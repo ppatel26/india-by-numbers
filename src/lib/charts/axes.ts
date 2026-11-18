@@ -6,8 +6,9 @@ import { colorVar } from '~/lib/tokens'
 import { attr, svg, type Markup } from '~/lib/markup'
 import type { Point } from '~/lib/data'
 
-export type Width = 'wide' | 'narrow'
-export const WIDTH: Record<Width, number> = { wide: 912, narrow: 358 }
+/** wide: the page; narrow: a phone; half: one of two panels side by side on the page (phone layout). */
+export type Width = 'wide' | 'half' | 'narrow'
+export const WIDTH: Record<Width, number> = { wide: 912, half: 444, narrow: 358 }
 
 export const FONT = {
   ui: "'Hanken Grotesk', system-ui, sans-serif",

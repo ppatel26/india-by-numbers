@@ -157,8 +157,9 @@ export function legendHeading(chart: Of<'states'>, data: StateData): { india: st
 export function renderTiles(chart: Of<'states'>, width: Width): Markup {
   const data = statesOf(chart)
   const narrow = width === 'narrow'
-  const size = narrow ? 40 : 64
   const gap = narrow ? 3 : 4
+  // On the page the grid takes the width the legend leaves (legend 270 px, 40 px between).
+  const size = narrow ? 40 : Math.floor((WIDTH.wide - 270 - 40) / GRID.cols) - gap
   const b = bins(chart, data)
   // Pattern ids must be unique on the page: a hidden view's pattern does not paint.
   const noData = `nodata-${chart.slug}-${width}`

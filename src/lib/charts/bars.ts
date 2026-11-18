@@ -8,7 +8,7 @@ import { drawn, show, tipLine, type Of, type SeriesData } from './model'
 /** Horizontal bars by category: one series, grouped series, or stacked to a total. */
 export function renderBars(chart: Of<'bars'>, width: Width): Markup {
   const series = drawn(chart)
-  const narrow = width === 'narrow'
+  const narrow = width !== 'wide'
   const W = WIDTH[width]
   const val = (s: SeriesData, k: string) => s.points.find((p) => p.x === k)
   const keys = chart.order

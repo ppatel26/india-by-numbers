@@ -26,8 +26,10 @@ function nice(min: number, max: number): Axis {
 
 export function renderPanels<C extends Paneled>(chart: C, width: Width, one: (c: C, w: Width) => Markup): Markup {
   const panels = chart.panels!
+  // On the page, two panels per row fill the width; on a phone, one.
   const perRow = width === 'wide' ? 2 : 1
-  const cell = WIDTH.narrow
+  const cellWidth: Width = width === 'wide' ? 'half' : 'narrow'
+  const cell = WIDTH[cellWidth]
   const shared = sharedAxis(chart)
   const plots = panels.map((p) => {
     // A panel on its own scale still reaches its reference lines (a majority line stays on the plot).
@@ -42,7 +44,7 @@ export function renderPanels<C extends Paneled>(chart: C, width: Width, one: (c:
       // The chart's own axis settings win over the computed range.
       ...(chart.kind === 'bars' ? { axis: { ...axis, ...chart.axis } } : { y: { ...axis, ...chart.y } }),
     } as C
-    return { p, html: one(sub, 'narrow').html }
+    return { p, html: one(sub, cellWidth).html }
   })
   let y = 0
   const rows: Markup[] = []

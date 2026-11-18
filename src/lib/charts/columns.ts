@@ -8,7 +8,7 @@ import { timeNotes } from './notes'
 /** Columns over time. Series that share an x sit side by side, or stack when `stacked`. */
 export function renderColumns(chart: Of<'columns'>, width: Width): Markup {
   const series = drawn(chart)
-  const narrow = width === 'narrow'
+  const narrow = width !== 'wide'
   const W = WIDTH[width]
   const H = narrow ? 260 : 340
   const xs = [...new Map(series.flatMap((s) => s.points).map((p) => [p.x, p])).values()].sort((a, b) => a.t - b.t)
