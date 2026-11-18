@@ -3,11 +3,6 @@
 import type { TopicSlug } from '../types'
 import { count } from './counts'
 
-export interface Section {
-  heading: string
-  body: string
-}
-
 export interface LedgerRow {
   topic: TopicSlug
   /** Chart slug the figure is read from. */
@@ -58,7 +53,6 @@ export interface Home {
       allLink: string
     }
   }
-  howWeCheck: { eyebrow: string; heading: string; body: string; link: string; steps: readonly Section[] }
 }
 
 const home: Home = {
@@ -184,30 +178,6 @@ const home: Home = {
       profileLink: ['Open the ', ' page'],
       allLink: `All ${count.places} states and UTs`,
     },
-  },
-  howWeCheck: {
-    eyebrow: 'How we check',
-    heading: 'You should not have to take our word for it',
-    body: 'Every number on this site comes from a release that a government office published. We keep the file, show what changed, and stamp each figure with a hallmark.',
-    link: 'Read how we check',
-    steps: [
-      {
-        heading: '1 · Fetch',
-        body: 'We store each release file as the publisher put it out, with its web address, the time we fetched it and a checksum.',
-      },
-      {
-        heading: '2 · Compare',
-        body: 'A parser reads the file. A diff shows every new period and every revised value next to the old one.',
-      },
-      {
-        heading: '3 · Review',
-        body: 'A person checks each change against the release document. Nothing publishes on its own.',
-      },
-      {
-        heading: '4 · Hallmark',
-        body: 'Each figure carries four punches: the office, the unit, the date we checked it and the period. Provisional, survey and method-break figures say so.',
-      },
-    ],
   },
 }
 

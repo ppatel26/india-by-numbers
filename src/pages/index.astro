@@ -64,7 +64,7 @@ const browseIntro = `${topics.length} topics, ${charts.length} charts. Each topi
     <p class="later"><strong>{home.comingLater.label}</strong> <span class="muted">{home.comingLater.topics.join(' · ')}</span></p>
   </section>
 
-  <section class="wrap section" aria-labelledby="beside">
+  <section class="wrap section beside-section" aria-labelledby="beside">
     <div class="section-head">
       <div>
         <h2 class="display" id="beside">{home.stateBeside.heading}</h2>
@@ -75,27 +75,6 @@ const browseIntro = `${topics.length} topics, ${charts.length} charts. Each topi
     <StateBeside content={home.stateBeside} />
   </section>
 
-  <section class="methods on-dark" aria-labelledby="methods">
-    <div class="wrap">
-      <div class="m-top">
-        <div>
-          <p class="label muted">{home.howWeCheck.eyebrow}</p>
-          <h2 class="display" id="methods">{home.howWeCheck.heading}</h2>
-          <p class="lede">{home.howWeCheck.body}</p>
-          <p><a href="/how-we-check/"><strong>{home.howWeCheck.link}</strong></a></p>
-        </div>
-        <Emblem name="methods" alt={EMBLEM_ALT.methods} size={300} screen />
-      </div>
-      <ol class="steps">
-        {home.howWeCheck.steps.map((s) => (
-          <li>
-            <h3 class="label">{s.heading}</h3>
-            <p>{s.body}</p>
-          </li>
-        ))}
-      </ol>
-    </div>
-  </section>
 </Base>
 
 <style>
@@ -194,58 +173,19 @@ const browseIntro = `${topics.length} topics, ${charts.length} charts. Each topi
   .picker {
     width: 320px;
   }
-  .methods {
-    margin-top: 120px;
-    padding-block: 96px;
-    background: var(--kajal);
-  }
-  .m-top {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 40px;
-  }
-  .methods h2 {
-    margin: 12px 0 20px;
-    font-size: clamp(36px, 4.4vw, 56px);
-    max-width: 720px;
-  }
-  .methods .lede {
-    color: var(--silver-dim);
-    margin-bottom: 24px;
-  }
-  .steps {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 24px;
-    margin: 56px 0 0;
-    padding: 0;
-    list-style: none;
-  }
-  .steps li {
-    padding-top: 20px;
-    border-top: 1px solid var(--kajal-rule);
-  }
-  .steps p {
-    margin-top: 12px;
-    font-size: 15px;
-    line-height: 23px;
+  .beside-section {
+    padding-bottom: 120px;
   }
   @media (max-width: 1000px) {
     .tiles {
       grid-template-columns: 1fr 1fr;
     }
-    .steps {
-      grid-template-columns: 1fr 1fr;
-    }
-    .inner > :global(.emblem),
-    .m-top > :global(.emblem) {
+    .inner > :global(.emblem) {
       display: none;
     }
   }
   @media (max-width: 640px) {
-    .tiles,
-    .steps {
+    .tiles {
       grid-template-columns: 1fr;
     }
     .search input {
