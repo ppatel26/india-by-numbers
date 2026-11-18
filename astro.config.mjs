@@ -6,7 +6,8 @@ export default defineConfig({
   output: 'static',
   trailingSlash: 'always',
   compressHTML: true,
-  build: { format: 'directory' },
+  // Inline the CSS: one round trip less before the first paint.
+  build: { format: 'directory', inlineStylesheets: 'always' },
   vite: {
     ssr: { external: ['@resvg/resvg-js'] },
   },
