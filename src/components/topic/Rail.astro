@@ -11,7 +11,7 @@ const { topic } = Astro.props
 ---
 
 <aside class="rail" aria-label="On this page">
-  <div class="block">
+  <div class="block contents">
     <h2 class="label muted">On this page</h2>
     <ol>
       {topic.parts.map((p, i) => <li><a href={`#${partId(i + 1)}`}>{p.title}</a></li>)}
@@ -96,6 +96,12 @@ const { topic } = Astro.props
   @media (max-width: 1100px) {
     .rail {
       position: static;
+    }
+  }
+  @media (max-width: 720px) {
+    /* Phones scroll the parts in order; the list would push the first chart down a screen. */
+    .contents {
+      display: none;
     }
   }
 </style>

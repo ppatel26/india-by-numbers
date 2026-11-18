@@ -55,7 +55,9 @@ export function renderLine(chart: Of<'line'>, width: Width): Markup {
 
 function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values: number[], narrow: boolean, small: boolean): Markup {
   const endLabels = !small
-  const m = { top: panel.label ? 34 : 16, right: endLabels ? (narrow ? 84 : 120) : 12, bottom: 28, left: 40 }
+  // End labels need room for the longest series name (about 7 px a character at 12.5 px).
+  const labelRoom = Math.max(...panel.series.map((s) => s.label.length), 8) * 7 + 12
+  const m = { top: panel.label ? 34 : 16, right: endLabels ? Math.min(labelRoom, W * (narrow ? 0.4 : 0.22)) : 12, bottom: 28, left: 40 }
   const pts = panel.series.flatMap((s) => s.points)
   const ts = pts.map((p) => p.t)
   const x = scaleLinear().domain([Math.min(...ts), Math.max(...ts)]).range([m.left, W - m.right])

@@ -23,7 +23,10 @@ export interface Margin {
 
 export function frame(width: Width, height: number, label: string, body: Markup | Markup[]): Markup {
   const w = WIDTH[width]
-  return svg`<svg class="plot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${height}" width="${w}" height="${height}" role="img" aria-label="${label}" font-family="${FONT.ui}">${body}</svg>`
+  const inner = svg`${body}`
+  // A plot with links in it (state names, tiles) is a group; an image cannot hold links.
+  const role = inner.html.includes('<a ') ? 'group' : 'img'
+  return svg`<svg class="plot" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 ${w} ${height}" width="${w}" height="${height}" role="${role}" aria-label="${label}" font-family="${FONT.ui}">${inner}</svg>`
 }
 
 /** A y scale from 0 (or the data minimum, when below 0) to a nice maximum. */

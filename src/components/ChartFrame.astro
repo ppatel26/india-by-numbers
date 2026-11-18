@@ -56,8 +56,12 @@ const href = `/charts/${chart.slug}/`
     <Hallmark {...chart.punches} status={chart.status} />
     <p class="source">{sourceLine(chart.sources)}</p>
     <p class="files">
-      <a href={`${href}?tab=table`} data-view-link="table">Table</a> · <a href={`/charts/${chart.slug}.csv`} download>CSV</a> ·{' '}
-      <a href={`/charts/${chart.slug}.png`} download>PNG</a> · <a href={`/charts/${chart.slug}.svg`} download>SVG</a>
+      <a href={`${href}?tab=table`} data-view-link="table">Table</a> · <a href={`/charts/${chart.slug}.csv`} download>CSV</a>
+      {chart.kind !== 'table' && (
+        <>
+          {' · '}<a href={`/charts/${chart.slug}.png`} download>PNG</a> · <a href={`/charts/${chart.slug}.svg`} download>SVG</a>
+        </>
+      )}
     </p>
   </figcaption>
 </figure>
