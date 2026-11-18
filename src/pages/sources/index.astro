@@ -6,7 +6,7 @@ import TopicTag from '~/components/TopicTag.astro'
 import page from '~/content/pages/sources'
 import { charts, topic } from '~/content'
 import { publisherOf, releasedText, uniqueSources } from '~/lib/sources'
-import { pigments } from '~/lib/tokens'
+import logoSize from '~/content/logos.json'
 
 const { publishers, notUsed } = page
 const count = new Map<string, number>()
@@ -57,13 +57,14 @@ const barName = (short: string) => short.split(/[ ,]/)[0]
     <section class="part" aria-labelledby="publishers">
       <p class="label muted">{publishers.eyebrow}</p>
       <h2 class="display" id="publishers">{publishers.heading}</h2>
+      <p class="muted logo-note">{publishers.logoNote}</p>
       {list.map((p) => (
         <article class="publisher">
           <div class="who">
-            <div class="name-row">
-              <span class="seal" style={`--seal:${pigments[p.topics[0]!].hex}`} data-len={p.mark.length} aria-hidden="true">{p.mark}</span>
-              <h3 class="display">{p.short}</h3>
+            <div class="logos">
+              {p.logos.map((l) => <img src={`/logos/${l}.webp`} alt="" width={Math.round((logoSize[l as keyof typeof logoSize].width / logoSize[l as keyof typeof logoSize].height) * 56)} height="56" loading="lazy" decoding="async" />)}
             </div>
+            <h3 class="display">{p.short}</h3>
             <p class="muted full">{p.full}</p>
             <p class="uses"><strong>{p.n}</strong> {publishers.labels.charts(p.n)}</p>
             <p class="tags">{p.topics.map((t) => <TopicTag topic={topic(t)} />)}</p>
@@ -200,31 +201,25 @@ const barName = (short: string) => short.split(/[ ,]/)[0]
     padding-block: 36px;
     border-top: 1px solid var(--ink);
   }
-  .name-row {
+  /* The publisher's own logo, at its own proportions; a very wide wordmark is capped. */
+  .logos {
     display: flex;
     align-items: center;
-    gap: 16px;
+    gap: 14px;
+    height: 56px;
+    margin-bottom: 14px;
   }
-  /* A typographic seal, not the publisher's own emblem: the site is not affiliated with them.
-     The ring takes the topic colour; the letters stay ink, so light pigments keep their contrast. */
-  .seal {
-    display: grid;
-    place-items: center;
-    flex-shrink: 0;
-    width: 64px;
-    height: 64px;
-    border-radius: 50%;
-    border: 1.5px solid var(--seal);
-    box-shadow: inset 0 0 0 3px var(--paper), inset 0 0 0 4px var(--seal);
-    color: var(--ink);
-    font: 400 17px/1 var(--font-display);
-    letter-spacing: 0.02em;
+  .logos img {
+    height: 56px;
+    width: auto;
+    max-width: 230px;
+    object-fit: contain;
+    object-position: left center;
   }
-  .seal[data-len='4'] {
-    font-size: 15px;
-  }
-  .seal[data-len='5'] {
-    font-size: 13px;
+  .logo-note {
+    margin-top: -16px;
+    margin-bottom: 20px;
+    font-size: 14px;
   }
   .publisher h3 {
     font-size: 32px;

@@ -14,8 +14,8 @@ export interface DataSet {
 
 export interface Publisher {
   short: string
-  /** The letters on the publisher's seal. */
-  mark: string
+  /** Logo files in public/logos/, without extension (sources: pipeline/logos/README.md). */
+  logos: readonly string[]
   full: string
   topics: readonly TopicSlug[]
   dataSets: readonly DataSet[]
@@ -44,6 +44,8 @@ export interface SourcesPage {
   publishers: {
     eyebrow: string
     heading: string
+    /** Under the heading: whose the logos are. */
+    logoNote: string
     labels: {
       charts: (n: number) => string
       dataSet: string
@@ -65,7 +67,7 @@ const NOT_STATED = 'Not stated'
 const PUBLISHERS: readonly Publisher[] = [
   {
     short: 'MoSPI',
-    mark: 'MoSPI',
+    logos: ['mospi'],
     full: 'National Statistics Office (NSO), Ministry of Statistics and Programme Implementation',
     topics: ['prices', 'economy', 'jobs', 'education', 'elections'],
     dataSets: [
@@ -82,7 +84,7 @@ const PUBLISHERS: readonly Publisher[] = [
   },
   {
     short: 'ORGI',
-    mark: 'ORGI',
+    logos: ['orgi'],
     full: 'Office of the Registrar General and Census Commissioner, India',
     topics: ['population', 'health', 'education', 'religion-and-culture'],
     dataSets: [
@@ -96,7 +98,7 @@ const PUBLISHERS: readonly Publisher[] = [
   },
   {
     short: 'MoE',
-    mark: 'MoE',
+    logos: ['moe'],
     full: 'Ministry of Education',
     topics: ['education'],
     dataSets: [
@@ -109,7 +111,7 @@ const PUBLISHERS: readonly Publisher[] = [
   },
   {
     short: 'RBI',
-    mark: 'RBI',
+    logos: ['rbi'],
     full: 'Reserve Bank of India',
     topics: ['prices', 'economy'],
     dataSets: [
@@ -125,7 +127,7 @@ const PUBLISHERS: readonly Publisher[] = [
   },
   {
     short: 'IMD',
-    mark: 'IMD',
+    logos: ['imd'],
     full: 'India Meteorological Department, Ministry of Earth Sciences',
     topics: ['climate'],
     dataSets: [
@@ -140,7 +142,7 @@ const PUBLISHERS: readonly Publisher[] = [
   },
   {
     short: 'ECI',
-    mark: 'ECI',
+    logos: ['eci'],
     full: 'Election Commission of India',
     topics: ['elections'],
     dataSets: [
@@ -154,7 +156,7 @@ const PUBLISHERS: readonly Publisher[] = [
   },
   {
     short: 'PIB',
-    mark: 'PIB',
+    logos: ['pib'],
     full: 'Press Information Bureau, Government of India',
     topics: ['economy', 'health', 'elections'],
     dataSets: [
@@ -168,7 +170,7 @@ const PUBLISHERS: readonly Publisher[] = [
   },
   {
     short: 'CEA',
-    mark: 'CEA',
+    logos: ['cea'],
     full: 'Central Electricity Authority',
     topics: ['climate'],
     dataSets: [
@@ -181,7 +183,7 @@ const PUBLISHERS: readonly Publisher[] = [
   },
   {
     short: 'MoHFW and IIPS',
-    mark: 'IIPS',
+    logos: ['mohfw', 'iips'],
     full: 'Ministry of Health and Family Welfare, with the International Institute for Population Sciences and NHSRC',
     topics: ['health'],
     dataSets: [
@@ -195,7 +197,7 @@ const PUBLISHERS: readonly Publisher[] = [
   },
   {
     short: 'MNRE',
-    mark: 'MNRE',
+    logos: ['mnre'],
     full: 'Ministry of New and Renewable Energy',
     topics: ['climate'],
     dataSets: [
@@ -207,7 +209,7 @@ const PUBLISHERS: readonly Publisher[] = [
   },
   {
     short: 'NCP, MoHFW',
-    mark: 'NCP',
+    logos: ['mohfw'],
     full: 'National Commission on Population, MoHFW: Technical Group on Population Projections',
     topics: ['population'],
     dataSets: [
@@ -242,6 +244,7 @@ const sources: SourcesPage = {
   publishers: {
     eyebrow: 'Publishers, by number of charts',
     heading: 'Who publishes the data we use?',
+    logoNote: 'Each logo belongs to its publisher and only identifies it. India by Numbers is not affiliated with any of them.',
     labels: {
       charts: (n) => (n === 1 ? 'chart uses it' : 'charts use it'),
       dataSet: 'Data set',

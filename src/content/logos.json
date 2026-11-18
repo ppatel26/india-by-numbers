@@ -1,0 +1,46 @@
+{
+  "mospi": {
+    "width": 199,
+    "height": 128
+  },
+  "orgi": {
+    "width": 116,
+    "height": 128
+  },
+  "moe": {
+    "width": 276,
+    "height": 128
+  },
+  "rbi": {
+    "width": 467,
+    "height": 128
+  },
+  "imd": {
+    "width": 69,
+    "height": 128
+  },
+  "eci": {
+    "width": 137,
+    "height": 128
+  },
+  "pib": {
+    "width": 128,
+    "height": 128
+  },
+  "cea": {
+    "width": 75,
+    "height": 128
+  },
+  "iips": {
+    "width": 128,
+    "height": 128
+  },
+  "mnre": {
+    "width": 844,
+    "height": 128
+  },
+  "mohfw": {
+    "width": 266,
+    "height": 128
+  }
+}
