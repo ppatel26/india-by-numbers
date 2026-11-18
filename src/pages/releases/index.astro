@@ -5,10 +5,13 @@ import PageHeader from '~/components/PageHeader.astro'
 import TopicTag from '~/components/TopicTag.astro'
 import page from '~/content/pages/releases'
 import { topic, topics } from '~/content'
+import { pigments } from '~/lib/tokens'
 
 const { dueNext, changeLog } = page
 const rows = changeLog.rows
 const [all, ...kinds] = changeLog.filters.kinds
+// Only topics with a row in the log; a filter that empties the table helps no one.
+const shownTopics = topics.filter((t) => rows.some((r) => r.topics.includes(t.slug)))
 ---
 
 <Base title={page.title} description={page.description}>
@@ -48,13 +51,15 @@ const [all, ...kinds] = changeLog.filters.kinds
           <button type="button" aria-pressed="true" data-kind="">{all}</button>
           {kinds.map((k) => <button type="button" aria-pressed="false" data-kind={k}>{k}</button>)}
         </div>
-        <label class="topic">
-          <span class="label muted">{changeLog.filters.topicLabel}</span>
-          <select data-topic>
-            <option value="">{changeLog.filters.allTopics}</option>
-            {topics.map((t) => <option value={t.slug}>{t.name}</option>)}
-          </select>
-        </label>
+        <div class="kinds topics" role="group" aria-label={changeLog.filters.topicLabel}>
+          <span class="label muted" aria-hidden="true">{changeLog.filters.topicLabel}</span>
+          <button type="button" aria-pressed="true" data-topic="">{changeLog.filters.allTopics}</button>
+          {shownTopics.map((t) => (
+            <button type="button" aria-pressed="false" data-topic={t.slug}>
+              <span class="sq" style={`background:${pigments[t.slug].hex}`} aria-hidden="true"></span>{t.name}
+            </button>
+          ))}
+        </div>
         <p class="muted count">{changeLog.count(rows.length, rows.at(-1)?.released ?? '', rows[0]?.released ?? '')}</p>
       </div>
       <table class="ruled log">
@@ -79,29 +84,33 @@ const [all, ...kinds] = changeLog.filters.kinds
           ))}
         </tbody>
       </table>
+      <p class="none" hidden data-none>{changeLog.filters.none}</p>
       <p class="muted footnote">{changeLog.footnote}</p>
     </section>
   </div>
 </Base>
 
 <script>
-  const buttons = document.querySelectorAll<HTMLButtonElement>('[data-kind]')
-  const select = document.querySelector<HTMLSelectElement>('[data-topic]')
-  let kind = ''
+  const on = { kind: '', topic: '' }
+  const none = document.querySelector<HTMLElement>('[data-none]')!
   function apply() {
-    const t = select?.value ?? ''
+    let shown = 0
     for (const tr of document.querySelectorAll<HTMLElement>('[data-row-kind]')) {
-      tr.hidden = (!!kind && tr.dataset.rowKind !== kind) || (!!t && !tr.dataset.rowTopics!.split(' ').includes(t))
+      tr.hidden = (!!on.kind && tr.dataset.rowKind !== on.kind) || (!!on.topic && !tr.dataset.rowTopics!.split(' ').includes(on.topic))
+      if (!tr.hidden) shown++
+    }
+    none.hidden = shown > 0
+  }
+  for (const key of ['kind', 'topic'] as const) {
+    const buttons = document.querySelectorAll<HTMLButtonElement>(`[data-${key}]`)
+    for (const b of buttons) {
+      b.addEventListener('click', () => {
+        on[key] = b.dataset[key] ?? ''
+        for (const x of buttons) x.setAttribute('aria-pressed', String(x === b))
+        apply()
+      })
     }
   }
-  for (const b of buttons) {
-    b.addEventListener('click', () => {
-      kind = b.dataset.kind ?? ''
-      for (const x of buttons) x.setAttribute('aria-pressed', String(x === b))
-      apply()
-    })
-  }
-  select?.addEventListener('change', apply)
 </script>
 
 <style>
@@ -181,15 +190,13 @@ const [all, ...kinds] = changeLog.filters.kinds
     gap: 12px 40px;
     margin: 24px 0 20px;
   }
-  .kinds,
-  .topic {
+  .kinds {
     display: flex;
     align-items: center;
     gap: 4px 16px;
     flex-wrap: wrap;
   }
-  .kinds button,
-  .topic select {
+  .kinds button {
     padding: 0;
     border: 0;
     background: none;
@@ -202,8 +209,29 @@ const [all, ...kinds] = changeLog.filters.kinds
     text-decoration: underline;
     text-underline-offset: 4px;
   }
-  .topic select {
-    font-weight: 600;
+  /* Topics take their own row, under the kinds and the count. */
+  .topics {
+    order: 1;
+    flex-basis: 100%;
+  }
+  .topics button {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+  }
+  .sq {
+    width: 8px;
+    height: 8px;
+  }
+  .kinds button[aria-pressed='false']:hover {
+    text-decoration: underline;
+    text-decoration-color: var(--rule);
+    text-underline-offset: 4px;
+  }
+  .none {
+    padding: 16px 0;
+    font-size: 15px;
+    border-bottom: 1px solid var(--rule);
   }
   .count {
     margin-left: auto;

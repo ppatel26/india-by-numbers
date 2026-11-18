@@ -1,7 +1,6 @@
 // Copy for the Releases page. The corrections log is in corrections.ts.
 
 import type { TopicSlug } from '../types'
-import { count } from './counts'
 
 export type ReleaseKind = 'New period' | 'Revision' | 'Method break' | 'Correction' | 'New chart'
 
@@ -42,7 +41,7 @@ export interface ReleasesPage {
   changeLog: {
     eyebrow: string
     heading: string
-    filters: { kindLabel: string; kinds: readonly string[]; topicLabel: string; allTopics: string }
+    filters: { kindLabel: string; kinds: readonly string[]; topicLabel: string; allTopics: string; none: string }
     count: (n: number, from: string, to: string) => string
     heads: { released: string; release: string; kind: string; charts: string }
     rows: readonly ChangeRow[]
@@ -113,7 +112,8 @@ const releases: ReleasesPage = {
       kindLabel: 'Kind',
       kinds: ['All', 'New period', 'Revision', 'Method break', 'Correction'],
       topicLabel: 'Topic',
-      allTopics: `All ${count.topics} topics`,
+      allTopics: 'All',
+      none: 'No release of this kind for this topic.',
     },
     count: (n, from, to) => `${n} releases, ${from} to ${to}`,
     heads: { released: 'Released', release: 'Publisher and release', kind: 'Kind', charts: 'Charts updated' },
