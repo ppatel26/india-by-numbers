@@ -11,6 +11,8 @@ import { formatDate } from '~/lib/period'
 import { upcoming } from '~/lib/releases'
 import { SITE } from '~/lib/site'
 import releases from '~/content/pages/releases'
+import sourcesPage from '~/content/pages/sources'
+import { publisherOf } from '~/lib/sources'
 
 describe('topics', () => {
   it('has all nine, in order', () => {
@@ -80,5 +82,18 @@ describe('release calendar', () => {
       const match = announced.some((r) => r.publisher === publisher && formatDate(r.expected_date!) === row.date)
       expect(match, `${row.date} ${row.release}`).toBe(row.certainty === 'Announced')
     }
+  })
+})
+
+describe('sources page', () => {
+  const all = charts.flatMap((c) => c.chart.sources)
+  it('names a publisher for every chart source, and lists each one', () => {
+    const listed = new Set(sourcesPage.publishers.list.map((p) => p.short))
+    for (const s of all) expect(listed.has(publisherOf(s.publisher)), s.publisher).toBe(true)
+  })
+  it('matches each data set to at least one of its publisher\'s chart sources', () => {
+    for (const p of sourcesPage.publishers.list)
+      for (const d of p.dataSets)
+        expect(all.some((s) => publisherOf(s.publisher) === p.short && d.match.test(s.release)), `${p.short}: ${d.name}`).toBe(true)
   })
 })

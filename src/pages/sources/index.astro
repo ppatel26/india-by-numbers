@@ -5,38 +5,24 @@ import PageHeader from '~/components/PageHeader.astro'
 import TopicTag from '~/components/TopicTag.astro'
 import page from '~/content/pages/sources'
 import { charts, topic } from '~/content'
+import { publisherOf, releasedText, uniqueSources } from '~/lib/sources'
+import { pigments } from '~/lib/tokens'
 
 const { publishers, notUsed } = page
-
-/**
- * Source lines name publishers in several ways ("NSO, MoSPI", "ECI via PIB").
- * The first rule that matches gives the publisher. Order matters: a release
- * that PIB carries for another office counts under PIB, as on the board.
- */
-const RULES: readonly (readonly [RegExp, string])[] = [
-  [/\bPIB\b/, 'PIB'],
-  [/National Commission on Population/, 'NCP, MoHFW'],
-  [/\bIIPS\b|NHSRC/, 'MoHFW and IIPS'],
-  [/\bORGI\b/, 'ORGI'],
-  [/MoSPI|\bNSO\b/, 'MoSPI'],
-  [/Ministry of Education/, 'MoE'],
-  [/\bRBI\b/, 'RBI'],
-  [/\bIMD\b/, 'IMD'],
-  [/\bECI\b/, 'ECI'],
-  [/\bCEA\b/, 'CEA'],
-  [/\bMNRE\b/, 'MNRE'],
-]
-function shortName(publisher: string): string {
-  const hit = RULES.find(([re]) => re.test(publisher))
-  if (!hit) throw new Error(`Sources page: no publisher for "${publisher}"`)
-  return hit[1]
-}
 const count = new Map<string, number>()
 for (const c of charts) {
-  for (const p of new Set(c.chart.sources.map((s) => shortName(s.publisher)))) count.set(p, (count.get(p) ?? 0) + 1)
+  for (const p of new Set(c.chart.sources.map((s) => publisherOf(s.publisher)))) count.set(p, (count.get(p) ?? 0) + 1)
+}
+const sources = uniqueSources(charts.flatMap((c) => c.chart.sources))
+/** The newest release among a data set's chart sources; undated releases sort last. */
+const latestOf = (short: string, match: RegExp): string | undefined => {
+  const dated = sources
+    .filter((s) => publisherOf(s.publisher) === short && match.test(s.release) && s.released !== 'not stated')
+    .sort((a, b) => b.released.localeCompare(a.released))
+  return dated[0] && releasedText(dated[0])
 }
 const list = publishers.list
-  .map((p) => ({ ...p, n: count.get(p.short) ?? 0 }))
+  .map((p) => ({ ...p, n: count.get(p.short) ?? 0, sets: p.dataSets.map((d) => ({ ...d, latest: latestOf(p.short, d.match) })) }))
   .sort((a, b) => b.n - a.n)
 const max = Math.max(...list.map((p) => p.n))
 const barName = (short: string) => short.split(/[ ,]/)[0]
@@ -71,33 +57,47 @@ const barName = (short: string) => short.split(/[ ,]/)[0]
     <section class="part" aria-labelledby="publishers">
       <p class="label muted">{publishers.eyebrow}</p>
       <h2 class="display" id="publishers">{publishers.heading}</h2>
-      {list.map((p) => {
-        const rows = [
-          [publishers.labels.whatWeTake, p.whatWeTake],
-          [publishers.labels.rhythm, p.rhythm],
-          [publishers.labels.latest, p.latestRelease],
-          [publishers.labels.licence, p.licence],
-          [publishers.labels.how, p.howItPublishes],
-        ] as const
-        return (
-          <article class="publisher">
-            <div>
+      {list.map((p) => (
+        <article class="publisher">
+          <div class="who">
+            <div class="name-row">
+              <span class="seal" style={`--seal:${pigments[p.topics[0]!].hex}`} data-len={p.mark.length} aria-hidden="true">{p.mark}</span>
               <h3 class="display">{p.short}</h3>
-              <p class="muted full">{p.full}</p>
-              <p class="uses"><strong>{p.n}</strong> {publishers.labels.charts(p.n)}</p>
-              <p class="tags">{p.topics.map((t) => <TopicTag topic={topic(t)} />)}</p>
             </div>
-            <dl>
-              {rows.map(([k, v]) => v && (
-                <div>
-                  <dt class="label muted">{k}</dt>
-                  <dd>{v}</dd>
-                </div>
-              ))}
+            <p class="muted full">{p.full}</p>
+            <p class="uses"><strong>{p.n}</strong> {publishers.labels.charts(p.n)}</p>
+            <p class="tags">{p.topics.map((t) => <TopicTag topic={topic(t)} />)}</p>
+            <dl class="facts">
+              <div><dt class="label muted">{publishers.labels.licence}</dt><dd>{p.licence}</dd></div>
+              <div><dt class="label muted">{publishers.labels.access}</dt><dd><ul>{p.access.map((a) => <li>{a}</li>)}</ul></dd></div>
+              <div><dt class="label muted">{publishers.labels.site}</dt><dd><a href={p.site} rel="external">{new URL(p.site).host.replace(/^www\./, '')}</a></dd></div>
             </dl>
-          </article>
-        )
-      })}
+          </div>
+          <div class="what">
+            <table class="ruled sets">
+              <thead>
+                <tr>
+                  <th scope="col">{publishers.labels.dataSet}</th>
+                  <th scope="col">{publishers.labels.detail}</th>
+                  <th scope="col">{publishers.labels.rhythm}</th>
+                  <th scope="col">{publishers.labels.latest}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {p.sets.map((d) => (
+                  <tr>
+                    <th scope="row">{d.name}</th>
+                    <td data-label={publishers.labels.detail}>{d.detail}</td>
+                    <td data-label={publishers.labels.rhythm}>{d.rhythm}</td>
+                    <td data-label={publishers.labels.latest} class="date">{d.latest ?? publishers.labels.notStated}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            {p.note && <p class="muted note">Note: {p.note}</p>}
+          </div>
+        </article>
+      ))}
     </section>
 
     <section class="part last" aria-labelledby="not-used">
@@ -195,17 +195,42 @@ const barName = (short: string) => short.split(/[ ,]/)[0]
   }
   .publisher {
     display: grid;
-    grid-template-columns: 320px minmax(0, 1fr);
+    grid-template-columns: 300px minmax(0, 1fr);
     gap: 48px;
-    padding-block: 32px;
+    padding-block: 36px;
     border-top: 1px solid var(--ink);
   }
+  .name-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  /* A typographic seal, not the publisher's own emblem: the site is not affiliated with them. */
+  .seal {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    border: 1.5px solid var(--seal);
+    box-shadow: inset 0 0 0 3px var(--paper), inset 0 0 0 4px var(--seal);
+    color: var(--seal);
+    font: 400 17px/1 var(--font-display);
+    letter-spacing: 0.02em;
+  }
+  .seal[data-len='4'] {
+    font-size: 15px;
+  }
+  .seal[data-len='5'] {
+    font-size: 13px;
+  }
   .publisher h3 {
-    font-size: 34px;
+    font-size: 32px;
     text-transform: none;
   }
   .full {
-    margin-top: 10px;
+    margin-top: 12px;
     font-size: 15px;
     line-height: 22px;
   }
@@ -214,7 +239,7 @@ const barName = (short: string) => short.split(/[ ,]/)[0]
     font-size: 15px;
   }
   .uses strong {
-    font: 500 30px/36px var(--font-ui);
+    font: 500 28px/34px var(--font-ui);
     margin-right: 4px;
   }
   .tags {
@@ -223,25 +248,55 @@ const barName = (short: string) => short.split(/[ ,]/)[0]
     gap: 6px;
     margin-top: 10px;
   }
-  dl {
-    margin: 0;
+  .facts {
+    margin: 20px 0 0;
+    border-top: 1px solid var(--rule);
   }
-  dl div {
+  .facts div {
     display: grid;
-    grid-template-columns: 192px minmax(0, 1fr);
-    padding-block: 12px;
+    grid-template-columns: 96px minmax(0, 1fr);
+    gap: 12px;
+    padding-block: 10px;
     border-bottom: 1px solid var(--rule);
   }
-  dl div:first-child {
-    padding-top: 0;
+  .facts dt {
+    padding-top: 3px;
   }
-  dt {
-    padding-top: 4px;
-  }
-  dd {
+  .facts dd {
     margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .facts ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 4px;
+  }
+  .sets {
+    width: 100%;
+  }
+  .sets th[scope='col'] {
+    text-align: left;
+  }
+  .ruled.sets th[scope='row'] {
+    width: 26%;
+  }
+  .ruled.sets td {
     font-size: 15px;
     line-height: 22px;
+    vertical-align: top;
+    padding-right: 16px;
+  }
+  .sets .date {
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+  }
+  .what .note {
+    margin-top: 14px;
+    font-size: 14px;
+    line-height: 21px;
   }
   .ruled thead th {
     border-bottom: 1px solid var(--ink);
@@ -263,9 +318,24 @@ const barName = (short: string) => short.split(/[ ,]/)[0]
     }
   }
   @media (max-width: 720px) {
-    dl div {
-      grid-template-columns: 1fr;
+    .sets thead {
+      display: none;
+    }
+    .sets tr {
+      display: grid;
       gap: 4px;
+      padding-block: 12px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .ruled.sets th[scope='row'],
+    .ruled.sets td {
+      width: auto;
+      padding: 0;
+      border: 0;
+    }
+    .sets td::before {
+      content: attr(data-label) ': ';
+      color: var(--slate);
     }
     .ruled th[scope='row'] {
       width: 40%;

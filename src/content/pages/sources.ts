@@ -3,18 +3,27 @@
 import type { TopicSlug } from '../types'
 import { count } from './counts'
 
+export interface DataSet {
+  name: string
+  detail: string
+  /** How often the publisher releases it. */
+  rhythm: string
+  /** Picks this data set's releases out of the publisher's chart sources, for "latest used". */
+  match: RegExp
+}
+
 export interface Publisher {
   short: string
+  /** The letters on the publisher's seal. */
+  mark: string
   full: string
-  /** Charts that use this publisher, counted from the chart sources. */
-  charts: number
   topics: readonly TopicSlug[]
-  whatWeTake: string
-  /** null when the publisher states no rhythm. */
-  rhythm: string | null
-  latestRelease: string
+  dataSets: readonly DataSet[]
   licence: string
-  howItPublishes: string
+  /** Where and in what form it publishes, one item each. */
+  access: readonly string[]
+  /** One caveat a reader needs, if any. */
+  note?: string
   site: string
 }
 
@@ -31,158 +40,181 @@ export interface SourcesPage {
   checked: string
   summary: { finding: string; licence: string }
   chart: { number: string; title: string; subtitle: string; note: string }
-  publishers: { eyebrow: string; heading: string; labels: { charts: (n: number) => string; whatWeTake: string; rhythm: string; latest: string; licence: string; how: string }; list: readonly Publisher[] }
+  publishers: {
+    eyebrow: string
+    heading: string
+    labels: {
+      charts: (n: number) => string
+      dataSet: string
+      detail: string
+      rhythm: string
+      latest: string
+      notStated: string
+      licence: string
+      access: string
+      site: string
+    }
+    list: readonly Publisher[]
+  }
   notUsed: { eyebrow: string; heading: string; heads: { source: string; why: string }; rows: readonly NotUsed[] }
 }
+
+const NOT_STATED = 'Not stated'
 
 const PUBLISHERS: readonly Publisher[] = [
   {
     short: 'MoSPI',
+    mark: 'MoSPI',
     full: 'National Statistics Office (NSO), Ministry of Statistics and Programme Implementation',
-    charts: 26,
     topics: ['prices', 'economy', 'jobs', 'education', 'elections'],
-    whatWeTake:
-      'Consumer Price Index (base 2012=100 to Dec 2025, base 2024=100 from Jan 2026); National Accounts (GDP, GVA, state income); Index of Industrial Production; Periodic Labour Force Survey (monthly, quarterly, annual); Women and Men in India 2025 (election tables).',
-    rhythm: 'CPI monthly. IIP monthly, on the 28th. PLFS monthly and quarterly bulletins and an annual report. GDP quarterly, with annual revisions.',
-    latestRelease:
-      'PLFS Monthly Bulletin, October 2026, released 16 Nov 2026. Also CPI for October 2026 (12 Nov 2026) and IIP for September 2026 (28 Oct 2026).',
-    licence: "Not stated on the publisher's site.",
-    howItPublishes:
-      'The eSankhyiki API (api.mospi.gov.in) for CPI, GDP, IIP and PLFS, and a press note with each release. The API has no PLFS monthly figure for March 2026; the press note gives it.',
-    site: 'https://api.mospi.gov.in',
+    dataSets: [
+      { name: 'Consumer Price Index', detail: 'Base 2012=100 to Dec 2025; base 2024=100 from Jan 2026', rhythm: 'Monthly, on the 12th', match: /Consumer Price Index|CPI/ },
+      { name: 'National Accounts', detail: 'GDP, GVA and state income', rhythm: 'Quarterly, with annual revisions', match: /National Accounts|GDP|state accounts/ },
+      { name: 'Index of Industrial Production', detail: 'Base 2011-12 and base 2022-23', rhythm: 'Monthly, on the 28th', match: /Industrial Production/ },
+      { name: 'Periodic Labour Force Survey', detail: 'Monthly and quarterly bulletins, annual report', rhythm: 'Monthly, quarterly and yearly', match: /PLFS/ },
+      { name: 'Women and Men in India', detail: 'Election tables, from ECI data', rhythm: 'Yearly', match: /Women and Men in India/ },
+    ],
+    licence: NOT_STATED,
+    access: ['eSankhyiki API (api.mospi.gov.in)', 'A press note with each release'],
+    note: 'The API has no PLFS monthly figure for March 2026. The press note gives it.',
+    site: 'https://www.mospi.gov.in',
   },
   {
     short: 'ORGI',
-    full: 'Office of the Registrar General and Census Commissioner, India: Census of India and Sample Registration System',
-    charts: 19,
+    mark: 'ORGI',
+    full: 'Office of the Registrar General and Census Commissioner, India',
     topics: ['population', 'health', 'education', 'religion-and-culture'],
-    whatWeTake:
-      'Census 2011 tables A-01, A-02, C-01, C-14, C-16 and the Primary Census Abstract; Census 2001 table C-01; SRS Bulletin and Statistical Report 2024; SRS maternal mortality bulletin 2022-24; SRS abridged life tables 2020-24.',
-    rhythm: 'Census at each count. Census 2027 door-to-door counting runs to 28 Feb 2027 in most states. SRS yearly.',
-    latestRelease: 'SRS Statistical Report 2024 and SRS Bulletin 2024, 20 May 2026.',
-    licence: 'No licence stated. The catalogue pages say "Rights Reserved".',
-    howItPublishes:
-      'Census tables and reports on censusindia.gov.in. Census 2011 is the latest full count, so every Census figure shows its year.',
+    dataSets: [
+      { name: 'Census of India', detail: '2011 tables A-01, A-02, C-01, C-14, C-16 and the Primary Census Abstract; 2001 table C-01', rhythm: 'Each census. The 2027 count runs to 28 Feb 2027 in most states.', match: /Census/ },
+      { name: 'Sample Registration System', detail: 'Bulletin and Statistical Report 2024; maternal mortality 2022-24; life tables 2020-24', rhythm: 'Yearly', match: /SRS/ },
+    ],
+    licence: '"Rights Reserved" on its catalogue pages',
+    access: ['Census tables and reports (censusindia.gov.in)', 'SRS bulletins and reports as PDF'],
+    note: 'Census 2011 is the latest full count, so every Census figure shows its year.',
     site: 'https://censusindia.gov.in',
   },
   {
     short: 'MoE',
-    full: 'Ministry of Education: UDISE+ (Department of School Education and Literacy) and AISHE (Department of Higher Education)',
-    charts: 7,
+    mark: 'MoE',
+    full: 'Ministry of Education',
     topics: ['education'],
-    whatWeTake:
-      'UDISE+ booklets for 2021-22 to 2025-26 (existing structure); AISHE final report 2023-24 and the AISHE enrolment ratio time series from 2011-12.',
-    rhythm: 'UDISE+ yearly. AISHE yearly, about two years behind the academic year it covers.',
-    latestRelease: 'UDISE+ 2025-26, 7 Jul 2026. AISHE 2023-24, 8 Jul 2026.',
-    licence: "Not stated on the publisher's site.",
-    howItPublishes:
-      'UDISE+ booklets for schools (udiseplus.gov.in) and AISHE reports for higher education (aishe.gov.in). The latest AISHE report covers 2023-24 and came out on 8 July 2026.',
+    dataSets: [
+      { name: 'UDISE+', detail: 'Schools: booklets 2021-22 to 2025-26, existing structure', rhythm: 'Yearly', match: /UDISE/ },
+      { name: 'AISHE', detail: 'Higher education: report 2023-24; enrolment ratios from 2011-12', rhythm: 'Yearly, about two years after the year it covers', match: /AISHE|Higher Education/ },
+    ],
+    licence: NOT_STATED,
+    access: ['UDISE+ booklets (udiseplus.gov.in)', 'AISHE reports (aishe.gov.in)'],
     site: 'https://udiseplus.gov.in',
   },
   {
     short: 'RBI',
+    mark: 'RBI',
     full: 'Reserve Bank of India',
-    charts: 5,
     topics: ['prices', 'economy'],
-    whatWeTake:
-      'Policy repo rate; Handbook of Statistics on Indian Economy 2025-26, tables 9, 10, 40, 133 and 236. Table 236 carries CPI series from the Labour Bureau (via RBI) and NSO. FBIL (via RBI): reference rate for the US dollar.',
-    rhythm: 'Repo rate at each Monetary Policy Committee meeting. Handbook yearly. Reference rate each working day.',
-    latestRelease: "Governor's Statement, 7 Oct 2026 (repo rate raised to 5.50%). FBIL (via RBI) reference rate for 18 Nov 2026: ₹93.36 per US$.",
-    licence: "Not stated on the publisher's site.",
-    howItPublishes:
-      'Handbook tables in Excel (rbidocs.rbi.org.in), policy statements on rbi.org.in, and the FBIL (via RBI) reference rate for each working day.',
+    dataSets: [
+      { name: 'Policy repo rate', detail: "Governor's statements", rhythm: 'At each Monetary Policy Committee meeting', match: /Governor/ },
+      { name: 'Inflation target', detail: '4%, with a band of 2% to 6%, to 31 Mar 2031', rhythm: 'Every five years', match: /Monetary Policy Framework/ },
+      { name: 'Handbook of Statistics on Indian Economy', detail: 'Tables 9, 10, 40, 133 and 236', rhythm: 'Yearly', match: /Handbook/ },
+      { name: 'Rupee reference rate', detail: 'US dollar, set by FBIL', rhythm: 'Each working day', match: /Reference Rate|Current Rates/ },
+    ],
+    licence: NOT_STATED,
+    access: ['Handbook tables in Excel (rbidocs.rbi.org.in)', 'Statements and rates (rbi.org.in)'],
+    note: 'Handbook table 236 carries CPI series from the Labour Bureau and NSO.',
     site: 'https://www.rbi.org.in',
   },
   {
     short: 'IMD',
+    mark: 'IMD',
     full: 'India Meteorological Department, Ministry of Earth Sciences',
-    charts: 5,
     topics: ['climate'],
-    whatWeTake:
-      'All-India monsoon rainfall, 1901 to 2026 (IMD Pune); the 2026 monsoon by subdivision and by month; the Statement on the Climate of India during 2025.',
-    rhythm: 'Monsoon report at the end of each season. Climate statement each January.',
-    latestRelease: 'Salient features of the 2026 southwest monsoon, 30 Sep 2026.',
-    licence: "Not stated on the publisher's site.",
-    howItPublishes:
-      'IMD publishes monsoon rainfall by meteorological subdivision, not by state, in its daily weather report. The 2026 season table is an image. Several states have more than one subdivision.',
+    dataSets: [
+      { name: 'All-India monsoon rainfall', detail: '1901 to 2026, from IMD Pune', rhythm: 'After each monsoon', match: /India \(June-Sept\) Rainfall/ },
+      { name: 'The 2026 monsoon', detail: 'By subdivision and by month', rhythm: 'After each monsoon', match: /Salient Features|Daily Weather Report|Rainfall statistics/ },
+      { name: 'Statement on the Climate of India', detail: 'Temperature and extremes, 2025', rhythm: 'Each January', match: /Climate of India/ },
+    ],
+    licence: NOT_STATED,
+    access: ['Press releases and reports (mausam.imd.gov.in)', 'Rainfall tables (imdpune.gov.in)'],
+    note: 'IMD gives rainfall by meteorological subdivision, not by state. The 2026 season table is an image.',
     site: 'https://mausam.imd.gov.in',
   },
   {
     short: 'ECI',
+    mark: 'ECI',
     full: 'Election Commission of India',
-    charts: 3,
     topics: ['elections'],
-    whatWeTake:
-      'General election 2024 statistical reports 20 and 33; results pages for June 2024, February 2025, November 2025 and May 2026; Tamil Nadu 2026 detailed results.',
-    rhythm: 'After each election.',
-    latestRelease: 'Assembly election results, May 2026: results pages last updated 5 May 2026; statistical reports published 8 May 2026.',
-    licence: "Not stated on the publisher's site.",
-    howItPublishes:
-      "Results on results.eci.gov.in and statistical reports as PDF on eci.gov.in. Each source line gives the original ECI address. Five more election charts use ECI data through MoSPI's Women and Men in India 2025.",
+    dataSets: [
+      { name: 'Statistical reports', detail: 'General election 2024, reports 20 and 33', rhythm: 'After each general election', match: /Statistical Report/ },
+      { name: 'Results pages', detail: 'June 2024, February 2025, November 2025 and May 2026', rhythm: 'After each election', match: /Trends and Results/ },
+    ],
+    licence: NOT_STATED,
+    access: ['Results (results.eci.gov.in)', 'Statistical reports as PDF (eci.gov.in)'],
+    note: "Five more election charts use ECI data through MoSPI's Women and Men in India 2025.",
     site: 'https://www.eci.gov.in',
   },
   {
     short: 'PIB',
+    mark: 'PIB',
     full: 'Press Information Bureau, Government of India',
-    charts: 3,
     topics: ['economy', 'health', 'elections'],
-    whatWeTake:
-      'Press releases that carry figures for other offices: the IIP quick estimate for September 2026 (MoSPI); state election turnout (ECI); NFHS-5 anaemia by state (a Lok Sabha reply of 17 Dec 2021).',
-    rhythm: "With each ministry's release.",
-    latestRelease: 'Quick estimates of IIP for September 2026, 28 Oct 2026.',
-    licence: "Not stated on the publisher's site.",
-    howItPublishes: 'Press releases for every ministry on pib.gov.in. The release of 29 May 2026 gives the NFHS-6 India values.',
+    dataSets: [
+      { name: 'Industrial production, quick estimate', detail: 'For MoSPI', rhythm: 'Monthly', match: /IIP/ },
+      { name: 'State election turnout', detail: 'For ECI', rhythm: 'After each phase of polling', match: /poll|turnout/i },
+      { name: 'NFHS-5 anaemia by state', detail: 'A Lok Sabha reply of 17 Dec 2021', rhythm: 'One release', match: /NFHS-5/ },
+    ],
+    licence: NOT_STATED,
+    access: ["Press releases for every ministry (pib.gov.in)"],
     site: 'https://www.pib.gov.in',
   },
   {
     short: 'CEA',
+    mark: 'CEA',
     full: 'Central Electricity Authority',
-    charts: 2,
     topics: ['climate'],
-    whatWeTake: 'Installed Capacity reports: the March edition of each year from 2014 to 2026, and the report as on 31 Oct 2026.',
-    rhythm: 'Monthly.',
-    latestRelease: 'Installed Capacity as on 31 Oct 2026. CEA gives no release date for it.',
-    licence: "Not stated on the publisher's site.",
-    howItPublishes: 'Monthly installed capacity reports on cea.nic.in, in PDF and Excel.',
+    dataSets: [
+      { name: 'Installed capacity', detail: 'By source: March editions 2014 to 2026, and 31 Oct 2026', rhythm: 'Monthly', match: /Installed Capacity/ },
+    ],
+    licence: NOT_STATED,
+    access: ['Monthly reports in PDF and Excel (cea.nic.in)'],
+    note: 'CEA gives no release date for its reports.',
     site: 'https://cea.nic.in',
   },
   {
     short: 'MoHFW and IIPS',
-    full: 'Ministry of Health and Family Welfare: National Family Health Survey (run by the International Institute for Population Sciences) and National Health Accounts (NHSRC)',
-    charts: 2,
+    mark: 'IIPS',
+    full: 'Ministry of Health and Family Welfare, with the International Institute for Population Sciences and NHSRC',
     topics: ['health'],
-    whatWeTake:
-      'NFHS-6 (2023-24) India and state fact sheets, provisional, which print NFHS-5 (2019-21) beside them; National Health Accounts Estimates for India 2023-24.',
-    rhythm: 'NFHS rounds come several years apart.',
-    latestRelease:
-      'NFHS-6 fact sheets, 29 May 2026. National Health Accounts 2023-24, released by 15 Nov 2026 (PIB).',
-    licence: "Not stated on the publisher's site.",
-    howItPublishes: 'NFHS-6 fact sheets on nfhsiips.in, for India and each state. They print the NFHS-5 value beside each NFHS-6 value.',
+    dataSets: [
+      { name: 'National Family Health Survey (NFHS-6)', detail: 'India and state fact sheets, 2023-24, provisional', rhythm: 'Rounds several years apart', match: /NFHS-6/ },
+      { name: 'National Health Accounts', detail: 'Estimates for 2023-24', rhythm: NOT_STATED, match: /National Health Accounts/ },
+    ],
+    licence: NOT_STATED,
+    access: ['NFHS fact sheets (nfhsiips.in)', 'Reports (mohfw.gov.in)'],
+    note: 'The NFHS-6 fact sheets print the NFHS-5 value beside each NFHS-6 value.',
     site: 'https://www.nfhsiips.in',
   },
   {
     short: 'MNRE',
+    mark: 'MNRE',
     full: 'Ministry of New and Renewable Energy',
-    charts: 1,
     topics: ['climate'],
-    whatWeTake: 'State-wise installed capacity of renewable power, by location, as on 31 Oct 2026.',
-    rhythm: 'A state-wise capacity table each month.',
-    latestRelease: 'Table as on 31 Oct 2026, published 12 Nov 2026.',
-    licence: "Not stated on the publisher's site.",
-    howItPublishes: 'A state-wise table of renewable capacity, as PDF on mnre.gov.in, published 12 November 2026.',
+    dataSets: [
+      { name: 'Renewable capacity by state', detail: 'By location, as on 31 Oct 2026', rhythm: 'Monthly', match: /Renewable Power/ },
+    ],
+    licence: NOT_STATED,
+    access: ['A state-wise table as PDF (mnre.gov.in)'],
     site: 'https://mnre.gov.in',
   },
   {
     short: 'NCP, MoHFW',
+    mark: 'NCP',
     full: 'National Commission on Population, MoHFW: Technical Group on Population Projections',
-    charts: 1,
     topics: ['population'],
-    whatWeTake: 'Population projections for India and the states, 2011 to 2036. We show them as Projection.',
-    rhythm: 'One report. No update announced.',
-    latestRelease: 'Report dated July 2020 (file uploaded October 2025).',
-    licence: "Not stated on the publisher's site.",
-    howItPublishes:
-      'The Technical Group report on population projections, on mohfw-dohfw.gov.in and linked from censusindia.gov.in. The report predates SRS data for 2020 onward.',
+    dataSets: [
+      { name: 'Population projections', detail: 'India and the states, 2011 to 2036. Shown as Projection.', rhythm: 'One report. No update announced.', match: /Population Projections/ },
+    ],
+    licence: NOT_STATED,
+    access: ['The Technical Group report (mohfw-dohfw.gov.in)'],
+    note: 'The report predates SRS data for 2020 onward.',
     site: 'https://mohfw-dohfw.gov.in',
   },
 ]
@@ -211,11 +243,14 @@ const sources: SourcesPage = {
     heading: 'Who publishes the data we use?',
     labels: {
       charts: (n) => (n === 1 ? 'chart uses it' : 'charts use it'),
-      whatWeTake: 'What we take',
-      rhythm: 'Release rhythm',
-      latest: 'Latest release used',
+      dataSet: 'Data set',
+      detail: 'What we take',
+      rhythm: 'How often',
+      latest: 'Latest used',
+      notStated: 'Date not stated',
       licence: 'Licence',
-      how: 'How it publishes',
+      access: 'Published as',
+      site: 'Website',
     },
     list: PUBLISHERS,
   },

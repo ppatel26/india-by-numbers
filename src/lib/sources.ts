@@ -28,3 +28,29 @@ export function uniqueSources(sources: Iterable<Source>): Source[] {
   }
   return [...seen.values()]
 }
+
+/**
+ * Source lines name publishers in several ways ("NSO, MoSPI", "ECI via PIB"). The first rule that
+ * matches gives the publisher's short name. Order matters: a release that PIB carries for another
+ * office counts under PIB.
+ */
+const PUBLISHER_RULES: readonly (readonly [RegExp, string])[] = [
+  [/\bPIB\b/, 'PIB'],
+  [/National Commission on Population/, 'NCP, MoHFW'],
+  [/\bIIPS\b|NHSRC/, 'MoHFW and IIPS'],
+  [/\bORGI\b/, 'ORGI'],
+  [/MoSPI|\bNSO\b/, 'MoSPI'],
+  [/Ministry of Education/, 'MoE'],
+  [/\bRBI\b/, 'RBI'],
+  [/\bIMD\b/, 'IMD'],
+  [/\bECI\b/, 'ECI'],
+  [/\bCEA\b/, 'CEA'],
+  [/\bMNRE\b/, 'MNRE'],
+]
+
+/** The short name of the publisher on a source line, as the Sources page lists it. */
+export function publisherOf(publisher: string): string {
+  const hit = PUBLISHER_RULES.find(([re]) => re.test(publisher))
+  if (!hit) throw new Error(`No publisher rule for "${publisher}"`)
+  return hit[1]
+}
