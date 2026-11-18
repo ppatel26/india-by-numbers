@@ -99,6 +99,10 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
   const path = d3line<Point>().x((p) => x(p.t)).y((p) => y(p.y!))
   if (chart.step) path.curve(curveStepAfter)
   const tOf = new Map(pts.map((p) => [p.x, p.t]))
+  const tLast = Math.max(...panel.series.flatMap((s) => s.points.filter((p) => p.y !== null).map((p) => p.t)))
+  const endLabeled = new Set(
+    endLabels ? panel.series.filter((s) => tLast - (s.points.findLast((p) => p.y !== null)?.t ?? -Infinity) < 0.5).map((s) => s.key) : [],
+  )
   const notes = timeNotes(chart, {
     xOf: (v) => {
       const t = tOf.get(v) ?? parsePeriod(v).t
@@ -107,9 +111,10 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
     y,
     top: m.top,
     bottom: H - m.bottom,
+    left: m.left,
     right: W - m.right,
     series: panel.series,
-    endLabels,
+    endLabeled,
     step: chart.step,
   })
 
@@ -145,17 +150,20 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
 
   // "No data" inside each hole wide enough to label, at the height of the line it interrupts.
   // One note per stretch of axis: a hole shared by several series is labelled once.
+  // Only a real missing value counts: a gap that is just the spacing between periods is not one.
   const taken: [number, number][] = []
-  const noData = segs.flatMap((sg) =>
-    holes(sg).flatMap(([a, b]) => {
+  const noData = segs.flatMap((sg, i) => {
+    const s = panel.series[i]!
+    return holes(sg).flatMap(([a, b]) => {
       const x0 = x(a.t)
       const x1 = x(b.t)
-      if (x1 - x0 < 50 || taken.some(([p, q]) => x0 < q && x1 > p)) return []
+      const missing = s.points.some((p) => p.y === null && p.t > a.t && p.t < b.t)
+      if (!missing || x1 - x0 < 50 || taken.some(([p, q]) => x0 < q && x1 > p)) return []
       taken.push([x0, x1])
       const ly = Math.max(m.top + 12, (y(a.y!) + y(b.y!)) / 2 - 8)
-      return [note((x0 + x1) / 2, ly, 'No data', 'middle')]
-    }),
-  )
+      return [note((x0 + x1) / 2, ly, 'No data', 'middle', colorVar(s.color))]
+    })
+  })
 
   // End labels name the series that reach the right edge. A series that stops earlier (an old
   // base, an old survey design) is named in the tooltip and the table instead.

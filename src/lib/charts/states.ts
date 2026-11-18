@@ -64,17 +64,19 @@ export function renderRanked(chart: Of<'states'>, width: Width): Markup {
     const x0 = x(Math.min(0, pt.y!))
     const x1 = x(Math.max(0, pt.y!))
     const ci = pt.interval
-    // The value sits outside the bar, past its whisker, and past the India line if it would touch it.
-    const end = Math.max(pt.y! >= 0 ? x1 : x0, ci ? x(ci[1]) : -Infinity)
-    const textW = v.text.length * 7 + 6
-    const crosses = ix !== null && end < ix + 2 && end + 5 + textW > ix - 2
-    const lx = crosses ? ix! + 6 : end + 5
+    // The value belongs to the bar end. With a confidence interval it sits inside the bar end when
+    // it fits, so the whisker never runs through it; otherwise just past the bar. The India line
+    // runs behind it.
+    const barEnd = pt.y! >= 0 ? x1 : x0
+    const textW = v.text.length * 7 + 8
+    const inside = !!ci && x1 - x0 > textW + 4
+    const lx = inside ? barEnd - 4 : ci ? Math.max(barEnd, x(ci[1])) + 5 : barEnd + 5
     const whisker = ci
       ? svg`<path d="M${x(ci[0])} ${y + rowH / 2}H${x(ci[1])}M${x(ci[0])} ${y + 7}V${y + rowH - 7}M${x(ci[1])} ${y + 7}V${y + rowH - 7}" stroke="var(--slate)" fill="none"/>`
       : null
     return svg`<g class="row" data-geo="${r.place.slug}" data-tip="${stateTip(chart, data, r.place)}">${label}
 <rect class="bar" x="${x0}" y="${y + 3}" width="${Math.max(1, x1 - x0)}" height="${rowH - 6}" fill="var(--other)"/>${whisker}
-<text class="value" x="${lx}" y="${y + 14}" font-size="12" fill="var(--ink)"${attr('data-alt', v.alt)}>${v.text}</text></g>`
+<text class="value" x="${lx}" y="${y + 14}"${svg` text-anchor="${inside ? 'end' : 'start'}" paint-order="stroke" stroke="${inside ? 'var(--other)' : 'var(--paper)'}" stroke-width="4"`} font-size="12" fill="var(--ink)"${attr('data-alt', v.alt)}>${v.text}</text></g>`
   })
 
   const indiaLine =
@@ -84,7 +86,7 @@ export function renderRanked(chart: Of<'states'>, width: Width): Markup {
 <text x="${ix}" y="${m.top - 12}" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--ink)">India ${show(chart, data.india).text}</text>`
 
   const missNote = missLines.map((l, i) => svg`<text x="0" y="${rowsH + 22 + i * 17}" font-size="12" fill="var(--slate)">${l}</text>`)
-  return frame(width, H, chart.title, svg`<g class="rows">${body}</g>${indiaLine}${missNote}`)
+  return frame(width, H, chart.title, svg`${indiaLine}<g class="rows">${body}</g>${missNote}`)
 }
 
 export interface Bin {
@@ -183,12 +185,13 @@ ${place.type === 'ut' ? svg`<path d="M${x + size - 10} ${y}h10v10z" fill="var(--
   const head = legendHeading(chart, data)
   const lx = narrow ? 0 : mapW + 40
   const ly = narrow ? mapH + 16 : 8
-  const items = [...b.map((x) => ({ fill: colorVar(x.token), label: x.label })), { fill: `url(#${noData})`, label: 'No data' }]
+  const anyMissing = data.values.some((v) => !v.pt || v.pt.y === null)
+  const items = [...b.map((x) => ({ fill: colorVar(x.token), label: x.label })), ...(anyMissing ? [{ fill: `url(#${noData})`, label: 'No data' }] : [])]
   const legend = svg`<g class="legend" transform="translate(${lx},${ly})">
 <text y="12" font-size="13" font-weight="600" fill="var(--ink)">${head.india}</text>
 <text y="32" font-size="12" fill="var(--slate)">${head.sub}</text>
 ${items.map((it, i) => svg`<rect x="0" y="${46 + i * 24}" width="16" height="16" rx="2" fill="${it.fill}"/><text x="24" y="${58 + i * 24}" font-size="12" fill="var(--ink)">${it.label}</text>`)}
-<path d="M0 ${54 + items.length * 24}h16v16h-16z" fill="var(--seq-4)"/><path d="M8 ${54 + items.length * 24}h8v8z" fill="var(--paper)"/>
+<path d="M0 ${54 + items.length * 24}h16v16h-16z" fill="var(--slate)"/><path d="M8 ${54 + items.length * 24}h8v8z" fill="var(--paper)"/>
 <text x="24" y="${66 + items.length * 24}" font-size="12" fill="var(--ink)">Corner mark: union territory</text></g>`
   const H = narrow ? ly + 80 + items.length * 24 : Math.max(mapH, 100 + items.length * 24)
   const defs = svg`<defs><pattern id="${noData}" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="var(--grid)"/><line x1="0" y1="0" x2="0" y2="6" stroke="var(--other)" stroke-width="2"/></pattern></defs>`

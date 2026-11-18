@@ -1,4 +1,5 @@
 /** Small multiples for column and bar charts: one sub-chart per panel, laid out in a grid. */
+import { scaleLinear } from 'd3-scale'
 import type { Axis } from '~/content/types'
 import { embed, svg, type Markup } from '~/lib/markup'
 import { WIDTH, frame, type Width } from './axes'
@@ -14,7 +15,13 @@ function sharedAxis(chart: Paneled): Axis {
   const ys = drawn(chart)
     .filter((s) => chart.panels!.some((p) => !p.own && p.series.includes(s.key)))
     .flatMap((s) => s.points.flatMap((p) => (p.y === null ? [] : [p.y])))
-  return { min: Math.min(0, ...ys), max: Math.max(...ys) }
+  return nice(Math.min(0, ...ys), Math.max(...ys))
+}
+
+/** A range rounded out to clean numbers, so the top tick stays on the plot. */
+function nice(min: number, max: number): Axis {
+  const [lo, hi] = scaleLinear().domain([min, max]).nice(5).domain() as [number, number]
+  return { min: lo, max: hi }
 }
 
 export function renderPanels<C extends Paneled>(chart: C, width: Width, one: (c: C, w: Width) => Markup): Markup {
@@ -25,7 +32,7 @@ export function renderPanels<C extends Paneled>(chart: C, width: Width, one: (c:
   const plots = panels.map((p) => {
     // A panel on its own scale still reaches its reference lines (a majority line stays on the plot).
     const ownYs = drawn(chart).filter((s) => p.series.includes(s.key)).flatMap((s) => s.points.flatMap((q) => (q.y === null ? [] : [q.y])))
-    const own: Axis = { min: Math.min(0, ...ownYs), max: Math.max(...ownYs, ...(p.refs ?? []).map((r) => r.value * 1.08)) }
+    const own = nice(Math.min(0, ...ownYs), Math.max(...ownYs, ...(p.refs ?? []).map((r) => r.value * 1.08)))
     const axis = p.own ? own : shared
     const sub = {
       ...chart,

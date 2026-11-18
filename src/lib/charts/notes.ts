@@ -18,8 +18,8 @@ export interface NoteBox {
   left?: number
   right?: number
   series: readonly SeriesData[]
-  /** True when the chart labels each series at its end. */
-  endLabels?: boolean
+  /** Series that carry an end label: a callout on that same last point would repeat it. */
+  endLabeled?: ReadonlySet<string>
   /**
    * Column charts: the highest bar top (pixel y) between two pixel x values. A callout sits on
    * the cap of its column, above any neighbour its text crosses, with no dot.
@@ -81,20 +81,29 @@ function callout(c: Callout, chart: WithNotes, box: NoteBox): Markup | null {
   const p = s?.points.find((pt) => pt.x === c.x)
   const px = p && box.xOf(p.x)
   // The end label already names a series' last value.
-  if (!s || !p || p.y === null || px === undefined || (box.endLabels && s.points.findLast((q) => q.y !== null) === p)) return null
+  if (!s || !p || p.y === null || px === undefined || (box.endLabeled?.has(s.key) && s.points.findLast((q) => q.y !== null) === p)) return null
   const py = box.y(p.y)
   const text = c.label ?? `${show(chart, p, s).text} ${when(p.label)}`
-  if (box.capAt) return capLabel(text, px, box, p.y < 0)
+  const rules = [...(chart.breaks ?? []), ...(chart.markers ?? [])].flatMap((b) => {
+    const rx = box.xOf(b.x)
+    return rx === undefined ? [] : [rx]
+  })
+  if (box.capAt) return capLabel(text, px, box, p.y < 0, rules)
   // Try spots around the point, nearest first, and take the first whose text crosses no line.
   const w = text.length * 6.5
-  const segs = lineSegments(box)
+  const segs: Seg[] = [...lineSegments(box), ...rules.map((rx): Seg => [rx, box.top - 22, rx, box.bottom])]
   const offsets: readonly (readonly [number, number])[] = [[7, -7], [7, 15], [-7, -7], [-7, 15], [7, -21], [7, 29], [-7, -21], [-7, 29]]
   const spots = offsets.map(([dx, dy]) => {
     const start = dx > 0 ? px + dx : px + dx - w
     return { x: start, y: py + dy, r: { l: start - 2, t: py + dy - 11, r: start + w + 2, b: py + dy + 3 } }
   }).filter((o) => o.r.l >= (box.left ?? -Infinity) && o.r.r <= (box.right ?? Infinity) && o.r.t >= box.top - 4 && o.r.b <= box.bottom)
-  const best = spots.find((o) => !segs.some((sg) => crosses(sg, o.r))) ?? spots[0] ?? { x: px + 7, y: py - 7 }
-  return svg`<circle cx="${px}" cy="${py}" r="3.5" fill="${colorVar(s.color)}" stroke="var(--paper)" stroke-width="1.5"/>
+  const at = spots.findIndex((o) => !segs.some((sg) => crosses(sg, o.r)))
+  const best = spots[at] ?? spots[0] ?? { x: px + 7, y: py - 7, r: { l: px, t: py, r: px, b: py } }
+  // A label that had to move away from its point keeps a leader line back to it.
+  const far = at >= 4
+  const lx = best.x < px ? best.r.r - 2 : best.r.l + 2
+  const ly = best.y < py ? best.r.b : best.r.t
+  return svg`${far ? svg`<path d="M${px} ${py}L${lx} ${ly}" stroke="${colorVar(s.color)}" fill="none"/>` : null}<circle cx="${px}" cy="${py}" r="3.5" fill="${colorVar(s.color)}" stroke="var(--paper)" stroke-width="1.5"/>
 <text x="${best.x}" y="${best.y}" font-size="12" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3">${text}</text>`
 }
 
@@ -102,9 +111,11 @@ function callout(c: Callout, chart: WithNotes, box: NoteBox): Markup | null {
  * A column callout: the text centred on the column's cap, raised clear of every bar it spans.
  * When it has to rise above its own cap, a short rule ties it back to the column.
  */
-function capLabel(text: string, px: number, box: NoteBox, below = false): Markup {
+function capLabel(text: string, px: number, box: NoteBox, below = false, rules: readonly number[] = []): Markup {
   const half = (text.length * 6.6) / 2 + 4
-  const cx = Math.max((box.left ?? -Infinity) + half, Math.min(px, (box.right ?? Infinity) - half))
+  let cx = Math.max((box.left ?? -Infinity) + half, Math.min(px, (box.right ?? Infinity) - half))
+  // Keep the text off any break or marker rule: shift it to the column's side of the rule.
+  for (const rx of rules) if (Math.abs(rx - cx) < half + 2) cx = rx >= px ? rx - half - 3 : rx + half + 3
   // A negative column's label hangs below its end, clear of any deeper neighbour.
   const edge = below ? box.floorAt! : box.capAt!
   const own = edge(px - 1, px + 1)

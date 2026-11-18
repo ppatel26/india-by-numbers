@@ -61,7 +61,7 @@ ${w > v.text.length * 7 + 8 ? svg`<text x="${x0 + 4}" y="${bandTop + bandH / 2 +
       const x0 = x(Math.min(0, p.y))
       const x1 = x(Math.max(0, p.y))
       return svg`<rect x="${x0}" y="${by}" width="${Math.max(1, x1 - x0)}" height="${barH - 3}" fill="${fill}"/>
-<text x="${(p.y >= 0 ? x1 : x0) + (p.y >= 0 ? 5 : -5)}" y="${by + barH - 2}" text-anchor="${p.y >= 0 ? 'start' : 'end'}" font-size="${grouped ? 11 : 12}" fill="var(--ink)"${attr('data-alt', v.alt)}>${v.text}</text>`
+<text x="${(p.y >= 0 ? x1 : x0) + (p.y >= 0 ? 5 : -5)}" y="${by + (barH - 3) / 2 + 4}" text-anchor="${p.y >= 0 ? 'start' : 'end'}" font-size="${grouped ? 11 : 12}" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3"${attr('data-alt', v.alt)}>${v.text}</text>`
     })
     return svg`<g class="row" data-tip="${tip}">${label}${marks}</g>`
   })

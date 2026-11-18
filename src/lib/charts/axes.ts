@@ -74,10 +74,18 @@ export function yGrid(s: ScaleLinear<number, number>, ticks: number[], x0: numbe
 
 /** Labels under a time axis. A label that would run past the plot edge is aligned to it. */
 export function xLabels(ticks: readonly { x: number; label: string }[], y: number, edges?: { left: number; right: number }): Markup {
-  return svg`<g class="x-ticks">${ticks.map((t) => {
-    const half = (t.label.length * 6.6) / 2
-    const anchor = edges && t.x + half > edges.right ? 'end' : edges && t.x - half < edges.left - 6 ? 'start' : 'middle'
+  // Place each label (edge labels align to the edge), then drop any that would touch its neighbour.
+  const placed = ticks.map((t) => {
+    const w = t.label.length * 6.6
+    const anchor = edges && t.x + w / 2 > edges.right ? 'end' : edges && t.x - w / 2 < edges.left - 6 ? 'start' : 'middle'
     const tx = anchor === 'end' ? Math.min(t.x + 4, edges!.right + 4) : anchor === 'start' ? t.x - 4 : t.x
+    const l = anchor === 'end' ? tx - w : anchor === 'start' ? tx : tx - w / 2
+    return { ...t, anchor, tx, l, r: l + w }
+  })
+  const kept = [...placed]
+  for (let i = 1; i < kept.length; i++) if (kept[i]!.l < kept[i - 1]!.r + 10) kept.splice(i === kept.length - 1 ? i - 1 : i--, 1)
+  return svg`<g class="x-ticks">${kept.map((t) => {
+    const { anchor, tx } = t
     return svg`<line x1="${t.x}" x2="${t.x}" y1="${y - 4}" y2="${y}" stroke="var(--ink)"/>
 <text x="${tx}" y="${y + 14}" text-anchor="${anchor}" font-family="${FONT.mono}" font-size="11" fill="var(--slate)">${t.label}</text>`
   })}</g>`
@@ -109,9 +117,11 @@ export function timeTicks(pts: readonly Point[], x: (t: number) => number, max: 
         return { x: x(p.t), label: i === 0 || mon === 'Jan' ? `${mon} ${year}` : mon! }
       })
   }
-  if (t1 - t0 < 1.5) {
-    // Under two years: month ticks, with the year on the first tick and on each January.
-    const step = Math.max(1, Math.ceil(pts.length / max))
+  if (t1 - t0 < 3) {
+    // Under three years: month ticks, a whole number of quarters apart where possible, with the
+    // year on the first tick and on each January.
+    const raw = Math.max(1, Math.ceil(pts.length / max))
+    const step = raw <= 1 ? 1 : raw <= 3 ? 3 : raw <= 6 ? 6 : 12
     return pts
       .filter((_, i) => i % step === 0)
       .map((p, i) => ({ x: x(p.t), label: i === 0 || p.label.startsWith('Jan') ? p.label : p.label.split(' ')[0]! }))

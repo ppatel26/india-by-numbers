@@ -69,10 +69,11 @@ export function renderDots(chart: Of<'dots'>, width: Width): Markup {
     return svg`<g class="row" data-geo="${k}" data-tip="${tip}">${india ? svg`<rect x="0" y="${y - rowH / 2}" width="${W}" height="${rowH}" fill="var(--band)"/>` : null}
 ${isPlace(k) ? svg`<a href="/states/${k}/">${name}</a>` : name}
 ${xs.length > 1 ? svg`<line x1="${Math.min(...xs)}" x2="${Math.max(...xs)}" y1="${y}" y2="${y}" stroke="var(--other-line)"/>` : null}
-${[...vs].sort((a, b) => Number(hollow.includes(a.s.key)) - Number(hollow.includes(b.s.key))).map((v) => {
-  // Open rings draw last, so a filled dot never hides one.
+${[...vs].sort((a, b) => Number(hollow.includes(b.s.key)) - Number(hollow.includes(a.s.key))).map((v) => {
+  // An open ring is a size larger and drawn first, so a filled dot inside it never hides it,
+  // and equal values show both marks.
   const ring = hollow.includes(v.s.key)
-  return svg`<circle cx="${x(v.p!.y!)}" cy="${y}" r="4.5" fill="${ring ? 'var(--paper)' : colorVar(v.s.color)}" stroke="${colorVar(v.s.color)}" stroke-width="1.5"/>`
+  return svg`<circle cx="${x(v.p!.y!)}" cy="${y}" r="${ring ? 6.5 : 4}" fill="${ring ? 'var(--paper)' : colorVar(v.s.color)}" stroke="${ring ? colorVar(v.s.color) : 'var(--paper)'}" stroke-width="1.5"/>`
 })}</g>`
   })
   return frame(width, H, chart.title, svg`${legend(series, hollow)}${grid}${valueRefs(chart.refs, x, m.top - 6, H - m.bottom)}${rows}`)
