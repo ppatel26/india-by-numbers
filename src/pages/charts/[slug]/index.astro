@@ -5,7 +5,7 @@ import ChartFrame from '~/components/ChartFrame.astro'
 import StateSelect from '~/components/StateSelect.astro'
 import TopicTag from '~/components/TopicTag.astro'
 import { charts, partId, type Placed } from '~/content'
-import { citation, dateRange, geographyOf } from '~/lib/metadata'
+import { citation, dateRange, geographyOf, latestSource, nextReleaseText, picksOf } from '~/lib/metadata'
 import { formatDate } from '~/lib/period'
 import { SITE } from '~/lib/site'
 import { releasedText } from '~/lib/sources'
@@ -25,9 +25,9 @@ const facts = [
   ['Source', [...new Set(chart.sources.map((s) => s.publisher))].join('; ')],
   ['Unit', chart.punches.unit],
   ['Date range', dateRange(placed)],
-  ['Released', chart.sources[0] ? releasedText(chart.sources[0]) : ''],
+  ['Latest release', latestSource(chart) ? releasedText(latestSource(chart)!) : ''],
   ['Last updated', formatDate(SITE.checked)],
-  ['Next expected update', chart.nextRelease && chart.nextRelease !== 'not announced' ? formatDate(chart.nextRelease) : 'Not announced'],
+  ['Next expected update', nextReleaseText(chart)],
   ['Geography', geographyOf(placed)],
 ] as const
 const related = [
@@ -42,15 +42,10 @@ const files = [
         ['Vector graphic (SVG)', 'For print and editing. Same title and source line.', `/charts/${chart.slug}.svg`],
       ]),
   ['Displayed data (CSV)', 'The values in this chart, with unit and source on every row.', `/charts/${chart.slug}.csv`],
-  ...[...new Set(sourceFiles(chart))].map((f) => ['Full data (CSV)', `The whole file this chart reads: ${f}.`, `/data/${f}`]),
+  ...[...new Set(picksOf(chart).map((p) => p.file))].map((f) => ['Full data (CSV)', `The whole file this chart reads: ${f}.`, `/data/${f}`]),
   ['Metadata (JSON)', 'Source, release date, unit, status, notes and processing steps.', `/charts/${chart.slug}.json`],
 ] as const
 
-function sourceFiles(c: typeof chart): string[] {
-  if (c.kind === 'states' || c.kind === 'table') return [c.data.file]
-  if (c.kind === 'pyramid') return [c.left.file, c.right.file]
-  return c.series.map((s) => s.file)
-}
 ---
 
 <Base title={chart.title} description={chart.subtitle} imageAlt={`Chart: ${chart.title}`} type="article">

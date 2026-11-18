@@ -135,7 +135,7 @@ export function sentence(topic: TopicSlug, slug: string, rows: readonly Row[]): 
       const level = a.data.values.filter((x) => x.place.slug !== slug && x.pt?.y === a.value!.y).map((x) => x.place.name)
       const was = (n: number) => (n > 1 ? 'were' : 'was')
       return (
-        `Women in ${state} had ${v} children on average in ${periodOf(a.chart)}. The replacement level is 2.1; India's rate was ${india}.` +
+        `In ${periodOf(a.chart)}, the fertility rate in ${state} was ${v} children per woman: the number a woman would have if that year's birth rates held through her life. The replacement level is 2.1; India's rate was ${india}.` +
         (lower.length > 0 && lower.length <= 2 && lowerAt.size === 1 ? ` Only ${list(names(lower))} ${was(lower.length)} lower, at ${[...lowerAt][0]}.` : '') +
         (level.length > 0 && level.length <= 3 ? ` ${list(level)} ${was(level.length)} level, at ${v}.` : '')
       )

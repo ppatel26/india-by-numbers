@@ -11,6 +11,7 @@ import type { Topic } from '~/content/types'
 import { openView, renderPlot } from './charts'
 import { FONT } from './charts/axes'
 import { show } from './charts/model'
+import { tableOf } from './charts/table'
 import { figureValue } from './figures'
 import { GRID, places, type Place } from './geography'
 import { Markup, svg } from './markup'
@@ -84,13 +85,11 @@ export function chartImage(p: Placed): Buffer {
   const sub = textBlock(chart.subtitle, 64, 120 + head.height, 1072, 20, svg` fill="var(--slate)"`, 28, 2)
   const top = 136 + head.height + sub.height
   const room = H - top - 70
-  let plot = new Markup('')
-  if (chart.kind !== 'table') {
-    const s = renderPlot(chart, openView(chart) === 'map' ? 'map' : 'chart', 'wide').html
-    const [, vw, vh] = s.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/)!.map(Number) as [number, number, number]
-    const width = Math.min(1072, (room * vw) / vh)
-    plot = embed(s, 64 + (1072 - width) / 2, top, width).el
-  }
+  const s = chart.kind === 'table' ? undefined : renderPlot(chart, openView(chart) === 'map' ? 'map' : 'chart', 'wide').html
+  const [, vw, vh] = s ? (s.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/)!.map(Number) as [number, number, number]) : [0, 1, 1]
+  const width = Math.min(1072, (room * vw) / vh)
+  // A plot squeezed below half the card's width is unreadable: show the first rows of its table instead.
+  const plot = s && width >= 536 ? embed(s, 64 + (1072 - width) / 2, top, width).el : tableRows(p, top, room)
   const punches = [chart.punches.office, chart.punches.unit, chart.punches.period, ...(chart.status ?? [])].join('  ·  ')
   return page(
     svg`<rect width="${W}" height="10" fill="${pig.hex}"/>
@@ -103,6 +102,21 @@ ${head.el}${sub.el}${plot}
 <text x="1136" y="${H - 28}" text-anchor="end" font-size="15" fill="var(--slate)">${chart.sources[0]?.publisher ?? ''} · checked ${SITE.checked.split('-').reverse().join('.')}</text>`,
     colors.paper,
   )
+}
+
+/** The first rows of a chart's table, for charts too tall to shrink into the card. */
+function tableRows(p: Placed, top: number, room: number): Markup {
+  const t = tableOf(p.chart)
+  const rows = t.rows.slice(0, Math.floor(room / 34) - 1)
+  const cols = t.columns.slice(0, 4)
+  const colX = (i: number) => 64 + (i === 0 ? 0 : 420 + (i - 1) * 220)
+  return svg`${cols.map((c, i) => svg`<text x="${colX(i)}" y="${top + 16}" font-family="${FONT.mono}" font-size="13" fill="var(--slate)">${upper(c).slice(0, 26)}</text>`)}
+${rows.map((r, j) => {
+  const y = top + 52 + j * 34
+  return svg`<line x1="64" x2="1136" y1="${y - 24}" y2="${y - 24}" stroke="var(--rule)"/>
+<text x="64" y="${y}" font-size="20" font-weight="600" fill="var(--ink)">${r.head.slice(0, 34)}</text>
+${r.cells.slice(0, 3).map((c, i) => svg`<text x="${colX(i + 1)}" y="${y}" font-size="20" fill="var(--ink)">${c.shown.text.slice(0, 18)}</text>`)}`
+})}`
 }
 
 /** The 36 tiles, this state's in series-1. */

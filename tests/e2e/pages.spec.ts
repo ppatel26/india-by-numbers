@@ -45,8 +45,11 @@ test('chart files carry the right types and data', async ({ request }) => {
   const csv = await request.get('/charts/cpi-inflation-by-state.csv')
   expect(csv.headers()['content-type']).toContain('text/csv')
   const text = await csv.text()
-  expect(text.split('\n')[0]).toBe('State or UT,% y/y,Gap from India,Rank (of 36),unit,source,released')
-  expect(text).toContain('Tamil Nadu,7.29,')
+  // One row per value, with its own period, unit and status.
+  expect(text.split('\n')[0]).toBe('entity,series,period,value,unit,status,note,sources')
+  expect(text).toContain('Tamil Nadu,Inflation,2026-10,7.29,percent,provisional,')
+  const pop = await (await request.get('/charts/population-projection.csv')).text()
+  expect(pop).toContain('India,Projection,2036,1522288,thousand persons')
   const json = await (await request.get('/charts/cpi-inflation-by-state.json')).json()
   expect(json.status).toContain('Provisional')
   const svg = await request.get('/charts/cpi-inflation-by-state.svg')

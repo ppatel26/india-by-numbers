@@ -43,6 +43,8 @@ export interface Pick {
   y?: string
   /** Column with the label to show for each x, when x is not the label (for example x 'mid_year', label 'period'). */
   xLabel?: string
+  /** Column with a note for each value, shown in tooltips and tables (for example an estimate basis). */
+  note?: string
 }
 
 export interface Series extends Pick {
@@ -53,6 +55,8 @@ export interface Series extends Pick {
   dash?: boolean
   /** Read for figures and the table, but not drawn. */
   hidden?: boolean
+  /** This series' number format, when it differs from the chart's (for example mm beside %). */
+  format?: Format
 }
 
 export interface Format {
@@ -122,7 +126,7 @@ interface ChartBase {
   know?: readonly string[]
   /** Chart page: "How we process this figure", in order. */
   processing?: readonly string[]
-  /** YYYY-MM-DD, or 'not announced'. */
+  /** YYYY-MM-DD from the publisher's calendar, 'YYYY-MM-DD (estimated)' when we infer it from past releases, or 'not announced'. */
   nextRelease?: string
 }
 
@@ -135,8 +139,8 @@ export type Chart =
         /** Shaded range, for example the RBI tolerance band; `since` is the x where it starts. */
         band?: { from: number; to: number; label: string; since?: string }
         refs?: readonly { y: number; label: string }[]
-        /** Small multiples: one panel per group of series keys. */
-        panels?: readonly { label: string; series: readonly string[] }[]
+        /** Small multiples: one panel per group of series keys. `own` gives a panel its own y scale. */
+        panels?: readonly { label: string; series: readonly string[]; own?: boolean }[]
         /** Draw steps: a value holds until the next one (policy rates). */
         step?: boolean
         /** Hold the last value flat to this date (YYYY-MM-DD), for step lines. */
@@ -171,6 +175,10 @@ export type Chart =
       short: string
       /** Fixed map bin edges, low to high, when the board sets them. */
       bins?: readonly number[]
+      /** India's value is a total of the states (capacity, seats): no gap from India, no India line. */
+      total?: boolean
+      /** Why a state has no value, shown in its tooltip and the table: { manipur: 'Not surveyed in NFHS-6' }. */
+      missing?: Readonly<Record<string, string>>
     })
   | (ChartBase & {
       /** Several values per row, as dots on one line: two periods, or women and men. */
@@ -186,6 +194,8 @@ export type Chart =
       map?: { series: string; scale?: 'seq' | 'div'; better?: 'high' | 'low' }
       /** Vertical reference lines, for example the replacement level of 2.1. */
       refs?: readonly ValueRef[]
+      /** Why a row has no value, shown in the map tooltip: { manipur: 'Not surveyed in NFHS-6' }. */
+      missing?: Readonly<Record<string, string>>
     })
   | (ChartBase & {
       /** Horizontal bars by category. Several series are grouped, or stacked to 100. */

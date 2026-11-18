@@ -34,7 +34,8 @@ export function figureValue(f: Figure): FigureValue {
   return {
     value: f.format ? formatNumber(pt.y, f.format, pt.raw) : show(chart, pt),
     label: f.label,
-    period: f.period ?? (chart.kind === 'states' ? chart.punches.period : pt.label),
+    // A time chart's x is the period; for states and categories, the row's own period column is.
+    period: f.period ?? (chart.kind === 'line' || chart.kind === 'columns' || chart.kind === 'area' ? pt.label : (pt.row.period ?? chart.punches.period)),
     // A method break belongs to a series, not to one value.
     status: (chart.status ?? []).filter((x) => x !== 'Method break'),
     office: chart.punches.office,

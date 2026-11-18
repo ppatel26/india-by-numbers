@@ -35,7 +35,7 @@ function callout(c: Callout, chart: WithNotes, box: NoteBox): Markup | null {
   // The end label already names a series' last value.
   if (!s || !p || p.y === null || px === undefined || (box.endLabels && s.points.findLast((q) => q.y !== null) === p)) return null
   const py = box.y(p.y)
-  const text = c.label ?? `${show(chart, p).text} in ${p.label}`
+  const text = c.label ?? `${show(chart, p, s).text} in ${p.label}`
   return svg`<circle cx="${px}" cy="${py}" r="3" fill="${colorVar(s.color)}"/>
 <text x="${px + 7}" y="${p.y >= 0 ? py - 6 : py + 14}" font-size="12" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3">${text}</text>`
 }

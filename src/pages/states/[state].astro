@@ -101,9 +101,12 @@ const src = (r: (typeof sections)[number]['rows'][number]) => {
                     <span class="muted src">{src(r)}</span>
                   </div>
                 </th>
-                <td class="v">{r.value ? <span data-alt={show(r.chart, r.value).alt}>{show(r.chart, r.value).text}</span> : <span class="muted">No data</span>}</td>
+                <td class="v">
+                  {r.value ? <span data-alt={show(r.chart, r.value).alt}>{show(r.chart, r.value).text}</span> : <span class="muted">No data</span>}
+                  {r.value?.note && <span class="muted note">{r.value.note}</span>}
+                </td>
                 <td>
-                  {r.data.india ? <span data-alt={show(r.chart, r.data.india).alt}>{show(r.chart, r.data.india).text}</span> : <span class="muted">–</span>}
+                  {r.data.india && !r.spec.noIndia ? <span data-alt={show(r.chart, r.data.india).alt}>{show(r.chart, r.data.india).text}</span> : <span class="muted">–</span>}
                   {r.spec.indiaNote && <span class="muted note">{r.spec.indiaNote}</span>}
                 </td>
                 <td>{r.rank ? rankText(r.rank) : <span class="muted">–</span>}</td>

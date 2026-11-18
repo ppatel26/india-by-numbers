@@ -12,7 +12,7 @@ const href = (p: Place) => `/states/${p.slug}/`
 /** "1.20 points above India (6.09%)" */
 function gapText(chart: Of<'states'>, data: StateData, y: number): string {
   const india = data.india
-  if (!india || india.y === null) return ''
+  if (!india || india.y === null || chart.total) return ''
   const d = Math.max(decimalsOf(india.raw), 1)
   const gap = +(y - india.y).toFixed(d)
   if (gap === 0) return `Same as India (${show(chart, india).text})`
@@ -22,8 +22,8 @@ function gapText(chart: Of<'states'>, data: StateData, y: number): string {
 
 export function stateTip(chart: Of<'states'>, data: StateData, p: Place): string {
   const pt = data.values.find((v) => v.place.slug === p.slug)?.pt
-  if (!pt || pt.y === null) return `${p.name}: No data`
-  return [`${p.name}: ${show(chart, pt).text}`, gapText(chart, data, pt.y)].filter(Boolean).join('\n')
+  if (!pt || pt.y === null) return `${p.name}: No data${chart.missing?.[p.slug] ? `. ${chart.missing[p.slug]}` : ''}`
+  return [`${p.name}: ${show(chart, pt).text}${pt.note ? ` (${pt.note})` : ''}`, gapText(chart, data, pt.y)].filter(Boolean).join('\n')
 }
 
 export function renderRanked(chart: Of<'states'>, width: Width): Markup {
@@ -35,7 +35,7 @@ export function renderRanked(chart: Of<'states'>, width: Width): Markup {
   const m = { top: 30, right: 56, bottom: 8, left: narrow ? 118 : 200 }
   const H = m.top + rows.length * rowH + m.bottom
   const vals = rows.flatMap((r) => (r.pt?.y != null ? [r.pt.y] : []))
-  const india = data.india?.y ?? null
+  const india = chart.total ? null : (data.india?.y ?? null)
   const x = scaleLinear()
     .domain([Math.min(0, ...vals), Math.max(...vals, india ?? 0)])
     .nice()
@@ -106,8 +106,13 @@ export function bins(chart: Of<'states'>, data: StateData): Bin[] {
       { token: up[0]!, label: `More than ${g(t[2]!)} below (under ${v(india - t[2]!)})`, test: () => true },
     ]
   }
-  const edges = chart.bins ? [...chart.bins] : scaleLinear().domain([Math.min(...vals), Math.max(...vals)]).nice(6).ticks(6).slice(1, -1)
-  const ramp = edges.length + 1 <= seq.length ? seq.slice(seq.length - edges.length - 1) : seq
+  // At most six bins, one ramp colour each.
+  const auto = (n: number): number[] => {
+    const e = scaleLinear().domain([Math.min(...vals), Math.max(...vals)]).nice(n).ticks(n).slice(1, -1)
+    return e.length + 1 > seq.length && n > 2 ? auto(n - 1) : e
+  }
+  const edges = chart.bins ? [...chart.bins] : auto(6)
+  const ramp = seq.slice(Math.max(0, seq.length - edges.length - 1))
   const v = (n: number) => fmt(n, { ...f, decimals: Math.max(d, decimalsOf(String(n))) })
   return [...edges, Infinity]
     .map((hi, i) => {
@@ -121,8 +126,11 @@ export function bins(chart: Of<'states'>, data: StateData): Bin[] {
 export const binOf = (b: Bin[], y: number): Bin => b.find((x) => x.test(y)) ?? b.at(-1)!
 
 export function legendHeading(chart: Of<'states'>, data: StateData): { india: string; sub: string } {
-  const india = data.india ? `India: ${show(chart, data.india).text}` : ''
-  const sub = chart.scale === 'div' ? `Gap from India${chart.format?.unit === '%' ? ', percentage points' : ''}` : chart.punches.unit
+  const india = data.india ? `${chart.total ? 'India total' : 'India'}: ${show(chart, data.india).text}` : ''
+  const sub =
+    chart.scale === 'div' && !chart.total
+      ? `${chart.short}: gap from India${chart.format?.unit === '%' ? ', percentage points' : ''}`
+      : `${chart.short}, ${chart.punches.unit}`
   return { india, sub }
 }
 

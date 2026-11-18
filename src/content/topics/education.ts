@@ -109,8 +109,7 @@ const trendSeries: Series[] = INDICATORS.flatMap(([ind, indicator]) =>
       key: `${ind}-${lvl}-${m}`,
       label,
       color,
-      // Enrolment is read for the table and the prose; the chart draws the ratio panels only.
-      hidden: ind === 'enrol',
+      ...(ind === 'enrol' ? { format: { scale: 'crore', decimals: 2 } as const } : {}),
       file: TREND,
       where: { indicator, level, period: years },
     })),
@@ -139,8 +138,6 @@ const topic: Topic = {
       blocks: [
         { text: 'Primary enrolment (classes 1 to 5) fell to 10.19 crore in 2025-26, from 10.44 crore in 2024-25.' },
         {
-          // LATER: the board draws a third panel, enrolment in crore; panels share one y scale and one Format, so
-          // enrolment (in persons) would flatten the ratio panels. Enrolment is in the table only.
           chart: {
             kind: 'line',
             slug: 'school-enrolment-trend',
@@ -164,8 +161,9 @@ const topic: Topic = {
               },
             ],
             panels: [
+              { label: 'Enrolment', series: trendPanel('enrol'), own: true },
               { label: 'Gross enrolment ratio', series: trendPanel('ger') },
-              { label: 'Dropout rate, %', series: trendPanel('dropout') },
+              { label: 'Dropout rate, %', series: trendPanel('dropout'), own: true },
             ],
             breaks: [{ x: '2022-23', label: 'New method' }],
             know: [

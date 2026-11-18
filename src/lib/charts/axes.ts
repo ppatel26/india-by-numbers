@@ -40,6 +40,13 @@ export function yTicks(s: ScaleLinear<number, number>, axis: Axis = {}): number[
 
 const tickFormat = (f: Format | undefined): Format => ({ ...f, decimals: undefined, unit: f?.unit === 'pp' ? '' : f?.unit })
 
+/** Left margin wide enough for the longest y tick label (Geist Mono 11 px runs about 7 px a character). */
+export function yRoom(values: readonly number[], axis: Axis | undefined, f?: Format): number {
+  const s = yScale(values, [1, 0], axis)
+  const longest = Math.max(...yTicks(s, axis).map((t) => formatNumber(t, tickFormat(f)).text.length))
+  return Math.max(32, longest * 7 + 12)
+}
+
 /** Horizontal gridlines with labels at the left. The top label carries the unit. */
 export function yGrid(s: ScaleLinear<number, number>, ticks: number[], x0: number, x1: number, f?: Format): Markup {
   const top = ticks.at(-1)

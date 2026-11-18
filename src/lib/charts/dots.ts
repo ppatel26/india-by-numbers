@@ -3,7 +3,8 @@ import { INDIA, geoName, isPlace } from '~/lib/geography'
 import { svg, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
 import { FONT, WIDTH, frame, valueRefs, type Width } from './axes'
-import { drawn, show, type Of, type SeriesData } from './model'
+import { drawn, tipLine, type Of, type SeriesData } from './model'
+import { fmt } from '~/lib/format'
 
 /** Display name for a row key: a state slug, 'india', or a category as published. */
 export const rowName = (key: string): string => (key === INDIA || isPlace(key) ? geoName(key) : key)
@@ -38,14 +39,14 @@ export function renderDots(chart: Of<'dots'>, width: Width): Markup {
   const ticks = x.ticks(narrow ? 4 : 6)
 
   const grid = svg`${ticks.map((t) => svg`<line x1="${x(t)}" x2="${x(t)}" y1="${m.top - 6}" y2="${H - m.bottom}" stroke="var(--grid)"/>
-<text x="${x(t)}" y="${H - m.bottom + 16}" text-anchor="middle" font-family="${FONT.mono}" font-size="11" fill="var(--slate)">${show(chart, { x: '', label: '', t: NaN, y: t, raw: String(t) }).text}</text>`)}`
+<text x="${x(t)}" y="${H - m.bottom + 16}" text-anchor="middle" font-family="${FONT.mono}" font-size="11" fill="var(--slate)">${fmt(t, { ...chart.format, decimals: undefined })}</text>`)}`
 
   const rows = keys.map((k, i) => {
     const y = m.top + i * rowH + rowH / 2
     const vs = series.map((s) => ({ s, p: val(s, k) })).filter((v) => v.p?.y != null)
     const xs = vs.map((v) => x(v.p!.y!))
     const india = k === INDIA
-    const tip = [rowName(k), ...series.map((s) => `${s.label}: ${val(s, k)?.y != null ? show(chart, val(s, k)!).text : 'No data'}`)].join('\n')
+    const tip = [rowName(k), ...series.map((s) => tipLine(chart, s, val(s, k)))].join('\n')
     const label = rowName(k)
     const name = svg`<text class="name" x="${m.left - 8}" y="${y + 4}" text-anchor="end" font-size="12.5" font-weight="${india ? 600 : 400}" fill="var(--ink)">${narrow && label.length > 17 ? `${label.slice(0, 15)}…` : label}</text>`
     return svg`<g class="row" data-geo="${k}" data-tip="${tip}">${india ? svg`<rect x="0" y="${y - rowH / 2}" width="${W}" height="${rowH}" fill="var(--band)"/>` : null}

@@ -10,6 +10,7 @@ export interface SeriesData {
   color: Color
   dash?: boolean
   hidden?: boolean
+  format?: Format
   points: Point[]
 }
 
@@ -32,6 +33,7 @@ const resolve = (chart: Chart, s: Series): SeriesData => {
     color: s.color,
     dash: s.dash,
     hidden: s.hidden,
+    format: s.format,
     points: points({ ...s, x }, category ? 'category' : 'time'),
   }
 }
@@ -74,7 +76,15 @@ export function asStates(chart: Of<'dots'> | Of<'bars'>, key?: string): Of<'stat
   const s = chart.series.find((x) => x.key === want)
   if (!s) throw new Error(`${chart.slug}: no series ${want}`)
   const map = chart.kind === 'dots' ? chart.map : undefined
-  return { ...chart, kind: 'states', data: { ...s, x: s.x ?? chart.by ?? 'geography' }, scale: map?.scale, better: map?.better, short: s.label }
+  return {
+    ...chart,
+    kind: 'states',
+    data: { ...s, x: s.x ?? chart.by ?? 'geography' },
+    scale: map?.scale,
+    better: map?.better,
+    short: s.label,
+    missing: chart.kind === 'dots' ? chart.missing : undefined,
+  }
 }
 
 /** Any chart with one value per state, as a 'states' chart; undefined for others. */
@@ -120,7 +130,16 @@ export function standing(data: StateData, slug: string): Standing | undefined {
   }
 }
 
-export const show = (chart: Chart, pt: Point): Shown => formatNumber(pt.y!, chart.format, pt.raw)
+/** A value as the chart shows it: the series' format, else the chart's. */
+export const show = (chart: Chart, pt: Point, s?: { format?: Format }): Shown => formatNumber(pt.y!, s?.format ?? chart.format, pt.raw)
+
+/** "Label: value (note)" for tooltips, or "Label: No data". */
+export const tipLine = (chart: Chart, s: SeriesData, p: Point | undefined): string =>
+  `${s.label}: ${p && p.y !== null ? show(chart, p, s).text + (p.note ? ` (${p.note})` : '') : 'No data'}`
+
+/** A value with all its published digits, for tables: no rounding to the chart's decimals, no crore. */
+export const exact = (chart: Chart, pt: Point, s?: { format?: Format }): Shown =>
+  formatNumber(pt.y!, { ...(s?.format ?? chart.format), decimals: undefined, scale: 'none' }, pt.raw)
 
 /** Format for a gap from India, in the chart's unit ('%' becomes percentage points). */
 export const gapFormat = (f: Format | undefined, decimals: number): Format => ({

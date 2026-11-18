@@ -4,11 +4,12 @@ import { svg, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
 import { FONT, WIDTH, frame, type Width } from './axes'
 import { legend } from './dots'
-import { seriesOf, type Of } from './model'
+import type { Point } from '~/lib/data'
+import { seriesOf, type Of, type SeriesData } from './model'
 
 /** Age pyramid: each bar is the group's share of the whole population. Youngest at the bottom. */
 export function renderPyramid(chart: Of<'pyramid'>, width: Width): Markup {
-  const [left, right] = seriesOf(chart) as [ReturnType<typeof seriesOf>[number], ReturnType<typeof seriesOf>[number]]
+  const [left, right] = seriesOf(chart) as [SeriesData, SeriesData]
   const narrow = width === 'narrow'
   const W = WIDTH[width]
   const groups = left.points.map((p) => p.x)
@@ -25,7 +26,9 @@ export function renderPyramid(chart: Of<'pyramid'>, width: Width): Markup {
     const y = m.top + i * rowH
     const l = left.points.find((p) => p.x === g)
     const r = right.points.find((p) => p.x === g)
-    const tip = `Age ${g}\n${left.label}: ${fmt(share(l?.y ?? null), { decimals: 2, unit: '%' })}\n${right.label}: ${fmt(share(r?.y ?? null), { decimals: 2, unit: '%' })}`
+    const line = (s: SeriesData, p: Point | undefined) =>
+      `${s.label}: ${fmt(share(p?.y ?? null), { decimals: 2, unit: '%' })} (${p?.y != null ? fmt(p.y, { scale: 'lakh' }) : 'no data'})`
+    const tip = `Age ${g}\n${line(left, l)}\n${line(right, r)}`
     return svg`<g class="row" data-tip="${tip}">
 <rect x="${mid - gutter - x(share(l?.y ?? null))}" y="${y + 1}" width="${x(share(l?.y ?? null))}" height="${rowH - 2}" fill="${colorVar(left.color)}"/>
 <rect x="${mid + gutter}" y="${y + 1}" width="${x(share(r?.y ?? null))}" height="${rowH - 2}" fill="${colorVar(right.color)}"/>
@@ -34,5 +37,7 @@ export function renderPyramid(chart: Of<'pyramid'>, width: Width): Markup {
   const ticks = x.ticks(narrow ? 2 : 4)
   const axis = ticks.map((t) => svg`<text x="${mid - gutter - x(t)}" y="${H - 8}" text-anchor="middle" font-family="${FONT.mono}" font-size="11" fill="var(--slate)">${t}%</text>
 <text x="${mid + gutter + x(t)}" y="${H - 8}" text-anchor="middle" font-family="${FONT.mono}" font-size="11" fill="var(--slate)">${t}%</text>`)
-  return frame(width, H, chart.title, svg`${legend([left, right])}${rows}${axis}`)
+  // Shares are of everyone whose age was recorded; the Census also counts people of unstated age.
+  const caption = svg`<text x="${W}" y="12" text-anchor="end" font-size="12" fill="var(--slate)">Share of all people with a stated age</text>`
+  return frame(width, H, chart.title, svg`${legend([left, right])}${narrow ? null : caption}${rows}${axis}`)
 }

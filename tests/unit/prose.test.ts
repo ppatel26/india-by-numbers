@@ -4,17 +4,15 @@
  */
 import { describe, expect, it } from 'vitest'
 import { topics } from '~/content'
-import type { Chart, Topic } from '~/content/types'
+import type { Topic } from '~/content/types'
+import { picksOf } from '~/lib/metadata'
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { DATA_DIR, rows } from '~/lib/data'
 
-const filesOf = (c: Chart): string[] =>
-  c.kind === 'states' || c.kind === 'table' ? [c.data.file] : c.kind === 'pyramid' ? [c.left.file, c.right.file] : c.series.map((s) => s.file)
-
 /** Every number in the topic's data folders (CSVs and the README headline tables), as printed. */
 function pool(t: Topic): Set<string> {
-  const dirs = new Set(t.parts.flatMap((p) => p.blocks.flatMap((b) => ('chart' in b ? filesOf(b.chart).map((f) => f.split('/')[0]!) : []))))
+  const dirs = new Set(t.parts.flatMap((p) => p.blocks.flatMap((b) => ('chart' in b ? picksOf(b.chart).map((k) => k.file.split('/')[0]!) : []))))
   const out = new Set<string>()
   const add = (n: string) => {
     const x = Math.abs(Number(n))

@@ -69,3 +69,25 @@ document.addEventListener('focusin', (e) => {
 document.addEventListener('focusout', () => {
   if (tip) tip.hidden = true
 })
+
+// On touch screens the first tap on a linked mark (a tile, a state name) shows its readout;
+// a second tap on the same mark follows the link.
+let touch = false
+let pinned: Element | null = null
+document.addEventListener('pointerdown', (e) => (touch = e.pointerType === 'touch'))
+document.addEventListener(
+  'click',
+  (e) => {
+    if (!touch) return
+    const el = (e.target as Element).closest('[data-tip]')
+    if (el && el.closest('a') && pinned !== el) {
+      e.preventDefault()
+      pinned = el
+      show(el, e.clientX, e.clientY)
+    } else if (!el) {
+      pinned = null
+      if (tip) tip.hidden = true
+    }
+  },
+  true,
+)

@@ -126,7 +126,7 @@ const QUARTERLY = 'economy/gdp-growth-quarterly.csv'
 const ANNUAL = 'economy/gdp-growth-annual.csv'
 const SHARES = 'economy/gva-sector-shares.csv'
 const IIP = 'economy/iip-growth-monthly.csv'
-const IIP_NEXT = '2026-11-28'
+const IIP_NEXT = '2026-11-30'
 
 /** Financial years 1950-51 to 2021-22: the 2011-12 base rows before the 2022-23 base starts. */
 const BEFORE_2022_23 = Array.from({ length: 72 }, (_, i) => `${1950 + i}-${String((51 + i) % 100).padStart(2, '0')}`)
@@ -145,7 +145,7 @@ const topic: Topic = {
     // LATER: the board's figure punch reads "FBIL via RBI"; a Figure has no office of its own.
     { chart: 'usd-inr-daily', label: 'Rupees per US dollar' },
   ],
-  nextRelease: 'IIP for October 2026, expected 28 Nov 2026',
+  nextRelease: 'IIP for October 2026 and GDP for Q2 FY 2026-27, both 30 Nov 2026',
   parts: [
     {
       title: 'How fast is the economy growing?',
@@ -193,7 +193,7 @@ const topic: Topic = {
               'Draw base 2011-12 to Q4 2022-23 and base 2022-23 from Q1 2023-24, and mark the break.',
               'Keep the overlapping quarters on base 2011-12 in the data, and leave them off the chart.',
             ],
-            nextRelease: 'not announced',
+            nextRelease: '2026-11-30',
           },
         },
         { text: "India's economy grew by 7.8% in 2025-26. It shrank in six years since 1951. The largest fall was 5.78% in 2020-21, during COVID-19; the one before that was 5.24% in 1979-80." },
@@ -216,7 +216,7 @@ const topic: Topic = {
             // LATER: the board also labels 7.8% in 2025-26; callouts at the right edge are cut off.
             series: [
               { key: 'base-2011-12', label: 'India, base 2011-12 (derived)', color: 'ink', file: ANNUAL, where: { base: '2011-12' } },
-              { key: 'base-2022-23', label: 'India, base 2022-23', color: 'ink', file: ANNUAL, where: { base: '2022-23' } },
+              { key: 'base-2022-23', label: 'India, base 2022-23', color: 'ink', file: ANNUAL, where: { base: '2022-23' }, note: 'estimate' },
             ],
             y: { min: -8, max: 12, step: 4 },
             breaks: [{ x: '2023-24', label: 'Base 2022-23 from 2023-24' }],

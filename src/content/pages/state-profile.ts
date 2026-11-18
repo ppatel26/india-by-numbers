@@ -29,6 +29,8 @@ export interface MeasureRow {
   noRank?: boolean
   /** Note under the India value, for example "India excl. Surat". */
   indiaNote?: string
+  /** Leave India's column empty: the state's value has no national equivalent (its own largest language). */
+  noIndia?: boolean
 }
 
 export interface ProfileSection {
@@ -127,7 +129,7 @@ const stateProfile: StateProfile = {
         { label: 'Maternal mortality', chart: 'maternal-mortality-by-state' },
         { label: 'Children who are stunted', chart: 'stunting-by-state', series: 'nfhs6' },
       ],
-      footnote: 'Ranks count only states and UTs with data. SRS and NFHS figures are survey estimates.',
+      footnote: 'Ranks count only states and UTs with data. SRS and NFHS figures are survey estimates. For the smaller states and UTs, infant mortality is a three-year average (2022-24); India and the bigger states are single-year 2024 values, so their ranks mix the two.',
     },
     {
       topic: 'education',
@@ -172,6 +174,8 @@ const stateProfile: StateProfile = {
           pick: { file: 'religion-culture/languages-top3-by-state-2011.csv', where: { rank: '1' }, y: 'share_pct' },
           labelFrom: 'language',
           format: { unit: '%', decimals: 2 },
+          noIndia: true,
+          indiaNote: 'No national figure for the same language',
           noRank: true,
         },
       ],

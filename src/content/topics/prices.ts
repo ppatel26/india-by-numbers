@@ -474,7 +474,7 @@ const topic: Topic = {
               "Check the 2026 meetings with no change against the Governor's Statements of 8 April, 5 June and 5 August 2026.",
               'Check the current rate against the RBI home page on 17 November 2026.',
             ],
-            nextRelease: 'not announced',
+            nextRelease: '2026-12-04',
           },
         },
       ],

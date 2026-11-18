@@ -58,6 +58,10 @@ export interface Point {
   t: number
   y: number | null
   raw: string
+  /** The CSV row the value came from: its period, unit and status travel with it. */
+  row: Row
+  /** The pick's note column for this value, if any. */
+  note?: string
 }
 
 export function toNumber(raw: string | undefined): number | null {
@@ -89,7 +93,8 @@ export function points(p: Pick, axis: 'time' | 'category' = 'time', defaultX = '
     if (raw === undefined) throw new Error(`${p.file}: no column "${yCol}"`)
     const period = time ? parsePeriod(x, yyMm) : undefined
     const label = (p.xLabel && r[p.xLabel]) || period?.label || x
-    out.push({ x, label, t: period?.t ?? (axis === 'time' ? out.length : NaN), y: toNumber(raw), raw: raw.trim() })
+    const note = (p.note && r[p.note]) || undefined
+    out.push({ x, label, t: period?.t ?? (axis === 'time' ? out.length : NaN), y: toNumber(raw), raw: raw.trim(), row: r, note })
   }
   return time ? out.sort((a, b) => a.t - b.t) : out
 }

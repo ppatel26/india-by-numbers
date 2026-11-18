@@ -333,6 +333,7 @@ const topic: Topic = {
             hollow: ['nfhs5'],
             sortBy: 'nfhs6',
             map: { series: 'nfhs6', scale: 'seq', better: 'low' },
+            missing: { manipur: 'NFHS-6 did not survey Manipur' },
             // LATER: the board colours the selected state's NFHS-6 dot series-1 and adds a row "Manipur: Not surveyed in NFHS-6".
             series: [
               { key: 'nfhs5', label: 'NFHS-5 (2019-21)', color: 'slate', file: 'health/nfhs-key-indicators-by-state.csv', x: 'geography', where: { indicator: 'stunted', round: 'NFHS-5' } },
@@ -443,7 +444,7 @@ const topic: Topic = {
             format: { decimals: 0 },
             // LATER: the board draws pooled (2022-24) rates with a dotted tile edge, from `estimate_basis`.
             bins: [10, 15, 20, 25, 30],
-            data: { file: 'health/imr-by-state-2024.csv' },
+            data: { file: 'health/imr-by-state-2024.csv', note: 'estimate_basis' },
             open: 'map',
             scale: 'seq',
             better: 'low',

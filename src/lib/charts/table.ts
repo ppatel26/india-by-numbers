@@ -5,7 +5,7 @@ import { select, toNumber, type Point } from '~/lib/data'
 import { decimalsOf, fmt, formatNumber, type Shown } from '~/lib/format'
 import { INDIA } from '~/lib/geography'
 import { rowName } from './dots'
-import { gapFormat, seriesOf, show, standing, statesOf, type Of } from './model'
+import { exact, gapFormat, seriesOf, standing, statesOf, type Of, type SeriesData } from './model'
 
 export interface Cell {
   shown: Shown
@@ -19,7 +19,14 @@ export interface TableModel {
 }
 
 const none: Cell = { shown: { text: 'No data' }, raw: '' }
-const cell = (chart: Chart, p: Point | undefined): Cell => (p && p.y !== null ? { shown: show(chart, p), raw: p.raw } : none)
+const dash: Cell = { shown: { text: '–' }, raw: '' }
+
+/** A table cell: every published digit, and the value's note when it has one. */
+function cell(chart: Chart, p: Point | undefined, s?: SeriesData): Cell {
+  if (!p || p.y === null) return none
+  const v = exact(chart, p, s)
+  return p.note ? { shown: { text: `${v.text} (${p.note})`, alt: v.alt && `${v.alt} (${p.note})` }, raw: p.raw } : { shown: v, raw: p.raw }
+}
 
 export function tableOf(chart: Chart): TableModel {
   switch (chart.kind) {
@@ -30,11 +37,23 @@ export function tableOf(chart: Chart): TableModel {
     case 'line':
     case 'columns':
     case 'area': {
+      // One column per measure: series with the same panel and label (one measure on two
+      // bases, or two survey designs) share a column, since their periods do not overlap.
       const series = seriesOf(chart)
+      const panelOf = (key: string) => (chart.kind === 'line' ? chart.panels?.find((p) => p.series.includes(key))?.label : undefined)
+      const groups = new Map<string, SeriesData[]>()
+      for (const s of series) {
+        const name = panelOf(s.key) ? `${panelOf(s.key)}: ${s.label}` : s.label
+        groups.set(name, [...(groups.get(name) ?? []), s])
+      }
       const xs = [...new Map(series.flatMap((s) => s.points).map((p) => [p.x, p])).values()].sort((a, b) => b.t - a.t)
+      const at = (g: SeriesData[], x: string) => {
+        const s = g.find((se) => se.points.some((p) => p.x === x && p.y !== null)) ?? g[0]!
+        return cell(chart, s.points.find((p) => p.x === x), s)
+      }
       return {
-        columns: ['Period', ...series.map((s) => s.label)],
-        rows: xs.map((x) => ({ key: x.x, head: x.label, cells: series.map((s) => cell(chart, s.points.find((p) => p.x === x.x))) })),
+        columns: ['Period', ...groups.keys()],
+        rows: xs.map((x) => ({ key: x.x, head: x.label, cells: [...groups.values()].map((g) => at(g, x.x)) })),
       }
     }
     case 'dots':
@@ -45,7 +64,8 @@ export function tableOf(chart: Chart): TableModel {
       const label = chart.kind === 'bars' ? (k: string) => chart.labels?.[k] ?? rowName(k) : rowName
       return {
         columns: [chart.kind === 'pyramid' ? 'Age group' : chart.kind === 'dots' && (chart.by ?? 'geography') === 'geography' ? 'State or UT' : 'Category', ...series.map((s) => s.label)],
-        rows: keys.map((k) => ({ key: k, head: label(k), cells: series.map((s) => cell(chart, s.points.find((p) => p.x === k))) })),
+        // A category missing from a series (a party that did not stand) is a dash, not missing data.
+        rows: keys.map((k) => ({ key: k, head: label(k), cells: series.map((s) => (s.points.some((p) => p.x === k) ? cell(chart, s.points.find((p) => p.x === k), s) : dash)) })),
       }
     }
   }
@@ -59,8 +79,9 @@ function statesTable(chart: Of<'states'>): TableModel {
     ...(india ? [{ key: INDIA, head: 'India', pt: india }] : []),
     ...data.values.map((v) => ({ key: v.place.slug, head: v.place.name, pt: v.pt })),
   ]
+  const gapCol = !chart.total
   return {
-    columns: ['State or UT', chart.punches.unit, 'Gap from India', `Rank (of ${data.values.filter((v) => v.pt?.y != null).length})`],
+    columns: ['State or UT', chart.punches.unit, ...(gapCol ? ['Gap from India'] : []), `Rank (of ${data.values.filter((v) => v.pt?.y != null).length})`],
     rows: rows.map((r) => {
       const has = r.pt && r.pt.y !== null
       const gap = has && india?.y != null && r.key !== INDIA ? +(r.pt!.y! - india.y).toFixed(d) : null
@@ -70,8 +91,8 @@ function statesTable(chart: Of<'states'>): TableModel {
         key: r.key,
         head: r.head,
         cells: [
-          cell(chart, r.pt),
-          gap === null ? { shown: { text: r.key === INDIA ? '' : 'No data' }, raw: '' } : { shown: { text: (gap > 0 ? '+' : '') + fmt(gap, gapFormat(chart.format, d)) }, raw: gap.toFixed(d) },
+          r.pt?.y == null && chart.missing?.[r.key] ? { shown: { text: `No data: ${chart.missing[r.key]}` }, raw: '' } : cell(chart, r.pt),
+          ...(!gapCol ? [] : [gap === null ? { shown: { text: r.key === INDIA ? '' : 'No data' }, raw: '' } : { shown: { text: (gap > 0 ? '+' : '') + fmt(gap, gapFormat(chart.format, d)) }, raw: gap.toFixed(d) }]),
           rank ? { shown: { text: String(rank.rank) }, raw: String(rank.rank) } : { shown: { text: '' }, raw: '' },
         ],
       }
@@ -99,11 +120,37 @@ function plainTable(chart: Of<'table'>): TableModel {
   }
 }
 
-/** The displayed data as CSV, with the source on every row. */
+/** One row per published value: who or what, when, the value as published, its unit, status and note. */
+function observations(chart: Chart): { entity: string; series: string; pt: Point }[] {
+  if (chart.kind === 'states') {
+    const d = statesOf(chart)
+    return [...(d.india ? [{ entity: 'India', series: chart.short, pt: d.india }] : []), ...d.values.flatMap((v) => (v.pt ? [{ entity: v.place.name, series: chart.short, pt: v.pt }] : []))]
+  }
+  const name = chart.kind === 'bars' ? (k: string) => chart.labels?.[k] ?? rowName(k) : rowName
+  // Over time, the row's place names the entity; by category, the category does.
+  const time = chart.kind === 'line' || chart.kind === 'columns' || chart.kind === 'area'
+  const entity = (pt: Point) => (time ? rowName(pt.row.geography ?? 'india') : name(pt.x))
+  return seriesOf(chart).flatMap((s) => s.points.map((pt) => ({ entity: entity(pt), series: s.label, pt })))
+}
+
+const SOURCE_COLUMNS = ['period', 'value', 'unit', 'status', 'note', 'sources'] as const
+
+/** The chart's data as CSV: one row per value, with its own period, unit and status, and the chart's sources. */
 export function tableCsv(chart: Chart): string {
-  const t = tableOf(chart)
-  const src = chart.sources[0]
-  const head = [...t.columns, 'unit', 'source', 'released']
-  const lines = t.rows.map((r) => [r.head, ...r.cells.map((c) => c.raw), chart.punches.unit, src ? `${src.publisher}, ${src.release}` : '', src?.released ?? ''])
-  return csvFormatRows([head, ...lines]) + '\n'
+  const sources = chart.sources.map((s) => `${s.publisher}, ${s.release}, ${s.released}`).join('; ')
+  if (chart.kind === 'table') {
+    const t = tableOf(chart)
+    return csvFormatRows([[...t.columns, 'sources'], ...t.rows.map((r) => [r.head, ...r.cells.map((c) => c.raw), sources])]) + '\n'
+  }
+  const lines = observations(chart).map(({ entity, series, pt }) => [
+    entity,
+    series,
+    pt.row.period ?? pt.label,
+    pt.raw,
+    pt.row.unit ?? chart.punches.unit,
+    pt.row.status ?? pt.row.estimate ?? '',
+    pt.note ?? '',
+    sources,
+  ])
+  return csvFormatRows([['entity', 'series', ...SOURCE_COLUMNS], ...lines]) + '\n'
 }

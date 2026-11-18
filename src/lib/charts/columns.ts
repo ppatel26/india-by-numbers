@@ -1,9 +1,8 @@
 import { scaleBand } from 'd3-scale'
-import type { Point } from '~/lib/data'
 import { svg, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
-import { WIDTH, frame, hit, xLabels, yGrid, yScale, yTicks, type Width } from './axes'
-import { drawn, show, type Of } from './model'
+import { WIDTH, frame, hit, xLabels, yGrid, yRoom, yScale, yTicks, type Width } from './axes'
+import { drawn, tipLine, type Of } from './model'
 import { timeNotes } from './notes'
 
 /** Columns over time. Series that share an x sit side by side, or stack when `stacked`. */
@@ -12,13 +11,12 @@ export function renderColumns(chart: Of<'columns'>, width: Width): Markup {
   const narrow = width === 'narrow'
   const W = WIDTH[width]
   const H = narrow ? 260 : 340
-  const m = { top: 16, right: 12, bottom: 30, left: 40 }
   const xs = [...new Map(series.flatMap((s) => s.points).map((p) => [p.x, p])).values()].sort((a, b) => a.t - b.t)
-  const x = scaleBand<string>().domain(xs.map((p) => p.x)).range([m.left, W - m.right]).paddingInner(0.2)
-
   const at = (x: string) => series.map((s) => ({ s, p: s.points.find((q) => q.x === x) })).filter((v) => v.p?.y != null)
   const totals = xs.map((p) => at(p.x).reduce((a, v) => a + (chart.stacked ? v.p!.y! : 0), 0))
   const values = chart.stacked ? totals : series.flatMap((s) => s.points.flatMap((p) => (p.y === null ? [] : [p.y])))
+  const m = { top: 16, right: 12, bottom: 30, left: yRoom(values, chart.y, chart.format) }
+  const x = scaleBand<string>().domain(xs.map((p) => p.x)).range([m.left, W - m.right]).paddingInner(0.2)
   const y = yScale(values, [H - m.bottom, m.top], chart.y)
 
   const bars = xs.map((p) => {
@@ -51,7 +49,7 @@ export function renderColumns(chart: Of<'columns'>, width: Width): Markup {
   })
 
   const hits = xs.map((p) =>
-    hit(x(p.x)!, m.top, x.step(), H - m.top - m.bottom, [p.label, ...at(p.x).map((v) => `${v.s.label}: ${show(chart, v.p as Point).text}`)].join('\n')),
+    hit(x(p.x)!, m.top, x.step(), H - m.top - m.bottom, [p.label, ...at(p.x).map((v) => tipLine(chart, v.s, v.p))].join('\n')),
   )
 
   return frame(

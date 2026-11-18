@@ -305,6 +305,7 @@ const topic: Topic = {
               {
                 key: 'count',
                 label: 'Number of languages',
+                format: { decimals: 0 },
                 color: 'ink',
                 hidden: true,
                 file: 'religion-culture/languages-count-2011.csv',
