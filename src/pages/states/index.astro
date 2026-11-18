@@ -25,16 +25,18 @@ const groups = [
   <PageHeader title={states.title} hindi={states.hindi} intro={states.intro} />
 
   <section class="wrap" aria-label="Map">
-    <label class="switch">
-      <span class="label muted">{states.map.switcherLabel}</span>
-      <select data-map-switch>
-        {maps.map((x) => <option value={x.slug} selected={x.open}>{x.m.label} ({states.map.coverage(x.n, places.length)})</option>)}
-      </select>
-    </label>
+    <div class="switch">
+      <p class="label muted" id="map-measure">{states.map.switcherLabel}</p>
+      <div class="measures" role="group" aria-labelledby="map-measure">
+        {maps.map((x) => (
+          <button type="button" data-measure={x.slug} aria-pressed={x.open ? 'true' : 'false'}>{x.m.label}</button>
+        ))}
+      </div>
+    </div>
     {maps.map((x) => (
       <figure class="map" data-map={x.slug} hidden={!x.open}>
         <h2><a href={`/charts/${x.slug}/`}>{x.chart.title}</a></h2>
-        <p class="muted">{x.chart.subtitle}</p>
+        <p class="muted">{x.chart.subtitle} {states.map.coverage(x.n, places.length)} states and UTs have data.</p>
         <div class="w-wide" set:html={renderTiles(x.chart, 'wide').html} />
         <div class="w-narrow" set:html={renderTiles(x.chart, 'narrow').html} />
         {x.chart.note && <p class="note">Note: {x.chart.note}</p>}
@@ -105,27 +107,55 @@ const groups = [
 </Base>
 
 <script>
-  document.querySelector<HTMLSelectElement>('[data-map-switch]')?.addEventListener('change', (e) => {
-    const v = (e.target as HTMLSelectElement).value
-    document.querySelectorAll<HTMLElement>('[data-map]').forEach((m) => (m.hidden = m.dataset.map !== v))
+  // One measure at a time: the pressed button names the map that shows.
+  document.querySelector('.measures')?.addEventListener('click', (e) => {
+    const b = (e.target as Element).closest<HTMLButtonElement>('[data-measure]')
+    if (!b) return
+    document.querySelectorAll<HTMLButtonElement>('[data-measure]').forEach((x) => x.setAttribute('aria-pressed', String(x === b)))
+    document.querySelectorAll<HTMLElement>('[data-map]').forEach((m) => (m.hidden = m.dataset.map !== b.dataset.measure))
   })
 </script>
 
 <style>
   .switch {
-    display: inline-grid;
-    max-width: 100%;
-    gap: 6px;
-    margin-block: 8px 24px;
+    display: grid;
+    gap: 10px;
+    margin-block: 8px 28px;
   }
-  .switch select {
-    width: 100%;
-    min-width: 0;
-    font: 500 15px var(--font-ui);
-    padding: 8px 12px;
-    border: 1px solid var(--ink);
-    border-radius: 2px;
+  .measures {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .measures button {
+    padding: 7px 14px;
+    border: 1px solid var(--rule);
+    border-radius: 18px;
     background: var(--paper);
+    font: 500 14px var(--font-ui);
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .measures button:hover {
+    border-color: var(--ink);
+  }
+  @media (max-width: 720px) {
+    /* Phones: one swipeable row instead of a tall stack. */
+    .measures {
+      flex-wrap: nowrap;
+      overflow-x: auto;
+      scrollbar-width: none;
+      margin-inline: calc(-1 * var(--gutter));
+      padding-inline: var(--gutter);
+    }
+    .measures button {
+      flex-shrink: 0;
+    }
+  }
+  .measures button[aria-pressed='true'] {
+    background: var(--ink);
+    border-color: var(--ink);
+    color: var(--paper);
   }
   .map {
     margin: 0;

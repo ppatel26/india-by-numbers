@@ -31,7 +31,6 @@ export interface StatesPage {
     title: string
     subtitle: string
     switcherLabel: string
-    menuHeads: { measure: string; coverage: string }
     coverage: (n: number, of: number) => string
     measures: readonly MapMeasure[]
     legend: { india: (value: string) => string; noData: (n: number, reason: string) => string; ut: string; selected: (state: string) => string }
@@ -66,14 +65,13 @@ const states: StatesPage = {
   title: 'States and union territories',
   hindi: 'राज्य और केंद्र शासित प्रदेश',
   intro:
-    `India has ${count.states} states and ${count.uts} union territories. Each one has a page that puts its figures beside India's on every topic. The map uses one measure: income per person in 2024-25.`,
+    `India has ${count.states} states and ${count.uts} union territories. Each one has a page that puts its figures beside India's on every topic. Pick a measure to colour the map, one at a time.`,
   map: {
     number: '1',
     title: 'Income per person by state and UT, 2024-25',
     subtitle:
       'Net state domestic product per person, rupees a year, current prices (base 2011-12), FY 2024-25. India is per capita net national income.',
     switcherLabel: 'Colour the map by',
-    menuHeads: { measure: 'Measure · period', coverage: 'States and UTs' },
     coverage: (n, of) => `${n} of ${of}`,
     measures: [
       { chart: 'cpi-inflation-by-state', label: 'Inflation, Oct 2026' },
