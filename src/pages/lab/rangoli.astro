@@ -1,0 +1,379 @@
+---
+/**
+ * The rangoli lab: tune the home hero's rangoli live. Not linked, not in the sitemap, not indexed.
+ * Move over (or click) the red panel to bloom; every knob re-renders at once. Save copies the
+ * settings as JSON; on the dev server it also writes src/content/rangoli.json, which the hero reads.
+ */
+import '~/styles/global.css'
+import { tokenCss } from '~/lib/tokens'
+import { INKS } from '~/lib/rangoli/palette'
+const inkNames = Object.keys(INKS)
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="robots" content="noindex, nofollow" />
+    <title>Rangoli lab · India by Numbers</title>
+    <style set:html={tokenCss()}></style>
+  </head>
+  <body>
+    <main class="lab">
+      <header class="stage on-dark" data-stage>
+        <canvas class="rangoli" aria-hidden="true"></canvas>
+        <div class="text">
+          <h1 class="display">Charts of India's official statistics</h1>
+          <form onsubmit="return false"><input placeholder="Search charts, topics and states" disabled /></form>
+          <p class="try"><span>Try</span><span class="chip">Inflation by state, October 2026</span><span class="chip">Youth unemployment</span></p>
+        </div>
+      </header>
+
+      <section class="panel">
+        <div class="bar">
+          <p class="label">Rangoli lab</p>
+          <div class="buttons">
+            <button type="button" data-auto aria-pressed="true">Auto trail</button>
+            <button type="button" data-clear>Clear</button>
+            <button type="button" data-reset>Reset to saved</button>
+            <button type="button" class="save" data-save>Save</button>
+          </div>
+        </div>
+        <p class="hint muted">Move over or click the red panel to bloom. Every change applies at once. Save copies the settings; on the dev server it also writes them to <code>src/content/rangoli.json</code>.</p>
+        <p class="status" role="status" data-status></p>
+        <form class="knobs" data-knobs>
+          <fieldset>
+            <legend class="label">Density and timing</legend>
+            <label>Pointer travel per bloom <output></output><input type="range" name="stride" min="40" max="320" step="5" /></label>
+            <label>At once, at most <output></output><input type="range" name="max" min="1" max="24" step="1" /></label>
+            <label>Rings per 100 px <output></output><input type="range" name="ringsPer100" min="1" max="8" step="0.5" /></label>
+            <label>Ring stagger, ms <output></output><input type="range" name="step" min="0" max="140" step="5" /></label>
+            <label>Open, ms <output></output><input type="range" name="grow" min="100" max="900" step="10" /></label>
+            <label>Extra open per px, ms <output></output><input type="range" name="growPerPx" min="0" max="4" step="0.1" /></label>
+            <label>Hold, ms <output></output><input type="range" name="hold" min="0" max="3000" step="50" /></label>
+            <label>Fade, ms <output></output><input type="range" name="fade" min="150" max="3000" step="50" /></label>
+            <label>Turn, degrees a second <output></output><input type="range" name="spin" min="0" max="40" step="1" /></label>
+            <label>Dot grid opacity <output></output><input type="range" name="grid" min="0" max="0.3" step="0.01" /></label>
+            <label>Over the text
+              <select name="overText"><option value="none">No blooms</option><option value="giant">Largest band only</option><option value="all">Any band</option></select>
+            </label>
+          </fieldset>
+          {['Small', 'Medium', 'Large'].map((name, i) => (
+            <fieldset>
+              <legend class="label">{name} band</legend>
+              <label>Share <output></output><input type="range" name={`b${i}.weight`} min="0" max="1" step="0.05" /></label>
+              <label>Smallest radius, px <output></output><input type="range" name={`b${i}.min`} min="6" max="600" step="2" /></label>
+              <label>Largest radius, px <output></output><input type="range" name={`b${i}.max`} min="8" max="800" step="2" /></label>
+              <label>Opacity <output></output><input type="range" name={`b${i}.opacity`} min="0" max="0.8" step="0.01" /></label>
+            </fieldset>
+          ))}
+          <fieldset>
+            <legend class="label">Inks</legend>
+            <div class="inks">
+              {inkNames.map((n) => (
+                <label class="ink"><input type="checkbox" name="ink" value={n} /><span class="swatch" style={`background:${INKS[n]}`}></span>{n}</label>
+              ))}
+            </div>
+          </fieldset>
+        </form>
+        <div class="saved">
+          <p class="label">Saved here</p>
+          <ol data-saved></ol>
+        </div>
+        <pre data-json></pre>
+      </section>
+    </main>
+
+    <style>
+      .lab {
+        padding-bottom: 64px;
+      }
+      .stage {
+        position: relative;
+        overflow: hidden;
+        height: 340px;
+        background: var(--lac);
+        cursor: crosshair;
+      }
+      .stage .text {
+        position: relative;
+        width: min(960px, 100% - 48px);
+        margin: 0 auto;
+        padding-top: 70px;
+        pointer-events: none;
+      }
+      .stage h1 {
+        white-space: nowrap;
+        font-size: 44px;
+      }
+      .stage form {
+        margin-top: 24px;
+        max-width: 700px;
+      }
+      .stage input {
+        width: 100%;
+        height: 56px;
+        padding: 0 20px;
+        font: 18px var(--font-ui);
+        border: 0;
+        border-radius: 2px;
+      }
+      .stage .try {
+        display: flex;
+        gap: 8px;
+        margin-top: 16px;
+        font-size: 15px;
+        align-items: center;
+      }
+      .chip {
+        padding: 4px 12px;
+        border: 1px solid var(--silver-dim);
+        border-radius: 16px;
+      }
+      .rangoli {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+      }
+      .panel {
+        width: min(1200px, 100% - 48px);
+        margin: 24px auto 0;
+      }
+      .bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      .buttons {
+        display: flex;
+        gap: 8px;
+      }
+      button {
+        padding: 8px 14px;
+        font: 600 14px var(--font-ui);
+        border: 1px solid var(--ink);
+        border-radius: 2px;
+        background: var(--paper);
+        cursor: pointer;
+      }
+      button[aria-pressed='true'],
+      .save {
+        background: var(--ink);
+        color: var(--paper);
+      }
+      .hint,
+      .status {
+        margin-top: 8px;
+        font-size: 14px;
+      }
+      .knobs {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 16px 32px;
+        margin-top: 16px;
+      }
+      fieldset {
+        margin: 0;
+        padding: 12px 0 0;
+        border: 0;
+        border-top: 1px solid var(--rule);
+        display: grid;
+        align-content: start;
+        gap: 10px;
+      }
+      fieldset label {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 2px 8px;
+        font-size: 13px;
+      }
+      fieldset input[type='range'],
+      fieldset select {
+        grid-column: 1 / -1;
+      }
+      output {
+        font: 12px var(--font-mono);
+        color: var(--slate);
+      }
+      .inks {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .ink {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .swatch {
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        border: 1px solid var(--rule);
+      }
+      .saved {
+        margin-top: 20px;
+      }
+      .saved ol {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+        margin: 8px 0 0;
+        padding: 0;
+        list-style: none;
+      }
+      pre {
+        margin-top: 16px;
+        padding: 12px;
+        font: 12px/1.5 var(--font-mono);
+        background: var(--band);
+        overflow: auto;
+      }
+    </style>
+
+    <script>
+      import saved from '~/content/rangoli.json'
+      import { createField, type RangoliConfig } from '~/lib/rangoli/field'
+      import { INKS } from '~/lib/rangoli/palette'
+
+      const stage = document.querySelector<HTMLElement>('[data-stage]')!
+      const canvas = stage.querySelector('canvas')!
+      const form = document.querySelector<HTMLFormElement>('[data-knobs]')!
+      const json = document.querySelector<HTMLElement>('[data-json]')!
+      const status = document.querySelector<HTMLElement>('[data-status]')!
+      const savedList = document.querySelector<HTMLOListElement>('[data-saved]')!
+      const KEY = 'ibn:lab:rangoli'
+      let config: RangoliConfig = structuredClone(saved as RangoliConfig)
+
+      const avoid = () => {
+        const base = stage.getBoundingClientRect()
+        return [...stage.querySelectorAll('h1, form, .try')].map((el) => {
+          const r = el.getBoundingClientRect()
+          return new DOMRect(r.left - base.left - 12, r.top - base.top - 12, r.width + 24, r.height + 24)
+        })
+      }
+      const field = createField(stage, canvas, INKS, config, avoid)
+
+      // Knobs <-> config.
+      const get = (name: string): number | string => {
+        const m = name.match(/^b(\d)\.(\w+)$/)
+        if (m) return config.bands[+m[1]!]![m[2] as 'weight']
+        return (config as unknown as Record<string, number | string>)[name]!
+      }
+      const set = (name: string, value: number | string) => {
+        const m = name.match(/^b(\d)\.(\w+)$/)
+        if (m) config.bands[+m[1]!]![m[2] as 'weight'] = Number(value)
+        else (config as unknown as Record<string, number | string>)[name] = name === 'overText' ? value : Number(value)
+      }
+      const show = () => {
+        for (const el of form.querySelectorAll<HTMLInputElement | HTMLSelectElement>('input[type=range], select')) {
+          el.value = String(get(el.name))
+          const out = el.closest('label')?.querySelector('output')
+          if (out) out.textContent = String(get(el.name))
+        }
+        for (const box of form.querySelectorAll<HTMLInputElement>('input[name=ink]')) box.checked = config.inks.includes(box.value)
+        json.textContent = JSON.stringify(config, null, 2)
+      }
+      form.addEventListener('input', (e) => {
+        const el = e.target as HTMLInputElement
+        if (el.name === 'ink') config.inks = [...form.querySelectorAll<HTMLInputElement>('input[name=ink]:checked')].map((b) => b.value)
+        else set(el.name, el.value)
+        field.setConfig(config)
+        show()
+      })
+
+      // Blooms: pointer travel, clicks, and an automatic trail.
+      const last = { x: -1e4, y: -1e4 }
+      const local = (e: PointerEvent) => {
+        const r = stage.getBoundingClientRect()
+        return { x: e.clientX - r.left, y: e.clientY - r.top }
+      }
+      stage.addEventListener('pointermove', (e) => {
+        const p = local(e)
+        if (Math.hypot(p.x - last.x, p.y - last.y) < config.stride) return
+        Object.assign(last, p)
+        field.bloom(p.x, p.y)
+      })
+      stage.addEventListener('pointerdown', (e) => {
+        const p = local(e)
+        field.bloom(p.x, p.y)
+      })
+      const autoBtn = document.querySelector<HTMLButtonElement>('[data-auto]')!
+      let auto = true
+      let t = 0
+      let travelled = 0
+      let prev = { x: 0, y: 0 }
+      const trail = () => {
+        if (auto) {
+          const r = stage.getBoundingClientRect()
+          t += 0.006
+          const p = { x: ((Math.sin(t * 0.9) + 1) / 2) * r.width, y: r.height / 2 + Math.sin(t * 2.3) * r.height * 0.38 }
+          travelled += Math.hypot(p.x - prev.x, p.y - prev.y)
+          prev = p
+          if (travelled >= config.stride) {
+            travelled = 0
+            field.bloom(p.x, p.y)
+          }
+        }
+        requestAnimationFrame(trail)
+      }
+      requestAnimationFrame(trail)
+      autoBtn.addEventListener('click', () => {
+        auto = !auto
+        autoBtn.setAttribute('aria-pressed', String(auto))
+      })
+      document.querySelector('[data-clear]')!.addEventListener('click', () => field.clear())
+      document.querySelector('[data-reset]')!.addEventListener('click', () => {
+        config = structuredClone(saved as RangoliConfig)
+        field.setConfig(config)
+        show()
+      })
+
+      // Save: copy the JSON, keep it in this browser's rail, and on the dev server write the file.
+      const rail = (): RangoliConfig[] => JSON.parse(localStorage.getItem(KEY) ?? '[]')
+      const drawRail = () => {
+        savedList.replaceChildren(
+          ...rail().map((c, i) => {
+            const li = document.createElement('li')
+            const b = document.createElement('button')
+            b.type = 'button'
+            b.textContent = `Saved ${i + 1}`
+            b.addEventListener('click', () => {
+              config = structuredClone(c)
+              field.setConfig(config)
+              show()
+            })
+            li.append(b)
+            return li
+          }),
+        )
+      }
+      document.querySelector('[data-save]')!.addEventListener('click', async () => {
+        const text = JSON.stringify(config, null, 2)
+        localStorage.setItem(KEY, JSON.stringify([...rail(), structuredClone(config)].slice(-12)))
+        drawRail()
+        let copied = false
+        try {
+          await navigator.clipboard.writeText(text)
+          copied = true
+        } catch {}
+        const wrote = await fetch('/__lab/rangoli', { method: 'POST', body: text })
+          .then((r) => (r.ok ? r.json() : null))
+          .catch(() => null)
+        status.textContent = wrote
+          ? `Saved to ${wrote.path}${copied ? ' and copied' : ''}.`
+          : copied
+            ? 'Copied the settings. Paste them into src/content/rangoli.json, or send them over.'
+            : 'Copy the settings from the box below.'
+      })
+
+      show()
+      drawRail()
+    </script>
+  </body>
+</html>

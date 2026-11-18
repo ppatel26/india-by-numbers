@@ -1,33 +1,13 @@
 ---
 /**
- * The home hero's background: a faint dot grid (pulli). As the pointer moves, rangoli bloom along
- * its path. Each one is a new design: a random symmetry and four to six rings drawn from petals,
- * teardrops, dots, scallops, diamonds, leaves, stars, spokes, zigzags, veined petals, turned
- * squares, kolam loops, crescents and dotted rings, in two or three colours from a rangoli palette.
- * Sizes run from a speck to a doorstep design. Each opens ring by ring with a strong ease-out,
- * turns slowly, holds briefly and fades.
- * A tap blooms one on a touch screen. Takes no clicks. Only the dot grid for readers who ask for
+ * The home hero's background: a faint dot grid (pulli), and rangoli that bloom along the pointer's
+ * path, each a new design. The look lives in src/content/rangoli.json; tune it at /lab/rangoli/.
+ * Takes no clicks. A tap blooms one on a touch screen. Only the dot grid for readers who ask for
  * less motion.
  */
-import { colors, pigments } from '~/lib/tokens'
-
-/** Mix a hex colour toward white: rangoli powder is bright and chalky on a lac ground. */
-const chalk = (hex: string, w: number) => {
-  const n = parseInt(hex.slice(1), 16)
-  const c = [n >> 16, (n >> 8) & 255, n & 255].map((v) => Math.round(v + (255 - v) * w))
-  return `#${c.map((v) => v.toString(16).padStart(2, '0')).join('')}`
-}
-const palette = [
-  pigments.economy.hex, // haldi
-  pigments['religion-and-culture'].hex, // kesar
-  colors.silver, // white
-  chalk(pigments.population.hex, 0.62), // rani, chalked
-  chalk(pigments.climate.hex, 0.45), // mor, a peacock blue-green, chalked
-  chalk(pigments.elections.hex, 0.55), // jamuni, chalked
-]
 ---
 
-<canvas class="rangoli" aria-hidden="true" data-rangoli={JSON.stringify(palette)}></canvas>
+<canvas class="rangoli" aria-hidden="true" data-rangoli></canvas>
 
 <style>
   .rangoli {
@@ -40,411 +20,40 @@ const palette = [
 </style>
 
 <script>
-  const TAU = Math.PI * 2
-  const GAP = 30 // dot grid spacing, CSS px
-  const STRIDE = 70 // pointer travel between two rangoli, CSS px
-  const MAX = 18 // rangoli on screen at once
-  const STEP = 45 // ms between rings as a rangoli unfurls
-  const GROW = 320 // ms for one ring to open (a strong ease-out, no overshoot)
-  const HOLD = 650
-  const FADE = 700
-  const PEAK = 0.78 // full opacity of a rangoli; the hero text stays readable over it
+  import config from '~/content/rangoli.json'
+  import { createField, type RangoliConfig } from '~/lib/rangoli/field'
+  import { INKS } from '~/lib/rangoli/palette'
 
-  type Ring = (ctx: CanvasRenderingContext2D) => void
-  interface Rangoli { x: number; y: number; born: number; spin: number; turn: number; rings: Ring[] }
-  interface Spec { n: number; m: number; r0: number; r1: number; fill: string; turn: number; wide: number; stroke: boolean }
-
-  /** A small seeded generator (mulberry32), so a design is fixed once it is born. */
-  const seeded = (seed: number) => () => {
-    seed = (seed + 0x6d2b79f5) | 0
-    let t = Math.imul(seed ^ (seed >>> 15), 1 | seed)
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296
-  }
-
-  /** The drawing for one ring. Every shape repeats around the circle with the ring's symmetry. */
-  function ring(kind: string, s: Spec): Ring {
-    const around = (ctx: CanvasRenderingContext2D, count: number, shape: () => void) => {
-      for (let i = 0; i < count; i++) {
-        ctx.save()
-        ctx.rotate(s.turn + (i * TAU) / count)
-        shape()
-        ctx.restore()
-      }
-    }
-    const mid = (s.r0 + s.r1) / 2
-    const len = s.r1 - s.r0
-    const paint = (ctx: CanvasRenderingContext2D) => {
-      if (s.stroke) {
-        ctx.strokeStyle = s.fill
-        ctx.lineWidth = 1.4
-        ctx.stroke()
-      } else {
-        ctx.fillStyle = s.fill
-        ctx.fill()
-      }
-    }
-    switch (kind) {
-      case 'petals':
-        return (ctx) => {
-          ctx.beginPath()
-          around(ctx, s.n, () => {
-            const w = len * s.wide
-            ctx.moveTo(s.r0, 0)
-            ctx.quadraticCurveTo(mid, -w, s.r1, 0)
-            ctx.quadraticCurveTo(mid, w, s.r0, 0)
-          })
-          paint(ctx)
-        }
-      case 'teardrops':
-        return (ctx) => {
-          ctx.beginPath()
-          around(ctx, s.n, () => {
-            const w = len * (s.wide + 0.1)
-            ctx.moveTo(s.r0, 0)
-            ctx.bezierCurveTo(s.r0 + len * 0.5, -w, s.r1 + w * 0.4, -w * 0.7, s.r1, 0)
-            ctx.bezierCurveTo(s.r1 + w * 0.4, w * 0.7, s.r0 + len * 0.5, w, s.r0, 0)
-          })
-          paint(ctx)
-        }
-      case 'leaves':
-        return (ctx) => {
-          ctx.beginPath()
-          around(ctx, s.n, () => {
-            for (const side of [-1, 1]) {
-              const a = side * (Math.PI / s.n) * 0.55
-              const cx = Math.cos(a)
-              const cy = Math.sin(a)
-              const w = len * 0.22
-              ctx.moveTo(s.r0 * cx, s.r0 * cy)
-              ctx.quadraticCurveTo(mid * cx - w * cy, mid * cy + w * cx, s.r1 * cx, s.r1 * cy)
-              ctx.quadraticCurveTo(mid * cx + w * cy, mid * cy - w * cx, s.r0 * cx, s.r0 * cy)
-            }
-          })
-          paint(ctx)
-        }
-      case 'dots':
-        return (ctx) => {
-          ctx.fillStyle = s.fill
-          ctx.beginPath()
-          const size = Math.max(1.2, Math.min(len * 0.32, ((Math.PI * mid) / s.m) * 0.42))
-          around(ctx, s.m, () => {
-            ctx.moveTo(mid + size, 0)
-            ctx.arc(mid, 0, size, 0, TAU)
-          })
-          ctx.fill()
-        }
-      case 'diamonds':
-        return (ctx) => {
-          ctx.beginPath()
-          const w = Math.min(len * 0.3, ((Math.PI * mid) / s.m) * 0.5)
-          around(ctx, s.m, () => {
-            ctx.moveTo(s.r0, 0)
-            ctx.lineTo(mid, -w)
-            ctx.lineTo(s.r1, 0)
-            ctx.lineTo(mid, w)
-            ctx.closePath()
-          })
-          paint(ctx)
-        }
-      case 'scallops':
-        return (ctx) => {
-          // A ring of arcs bulging outward, like the edge of a lotus.
-          const half = Math.PI / s.m
-          const bump = mid * Math.sin(half)
-          ctx.strokeStyle = s.fill
-          ctx.lineWidth = 1.6
-          ctx.beginPath()
-          around(ctx, s.m, () => {
-            const cx = mid * Math.cos(half)
-            ctx.moveTo(cx + bump * Math.cos(-Math.PI / 2), bump * Math.sin(-Math.PI / 2))
-            ctx.arc(cx, 0, bump, -Math.PI / 2, Math.PI / 2)
-          })
-          ctx.stroke()
-        }
-      case 'star':
-        return (ctx) => {
-          // A star of interlaced polygons: each point joined to the one k along. Where k shares a
-          // factor with n the star is several polygons, as two squares make an eight-point star.
-          ctx.strokeStyle = s.fill
-          ctx.lineWidth = 1.3
-          ctx.beginPath()
-          const k = s.n === 6 ? 2 : s.n === 16 ? 6 : s.n >= 10 ? 4 : 2
-          const gcd = (a: number, b: number): number => (b ? gcd(b, a % b) : a)
-          const loops = gcd(s.n, k)
-          for (let l = 0; l < loops; l++)
-            for (let i = 0; i <= s.n / loops; i++) {
-              const a = s.turn + ((l + i * k) % s.n) * (TAU / s.n)
-              const x = Math.cos(a) * s.r1
-              const y = Math.sin(a) * s.r1
-              if (i === 0) ctx.moveTo(x, y)
-              else ctx.lineTo(x, y)
-            }
-          ctx.stroke()
-        }
-      case 'spokes':
-        return (ctx) => {
-          // Rays from the inner ring to the outer, each tipped with a dot.
-          ctx.strokeStyle = s.fill
-          ctx.fillStyle = s.fill
-          ctx.lineWidth = 1.1
-          ctx.beginPath()
-          around(ctx, s.m, () => {
-            ctx.moveTo(s.r0, 0)
-            ctx.lineTo(s.r1 - 1.5, 0)
-          })
-          ctx.stroke()
-          ctx.beginPath()
-          around(ctx, s.m, () => {
-            ctx.moveTo(s.r1 + 1.4, 0)
-            ctx.arc(s.r1, 0, 1.4, 0, TAU)
-          })
-          ctx.fill()
-        }
-      case 'zigzag':
-        return (ctx) => {
-          // A closed zigzag between the two radii, like a border of triangles.
-          ctx.strokeStyle = s.fill
-          ctx.lineWidth = 1.3
-          ctx.beginPath()
-          const pts = s.m * 2
-          for (let i = 0; i <= pts; i++) {
-            const a = s.turn + (i * TAU) / pts
-            const r = i % 2 ? s.r1 : s.r0
-            if (i === 0) ctx.moveTo(Math.cos(a) * r, Math.sin(a) * r)
-            else ctx.lineTo(Math.cos(a) * r, Math.sin(a) * r)
-          }
-          ctx.stroke()
-        }
-      case 'veined':
-        return (ctx) => {
-          // Petals drawn in outline with a midrib, like a lotus in powder lines.
-          ctx.strokeStyle = s.fill
-          ctx.lineWidth = 1.2
-          ctx.beginPath()
-          around(ctx, s.n, () => {
-            const w = len * (s.wide + 0.05)
-            ctx.moveTo(s.r0, 0)
-            ctx.quadraticCurveTo(mid, -w, s.r1, 0)
-            ctx.quadraticCurveTo(mid, w, s.r0, 0)
-            ctx.moveTo(s.r0 + len * 0.15, 0)
-            ctx.lineTo(s.r1 - len * 0.2, 0)
-          })
-          ctx.stroke()
-        }
-      case 'squares':
-        return (ctx) => {
-          // Two or three squares, each turned a little further: the ashtadal frame.
-          const k = s.n % 3 === 0 ? 3 : 2
-          ctx.strokeStyle = s.fill
-          ctx.lineWidth = 1.2
-          ctx.beginPath()
-          for (let j = 0; j < k; j++)
-            for (let i = 0; i <= 4; i++) {
-              const a = s.turn + (j * Math.PI) / (2 * k) + (i * TAU) / 4 + Math.PI / 4
-              if (i === 0) ctx.moveTo(Math.cos(a) * s.r1, Math.sin(a) * s.r1)
-              else ctx.lineTo(Math.cos(a) * s.r1, Math.sin(a) * s.r1)
-            }
-          ctx.stroke()
-        }
-      case 'arcs':
-        return (ctx) => {
-          // Kolam loops: a line curling around each dot of a ring.
-          const r = Math.min(len * 0.45, ((Math.PI * mid) / s.m) * 0.55)
-          ctx.strokeStyle = s.fill
-          ctx.fillStyle = s.fill
-          ctx.lineWidth = 1.2
-          ctx.beginPath()
-          around(ctx, s.m, () => {
-            ctx.moveTo(mid + r * Math.cos(-2.4), r * Math.sin(-2.4))
-            ctx.arc(mid, 0, r, -2.4, 2.4)
-          })
-          ctx.stroke()
-          ctx.beginPath()
-          around(ctx, s.m, () => {
-            ctx.moveTo(mid + 1.3, 0)
-            ctx.arc(mid, 0, 1.3, 0, TAU)
-          })
-          ctx.fill()
-        }
-      case 'crescents':
-        return (ctx) => {
-          // Small moons facing outward.
-          const r = Math.min(len * 0.38, ((Math.PI * mid) / s.m) * 0.45)
-          ctx.fillStyle = s.fill
-          ctx.beginPath()
-          around(ctx, s.m, () => {
-            ctx.moveTo(mid + r, 0)
-            ctx.arc(mid, 0, r, 0, TAU)
-            ctx.moveTo(mid - r * 0.35 + r * 0.8, 0)
-            ctx.arc(mid - r * 0.35, 0, r * 0.8, 0, TAU, true)
-          })
-          ctx.fill('evenodd')
-        }
-      default:
-        return (ctx) => {
-          ctx.strokeStyle = s.fill
-          ctx.lineWidth = 1
-          ctx.setLineDash([2, 3])
-          ctx.beginPath()
-          ctx.arc(0, 0, mid, 0, TAU)
-          ctx.stroke()
-          ctx.setLineDash([])
-        }
-    }
-  }
-
-  /** One new rangoli design: its rings, centre outward, each drawn around the origin. */
-  function design(rand: () => number, palette: readonly string[]): Ring[] {
-    const pick = <T,>(xs: readonly T[]): T => xs[Math.floor(rand() * xs.length)]!
-    const shuffle = <T,>(xs: readonly T[]): T[] => xs.map((x) => [rand(), x] as const).sort((a, b) => a[0] - b[0]).map((p) => p[1])
-    const n = pick([5, 6, 8, 8, 10, 12, 12, 16])
-    // Mostly small, some medium, a few large: from a speck of powder to a full doorstep design.
-    const size = rand()
-    const R = size < 0.5 ? 14 + rand() * 16 : size < 0.85 ? 30 + rand() * 30 : 60 + rand() * 50
-    const inks = shuffle(palette).slice(0, R < 30 ? 2 : 3)
-    // One solid ring of petals or teardrops gives every design a body; the rest is chosen freely.
-    const body = pick(['petals', 'teardrops'])
-    const all = ['petals', 'teardrops', 'dots', 'scallops', 'diamonds', 'leaves', 'star', 'ring', 'spokes', 'zigzag', 'veined', 'squares', 'arcs', 'crescents']
-    const rest = shuffle(all.filter((k) => k !== body))
-    const kinds = [...rest.slice(0, 1), body, ...rest.slice(1)]
-    const count = R < 30 ? 2 + Math.floor(rand() * 2) : R < 60 ? 3 + Math.floor(rand() * 3) : 5 + Math.floor(rand() * 3)
-
-    const centre = pick(inks)
-    const c0 = R * (0.08 + rand() * 0.06)
-    const rings: Ring[] = [
-      (ctx) => {
-        ctx.fillStyle = centre
-        ctx.beginPath()
-        ctx.arc(0, 0, c0, 0, TAU)
-        ctx.fill()
-      },
-    ]
-    let r = c0 * 1.3
-    for (let i = 0; i < count; i++) {
-      const band = ((R - c0) / count) * (0.8 + rand() * 0.5)
-      const r1 = Math.min(R, r + band)
-      const kind = kinds[i]!
-      rings.push(ring(kind, { n, m: rand() < 0.4 ? n * 2 : n, r0: r, r1, fill: pick(inks), turn: rand() < 0.5 ? 0 : Math.PI / n, wide: 0.28 + rand() * 0.3, stroke: kind !== body && rand() < 0.35 }))
-      r = r1 + 1.5
-    }
-    return rings
-  }
-
-  /** A strong ease-out (expo): each ring opens fast and settles, with no overshoot. */
-  const easeOut = (t: number) => (t >= 1 ? 1 : 1 - Math.pow(2, -10 * t))
-
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches
   for (const canvas of document.querySelectorAll<HTMLCanvasElement>('[data-rangoli]')) {
-    const palette = JSON.parse(canvas.dataset.rangoli!) as string[]
     const host = canvas.parentElement!
-    const ctx = canvas.getContext('2d')!
-    const still = matchMedia('(prefers-reduced-motion: reduce)').matches
-    const grid = document.createElement('canvas')
-    let w = 0
-    let h = 0
-    let dpr = 1
-    let frame = 0
-    let visible = true
-    let seed = Math.floor(Math.random() * 1e9)
-    const live: Rangoli[] = []
+    // The headline, the search and the suggestions: only faint giants bloom over them.
+    const avoid = () => {
+      const base = host.getBoundingClientRect()
+      return [...host.querySelectorAll('h1, form, .try')].map((el) => {
+        const r = el.getBoundingClientRect()
+        return new DOMRect(r.left - base.left - 12, r.top - base.top - 12, r.width + 24, r.height + 24)
+      })
+    }
+    const field = createField(host, canvas, INKS, config as RangoliConfig, avoid)
+    if (still) continue
     const last = { x: -1e4, y: -1e4 }
-
-    const size = () => {
-      const r = host.getBoundingClientRect()
-      dpr = Math.min(devicePixelRatio || 1, 2)
-      w = r.width
-      h = r.height
-      for (const c of [canvas, grid]) {
-        c.width = Math.round(w * dpr)
-        c.height = Math.round(h * dpr)
-      }
-      // The dot grid never changes, so draw it once.
-      const g = grid.getContext('2d')!
-      g.setTransform(dpr, 0, 0, dpr, 0, 0)
-      g.fillStyle = 'rgba(255, 255, 255, 0.11)'
-      g.beginPath()
-      for (let y = (h % GAP) / 2 + GAP / 2; y < h; y += GAP)
-        for (let x = (w % GAP) / 2 + GAP / 2; x < w; x += GAP) {
-          g.moveTo(x + 1.2, y)
-          g.arc(x, y, 1.2, 0, TAU)
-        }
-      g.fill()
-    }
-
-    const draw = (now: number) => {
-      ctx.setTransform(1, 0, 0, 1, 0, 0)
-      ctx.globalAlpha = 1
-      ctx.clearRect(0, 0, canvas.width, canvas.height)
-      ctx.drawImage(grid, 0, 0)
-      for (let i = live.length - 1; i >= 0; i--) {
-        const g = live[i]!
-        const age = now - g.born
-        const open = g.rings.length * STEP + GROW
-        if (age > open + HOLD + FADE) {
-          live.splice(i, 1)
-          continue
-        }
-        const fade = age > open + HOLD ? 1 - (age - open - HOLD) / FADE : 1
-        ctx.setTransform(dpr, 0, 0, dpr, dpr * g.x, dpr * g.y)
-        ctx.rotate(g.turn + (g.spin * age) / 1000)
-        g.rings.forEach((paint, j) => {
-          const t = Math.min(1, Math.max(0, (age - j * STEP) / GROW))
-          if (t <= 0) return
-          ctx.save()
-          // The fade starts fast and settles (ease-out on its progress), like the entrance.
-          ctx.globalAlpha = PEAK * (1 - easeOut(1 - fade)) * Math.min(1, t * 2.2)
-          // Rings open from 60% of their size, never from nothing.
-          const k = 0.6 + 0.4 * easeOut(t)
-          ctx.scale(k, k)
-          paint(ctx)
-          ctx.restore()
-        })
-      }
-    }
-
-    const tick = (now: number) => {
-      frame = 0
-      draw(now)
-      if (visible && live.length) frame = requestAnimationFrame(tick)
-    }
-    const wake = () => {
-      if (!frame && visible) frame = requestAnimationFrame(tick)
-    }
-
-    const bloom = (x: number, y: number) => {
-      const rand = seeded(seed++)
-      live.push({ x, y, born: performance.now(), spin: (rand() < 0.5 ? -1 : 1) * (0.08 + rand() * 0.12), turn: rand() * TAU, rings: design(rand, palette) })
-      if (live.length > MAX) live.shift()
-      wake()
-    }
-
     const at = (e: PointerEvent) => {
       const r = host.getBoundingClientRect()
       return { x: e.clientX - r.left, y: e.clientY - r.top }
     }
-
-    if (!still) {
-      host.addEventListener('pointermove', (e) => {
-        if (e.pointerType !== 'mouse') return
-        const p = at(e)
-        if (Math.hypot(p.x - last.x, p.y - last.y) < STRIDE) return
-        Object.assign(last, p)
-        bloom(p.x, p.y)
-      })
-      host.addEventListener('pointerleave', () => Object.assign(last, { x: -1e4, y: -1e4 }))
-      host.addEventListener('pointerdown', (e) => {
-        if (e.pointerType === 'mouse') return
-        const p = at(e)
-        bloom(p.x, p.y)
-      })
-    }
-    new IntersectionObserver(([entry]) => {
-      visible = !!entry?.isIntersecting
-      if (visible) wake()
-    }).observe(host)
-    new ResizeObserver(() => {
-      size()
-      draw(performance.now())
-    }).observe(host)
+    host.addEventListener('pointermove', (e) => {
+      if (e.pointerType !== 'mouse') return
+      const p = at(e)
+      if (Math.hypot(p.x - last.x, p.y - last.y) < config.stride) return
+      Object.assign(last, p)
+      field.bloom(p.x, p.y)
+    })
+    host.addEventListener('pointerleave', () => Object.assign(last, { x: -1e4, y: -1e4 }))
+    host.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'mouse') return
+      const p = at(e)
+      field.bloom(p.x, p.y)
+    })
   }
 </script>

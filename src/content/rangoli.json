@@ -1,0 +1,19 @@
+{
+  "stride": 150,
+  "max": 8,
+  "bands": [
+    { "weight": 0.55, "min": 14, "max": 40, "opacity": 0.28 },
+    { "weight": 0.3, "min": 40, "max": 110, "opacity": 0.18 },
+    { "weight": 0.15, "min": 220, "max": 460, "opacity": 0.09 }
+  ],
+  "inks": ["white", "haldi", "kesar-chalk"],
+  "ringsPer100": 3.5,
+  "step": 45,
+  "grow": 280,
+  "growPerPx": 1.6,
+  "hold": 700,
+  "fade": 900,
+  "spin": 7,
+  "overText": "giant",
+  "grid": 0.11
+}
