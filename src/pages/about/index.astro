@@ -1,0 +1,74 @@
+---
+/** Board S18: what the site is, who makes it, reuse, Hindi and contact. */
+import Base from '~/layouts/Base.astro'
+import PageHeader from '~/components/PageHeader.astro'
+import page from '~/content/pages/about'
+
+/** Link targets for the section links. "Contact" has none yet: it is this section. */
+const HREF: Readonly<Record<string, string>> = { 'Report a problem': '/corrections/#report' }
+---
+
+<Base title={page.title} description={page.intro}>
+  <PageHeader breadcrumb={page.breadcrumb} title={page.title} hindi={page.hindi} intro={page.intro} />
+
+  <div class="wrap list">
+    {page.sections.map((s) => {
+      const links = (s.links ?? []).filter((l) => HREF[l])
+      return (
+        <section id={s.id} aria-labelledby={`${s.id}-title`}>
+          <h2 class="display" id={`${s.id}-title`}>
+            {s.heading}
+            {s.hindi && <span class="deva muted" lang="hi">{s.hindi}</span>}
+          </h2>
+          <div class="text">
+            {links.length > 0 && <p class="link-row">{links.map((l) => <a href={HREF[l]}>{l}</a>)}</p>}
+            {s.body.map((p) => <p class={p.style}>{p.text}</p>)}
+          </div>
+        </section>
+      )
+    })}
+  </div>
+</Base>
+
+<style>
+  .list {
+    padding-bottom: 112px;
+  }
+  section {
+    display: grid;
+    grid-template-columns: minmax(0, 360px) minmax(0, 720px);
+    gap: 48px;
+    padding-block: 40px 32px;
+    border-top: 1px solid var(--rule);
+  }
+  section:first-child {
+    border-top: 2px solid var(--ink);
+  }
+  section:last-child {
+    border-bottom: 1px solid var(--rule);
+  }
+  h2 {
+    font-size: clamp(28px, 3vw, 34px);
+  }
+  .deva {
+    display: block;
+    margin-top: 6px;
+    font-size: 0.68em;
+  }
+  .text p + p {
+    margin-top: 16px;
+  }
+  .lead {
+    font-weight: 600;
+  }
+  .aside {
+    font-size: 15px;
+    color: var(--slate);
+  }
+  @media (max-width: 900px) {
+    section {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+</style>

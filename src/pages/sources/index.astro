@@ -1,0 +1,278 @@
+---
+/** Board S16: the publishers, how many charts use each, and the sources we leave out. */
+import Base from '~/layouts/Base.astro'
+import PageHeader from '~/components/PageHeader.astro'
+import TopicTag from '~/components/TopicTag.astro'
+import page from '~/content/pages/sources'
+import { charts, topic } from '~/content'
+
+const { publishers, notUsed } = page
+
+/**
+ * Source lines name publishers in several ways ("NSO, MoSPI", "ECI via PIB").
+ * The first rule that matches gives the publisher. Order matters: a release
+ * that PIB carries for another office counts under PIB, as on the board.
+ */
+const RULES: readonly (readonly [RegExp, string])[] = [
+  [/\bPIB\b/, 'PIB'],
+  [/National Commission on Population/, 'NCP, MoHFW'],
+  [/\bIIPS\b|NHSRC/, 'MoHFW and IIPS'],
+  [/\bORGI\b/, 'ORGI'],
+  [/MoSPI|\bNSO\b/, 'MoSPI'],
+  [/Ministry of Education/, 'MoE'],
+  [/\bRBI\b/, 'RBI'],
+  [/\bIMD\b/, 'IMD'],
+  [/\bECI\b/, 'ECI'],
+  [/\bCEA\b/, 'CEA'],
+  [/\bMNRE\b/, 'MNRE'],
+]
+function shortName(publisher: string): string {
+  const hit = RULES.find(([re]) => re.test(publisher))
+  if (!hit) throw new Error(`Sources page: no publisher for "${publisher}"`)
+  return hit[1]
+}
+const count = new Map<string, number>()
+for (const c of charts) {
+  for (const p of new Set(c.chart.sources.map((s) => shortName(s.publisher)))) count.set(p, (count.get(p) ?? 0) + 1)
+}
+const list = publishers.list
+  .map((p) => ({ ...p, n: count.get(p.short) ?? 0 }))
+  .sort((a, b) => b.n - a.n)
+const max = Math.max(...list.map((p) => p.n))
+const barName = (short: string) => short.split(/[ ,]/)[0]
+---
+
+<Base title={page.title} description={page.intro}>
+  <PageHeader breadcrumb={page.breadcrumb} title={page.title} hindi={page.hindi} intro={page.intro}>
+    <p class="label muted">{page.checked}</p>
+  </PageHeader>
+
+  <div class="wrap">
+    <div class="summary">
+      <div class="aside">
+        <p class="finding">{page.summary.finding}</p>
+        <p class="muted">{page.summary.licence}</p>
+      </div>
+      <figure aria-labelledby="chart-title">
+        <h2 id="chart-title"><span class="label muted">{page.chart.number}</span> {page.chart.title}</h2>
+        <p class="muted subtitle">{page.chart.subtitle}</p>
+        <ol class="bars">
+          {list.map((p) => (
+            <li>
+              <span class="name">{barName(p.short)}</span>
+              <span class="track"><span class="bar" style={`width:calc((100% - 40px) * ${p.n / max})`}></span>{p.n}</span>
+            </li>
+          ))}
+        </ol>
+        <figcaption class="muted note">{page.chart.note}</figcaption>
+      </figure>
+    </div>
+
+    <section class="part" aria-labelledby="publishers">
+      <p class="label muted">{publishers.eyebrow}</p>
+      <h2 class="display" id="publishers">{publishers.heading}</h2>
+      {list.map((p) => {
+        const rows = [
+          [publishers.labels.whatWeTake, p.whatWeTake],
+          [publishers.labels.rhythm, p.rhythm],
+          [publishers.labels.latest, p.latestRelease],
+          [publishers.labels.licence, p.licence],
+          [publishers.labels.how, p.howItPublishes],
+        ] as const
+        return (
+          <article class="publisher">
+            <div>
+              <h3 class="display">{p.short}</h3>
+              <p class="muted full">{p.full}</p>
+              <p class="uses"><strong>{p.n}</strong> {publishers.labels.charts(p.n)}</p>
+              <p class="tags">{p.topics.map((t) => <TopicTag topic={topic(t)} />)}</p>
+            </div>
+            <dl>
+              {rows.map(([k, v]) => v && (
+                <div>
+                  <dt class="label muted">{k}</dt>
+                  <dd>{v}</dd>
+                </div>
+              ))}
+            </dl>
+          </article>
+        )
+      })}
+    </section>
+
+    <section class="part last" aria-labelledby="not-used">
+      <p class="label muted">{notUsed.eyebrow}</p>
+      <h2 class="display" id="not-used">{notUsed.heading}</h2>
+      <table class="ruled">
+        <thead>
+          <tr><th scope="col">{notUsed.heads.source}</th><th scope="col">{notUsed.heads.why}</th></tr>
+        </thead>
+        <tbody>
+          {notUsed.rows.map((r) => (
+            <tr><th scope="row">{r.source}</th><td>{r.why}</td></tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .summary {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 48px;
+  }
+  .aside,
+  figure {
+    margin: 0;
+    padding-top: 24px;
+    border-top: 1px solid var(--rule);
+  }
+  .finding {
+    font-size: 17px;
+    line-height: 28px;
+  }
+  .aside .muted {
+    margin-top: 12px;
+    font-size: 14px;
+    line-height: 24px;
+  }
+  figure h2 {
+    font: 600 17px/24px var(--font-ui);
+  }
+  figure h2 .label {
+    margin-right: 4px;
+  }
+  .subtitle {
+    margin-top: 4px;
+    font-size: 15px;
+  }
+  .bars {
+    display: grid;
+    gap: 8px;
+    margin: 24px 0 0;
+    padding: 0 0 20px;
+    list-style: none;
+    border-bottom: 1px solid var(--rule);
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .bars li {
+    display: grid;
+    grid-template-columns: 72px minmax(0, 1fr);
+    align-items: center;
+    gap: 16px;
+  }
+  .name {
+    text-align: right;
+  }
+  .track {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .bar {
+    height: 16px;
+    background: var(--ink);
+  }
+  .note {
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .part {
+    margin-top: 64px;
+    padding-top: 20px;
+    border-top: 2px solid var(--ink);
+  }
+  .last {
+    padding-bottom: 96px;
+  }
+  .part > h2 {
+    margin: 8px 0 28px;
+    font-size: clamp(32px, 4vw, 44px);
+  }
+  .publisher {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 48px;
+    padding-block: 32px;
+    border-top: 1px solid var(--ink);
+  }
+  .publisher h3 {
+    font-size: 34px;
+    text-transform: none;
+  }
+  .full {
+    margin-top: 10px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .uses {
+    margin-top: 16px;
+    font-size: 15px;
+  }
+  .uses strong {
+    font: 500 30px/36px var(--font-ui);
+    margin-right: 4px;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  dl {
+    margin: 0;
+  }
+  dl div {
+    display: grid;
+    grid-template-columns: 192px minmax(0, 1fr);
+    padding-block: 12px;
+    border-bottom: 1px solid var(--rule);
+  }
+  dl div:first-child {
+    padding-top: 0;
+  }
+  dt {
+    padding-top: 4px;
+  }
+  dd {
+    margin: 0;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .ruled thead th {
+    border-bottom: 1px solid var(--ink);
+  }
+  .ruled th[scope='row'] {
+    width: 32%;
+    font: 600 15px/22px var(--font-ui);
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+    padding: 14px 12px 14px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .ruled td {
+    padding-block: 14px;
+  }
+  @media (max-width: 900px) {
+    .summary,
+    .publisher {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+  @media (max-width: 720px) {
+    dl div {
+      grid-template-columns: 1fr;
+      gap: 4px;
+    }
+    .ruled th[scope='row'] {
+      width: 40%;
+    }
+  }
+</style>

@@ -1,0 +1,86 @@
+import { expect, test } from '@playwright/test'
+import { SAMPLE } from './site'
+
+test('no script errors on any sample page @mobile', async ({ page }) => {
+  const errors: string[] = []
+  page.on('pageerror', (e) => errors.push(e.message))
+  page.on('console', (m) => m.type() === 'error' && errors.push(m.text()))
+  for (const path of SAMPLE) await page.goto(path)
+  expect(errors).toEqual([])
+})
+
+test('chart tabs switch views, by mouse and keyboard', async ({ page }) => {
+  await page.goto('/prices/')
+  const frame = page.locator('[data-chart="cpi-inflation-by-state"]')
+  await expect(frame.getByRole('tabpanel')).toHaveAttribute('id', /-map$/)
+  await frame.getByRole('tab', { name: 'Table' }).click()
+  await expect(frame.getByRole('table')).toBeVisible()
+  await frame.getByRole('tab', { name: 'Table' }).press('ArrowLeft')
+  await expect(frame.getByRole('tab', { name: 'Chart' })).toHaveAttribute('aria-selected', 'true')
+  await expect(frame.getByRole('tab', { name: 'Chart' })).toBeFocused()
+})
+
+test('?tab=table opens the table on a chart page', async ({ page }) => {
+  await page.goto('/charts/cpi-inflation/?tab=table')
+  await expect(page.getByRole('table').first()).toBeVisible()
+})
+
+test('the tooltip shows a value on hover', async ({ page }) => {
+  await page.goto('/prices/')
+  await page.locator('[data-chart="cpi-inflation-by-state"] .tile[data-geo="kerala"]').first().hover()
+  await expect(page.locator('.tip')).toContainText('Kerala: 6.22%')
+})
+
+test('the number switch changes crore to million and is remembered', async ({ page }) => {
+  await page.goto('/population/')
+  const figure = page.locator('header .figure .value').first()
+  await expect(figure).toContainText('crore')
+  await page.getByRole('button', { name: 'Million' }).first().click()
+  await expect(figure).toContainText(/million|billion/)
+  await page.goto('/education/')
+  await expect(page.getByRole('button', { name: 'Million' }).first()).toHaveAttribute('aria-pressed', 'true')
+})
+
+test('choosing a state marks it on every chart and carries to other pages', async ({ page }) => {
+  await page.goto('/prices/')
+  await page.locator('[data-state-select]').first().selectOption('kerala')
+  await expect(page.locator('.row[data-geo="kerala"].is-sel').first()).toBeAttached()
+  await expect(page.locator('[data-state-name]').first()).toHaveText('Kerala')
+  await page.goto('/jobs/')
+  await expect(page.locator('[data-geo="kerala"].is-sel').first()).toBeAttached()
+})
+
+test('search suggests topics, states and charts, in Hindi too @mobile', async ({ page, isMobile }) => {
+  await page.goto(isMobile ? '/search/' : '/')
+  const box = page.locator(isMobile ? '#page-q' : '#home-q')
+  await box.fill('महंगाई')
+  if (isMobile) await box.press('Enter')
+  else await expect(page.locator('.typeahead a').first()).toContainText('Prices')
+  await page.goto('/search/?q=kerala')
+  await expect(page.locator('[data-search-results] a').first()).toHaveAttribute('href', '/states/kerala/')
+})
+
+test('a state page shows its names, ranks and the switch to other states', async ({ page }) => {
+  await page.goto('/states/tamil-nadu/')
+  await expect(page.locator('.names')).toContainText('தமிழ்நாடு')
+  await expect(page.getByRole('row', { name: /Inflation, rural and urban/ })).toContainText('3rd highest of 36')
+  await page.locator('[data-state-nav]').selectOption('kerala')
+  await expect(page).toHaveURL(/\/states\/kerala\/$/)
+  await expect(page.locator('.names')).toContainText('കേരളം')
+})
+
+test('Report a problem stores the report and says so', async ({ page }) => {
+  await page.goto('/corrections/?chart=cpi-inflation')
+  await page.getByLabel(/what looks wrong/i).fill('The October value looks off by one decimal.')
+  await page.getByRole('button', { name: /send|report|submit/i }).click()
+  await expect(page).toHaveURL(/sent=1/)
+})
+
+test('pages fit a phone screen without sideways scrolling @mobile', async ({ page, isMobile }) => {
+  test.skip(!isMobile)
+  for (const path of ['/', '/prices/', '/charts/cpi-inflation-by-state/', '/states/tamil-nadu/', '/states/']) {
+    await page.goto(path)
+    const over = await page.evaluate(() => document.documentElement.scrollWidth - document.documentElement.clientWidth)
+    expect(over, path).toBeLessThanOrEqual(0)
+  }
+})

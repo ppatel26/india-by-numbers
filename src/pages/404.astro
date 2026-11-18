@@ -1,0 +1,32 @@
+---
+import Base from '~/layouts/Base.astro'
+---
+
+<Base title="Page not found" description="There is no page at this address.">
+  <div class="wrap page">
+    <p class="label muted">404</p>
+    <h1 class="display">Page not found</h1>
+    <p class="lede">There is no page at this address. It may have moved, or the link may be wrong.</p>
+    <p class="link-row">
+      <a href="/topics/">Browse all topics</a>
+      <a href="/states/">Choose a state</a>
+      <a href="/search/">Search the site</a>
+    </p>
+  </div>
+</Base>
+
+<style>
+  .page {
+    padding-block: 96px 160px;
+  }
+  h1 {
+    margin-top: 14px;
+    font-size: clamp(40px, 6vw, 72px);
+  }
+  .lede {
+    margin-top: 20px;
+  }
+  .link-row {
+    margin-top: 32px;
+  }
+</style>

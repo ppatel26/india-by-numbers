@@ -1,0 +1,302 @@
+---
+/** Board S17, top half: releases due next and the change log. Corrections are on /corrections/. */
+import Base from '~/layouts/Base.astro'
+import PageHeader from '~/components/PageHeader.astro'
+import TopicTag from '~/components/TopicTag.astro'
+import page from '~/content/pages/releases'
+import { topic, topics } from '~/content'
+
+const { dueNext, changeLog } = page
+const rows = changeLog.rows
+const [all, ...kinds] = changeLog.filters.kinds
+---
+
+<Base title={page.title} description={page.intro}>
+  <PageHeader breadcrumb={page.breadcrumb} title={page.title} hindi={page.hindi} intro={page.intro}>
+    <p class="label muted meta"><a href="/releases/feed.xml">{page.feed}</a> <span>{page.checked}</span></p>
+  </PageHeader>
+
+  <div class="wrap">
+    <section class="due" aria-labelledby="due-next">
+      <div class="due-head">
+        <p class="label muted">{dueNext.eyebrow}</p>
+        <h2 class="display" id="due-next">{dueNext.heading}</h2>
+        <p class="muted">{dueNext.key}</p>
+      </div>
+      <table class="ruled">
+        <thead>
+          <tr><th scope="col">{dueNext.heads.date}</th><th scope="col">{dueNext.heads.release}</th><th scope="col">{dueNext.heads.charts}</th></tr>
+        </thead>
+        <tbody>
+          {dueNext.rows.map((r) => (
+            <tr>
+              <th scope="row"><strong>{r.date}</strong><span class="muted small">{r.certainty}</span></th>
+              <td>{r.release}<span class="muted small">{r.detail}</span></td>
+              <td>{r.charts}<span class="tags">{r.topics.map((t) => <TopicTag topic={topic(t)} />)}</span></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="part" aria-labelledby="change-log">
+      <p class="label muted">{changeLog.eyebrow}</p>
+      <h2 class="display" id="change-log">{changeLog.heading}</h2>
+      <div class="filters">
+        <div class="kinds" role="group" aria-label={changeLog.filters.kindLabel}>
+          <span class="label muted" aria-hidden="true">{changeLog.filters.kindLabel}</span>
+          <button type="button" aria-pressed="true" data-kind="">{all}</button>
+          {kinds.map((k) => <button type="button" aria-pressed="false" data-kind={k}>{k}</button>)}
+        </div>
+        <label class="topic">
+          <span class="label muted">{changeLog.filters.topicLabel}</span>
+          <select data-topic>
+            <option value="">{changeLog.filters.allTopics}</option>
+            {topics.map((t) => <option value={t.slug}>{t.name}</option>)}
+          </select>
+        </label>
+        <p class="muted count">{changeLog.count(rows.length, rows.at(-1)?.released ?? '', rows[0]?.released ?? '')}</p>
+      </div>
+      <table class="ruled log">
+        <thead>
+          <tr>
+            <th scope="col">{changeLog.heads.released}</th>
+            <th scope="col">{changeLog.heads.release}</th>
+            <th scope="col">{changeLog.heads.kind}</th>
+            <th scope="col">{changeLog.heads.charts}</th>
+            <th scope="col"><span class="visually-hidden">{changeLog.filters.topicLabel}</span></th>
+          </tr>
+        </thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr data-row-kind={r.kind} data-row-topics={r.topics.join(' ')}>
+              <th scope="row">{r.released}</th>
+              <td>{r.release}{r.detail && <span class="muted small">{r.detail}</span>}</td>
+              <td class:list={{ strong: r.kind !== 'New period' }}>{r.kind}</td>
+              <td>{r.charts}</td>
+              <td class="tags">{r.topics.map((t) => <TopicTag topic={topic(t)} />)}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="muted footnote">{changeLog.footnote}</p>
+    </section>
+  </div>
+</Base>
+
+<script>
+  const buttons = document.querySelectorAll<HTMLButtonElement>('[data-kind]')
+  const select = document.querySelector<HTMLSelectElement>('[data-topic]')
+  let kind = ''
+  function apply() {
+    const t = select?.value ?? ''
+    for (const tr of document.querySelectorAll<HTMLElement>('[data-row-kind]')) {
+      tr.hidden = (!!kind && tr.dataset.rowKind !== kind) || (!!t && !tr.dataset.rowTopics!.split(' ').includes(t))
+    }
+  }
+  for (const b of buttons) {
+    b.addEventListener('click', () => {
+      kind = b.dataset.kind ?? ''
+      for (const x of buttons) x.setAttribute('aria-pressed', String(x === b))
+      apply()
+    })
+  }
+  select?.addEventListener('change', apply)
+</script>
+
+<style>
+  .meta {
+    display: flex;
+    gap: 16px;
+  }
+  .due {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 48px;
+  }
+  .due-head {
+    padding-top: 20px;
+    border-top: 2px solid var(--ink);
+  }
+  .due-head h2 {
+    margin-top: 8px;
+    font-size: 34px;
+  }
+  .due-head p:last-child {
+    margin-top: 16px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .due .ruled {
+    border-top: 2px solid var(--ink);
+  }
+  .due .ruled thead th {
+    padding-top: 18px;
+  }
+  .ruled thead th {
+    border-bottom: 1px solid var(--ink);
+  }
+  .ruled tbody th {
+    font: 400 16px/24px var(--font-ui);
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+    text-align: left;
+    padding: 16px 12px 16px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+    white-space: nowrap;
+  }
+  .ruled td {
+    padding-block: 16px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+  .due tbody strong {
+    display: block;
+    font-size: 17px;
+    font-weight: 600;
+  }
+  .small {
+    display: block;
+    margin-top: 4px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  .due .tags {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+  }
+  .part {
+    margin-top: 72px;
+    padding: 20px 0 96px;
+    border-top: 2px solid var(--ink);
+  }
+  .part > h2 {
+    margin-top: 8px;
+    font-size: clamp(32px, 4vw, 44px);
+  }
+  .filters {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 40px;
+    margin: 24px 0 20px;
+  }
+  .kinds,
+  .topic {
+    display: flex;
+    align-items: center;
+    gap: 4px 16px;
+    flex-wrap: wrap;
+  }
+  .kinds button,
+  .topic select {
+    padding: 0;
+    border: 0;
+    background: none;
+    font: 400 15px/24px var(--font-ui);
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .kinds button[aria-pressed='true'] {
+    font-weight: 600;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+  }
+  .topic select {
+    font-weight: 600;
+  }
+  .count {
+    margin-left: auto;
+    font-size: 15px;
+  }
+  .due th:first-child {
+    width: 144px;
+  }
+  .due th:nth-child(2) {
+    width: 304px;
+  }
+  .log th:first-child {
+    width: 136px;
+  }
+  .log th:nth-child(2) {
+    width: 384px;
+  }
+  .log th:nth-child(3) {
+    width: 152px;
+  }
+  .log .strong {
+    font-weight: 600;
+  }
+  .log td.tags {
+    padding-right: 0;
+    text-align: right;
+  }
+  .log td.tags :global(.tag) {
+    margin-bottom: 6px;
+  }
+  .footnote {
+    margin-top: 20px;
+    max-width: 912px;
+    font-size: 13px;
+    line-height: 20px;
+  }
+  @media (max-width: 900px) {
+    .due {
+      grid-template-columns: 1fr;
+      gap: 24px;
+    }
+  }
+  @media (max-width: 720px) {
+    .log thead {
+      display: none;
+    }
+    .log tr {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 4px 12px;
+      padding-block: 14px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .log tr[hidden] {
+      display: none;
+    }
+    .log tbody th,
+    .log td {
+      padding: 0;
+      border: 0;
+    }
+    .log td:nth-child(2),
+    .log td:nth-child(4) {
+      grid-column: 1 / -1;
+    }
+    .log td:nth-child(3) {
+      grid-row: 1;
+      grid-column: 2;
+      font-size: 14px;
+    }
+    .log td.tags {
+      grid-column: 1 / -1;
+      text-align: left;
+    }
+    .due thead {
+      display: none;
+    }
+    .due tr {
+      display: grid;
+      gap: 6px;
+      padding-block: 16px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .due tbody th,
+    .due td {
+      padding: 0;
+      border: 0;
+    }
+    .count {
+      margin-left: 0;
+    }
+  }
+</style>

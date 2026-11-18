@@ -1,0 +1,196 @@
+---
+/** Board S17, bottom half: the corrections log, our policy and the report form. */
+import Base from '~/layouts/Base.astro'
+import PageHeader from '~/components/PageHeader.astro'
+import page from '~/content/pages/corrections'
+
+const { log, policy, form } = page
+const { fields } = form
+---
+
+<Base title={page.eyebrow} description={policy.body}>
+  <PageHeader breadcrumb={page.eyebrow} title={page.heading} />
+
+  <div class="wrap body">
+    <div class="left">
+      <table class="ruled">
+        <thead>
+          <tr><th scope="col">{log.heads.reported}</th><th scope="col">{log.heads.fixed}</th><th scope="col">{log.heads.page}</th></tr>
+        </thead>
+        <tbody>
+          {log.rows.length === 0 ? (
+            <tr><td class="empty" colspan="3">{log.empty}</td></tr>
+          ) : (
+            log.rows.map((r) => (
+              <tr>
+                <th scope="row">{r.reported}</th>
+                <td>{r.fixed}</td>
+                <td><strong>{r.page}</strong> {r.change} <span class="muted">{r.cause}</span></td>
+              </tr>
+            ))
+          )}
+        </tbody>
+      </table>
+      <h2 class="label muted policy-head">{policy.heading}</h2>
+      <p class="policy">{policy.body}</p>
+    </div>
+
+    <section class="report" id="report" aria-labelledby="report-title">
+      <h2 id="report-title">{form.heading}</h2>
+      <p class="muted intro">{form.intro}</p>
+      <form action="/api/report" method="post">
+        <label class="field">
+          <span class="label muted">{fields.page.label}</span>
+          <input name="page" type="text" placeholder={fields.page.placeholder} aria-describedby="page-hint" data-report-page />
+        </label>
+        <p class="muted hint" id="page-hint">{fields.page.hint}</p>
+        <label class="field">
+          <span class="label muted">{fields.problem.label}</span>
+          <textarea name="problem" rows="3" required placeholder={fields.problem.placeholder}></textarea>
+        </label>
+        <div class="pair">
+          <label class="field">
+            <span class="label muted">{fields.source.label}</span>
+            <input name="source" type="text" placeholder={fields.source.placeholder} />
+          </label>
+          <label class="field">
+            <span class="label muted">{fields.email.label}</span>
+            <input name="email" type="email" autocomplete="email" placeholder={fields.email.placeholder} />
+          </label>
+        </div>
+        <label class="trap" aria-hidden="true">
+          <span>Website</span>
+          <input name="website" type="text" tabindex="-1" autocomplete="off" />
+        </label>
+        <p class="actions">
+          <button type="submit">{form.submit}</button>
+          <a href="/about/#contact">{form.links.contact}</a>
+        </p>
+      </form>
+    </section>
+  </div>
+</Base>
+
+<script>
+  const slug = new URLSearchParams(location.search).get('chart')
+  const input = document.querySelector<HTMLInputElement>('[data-report-page]')
+  if (input && slug && /^[a-z0-9-]+$/.test(slug)) input.value = `/charts/${slug}/`
+</script>
+
+<style>
+  .body {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+    gap: 48px 96px;
+    padding-bottom: 112px;
+  }
+  .ruled thead th {
+    border-bottom: 1px solid var(--ink);
+  }
+  .empty {
+    padding-block: 28px 32px !important;
+    font-size: 17px;
+    line-height: 28px;
+  }
+  .policy-head {
+    margin-top: 32px;
+  }
+  .policy {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .report {
+    position: relative;
+  }
+  .report::before {
+    content: '';
+    position: absolute;
+    left: -48px;
+    top: 0;
+    bottom: 0;
+    border-left: 1px solid var(--rule);
+  }
+  .report h2 {
+    font: 600 20px/28px var(--font-ui);
+  }
+  .intro {
+    margin-top: 4px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  form {
+    display: grid;
+    gap: 16px;
+    margin-top: 20px;
+  }
+  .field {
+    display: grid;
+    gap: 6px;
+  }
+  input,
+  textarea {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid var(--rule);
+    border-radius: 0;
+    background: var(--paper);
+    font: 400 15px/22px var(--font-ui);
+    color: var(--ink);
+  }
+  input::placeholder,
+  textarea::placeholder {
+    color: var(--slate);
+  }
+  textarea {
+    min-height: 96px;
+    resize: vertical;
+  }
+  .hint {
+    margin-top: -10px;
+    font-size: 13px;
+  }
+  .pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+  }
+  .trap {
+    position: absolute;
+    left: -9999px;
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-top: 4px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  button {
+    padding: 9px 18px;
+    border: 0;
+    border-radius: 20px;
+    background: var(--ink);
+    color: var(--paper);
+    font: 600 15px/22px var(--font-ui);
+    cursor: pointer;
+  }
+  @media (max-width: 900px) {
+    .body {
+      grid-template-columns: 1fr;
+    }
+    .report {
+      padding-top: 32px;
+      border-top: 1px solid var(--rule);
+    }
+    .report::before {
+      display: none;
+    }
+  }
+  @media (max-width: 520px) {
+    .pair {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

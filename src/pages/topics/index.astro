@@ -1,0 +1,391 @@
+---
+/** Board S02: every topic with its questions and releases, then every chart by topic. */
+import Base from '~/layouts/Base.astro'
+import Emblem from '~/components/Emblem.astro'
+import PageHeader from '~/components/PageHeader.astro'
+import page from '~/content/pages/topics'
+import { charts, topics } from '~/content'
+import type { Chart } from '~/content/types'
+import { EMBLEM_ALT } from '~/lib/emblems'
+import { places } from '~/lib/geography'
+import { dateRange } from '~/lib/metadata'
+import { pigments } from '~/lib/tokens'
+
+const counts = [
+  [topics.length, page.counts.topics],
+  [charts.length, page.counts.charts],
+  [places.length, page.counts.states],
+] as const
+const chartsOf = (slug: string) => charts.filter((c) => c.topic.slug === slug)
+
+/** The chart-type tag in the All charts list. */
+function kindOf(c: Chart): string {
+  switch (c.kind) {
+    case 'line':
+      return c.panels ? 'Panels' : c.step ? 'Step' : 'Line'
+    case 'columns':
+      return c.stacked ? 'Stacked' : 'Column'
+    case 'area':
+      return 'Stacked'
+    case 'states':
+      return c.open === 'map' ? 'Map · Bar' : 'Bar · Map'
+    case 'dots':
+      return c.map ? 'Dot · Map' : 'Dot'
+    case 'bars':
+      return c.stacked ? 'Stacked' : 'H-bar'
+    case 'pyramid':
+      return 'Pyramid'
+    case 'table':
+      return 'Table'
+  }
+}
+---
+
+<Base title={page.title} description={page.intro}>
+  <PageHeader breadcrumb={page.breadcrumb} title={page.title} hindi={page.hindi} intro={page.intro}>
+    <dl class="counts">
+      {counts.map(([n, label]) => (
+        <div>
+          <dt class="label muted">{label}</dt>
+          <dd>{n}</dd>
+        </div>
+      ))}
+    </dl>
+  </PageHeader>
+
+  <div class="wrap">
+    <ul class="topics">
+      {topics.map((t) => {
+        const row = page.rows[t.slug]
+        return (
+          <li class="topic">
+            <div class="tile" style={`background:${pigments[t.slug].hex}`}>
+              <Emblem name={t.slug} alt={EMBLEM_ALT[t.slug]} size={128} />
+            </div>
+            <div>
+              <h2 class="display name">{t.name}</h2>
+              <p class="deva muted" lang="hi">{t.hindi}</p>
+              <p class="label count"><span style={`background:${pigments[t.slug].hex}`}></span>{page.row.charts(chartsOf(t.slug).length)}</p>
+              <a class="go" href={`/${t.slug}/`}>{page.row.go(t.name)}</a>
+            </div>
+            <div>
+              <h3 class="label muted">{page.row.questionsLabel}</h3>
+              <ol class="questions">{row.questions.map((q) => <li>{q}</li>)}</ol>
+            </div>
+            <dl class="releases">
+              {([
+                [page.row.latestLabel, row.latest],
+                [page.row.nextLabel, row.next],
+              ] as const).map(([label, r]) => (
+                <div>
+                  <dt class="label muted">{label}</dt>
+                  <dd><strong>{r.date}</strong><span class="muted">{r.label}</span></dd>
+                </div>
+              ))}
+            </dl>
+          </li>
+        )
+      })}
+    </ul>
+
+    <div class="later">
+      <div>
+        <h2>{page.comingLater.heading}</h2>
+        <p class="muted">{page.comingLater.intro}</p>
+      </div>
+      <ul class="muted">{page.comingLater.topics.map((t) => <li>{t}</li>)}</ul>
+    </div>
+
+    <section class="section" aria-labelledby="all-charts">
+      <div class="section-head">
+        <div>
+          <h2 class="display" id="all-charts">{page.allCharts.heading}</h2>
+          <p>{page.allCharts.intro}</p>
+        </div>
+        <a class="go" href="/charts/">{page.allCharts.link}</a>
+      </div>
+      <div class="filter">
+        <label class="search">
+          <span class="visually-hidden">{page.allCharts.heading}</span>
+          <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.5"></path></svg>
+          <input type="search" placeholder={page.allCharts.searchPlaceholder} data-chart-filter />
+        </label>
+        <p class="label muted" aria-live="polite" data-chart-count>{page.allCharts.count(charts.length)}</p>
+      </div>
+      <div class="groups">
+        {topics.map((t) => (
+          <div class="group" data-group>
+            <h3 class="label group-head">
+              <span><span class="swatch" style={`background:${pigments[t.slug].hex}`}></span>{t.name}</span>
+              <span class="muted">{page.row.charts(chartsOf(t.slug).length)}</span>
+            </h3>
+            <ul>
+              {chartsOf(t.slug).map((c) => (
+                <li data-title={c.chart.title.toLowerCase()}>
+                  <span class="label muted kind">{kindOf(c.chart)}</span>
+                  <a href={`/charts/${c.chart.slug}/`}>{c.chart.title}</a>
+                  <span class="label muted period">{dateRange(c)}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </section>
+  </div>
+</Base>
+
+<script>
+  import { normalise } from '~/lib/search'
+  const input = document.querySelector<HTMLInputElement>('[data-chart-filter]')
+  const count = document.querySelector('[data-chart-count]')
+  input?.addEventListener('input', () => {
+    const terms = normalise(input.value).split(/\s+/).filter(Boolean)
+    let n = 0
+    for (const li of document.querySelectorAll<HTMLElement>('[data-title]')) {
+      li.hidden = !terms.every((t) => li.dataset.title!.includes(t))
+      if (!li.hidden) n++
+    }
+    for (const g of document.querySelectorAll<HTMLElement>('[data-group]')) g.hidden = !g.querySelector('li:not([hidden])')
+    if (count) count.textContent = count.textContent!.replace(/^\d+/, String(n))
+  })
+</script>
+
+<style>
+  .counts {
+    display: flex;
+    gap: 40px;
+    margin: 0;
+  }
+  .counts div {
+    display: flex;
+    flex-direction: column-reverse;
+  }
+  .counts dd {
+    margin: 0;
+    font: 600 32px/36px var(--font-ui);
+  }
+  .counts dt {
+    margin-top: 6px;
+  }
+  .topics,
+  .questions,
+  .later ul,
+  .groups ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .topics {
+    border-top: 2px solid var(--ink);
+  }
+  .topic {
+    display: grid;
+    grid-template-columns: 128px minmax(0, 248px) minmax(0, 1fr) 220px;
+    gap: 32px;
+    padding-block: 28px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .tile {
+    display: block;
+    width: 128px;
+    height: 128px;
+  }
+  .name {
+    font-size: 34px;
+  }
+  .deva {
+    margin-top: 2px;
+    font-size: 18px;
+  }
+  .count {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+  }
+  .count span,
+  .swatch {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+  }
+  .go {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 15px;
+    font-weight: 500;
+  }
+  .questions {
+    counter-reset: q;
+    display: grid;
+    gap: 4px;
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .questions li {
+    counter-increment: q;
+    display: grid;
+    grid-template-columns: 28px 1fr;
+  }
+  .questions li::before {
+    content: counter(q);
+    font: 400 11px/22px var(--font-mono);
+    color: var(--slate);
+  }
+  .releases {
+    display: grid;
+    gap: 20px;
+    align-content: start;
+    margin: 0;
+  }
+  .releases dd {
+    display: grid;
+    margin: 4px 0 0;
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .releases strong {
+    font-size: 17px;
+    line-height: 26px;
+    font-weight: 600;
+  }
+  .later {
+    display: grid;
+    grid-template-columns: minmax(0, 408px) 1fr;
+    gap: 32px;
+    padding-block: 40px 0;
+  }
+  .later h2 {
+    font: 600 17px/26px var(--font-ui);
+  }
+  .later > div p {
+    margin-top: 4px;
+    font-size: 15px;
+  }
+  .later ul {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 6px 32px;
+    font-size: 15px;
+  }
+  .section {
+    padding-bottom: 96px;
+  }
+  .filter {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    margin-top: 24px;
+  }
+  .search {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: min(420px, 100%);
+    height: 44px;
+    padding-inline: 16px;
+    border: 1px solid var(--ink);
+    border-radius: 22px;
+  }
+  .search input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    background: none;
+    font: 400 15px var(--font-ui);
+    color: var(--ink);
+    outline: none;
+  }
+  .search:focus-within {
+    outline: 2px solid var(--s5);
+    outline-offset: 2px;
+  }
+  .groups {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 48px;
+    margin-top: 40px;
+  }
+  .group-head {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--ink);
+  }
+  .group-head .swatch {
+    margin-right: 8px;
+  }
+  .group-head .muted {
+    text-transform: none;
+  }
+  .groups li {
+    display: grid;
+    grid-template-columns: 108px minmax(0, 1fr) auto;
+    gap: 14px;
+    align-items: center;
+    padding-block: 9px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 15px;
+    line-height: 20px;
+  }
+  .groups li a {
+    text-decoration: none;
+  }
+  .groups li a:hover {
+    text-decoration: underline;
+  }
+  .kind {
+    padding: 4px 6px;
+    background: var(--band);
+    text-align: center;
+  }
+  .period {
+    text-transform: none;
+    letter-spacing: 0;
+    text-align: right;
+  }
+  @media (max-width: 1100px) {
+    .topic {
+      grid-template-columns: 128px minmax(0, 1fr);
+    }
+    .topic > :nth-child(n + 3) {
+      grid-column: 2;
+    }
+  }
+  @media (max-width: 720px) {
+    .topic {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+    .topic > :nth-child(n + 3) {
+      grid-column: auto;
+    }
+    .tile {
+      width: 96px;
+      height: 96px;
+    }
+    .tile :global(.emblem) {
+      width: 96px !important;
+      height: 96px !important;
+    }
+    .later,
+    .groups {
+      grid-template-columns: 1fr;
+    }
+    .later ul {
+      grid-template-columns: 1fr 1fr;
+    }
+    .filter {
+      flex-wrap: wrap;
+    }
+    .groups li {
+      grid-template-columns: 1fr auto;
+    }
+    .kind {
+      display: none;
+    }
+  }
+</style>

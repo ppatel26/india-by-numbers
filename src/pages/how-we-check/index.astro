@@ -1,0 +1,440 @@
+---
+/** Board S15: the four checks, the hallmark, method breaks with real charts, our limits and corrections. */
+import Base from '~/layouts/Base.astro'
+import ChartFrame from '~/components/ChartFrame.astro'
+import Emblem from '~/components/Emblem.astro'
+import Hallmark from '~/components/Hallmark.astro'
+import PageHeader from '~/components/PageHeader.astro'
+import Seal from '~/components/Seal.astro'
+import page from '~/content/pages/how-we-check'
+import { placed } from '~/content'
+import { EMBLEM_ALT } from '~/lib/emblems'
+
+const { part1, part2, part3, part4, part5 } = page
+const examples = part3.examples.map((e, i) => ({ ...e, number: `3.${i + 1}`, placed: placed(e.chart) }))
+const punchClass = ['office', 'unit', 'seal', 'period'] as const
+---
+
+<Base title={page.title} description={page.intro}>
+  <PageHeader breadcrumb={page.breadcrumb} title={page.title} hindi={page.hindi} intro={page.intro}>
+    <p class="label muted">{page.checked}</p>
+  </PageHeader>
+
+  <section class="kajal on-dark" aria-labelledby="part-1">
+    <div class="wrap split">
+      <figure class="object">
+        <Emblem name="methods" alt={EMBLEM_ALT.methods} size={300} screen eager />
+        <figcaption class="label muted">{page.object.caption}</figcaption>
+      </figure>
+      <div class="part">
+        <p class="label muted">{part1.eyebrow}</p>
+        <h2 class="display" id="part-1">{part1.heading}</h2>
+        <p class="lede">{part1.lede}</p>
+        <ol class="checks">
+          {part1.checks.map((c) => (
+            <li>
+              <h3><span class="label muted">{c.number}</span> <span class="display">{c.heading}</span></h3>
+              <p>{c.body}</p>
+              <dl>
+                <div><dt class="label muted">{part1.labels.machine}</dt><dd>{c.machine}</dd></div>
+                <div><dt class="label muted">{part1.labels.person}</dt><dd>{c.person}</dd></div>
+              </dl>
+            </li>
+          ))}
+        </ol>
+      </div>
+    </div>
+  </section>
+
+  <div class="wrap parts">
+    <section class="part" id="hallmark" aria-labelledby="part-2">
+      <p class="label muted">{part2.eyebrow}</p>
+      <h2 class="display" id="part-2">{part2.heading}</h2>
+      <p class="lede">{part2.lede}</p>
+      <ul class="cols punches">
+        {part2.punches.map((p, i) => (
+          <li>
+            <p class:list={['punch', punchClass[i]]}>{punchClass[i] === 'seal' ? <Seal size={16} /> : p.example}</p>
+            <h3 class="label muted">{p.heading}</h3>
+            <p>{p.body}</p>
+          </li>
+        ))}
+      </ul>
+      <table class="ruled statuses">
+        <thead>
+          <tr>{part2.statusHeads.map((h) => <th scope="col">{h}</th>)}</tr>
+        </thead>
+        <tbody>
+          {part2.statuses.map((s) => (
+            <tr>
+              <th scope="row">{s.status && s.hallmark ? <Hallmark {...s.hallmark} status={[s.status]} /> : 'No status word'}</th>
+              <td>{s.means}</td>
+              <td class="muted">{s.changes}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <div class="rule">
+        <h3 class="label muted">{part2.rule.heading}</h3>
+        <p>{part2.rule.body}</p>
+      </div>
+    </section>
+
+    <section class="part" aria-labelledby="part-3">
+      <p class="label muted">{part3.eyebrow}</p>
+      <h2 class="display" id="part-3">{part3.heading}</h2>
+      <p class="lede">{part3.lede}</p>
+      <div class="examples">
+        {examples.map((e) => (
+          <div>
+            <p class="finding">{e.finding}</p>
+            <ChartFrame chart={e.placed.chart} number={e.number} />
+          </div>
+        ))}
+      </div>
+      <div class="revisions">
+        <h3>{part3.revisions.heading}</h3>
+        <p>{part3.revisions.body}</p>
+      </div>
+      <table class="ruled revised">
+        <thead>
+          <tr>{part3.revisions.heads.map((h) => <th scope="col">{h}</th>)}</tr>
+        </thead>
+        <tbody>
+          {part3.revisions.rows.map((r) => (
+            <tr>
+              <th scope="row">{r.cells[0]}</th>
+              <td>{r.cells[1]}</td>
+              <td><strong>{r.cells[2]}</strong></td>
+              <td class="muted">{r.cells[3]}</td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </section>
+
+    <section class="part" aria-labelledby="part-4">
+      <p class="label muted">{part4.eyebrow}</p>
+      <h2 class="display" id="part-4">{part4.heading}</h2>
+      <ul class="cols rules">
+        {part4.rules.map((r) => (
+          <li>
+            <h3>{r.heading}</h3>
+            <p>{r.body}</p>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section class="part last" id="corrections" aria-labelledby="part-5">
+      <p class="label muted">{part5.eyebrow}</p>
+      <h2 class="display" id="part-5">{part5.heading}</h2>
+      <p class="lede">{part5.lede}</p>
+      <table class="ruled targets">
+        <thead>
+          <tr>{part5.heads.map((h) => <th scope="col">{h}</th>)}</tr>
+        </thead>
+        <tbody>
+          {part5.targets.map((r) => (
+            <tr>
+              <th scope="row">{r.cells[0]}</th>
+              <td><strong>{r.cells[1]}</strong></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      <p class="actions">
+        <a class="button" href="/corrections/#report">{part5.actions.report}</a>
+        <a href="/corrections/">{part5.actions.log}</a>
+      </p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .kajal {
+    background: var(--kajal);
+    padding-block: 72px 80px;
+  }
+  .split {
+    display: grid;
+    grid-template-columns: 320px minmax(0, 1fr);
+    gap: 80px;
+  }
+  .object {
+    margin: 24px 0 0;
+  }
+  .object :global(.emblem) {
+    margin-inline: auto;
+  }
+  .object figcaption {
+    margin-top: 32px;
+  }
+  .part {
+    padding-top: 20px;
+    border-top: 2px solid var(--ink);
+  }
+  .kajal .part {
+    border-color: var(--silver-dim);
+  }
+  .parts > .part {
+    margin-top: 96px;
+  }
+  .last {
+    padding-bottom: 96px;
+  }
+  .part > h2 {
+    margin-top: 8px;
+    font-size: clamp(32px, 4vw, 44px);
+  }
+  .part > .lede {
+    margin-top: 16px;
+    font-size: 17px;
+    line-height: 28px;
+  }
+  .checks,
+  .cols {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+  }
+  .checks {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 40px 48px;
+    margin-top: 40px;
+  }
+  .checks li {
+    padding-top: 20px;
+    border-top: 1px solid var(--kajal-rule);
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .checks h3 .display {
+    font-size: 32px;
+    margin-left: 6px;
+  }
+  .checks h3 + p {
+    margin-top: 12px;
+  }
+  .checks dl {
+    display: grid;
+    gap: 6px;
+    margin: 16px 0 0;
+  }
+  .checks dl div {
+    display: grid;
+    grid-template-columns: 76px 1fr;
+    line-height: 20px;
+  }
+  .checks dd {
+    margin: 0;
+  }
+  .cols {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 32px;
+    margin-top: 40px;
+  }
+  .cols li {
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .cols h3 + p {
+    margin-top: 10px;
+  }
+  .rules h3 {
+    font: 600 17px/26px var(--font-ui);
+  }
+  /* Single punches, as in the hallmark. */
+  .punch {
+    display: inline-grid;
+    place-items: center;
+    height: 24px;
+    margin-bottom: 18px;
+    padding-inline: 8px;
+    border: 1px solid var(--ink);
+    border-radius: 11px;
+    font: 400 11px/16px var(--font-mono);
+  }
+  .punch.office {
+    border-radius: 0;
+  }
+  .punch.seal {
+    width: 24px;
+    padding: 0;
+    border: 0;
+    border-radius: 2px;
+    background: var(--lac);
+    color: var(--silver);
+  }
+  .statuses {
+    margin-top: 48px;
+  }
+  .statuses th[scope='row'] {
+    width: 34%;
+    font: 600 15px/22px var(--font-ui);
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+    text-align: left;
+    padding: 20px 24px 20px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .statuses td {
+    padding: 20px 24px 20px 0;
+  }
+  .statuses td:last-child {
+    width: 24%;
+  }
+  .ruled thead th {
+    border-bottom: 1px solid var(--ink);
+  }
+  .rule {
+    display: grid;
+    grid-template-columns: 34% minmax(0, 640px);
+    padding-top: 28px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .examples {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 72px;
+    margin-top: 48px;
+  }
+  /* Half-width frames: the narrow plot and a stacked footer read better than the wide plot scaled down. */
+  .examples :global(.w-wide) {
+    display: none;
+  }
+  .examples :global(.w-narrow) {
+    display: block;
+  }
+  .examples :global(.foot) {
+    grid-template-columns: 1fr;
+  }
+  .finding {
+    font-size: 15px;
+    line-height: 24px;
+    margin-bottom: 16px;
+  }
+  .revisions {
+    display: grid;
+    grid-template-columns: minmax(0, 468px) minmax(0, 1fr);
+    align-items: end;
+    margin-top: 72px;
+  }
+  .revisions h3 {
+    font: 600 20px/28px var(--font-ui);
+  }
+  .revisions p {
+    font-size: 15px;
+    line-height: 24px;
+  }
+  .revised,
+  .targets {
+    margin-top: 24px;
+  }
+  .revised th[scope='row'],
+  .targets th[scope='row'] {
+    font: 400 15px/22px var(--font-ui);
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+    padding: 14px 12px 14px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .revised td,
+  .targets td {
+    padding-block: 14px;
+  }
+  .revised strong,
+  .targets strong {
+    font-weight: 600;
+  }
+  .targets {
+    max-width: 912px;
+    margin-top: 40px;
+  }
+  .targets th[scope='row'] {
+    width: 46%;
+  }
+  .actions {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    margin-top: 28px;
+    font-weight: 600;
+    font-size: 15px;
+  }
+  .button {
+    padding: 9px 18px;
+    border-radius: 20px;
+    background: var(--ink);
+    color: var(--paper);
+    text-decoration: none;
+  }
+  @media (max-width: 1100px) {
+    .split,
+    .examples {
+      grid-template-columns: 1fr;
+    }
+    .object {
+      display: flex;
+      gap: 24px;
+      align-items: center;
+    }
+    .object :global(.emblem) {
+      width: 160px !important;
+      height: 160px !important;
+      margin: 0;
+    }
+    .object figcaption {
+      margin: 0;
+    }
+    .cols {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+  @media (max-width: 720px) {
+    .checks,
+    .cols,
+    .rule,
+    .revisions {
+      grid-template-columns: 1fr;
+    }
+    .rule,
+    .revisions {
+      gap: 8px;
+    }
+    .object {
+      flex-direction: column;
+      align-items: flex-start;
+    }
+    .statuses thead {
+      display: none;
+    }
+    .statuses tr,
+    .statuses th[scope='row'],
+    .statuses td {
+      display: block;
+      width: auto !important;
+    }
+    .statuses tr {
+      padding-block: 16px;
+      border-bottom: 1px solid var(--rule);
+    }
+    .statuses th[scope='row'],
+    .statuses td {
+      padding: 0 0 8px;
+      border: 0;
+    }
+    .revised thead th:nth-child(4),
+    .revised td:nth-child(4) {
+      display: none;
+    }
+  }
+</style>

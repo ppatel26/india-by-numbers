@@ -1,0 +1,66 @@
+import { expect, test } from '@playwright/test'
+import { meta, sitemap } from './site'
+
+test('every page in the sitemap has a title, a description, one h1, a canonical link and a social image', async ({ request }) => {
+  const pages = await sitemap(request)
+  expect(pages.length).toBeGreaterThan(120)
+  const images = new Set<string>()
+  for (const path of pages) {
+    const res = await request.get(path)
+    expect(res.status(), path).toBe(200)
+    const html = await res.text()
+    expect(html.match(/<h1[\s>]/g)?.length, `${path}: one h1`).toBe(1)
+    expect(html, path).toMatch(/<title>[^<]*India by Numbers[^<]*<\/title>/)
+    expect(meta(html, 'description')?.length, `${path}: description`).toBeGreaterThan(20)
+    expect(html).toContain(`<link rel="canonical" href="https://india-by-numbers.parv-personal.workers.dev${path}"`)
+    const og = meta(html, 'og:image')
+    expect(og, `${path}: og:image`).toBeTruthy()
+    images.add(new URL(og!).pathname)
+    expect(html, `${path}: em dash`).not.toContain('—')
+  }
+  for (const img of images) {
+    const res = await request.get(img)
+    expect(res.status(), img).toBe(200)
+    expect(res.headers()['content-type']).toBe('image/png')
+    expect((await res.body()).length, img).toBeGreaterThan(20_000)
+  }
+})
+
+test('every internal link and file resolves', async ({ request }) => {
+  const pages = await sitemap(request)
+  const links = new Set<string>()
+  for (const path of pages) {
+    const html = await (await request.get(path)).text()
+    for (const m of html.matchAll(/(?:href|src)="(\/[^"#?]*)/g)) links.add(m[1]!)
+  }
+  const broken: string[] = []
+  for (const link of links) {
+    const res = await request.get(link, { maxRedirects: 2 })
+    if (res.status() !== 200) broken.push(`${res.status()} ${link}`)
+  }
+  expect(broken).toEqual([])
+})
+
+test('chart files carry the right types and data', async ({ request }) => {
+  const csv = await request.get('/charts/cpi-inflation-by-state.csv')
+  expect(csv.headers()['content-type']).toContain('text/csv')
+  const text = await csv.text()
+  expect(text.split('\n')[0]).toBe('State or UT,% y/y,Gap from India,Rank (of 36),unit,source,released')
+  expect(text).toContain('Tamil Nadu,7.29,')
+  const json = await (await request.get('/charts/cpi-inflation-by-state.json')).json()
+  expect(json.status).toContain('Provisional')
+  const svg = await request.get('/charts/cpi-inflation-by-state.svg')
+  expect(svg.headers()['content-type']).toContain('image/svg+xml')
+  expect(await svg.text()).toContain('Inflation by state and UT')
+})
+
+test('unknown pages return the 404 page', async ({ request }) => {
+  const res = await request.get('/no-such-page/')
+  expect(res.status()).toBe(404)
+  expect(await res.text()).toContain('<h1')
+})
+
+test('robots, sitemap and headers keep the preview out of search', async ({ request }) => {
+  expect(await (await request.get('/robots.txt')).text()).toContain('Disallow: /')
+  expect((await request.get('/')).headers()['x-robots-tag']).toBe('noindex')
+})
