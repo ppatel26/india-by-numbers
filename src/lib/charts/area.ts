@@ -4,6 +4,7 @@ import type { Point } from '~/lib/data'
 import { parsePeriod } from '~/lib/period'
 import { svg, attr, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
+import { formatNumber } from '~/lib/format'
 import { WIDTH, frame, hit, spread, timeTicks, xLabels, yGrid, yRoom, yScale, yTicks, type Width } from './axes'
 import { drawn, show, tipLine, type Of, type SeriesData } from './model'
 import { timeNotes } from './notes'
@@ -51,22 +52,28 @@ export function renderArea(chart: Of<'area'>, width: Width): Markup {
   const areas = stacks.flatMap((g) =>
     g.series.map((s, i) => svg`<path d="${shape(g.layers[i]!) ?? ''}" fill="${colorVar(s.color)}" stroke="var(--paper)" stroke-width="2" stroke-linejoin="round"/>`),
   )
-  // End labels name the parts of the latest stack only.
+  // End labels name the bands of the latest stack. Parts that share a name and colour (coal and
+  // lignite) are one band: one label, at the band's middle, with its total and a swatch.
   const end = stacks.at(-1)!
   const last = end.xs.at(-1)!
-  const labels = spread(
-    end.series.map((s, i) => {
-      const top = end.layers[i]!.at(-1)!
-      return { s, y: y((top[0] + top[1]) / 2) }
-    }),
-    28,
-    m.top,
-    H - m.bottom,
-  ).map(({ s, ly }) => {
+  type Band = { s: SeriesData; y0: number; y1: number; parts: Point[] }
+  const bands: Band[] = []
+  end.series.forEach((s, i) => {
+    const top = end.layers[i]!.at(-1)!
     const p = s.points.find((q) => q.x === last.x)
-    const v = p && p.y !== null ? show(chart, p, s) : undefined
-    return svg`<text x="${W - m.right + 8}" y="${ly - 2}" font-size="12" font-weight="600" fill="var(--ink)">${s.label}</text>
-<text x="${W - m.right + 8}" y="${ly + 12}" font-size="12" fill="var(--ink)"${attr('data-alt', v?.alt)}>${v?.text ?? 'No data'}</text>`
+    const prev = bands.at(-1)
+    if (prev && prev.s.label === s.label && prev.s.color === s.color) {
+      prev.y1 = top[1]
+      if (p && p.y !== null) prev.parts.push(p)
+    } else bands.push({ s, y0: top[0], y1: top[1], parts: p && p.y !== null ? [p] : [] })
+  })
+  const lx = W - m.right + 8
+  const labels = spread(bands.map((b) => ({ ...b, y: y((b.y0 + b.y1) / 2) })), 28, m.top, H - m.bottom).map(({ s, parts, ly, y: at }) => {
+    const v = parts.length === 1 ? show(chart, parts[0]!, s) : parts.length ? formatNumber(parts.reduce((a, p) => a + p.y!, 0), chart.format) : undefined
+    const moved = Math.abs(ly + 3 - at) > 9
+    return svg`${moved ? svg`<path d="M${W - m.right + 1} ${at}L${lx - 1} ${ly + 3}" stroke="var(--slate)" fill="none"/>` : null}<rect x="${lx}" y="${ly - 11}" width="10" height="10" fill="${colorVar(s.color)}"/>
+<text x="${lx + 15}" y="${ly - 2}" font-size="12" font-weight="600" fill="var(--ink)">${s.label}</text>
+<text x="${lx + 15}" y="${ly + 12}" font-size="12" fill="var(--ink)"${attr('data-alt', v?.alt)}>${v?.text ?? 'No data'}</text>`
   })
   const hits = xs.map((p, i) => {
     const x0 = i ? (x(xs[i - 1]!.t) + x(p.t)) / 2 : x(p.t) - 4

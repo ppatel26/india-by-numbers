@@ -4,7 +4,8 @@ import { decimalsOf, fmt } from '~/lib/format'
 import { GRID, type Place } from '~/lib/geography'
 import { attr, svg, type Markup } from '~/lib/markup'
 import { colorVar, div, seq, textOn, type Token } from '~/lib/tokens'
-import { FONT, WIDTH, frame, type Width } from './axes'
+import { WIDTH, frame, type Width } from './axes'
+import { nameColumn, rowName } from './dots'
 import { gapFormat, ranked, show, statesOf, type Of, type StateData } from './model'
 
 const href = (p: Place) => `/states/${p.slug}/`
@@ -31,10 +32,22 @@ export function renderRanked(chart: Of<'states'>, width: Width): Markup {
   const data = statesOf(chart)
   const narrow = width === 'narrow'
   const W = WIDTH[width]
-  const rows = ranked(data)
+  // States with no value go in one line under the bars, not in a stack of empty rows.
+  const rows = ranked(data).filter((r) => r.pt?.y != null)
+  const missing = ranked(data).filter((r) => r.pt?.y == null).map((r) => rowName(r.place.slug))
+  const shortName = (p: Place) => (narrow && p.name.length > 16 ? p.short.replace('-', '') : rowName(p.slug))
   const rowH = 20
-  const m = { top: 30, right: 56, bottom: 8, left: narrow ? 118 : 200 }
-  const H = m.top + rows.length * rowH + m.bottom
+  const m = { top: 30, right: 56, bottom: 8, left: nameColumn(rows.map((r) => shortName(r.place)), narrow) }
+  // The no-data line wraps at the plot width.
+  const perLine = Math.floor((W - 8) / 6.4)
+  const missLines: string[] = []
+  for (const word of missing.length ? `No data: ${missing.join(', ')}.`.split(' ') : []) {
+    const last = missLines.at(-1)
+    if (last !== undefined && last.length + word.length + 1 <= perLine) missLines[missLines.length - 1] = `${last} ${word}`
+    else missLines.push(word)
+  }
+  const rowsH = m.top + rows.length * rowH
+  const H = rowsH + (missLines.length ? 12 + missLines.length * 17 : 0) + m.bottom
   const vals = rows.flatMap((r) => (r.pt?.y != null ? [r.pt.y] : []))
   const india = chart.total ? null : (data.india?.y ?? null)
   const x = scaleLinear()
@@ -45,35 +58,33 @@ export function renderRanked(chart: Of<'states'>, width: Width): Markup {
 
   const body = rows.map((r, i) => {
     const y = m.top + i * rowH
-    const name = narrow ? (r.place.name.length > 16 ? r.place.short.replace('-', '') : r.place.name) : r.place.name
-    const label = svg`<a href="${href(r.place)}"><text class="name" x="${m.left - 8}" y="${y + 14}" text-anchor="end" font-size="12.5" fill="var(--ink)">${name}</text></a>`
-    if (!r.pt || r.pt.y === null)
-      return svg`<g class="row" data-geo="${r.place.slug}" data-tip="${r.place.name}: No data">${label}<text x="${m.left}" y="${y + 14}" font-family="${FONT.mono}" font-size="10.5" fill="var(--slate)">NO DATA</text></g>`
-    const v = show(chart, r.pt)
-    const x0 = x(Math.min(0, r.pt.y))
-    const x1 = x(Math.max(0, r.pt.y))
-    const end = r.pt.y >= 0 ? x1 : x0
+    const label = svg`<a href="${href(r.place)}"><text class="name" x="${m.left - 8}" y="${y + 14}" text-anchor="end" font-size="12.5" fill="var(--ink)">${shortName(r.place)}</text></a>`
+    const pt = r.pt!
+    const v = show(chart, pt)
+    const x0 = x(Math.min(0, pt.y!))
+    const x1 = x(Math.max(0, pt.y!))
+    const ci = pt.interval
+    // The value sits outside the bar, past its whisker, and past the India line if it would touch it.
+    const end = Math.max(pt.y! >= 0 ? x1 : x0, ci ? x(ci[1]) : -Infinity)
     const textW = v.text.length * 7 + 6
-    // Keep value labels off the India line: inside the bar end, or past the line.
-    const crosses = ix !== null && end < ix && end + textW > ix - 2
-    const inside = crosses && end - m.left > textW + 4
-    const lx = inside ? end - 4 : crosses ? ix! + 6 : end + 5
-    const ci = r.pt.interval
+    const crosses = ix !== null && end < ix + 2 && end + 5 + textW > ix - 2
+    const lx = crosses ? ix! + 6 : end + 5
     const whisker = ci
-      ? svg`<line x1="${x(ci[0])}" x2="${x(ci[1])}" y1="${y + rowH / 2}" y2="${y + rowH / 2}" stroke="var(--ink)"/><line x1="${x(ci[0])}" x2="${x(ci[0])}" y1="${y + 6}" y2="${y + rowH - 6}" stroke="var(--ink)"/><line x1="${x(ci[1])}" x2="${x(ci[1])}" y1="${y + 6}" y2="${y + rowH - 6}" stroke="var(--ink)"/>`
+      ? svg`<path d="M${x(ci[0])} ${y + rowH / 2}H${x(ci[1])}M${x(ci[0])} ${y + 7}V${y + rowH - 7}M${x(ci[1])} ${y + 7}V${y + rowH - 7}" stroke="var(--slate)" fill="none"/>`
       : null
     return svg`<g class="row" data-geo="${r.place.slug}" data-tip="${stateTip(chart, data, r.place)}">${label}
 <rect class="bar" x="${x0}" y="${y + 3}" width="${Math.max(1, x1 - x0)}" height="${rowH - 6}" fill="var(--other)"/>${whisker}
-<text class="value${inside ? ' inside' : ''}" x="${lx}" y="${y + 14}" text-anchor="${inside ? 'end' : 'start'}" font-size="12" fill="var(--ink)"${attr('data-alt', v.alt)}>${v.text}</text></g>`
+<text class="value" x="${lx}" y="${y + 14}" font-size="12" fill="var(--ink)"${attr('data-alt', v.alt)}>${v.text}</text></g>`
   })
 
   const indiaLine =
     ix === null || !data.india
       ? null
-      : svg`<line x1="${ix}" x2="${ix}" y1="${m.top - 6}" y2="${H - m.bottom}" stroke="var(--ink)" stroke-width="1.5"/>
+      : svg`<line x1="${ix}" x2="${ix}" y1="${m.top - 6}" y2="${rowsH}" stroke="var(--ink)" stroke-width="1.5"/>
 <text x="${ix}" y="${m.top - 12}" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--ink)">India ${show(chart, data.india).text}</text>`
 
-  return frame(width, H, chart.title, svg`<g class="rows">${body}</g>${indiaLine}`)
+  const missNote = missLines.map((l, i) => svg`<text x="0" y="${rowsH + 22 + i * 17}" font-size="12" fill="var(--slate)">${l}</text>`)
+  return frame(width, H, chart.title, svg`<g class="rows">${body}</g>${indiaLine}${missNote}`)
 }
 
 export interface Bin {
@@ -118,7 +129,8 @@ export function bins(chart: Of<'states'>, data: StateData): Bin[] {
   }
   const edges = chart.bins ? [...chart.bins] : auto(6)
   const ramp = seq.slice(Math.max(0, seq.length - edges.length - 1))
-  const v = (n: number) => fmt(n, { ...f, decimals: Math.max(d, decimalsOf(String(n))) })
+  // Bin edges are round numbers: print them as such (30,000, not 30,000.00).
+  const v = (n: number) => fmt(n, { ...f, decimals: decimalsOf(String(n)) })
   return [...edges, Infinity]
     .map((hi, i) => {
       const lo = i === 0 ? -Infinity : edges[i - 1]!
@@ -155,14 +167,16 @@ export function renderTiles(chart: Of<'states'>, width: Width): Markup {
     const token: Token | undefined = has ? binOf(b, pt.y!).token : undefined
     const ink = token ? textOn(token) : 'var(--ink)'
     const v = has ? show(chart, pt) : undefined
+    // A long value (₹2,16,590) shrinks to fit its tile rather than running into the next one.
+    const vSize = Math.min(narrow ? 10.5 : 12, ((size - 9) / Math.max(1, (v?.text.length ?? 1) * 0.58)))
     const [l1, l2] = place.short.includes('-') ? place.short.split('-').map((s, i) => (i === 0 ? `${s}-` : s)) : [place.short]
     const name = narrow
       ? svg`<text x="${x + 4}" y="${y + 13}" font-size="10.5" font-weight="600" fill="${ink}">${place.code}</text>`
       : svg`<text x="${x + 5}" y="${y + 14}" font-size="11" font-weight="600" fill="${ink}">${l1}${l2 ? svg`<tspan x="${x + 5}" dy="12">${l2}</tspan>` : null}</text>`
     return svg`<a href="${href(place)}" class="tile" data-geo="${place.slug}" data-tip="${stateTip(chart, data, place)}">
 <rect x="${x}" y="${y}" width="${size}" height="${size}" rx="2" fill="${token ? colorVar(token) : `url(#${noData})`}"/>
-${place.type === 'ut' ? svg`<path d="M${x + size - 9} ${y}h9v9z" fill="${ink}"/>` : null}${name}
-<text x="${x + (narrow ? 4 : 5)}" y="${y + size - (narrow ? 6 : 8)}" font-size="${narrow ? 10.5 : 12}" fill="${ink}"${attr('data-alt', v?.alt)}>${v?.text ?? '–'}</text></a>`
+${place.type === 'ut' ? svg`<path d="M${x + size - 10} ${y}h10v10z" fill="var(--paper)"/>` : null}${name}
+<text x="${x + (narrow ? 4 : 5)}" y="${y + size - (narrow ? 6 : 8)}" font-size="${vSize.toFixed(1)}" fill="${ink}"${attr('data-alt', v?.alt)}>${v?.text ?? '–'}</text></a>`
   })
   const mapW = GRID.cols * (size + gap)
   const mapH = GRID.rows * (size + gap)
@@ -174,7 +188,7 @@ ${place.type === 'ut' ? svg`<path d="M${x + size - 9} ${y}h9v9z" fill="${ink}"/>
 <text y="12" font-size="13" font-weight="600" fill="var(--ink)">${head.india}</text>
 <text y="32" font-size="12" fill="var(--slate)">${head.sub}</text>
 ${items.map((it, i) => svg`<rect x="0" y="${46 + i * 24}" width="16" height="16" rx="2" fill="${it.fill}"/><text x="24" y="${58 + i * 24}" font-size="12" fill="var(--ink)">${it.label}</text>`)}
-<path d="M0 ${54 + items.length * 24}h16v16h-16z" fill="var(--grid)"/><path d="M7 ${54 + items.length * 24}h9v9z" fill="var(--ink)"/>
+<path d="M0 ${54 + items.length * 24}h16v16h-16z" fill="var(--seq-4)"/><path d="M8 ${54 + items.length * 24}h8v8z" fill="var(--paper)"/>
 <text x="24" y="${66 + items.length * 24}" font-size="12" fill="var(--ink)">Corner mark: union territory</text></g>`
   const H = narrow ? ly + 80 + items.length * 24 : Math.max(mapH, 100 + items.length * 24)
   const defs = svg`<defs><pattern id="${noData}" width="6" height="6" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><rect width="6" height="6" fill="var(--grid)"/><line x1="0" y1="0" x2="0" y2="6" stroke="var(--other)" stroke-width="2"/></pattern></defs>`

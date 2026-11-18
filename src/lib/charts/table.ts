@@ -64,7 +64,7 @@ export function tableOf(chart: Chart): TableModel {
     case 'pyramid': {
       const series = seriesOf(chart)
       const keys = [...new Set(series.flatMap((s) => s.points.map((p) => p.x)))]
-      const label = chart.kind === 'bars' ? (k: string) => chart.labels?.[k] ?? rowName(k) : rowName
+      const label = chart.kind === 'bars' ? (k: string) => chart.labels?.[k] ?? rowName(k, false) : (k: string) => rowName(k, false)
       return {
         columns: [chart.kind === 'pyramid' ? 'Age group' : chart.kind === 'dots' && (chart.by ?? 'geography') === 'geography' ? 'State or UT' : 'Category', ...series.map((s) => s.label)],
         // A category missing from a series (a party that did not stand) is a dash, not missing data.
@@ -113,7 +113,7 @@ function plainTable(chart: Of<'table'>): TableModel {
     columns: [chart.by === 'geography' ? 'State or UT' : chart.by, ...chart.columns.map((c) => c.label)],
     rows: keys.map((k) => ({
       key: k,
-      head: rowName(k),
+      head: rowName(k, false),
       cells: chart.columns.map((c) => {
         const r = picked.find((row) => row[chart.by] === k && Object.entries(c.where ?? {}).every(([col, v]) => (typeof v === 'string' ? row[col] === v : v.includes(row[col]!))))
         const raw = r?.[c.y ?? c.key]?.trim() ?? ''

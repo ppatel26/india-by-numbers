@@ -19,7 +19,9 @@ export const colors = {
   'silver-dim': '#E9E3E0',
   'on-light-dim': '#463C26',
   lac: '#99221F',
-  other: '#C9CCD1',
+  other: '#AEB3BB',
+  /** Bar and column fills for India: a softer ink, so many bars do not read as one black block. */
+  'ink-fill': '#3D424C',
   'other-line': '#9AA0A8',
   s1: '#CC2827',
   s2: '#00909C',
@@ -29,12 +31,13 @@ export const colors = {
   s6: '#AA8726',
   s7: '#A11C6C',
   s8: '#C46C23',
-  'seq-1': '#50C1C7',
-  'seq-2': '#34A8AD',
-  'seq-3': '#1F8E93',
-  'seq-4': '#127479',
-  'seq-5': '#0C5B5F',
-  'seq-6': '#0D4346',
+  // A wide light-to-dark ramp, so neighbouring bins read apart; text on each picks ink or white by contrast.
+  'seq-1': '#D2EFEF',
+  'seq-2': '#9BD8DA',
+  'seq-3': '#5BBBC0',
+  'seq-4': '#1F7D83',
+  'seq-5': '#125E63',
+  'seq-6': '#0A3A3D',
   'div-1': '#104A97',
   'div-2': '#246ED4',
   'div-3': '#72A0E3',
@@ -64,6 +67,9 @@ export const seq = ['seq-1', 'seq-2', 'seq-3', 'seq-4', 'seq-5', 'seq-6'] as con
 export const div = ['div-1', 'div-2', 'div-3', 'div-mid', 'div-5', 'div-6', 'div-7'] as const satisfies readonly Token[]
 
 export const colorVar = (c: Color | Token): string => `var(--${c})`
+
+/** A bar or column fill: India's ink is softened for fills; every other colour is as named. */
+export const fillVar = (c: Color | Token): string => colorVar(c === 'ink' ? 'ink-fill' : c)
 
 const luminance = (hex: string): number => {
   const [r, g, b] = [1, 3, 5].map((i) => {

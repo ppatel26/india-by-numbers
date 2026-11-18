@@ -23,12 +23,17 @@ export function renderPanels<C extends Paneled>(chart: C, width: Width, one: (c:
   const cell = WIDTH.narrow
   const shared = sharedAxis(chart)
   const plots = panels.map((p) => {
+    // A panel on its own scale still reaches its reference lines (a majority line stays on the plot).
+    const ownYs = drawn(chart).filter((s) => p.series.includes(s.key)).flatMap((s) => s.points.flatMap((q) => (q.y === null ? [] : [q.y])))
+    const own: Axis = { min: Math.min(0, ...ownYs), max: Math.max(...ownYs, ...(p.refs ?? []).map((r) => r.value * 1.08)) }
+    const axis = p.own ? own : shared
     const sub = {
       ...chart,
       panels: undefined,
       series: chart.series.filter((s) => p.series.includes(s.key)),
       refs: p.refs ?? ('refs' in chart ? chart.refs : undefined),
-      ...(p.own ? {} : chart.kind === 'bars' ? { axis: shared } : { y: { ...chart.y, ...shared } }),
+      // The chart's own axis settings win over the computed range.
+      ...(chart.kind === 'bars' ? { axis: { ...axis, ...chart.axis } } : { y: { ...axis, ...chart.y } }),
     } as C
     return { p, html: one(sub, 'narrow').html }
   })

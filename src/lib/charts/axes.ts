@@ -72,13 +72,19 @@ export function yGrid(s: ScaleLinear<number, number>, ticks: number[], x0: numbe
   })}</g>`
 }
 
-/** Labels under a time axis. */
-export function xLabels(ticks: readonly { x: number; label: string }[], y: number): Markup {
-  return svg`<g class="x-ticks">${ticks.map(
-    (t) => svg`<line x1="${t.x}" x2="${t.x}" y1="${y - 4}" y2="${y}" stroke="var(--ink)"/>
-<text x="${t.x}" y="${y + 14}" text-anchor="middle" font-family="${FONT.mono}" font-size="11" fill="var(--slate)">${t.label}</text>`,
-  )}</g>`
+/** Labels under a time axis. A label that would run past the plot edge is aligned to it. */
+export function xLabels(ticks: readonly { x: number; label: string }[], y: number, edges?: { left: number; right: number }): Markup {
+  return svg`<g class="x-ticks">${ticks.map((t) => {
+    const half = (t.label.length * 6.6) / 2
+    const anchor = edges && t.x + half > edges.right ? 'end' : edges && t.x - half < edges.left - 6 ? 'start' : 'middle'
+    const tx = anchor === 'end' ? Math.min(t.x + 4, edges!.right + 4) : anchor === 'start' ? t.x - 4 : t.x
+    return svg`<line x1="${t.x}" x2="${t.x}" y1="${y - 4}" y2="${y}" stroke="var(--ink)"/>
+<text x="${tx}" y="${y + 14}" text-anchor="${anchor}" font-family="${FONT.mono}" font-size="11" fill="var(--slate)">${t.label}</text>`
+  })}</g>`
 }
+
+/** How many time labels fit across a plot: each needs its own width and some air. */
+export const tickRoom = (width: number, label: string): number => Math.max(2, Math.floor(width / (label.length * 6.6 + 22)))
 
 /**
  * Tick positions for a time axis. Calendar data gets year ticks; financial
@@ -92,10 +98,23 @@ export function timeTicks(pts: readonly Point[], x: (t: number) => number, max: 
   }
   const t0 = pts[0]!.t
   const t1 = pts.at(-1)!.t
+  if (t1 - t0 < 1.5 && /^\d{1,2} [A-Z][a-z]{2} \d{4}$/.test(pts[0]!.label)) {
+    // Daily data: a tick at the first day of each month, "Jan 2026", then "Feb", "Mar".
+    const firsts = pts.filter((p, i) => i === 0 || p.label.slice(-8) !== pts[i - 1]!.label.slice(-8))
+    const step = Math.max(1, Math.ceil(firsts.length / max))
+    return firsts
+      .filter((_, i) => i % step === 0)
+      .map((p, i) => {
+        const [mon, year] = p.label.split(' ').slice(1)
+        return { x: x(p.t), label: i === 0 || mon === 'Jan' ? `${mon} ${year}` : mon! }
+      })
+  }
   if (t1 - t0 < 1.5) {
-    // Under two years: month ticks.
+    // Under two years: month ticks, with the year on the first tick and on each January.
     const step = Math.max(1, Math.ceil(pts.length / max))
-    return pts.filter((_, i) => i % step === 0).map((p) => ({ x: x(p.t), label: p.label }))
+    return pts
+      .filter((_, i) => i % step === 0)
+      .map((p, i) => ({ x: x(p.t), label: i === 0 || p.label.startsWith('Jan') ? p.label : p.label.split(' ')[0]! }))
   }
   return scaleLinear()
     .domain([t0, t1])
@@ -109,13 +128,34 @@ export function timeTicks(pts: readonly Point[], x: (t: number) => number, max: 
  * the result keeps the order and leaves `gap` between neighbours.
  */
 export function spread<T extends { y: number }>(items: T[], gap: number, lo: number, hi: number): (T & { ly: number })[] {
-  const out = items.map((it) => ({ ...it, ly: it.y })).sort((a, b) => a.ly - b.ly)
-  for (let i = 1; i < out.length; i++) out[i]!.ly = Math.max(out[i]!.ly, out[i - 1]!.ly + gap)
-  const over = (out.at(-1)?.ly ?? 0) - hi
-  if (over > 0) for (const o of out) o.ly -= over
-  for (let i = out.length - 2; i >= 0; i--) out[i]!.ly = Math.min(out[i]!.ly, out[i + 1]!.ly - gap)
-  for (const o of out) o.ly = Math.max(lo, o.ly)
-  return out
+  // Labels that would overlap form a group, centred on the mean of where its members want to be,
+  // so each label stays as close to its own point as the others allow. Groups merge until none overlap.
+  const sorted = [...items].sort((a, b) => a.y - b.y)
+  type Group = { members: T[]; top: number }
+  const groups: Group[] = []
+  for (const it of sorted) {
+    groups.push({ members: [it], top: it.y })
+    for (;;) {
+      const g = groups.at(-1)!
+      const prev = groups.at(-2)
+      if (!prev || prev.top + prev.members.length * gap <= g.top) break
+      const members = [...prev.members, ...g.members]
+      const mean = members.reduce((a, m) => a + m.y, 0) / members.length
+      groups.splice(-2, 2, { members, top: mean - ((members.length - 1) * gap) / 2 })
+    }
+  }
+  // Keep the whole set inside [lo, hi].
+  const first = groups[0]
+  const last = groups.at(-1)
+  if (last) {
+    const over = last.top + (last.members.length - 1) * gap - hi
+    if (over > 0) for (const g of groups) g.top -= over
+  }
+  if (first && first.top < lo) {
+    const under = lo - first.top
+    for (const g of groups) g.top += under
+  }
+  return groups.flatMap((g) => g.members.map((m, i) => ({ ...m, ly: g.top + i * gap })))
 }
 
 /** A small mono label with a white halo, so lines under it do not hide it. */
@@ -129,8 +169,9 @@ export function valueRefs(refs: readonly { value: number; label: string }[] | un
     const at = x(r.value)
     // Near the right edge the label reads leftwards from the line.
     const left = edge - at < r.label.length * 7
-    return svg`<line x1="${at}" x2="${at}" y1="${top}" y2="${bottom}" stroke="var(--ink)" stroke-dasharray="3 3"/>
-${note(left ? at - 4 : at + 4, top + 10, r.label, left ? 'end' : 'start')}`
+    // The label sits above the line's top, clear of the first row of marks.
+    return svg`<line x1="${at}" x2="${at}" y1="${top}" y2="${bottom}" stroke="var(--slate)" stroke-dasharray="3 3"/>
+${note(left ? at - 4 : at + 4, top - 6, r.label, left ? 'end' : 'start')}`
   })}`
 }
 

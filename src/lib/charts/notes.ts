@@ -4,7 +4,7 @@ import type { Chart, Callout, Breakpoint } from '~/content/types'
 import { svg, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
 import { note as mono } from './axes'
-import { show, type SeriesData } from './model'
+import { show, when, type SeriesData } from './model'
 
 type WithNotes = Extract<Chart, { kind: 'line' | 'columns' | 'area' }>
 
@@ -25,6 +25,45 @@ export interface NoteBox {
    * the cap of its column, above any neighbour its text crosses, with no dot.
    */
   capAt?: (x0: number, x1: number) => number
+  /** Column charts: the lowest bar bottom (pixel y) between two pixel x values, for negative values. */
+  floorAt?: (x0: number, x1: number) => number
+  /** Step lines hold each value until the next point. */
+  step?: boolean
+}
+
+type Seg = readonly [number, number, number, number]
+
+/** The drawn lines as pixel segments, so a callout can keep its text off them. */
+function lineSegments(box: NoteBox): Seg[] {
+  return box.series.flatMap((s) => {
+    const pts = s.points.flatMap((p) => {
+      const px = p.y === null ? undefined : box.xOf(p.x)
+      return px === undefined ? [] : [[px, box.y(p.y!)] as const]
+    })
+    return pts.slice(1).flatMap(([x1, y1], i): Seg[] => {
+      const [x0, y0] = pts[i]!
+      return box.step ? [[x0, y0, x1, y0], [x1, y0, x1, y1]] : [[x0, y0, x1, y1]]
+    })
+  })
+}
+
+/** True when a segment passes through a rectangle (Liang-Barsky clipping). */
+function crosses([x0, y0, x1, y1]: Seg, r: { l: number; t: number; r: number; b: number }): boolean {
+  let lo = 0
+  let hi = 1
+  const dx = x1 - x0
+  const dy = y1 - y0
+  for (const [p, q] of [[-dx, x0 - r.l], [dx, r.r - x0], [-dy, y0 - r.t], [dy, r.b - y0]] as const) {
+    if (p === 0) {
+      if (q < 0) return false
+    } else {
+      const t = q / p
+      if (p < 0) lo = Math.max(lo, t)
+      else hi = Math.min(hi, t)
+      if (lo > hi) return false
+    }
+  }
+  return true
 }
 
 
@@ -44,25 +83,37 @@ function callout(c: Callout, chart: WithNotes, box: NoteBox): Markup | null {
   // The end label already names a series' last value.
   if (!s || !p || p.y === null || px === undefined || (box.endLabels && s.points.findLast((q) => q.y !== null) === p)) return null
   const py = box.y(p.y)
-  const text = c.label ?? `${show(chart, p, s).text} in ${p.label}`
-  if (box.capAt && p.y >= 0) return capLabel(text, px, box)
-  const left = box.right !== undefined && px + 7 + text.length * 6.5 > box.right
-  return svg`<circle cx="${px}" cy="${py}" r="3" fill="${colorVar(s.color)}"/>
-<text x="${left ? px - 7 : px + 7}" y="${p.y >= 0 ? py - 6 : py + 14}" text-anchor="${left ? 'end' : 'start'}" font-size="12" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3">${text}</text>`
+  const text = c.label ?? `${show(chart, p, s).text} ${when(p.label)}`
+  if (box.capAt) return capLabel(text, px, box, p.y < 0)
+  // Try spots around the point, nearest first, and take the first whose text crosses no line.
+  const w = text.length * 6.5
+  const segs = lineSegments(box)
+  const offsets: readonly (readonly [number, number])[] = [[7, -7], [7, 15], [-7, -7], [-7, 15], [7, -21], [7, 29], [-7, -21], [-7, 29]]
+  const spots = offsets.map(([dx, dy]) => {
+    const start = dx > 0 ? px + dx : px + dx - w
+    return { x: start, y: py + dy, r: { l: start - 2, t: py + dy - 11, r: start + w + 2, b: py + dy + 3 } }
+  }).filter((o) => o.r.l >= (box.left ?? -Infinity) && o.r.r <= (box.right ?? Infinity) && o.r.t >= box.top - 4 && o.r.b <= box.bottom)
+  const best = spots.find((o) => !segs.some((sg) => crosses(sg, o.r))) ?? spots[0] ?? { x: px + 7, y: py - 7 }
+  return svg`<circle cx="${px}" cy="${py}" r="3.5" fill="${colorVar(s.color)}" stroke="var(--paper)" stroke-width="1.5"/>
+<text x="${best.x}" y="${best.y}" font-size="12" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3">${text}</text>`
 }
 
 /**
  * A column callout: the text centred on the column's cap, raised clear of every bar it spans.
  * When it has to rise above its own cap, a short rule ties it back to the column.
  */
-function capLabel(text: string, px: number, box: NoteBox): Markup {
+function capLabel(text: string, px: number, box: NoteBox, below = false): Markup {
   const half = (text.length * 6.6) / 2 + 4
   const cx = Math.max((box.left ?? -Infinity) + half, Math.min(px, (box.right ?? Infinity) - half))
-  const own = box.capAt!(px - 1, px + 1)
-  const clear = Math.min(own, box.capAt!(cx - half, cx + half))
-  const ty = Math.max(12, clear - 8)
-  const tied = own - ty > 18
-  return svg`${tied ? svg`<line x1="${px}" x2="${px}" y1="${own - 2}" y2="${ty + 4}" stroke="var(--slate)"/>` : null}
+  // A negative column's label hangs below its end, clear of any deeper neighbour.
+  const edge = below ? box.floorAt! : box.capAt!
+  const own = edge(px - 1, px + 1)
+  const clear = below ? Math.max(own, edge(cx - half, cx + half)) : Math.min(own, edge(cx - half, cx + half))
+  const ty = below ? clear + 16 : Math.max(12, clear - 8)
+  const tied = Math.abs(own - ty) > (below ? 26 : 18)
+  const y1 = below ? own + 2 : own - 2
+  const y2 = below ? ty - 12 : ty + 4
+  return svg`${tied ? svg`<line x1="${px}" x2="${px}" y1="${y1}" y2="${y2}" stroke="var(--slate)"/>` : null}
 <text x="${cx}" y="${ty}" text-anchor="middle" font-size="12" font-weight="500" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3">${text}</text>`
 }
 

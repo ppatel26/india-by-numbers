@@ -63,7 +63,7 @@ const TILES: readonly (readonly [string, string, string, number, number])[] = [
   ['kerala', 'Kerala', 'KL', 3, 7],
   ['tamil-nadu', 'Tamil Nadu', 'TN', 4, 7],
   ['puducherry', 'Puduch-erry', 'PY', 5, 7],
-  ['andaman-nicobar', 'A&N Islands', 'AN', 7, 7],
+  ['andaman-nicobar', 'A&N', 'AN', 7, 7],
 ]
 
 export const GRID = { cols: 8, rows: 7 } as const

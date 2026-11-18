@@ -164,3 +164,6 @@ export const gapFormat = (f: Format | undefined, decimals: number): Format => ({
 export function pointAt(series: SeriesData, x?: string): Point | undefined {
   return x ? series.points.find((p) => p.x === x) : latest(series.points)
 }
+
+/** "on 18 Nov 2026" for a day, "in October 2026" or "in 2024" for anything longer. */
+export const when = (label: string): string => `${/^\d{1,2} [A-Z][a-z]{2} \d{4}$/.test(label) ? 'on' : 'in'} ${label}`

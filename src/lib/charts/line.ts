@@ -4,8 +4,9 @@ import type { Point } from '~/lib/data'
 import { svg, attr, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
 import { parsePeriod } from '~/lib/period'
-import { WIDTH, frame, note, yRoom, hit, spread, timeTicks, xLabels, yGrid, yScale, yTicks, type Width } from './axes'
-import { drawn, show, tipLine, type Of, type SeriesData } from './model'
+import { WIDTH, frame, note, yRoom, hit, spread, tickRoom, timeTicks, xLabels, yGrid, yScale, yTicks, type Width } from './axes'
+import { legend } from './dots'
+import { drawn, show, tipLine, when, type Of, type SeriesData } from './model'
 import { timeNotes } from './notes'
 
 /**
@@ -16,10 +17,12 @@ import { timeNotes } from './notes'
 export function segments(pts: readonly Point[], regular = true): Point[][] {
   const steps = pts.slice(1).map((p, i) => p.t - pts[i]!.t).sort((a, b) => a - b)
   const typical = steps[Math.floor(steps.length / 2)] ?? 1
+  // A daily series skips weekends and holidays: only a gap of a week or more is a real gap.
+  const limit = typical < 2 / 365 ? 7 / 365 : typical * 1.8
   const out: Point[][] = [[]]
   pts.forEach((p, i) => {
     const prev = pts[i - 1]
-    if (p.y === null || (regular && prev && p.t - prev.t > typical * 1.8)) out.push([])
+    if (p.y === null || (regular && prev && p.t - prev.t > limit)) out.push([])
     if (p.y !== null) out.at(-1)!.push(p)
   })
   return out.filter((s) => s.length > 0)
@@ -55,7 +58,19 @@ export function renderLine(chart: Of<'line'>, width: Width): Markup {
     const scaleOn = own ? panel.series.flatMap((s) => s.points.flatMap((p) => (p.y === null ? [] : [p.y]))) : [...values, ...extra]
     return svg`<g transform="translate(${ox},${oy})">${linePanel(chart, panel, panelW, panelH, scaleOn, narrow, panels.length > 1, own)}</g>`
   })
-  return frame(width, rows * panelH + (rows - 1) * 24, chart.title, body)
+  // Small multiples carry no end labels, so two or more series need a key above the panels.
+  // One entry per name and colour. A colour worn by several names is each panel's own series,
+  // which the panel title already names, so it gets no entry.
+  const named = [...new Map(all.map((s) => [`${s.label}|${s.color}`, s])).values()]
+  const seen = named.filter((s) => named.filter((o) => o.color === s.color).length === 1)
+  const keyed = panels.length > 1 && seen.length > 1
+  const keyH = keyed ? 26 : 0
+  return frame(
+    width,
+    keyH + rows * panelH + (rows - 1) * 24,
+    chart.title,
+    svg`${keyed ? legend(seen) : null}<g transform="translate(0,${keyH})">${body}</g>`,
+  )
 }
 
 function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values: number[], narrow: boolean, small: boolean, own = false): Markup {
@@ -63,7 +78,7 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
   // End labels need room for the longest name or "value in period" line (about 7 px a character).
   const lastLine = (s: SeriesData) => {
     const p = s.points.findLast((q) => q.y !== null)
-    return p ? `${show(chart, p, s).text}${narrow ? '' : ` in ${p.label}`}`.length : 0
+    return p ? `${show(chart, p, s).text}${narrow ? '' : ` ${when(p.label)}`}`.length : 0
   }
   const labelRoom = Math.max(...panel.series.map((s) => Math.max(s.label.length, lastLine(s))), 8) * 7 + 12
   // A panel on its own scale may also have its own unit (enrolment in crore beside ratios).
@@ -95,6 +110,7 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
     right: W - m.right,
     series: panel.series,
     endLabels,
+    step: chart.step,
   })
 
   const band = chart.band
@@ -127,10 +143,19 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
     ),
   )
 
-  // "No data" under a hole in the first series, when the hole is wide enough to label.
-  const noData = (segs[0] ? holes(segs[0]) : [])
-    .filter(([a, b]) => x(b.t) - x(a.t) > 50)
-    .map(([a, b]) => note((x(a.t) + x(b.t)) / 2, H - m.bottom - 6, 'No data', 'middle'))
+  // "No data" inside each hole wide enough to label, at the height of the line it interrupts.
+  // One note per stretch of axis: a hole shared by several series is labelled once.
+  const taken: [number, number][] = []
+  const noData = segs.flatMap((sg) =>
+    holes(sg).flatMap(([a, b]) => {
+      const x0 = x(a.t)
+      const x1 = x(b.t)
+      if (x1 - x0 < 50 || taken.some(([p, q]) => x0 < q && x1 > p)) return []
+      taken.push([x0, x1])
+      const ly = Math.max(m.top + 12, (y(a.y!) + y(b.y!)) / 2 - 8)
+      return [note((x0 + x1) / 2, ly, 'No data', 'middle')]
+    }),
+  )
 
   // End labels name the series that reach the right edge. A series that stops earlier (an old
   // base, an old survey design) is named in the tooltip and the table instead.
@@ -146,9 +171,11 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
         H - m.bottom,
       ).map(({ s, p, ly }) => {
         const v = show(chart, p, s)
-        return svg`<circle cx="${x(p.t)}" cy="${y(p.y!)}" r="3" fill="${colorVar(s.color)}"/>
+        // A label pushed away from its dot gets a short connector, so it never reads as another line's.
+        const moved = Math.abs(ly + 3 - y(p.y!)) > 9
+        return svg`${moved ? svg`<path d="M${x(p.t) + 3} ${y(p.y!)}L${x(p.t) + 6} ${ly + 3}" stroke="${colorVar(s.color)}" fill="none"/>` : null}<circle cx="${x(p.t)}" cy="${y(p.y!)}" r="3" fill="${colorVar(s.color)}"/>
 <text x="${x(p.t) + 8}" y="${ly - 2}" font-size="12.5" font-weight="600" fill="var(--ink)">${s.label}</text>
-<text x="${x(p.t) + 8}" y="${ly + 12}" font-size="12.5" fill="var(--ink)"${attr('data-alt', v.alt)}>${v.text}${narrow ? '' : ` in ${p.label}`}</text>`
+<text x="${x(p.t) + 8}" y="${ly + 12}" font-size="12.5" fill="var(--ink)"${attr('data-alt', v.alt)}>${v.text}${narrow ? '' : ` ${when(p.label)}`}</text>`
       })
     : []
 
@@ -163,7 +190,7 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
 
   return svg`${panel.label ? svg`<text x="${m.left}" y="14" font-size="13" font-weight="600" fill="var(--ink)">${panel.label}</text>` : null}
 ${key}${bandEl}${yGrid(y, ticks, m.left, W - m.right, f)}${refs}${notes.under}
-${xLabels(timeTicks(sorted, x, narrow || small ? 4 : 8), H - m.bottom)}
+${xLabels(timeTicks(sorted, x, Math.min(narrow || small ? 5 : 8, tickRoom(W - m.left - m.right, sorted.at(-1)?.label ?? '2026'))), H - m.bottom, { left: m.left, right: W - m.right })}
 ${noData}${lines}${notes.over}${ends}<g class="hits">${hits}</g>`
 }
 

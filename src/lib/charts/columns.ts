@@ -1,7 +1,7 @@
 import { scaleBand } from 'd3-scale'
 import { svg, type Markup } from '~/lib/markup'
-import { colorVar } from '~/lib/tokens'
-import { WIDTH, frame, hit, xLabels, yGrid, yRoom, yScale, yTicks, type Width } from './axes'
+import { colorVar, fillVar } from '~/lib/tokens'
+import { WIDTH, frame, hit, tickRoom, xLabels, yGrid, yRoom, yScale, yTicks, type Width } from './axes'
 import { drawn, tipLine, type Of } from './model'
 import { timeNotes } from './notes'
 
@@ -28,7 +28,7 @@ export function renderColumns(chart: Of<'columns'>, width: Width): Markup {
     let base = 0
     return here.map((v, i) => {
       const val = v.p!.y!
-      const fill = chart.sign ? colorVar(val >= 0 ? chart.sign.above : chart.sign.below) : colorVar(v.s.color)
+      const fill = chart.sign ? colorVar(val >= 0 ? chart.sign.above : chart.sign.below) : fillVar(v.s.color)
       if (chart.stacked) {
         const y0 = y(base)
         base += val
@@ -39,16 +39,20 @@ export function renderColumns(chart: Of<'columns'>, width: Width): Markup {
     })
   })
 
-  const step = Math.max(1, Math.ceil(xs.length / (narrow ? 4 : 9)))
+  // Label every column when each label fits its own column; otherwise every n-th.
+  const widest = Math.max(...xs.map((p) => p.label.length)) * 6.6 + 8
+  const step = x.step() >= widest ? 1 : Math.max(1, Math.ceil(xs.length / Math.min(narrow ? 4 : 9, tickRoom(W - m.left - m.right, xs.at(-1)?.label ?? '2026'))))
   const ticks = xs.filter((_, i) => i % step === 0).map((p) => ({ x: x(p.x)! + x.bandwidth() / 2, label: p.label }))
 
   // The top of each column, for callouts that must clear their neighbours.
   const caps = xs.map((p, i) => {
     const vals = at(p.x).map((v) => v.p!.y!)
     const top = chart.stacked ? totals[i]! : Math.max(0, ...vals)
-    return { x0: x(p.x)!, x1: x(p.x)! + x.bandwidth(), y: y(top) }
+    return { x0: x(p.x)!, x1: x(p.x)! + x.bandwidth(), y: y(top), low: y(Math.min(0, ...vals)) }
   })
-  const capAt = (a: number, b: number) => Math.min(y(0), ...caps.filter((c) => c.x1 >= a && c.x0 <= b).map((c) => c.y))
+  const near = (a: number, b: number) => caps.filter((c) => c.x1 >= a && c.x0 <= b)
+  const capAt = (a: number, b: number) => Math.min(y(0), ...near(a, b).map((c) => c.y))
+  const floorAt = (a: number, b: number) => Math.max(y(0), ...near(a, b).map((c) => c.low))
 
   const notes = timeNotes(chart, {
     // Notes sit at the centre of their column.
@@ -60,6 +64,7 @@ export function renderColumns(chart: Of<'columns'>, width: Width): Markup {
     right: W - m.right,
     series,
     capAt,
+    floorAt,
   })
 
   const hits = xs.map((p) =>
@@ -72,6 +77,6 @@ export function renderColumns(chart: Of<'columns'>, width: Width): Markup {
     chart.title,
     svg`${yGrid(y, yTicks(y, chart.y), m.left, W - m.right, chart.format)}${notes.under}${bars}
 <line x1="${m.left}" x2="${W - m.right}" y1="${y(0)}" y2="${y(0)}" stroke="var(--ink)"/>
-${xLabels(ticks, H - m.bottom)}${notes.over}<g class="hits">${hits}</g>`,
+${xLabels(ticks, H - m.bottom, { left: m.left, right: W - m.right })}${notes.over}<g class="hits">${hits}</g>`,
   )
 }

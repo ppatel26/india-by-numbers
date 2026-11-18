@@ -33,7 +33,7 @@ The brand colour is lac (लाख), the resin India used for sealing wax on off
 | Ink / Slate (text on white) | #16181D (17.8:1) / #555B68 (6.8:1) |
 | Text on lac / secondary text on lac | #FFFFFF (9.1:1) / #DDD6D4 (6.3:1; 13.0:1 on kajal) |
 | Rule (hairlines on white) | #DCDAD6 |
-| Chart: India (reference), selected state and series 1 to 4, other | ink #16181D; lac #AF2C1F, peacock #008A78, turmeric #B7850C, lapis #3A5BA8; other #9AA0A8 (bars #C9CCD1) |
+| Chart: India (reference), selected state and series 1 to 4, other | ink #16181D; lac #AF2C1F, peacock #008A78, turmeric #B7850C, lapis #3A5BA8; other #9AA0A8 (bars #AEB3BB); India bar fills #3D424C |
 | Chart: target band, gridlines | #F2F1EE, #ECEBE8 |
 | Flag only (conventional screen values; the Flag Code gives no hex) | #FF9933, #FFFFFF, #138808, chakra #000080 |
 
@@ -69,7 +69,7 @@ Topic pigments (hero ground, home and topics tiles, topic tag; never a data colo
 
 Chart colours, fixed order: #CC2827, #00909C, #7233BB, #279662, #1C6DDA, #AA8726, #A11C6C, #C46C23. The set passes every check in light and dark mode (worst adjacent colourblind pair ΔE 15.8). Slots 1 to 3 also pass all-pairs, for maps and scatter. India is always ink. The selected state is slot 1.
 
-Map ramps: sequential mor, 6 steps (#50C1C7 to #0D4346); diverging lapis to lac around the India value, with a neutral midpoint. Maps are tile grids (one equal tile per state or UT), so no boundary is drawn.
+Map ramps: sequential mor, 6 steps from very light to very dark (#D2EFEF to #0A3A3D), so neighbouring bins read apart; tile text takes ink or white by contrast; diverging lapis to lac around the India value, with a neutral midpoint. Maps are tile grids (one equal tile per state or UT), so no boundary is drawn.
 
 Entity colours are fixed site-wide (for example women slot 3, men slot 2, rural slot 4, urban slot 5, ages 15-29 slot 8). The full table lives in the kit board on page 03.
 
