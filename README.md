@@ -1,25 +1,36 @@
 # India by Numbers
 
-India's official statistics, checked and charted. A static site in the spirit of
-[UK by Numbers](https://ukbynumbers.org/) and [Our World in Data](https://ourworldindata.org/).
+**[indiabynumbers.org](https://indiabynumbers.org)**: India's official statistics, checked and charted.
 
-Live: <https://indiabynumbers.org>. Built by Parv ([@patel_parv](https://x.com/patel_parv)).
+Nine topics (prices, the economy, jobs, population, health, education, elections, climate, and
+religion and culture), 72 charts, and a profile of each of India's 28 states and 8 union territories
+beside the national figure. The site follows the example of [UK by Numbers](https://ukbynumbers.org/)
+and [Our World in Data](https://ourworldindata.org/).
 
-## What is here
+Built by Parv ([@patel_parv](https://x.com/patel_parv)).
 
-| Path | What it holds |
-| --- | --- |
-| `research/data/` | The data: publisher CSVs per topic, with a README for each (release, date, URL, sha256, gaps). Also `geography.csv`, `state-languages.csv` and `release-calendar.csv`. |
-| `src/content/` | The content model (`types.ts`), one module per topic (copy and chart definitions), and page copy (`pages/`). |
-| `src/lib/` | Build-time code: CSV reading, periods and number formats, the chart engine (`charts/`), state pages (`profile.ts`), chart files and social images (`render.ts`, `og.ts`, `shape.ts`). |
-| `src/components/`, `src/pages/` | Astro components and routes. |
-| `src/scripts/` | Small browser scripts: chart tabs and tooltips, the number switch, the selected state, search, list filters. |
-| `worker/` | The Cloudflare Worker: static files, plus `POST /api/report` into D1. |
-| `docs/` | Site spec and the Taksal design direction. |
-| `tests/` | Unit tests (Vitest) and end-to-end tests (Playwright). |
+## How the numbers are checked
 
-Every number on the site is read from `research/data` at build time and printed with the publisher's
-digits. One renderer makes each chart's page view, its PNG and SVG files and its social image.
+- Every value comes from a release by a government office: MoSPI, RBI, the Registrar General (Census
+  and SRS), IIPS for the NFHS, the Ministry of Education, the Election Commission, IMD, CEA, MNRE and
+  others. Each topic folder in [`research/data/`](research/data/) has a README with the release, its
+  date, the link and the checksum of the file we read.
+- The site prints the publisher's own digits. Each figure carries its period and, where it applies,
+  a status word: Provisional, Projection, Survey estimate or Method break.
+- Base-year changes stay visible. The CPI on base 2012=100 and on 2024=100 are two lines with a break,
+  not one spliced line.
+- A test fails the build if the text quotes a number that is not in the data.
+- Every chart has a table, and CSV, PNG, SVG and JSON downloads.
+
+## Contribute
+
+**Found a wrong figure?** Use [Report a problem](https://indiabynumbers.org/corrections/#report) on
+the site, or open a [wrong figure issue](../../issues/new?template=wrong-figure.yml) with a link to
+the source you checked.
+
+**Know a dataset that belongs here?** Open a [dataset issue](../../issues/new?template=dataset.yml):
+the publisher, a link, and the question it answers. Pull requests that add data are welcome; see
+[CONTRIBUTING.md](CONTRIBUTING.md).
 
 ## Run it
 
@@ -27,26 +38,31 @@ Node 24 and pnpm.
 
 ```sh
 pnpm install
-pnpm dev            # http://localhost:4321
-pnpm build          # static site in dist/
-pnpm test           # unit tests: data, prose numbers, copy rules, formats
-pnpm build && pnpm test:e2e   # every page, link, file and interaction, through the real Worker
-pnpm check          # astro check and the Worker types
+pnpm dev                      # http://localhost:4321
+pnpm test                     # data, prose numbers, copy rules, formats, charts
+pnpm build && pnpm test:e2e   # every page, link, file and interaction, through the Worker
+pnpm check                    # types
+pnpm deploy                   # Cloudflare, personal profile
 ```
 
-## Deploy
+## How it is built
 
-Cloudflare Workers on the personal account (`pnpm deploy` passes `--profile personal`).
+| Path | What it holds |
+| --- | --- |
+| [`research/data/`](research/data/) | The data: one folder per topic, with CSVs and a README of sources. Also the 36 states and UTs, their official languages, and the release calendar. |
+| [`pipeline/`](pipeline/) | The scripts that turned each publisher file into its CSV. |
+| [`src/content/`](src/content/) | The copy and the chart definitions, as typed data (`types.ts`). |
+| [`src/lib/`](src/lib/) | Build-time code: CSV reading, periods and number formats, the chart engine (`charts/`), state pages, chart files and social images. |
+| [`src/components/`](src/components/), [`src/pages/`](src/pages/) | Astro components and routes. |
+| [`src/scripts/`](src/scripts/) | Small browser scripts: chart tabs and tooltips, the lakh and million switch, the chosen state, search. |
+| [`worker/`](worker/) | The Cloudflare Worker: static files, and the Report a problem form into D1. |
+| [`docs/`](docs/) | The site spec and the design direction. |
 
-```sh
-pnpm deploy
-pnpm exec wrangler d1 migrations apply india-by-numbers --remote   # after a new migration
-```
+Charts are drawn at build time from the CSVs, as SVG. One renderer makes each chart's page view, its
+downloads and its social image. The site is static HTML on Cloudflare Workers.
 
-## Add or update data
+## Licence
 
-1. Put the publisher file's values in a CSV under `research/data/<topic>/`, and record the release,
-   date, URL and sha256 in that folder's README.
-2. Point a chart at it in `src/content/topics/<topic>.ts` (a `Pick`: file, `where`, `x`, `y`).
-3. Run `pnpm test`. The prose test fails if the copy quotes a number that is not in the data.
-4. Change `SITE.checked` in `src/lib/site.ts` when a full check is done.
+Code: [MIT](LICENSE). Text, charts and processed data files: [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/);
+credit "India by Numbers" and link to the page. Publisher data stays under each publisher's terms.
+Fonts: SIL Open Font License.

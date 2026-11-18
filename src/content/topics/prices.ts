@@ -1,8 +1,6 @@
 import type { Source, Topic } from '../types'
 
-// and, for chart 2.1, board S12 (6S3-0).
-// Data: research/data/prices. Every prose number is checked by
-// pipeline/check_prices_economy.py.
+// Data: research/data/prices. tests/unit/prose.test.ts checks every number in the prose.
 
 // ---------------------------------------------------------------- Sources
 
@@ -219,14 +217,14 @@ const topic: Topic = {
             better: 'low',
             short: 'Inflation',
             timeline: { column: 'period', values: ['2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10'] },
-            // From board S12, "What you should know about this indicator".
+            // From the chart page design, "What you should know about this indicator".
             know: [
               'October 2026 is provisional. MoSPI finalises it with the November release, due on 14 December 2026.',
               'CPI moved to a new base, 2024=100, in January 2026, with a new basket and new weights. Rates on the old base, 2012=100, end in December 2025. Do not compare them with this chart without the break.',
               "Each value combines rural and urban prices. In October 2026 India's rural rate was 6.63% and its urban rate 5.41%. Chandigarh has no rural index, so its combined rate equals its urban rate, 5.23%.",
               'State indices rest on thinner samples than the national index. MoSPI asks users to treat state-level item indices with caution.',
             ],
-            // From board S12, "How we process this figure".
+            // From the chart page design, "How we process this figure".
             processing: [
               'Fetch the state general index and rate for each month and sector from the MoSPI eSankhyiki API (base 2024=100).',
               'Check October 2026 against Annexure III of the press release of 12 Nov 2026.',

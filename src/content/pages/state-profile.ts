@@ -1,4 +1,4 @@
-// Fixed copy and the measure rows of the state pages (board S14). The sentences that quote a
+// Fixed copy and the measure rows of the state pages. The sentences that quote a
 // state's values are in src/lib/profile.ts, next to the numbers they use.
 
 import type { Format, Pick, TopicSlug } from '../types'

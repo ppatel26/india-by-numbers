@@ -1,6 +1,6 @@
 import type { Source, Topic } from '../types'
 
-// Board S05. Data: research/data/population/README.md.
+// Data: research/data/population/README.md.
 
 
 const CENSUS_URL_A02 =

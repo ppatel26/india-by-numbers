@@ -1,6 +1,5 @@
 import type { Source, Topic } from '../types'
 
-// Board S11. Copy is verbatim from the board, except where a comment says why.
 
 // --- Sources (research/data/elections/README.md, rows S1 to S16) ---
 

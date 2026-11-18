@@ -15,9 +15,11 @@ coverage/
 .env.*
 .dev.vars*
 
-# UK by Numbers mirror and captures: third-party content, kept local only
+# UK by Numbers mirror, extracts and captures: third-party content, kept local only
 research/reference/raw/
 research/reference/screenshots/
+research/reference/extract/
+research/reference/crawl-inventory.json
 
 .DS_Store
 __pycache__/

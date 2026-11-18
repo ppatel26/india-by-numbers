@@ -1,0 +1,5 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Report a problem on a page
+    url: https://indiabynumbers.org/corrections/#report
+    about: The form on the site works without a GitHub account.

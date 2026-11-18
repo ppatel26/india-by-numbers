@@ -1,6 +1,6 @@
 import type { Series, Source, Topic } from '../types'
 
-// Board S06. Data: research/data/religion-culture/README.md.
+// Data: research/data/religion-culture/README.md.
 
 /** Each religion keeps one colour across the page (chart 1.1 and the by-state chart). */
 const RELIGION_COLORS = {

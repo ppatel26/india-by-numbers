@@ -1,4 +1,4 @@
-/** Topic tiles on the home page (board S01): two questions and one figure per topic. */
+/** Topic tiles on the home page: two questions and one figure per topic. */
 import type { Figure, TopicSlug } from '../types'
 
 export interface Tile {

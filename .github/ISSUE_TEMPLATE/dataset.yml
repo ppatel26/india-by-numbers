@@ -1,0 +1,30 @@
+name: Suggest a dataset
+description: Official Indian data that should be on the site.
+labels: [dataset]
+body:
+  - type: input
+    id: title
+    attributes:
+      label: Dataset
+      description: For example "PLFS quarterly bulletin, state tables" or "NCRB Crime in India, Table 1A.1".
+    validations:
+      required: true
+  - type: input
+    id: publisher
+    attributes:
+      label: Publisher and link
+      description: The government office that publishes it, and a link to the release or file.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: What question it answers
+      description: One or two plain questions a reader could answer with it.
+    validations:
+      required: true
+  - type: textarea
+    id: details
+    attributes:
+      label: Coverage and cadence
+      description: Years, states, how often it is released, and any method changes you know of.

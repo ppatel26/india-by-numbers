@@ -1,7 +1,6 @@
 import type { Source, Topic } from '../types'
 
-// Board S04. Data: research/data/economy. Every prose number is
-// checked by pipeline/check_prices_economy.py.
+// Data: research/data/economy. tests/unit/prose.test.ts checks every number in the prose.
 
 // ---------------------------------------------------------------- Period lists
 // The two bases overlap. The board draws the old base only up to the break, so the old

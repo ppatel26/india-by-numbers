@@ -1,6 +1,5 @@
 import type { Source, Topic } from '../types'
 
-// Board S09. Copy is verbatim from the board.
 
 // The ORGI catalogue gives "Date published 2026-05-20".
 const SRS_BULLETIN_2024: Source = {

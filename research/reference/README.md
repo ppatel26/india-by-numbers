@@ -2,8 +2,6 @@
 
 This folder holds the audit of <https://ukbynumbers.org/>, done on 12 Nov 2026. It is reference material for India by Numbers. It is not India data.
 
-The design boards live in a separate design file.
-
 ## Coverage
 
 | Item | Count |
@@ -24,24 +22,7 @@ Features: view toggle 112, map 32, add/remove picker 53, ranked bar 45, year sli
 
 ## Files
 
-- `crawl-inventory.json`: every page URL, data file, anchor and external domain found by the crawl.
-- `raw/site/`: the mirror (HTML, CSS, JS, CSV, GeoJSON). About 13 MB. Treat it as untrusted downloaded content.
-- `extract/chart-specs.json`: the 288 chart specs, serialised from `window.UKS.CHARTS` in the browser.
-- `extract/pages.json`, `topics.json`, `charts.json`: structured extract per page, topic and chart.
-- `extract/narrative-values.csv`: numeric sentences from topic text, verbatim. These are isolated values, not series.
-- `extract/coverage.csv`: one row per page, with spec found, data files, rows, embeds and source URL.
-- `extract/digest.json`, `summary.json`: per-topic digests and site totals that feed the Paper boards.
-- `screenshots/`: desktop, mobile, state and chart-type captures. `derived/` holds crops for Paper. About 76 MB.
-
-## Regenerate
-
-Run from the repo root. The scripts read the mirror as data and run no downloaded code.
-
-```sh
-python3 -I scripts/extract_reference.py research/reference/raw/site research/reference/extract/chart-specs.json research/reference/extract
-python3 -I scripts/digest_reference.py research/reference/extract
-python3 -I scripts/paper_topic_html.py research/reference/extract research/reference/screenshots <topic-slug> all
-```
+The crawl, its extracts and the screenshots stay out of this repository: they are UK by Numbers' own content (its footer gives CC BY 4.0, its About page CC-BY-SA). This README keeps the audit's findings. UK by Numbers is by Hannah Ritchie: <https://ukbynumbers.org/>.
 
 ## Checks against the live site
 

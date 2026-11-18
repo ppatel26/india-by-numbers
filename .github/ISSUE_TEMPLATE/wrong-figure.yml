@@ -1,0 +1,25 @@
+name: Report a wrong figure
+description: A number, period, unit or source on the site does not match the publisher.
+labels: [data error]
+body:
+  - type: input
+    id: page
+    attributes:
+      label: Page or chart
+      description: The address, for example https://indiabynumbers.org/charts/cpi-inflation/
+    validations:
+      required: true
+  - type: textarea
+    id: problem
+    attributes:
+      label: What looks wrong
+      description: The value on the site, and the value you expected.
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: The source you checked
+      description: A link to the publisher's release, table or file, with page or table number.
+    validations:
+      required: true

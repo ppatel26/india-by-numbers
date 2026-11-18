@@ -1,6 +1,5 @@
 import type { Source, Topic } from '../types'
 
-// Board S10. Copy is verbatim from the board.
 
 const IMD_SEASON_2026: Source = {
   publisher: 'IMD',
