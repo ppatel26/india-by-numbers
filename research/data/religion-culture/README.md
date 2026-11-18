@@ -101,8 +101,8 @@ Source blocks give publisher, table and period. See "Sources" for URLs and check
 
 ## Sources
 
-Read date for all rows: 17 Nov 2026. Raw files are in raw/religion-culture/ (not in the repo).
-Parsing script: pipeline/build_religion.py (run with `python3 -I`).
+Read date for all rows: 17 Nov 2026. Raw downloads are not kept in the repository; the URL and sha256 below identify each file.
+Parsing script: pipeline/religion-culture/build_religion.py (run with `python3 -I`).
 
 | Publisher | Release / table | Release date | Data period | URL read | Licence | sha256 of raw file |
 | --- | --- | --- | --- | --- | --- | --- |

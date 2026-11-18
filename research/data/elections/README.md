@@ -131,7 +131,7 @@ All read on 17 Nov 2026. "Archive" means the Internet Archive copy of the ECI UR
 | S15 | Election Commission of India | Odisha assembly results June 2024 (used only for the party name "Biju Janata Dal") | 05/06/2024 | 2024 | https://results.eci.gov.in/AcResultGenJune2024/partywiseresult-S18.htm (capture 2024-06-18 13:54 UTC) | Not stated | a28866d5f86885eac08b757bf4b89af583a38632fa81305819fd7cf86725e917 |
 | S16 | MoSPI via PIB | Release of "Women and Men in India 2025" (Release ID 2256593), for the S1 release date | 29 Apr 2026 | n/a | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2256593&reg=3&lang=1 | Not stated | c9731568093bd0a20d3d8b564d972c98f00ddc907dfc20a29d8f0d37820a0035 |
 
-Raw files are in `raw/elections/` with a log (`_log.tsv`) of URL, sha256 and fetch time. Parsing scripts are in `pipeline/` (`parse_d33.py`, `check_d33.py`, `build_elections.py`, `build_party.py`, `build_ae.py`).
+Raw downloads are not kept in the repository; the URL and sha256 above identify each file. Files were fetched with `pipeline/common/fetch.sh` and `pipeline/elections/get2026.sh`. Parsing scripts are in `pipeline/elections/` (`extract_text.sh`, `parse_d33.py`, `check_d33.py`, `build_elections.py`, `build_party.py`, `build_ae.py`).
 
 ### How the values were taken
 

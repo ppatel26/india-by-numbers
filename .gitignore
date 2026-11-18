@@ -15,6 +15,10 @@ coverage/
 .env.*
 .dev.vars*
 
+# Pipeline downloads and the text extracted from them: untrusted publisher files, kept local only
+/raw/
+/work/
+
 # UK by Numbers mirror, extracts and captures: third-party content, kept local only
 research/reference/raw/
 research/reference/screenshots/

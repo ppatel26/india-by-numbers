@@ -104,7 +104,7 @@ Other national values in the sources: institutional births 90.6% (NFHS-6; 88.6% 
 
 ## Sources
 
-All read on 17 Nov 2026. Raw files are in `raw/health/` (not in the repo). No page stated a reuse licence, unless shown.
+All read on 17 Nov 2026. Raw downloads are not kept in the repository; the URL and sha256 below identify each file. No page stated a reuse licence, unless shown.
 
 | Publisher | Release | Release date | Period | URL | sha256 of raw file |
 | --- | --- | --- | --- | --- | --- |
@@ -129,7 +129,7 @@ All read on 17 Nov 2026. Raw files are in `raw/health/` (not in the repo). No pa
 | PIB (Ministry of Women and Child Development) | "Study on impact of PMMVY", Release 1782638, Annexure-I (Lok Sabha reply) | 17 Dec 2021 | NFHS-5, 2019-21 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=1782638 | 70eeb06710894aec3ded97d2d9c649faeb82f125206a935af1a394e4aa59d612 |
 | MoHFW, NHSRC (NHA Technical Secretariat) | National Health Accounts Estimates for India 2023-24 | Public release confirmed by 15 Nov 2026 (PIB PRID 2336478). Foreword dated 7 Sep 2026. PDF dated 6 Nov 2026 | 2013-14 to 2023-24 | https://nhsrcindia.org/sites/default/files/2026-11/NHA%20Report%202023-24.pdf | cf60c3fd530a585f9426595505c1301a2877e317adca4f8d17097c84e190e119 |
 
-Parsing: `pdftotext -layout`, then `pipeline/health/build.py` run with `python3 -I`. The script checks row counts and some known values (for example IMR 129 in 1971 and 24 in 2024, NFHS-5 anaemia 57.0 for India).
+Parsing: `pdftotext -layout` (`pipeline/health/extract_text.sh`), then `pipeline/health/build_health.py` run with `python3 -I`. The script checks row counts and some known values (for example IMR 129 in 1971 and 24 in 2024, NFHS-5 anaemia 57.0 for India).
 
 ## Gaps and cautions
 

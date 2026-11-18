@@ -106,7 +106,7 @@ Data gathered on 17 Nov 2026 from IMD, IMD Pune, CEA and MNRE. All values are as
 
 ## Sources
 
-All read on 17 Nov 2026. Raw files are under `raw/climate/` (not in the repo). No licence was stated on any of these pages unless noted.
+All read on 17 Nov 2026. Raw downloads are not kept in the repository; the URL and sha256 below identify each file. No licence was stated on any of these pages unless noted.
 
 | # | Publisher | Release or table | Release date | Data period | URL | sha256 of raw file |
 | --- | --- | --- | --- | --- | --- | --- |
@@ -145,7 +145,7 @@ Files checked but not used for a chart:
 | MoSPI (NSO) | EnviStats India 2025 Vol. I (scanned PDF) | https://www.mospi.gov.in/sites/default/files/reports_and_publication/statistical_publication/EnviStats/Complete_ES1_2025.pdf | 2652fe6f272e33d69b69dbacbc439fbb6cdc8ca523aff6a52df39f8e276aea64 |
 | PIB (MoEFCC) | India submits its 4th Biennial Update Report to the UNFCCC, 2 Jan 2025 | https://pib.gov.in/PressReleaseIframePage.aspx?PRID=2089589 | 10d570ef046a075fb5d49d88952d160027d32d7bfa311b223549604e54ad1352 |
 
-Parsing scripts: `pipeline/climate/` (`build_rain.py`, `build_subdiv.py`, `parse_cea.py`, `build_cea.py`, `build_mnre.py`, `xlsx_dump.py`). Each script asserts the source totals: CEA parts sum to the grand total, MNRE state rows sum to their own totals and to 303,463 MW, and the subdivision categories count 18 normal, 17 deficient, 1 excess, as IMD reports.
+Parsing scripts: `pipeline/climate/` (`extract_text.sh`, `build_rain.py`, `build_subdiv.py`, `parse_cea.py`, `build_cea.py`, `build_mnre.py`). Each script asserts the source totals: CEA parts sum to the grand total, MNRE state rows sum to their own totals and to 303,463 MW, and the subdivision categories count 18 normal, 17 deficient, 1 excess, as IMD reports.
 
 ## Gaps and cautions
 

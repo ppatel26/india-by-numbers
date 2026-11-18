@@ -33,8 +33,8 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in`. It serves the
 - Sentence: "In October 2026 inflation was highest in Puducherry, at 7.96%, and lowest in Mizoram, at 2.85%. Among the large states, Tamil Nadu (7.29%), Telangana (7.26%) and Andhra Pradesh (7.25%) had the highest rates."
 - Source: MoSPI, CPI (base 2024=100), state-wise general index, October 2026. Same values as Annexure III of the press release of 12 Nov 2026.
 - Notes: all 36 states and union territories have a combined value. MoSPI warns that state indices for some items use thin samples.
-- September 2026 rows: the same CSV also holds September 2026 (status `final`, 110 rows: combined and urban for India and all 36 states and UTs, rural for India and 35). They back the "Sep 2026" column and the change in percentage points on the Table tab. Parsed on 17 Nov 2026 from the same raw file, `prices/api/cpi24_general_allstates.all.json`, by `pipeline/charts/topics/add_sep2026_states.py` (run with `python3 -I`). India, combined: 5.54% in September 2026.
-- January to August 2026 rows: added on 18 Nov 2026 for the chart page timeline (status `final`, 880 rows: 110 per month, same sectors and coverage as September). Parsed from the same raw file, `prices/api/cpi24_general_allstates.all.json`, by `pipeline/charts/s11-s12/s12_extend.py` (run with `python3 -I`). The script first checked that all 220 September and October rows in the raw file match the CSV exactly. The rows before were left unchanged; the CSV now has 1,100 data rows. India, combined: 2.74% in January 2026 and 4.83% in August 2026.
+- September 2026 rows: the same CSV also holds September 2026 (status `final`, 110 rows: combined and urban for India and all 36 states and UTs, rural for India and 35). They back the "Sep 2026" column and the change in percentage points on the Table tab. Parsed on 17 Nov 2026 from the same raw file, `prices/api/cpi24_general_allstates.all.json`, by `pipeline/prices/add_sep2026_states.py` (run with `python3 -I`). India, combined: 5.54% in September 2026.
+- January to August 2026 rows: added on 18 Nov 2026 for the chart page timeline (status `final`, 880 rows: 110 per month, same sectors and coverage as September). Parsed from the same raw file, `prices/api/cpi24_general_allstates.all.json`, by `pipeline/prices/extend_jan_aug2026_states.py` (run with `python3 -I`). The script first checked that all 220 September and October rows in the raw file match the CSV exactly. The rows before were left unchanged; the CSV now has 1,100 data rows. India, combined: 2.74% in January 2026 and 4.83% in August 2026.
 
 ### P3. What is driving inflation: the 12 divisions, October 2026
 
@@ -103,7 +103,7 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in`. It serves the
 - Sentence: "Food inflation, on the Consumer Food Price Index, was 8.94% in October 2026, up from 2.13% in January."
 - Source: MoSPI, Press Releases of Consumer Price Index on base 2024=100, January to October 2026, table "National Level Indices" (page 1). The eSankhyiki API serves no CFPI series, so the values come from the releases. Each month's final value is the one in the next month's release; October 2026 is provisional (release of 12 Nov 2026). The May 2026 release was read on PIB (Release ID 2272112, posted 12 Jun 2026, 4:00 pm).
 - Notes: the CFPI is not the same as the "Food and beverages" division (8.51% in October 2026). It covers food items only, with its own weights. March 2026 rural moved from 3.96% (provisional) to 3.95% (final); the CSV holds the final value.
-- Rebuild: `pipeline/cfpi_2026.py` (run with `python3 -I`), from the raw files in `raw/cfpi-*`. The script checks each value against the release text. Built on 18 Nov 2026.
+- Rebuild: `pipeline/prices/cfpi_2026.py` (run with `python3 -I`), from the raw files in `raw/prices/cfpi/cfpi-*`. Raw downloads are not kept in the repository; the URL and sha256 in "CFPI raw files" identify each file. The script checks each value against the release text. Built on 18 Nov 2026.
 
 ## Headline figures
 
@@ -130,7 +130,7 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in`. It serves the
 | RBI | Monetary Policy Framework overview (inflation target retained on 25 Mar 2026 for 1 Apr 2026 to 31 Mar 2031) | Live page | 2016 to 2031 | https://www.rbi.org.in/scripts/fs_overview.aspx?fn=2752 | 17 Nov 2026 | Not stated | `prices/rbi/fs_overview_2752.html` |
 | RBI | Handbook of Statistics on Indian Economy 2025-26, Table 236: Consumer Price Index (Average of Months) - Annual Variation | 31 Jul 2026 | 1993-94 to 2025-26 | https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/236T_HBIE310720260380CC1834364289AF00337B7FFD8336.XLSX | 17 Nov 2026 | Not stated | `prices/rbi/236T_*.XLSX` |
 | RBI | Home page, "Current Rates" box | Live | 17 Nov 2026 | https://www.rbi.org.in/ | 17 Nov 2026 | Not stated | `economy/rbi/rbi_home.html` |
-| MoSPI, NSO | Press Releases of Consumer Price Index on base 2024=100, January to October 2026 (CFPI rows, page 1) | 12 Feb, 12 Mar, 13 Apr, 12 May, 12 Jun, 13 Jul, 12 Aug, 14 Sep, 12 Oct and 12 Nov 2026, 4:00 pm (embargo line of each release) | Jan to Oct 2026 | See "CFPI raw files" | 18 Nov 2026 | Not stated | `raw/cfpi-*` |
+| MoSPI, NSO | Press Releases of Consumer Price Index on base 2024=100, January to October 2026 (CFPI rows, page 1) | 12 Feb, 12 Mar, 13 Apr, 12 May, 12 Jun, 13 Jul, 12 Aug, 14 Sep, 12 Oct and 12 Nov 2026, 4:00 pm (embargo line of each release) | Jan to Oct 2026 | See "CFPI raw files" | 18 Nov 2026 | Not stated | `prices/cfpi/cfpi-*` |
 
 Handbook tables 163 and 243 (monthly CPI indices and variation) were also downloaded as a cross-check. They are not used in a chart.
 
@@ -149,11 +149,11 @@ Handbook tables 163 and 243 (monthly CPI indices and variation) were also downlo
 
 ## Rebuild
 
-The CSVs are built by `pipeline/build_prices_economy.py` (run with `python3 -I`), from the raw files in `raw/prices/` and `raw/economy/`. Raw files stay outside the repo. Fetch scripts: `fetch_api.py` (paged API), `fetch_cpi12.py` (one month per request), `pw/dl.mjs` (Playwright, for the RBI document server, which blocks plain HTTP clients), `refrate.py` (RBI reference rate archive form).
+The CSVs are built by `pipeline/prices/build_prices_economy.py` (run with `python3 -I`), from the raw files in `raw/prices/` and `raw/economy/`. Raw downloads are not kept in the repository; the URL and sha256 below identify each file. Fetch scripts: `pipeline/common/fetch_api.py` (paged API), `pipeline/prices/fetch_cpi12.py` (one month per request), `pipeline/common/dl.mjs` (Playwright, for the RBI document server, which blocks plain HTTP clients), `pipeline/economy/refrate.py` (RBI reference rate archive form).
 
 ## Raw files
 
-Saved under `raw/`. Files ending `.pN.json` are single API pages; `.all.json` merges them.
+Paths are relative to `raw/`. Raw downloads are not kept in the repository; the URL and sha256 below identify each file. Files ending `.pN.json` are single API pages; `.all.json` merges them.
 
 | File | Source URL | sha256 |
 | --- | --- | --- |
@@ -247,7 +247,7 @@ Saved under `raw/`. Files ending `.pN.json` are single API pages; `.all.json` me
 
 ## CFPI raw files
 
-Saved on 18 Nov 2026 under `raw/`. Text extracted with `pdftotext -layout`.
+Saved on 18 Nov 2026 under `raw/prices/cfpi/` with `pipeline/common/fetch_batch.py` and `pipeline/prices/cfpi_sources.tsv`. Raw downloads are not kept in the repository; the URL and sha256 below identify each file. Text extracted with `pdftotext -layout` (`pipeline/prices/extract_text.sh`).
 
 | Release | Released | URL | sha256 |
 | --- | --- | --- | --- |

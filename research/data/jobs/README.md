@@ -117,7 +117,7 @@ Read on 17 Nov 2026.
 | MoSPI NSO | Press note, PLFS Annual Report July 2023 to June 2024 | 23 Sep 2024 | 2017-18 to 2023-24 | https://www.mospi.gov.in/uploads/documents/Press_note_AR_PLFS_2023_24_22092024.pdf | 17 Nov 2026 | Not stated | 969e90c48acef4c80885e1ae245f088ffdcc39511fcbd8cb1892f57587fb9ca1 |
 | MoSPI | PLFS product page data (release list, upload times) | Live | Not applicable | https://www.mospi.gov.in/api/product/get-product-data (POST, product_id 69) | 17 Nov 2026 | Not stated | e4e0b60823e339ab3f54fc729072876e561192e4a8c4c6681fe51209200589d7 |
 
-Raw files are in `raw/jobs/`. Parsing scripts are in `pipeline/` (`fetch_plfs.py`, `build_jobs.py`). PDFs were turned into text with `pdftotext -layout`.
+Raw downloads are not kept in the repository; the URL and sha256 above identify each file. Scripts are in `pipeline/jobs/` (`fetch_plfs.py`, `extract_text.sh`, `build_jobs.py`). PDFs were turned into text with `pdftotext -layout`.
 
 ## Checks done
 

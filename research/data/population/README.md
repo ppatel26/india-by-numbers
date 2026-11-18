@@ -142,8 +142,8 @@ Source blocks give publisher, release, period and file. See "Sources" for URLs a
 
 ## Sources
 
-Read date for all rows: 17 Nov 2026. Raw files are in raw/population/ (not in the repo).
-Parsing scripts: pipeline/build_population.py and pipeline/parse_proj.py (run with `python3 -I`).
+Read date for all rows: 17 Nov 2026. Raw downloads are not kept in the repository; the URL and sha256 below identify each file.
+Parsing scripts: pipeline/population/extract_text.sh, pipeline/population/parse_proj.py and pipeline/population/build_population.py (run with `python3 -I`).
 
 | Publisher | Release / table | Release date | Data period | URL read | Licence | sha256 of raw file |
 | --- | --- | --- | --- | --- | --- | --- |
