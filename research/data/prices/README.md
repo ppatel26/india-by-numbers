@@ -94,6 +94,17 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in`. It serves the
 - Source: RBI, Handbook of Statistics on Indian Economy 2025-26, Table 236 (data from the Labour Bureau and NSO).
 - Notes: CPI-IW changed base in 2005-06 (2001=100) and 2020-21 (2016=100); RBI links the series with factors given in the table notes. For 2025-26 the CPI Combined value is split: 1.7% for April to December 2025 (base 2012) and 3.1% for January to March 2026 (base 2024).
 
+### P9. Food inflation (Consumer Food Price Index, CFPI), 2026
+
+- Type: a line on chart P4 (2026 divisions), and the second headline figure.
+- Unit: % change on the same month a year earlier.
+- Geography: India. Period: January to October 2026, monthly. Rural, urban and combined.
+- CSV: `cfpi-inflation-2026.csv` (columns geography, period, value, unit, sector, base, status).
+- Sentence: "Food inflation, on the Consumer Food Price Index, was 8.94% in October 2026, up from 2.13% in January."
+- Source: MoSPI, Press Releases of Consumer Price Index on base 2024=100, January to October 2026, table "National Level Indices" (page 1). The eSankhyiki API serves no CFPI series, so the values come from the releases. Each month's final value is the one in the next month's release; October 2026 is provisional (release of 12 Nov 2026). The May 2026 release was read on PIB (Release ID 2272112, posted 12 Jun 2026, 4:00 pm).
+- Notes: the CFPI is not the same as the "Food and beverages" division (8.51% in October 2026). It covers food items only, with its own weights. March 2026 rural moved from 3.96% (provisional) to 3.95% (final); the CSV holds the final value.
+- Rebuild: `pipeline/cfpi_2026.py` (run with `python3 -I`), from the raw files in `raw/cfpi-*`. The script checks each value against the release text. Built on 18 Nov 2026.
+
 ## Headline figures
 
 | Figure | Value | Period | Source |
@@ -119,6 +130,7 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in`. It serves the
 | RBI | Monetary Policy Framework overview (inflation target retained on 25 Mar 2026 for 1 Apr 2026 to 31 Mar 2031) | Live page | 2016 to 2031 | https://www.rbi.org.in/scripts/fs_overview.aspx?fn=2752 | 17 Nov 2026 | Not stated | `prices/rbi/fs_overview_2752.html` |
 | RBI | Handbook of Statistics on Indian Economy 2025-26, Table 236: Consumer Price Index (Average of Months) - Annual Variation | 31 Jul 2026 | 1993-94 to 2025-26 | https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/236T_HBIE310720260380CC1834364289AF00337B7FFD8336.XLSX | 17 Nov 2026 | Not stated | `prices/rbi/236T_*.XLSX` |
 | RBI | Home page, "Current Rates" box | Live | 17 Nov 2026 | https://www.rbi.org.in/ | 17 Nov 2026 | Not stated | `economy/rbi/rbi_home.html` |
+| MoSPI, NSO | Press Releases of Consumer Price Index on base 2024=100, January to October 2026 (CFPI rows, page 1) | 12 Feb, 12 Mar, 13 Apr, 12 May, 12 Jun, 13 Jul, 12 Aug, 14 Sep, 12 Oct and 12 Nov 2026, 4:00 pm (embargo line of each release) | Jan to Oct 2026 | See "CFPI raw files" | 18 Nov 2026 | Not stated | `raw/cfpi-*` |
 
 Handbook tables 163 and 243 (monthly CPI indices and variation) were also downloaded as a cross-check. They are not used in a chart.
 
@@ -232,3 +244,20 @@ Saved under `raw/`. Files ending `.pN.json` are single API pages; `.all.json` me
 | `prices/rbi/pr62864.html` | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62864 | `58369fd4dceed876b8dbe0de9e3ed609a324f393ca2de30faf8e3fee684bf962` |
 | `prices/rbi/pr63288.html` | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63288 | `24549831c2a92d03f288f4cbfbe02e9ad4da85a320453890fa2416ab707049b6` |
 | `prices/rbi/pr63744.html` | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63744 | `e218332d2189c079c08e8eabfdd3565c50f2f7b15067aa3719b8143108cfc137` |
+
+## CFPI raw files
+
+Saved on 18 Nov 2026 under `raw/`. Text extracted with `pdftotext -layout`.
+
+| Release | Released | URL | sha256 |
+| --- | --- | --- | --- |
+| January 2026 | 12 Feb 2026 | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1770891893893_6b458c0a-c327-4fef-a554-41131ea67273_Press_Relase_of_CPI_for_Jan26.pdf | `cd4d8fd861a43f4467237813bc6e9a943bf56b471d1baefae9ba1d3d240a00bb` |
+| February 2026 | 12 Mar 2026 | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1773310539387_714ce3b5-4644-4aef-b2e3-64433640a9c3_Press_Release_of_CPI_February_2026.pdf | `76631a0fbb35b7ee7dac6e1d77a8e81705f8db0278ea72c9399eb76246953bc1` |
+| March 2026 | 13 Apr 2026 | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1776075408775_60ad93d0-aedc-405b-864a-d1e965e7ba40_Press_Release_of_CPI_March_2026.pdf | `3ce90fcdd386beb354d6fdf9c2bb8115ac7c18e6195e61e33f4508083e681908` |
+| April 2026 | 12 May 2026 | https://www.mospi.gov.in/uploads/PressRelease/CPI%20Press%20Release%20of%20April%202026.pdf | `80c82154b48f349bb4618d16f44774720bc817926b4566e6276e97ada3a8a7b8` |
+| May 2026 (PIB page) | 12 Jun 2026 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2272112&reg=48&lang=1 | `1a6e67880d6568c9663b6fc8011934d7ca032548986c351cfd4ef15014484b82` |
+| June 2026 | 13 Jul 2026 | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1783937698596_1013f1a1-3400-41aa-b4f4-5bbff10db7b7_Press_Release_of_CPI_for_June_2026.pdf | `20a61f0d4c339c2cfa005c9889ab73f5c36ebc664ccd9a628314a066aecf5c89` |
+| July 2026 | 12 Aug 2026 | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1786529680747_3113661d-1a2b-4b9a-af06-b340193ef9a0_Press_Release_CPI_July_2026.pdf | `f0c031b3177cec8ef13b54f62d71e42835d4eb713eb6e69996260dc5b016cfe4` |
+| August 2026 | 14 Sep 2026 | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1789381904344_6c792dcf-8a9f-4fca-93d3-99d833bdb358_Press_Release_of_CPI_for_August_2026.pdf | `efed906339562651b94218b35079f4fc3a04f6aa43c0d6901bde8985478fda57` |
+| September 2026 | 12 Oct 2026 | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1791800601071_643518af-5320-4e52-b78c-75c92b83885b_Press_Release_for_the_month_of_September,_2026.pdf | `a6087e10a1bdb64ebdc9dc32f80605d2905d147602d41cce5879871b5ccefa37` |
+| October 2026 | 12 Nov 2026 | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1794478693814_7c90e80f-9e64-4aa4-b44a-1dc727b0fed9_Press_Release_of_CPI_for_October_2026_.pdf | `ef81780a6b0198bd10cefec46f68362fdf9f82b7912fdb476309986976a8240d` |

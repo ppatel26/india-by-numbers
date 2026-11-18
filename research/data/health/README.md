@@ -97,6 +97,8 @@ Data gathered on 17 Nov 2026 from primary sources: ORGI Sample Registration Syst
 | Under-5 mortality rate | 28 per 1,000 live births | 2024 | SRS Statistical Report 2024, Statement 53 |
 | Children under 5 stunted | 29.3% (35.5% in 2019-21) | 2023-24 | NFHS-6 India Fact Sheet (provisional) |
 | Out-of-pocket share of health spending | 42.7% of total health expenditure (64.2% in 2013-14) | 2023-24 | National Health Accounts 2023-24, Table 1 |
+| Kerala, total health spending per person (note on chart 4.2) | Rs 13,605 | 2023-24 | MoHFW and NHSRC, National Health Accounts Estimates for India 2023-24, Nov 2026, Annexure A.2, Table A.6 "Key Health Financing Indicators for select States", row 10 Kerala, THE per capita in Rs (PDF page 87). Checked 18 Nov 2026 |
+| SDG target for maternal mortality (reference line on chart 1.2) | less than 70 per 100,000 live births | by 2030 | ORGI, SRS Special Bulletin on Maternal Mortality in India 2022-24, 20 May 2026, page 1, paragraph 2: "The target 3.1 of Sustainable Development Goals (SDG) ... aims at reducing the global maternal mortality ratio to less than 70 per 100,000 live births". Checked 18 Nov 2026 |
 
 Other national values in the sources: institutional births 90.6% (NFHS-6; 88.6% in NFHS-5); full immunisation, card only, 87.1% (83.8%); all women 15-49 anaemic 57.0% (NFHS-5, 2019-21); neonatal mortality rate 18 (2024).
 
@@ -106,11 +108,11 @@ All read on 17 Nov 2026. Raw files are in `raw/health/` (not in the repo). No pa
 
 | Publisher | Release | Release date | Period | URL | sha256 of raw file |
 | --- | --- | --- | --- | --- | --- |
-| ORGI, Vital Statistics Division | SRS Bulletin 2024, Vol. 59 No. 1 | May 2026 (NADA entry created 20 May 2026) | 2024 | https://censusindia.gov.in/nada/index.php/catalog/47150/download/51394 | dbd5008ffba5122d222775fc711a3a050867f65f06d9a2afb513311dc7031d05 |
+| ORGI, Vital Statistics Division | SRS Bulletin 2024, Vol. 59 No. 1 | 20 May 2026 (catalogue "Date published 2026-05-20", catalog/47150, checked 18 Nov 2026) | 2024 | https://censusindia.gov.in/nada/index.php/catalog/47150/download/51394 | dbd5008ffba5122d222775fc711a3a050867f65f06d9a2afb513311dc7031d05 |
 | ORGI | SRS Statistical Report 2024 | May 2026 | 2024 | https://censusindia.gov.in/nada/index.php/catalog/47152/download/51396 | f922a4a817e612c78a7827e4f526f69dc433d68c4af287b76d418337637c946a |
-| ORGI | SRS Special Bulletin on Maternal Mortality in India 2022-24 | May 2026 | 2022-24 | https://censusindia.gov.in/nada/index.php/catalog/47151/download/51395 | 64496bdb2e245415b4fc682d01f56f14446d986c08723f3f74f4e51c0d5cb634 |
-| ORGI | SRS Based Abridged Life Tables 2020-24 | May 2026 | 2020-24 | https://censusindia.gov.in/nada/index.php/catalog/47148/download/51393 | 148629ce39c9956fa6a2444ad606394b9104d40f9ac6efcebb1da7336461f19f |
-| ORGI | SRS Compendium of India's Fertility and Mortality Indicators 1971-2013 | not stated in the file | 1971 to 2013 | https://censusindia.gov.in/nada/index.php/catalog/33218/download/37035 | 8085ab18a367ab6fe96718641c04de93c494522588135e72f51bb3dcb3394984 |
+| ORGI | SRS Special Bulletin on Maternal Mortality in India 2022-24 | 20 May 2026 (catalogue "Date published 2026-05-20", catalog/47151, checked 18 Nov 2026) | 2022-24 | https://censusindia.gov.in/nada/index.php/catalog/47151/download/51395 | 64496bdb2e245415b4fc682d01f56f14446d986c08723f3f74f4e51c0d5cb634 |
+| ORGI | SRS Based Abridged Life Tables 2020-24 | 18 May 2026 (catalogue "Date published 2026-05-18", catalog/47148, checked 18 Nov 2026) | 2020-24 | https://censusindia.gov.in/nada/index.php/catalog/47148/download/51393 | 148629ce39c9956fa6a2444ad606394b9104d40f9ac6efcebb1da7336461f19f |
+| ORGI | SRS Compendium of India's Fertility and Mortality Indicators 1971-2013 | 2014 (not stated in the file; catalogue "Date published 2014-01-01", a year-only entry, catalog/33218, checked 18 Nov 2026) | 1971 to 2013 | https://censusindia.gov.in/nada/index.php/catalog/33218/download/37035 | 8085ab18a367ab6fe96718641c04de93c494522588135e72f51bb3dcb3394984 |
 | ORGI | SRS Bulletin 2014 | Jul 2016 | 2014 | https://censusindia.gov.in/nada/index.php/catalog/42707/download/46377 | 5302df7b315488089813884737f312fdc3d4e6b823f75e9ac7d8ca53df732c31 |
 | ORGI | SRS Bulletin 2015 | see file | 2015 | https://censusindia.gov.in/nada/index.php/catalog/42683/download/46353 | e7efe2b6fc6b829876ae80d492629b8ba65bcc321f50ed752951d90f7b1e4dbe |
 | ORGI | SRS Bulletin 2016 | see file | 2016 | https://censusindia.gov.in/nada/index.php/catalog/42684/download/46354 | fe6c0a9ffda61e431205585c90439cca6ed423d78baa1250e8df8906e740a0f5 |
@@ -125,7 +127,7 @@ All read on 17 Nov 2026. Raw files are in `raw/health/` (not in the repo). No pa
 | PIB (MoHFW) | "Union Health Ministry Releases National Family Health Survey - 6", Release ID 2266600 | 29 May 2026 | 2023-24 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2266600 | caeb939052f8106e8fb4f7477defc2c1d85ec350d4361e349517aa8c222c08f0 |
 | PIB (MoHFW) | "Update on NFHS-6", Release ID 2294277 (Rajya Sabha reply) | 4 Aug 2026 | n/a | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294277 | 0f533189750ee1ddfb2e6e9afc8bf8d37e9983b013636d587f69ae499bf6bcd0 |
 | PIB (Ministry of Women and Child Development) | "Study on impact of PMMVY", Release 1782638, Annexure-I (Lok Sabha reply) | 17 Dec 2021 | NFHS-5, 2019-21 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=1782638 | 70eeb06710894aec3ded97d2d9c649faeb82f125206a935af1a394e4aa59d612 |
-| MoHFW, NHSRC (NHA Technical Secretariat) | National Health Accounts Estimates for India 2023-24 | Foreword dated 7 Sep 2026; file posted in the Nov 2026 folder | 2013-14 to 2023-24 | https://nhsrcindia.org/sites/default/files/2026-11/NHA%20Report%202023-24.pdf | cf60c3fd530a585f9426595505c1301a2877e317adca4f8d17097c84e190e119 |
+| MoHFW, NHSRC (NHA Technical Secretariat) | National Health Accounts Estimates for India 2023-24 | Nov 2026: foreword dated 7 Sep 2026; file in the Nov 2026 folder; PDF dated 6 Nov 2026 (checked 18 Nov 2026). News reports date the launch 15 Nov 2026; no ministry or PIB page found | 2013-14 to 2023-24 | https://nhsrcindia.org/sites/default/files/2026-11/NHA%20Report%202023-24.pdf | cf60c3fd530a585f9426595505c1301a2877e317adca4f8d17097c84e190e119 |
 
 Parsing: `pdftotext -layout`, then `pipeline/health/build.py` run with `python3 -I`. The script checks row counts and some known values (for example IMR 129 in 1971 and 24 in 2024, NFHS-5 anaemia 57.0 for India).
 

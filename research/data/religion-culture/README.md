@@ -73,6 +73,12 @@ Source blocks give publisher, table and period. See "Sources" for URLs and check
   other mother tongues grouped under Hindi. The file has all 121 languages listed in C-16 plus "Others".
   Bhili/Bhilodi (10,413,637) is the largest language outside the Eighth Schedule.
 
+### lang-03: Count of languages, India, 2011
+
+- CSV: `languages-count-2011.csv` (added 18 Nov 2026). Derived: three rows that count the language rows of
+  `languages-india-2011.csv`: 121 languages with 10,000 or more speakers, 22 scheduled (`scheduled_language`
+  yes) and 99 other (no). The "Others" row is not counted. It backs the third headline figure.
+
 ### lang-02: Main languages in each state, 2011
 
 - Type: tile map by state (colour by largest language), table of top 3 with shares.

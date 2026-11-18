@@ -28,6 +28,7 @@ Data gathered on 17 Nov 2026 from IMD, IMD Pune, CEA and MNRE. All values are as
 - Geography: 36 IMD meteorological subdivisions, 4 homogeneous regions, India.
 - Period: 1 Jun to 30 Sep 2026.
 - CSV: `monsoon-2026-by-subdivision.csv` (column `states_covered` maps each subdivision to state slugs).
+- Row order (18 Nov 2026): India and the four regions first, then the 36 subdivisions from the largest excess to the largest shortfall (ties by name). No value changed.
 - Sentence: "17 of 36 subdivisions had deficient rain in 2026. Arunachal Pradesh was 44% short and Punjab 41% short. Odisha was the only subdivision with excess rain, at 29% above normal."
 - Source: IMD National Weather Forecasting Centre, Special Daily Weather Report, 30 Sep 2026, Table-2 "Met. Subdivision-wise Seasonal Cumulative Rainfall Statistics".
 
@@ -37,6 +38,7 @@ Data gathered on 17 Nov 2026 from IMD, IMD Pune, CEA and MNRE. All values are as
 - Unit: mm and % departure from LPA.
 - Geography: India and 4 homogeneous regions. Period: June, July, August, September 2026 and the season.
 - CSV: `monsoon-2026-by-month-and-region.csv`
+- Column `month` (added 18 Nov 2026) is a display label: Jun, Jul, Aug, Sep, and Season for the June to September total. It changes no value.
 - Sentence: "June 2026 brought 35% less rain than normal across India. In Central India, June rain was half of normal, then July was 33% above normal."
 - Source: IMD Pune, "Rainfall statistics: monsoon season 2026" (rfstats.gif on the 2026 monsoon page); season report of 30 Sep 2026.
 
@@ -55,6 +57,7 @@ Data gathered on 17 Nov 2026 from IMD, IMD Pune, CEA and MNRE. All values are as
 - Unit: °C anomaly against 1991 to 2020.
 - Geography: India. Period: 2025, four seasons and the year.
 - CSV: `temperature-anomaly-2025-by-season.csv`
+- Column `season_name` (added 18 Nov 2026) is a display label, for example "Winter, Jan-Feb" and "Year 2025". The annual row is now the last row, so the year follows the four seasons. No value changed.
 - Sentence: "January and February 2025 were 1.17°C warmer than the 1991 to 2020 average, the warmest winter since 1901."
 - Source: IMD, "Statement on the Climate of India during 2025", 1 Jan 2026.
 
@@ -97,6 +100,9 @@ Data gathered on 17 Nov 2026 from IMD, IMD Pune, CEA and MNRE. All values are as
 | Long-term warming trend | +0.68°C per 100 years | 1901 to 2025 | Same statement |
 | Non-fossil share of power capacity | 55.45% of 563,113 MW | 31 Oct 2026 | CEA Installed Capacity report, Oct 2026 |
 | Solar capacity | 174,547 MW (31.00% of total) | 31 Oct 2026 | CEA, Oct 2026; MNRE state table, 31 Oct 2026 |
+| East and Northeast India, season rainfall, in the season report table (note on chart 1.2) | 1,016.3 mm (1,017.1 mm in the season table, S2 and S4) | Jun to Sep 2026 | IMD (MoES), Salient Features of the 2026 Southwest Monsoon Season, press release 5361, 30 Sep 2026, Table 1 "Season (June to September) Rainfall", row East & Northeast India (PDF page 4). Same table in the end of season report (S5), page 4. Checked 18 Nov 2026 |
+| June rainfall, India, in the report text (note on chart 1.2) | 104 mm against a normal of 165.3 mm (the table gives 106.8 mm) | Jun 2026 | IMD (MoES), press release 5361, 30 Sep 2026, text on the monthly distribution: "Overall, the country received 104 mm of rainfall against the normal of 165.3 mm" (PDF page 8). Checked 18 Nov 2026 |
+| Captive bagasse cogeneration added in the 2017 MNRE revision (About the data) | about 3,000 MW | 31 Mar 2014 to 31 Mar 2017 | CEA, Installed Capacity report as on 31.03.2014 (revised edition), page 1, note 2: "... due to addition of 3000 MW that was being used for captive consumption of the plants in Bagasse Co-generation projects which was not accounted for earlier" (MNRE letter 146/16/2017-P&C, 23.08.2017). Checked 18 Nov 2026 |
 
 ## Sources
 
