@@ -36,7 +36,7 @@ pnpm check          # astro check and the Worker types
 
 ## Deploy
 
-Cloudflare Workers on the personal account (`wrangler auth activate personal` binds this folder).
+Cloudflare Workers on the personal account (`pnpm deploy` passes `--profile personal`).
 
 ```sh
 pnpm deploy
