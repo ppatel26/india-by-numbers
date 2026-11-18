@@ -3,6 +3,7 @@
 // "Charts updated" lists chart titles as on the board; the build should link each to its chart.
 
 import type { TopicSlug } from '../types'
+import { count } from './counts'
 
 export type ReleaseKind = 'New period' | 'Revision' | 'Method break' | 'Correction' | 'New chart'
 
@@ -90,7 +91,7 @@ const releases: ReleasesPage = {
       kindLabel: 'Kind',
       kinds: ['All', 'New period', 'Revision', 'Method break', 'Correction'],
       topicLabel: 'Topic',
-      allTopics: 'All 9 topics',
+      allTopics: `All ${count.topics} topics`,
     },
     count: (n, from, to) => `${n} releases, ${from} to ${to}`,
     heads: { released: 'Released', release: 'Publisher and release', kind: 'Kind', charts: 'Charts updated' },

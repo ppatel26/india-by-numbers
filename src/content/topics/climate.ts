@@ -16,7 +16,7 @@ const IMD_SDWR_2026_09_30: Source = {
   url: 'https://mausam.imd.gov.in/backend/assets/pdf_to_img_nwfc_monsoon/14_IMD%20SDWR%2030%20September%202026_6abce82b302f8.png',
 }
 
-// SOURCE: IMD Pune states no release date for this table (README and board: "Release date not stated").
+// IMD Pune states no release date for this live table.
 const IMD_PUNE_ALL_INDIA: Source = {
   publisher: 'IMD Pune, Climate Research and Services',
   release: 'India (June-Sept) Rainfall, all-India table, 1901 to 2026',
@@ -24,7 +24,7 @@ const IMD_PUNE_ALL_INDIA: Source = {
   url: 'https://imdpune.gov.in/cmpg/Product/Rainfall_Data.html',
 }
 
-// SOURCE: IMD Pune states no release date for this image (README and board: "Release date not stated").
+// IMD Pune states no release date for this image.
 const IMD_PUNE_RFSTATS_2026: Source = {
   publisher: 'IMD Pune, Climate Research and Services',
   release: 'Rainfall statistics, monsoon season 2026',
@@ -39,7 +39,7 @@ const IMD_CLIMATE_2025: Source = {
   url: 'https://internal.imd.gov.in/press_release/20260101_pr_4602.pdf',
 }
 
-// SOURCE: CEA states no release date for its monthly reports (README: "listed on 17 Nov 2026").
+// CEA states no release date for its monthly reports; the list page shows none.
 // The URL is the CEA list page that holds every edition; the README gives one download id per edition.
 const CEA_CAPACITY: Source = {
   publisher: 'Central Electricity Authority (CEA)',
@@ -78,12 +78,11 @@ const topic: Topic = {
   standfirst:
     'India got 759.4 mm of rain in the 2026 monsoon, 12.6% below the long-period average. Only 12 monsoons since 1901 were drier.',
   figures: [
-    // MODEL: the board shows 759.4 mm, the `rainfall_mm` column of the 2026 row in the chart's CSV.
-    // The chart plots `departure_pct_from_lpa`, and a Figure cannot pick another column. It needs `y`.
     {
       chart: 'monsoon-rainfall',
-      series: 'india',
+      series: 'rain-mm',
       x: '2026',
+      format: { decimals: 1, suffix: ' mm' },
       label: 'Monsoon rain, 87% of the long-period average',
       period: 'Jun to Sep 2026',
     },
@@ -109,12 +108,17 @@ const topic: Topic = {
             format: { decimals: 1, unit: '%' },
             y: { min: -30, max: 30, step: 10 },
             sign: { above: 's5', below: 's1', aboveLabel: 'Wetter than the LPA', belowLabel: 'Drier than the LPA' },
-            // MODEL: the board labels three columns: "1917: wettest, +26.6%", "1972: driest, -22.3%" and
-            // "2026: 12.6% below". `columns` has no callouts.
-            // MODEL: "Provisional" applies to the 2026 value only; the model sets status per chart.
+            // LATER: "Provisional" applies to the 2026 value only; status is set per chart.
             series: [
               { key: 'india', label: 'India', color: 'ink', file: 'climate/monsoon-rainfall-all-india-1901-2026.csv', y: 'departure_pct_from_lpa', where: { geography: 'india', season: 'jun-sep' } },
+              // Read for the hero figure (759.4 mm) and the table; not drawn.
+              { key: 'rain-mm', label: 'Rainfall, mm', color: 'ink', hidden: true, file: 'climate/monsoon-rainfall-all-india-1901-2026.csv', y: 'rainfall_mm', where: { geography: 'india', season: 'jun-sep' } },
             ],
+            callouts: [
+              { series: 'india', x: '1917', label: '1917: wettest, +26.6%' },
+              { series: 'india', x: '1972', label: '1972: driest, -22.3%' },
+            ],
+            // LATER: the board also labels "2026: 12.6% below"; a callout on the last column is cut off.
             know: [
               'The long-period average (LPA) is the mean June to September rainfall for India over 1971 to 2020: 868.6 mm.',
               'The 2026 value comes from real-time data. IMD may revise it in its final monsoon report.',
@@ -143,17 +147,16 @@ const topic: Topic = {
             format: { decimals: 1, unit: '%' },
             y: { min: -60, max: 40, step: 20 },
             sign: { above: 's5', below: 's1', aboveLabel: 'Wetter than normal', belowLabel: 'Drier than normal' },
-            // MODEL: the board draws five small multiples, one per region (All India, Northwest, East and
-            // Northeast, Central, South Peninsula). `columns` has no `panels`.
-            // MODEL: the x values are months ("2026-06") and the season ("2026-06/2026-09"). The season
-            // value does not parse as a period; it should be a category labelled "Season", set apart by a
-            // dashed rule as on the board.
+            // LATER: the board draws five panels, one per region; 'columns' has no panels, so the chart
+            // draws All India and the four regions are in the table only. The board also sets the
+            // season apart with a dashed rule.
+            // x is the `month` label column (Jun to Sep, then Season), so the columns keep the CSV order.
             series: [
-              { key: 'india', label: 'All India', color: 'ink', file: RAIN_BY_MONTH, y: 'departure_pct', where: { geography: 'india' } },
-              { key: 'northwest', label: 'Northwest', color: 'ink', file: RAIN_BY_MONTH, y: 'departure_pct', where: { geography: 'northwest-india' } },
-              { key: 'east-northeast', label: 'East and Northeast', color: 'ink', file: RAIN_BY_MONTH, y: 'departure_pct', where: { geography: 'east-northeast-india' } },
-              { key: 'central', label: 'Central', color: 'ink', file: RAIN_BY_MONTH, y: 'departure_pct', where: { geography: 'central-india' } },
-              { key: 'south-peninsula', label: 'South Peninsula', color: 'ink', file: RAIN_BY_MONTH, y: 'departure_pct', where: { geography: 'south-peninsula' } },
+              { key: 'india', label: 'All India', color: 'ink', file: RAIN_BY_MONTH, x: 'month', y: 'departure_pct', where: { geography: 'india' } },
+              { key: 'northwest', label: 'Northwest', color: 'ink', hidden: true, file: RAIN_BY_MONTH, x: 'month', y: 'departure_pct', where: { geography: 'northwest-india' } },
+              { key: 'east-northeast', label: 'East and Northeast', color: 'ink', hidden: true, file: RAIN_BY_MONTH, x: 'month', y: 'departure_pct', where: { geography: 'east-northeast-india' } },
+              { key: 'central', label: 'Central', color: 'ink', hidden: true, file: RAIN_BY_MONTH, x: 'month', y: 'departure_pct', where: { geography: 'central-india' } },
+              { key: 'south-peninsula', label: 'South Peninsula', color: 'ink', hidden: true, file: RAIN_BY_MONTH, x: 'month', y: 'departure_pct', where: { geography: 'south-peninsula' } },
             ],
             know: [
               'IMD divides India into four homogeneous regions: Northwest, Central, East and Northeast, and the South Peninsula.',
@@ -182,7 +185,7 @@ const topic: Topic = {
             kind: 'dots',
             slug: 'monsoon-2026-by-subdivision',
             title: 'Monsoon rainfall by meteorological subdivision, 2026',
-            subtitle: 'Departure of rainfall from normal, %, IMD\'s 36 meteorological subdivisions, 1 Jun to 30 Sep 2026. Sorted from the largest shortfall.',
+            subtitle: 'Departure of rainfall from normal, %, IMD\'s 36 meteorological subdivisions, 1 Jun to 30 Sep 2026. Sorted from the wettest to the driest.',
             punches: { office: 'IMD', unit: '% from normal', period: '1 JUN-30 SEP 2026' },
             status: ['Provisional'],
             note: "Colours show IMD's own category for each subdivision. Subdivisions do not follow state lines: Maharashtra has four, and Haryana, Chandigarh and Delhi share one. IMD rounds these departures to whole numbers; India's -13% is -12.6% in IMD's all-India table.",
@@ -191,9 +194,9 @@ const topic: Topic = {
             by: 'name',
             // One series per IMD category, so each dot takes its category colour. Rows are picked by
             // column values (type and category), not by position.
-            // MODEL: the board sorts rows from the largest shortfall (ascending departure), draws a
-            // vertical India line labelled "India -13%" (the `india` row of the same CSV), and draws
-            // each dot on a stem from zero. `dots` has no sort, reference line or stems.
+            // Rows keep the CSV order (wettest to driest): each row has a value in one series only.
+            // LATER: the board sorts from the largest shortfall and draws each dot on a stem from zero; dots sort high to low and have no stems.
+            refs: [{ value: -13, label: 'India -13%' }],
             series: [
               { key: 'excess', label: 'Excess: wetter than normal', color: 's5', file: SUBDIVISIONS, x: 'name', y: 'departure_pct', where: { geography_type: 'met-subdivision', category: 'excess' } },
               { key: 'normal', label: 'Normal', color: 'other', file: SUBDIVISIONS, x: 'name', y: 'departure_pct', where: { geography_type: 'met-subdivision', category: 'normal' } },
@@ -230,14 +233,12 @@ const topic: Topic = {
             punches: { office: 'IMD', unit: '°C vs 1991-2020', period: '2025' },
             note: 'IMD names the five warmest years and the rank of 2025, but not the 6th and 7th warmest years. Older IMD statements used the 1981 to 2010 average, so their figures do not compare with these.',
             sources: [IMD_CLIMATE_2025],
-            // MODEL: values print as "+0.65°C". Format.unit has no '°C' and no plus sign for positives.
-            format: { decimals: 2 },
+            format: { decimals: 2, unit: '°C', signed: true },
             by: 'period',
             order: ['2024', '2016', '2009', '2010', '2017', '2025'],
             highlight: '2025',
-            // MODEL: the board fills the highlighted year (2025) in ink, not series-1, prints each rank
-            // ("1st" to "5th", "8th") from `rank_warmest_since_1901`, and leaves a gap row "6th and 7th:
-            // not named by IMD". `bars` has no highlight colour, rank column or gap row.
+            // LATER: the board fills 2025 in ink (highlight is series-1), prints each rank from
+            // `rank_warmest_since_1901`, and adds a gap row "6th and 7th: not named by IMD".
             series: [
               { key: 'anomaly', label: 'Other years', color: 'other', file: 'climate/warmest-years-temperature-anomaly.csv', x: 'period', where: { geography: 'india' } },
             ],
@@ -265,15 +266,13 @@ const topic: Topic = {
             punches: { office: 'IMD', unit: '°C vs 1991-2020', period: '2025' },
             note: "IMD's seasons are winter (January and February), pre-monsoon (March to May), monsoon (June to September) and post-monsoon (October to December).",
             sources: [IMD_CLIMATE_2025],
-            format: { decimals: 2 },
+            format: { decimals: 2, unit: '°C', signed: true },
             y: { min: -0.5, max: 1.5, step: 0.5 },
             sign: { above: 's1', below: 's5', aboveLabel: 'Warmer than average', belowLabel: 'Cooler than average' },
-            // MODEL: x is the `season` column, a category, not a period. The board orders winter,
-            // pre-monsoon, monsoon, post-monsoon, then the year apart after a dashed rule, with labels
-            // "Winter Jan-Feb" ... "Year 2025". `columns` has no category axis, order or labels.
-            // MODEL: values print as "+1.17°C"; Format.unit has no '°C'.
+            // x is the `season_name` label column; the CSV lists the four seasons, then the year.
+            // LATER: the board sets the year apart with a dashed rule.
             series: [
-              { key: 'anomaly', label: 'India', color: 'ink', file: 'climate/temperature-anomaly-2025-by-season.csv', x: 'season', where: { geography: 'india', period: '2025' } },
+              { key: 'anomaly', label: 'India', color: 'ink', file: 'climate/temperature-anomaly-2025-by-season.csv', x: 'season_name', where: { geography: 'india', period: '2025' } },
             ],
             know: [
               'IMD\'s seasons are winter (January and February), pre-monsoon (March to May), monsoon (June to September) and post-monsoon (October to December).',
@@ -307,18 +306,14 @@ const topic: Topic = {
             sources: [CEA_CAPACITY],
             format: { decimals: 0, scale: 'none' },
             y: { min: 0, max: 600000, step: 100000 },
-            // MODEL: the board stacks seven bands and labels each at its end with the band total, for
-            // example "Coal and lignite 2,31,438 MW" (coal + lignite) and "Other renewables 17,072 MW"
-            // (small hydro + bio-power + waste-to-energy). The CSV holds each CEA source on its own, and
-            // `points` allows one row per x, so each source is one series here, with the same colour
-            // for the sources of one band. The model needs a way to sum series into one labelled band.
-            // `coal` takes `coal-incl-lignite` up to March 2018 and `coal` after; the two never overlap.
-            // MODEL: the board marks "Off-grid renewables added" (from Aug 2021, first point 31 Mar 2022)
-            // and "Plants on long outage removed" (30 Apr 2025, first point 31 Mar 2026; 31 Aug 2026,
-            // first point 31 Oct 2026) with dotted vertical lines. `area` has no `breaks`; they would be:
-            // [{ x: '2022-03-31', label: 'Off-grid renewables added' },
-            //  { x: '2026-03-31', label: 'Plants on long outage removed' },
-            //  { x: '2026-10-31', label: 'Plants on long outage removed' }]
+            // LATER: the board sums sources into seven bands, each labelled with its total ("Coal and
+            // lignite 2,31,438 MW"); a series reads one CSV row per x, so each source is its own series,
+            // in its band's colour. `coal` takes `coal-incl-lignite` to March 2018 and `coal` after.
+            breaks: [
+              { x: '2022-03-31', label: 'Off-grid renewables added' },
+              { x: '2026-03-31', label: 'Plants on long outage removed' },
+              { x: '2026-10-31', label: '' },
+            ],
             series: [
               { key: 'coal', label: 'Coal and lignite', color: 'slate', file: CAPACITY, where: { geography: 'india', source: ['coal-incl-lignite', 'coal'] } },
               { key: 'lignite', label: 'Coal and lignite', color: 'slate', file: CAPACITY, where: { geography: 'india', source: 'lignite' } },
@@ -396,8 +391,7 @@ const topic: Topic = {
             note: 'MNRE places each plant in the state where it stands. CEA\'s state tables add each state\'s share of central plants, so their figures differ. The total includes large hydro. MNRE lists a further 49.31 MW under "Others" with no state; it is in the India total.',
             sources: [MNRE_STATES_2026_10],
             format: { decimals: 0, scale: 'none' },
-            // MODEL: the board's map uses fixed bins (under 500, 500 to 1,999, 2,000 to 4,999, 5,000 to
-            // 9,999, 10,000 to 29,999, 30,000 MW and over). The model has no bin breaks for `seq`.
+            bins: [500, 2000, 5000, 10000, 30000],
             data: { file: 'climate/renewable-capacity-by-state-2026-10.csv', where: { series: 'total_re', geography: STATES_AND_INDIA } },
             open: 'map',
             scale: 'seq',
@@ -419,11 +413,10 @@ const topic: Topic = {
       ],
     },
   ],
-  // MODEL: the board's About band also has a rail line ("How each climate figure is made, where it
-  // breaks, and what is missing.") and an intro paragraph ("All values are as published. Every figure
-  // on this page is a measurement or a count by IMD, CEA or MNRE, not a survey estimate. We read every
-  // source on 17 November 2026."). AboutTheData has no field for either.
+  // LATER: the About band's side line ("How each climate figure is made, where it breaks, and what is missing.") has no field.
   about: {
+    intro:
+      'All values are as published. Every figure on this page is a measurement or a count by IMD, CEA or MNRE, not a survey estimate. We read every source on 17 November 2026.',
     publisher:
       'The India Meteorological Department (IMD), Ministry of Earth Sciences, measures rainfall and temperature for India, its four homogeneous regions and 36 meteorological subdivisions. The Central Electricity Authority (CEA) counts the installed power capacity of utilities. The Ministry of New and Renewable Energy (MNRE) publishes renewable capacity by state.',
     frequency:

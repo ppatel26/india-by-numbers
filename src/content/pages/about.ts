@@ -1,5 +1,8 @@
 // About. Copy is verbatim from the board, with copy rules applied.
 
+import { count } from './counts'
+import sources from './sources'
+
 export interface Section {
   /** Anchor for links from the footer. */
   id: string
@@ -30,7 +33,7 @@ const about: AboutPage = {
       heading: 'What is it?',
       body: [
         {
-          text: "India by Numbers shows India's official statistics as plain charts, with the source, period and status on every figure. The first release has 69 charts on 9 topics, from 11 publishers. It is free and needs no account.",
+          text: `India by Numbers shows India's official statistics as plain charts, with the source, period and status on every figure. The first release has ${count.charts} charts on ${count.topics} topics, from ${sources.publishers.list.length} publishers. It is free and needs no account.`,
         },
       ],
     },
@@ -88,7 +91,7 @@ const about: AboutPage = {
           text: 'Use our charts, text and code for any purpose. Credit "India by Numbers" and link to the page. Every PNG and SVG already carries the title, the hallmark and the source line, so the image keeps its provenance.',
         },
         {
-          text: 'None of our 11 publishers states an open reuse licence. The Sources page shows the terms of each.',
+          text: `None of our ${sources.publishers.list.length} publishers states an open reuse licence. The Sources page shows the terms of each.`,
         },
       ],
     },

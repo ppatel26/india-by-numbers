@@ -2,21 +2,7 @@ import type { Series, Source, Topic } from '../types'
 
 // Board S06. Data: research/data/religion-culture/README.md.
 
-// MODEL: the rail card "Census 2027" has no place in the model. Board copy, verbatim:
-//   Census 2027
-//   Census 2027 asks about religion and mother tongue again. No results are published yet.
-//   25 Jan to 28 Feb 2027: Count in most states and UTs.
-//   1 to 5 Mar 2027: Revision round.
-//   Not announced: Religion and language tables.
-//   Source: ORGI gazette notifications, 14 Aug and 30 Oct 2026.
-// MODEL: "About the data" has an intro paragraph and a rail line that AboutTheData cannot hold:
-//   Rail: "How the religion and language counts are made, and what they leave out."
-//   Intro: "Religion and mother tongue are what each person reported to the census. We use the Census
-//   category names as published. Shares are derived from the published counts, to two decimals."
-// MODEL: copy F keeps fixed colour slots per religion (Hindu s1, Muslim s2, Christian s3, Sikh s4,
-//   Buddhist s5, Jain s6, Other religions and persuasions s7, Religion not stated 'other'). 'bars' gives
-//   one colour per series, so charts 1.1 and 1.2 (one bar per religion) cannot colour by category.
-//   Chart 3.1 (one series per religion) uses the slots.
+// LATER: copy F gives each religion a fixed colour slot; 'bars' colours by series, so charts 1.1 and 1.2 are ink (3.1 uses the slots).
 
 const C01_URL =
   'https://censusindia.gov.in/nada/index.php/catalog/11361/download/14474/DDW00C-01%20MDDS.XLS'
@@ -173,11 +159,12 @@ const topic: Topic = {
   figures: [
     { chart: 'religion-in-india', series: 'share', x: 'Hindu', label: 'Reported their religion as Hindu' },
     { chart: 'religion-in-india', series: 'share', x: 'Muslim', label: 'Reported their religion as Muslim' },
-    // MODEL: the board shows 121, the number of languages in Table C-16 with 10,000 or more speakers
-    // (rows of languages-india-2011.csv with scheduled_language 'yes' (22) or 'no' (99)). A Figure reads
-    // one value; it cannot count rows. The lead needs a count figure, or a CSV row that holds 121.
+    // 121 is a derived count of the C-16 language rows (languages-count-2011.csv).
     {
       chart: 'mother-tongues',
+      series: 'count',
+      x: 'Languages with 10,000 or more speakers',
+      format: { decimals: 0, unit: '' },
       label: 'Languages with 10,000+ speakers',
       period: '2011 · 22 scheduled, 99 other',
     },
@@ -189,9 +176,7 @@ const topic: Topic = {
       lede: 'In 2011, 96,62,57,353 people in India (79.80%) reported their religion as Hindu, 17,22,45,158 (14.23%) as Muslim and 2,78,19,588 (2.30%) as Christian. 28,67,303 people (0.24%) did not state a religion.',
       blocks: [
         {
-          // MODEL: the board shows a 100% strip of the eight shares above the bars, colours each religion
-          // by its slot, and prints the number of people (column 'value') beside each share. 'bars' has
-          // one value per bar and one colour per series.
+          // LATER: the board adds a 100% strip of the eight shares and prints the number of people (column 'value') beside each bar.
           chart: {
             slug: 'religion-in-india',
             kind: 'bars',
@@ -236,10 +221,7 @@ const topic: Topic = {
           text: "The Hindu share of the population was 79.80% in 2011, against 80.46% in 2001. The Muslim share was 14.23%, against 13.43%. No other group's share moved by more than 0.2 percentage points.",
         },
         {
-          // MODEL: the board adds a "Change" column (2011 share minus 2001 share, in percentage points)
-          // and colours each religion by its slot, with a lighter tint for 2001. 'bars' has no derived
-          // column and one colour per series; 2001 and 2011 use slate and ink here (copy F,
-          // earlier and latest period).
+          // LATER: the board adds a "Change" column (2011 minus 2001, pp); 'bars' has no derived column. 2001 is slate, 2011 ink.
           chart: {
             slug: 'religion-change',
             kind: 'bars',
@@ -293,10 +275,8 @@ const topic: Topic = {
       lede: 'In 2011, 52,83,47,193 people (43.63%) gave a mother tongue grouped under Hindi. Bengali came second with 9,72,37,669 (8.03%), then Marathi with 8,30,26,680 (6.86%). The Census lists 22 scheduled languages and 99 other languages, each with 10,000 or more speakers.',
       blocks: [
         {
-          // MODEL: the board marks languages outside the Eighth Schedule with a hollow bar and an asterisk
-          // (legend: "In the Eighth Schedule (22 languages)", "* Not in the Eighth Schedule"; column
-          // scheduled_language), prints the number of people (column 'value') beside each share, and puts
-          // a label inside the Hindi bar: "Includes Bhojpuri and other mother tongues grouped under Hindi".
+          // LATER: the board draws languages outside the Eighth Schedule as hollow bars, prints the number of
+          // people beside each bar, and labels the Hindi bar "Includes Bhojpuri and other mother tongues grouped under Hindi".
           chart: {
             slug: 'mother-tongues',
             kind: 'bars',
@@ -320,6 +300,16 @@ const topic: Topic = {
                 where: { language: TOP_LANGUAGES },
                 x: 'language',
                 y: 'share_pct',
+              },
+              // Read for the third headline figure (121 languages); not drawn.
+              {
+                key: 'count',
+                label: 'Number of languages',
+                color: 'ink',
+                hidden: true,
+                file: 'religion-culture/languages-count-2011.csv',
+                where: { language: 'Languages with 10,000 or more speakers' },
+                x: 'language',
               },
             ],
             know: [
@@ -345,9 +335,7 @@ const topic: Topic = {
       lede: 'In 27 of the 34 units in the 2011 data, Hindus were the largest group. Muslims were the largest group in Lakshadweep (96.58%) and Jammu and Kashmir (68.31%), Sikhs in Punjab (57.69%), and Christians in Nagaland (87.93%), Mizoram (87.16%), Meghalaya (74.59%) and Arunachal Pradesh (30.26%). The 34 units are the 35 of Census 2011 with Dadra and Nagar Haveli and Daman and Diu counted as one.',
       blocks: [
         {
-          // MODEL: the board opens this frame on its Table view (a stacked bar and eight share columns per
-          // row) and has a Map tab that shows one religion at a time. 'bars' has no 'open', no Table
-          // layout and no map. copy B wants the first by-state dataset on the page to open on Map.
+          // LATER: the board opens this frame on its Table view and has a Map tab, one religion at a time; 'bars' has neither.
           chart: {
             slug: 'religion-by-state',
             kind: 'bars',
@@ -393,10 +381,8 @@ const topic: Topic = {
           text: 'In 2011, 97.03% of people in Kerala gave Malayalam as their mother tongue. In Nagaland, the largest language, Konyak, was the mother tongue of 12.34%. Hindi was the largest language in 11 states and UTs.',
         },
         {
-          // MODEL: the Largest, Second and Third columns hold text (column 'language'); Table columns read
-          // numbers only. The board also has a Map tab (each tile coloured by its largest language) and a
-          // Chart tab; 'table' has neither. Telangana and Ladakh rows read "In Andhra Pradesh" and
-          // "In Jammu and Kashmir".
+          // LATER: the board has Map and Chart tabs (tiles coloured by the largest language), and rows for
+          // Telangana ("In Andhra Pradesh") and Ladakh ("In Jammu and Kashmir"); 'table' has neither.
           chart: {
             slug: 'mother-tongues-by-state',
             kind: 'table',
@@ -434,7 +420,10 @@ const topic: Topic = {
       ],
     },
   ],
+  // LATER: the About band's side line ("How the religion and language counts are made, and what they leave out.") has no field.
   about: {
+    intro:
+      'Religion and mother tongue are what each person reported to the census. We use the Census category names as published. Shares are derived from the published counts, to two decimals.',
     publisher:
       'The Office of the Registrar General and Census Commissioner, India (ORGI), Ministry of Home Affairs, runs the Census. Religion comes from Table C-01, Population by religious community. Mother tongue comes from Table C-16, Population by mother tongue.',
     frequency:
@@ -450,9 +439,14 @@ const topic: Topic = {
   },
   // The board lists Table C-01 and its Appendix on one line; they are two files with two URLs.
   sources: [c01States, c01Appendix, c01Census2001, c16, gazette4505, gazette5913],
+  rail: [
+    {
+      title: 'Census 2027',
+      body: 'Census 2027 asks about religion and mother tongue again. No results are published yet. 25 Jan to 28 Feb 2027: Count in most states and UTs. 1 to 5 Mar 2027: Revision round. Not announced: Religion and language tables. Source: ORGI gazette notifications, 14 Aug and 30 Oct 2026.',
+    },
+  ],
   related: [
     { label: 'Population: Population growth by state and UT, 2001 to 2011', href: '/charts/population-growth-by-state/' },
-    // LINK: the slug belongs to the Education module; confirm it when the modules merge.
     { label: 'Education: Literacy by state', href: '/charts/literacy-by-state/' },
     { label: 'States: Tamil Nadu profile', href: '/states/tamil-nadu/' },
     { label: 'How we check: derived shares', href: '/how-we-check/' },

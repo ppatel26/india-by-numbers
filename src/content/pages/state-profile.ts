@@ -3,6 +3,7 @@
 // sentence when given the Tamil Nadu values (shown in the comment above it).
 
 import type { Pick, TopicSlug } from '../types'
+import { count } from './counts'
 
 export interface Section {
   heading: string
@@ -285,7 +286,7 @@ const stateProfile: StateProfile = {
       { heading: 'Religion and language after 2011', body: 'No count since Census 2011. Census 2027 will collect both.' },
     ],
   },
-  prevNext: { previous: 'Previous', next: 'Next', all: 'All 36 states and UTs' },
+  prevNext: { previous: 'Previous', next: 'Next', all: `All ${count.places} states and UTs` },
 }
 
 export default stateProfile

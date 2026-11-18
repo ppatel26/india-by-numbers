@@ -40,7 +40,7 @@ const GDP_PRESS_NOTE: Source = {
   url: 'https://www.mospi.gov.in/uploads/latestReleases/latest_release_1788172583113_d65a77cf-240e-4491-82ee-59f78618fa41_Press_Note_on_GDP_Estimates_for_Q1_2026-27.pdf',
 }
 
-// SOURCE: one board row for the whole eSankhyiki API (national accounts, state accounts,
+// One board row for the whole eSankhyiki API (national accounts, state accounts,
 // IIP), dated by its latest update. The link is the national accounts endpoint; the
 // charts cite the endpoint each one uses.
 const ESANKHYIKI: Source = {
@@ -50,7 +50,7 @@ const ESANKHYIKI: Source = {
   url: 'https://api.mospi.gov.in/api/nas/getNASData?base_year=2022-23&series=Current',
 }
 
-// SOURCE: base 2022-23 is read from this URL; base 2011-12 (Current and Back series) from
+// Base 2022-23 is read from this URL; base 2011-12 (Current and Back series) from
 // https://api.mospi.gov.in/api/nas/getNASData?base_year=2011-12. 31 Aug 2026 is the last
 // update (the board's "updated 31 Aug 2026").
 const NAS_API: Source = {
@@ -60,7 +60,7 @@ const NAS_API: Source = {
   url: 'https://api.mospi.gov.in/api/nas/getNASData?base_year=2022-23&series=Current',
 }
 
-// SOURCE: the README gives the URL for indicator 25 (per capita NSDP). GSDP growth is
+// The README gives the URL for indicator 25 (per capita NSDP). GSDP growth is
 // indicator 26 of the same endpoint. 15 Apr 2026 is the state data release (RBI note).
 const STATE_API: Source = {
   publisher: 'MoSPI (NSO)',
@@ -83,7 +83,7 @@ const IIP_RELEASE: Source = {
   url: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=2329475',
 }
 
-// SOURCE: the board row covers Tables 9, 10 and 133. Its link is the Handbook page named
+// The board row covers Tables 9, 10 and 133. Its link is the Handbook page named
 // in the README; the charts cite each table file below.
 const RBI_HANDBOOK: Source = {
   publisher: 'RBI',
@@ -92,7 +92,7 @@ const RBI_HANDBOOK: Source = {
   url: 'https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook%20of%20Statistics%20on%20Indian%20Economy',
 }
 
-// SOURCE: Table 9 (current prices) is this file; Table 10 (constant prices) is
+// Table 9 (current prices) is this file; Table 10 (constant prices) is
 // https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/10T_HBIE310720268B682995CC224C51B22FC6036E99B7D1.XLSX
 const RBI_TABLE_9: Source = {
   publisher: 'RBI',
@@ -128,6 +128,9 @@ const SHARES = 'economy/gva-sector-shares.csv'
 const IIP = 'economy/iip-growth-monthly.csv'
 const IIP_NEXT = '2026-11-28'
 
+/** Financial years 1950-51 to 2021-22: the 2011-12 base rows before the 2022-23 base starts. */
+const BEFORE_2022_23 = Array.from({ length: 72 }, (_, i) => `${1950 + i}-${String((51 + i) % 100).padStart(2, '0')}`)
+
 // ---------------------------------------------------------------- Topic
 
 const topic: Topic = {
@@ -139,7 +142,7 @@ const topic: Topic = {
   figures: [
     { chart: 'gdp-growth-quarterly', series: 'base-2022-23', label: 'Real GDP growth' },
     { chart: 'iip-growth', series: 'base-2022-23', label: 'Industrial output (quick estimate)' },
-    // MODEL: the board's source punch reads "FBIL via RBI"; the chart office punch is FBIL.
+    // LATER: the board's figure punch reads "FBIL via RBI"; a Figure has no office of its own.
     { chart: 'usd-inr-daily', label: 'Rupees per US dollar' },
   ],
   nextRelease: 'IIP for October 2026, expected 28 Nov 2026',
@@ -160,8 +163,11 @@ const topic: Topic = {
             note: 'The two bases overlap from Q1 2023-24 to Q2 2025-26 and give different numbers for the same quarter (Q1 2025-26: 7.8% on base 2011-12, 6.9% on base 2022-23). The chart shows the new base where it exists, after a gap at the break.',
             sources: [GDP_PRESS_NOTE, NAS_API],
             format: { unit: '%', decimals: 1 },
-            // MODEL: the board labels four bars: -23.1% in Q1 2020-21, 22.6% (Q1 2021-22),
-            // 8.6% (Q4 2025-26) and 7.8% (Q1 2026-27). 'columns' has no callouts.
+            callouts: [
+              { series: 'base-2011-12', x: '2020-21 Q1' },
+              { series: 'base-2011-12', x: '2021-22 Q1' },
+            ],
+            // LATER: the board also labels 8.6% (Q4 2025-26) and 7.8% (Q1 2026-27); callouts at the right edge are cut off.
             series: [
               {
                 key: 'base-2011-12',
@@ -173,7 +179,7 @@ const topic: Topic = {
               { key: 'base-2022-23', label: 'India, base 2022-23', color: 'ink', file: QUARTERLY, where: { base: '2022-23' } },
             ],
             y: { step: 10 },
-            breaks: [{ x: '2023-24 Q1', label: 'Base 2022-23' }],
+            breaks: [{ x: '2023-24 Q1', label: 'Base 2022-23 from Q1 2023-24' }],
             know: [
               'Real GDP is output at constant prices, so the rate shows growth after inflation. Each bar compares a quarter with the same quarter a year earlier.',
               'Quarters follow the financial year: Q1 is April to June.',
@@ -203,14 +209,17 @@ const topic: Topic = {
             note: 'Derived. Growth for 1951-52 to 2022-23 is computed from published constant-price GDP; it matches RBI Handbook Table 227 for 2019-20 to 2022-23 (3.87%, -5.78%, 9.69%, 7.61%). 2025-26 is a Provisional Estimate and 2024-25 a First Revised Estimate. The revision of 31 August 2026 raised 2023-24 to 7.3% and 2024-25 to 7.2%.',
             sources: [NAS_API],
             format: { unit: '%' },
-            // MODEL: the board labels -5.24% in 1979-80, -5.78% in 2020-21 and 7.8% in
-            // 2025-26. 'columns' has no callouts.
+            callouts: [
+              { series: 'base-2011-12', x: '1979-80' },
+              { series: 'base-2011-12', x: '2020-21', label: '-5.78%' },
+            ],
+            // LATER: the board also labels 7.8% in 2025-26; callouts at the right edge are cut off.
             series: [
               { key: 'base-2011-12', label: 'India, base 2011-12 (derived)', color: 'ink', file: ANNUAL, where: { base: '2011-12' } },
               { key: 'base-2022-23', label: 'India, base 2022-23', color: 'ink', file: ANNUAL, where: { base: '2022-23' } },
             ],
             y: { min: -8, max: 12, step: 4 },
-            breaks: [{ x: '2023-24', label: 'Base 2022-23' }],
+            breaks: [{ x: '2023-24', label: 'Base 2022-23 from 2023-24' }],
             know: [
               'Each bar is the change in real GDP for the financial year (April to March) on the year before.',
               'For 1951-52 to 2022-23 we derive the rate from the constant-price GDP levels that MoSPI publishes on base 2011-12. For 2023-24 to 2025-26 the rate is as MoSPI publishes it on base 2022-23.',
@@ -245,18 +254,19 @@ const topic: Topic = {
             note: 'Derived from published GVA. Primary is agriculture, livestock, forestry and fishing, plus mining and quarrying. Industry (secondary) is manufacturing, utilities and construction. Services (tertiary) is total GVA minus the two. In 2022-23 the bases differ: primary 20.12% on base 2011-12, 22.04% on base 2022-23.',
             sources: [NAS_API],
             format: { unit: '%', decimals: 2 },
-            // MODEL: 'area' has no `breaks`. The board stacks each base on its own, with a
-            // gap at 2022-23 and the label "Base 2022-23 from 2022-23 →". Both bases have a
-            // 2022-23 row, so each sector is two series here. The board labels the shares
-            // for 1950-51 and 2025-26 on the plot.
+            // Each sector is two series, one per base; both bases have a 2022-23 row, so the
+            // 2011-12 series stop at 2021-22 and the stack holds 100% in every year.
+            // LATER: the board labels the 1950-51 shares on the plot; area callouts sit at the raw value, not the stack.
+            // LATER: area labels every series at the last year, so the base 2011-12 series print "No data".
             series: [
-              { key: 'primary-2011-12', label: 'Primary (farming, forestry, fishing, mining)', color: 's4', file: SHARES, where: { sector: 'primary', base: '2011-12' } },
-              { key: 'secondary-2011-12', label: 'Industry', color: 's6', file: SHARES, where: { sector: 'secondary', base: '2011-12' } },
-              { key: 'tertiary-2011-12', label: 'Services', color: 's5', file: SHARES, where: { sector: 'tertiary', base: '2011-12' } },
-              { key: 'primary-2022-23', label: 'Primary, base 2022-23', color: 's4', file: SHARES, where: { sector: 'primary', base: '2022-23' } },
-              { key: 'secondary-2022-23', label: 'Industry, base 2022-23', color: 's6', file: SHARES, where: { sector: 'secondary', base: '2022-23' } },
-              { key: 'tertiary-2022-23', label: 'Services, base 2022-23', color: 's5', file: SHARES, where: { sector: 'tertiary', base: '2022-23' } },
+              { key: 'primary-2011-12', label: 'Primary, base 2011-12', color: 's4', file: SHARES, where: { sector: 'primary', base: '2011-12', period: BEFORE_2022_23 } },
+              { key: 'primary-2022-23', label: 'Primary', color: 's4', file: SHARES, where: { sector: 'primary', base: '2022-23' } },
+              { key: 'secondary-2011-12', label: 'Industry, base 2011-12', color: 's6', file: SHARES, where: { sector: 'secondary', base: '2011-12', period: BEFORE_2022_23 } },
+              { key: 'secondary-2022-23', label: 'Industry', color: 's6', file: SHARES, where: { sector: 'secondary', base: '2022-23' } },
+              { key: 'tertiary-2011-12', label: 'Services, base 2011-12', color: 's5', file: SHARES, where: { sector: 'tertiary', base: '2011-12', period: BEFORE_2022_23 } },
+              { key: 'tertiary-2022-23', label: 'Services', color: 's5', file: SHARES, where: { sector: 'tertiary', base: '2022-23' } },
             ],
+            breaks: [{ x: '2022-23', label: 'Base 2022-23', before: 'Base 2011-12' }],
             y: { min: 0, max: 100, step: 25 },
             know: [
               "Each share is the sector's part of gross value added (GVA) at current prices. The three shares add to 100%.",
@@ -361,8 +371,8 @@ const topic: Topic = {
             note: 'The two bases overlap from April 2024 to March 2026 with different values; the chart shows the new base from April 2024. On the new base, rates for April 2023 to March 2024 compare with the base-year average, not the same month, so they are left out. MoSPI gives no IIP rate for April 2021 on the 2011-12 base.',
             sources: [IIP_API, IIP_RELEASE],
             format: { unit: '%', decimals: 1 },
-            // MODEL: the CSV has no row for April 2021 (no published rate), so nothing
-            // breaks the line there; the board shows a gap labelled "No data, Apr 2021".
+            // The CSV has no row for April 2021, so the line breaks there (a two-month step).
+            // LATER: the board labels the gap "No data, Apr 2021"; a span label there collides with the May 2021 callout and the break label.
             series: [
               {
                 key: 'base-2011-12',
@@ -450,12 +460,10 @@ const topic: Topic = {
             note: 'To 1991-92, official rates; from 1992-93, FEDAI indicative rates; from May 2012, RBI reference rates; from 10 July 2018, FBIL reference rates.',
             sources: [RBI_TABLE_133],
             format: { unit: '₹', decimals: 2 },
-            // MODEL: the board writes a text label at 1991-92: "1991-92 and 1992-93:
-            // devaluation, then a market rate". 'line' has no text annotation.
             series: [
               {
                 key: 'average',
-                label: 'Rupees per US dollar, financial-year average',
+                label: 'Rupees per US dollar',
                 color: 'ink',
                 file: 'economy/usd-inr-annual.csv',
                 where: { measure: 'financial-year average' },
@@ -464,6 +472,7 @@ const topic: Topic = {
             y: { min: 0, max: 100, step: 20 },
             callouts: [
               { series: 'average', x: '1986-87' },
+              { series: 'average', x: '1991-92', label: '1991-92 and 1992-93: devaluation, then a market rate' },
               { series: 'average', x: '2025-26' },
             ],
             know: [
@@ -490,8 +499,7 @@ const topic: Topic = {
             punches: { office: 'FBIL', unit: '₹ per US$', period: '17 NOV 2026' },
             note: 'The rate for 17 November 2026 is as at 1:00 pm on the RBI home page.',
             sources: [FBIL_ARCHIVE, RBI_HOME],
-            // MODEL: the board prints four decimals with the last two smaller (₹93.57|03);
-            // the hero figure shows ₹93.57. Format has one `decimals` for both.
+            // LATER: the board prints four decimals with the last two smaller (₹93.57|03); Format has one `decimals`.
             format: { unit: '₹' },
             series: [
               { key: 'fbil', label: 'FBIL reference rate', color: 'ink', file: 'economy/usd-inr-daily-2026.csv', x: 'date' },
@@ -519,12 +527,10 @@ const topic: Topic = {
       ],
     },
   ],
-  // MODEL: the board's "About the data" band also has a rail line ("How each economy
-  // figure is made, where it breaks, and what is missing.") and an intro paragraph ("All
-  // values are as published, except where a chart says derived. We read every source on
-  // 17 November 2026. The national accounts values match the GDP press note of 31 August
-  // 2026 and the IIP release of 28 October 2026."). AboutTheData has no field for them.
+  // LATER: the About band's side line ("How each economy figure is made, where it breaks, and what is missing.") has no field.
   about: {
+    intro:
+      'All values are as published, except where a chart says derived. We read every source on 17 November 2026. The national accounts values match the GDP press note of 31 August 2026 and the IIP release of 28 October 2026.',
     publisher:
       'The National Statistics Office (NSO), MoSPI, publishes the national accounts (GDP, GVA by industry), the state accounts and the Index of Industrial Production (IIP). The Reserve Bank of India (RBI) publishes the exchange rate tables; the daily reference rate comes from Financial Benchmarks India (FBIL).',
     frequency:
@@ -542,11 +548,9 @@ const topic: Topic = {
   related: [
     { label: 'Prices: Consumer price inflation since 2012', href: '/charts/cpi-inflation/' },
     { label: 'Prices: RBI policy repo rate since 2008', href: '/charts/repo-rate/' },
-    // LINK: the Jobs module has no chart slugs yet; the lead sets the chart URL.
-    { label: 'Jobs: Unemployment rate by state', href: '/jobs/' },
+    { label: 'Jobs: Unemployment rate by state', href: '/charts/unemployment-by-state/' },
     { label: 'States: Tamil Nadu profile', href: '/states/tamil-nadu/' },
-    // LINK: the How we check board (S15) has no anchor ids; the lead sets the fragment.
-    { label: 'How we check: derived values', href: '/how-we-check/#derived-values' },
+    { label: 'How we check: derived values', href: '/how-we-check/#hallmark' },
   ],
 }
 

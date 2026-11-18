@@ -3,6 +3,7 @@
 // each topic README's "Questions this topic answers".
 
 import type { TopicSlug } from '../types'
+import { count } from './counts'
 
 export interface TopicRow {
   questions: readonly string[]
@@ -169,8 +170,8 @@ const topics: TopicsPage = {
     heading: 'All charts',
     intro: 'Every chart has a table, a source and a CSV.',
     link: 'Go to All charts',
-    searchPlaceholder: 'Search 69 charts, for example "turnout"',
-    filters: ['Topic: All 9', 'Chart type: All', 'Has state data', 'Status: Any'],
+    searchPlaceholder: `Search ${count.charts} charts, for example "turnout"`,
+    filters: [`Topic: All ${count.topics}`, 'Chart type: All', 'Has state data', 'Status: Any'],
     count: (n) => `${n} charts`,
   },
 }

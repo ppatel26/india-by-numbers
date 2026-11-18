@@ -2,17 +2,6 @@ import type { Source, Topic } from '../types'
 
 // Board S05. Data: research/data/population/README.md.
 
-// MODEL: the rail card "Census 2027" has no place in the model. Board copy, verbatim:
-//   Census 2027
-//   The next count is under way. No results are published yet.
-//   1 Apr to 30 Sep 2026: House-listing, all states and UTs. Done.
-//   1 Dec 2026 to 4 Jan 2027: Count in Goa, Uttar Pradesh, Punjab and Uttarakhand.
-//   25 Jan to 28 Feb 2027: Count in all other states and UTs. Reference date 1 Mar 2027. Manipur: dates not yet set.
-//   Source: ORGI gazette notifications, 16 Jun 2025 to 30 Oct 2026.
-// MODEL: "About the data" has an intro paragraph and a rail line that AboutTheData cannot hold:
-//   Rail: "How each population figure is made: counts, survey estimates and projections."
-//   Intro: "This page uses three kinds of figure. Census 2011 is a count of every person. The SRS is a
-//   sample survey. The 2026 and 2036 values are projections. Each chart says which one it shows."
 
 const CENSUS_URL_A02 =
   'https://censusindia.gov.in/nada/index.php/catalog/43333/download/47001/00%20A%202-India.xls'
@@ -66,12 +55,11 @@ const srsBulletin: Source = {
 
 const srsBulletinT1: Source = { ...srsBulletin, release: 'SRS Bulletin 2024, Volume 59 No. 1, Table 1' }
 
-// SOURCE: the report is dated July 2020 and gives no day; '2020-07-01' stands for "July 2020".
-// MODEL: Source.released needs a month-only form so the page prints "July 2020", not "1 Jul 2020".
+// The report is dated July 2020 and gives no day.
 const projections: Source = {
   publisher: 'MoHFW, National Commission on Population',
   release: 'Population Projections for India and States 2011-2036, Report of the Technical Group',
-  released: '2020-07-01',
+  released: '2020-07',
   url: 'https://www.mohfw-dohfw.gov.in/static/uploads/2025/10/1c3c2048814bd3747f44e661f8547055.pdf',
 }
 
@@ -155,9 +143,7 @@ const topic: Topic = {
       lede: "India's population more than tripled between the 1951 and 2011 counts, from 36,10,88,090. Growth over the decade to 2011 was 17.70%, the slowest since the decade to 1951 (13.31%).",
       blocks: [
         {
-          // MODEL: the board prints the change since the previous census (%) as a second row of labels
-          // under the columns (column change_since_previous_census_pct), and value labels on 1901,
-          // 1951 and 2011 only. 'columns' has no second-row labels and no callouts.
+          // LATER: the board prints the change since the previous census (change_since_previous_census_pct) as a second row of labels.
           chart: {
             slug: 'population-by-census',
             kind: 'columns',
@@ -178,6 +164,11 @@ const topic: Topic = {
                 y: 'population',
               },
             ],
+            callouts: [
+              { series: 'population', x: '1901' },
+              { series: 'population', x: '1951' },
+            ],
+            // LATER: the board also labels 2011; a callout on the last column is cut off.
             know: [
               'Census 2011 is the latest full count. Its reference date was 00:00 on 1 March 2011.',
               'Assam had no census in 1981, and Jammu and Kashmir had none in 1991. ORGI gives interpolated figures for them, so the India totals for those years include estimates.',
@@ -203,8 +194,7 @@ const topic: Topic = {
       lede: 'In 2011, the largest age group was children aged 10 to 14: 13,27,09,212 people. There were 1,12,89,005 people aged 80 and over.',
       blocks: [
         {
-          // MODEL: the board labels two bars in the plot ("Largest group, aged 10 to 14" and "Aged 80
-          // and over"), each with men and women added. 'pyramid' has no callouts.
+          // LATER: the board labels two bars ("Largest group, aged 10 to 14", "Aged 80 and over"); 'pyramid' has no callouts.
           chart: {
             slug: 'population-pyramid',
             kind: 'pyramid',
@@ -251,9 +241,7 @@ const topic: Topic = {
       lede: 'Women in India had 1.9 children on average in 2024, below the replacement level of 2.1. Replacement level is the rate at which each generation replaces itself. Bihar had the highest rate (2.9) and Delhi the lowest (1.2). 16 of the 22 bigger states and UTs were below 2.1.',
       blocks: [
         {
-          // MODEL: the board draws a dashed reference line at the replacement level (2.1, "Replacement
-          // level: 2.1"), an x axis from 1.0 to 3.5, and sorts rows by the 2024 value with India first.
-          // 'dots' has no refs, no axis and no sort order.
+          // LATER: the board sets the axis from 1.0 to 3.5 and puts India first; dots start the axis at 0 and sort India by value.
           chart: {
             slug: 'fertility-rate-by-state',
             kind: 'dots',
@@ -265,6 +253,8 @@ const topic: Topic = {
             note: 'The SRS gives a fertility rate only for the 22 bigger states and UTs. The other 14 have no estimate. Values are rounded to one decimal in the source.',
             sources: [srsReportT15],
             format: { decimals: 1 },
+            sortBy: '2024',
+            refs: [{ value: 2.1, label: 'Replacement level: 2.1' }],
             series: [
               {
                 key: '2019',
@@ -303,8 +293,6 @@ const topic: Topic = {
           text: "India's birth rate was 18.3 per 1,000 people in 2024, and its death rate was 6.4. Bihar had the highest birth rate (26.8) and Andaman and Nicobar Islands the lowest (9.9).",
         },
         {
-          // MODEL: the board frame has a Map tab (birth rate on the tile map) and sorts rows by birth
-          // rate. 'dots' has no map view; 'states' takes one series only.
           chart: {
             slug: 'birth-death-rates-by-state',
             kind: 'dots',
@@ -316,6 +304,8 @@ const topic: Topic = {
             note: 'The SRS is a sample survey. Values for small states and UTs rest on small samples; the Manipur estimate rests on 130 sample units.',
             sources: [srsBulletinT1],
             format: { decimals: 1 },
+            sortBy: 'birth',
+            map: { series: 'birth', scale: 'seq' },
             series: [
               {
                 key: 'birth',
@@ -352,9 +342,7 @@ const topic: Topic = {
           text: 'For every 1,000 boys born in India in 2022-24, 918 girls were born, up from 907 in 2018-20. Chhattisgarh had the highest ratio (978) and Uttarakhand the lowest (872).',
         },
         {
-          // MODEL: the board draws a dashed reference line at 1,000 ("Equal numbers of girls and boys"),
-          // starts the axis at 840 and sorts rows by the 2022-24 value with India first. 'dots' has no
-          // refs, no axis and no sort order.
+          // LATER: the board starts the axis at 840 and puts India first; dots start the axis at 0 and sort India by value.
           chart: {
             slug: 'sex-ratio-at-birth-by-state',
             kind: 'dots',
@@ -363,9 +351,12 @@ const topic: Topic = {
               'Girls born for every 1,000 boys born, three-year averages, 22 bigger states and UTs, 2018-20 and 2022-24.',
             punches: { office: 'ORGI · SRS', unit: 'per 1,000 boys', period: '2022-24' },
             status: ['Survey estimate'],
-            note: 'The SRS gives this ratio only for the 22 bigger states and UTs. Each value is an average over three years. The axis starts at 840.',
+            note: 'The SRS gives this ratio only for the 22 bigger states and UTs. Each value is an average over three years. The dotted line marks 1,000: equal numbers of girls and boys.',
             sources: [srsReportT16],
             format: { decimals: 0 },
+            sortBy: '2022-24',
+            // The line sits at the right edge of the axis, so its label goes in the note.
+            refs: [{ value: 1000, label: '' }],
             series: [
               {
                 key: '2018-20',
@@ -406,8 +397,7 @@ const topic: Topic = {
       lede: 'Uttar Pradesh had 19,98,12,341 people in 2011, more than any other state. Nagaland was the only state whose population fell between 2001 and 2011 (−0.58%). These are Census 2011 units, so Telangana and Ladakh have no figures of their own.',
       blocks: [
         {
-          // MODEL: the subtitle also names "people counted in 2011" (series 'population' in the same
-          // file), shown in the Table view. 'states' takes one value per state.
+          // LATER: the board's Table view adds "people counted in 2011" (series 'population'); 'states' takes one value per state.
           chart: {
             slug: 'population-growth-by-state',
             kind: 'states',
@@ -482,12 +472,7 @@ const topic: Topic = {
       lede: 'The Technical Group on Population Projections (MoHFW, National Commission on Population) projects 152.2 crore people in India by 1 March 2036, up from 142.6 crore in 2026. Uttar Pradesh alone is projected at 24.3 crore in 2026. These are projections made in 2020, not counts. Census 2027 will give the first new count.',
       blocks: [
         {
-          // MODEL: values are in thousand persons. Format needs a multiplier (x 1,000) so that
-          // scale 'crore' prints 142.6 crore for 1,425,908 thousand.
-          // MODEL: the board draws two vertical markers, "Today, 17 Nov 2026" and "Census 2027, ref. date
-          // 1 Mar 2027"; 'line' has refs on y only.
-          // MODEL: the board frame has a Map tab (state projections for 2026, same file); 'line' has no
-          // map view.
+          // LATER: the board frame has a Map tab (state projections for 2026, same file); 'line' has no map view.
           chart: {
             slug: 'population-projection',
             kind: 'line',
@@ -498,12 +483,19 @@ const topic: Topic = {
             status: ['Projection'],
             note: 'These are projections made in July 2020 from Census 2011 and SRS trends. They are not counts, and they do not use the SRS rates for 2020 onward. The report gives values in thousands; 1 crore is 10,000 thousand.',
             sources: [projectionsT8],
-            format: { scale: 'crore', decimals: 1 },
+            // The report gives thousand persons: 1,425,908 thousand prints as 142.6 crore.
+            format: { scale: 'crore', decimals: 1, multiply: 1000 },
             y: { min: 1100000, max: 1600000, step: 100000 },
+            // The two markers are 3.5 months apart: "Today" is labelled left of its line, Census 2027 right
+            // of its line (a blank `before` puts the label on the right).
+            markers: [
+              { x: '2026-11-17', label: 'Today, 17 Nov 2026' },
+              { x: '2027-03-01', label: 'Census 2027, ref. date 1 Mar 2027', before: ' ' },
+            ],
             series: [
               {
                 key: 'projection',
-                label: 'Projection (Technical Group, July 2020)',
+                label: 'Projection',
                 color: 'ink',
                 dash: true,
                 file: PROJ,
@@ -541,7 +533,10 @@ const topic: Topic = {
       ],
     },
   ],
+  // LATER: the About band's side line ("How each population figure is made: counts, survey estimates and projections.") has no field.
   about: {
+    intro:
+      'This page uses three kinds of figure. Census 2011 is a count of every person. The SRS is a sample survey. The 2026 and 2036 values are projections. Each chart says which one it shows.',
     publisher:
       'The Office of the Registrar General and Census Commissioner, India (ORGI), Ministry of Home Affairs, runs the Census and the Sample Registration System (SRS). The National Commission on Population, Ministry of Health and Family Welfare (MoHFW), publishes the population projections of its Technical Group.',
     frequency:
@@ -560,8 +555,13 @@ const topic: Topic = {
   },
   // The board lists the SRS report and bulletin on one line; they are two releases with two URLs.
   sources: [censusA02, censusA01, censusC14, srsReport, srsBulletin, projections, ...gazettes],
+  rail: [
+    {
+      title: 'Census 2027',
+      body: 'The next count is under way. No results are published yet. 1 Apr to 30 Sep 2026: House-listing, all states and UTs. Done. 1 Dec 2026 to 4 Jan 2027: Count in Goa, Uttar Pradesh, Punjab and Uttarakhand. 25 Jan to 28 Feb 2027: Count in all other states and UTs. Reference date 1 Mar 2027. Manipur: dates not yet set. Source: ORGI gazette notifications, 16 Jun 2025 to 30 Oct 2026.',
+    },
+  ],
   related: [
-    // LINK: the slug belongs to the Health module; confirm it when the modules merge.
     { label: 'Health: Infant mortality by state', href: '/charts/infant-mortality-by-state/' },
     { label: 'Religion and culture: Religion by state, 2011', href: '/charts/religion-by-state/' },
     { label: 'States: Tamil Nadu profile', href: '/states/tamil-nadu/' },

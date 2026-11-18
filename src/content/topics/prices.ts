@@ -13,7 +13,7 @@ const CPI_RELEASE: Source = {
   url: 'https://www.mospi.gov.in/uploads/latestReleases/latest_release_1794478693814_7c90e80f-9e64-4aa4-b44a-1dc727b0fed9_Press_Release_of_CPI_for_October_2026_.pdf',
 }
 
-// SOURCE: one board row covers both endpoints. The base 2012=100 series is read from
+// One board row covers both endpoints. The base 2012=100 series is read from
 // https://api.mospi.gov.in/api/cpi/getCPIIndex (final series, last month December 2025).
 const CPI_API: Source = {
   publisher: 'MoSPI (NSO)',
@@ -22,7 +22,7 @@ const CPI_API: Source = {
   url: 'https://api.mospi.gov.in/api/cpi/getCPIData',
 }
 
-// SOURCE: the board row covers Tables 40 and 236. Its link is the Handbook page named in the
+// The board row covers Tables 40 and 236. Its link is the Handbook page named in the
 // README; the charts cite each table file below.
 const RBI_HANDBOOK: Source = {
   publisher: 'RBI',
@@ -52,7 +52,7 @@ const RBI_HIKE: Source = {
   url: 'https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63744',
 }
 
-// SOURCE: one README row for three statements (8 Apr, 5 Jun, 5 Aug 2026). This is the
+// One README row for three statements (8 Apr, 5 Jun, 5 Aug 2026). This is the
 // 5 Aug one; the others are prid=62515 (8 Apr) and prid=62864 (5 Jun).
 const RBI_HOLDS: Source = {
   publisher: 'RBI',
@@ -61,12 +61,20 @@ const RBI_HOLDS: Source = {
   url: 'https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63288',
 }
 
-// SOURCE: a live page. 25 Mar 2026 is the date the RBI retained the target (board row).
+// A live page. 25 Mar 2026 is the date the RBI retained the target (board row).
 const RBI_TARGET: Source = {
   publisher: 'RBI',
   release: 'Monetary Policy Framework: inflation target 4%, band 2% to 6%, 1 Apr 2026 to 31 Mar 2031',
   released: '2026-03-25',
   url: 'https://www.rbi.org.in/scripts/fs_overview.aspx?fn=2752',
+}
+
+// One row for the ten monthly releases that give the CFPI (each month's final value is in the next release).
+const CFPI_RELEASES: Source = {
+  publisher: 'MoSPI (NSO)',
+  release: 'Press Releases of Consumer Price Index on base 2024=100, January to October 2026: Consumer Food Price Index (CFPI)',
+  released: '2026-11-12',
+  url: 'https://www.mospi.gov.in/uploads/latestReleases/latest_release_1794478693814_7c90e80f-9e64-4aa4-b44a-1dc727b0fed9_Press_Release_of_CPI_for_October_2026_.pdf',
 }
 
 const CPI_NEXT = '2026-12-14'
@@ -87,16 +95,7 @@ const topic: Topic = {
   standfirst: "Consumer prices rose by 6.09% in the year to October 2026, above the RBI's upper limit of 6%.",
   figures: [
     { chart: 'cpi-inflation', series: 'base-2024', label: 'Consumer price inflation' },
-    // DATA: the board shows "8.94%, Consumer Food Price Index, Oct 2026" (README headline
-    // table, CPI press release of 12 Nov 2026). No CSV in research/data/prices holds the
-    // CFPI for October 2026, so no chart can carry it. Until a CFPI row is added, this
-    // figure shows the Food and beverages division (8.51%) from chart 3.1.
-    {
-      chart: 'cpi-inflation-by-division',
-      series: 'oct-2026',
-      x: 'Food and beverages',
-      label: 'Food and beverages inflation',
-    },
+    { chart: 'cpi-inflation-by-division-2026', series: 'cfpi', label: 'Consumer Food Price Index (CFPI)' },
     { chart: 'repo-rate', label: 'RBI policy repo rate', period: 'From 7 Oct 2026' },
   ],
   nextRelease: 'CPI for November 2026, expected 14 Dec 2026',
@@ -219,8 +218,7 @@ const topic: Topic = {
             scale: 'div',
             better: 'low',
             short: 'Inflation',
-            // MODEL: board S12 gives this chart a timeline, January to October 2026 (the CSV
-            // holds every month). The 'states' kind picks one period only.
+            // LATER: board S12 gives this chart a timeline, January to October 2026; 'states' shows one period.
             // From board S12, "What you should know about this indicator".
             know: [
               'October 2026 is provisional. MoSPI finalises it with the November release, due on 14 December 2026.',
@@ -257,9 +255,13 @@ const topic: Topic = {
             sources: [CPI_RELEASE],
             format: { unit: '%' },
             by: 'division',
-            // MODEL: the board prints a "Weight" column (weight_combined, % of the basket)
-            // beside each bar, and draws "All items 6.09%" (division_code 00) as a vertical
-            // reference line. 'bars' has no label column and no reference line.
+            // LATER: the board prints a "Weight" column (weight_combined) beside each bar; 'bars' has no value column.
+            refs: [{ value: 6.09, label: 'All items 6.09%' }],
+            labels: {
+              'Personal care, social protection and miscellaneous goods and services': 'Personal care and miscellaneous',
+              'Furnishings, household equipment and routine household maintenance': 'Furnishings and household equipment',
+              'Housing, water, electricity, gas and other fuels': 'Housing, water and fuels',
+            },
             series: [
               {
                 key: 'oct-2026',
@@ -296,12 +298,12 @@ const topic: Topic = {
               'Annual change in the Consumer Price Index (2024=100), rural and urban combined, %, January to October 2026. The four largest divisions by weight. Same scale in every panel.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'OCT 2026' },
             status: ['Provisional'],
-            sources: [CPI_API],
+            sources: [CPI_API, CFPI_RELEASES],
             format: { unit: '%' },
-            // MODEL: each panel on the board has a sub-label with the division weight
-            // ("Weight 36.75%"). 'panels' has no sub-label.
+            // LATER: each panel on the board has a sub-label with the division weight ("Weight 36.75%").
             series: [
               { key: 'food', label: 'Food and beverages', color: 'ink', file: DIVISIONS_2026, where: { sector: 'combined', division_code: '01' } },
+              { key: 'cfpi', label: 'Food price index (CFPI)', color: 's8', file: 'prices/cfpi-inflation-2026.csv', where: { sector: 'combined' } },
               { key: 'housing', label: 'Housing, water, electricity, gas and other fuels', color: 'ink', file: DIVISIONS_2026, where: { sector: 'combined', division_code: '04' } },
               { key: 'transport', label: 'Transport', color: 'ink', file: DIVISIONS_2026, where: { sector: 'combined', division_code: '07' } },
               { key: 'clothing', label: 'Clothing and footwear', color: 'ink', file: DIVISIONS_2026, where: { sector: 'combined', division_code: '03' } },
@@ -309,13 +311,15 @@ const topic: Topic = {
             ],
             y: { step: 5 },
             panels: [
-              { label: 'Food and beverages', series: ['food', 'all-items'] },
+              { label: 'Food and beverages', series: ['food', 'cfpi', 'all-items'] },
               { label: 'Housing, water and fuels', series: ['housing', 'all-items'] },
               { label: 'Transport', series: ['transport', 'all-items'] },
               { label: 'Clothing and footwear', series: ['clothing', 'all-items'] },
             ],
             callouts: [
               { series: 'food', x: '2026-10' },
+              // The CFPI label sits at September so that it does not cover the food label at October.
+              { series: 'cfpi', x: '2026-09', label: 'CFPI' },
               { series: 'housing', x: '2026-10' },
               { series: 'transport', x: '2026-10' },
               { series: 'clothing', x: '2026-10' },
@@ -325,11 +329,13 @@ const topic: Topic = {
               'The four divisions shown carry the largest weights: food and beverages (36.75%), housing, water and fuels (17.66%), transport (8.80%), and clothing and footwear (6.38%).',
               'The series starts in January 2026, the first month on base 2024=100. January to September are final; October is provisional.',
               'All items is the general index, 6.09% in October 2026.',
+              'The Consumer Food Price Index (CFPI) covers food items only, with its own weights. It is not the same as the food and beverages division: 8.94% against 8.51% in October 2026.',
             ],
             processing: [
               'Fetch the all-India division indices and rates from the MoSPI eSankhyiki API, one request per month and sector (base 2024=100).',
               'Pick the four divisions with the largest weights in Annexure I of the press release.',
               'Draw each division with the general index in the same panel, on one shared scale.',
+              'Read the CFPI for each month from the monthly press releases: the final value from the next release, and October 2026 (provisional) from the release of 12 Nov 2026.',
             ],
             nextRelease: CPI_NEXT,
           },
@@ -343,12 +349,11 @@ const topic: Topic = {
             subtitle:
               'Annual change in the Consumer Price Index (2012=100), rural and urban combined, %, January 2014 to December 2025. Four of the 2012 groups. Same scale in every panel. These groups do not match the 2024 divisions in 3.1 and 3.2.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'DEC 2025' },
-            // SOURCE: the board cites the 2012=100 group indices, final series to December
+            // The board cites the 2012=100 group indices, final series to December
             // 2025 (getCPIIndex). The API row carries the latest update date.
             sources: [CPI_API],
             format: { unit: '%' },
-            // MODEL: each panel on the board has a sub-label with the peak ("Peak 12.16 ·
-            // Dec 2019"). 'panels' has no sub-label; the peaks are callouts here.
+            // LATER: each panel on the board has a sub-label with the peak ("Peak 12.16 · Dec 2019"); the peaks are callouts here.
             series: [
               { key: 'food', label: 'Food and beverages', color: 'ink', file: GROUPS_2012, where: { sector: 'combined', group: 'Food and Beverages' } },
               { key: 'fuel', label: 'Fuel and light', color: 'ink', file: GROUPS_2012, where: { sector: 'combined', group: 'Fuel and Light' } },
@@ -366,13 +371,9 @@ const topic: Topic = {
             callouts: [
               { series: 'food', x: '2019-12' },
               { series: 'food', x: '2025-10' },
-              { series: 'food', x: '2025-12' },
               { series: 'fuel', x: '2021-10' },
-              { series: 'fuel', x: '2025-12' },
               { series: 'housing', x: '2014-05' },
-              { series: 'housing', x: '2025-12' },
               { series: 'clothing', x: '2022-09' },
-              { series: 'clothing', x: '2025-12' },
             ],
             know: [
               'These are the six groups of the 2012=100 series; the chart shows four of them and the general index. The series ends in December 2025.',
@@ -448,19 +449,18 @@ const topic: Topic = {
             note: 'The repo rate became the single policy rate on 3 May 2011. The MPC kept the rate at 5.25% in April, June and August 2026.',
             sources: [RBI_TABLE_40, RBI_HIKE, RBI_HOLDS],
             format: { unit: '%', decimals: 2 },
-            // MODEL: the board draws a step line held flat to 17 Nov 2026, and marks
-            // "3 May 2011: repo becomes the single policy rate" with a vertical rule that is
-            // not a method break. The callout at 22 May 2020 reads "4.00%, May 2020 to May
-            // 2022". 'line' has no step, annotation or callout-label option.
+            step: true,
+            extendTo: '2026-11-17',
+            // The note gives the full text: the repo rate became the single policy rate on 3 May 2011.
+            markers: [{ x: '2011-05-03', label: 'Single policy rate' }],
             series: [
-              { key: 'repo', label: 'Repo rate', color: 'ink', file: 'prices/repo-rate.csv', x: 'effective_date' },
+              { key: 'repo', label: 'RBI policy repo rate', color: 'ink', file: 'prices/repo-rate.csv', x: 'effective_date' },
             ],
             y: { min: 0, max: 10, step: 2 },
             callouts: [
-              { series: 'repo', x: '2008-07-30' },
-              { series: 'repo', x: '2020-05-22' },
-              { series: 'repo', x: '2023-02-08' },
-              { series: 'repo', x: '2026-10-07' },
+              { series: 'repo', x: '2008-07-30', label: '9.00%, 30 Jul 2008' },
+              { series: 'repo', x: '2020-05-22', label: '4.00%, May 2020 to May 2022' },
+              { series: 'repo', x: '2023-02-08', label: '6.50%, 8 Feb 2023' },
             ],
             know: [
               "The repo rate is the RBI's policy rate: the rate at which it lends to banks. The Monetary Policy Committee (MPC) sets it.",
@@ -480,12 +480,10 @@ const topic: Topic = {
       ],
     },
   ],
-  // MODEL: the board's "About the data" band also has a rail line ("How each prices figure
-  // is made, where it breaks, and what is missing.") and an intro paragraph ("All values
-  // are as published. We read every source on 17 November 2026. The October 2026 values
-  // match the MoSPI CPI press release of 12 November 2026, table by table."). AboutTheData
-  // has no field for them.
+  // LATER: the About band's side line ("How each prices figure is made, where it breaks, and what is missing.") has no field.
   about: {
+    intro:
+      'All values are as published. We read every source on 17 November 2026. The October 2026 values match the MoSPI CPI press release of 12 November 2026, table by table.',
     publisher:
       'The National Statistics Office (NSO), MoSPI, compiles the Consumer Price Index (CPI) for rural, urban and combined India, for each state and UT, and for 12 spending divisions. The Reserve Bank of India (RBI) sets the repo rate and publishes CPI for industrial workers (CPI-IW) from the Labour Bureau in its Handbook of Statistics.',
     frequency:
@@ -499,14 +497,13 @@ const topic: Topic = {
     missing:
       'MoSPI gives no inflation rate for June to December 2013 in either 2012-base series, and none for April and May 2020, the lockdown months. Repo rates before April 2008 are in earlier editions of the RBI Handbook. No publisher states a reuse licence for these data.',
   },
-  sources: [CPI_RELEASE, CPI_API, RBI_HANDBOOK, RBI_HIKE, RBI_TARGET],
+  sources: [CPI_RELEASE, CFPI_RELEASES, CPI_API, RBI_HANDBOOK, RBI_HIKE, RBI_TARGET],
   related: [
     { label: 'Economy: Industrial production, month by month', href: '/charts/iip-growth/' },
     { label: 'Economy: Rupees per US dollar since 1986-87', href: '/charts/usd-inr-annual/' },
     { label: 'Economy: Quarterly GDP growth', href: '/charts/gdp-growth-quarterly/' },
     { label: 'States: Tamil Nadu profile', href: '/states/tamil-nadu/' },
-    // LINK: the How we check board (S15) has no anchor ids; the lead sets the fragment.
-    { label: 'How we check: method breaks', href: '/how-we-check/#method-breaks' },
+    { label: 'How we check: method breaks', href: '/how-we-check/#part-3' },
   ],
 }
 

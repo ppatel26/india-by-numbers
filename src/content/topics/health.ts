@@ -2,7 +2,7 @@ import type { Source, Topic } from '../types'
 
 // Board S09. Copy is verbatim from the board.
 
-// SOURCE: the README gives "May 2026 (NADA entry created 20 May 2026)"; 20 May is the catalogue date.
+// The ORGI catalogue gives "Date published 2026-05-20".
 const SRS_BULLETIN_2024: Source = {
   publisher: 'ORGI',
   release: 'SRS Bulletin 2024 (Vol. 59 No. 1)',
@@ -10,27 +10,28 @@ const SRS_BULLETIN_2024: Source = {
   url: 'https://censusindia.gov.in/nada/index.php/catalog/47150/download/51394',
 }
 
-// SOURCE: the README gives "May 2026" with no day. Lead to confirm the day.
+// The ORGI catalogue gives "Date published 2026-05-20" (catalog/47151).
 const SRS_MMR_2022_24: Source = {
   publisher: 'ORGI',
   release: 'SRS Special Bulletin on Maternal Mortality in India 2022-24',
-  released: '2026-05',
+  released: '2026-05-20',
   url: 'https://censusindia.gov.in/nada/index.php/catalog/47151/download/51395',
 }
 
-// SOURCE: the README gives "May 2026" with no day. Lead to confirm the day.
+// The ORGI catalogue gives "Date published 2026-05-18" (catalog/47148).
 const SRS_LIFE_TABLES: Source = {
   publisher: 'ORGI',
   release: 'SRS Based Abridged Life Tables 2020-24',
-  released: '2026-05',
+  released: '2026-05-18',
   url: 'https://censusindia.gov.in/nada/index.php/catalog/47148/download/51393',
 }
 
-// SOURCE: the file states no release date (README and board: "Date not stated").
+// The file states no date. The ORGI catalogue gives "Date published 2014-01-01" (catalog/33218),
+// a year-only entry, so the year is 2014.
 const SRS_COMPENDIUM: Source = {
   publisher: 'ORGI',
   release: "SRS Compendium of India's Fertility and Mortality Indicators 1971-2013",
-  released: 'not stated',
+  released: '2014',
   url: 'https://censusindia.gov.in/nada/index.php/catalog/33218/download/37035',
 }
 
@@ -48,8 +49,8 @@ const PIB_ANAEMIA: Source = {
   url: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=1782638',
 }
 
-// SOURCE: no release date found. Foreword dated 7 Sep 2026; NHSRC posted the file in its
-// November 2026 folder (the board says "Nov 2026"). Lead to confirm the day.
+// NHSRC gives no day: the file sits in its November 2026 folder and the PDF is dated 6 Nov 2026.
+// News reports date the launch 15 Nov 2026; no ministry or PIB page confirms the day.
 const NHA_2023_24: Source = {
   publisher: 'MoHFW and NHSRC',
   release: 'National Health Accounts Estimates for India 2023-24',
@@ -125,8 +126,7 @@ const topic: Topic = {
             note: 'The India rate for 1991 to 1997 leaves out Jammu and Kashmir. The SRS Compendium also notes that Mizoram is left out before 1995, and rural Nagaland from 1995 to 2003.',
             sources: [withTable(SRS_COMPENDIUM, 'Table 1'), withTable(SRS_BULLETIN_2024, 'Table 1')],
             format: { decimals: 0 },
-            // MODEL: the board shades the years 1991 to 1997 on the x axis, labelled "Excludes J&K".
-            // `band` shades a y range only; the model needs an x-range band.
+            spans: [{ from: '1991', to: '1997', label: 'Excludes J&K' }],
             y: { min: 0, max: 160, step: 40 },
             series: [
               { key: 'total', label: 'India, total', color: 'ink', file: 'health/imr-india-1971-2024.csv', where: { geography: 'india', series: 'total' } },
@@ -168,9 +168,9 @@ const topic: Topic = {
             format: { decimals: 0 },
             y: { min: 0, max: 400, step: 100 },
             refs: [{ y: 70, label: 'SDG target: below 70' }],
-            // MODEL: the board breaks the line between 2011-13 and 2014-16 and labels the gap
-            // "No data 2012-14, 2013-15". This is a gap, not a method break; the model has no gap marker.
-            // MODEL: the board labels every point with its value; `callouts` also print the period.
+            // The line breaks at the gap and the chart labels it "No data".
+            // LATER: the board joins the points up to 2011-13 and names the gap "No data 2012-14, 2013-15"; the line splits where periods are not consecutive.
+            // LATER: the board labels every point with its value only; a callout per point would crowd the line.
             series: [
               { key: 'india', label: 'India', color: 'ink', file: 'health/mmr-india-1997-2024.csv', where: { geography: 'india' } },
             ],
@@ -208,14 +208,14 @@ const topic: Topic = {
             sources: [withTable(SRS_LIFE_TABLES, 'Statement 1')],
             format: { decimals: 1 },
             y: { min: 40, max: 80, step: 10 },
-            // MODEL: x is `mid_year` (the board plots each period at its middle year), but the axis and
-            // table should show the `period` label (1970-75, 2020-24). The model needs a label column.
-            // MODEL: the board shades 1987-91 to 1997-01 on the x axis ("Excludes J&K") and draws the
-            // first four points as dots; the model has no x-range band or per-point markers.
+            // Each period sits at its middle year (`mid_year`) and is labelled with `period`.
+            // 1987-91 is at 1989 and 1997-01 at 1999.
+            spans: [{ from: '1989', to: '1999', label: 'Excludes J&K' }],
+            // LATER: the board draws the first four points (separate five-year blocks) as dots.
             series: [
-              { key: 'total', label: 'India, total', color: 'ink', file: 'health/life-expectancy-india-1970-2024.csv', x: 'mid_year', where: { geography: 'india', residence: 'total', sex: 'total' } },
-              { key: 'female', label: 'Women', color: 's3', file: 'health/life-expectancy-india-1970-2024.csv', x: 'mid_year', where: { geography: 'india', residence: 'total', sex: 'female' } },
-              { key: 'male', label: 'Men', color: 's2', file: 'health/life-expectancy-india-1970-2024.csv', x: 'mid_year', where: { geography: 'india', residence: 'total', sex: 'male' } },
+              { key: 'total', label: 'India, total', color: 'ink', file: 'health/life-expectancy-india-1970-2024.csv', x: 'mid_year', xLabel: 'period', where: { geography: 'india', residence: 'total', sex: 'total' } },
+              { key: 'female', label: 'Women', color: 's3', file: 'health/life-expectancy-india-1970-2024.csv', x: 'mid_year', xLabel: 'period', where: { geography: 'india', residence: 'total', sex: 'female' } },
+              { key: 'male', label: 'Men', color: 's2', file: 'health/life-expectancy-india-1970-2024.csv', x: 'mid_year', xLabel: 'period', where: { geography: 'india', residence: 'total', sex: 'male' } },
             ],
             know: [
               'Life expectancy at birth is the number of years a newborn would live if the death rates of the period stayed the same all its life.',
@@ -239,18 +239,18 @@ const topic: Topic = {
             kind: 'dots',
             slug: 'life-expectancy-by-state',
             title: 'Life expectancy at birth by state and sex, 2020-24',
-            subtitle: 'Years, women and men, India and the 22 states with SRS life tables, 2020-24. Sorted by the total.',
+            subtitle: 'Years, women and men, India and the 22 states with SRS life tables, 2020-24. Sorted by the figure for women.',
             punches: { office: 'ORGI', unit: 'years', period: '2020-24' },
             status: ['Survey estimate'],
             note: 'Life expectancy at birth ranges from 64.7 years in Chhattisgarh to 75.6 years in Kerala. SRS publishes life tables for the 21 bigger states and Himachal Pradesh only, and gives no figure for the other 14 states and UTs.',
             sources: [withTable(SRS_LIFE_TABLES, 'Statement 3')],
             format: { decimals: 1 },
             by: 'geography',
-            // MODEL: the board sorts the rows by the total (sex = total) and prints the total in a
-            // right-hand "Total" column. The model needs a sort series and a value column that is not a dot.
+            // LATER: the board sorts by the hidden total and prints it in a "Total" column; dots sort on a drawn series and have no value column.
             series: [
               { key: 'female', label: 'Women', color: 's3', file: 'health/life-expectancy-by-state-2020-24.csv', x: 'geography', where: { residence: 'total', sex: 'female' } },
               { key: 'male', label: 'Men', color: 's2', file: 'health/life-expectancy-by-state-2020-24.csv', x: 'geography', where: { residence: 'total', sex: 'male' } },
+              { key: 'total', label: 'Total', color: 'ink', hidden: true, file: 'health/life-expectancy-by-state-2020-24.csv', x: 'geography', where: { residence: 'total', sex: 'total' } },
             ],
             know: [
               'SRS publishes life tables for India, the 21 bigger states and Himachal Pradesh. It gives no figure for the other 14 states and UTs.',
@@ -296,8 +296,7 @@ const topic: Topic = {
               'full-immunisation-card-or-recall': 'Fully vaccinated, card or recall',
               'anaemia-women-15-49': 'Women 15-49 with anaemia',
             },
-            // MODEL: the board writes "Not in NFHS-6" where the NFHS-6 bar for anaemia would be.
-            // The model needs a label for a missing value in a grouped bar.
+            // LATER: the board writes "Not in NFHS-6" where the NFHS-6 anaemia bar would be; bars have no missing-value label.
             series: [
               { key: 'nfhs5', label: 'NFHS-5 (2019-21)', color: 'other', file: 'health/nfhs-key-indicators-by-state.csv', x: 'indicator', where: { geography: 'india', round: 'NFHS-5', indicator: NFHS_INDIA_INDICATORS } },
               { key: 'nfhs6', label: 'NFHS-6 (2023-24), provisional', color: 'ink', file: 'health/nfhs-key-indicators-by-state.csv', x: 'indicator', where: { geography: 'india', round: 'NFHS-6', indicator: NFHS_INDIA_INDICATORS } },
@@ -332,9 +331,9 @@ const topic: Topic = {
             format: { decimals: 1, unit: '%' },
             by: 'geography',
             hollow: ['nfhs5'],
-            // MODEL: the board gives this frame a Map tab (NFHS-6 stunting on the tile map) and colours
-            // the selected state's NFHS-6 dot series-1 ("Tamil Nadu, NFHS-6"). `dots` has neither.
-            // It also lists Manipur as "Not surveyed in NFHS-6" (no row in the CSV).
+            sortBy: 'nfhs6',
+            map: { series: 'nfhs6', scale: 'seq', better: 'low' },
+            // LATER: the board colours the selected state's NFHS-6 dot series-1 and adds a row "Manipur: Not surveyed in NFHS-6".
             series: [
               { key: 'nfhs5', label: 'NFHS-5 (2019-21)', color: 'slate', file: 'health/nfhs-key-indicators-by-state.csv', x: 'geography', where: { indicator: 'stunted', round: 'NFHS-5' } },
               { key: 'nfhs6', label: 'NFHS-6 (2023-24), provisional', color: 'ink', file: 'health/nfhs-key-indicators-by-state.csv', x: 'geography', where: { indicator: 'stunted', round: 'NFHS-6' } },
@@ -373,10 +372,8 @@ const topic: Topic = {
             sources: [withTable(NHA_2023_24, 'Table 1')],
             format: { decimals: 1, unit: '%' },
             y: { min: 0, max: 70, step: 10 },
-            breaks: [{ x: '2017-18', label: 'NSS 2017-18 survey' }],
-            // MODEL: the board also marks 2022-23 "New sources" with a tick on the x axis. That is a
-            // change of sources, not a break in the line; the model has no x marker short of a break.
-            // MODEL: the board labels the before-break side "NSS 2014 survey"; Breakpoint has one label.
+            breaks: [{ x: '2017-18', label: 'NSS 2017-18 survey', before: 'NSS 2014 survey' }],
+            markers: [{ x: '2022-23', label: 'New sources' }],
             series: [
               { key: 'oope-nss71', label: 'Out of pocket', color: 's7', file: 'health/out-of-pocket-health-spending.csv', where: { geography: 'india', series: 'oope-share-of-the', period: ['2013-14', '2014-15', '2015-16', '2016-17'] } },
               { key: 'oope', label: 'Out of pocket', color: 's7', file: 'health/out-of-pocket-health-spending.csv', where: { geography: 'india', series: 'oope-share-of-the', period: ['2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'] } },
@@ -408,8 +405,7 @@ const topic: Topic = {
             note: "NHSRC leaves out the small states, the UTs and the North-East because their survey samples are too small. State shares still rest on the 2017-18 household survey. Kerala's high share (65.2%) sits beside high total spending, ₹13,605 per person, so the share alone does not show hardship.",
             sources: [withTable(NHA_2023_24, 'Table A.6')],
             format: { decimals: 1, unit: '%' },
-            // MODEL: the board gives this frame Chart and Table tabs only, no Map (21 states). The
-            // model needs a way to turn the map view off for a `states` chart.
+            // LATER: the board gives this frame Chart and Table tabs only, no Map (21 states); 'states' always has a Map tab.
             data: { file: 'health/out-of-pocket-health-spending.csv', where: { series: 'oope-share-of-the', period: '2023-24' } },
             open: 'chart',
             scale: 'seq',
@@ -445,10 +441,8 @@ const topic: Topic = {
             note: "Each state and UT is one equal tile; the grid is not a map of borders. For the 15 smaller states and UTs, SRS pools three years because each year's sample is small. Manipur's rate of 2 is the lowest, but it rests on 130 sample units. SRS gives rural and urban rates for India and the 21 bigger states only.",
             sources: [withTable(SRS_BULLETIN_2024, 'Table 1')],
             format: { decimals: 0 },
-            // MODEL: the map draws pooled (2022-24) rates with a dotted tile edge, from the
-            // `estimate_basis` column. The model has no per-row style column.
-            // MODEL: the board's map and bars use fixed bins (under 10, 10 to 14, 15 to 19, 20 to 24,
-            // 25 to 29, 30 and over). The model has no bin breaks for `seq`.
+            // LATER: the board draws pooled (2022-24) rates with a dotted tile edge, from `estimate_basis`.
+            bins: [10, 15, 20, 25, 30],
             data: { file: 'health/imr-by-state-2024.csv' },
             open: 'map',
             scale: 'seq',
@@ -479,12 +473,11 @@ const topic: Topic = {
             subtitle: 'Maternal deaths per 1,00,000 live births, 19 states and one group for all other states and UTs, 2022-24, with 95% confidence intervals.',
             punches: { office: 'ORGI', unit: 'per 1,00,000', period: '2022-24' },
             status: ['Survey estimate'],
-            note: "SRS gives a ratio for 19 bigger states and one ratio for all other states and UTs together, so this chart has no map. The intervals are wide: Kerala's runs from 0 to 50, and Chhattisgarh's from 48 to 199.",
+            note: "SRS gives a ratio for 19 bigger states and one ratio for all other states and UTs together, so the map shows the 19 states only. The intervals are wide: Kerala's runs from 0 to 50, and Chhattisgarh's from 48 to 199.",
             sources: [withTable(SRS_MMR_2022_24, 'Table 1')],
             format: { decimals: 0 },
-            // MODEL: the board draws 95% confidence interval whiskers from `ci95_lower` and `ci95_upper`,
-            // shows no Map tab, and has a row "Other states and UTs (one group)" (`other-states`, not in
-            // geography.csv). The model needs interval columns, a no-map option and a label for that row.
+            // LATER: the board draws 95% confidence whiskers (`ci95_lower`, `ci95_upper`), has no Map tab,
+            // and adds the row "Other states and UTs (one group)" (`other-states`, not a place).
             data: { file: 'health/mmr-by-state-2022-24.csv', where: { geography: MMR_STATES } },
             open: 'chart',
             scale: 'seq',
@@ -507,15 +500,14 @@ const topic: Topic = {
       ],
     },
   ],
-  // MODEL: the board's About band also has a rail line ("How each health measure is made, which are
-  // surveys, where the series break, and what is missing.") and an intro paragraph ("All values are as
-  // published. We read every source on 17 November 2026. SRS and NFHS are sample surveys, so most
-  // figures on this page are survey estimates."). AboutTheData has no field for either.
+  // LATER: the About band's side line ("How each health measure is made, which are surveys, where the series break, and what is missing.") has no field.
   about: {
+    intro:
+      'All values are as published. We read every source on 17 November 2026. SRS and NFHS are sample surveys, so most figures on this page are survey estimates.',
     publisher:
       'The Office of the Registrar General of India (ORGI) runs the Sample Registration System (SRS), a large sample survey of births and deaths. It publishes infant and maternal mortality and life tables from it. The International Institute for Population Sciences (IIPS) runs the National Family Health Survey (NFHS) for the Ministry of Health and Family Welfare (MoHFW). The National Health Systems Resource Centre (NHSRC) compiles the National Health Accounts for MoHFW.',
     frequency:
-      'SRS Bulletin: once a year. The 2024 bulletin came out in May 2026; ORGI has not announced a date for 2025. Maternal mortality and life tables: pooled periods, published alongside the bulletin. NFHS: one round every few years; the NFHS-6 fact sheets came out on 29 May 2026. National Health Accounts: once a year; NHSRC posted the 2023-24 estimates in November 2026.',
+      'SRS Bulletin: once a year. The 2024 bulletin came out on 20 May 2026; ORGI has not announced a date for 2025. Maternal mortality and life tables: pooled periods, published alongside the bulletin. NFHS: one round every few years; the NFHS-6 fact sheets came out on 29 May 2026. National Health Accounts: once a year; NHSRC posted the 2023-24 estimates in November 2026.',
     revisions:
       'NFHS-6 results are provisional, as the fact sheets say. The NFHS-5 values shown are as printed in the NFHS-6 fact sheets. The National Health Accounts added new data sources in 2022-23.',
     breaks:
@@ -526,11 +518,10 @@ const topic: Topic = {
       'NFHS-6 did not report anaemia; MoHFW will use a separate ICMR survey with a different blood test. NFHS-6 gives no infant or child mortality, so this page uses SRS. SRS publishes no life expectancy, under-5 or neonatal mortality for the smaller states and UTs. None of the publishers states a reuse licence for these data.',
   },
   sources: [SRS_BULLETIN_2024, SRS_MMR_2022_24, SRS_LIFE_TABLES, SRS_COMPENDIUM, NFHS_6, PIB_ANAEMIA, NHA_2023_24],
-  // MODEL: chart slugs on other pages are not fixed yet; the population links point at the topic page.
   related: [
-    { label: 'Population: Fertility rate by state', href: '/population/' },
-    { label: 'Population: Birth rate and death rate', href: '/population/' },
-    { label: 'Population: Sex ratio at birth by state', href: '/population/' },
+    { label: 'Population: Fertility rate by state', href: '/charts/fertility-rate-by-state/' },
+    { label: 'Population: Birth rate and death rate', href: '/charts/birth-death-rates-by-state/' },
+    { label: 'Population: Sex ratio at birth by state', href: '/charts/sex-ratio-at-birth-by-state/' },
     { label: 'States: Tamil Nadu profile', href: '/states/tamil-nadu/' },
     { label: 'How we check: survey estimates', href: '/how-we-check/' },
   ],

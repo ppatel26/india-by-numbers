@@ -37,7 +37,7 @@ const plfsQuarterlyAprJun2025: Source = {
   url: 'https://www.mospi.gov.in/uploads/publications_reports/publications_reports1757323377120_dab45d40-9160-4804-8ac0-387846ebd44d_QuarterlyBulletinPLFS_April_June_2025.pdf',
 }
 
-// SOURCE: the README gives "2025 (archive lists 16 Jan 2025)"; the date is the MoSPI archive date.
+// The date is the MoSPI archive date (README).
 const plfsQuarterlyOctDec2024: Source = {
   publisher: 'NSO, MoSPI',
   release: 'PLFS Quarterly Bulletin, October to December 2024',
@@ -52,7 +52,7 @@ const plfsQuarterlyAprJun2024: Source = {
   url: 'https://www.mospi.gov.in/sites/default/files/publication_reports/Quarterly_Bulletin_PLFS_April_June_2024.pdf',
 }
 
-// SOURCE: the README gives "2023 (press note 29 May 2023)"; the date is the press note date.
+// The date is the press note date (README).
 const plfsQuarterlyJanMar2023: Source = {
   publisher: 'NSO, MoSPI',
   release: 'PLFS Quarterly Bulletin, January to March 2023',
@@ -60,7 +60,7 @@ const plfsQuarterlyJanMar2023: Source = {
   url: 'https://www.mospi.gov.in/sites/default/files/publication_reports/QuarterlyBulletinPLFS%20JanuaryMarch2023.pdf',
 }
 
-// SOURCE: the file carries no date; the README gives the MoSPI archive date, 27 Feb 2023.
+// The file carries no date; this is the MoSPI archive date (README).
 const plfsQuarterlyPressOctDec2021: Source = {
   publisher: 'NSO, MoSPI',
   release: 'Press note, PLFS Quarterly Bulletin, October to December 2021',
@@ -68,19 +68,19 @@ const plfsQuarterlyPressOctDec2021: Source = {
   url: 'https://www.mospi.gov.in/uploads/documents/Press_note_QB_October_December_20211651839674736.pdf',
 }
 
-// SOURCE: the README has no release date for this bulletin ("Not checked").
+// Released 2 Aug 2021: PIB release 1741589 and the bulletin's cover date.
 const plfsQuarterlyJulSep2020: Source = {
   publisher: 'NSO, MoSPI',
   release: 'PLFS Quarterly Bulletin, July to September 2020',
-  released: 'not checked',
+  released: '2021-08-02',
   url: 'https://www.mospi.gov.in/sites/default/files/publication_reports/PLFS_Quarterly_Bulletin_Jul_Sep_2020.pdf',
 }
 
-// SOURCE: the README has no release date for this bulletin ("Not checked").
+// The bulletin has no cover date; its PDF is dated 16 Oct 2020, so the month is October 2020.
 const plfsQuarterlyJulSep2019: Source = {
   publisher: 'NSO, MoSPI',
   release: 'PLFS Quarterly Bulletin, July to September 2019',
-  released: 'not checked',
+  released: '2020-10',
   url: 'https://www.mospi.gov.in/sites/default/files/publication_reports/Quarterly_Bulletin_July_September_2019_M.pdf',
 }
 
@@ -233,12 +233,12 @@ const topic: Topic = {
                 file: MONTHLY,
                 where: { indicator: 'UR', sector: 'rural+urban', sex: 'person', age_group: '15+' },
               },
-              // MODEL: data-only series for the second headline figure (35.0%, October 2026). The board
-              // does not draw it. Series needs a `hidden` flag (or Figure its own Pick) before render.
+              // Read for the second headline figure (35.0%, October 2026); not drawn.
               {
                 key: 'lfpr-women',
                 label: 'Women in the labour force',
                 color: 's3',
+                hidden: true,
                 file: MONTHLY,
                 where: { indicator: 'LFPR', sector: 'rural+urban', sex: 'female', age_group: '15+' },
               },
@@ -330,9 +330,7 @@ const topic: Topic = {
       lede: 'The annual report counts what people did over the 365 days before the interview, the usual status. Its rates are lower than the weekly rates in Part 1. On this measure, 40.0% of women aged 15 and over were in the labour force in 2025, against 79.1% of men. In 2017-18 the rate for women was 23.3%.',
       blocks: [
         {
-          // MODEL: the board places the July to June years and the calendar years side by side, with
-          // their own x ranges in each panel. On one time axis 2022-23 and 2022 overlap. The line kind
-          // needs per-segment x ranges.
+          // LATER: the board puts July to June years and calendar years side by side, each on its own x range; here they share one axis.
           chart: {
             kind: 'line',
             slug: 'labour-force-by-sex-annual',
@@ -373,8 +371,7 @@ const topic: Topic = {
       lede: 'Most workers in India run their own farm or small business, or help in a family one. In 2025, 56.2% of workers were self-employed, 23.6% had a regular wage or salary and 20.2% did casual labour.',
       blocks: [
         {
-          // MODEL: the board adds two rows, "Men, 2025" and "Women, 2025", under a "By sex" label.
-          // Bars take one category column, so only the four years are picked here.
+          // LATER: the board adds rows "Men, 2025" and "Women, 2025" under "By sex"; bars read one category column.
           chart: {
             kind: 'bars',
             slug: 'employment-status',
@@ -477,8 +474,7 @@ const topic: Topic = {
                 file: INDUSTRY,
                 where: { geography: 'india', period: '2025', sector: 'rural+urban', sex: 'female' },
               },
-              // MODEL: the board draws 2022 as a triangle marker above each "All workers" bar, not as
-              // a bar. Bars need a marker series.
+              // LATER: the board draws 2022 as a triangle marker above each "All workers" bar; bars have no marker series.
               {
                 key: 'all-2022',
                 label: 'All workers, 2022',
@@ -581,8 +577,6 @@ const topic: Topic = {
           text: 'In every state and UT, people aged 15 to 29 had a higher unemployment rate than all adults in 2025.',
         },
         {
-          // MODEL: the board sorts the rows by the 15-29 rate and opens on Chart with a Map tab.
-          // Dots have no sort key and no map view.
           chart: {
             kind: 'dots',
             slug: 'unemployment-by-state',
@@ -595,6 +589,12 @@ const topic: Topic = {
             sources: [plfsAnnual2025],
             format: { unit: '%', decimals: 1 },
             by: 'geography',
+            sortBy: 'youth',
+            map: { series: 'adults', scale: 'seq', better: 'low' },
+            refs: [
+              { value: 3.1, label: 'India 3.1%, 15+' },
+              { value: 9.9, label: 'India 9.9%, 15-29' },
+            ],
             series: [
               {
                 key: 'adults',
@@ -630,11 +630,10 @@ const topic: Topic = {
       ],
     },
   ],
-  // MODEL: the board's band also has a lede ("All values are as published. We read every source on
-  // 17 November 2026. The monthly rates for June to October 2026 match Statement 3 of the MoSPI
-  // bulletin of 16 November 2026.") and a rail line ("How each jobs figure is made, where it breaks,
-  // and what is missing."). AboutTheData has no field for them.
+  // LATER: the About band's side line ("How each jobs figure is made, where it breaks, and what is missing.") has no field.
   about: {
+    intro:
+      'All values are as published. We read every source on 17 November 2026. The monthly rates for June to October 2026 match Statement 3 of the MoSPI bulletin of 16 November 2026.',
     publisher:
       'The National Statistics Office (NSO), Ministry of Statistics and Programme Implementation (MoSPI), runs the Periodic Labour Force Survey (PLFS), a household survey. Every figure on this page is a survey estimate from it.',
     frequency:
@@ -664,7 +663,7 @@ const topic: Topic = {
     { label: 'Education: Literacy by state', href: '/charts/literacy-by-state/' },
     { label: 'Population: People by state', href: '/population/' },
     { label: 'States: Tamil Nadu profile', href: '/states/tamil-nadu/' },
-    { label: 'How we check: method breaks', href: '/how-we-check/#method-breaks' },
+    { label: 'How we check: method breaks', href: '/how-we-check/#part-3' },
   ],
 }
 

@@ -9,36 +9,39 @@ const udise2025_26: Source = {
   url: 'https://dashboard.udiseplus.gov.in/report2026/static/media/UDISE+2025_26_Booklet_existing.edd7cd16d934a10377ba.pdf',
 }
 
-// SOURCE: the README has no release date for the 2021-22 to 2024-25 booklets ("Not checked").
+// Released 28 Aug 2025: PIB release 2161543; the PDF is dated the same day.
 const udise2024_25: Source = {
   publisher: 'Ministry of Education',
   release: 'UDISE+ 2024-25 booklet, existing structure',
-  released: 'not checked',
+  released: '2025-08-28',
   url: 'https://dashboard.udiseplus.gov.in/report2026/static/media/UDISE+2024_25_Booklet_existing.118ba29d4773e6372f72.pdf',
 }
 
+// The 2022-23 and 2023-24 booklets came out together. Both PDFs are dated 30 Dec 2024; the
+// ministry's page for the 2023-24 booklet was created on 27 Dec 2024.
 const udise2023_24: Source = {
   publisher: 'Ministry of Education',
   release: 'UDISE+ 2023-24 booklet, existing structure',
-  released: 'not checked',
+  released: '2024-12-30',
   url: 'https://dashboard.udiseplus.gov.in/report2026/static/media/UDISE+2023_24_Booklet_existing.309eabf9e4889db93bcb.pdf',
 }
 
 const udise2022_23: Source = {
   publisher: 'Ministry of Education',
   release: 'UDISE+ 2022-23 booklet, existing structure',
-  released: 'not checked',
+  released: '2024-12-30',
   url: 'https://dashboard.udiseplus.gov.in/report2026/static/media/UDISE+2022_23_Booklet_existing.d209e7c7516d77939da9.pdf',
 }
 
+// Released 3 Nov 2022: PIB release 1873307; the PDF is dated the same day.
 const udise2021_22: Source = {
   publisher: 'Ministry of Education',
   release: 'UDISE+ 2021-22 booklet',
-  released: 'not checked',
+  released: '2022-11-03',
   url: 'https://dashboard.udiseplus.gov.in/report2026/static/media/UDISE+2021_22_Booklet.f55c1a60ed700e6c7892.pdf',
 }
 
-// SOURCE: the report PDF is linked from https://aishe.gov.in/ (README).
+// The report PDF is linked from https://aishe.gov.in/ (README).
 const aishe2023_24: Source = {
   publisher: 'Ministry of Education',
   release: 'All India Survey on Higher Education, Final Report 2023-24',
@@ -46,7 +49,7 @@ const aishe2023_24: Source = {
   url: 'https://cdnbbsr.s3waas.gov.in/s392049debbe566ca5782a3045cf300a3c/uploads/2026/07/202607131602421770.pdf',
 }
 
-// SOURCE: the README gives "File uploaded Jun 2025" and no day; the board shows "Jun 2025".
+// The ministry gives "File uploaded Jun 2025" and no day.
 const aisheTimeSeries: Source = {
   publisher: 'Ministry of Education',
   release: 'AISHE time series for GER, based on 2011 population projection',
@@ -61,11 +64,11 @@ const plfsAnnual2025: Source = {
   url: 'https://www.mospi.gov.in/uploads/publications_reports/publications_reports1780040415321_0624fb13-fb47-40bc-b470-7c7e9635c3ef_PLFS_2025_F_REV_29052026.pdf',
 }
 
-// SOURCE: the README gives "2013 (PCA release; not checked on the page)"; the board shows "2013".
+// Released 30 Apr 2013: PIB release 95372, "Census 2011: Abstract- Primary Data Released".
 const census2011Pca: Source = {
   publisher: 'ORGI, Census of India',
   release: 'Census 2011 Primary Census Abstract, India and states',
-  released: '2013',
+  released: '2013-04-30',
   url: 'https://censusindia.gov.in/nada/index.php/catalog/6191/download/9268/DDW_PCA0000_2011_Indiastatedist.xlsx',
 }
 
@@ -106,6 +109,8 @@ const trendSeries: Series[] = INDICATORS.flatMap(([ind, indicator]) =>
       key: `${ind}-${lvl}-${m}`,
       label,
       color,
+      // Enrolment is read for the table and the prose; the chart draws the ratio panels only.
+      hidden: ind === 'enrol',
       file: TREND,
       where: { indicator, level, period: years },
     })),
@@ -134,8 +139,8 @@ const topic: Topic = {
       blocks: [
         { text: 'Primary enrolment (classes 1 to 5) fell to 10.19 crore in 2025-26, from 10.44 crore in 2024-25.' },
         {
-          // MODEL: the three panels have different units (enrolment in crore; GER and dropout as
-          // published). Format is per chart, so it is left unset; panels need their own Format.
+          // LATER: the board draws a third panel, enrolment in crore; panels share one y scale and one Format, so
+          // enrolment (in persons) would flatten the ratio panels. Enrolment is in the table only.
           chart: {
             kind: 'line',
             slug: 'school-enrolment-trend',
@@ -148,19 +153,17 @@ const topic: Topic = {
             sources: [udise2025_26, udise2024_25, udise2023_24, udise2022_23, udise2021_22],
             series: [
               ...trendSeries,
-              // MODEL: data-only series for the first headline figure and the standfirst (total
-              // enrolment). It is in no panel and the board does not draw it. Series needs a
-              // `hidden` flag (or Figure its own Pick) before render.
+              // Read for the first headline figure and the standfirst; not drawn.
               {
                 key: 'enrol-total-new',
                 label: 'All levels, pre-primary to 12',
                 color: 'ink',
+                hidden: true,
                 file: TREND,
                 where: { indicator: 'enrolment', level: 'total (pre-primary to higher secondary)', period: NEW_YEARS },
               },
             ],
             panels: [
-              { label: 'Enrolment, crore', series: trendPanel('enrol') },
               { label: 'Gross enrolment ratio', series: trendPanel('ger') },
               { label: 'Dropout rate, %', series: trendPanel('dropout') },
             ],
@@ -294,9 +297,8 @@ const topic: Topic = {
           text: 'Two in three schools (67.4%) had internet in 2025-26, but in West Bengal it was one in five (19.7%).',
         },
         {
-          // MODEL: the board draws a heat table (cells coloured in six bins from "Under 40" to "97 and
-          // over"), sorted by internet, with India on a rule. The table kind has no cell colours and no
-          // sort key.
+          // Rows keep the CSV order, which is sorted by internet share.
+          // LATER: the board colours the cells in six bins ("Under 40" to "97 and over"); 'table' has no cell colours.
           chart: {
             kind: 'table',
             slug: 'school-facilities-by-state',
@@ -310,9 +312,9 @@ const topic: Topic = {
             data: { file: FACILITIES },
             by: 'geography',
             columns: [
-              { key: 'internet', label: 'Internet', where: { facility: 'internet facility' } },
-              { key: 'electricity', label: 'Working electricity', where: { facility: 'functional electricity' } },
-              { key: 'toilet', label: "Working girls' toilet", where: { facility: "functional girls' toilet" } },
+              { key: 'internet', label: 'Internet', where: { facility: 'internet facility' }, y: 'value' },
+              { key: 'electricity', label: 'Working electricity', where: { facility: 'functional electricity' }, y: 'value' },
+              { key: 'toilet', label: "Working girls' toilet", where: { facility: "functional girls' toilet" }, y: 'value' },
             ],
             know: [
               'Internet shares are derived: schools with internet divided by all schools, from Table 2.5. For India the derived share is 67.4%, the same as the share Table 1 publishes.',
@@ -339,8 +341,6 @@ const topic: Topic = {
           text: 'Women overtook men in higher education in 2017-18, and in 2023-24 the ratio was 31.2 for women and 28.9 for men.',
         },
         {
-          // MODEL: the board marks 2017-18 with a vertical marker and the text "2017-18: women
-          // overtake men". Callouts print value and period only.
           chart: {
             kind: 'line',
             slug: 'college-enrolment-ratio',
@@ -352,6 +352,7 @@ const topic: Topic = {
             sources: [aisheTimeSeries, aishe2023_24],
             format: { decimals: 1 },
             y: { min: 0 },
+            markers: [{ x: '2017-18', label: '2017-18: women overtake men' }],
             series: [
               {
                 key: 'women',
@@ -381,19 +382,19 @@ const topic: Topic = {
           text: 'In 2023-24 the ratio ranged from 7.1 in Lakshadweep to 72.3 in Puducherry, and Tamil Nadu, at 52.3, was highest among large states.',
         },
         {
-          // MODEL: the board sorts the rows by the total for both sexes, which is not drawn, and labels
-          // the India line "India 30.0 (women 31.2, men 28.9)". Dots have no sort key.
+          // LATER: the board sorts the rows by the hidden total; dots sort on a drawn series only, so the rows follow women.
           chart: {
             kind: 'dots',
             slug: 'college-enrolment-ratio-by-state',
             title: 'College enrolment ratio by state and UT, women and men, 2023-24',
             subtitle:
-              'Gross enrolment ratio in higher education, per cent of people aged 18 to 23, 36 states and UTs, 2023-24. Sorted by the total for both sexes.',
+              'Gross enrolment ratio in higher education, per cent of people aged 18 to 23, 36 states and UTs, 2023-24. Sorted by the ratio for women.',
             punches: { office: 'MoE', unit: 'GER 18-23', period: '2023-24' },
             note: 'India is a reference line, not a rank. Ratios use population projections based on Census 2011. Institutions submit data to AISHE voluntarily.',
             sources: [aishe2023_24],
             format: { decimals: 1 },
             by: 'geography',
+            refs: [{ value: 30.0, label: 'India 30.0 (women 31.2, men 28.9)' }],
             series: [
               {
                 key: 'women',
@@ -411,12 +412,12 @@ const topic: Topic = {
                 where: { sex: 'male', social_group: 'all categories' },
                 x: 'geography',
               },
-              // MODEL: data-only series (the sort key and the prose values for Tamil Nadu and Bihar).
-              // The board does not draw it. Series needs a `hidden` flag before render.
+              // The sort key and the prose values for Tamil Nadu and Bihar; not drawn.
               {
                 key: 'total',
                 label: 'Women and men',
                 color: 'ink',
+                hidden: true,
                 file: GER_HE_STATE,
                 where: { sex: 'total', social_group: 'all categories' },
                 x: 'geography',
@@ -446,9 +447,7 @@ const topic: Topic = {
           text: 'The PLFS survey estimated that 81.1% of people aged 7 and over could read and write in 2025: 87.5% of men and 74.9% of women.',
         },
         {
-          // MODEL: the board draws 2025 as ranked bars (Tamil Nadu in series-1) with 2011 as rings and
-          // an India 2025 reference line. Dots is the closest kind. The last two series are data-only
-          // (the 2025 values for men and women quoted in the prose); they need a `hidden` flag.
+          // LATER: the board draws 2025 as ranked bars (Tamil Nadu in series-1) with 2011 as rings; dots is the closest kind.
           chart: {
             kind: 'dots',
             slug: 'literacy-by-state',
@@ -462,6 +461,7 @@ const topic: Topic = {
             format: { unit: '%' },
             by: 'geography',
             hollow: ['census-2011'],
+            refs: [{ value: 81.1, label: 'India 81.1% (2025)' }],
             series: [
               {
                 key: 'plfs-2025',
@@ -483,6 +483,7 @@ const topic: Topic = {
                 key: 'plfs-2025-men',
                 label: 'Men, 2025',
                 color: 's2',
+                hidden: true,
                 file: LITERACY,
                 where: { period: '2025', sex: 'male' },
                 x: 'geography',
@@ -491,6 +492,7 @@ const topic: Topic = {
                 key: 'plfs-2025-women',
                 label: 'Women, 2025',
                 color: 's3',
+                hidden: true,
                 file: LITERACY,
                 where: { period: '2025', sex: 'female' },
                 x: 'geography',
@@ -514,11 +516,10 @@ const topic: Topic = {
       ],
     },
   ],
-  // MODEL: the board's band also has a lede ("All values are as published. We read every source on
-  // 17 November 2026. School figures are an administrative count of schools, college figures come
-  // from a survey of institutions, and literacy comes from a household survey and the Census.") and a
-  // rail line ("How each education figure is made, where it breaks, and what is missing.").
+  // LATER: the About band's side line ("How each education figure is made, where it breaks, and what is missing.") has no field.
   about: {
+    intro:
+      'All values are as published. We read every source on 17 November 2026. School figures are an administrative count of schools, college figures come from a survey of institutions, and literacy comes from a household survey and the Census.',
     publisher:
       'The Ministry of Education publishes school data through UDISE+ (Department of School Education and Literacy) and college data through the All India Survey on Higher Education, AISHE (Department of Higher Education). The National Statistics Office (NSO), MoSPI, publishes the PLFS literacy estimate. The Office of the Registrar General of India (ORGI) runs the Census.',
     frequency:
@@ -549,7 +550,7 @@ const topic: Topic = {
     // The Population chart slug belongs to another module; this points at the topic page.
     { label: 'Population: People by state', href: '/population/' },
     { label: 'States: Tamil Nadu profile', href: '/states/tamil-nadu/' },
-    { label: 'How we check: method breaks', href: '/how-we-check/#method-breaks' },
+    { label: 'How we check: method breaks', href: '/how-we-check/#part-3' },
   ],
 }
 

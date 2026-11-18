@@ -1,9 +1,9 @@
 // Home. Copy is verbatim from the board.
 // The ledger figures, the topic tiles and the state pairs are built from data and topic modules.
-// This file records which chart each row reads. `// CHECK SLUG` marks a slug in a topic module
-// that this module does not own: the slug is a guess.
+// This file records which chart each row reads.
 
 import type { TopicSlug } from '../types'
+import { count } from './counts'
 
 export interface Section {
   heading: string
@@ -67,7 +67,7 @@ const home: Home = {
   standfirst: 'Every figure carries its publisher, its period and the date we checked it.',
   search: {
     // The counts (9, 69, 36) are live counts on the built site.
-    placeholder: 'Search 9 topics, 69 charts and 36 states and UTs',
+    placeholder: `Search ${count.topics} topics, ${count.charts} charts and ${count.places} states and UTs`,
     key: '/',
     tryLabel: 'Try',
     tryTerms: ['Inflation by state, October 2026', 'Youth unemployment', 'Monsoon rainfall since 1901'],
@@ -142,7 +142,7 @@ const home: Home = {
   },
   browse: {
     heading: 'Browse by topic',
-    intro: 'Nine topics, 69 charts. Each topic page answers a few plain questions with charts, tables and sources.',
+    intro: `${count.topics} topics, ${count.charts} charts. Each topic page answers a few plain questions with charts, tables and sources.`,
     link: 'All topics',
     tileChartsLabel: (n) => `${n} charts`,
   },
@@ -181,7 +181,7 @@ const home: Home = {
     sources:
       'Sources: MoSPI CPI release, 12 Nov 2026; MoSPI state accounts and RBI Handbook 2025-26; SRS Bulletin 2024; PLFS Annual Report 2025; Women and Men in India 2025 (ECI data); SRS Statistical Report 2024.',
     map: {
-      eyebrow: '36 states and union territories',
+      eyebrow: `${count.places} states and union territories`,
       // Board: "Each tile opens a state profile. Tamil Nadu ranks 3rd of 36 for inflation in October
       // 2026, after Puducherry and Dadra and Nagar Haveli and Daman and Diu."
       text: ({ state, rank, of, measure, above }) =>
@@ -189,7 +189,7 @@ const home: Home = {
       selected: (state) => `${state}, selected`,
       ut: 'Union territory',
       profileLink: (state) => `See the ${state} profile`,
-      allLink: 'All 36 states and UTs',
+      allLink: `All ${count.places} states and UTs`,
     },
   },
   howWeCheck: {

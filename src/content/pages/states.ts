@@ -1,6 +1,8 @@
 // States and UTs. Copy is verbatim from the board.
 // The map values, legend bands and tooltip values are built from data.
 
+import { count } from './counts'
+
 export interface Section {
   heading: string
   body: string
@@ -15,7 +17,7 @@ export interface MapMeasure {
 export interface CoverageRow {
   dataSet: string
   period: string
-  /** States and UTs with data, of 36. */
+  /** States and UTs with data, of all of them. */
   of36: number
   gaps: string
 }
@@ -65,7 +67,7 @@ const states: StatesPage = {
   title: 'States and union territories',
   hindi: 'राज्य और केंद्र शासित प्रदेश',
   intro:
-    "India has 28 states and 8 union territories, and each one has a page that puts its figures beside India's on every topic. The map below shows one measure: income per person in 2024-25.",
+    `India has ${count.states} states and ${count.uts} union territories, and each one has a page that puts its figures beside India's on every topic. The map below shows one measure: income per person in 2024-25.`,
   map: {
     number: '1',
     title: 'Income per person by state and UT, 2024-25',
@@ -103,9 +105,9 @@ const states: StatesPage = {
       'Source: National Statistics Office, MoSPI, state-wise per capita NSDP (base 2011-12), eSankhyiki API, state data released 15 Apr 2026. India: RBI, Handbook of Statistics on Indian Economy 2025-26, Table 9, 31 Jul 2026. Checked 17 Nov 2026.',
   },
   aToZ: {
-    eyebrow: '28 states · 8 union territories',
+    eyebrow: `${count.states} states · ${count.uts} union territories`,
     heading: 'Every state and UT, A to Z',
-    filterPlaceholder: 'Filter 36 states and UTs',
+    filterPlaceholder: `Filter ${count.places} states and UTs`,
     typeLabels: { state: 'State', ut: 'UT' },
     note: 'DNH and DD is short for Dadra and Nagar Haveli and Daman and Diu, two UTs that merged in 2020.',
   },
@@ -114,7 +116,7 @@ const states: StatesPage = {
     eyebrow: 'About the data',
     heading: 'Which states does each data set cover?',
     intro:
-      "India has had 28 states and 8 union territories since 2020. The latest census, in 2011, counted 35 units, so three of today's tiles do not match it.",
+      `India has had ${count.states} states and ${count.uts} union territories since 2020. The latest census, in 2011, counted 35 units, so three of today's tiles do not match it.`,
     changes: [
       {
         heading: 'Telangana',
@@ -130,7 +132,7 @@ const states: StatesPage = {
       },
     ],
     link: 'How we handle boundary changes',
-    coverageHeads: { dataSet: 'Data set', period: 'Period', of36: 'Of 36', gaps: 'Gaps and cautions' },
+    coverageHeads: { dataSet: 'Data set', period: 'Period', of36: `Of ${count.places}`, gaps: 'Gaps and cautions' },
     coverage: [
       { dataSet: 'Inflation (CPI)', period: 'Oct 2026', of36: 36, gaps: 'Provisional. Rural rate: no Chandigarh' },
       { dataSet: 'Income per person', period: 'FY 2024-25', of36: 32, gaps: 'No 2024-25 figure for Nagaland, Ladakh, Lakshadweep, DNH and DD' },

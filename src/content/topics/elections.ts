@@ -18,19 +18,19 @@ const WMI_5_3 = withTable(WMI_2025, 'Table 5.3')
 const WMI_5_6 = withTable(WMI_2025, 'Table 5.6')
 const WMI_5_7 = withTable(WMI_2025, 'Table 5.7')
 
-// S2. SOURCE: the file states no release date (board: "release date not stated").
+// S2. The file states no release date; the PDF is dated 25 Dec 2024, so the month is December 2024.
 const ECI_REPORT_20: Source = {
   publisher: 'ECI',
   release: 'GE 2024 Statistical Report 20, Performance of National Parties',
-  released: 'not stated',
+  released: '2024-12',
   url: 'https://www.eci.gov.in/eci-backend/public/all_files/GE-2024-statistical-report/20-Performance-of-National-Parties.pdf',
 }
 
-// S3. SOURCE: the file states no release date (board: "release date not stated").
+// S3. The file states no release date; the PDF is dated 25 Dec 2024, so the month is December 2024.
 const ECI_REPORT_33: Source = {
   publisher: 'ECI',
   release: 'GE 2024 Statistical Report 33, Constituency Wise Detailed Results',
-  released: 'not stated',
+  released: '2024-12',
   url: 'https://www.eci.gov.in/eci-backend/public/all_files/GE-2024-statistical-report/33-Constituency-Wise-Detailed-Result.pdf',
 }
 
@@ -50,7 +50,7 @@ const ECI_RESULTS_DELHI_2025: Source = {
   url: 'https://results.eci.gov.in/ResultAcGenFeb2025/index.htm',
 }
 
-// S5 (Bihar). SOURCE: the page shows no update date; the board says "Nov 2025".
+// S5 (Bihar). The page shows no update date; the board says "Nov 2025".
 const ECI_RESULTS_BIHAR_2025: Source = {
   publisher: 'ECI',
   release: 'Trends and Results, November 2025 (Bihar)',
@@ -66,7 +66,7 @@ const ECI_RESULTS_MAY_2026: Source = {
   url: 'https://results.eci.gov.in/ResultAcGenMay2026/index.htm',
 }
 
-// SOURCE: README check of 18 Nov 2026 (144-Falta re-poll). The page states no date. The
+// README check of 18 Nov 2026 (144-Falta re-poll). The page states no date. The
 // README dates the declaration 24 May 2026 from Akashvani, a news source, so we do not use it here.
 const ECI_RESULT_FALTA_2026: Source = {
   publisher: 'ECI',
@@ -158,13 +158,9 @@ const topic: Topic = {
   question: 'What share of electors vote?',
   standfirst:
     'India had 97.80 crore electors at the 2024 general election, up from 17.32 crore at the first general election in 1951-52.',
-  // MODEL: the board shows each figure's office as "ECI" ("2024 general election · ECI"), but the
-  // charts' hallmarks say MoSPI (MoSPI's tables of ECI data). Figure has no office field.
-  // MODEL: Figure 2 carries a footnote on the board: "* MoSPI's Women and Men in India 2025 gives
-  // 66.10% in Table 5.7 and 65.7% in Table 5.6." Figure has no footnote field.
-  // MODEL: Figure 3 prints "74 of 543", a value and its base. The 74 and 13.62% basis is Table 5.3
-  // (chart 3.2), which has no India row in its bars, so this figure reads 74 from chart 2.1
-  // (Table 5.2, women elected in 2024). Both tables give 74.
+  // LATER: the board's figure punch says "ECI"; a Figure takes the chart's office (MoSPI, which compiles ECI data).
+  // LATER: Figure 2 has a footnote on the board ("* MoSPI's Women and Men in India 2025 gives 66.10% in Table 5.7 and 65.7% in Table 5.6.").
+  // Figure 3 reads 74 from chart 2.1 (Table 5.2); Table 5.3 (chart 3.2) also gives 74 of 543.
   figures: [
     { chart: 'lok-sabha-electors', series: 'total', x: '2024', label: 'Electors', period: '2024 general election' },
     { chart: 'lok-sabha-turnout-by-state', label: 'Electors who voted', period: '2024 general election' },
@@ -174,6 +170,7 @@ const topic: Topic = {
       x: '2024',
       label: 'Women MPs, 13.62% of seats',
       period: '18th Lok Sabha · 20 Dec 2024',
+      format: { decimals: 0, suffix: ' of 543' },
     },
   ],
   nextRelease: 'not announced',
@@ -193,7 +190,10 @@ const topic: Topic = {
             sources: [WMI_5_6],
             format: { decimals: 1, unit: '%' },
             y: { min: 40, max: 80, step: 10 },
-            // MODEL: the board writes "No data by sex" in the plot at 1952-57 and 1971.
+            spans: [
+              { from: '1952', to: '1957', label: 'No data by sex' },
+              { from: '1971', to: '1971', label: 'No data by sex' },
+            ],
             series: [
               { key: 'women', label: 'Women', color: 's3', file: TURNOUT_BY_SEX, where: { series: 'women' } },
               { key: 'total', label: 'All electors', color: 'ink', file: TURNOUT_BY_SEX, where: { series: 'total' } },
@@ -232,10 +232,9 @@ const topic: Topic = {
             punches: { office: 'MoSPI', unit: 'crore', period: '1952-2024' },
             note: 'The first general election ran in 1951-52; the source dates it 1952. Totals for 2014 to 2024 include third-gender electors.',
             sources: [WMI_5_6],
-            // MODEL: the CSV holds million electors (978.0); the board prints crore (97.80 crore).
-            // Format.scale 'crore' needs to accept values in millions, or the model needs a unit factor.
-            format: { decimals: 2, scale: 'crore' },
-            y: { min: 0, max: 100, step: 20 },
+            // The CSV holds million electors (978.0); the chart prints crore (97.80 crore).
+            format: { decimals: 2, scale: 'crore', multiply: 1e6 },
+            y: { min: 0, max: 1000, step: 200 },
             series: [{ key: 'total', label: 'All electors', color: 'ink', file: ELECTORS, where: { series: 'total' } }],
             callouts: [
               { series: 'total', x: '1952' },
@@ -272,12 +271,11 @@ const topic: Topic = {
             subtitle: 'Number of women who stood for the Lok Sabha, and number elected, at each general election.',
             punches: { office: 'MoSPI', unit: 'people', period: '1957-2024' },
             // The board marks the 1999 bar with "*" and starts the note's second sentence with "*".
-            // MODEL: no way to mark one column with a footnote symbol.
+            // LATER: no way to mark one column with a footnote symbol.
             note: 'There are no figures by sex for 1951-52. For 1999 the source gives 494 men and 52 women elected, 546 in total, more than the 543 seats; we show the values as published. The 2024 counts are for 542 seats polled; Surat was won unopposed.',
             sources: [WMI_5_2],
             format: { decimals: 0 },
-            // MODEL: the board draws two panels side by side ("Women candidates", "Women MPs elected"),
-            // each on its own y scale (0-800 and 0-80). 'columns' has no panels.
+            // LATER: the board draws two panels ("Women candidates", "Women MPs elected") on their own y scales; 'columns' has no panels.
             series: [
               {
                 key: 'candidates',
@@ -359,9 +357,8 @@ const topic: Topic = {
             format: { decimals: 0 },
             by: 'name',
             highlight: 'Tamil Nadu',
-            // MODEL: the board draws the women bar over the start of the seats bar (overlay, not
-            // grouped or stacked), and adds three table columns beside the bars: SEATS, WOMEN and
-            // SHARE (series 'women_share', % of the state's seats). Rows sort by seats.
+            // LATER: the board overlays the women bar on the seats bar and adds SEATS, WOMEN and SHARE
+            // columns (series 'women_share'); bars are grouped here, sorted by seats.
             series: [
               {
                 key: 'seats',
@@ -441,11 +438,8 @@ const topic: Topic = {
             sources: [ECI_RESULTS_JUN_2024, ECI_REPORT_20, ECI_REPORT_33],
             data: { file: PARTY_RESULTS },
             by: 'party_name',
-            // MODEL: the board draws a bar in the seats and share cells, puts a rule above the last
-            // two rows (Independents, All other parties), and fills BASIS with "ECI" or "Derived".
-            // The CSV holds that as a sentence in 'notes' ("Vote share published in ECI Report 20" or
-            // "Vote share computed from ECI Report 33"). The model needs a text column with a mapping.
-            // The board also labels the IND row "Independents" (CSV: "Independent").
+            // LATER: the board draws bars in the seats and share cells, a rule above the last two rows,
+            // "Independents" for the IND row, and BASIS as "ECI" or "Derived"; the CSV 'notes' column holds a sentence.
             columns: [
               { key: 'seats', label: 'Seats won, of 543', y: 'seats_won', format: { decimals: 0 } },
               { key: 'share', label: 'Share of valid votes, %', y: 'vote_share_pct', format: { unit: '%' } },
@@ -492,22 +486,9 @@ const topic: Topic = {
             ],
             format: { decimals: 0 },
             by: 'party_abbr',
-            // MODEL: the board draws small multiples, one panel per state, in this order:
-            //   Delhi, FEB 2025 · 70 SEATS, turnout "No data", majority 36
-            //   Bihar, NOV 2025 · 243 SEATS, 67.13%, majority 122
-            //   Assam, APR 2026 · 126 SEATS, 85.38%, majority 64
-            //   Kerala, APR 2026 · 140 SEATS, 78.03%, majority 71
-            //   Puducherry, APR 2026 · 30 SEATS, 89.83%, majority 16
-            //   Tamil Nadu, APR 2026 · 234 SEATS, 84.69%, majority 118
-            //   West Bengal, APR 2026 · 294 SEATS, 92.47%, majority 148
-            // Each panel: a big turnout figure labelled "Turnout, provisional" (Delhi: "No data",
-            // "Turnout"), a dashed majority line, and bars whose length is the share of the assembly
-            // (seats_won / assembly_seats). Turnout comes from
-            // 'elections/assembly-2025-2026-turnout.csv' (series 'turnout_total').
-            // Above the panels: "SEATS WON BY PARTY; BAR LENGTH IS SHARE OF THE ASSEMBLY".
-            // Below: a "Party key" from the CSV's party_abbr and party_name columns.
-            // The board's "293 of 294 results declared" under West Bengal is out of date (see note).
-            // The model needs small multiples for 'bars' and a figure per panel.
+            // LATER: the board draws one panel per state (Delhi, Bihar, Assam, Kerala, Puducherry, Tamil Nadu,
+            // West Bengal), each with its turnout figure ('elections/assembly-2025-2026-turnout.csv'), a
+            // dashed majority line and bars as a share of the assembly, plus a party key; 'bars' has no panels.
             series: [
               assembly('delhi', 'Delhi'),
               assembly('bihar', 'Bihar'),
@@ -536,11 +517,10 @@ const topic: Topic = {
       ],
     },
   ],
-  // MODEL: the band opens with a paragraph the model cannot hold: "All values are as published,
-  // except those marked Derived. We read every source on 17 November 2026. ECI's reports are the
-  // source; we read archived copies of the original ECI pages." The band rail reads "How each
-  // election figure is made, where it breaks, and what is missing."
+  // LATER: the About band's side line ("How each election figure is made, where it breaks, and what is missing.") has no field.
   about: {
+    intro:
+      "All values are as published, except those marked Derived. We read every source on 17 November 2026. ECI's reports are the source; we read archived copies of the original ECI pages.",
     publisher:
       'The Election Commission of India (ECI) runs national and state elections and publishes electors, votes and results. MoSPI republishes the Lok Sabha series by sex in Women and Men in India 2025. The Lok Sabha Secretariat gives the count of women MPs.',
     frequency:
@@ -572,9 +552,8 @@ const topic: Topic = {
   ],
   related: [
     { label: 'States: Tamil Nadu profile', href: '/states/tamil-nadu/' },
-    // CHECK SLUG: chart in the population module (not mine).
-    { label: 'Population: Population by state', href: '/charts/population-by-state/' },
-    { label: 'How we check: derived figures', href: '/how-we-check/#derived' },
+    { label: 'Population: Population growth by state', href: '/charts/population-growth-by-state/' },
+    { label: 'How we check: derived figures', href: '/how-we-check/#hallmark' },
   ],
 }
 
