@@ -4,6 +4,7 @@ import type { Chart } from '~/content/types'
 import { select, toNumber, type Point } from '~/lib/data'
 import { decimalsOf, fmt, formatNumber, type Shown } from '~/lib/format'
 import { INDIA } from '~/lib/geography'
+import { seq, type Token } from '~/lib/tokens'
 import { rowName } from './dots'
 import { exact, gapFormat, seriesOf, standing, statesOf, type Of, type SeriesData } from './model'
 
@@ -11,6 +12,8 @@ export interface Cell {
   shown: Shown
   /** The value as published, for the CSV. Empty when there is none. */
   raw: string
+  /** Heat-table colour for this cell. */
+  fill?: Token
 }
 
 export interface TableModel {
@@ -80,8 +83,10 @@ function statesTable(chart: Of<'states'>): TableModel {
     ...data.values.map((v) => ({ key: v.place.slug, head: v.place.name, pt: v.pt })),
   ]
   const gapCol = !chart.total
+  const ciCol = rows.some((r) => r.pt?.interval)
+  const interval = (p?: Point): Cell => (p?.interval ? { shown: { text: `${fmt(p.interval[0], chart.format)} to ${fmt(p.interval[1], chart.format)}` }, raw: p.interval.join(' to ') } : { shown: { text: '' }, raw: '' })
   return {
-    columns: ['State or UT', chart.punches.unit, ...(gapCol ? ['Gap from India'] : []), `Rank (of ${data.values.filter((v) => v.pt?.y != null).length})`],
+    columns: ['State or UT', chart.punches.unit, ...(ciCol ? ['95% interval'] : []), ...(gapCol ? ['Gap from India'] : []), `Rank (of ${data.values.filter((v) => v.pt?.y != null).length})`],
     rows: rows.map((r) => {
       const has = r.pt && r.pt.y !== null
       const gap = has && india?.y != null && r.key !== INDIA ? +(r.pt!.y! - india.y).toFixed(d) : null
@@ -92,6 +97,7 @@ function statesTable(chart: Of<'states'>): TableModel {
         head: r.head,
         cells: [
           r.pt?.y == null && chart.missing?.[r.key] ? { shown: { text: `No data: ${chart.missing[r.key]}` }, raw: '' } : cell(chart, r.pt),
+          ...(ciCol ? [interval(r.pt)] : []),
           ...(!gapCol ? [] : [gap === null ? { shown: { text: r.key === INDIA ? '' : 'No data' }, raw: '' } : { shown: { text: (gap > 0 ? '+' : '') + fmt(gap, gapFormat(chart.format, d)) }, raw: gap.toFixed(d) }]),
           rank ? { shown: { text: String(rank.rank) }, raw: String(rank.rank) } : { shown: { text: '' }, raw: '' },
         ],
@@ -113,11 +119,18 @@ function plainTable(chart: Of<'table'>): TableModel {
         const raw = r?.[c.y ?? c.key]?.trim() ?? ''
         if (!raw) return none
         // Table columns may hold text, such as a party name.
-        const shown = /^-?[\d,]*\.?\d+$/.test(raw) ? formatNumber(toNumber(raw)!, c.format ?? chart.format, raw) : { text: raw }
-        return { shown, raw }
+        const n = /^-?[\d,]*\.?\d+$/.test(raw) ? toNumber(raw)! : null
+        const shown = n === null ? { text: raw } : formatNumber(n, c.format ?? chart.format, raw)
+        return { shown, raw, fill: n === null || !chart.bins ? undefined : heat(chart.bins, n) }
       }),
     })),
   }
+}
+
+/** The ramp colour for a value, given bin edges low to high. */
+export const heat = (edges: readonly number[], v: number): Token => {
+  const i = edges.filter((e) => v >= e).length
+  return seq[Math.round((i * (seq.length - 1)) / edges.length)]!
 }
 
 /** One row per published value: who or what, when, the value as published, its unit, status and note. */

@@ -296,7 +296,6 @@ const topic: Topic = {
         },
         {
           // Rows keep the CSV order, which is sorted by internet share.
-          // LATER: the board colours the cells in six bins ("Under 40" to "97 and over"); 'table' has no cell colours.
           chart: {
             kind: 'table',
             slug: 'school-facilities-by-state',
@@ -309,6 +308,7 @@ const topic: Topic = {
             format: { unit: '%', decimals: 1 },
             data: { file: FACILITIES },
             by: 'geography',
+            bins: [40, 60, 80, 90, 97],
             columns: [
               { key: 'internet', label: 'Internet', where: { facility: 'internet facility' }, y: 'value' },
               { key: 'electricity', label: 'Working electricity', where: { facility: 'functional electricity' }, y: 'value' },
@@ -380,8 +380,8 @@ const topic: Topic = {
           text: 'In 2023-24 the ratio ranged from 7.1 in Lakshadweep to 72.3 in Puducherry, and Tamil Nadu, at 52.3, was highest among large states.',
         },
         {
-          // LATER: the board sorts the rows by the hidden total; dots sort on a drawn series only, so the rows follow women.
           chart: {
+            sortBy: 'total',
             kind: 'dots',
             slug: 'college-enrolment-ratio-by-state',
             title: 'College enrolment ratio by state and UT, women and men, 2023-24',

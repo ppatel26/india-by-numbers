@@ -3,7 +3,7 @@ import { INDIA, geoName, isPlace } from '~/lib/geography'
 import { svg, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
 import { FONT, WIDTH, frame, valueRefs, type Width } from './axes'
-import { drawn, tipLine, type Of, type SeriesData } from './model'
+import { drawn, seriesOf, tipLine, type Of, type SeriesData } from './model'
 import { fmt } from '~/lib/format'
 
 /** Display name for a row key: a state slug, 'india', or a category as published. */
@@ -28,14 +28,18 @@ export function renderDots(chart: Of<'dots'>, width: Width): Markup {
   const hollow = chart.hollow ?? []
   const keys = [...new Set(series.flatMap((s) => s.points.map((p) => p.x)))]
   const val = (s: SeriesData, k: string) => s.points.find((p) => p.x === k)
-  const first = series.find((s) => s.key === chart.sortBy) ?? series[0]!
-  keys.sort((a, b) => (val(first, b)?.y ?? -Infinity) - (val(first, a)?.y ?? -Infinity))
+  const first = seriesOf(chart).find((s) => s.key === chart.sortBy) ?? series[0]!
+  const pin = chart.pin ?? []
+  const rank = (k: string) => (pin.includes(k) ? Infinity : (val(first, k)?.y ?? -Infinity))
+  keys.sort((a, b) => rank(b) - rank(a))
   const rowH = 20
   const m = { top: 40, right: 24, bottom: 28, left: narrow ? 118 : 200 }
   const H = m.top + keys.length * rowH + m.bottom
   const all = series.flatMap((s) => s.points.flatMap((p) => (p.y === null ? [] : [p.y])))
   const refVals = (chart.refs ?? []).map((r) => r.value)
-  const x = scaleLinear().domain([Math.min(0, ...all, ...refVals), Math.max(...all, ...refVals)]).nice().range([m.left, W - m.right])
+  const lo = chart.axis?.min ?? Math.min(0, ...all, ...refVals)
+  const hi = chart.axis?.max ?? Math.max(...all, ...refVals)
+  const x = scaleLinear().domain([lo, hi]).nice().range([m.left, W - m.right])
   const ticks = x.ticks(narrow ? 4 : 6)
 
   const grid = svg`${ticks.map((t) => svg`<line x1="${x(t)}" x2="${x(t)}" y1="${m.top - 6}" y2="${H - m.bottom}" stroke="var(--grid)"/>

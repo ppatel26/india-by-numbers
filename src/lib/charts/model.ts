@@ -3,6 +3,7 @@ import type { Chart, Color, Format, Series } from '~/content/types'
 import { latest, points, type Point } from '~/lib/data'
 import { INDIA, places, type Place } from '~/lib/geography'
 import { formatNumber, type Shown } from '~/lib/format'
+import { parsePeriod } from '~/lib/period'
 
 export interface SeriesData {
   key: string
@@ -92,6 +93,16 @@ export function byState(chart: Chart, key?: string): Of<'states'> | undefined {
   if (chart.kind === 'states') return chart
   if ((chart.kind === 'dots' || chart.kind === 'bars') && (chart.by ?? 'geography') === 'geography') return asStates(chart, key)
   return undefined
+}
+
+/** The chart at each step of its timeline, oldest first; the chart's own pick is the last step. */
+export function timelineOf(chart: Of<'states'>): { label: string; chart: Of<'states'> }[] {
+  const tl = chart.timeline
+  if (!tl) return []
+  return tl.values.map((v) => ({
+    label: parsePeriod(v).label,
+    chart: { ...chart, slug: `${chart.slug}-${v}`, data: { ...chart.data, where: { ...chart.data.where, [tl.column]: v } } },
+  }))
 }
 
 export function statesOf(chart: Of<'states'>): StateData {

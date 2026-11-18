@@ -45,7 +45,7 @@ export function renderArea(chart: Of<'area'>, width: Width): Markup {
     .y1((d) => y(d[1]))
 
   const tOf = new Map(xs.map((p) => [p.x, p.t]))
-  const notes = timeNotes(chart, { xOf: (v) => (tOf.has(v) ? x(tOf.get(v)!) : undefined), y, top: m.top, bottom: H - m.bottom, series, endLabels: true })
+  const notes = timeNotes(chart, { xOf: (v) => (tOf.has(v) ? x(tOf.get(v)!) : undefined), y, top: m.top, bottom: H - m.bottom, right: W - m.right, series, endLabels: true })
   const areas = stacks.flatMap((g) =>
     g.series.map((s, i) => svg`<path d="${shape(g.layers[i]!) ?? ''}" fill="${colorVar(s.color)}" stroke="var(--paper)" stroke-width="2" stroke-linejoin="round"/>`),
   )

@@ -2,7 +2,17 @@ import type { Series, Source, Topic } from '../types'
 
 // Board S06. Data: research/data/religion-culture/README.md.
 
-// LATER: copy F gives each religion a fixed colour slot; 'bars' colours by series, so charts 1.1 and 1.2 are ink (3.1 uses the slots).
+/** Each religion keeps one colour across the page (chart 1.1 and the by-state chart). */
+const RELIGION_COLORS = {
+  Hindu: 's1',
+  Muslim: 's2',
+  Christian: 's3',
+  Sikh: 's4',
+  Buddhist: 's5',
+  Jain: 's6',
+  'Other religions and persuasions': 's7',
+  'Religion not stated': 'other',
+} as const
 
 const C01_URL =
   'https://censusindia.gov.in/nada/index.php/catalog/11361/download/14474/DDW00C-01%20MDDS.XLS'
@@ -191,6 +201,7 @@ const topic: Topic = {
             format: { unit: '%', decimals: 2 },
             by: 'religion',
             order: RELIGIONS,
+            colors: RELIGION_COLORS,
             series: [
               {
                 key: 'share',

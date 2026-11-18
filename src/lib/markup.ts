@@ -33,3 +33,18 @@ export function svg(strings: TemplateStringsArray, ...values: Value[]): Markup {
 /** Optional attribute: attr('data-alt', alt) -> ` data-alt="..."` or nothing. */
 export const attr = (name: string, value: string | number | undefined | null): Markup =>
   new Markup(value === undefined || value === null || value === '' ? '' : ` ${name}="${part(value)}"`)
+
+/** Width and height of an SVG string's root. */
+export function sizeOf(s: string): { w: number; h: number } {
+  const m = s.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/)
+  if (!m) throw new Error('No viewBox')
+  return { w: +m[1]!, h: +m[2]! }
+}
+
+/** Put an SVG inside another at (x, y), scaled to `width`. */
+export function embed(inner: string, x: number, y: number, width: number): { el: Markup; height: number } {
+  const { w, h } = sizeOf(inner)
+  const height = (h * width) / w
+  const body = inner.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '')
+  return { el: svg`<svg x="${x}" y="${y}" width="${width}" height="${height}" viewBox="0 0 ${w} ${h}">${new Markup(body)}</svg>`, height }
+}

@@ -45,6 +45,7 @@ export function renderColumns(chart: Of<'columns'>, width: Width): Markup {
     y,
     top: m.top,
     bottom: H - m.bottom,
+    right: W - m.right,
     series,
   })
 

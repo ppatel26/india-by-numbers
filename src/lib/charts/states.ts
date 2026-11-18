@@ -23,7 +23,8 @@ function gapText(chart: Of<'states'>, data: StateData, y: number): string {
 export function stateTip(chart: Of<'states'>, data: StateData, p: Place): string {
   const pt = data.values.find((v) => v.place.slug === p.slug)?.pt
   if (!pt || pt.y === null) return `${p.name}: No data${chart.missing?.[p.slug] ? `. ${chart.missing[p.slug]}` : ''}`
-  return [`${p.name}: ${show(chart, pt).text}${pt.note ? ` (${pt.note})` : ''}`, gapText(chart, data, pt.y)].filter(Boolean).join('\n')
+  const ci = pt.interval ? `95% interval ${fmt(pt.interval[0], chart.format)} to ${fmt(pt.interval[1], chart.format)}` : ''
+  return [`${p.name}: ${show(chart, pt).text}${pt.note ? ` (${pt.note})` : ''}`, ci, gapText(chart, data, pt.y)].filter(Boolean).join('\n')
 }
 
 export function renderRanked(chart: Of<'states'>, width: Width): Markup {
@@ -37,7 +38,7 @@ export function renderRanked(chart: Of<'states'>, width: Width): Markup {
   const vals = rows.flatMap((r) => (r.pt?.y != null ? [r.pt.y] : []))
   const india = chart.total ? null : (data.india?.y ?? null)
   const x = scaleLinear()
-    .domain([Math.min(0, ...vals), Math.max(...vals, india ?? 0)])
+    .domain([Math.min(0, ...vals), Math.max(...vals, ...rows.flatMap((r) => r.pt?.interval ?? []), india ?? 0)])
     .nice()
     .range([m.left, W - m.right])
   const ix = india === null ? null : x(india)
@@ -57,8 +58,12 @@ export function renderRanked(chart: Of<'states'>, width: Width): Markup {
     const crosses = ix !== null && end < ix && end + textW > ix - 2
     const inside = crosses && end - m.left > textW + 4
     const lx = inside ? end - 4 : crosses ? ix! + 6 : end + 5
+    const ci = r.pt.interval
+    const whisker = ci
+      ? svg`<line x1="${x(ci[0])}" x2="${x(ci[1])}" y1="${y + rowH / 2}" y2="${y + rowH / 2}" stroke="var(--ink)"/><line x1="${x(ci[0])}" x2="${x(ci[0])}" y1="${y + 6}" y2="${y + rowH - 6}" stroke="var(--ink)"/><line x1="${x(ci[1])}" x2="${x(ci[1])}" y1="${y + 6}" y2="${y + rowH - 6}" stroke="var(--ink)"/>`
+      : null
     return svg`<g class="row" data-geo="${r.place.slug}" data-tip="${stateTip(chart, data, r.place)}">${label}
-<rect class="bar" x="${x0}" y="${y + 3}" width="${Math.max(1, x1 - x0)}" height="${rowH - 6}" fill="var(--other)"/>
+<rect class="bar" x="${x0}" y="${y + 3}" width="${Math.max(1, x1 - x0)}" height="${rowH - 6}" fill="var(--other)"/>${whisker}
 <text class="value${inside ? ' inside' : ''}" x="${lx}" y="${y + 14}" text-anchor="${inside ? 'end' : 'start'}" font-size="12" fill="var(--ink)"${attr('data-alt', v.alt)}>${v.text}</text></g>`
   })
 

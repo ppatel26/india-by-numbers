@@ -83,6 +83,7 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
     y,
     top: m.top,
     bottom: H - m.bottom,
+    right: W - m.right,
     series: panel.series,
     endLabels,
   })

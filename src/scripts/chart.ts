@@ -91,3 +91,16 @@ document.addEventListener(
   },
   true,
 )
+
+// The month-by-month map on a chart page: the slider shows one step.
+for (const tl of document.querySelectorAll<HTMLElement>('[data-timeline]')) {
+  const input = tl.querySelector<HTMLInputElement>('input[type="range"]')!
+  const out = tl.querySelector('output')!
+  const labels = input.dataset.labels!.split('|')
+  input.addEventListener('input', () => {
+    const i = Number(input.value)
+    tl.querySelectorAll<HTMLElement>('[data-step]').forEach((s) => (s.hidden = Number(s.dataset.step) !== i))
+    out.textContent = labels[i] ?? ''
+    input.setAttribute('aria-valuetext', labels[i] ?? '')
+  })
+}

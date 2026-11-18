@@ -246,7 +246,7 @@ const topic: Topic = {
             sources: [withTable(SRS_LIFE_TABLES, 'Statement 3')],
             format: { decimals: 1 },
             by: 'geography',
-            // LATER: the board sorts by the hidden total and prints it in a "Total" column; dots sort on a drawn series and have no value column.
+            sortBy: 'total',
             series: [
               { key: 'female', label: 'Women', color: 's3', file: 'health/life-expectancy-by-state-2020-24.csv', x: 'geography', where: { residence: 'total', sex: 'female' } },
               { key: 'male', label: 'Men', color: 's2', file: 'health/life-expectancy-by-state-2020-24.csv', x: 'geography', where: { residence: 'total', sex: 'male' } },
@@ -296,7 +296,7 @@ const topic: Topic = {
               'full-immunisation-card-or-recall': 'Fully vaccinated, card or recall',
               'anaemia-women-15-49': 'Women 15-49 with anaemia',
             },
-            // LATER: the board writes "Not in NFHS-6" where the NFHS-6 anaemia bar would be; bars have no missing-value label.
+            missing: { 'anaemia-women-15-49': 'Not in NFHS-6' },
             series: [
               { key: 'nfhs5', label: 'NFHS-5 (2019-21)', color: 'other', file: 'health/nfhs-key-indicators-by-state.csv', x: 'indicator', where: { geography: 'india', round: 'NFHS-5', indicator: NFHS_INDIA_INDICATORS } },
               { key: 'nfhs6', label: 'NFHS-6 (2023-24), provisional', color: 'ink', file: 'health/nfhs-key-indicators-by-state.csv', x: 'indicator', where: { geography: 'india', round: 'NFHS-6', indicator: NFHS_INDIA_INDICATORS } },
@@ -477,9 +477,8 @@ const topic: Topic = {
             note: "SRS gives a ratio for 19 bigger states and one ratio for all other states and UTs together, so the map shows the 19 states only. The intervals are wide: Kerala's runs from 0 to 50, and Chhattisgarh's from 48 to 199.",
             sources: [withTable(SRS_MMR_2022_24, 'Table 1')],
             format: { decimals: 0 },
-            // LATER: the board draws 95% confidence whiskers (`ci95_lower`, `ci95_upper`), has no Map tab,
-            // and adds the row "Other states and UTs (one group)" (`other-states`, not a place).
-            data: { file: 'health/mmr-by-state-2022-24.csv', where: { geography: MMR_STATES } },
+            // Whiskers show the 95% confidence interval SRS publishes for each state.
+            data: { file: 'health/mmr-by-state-2022-24.csv', where: { geography: MMR_STATES }, interval: ['ci95_lower', 'ci95_upper'] },
             open: 'chart',
             scale: 'seq',
             better: 'low',

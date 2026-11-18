@@ -275,7 +275,10 @@ const topic: Topic = {
             note: 'There are no figures by sex for 1951-52. For 1999 the source gives 494 men and 52 women elected, 546 in total, more than the 543 seats; we show the values as published. The 2024 counts are for 542 seats polled; Surat was won unopposed.',
             sources: [WMI_5_2],
             format: { decimals: 0 },
-            // LATER: the board draws two panels ("Women candidates", "Women MPs elected") on their own y scales; 'columns' has no panels.
+            panels: [
+              { label: 'Women candidates', series: ['candidates'], own: true },
+              { label: 'Women MPs elected', series: ['elected'], own: true },
+            ],
             series: [
               {
                 key: 'candidates',
@@ -486,9 +489,16 @@ const topic: Topic = {
             ],
             format: { decimals: 0 },
             by: 'party_abbr',
-            // LATER: the board draws one panel per state (Delhi, Bihar, Assam, Kerala, Puducherry, Tamil Nadu,
-            // West Bengal), each with its turnout figure ('elections/assembly-2025-2026-turnout.csv'), a
-            // dashed majority line and bars as a share of the assembly, plus a party key; 'bars' has no panels.
+            // Each assembly on its own scale, with the seats needed for a majority.
+            panels: [
+              { label: 'Delhi', series: ['delhi'], own: true, refs: [{ value: 36, label: 'Majority 36' }] },
+              { label: 'Bihar', series: ['bihar'], own: true, refs: [{ value: 122, label: 'Majority 122' }] },
+              { label: 'Assam', series: ['assam'], own: true, refs: [{ value: 64, label: 'Majority 64' }] },
+              { label: 'Kerala', series: ['kerala'], own: true, refs: [{ value: 71, label: 'Majority 71' }] },
+              { label: 'Puducherry', series: ['puducherry'], own: true, refs: [{ value: 16, label: 'Majority 16' }] },
+              { label: 'Tamil Nadu', series: ['tamil-nadu'], own: true, refs: [{ value: 118, label: 'Majority 118' }] },
+              { label: 'West Bengal', series: ['west-bengal'], own: true, refs: [{ value: 148, label: 'Majority 148' }] },
+            ],
             series: [
               assembly('delhi', 'Delhi'),
               assembly('bihar', 'Bihar'),

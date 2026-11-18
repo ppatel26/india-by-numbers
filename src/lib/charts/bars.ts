@@ -1,7 +1,7 @@
 import { scaleLinear } from 'd3-scale'
 import { svg, attr, type Markup } from '~/lib/markup'
 import { colorVar, textOn } from '~/lib/tokens'
-import { WIDTH, frame, valueRefs, type Width } from './axes'
+import { FONT, WIDTH, frame, valueRefs, type Width } from './axes'
 import { legend, rowName } from './dots'
 import { drawn, show, tipLine, type Of, type SeriesData } from './model'
 
@@ -26,8 +26,8 @@ export function renderBars(chart: Of<'bars'>, width: Width): Markup {
   const m = { top: series.length > 1 ? 32 : 8, right: narrow ? 52 : 64, bottom: 8, left: labelW }
   const H = m.top + keys.length * rowH + m.bottom
   const total = (k: string) => series.reduce((a, s) => a + (val(s, k)?.y ?? 0), 0)
-  const max = chart.stacked ? Math.max(...keys.map(total)) : Math.max(...series.flatMap((s) => s.points.map((p) => p.y ?? 0)))
-  const min = chart.stacked ? 0 : Math.min(0, ...series.flatMap((s) => s.points.map((p) => p.y ?? 0)))
+  const max = chart.axis?.max ?? (chart.stacked ? Math.max(...keys.map(total)) : Math.max(...series.flatMap((s) => s.points.map((p) => p.y ?? 0))))
+  const min = chart.axis?.min ?? (chart.stacked ? 0 : Math.min(0, ...series.flatMap((s) => s.points.map((p) => p.y ?? 0))))
   const x = scaleLinear().domain([min, max]).nice().range([m.left, W - m.right])
 
   const rows = keys.map((k, i) => {
@@ -42,6 +42,8 @@ export function renderBars(chart: Of<'bars'>, width: Width): Markup {
     let base = 0
     const marks = series.map((s, j) => {
       const p = val(s, k)
+      if ((!p || p.y === null) && chart.missing?.[k])
+        return svg`<text x="${x(0) + 4}" y="${(grouped ? bandTop + 4 + j * barH : bandTop + (bandH - barH) / 2) + barH - 3}" font-family="${FONT.mono}" font-size="10.5" fill="var(--slate)">${chart.missing[k]!.toUpperCase()}</text>`
       if (!p || p.y === null) return null
       const v = show(chart, p, s)
       if (chart.stacked) {
@@ -53,7 +55,7 @@ export function renderBars(chart: Of<'bars'>, width: Width): Markup {
 ${w > v.text.length * 7 + 8 ? svg`<text x="${x0 + 4}" y="${bandTop + bandH / 2 + 4}" font-size="11.5" fill="${ink}"${attr('data-alt', v.alt)}>${v.text}</text>` : null}`
       }
       const by = grouped ? bandTop + 4 + j * barH : bandTop + (bandH - barH) / 2
-      const fill = colorVar(hi && series.length === 1 ? 's1' : s.color)
+      const fill = colorVar(chart.colors?.[k] ?? (hi && series.length === 1 ? 's1' : s.color))
       const x0 = x(Math.min(0, p.y))
       const x1 = x(Math.max(0, p.y))
       return svg`<rect x="${x0}" y="${by}" width="${Math.max(1, x1 - x0)}" height="${barH - 1}" fill="${fill}"/>

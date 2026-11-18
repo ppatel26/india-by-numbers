@@ -241,8 +241,9 @@ const topic: Topic = {
       lede: 'Women in India had 1.9 children on average in 2024, below the replacement level of 2.1. Replacement level is the rate at which each generation replaces itself. Bihar had the highest rate (2.9) and Delhi the lowest (1.2). 16 of the 22 bigger states and UTs were below 2.1.',
       blocks: [
         {
-          // LATER: the board sets the axis from 1.0 to 3.5 and puts India first; dots start the axis at 0 and sort India by value.
           chart: {
+            pin: ['india'],
+            axis: { min: 1, max: 3.5 },
             slug: 'fertility-rate-by-state',
             kind: 'dots',
             title: 'Fertility rate by state, 2019 and 2024',
@@ -342,8 +343,9 @@ const topic: Topic = {
           text: 'For every 1,000 boys born in India in 2022-24, 918 girls were born, up from 907 in 2018-20. Chhattisgarh had the highest ratio (978) and Uttarakhand the lowest (872).',
         },
         {
-          // LATER: the board starts the axis at 840 and puts India first; dots start the axis at 0 and sort India by value.
           chart: {
+            pin: ['india'],
+            axis: { min: 840 },
             slug: 'sex-ratio-at-birth-by-state',
             kind: 'dots',
             title: 'Sex ratio at birth by state, 2018-20 and 2022-24',

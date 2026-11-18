@@ -85,3 +85,12 @@ test('pages fit a phone screen without sideways scrolling @mobile', async ({ pag
     expect(over, path).toBeLessThanOrEqual(0)
   }
 })
+
+test('the timeline steps the state map back to January', async ({ page }) => {
+  await page.goto('/charts/cpi-inflation-by-state/')
+  const slider = page.locator('[data-timeline] input[type="range"]')
+  await slider.fill('0')
+  await expect(page.locator('[data-timeline] output')).toHaveText('Jan 2026')
+  await expect(page.locator('[data-timeline] [data-step="0"]')).toBeVisible()
+  await expect(page.locator('[data-timeline] [data-step="9"]')).toBeHidden()
+})

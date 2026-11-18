@@ -138,8 +138,8 @@ const topic: Topic = {
           chart: {
             kind: 'columns',
             slug: 'monsoon-2026-by-month',
-            title: 'Monsoon rainfall in 2026 by month, India',
-            subtitle: 'Departure of rainfall from the long-period average for each month and for the season (June to September), %, 2026. The table and CSV add IMD’s four regions.',
+            title: 'Monsoon rainfall in 2026 by month, India and its four regions',
+            subtitle: 'Departure of rainfall from the long-period average for each month and for the season (June to September), %, 2026.',
             punches: { office: 'IMD', unit: '% from LPA', period: 'JUN-SEP 2026' },
             status: ['Provisional'],
             note: 'The regions are IMD\'s four homogeneous regions. IMD documents differ slightly: East and Northeast India got 1,017.1 mm in the season table and 1,016.3 mm in the season report table. The report text gives June rain for India as 104 mm; its table gives 106.8 mm. This chart uses the table values.',
@@ -147,16 +147,20 @@ const topic: Topic = {
             format: { decimals: 1, unit: '%' },
             y: { min: -60, max: 40, step: 20 },
             sign: { above: 's5', below: 's1', aboveLabel: 'Wetter than normal', belowLabel: 'Drier than normal' },
-            // LATER: the board draws five panels, one per region; 'columns' has no panels, so the chart
-            // draws All India and the four regions are in the table only. The board also sets the
-            // season apart with a dashed rule.
+            panels: [
+              { label: 'All India', series: ['india'] },
+              { label: 'Northwest', series: ['northwest'] },
+              { label: 'East and Northeast', series: ['east-northeast'] },
+              { label: 'Central', series: ['central'] },
+              { label: 'South Peninsula', series: ['south-peninsula'] },
+            ],
             // x is the `month` label column (Jun to Sep, then Season), so the columns keep the CSV order.
             series: [
               { key: 'india', label: 'All India', color: 'ink', file: RAIN_BY_MONTH, x: 'month', y: 'departure_pct', where: { geography: 'india' } },
-              { key: 'northwest', label: 'Northwest', color: 'ink', hidden: true, file: RAIN_BY_MONTH, x: 'month', y: 'departure_pct', where: { geography: 'northwest-india' } },
-              { key: 'east-northeast', label: 'East and Northeast', color: 'ink', hidden: true, file: RAIN_BY_MONTH, x: 'month', y: 'departure_pct', where: { geography: 'east-northeast-india' } },
-              { key: 'central', label: 'Central', color: 'ink', hidden: true, file: RAIN_BY_MONTH, x: 'month', y: 'departure_pct', where: { geography: 'central-india' } },
-              { key: 'south-peninsula', label: 'South Peninsula', color: 'ink', hidden: true, file: RAIN_BY_MONTH, x: 'month', y: 'departure_pct', where: { geography: 'south-peninsula' } },
+              { key: 'northwest', label: 'Northwest', color: 'ink', file: RAIN_BY_MONTH, x: 'month', y: 'departure_pct', where: { geography: 'northwest-india' } },
+              { key: 'east-northeast', label: 'East and Northeast', color: 'ink', file: RAIN_BY_MONTH, x: 'month', y: 'departure_pct', where: { geography: 'east-northeast-india' } },
+              { key: 'central', label: 'Central', color: 'ink', file: RAIN_BY_MONTH, x: 'month', y: 'departure_pct', where: { geography: 'central-india' } },
+              { key: 'south-peninsula', label: 'South Peninsula', color: 'ink', file: RAIN_BY_MONTH, x: 'month', y: 'departure_pct', where: { geography: 'south-peninsula' } },
             ],
             know: [
               'IMD divides India into four homogeneous regions: Northwest, Central, East and Northeast, and the South Peninsula.',

@@ -7,6 +7,7 @@ import { renderBars } from './bars'
 import { renderColumns } from './columns'
 import { renderDots } from './dots'
 import { renderLine } from './line'
+import { renderPanels } from './panels'
 import { renderPyramid } from './pyramid'
 import { renderRanked, renderTiles } from './states'
 import { asStates } from './model'
@@ -29,7 +30,7 @@ export function renderPlot(chart: Chart, view: 'chart' | 'map', width: Width): M
     case 'line':
       return renderLine(chart, width)
     case 'columns':
-      return renderColumns(chart, width)
+      return chart.panels ? renderPanels(chart, width, renderColumns) : renderColumns(chart, width)
     case 'area':
       return renderArea(chart, width)
     case 'states':
@@ -37,7 +38,7 @@ export function renderPlot(chart: Chart, view: 'chart' | 'map', width: Width): M
     case 'dots':
       return view === 'map' ? renderTiles(asStates(chart), width) : renderDots(chart, width)
     case 'bars':
-      return renderBars(chart, width)
+      return chart.panels ? renderPanels(chart, width, renderBars) : renderBars(chart, width)
     case 'pyramid':
       return renderPyramid(chart, width)
     case 'table':

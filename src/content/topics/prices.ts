@@ -218,7 +218,7 @@ const topic: Topic = {
             scale: 'div',
             better: 'low',
             short: 'Inflation',
-            // LATER: board S12 gives this chart a timeline, January to October 2026; 'states' shows one period.
+            timeline: { column: 'period', values: ['2026-01', '2026-02', '2026-03', '2026-04', '2026-05', '2026-06', '2026-07', '2026-08', '2026-09', '2026-10'] },
             // From board S12, "What you should know about this indicator".
             know: [
               'October 2026 is provisional. MoSPI finalises it with the November release, due on 14 December 2026.',

@@ -1,6 +1,8 @@
 ---
 import type { Chart } from '~/content/types'
-import { tableOf } from '~/lib/charts/table'
+import { heat, tableOf } from '~/lib/charts/table'
+import { fmt } from '~/lib/format'
+import { colorVar, textOn } from '~/lib/tokens'
 import { isPlace } from '~/lib/geography'
 
 interface Props {
@@ -8,7 +10,16 @@ interface Props {
 }
 const { chart } = Astro.props
 const t = tableOf(chart)
+const bins = chart.kind === 'table' ? chart.bins : undefined
+const legend = bins?.map((e, i, all) => ({ fill: heat(bins, e), label: i === all.length - 1 ? `${fmt(e)} and over` : `${fmt(e)} to under ${fmt(all[i + 1]!)}` }))
 ---
+
+{bins && (
+  <p class="heat-key">
+    <span><i style={`background:${colorVar(heat(bins, -Infinity))}`}></i>Under {fmt(bins[0]!)}</span>
+    {legend!.map((l) => <span><i style={`background:${colorVar(l.fill)}`}></i>{l.label}</span>)}
+  </p>
+)}
 
 <div class="scroll" tabindex="0" role="region" aria-label={`${chart.title}: table`}>
   <table class="ruled">
@@ -20,7 +31,9 @@ const t = tableOf(chart)
       {t.rows.map((r) => (
         <tr data-geo={isPlace(r.key) || r.key === 'india' ? r.key : undefined}>
           <th scope="row">{isPlace(r.key) ? <a href={`/states/${r.key}/`}>{r.head}</a> : r.head}</th>
-          {r.cells.map((c) => <td class="num" data-alt={c.shown.alt}>{c.shown.text}</td>)}
+          {r.cells.map((c) => (
+            <td class="num" data-alt={c.shown.alt} style={c.fill && `background:${colorVar(c.fill)};color:${textOn(c.fill)}`}>{c.shown.text}</td>
+          ))}
         </tr>
       ))}
     </tbody>
@@ -28,6 +41,23 @@ const t = tableOf(chart)
 </div>
 
 <style>
+  .heat-key {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 6px 16px;
+    margin-bottom: 12px;
+    font-size: 13px;
+  }
+  .heat-key span {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+  .heat-key i {
+    width: 14px;
+    height: 14px;
+    border-radius: 2px;
+  }
   .scroll {
     max-height: 560px;
     overflow: auto;

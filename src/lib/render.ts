@@ -9,7 +9,7 @@ import { Resvg } from '@resvg/resvg-js'
 import type { Chart } from '~/content/types'
 import { openView, renderPlot } from './charts'
 import { FONT, WIDTH } from './charts/axes'
-import { Markup, svg } from './markup'
+import { embed, svg, type Markup } from './markup'
 import { formatDate } from './period'
 import { SITE } from './site'
 import { sourceLine } from './sources'
@@ -41,21 +41,6 @@ export function textBlock(text: string, x: number, y: number, width: number, siz
     el: svg`${lines.map((l, i) => svg`<text x="${x}" y="${y + size + i * lineHeight}" font-size="${size}"${attrs}>${l}</text>`)}`,
     height: lines.length * lineHeight,
   }
-}
-
-/** Width and height of an SVG string's root. */
-export function sizeOf(s: string): { w: number; h: number } {
-  const m = s.match(/viewBox="0 0 ([\d.]+) ([\d.]+)"/)
-  if (!m) throw new Error('No viewBox')
-  return { w: +m[1]!, h: +m[2]! }
-}
-
-/** Put an SVG inside another at (x, y), scaled to `width`. */
-export function embed(inner: string, x: number, y: number, width: number): { el: Markup; height: number } {
-  const { w, h } = sizeOf(inner)
-  const height = (h * width) / w
-  const body = inner.replace(/^<svg[^>]*>/, '').replace(/<\/svg>$/, '')
-  return { el: svg`<svg x="${x}" y="${y}" width="${width}" height="${height}" viewBox="0 0 ${w} ${h}">${new Markup(body)}</svg>`, height }
 }
 
 export function chartSvg(chart: Chart): string {

@@ -8,6 +8,7 @@ import ChartTable from './ChartTable.astro'
 import Hallmark from './Hallmark.astro'
 import type { Chart } from '~/content/types'
 import { openView, renderPlot, viewsOf, type View } from '~/lib/charts'
+import { timelineOf } from '~/lib/charts/model'
 import { sourceLine } from '~/lib/sources'
 
 interface Props {
@@ -24,6 +25,8 @@ const names: Record<View, string> = { chart: 'Chart', table: 'Table', map: 'Map'
 const id = `c-${chart.slug}`
 const Heading = page ? 'h1' : 'h3'
 const href = `/charts/${chart.slug}/`
+// The month-by-month map shows on the chart's own page only, to keep topic pages light.
+const steps = page && chart.kind === 'states' ? timelineOf(chart) : []
 ---
 
 <figure class="chart" id={chart.slug} data-chart={chart.slug} aria-labelledby={`${id}-title`}>
@@ -43,6 +46,21 @@ const href = `/charts/${chart.slug}/`
     <div class:list={['view', v]} id={`${id}-${v}`} role={views.length > 1 ? 'tabpanel' : undefined} aria-labelledby={views.length > 1 ? `${id}-tab-${v}` : undefined} hidden={v !== open}>
       {v === 'table' ? (
         <ChartTable chart={chart} />
+      ) : v === 'map' && steps.length > 0 ? (
+        <div class="timeline" data-timeline>
+          {steps.map((s, i) => (
+            <div data-step={i} hidden={i !== steps.length - 1}>
+              <div class="w-wide" set:html={renderPlot(s.chart, 'map', 'wide').html} />
+              <div class="w-narrow" set:html={renderPlot(s.chart, 'map', 'narrow').html} />
+            </div>
+          ))}
+          <label class="slider">
+            <span class="label muted">{steps[0]!.label}</span>
+            <input type="range" min="0" max={steps.length - 1} value={steps.length - 1} step="1" aria-label="Month" aria-valuetext={steps.at(-1)!.label} data-labels={steps.map((s) => s.label).join('|')} />
+            <span class="label muted">{steps.at(-1)!.label}</span>
+            <output class="label">{steps.at(-1)!.label}</output>
+          </label>
+        </div>
       ) : (
         <>
           <div class="w-wide" set:html={renderPlot(chart, v, 'wide').html} />
@@ -128,6 +146,22 @@ const href = `/charts/${chart.slug}/`
     .w-narrow {
       display: block;
     }
+  }
+  .slider {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr) auto auto;
+    align-items: center;
+    gap: 12px;
+    margin-top: 16px;
+    max-width: 640px;
+  }
+  .slider input {
+    accent-color: var(--ink);
+  }
+  .slider output {
+    padding: 3px 9px;
+    border: 1px solid var(--ink);
+    border-radius: 11px;
   }
   .note {
     margin-top: 16px;

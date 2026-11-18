@@ -109,9 +109,15 @@ export const note = (x: number, y: number, text: string, anchor: 'start' | 'midd
   svg`<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="${FONT.mono}" font-size="10.5" fill="${fill}" paint-order="stroke" stroke="var(--paper)" stroke-width="3" stroke-linejoin="round">${text.toUpperCase()}</text>`
 
 /** Vertical reference lines across a horizontal value axis, with labels at the top. */
-export function valueRefs(refs: readonly { value: number; label: string }[] | undefined, x: (v: number) => number, top: number, bottom: number): Markup {
-  return svg`${(refs ?? []).map((r) => svg`<line x1="${x(r.value)}" x2="${x(r.value)}" y1="${top}" y2="${bottom}" stroke="var(--ink)" stroke-dasharray="3 3"/>
-${note(x(r.value) + 4, top + 10, r.label)}`)}`
+export function valueRefs(refs: readonly { value: number; label: string }[] | undefined, x: ScaleLinear<number, number>, top: number, bottom: number): Markup {
+  const edge = x.range()[1]!
+  return svg`${(refs ?? []).map((r) => {
+    const at = x(r.value)
+    // Near the right edge the label reads leftwards from the line.
+    const left = edge - at < r.label.length * 7
+    return svg`<line x1="${at}" x2="${at}" y1="${top}" y2="${bottom}" stroke="var(--ink)" stroke-dasharray="3 3"/>
+${note(left ? at - 4 : at + 4, top + 10, r.label, left ? 'end' : 'start')}`
+  })}`
 }
 
 /** An invisible hover target. The page script shows `tip` (lines split by "\n"). */
