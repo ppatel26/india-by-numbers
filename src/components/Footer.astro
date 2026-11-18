@@ -6,10 +6,14 @@ import { places } from '~/lib/geography'
 import { SITE } from '~/lib/site'
 import { flapDate, upcoming } from '~/lib/releases'
 
-// The timetable: when we last checked, and the next two announced releases.
+// The timetable: when we last checked, and the next release date with everything due on it.
+const due = upcoming(8)
+const next = due.filter((d) => d.date === due[0]?.date)
 const timetable = [
   { what: 'Checked', date: SITE.checked, detail: `All ${charts.length} charts`, href: '/how-we-check/' },
-  ...upcoming(2).map((d, i) => ({ what: i ? 'Then' : 'Next', date: d.date, detail: `${d.name} · ${d.publisher}`, href: '/releases/' })),
+  ...(next.length
+    ? [{ what: 'Next', date: next[0]!.date, detail: `${next.map((d) => d.name).join(' and ')} · ${[...new Set(next.map((d) => d.publisher))].join(', ')}`, href: '/releases/' }]
+    : []),
 ]
 
 const states = places.filter((p) => p.type === 'state').length
@@ -119,6 +123,11 @@ const groups = [
     align-items: center;
     gap: 24px;
     padding: 12px 0;
+  }
+  /* Only the words underline on hover, not the flaps or the row label. */
+  .board li a,
+  .board li a:hover {
+    text-decoration: none;
   }
   .board li a:hover .detail {
     text-decoration: underline;
