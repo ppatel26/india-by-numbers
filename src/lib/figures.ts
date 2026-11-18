@@ -3,7 +3,18 @@ import { placed } from '~/content'
 import type { Figure, Status } from '~/content/types'
 import { formatNumber, type Shown } from './format'
 import { latest } from './data'
+import { parsePeriod } from './period'
 import { seriesOf, show, statesOf, pointAt, type SeriesData } from './charts/model'
+
+/** "2026-10" -> "Oct 2026"; spans and years stay as published. */
+function rowPeriod(p: string | undefined): string | undefined {
+  if (!p) return undefined
+  try {
+    return parsePeriod(p).label
+  } catch {
+    return p
+  }
+}
 
 const lastT = (s: SeriesData): number => latest(s.points)?.t ?? -Infinity
 
@@ -35,7 +46,7 @@ export function figureValue(f: Figure): FigureValue {
     value: f.format ? formatNumber(pt.y, f.format, pt.raw) : show(chart, pt),
     label: f.label,
     // A time chart's x is the period; for states and categories, the row's own period column is.
-    period: f.period ?? (chart.kind === 'line' || chart.kind === 'columns' || chart.kind === 'area' ? pt.label : (pt.row.period ?? chart.punches.period)),
+    period: f.period ?? (chart.kind === 'line' || chart.kind === 'columns' || chart.kind === 'area' ? pt.label : rowPeriod(pt.row.period) ?? chart.punches.period),
     // A method break belongs to a series, not to one value.
     status: (chart.status ?? []).filter((x) => x !== 'Method break'),
     office: chart.punches.office,

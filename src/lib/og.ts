@@ -25,8 +25,12 @@ const W = 1200
 const H = 630
 const DISPLAY = "'Marcellus', serif"
 
-const emblem = (name: string): string =>
-  `data:image/jpeg;base64,${readFileSync(join(process.cwd(), 'src/assets/emblems', `${name}.jpg`)).toString('base64')}`
+/** Cut-out objects are PNG with transparency; the methods relief is a photo on black. */
+const emblem = (name: string): string => {
+  const file = name === 'methods' ? 'methods.jpg' : `${name}.png`
+  const type = name === 'methods' ? 'jpeg' : 'png'
+  return `data:image/${type};base64,${readFileSync(join(process.cwd(), 'src/assets/emblems', file)).toString('base64')}`
+}
 
 const seal = readFileSync(join(process.cwd(), 'src/assets/brand/seal.svg'), 'utf8').replace(/^<svg[^>]*>/, '').replace(/<\/svg>\s*$/, '')
 
@@ -37,12 +41,16 @@ function wordmark(x: number, y: number, color: string): Markup {
 ${shaped(SITE.hindiName, 'Devanagari', x + 54, y + 42, 15, color).el}`
 }
 
-/** An emblem melted into its ground with a radial mask. */
-function object(name: string, x: number, y: number, size: number, screen = false): Markup {
-  const id = `m-${name}-${Math.round(x)}-${Math.round(y)}`
-  return svg`<defs><radialGradient id="${id}-g"><stop offset="0.72" stop-color="#fff"/><stop offset="0.98" stop-color="#000"/></radialGradient>
-<mask id="${id}"><rect x="${x}" y="${y}" width="${size}" height="${size}" fill="url(#${id}-g)"/></mask></defs>
-<image href="${emblem(name)}" x="${x}" y="${y}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet"${screen ? null : svg` mask="url(#${id})"`}/>`
+/** A topic object with a soft cast shadow. The methods relief keeps a radial fade into its dark ground. */
+function object(name: string, x: number, y: number, size: number): Markup {
+  const id = `o-${name}-${Math.round(x)}-${Math.round(y)}`
+  const fade = name === 'methods'
+  return svg`<defs>${
+    fade
+      ? svg`<radialGradient id="${id}-g"><stop offset="0.72" stop-color="#fff"/><stop offset="0.98" stop-color="#000"/></radialGradient><mask id="${id}"><rect x="${x}" y="${y}" width="${size}" height="${size}" fill="url(#${id}-g)"/></mask>`
+      : svg`<filter id="${id}" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="${size * 0.04}" stdDeviation="${size * 0.035}" flood-color="#000" flood-opacity="0.32"/></filter>`
+  }</defs>
+<image href="${emblem(name)}" x="${x}" y="${y}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet" ${fade ? svg`mask="url(#${id})"` : svg`filter="url(#${id})"`}/>`
 }
 
 function page(body: Markup, ground: string): Buffer {
@@ -62,7 +70,7 @@ export function topicImage(t: Topic): Buffer {
   const dim = p.text === 'light' ? colors['silver-dim'] : colors['on-light-dim']
   const figs = t.figures.map(figureValue)
   return page(
-    svg`${object(t.slug, 700, 70, 460)}
+    svg`${object(t.slug, 772, 56, 380)}
 ${wordmark(64, 56, ink)}
 <text x="64" y="196" font-family="${FONT.mono}" font-size="16" letter-spacing="2" fill="${dim}">TOPIC</text>
 <text x="64" y="292" font-family="${DISPLAY}" font-size="${fit(upper(t.name), 620, 92)}" fill="${ink}">${upper(t.name)}</text>

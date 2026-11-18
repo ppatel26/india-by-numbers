@@ -1,11 +1,10 @@
 ---
 /** A topic as a flat pigment block: chart count, emblem, name, two questions, one figure. */
-import Emblem from '../Emblem.astro'
+import Niche from '../Niche.astro'
 import FigureValue from '../FigureValue.astro'
 import { charts } from '~/content'
 import type { Tile } from '~/content/pages/tiles'
 import type { Topic } from '~/content/types'
-import { EMBLEM_ALT } from '~/lib/emblems'
 import { pigments } from '~/lib/tokens'
 
 interface Props {
@@ -19,7 +18,7 @@ const count = charts.filter((c) => c.topic.slug === topic.slug).length
 
 <li class:list={['tile', p.text === 'light' ? 'on-dark' : 'on-light']} style={`--ground:${p.hex}`}>
   <p class="label count">{count} charts</p>
-  <Emblem name={topic.slug} alt={EMBLEM_ALT[topic.slug]} size={180} />
+  <Niche topic={topic.slug} size={168} deep />
   <h3>
     <a href={`/${topic.slug}/`} class="display">{topic.name}</a>
     <span class="deva" lang="hi">{topic.hindi}</span>
@@ -41,10 +40,10 @@ const count = charts.filter((c) => c.topic.slug === topic.slug).length
   .on-light {
     color: var(--ink);
   }
-  .tile > :global(.emblem) {
+  .tile > :global(.niche) {
     position: absolute;
-    top: 16px;
-    right: 16px;
+    top: 8px;
+    right: 24px;
   }
   .count {
     opacity: 0.85;

@@ -1,5 +1,5 @@
 ---
-/** A topic's silver object, on its own pigment. The radial mask melts the edge into the ground. */
+/** A topic's silver object, cut out of its backdrop, so it sits on any ground with no box or glow. */
 interface Props {
   name: string
   alt: string
@@ -26,12 +26,11 @@ const { name, alt, size = 280, screen = false, eager = false } = Astro.props
   .emblem {
     object-fit: contain;
     flex-shrink: 0;
-    -webkit-mask-image: radial-gradient(closest-side, black 74%, transparent 98%);
-    mask-image: radial-gradient(closest-side, black 74%, transparent 98%);
+    /* The cut-outs lost their cast shadow; one soft shadow puts them back on the ground. */
+    filter: drop-shadow(0 14px 18px rgb(0 0 0 / 0.3));
   }
   .screen {
     mix-blend-mode: screen;
-    -webkit-mask-image: none;
-    mask-image: none;
+    filter: none;
   }
 </style>

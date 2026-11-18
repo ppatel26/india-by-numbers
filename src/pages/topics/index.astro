@@ -1,12 +1,11 @@
 ---
 /** Every topic with its questions and releases, then every chart by topic. */
 import Base from '~/layouts/Base.astro'
-import Emblem from '~/components/Emblem.astro'
+import Niche from '~/components/Niche.astro'
 import PageHeader from '~/components/PageHeader.astro'
 import page from '~/content/pages/topics'
 import { charts, topics } from '~/content'
 import type { Chart } from '~/content/types'
-import { EMBLEM_ALT } from '~/lib/emblems'
 import { places } from '~/lib/geography'
 import { dateRange } from '~/lib/metadata'
 import { pigments } from '~/lib/tokens'
@@ -59,9 +58,7 @@ function kindOf(c: Chart): string {
         const row = page.rows[t.slug]
         return (
           <li class="topic">
-            <div class="tile" style={`background:${pigments[t.slug].hex}`}>
-              <Emblem name={t.slug} alt={EMBLEM_ALT[t.slug]} size={128} />
-            </div>
+            <div class="tile"><Niche topic={t.slug} size={128} /></div>
             <div>
               <h2 class="display name">{t.name}</h2>
               <p class="deva muted" lang="hi">{t.hindi}</p>
@@ -172,9 +169,7 @@ function kindOf(c: Chart): string {
     border-bottom: 1px solid var(--rule);
   }
   .tile {
-    display: block;
     width: 128px;
-    height: 128px;
   }
   .name {
     font-size: 34px;
@@ -350,11 +345,13 @@ function kindOf(c: Chart): string {
     }
     .tile {
       width: 96px;
-      height: 96px;
+    }
+    .tile :global(.niche) {
+      --size: 96px !important;
     }
     .tile :global(.emblem) {
-      width: 96px !important;
-      height: 96px !important;
+      width: 83px !important;
+      height: 83px !important;
     }
     .later,
     .groups {
