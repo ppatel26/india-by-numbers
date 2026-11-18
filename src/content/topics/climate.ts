@@ -291,7 +291,7 @@ const topic: Topic = {
     },
     {
       title: 'How fast is power capacity moving away from coal?',
-      lede: 'The Central Electricity Authority (CEA) counts the power capacity of utilities every month. Capacity is the most power that plants can make. It is not the power that they make.',
+      lede: 'The Central Electricity Authority (CEA) counts the power capacity of utilities every month. Capacity is the most power that plants can make at once. It is not the power that they made in a period.',
       blocks: [
         { text: 'Solar capacity grew from 2,632 MW in March 2014 to 1,74,547 MW in October 2026. Coal and lignite capacity grew from 1,45,273 MW to 2,31,438 MW.' },
         {
@@ -328,7 +328,7 @@ const topic: Topic = {
               { key: 'waste-to-energy', label: 'Other renewables', color: 's4', file: CAPACITY, where: { geography: 'india', source: 'waste-to-energy' } },
             ],
             know: [
-              'Installed capacity is the most power that plants can make, in megawatts (MW). It is not the power that they make.',
+              'Installed capacity is the most power that plants can make at once, in megawatts (MW). It is not the power that they made in a period.',
               'CEA counts utilities only. Captive plants are not included.',
               'Before March 2019 CEA had no lignite column; lignite plants are counted inside coal.',
               'CEA counts off-grid renewable capacity from August 2021. In 2017 MNRE revised renewable capacity for March 2014 to March 2017.',

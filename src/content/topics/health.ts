@@ -113,7 +113,7 @@ const topic: Topic = {
   parts: [
     {
       title: 'Are fewer babies dying?',
-      lede: 'Yes, in villages and in towns. In 1971 the rate was 138 in rural areas and 82 in urban areas. In 2024 it was 27 and 17.',
+      lede: 'In 2024 the rate was 27 in rural areas and 17 in urban areas, down from 138 and 82 in 1971.',
       blocks: [
         {
           chart: {

@@ -66,7 +66,7 @@ const states: StatesPage = {
   title: 'States and union territories',
   hindi: 'राज्य और केंद्र शासित प्रदेश',
   intro:
-    `India has ${count.states} states and ${count.uts} union territories, and each one has a page that puts its figures beside India's on every topic. The map below shows one measure: income per person in 2024-25.`,
+    `India has ${count.states} states and ${count.uts} union territories. Each one has a page that puts its figures beside India's on every topic. The map uses one measure: income per person in 2024-25.`,
   map: {
     number: '1',
     title: 'Income per person by state and UT, 2024-25',

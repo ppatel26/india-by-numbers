@@ -154,7 +154,7 @@ export function sentence(topic: TopicSlug, slug: string, rows: readonly Row[]): 
       return `${v} of ${possessive(state)} electors voted in the 2024 Lok Sabha election, against ${india} across India.`
     case 'climate':
       if (!a.rank) return undefined
-      return `${state} had ${v} MW of renewable power capacity on ${periodOf(a.chart)}, ${ordinal(standing(a.data, slug)!.top)} of the ${a.rank.of} states and UTs.`
+      return `${state} had ${v} MW of renewable power capacity on ${periodOf(a.chart)}, ${ordinal(standing(a.data, slug)!.top)} highest of the ${a.rank.of} states and UTs.`
     case 'religion-and-culture': {
       const tongue = rows.at(-1)
       if (!tongue?.value) return undefined

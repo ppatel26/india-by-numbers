@@ -139,7 +139,7 @@ const home: Home = {
   },
   browse: {
     heading: 'Browse by topic',
-    intro: `${count.topics} topics, ${count.charts} charts. Each topic page answers a few plain questions with charts, tables and sources.`,
+    intro: `${count.topics} topics, ${count.charts} charts. Each topic page answers plain questions. Every chart carries its source.`,
     link: 'All topics',
     tileChartsLabel: (n) => `${n} charts`,
   },

@@ -125,7 +125,7 @@ const topic: Topic = {
   hindi: 'शिक्षा',
   question: 'How many children are in school, and how far do they get?',
   standfirst:
-    'In 2025-26, 24.72 crore children were enrolled from pre-primary to class 12, slightly more than the 24.69 crore of 2024-25.',
+    'In 2025-26, 24.72 crore children were enrolled from pre-primary to class 12, against 24.69 crore in 2024-25.',
   figures: [
     { chart: 'school-enrolment-trend', series: 'enrol-total-new', label: 'Students, pre-primary to class 12' },
     { chart: 'ger-higher-secondary-by-state', label: 'Enrolment ratio, classes 11 and 12' },
@@ -209,7 +209,7 @@ const topic: Topic = {
             better: 'low',
             short: 'Dropout, classes 9-10',
             know: [
-              'The dropout rate is the share of students in a level who leave school during the year. This chart shows secondary level, classes 9 and 10.',
+              'The dropout rate is the share of students in a level who leave school during the year. The rate here is for secondary level, classes 9 and 10.',
               'In 2025-26 the rate was 9.5% for India, highest in Karnataka (18.1%) and lowest in Chandigarh (1.3%).',
               'Dropout rates from 2022-23 use student-level data and do not compare with rates up to 2021-22.',
               'UDISE+ is an administrative count. Schools enter their own data.',

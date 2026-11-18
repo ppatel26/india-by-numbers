@@ -327,7 +327,7 @@ const topic: Topic = {
     },
     {
       title: 'How many people work?',
-      lede: 'The annual report counts what people did over the 365 days before the interview, the usual status. Its rates are lower than the weekly rates in Part 1. On this measure, 40.0% of women aged 15 and over were in the labour force in 2025, against 79.1% of men. In 2017-18 the rate for women was 23.3%.',
+      lede: 'The annual report counts what people did over the 365 days before the interview, the usual status. Its rates are lower than the weekly rates. On this measure, 40.0% of women aged 15 and over were in the labour force in 2025, against 79.1% of men. In 2017-18 the rate for women was 23.3%.',
       blocks: [
         {
           // LATER: the board puts July to June years and calendar years side by side, each on its own x range; here they share one axis.
@@ -512,7 +512,7 @@ const topic: Topic = {
               'Unemployed people aged 15 to 29 as a share of the labour force of that age, India, usual status, %, calendar years 2022 to 2025.',
             punches: { office: 'MoSPI', unit: '% 15-29', period: '2025' },
             status: ['Survey estimate'],
-            note: 'Calendar-year figures from the 2025 annual report. Usual-status rates are lower than the weekly rates in Part 1, so the two are not compared.',
+            note: 'Calendar-year figures from the 2025 annual report. Usual-status rates are lower than the weekly rates, so the two are not compared.',
             sources: [plfsAnnual2025],
             format: { unit: '%', decimals: 1 },
             y: { min: 0, max: 20, step: 10 },

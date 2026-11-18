@@ -140,7 +140,7 @@ const topic: Topic = {
   parts: [
     {
       title: 'How many people live in India?',
-      lede: "India's population more than tripled between the 1951 and 2011 counts, from 36,10,88,090. Growth over the decade to 2011 was 17.70%, the slowest since the decade to 1951 (13.31%).",
+      lede: "India's population in 2011 was more than three times its 1951 count of 36,10,88,090. Growth over the decade to 2011 was 17.70%, the slowest since the decade to 1951 (13.31%).",
       blocks: [
         {
           // LATER: the board prints the change since the previous census (change_since_previous_census_pct) as a second row of labels.

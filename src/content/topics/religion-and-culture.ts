@@ -155,7 +155,7 @@ const topic: Topic = {
   name: 'Religion and culture',
   hindi: 'धर्म और संस्कृति',
   question: 'What religions do people in India report, and in what numbers?',
-  standfirst: 'Every figure here is from Census 2011, the latest count of religion and mother tongue.',
+  standfirst: 'All figures on this page come from Census 2011, the latest count of religion and mother tongue.',
   figures: [
     { chart: 'religion-in-india', series: 'share', x: 'Hindu', label: 'Reported their religion as Hindu' },
     { chart: 'religion-in-india', series: 'share', x: 'Muslim', label: 'Reported their religion as Muslim' },
