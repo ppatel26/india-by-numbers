@@ -1,7 +1,7 @@
 /** Shared plot parts: sizes, scales, gridlines, ticks, labels and hover targets. */
 import { scaleLinear, type ScaleLinear } from 'd3-scale'
 import type { Axis, Format } from '~/content/types'
-import { formatNumber } from '~/lib/format'
+import { formatTick, type Shown } from '~/lib/format'
 import { colorVar } from '~/lib/tokens'
 import { attr, svg, type Markup } from '~/lib/markup'
 import type { Point } from '~/lib/data'
@@ -38,21 +38,35 @@ export function yTicks(s: ScaleLinear<number, number>, axis: Axis = {}): number[
   return out
 }
 
-const tickFormat = (f: Format | undefined): Format => ({ ...f, decimals: undefined, unit: f?.unit === 'pp' ? '' : f?.unit })
+/**
+ * Tick labels print the fewest decimals that keep every tick exact: "20 crore", not "20.0 crore".
+ * Unscaled ticks already drop trailing zeros; crore and lakh ticks need it worked out.
+ */
+function tickLabels(ticks: readonly number[], f: Format | undefined): (t: number, withUnit: boolean) => Shown {
+  const base: Format = { ...f, decimals: undefined, unit: f?.unit === 'pp' ? '' : f?.unit }
+  const per = (f?.scale === 'crore' ? 1e7 : f?.scale === 'lakh' ? 1e5 : 0) / (f?.multiply ?? 1)
+  const exact = (d: number) => ticks.every((t) => Math.abs(Math.round((t / per) * 10 ** d) - (t / per) * 10 ** d) < 1e-6)
+  const d = per ? ([0, 1, 2].find(exact) ?? 2) : 0
+  // The baseline reads plain 0; the unit sits on the top tick.
+  return (t, withUnit) => (t === 0 && !withUnit ? { text: '0' } : formatTick(t, { ...base, unit: withUnit ? base.unit : '' }, d))
+}
 
 /** Left margin wide enough for the longest y tick label (Geist Mono 11 px runs about 7 px a character). */
 export function yRoom(values: readonly number[], axis: Axis | undefined, f?: Format): number {
   const s = yScale(values, [1, 0], axis)
-  const longest = Math.max(...yTicks(s, axis).map((t) => formatNumber(t, tickFormat(f)).text.length))
+  const ticks = yTicks(s, axis)
+  const label = tickLabels(ticks, f)
+  const longest = Math.max(...ticks.map((t) => label(t, true).text.length))
   return Math.max(32, longest * 7 + 12)
 }
 
 /** Horizontal gridlines with labels at the left. The top label carries the unit. */
 export function yGrid(s: ScaleLinear<number, number>, ticks: number[], x0: number, x1: number, f?: Format): Markup {
   const top = ticks.at(-1)
+  const label = tickLabels(ticks, f)
   return svg`<g class="y-grid">${ticks.map((t) => {
     const y = s(t)
-    const shown = formatNumber(t, { ...tickFormat(f), unit: t === top ? tickFormat(f).unit : '' })
+    const shown = label(t, t === top)
     return svg`<line x1="${x0}" x2="${x1}" y1="${y}" y2="${y}" stroke="${t === 0 ? colorVar('ink') : 'var(--grid)'}" stroke-width="1"/>
 <text x="${x0 - 8}" y="${y + 4}" text-anchor="end" font-family="${FONT.mono}" font-size="11" fill="var(--slate)"${attr('data-alt', shown.alt)}>${shown.text}</text>`
   })}</g>`

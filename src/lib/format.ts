@@ -24,15 +24,16 @@ function grouped(n: number, d: number, nf: Intl.NumberFormat): string {
   return nf.format(Number(int)) + (frac ? `.${frac}` : '')
 }
 
-function scaled(n: number, scale: Format['scale']): Shown {
+/** `d`: digits after the point in crore or lakh (default 1); the million/billion form follows it. */
+function scaled(n: number, scale: Format['scale'], d = 1): Shown {
   if (scale === 'crore') {
-    const text = `${grouped(n / 1e7, 1, indian)} crore`
-    const alt = Math.abs(n) >= 1e9 ? `${(n / 1e9).toFixed(2)} billion` : `${grouped(n / 1e6, 1, intl)} million`
+    const text = `${grouped(n / 1e7, d, indian)} crore`
+    const alt = Math.abs(n) >= 1e9 ? `${(n / 1e9).toFixed(d + 1)} billion` : `${grouped(n / 1e6, d, intl)} million`
     return { text, alt }
   }
   if (scale === 'lakh') {
-    const text = `${grouped(n / 1e5, 1, indian)} lakh`
-    const alt = Math.abs(n) >= 1e6 ? `${(n / 1e6).toFixed(2)} million` : `${grouped(n / 1e3, 1, intl)} thousand`
+    const text = `${grouped(n / 1e5, d, indian)} lakh`
+    const alt = Math.abs(n) >= 1e6 ? `${(n / 1e6).toFixed(d + 1)} million` : `${grouped(n / 1e3, d, intl)} thousand`
     return { text, alt }
   }
   throw new Error(`Unknown scale ${scale}`)
@@ -57,6 +58,13 @@ export function formatNumber(value: number, fmt: Format = {}, raw?: string): Sho
   const text = withUnit(sign + grouped(a, d, indian), fmt.unit, fmt.suffix)
   const alt = withUnit(sign + grouped(a, d, intl), fmt.unit, fmt.suffix)
   return alt === text ? { text } : { text, alt }
+}
+
+/** An axis tick: as formatNumber, but crore and lakh ticks print `d` decimals, so 20 crore, not 20.0. */
+export function formatTick(value: number, fmt: Format, d: number): Shown {
+  if (!fmt.scale || fmt.scale === 'none') return formatNumber(value, fmt)
+  const s = scaled(value * (fmt.multiply ?? 1), fmt.scale, d)
+  return { text: withUnit(s.text, fmt.unit, fmt.suffix), alt: s.alt && withUnit(s.alt, fmt.unit, fmt.suffix) }
 }
 
 /** Plain text in the default (lakh and crore) mode. */

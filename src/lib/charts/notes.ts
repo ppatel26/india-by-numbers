@@ -14,11 +14,17 @@ export interface NoteBox {
   y: ScaleLinear<number, number>
   top: number
   bottom: number
-  /** Right edge of the plot: callouts near it read leftwards. */
+  /** Left and right edges of the plot: callouts near them stay inside. */
+  left?: number
   right?: number
   series: readonly SeriesData[]
   /** True when the chart labels each series at its end. */
   endLabels?: boolean
+  /**
+   * Column charts: the highest bar top (pixel y) between two pixel x values. A callout sits on
+   * the cap of its column, above any neighbour its text crosses, with no dot.
+   */
+  capAt?: (x0: number, x1: number) => number
 }
 
 
@@ -39,9 +45,25 @@ function callout(c: Callout, chart: WithNotes, box: NoteBox): Markup | null {
   if (!s || !p || p.y === null || px === undefined || (box.endLabels && s.points.findLast((q) => q.y !== null) === p)) return null
   const py = box.y(p.y)
   const text = c.label ?? `${show(chart, p, s).text} in ${p.label}`
+  if (box.capAt && p.y >= 0) return capLabel(text, px, box)
   const left = box.right !== undefined && px + 7 + text.length * 6.5 > box.right
   return svg`<circle cx="${px}" cy="${py}" r="3" fill="${colorVar(s.color)}"/>
 <text x="${left ? px - 7 : px + 7}" y="${p.y >= 0 ? py - 6 : py + 14}" text-anchor="${left ? 'end' : 'start'}" font-size="12" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3">${text}</text>`
+}
+
+/**
+ * A column callout: the text centred on the column's cap, raised clear of every bar it spans.
+ * When it has to rise above its own cap, a short rule ties it back to the column.
+ */
+function capLabel(text: string, px: number, box: NoteBox): Markup {
+  const half = (text.length * 6.6) / 2 + 4
+  const cx = Math.max((box.left ?? -Infinity) + half, Math.min(px, (box.right ?? Infinity) - half))
+  const own = box.capAt!(px - 1, px + 1)
+  const clear = Math.min(own, box.capAt!(cx - half, cx + half))
+  const ty = Math.max(12, clear - 8)
+  const tied = own - ty > 18
+  return svg`${tied ? svg`<line x1="${px}" x2="${px}" y1="${own - 2}" y2="${ty + 4}" stroke="var(--slate)"/>` : null}
+<text x="${cx}" y="${ty}" text-anchor="middle" font-size="12" font-weight="500" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3">${text}</text>`
 }
 
 /** `under` goes below the data marks, `over` above them. */
