@@ -4,6 +4,13 @@ import { topics } from '~/content'
 import { formatDate } from '~/lib/period'
 import { places } from '~/lib/geography'
 import { SITE } from '~/lib/site'
+import { flapDate, upcoming } from '~/lib/releases'
+
+// The timetable: when we last checked, and the next two announced releases.
+const timetable = [
+  { what: 'Checked', date: SITE.checked, detail: 'Every figure, against its release', href: '/how-we-check/' },
+  ...upcoming(2).map((d, i) => ({ what: i ? 'Then' : 'Next', date: d.date, detail: `${d.name} · ${d.publisher}`, href: '/releases/' })),
+]
 
 const states = places.filter((p) => p.type === 'state').length
 const uts = places.length - states
@@ -40,11 +47,31 @@ const groups = [
 ---
 
 <footer class="site on-dark">
+  <section class="wrap board" aria-labelledby="timetable" data-flaps>
+    <div class="board-head">
+      <h2 class="label" id="timetable">Timetable</h2>
+      <a href="/releases/">All releases</a>
+    </div>
+    <ol>
+      {timetable.map((t) => (
+        <li>
+          <a href={t.href}>
+            <span class="what label">{t.what}</span>
+            <span class="flaps">
+              <span class="visually-hidden">{formatDate(t.date)}</span>
+              {[...flapDate(t.date)].map((c) => <span class="f" aria-hidden="true"><span>{c}</span></span>)}
+            </span>
+            <span class="detail">{t.detail}</span>
+          </a>
+        </li>
+      ))}
+    </ol>
+  </section>
   <div class="wrap grid">
     <div class="intro">
       <Wordmark />
       <p class="muted">An independent project. Not affiliated with the Government of India.</p>
-      <p class="muted">Built by <a href={SITE.author.url} rel="me">{SITE.author.name} ({SITE.author.handle})</a>.</p>
+      <p class="muted">Built by <a href={SITE.author.url} rel="me">{SITE.author.name} ({SITE.author.handle})</a> <span aria-hidden="true">✌️</span></p>
     </div>
     {groups.map((g) => (
       <div>
@@ -57,7 +84,6 @@ const groups = [
   </div>
   <div class="wrap base">
     <p>{SITE.licence}</p>
-    <p class="label">Checked {formatDate(SITE.checked)}</p>
   </div>
 </footer>
 
@@ -65,6 +91,78 @@ const groups = [
   .site {
     background: var(--kajal);
     padding: 64px 0 40px;
+  }
+  .board {
+    margin-bottom: 56px;
+  }
+  .board-head {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding-bottom: 12px;
+    font-size: 13px;
+  }
+  .board ol {
+    margin: 0;
+    padding: 6px 20px;
+    list-style: none;
+    background: color-mix(in srgb, var(--kajal), black 45%);
+    border: 1px solid var(--kajal-rule);
+    border-radius: 4px;
+  }
+  .board li + li {
+    border-top: 1px solid var(--kajal-rule);
+  }
+  .board li a {
+    display: grid;
+    grid-template-columns: 96px auto minmax(0, 1fr);
+    align-items: center;
+    gap: 24px;
+    padding: 12px 0;
+  }
+  .board li a:hover .detail {
+    text-decoration: underline;
+  }
+  .what {
+    color: var(--silver-dim);
+  }
+  .flaps {
+    display: flex;
+    gap: 3px;
+  }
+  .f {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 34px;
+    font: 500 20px/1 var(--font-mono);
+    color: var(--silver);
+    background: color-mix(in srgb, var(--kajal), white 7%);
+    border-radius: 3px;
+  }
+  .f::after {
+    content: '';
+    position: absolute;
+    inset: 50% 0 auto;
+    height: 1px;
+    background: color-mix(in srgb, var(--kajal), black 45%);
+  }
+  .f > span {
+    display: block;
+  }
+  .f > :global(.flip) {
+    animation: flip 70ms ease-in;
+  }
+  @keyframes flip {
+    from {
+      transform: scaleY(0.4);
+      color: var(--silver-dim);
+    }
+  }
+  .detail {
+    font-size: 15px;
+    line-height: 22px;
   }
   .grid {
     display: grid;
@@ -102,6 +200,20 @@ const groups = [
     padding-top: 24px;
     border-top: 1px solid var(--kajal-rule);
     font-size: 13px;
+  }
+  @media (max-width: 640px) {
+    .board ol {
+      padding: 4px 14px;
+    }
+    .board li a {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .f {
+      width: 20px;
+      height: 28px;
+      font-size: 16px;
+    }
   }
   @media (max-width: 900px) {
     .grid {

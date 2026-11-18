@@ -6,6 +6,11 @@ import { renderPlot, viewsOf } from '~/lib/charts'
 import { byState, seriesOf, statesOf } from '~/lib/charts/model'
 import { tableOf } from '~/lib/charts/table'
 import { GRID, places } from '~/lib/geography'
+import { rows } from '~/lib/data'
+import { formatDate } from '~/lib/period'
+import { upcoming } from '~/lib/releases'
+import { SITE } from '~/lib/site'
+import releases from '~/content/pages/releases'
 
 describe('topics', () => {
   it('has all nine, in order', () => {
@@ -56,6 +61,24 @@ describe('geography', () => {
     for (const p of places) {
       expect(p.col).toBeLessThanOrEqual(GRID.cols)
       expect(p.row).toBeLessThanOrEqual(GRID.rows)
+    }
+  })
+})
+
+describe('release calendar', () => {
+  it('lists only announced dates after the check, soonest first', () => {
+    const due = upcoming(5)
+    expect(due.length).toBeGreaterThan(0)
+    expect(due.every((d) => d.date > SITE.checked)).toBe(true)
+    expect(due.map((d) => d.date)).toEqual([...due.map((d) => d.date)].sort())
+    expect(due[0]!.name).not.toMatch(/undefined/)
+  })
+  it('agrees with the "Due next" table on the Releases page', () => {
+    const announced = rows('release-calendar.csv').filter((r) => r.status === 'announced')
+    for (const row of releases.dueNext.rows) {
+      const publisher = row.release.split(' · ')[0]
+      const match = announced.some((r) => r.publisher === publisher && formatDate(r.expected_date!) === row.date)
+      expect(match, `${row.date} ${row.release}`).toBe(row.certainty === 'Announced')
     }
   })
 })
