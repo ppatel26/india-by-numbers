@@ -52,7 +52,6 @@ export interface HowWeCheck {
   hindi: string
   intro: string
   checked: string
-  object: { caption: string }
   part1: { eyebrow: string; heading: string; lede: string; labels: { machine: string; person: string; example: string }; checks: readonly Check[] }
   part2: {
     eyebrow: string
@@ -88,10 +87,6 @@ const howWeCheck: HowWeCheck = {
   intro:
     "Every figure comes from a publisher's own release.",
   checked: 'Page checked 18 Nov 2026',
-  object: {
-    caption:
-      'Recast · A merchant and a scribe weigh goods. Red sandstone relief, made with an image model. It stands in for no data.',
-  },
   part1: {
     eyebrow: 'Part 1 · Before a figure publishes',
     heading: 'What happens to a number before it reaches a chart?',

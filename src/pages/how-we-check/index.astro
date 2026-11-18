@@ -22,10 +22,9 @@ const punchClass = ['office', 'unit', 'seal', 'period'] as const
 
   <section class="kajal on-dark" aria-labelledby="part-1">
     <div class="wrap split">
-      <figure class="object">
+      <div class="object">
         <Emblem name="methods" alt={EMBLEM_ALT.methods} size={300} screen eager />
-        <figcaption class="label muted">{page.object.caption}</figcaption>
-      </figure>
+      </div>
       <div class="part">
         <p class="label muted">{part1.eyebrow}</p>
         <h2 class="display" id="part-1">{part1.heading}</h2>
@@ -171,9 +170,6 @@ const punchClass = ['office', 'unit', 'seal', 'period'] as const
   }
   .object :global(.emblem) {
     margin-inline: auto;
-  }
-  .object figcaption {
-    margin-top: 32px;
   }
   .part {
     padding-top: 20px;
@@ -402,9 +398,6 @@ const punchClass = ['office', 'unit', 'seal', 'period'] as const
     .object :global(.emblem) {
       width: 160px !important;
       height: 160px !important;
-      margin: 0;
-    }
-    .object figcaption {
       margin: 0;
     }
     .cols {
