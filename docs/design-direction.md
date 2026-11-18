@@ -26,7 +26,7 @@ The brand colour is lac (लाख), the resin India used for sealing wax on off
 
 | Role | Value |
 | --- | --- |
-| Lac (brand ground: nav, hero, footer, P1, assay punch) | #89221C |
+| Lac (brand ground: nav, hero, footer, the first poster, assay punch) | #89221C |
 | Lac line (hairlines on lac only) | #A95043 |
 | Reading ground and chart surface (one white) | #FFFFFF |
 | Kajal (rare dark ground: methods) | #141211 |
@@ -97,14 +97,13 @@ Production rules:
 - For lac, generate it on a flat sealing-wax red backdrop (hex 89221C, no gradient, no vignette). Use the normal blend and a radial mask to melt the edges. Screen on lac turns silver pink.
 - Use one key light from the top left and a three-quarter view. Put no text on the object.
 
-## Boards on page 02
+## The design boards
 
-- P1, P2, P3: posters, one object each. P1 "Every number has a source" on lac. P2 "How often India counts" on white. P3 "You should not have to take our word for it" on kajal.
-- F1: foundations. Colour, chart series, type, the hallmark, the flag.
-- F2: the object library and production rules.
-- H1: homepage at 1440.
-- T1: topic page, Prices, at 1440.
-- M1, M2, M3: mobile home, chart with a pinned readout, hallmark sheet.
+- Three posters, one object each: "Every number has a source" on lac, "How often India counts" on white, and "You should not have to take our word for it" on kajal.
+- Foundations: colour, chart series, type, the hallmark and the flag.
+- The object library and its production rules.
+- The home page and a topic page (Prices) at 1440 px.
+- Mobile: the home page, a chart with a pinned readout, and the hallmark sheet.
 
 Real figures, checked against primary sources on 17 Nov 2026:
 

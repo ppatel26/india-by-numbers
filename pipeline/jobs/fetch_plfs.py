@@ -12,6 +12,7 @@ import json
 import os
 import sys
 import time
+import urllib.error
 import urllib.parse
 import urllib.request
 
@@ -25,9 +26,16 @@ def get(params):
         try:
             with urllib.request.urlopen(req, timeout=90) as r:
                 return url, json.loads(r.read().decode("utf-8"))
-        except Exception as e:  # noqa: BLE001
+        except urllib.error.HTTPError as e:
+            # A refusal or a rate limit is final: stop and download by hand from the publisher's page.
+            if e.code in (401, 403, 429, 451):
+                raise SystemExit(f"{url}: HTTP {e.code}. The publisher refused the request; download the file by hand.")
             err = e
-            time.sleep(3 * (attempt + 1))
+        except json.JSONDecodeError:
+            raise SystemExit(f"{url}: the reply is not JSON (a challenge page?). Download the file by hand.")
+        except (urllib.error.URLError, TimeoutError) as e:
+            err = e
+        time.sleep(3 * (attempt + 1))
     raise SystemExit(f"failed {url}: {err}")
 
 

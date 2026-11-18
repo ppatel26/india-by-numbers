@@ -276,7 +276,7 @@ About is visible on all screen sizes. The UK site hides it on small screens.
 | Stacked bar | Shares that add to 100%, for example workers by type of work | Segments in a fixed order, direct labels, total shown | UK `chart-type-stacked-sectors.png` |
 | Population pyramid | Age and sex structure | Men left, women right, five-year groups, a period selector | UK `chart-type-pyramid.png` |
 | Slope chart | Change between two periods for each state | Two columns, state labels at both ends, India in ink | New |
-| Hero number | One headline figure | Figure, label, change from previous period, hallmark, status word, link to the chart | New (Taksal H1 ledger) |
+| Hero number | One headline figure | Figure, label, change from previous period, hallmark, status word, link to the chart | New (the Taksal home page ledger) |
 
 ### The chart frame
 

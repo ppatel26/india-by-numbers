@@ -1,7 +1,7 @@
 """Refetch CPI base 2012 all-India data one month per request, so each answer fits in one page.
 Usage: python3 -I pipeline/prices/fetch_cpi12.py --raw raw/prices <series Current|Back> <years comma> <name.all.json>
 Writes <raw>/api/<name.all.json>. Used for cpi12_allindia.all.json and cpi12back_allindia.all.json."""
-import argparse, json, os, sys, time, urllib.request
+import argparse, json, os, sys, time, urllib.error, urllib.request
 
 ap = argparse.ArgumentParser()
 ap.add_argument("--raw", default="raw/prices")
@@ -20,7 +20,14 @@ for y in years:
             try:
                 d = json.loads(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "IndiaByNumbers/1.0 (+https://indiabynumbers.org/about/)"}), timeout=60).read())
                 break
-            except Exception:
+            except urllib.error.HTTPError as e:
+                # A refusal or a rate limit is final: stop and download by hand from the publisher's page.
+                if e.code in (401, 403, 429, 451):
+                    raise SystemExit(f"{url}: HTTP {e.code}. The publisher refused the request; download the file by hand.")
+                time.sleep(2)
+            except json.JSONDecodeError:
+                raise SystemExit(f"{url}: the reply is not JSON (a challenge page?). Download the file by hand.")
+            except (urllib.error.URLError, TimeoutError):
                 time.sleep(2)
         data = d.get("data") or []
         tot = (d.get("meta_data") or {}).get("totalRecords", 0)
