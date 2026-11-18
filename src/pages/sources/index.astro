@@ -205,7 +205,8 @@ const barName = (short: string) => short.split(/[ ,]/)[0]
     align-items: center;
     gap: 16px;
   }
-  /* A typographic seal, not the publisher's own emblem: the site is not affiliated with them. */
+  /* A typographic seal, not the publisher's own emblem: the site is not affiliated with them.
+     The ring takes the topic colour; the letters stay ink, so light pigments keep their contrast. */
   .seal {
     display: grid;
     place-items: center;
@@ -215,7 +216,7 @@ const barName = (short: string) => short.split(/[ ,]/)[0]
     border-radius: 50%;
     border: 1.5px solid var(--seal);
     box-shadow: inset 0 0 0 3px var(--paper), inset 0 0 0 4px var(--seal);
-    color: var(--seal);
+    color: var(--ink);
     font: 400 17px/1 var(--font-display);
     letter-spacing: 0.02em;
   }
