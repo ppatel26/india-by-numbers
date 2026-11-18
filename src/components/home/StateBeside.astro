@@ -6,9 +6,9 @@
 import TileNav from '../TileNav.astro'
 import type { Home } from '~/content/pages/home'
 import { placed } from '~/content'
-import { byState, ranked, show, statesOf } from '~/lib/charts/model'
-import { ordinal } from '~/lib/format'
-import { places } from '~/lib/geography'
+import { byState, show, statesOf } from '~/lib/charts/model'
+import { place, places } from '~/lib/geography'
+import { rankIn, rankText } from '~/lib/profile'
 
 interface Props {
   content: Home['stateBeside']
@@ -23,19 +23,9 @@ const rows = content.pairs.map((pair) => {
   return { pair, chart, data, pct }
 })
 const first = rows[0]!
-const order = ranked(first.data).filter((v) => v.pt?.y != null)
 const sentence = (slug: string): string => {
-  const i = order.findIndex((v) => v.place.slug === slug)
-  if (i < 0) return `Each tile opens a state profile.`
-  const above = order.slice(0, i).map((v) => v.place.name)
-  const text = content.map.text({
-    state: order[i]!.place.name,
-    rank: ordinal(i + 1),
-    of: order.length,
-    measure: first.pair.label.replace(/^Inflation/, 'inflation'),
-    above: above.length > 2 ? `${above.length} others` : above.join(' and '),
-  })
-  return above.length ? text : text.replace(/, after \.$/, '.')
+  const rank = rankIn(first.data, slug)
+  return rank ? content.map.text({ state: place(slug).name, rank: rankText(rank) }) : ''
 }
 ---
 
@@ -72,12 +62,13 @@ const sentence = (slug: string): string => {
   </div>
   <div class="map">
     <p class="label muted">{content.map.eyebrow}</p>
+    <p class="hint muted">{content.map.hint}</p>
+    <div class="peek" data-peek><TileNav /></div>
     <div class="per-state">
       {places.map((p) => <p data-geo={p.slug}>{sentence(p.slug)}</p>)}
     </div>
-    <TileNav />
     <p class="links">
-      <a data-state-link href="/states/">See the profile</a>
+      <a data-state-link data-state-only href="/states/">{content.map.profileLink[0]}<span data-state-name></span>{content.map.profileLink[1]}</a>
       <a href="/states/">{content.map.allLink}</a>
     </p>
   </div>
@@ -119,6 +110,7 @@ const sentence = (slug: string): string => {
   .row {
     display: grid;
     grid-template-columns: 300px minmax(0, 1fr);
+    align-items: center;
     gap: 24px;
     padding-block: 14px;
     border-top: 1px solid var(--rule);
@@ -153,7 +145,8 @@ const sentence = (slug: string): string => {
   }
   .map .per-state > [data-geo]:global(.is-sel) {
     display: block;
-    margin: 8px 0 16px;
+    min-height: 44px;
+    margin: 16px 0 0;
     font-size: 15px;
     line-height: 22px;
   }
@@ -162,6 +155,21 @@ const sentence = (slug: string): string => {
     font-size: 13px;
     line-height: 19px;
     color: var(--slate);
+  }
+  .map > .label {
+    margin-bottom: 6px;
+  }
+  .peek {
+    width: fit-content;
+  }
+  .hint {
+    margin-bottom: 14px;
+    font-size: 13px;
+  }
+  @media (hover: none) {
+    .hint {
+      display: none;
+    }
   }
   .links {
     display: grid;

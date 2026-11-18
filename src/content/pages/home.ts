@@ -49,10 +49,12 @@ export interface Home {
     sources: string
     map: {
       eyebrow: string
-      text: (p: { state: string; rank: string; of: number; measure: string; above: string }) => string
-      selected: (state: string) => string
-      ut: string
-      profileLink: (state: string) => string
+      /** The chosen state's rank on the first pair, e.g. "3rd highest of 36". */
+      text: (p: { state: string; rank: string }) => string
+      /** Shown only where a pointer can hover. */
+      hint: string
+      /** Before and after the state's name in the profile link. */
+      profileLink: readonly [string, string]
       allLink: string
     }
   }
@@ -164,25 +166,22 @@ const home: Home = {
     defaultState: 'tamil-nadu',
     legendNote: 'Bars start at zero · each row on its own scale',
     pairs: [
-      { chart: 'cpi-inflation-by-state', label: 'Inflation, October 2026', meta: 'MoSPI · % y/y · Provisional' },
-      { chart: 'income-per-person-by-state', label: 'Income per person, FY 2024-25', meta: 'MoSPI, RBI · ₹ · current prices' },
+      { chart: 'cpi-inflation-by-state', label: 'Inflation, October 2026', meta: '% y/y · Provisional' },
+      { chart: 'income-per-person-by-state', label: 'Income per person, FY 2024-25', meta: '₹ a year · current prices' },
       // In src/content/topics/health.ts.
-      { chart: 'infant-mortality-by-state', label: 'Infant mortality, 2024', meta: 'ORGI SRS · deaths per 1,000 live births · Survey estimate' },
-      { chart: 'women-labour-force-by-state', label: 'Women in the labour force, 2025, usual status', meta: 'MoSPI PLFS · % of women 15+ · Survey estimate' },
+      { chart: 'infant-mortality-by-state', label: 'Infant mortality, 2024', meta: 'per 1,000 live births · Survey estimate' },
+      { chart: 'women-labour-force-by-state', label: 'Women in the labour force, 2025', meta: '% of women 15+ · Survey estimate' },
       // In src/content/topics/elections.ts.
-      { chart: 'lok-sabha-turnout-by-state', label: 'Turnout, Lok Sabha 2024', meta: 'ECI via MoSPI · % of electors' },
-      { chart: 'fertility-rate-by-state', label: 'Fertility rate, 2024', meta: 'ORGI SRS · children per woman · Survey estimate' },
+      { chart: 'lok-sabha-turnout-by-state', label: 'Lok Sabha turnout, 2024', meta: '% of electors' },
+      { chart: 'fertility-rate-by-state', label: 'Fertility rate, 2024', meta: 'children per woman · Survey estimate' },
     ],
-    note: "Note: Income per person compares each state's net state domestic product per person with India's net national income per person, both base 2011-12. Women in the labour force uses usual status, age 15+, and is a survey estimate. Inflation for October 2026 is provisional.",
-    sources:
-      'Sources: MoSPI CPI release, 12 Nov 2026; MoSPI state accounts and RBI Handbook 2025-26; SRS Bulletin 2024; PLFS Annual Report 2025; Women and Men in India 2025 (ECI data); SRS Statistical Report 2024.',
+    note: 'Income per person: net state domestic product for a state, net national income for India. Each row opens its chart, with full sources.',
+    sources: 'Sources: MoSPI (CPI, state accounts, PLFS, ECI turnout), RBI, ORGI (SRS).',
     map: {
-      eyebrow: `${count.places} states and union territories`,
-      text: ({ state, rank, of, measure, above }) =>
-        `Each tile opens a state profile. ${state} ranks ${rank} of ${of} for ${measure}, after ${above}.`,
-      selected: (state) => `${state}, selected`,
-      ut: 'Union territory',
-      profileLink: (state) => `See the ${state} profile`,
+      eyebrow: `${count.places} states and UTs`,
+      text: ({ state, rank }) => `${state}: ${rank} for inflation, October 2026.`,
+      hint: 'Hover over a tile to see that state. Click to open its page.',
+      profileLink: ['Open the ', ' page'],
       allLink: `All ${count.places} states and UTs`,
     },
   },
