@@ -1,6 +1,6 @@
 # Site specification: India by Numbers
 
-Status: draft for design, 17 Nov 2026. Not built. Implementation waits for approval.
+Status: built as release 1 on 18 Nov 2026. Decisions taken in the build are marked "Decided".
 
 This spec defines the pages, blocks, chart parts, data rules, map policy and voice for the first public release (release 1). Designers draw every page in Paper from this spec. The visual language is "Taksal" (see `docs/design-direction.md`). The build shape is in `docs/build-exploration.md`.
 
@@ -52,7 +52,7 @@ UK by Numbers and OWID are related. The UK by Numbers About page says it was bui
 
 ## Sitemap
 
-All URLs are lower case with a trailing slash. Slugs come from `research/data/geography.csv` for states and UTs. Hindi pages use the same path under `/hi/`.
+All URLs are lower case with a trailing slash. Slugs come from `research/data/geography.csv` for states and UTs.
 
 | Page type | URL pattern | Release 1 | Pattern it follows |
 | --- | --- | --- | --- |
@@ -72,13 +72,13 @@ All URLs are lower case with a trailing slash. Slugs come from `research/data/ge
 | Corrections | `/corrections/` | Yes | New (neither site has one) |
 | About | `/about/` | Yes | UK About |
 | Search | `/search/?q=<terms>` | Yes | UK typeahead, plus a results page |
-| Hindi interface | `/hi/...` | Yes, interface and labels only | New |
+| Hindi interface | `/hi/...` | Later. Decided: release 1 is in English, with topic names in Hindi and each state's name in Hindi and in its own official language and script (`research/data/state-languages.csv`). | New |
 | Embed | `/charts/<chart-slug>/embed/` | Later | UK "Embed", OWID live and snapshot embeds |
 | District pages | `/states/<state-slug>/<district-slug>/` | Later | New |
 | Not found | any unknown path | Yes | Standard |
 | Sitemap file | `/sitemap.xml` | Yes | UK has none |
 
-Header navigation: Topics, States, All charts, How we check, About, search, the number switch (lakh and crore or million), and the language switch (English or हिन्दी).
+Header navigation: Topics, States, All charts, How we check, About, search, the number switch (lakh and crore or million), (Decided: no language switch until the Hindi interface exists).
 
 Footer: the one-line purpose, the licence in one sentence, links to Sources, Releases, Corrections, How we check and About, and the date of the last site build.
 
@@ -112,7 +112,7 @@ Each list gives the blocks from top to bottom. "UK" and "OWID" name the pattern 
 
 ### Home (`/`)
 
-1. Header. Wordmark, navigation, search, number switch, language switch. UK header (`home-desktop.png`).
+1. Header. Wordmark, navigation, search, number switch. UK header (`home-desktop.png`).
 2. Hero on lac. The Indus seal object, the site name, one line ("India's official statistics, checked and charted"), and search: "Search N charts, topics and states". Under it, "Try" with four terms, for example "inflation", "unemployment", "Kerala", "turnout". UK hero (`home-desktop.png`, `home-mobile.png`).
 3. Latest figures. A ledger of five to seven hero numbers, one per row. Each row has the figure, a plain label, the change from the last period, and the hallmark. Example rows (checked 17 Nov 2026, `docs/design-direction.md`): CPI inflation 6.09%, Oct 2026, Provisional, MoSPI; real GDP growth 7.8%, Q1 FY 2026-27, MoSPI; unemployment 5.0%, Sep 2026, persons 15+, CWS, MoSPI PLFS. Each row links to its chart page. New (UK has no figures on the home page).
 4. Browse by topic. Nine topics in a ruled list. Each item has the topic coin, the name, one question, and the number of charts. UK "Browse by topic".

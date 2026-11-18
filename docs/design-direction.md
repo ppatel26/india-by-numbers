@@ -1,6 +1,6 @@
 # Design direction: Taksal (टकसाल, the mint)
 
-Status: in review. Page 03 of the Paper file holds the full site (24 boards) with real data. The design boards live in a separate design file.
+Status: built. Page 03 of the Paper file holds the full site (24 boards) with real data; the live site follows it. The design boards live in a separate design file.
 
 Reference: the "Assay" brand exploration by @Yaxbuzz, <https://x.com/Yaxbuzz/status/2122222435160474082> (16 Nov 2026).
 
