@@ -158,30 +158,32 @@ export function renderTiles(chart: Of<'states'>, width: Width): Markup {
   const data = statesOf(chart)
   const narrow = width === 'narrow'
   const gap = narrow ? 3 : 4
-  // On the page the grid takes the width the legend leaves (legend 270 px, 40 px between).
+  // The grid takes the width the legend leaves (legend 270 px, 40 px between). Tiles are square
+  // up to the chart width; wider pages make them wider, not taller.
   const size = narrow ? 40 : Math.floor((WIDTH.wide - 270 - 40) / GRID.cols) - gap
+  const tileW = narrow ? size : Math.floor((WIDTH[width] - 270 - 40) / GRID.cols) - gap
   const b = bins(chart, data)
   // Pattern ids must be unique on the page: a hidden view's pattern does not paint.
   const noData = `nodata-${chart.slug}-${width}`
   const tiles = data.values.map(({ place, pt }) => {
-    const x = (place.col - 1) * (size + gap)
+    const x = (place.col - 1) * (tileW + gap)
     const y = (place.row - 1) * (size + gap)
     const has = pt && pt.y !== null
     const token: Token | undefined = has ? binOf(b, pt.y!).token : undefined
     const ink = token ? textOn(token) : 'var(--ink)'
     const v = has ? show(chart, pt) : undefined
     // A long value (₹2,16,590) shrinks to fit its tile rather than running into the next one.
-    const vSize = Math.min(narrow ? 10.5 : 12, ((size - 9) / Math.max(1, (v?.text.length ?? 1) * 0.58)))
+    const vSize = Math.min(narrow ? 10.5 : 12, ((tileW - 9) / Math.max(1, (v?.text.length ?? 1) * 0.58)))
     const [l1, l2] = place.short.includes('-') ? place.short.split('-').map((s, i) => (i === 0 ? `${s}-` : s)) : [place.short]
     const name = narrow
       ? svg`<text x="${x + 4}" y="${y + 13}" font-size="10.5" font-weight="600" fill="${ink}">${place.code}</text>`
       : svg`<text x="${x + 5}" y="${y + 14}" font-size="11" font-weight="600" fill="${ink}">${l1}${l2 ? svg`<tspan x="${x + 5}" dy="12">${l2}</tspan>` : null}</text>`
     return svg`<a href="${href(place)}" class="tile" data-geo="${place.slug}" data-tip="${stateTip(chart, data, place)}">
-<rect x="${x}" y="${y}" width="${size}" height="${size}" rx="2" fill="${token ? colorVar(token) : `url(#${noData})`}"/>
-${place.type === 'ut' ? svg`<path d="M${x + size - 10} ${y}h10v10z" fill="var(--paper)"/>` : null}${name}
+<rect x="${x}" y="${y}" width="${tileW}" height="${size}" rx="2" fill="${token ? colorVar(token) : `url(#${noData})`}"/>
+${place.type === 'ut' ? svg`<path d="M${x + tileW - 10} ${y}h10v10z" fill="var(--paper)"/>` : null}${name}
 <text x="${x + (narrow ? 4 : 5)}" y="${y + size - (narrow ? 6 : 8)}" font-size="${vSize.toFixed(1)}" fill="${ink}"${attr('data-alt', v?.alt)}>${v?.text ?? '–'}</text></a>`
   })
-  const mapW = GRID.cols * (size + gap)
+  const mapW = GRID.cols * (tileW + gap)
   const mapH = GRID.rows * (size + gap)
   const head = legendHeading(chart, data)
   const lx = narrow ? 0 : mapW + 40

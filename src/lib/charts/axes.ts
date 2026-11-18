@@ -7,8 +7,9 @@ import { attr, svg, type Markup } from '~/lib/markup'
 import type { Point } from '~/lib/data'
 
 /** wide: the page; narrow: a phone; half: one of two panels side by side on the page (phone layout). */
-export type Width = 'wide' | 'half' | 'narrow'
-export const WIDTH: Record<Width, number> = { wide: 912, half: 444, narrow: 358 }
+/** `page` is the full page width (--page), for the States page map only. */
+export type Width = 'wide' | 'half' | 'narrow' | 'page'
+export const WIDTH: Record<Width, number> = { wide: 912, half: 444, narrow: 358, page: 1200 }
 
 export const FONT = {
   ui: "'Hanken Grotesk', system-ui, sans-serif",

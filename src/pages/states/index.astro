@@ -37,6 +37,7 @@ const groups = [
       <figure class="map" data-map={x.slug} hidden={!x.open}>
         <h2><a href={`/charts/${x.slug}/`}>{x.chart.title}</a></h2>
         <p class="muted">{x.chart.subtitle} {states.map.coverage(x.n, places.length)} states and UTs have data.</p>
+        <div class="w-page" set:html={renderTiles(x.chart, 'page').html} />
         <div class="w-wide" set:html={renderTiles(x.chart, 'wide').html} />
         <div class="w-narrow" set:html={renderTiles(x.chart, 'narrow').html} />
         {x.chart.note && <p class="note">Note: {x.chart.note}</p>}
@@ -177,8 +178,18 @@ const groups = [
     margin-block: 4px 20px;
     font-size: 15px;
   }
+  /* The map fills the page row: page width on large screens, chart width below, the phone layout under 720 px. */
+  .w-wide,
   .w-narrow {
     display: none;
+  }
+  @media (max-width: 1199px) {
+    .w-page {
+      display: none;
+    }
+    .w-wide {
+      display: block;
+    }
   }
   @media (max-width: 720px) {
     .w-wide {
