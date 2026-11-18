@@ -20,11 +20,11 @@ body:
     id: why
     attributes:
       label: What question it answers
-      description: One or two plain questions a reader could answer with it.
+      description: Write one or two plain questions. A reader must be able to answer each question with this dataset.
     validations:
       required: true
   - type: textarea
     id: details
     attributes:
       label: Coverage and cadence
-      description: Years, states, how often it is released, and any method changes you know of.
+      description: State the years it covers and the states it covers. State how often the publisher releases it. Note any method changes you know of.

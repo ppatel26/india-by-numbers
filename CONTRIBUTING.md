@@ -1,18 +1,21 @@
 # Contributing
 
-Thank you for helping. The site has one rule above all: every number must come from an official
-release, with its period, and anyone must be able to check it.
+One rule governs the site: every number must come from an official release. Each number must
+carry its period. Any reader must be able to check the number against the release.
+
+Use an issue to report a figure or to suggest a dataset. Use a pull request to submit data or
+code you have prepared.
 
 ## Report a wrong figure
 
 Use [Report a problem](https://indiabynumbers.org/corrections/#report) on the site, or open a
-"Report a wrong figure" issue. Give the page, the value you see, the value you expected, and a link
-to the publisher's release with the table or page number. Publisher revisions are welcome too: they
-go on the Releases page, not the Corrections log.
+"Report a wrong figure" issue. Give the page, the value you see, and the value you expected.
+Give a link to the publisher's release. Add the table number or the page number. Report a
+publisher revision in the same way. Revisions go on the Releases page, not the Corrections log.
 
 ## Suggest a dataset
 
-Open a "Suggest a dataset" issue. Good candidates are:
+Open a "Suggest a dataset" issue. A good candidate meets all three conditions below:
 
 - published by a government office (a ministry, the RBI, a statutory body), not a news report;
 - released on a known cadence, so the chart can stay current;
@@ -37,10 +40,10 @@ Open a "Suggest a dataset" issue. Good candidates are:
 
 ## Writing
 
-Plain, number first: "In 2024, 11 in every 1,000 babies born in Tamil Nadu died before their first
-birthday, against 24 across India." Short sentences, active voice, lakh and crore, "percentage
-points" for a change in a rate, no em dashes. `docs/site-spec.md` has the full voice guide and the
-words to avoid.
+Write plain text. Put the number first: "In 2024, 11 in every 1,000 babies born in Tamil Nadu
+died before their first birthday, against 24 across India." Use short sentences. Use the active
+voice. Use lakh and crore. Use "percentage points" for a change in a rate. Do not use em dashes.
+`docs/site-spec.md` has the full voice guide and the words to avoid.
 
 ## Code
 

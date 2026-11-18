@@ -1,6 +1,6 @@
 ## What this changes
 
-<!-- One or two sentences. -->
+<!-- State what this pull request changes and why, in one or two sentences. Link the issue, if one exists. -->
 
 ## For data changes
 

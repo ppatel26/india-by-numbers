@@ -1,11 +1,11 @@
 # Pipeline
 
-These scripts made the CSVs in [`research/data/`](../research/data/). Some download publisher files.
-The others turn those files into tidy CSVs. Each topic README in `research/data/<topic>/` names the
-release, URL and sha256 of the raw files.
+The scripts in this folder made the CSVs in [`research/data/`](../research/data/). Some scripts
+download publisher files. The other scripts convert those files to CSVs. Each topic README in
+`research/data/<topic>/` names the release, the URL and the sha256 of each raw file.
 
-Raw downloads are not kept in the repository. The URL and sha256 in each topic README identify each
-file.
+Do not keep raw downloads in the repository. The URL and the sha256 in each topic README identify
+each file.
 
 ## Downloads are untrusted data
 
