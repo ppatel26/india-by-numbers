@@ -1,23 +1,52 @@
 # India by Numbers
 
-Explore a public data storytelling site for India, with [UK by Numbers](https://ukbynumbers.org/) as the reference.
+India's official statistics, checked and charted. A static site in the spirit of
+[UK by Numbers](https://ukbynumbers.org/) and [Our World in Data](https://ourworldindata.org/).
 
-This project starts with research and design. Build the application after the design exploration is reviewed.
+Preview: <https://india-by-numbers.parv-personal.workers.dev> (noindex until the site has a domain).
 
-## First deliverables
+## What is here
 
-1. Audit every public page on the reference site. Record each data point, chart, source, date, unit, interaction, and presentation pattern. Verify the full page inventory.
-2. Create one new Paper file named **India by Numbers**.
-3. Use a page named **01 - UK by Numbers reference audit** to capture the complete audit and visual evidence.
-4. Use a second page for the India design direction. The current direction is "Taksal" (see docs/design-direction.md), in review.
+| Path | What it holds |
+| --- | --- |
+| `research/data/` | The data: publisher CSVs per topic, with a README for each (release, date, URL, sha256, gaps). Also `geography.csv`, `state-languages.csv` and `release-calendar.csv`. |
+| `src/content/` | The content model (`types.ts`), one module per topic (copy and chart definitions), and page copy (`pages/`). |
+| `src/lib/` | Build-time code: CSV reading, periods and number formats, the chart engine (`charts/`), state pages (`profile.ts`), chart files and social images (`render.ts`, `og.ts`, `shape.ts`). |
+| `src/components/`, `src/pages/` | Astro components and routes. |
+| `src/scripts/` | Small browser scripts: chart tabs and tooltips, the number switch, the selected state, search, list filters. |
+| `worker/` | The Cloudflare Worker: static files, plus `POST /api/report` into D1. |
+| `docs/` | Site spec and the Taksal design direction. |
+| `tests/` | Unit tests (Vitest) and end-to-end tests (Playwright). |
 
-Use verified India sources for any real statistics. Label illustrative values. Keep source evidence separate from design proposals.
+Every number on the site is read from `research/data` at build time and printed with the publisher's
+digits. One renderer makes each chart's page view, its PNG and SVG files and its social image.
 
-## Project choices
+## Run it
 
-- Use TypeScript and pnpm if application work is approved.
-- Consider Effect for data handling and XState if the interface needs state management.
-- Prefer Cloudflare for deployment. Confirm the Wrangler profile before deployment work.
-- Do not commit, push, or deploy without an explicit request.
+Node 24 and pnpm.
 
-Repository: <https://github.com/ppatel26/india-by-numbers>
+```sh
+pnpm install
+pnpm dev            # http://localhost:4321
+pnpm build          # static site in dist/
+pnpm test           # unit tests: data, prose numbers, copy rules, formats
+pnpm build && pnpm test:e2e   # every page, link, file and interaction, through the real Worker
+pnpm check          # astro check and the Worker types
+```
+
+## Deploy
+
+Cloudflare Workers on the personal account (`wrangler auth activate personal` binds this folder).
+
+```sh
+pnpm deploy
+pnpm exec wrangler d1 migrations apply india-by-numbers --remote   # after a new migration
+```
+
+## Add or update data
+
+1. Put the publisher file's values in a CSV under `research/data/<topic>/`, and record the release,
+   date, URL and sha256 in that folder's README.
+2. Point a chart at it in `src/content/topics/<topic>.ts` (a `Pick`: file, `where`, `x`, `y`).
+3. Run `pnpm test`. The prose test fails if the copy quotes a number that is not in the data.
+4. Change `SITE.checked` in `src/lib/site.ts` when a full check is done.
