@@ -210,7 +210,7 @@ const topic: Topic = {
             format: { unit: '%' },
             callouts: [
               { series: 'base-2011-12', x: '1979-80' },
-              { series: 'base-2011-12', x: '2020-21', label: '-5.78%' },
+              { series: 'base-2011-12', x: '2020-21' },
             ],
             // LATER: the board also labels 7.8% in 2025-26; callouts at the right edge are cut off.
             series: [
@@ -494,8 +494,8 @@ const topic: Topic = {
             kind: 'line',
             slug: 'usd-inr-daily',
             title: 'The rupee in 2026, day by day',
-            subtitle: 'FBIL reference rate, rupees per US dollar, working days, 1 January to 17 November 2026. A higher line means a weaker rupee.',
-            punches: { office: 'FBIL', unit: '₹ per US$', period: '17 NOV 2026' },
+            subtitle: 'FBIL reference rate, rupees per US dollar, working days, 1 January to 18 November 2026. A higher line means a weaker rupee.',
+            punches: { office: 'FBIL', unit: '₹ per US$', period: '18 NOV 2026' },
             note: 'The rate for 17 November 2026 is as at 1:00 pm on the RBI home page.',
             sources: [FBIL_ARCHIVE, RBI_HOME],
             format: { unit: '₹', decimals: 2 },
@@ -506,7 +506,6 @@ const topic: Topic = {
             callouts: [
               { series: 'fbil', x: '2026-01-01' },
               { series: 'fbil', x: '2026-05-20' },
-              { series: 'fbil', x: '2026-11-17' },
             ],
             know: [
               'The FBIL reference rate is the benchmark rate for the rupee against the US dollar, set by Financial Benchmarks India each working day.',

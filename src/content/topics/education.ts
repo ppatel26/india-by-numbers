@@ -451,7 +451,7 @@ const topic: Topic = {
             slug: 'literacy-by-state',
             title: 'Literacy by state and UT, 2025 survey and 2011 Census',
             subtitle:
-              'Share of people aged 7 and over who can read and write, %, 36 states and UTs. Bars: 2025 survey estimate. Rings: 2011 Census count. The two are not joined.',
+              'Share of people aged 7 and over who can read and write, %, 36 states and UTs. Filled dots: 2025 survey estimate. Rings: 2011 Census count.',
             punches: { office: 'MoSPI', unit: '% 7+', period: '2025' },
             status: ['Survey estimate'],
             note: 'Telangana and Ladakh did not exist in 2011. * The 2011 Andhra Pradesh figure includes present Telangana, and Jammu and Kashmir includes Ladakh, so they do not compare with 2025. The 2011 Dadra and Nagar Haveli and Daman and Diu figure adds the two former UTs. India: 72.98% in 2011. Derived: Census 2011 rates are literates divided by the population aged 7 and over.',

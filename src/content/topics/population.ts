@@ -151,9 +151,9 @@ const topic: Topic = {
             kind: 'columns',
             title: "India's population at each census, 1901 to 2011",
             subtitle:
-              'Number of people counted, and change since the previous census (%), India, census years 1901 to 2011.',
+              'Number of people counted, India, census years 1901 to 2011.',
             punches: { office: 'ORGI', unit: 'persons', period: '1901-2011' },
-            note: 'Assam in 1981 and Jammu and Kashmir in 1991 had no census; ORGI gives interpolated figures. The 2001 total includes an estimate for three sub-divisions of Senapati district, Manipur.',
+            note: 'There has been no census since 2011. Census 2027 is under way, and its first results are not out yet. Assam in 1981 and Jammu and Kashmir in 1991 had no census; ORGI gives interpolated figures. The 2001 total includes an estimate for three sub-divisions of Senapati district, Manipur.',
             sources: [censusA02],
             format: { scale: 'crore' },
             y: { min: 0, step: 200000000 },

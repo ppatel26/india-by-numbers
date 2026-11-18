@@ -249,7 +249,7 @@ const topic: Topic = {
               {
                 key: '2001',
                 label: '2001',
-                color: 'slate',
+                color: 'other',
                 file: 'religion-culture/religion-india-2001-2011.csv',
                 where: { period: '2001' },
                 x: 'religion',

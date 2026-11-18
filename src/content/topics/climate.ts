@@ -315,11 +315,10 @@ const topic: Topic = {
             breaks: [
               { x: '2022-03-31', label: 'Off-grid renewables added' },
               { x: '2026-03-31', label: 'Plants on long outage removed' },
-              { x: '2026-10-31', label: '' },
             ],
             series: [
-              { key: 'coal', label: 'Coal and lignite', color: 'slate', file: CAPACITY, where: { geography: 'india', source: ['coal-incl-lignite', 'coal'] } },
-              { key: 'lignite', label: 'Coal and lignite', color: 'slate', file: CAPACITY, where: { geography: 'india', source: 'lignite' } },
+              { key: 'coal', label: 'Coal and lignite', color: 'other', file: CAPACITY, where: { geography: 'india', source: ['coal-incl-lignite', 'coal'] } },
+              { key: 'lignite', label: 'Coal and lignite', color: 'other', file: CAPACITY, where: { geography: 'india', source: 'lignite' } },
               { key: 'gas', label: 'Gas and diesel', color: 's6', file: CAPACITY, where: { geography: 'india', source: 'gas' } },
               { key: 'diesel', label: 'Gas and diesel', color: 's6', file: CAPACITY, where: { geography: 'india', source: 'diesel' } },
               { key: 'nuclear', label: 'Nuclear', color: 's3', file: CAPACITY, where: { geography: 'india', source: 'nuclear' } },
@@ -360,8 +359,8 @@ const topic: Topic = {
             y: { min: 0, max: 60, step: 10 },
             refs: [{ y: 50, label: 'Half of all capacity' }],
             series: [
-              { key: 'non-fossil', label: 'Non-fossil: nuclear, hydro and other renewables', color: 's4', file: 'climate/non-fossil-share-of-capacity-2014-2026.csv', where: { geography: 'india', series: 'non-fossil' } },
-              { key: 'wind-solar-other', label: 'Wind, solar and other renewables', color: 's2', file: 'climate/non-fossil-share-of-capacity-2014-2026.csv', where: { geography: 'india', series: 'wind-solar-other-re' } },
+              { key: 'non-fossil', label: 'Non-fossil', color: 's4', file: 'climate/non-fossil-share-of-capacity-2014-2026.csv', where: { geography: 'india', series: 'non-fossil' } },
+              { key: 'wind-solar-other', label: 'Wind, solar and others', color: 's8', file: 'climate/non-fossil-share-of-capacity-2014-2026.csv', where: { geography: 'india', series: 'wind-solar-other-re' } },
             ],
             know: [
               'Non-fossil capacity is nuclear, large hydro and renewable capacity, as a share of all installed capacity at utilities.',

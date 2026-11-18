@@ -344,7 +344,7 @@ const topic: Topic = {
             panels: [
               { label: 'Labour force participation', series: annualPanel('lfpr') },
               { label: 'Worker population ratio', series: annualPanel('wpr') },
-              { label: 'Unemployment rate', series: annualPanel('ur') },
+              { label: 'Unemployment rate', series: annualPanel('ur'), own: true },
             ],
             breaks: [{ x: '2022', label: 'Calendar years' }],
             know: [
@@ -475,7 +475,7 @@ const topic: Topic = {
               {
                 key: 'all-2022',
                 label: 'All workers, 2022',
-                color: 'slate',
+                color: 'other',
                 file: INDUSTRY,
                 where: { geography: 'india', period: '2022', sector: 'rural+urban', sex: 'person' },
               },
