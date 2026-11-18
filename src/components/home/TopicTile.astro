@@ -16,7 +16,7 @@ const p = pigments[topic.slug]
 const count = charts.filter((c) => c.topic.slug === topic.slug).length
 ---
 
-<li class:list={['tile', p.text === 'light' ? 'on-dark' : 'on-light']} style={`--ground:${p.hex}`}>
+<li class:list={['tile', p.text === 'light' ? 'on-dark' : 'on-light']} style={`--ground:${p.hex}`} data-jaali>
   <p class="label count">{count} charts</p>
   <Medallion topic={topic.slug} size={156} deep />
   <h3>
@@ -30,6 +30,7 @@ const count = charts.filter((c) => c.topic.slug === topic.slug).length
 <style>
   .tile {
     position: relative;
+    isolation: isolate;
     display: grid;
     grid-template-rows: auto 1fr auto auto auto;
     padding: 24px;
@@ -39,6 +40,33 @@ const count = charts.filter((c) => c.topic.slug === topic.slug).length
   }
   .on-light {
     color: var(--ink);
+  }
+  /*
+   * A jaali, like a carved stone screen, that the pointer lights up as it moves over the tile.
+   * The lattice is masked by a soft circle at the pointer (--mx, --my, set by the script below).
+   */
+  .tile::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+    border-radius: inherit;
+    background: currentColor;
+    opacity: 0;
+    mask:
+      url('/patterns/jaali.svg') 0 0 / 56px 56px repeat,
+      radial-gradient(circle 200px at var(--mx, 70%) var(--my, 30%), #000, transparent 72%);
+    mask-composite: intersect;
+    transition: opacity 320ms cubic-bezier(0.19, 1, 0.22, 1);
+    pointer-events: none;
+  }
+  .tile > :global(.medallion) {
+    transition: transform 420ms cubic-bezier(0.19, 1, 0.22, 1);
+  }
+  @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
+    .tile:hover::before {
+      opacity: 0.22;
+    }
   }
   .tile > :global(.medallion) {
     position: absolute;
@@ -87,3 +115,40 @@ const count = charts.filter((c) => c.topic.slug === topic.slug).length
     color: var(--on-light-dim);
   }
 </style>
+
+<script>
+  // Light the jaali under the pointer and tilt the medallion a little toward it. Hover only, and
+  // nothing for readers who ask for less motion.
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches
+  const still = matchMedia('(prefers-reduced-motion: reduce)').matches
+  if (fine && !still) {
+    for (const tile of document.querySelectorAll<HTMLElement>('[data-jaali]')) {
+      const medallion = tile.querySelector<HTMLElement>('.medallion')
+      let frame = 0
+      let last: PointerEvent | undefined
+      const paint = () => {
+        frame = 0
+        if (!last) return
+        const r = tile.getBoundingClientRect()
+        const x = last.clientX - r.left
+        const y = last.clientY - r.top
+        tile.style.setProperty('--mx', `${x}px`)
+        tile.style.setProperty('--my', `${y}px`)
+        if (medallion) {
+          const m = medallion.getBoundingClientRect()
+          const dx = (last.clientX - (m.left + m.width / 2)) / r.width
+          const dy = (last.clientY - (m.top + m.height / 2)) / r.height
+          medallion.style.transform = `perspective(700px) rotateY(${(dx * 14).toFixed(2)}deg) rotateX(${(-dy * 14).toFixed(2)}deg)`
+        }
+      }
+      tile.addEventListener('pointermove', (e) => {
+        last = e
+        if (!frame) frame = requestAnimationFrame(paint)
+      })
+      tile.addEventListener('pointerleave', () => {
+        last = undefined
+        if (medallion) medallion.style.transform = ''
+      })
+    }
+  }
+</script>

@@ -2,8 +2,10 @@
 /**
  * The home hero's background: a faint dot grid (pulli). As the pointer moves, rangoli bloom along
  * its path. Each one is a new design: a random symmetry and four to six rings drawn from petals,
- * teardrops, dots, scallops, diamonds, leaves, star lines and thin rings, in three colours from a
- * rangoli palette. Each unfurls ring by ring from the centre, turns slowly, holds, then fades.
+ * teardrops, dots, scallops, diamonds, leaves, stars, spokes, zigzags, veined petals, turned
+ * squares, kolam loops, crescents and dotted rings, in two or three colours from a rangoli palette.
+ * Sizes run from a speck to a doorstep design. Each opens ring by ring with a strong ease-out,
+ * turns slowly, holds briefly and fades.
  * A tap blooms one on a touch screen. Takes no clicks. Only the dot grid for readers who ask for
  * less motion.
  */
@@ -40,13 +42,13 @@ const palette = [
 <script>
   const TAU = Math.PI * 2
   const GAP = 30 // dot grid spacing, CSS px
-  const STRIDE = 118 // pointer travel between two rangoli, CSS px
-  const MAX = 14 // rangoli on screen at once
-  const STEP = 90 // ms between rings as a rangoli unfurls
-  const GROW = 520 // ms for one ring to open
-  const HOLD = 1500
-  const FADE = 1300
-  const PEAK = 0.74 // full opacity of a rangoli; the hero text stays readable over it
+  const STRIDE = 70 // pointer travel between two rangoli, CSS px
+  const MAX = 18 // rangoli on screen at once
+  const STEP = 45 // ms between rings as a rangoli unfurls
+  const GROW = 320 // ms for one ring to open (a strong ease-out, no overshoot)
+  const HOLD = 650
+  const FADE = 700
+  const PEAK = 0.78 // full opacity of a rangoli; the hero text stays readable over it
 
   type Ring = (ctx: CanvasRenderingContext2D) => void
   interface Rangoli { x: number; y: number; born: number; spin: number; turn: number; rings: Ring[] }
@@ -180,6 +182,105 @@ const palette = [
             }
           ctx.stroke()
         }
+      case 'spokes':
+        return (ctx) => {
+          // Rays from the inner ring to the outer, each tipped with a dot.
+          ctx.strokeStyle = s.fill
+          ctx.fillStyle = s.fill
+          ctx.lineWidth = 1.1
+          ctx.beginPath()
+          around(ctx, s.m, () => {
+            ctx.moveTo(s.r0, 0)
+            ctx.lineTo(s.r1 - 1.5, 0)
+          })
+          ctx.stroke()
+          ctx.beginPath()
+          around(ctx, s.m, () => {
+            ctx.moveTo(s.r1 + 1.4, 0)
+            ctx.arc(s.r1, 0, 1.4, 0, TAU)
+          })
+          ctx.fill()
+        }
+      case 'zigzag':
+        return (ctx) => {
+          // A closed zigzag between the two radii, like a border of triangles.
+          ctx.strokeStyle = s.fill
+          ctx.lineWidth = 1.3
+          ctx.beginPath()
+          const pts = s.m * 2
+          for (let i = 0; i <= pts; i++) {
+            const a = s.turn + (i * TAU) / pts
+            const r = i % 2 ? s.r1 : s.r0
+            if (i === 0) ctx.moveTo(Math.cos(a) * r, Math.sin(a) * r)
+            else ctx.lineTo(Math.cos(a) * r, Math.sin(a) * r)
+          }
+          ctx.stroke()
+        }
+      case 'veined':
+        return (ctx) => {
+          // Petals drawn in outline with a midrib, like a lotus in powder lines.
+          ctx.strokeStyle = s.fill
+          ctx.lineWidth = 1.2
+          ctx.beginPath()
+          around(ctx, s.n, () => {
+            const w = len * (s.wide + 0.05)
+            ctx.moveTo(s.r0, 0)
+            ctx.quadraticCurveTo(mid, -w, s.r1, 0)
+            ctx.quadraticCurveTo(mid, w, s.r0, 0)
+            ctx.moveTo(s.r0 + len * 0.15, 0)
+            ctx.lineTo(s.r1 - len * 0.2, 0)
+          })
+          ctx.stroke()
+        }
+      case 'squares':
+        return (ctx) => {
+          // Two or three squares, each turned a little further: the ashtadal frame.
+          const k = s.n % 3 === 0 ? 3 : 2
+          ctx.strokeStyle = s.fill
+          ctx.lineWidth = 1.2
+          ctx.beginPath()
+          for (let j = 0; j < k; j++)
+            for (let i = 0; i <= 4; i++) {
+              const a = s.turn + (j * Math.PI) / (2 * k) + (i * TAU) / 4 + Math.PI / 4
+              if (i === 0) ctx.moveTo(Math.cos(a) * s.r1, Math.sin(a) * s.r1)
+              else ctx.lineTo(Math.cos(a) * s.r1, Math.sin(a) * s.r1)
+            }
+          ctx.stroke()
+        }
+      case 'arcs':
+        return (ctx) => {
+          // Kolam loops: a line curling around each dot of a ring.
+          const r = Math.min(len * 0.45, ((Math.PI * mid) / s.m) * 0.55)
+          ctx.strokeStyle = s.fill
+          ctx.fillStyle = s.fill
+          ctx.lineWidth = 1.2
+          ctx.beginPath()
+          around(ctx, s.m, () => {
+            ctx.moveTo(mid + r * Math.cos(-2.4), r * Math.sin(-2.4))
+            ctx.arc(mid, 0, r, -2.4, 2.4)
+          })
+          ctx.stroke()
+          ctx.beginPath()
+          around(ctx, s.m, () => {
+            ctx.moveTo(mid + 1.3, 0)
+            ctx.arc(mid, 0, 1.3, 0, TAU)
+          })
+          ctx.fill()
+        }
+      case 'crescents':
+        return (ctx) => {
+          // Small moons facing outward.
+          const r = Math.min(len * 0.38, ((Math.PI * mid) / s.m) * 0.45)
+          ctx.fillStyle = s.fill
+          ctx.beginPath()
+          around(ctx, s.m, () => {
+            ctx.moveTo(mid + r, 0)
+            ctx.arc(mid, 0, r, 0, TAU)
+            ctx.moveTo(mid - r * 0.35 + r * 0.8, 0)
+            ctx.arc(mid - r * 0.35, 0, r * 0.8, 0, TAU, true)
+          })
+          ctx.fill('evenodd')
+        }
       default:
         return (ctx) => {
           ctx.strokeStyle = s.fill
@@ -197,14 +298,17 @@ const palette = [
   function design(rand: () => number, palette: readonly string[]): Ring[] {
     const pick = <T,>(xs: readonly T[]): T => xs[Math.floor(rand() * xs.length)]!
     const shuffle = <T,>(xs: readonly T[]): T[] => xs.map((x) => [rand(), x] as const).sort((a, b) => a[0] - b[0]).map((p) => p[1])
-    const n = pick([6, 8, 8, 10, 12, 12, 16])
-    const R = 34 + rand() * 38
-    const inks = shuffle(palette).slice(0, 3)
+    const n = pick([5, 6, 8, 8, 10, 12, 12, 16])
+    // Mostly small, some medium, a few large: from a speck of powder to a full doorstep design.
+    const size = rand()
+    const R = size < 0.5 ? 14 + rand() * 16 : size < 0.85 ? 30 + rand() * 30 : 60 + rand() * 50
+    const inks = shuffle(palette).slice(0, R < 30 ? 2 : 3)
     // One solid ring of petals or teardrops gives every design a body; the rest is chosen freely.
     const body = pick(['petals', 'teardrops'])
-    const rest = shuffle(['petals', 'teardrops', 'dots', 'scallops', 'diamonds', 'leaves', 'star', 'ring'].filter((k) => k !== body))
+    const all = ['petals', 'teardrops', 'dots', 'scallops', 'diamonds', 'leaves', 'star', 'ring', 'spokes', 'zigzag', 'veined', 'squares', 'arcs', 'crescents']
+    const rest = shuffle(all.filter((k) => k !== body))
     const kinds = [...rest.slice(0, 1), body, ...rest.slice(1)]
-    const count = 4 + Math.floor(rand() * 3)
+    const count = R < 30 ? 2 + Math.floor(rand() * 2) : R < 60 ? 3 + Math.floor(rand() * 3) : 5 + Math.floor(rand() * 3)
 
     const centre = pick(inks)
     const c0 = R * (0.08 + rand() * 0.06)
@@ -227,8 +331,8 @@ const palette = [
     return rings
   }
 
-  /** 0 to 1 with a small overshoot, so a ring springs open. */
-  const springOut = (t: number) => 1 + 2.5 * Math.pow(t - 1, 3) + 1.5 * Math.pow(t - 1, 2)
+  /** A strong ease-out (expo): each ring opens fast and settles, with no overshoot. */
+  const easeOut = (t: number) => (t >= 1 ? 1 : 1 - Math.pow(2, -10 * t))
 
   for (const canvas of document.querySelectorAll<HTMLCanvasElement>('[data-rangoli]')) {
     const palette = JSON.parse(canvas.dataset.rangoli!) as string[]
@@ -287,8 +391,10 @@ const palette = [
           const t = Math.min(1, Math.max(0, (age - j * STEP) / GROW))
           if (t <= 0) return
           ctx.save()
-          ctx.globalAlpha = PEAK * fade * Math.min(1, t * 1.6)
-          const k = springOut(t)
+          // The fade starts fast and settles (ease-out on its progress), like the entrance.
+          ctx.globalAlpha = PEAK * (1 - easeOut(1 - fade)) * Math.min(1, t * 2.2)
+          // Rings open from 60% of their size, never from nothing.
+          const k = 0.6 + 0.4 * easeOut(t)
           ctx.scale(k, k)
           paint(ctx)
           ctx.restore()
