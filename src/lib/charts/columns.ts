@@ -3,12 +3,12 @@ import type { Point } from '~/lib/data'
 import { svg, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
 import { WIDTH, frame, hit, xLabels, yGrid, yScale, yTicks, type Width } from './axes'
-import { seriesOf, show, type Of } from './model'
+import { drawn, show, type Of } from './model'
 import { timeNotes } from './notes'
 
 /** Columns over time. Series that share an x sit side by side, or stack when `stacked`. */
 export function renderColumns(chart: Of<'columns'>, width: Width): Markup {
-  const series = seriesOf(chart)
+  const series = drawn(chart)
   const narrow = width === 'narrow'
   const W = WIDTH[width]
   const H = narrow ? 260 : 340

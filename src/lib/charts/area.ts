@@ -3,11 +3,12 @@ import { area as d3area } from 'd3-shape'
 import { svg, attr, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
 import { WIDTH, frame, hit, spread, timeTicks, xLabels, yGrid, yScale, yTicks, type Width } from './axes'
-import { seriesOf, show, type Of } from './model'
+import { drawn, show, type Of } from './model'
+import { timeNotes } from './notes'
 
 /** Stacked areas: shares or parts of a total over time. Segments are split by 2 px white gaps. */
 export function renderArea(chart: Of<'area'>, width: Width): Markup {
-  const series = seriesOf(chart)
+  const series = drawn(chart)
   const narrow = width === 'narrow'
   const W = WIDTH[width]
   const H = narrow ? 280 : 380
@@ -29,6 +30,8 @@ export function renderArea(chart: Of<'area'>, width: Width): Markup {
     .y0((d) => y(d.lo))
     .y1((d) => y(d.hi))
 
+  const tOf = new Map(xs.map((p) => [p.x, p.t]))
+  const notes = timeNotes(chart, { xOf: (v) => (tOf.has(v) ? x(tOf.get(v)!) : undefined), y, top: m.top, bottom: H - m.bottom, series, endLabels: true })
   const areas = series.map(
     (s, i) => svg`<path d="${shape(stacks[i]!) ?? ''}" fill="${colorVar(s.color)}" stroke="var(--paper)" stroke-width="2" stroke-linejoin="round"/>`,
   )
@@ -60,7 +63,7 @@ export function renderArea(chart: Of<'area'>, width: Width): Markup {
     width,
     H,
     chart.title,
-    svg`${yGrid(y, yTicks(y, chart.y), m.left, W - m.right, chart.format)}${areas}
-${xLabels(timeTicks(xs, x, narrow ? 4 : 8), H - m.bottom)}${labels}<g class="hits">${hits}</g>`,
+    svg`${yGrid(y, yTicks(y, chart.y), m.left, W - m.right, chart.format)}${areas}${notes.under}
+${xLabels(timeTicks(xs, x, narrow ? 4 : 8), H - m.bottom)}${labels}${notes.over}<g class="hits">${hits}</g>`,
   )
 }

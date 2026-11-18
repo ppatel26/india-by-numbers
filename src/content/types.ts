@@ -51,6 +51,8 @@ export interface Series extends Pick {
   color: Color
   /** Dashed line: projections. */
   dash?: boolean
+  /** Read for figures and the table, but not drawn. */
+  hidden?: boolean
 }
 
 export interface Format {
@@ -62,6 +64,8 @@ export interface Format {
   signed?: boolean
   /** Multiply the published value first, for example 1000 for "thousand persons". */
   multiply?: number
+  /** Words after the number, for example ' mm' or ' years'. */
+  suffix?: string
   /** 'crore' and 'lakh' print 142.6 crore (and 1.43 billion in million mode). */
   scale?: 'crore' | 'lakh' | 'none'
 }
@@ -79,6 +83,12 @@ export interface Breakpoint {
   label: string
   /** Label for the side before the break, for example 'NSS 2014 survey'. */
   before?: string
+}
+
+/** A reference line at a value on the value axis. */
+export interface ValueRef {
+  value: number
+  label: string
 }
 
 /** A labelled point: value and period by default, or your own text. */
@@ -141,11 +151,12 @@ export type Chart =
       /** Colour each column by its sign, for example rainfall above or below normal. */
       sign?: { above: Color; below: Color; aboveLabel: string; belowLabel: string }
     })
-  | (ChartBase & {
-      kind: 'area'
-      series: readonly Series[]
-      y?: Axis
-    })
+  | (ChartBase &
+      TimeNotes & {
+        kind: 'area'
+        series: readonly Series[]
+        y?: Axis
+      })
   | (ChartBase & {
       /** One value per state and UT: ranked bars, tile map and table in one frame. */
       kind: 'states'
@@ -173,6 +184,8 @@ export type Chart =
       sortBy?: string
       /** Add a Map tab that colours this series (rows must be states). */
       map?: { series: string; scale?: 'seq' | 'div'; better?: 'high' | 'low' }
+      /** Vertical reference lines, for example the replacement level of 2.1. */
+      refs?: readonly ValueRef[]
     })
   | (ChartBase & {
       /** Horizontal bars by category. Several series are grouped, or stacked to 100. */
@@ -186,6 +199,8 @@ export type Chart =
       labels?: Readonly<Record<string, string>>
       /** Highlight one category with series-1, for example India's latest value. */
       highlight?: string
+      /** Vertical reference lines, for example "All items 6.09%". */
+      refs?: readonly ValueRef[]
     })
   | (ChartBase & {
       kind: 'pyramid'
@@ -214,6 +229,8 @@ export interface Figure {
   label: string
   /** Replaces the period punch, for example 'From 7 Oct 2026'. */
   period?: string
+  /** Replaces the chart's format, for a figure read from a hidden series in another unit. */
+  format?: Format
 }
 
 export type Block = { text: string } | { chart: Chart }

@@ -5,7 +5,7 @@ import { svg, attr, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
 import { parsePeriod } from '~/lib/period'
 import { WIDTH, frame, note, hit, spread, timeTicks, xLabels, yGrid, yScale, yTicks, type Width } from './axes'
-import { seriesOf, show, type Of, type SeriesData } from './model'
+import { drawn, show, type Of, type SeriesData } from './model'
 import { timeNotes } from './notes'
 
 /** Split a series where values are missing or the period step jumps, so gaps stay gaps. */
@@ -33,7 +33,7 @@ interface Panel {
 }
 
 export function renderLine(chart: Of<'line'>, width: Width): Markup {
-  const all = seriesOf(chart).map((s) => (chart.extendTo ? extend(s, chart.extendTo) : s))
+  const all = drawn(chart).map((s) => (chart.extendTo ? extend(s, chart.extendTo) : s))
   const panels: Panel[] = chart.panels
     ? chart.panels.map((p) => ({ label: p.label, series: all.filter((s) => p.series.includes(s.key)) }))
     : [{ series: all }]

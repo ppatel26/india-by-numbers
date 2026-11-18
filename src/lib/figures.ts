@@ -1,7 +1,7 @@
 /** Headline figures: one value read from a chart's data, with its hallmark. */
 import { placed } from '~/content'
 import type { Figure, Status } from '~/content/types'
-import type { Shown } from './format'
+import { formatNumber, type Shown } from './format'
 import { latest } from './data'
 import { seriesOf, show, statesOf, pointAt, type SeriesData } from './charts/model'
 
@@ -32,7 +32,7 @@ export function figureValue(f: Figure): FigureValue {
         })()
   if (!pt || pt.y === null) throw new Error(`${f.chart}: no value for the figure "${f.label}"`)
   return {
-    value: show(chart, pt),
+    value: f.format ? formatNumber(pt.y, f.format, pt.raw) : show(chart, pt),
     label: f.label,
     period: f.period ?? (chart.kind === 'states' ? chart.punches.period : pt.label),
     // A method break belongs to a series, not to one value.

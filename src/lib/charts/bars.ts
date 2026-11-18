@@ -1,13 +1,13 @@
 import { scaleLinear } from 'd3-scale'
 import { svg, attr, type Markup } from '~/lib/markup'
 import { colorVar, textOn } from '~/lib/tokens'
-import { WIDTH, frame, type Width } from './axes'
+import { WIDTH, frame, valueRefs, type Width } from './axes'
 import { legend, rowName } from './dots'
-import { seriesOf, show, type Of, type SeriesData } from './model'
+import { drawn, show, type Of, type SeriesData } from './model'
 
 /** Horizontal bars by category: one series, grouped series, or stacked to a total. */
 export function renderBars(chart: Of<'bars'>, width: Width): Markup {
-  const series = seriesOf(chart)
+  const series = drawn(chart)
   const narrow = width === 'narrow'
   const W = WIDTH[width]
   const val = (s: SeriesData, k: string) => s.points.find((p) => p.x === k)
@@ -55,5 +55,5 @@ ${w > v.text.length * 7 + 8 ? svg`<text x="${x0 + 4}" y="${y + rowH / 2 + 4}" fo
     })
     return svg`<g class="row" data-tip="${tip}">${label}${marks}</g>`
   })
-  return frame(width, H, chart.title, svg`${series.length > 1 ? legend(series) : null}${rows}`)
+  return frame(width, H, chart.title, svg`${series.length > 1 ? legend(series) : null}${rows}${valueRefs(chart.refs, x, m.top - 4, H - m.bottom)}`)
 }

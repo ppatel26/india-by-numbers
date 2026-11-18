@@ -9,6 +9,7 @@ export interface SeriesData {
   label: string
   color: Color
   dash?: boolean
+  hidden?: boolean
   points: Point[]
 }
 
@@ -30,9 +31,13 @@ const resolve = (chart: Chart, s: Series): SeriesData => {
     label: s.label,
     color: s.color,
     dash: s.dash,
+    hidden: s.hidden,
     points: points({ ...s, x }, category ? 'category' : 'time'),
   }
 }
+
+/** The series a chart draws: all but the hidden ones. */
+export const drawn = (chart: Chart): SeriesData[] => seriesOf(chart).filter((s) => !s.hidden)
 
 export function seriesOf(chart: Chart): SeriesData[] {
   switch (chart.kind) {

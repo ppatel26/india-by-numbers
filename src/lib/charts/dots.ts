@@ -2,8 +2,8 @@ import { scaleLinear } from 'd3-scale'
 import { INDIA, geoName, isPlace } from '~/lib/geography'
 import { svg, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
-import { FONT, WIDTH, frame, type Width } from './axes'
-import { seriesOf, show, type Of, type SeriesData } from './model'
+import { FONT, WIDTH, frame, valueRefs, type Width } from './axes'
+import { drawn, show, type Of, type SeriesData } from './model'
 
 /** Display name for a row key: a state slug, 'india', or a category as published. */
 export const rowName = (key: string): string => (key === INDIA || isPlace(key) ? geoName(key) : key)
@@ -21,7 +21,7 @@ export function legend(series: readonly SeriesData[], hollow: readonly string[] 
 
 /** Two or more values per row as dots on one line, sorted by the first series. */
 export function renderDots(chart: Of<'dots'>, width: Width): Markup {
-  const series = seriesOf(chart)
+  const series = drawn(chart)
   const narrow = width === 'narrow'
   const W = WIDTH[width]
   const hollow = chart.hollow ?? []
@@ -33,7 +33,8 @@ export function renderDots(chart: Of<'dots'>, width: Width): Markup {
   const m = { top: 40, right: 24, bottom: 28, left: narrow ? 118 : 200 }
   const H = m.top + keys.length * rowH + m.bottom
   const all = series.flatMap((s) => s.points.flatMap((p) => (p.y === null ? [] : [p.y])))
-  const x = scaleLinear().domain([Math.min(0, ...all), Math.max(...all)]).nice().range([m.left, W - m.right])
+  const refVals = (chart.refs ?? []).map((r) => r.value)
+  const x = scaleLinear().domain([Math.min(0, ...all, ...refVals), Math.max(...all, ...refVals)]).nice().range([m.left, W - m.right])
   const ticks = x.ticks(narrow ? 4 : 6)
 
   const grid = svg`${ticks.map((t) => svg`<line x1="${x(t)}" x2="${x(t)}" y1="${m.top - 6}" y2="${H - m.bottom}" stroke="var(--grid)"/>
@@ -55,5 +56,5 @@ ${vs.map((v) => {
   return svg`<circle cx="${x(v.p!.y!)}" cy="${y}" r="4.5" fill="${ring ? 'var(--paper)' : colorVar(v.s.color)}" stroke="${colorVar(v.s.color)}" stroke-width="1.5"/>`
 })}</g>`
   })
-  return frame(width, H, chart.title, svg`${legend(series, hollow)}${grid}${rows}`)
+  return frame(width, H, chart.title, svg`${legend(series, hollow)}${grid}${valueRefs(chart.refs, x, m.top - 6, H - m.bottom)}${rows}`)
 }

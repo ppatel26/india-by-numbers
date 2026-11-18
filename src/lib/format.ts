@@ -38,8 +38,8 @@ function scaled(n: number, scale: Format['scale']): Shown {
   throw new Error(`Unknown scale ${scale}`)
 }
 
-const withUnit = (s: string, unit: Format['unit']): string =>
-  unit === '₹' ? `₹${s}` : unit === 'pp' ? `${s} pp` : `${s}${unit ?? ''}`
+const withUnit = (s: string, unit: Format['unit'], suffix = ''): string =>
+  (unit === '₹' ? `₹${s}` : unit === 'pp' ? `${s} pp` : `${s}${unit ?? ''}`) + suffix
 
 /**
  * Format a value. Pass the published string as `raw` to keep the publisher's
@@ -49,13 +49,13 @@ export function formatNumber(value: number, fmt: Format = {}, raw?: string): Sho
   if (fmt.multiply) return formatNumber(value * fmt.multiply, { ...fmt, multiply: undefined })
   if (fmt.scale && fmt.scale !== 'none') {
     const s = scaled(value, fmt.scale)
-    return { text: withUnit(s.text, fmt.unit), alt: s.alt && withUnit(s.alt, fmt.unit) }
+    return { text: withUnit(s.text, fmt.unit, fmt.suffix), alt: s.alt && withUnit(s.alt, fmt.unit, fmt.suffix) }
   }
   const d = fmt.decimals ?? (raw ? decimalsOf(raw) : Math.min(2, decimalsOf(String(value))))
   const sign = value < 0 ? '-' : fmt.signed && value > 0 ? '+' : ''
   const a = Math.abs(value)
-  const text = withUnit(sign + grouped(a, d, indian), fmt.unit)
-  const alt = withUnit(sign + grouped(a, d, intl), fmt.unit)
+  const text = withUnit(sign + grouped(a, d, indian), fmt.unit, fmt.suffix)
+  const alt = withUnit(sign + grouped(a, d, intl), fmt.unit, fmt.suffix)
   return alt === text ? { text } : { text, alt }
 }
 

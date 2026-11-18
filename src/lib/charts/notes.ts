@@ -6,7 +6,7 @@ import { colorVar } from '~/lib/tokens'
 import { note as mono } from './axes'
 import { show, type SeriesData } from './model'
 
-type WithNotes = Extract<Chart, { kind: 'line' | 'columns' }>
+type WithNotes = Extract<Chart, { kind: 'line' | 'columns' | 'area' }>
 
 export interface NoteBox {
   /** Pixel x of an x value, or undefined when it is not on the axis. */

@@ -105,6 +105,12 @@ export function spread<T extends { y: number }>(items: T[], gap: number, lo: num
 export const note = (x: number, y: number, text: string, anchor: 'start' | 'middle' | 'end' = 'start', fill = 'var(--slate)'): Markup =>
   svg`<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="${FONT.mono}" font-size="10.5" fill="${fill}" paint-order="stroke" stroke="var(--paper)" stroke-width="3" stroke-linejoin="round">${text.toUpperCase()}</text>`
 
+/** Vertical reference lines across a horizontal value axis, with labels at the top. */
+export function valueRefs(refs: readonly { value: number; label: string }[] | undefined, x: (v: number) => number, top: number, bottom: number): Markup {
+  return svg`${(refs ?? []).map((r) => svg`<line x1="${x(r.value)}" x2="${x(r.value)}" y1="${top}" y2="${bottom}" stroke="var(--ink)" stroke-dasharray="3 3"/>
+${note(x(r.value) + 4, top + 10, r.label)}`)}`
+}
+
 /** An invisible hover target. The page script shows `tip` (lines split by "\n"). */
 export const hit = (x: number, y: number, w: number, h: number, tip: string): Markup =>
   svg`<rect class="hit" x="${x}" y="${y}" width="${Math.max(1, w)}" height="${Math.max(1, h)}" fill="transparent" data-tip="${tip}" tabindex="-1"/>`
