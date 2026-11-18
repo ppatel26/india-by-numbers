@@ -1,0 +1,254 @@
+/**
+ * The content model. Topic modules in src/content/topics/ are plain data in
+ * these shapes. Every number a reader sees comes from a CSV in research/data,
+ * picked by a `Pick`; prose may quote numbers, and tests/unit/prose.test.ts
+ * checks each one against the chart data.
+ */
+
+export const TOPICS = [
+  'population',
+  'prices',
+  'economy',
+  'jobs',
+  'health',
+  'education',
+  'elections',
+  'climate',
+  'religion-and-culture',
+] as const
+export type TopicSlug = (typeof TOPICS)[number]
+
+export type Status = 'Provisional' | 'Projection' | 'Survey estimate' | 'Method break'
+
+/** Chart colours. `ink` is India, `s1` the selected state. See src/styles/tokens.css. */
+export type Color = 'ink' | 'slate' | 'other' | 's1' | 's2' | 's3' | 's4' | 's5' | 's6' | 's7' | 's8'
+
+export interface Source {
+  publisher: string
+  release: string
+  /** Publisher release date: YYYY-MM-DD; YYYY-MM or YYYY when the publisher gives no day; or 'not stated'. */
+  released: string
+  url: string
+}
+
+/** Select rows from one CSV in research/data. */
+export interface Pick {
+  /** Path under research/data, for example 'prices/cpi-inflation-monthly.csv'. */
+  file: string
+  /** Keep rows where each column equals the value, or one of the values. */
+  where?: Record<string, string | readonly string[]>
+  /** Column that holds the x value. Default 'period'; 'geography' for by-state charts. */
+  x?: string
+  /** Column that holds the number. Default 'value'. */
+  y?: string
+  /** Column with the label to show for each x, when x is not the label (for example x 'mid_year', label 'period'). */
+  xLabel?: string
+}
+
+export interface Series extends Pick {
+  key: string
+  label: string
+  color: Color
+  /** Dashed line: projections. */
+  dash?: boolean
+}
+
+export interface Format {
+  /** Digits after the point. Default: as many as the data has, up to 2. */
+  decimals?: number
+  /** '%' prints 6.09%, '₹' prints ₹93.57, 'pp' prints 1.20 pp, '°C' prints 0.65°C. */
+  unit?: '%' | '₹' | 'pp' | '°C' | ''
+  /** Print a plus sign on positive values: +0.65°C. */
+  signed?: boolean
+  /** Multiply the published value first, for example 1000 for "thousand persons". */
+  multiply?: number
+  /** 'crore' and 'lakh' print 142.6 crore (and 1.43 billion in million mode). */
+  scale?: 'crore' | 'lakh' | 'none'
+}
+
+export interface Axis {
+  min?: number
+  max?: number
+  /** Distance between gridlines. */
+  step?: number
+}
+
+export interface Breakpoint {
+  /** The x value where the new method starts. */
+  x: string
+  label: string
+  /** Label for the side before the break, for example 'NSS 2014 survey'. */
+  before?: string
+}
+
+/** A labelled point: value and period by default, or your own text. */
+export interface Callout {
+  series: string
+  x: string
+  label?: string
+}
+
+/** Notes drawn on a time axis. */
+interface TimeNotes {
+  breaks?: readonly Breakpoint[]
+  /** Plain vertical markers, for example 'Today' or a survey change that is not a method break. */
+  markers?: readonly Breakpoint[]
+  /** Shaded x ranges, for example years that exclude a state. */
+  spans?: readonly { from: string; to: string; label: string }[]
+  callouts?: readonly Callout[]
+}
+
+interface ChartBase {
+  slug: string
+  title: string
+  subtitle: string
+  /** Hallmark punches: office, unit, period. */
+  punches: { office: string; unit: string; period: string }
+  status?: readonly Status[]
+  note?: string
+  sources: readonly Source[]
+  format?: Format
+  /** Chart page: "What you should know about this data". */
+  know?: readonly string[]
+  /** Chart page: "How we process this figure", in order. */
+  processing?: readonly string[]
+  /** YYYY-MM-DD, or 'not announced'. */
+  nextRelease?: string
+}
+
+export type Chart =
+  | (ChartBase &
+      TimeNotes & {
+        kind: 'line'
+        series: readonly Series[]
+        y?: Axis
+        /** Shaded range, for example the RBI tolerance band; `since` is the x where it starts. */
+        band?: { from: number; to: number; label: string; since?: string }
+        refs?: readonly { y: number; label: string }[]
+        /** Small multiples: one panel per group of series keys. */
+        panels?: readonly { label: string; series: readonly string[] }[]
+        /** Draw steps: a value holds until the next one (policy rates). */
+        step?: boolean
+        /** Hold the last value flat to this date (YYYY-MM-DD), for step lines. */
+        extendTo?: string
+      })
+  | (ChartBase &
+      TimeNotes & {
+      kind: 'columns'
+      series: readonly Series[]
+      y?: Axis
+      stacked?: boolean
+      /** Colour each column by its sign, for example rainfall above or below normal. */
+      sign?: { above: Color; below: Color; aboveLabel: string; belowLabel: string }
+    })
+  | (ChartBase & {
+      kind: 'area'
+      series: readonly Series[]
+      y?: Axis
+    })
+  | (ChartBase & {
+      /** One value per state and UT: ranked bars, tile map and table in one frame. */
+      kind: 'states'
+      data: Pick
+      /** The view that opens first. */
+      open?: 'map' | 'chart'
+      /** Map colours: 'seq' for size, 'div' for the gap from India. */
+      scale?: 'seq' | 'div'
+      /** Which end is better, for ranks on state pages. Omit when neither is. */
+      better?: 'high' | 'low'
+      /** Short label used on state pages, for example 'Inflation'. */
+      short: string
+      /** Fixed map bin edges, low to high, when the board sets them. */
+      bins?: readonly number[]
+    })
+  | (ChartBase & {
+      /** Several values per row, as dots on one line: two periods, or women and men. */
+      kind: 'dots'
+      series: readonly Series[]
+      /** Column that names the rows. Default 'geography'. */
+      by?: string
+      /** Hollow ring for these series keys (earlier periods). */
+      hollow?: readonly string[]
+      /** Sort rows by this series. Default: the first. */
+      sortBy?: string
+      /** Add a Map tab that colours this series (rows must be states). */
+      map?: { series: string; scale?: 'seq' | 'div'; better?: 'high' | 'low' }
+    })
+  | (ChartBase & {
+      /** Horizontal bars by category. Several series are grouped, or stacked to 100. */
+      kind: 'bars'
+      series: readonly Series[]
+      /** Column that names the categories. */
+      by: string
+      stacked?: boolean
+      /** Category order and display labels. Default: by value, high to low. */
+      order?: readonly string[]
+      labels?: Readonly<Record<string, string>>
+      /** Highlight one category with series-1, for example India's latest value. */
+      highlight?: string
+    })
+  | (ChartBase & {
+      kind: 'pyramid'
+      left: Series
+      right: Series
+      /** Column that holds the age group. */
+      by: string
+    })
+  | (ChartBase & {
+      kind: 'table'
+      data: Pick
+      /** Column that names the rows. */
+      by: string
+      columns: readonly { key: string; label: string; where?: Pick['where']; y?: string; format?: Format }[]
+    })
+
+export type ChartKind = Chart['kind']
+
+/** A headline figure. The value is read from the chart's data. */
+export interface Figure {
+  chart: string
+  /** Series key. Default: the first series, or India for 'states' charts. */
+  series?: string
+  /** x value. Default: the latest. */
+  x?: string
+  label: string
+  /** Replaces the period punch, for example 'From 7 Oct 2026'. */
+  period?: string
+}
+
+export type Block = { text: string } | { chart: Chart }
+
+export interface Part {
+  title: string
+  lede: string
+  blocks: readonly Block[]
+}
+
+export interface AboutTheData {
+  /** One paragraph above the six rows. */
+  intro?: string
+  publisher: string
+  frequency: string
+  revisions: string
+  breaks: string
+  coverage: string
+  missing: string
+}
+
+export interface Topic {
+  slug: TopicSlug
+  name: string
+  hindi: string
+  /** One plain question for the home and topics lists. */
+  question: string
+  standfirst: string
+  figures: readonly [Figure, Figure, Figure]
+  /** Meta strip, for example 'CPI for November 2026, expected 14 Dec 2026'. */
+  nextRelease: string
+  parts: readonly Part[]
+  about: AboutTheData
+  sources: readonly Source[]
+  related: readonly { label: string; href: string }[]
+  /** Short notes in the rail, under "Comparing", for example the Census 2027 note. */
+  rail?: readonly { title: string; body: string }[]
+}
