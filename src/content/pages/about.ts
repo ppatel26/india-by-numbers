@@ -86,7 +86,7 @@ const about: AboutPage = {
       body: [
         { text: 'Licence: text, charts and data files CC BY 4.0; code MIT. Publisher data stays under each publisher’s terms.', style: 'lead' },
         {
-          text: 'Use our charts, text and data files for any purpose. Credit "India by Numbers" and link to the page. Every PNG and SVG already carries the title, the hallmark and the source line, so the image keeps its provenance. The code that builds the site is open source under the MIT licence.',
+          text: 'You may reuse our charts, text and processed data files under CC BY 4.0. Credit "India by Numbers" and link to the page. The figures in them come from publishers, and each publisher\'s terms still apply to its own material. Every PNG and SVG already carries the title, the hallmark and the source line, so the image keeps its provenance. The code that builds the site is open source under the MIT licence.',
         },
         {
           text: `None of our ${sources.publishers.list.length} publishers states an open reuse licence. The Sources page shows the terms of each.`,

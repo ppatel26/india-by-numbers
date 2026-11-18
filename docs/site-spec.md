@@ -84,7 +84,7 @@ Footer: the one-line purpose, the licence in one sentence, links to Sources, Rel
 
 ## Topics for release 1
 
-Each topic gets a slug, a Taksal object (`docs/design-direction.md`) and parts in the UK style. The parts below are proposals. The data work in `research/data/` decide which charts each part can carry. Sources marked "to check" are not yet checked for reach, format, cadence or licence (`research/india-sources.md`).
+Each topic gets a slug, a Taksal object (`docs/design-direction.md`) and parts in the UK style. The parts below are proposals. The data work in `research/data/` decides which charts each part can carry. Sources marked "to check" are not yet checked for reach, format, cadence or licence (`research/india-sources.md`).
 
 | Topic | Slug | Proposed parts | Main sources |
 | --- | --- | --- | --- |
@@ -98,7 +98,7 @@ Each topic gets a slug, a Taksal object (`docs/design-direction.md`) and parts i
 | Climate | `climate` | How has India's temperature changed? The monsoon. Greenhouse gas emissions. Climate across the states. About the data. | IMD (to check), India's reports to the UNFCCC (to check) |
 | Religion and culture | `religion-and-culture` | Religion in India. Languages. Religion and language across the states. About the data. | Census of India (latest full count is 2011; Census 2027 counting runs to 4 Jan 2027) |
 
-Note: `docs/build-exploration.md` scoped the MVP at 6 topics. This spec adds Elections, Climate, and Religion and culture, as the brief asks. Confirm the scope before build.
+Note: `docs/build-exploration.md` scoped the MVP at 6 topics. Release 1 adds Elections, Climate, and Religion and culture, for 9 topics.
 
 ### Later
 
@@ -477,10 +477,7 @@ Use plain verbs instead: "see", "compare", "find", "shows", "rose", "fell".
 
 ## Open points
 
-1. Confirm the release 1 scope: 9 topics here against 6 in `docs/build-exploration.md`.
-2. Confirm the licence (CC BY 4.0 proposed) and each publisher's reuse terms.
-3. Confirm the legal position on India's boundary before any outline map or district map.
-4. Review the tile grid with the designers. Check each tile's neighbours.
-5. Confirm the correction and update targets (2, 7 and 5 working days).
-6. Native-speaker review of all Hindi labels.
-7. Confirm each topic's sources with the data work' results in `research/data/`.
+1. Confirm the legal position on India's boundary before any outline map or district map.
+2. Check each tile's neighbours on the tile grid.
+3. Confirm the correction and update targets (2, 7 and 5 working days).
+4. Get a native-speaker review of all Hindi labels.

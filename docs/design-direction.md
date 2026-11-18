@@ -1,6 +1,6 @@
 # Design direction: Taksal (टकसाल, the mint)
 
-Status: built. Page 03 of the Paper file holds the full site (24 boards) with real data; the live site follows it.
+Status: built. The design boards (24, with real data) live in a separate design file; the live site follows them.
 
 Reference: the "Assay" brand exploration by @Yaxbuzz, <https://x.com/Yaxbuzz/status/2122222435160474082> (16 Nov 2026).
 
@@ -22,7 +22,7 @@ The brand colour is lac (लाख), the resin India used for sealing wax on off
 8. No cards for figures or charts. Figures sit in ruled ledger rows. Charts sit on the white ground under a 1 px rule. A tooltip or bottom sheet may keep one shadow ring.
 9. Nothing decorates the hero. No guide circles or construction lines.
 
-## Tokens (in the Paper file)
+## Tokens
 
 | Role | Value |
 | --- | --- |
