@@ -11,6 +11,9 @@ describe('headline figures read a value from data', () => {
     ...home.newest.rows.map((r) => [`home: ${r.measure}`, { chart: r.chart, series: r.series, x: r.x, label: r.measure }] as const),
   ]
   it.each(figures)('%s', (_, f) => {
-    expect(figureValue(f).value.text).toMatch(/\d/)
+    const { text } = figureValue(f).value
+    expect(text).toMatch(/\d/)
+    // A count of a crore or more reads in crore or lakh, never as eight or more raw digits.
+    expect(text.replace(/[^\d.]/g, '').split('.')[0]!.length).toBeLessThan(8)
   })
 })

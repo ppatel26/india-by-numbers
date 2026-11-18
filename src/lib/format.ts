@@ -49,7 +49,7 @@ const withUnit = (s: string, unit: Format['unit'], suffix = ''): string =>
 export function formatNumber(value: number, fmt: Format = {}, raw?: string): Shown {
   if (fmt.multiply) return formatNumber(value * fmt.multiply, { ...fmt, multiply: undefined })
   if (fmt.scale && fmt.scale !== 'none') {
-    const s = scaled(value, fmt.scale)
+    const s = scaled(value, fmt.scale, fmt.decimals)
     return { text: withUnit(s.text, fmt.unit, fmt.suffix), alt: s.alt && withUnit(s.alt, fmt.unit, fmt.suffix) }
   }
   const d = fmt.decimals ?? (raw ? decimalsOf(raw) : Math.min(2, decimalsOf(String(value))))

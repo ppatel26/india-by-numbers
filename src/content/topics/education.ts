@@ -156,6 +156,7 @@ const topic: Topic = {
                 label: 'All levels, pre-primary to 12',
                 color: 'ink',
                 hidden: true,
+                format: { scale: 'crore', decimals: 2 },
                 file: TREND,
                 where: { indicator: 'enrolment', level: 'total (pre-primary to higher secondary)', period: NEW_YEARS },
               },

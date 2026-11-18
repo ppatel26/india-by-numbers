@@ -14,6 +14,7 @@ describe('formatNumber', () => {
     expect(formatNumber(1426000000, { scale: 'crore' })).toEqual({ text: '142.6 crore', alt: '1.43 billion' })
     expect(formatNumber(2500000, { scale: 'lakh' })).toEqual({ text: '25.0 lakh', alt: '2.50 million' })
     expect(formatNumber(1426000, { scale: 'crore', multiply: 1000 }).text).toBe('142.6 crore')
+    expect(formatNumber(247219766, { scale: 'crore', decimals: 2 })).toEqual({ text: '24.72 crore', alt: '247.22 million' })
   })
   it('signs and units', () => {
     expect(fmt(0.65, { unit: '°C', signed: true }, '0.65')).toBe('+0.65°C')

@@ -29,9 +29,9 @@ export interface FigureValue {
 
 export function figureValue(f: Figure): FigureValue {
   const { chart } = placed(f.chart)
-  const pt =
+  const { pt, s } =
     chart.kind === 'states'
-      ? statesOf(chart).india
+      ? { pt: statesOf(chart).india, s: undefined }
       : (() => {
           const all = seriesOf(chart)
           // Default: the series that reaches the latest period (the current base, not the old
@@ -39,11 +39,12 @@ export function figureValue(f: Figure): FigureValue {
           const rank = (x: SeriesData) => lastT(x) + (x.color === 'ink' ? 1e-6 : 0)
           const s = f.series ? all.find((x) => x.key === f.series) : all.toSorted((a, b) => rank(b) - rank(a))[0]
           if (!s) throw new Error(`${f.chart}: no series ${f.series}`)
-          return pointAt(s, f.x)
+          return { pt: pointAt(s, f.x), s }
         })()
   if (!pt || pt.y === null) throw new Error(`${f.chart}: no value for the figure "${f.label}"`)
   return {
-    value: f.format ? formatNumber(pt.y, f.format, pt.raw) : show(chart, pt),
+    // The figure takes its series' own format (enrolment in crore beside ratios), then the chart's.
+    value: f.format ? formatNumber(pt.y, f.format, pt.raw) : show(chart, pt, s),
     label: f.label,
     // A time chart's x is the period; for states and categories, the row's own period column is.
     period: f.period ?? (chart.kind === 'line' || chart.kind === 'columns' || chart.kind === 'area' ? pt.label : rowPeriod(pt.row.period) ?? chart.punches.period),
