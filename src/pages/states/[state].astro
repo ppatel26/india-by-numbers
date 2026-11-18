@@ -51,7 +51,7 @@ const src = (r: (typeof sections)[number]['rows'][number]) => {
       <h1 class="display">{place.name}</h1>
       <p class="names">
         {place.hindi && <span class="native" lang="hi">{place.hindi}</span>}
-        {place.native && place.native.name !== place.hindi && <span class="native" title={place.native.language}>{place.native.name}</span>}
+        {place.native && place.native.name !== place.hindi && <span class="native" title={place.native.language} lang={place.native.lang} dir={place.native.rtl ? 'rtl' : undefined}>{place.native.name}</span>}
       </p>
       {lede && <p class="lede">{lede}</p>}
       <p class="label muted on">{profile.onThisPage(sections.length)}</p>

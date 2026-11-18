@@ -20,8 +20,10 @@ export interface Place {
   col: number
   row: number
   hindi?: string
+  /** Official languages, as the state's language law names them. */
+  official: readonly string[]
   /** The name in the state's own official language, when that is not English. */
-  native?: { name: string; language: string; script: string }
+  native?: { name: string; language: string; script: string; lang: string; rtl: boolean }
 }
 
 /** [slug, short label, code, column, row]. Row 1 is the north, column 1 the west. */
@@ -66,6 +68,12 @@ const TILES: readonly (readonly [string, string, string, number, number])[] = [
 
 export const GRID = { cols: 8, rows: 7 } as const
 
+/** BCP 47 codes, so browsers and screen readers read each name in its own language. */
+const LANG_CODES: Readonly<Record<string, string>> = {
+  Assamese: 'as', Bengali: 'bn', Gujarati: 'gu', Hindi: 'hi', Kannada: 'kn', Konkani: 'gom', Malayalam: 'ml',
+  Manipuri: 'mni', Marathi: 'mr', Nepali: 'ne', Odia: 'or', Punjabi: 'pa', Tamil: 'ta', Telugu: 'te', Urdu: 'ur',
+}
+
 function load(): Place[] {
   const langFile = 'state-languages.csv'
   const langs = existsSync(join(DATA_DIR, langFile)) ? rows(langFile) : []
@@ -83,8 +91,9 @@ function load(): Place[] {
       col: tile[3],
       row: tile[4],
       hindi: lang?.hindi_name || undefined,
+      official: lang?.official_languages?.split(';').filter(Boolean) ?? [],
       native: lang?.native_name
-        ? { name: lang.native_name, language: lang.display_language!, script: lang.script! }
+        ? { name: lang.native_name, language: lang.display_language!, script: lang.script!, lang: LANG_CODES[lang.display_language!] ?? 'und', rtl: lang.script === 'Arabic' }
         : undefined,
     }
   })

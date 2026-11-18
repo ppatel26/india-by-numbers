@@ -64,7 +64,11 @@ const groups = [
             {g.list.map((p) => (
               <li data-words={`${p.name} ${p.hindi ?? ''} ${p.native?.name ?? ''} ${p.code}`.toLowerCase()}>
                 <a href={`/states/${p.slug}/`}>{p.name}</a>
-                <span class="native muted">{p.native?.name ?? p.hindi}</span>
+                {p.native ? (
+                  <span class="native muted" lang={p.native.lang} dir={p.native.rtl ? 'rtl' : undefined}>{p.native.name}</span>
+                ) : (
+                  <span class="official muted">Official: {p.official.join(', ')}</span>
+                )}
               </li>
             ))}
           </ul>
@@ -213,13 +217,26 @@ const groups = [
   #uts ul {
     columns: 1;
   }
+  /* Name, then the name in the state's own script under it: one left edge for every script. */
   .lists li {
-    display: flex;
-    justify-content: space-between;
-    gap: 12px;
-    padding-block: 8px;
+    display: grid;
+    gap: 2px;
+    padding-block: 10px;
     border-bottom: 1px solid var(--rule);
     break-inside: avoid;
+  }
+  .lists .native {
+    font-size: 16px;
+    line-height: 1.6;
+    text-align: left;
+  }
+  .lists .official {
+    font-size: 14px;
+    line-height: 1.8;
+  }
+  .lists .native:lang(ur) {
+    font-size: 15px;
+    line-height: 2;
   }
   .lists li a {
     font-weight: 600;
