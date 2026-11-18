@@ -243,7 +243,9 @@ QLAB = {"Q1": "Jan-Mar", "Q2": "Apr-Jun", "Q3": "Jul-Sep", "Q4": "Oct-Dec"}
 qrows = {}
 old = [("qb-2019-jul-sep.txt", "PLFS Quarterly Bulletin Jul-Sep 2019, Statement 5"),
        ("qb-2020-jul-sep.txt", "PLFS Quarterly Bulletin Jul-Sep 2020, Statement 5"),
+       ("qb-2021-apr-jun.txt", "PLFS Quarterly Bulletin Apr-Jun 2021, Statement 5"),
        ("qbpn-2021-oct-dec.txt", "PLFS Quarterly Bulletin Oct-Dec 2021 press note, Statement 3"),
+       ("qb-2022-jan-mar.txt", "PLFS Quarterly Bulletin Jan-Mar 2022, Statement 5"),
        ("qb-2023-jan-mar.txt", "PLFS Quarterly Bulletin Jan-Mar 2023, Statement 5"),
        ("qb-2024-apr-jun.txt", "PLFS Quarterly Bulletin Apr-Jun 2024, Statement 5"),
        ("qb-2024-oct-dec.txt", "PLFS Quarterly Bulletin Oct-Dec 2024, Statement 5")]
