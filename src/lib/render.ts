@@ -72,18 +72,8 @@ ${src.el}
   )
 }
 
-/**
- * Hanken Grotesk has no ₹, and resvg moves a whole line to the first font that has every glyph,
- * which is Geist Mono. A sans line that carries a ₹ is set in Noto Sans Devanagari instead: a
- * clean sans with the sign. Mono lines keep Geist Mono, which has it.
- */
-const rupeeLines = (s: string): string =>
-  s.replace(/<(text|tspan)\b([^>]*)>([^<]*₹)/g, (m, tag: string, attrs: string, content: string) =>
-    attrs.includes('Geist') ? m : `<${tag}${attrs.replace(/\sfont-family="[^"]*"/, '')} font-family="Noto Sans Devanagari">${content}`,
-  )
-
 export function toPng(svgText: string, width: number): Buffer {
-  const r = new Resvg(rupeeLines(svgText), {
+  const r = new Resvg(svgText, {
     fitTo: { mode: 'width', value: width },
     font: { fontFiles, loadSystemFonts: false, defaultFontFamily: 'Hanken Grotesk' },
     background: '#FFFFFF',
