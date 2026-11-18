@@ -100,12 +100,24 @@ export function ranked(data: StateData): StateValue[] {
   return [...has.sort((a, b) => b.pt!.y! - a.pt!.y!), ...none]
 }
 
-/** Rank of a state among those with data. `better` decides which end is 1st. */
-export function rankOf(data: StateData, slug: string, better: 'high' | 'low' = 'high'): { rank: number; of: number } | undefined {
-  const order = ranked(data).filter((v) => v.pt?.y != null)
-  if (better === 'low') order.reverse()
-  const i = order.findIndex((v) => v.place.slug === slug)
-  return i < 0 ? undefined : { rank: i + 1, of: order.length }
+/** Where a state stands among those with data: its rank from the top and from the bottom. Equal values share a rank. */
+export interface Standing {
+  top: number
+  bottom: number
+  of: number
+  joint: boolean
+}
+
+export function standing(data: StateData, slug: string): Standing | undefined {
+  const ys = data.values.flatMap((v) => (v.pt?.y != null ? [v.pt.y] : []))
+  const me = data.values.find((v) => v.place.slug === slug)?.pt?.y
+  if (me == null) return undefined
+  return {
+    top: ys.filter((y) => y > me).length + 1,
+    bottom: ys.filter((y) => y < me).length + 1,
+    of: ys.length,
+    joint: ys.filter((y) => y === me).length > 1,
+  }
 }
 
 export const show = (chart: Chart, pt: Point): Shown => formatNumber(pt.y!, chart.format, pt.raw)

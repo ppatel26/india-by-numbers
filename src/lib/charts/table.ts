@@ -1,10 +1,11 @@
 /** Every chart's values as a table: the Table view and the CSV download. */
+import { csvFormatRows } from 'd3-dsv'
 import type { Chart } from '~/content/types'
 import { select, toNumber, type Point } from '~/lib/data'
 import { decimalsOf, fmt, formatNumber, type Shown } from '~/lib/format'
 import { INDIA } from '~/lib/geography'
 import { rowName } from './dots'
-import { gapFormat, rankOf, seriesOf, show, statesOf, type Of } from './model'
+import { gapFormat, seriesOf, show, standing, statesOf, type Of } from './model'
 
 export interface Cell {
   shown: Shown
@@ -63,7 +64,8 @@ function statesTable(chart: Of<'states'>): TableModel {
     rows: rows.map((r) => {
       const has = r.pt && r.pt.y !== null
       const gap = has && india?.y != null && r.key !== INDIA ? +(r.pt!.y! - india.y).toFixed(d) : null
-      const rank = r.key === INDIA ? undefined : rankOf(data, r.key, chart.better ?? 'high')
+      const st = r.key === INDIA ? undefined : standing(data, r.key)
+      const rank = st && { rank: chart.better === 'low' ? st.bottom : st.top }
       return {
         key: r.key,
         head: r.head,
@@ -97,13 +99,11 @@ function plainTable(chart: Of<'table'>): TableModel {
   }
 }
 
-const csvCell = (s: string) => (/[",\n]/.test(s) ? `"${s.replace(/"/g, '""')}"` : s)
-
 /** The displayed data as CSV, with the source on every row. */
 export function tableCsv(chart: Chart): string {
   const t = tableOf(chart)
   const src = chart.sources[0]
   const head = [...t.columns, 'unit', 'source', 'released']
   const lines = t.rows.map((r) => [r.head, ...r.cells.map((c) => c.raw), chart.punches.unit, src ? `${src.publisher}, ${src.release}` : '', src?.released ?? ''])
-  return [head, ...lines].map((l) => l.map(csvCell).join(',')).join('\n') + '\n'
+  return csvFormatRows([head, ...lines]) + '\n'
 }

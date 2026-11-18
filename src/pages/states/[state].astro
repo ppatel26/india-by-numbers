@@ -1,6 +1,7 @@
 ---
 /** One state or UT beside India, on every topic. Built for all 36 from the topic charts. */
 import Base from '~/layouts/Base.astro'
+import Crumbs from '~/components/Crumbs.astro'
 import StateSelect from '~/components/StateSelect.astro'
 import TileNav from '~/components/TileNav.astro'
 import TopicTag from '~/components/TopicTag.astro'
@@ -48,7 +49,7 @@ const src = (r: (typeof sections)[number]['rows'][number]) => {
 <Base title={`${place.name}: figures beside India`} description={standfirst ?? `${place.name} beside India on prices, jobs, health, education and more.`} imageAlt={`${place.name} beside India`} pageState={place.slug}>
   <header class="wrap head">
     <div class="intro">
-      <p class="label muted"><a href="/">Home</a> / <a href="/states/">States</a> / {place.name}</p>
+      <Crumbs trail={[['States', '/states/']]} current={place.name} />
       <p class="label kind">{kind}</p>
       <h1 class="display">{place.name}</h1>
       <p class="names">
@@ -283,13 +284,8 @@ const src = (r: (typeof sections)[number]['rows'][number]) => {
     gap: 2px;
   }
   tbody th {
-    font: 400 15px/21px var(--font-ui);
-    letter-spacing: 0;
-    text-transform: none;
-    color: var(--ink);
-    text-align: left;
-    padding: 14px 12px 14px 0;
-    border-bottom: 1px solid var(--rule);
+    font-size: 15px;
+    line-height: 21px;
   }
   tbody th a {
     font-weight: 600;

@@ -33,6 +33,8 @@ export interface CorrectionsPage {
     intro: string
     fields: { page: FormField; problem: FormField; source: FormField; email: FormField }
     submit: string
+    /** After the form is sent: success, or a problem we could not store. */
+    status: { sent: string; error: string }
     links: { report: string; contact: string }
   }
 }
@@ -64,6 +66,10 @@ const corrections: CorrectionsPage = {
       email: { label: 'Your email (optional)', placeholder: 'So we can reply', optional: true },
     },
     submit: 'Send report',
+    status: {
+      sent: 'Thank you. We have your report and will check it against the source.',
+      error: 'We could not send the report. Say in a few words what looks wrong, then try again.',
+    },
     // DECIDE: the board gives no target for "Contact". copy: no placeholder email.
     links: { report: 'Report a problem', contact: 'Contact' },
   },

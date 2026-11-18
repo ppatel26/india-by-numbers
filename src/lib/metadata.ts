@@ -1,6 +1,6 @@
 /** What a chart is, where it comes from and how to cite it: the chart page and its JSON file. */
 import type { Placed } from '~/content'
-import { seriesOf, statesOf } from './charts/model'
+import { byState, seriesOf, statesOf } from './charts/model'
 import { formatDate } from './period'
 import { SITE } from './site'
 import { releasedText } from './sources'
@@ -17,9 +17,9 @@ export function dateRange(p: Placed): string {
 }
 
 export function geographyOf(p: Placed): string {
-  const { chart } = p
-  if (chart.kind === 'states') {
-    const d = statesOf(chart)
+  const s = byState(p.chart)
+  if (s) {
+    const d = statesOf(s)
     const n = d.values.filter((v) => v.pt?.y != null).length
     return `${n} states and UTs${d.india ? ', and India' : ''}`
   }

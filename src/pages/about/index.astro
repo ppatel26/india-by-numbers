@@ -9,7 +9,7 @@ const HREF: Readonly<Record<string, string>> = { 'Report a problem': '/correctio
 ---
 
 <Base title={page.title} description={page.intro}>
-  <PageHeader breadcrumb={page.breadcrumb} title={page.title} hindi={page.hindi} intro={page.intro} />
+  <PageHeader title={page.title} hindi={page.hindi} intro={page.intro} />
 
   <div class="wrap list">
     {page.sections.map((s) => {

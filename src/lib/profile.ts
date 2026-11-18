@@ -6,7 +6,7 @@ import { placed } from '~/content'
 import profile, { type MeasureRow } from '~/content/pages/state-profile'
 import type { TopicSlug } from '~/content/types'
 import { select, type Point } from './data'
-import { byState, show, statesOf, type Of, type StateData } from './charts/model'
+import { byState, show, standing, statesOf, type Of, type StateData } from './charts/model'
 import { place } from './geography'
 import { formatDate, longPeriod } from './period'
 
@@ -39,17 +39,10 @@ export function measureChart(spec: MeasureRow): Of<'states'> {
 
 /** Rank from the nearer end: "3rd highest" or "5th lowest". Ties share a rank. */
 export function rankIn(data: StateData, slug: string): Rank | undefined {
-  const vals = data.values.flatMap((v) => (v.pt?.y != null ? [{ slug: v.place.slug, y: v.pt.y }] : []))
-  const me = vals.find((v) => v.slug === slug)
-  if (!me) return undefined
-  const top = vals.filter((v) => v.y > me.y).length + 1
-  const bottom = vals.filter((v) => v.y < me.y).length + 1
-  const joint = vals.filter((v) => v.y === me.y).length > 1
-  return top <= bottom ? { n: top, of: vals.length, dir: 'highest', joint } : { n: bottom, of: vals.length, dir: 'lowest', joint }
+  const st = standing(data, slug)
+  if (!st) return undefined
+  return st.top <= st.bottom ? { n: st.top, of: st.of, dir: 'highest', joint: st.joint } : { n: st.bottom, of: st.of, dir: 'lowest', joint: st.joint }
 }
-
-/** Rank from the top, for sentences that say "7th highest". */
-const fromTop = (data: StateData, y: number): number => data.values.filter((v) => v.pt?.y != null && v.pt.y > y).length + 1
 
 export const rankText = (r: Rank): string => profile.rank({ rank: r.n, of: r.of, direction: r.dir, joint: r.joint })
 
@@ -104,7 +97,7 @@ export function sentence(topic: TopicSlug, slug: string, rows: readonly Row[]): 
     }
     case 'economy':
       if (!a.rank || !b?.value) return undefined
-      return s.economy({ state, value: v, period: periodOf(a.chart), rank: fromTop(a.data, a.value.y!), of: a.rank.of, growth: text(b, b.value), indiaGrowth: text(b, b.data.india) })
+      return s.economy({ state, value: v, period: periodOf(a.chart), rank: standing(a.data, slug)!.top, of: a.rank.of, growth: text(b, b.value), indiaGrowth: text(b, b.data.india) })
     case 'population': {
       const lower = beyond(a, 'below')
       const lowerVals = new Set(lower.map((l) => a.data.values.find((x) => x.place.slug === l)!.pt!.raw))
@@ -139,7 +132,7 @@ export function sentence(topic: TopicSlug, slug: string, rows: readonly Row[]): 
       return s.elections({ state, value: v, india })
     case 'climate':
       if (!a.rank) return undefined
-      return s.climate({ state, value: v, date: periodOf(a.chart), rank: fromTop(a.data, a.value.y!), of: a.rank.of })
+      return s.climate({ state, value: v, date: periodOf(a.chart), rank: standing(a.data, slug)!.top, of: a.rank.of })
     case 'religion-and-culture': {
       const tongue = rows.at(-1)
       if (!tongue?.value) return undefined

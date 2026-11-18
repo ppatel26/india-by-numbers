@@ -7,6 +7,7 @@ export const SITE = {
   checked: '2026-11-17',
   licence: 'Licence: CC BY 4.0. Publisher data stays under each publisher’s terms.',
   repo: 'https://github.com/ppatel26/india-by-numbers',
+  searchPlaceholder: 'Search charts, topics and states',
 } as const
 
 /**

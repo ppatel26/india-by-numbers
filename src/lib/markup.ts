@@ -30,9 +30,6 @@ export function svg(strings: TemplateStringsArray, ...values: Value[]): Markup {
   return new Markup(out)
 }
 
-/** Same tag, for HTML fragments. */
-export const html = svg
-
 /** Optional attribute: attr('data-alt', alt) -> ` data-alt="..."` or nothing. */
 export const attr = (name: string, value: string | number | undefined | null): Markup =>
   new Markup(value === undefined || value === null || value === '' ? '' : ` ${name}="${part(value)}"`)

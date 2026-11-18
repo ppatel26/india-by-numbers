@@ -1,4 +1,5 @@
 ---
+import Crumbs from '../Crumbs.astro'
 import Emblem from '../Emblem.astro'
 import FigureValue from '../FigureValue.astro'
 import type { Topic } from '~/content/types'
@@ -15,7 +16,7 @@ const pigment = pigments[topic.slug]
 <header class:list={['hero', pigment.text === 'light' ? 'on-dark' : 'on-light']} style={`--ground:${pigment.hex}`}>
   <div class="wrap inner">
     <div class="text">
-      <p class="label crumb"><a href="/topics/">Topics</a> / {topic.name}</p>
+      <Crumbs trail={[['Topics', '/topics/']]} current={topic.name} />
       <h1 class="display title">
         {topic.name} <span class="deva" lang="hi">{topic.hindi}</span>
       </h1>
@@ -44,8 +45,8 @@ const pigment = pigments[topic.slug]
     min-height: 320px;
     padding-block: 24px 28px;
   }
-  .crumb a {
-    text-decoration: none;
+  .hero :global(.crumbs) {
+    color: inherit;
   }
   .title {
     margin-top: 10px;

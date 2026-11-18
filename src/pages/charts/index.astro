@@ -1,5 +1,6 @@
 ---
 import Base from '~/layouts/Base.astro'
+import PageHeader from '~/components/PageHeader.astro'
 import TopicTag from '~/components/TopicTag.astro'
 import { charts, topics } from '~/content'
 import { dateRange } from '~/lib/metadata'
@@ -8,15 +9,12 @@ const kinds: Record<string, string> = { line: 'Line', columns: 'Columns', area: 
 ---
 
 <Base title="All charts" description={`Every chart has a table, a source and a CSV. ${charts.length} charts.`}>
-  <header class="wrap head">
-    <p class="label muted"><a href="/">Home</a> / All charts</p>
-    <h1 class="display">All charts</h1>
-    <p class="lede">Every chart has a table, a source and a CSV.</p>
+  <PageHeader title="All charts" intro="Every chart has a table, a source and a CSV.">
     <label class="filter">
       <span class="visually-hidden">Filter charts</span>
       <input type="search" placeholder={`Filter ${charts.length} charts`} data-filter=".chart-list li" />
     </label>
-  </header>
+  </PageHeader>
   <div class="wrap">
     {topics.map((t) => (
       <section aria-labelledby={`t-${t.slug}`}>
@@ -40,21 +38,7 @@ const kinds: Record<string, string> = { line: 'Line', columns: 'Columns', area: 
 </Base>
 
 <style>
-  .head {
-    padding-block: 40px 24px;
-  }
-  .head a {
-    text-decoration: none;
-  }
-  h1 {
-    margin-top: 16px;
-    font-size: clamp(40px, 5vw, 64px);
-  }
-  .lede {
-    margin-top: 12px;
-  }
   .filter input {
-    margin-top: 24px;
     width: min(420px, 100%);
     padding: 10px 14px;
     font: 400 16px var(--font-ui);

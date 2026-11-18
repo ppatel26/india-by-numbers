@@ -28,8 +28,11 @@ export function parsePeriod(s: string, yyMm: 'month' | 'span' = guessYyMm(s)): P
   if ((m = s.match(/^(\d{4})$/))) return { kind: 'year', t: +m[1]!, label: s }
   if ((m = s.match(/^(\d{4})-(\d{2})$/)) && yyMm === 'month')
     return { kind: 'month', t: +m[1]! + (+m[2]! - 1) / 12, label: `${month(m[2]!)} ${m[1]}` }
-  if ((m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/)))
-    return { kind: 'day', t: +m[1]! + (+m[2]! - 1) / 12 + (+m[3]! - 1) / 365, label: formatDate(s) }
+  if ((m = s.match(/^(\d{4})-(\d{2})-(\d{2})$/))) {
+    const y = +m[1]!
+    const start = Date.UTC(y, 0, 1)
+    return { kind: 'day', t: y + (Date.UTC(y, +m[2]! - 1, +m[3]!) - start) / (Date.UTC(y + 1, 0, 1) - start), label: formatDate(s) }
+  }
   if ((m = s.match(/^(\d{4})-(\d{2})$/))) return { kind: 'span', t: +m[1]!, label: s }
   if ((m = s.match(/^(\d{4})-(\d{2}) Q([1-4])$/)))
     return { kind: 'fy-quarter', t: +m[1]! + 0.25 * +m[3]!, label: `Q${m[3]} ${m[1]}-${m[2]}` }

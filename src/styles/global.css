@@ -183,7 +183,7 @@ p {
   line-height: 22px;
 }
 
-.ruled th {
+.ruled thead th {
   font: 400 11px/16px var(--font-mono);
   letter-spacing: 0.08em;
   text-transform: uppercase;
@@ -194,10 +194,16 @@ p {
   vertical-align: bottom;
 }
 
-.ruled td {
+.ruled td,
+.ruled tbody th {
   padding: 12px 12px 12px 0;
   border-bottom: 1px solid var(--rule);
   vertical-align: top;
+  text-align: left;
+}
+
+.ruled tbody th {
+  font-weight: 400;
 }
 
 .ruled td.num,
@@ -205,11 +211,11 @@ p {
   text-align: right;
 }
 
-.on-dark .ruled th {
+.on-dark .ruled thead th {
   color: var(--silver-dim);
-  border-color: var(--kajal-rule);
 }
 
+.on-dark .ruled th,
 .on-dark .ruled td {
   border-color: var(--kajal-rule);
 }

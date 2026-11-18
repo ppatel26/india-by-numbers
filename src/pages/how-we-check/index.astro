@@ -16,7 +16,7 @@ const punchClass = ['office', 'unit', 'seal', 'period'] as const
 ---
 
 <Base title={page.title} description={page.intro}>
-  <PageHeader breadcrumb={page.breadcrumb} title={page.title} hindi={page.hindi} intro={page.intro}>
+  <PageHeader title={page.title} hindi={page.hindi} intro={page.intro}>
     <p class="label muted">{page.checked}</p>
   </PageHeader>
 
@@ -275,12 +275,8 @@ const punchClass = ['office', 'unit', 'seal', 'period'] as const
   .statuses th[scope='row'] {
     width: 34%;
     font: 600 15px/22px var(--font-ui);
-    letter-spacing: 0;
-    text-transform: none;
-    color: var(--ink);
     text-align: left;
     padding: 20px 24px 20px 0;
-    border-bottom: 1px solid var(--rule);
     vertical-align: top;
   }
   .statuses td {
@@ -340,11 +336,7 @@ const punchClass = ['office', 'unit', 'seal', 'period'] as const
   .revised th[scope='row'],
   .targets th[scope='row'] {
     font: 400 15px/22px var(--font-ui);
-    letter-spacing: 0;
-    text-transform: none;
-    color: var(--ink);
     padding: 14px 12px 14px 0;
-    border-bottom: 1px solid var(--rule);
     vertical-align: top;
   }
   .revised td,

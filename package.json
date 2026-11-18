@@ -9,8 +9,8 @@
   "scripts": {
     "dev": "astro dev",
     "build": "astro build",
-    "preview": "wrangler dev",
-    "check": "astro check && tsc --noEmit",
+    "preview": "wrangler dev --port 8788",
+    "check": "astro check && tsc --noEmit -p worker",
     "test": "vitest run",
     "test:e2e": "playwright test",
     "deploy": "pnpm build && wrangler deploy"

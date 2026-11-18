@@ -74,6 +74,7 @@ test('Report a problem stores the report and says so', async ({ page }) => {
   await page.getByLabel(/what looks wrong/i).fill('The October value looks off by one decimal.')
   await page.getByRole('button', { name: /send|report|submit/i }).click()
   await expect(page).toHaveURL(/sent=1/)
+  await expect(page.getByRole('status').filter({ hasText: 'Thank you' })).toBeVisible()
 })
 
 test('pages fit a phone screen without sideways scrolling @mobile', async ({ page, isMobile }) => {

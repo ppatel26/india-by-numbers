@@ -9,7 +9,7 @@ const { fields } = form
 ---
 
 <Base title={page.eyebrow} description={policy.body}>
-  <PageHeader breadcrumb={page.eyebrow} title={page.heading} />
+  <PageHeader title={page.heading} />
 
   <div class="wrap body">
     <div class="left">
@@ -38,6 +38,8 @@ const { fields } = form
     <section class="report" id="report" aria-labelledby="report-title">
       <h2 id="report-title">{form.heading}</h2>
       <p class="muted intro">{form.intro}</p>
+      <p class="status" role="status" data-report-status="sent" hidden>{form.status.sent}</p>
+      <p class="status error" role="alert" data-report-status="error" hidden>{form.status.error}</p>
       <form action="/api/report" method="post">
         <label class="field">
           <span class="label muted">{fields.page.label}</span>
@@ -46,7 +48,7 @@ const { fields } = form
         <p class="muted hint" id="page-hint">{fields.page.hint}</p>
         <label class="field">
           <span class="label muted">{fields.problem.label}</span>
-          <textarea name="problem" rows="3" required placeholder={fields.problem.placeholder}></textarea>
+          <textarea name="problem" rows="3" required minlength="5" placeholder={fields.problem.placeholder}></textarea>
         </label>
         <div class="pair">
           <label class="field">
@@ -72,7 +74,9 @@ const { fields } = form
 </Base>
 
 <script>
-  const slug = new URLSearchParams(location.search).get('chart')
+  const query = new URLSearchParams(location.search)
+  for (const el of document.querySelectorAll<HTMLElement>('[data-report-status]')) el.hidden = !query.has(el.dataset.reportStatus!)
+  const slug = query.get('chart')
   const input = document.querySelector<HTMLInputElement>('[data-report-page]')
   if (input && slug && /^[a-z0-9-]+$/.test(slug)) input.value = `/charts/${slug}/`
 </script>
@@ -110,6 +114,15 @@ const { fields } = form
     top: 0;
     bottom: 0;
     border-left: 1px solid var(--rule);
+  }
+  .status {
+    margin-top: 16px;
+    padding: 12px 14px;
+    background: var(--band);
+    border-left: 3px solid var(--s4);
+  }
+  .status.error {
+    border-color: var(--s1);
   }
   .report h2 {
     font: 600 20px/28px var(--font-ui);

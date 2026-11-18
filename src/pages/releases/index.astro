@@ -12,7 +12,7 @@ const [all, ...kinds] = changeLog.filters.kinds
 ---
 
 <Base title={page.title} description={page.intro}>
-  <PageHeader breadcrumb={page.breadcrumb} title={page.title} hindi={page.hindi} intro={page.intro}>
+  <PageHeader title={page.title} hindi={page.hindi} intro={page.intro}>
     <p class="label muted meta"><a href="/releases/feed.xml">{page.feed}</a> <span>{page.checked}</span></p>
   </PageHeader>
 
@@ -138,9 +138,6 @@ const [all, ...kinds] = changeLog.filters.kinds
   }
   .ruled tbody th {
     font: 400 16px/24px var(--font-ui);
-    letter-spacing: 0;
-    text-transform: none;
-    color: var(--ink);
     text-align: left;
     padding: 16px 12px 16px 0;
     border-bottom: 1px solid var(--rule);

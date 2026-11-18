@@ -1,0 +1,23 @@
+---
+/** "Home / States / Tamil Nadu": links for every step but the current page. */
+interface Props {
+  /** Steps between Home and the current page: [label, href]. */
+  trail?: readonly (readonly [string, string])[]
+  current: string
+}
+const { trail = [], current } = Astro.props
+---
+
+<nav class="label muted crumbs" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  {trail.map(([label, href]) => <> / <a href={href}>{label}</a></>)} / <span aria-current="page">{current}</span>
+</nav>
+
+<style>
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+</style>

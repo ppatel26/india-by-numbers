@@ -4,6 +4,8 @@
  * state (data-page-state on <main>) without changing the saved choice; the
  * home page shows data-default-state until the reader picks one.
  */
+import { load, save } from './store'
+
 const KEY = 'ibn:state'
 
 function apply(slug: string): void {
@@ -21,10 +23,9 @@ document.addEventListener('change', (e) => {
   if (nav) location.href = `/states/${nav.value}/`
   const s = (e.target as Element).closest<HTMLSelectElement>('[data-state-select]')
   if (!s) return
-  localStorage.setItem(KEY, s.value)
   apply(s.value)
+  save(KEY, s.value)
 })
 
 const main = document.querySelector<HTMLElement>('main')?.dataset
-apply(main?.pageState ?? localStorage.getItem(KEY) ?? main?.defaultState ?? '')
-export {}
+apply(main?.pageState ?? load(KEY) ?? main?.defaultState ?? '')

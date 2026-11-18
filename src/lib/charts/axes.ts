@@ -14,13 +14,6 @@ export const FONT = {
   mono: "'Geist Mono', ui-monospace, monospace",
 } as const
 
-export interface Margin {
-  top: number
-  right: number
-  bottom: number
-  left: number
-}
-
 export function frame(width: Width, height: number, label: string, body: Markup | Markup[]): Markup {
   const w = WIDTH[width]
   const inner = svg`${body}`

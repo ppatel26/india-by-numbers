@@ -1,5 +1,6 @@
 ---
 import Base from '~/layouts/Base.astro'
+import PageHeader from '~/components/PageHeader.astro'
 import states from '~/content/pages/states'
 import { placed } from '~/content'
 import { renderTiles } from '~/lib/charts/states'
@@ -20,11 +21,7 @@ const groups = [
 ---
 
 <Base title={states.title} description={states.intro}>
-  <header class="wrap head">
-    <p class="label muted"><a href="/">Home</a> / States</p>
-    <h1 class="display">{states.title} <span class="deva" lang="hi">{states.hindi}</span></h1>
-    <p class="lede">{states.intro.replace(/ The map below shows one measure: .*$/, '')}</p>
-  </header>
+  <PageHeader title={states.title} hindi={states.hindi} intro={states.intro} />
 
   <section class="wrap" aria-label="Map">
     <label class="switch">
@@ -87,7 +84,6 @@ const groups = [
         <div><dt><strong>{c.heading}</strong></dt><dd>{c.body}</dd></div>
       ))}
     </dl>
-    <p><a href="/how-we-check/#geography"><strong>{states.boundaries.link}</strong></a></p>
     <table class="ruled cover">
       <thead>
         <tr>
@@ -115,25 +111,6 @@ const groups = [
 </script>
 
 <style>
-  .head {
-    padding-block: 40px 24px;
-  }
-  .head a {
-    text-decoration: none;
-  }
-  h1 {
-    margin-top: 16px;
-    font-size: clamp(40px, 5vw, 64px);
-  }
-  h1 .deva {
-    display: block;
-    font-size: 0.5em;
-    margin-top: 6px;
-    color: var(--slate);
-  }
-  .lede {
-    margin-top: 16px;
-  }
   .switch {
     display: inline-grid;
     max-width: 100%;

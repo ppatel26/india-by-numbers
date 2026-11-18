@@ -1,5 +1,5 @@
 /** The site's content: topics in order, and every chart with its place on its topic page. */
-import { TOPICS, type Chart, type Figure, type Part, type Topic, type TopicSlug } from './types'
+import { TOPICS, type Chart, type Part, type Topic, type TopicSlug } from './types'
 
 const modules = import.meta.glob<{ default: Topic }>('./topics/*.ts', { eager: true })
 
@@ -43,10 +43,6 @@ export function placed(slug: string): Placed {
   if (!c) throw new Error(`No chart "${slug}"`)
   return c
 }
-
-export const hasChart = (slug: string): boolean => bySlug.has(slug)
-
-export const figureChart = (f: Figure): Placed => placed(f.chart)
 
 /** Anchor id for a part on its topic page. */
 export const partId = (partNo: number): string => `part-${partNo}`

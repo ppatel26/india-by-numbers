@@ -2,16 +2,16 @@
 /** Search results. src/scripts/search.ts reads ?q= and fills the list from /search.json. */
 import Base from '~/layouts/Base.astro'
 import PageHeader from '~/components/PageHeader.astro'
-import chrome from '~/content/pages/chrome'
+import { SITE } from '~/lib/site'
 import topicsPage from '~/content/pages/topics'
 ---
 
-<Base title="Search" description={chrome.searchPlaceholder}>
-  <PageHeader breadcrumb="Home / Search" title="Search">
+<Base title="Search" description={SITE.searchPlaceholder}>
+  <PageHeader title="Search">
     <form class="box" action="/search/" method="get" role="search" aria-label="Search results">
-      <label class="visually-hidden" for="page-q">{chrome.searchPlaceholder}</label>
+      <label class="visually-hidden" for="page-q">{SITE.searchPlaceholder}</label>
       <svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.5"></path></svg>
-      <input id="page-q" name="q" type="search" placeholder={chrome.searchPlaceholder} autocomplete="off" />
+      <input id="page-q" name="q" type="search" placeholder={SITE.searchPlaceholder} autocomplete="off" />
       <button type="submit">Search</button>
     </form>
   </PageHeader>

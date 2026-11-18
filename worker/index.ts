@@ -14,15 +14,21 @@ const back = (url: URL, status: 'sent' | 'error') => Response.redirect(new URL(`
 
 async function report(request: Request, env: Env): Promise<Response> {
   const url = new URL(request.url)
-  const form = await request.formData()
+  const form = await request.formData().catch(() => null)
+  if (!form) return back(url, 'error')
   // Bots fill the hidden "website" field; people never see it.
   if (String(form.get('website') ?? '') !== '') return back(url, 'sent')
   const value = (f: Field) => String(form.get(f) ?? '').trim().slice(0, LIMITS[f])
   const problem = value('problem')
   if (problem.length < 5) return back(url, 'error')
-  await env.DB.prepare('INSERT INTO reports (page, problem, source, email, created_at) VALUES (?, ?, ?, ?, ?)')
-    .bind(value('page'), problem, value('source'), value('email'), new Date().toISOString())
-    .run()
+  try {
+    await env.DB.prepare('INSERT INTO reports (page, problem, source, email, created_at) VALUES (?, ?, ?, ?, ?)')
+      .bind(value('page'), problem, value('source'), value('email'), new Date().toISOString())
+      .run()
+  } catch (e) {
+    console.error('report not stored', e)
+    return back(url, 'error')
+  }
   return back(url, 'sent')
 }
 

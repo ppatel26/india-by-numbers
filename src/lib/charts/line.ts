@@ -8,24 +8,25 @@ import { WIDTH, frame, note, hit, spread, timeTicks, xLabels, yGrid, yScale, yTi
 import { drawn, show, type Of, type SeriesData } from './model'
 import { timeNotes } from './notes'
 
-/** Split a series where values are missing or the period step jumps, so gaps stay gaps. */
-export function segments(pts: readonly Point[]): Point[][] {
+/**
+ * Split a series where values are missing, and (for regular series) where the
+ * period step jumps, so gaps stay gaps. Step series, such as policy rates, change
+ * at irregular dates and are never split by spacing.
+ */
+export function segments(pts: readonly Point[], regular = true): Point[][] {
   const steps = pts.slice(1).map((p, i) => p.t - pts[i]!.t).sort((a, b) => a - b)
   const typical = steps[Math.floor(steps.length / 2)] ?? 1
   const out: Point[][] = [[]]
   pts.forEach((p, i) => {
     const prev = pts[i - 1]
-    if (p.y === null || (prev && p.t - prev.t > typical * 1.8)) out.push([])
+    if (p.y === null || (regular && prev && p.t - prev.t > typical * 1.8)) out.push([])
     if (p.y !== null) out.at(-1)!.push(p)
   })
   return out.filter((s) => s.length > 0)
 }
 
-/** Ranges where a series has no data inside its span: [last value before, first value after]. */
-function holes(pts: readonly Point[]): [Point, Point][] {
-  const segs = segments(pts)
-  return segs.slice(1).map((s, i) => [segs[i]!.at(-1)!, s[0]!])
-}
+/** Ranges with no data inside a series: [last value before, first value after]. */
+const holes = (segs: readonly Point[][]): [Point, Point][] => segs.slice(1).map((s, i) => [segs[i]!.at(-1)!, s[0]!])
 
 interface Panel {
   label?: string
@@ -91,8 +92,9 @@ ${note(bandX0 + 6, y(band.to) + 14, band.label)}`
 ${note(W - m.right - 4, y(r.y) - 5, r.label, 'end')}`,
   )
 
-  const lines = panel.series.map((s) =>
-    segments(s.points).map((seg) =>
+  const segs = panel.series.map((s) => segments(s.points, !chart.step))
+  const lines = panel.series.map((s, i) =>
+    segs[i]!.map((seg) =>
       seg.length === 1
         ? svg`<circle cx="${x(seg[0]!.t)}" cy="${y(seg[0]!.y!)}" r="2.5" fill="${colorVar(s.color)}"/>`
         : svg`<path d="${path(seg) ?? ''}" fill="none" stroke="${colorVar(s.color)}" stroke-width="${s.color === 'ink' ? 2 : 1.75}" stroke-linejoin="round"${attr('stroke-dasharray', s.dash ? '5 4' : undefined)}/>`,
@@ -100,7 +102,7 @@ ${note(W - m.right - 4, y(r.y) - 5, r.label, 'end')}`,
   )
 
   // "No data" under a hole in the first series, when the hole is wide enough to label.
-  const noData = (panel.series[0] ? holes(panel.series[0].points) : [])
+  const noData = (segs[0] ? holes(segs[0]) : [])
     .filter(([a, b]) => x(b.t) - x(a.t) > 50)
     .map(([a, b]) => note((x(a.t) + x(b.t)) / 2, H - m.bottom - 6, 'No data', 'middle'))
 

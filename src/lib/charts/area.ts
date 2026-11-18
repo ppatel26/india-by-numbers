@@ -1,5 +1,5 @@
 import { scaleLinear } from 'd3-scale'
-import { area as d3area } from 'd3-shape'
+import { area as d3area, stack, type SeriesPoint } from 'd3-shape'
 import { svg, attr, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
 import { WIDTH, frame, hit, spread, timeTicks, xLabels, yGrid, yScale, yTicks, type Width } from './axes'
@@ -14,21 +14,15 @@ export function renderArea(chart: Of<'area'>, width: Width): Markup {
   const H = narrow ? 280 : 380
   const m = { top: 16, right: narrow ? 96 : 170, bottom: 30, left: 48 }
   const xs = [...new Map(series.flatMap((s) => s.points).map((p) => [p.x, p])).values()].sort((a, b) => a.t - b.t)
-  const value = (key: string, x: string) => series.find((s) => s.key === key)?.points.find((p) => p.x === x)?.y ?? 0
-
-  // Cumulative bottoms and tops, in series order (first series at the bottom).
-  const stacks = series.map((s, i) =>
-    xs.map((p) => {
-      const lo = series.slice(0, i).reduce((a, o) => a + value(o.key, p.x), 0)
-      return { t: p.t, lo, hi: lo + value(s.key, p.x) }
-    }),
-  )
+  // One row per period; a missing part counts as zero so the stack stays closed.
+  const table = xs.map((p) => ({ t: p.t, ...Object.fromEntries(series.map((s) => [s.key, s.points.find((q) => q.x === p.x)?.y ?? 0])) }))
+  const stacks = stack<Record<string, number>>().keys(series.map((s) => s.key))(table as Record<string, number>[])
   const x = scaleLinear().domain([xs[0]!.t, xs.at(-1)!.t]).range([m.left, W - m.right])
-  const y = yScale(stacks.at(-1)!.map((v) => v.hi), [H - m.bottom, m.top], chart.y)
-  const shape = d3area<{ t: number; lo: number; hi: number }>()
-    .x((d) => x(d.t))
-    .y0((d) => y(d.lo))
-    .y1((d) => y(d.hi))
+  const y = yScale(stacks.at(-1)!.map((d) => d[1]), [H - m.bottom, m.top], chart.y)
+  const shape = d3area<SeriesPoint<Record<string, number>>>()
+    .x((d) => x(d.data.t!))
+    .y0((d) => y(d[0]))
+    .y1((d) => y(d[1]))
 
   const tOf = new Map(xs.map((p) => [p.x, p.t]))
   const notes = timeNotes(chart, { xOf: (v) => (tOf.has(v) ? x(tOf.get(v)!) : undefined), y, top: m.top, bottom: H - m.bottom, series, endLabels: true })
@@ -39,7 +33,7 @@ export function renderArea(chart: Of<'area'>, width: Width): Markup {
   const labels = spread(
     series.map((s, i) => {
       const top = stacks[i]!.at(-1)!
-      return { s, y: y((top.lo + top.hi) / 2) }
+      return { s, y: y((top[0] + top[1]) / 2) }
     }),
     28,
     m.top,

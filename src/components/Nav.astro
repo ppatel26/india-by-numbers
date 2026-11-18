@@ -3,6 +3,7 @@ import Wordmark from './Wordmark.astro'
 import NumberSwitch from './NumberSwitch.astro'
 import { charts, topics } from '~/content'
 import { places } from '~/lib/geography'
+import { SITE } from '~/lib/site'
 
 const links = [
   ['Topics', '/topics/'],
@@ -28,7 +29,7 @@ const placeholder = `Search ${charts.length} charts, ${topics.length} topics and
     <form class="search" action="/search/" method="get" role="search">
       <label class="visually-hidden" for="nav-q">Search</label>
       <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.5"></path></svg>
-      <input id="nav-q" name="q" type="search" placeholder="Search charts, topics and states" title={placeholder} autocomplete="off" data-search />
+      <input id="nav-q" name="q" type="search" placeholder={SITE.searchPlaceholder} title={placeholder} autocomplete="off" data-search />
     </form>
     <NumberSwitch class="in-bar" />
     <details class="menu">
@@ -82,6 +83,10 @@ const placeholder = `Search ${charts.length} charts, ${topics.length} topics and
     border: 1px solid var(--rule);
     border-radius: 20px;
     color: var(--slate);
+  }
+  .search:focus-within {
+    outline: 2px solid var(--s5);
+    outline-offset: 2px;
   }
   .search input {
     flex: 1;

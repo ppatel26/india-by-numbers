@@ -1,16 +1,17 @@
 ---
 /** The head of an index or about page: breadcrumb, title, Hindi title, intro. The slot sits at the right of the intro. */
+import Crumbs from './Crumbs.astro'
+
 interface Props {
-  breadcrumb: string
   title: string
   hindi?: string
   intro?: string
 }
-const { breadcrumb, title, hindi, intro } = Astro.props
+const { title, hindi, intro } = Astro.props
 ---
 
 <header class="wrap head">
-  <p class="label muted">{breadcrumb}</p>
+  <Crumbs current={title} />
   <h1 class="display">{title} {hindi && <span class="deva muted" lang="hi">{hindi}</span>}</h1>
   <div class="row">
     {intro && <p class="lede">{intro}</p>}

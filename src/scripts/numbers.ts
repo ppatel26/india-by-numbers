@@ -2,6 +2,8 @@
  * The number switch. Every element with data-alt holds the other form of its
  * number; switching swaps text and data-alt. The choice is kept per browser.
  */
+import { load, save } from './store'
+
 type Mode = 'indian' | 'intl'
 const KEY = 'ibn:numbers'
 let mode: Mode = 'indian'
@@ -22,9 +24,8 @@ document.addEventListener('click', (e) => {
   const b = (e.target as Element).closest<HTMLButtonElement>('[data-numbers]')
   if (!b) return
   const next = b.dataset.numbers as Mode
-  localStorage.setItem(KEY, next)
   apply(next)
+  save(KEY, next)
 })
 
-if (localStorage.getItem(KEY) === 'intl') apply('intl')
-export {}
+if (load(KEY) === 'intl') apply('intl')
