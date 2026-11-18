@@ -22,8 +22,8 @@ const HREF: Readonly<Record<string, string>> = { 'Report a problem': '/correctio
             {s.hindi && <span class="deva muted" lang="hi">{s.hindi}</span>}
           </h2>
           <div class="text">
-            {links.length > 0 && <p class="link-row">{links.map((l) => <a href={HREF[l]}>{l}</a>)}</p>}
             {s.body.map((p) => <p class={p.style}>{p.text}</p>)}
+            {links.length > 0 && <p class="link-row">{links.map((l) => <a href={HREF[l]}>{l}</a>)}</p>}
           </div>
         </section>
       )
