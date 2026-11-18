@@ -5,7 +5,7 @@ import ChartFrame from '~/components/ChartFrame.astro'
 import StateSelect from '~/components/StateSelect.astro'
 import TopicTag from '~/components/TopicTag.astro'
 import { charts, partId, type Placed } from '~/content'
-import { citation, dateRange, geographyOf, latestSource, nextReleaseText, picksOf } from '~/lib/metadata'
+import { citation, dateRange, geographyOf, latestSource, nextReleaseText } from '~/lib/metadata'
 import { formatDate } from '~/lib/period'
 import { SITE } from '~/lib/site'
 import { releasedText } from '~/lib/sources'
@@ -34,17 +34,6 @@ const related = [
   ...charts.filter((c) => c.topic === topic && c.part === placed.part && c !== placed),
   ...charts.filter((c) => c.topic === topic && c.part !== placed.part),
 ].slice(0, 4)
-const files = [
-  ...(chart.kind === 'table'
-    ? []
-    : [
-        ['Image (PNG)', 'Title, hallmark, status and source line on the image.', `/charts/${chart.slug}.png`],
-        ['Vector graphic (SVG)', 'For print and editing. Same title and source line.', `/charts/${chart.slug}.svg`],
-      ]),
-  ['Displayed data (CSV)', 'The values in this chart, with unit and source on every row.', `/charts/${chart.slug}.csv`],
-  ...[...new Set(picksOf(chart).map((p) => p.file))].map((f) => ['Full data (CSV)', `The whole file this chart reads: ${f}.`, `/data/${f}`]),
-  ['Metadata (JSON)', 'Source, release date, unit, status, notes and processing steps.', `/charts/${chart.slug}.json`],
-] as const
 
 ---
 
@@ -59,17 +48,6 @@ const files = [
     )}
     <ChartFrame chart={chart} page periods={placed.periods} />
 
-    <section aria-labelledby="files">
-      <h2 class="display" id="files">Download</h2>
-      <ul class="files">
-        {files.map(([name, about, href]) => (
-          <li>
-            <a href={href} download><strong>{name}</strong></a>
-            <span class="muted">{about}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
 
     <section aria-labelledby="about">
       <h2 class="display" id="about">About this data</h2>
@@ -85,7 +63,7 @@ const files = [
 
     {chart.know && chart.know.length > 0 && (
       <section aria-labelledby="know">
-        <h2 class="display" id="know">About this data</h2>
+        <h2 class="display" id="know">What to know</h2>
         <ul class="prose bullets">{chart.know.map((k) => <li>{k}</li>)}</ul>
       </section>
     )}
@@ -168,15 +146,6 @@ const files = [
     font-size: clamp(26px, 3vw, 32px);
     margin-bottom: 24px;
   }
-  .files {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 0 32px;
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  .files li,
   .related li {
     display: grid;
     gap: 2px;
@@ -245,7 +214,6 @@ const files = [
     font-weight: 600;
   }
   @media (max-width: 720px) {
-    .files,
     .related {
       grid-template-columns: 1fr;
     }

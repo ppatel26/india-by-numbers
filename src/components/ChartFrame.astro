@@ -11,6 +11,7 @@ import type { PeriodLink } from '~/content'
 import { openView, renderPlot, viewsOf, type View } from '~/lib/charts'
 import { timelineOf } from '~/lib/charts/model'
 import { sourceLine } from '~/lib/sources'
+import { picksOf } from '~/lib/metadata'
 
 interface Props {
   chart: Chart
@@ -32,6 +33,8 @@ const Heading = page ? 'h1' : 'h3'
 const href = `/charts/${chart.slug}/`
 // The month-by-month map shows on the chart's own page only, to keep topic pages light.
 const steps = page && chart.kind === 'states' ? timelineOf(chart) : []
+// The chart page also links the whole source files and the metadata.
+const full = page ? [...new Set(picksOf(chart).map((p) => p.file))] : []
 ---
 
 <figure class="chart" id={chart.slug} data-chart={chart.slug} aria-labelledby={`${id}-title`} hidden={hidden}>
@@ -92,10 +95,21 @@ const steps = page && chart.kind === 'states' ? timelineOf(chart) : []
     <Hallmark {...chart.punches} status={chart.status} />
     <p class="source">{sourceLine(chart.sources, page)}</p>
     <p class="files">
-      <a href={`${href}?tab=table`} data-view-link="table">Table</a> · <a href={`/charts/${chart.slug}.csv`} download>CSV</a>
+      <a href={`${href}?tab=table`} data-view-link="table">Table</a> · <a href={`/charts/${chart.slug}.csv`} download title="The values in this chart, with unit and source on every row">CSV</a>
+      {page &&
+        full.map((f) => (
+          <>
+            {' · '}<a href={`/data/${f}`} download title={`The whole file this chart reads: ${f}`}>{full.length > 1 ? f.split('/').at(-1) : 'Full CSV'}</a>
+          </>
+        ))}
       {chart.kind !== 'table' && (
         <>
-          {' · '}<a href={`/charts/${chart.slug}.png`} download>PNG</a> · <a href={`/charts/${chart.slug}.svg`} download>SVG</a>
+          {' · '}<a href={`/charts/${chart.slug}.png`} download title="Title, hallmark, status and source line on the image">PNG</a> · <a href={`/charts/${chart.slug}.svg`} download title="For print and editing">SVG</a>
+        </>
+      )}
+      {page && (
+        <>
+          {' · '}<a href={`/charts/${chart.slug}.json`} download title="Source, release date, unit, status, notes and processing steps">JSON</a>
         </>
       )}
     </p>
