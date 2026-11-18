@@ -99,3 +99,16 @@ test('the timeline steps the state map back to January', async ({ page }) => {
   await expect(page.locator('[data-timeline] [data-step="0"]')).toBeVisible()
   await expect(page.locator('[data-timeline] [data-step="9"]')).toBeHidden()
 })
+
+test('filtering all charts hides topics with no match and says when nothing matches', async ({ page }) => {
+  await page.goto('/charts/')
+  const box = page.getByPlaceholder(/Filter \d+ charts/)
+  await box.fill('price')
+  await expect(page.locator('section[aria-labelledby="t-prices"]')).toBeVisible()
+  await expect(page.locator('section[aria-labelledby="t-population"]')).toBeHidden()
+  await expect(page.locator('[data-filter-empty]')).toBeHidden()
+  await box.fill('zzqx')
+  await expect(page.locator('[data-filter-empty]')).toBeVisible()
+  await box.fill('')
+  await expect(page.locator('section[aria-labelledby="t-population"]')).toBeVisible()
+})

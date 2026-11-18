@@ -17,7 +17,7 @@ const kinds: Record<string, string> = { line: 'Line', columns: 'Columns', area: 
   </PageHeader>
   <div class="wrap">
     {topics.map((t) => (
-      <section aria-labelledby={`t-${t.slug}`}>
+      <section aria-labelledby={`t-${t.slug}`} data-filter-group>
         <h2 id={`t-${t.slug}`}><TopicTag topic={t} /></h2>
         <ol class="chart-list">
           {charts
@@ -33,6 +33,7 @@ const kinds: Record<string, string> = { line: 'Line', columns: 'Columns', area: 
         </ol>
       </section>
     ))}
+    <p class="none muted" role="status" hidden data-filter-empty>No chart matches. Try fewer or shorter words.</p>
   </div>
   <div class="end"></div>
 </Base>
@@ -47,6 +48,10 @@ const kinds: Record<string, string> = { line: 'Line', columns: 'Columns', area: 
   }
   section {
     margin-top: 48px;
+  }
+  .none {
+    margin-top: 48px;
+    font-size: 17px;
   }
   h2 {
     padding-bottom: 12px;

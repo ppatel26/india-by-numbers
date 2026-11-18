@@ -128,6 +128,7 @@ function kindOf(c: Chart): string {
           </div>
         ))}
       </div>
+      <p class="none muted" role="status" hidden data-filter-empty>No chart matches. Try fewer or shorter words.</p>
     </section>
   </div>
 </Base>
@@ -282,6 +283,10 @@ function kindOf(c: Chart): string {
   .search:focus-within {
     outline: 2px solid var(--s5);
     outline-offset: 2px;
+  }
+  .none {
+    margin-top: 24px;
+    font-size: 17px;
   }
   .groups {
     display: grid;
