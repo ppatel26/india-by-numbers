@@ -92,7 +92,8 @@ function callout(c: Callout, chart: WithNotes, box: NoteBox): Markup | null {
   // Try spots around the point, nearest first, and take the first whose text crosses no line.
   const w = text.length * 6.5
   const segs: Seg[] = [...lineSegments(box), ...rules.map((rx): Seg => [rx, box.top - 22, rx, box.bottom])]
-  const offsets: readonly (readonly [number, number])[] = [[7, -7], [7, 15], [-7, -7], [-7, 15], [7, -21], [7, 29], [-7, -21], [-7, 29]]
+  // Farther spots last, sideways before up and down: between two close lines the near ones can all be crossed.
+  const offsets: readonly (readonly [number, number])[] = [[7, -7], [7, 15], [-7, -7], [-7, 15], [7, -21], [7, 29], [-7, -21], [-7, 29], [21, -21], [21, 29], [-21, -21], [-21, 29], [7, -37], [-7, -37], [7, 45], [-7, 45], [7, -53], [-7, -53]]
   const spots = offsets.map(([dx, dy]) => {
     const start = dx > 0 ? px + dx : px + dx - w
     return { x: start, y: py + dy, r: { l: start - 2, t: py + dy - 11, r: start + w + 2, b: py + dy + 3 } }

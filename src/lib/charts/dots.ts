@@ -44,8 +44,14 @@ export function renderDots(chart: Of<'dots'>, width: Width): Markup {
   const pin = chart.pin ?? []
   const rank = (k: string) => (pin.includes(k) ? Infinity : (val(first, k)?.y ?? -Infinity))
   keys.sort((a, b) => rank(b) - rank(a))
+  // Say which series sets the order; with two years or two sexes the reader cannot tell.
+  // Only when that series has every row; rows split across series keep their own order.
+  const sorts = keys.every((k) => pin.includes(k) || val(first, k)?.y != null)
+  const ranked = sorts && (series.length > 1 || first.hidden) ? `Ranked by ${first.label}` : ''
+  const keyWidth = series.reduce((w, s) => w + 30 + s.label.length * 7, 0)
+  const ownLine = !!ranked && keyWidth + ranked.length * 6.6 + 24 > W
   const rowH = 20
-  const m = { top: 40, right: 24, bottom: 28, left: nameColumn(keys.map((k) => rowName(k)), narrow) }
+  const m = { top: ownLine ? 56 : 40, right: 24, bottom: 28, left: nameColumn(keys.map((k) => rowName(k)), narrow) }
   const H = m.top + keys.length * rowH + m.bottom
   const all = series.flatMap((s) => s.points.flatMap((p) => (p.y === null ? [] : [p.y])))
   const refVals = (chart.refs ?? []).map((r) => r.value)
@@ -76,5 +82,6 @@ ${[...vs].sort((a, b) => Number(hollow.includes(b.s.key)) - Number(hollow.includ
   return svg`<circle cx="${x(v.p!.y!)}" cy="${y}" r="${ring ? 6.5 : 4}" fill="${ring ? 'var(--paper)' : colorVar(v.s.color)}" stroke="${ring ? colorVar(v.s.color) : 'var(--paper)'}" stroke-width="1.5"/>`
 })}</g>`
   })
-  return frame(width, H, chart.title, svg`${legend(series, hollow)}${grid}${valueRefs(chart.refs, x, m.top - 6, H - m.bottom)}${rows}`)
+  const rankText = ranked ? svg`<text x="${ownLine ? 0 : W}" y="${ownLine ? 30 : 12}" text-anchor="${ownLine ? 'start' : 'end'}" font-size="12.5" fill="var(--slate)">${ranked}</text>` : null
+  return frame(width, H, chart.title, svg`${legend(series, hollow)}${rankText}${grid}${valueRefs(chart.refs, x, m.top - 6, H - m.bottom)}${rows}`)
 }
