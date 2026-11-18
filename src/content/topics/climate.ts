@@ -31,6 +31,13 @@ const IMD_PUNE_RFSTATS_2026: Source = {
   url: 'https://imdpune.gov.in/seasons_previous/swmonsoon/swmonsoon26/rfstats.gif',
 }
 
+const IMD_PUNE_TEMPERATURE: Source = {
+  publisher: 'IMD Pune, Climate Research and Services',
+  release: 'All India Time Series of Temperature, Mean Temperature table',
+  released: 'not stated',
+  url: 'https://imdpune.gov.in/cmpg/Product/allindia_temp.html',
+}
+
 const IMD_CLIMATE_2025: Source = {
   publisher: 'IMD',
   release: 'Statement on the Climate of India during 2025 (press release)',
@@ -85,7 +92,7 @@ const topic: Topic = {
       label: 'Monsoon rain, 87% of the long-period average',
       period: 'Jun to Sep 2026',
     },
-    { chart: 'warmest-years', series: 'anomaly', x: '2025', label: '2025 against 1991-2020; 2024 was warmest, +0.65°C' },
+    { chart: 'annual-temperature-anomaly', series: 'anomaly', x: '2025', label: '2025 temperature above the 1991 to 2020 average' },
     { chart: 'non-fossil-capacity-share', series: 'non-fossil', x: '2026-10-31', label: 'Non-fossil share of installed power capacity', period: '31 Oct 2026' },
   ],
   nextRelease: 'MNRE and CEA capacity for November 2026, estimated mid-December 2026',
@@ -224,48 +231,36 @@ const topic: Topic = {
     },
     {
       title: 'Which years were warmest, and how warm was 2025?',
-      lede: "IMD compares each year's average land temperature with the average for 1991 to 2020. The difference is the temperature anomaly. IMD has not released its annual temperature series since 1901 as data; its statement for 2025 gives a warming trend of 0.68°C per 100 years over 1901 to 2025.",
+      lede: "The temperature anomaly is the difference between a year's mean land surface air temperature and the 1991 to 2020 mean.",
       blocks: [
-        { text: "2024 was India's warmest year since records began in 1901, at 0.65°C above the 1991 to 2020 average. 2025 was the eighth warmest, at 0.28°C above." },
+        { text: "2024 was India's warmest year since 1901, at 0.65°C above the 1991 to 2020 mean. IMD ranked 2025 eighth, at 0.28°C above the mean." },
         {
           chart: {
-            kind: 'bars',
-            slug: 'warmest-years',
-            title: "India's warmest years since 1901, ranked",
-            subtitle:
-              'Rank among all years since 1901, and difference from the 1991 to 2020 average, °C, annual mean land surface air temperature, India.',
-            punches: { office: 'IMD', unit: '°C vs 1991-2020', period: '2025' },
-            note: 'IMD names the five warmest years and ranks 2025 eighth. It does not name the 6th and 7th, and it publishes the full series since 1901 only as a picture, so the chart cannot show every year. Older statements used the 1981 to 2010 average and do not compare.',
-            sources: [IMD_CLIMATE_2025],
+            kind: 'line',
+            slug: 'annual-temperature-anomaly',
+            title: 'Annual mean temperature anomaly in India, 1901 to 2025',
+            subtitle: 'Difference from the 1991 to 2020 mean land surface air temperature, in °C.',
+            punches: { office: 'IMD', unit: '°C vs 1991-2020', period: '1901 TO 2025' },
+            note: 'The 1901 to 2024 anomalies are calculated from IMD Pune’s annual means. The 2025 anomaly comes from the IMD climate statement.',
+            sources: [IMD_PUNE_TEMPERATURE, IMD_CLIMATE_2025],
             format: { decimals: 2, unit: '°C', signed: true },
-            by: 'period',
-            // Rows run by rank, warmest first. The 6th and 7th warmest years are a visible gap.
-            order: ['2024', '2016', '2009', '2010', '2017', 'ranks-6-7', '2025'],
-            labels: {
-              '2024': '1st · 2024',
-              '2016': '2nd · 2016',
-              '2009': '3rd · 2009',
-              '2010': '4th · 2010',
-              '2017': '5th · 2017',
-              'ranks-6-7': '6th and 7th',
-              '2025': '8th · 2025',
-            },
-            missing: { 'ranks-6-7': 'Not named by IMD' },
-            rowHead: 'Rank and year',
-            highlight: '2025',
+            y: { min: -1.5, max: 1, step: 0.5 },
+            markers: [{ x: '2025', label: '2025 climate statement' }],
             series: [
-              { key: 'anomaly', label: 'Difference from the 1991 to 2020 average', color: 'other', file: 'climate/warmest-years-temperature-anomaly.csv', x: 'period', where: { geography: 'india' } },
+              { key: 'anomaly', label: 'India', color: 'ink', file: 'climate/annual-temperature-anomaly-1901-2025.csv', note: 'note', where: { geography: 'india' } },
+            ],
+            callouts: [
+              { series: 'anomaly', x: '2024', label: '2024 · Warmest' },
+              { series: 'anomaly', x: '2016', label: '2016 · Second warmest' },
             ],
             know: [
-              'The anomaly is the difference between a year\'s mean land surface air temperature and the 1991 to 2020 average.',
-              'IMD names the five warmest years since 1901 and the rank of 2025. It does not name the 6th and 7th warmest years.',
-              'IMD publishes its annual temperature series since 1901 only as a chart image, not as data.',
-              'Older IMD statements used the 1981 to 2010 average, so their anomalies do not compare with these.',
+              'IMD Pune gives the 1991 to 2020 annual mean as 25.09°C.',
+              'The IMD climate statement ranks 2024 first, 2016 second and 2025 eighth.',
             ],
             processing: [
-              'We take the anomaly and the rank of each named year from the text of the IMD Statement on the Climate of India during 2025.',
-              'We keep the anomalies as IMD states them, to two decimal places.',
-              'We do not estimate the years that IMD does not name.',
+              'Subtract the published 1991 to 2020 mean from each annual mean in the IMD Pune table.',
+              'Check that all six annual anomalies named in the 2025 statement match the calculated values to two decimal places.',
+              'Use the climate statement’s published anomaly for 2025.',
             ],
             nextRelease: 'not announced',
           },
@@ -436,17 +431,18 @@ const topic: Topic = {
     revisions:
       'The 2026 monsoon figures come from real-time data, and IMD may revise them in its final monsoon report. In 2017 MNRE revised renewable capacity for March 2014 to March 2017, mainly by adding about 3,000 MW of captive bagasse cogeneration; we use the revised values. IMD documents differ slightly on some 2026 totals; we use the table values.',
     breaks:
-      'Rainfall is compared with the long-period average, 868.6 mm, the mean for 1971 to 2020. Temperature anomalies are against 1991 to 2020; older IMD statements used 1981 to 2010, and we do not join the two. CEA counted lignite inside coal before March 2019, counts off-grid renewables from August 2021, and removed plants on long outage from 30 April 2025 and 31 August 2026.',
+      'Rainfall is compared with the long-period average, 868.6 mm, the mean for 1971 to 2020. Temperature anomalies use the 1991 to 2020 mean. The 2025 IMD statement uses the same normal period as the IMD Pune table. CEA counted lignite inside coal before March 2019, counts off-grid renewables from August 2021, and removed plants on long outage from 30 April 2025 and 31 August 2026.',
     coverage:
       'Rainfall: India, 4 homogeneous regions and 36 meteorological subdivisions, which do not follow state lines. Capacity: utilities only; captive plants are not included. MNRE places each plant in the state where it stands, for all 36 states and UTs; 49.31 MW under "Others" has no state.',
     missing:
-      'IMD publishes its annual temperature series since 1901 only as a chart image, not as data. IMD publishes 2026 monsoon rainfall by subdivision, not by state. IMD does not name the 6th and 7th warmest years. IMD, CEA and MNRE state no reuse licence for these data.',
+      'IMD publishes 2026 monsoon rainfall by meteorological subdivision. IMD, CEA and MNRE state no reuse licence for these data.',
   },
   sources: [
     IMD_SEASON_2026,
     IMD_SDWR_2026_09_30,
     IMD_PUNE_ALL_INDIA,
     IMD_PUNE_RFSTATS_2026,
+    IMD_PUNE_TEMPERATURE,
     IMD_CLIMATE_2025,
     CEA_CAPACITY,
     MNRE_STATES_2026_10,

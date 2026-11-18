@@ -1,6 +1,6 @@
 # Climate
 
-Data gathered on 17 Nov 2026 from IMD, IMD Pune, CEA and MNRE. All values are as published. Read date for every source: 17 Nov 2026.
+The original data come from IMD, IMD Pune, CEA and MNRE (read 17 to 18 Nov 2026). The CSVs identify calculated values.
 
 ## Questions this topic answers
 
@@ -42,14 +42,13 @@ Data gathered on 17 Nov 2026 from IMD, IMD Pune, CEA and MNRE. All values are as
 - Sentence: "June 2026 brought 35% less rain than normal across India. In Central India, June rain was half of normal, then July was 33% above normal."
 - Source: IMD Pune, "Rainfall statistics: monsoon season 2026" (rfstats.gif on the 2026 monsoon page); season report of 30 Sep 2026.
 
-### C4. India's warmest years
+### C4. Annual mean temperature anomaly in India
 
-- Type: ranked bar (horizontal).
-- Unit: °C anomaly in annual mean land surface air temperature, against 1991 to 2020.
-- Geography: India. Period: named years from 1901 to 2025.
-- CSV: `warmest-years-temperature-anomaly.csv`
-- Sentence: "2024 was India's warmest year since records began in 1901, at 0.65°C above the 1991 to 2020 average. 2025 was the eighth warmest, at 0.28°C above."
-- Source: IMD, "Statement on the Climate of India during 2025", press release, 1 Jan 2026.
+- Type: line chart with the two warmest years labelled.
+- Unit: °C from the 1991 to 2020 mean land surface air temperature.
+- Geography: India. Period: 1901 to 2025, every year.
+- CSV: `annual-temperature-anomaly-1901-2025.csv`. The older `warmest-years-temperature-anomaly.csv` records the six entries from the former ranked chart.
+- Sources: IMD Pune, Mean Temperature table (S10), and IMD, Statement on the Climate of India during 2025 (S6).
 
 ### C5. Temperature in 2025 by season
 
@@ -149,7 +148,6 @@ Parsing scripts: `pipeline/climate/` (`extract_text.sh`, `build_rain.py`, `build
 
 ## Gaps and cautions
 
-- **Annual temperature series since 1901: not found as data.** IMD shows it only as a chart (Fig. 1 in S6). I tried the IMD press release, IMD Pune climate pages, the IMD Pune data portal (needs a login), and EnviStats India 2025 (a scanned PDF with only a 2001 to 2024 chart and no table). C4 and C5 use the values that IMD states in text. Do not join anomalies from older IMD statements: they used the 1981 to 2010 base.
 - **State-wise monsoon rainfall for 2026: not found.** The IMD state rainfall page now shows only the post-monsoon period (from 1 Oct 2026). `hydro.imd.gov.in` did not resolve and `imdgeospatial.imd.gov.in` did not connect. C2 uses the 36 IMD meteorological subdivisions. They do not match state lines. Several states have more than one subdivision (Maharashtra 4, Karnataka 3, Rajasthan 2, Uttar Pradesh 2, Madhya Pradesh 2, Gujarat 2, Andhra Pradesh 2). Some subdivisions cover more than one state. Do not draw C2 on a state tile map.
 - **C2 values are transcribed** from an image of the SDWR table (S2). See the check below.
 - **2026 rainfall is real-time data.** IMD may revise it in the final monsoon report.
@@ -169,6 +167,27 @@ Parsing scripts: `pipeline/climate/` (`extract_text.sh`, `build_rain.py`, `build
 ## Checks (18 Nov 2026)
 
 - Downloaded IMD's Special Daily Weather Report, 30 Sep 2026, Table 2, page 14. Compared rainfall, normal rainfall, departure and category in all 41 rows with the image. All 36 subdivisions, four homogeneous regions and the India row match. The subdivision counts also match the IMD season release (S1). SHA-256 of the image is `7feac617a8e9a401abd55345c21966665a17b3f2a6f7c97f85dc74fbfd603cad`. [IMD table](https://mausam.imd.gov.in/backend/assets/pdf_to_img_nwfc_monsoon/14_IMD%20SDWR%2030%20September%202026_6abce82b302f8.png) · [IMD season release](https://internal.imd.gov.in/press_release/20260930_pr_5361.pdf)
+
+## Annual temperature series extension
+
+| # | Publisher | Release and period | URL | Read date | Local raw file | SHA-256 |
+| --- | --- | --- | --- | --- | --- | --- |
+| S10 | IMD Pune, Climate Research and Services | All India Time Series of Temperature, Mean Temperature table. No release date stated. Heading says 1901 to 2024. The table runs to 2025. | https://imdpune.gov.in/cmpg/Product/allindia_temp.html | 18 Nov 2026 | `raw/climate/imdseries/download` | `12a16ecb8c05ad6648eb43643c27c824c2a89d77f973f5c2536521e577551d80` |
+| S6 | IMD | Statement on the Climate of India during 2025, page 2, 1 Jan 2026 | https://internal.imd.gov.in/press_release/20260101_pr_4602.pdf | 18 Nov 2026 | `raw/climate/imd2025/download` | `93f4e4f0767dbe7c4b1abe2b1eba255fd4b0a4d03e2ae3e7594be680d76347c9` |
+| S11 | IMD Pune, Climate Research and Services | Annual Climate Summary 2025, Table 3 and temperature summary. No release date stated. | https://imdpune.gov.in/cmpg/Product/Annual_Climate_Summary/annual_summary_2025.pdf | 18 Nov 2026 | `raw/climate/imdfull2025/download` | `3eb556f7567251d47dd4f273567296c168b8b8286ef4416be98827e413f1ca7e` |
+
+Run `python3 -I pipeline/climate/build_temperature.py` from the repository root. Read the Annual column in the Mean Temperature table. Keep every published digit in `annual_mean_deg_c`. Subtract the annual normal IMD Pune prints for 1991 to 2020 (25.09°C) with decimal arithmetic. Set `derived=yes` on the 1901 to 2024 rows. Use the published statement anomaly for 2025 and set `derived=no`. The `statement_anomaly_deg_c` column records all six values that the statement names. The chart displays two decimal places and marks the change in source at 2025. The two publishers' files use the same normal period.
+
+| Year | Pune annual mean, °C | Mean minus 25.09°C | 2025 statement anomaly, °C |
+| --- | ---: | ---: | ---: |
+| 2024 | 25.7431 | +0.6531 | +0.65 |
+| 2016 | 25.6305 | +0.5405 | +0.54 |
+| 2009 | 25.4891 | +0.3991 | +0.40 |
+| 2010 | 25.4804 | +0.3904 | +0.39 |
+| 2017 | 25.4721 | +0.3821 | +0.38 |
+| 2025 | 25.3704 | +0.2804 | +0.28 |
+
+All six calculated anomalies round to the published values. The Pune annual means also reproduce the five warmest years in the same order and place 2025 eighth. The sixth and seventh years in the table are 2023 and 2022. The Annual Climate Summary confirms +0.28°C and gives the 2025 annual mean rounded to 25.37°C. The data.gov.in catalogue search returned HTTP 403. The direct IMD Pune table supplied the full series.
 
 ## Publisher check on 18 Nov 2026
 
