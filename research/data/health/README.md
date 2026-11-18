@@ -172,4 +172,22 @@ Parsing: `pdftotext -layout`, then `pipeline/health/build.py` run with `python3 
 - Life expectancy for the 14 smaller states and UTs: not published by SRS.
 - U5MR and NMR for smaller states and UTs: not published by SRS.
 - NFHS-6 anaemia: not released (see above).
+
+## Checks (18 Nov 2026)
+
+- Downloaded the 29 May 2026 fact sheets from MoHFW with valid HTTPS. The ministry PDF has SHA-256 `6b7d4eef047ddc5f37b6afa3935dab997a3b7ffff51ceb609eead44c34e25994`. Its bytes differ from the IIPS copy. The rchiips.org and IIPS certificates did not validate. A separate IIPS download without certificate verification matched the original SHA-256 `59dec561e837bea060b6684a75caca84e0c982ed9e2670848521755f2ab267f9`. [MoHFW media index](https://master-mohfw-dohfw.digifootprint.gov.in/cms/wp-json/wp/v2/media?search=NFHS) · [MoHFW PDF](https://www.mohfw-dohfw.gov.in/static/uploads/2026/05/111ff4a13ca36b5cabb7f94aec5bb0ce.pdf)
+- Checked ten NFHS-6 values and the corresponding ten NFHS-5 values across five geographies in both PDFs. All 20 values matched the CSV. The table gives percentages in the order NFHS-6, NFHS-5.
+
+| Geography | Indicator | NFHS-6 | NFHS-5 |
+| --- | --- | ---: | ---: |
+| India | Institutional births | 90.6 | 88.6 |
+| India | Full vaccination, card or recall | 82.6 | 76.6 |
+| India | Full vaccination, card only | 87.1 | 83.8 |
+| India | Stunting | 29.3 | 35.5 |
+| India | Wasting | 19.0 | 19.3 |
+| India | Severe wasting | 5.2 | 7.7 |
+| Andhra Pradesh | Institutional births | 98.4 | 96.5 |
+| Arunachal Pradesh | Severe wasting | 8.0 | 6.5 |
+| Assam | Stunting | 30.3 | 35.3 |
+| Bihar | Stunting | 35.6 | 42.9 |
 - The release date of the National Health Accounts 2023-24: news reports say about 15 Nov 2026 (unverified). The PIB release was not opened.
