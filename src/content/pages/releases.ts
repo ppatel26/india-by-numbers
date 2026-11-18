@@ -1,6 +1,4 @@
-// Releases and corrections, the releases half. Copy is verbatim from
-// the board. The corrections half is in corrections.ts.
-// "Charts updated" lists chart titles as on the board; the build should link each to its chart.
+// Copy for the Releases page. The corrections log is in corrections.ts.
 
 import type { TopicSlug } from '../types'
 import { count } from './counts'
@@ -212,7 +210,6 @@ const releases: ReleasesPage = {
         released: '29 Apr 2026',
         release: 'MoSPI · Women and Men in India 2025',
         detail: 'Election tables 1952 to 2024, from ECI data.',
-        // The board's filter row has no "New chart" kind; the row itself says "New chart".
         kind: 'New chart',
         charts: 'Lok Sabha turnout, men and women · Number of electors · Turnout by state, 2024 · Women candidates and MPs · Seats and women MPs by state',
         topics: ['elections'],

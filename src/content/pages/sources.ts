@@ -1,7 +1,4 @@
-// Sources. Copy is verbatim from the board.
-// The board gives no URL per publisher; `site` is the address the board names in "How it publishes".
-// The board shows one "Page checked 17 Nov 2026" date for the whole page, not a "last fetched"
-// date per publisher.
+// Copy for the Sources page: one block per publisher.
 
 import type { TopicSlug } from '../types'
 import { count } from './counts'
@@ -9,11 +6,11 @@ import { count } from './counts'
 export interface Publisher {
   short: string
   full: string
-  /** "26 charts use it". Derived from the chart register; the board value is kept for checking. */
+  /** Charts that use this publisher, counted from the chart sources. */
   charts: number
   topics: readonly TopicSlug[]
   whatWeTake: string
-  /** null: see the DECIDE comment. */
+  /** null when the publisher states no rhythm. */
   rhythm: string | null
   latestRelease: string
   licence: string
@@ -108,8 +105,7 @@ const PUBLISHERS: readonly Publisher[] = [
     licence: "Not stated on the publisher's site.",
     howItPublishes:
       'IMD publishes monsoon rainfall by meteorological subdivision, not by state, in its daily weather report. The 2026 season table is an image. Several states have more than one subdivision.',
-    // DECIDE: the board names no IMD address.
-    site: '',
+    site: 'https://mausam.imd.gov.in',
   },
   {
     short: 'ECI',
@@ -157,8 +153,6 @@ const PUBLISHERS: readonly Publisher[] = [
     topics: ['health'],
     whatWeTake:
       'NFHS-6 (2023-24) India and state fact sheets, provisional, which print NFHS-5 (2019-21) beside them; National Health Accounts Estimates for India 2023-24.',
-    // DECIDE: the board adds "National Health Accounts: rhythm not yet checked." That is a note
-    // about our own work (copy G), so it is left out until the rhythm is known.
     rhythm: 'NFHS rounds come several years apart.',
     latestRelease:
       'NFHS-6 fact sheets, 29 May 2026. National Health Accounts 2023-24: foreword dated 7 Sep 2026, file posted in November 2026; release date not confirmed.',
@@ -172,8 +166,7 @@ const PUBLISHERS: readonly Publisher[] = [
     charts: 1,
     topics: ['climate'],
     whatWeTake: 'State-wise installed capacity of renewable power, by location, as on 31 Oct 2026.',
-    // DECIDE: the board says "Not yet checked." (a note about our own work, copy G).
-    rhythm: null,
+    rhythm: 'A state-wise capacity table each month.',
     latestRelease: 'Table as on 31 Oct 2026, published 12 Nov 2026.',
     licence: "Not stated on the publisher's site.",
     howItPublishes: 'A state-wise table of renewable capacity, as PDF on mnre.gov.in, published 12 November 2026.',

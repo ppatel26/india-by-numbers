@@ -11,7 +11,7 @@ import { topic } from '~/content'
 import { show } from '~/lib/charts/model'
 import { places, type Place } from '~/lib/geography'
 import { formatDate } from '~/lib/period'
-import { rankText, row, sentence, periodOf } from '~/lib/profile'
+import { rankText, row, sentence, standfirst } from '~/lib/profile'
 import { SITE } from '~/lib/site'
 import { releasedText } from '~/lib/sources'
 
@@ -32,11 +32,7 @@ const sections = profile.sections.map((sec) => {
   const rows = sec.measures.map((m) => row(m, place.slug))
   return { sec, t: topic(sec.topic), rows, text: sentence(sec.topic, place.slug, rows) }
 })
-const imr = sections.find((s) => s.sec.topic === 'health')?.rows[0]
-const standfirst =
-  imr?.value && imr.data.india
-    ? profile.standfirst({ year: periodOf(imr.chart), value: show(imr.chart, imr.value).text, state: place.name, india: show(imr.chart, imr.data.india).text })
-    : undefined
+const lede = standfirst(sections.find((s) => s.sec.topic === 'health')?.rows[0], place.name)
 const missing = sections.flatMap((s) => s.rows.filter((r) => !r.value).map((r) => ({ t: s.t, r })))
 const kind = place.type === 'ut' ? profile.typeLabel.ut : profile.typeLabel.state
 const sub = (r: (typeof sections)[number]['rows'][number]) => [r.chart.punches.period, r.chart.punches.unit, ...(r.chart.status ?? []).filter((s) => s !== 'Method break')].join(' · ')
@@ -46,7 +42,7 @@ const src = (r: (typeof sections)[number]['rows'][number]) => {
 }
 ---
 
-<Base title={`${place.name}: figures beside India`} description={standfirst ?? `${place.name} beside India on prices, jobs, health, education and more.`} imageAlt={`${place.name} beside India`} pageState={place.slug}>
+<Base title={`${place.name}: figures beside India`} description={lede ?? `${place.name} beside India on prices, jobs, health, education and more.`} imageAlt={`${place.name} beside India`} pageState={place.slug}>
   <header class="wrap head">
     <div class="intro">
       <Crumbs trail={[['States', '/states/']]} current={place.name} />
@@ -56,7 +52,7 @@ const src = (r: (typeof sections)[number]['rows'][number]) => {
         {place.hindi && <span class="native" lang="hi">{place.hindi}</span>}
         {place.native && place.native.name !== place.hindi && <span class="native" title={place.native.language}>{place.native.name}</span>}
       </p>
-      {standfirst && <p class="lede">{standfirst}</p>}
+      {lede && <p class="lede">{lede}</p>}
       <p class="label muted on">{profile.onThisPage(sections.length)}</p>
       <p class="tags">{sections.map((s) => <a href={`#${s.t.slug}`} class="label tag">{s.t.name}</a>)}</p>
     </div>

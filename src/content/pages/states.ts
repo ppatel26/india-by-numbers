@@ -1,5 +1,4 @@
-// States and UTs. Copy is verbatim from the board.
-// The map values, legend bands and tooltip values are built from data.
+// Copy for the States and UTs index.
 
 import { count } from './counts'
 
@@ -76,7 +75,6 @@ const states: StatesPage = {
     switcherLabel: 'Colour the map by',
     menuHeads: { measure: 'Measure · period', coverage: 'States and UTs' },
     coverage: (n, of) => `${n} of ${of}`,
-    // Board order. Slugs are in topic modules this file does not own, except where noted.
     measures: [
       { chart: 'cpi-inflation-by-state', label: 'Inflation, Oct 2026' },
       { chart: 'income-per-person-by-state', label: 'Income per person, FY 2024-25' },
@@ -89,14 +87,12 @@ const states: StatesPage = {
     ],
     legend: {
       india: (value) => `India: ${value}`,
-      // Board: "No data (4): not in MoSPI's 2024-25 release". The reason is per measure.
       noData: (n, reason) => `No data (${n}): ${reason}`,
       ut: 'Corner mark: union territory',
       selected: (state) => `Outline: selected state (${state})`,
     },
     tooltip: {
       value: (state, value) => `${state}: ${value}`,
-      // Board: "7th highest of 32 · India ₹2,05,324"
       rank: ({ rank, of, india }) => `${rank} highest of ${of} · India ${india}`,
       open: (state) => `Open the ${state} page →`,
     },

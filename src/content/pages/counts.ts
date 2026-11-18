@@ -9,4 +9,6 @@ export const count = {
   places: places.length,
   states: places.filter((p) => p.type === 'state').length,
   uts: places.filter((p) => p.type === 'ut').length,
+  /** Scripts other than Latin used for state names, Devanagari included. */
+  nativeScripts: new Set(places.flatMap((p) => [p.native?.script, p.hindi ? 'Devanagari' : undefined]).filter(Boolean)).size,
 }

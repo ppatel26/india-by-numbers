@@ -1,4 +1,4 @@
-// How we check. Copy is verbatim from the board.
+// Copy for the How we check page.
 
 import type { Status } from '../types'
 
@@ -196,10 +196,9 @@ const howWeCheck: HowWeCheck = {
     eyebrow: 'Part 3 · Revisions and base-year changes',
     heading: 'What happens when a publisher changes its method?',
     lede: 'We keep both series and mark the break. We do not splice them into one line. Two changes in the last two years show how this looks.',
-    // The board numbers these 3.1 and 3.2. Each plot is a copy of a topic chart.
     examples: [
       {
-        chart: 'cpi-inflation', // The board plots Jan 2025 to Oct 2026, both bases.
+        chart: 'cpi-inflation',
         title: 'Consumer price inflation, January 2025 to October 2026',
         subtitle: '% change on the same month a year earlier, India, rural and urban combined',
         finding:
@@ -210,7 +209,7 @@ const howWeCheck: HowWeCheck = {
           'Source: MoSPI, Consumer Price Index (2012=100) to December 2025 and (2024=100) from January 2026, October 2026 release, 12 Nov 2026. Checked 17 Nov 2026.',
       },
       {
-        chart: 'urban-unemployment-quarterly', // The board plots Jan-Mar 2022 to Jul-Sep 2026.
+        chart: 'urban-unemployment-quarterly',
         title: 'Urban unemployment, Jan-Mar 2022 to Jul-Sep 2026',
         subtitle: '% of the urban labour force aged 15+, current weekly status, by quarter',
         finding:

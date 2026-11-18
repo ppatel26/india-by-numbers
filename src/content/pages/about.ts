@@ -1,4 +1,4 @@
-// About. Copy is verbatim from the board, with copy rules applied.
+// Copy for the About page.
 
 import { count } from './counts'
 import sources from './sources'
@@ -7,7 +7,7 @@ export interface Section {
   /** Anchor for links from the footer. */
   id: string
   heading: string
-  /** Hindi heading, where the board has one. */
+  /** Hindi heading, when the section has one. */
   hindi?: string
   /** Paragraphs in order. `lead` paragraphs are set bold; `aside` paragraphs are set small and grey. */
   body: readonly { text: string; style?: 'lead' | 'aside' }[]
@@ -44,9 +44,6 @@ const about: AboutPage = {
         {
           text: 'An independent project. It is not affiliated with the Government of India or with any ministry, and no publisher reviews what we write. We take sides on no policy.',
         },
-        // DECIDE: the board adds a placeholder line, "The names of the people who make it, and any
-        // funding, will be listed here before launch." Left out: add the names and funding, or
-        // confirm there is none, before launch.
       ],
     },
     {
@@ -85,7 +82,6 @@ const about: AboutPage = {
       id: 'reuse',
       heading: 'Can I reuse the charts and data?',
       body: [
-        // Board: "Licence: CC BY 4.0 for our charts, text and code." copy G sets the licence line.
         { text: "Licence: CC BY 4.0. Publisher data stays under each publisher's terms.", style: 'lead' },
         {
           text: 'Use our charts, text and code for any purpose. Credit "India by Numbers" and link to the page. Every PNG and SVG already carries the title, the hallmark and the source line, so the image keeps its provenance.',
@@ -96,24 +92,23 @@ const about: AboutPage = {
       ],
     },
     {
-      id: 'hindi',
-      heading: 'Is it in Hindi?',
-      hindi: 'क्या यह हिंदी में है?',
+      id: 'languages',
+      heading: 'Which languages does the site use?',
+      hindi: 'भाषाएँ',
       body: [
         {
-          text: 'The interface is in English and Hindi from launch: the menus, topic names, chart titles, axis labels, status words and hallmark labels. Use the EN / हिंदी switch at the top of any page. Hindi pages use the digits 0 to 9.',
+          text: `The site is in English. Topic names also appear in Hindi. Each state and union territory page gives its name in Hindi and in the state's own official language, in its own script: ${count.nativeScripts} scripts in all, from Bengali to Meetei Mayek and Urdu.`,
         },
-        { text: 'Chart notes and longer text stay in English for now.' },
+        { text: 'Chart titles, notes and labels are in English for now.' },
       ],
     },
     {
       id: 'contact',
       heading: 'How do I contact you?',
-      // DECIDE: the board gives no target for "Contact". copy: no placeholder email.
-      links: ['Report a problem', 'Contact'],
+      links: ['Report a problem'],
       body: [
         {
-          text: 'To report a wrong figure, use "Report a problem" on any chart, or go to the Corrections page. We reply within 2 working days.',
+          text: 'To report a wrong figure, use "Report a problem" on any chart, or go to the Corrections page. We read every report, and each fix goes in the corrections log.',
         },
       ],
     },

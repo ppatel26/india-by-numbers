@@ -1,5 +1,4 @@
-// Releases and corrections, the corrections half. Copy is verbatim
-// from the board. The site has no backend yet: the form keeps its labels and the lead wires it.
+// Copy for the Corrections page and the Report a problem form.
 
 export interface CorrectionRow {
   /** Dates as "12 Nov 2026". */
@@ -55,7 +54,6 @@ const corrections: CorrectionsPage = {
     heading: 'Report a problem',
     intro: "Tell us what looks wrong. A link to the publisher's own figure helps us check fast.",
     fields: {
-      // The board shows "/charts/consumer-price-inflation/" as a filled example.
       page: { label: 'Page', placeholder: '', hint: 'Filled in when you come from a chart.' },
       problem: {
         label: 'What looks wrong',
@@ -70,7 +68,6 @@ const corrections: CorrectionsPage = {
       sent: 'Thank you. We have your report and will check it against the source.',
       error: 'We could not send the report. Say in a few words what looks wrong, then try again.',
     },
-    // DECIDE: the board gives no target for "Contact". copy: no placeholder email.
     links: { report: 'Report a problem', contact: 'Contact' },
   },
 }

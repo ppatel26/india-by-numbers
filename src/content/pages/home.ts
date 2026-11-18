@@ -1,6 +1,4 @@
-// Home. Copy is verbatim from the board.
-// The ledger figures, the topic tiles and the state pairs are built from data and topic modules.
-// This file records which chart each row reads.
+// Copy for the home page. Figures are read from the charts named here.
 
 import type { TopicSlug } from '../types'
 import { count } from './counts'
@@ -16,9 +14,9 @@ export interface LedgerRow {
   chart: string
   series?: string
   x?: string
-  /** Measure line, as on the board. The build fills the value from data. */
+  /** Measure line. The value comes from the chart. */
   measure: string
-  /** Comparison line, as on the board. Its numbers come from the same chart. */
+  /** Comparison line. Its numbers come from the same chart. */
   compare: string
   /** "Released 17 Nov 2026" or "Announced 7 Oct 2026". */
   released: string
@@ -28,7 +26,7 @@ export interface StatePair {
   chart: string
   series?: string
   label: string
-  /** Office · unit · status, as on the board. */
+  /** Office · unit · status. */
   meta: string
 }
 
@@ -77,7 +75,6 @@ const home: Home = {
     intro: 'The latest headline number from each release, newest release first.',
     checked: 'Checked 17 Nov 2026',
     link: 'All releases',
-    // Board order: newest release first.
     rows: [
       {
         topic: 'economy',
@@ -182,8 +179,6 @@ const home: Home = {
       'Sources: MoSPI CPI release, 12 Nov 2026; MoSPI state accounts and RBI Handbook 2025-26; SRS Bulletin 2024; PLFS Annual Report 2025; Women and Men in India 2025 (ECI data); SRS Statistical Report 2024.',
     map: {
       eyebrow: `${count.places} states and union territories`,
-      // Board: "Each tile opens a state profile. Tamil Nadu ranks 3rd of 36 for inflation in October
-      // 2026, after Puducherry and Dadra and Nagar Haveli and Daman and Diu."
       text: ({ state, rank, of, measure, above }) =>
         `Each tile opens a state profile. ${state} ranks ${rank} of ${of} for ${measure}, after ${above}.`,
       selected: (state) => `${state}, selected`,

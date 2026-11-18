@@ -1,6 +1,4 @@
-// Topics index. Copy is verbatim from the board.
-// Topic names, Hindi names and chart counts come from the topic modules. The questions match
-// each topic README's "Questions this topic answers".
+// Copy for the Topics index.
 
 import type { TopicSlug } from '../types'
 import { count } from './counts'
