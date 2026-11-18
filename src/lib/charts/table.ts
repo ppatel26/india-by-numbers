@@ -63,12 +63,22 @@ export function tableOf(chart: Chart): TableModel {
     case 'bars':
     case 'pyramid': {
       const series = seriesOf(chart)
-      const keys = [...new Set(series.flatMap((s) => s.points.map((p) => p.x)))]
-      const label = chart.kind === 'bars' ? (k: string) => chart.labels?.[k] ?? rowName(k, false) : (k: string) => rowName(k, false)
+      const bars = chart.kind === 'bars' ? chart : undefined
+      // A bar chart's table follows the chart's own row order, including rows it marks as missing.
+      const keys = bars?.order ? [...bars.order] : [...new Set(series.flatMap((s) => s.points.map((p) => p.x)))]
+      const label = bars ? (k: string) => bars.labels?.[k] ?? rowName(k, false) : (k: string) => rowName(k, false)
+      const head = bars?.rowHead ?? (chart.kind === 'pyramid' ? 'Age group' : chart.kind === 'dots' && (chart.by ?? 'geography') === 'geography' ? 'State or UT' : 'Category')
       return {
-        columns: [chart.kind === 'pyramid' ? 'Age group' : chart.kind === 'dots' && (chart.by ?? 'geography') === 'geography' ? 'State or UT' : 'Category', ...series.map((s) => s.label)],
-        // A category missing from a series (a party that did not stand) is a dash, not missing data.
-        rows: keys.map((k) => ({ key: k, head: label(k), cells: series.map((s) => (s.points.some((p) => p.x === k) ? cell(chart, s.points.find((p) => p.x === k), s) : dash)) })),
+        columns: [head, ...series.map((s) => s.label)],
+        // A category missing from a series (a party that did not stand) is a dash, not missing data;
+        // a row the chart marks as missing carries its note.
+        rows: keys.map((k) => ({
+          key: k,
+          head: label(k),
+          cells: series.map((s) =>
+            s.points.some((p) => p.x === k) ? cell(chart, s.points.find((p) => p.x === k), s) : bars?.missing?.[k] ? { shown: { text: bars.missing[k]! }, raw: '' } : dash,
+          ),
+        })),
       }
     }
   }

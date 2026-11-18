@@ -229,6 +229,8 @@ export type Chart =
       /** Category order and display labels. Default: by value, high to low. */
       order?: readonly string[]
       labels?: Readonly<Record<string, string>>
+      /** Heading of the category column in the table view. Default: "Category". */
+      rowHead?: string
       /** Highlight one category with series-1, for example India's latest value. */
       highlight?: string
       /** A fixed colour per category, for example each religion's slot. */

@@ -231,19 +231,30 @@ const topic: Topic = {
           chart: {
             kind: 'bars',
             slug: 'warmest-years',
-            title: "India's warmest years since 1901",
-            subtitle: 'Annual mean land surface air temperature, difference from the 1991 to 2020 average, °C, India. The years IMD names in its statement for 2025.',
+            title: "India's warmest years since 1901, ranked",
+            subtitle:
+              'Rank among all years since 1901, and difference from the 1991 to 2020 average, °C, annual mean land surface air temperature, India.',
             punches: { office: 'IMD', unit: '°C vs 1991-2020', period: '2025' },
-            note: 'IMD names the five warmest years and the rank of 2025, but not the 6th and 7th warmest years. Older IMD statements used the 1981 to 2010 average, so their figures do not compare with these.',
+            note: 'IMD names the five warmest years and ranks 2025 eighth. It does not name the 6th and 7th, and it publishes the full series since 1901 only as a picture, so the chart cannot show every year. Older statements used the 1981 to 2010 average and do not compare.',
             sources: [IMD_CLIMATE_2025],
             format: { decimals: 2, unit: '°C', signed: true },
             by: 'period',
-            order: ['2024', '2016', '2009', '2010', '2017', '2025'],
+            // Rows run by rank, warmest first. The 6th and 7th warmest years are a visible gap.
+            order: ['2024', '2016', '2009', '2010', '2017', 'ranks-6-7', '2025'],
+            labels: {
+              '2024': '1st · 2024',
+              '2016': '2nd · 2016',
+              '2009': '3rd · 2009',
+              '2010': '4th · 2010',
+              '2017': '5th · 2017',
+              'ranks-6-7': '6th and 7th',
+              '2025': '8th · 2025',
+            },
+            missing: { 'ranks-6-7': 'Not named by IMD' },
+            rowHead: 'Rank and year',
             highlight: '2025',
-            // LATER: the board fills 2025 in ink (highlight is series-1), prints each rank from
-            // `rank_warmest_since_1901`, and adds a gap row "6th and 7th: not named by IMD".
             series: [
-              { key: 'anomaly', label: 'Other years', color: 'other', file: 'climate/warmest-years-temperature-anomaly.csv', x: 'period', where: { geography: 'india' } },
+              { key: 'anomaly', label: 'Difference from the 1991 to 2020 average', color: 'other', file: 'climate/warmest-years-temperature-anomaly.csv', x: 'period', where: { geography: 'india' } },
             ],
             know: [
               'The anomaly is the difference between a year\'s mean land surface air temperature and the 1991 to 2020 average.',
