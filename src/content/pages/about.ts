@@ -114,6 +114,18 @@ const about: AboutPage = {
         },
       ],
     },
+    {
+      id: 'privacy',
+      heading: 'What do you record about visitors?',
+      body: [
+        {
+          text: 'We count visits with Cloudflare Web Analytics: pages viewed, the site that sent you, your country and your type of device. It sets no cookies and does not follow you across other sites. The site stores your number format and your chosen state in your own browser only.',
+        },
+        {
+          text: 'A report sent with "Report a problem" is kept with the page, your message and, if you give one, your email address. We use the email only to reply.',
+        },
+      ],
+    },
   ],
 }
 
