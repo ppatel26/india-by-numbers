@@ -15,7 +15,9 @@ export function renderColumns(chart: Of<'columns'>, width: Width): Markup {
   const at = (x: string) => series.map((s) => ({ s, p: s.points.find((q) => q.x === x) })).filter((v) => v.p?.y != null)
   const totals = xs.map((p) => at(p.x).reduce((a, v) => a + (chart.stacked ? v.p!.y! : 0), 0))
   const values = chart.stacked ? totals : series.flatMap((s) => s.points.flatMap((p) => (p.y === null ? [] : [p.y])))
-  const m = { top: 16, right: 12, bottom: 30, left: yRoom(values, chart.y, chart.format) }
+  // Break and marker labels get their own band above the plot.
+  const ruled = (chart.breaks ?? []).length + (chart.markers ?? []).length > 0
+  const m = { top: ruled ? 40 : 16, right: 12, bottom: 30, left: yRoom(values, chart.y, chart.format) }
   const x = scaleBand<string>().domain(xs.map((p) => p.x)).range([m.left, W - m.right]).paddingInner(0.2)
   const y = yScale(values, [H - m.bottom, m.top], chart.y)
 

@@ -72,7 +72,7 @@ const steps = page && chart.kind === 'states' ? timelineOf(chart) : []
   {chart.note && <p class="note">Note: {chart.note}</p>}
   <figcaption class="foot">
     <Hallmark {...chart.punches} status={chart.status} />
-    <p class="source">{sourceLine(chart.sources)}</p>
+    <p class="source">{sourceLine(chart.sources, page)}</p>
     <p class="files">
       <a href={`${href}?tab=table`} data-view-link="table">Table</a> · <a href={`/charts/${chart.slug}.csv`} download>CSV</a>
       {chart.kind !== 'table' && (

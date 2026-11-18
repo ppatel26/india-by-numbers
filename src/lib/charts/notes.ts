@@ -26,8 +26,9 @@ function rule(b: Breakpoint, box: NoteBox, dotted: boolean): Markup | null {
   const bx = box.xOf(b.x)
   if (bx === undefined) return null
   const stroke = dotted ? 'var(--ink)' : 'var(--slate)'
-  return svg`<line x1="${bx}" x2="${bx}" y1="${box.top - 6}" y2="${box.bottom}" stroke="${stroke}"${dotted ? svg` stroke-dasharray="2 3"` : null}/>
-${b.before ? mono(bx - 6, box.top + 6, b.before, 'end', stroke) : null}${mono(b.before ? bx + 6 : bx - 6, box.top + 6, b.label, b.before ? 'start' : 'end', stroke)}`
+  // Labels sit in the band above the plot (callers leave 24 px for them), clear of the lines.
+  return svg`<line x1="${bx}" x2="${bx}" y1="${box.top - 22}" y2="${box.bottom}" stroke="${stroke}"${dotted ? svg` stroke-dasharray="2 3"` : null}/>
+${b.before ? mono(bx - 6, box.top - 12, b.before, 'end', stroke) : null}${mono(b.before ? bx + 6 : bx - 6, box.top - 12, b.label, b.before ? 'start' : 'end', stroke)}`
 }
 
 function callout(c: Callout, chart: WithNotes, box: NoteBox): Markup | null {

@@ -35,7 +35,9 @@ export function renderArea(chart: Of<'area'>, width: Width): Markup {
   const H = narrow ? 280 : 380
   const stacks = stacksOf(chart, series)
   const tops = stacks.flatMap((g) => g.layers.at(-1)!.map((d) => d[1]))
-  const m = { top: 16, right: narrow ? 96 : 170, bottom: 30, left: yRoom(tops, chart.y, chart.format) }
+  // Break and marker labels get their own band above the plot.
+  const ruled = (chart.breaks ?? []).length + (chart.markers ?? []).length > 0
+  const m = { top: ruled ? 40 : 16, right: narrow ? 96 : 170, bottom: 30, left: yRoom(tops, chart.y, chart.format) }
   const xs = [...new Map(stacks.flatMap((g) => g.xs).map((p) => [p.x, p])).values()].sort((a, b) => a.t - b.t)
   const x = scaleLinear().domain([xs[0]!.t, xs.at(-1)!.t]).range([m.left, W - m.right])
   const y = yScale(tops, [H - m.bottom, m.top], chart.y)

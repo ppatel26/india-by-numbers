@@ -42,7 +42,7 @@ export function renderLine(chart: Of<'line'>, width: Width): Markup {
   const perRow = narrow ? 1 : panels.length
   const W = WIDTH[width]
   const panelW = (W - (perRow - 1) * 24) / perRow
-  const panelH = panels.length > 1 ? (narrow ? 200 : 240) : narrow ? 260 : 360
+  const panelH = panels.length > 1 ? (narrow ? 200 : 240) : narrow ? 280 : 380
   const rows = Math.ceil(panels.length / perRow)
   // The shared scale covers every series except those in panels with their own scale.
   const ownKeys = new Set((chart.panels ?? []).filter((p) => p.own).flatMap((p) => p.series))
@@ -60,12 +60,21 @@ export function renderLine(chart: Of<'line'>, width: Width): Markup {
 
 function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values: number[], narrow: boolean, small: boolean, own = false): Markup {
   const endLabels = !small
-  // End labels need room for the longest series name (about 7 px a character at 12.5 px).
-  const labelRoom = Math.max(...panel.series.map((s) => s.label.length), 8) * 7 + 12
+  // End labels need room for the longest name or "value in period" line (about 7 px a character).
+  const lastLine = (s: SeriesData) => {
+    const p = s.points.findLast((q) => q.y !== null)
+    return p ? `${show(chart, p, s).text}${narrow ? '' : ` in ${p.label}`}`.length : 0
+  }
+  const labelRoom = Math.max(...panel.series.map((s) => Math.max(s.label.length, lastLine(s))), 8) * 7 + 12
   // A panel on its own scale may also have its own unit (enrolment in crore beside ratios).
   const f = own ? (panel.series[0]?.format ?? chart.format) : chart.format
   const axis = own ? undefined : chart.y
-  const m = { top: panel.label ? 34 : 16, right: endLabels ? Math.min(labelRoom, W * (narrow ? 0.4 : 0.22)) : 12, bottom: 28, left: yRoom(values, axis, f) }
+  // Room above the plot: the panel label, a key for the band and reference lines, and the
+  // labels of method breaks and markers, so none of them sits on the data.
+  const keyed = !!chart.band || (chart.refs ?? []).length > 0
+  const ruled = (chart.breaks ?? []).length + (chart.markers ?? []).length > 0
+  const top = (panel.label ? 34 : 16) + (keyed ? 24 : 0) + (ruled ? 24 : 0)
+  const m = { top, right: endLabels ? Math.min(labelRoom, W * (narrow ? 0.4 : 0.22)) : 12, bottom: 28, left: yRoom(values, axis, f) }
   const pts = panel.series.flatMap((s) => s.points)
   const ts = pts.map((p) => p.t)
   const x = scaleLinear().domain([Math.min(...ts), Math.max(...ts)]).range([m.left, W - m.right])
@@ -90,15 +99,24 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
 
   const band = chart.band
   const bandX0 = band ? x(Math.max(x.domain()[0]!, parseBandStart(band))) : 0
-  const bandEl = band
-    ? svg`<rect x="${bandX0}" y="${y(band.to)}" width="${W - m.right - bandX0}" height="${y(band.from) - y(band.to)}" fill="var(--band)"/>
-${note(bandX0 + 6, y(band.to) + 14, band.label)}`
-    : null
-
+  const bandEl = band ? svg`<rect x="${bandX0}" y="${y(band.to)}" width="${W - m.right - bandX0}" height="${y(band.from) - y(band.to)}" fill="var(--band)"/>` : null
   const refs = (chart.refs ?? []).map(
-    (r) => svg`<line x1="${m.left}" x2="${W - m.right}" y1="${y(r.y)}" y2="${y(r.y)}" stroke="var(--slate)" stroke-dasharray="2 3"/>
-${note(W - m.right - 4, y(r.y) - 5, r.label, 'end')}`,
+    (r) => svg`<line x1="${m.left}" x2="${W - m.right}" y1="${y(r.y)}" y2="${y(r.y)}" stroke="var(--slate)" stroke-dasharray="2 3"/>`,
   )
+  // The key names the band and the reference lines above the plot, not on top of the lines.
+  const keyY = (panel.label ? 34 : 16) + 6
+  let kx = m.left
+  const key = keyed
+    ? svg`${band ? (() => {
+        const at = kx
+        kx += 26 + band.label.length * 6.6 + 18
+        return svg`<rect x="${at}" y="${keyY - 9}" width="18" height="12" fill="var(--band)" stroke="var(--rule)"/><text x="${at + 24}" y="${keyY + 1}" font-size="12" fill="var(--slate)">${band.label}</text>`
+      })() : null}${(chart.refs ?? []).map((r) => {
+        const at = kx
+        kx += 26 + r.label.length * 6.6 + 18
+        return svg`<line x1="${at}" x2="${at + 18}" y1="${keyY - 3}" y2="${keyY - 3}" stroke="var(--slate)" stroke-dasharray="2 3"/><text x="${at + 24}" y="${keyY + 1}" font-size="12" fill="var(--slate)">${r.label}</text>`
+      })}`
+    : null
 
   const segs = panel.series.map((s) => segments(s.points, !chart.step))
   const lines = panel.series.map((s, i) =>
@@ -114,11 +132,14 @@ ${note(W - m.right - 4, y(r.y) - 5, r.label, 'end')}`,
     .filter(([a, b]) => x(b.t) - x(a.t) > 50)
     .map(([a, b]) => note((x(a.t) + x(b.t)) / 2, H - m.bottom - 6, 'No data', 'middle'))
 
+  // End labels name the series that reach the right edge. A series that stops earlier (an old
+  // base, an old survey design) is named in the tooltip and the table instead.
+  const tEnd = Math.max(...panel.series.flatMap((s) => s.points.filter((p) => p.y !== null).map((p) => p.t)))
   const ends = endLabels
     ? spread(
         panel.series.flatMap((s) => {
           const last = s.points.findLast((p) => p.y !== null)
-          return last ? [{ s, p: last, y: y(last.y!) }] : []
+          return last && tEnd - last.t < 0.5 ? [{ s, p: last, y: y(last.y!) }] : []
         }),
         30,
         m.top,
@@ -141,7 +162,7 @@ ${note(W - m.right - 4, y(r.y) - 5, r.label, 'end')}`,
   })
 
   return svg`${panel.label ? svg`<text x="${m.left}" y="14" font-size="13" font-weight="600" fill="var(--ink)">${panel.label}</text>` : null}
-${bandEl}${yGrid(y, ticks, m.left, W - m.right, f)}${refs}${notes.under}
+${key}${bandEl}${yGrid(y, ticks, m.left, W - m.right, f)}${refs}${notes.under}
 ${xLabels(timeTicks(sorted, x, narrow || small ? 4 : 8), H - m.bottom)}
 ${noData}${lines}${notes.over}${ends}<g class="hits">${hits}</g>`
 }

@@ -9,7 +9,12 @@ export function releasedText(s: Source): string {
 }
 
 /** "Source: MoSPI, CPI release for October 2026, 12 Nov 2026. Checked 18 Nov 2026." */
-export function sourceLine(sources: readonly Source[]): string {
+export function sourceLine(sources: readonly Source[], full = true): string {
+  // In a chart frame, a long list of releases shortens to the latest; the chart page lists them all.
+  if (!full && sources.length > 2) {
+    const [first] = sources
+    return `Sources: ${first!.publisher}, ${first!.release}, ${releasedText(first!)}, and ${sources.length - 1} more, listed on the chart page. Checked ${formatDate(SITE.checked)}.`
+  }
   const list = sources.map((s) => `${s.publisher}, ${s.release}, ${releasedText(s)}`).join('; ')
   return `Source${sources.length > 1 ? 's' : ''}: ${list}. Checked ${formatDate(SITE.checked)}.`
 }
