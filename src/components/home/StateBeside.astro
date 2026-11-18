@@ -62,7 +62,6 @@ const sentence = (slug: string): string => {
   </div>
   <div class="map">
     <p class="label muted">{content.map.eyebrow}</p>
-    <p class="hint muted">{content.map.hint}</p>
     <div class="peek" data-peek><TileNav /></div>
     <div class="per-state">
       {places.map((p) => <p data-geo={p.slug}>{sentence(p.slug)}</p>)}
@@ -161,15 +160,6 @@ const sentence = (slug: string): string => {
   }
   .peek {
     width: fit-content;
-  }
-  .hint {
-    margin-bottom: 14px;
-    font-size: 13px;
-  }
-  @media (hover: none) {
-    .hint {
-      display: none;
-    }
   }
   .links {
     display: grid;

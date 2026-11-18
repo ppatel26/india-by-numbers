@@ -36,7 +36,8 @@ export interface SourcesPage {
   breadcrumb: string
   title: string
   hindi: string
-  intro: string
+  /** For search engines and link previews; not shown on the page. */
+  description: string
   checked: string
   summary: { finding: string; licence: string }
   chart: { number: string; title: string; subtitle: string; note: string }
@@ -223,7 +224,7 @@ const sources: SourcesPage = {
   breadcrumb: 'About the data / Sources',
   title: 'Sources',
   hindi: 'स्रोत',
-  intro: `Every figure on this site comes from one of these ${PUBLISHERS.length} publishers. The first release has ${count.charts} charts.`,
+  description: `The ${PUBLISHERS.length} publishers behind India by Numbers: what we take from each, how often it releases, and its terms.`,
   checked: 'Page checked 18 Nov 2026',
   summary: {
     finding: `Two offices, MoSPI and ORGI, supply the data for most of the ${count.charts} charts. Some charts combine two publishers, so the bars add up to more than ${count.charts}.`,

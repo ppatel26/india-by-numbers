@@ -210,7 +210,7 @@ const topic: Topic = {
               'Annual change in the Consumer Price Index (2024=100), rural and urban combined, %, 36 states and UTs, October 2026. Colour shows the gap from India.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'OCT 2026' },
             status: ['Provisional'],
-            note: 'Each state and UT is one equal tile; the grid does not show borders. MoSPI says state indices use thinner samples than the national index.',
+            note: 'MoSPI says state indices use thinner samples than the national index.',
             sources: [CPI_RELEASE, CPI_API],
             format: { unit: '%' },
             data: { file: 'prices/cpi-inflation-by-state.csv', where: { period: '2026-10', sector: 'combined' } },
@@ -482,8 +482,6 @@ const topic: Topic = {
   ],
   // LATER: the About band's side line ("How each prices figure is made, where it breaks, and what is missing.") has no field.
   about: {
-    intro:
-      'All values are as published. We last checked every source on 18 November 2026. The October 2026 values match the MoSPI CPI press release of 12 November 2026, table by table.',
     publisher:
       'The National Statistics Office (NSO), MoSPI, compiles the Consumer Price Index (CPI) for rural, urban and combined India, for each state and UT, and for 12 spending divisions. The Reserve Bank of India (RBI) sets the repo rate and publishes CPI for industrial workers (CPI-IW) from the Labour Bureau in its Handbook of Statistics.',
     frequency:

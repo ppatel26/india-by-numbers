@@ -11,8 +11,8 @@ const rows = changeLog.rows
 const [all, ...kinds] = changeLog.filters.kinds
 ---
 
-<Base title={page.title} description={page.intro}>
-  <PageHeader title={page.title} hindi={page.hindi} intro={page.intro}>
+<Base title={page.title} description={page.description}>
+  <PageHeader title={page.title} hindi={page.hindi}>
     <p class="label muted meta"><a href="/releases/feed.xml">{page.feed}</a> <span>{page.checked}</span></p>
   </PageHeader>
 

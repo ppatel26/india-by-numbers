@@ -297,7 +297,7 @@ const topic: Topic = {
             subtitle:
               'Net state domestic product per person, rupees a year, current prices, 2024-25. State accounts are on the 2011-12 base. Darker means higher.',
             punches: { office: 'MoSPI', unit: '₹ a year', period: '2024-25' },
-            note: 'Each state and UT is one equal tile; the grid does not show borders. India is per capita net national income, the comparator the RBI uses. Assam and Haryana: MoSPI data as on 1 August 2025, from the RBI Handbook.',
+            note: 'India is per capita net national income, the comparator the RBI uses. Assam and Haryana: MoSPI data as on 1 August 2025, from the RBI Handbook.',
             sources: [STATE_API, RBI_TABLE_9],
             format: { unit: '₹', decimals: 0, scale: 'none' },
             data: { file: 'economy/per-capita-nsdp-by-state.csv', where: { price_basis: 'current prices' } },
@@ -527,8 +527,6 @@ const topic: Topic = {
   ],
   // LATER: the About band's side line ("How each economy figure is made, where it breaks, and what is missing.") has no field.
   about: {
-    intro:
-      'All values are as published, except where a chart says derived. We last checked every source on 18 November 2026. The national accounts values match the GDP press note of 31 August 2026 and the IIP release of 28 October 2026.',
     publisher:
       'The National Statistics Office (NSO), MoSPI, publishes the national accounts (GDP, GVA by industry), the state accounts and the Index of Industrial Production (IIP). The Reserve Bank of India (RBI) publishes the exchange rate tables; the daily reference rate comes from Financial Benchmarks India (FBIL).',
     frequency:

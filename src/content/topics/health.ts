@@ -437,7 +437,7 @@ const topic: Topic = {
             subtitle: 'Infant deaths per 1,000 live births, 36 states and UTs. Bigger states: 2024. Smaller states and UTs: three-year pool, 2022-24.',
             punches: { office: 'ORGI', unit: 'per 1,000', period: '2024' },
             status: ['Survey estimate'],
-            note: "Each state and UT is one equal tile; the grid is not a map of borders. For the 15 smaller states and UTs, SRS pools three years because each year's sample is small. Manipur's rate of 2 is the lowest, but it rests on 130 sample units. SRS gives rural and urban rates for India and the 21 bigger states only.",
+            note: "For the 15 smaller states and UTs, SRS pools three years because each year's sample is small. Manipur's rate of 2 is the lowest, but it rests on 130 sample units. SRS gives rural and urban rates for India and the 21 bigger states only.",
             sources: [withTable(SRS_BULLETIN_2024, 'Table 1')],
             format: { decimals: 0 },
             // LATER: the board draws pooled (2022-24) rates with a dotted tile edge, from `estimate_basis`.
@@ -500,8 +500,6 @@ const topic: Topic = {
   ],
   // LATER: the About band's side line ("How each health measure is made, which are surveys, where the series break, and what is missing.") has no field.
   about: {
-    intro:
-      'All values are as published. We last checked every source on 18 November 2026. SRS and NFHS are sample surveys, so most figures on this page are survey estimates.',
     publisher:
       'The Office of the Registrar General of India (ORGI) runs the Sample Registration System (SRS), a large sample survey of births and deaths. It publishes infant and maternal mortality and life tables from it. The International Institute for Population Sciences (IIPS) runs the National Family Health Survey (NFHS) for the Ministry of Health and Family Welfare (MoHFW). The National Health Systems Resource Centre (NHSRC) compiles the National Health Accounts for MoHFW.',
     frequency:

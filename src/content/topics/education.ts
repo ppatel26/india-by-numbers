@@ -198,7 +198,7 @@ const topic: Topic = {
             title: 'Dropout rate in classes 9 and 10 by state and UT, 2025-26',
             subtitle: 'Students in classes 9 and 10 who dropped out, %, 36 states and UTs, 2025-26.',
             punches: { office: 'MoE', unit: '%', period: '2025-26' },
-            note: 'Each state and UT is one equal tile. The grid is not a map of borders. Rates are as published in UDISE+ Table 6.13; the India rate fell from 11.5% in 2024-25 to 9.5%.',
+            note: 'Rates are as published in UDISE+ Table 6.13; the India rate fell from 11.5% in 2024-25 to 9.5%.',
             sources: [udise2025_26],
             format: { unit: '%', decimals: 1 },
             data: { file: DROPOUT, where: { level: 'secondary (9-10)', sex: 'total' }, x: 'geography' },
@@ -517,7 +517,7 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each education figure is made, where it breaks, and what is missing.") has no field.
   about: {
     intro:
-      'All values are as published. We last checked every source on 18 November 2026. School figures are an administrative count of schools, college figures come from a survey of institutions, and literacy comes from a household survey and the Census.',
+      'School figures are an administrative count of schools, college figures come from a survey of institutions, and literacy comes from a household survey and the Census.',
     publisher:
       'The Ministry of Education publishes school data through UDISE+ (Department of School Education and Literacy) and college data through the All India Survey on Higher Education, AISHE (Department of Higher Education). The National Statistics Office (NSO), MoSPI, publishes the PLFS literacy estimate. The Office of the Registrar General of India (ORGI) runs the Census.',
     frequency:

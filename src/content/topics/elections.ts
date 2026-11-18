@@ -323,7 +323,7 @@ const topic: Topic = {
             title: 'Turnout by state and UT, 2024 general election',
             subtitle: 'Share of electors who voted, %, 18th Lok Sabha election, 2024. Darker tiles had higher turnout.',
             punches: { office: 'MoSPI', unit: '% of electors', period: '2024' },
-            note: "Each state and UT is one equal tile; the grid is not a map of borders. Tamil Nadu, outlined, was 70.14%, above India's 66.10%. Gujarat excludes Surat, where the seat was won unopposed and no poll was held. Lakshadweep counts are rounded to thousands in the source.",
+            note: "Tamil Nadu, outlined, was 70.14%, above India's 66.10%. Gujarat excludes Surat, where the seat was won unopposed and no poll was held. Lakshadweep counts are rounded to thousands in the source.",
             sources: [WMI_5_7],
             format: { decimals: 2, unit: '%' },
             data: { file: TURNOUT_BY_STATE, where: { series: 'turnout_total' }, x: 'geography' },
@@ -529,7 +529,7 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each election figure is made, where it breaks, and what is missing.") has no field.
   about: {
     intro:
-      "All values are as published, except those marked Derived. We last checked every source on 18 November 2026. ECI's reports are the source; we read archived copies of the original ECI pages.",
+      "ECI's reports are the source; we read archived copies of the original ECI pages.",
     publisher:
       'The Election Commission of India (ECI) runs national and state elections and publishes electors, votes and results. MoSPI republishes the Lok Sabha series by sex in Women and Men in India 2025. The Lok Sabha Secretariat gives the count of women MPs.',
     frequency:

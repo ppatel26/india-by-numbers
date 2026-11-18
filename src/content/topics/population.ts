@@ -409,7 +409,7 @@ const topic: Topic = {
             subtitle:
               'Change in the number of people counted between Census 2001 and Census 2011, %, and people counted in 2011, states and UTs as in Census 2011.',
             punches: { office: 'ORGI', unit: '% change', period: '2001-2011' },
-            note: 'Each state and UT is one equal tile; the grid is not a map of borders. Telangana and Ladakh have no 2011 figures of their own: their people are counted in Andhra Pradesh and in Jammu and Kashmir. Dadra and Nagar Haveli and Daman and Diu were two UTs in 2011; the tile shows their sum (derived).',
+            note: 'Telangana and Ladakh have no 2011 figures of their own: their people are counted in Andhra Pradesh and in Jammu and Kashmir. Dadra and Nagar Haveli and Daman and Diu were two UTs in 2011; the tile shows their sum (derived).',
             sources: [censusA02States],
             format: { unit: '%', decimals: 2 },
             data: {
@@ -540,7 +540,7 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each population figure is made: counts, survey estimates and projections.") has no field.
   about: {
     intro:
-      'This page uses three kinds of figure. Census 2011 is a count of every person. The SRS is a sample survey. The 2026 and 2036 values are projections. Each chart says which one it shows.',
+      'Census 2011 is a count of every person. The SRS is a sample survey. The 2026 and 2036 values are projections.',
     publisher:
       'The Office of the Registrar General and Census Commissioner, India (ORGI), Ministry of Home Affairs, runs the Census and the Sample Registration System (SRS). The National Commission on Population, Ministry of Health and Family Welfare (MoHFW), publishes the population projections of its Technical Group.',
     frequency:

@@ -32,7 +32,7 @@ export const GET: APIRoute = ({ site }) => {
 <channel>
 <title>${escape(`${SITE.name}: ${page.title.toLowerCase()}`)}</title>
 <link>${base}</link>
-<description>${escape(page.intro)}</description>
+<description>${escape(page.description)}</description>
 <language>en-IN</language>
 ${rows[0] ? `<lastBuildDate>${rfc822(rows[0].released)}</lastBuildDate>` : ''}
 ${items.join('\n')}

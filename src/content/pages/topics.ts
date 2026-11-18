@@ -13,7 +13,8 @@ export interface TopicsPage {
   breadcrumb: string
   title: string
   hindi: string
-  intro: string
+  /** For search engines and link previews; not shown on the page. */
+  description: string
   counts: { topics: string; charts: string; states: string }
   row: {
     questionsLabel: string
@@ -26,7 +27,6 @@ export interface TopicsPage {
   comingLater: { heading: string; intro: string; topics: readonly string[] }
   allCharts: {
     heading: string
-    intro: string
     link: string
     searchPlaceholder: string
     filters: readonly string[]
@@ -38,7 +38,7 @@ const topics: TopicsPage = {
   breadcrumb: 'Home / Topics',
   title: 'Topics',
   hindi: 'विषय',
-  intro: 'Each topic page answers a few plain questions. Every chart has a table, a source and a CSV.',
+  description: `${count.topics} topics and ${count.charts} charts of India's official statistics, with the release behind each figure.`,
   counts: { topics: 'Topics', charts: 'Charts', states: 'States and UTs' },
   row: {
     questionsLabel: 'Questions it answers',
@@ -166,7 +166,6 @@ const topics: TopicsPage = {
   },
   allCharts: {
     heading: 'All charts',
-    intro: 'Every chart has a table, a source and a CSV.',
     link: 'Go to All charts',
     searchPlaceholder: `Search ${count.charts} charts, for example "turnout"`,
     filters: [`Topic: All ${count.topics}`, 'Chart type: All', 'Has state data', 'Status: Any'],

@@ -1,6 +1,6 @@
 ---
 import Wordmark from './Wordmark.astro'
-import { topics } from '~/content'
+import { charts, topics } from '~/content'
 import { formatDate } from '~/lib/period'
 import { places } from '~/lib/geography'
 import { SITE } from '~/lib/site'
@@ -8,7 +8,7 @@ import { flapDate, upcoming } from '~/lib/releases'
 
 // The timetable: when we last checked, and the next two announced releases.
 const timetable = [
-  { what: 'Checked', date: SITE.checked, detail: 'Every figure, against its release', href: '/how-we-check/' },
+  { what: 'Checked', date: SITE.checked, detail: `All ${charts.length} charts`, href: '/how-we-check/' },
   ...upcoming(2).map((d, i) => ({ what: i ? 'Then' : 'Next', date: d.date, detail: `${d.name} · ${d.publisher}`, href: '/releases/' })),
 ]
 

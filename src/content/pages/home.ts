@@ -27,14 +27,14 @@ export interface StatePair {
 
 export interface Home {
   title: string
-  standfirst: string
+  /** For search engines and link previews; not shown on the page. */
+  description: string
   search: { placeholder: string; key: string; tryLabel: string; tryTerms: readonly string[] }
-  newest: { heading: string; intro: string; checked: string; link: string; rows: readonly LedgerRow[] }
-  browse: { heading: string; intro: string; link: string; tileChartsLabel: (n: number) => string }
+  newest: { heading: string; checked: string; link: string; rows: readonly LedgerRow[] }
+  browse: { heading: string; link: string; tileChartsLabel: (n: number) => string }
   comingLater: { label: string; topics: readonly string[] }
   stateBeside: {
     heading: string
-    intro: string
     pickerLabel: string
     defaultState: string
     legendNote: string
@@ -45,8 +45,6 @@ export interface Home {
       eyebrow: string
       /** The chosen state's rank on the first pair, e.g. "3rd highest of 36". */
       text: (p: { state: string; rank: string }) => string
-      /** Shown only where a pointer can hover. */
-      hint: string
       /** Before and after the state's name in the profile link. */
       profileLink: readonly [string, string]
       allLink: string
@@ -56,7 +54,7 @@ export interface Home {
 
 const home: Home = {
   title: "Charts of India's official statistics",
-  standfirst: 'Each figure shows who published it, the period it covers and the day we checked it.',
+  description: "Charts of India's official statistics, for India and its 36 states and union territories: prices, the economy, jobs, population, health, education, elections, climate, and religion and culture.",
   search: {
     placeholder: 'Search charts, topics and states',
     key: '/',
@@ -65,7 +63,6 @@ const home: Home = {
   },
   newest: {
     heading: 'Newest figures',
-    intro: 'The latest headline number from each release, newest release first.',
     checked: 'Checked 18 Nov 2026',
     link: 'All releases',
     rows: [
@@ -132,7 +129,6 @@ const home: Home = {
   },
   browse: {
     heading: 'Browse by topic',
-    intro: `${count.topics} topics, ${count.charts} charts. Each topic page answers plain questions. Every chart carries its source.`,
     link: 'All topics',
     tileChartsLabel: (n) => `${n} charts`,
   },
@@ -153,7 +149,6 @@ const home: Home = {
   },
   stateBeside: {
     heading: 'Your state beside India',
-    intro: "Choose a state or union territory. Its latest figures sit next to India's, on every topic.",
     pickerLabel: 'State',
     defaultState: 'tamil-nadu',
     legendNote: 'Bars start at zero · each row on its own scale',
@@ -167,12 +162,11 @@ const home: Home = {
       { chart: 'lok-sabha-turnout-by-state', label: 'Lok Sabha turnout, 2024', meta: '% of electors' },
       { chart: 'fertility-rate-by-state', label: 'Fertility rate, 2024', meta: 'children per woman · Survey estimate' },
     ],
-    note: 'Income per person: net state domestic product for a state, net national income for India. Each row opens its chart, with full sources.',
+    note: 'Income per person: net state domestic product for a state, net national income for India.',
     sources: 'Sources: MoSPI (CPI, state accounts, PLFS, ECI turnout), RBI, ORGI (SRS).',
     map: {
       eyebrow: `${count.places} states and UTs`,
       text: ({ state, rank }) => `${state}: ${rank} for inflation, October 2026.`,
-      hint: 'Hover over a tile to see that state. Click to open its page.',
       profileLink: ['Open the ', ' page'],
       allLink: `All ${count.places} states and UTs`,
     },

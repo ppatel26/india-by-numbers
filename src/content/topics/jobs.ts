@@ -248,7 +248,6 @@ const topic: Topic = {
               'Monthly estimates start in April 2025, after PLFS moved to a new sample design in January 2025. There is no monthly series before that.',
               'MoSPI gives no rural rate for March 2026, and no rates by sex or for ages 15 to 29 for that month. The overall rate (5.1%) and the urban rate (6.8%) for March 2026 come from the press note of 15 April 2026.',
               'Weekly rates are higher than the usual-status rates in the annual report. In 2025 the usual-status rate was 3.1%, and the weekly rate was between 4.7% and 5.6% in every month from April to December.',
-              'Every value is a survey estimate from a household sample, not a count.',
             ],
             processing: [
               'Read the monthly LFPR, WPR and unemployment rates for April 2025 to October 2026 from the MoSPI eSankhyiki API (PLFS, current weekly status).',
@@ -312,7 +311,6 @@ const topic: Topic = {
               'PLFS moved to a new sample design in January 2025. The new urban series starts in April to June 2025. MoSPI says to take the change into account when comparing with releases up to December 2024.',
               'There is no estimate for January to March 2025. For ages 15 to 29 there is no urban rate for October 2020 to December 2021.',
               'The rate uses the current weekly status: activity in the 7 days before the interview.',
-              'Every value is a survey estimate from a household sample.',
             ],
             processing: [
               'Read each quarter from the bulletin tables (Statement 5 in the old design), not from the eSankhyiki API, because the API gives wrong values for some past quarters.',
@@ -413,7 +411,6 @@ const topic: Topic = {
               'Self-employed workers run their own business or farm, employ others, or help without pay in a household business. MoSPI publishes the two parts separately; this chart shows their total.',
               'Women workers are more often self-employed than men, mostly because more of them help without pay in a family business.',
               'The shares cover workers of all ages on the usual status, which counts activity over the 365 days before the interview.',
-              'Every value is a survey estimate from a household sample.',
             ],
             processing: [
               'Read Statement 7 of the PLFS Annual Report 2025 for calendar years 2022 to 2025, by sector and sex.',
@@ -487,7 +484,6 @@ const topic: Topic = {
               'Industries follow the National Industrial Classification (NIC) 2008. "Other services" includes public administration, education, health, finance and other services.',
               'The shares cover workers of all ages on the usual status, which counts activity over the 365 days before the interview.',
               'Agriculture fell from 45.5% of workers in 2022 to 43.0% in 2025. Construction fell from 13.4% to 12.0%.',
-              'Every value is a survey estimate from a household sample.',
             ],
             processing: [
               'Read Statement 8 of the PLFS Annual Report 2025 for calendar years 2022 to 2025, by sector and sex.',
@@ -526,7 +522,6 @@ const topic: Topic = {
               'The rate is the share of the labour force aged 15 to 29 with no work, on the usual status, which counts activity over the 365 days before the interview.',
               'Young women in towns and cities have the highest rate: 18.9% in 2025, down from 21.9% in 2022.',
               'The series uses calendar years from the 2025 annual report. Earlier reports used July to June years, which are not shown here.',
-              'Every value is a survey estimate from a household sample.',
             ],
             processing: [
               'Read Statement 18 of the PLFS Annual Report 2025 for calendar years 2022 to 2025.',
@@ -551,7 +546,7 @@ const topic: Topic = {
               'Share of women aged 15 and over who work or look for work, usual status, rural and urban combined, %, all 36 states and UTs, 2025.',
             punches: { office: 'MoSPI', unit: '% women', period: '2025' },
             status: ['Survey estimate'],
-            note: 'This is the usual-status rate for 2025 (India 40.0%). The monthly rate for October 2026, on the current weekly status, was 35.0%; the two are different measures. Each state and UT is one equal tile, not a map of borders. Samples are small in Lakshadweep, the Andaman and Nicobar Islands, Ladakh, Chandigarh and Dadra and Nagar Haveli and Daman and Diu; Chandigarh has urban data only.',
+            note: 'This is the usual-status rate for 2025 (India 40.0%). The monthly rate for October 2026, on the current weekly status, was 35.0%; the two are different measures. Samples are small in Lakshadweep, the Andaman and Nicobar Islands, Ladakh, Chandigarh and Dadra and Nagar Haveli and Daman and Diu; Chandigarh has urban data only.',
             sources: [plfsAnnual2025],
             format: { unit: '%', decimals: 1 },
             data: { file: LFPR_STATE, where: { sex: 'female', age_group: '15+' }, x: 'geography' },
@@ -632,10 +627,8 @@ const topic: Topic = {
   ],
   // LATER: the About band's side line ("How each jobs figure is made, where it breaks, and what is missing.") has no field.
   about: {
-    intro:
-      'All values are as published. We last checked every source on 18 November 2026. The monthly rates for June to October 2026 match Statement 3 of the MoSPI bulletin of 16 November 2026.',
     publisher:
-      'The National Statistics Office (NSO), Ministry of Statistics and Programme Implementation (MoSPI), runs the Periodic Labour Force Survey (PLFS), a household survey. Every figure on this page is a survey estimate from it.',
+      'The National Statistics Office (NSO), Ministry of Statistics and Programme Implementation (MoSPI), runs the Periodic Labour Force Survey (PLFS), a household survey.',
     frequency:
       'Monthly bulletin (current weekly status, India, rural and urban): the October 2026 bulletin came out on 16 Nov 2026. Quarterly bulletin: the July to September 2026 bulletin came out on 10 Nov 2026. Annual report (usual status, all states and UTs): the 2025 report came out on 27 Mar 2026.',
     revisions:

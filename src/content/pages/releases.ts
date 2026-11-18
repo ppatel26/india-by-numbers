@@ -28,7 +28,8 @@ export interface ReleasesPage {
   breadcrumb: string
   title: string
   hindi: string
-  intro: string
+  /** For search engines and link previews; not shown on the page. */
+  description: string
   feed: string
   checked: string
   dueNext: {
@@ -53,8 +54,7 @@ const releases: ReleasesPage = {
   breadcrumb: 'About the data / Releases and corrections',
   title: 'Releases and corrections',
   hindi: 'रिलीज़ और सुधार',
-  intro:
-    'What changed on this site, what is due next, and every error we fix. Each row below is a publisher release that the site carries.',
+  description: 'New publisher releases, the releases due next, and our corrections, for India by Numbers.',
   feed: 'Feed (RSS)',
   checked: 'Page checked 18 Nov 2026',
   dueNext: {

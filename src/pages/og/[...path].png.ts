@@ -5,16 +5,16 @@ import { places } from '~/lib/geography'
 import { chartImage, plainImage, stateImage, topicImage } from '~/lib/og'
 import { SITE } from '~/lib/site'
 
-const counts = `Charts of India's official statistics: ${topics.length} topics, ${charts.length} charts and ${places.length} states and UTs, each figure with its source and period.`
+const counts = `Charts of India's official statistics: ${topics.length} topics, ${charts.length} charts, ${places.length} states and UTs.`
 
 const plain: Record<string, [string, string]> = {
   home: ['India by Numbers', counts],
-  topics: ['Topics', 'Each topic page answers a few plain questions. Every chart has a table, a source and a CSV.'],
-  charts: ['All charts', `${charts.length} charts. Every chart has a table, a source and a CSV.`],
-  states: ['States and union territories', "One state's figures beside India's, on every topic."],
+  topics: ['Topics', `${topics.length} topics, ${charts.length} charts.`],
+  charts: ['All charts', `${charts.length} charts, by topic.`],
+  states: ['States and union territories', `${places.length} states and UTs, each beside India.`],
   'how-we-check': ['How we check', 'You should not have to take our word for it.'],
-  sources: ['Sources', 'Every figure on this site comes from one of these publishers.'],
-  releases: ['Releases', 'What changed on this site, and what is due next.'],
+  sources: ['Sources', 'The publishers behind every figure.'],
+  releases: ['Releases', 'New releases and what is due next.'],
   corrections: ['Corrections', 'What we got wrong, and what we changed.'],
   about: [`About ${SITE.name}`, 'A free, independent site for India’s official statistics. Not a government website.'],
   search: ['Search', counts],

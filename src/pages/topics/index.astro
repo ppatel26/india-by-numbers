@@ -40,8 +40,8 @@ function kindOf(c: Chart): string {
 }
 ---
 
-<Base title={page.title} description={page.intro}>
-  <PageHeader title={page.title} hindi={page.hindi} intro={page.intro}>
+<Base title={page.title} description={page.description}>
+  <PageHeader title={page.title} hindi={page.hindi}>
     <dl class="counts">
       {counts.map(([n, label]) => (
         <div>
@@ -97,7 +97,6 @@ function kindOf(c: Chart): string {
       <div class="section-head">
         <div>
           <h2 class="display" id="all-charts">{page.allCharts.heading}</h2>
-          <p>{page.allCharts.intro}</p>
         </div>
         <a class="go" href="/charts/">{page.allCharts.link}</a>
       </div>

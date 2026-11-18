@@ -8,20 +8,18 @@ import StateBeside from '~/components/home/StateBeside.astro'
 import RangoliField from '~/components/home/RangoliField.astro'
 import home from '~/content/pages/home'
 import tiles from '~/content/pages/tiles'
-import { charts, topics } from '~/content'
+import { topics } from '~/content'
 import { EMBLEM_ALT } from '~/lib/emblems'
 import { SITE } from '~/lib/site'
 
-const browseIntro = `${topics.length} topics, ${charts.length} charts. Each topic page answers a few plain questions with charts, tables and sources.`
 ---
 
-<Base title={SITE.name} description={`${home.title}. ${home.standfirst}`} imageAlt="India by Numbers: India's official statistics, checked and charted" defaultState={home.stateBeside.defaultState}>
+<Base title={SITE.name} description={home.description} imageAlt="India by Numbers: India's official statistics, checked and charted" defaultState={home.stateBeside.defaultState}>
   <header class="hero on-dark">
     <RangoliField />
     <div class="wrap inner">
       <div class="text">
         <h1 class="display">{home.title}</h1>
-        <p class="standfirst">{home.standfirst}</p>
         <form class="search" action="/search/" method="get" role="search">
           <label class="visually-hidden" for="home-q">Search</label>
           <svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.5"></path></svg>
@@ -40,7 +38,6 @@ const browseIntro = `${topics.length} topics, ${charts.length} charts. Each topi
     <div class="section-head">
       <div>
         <h2 class="display" id="newest">{home.newest.heading}</h2>
-        <p>{home.newest.intro}</p>
       </div>
       <a href="/releases/">{home.newest.link}</a>
     </div>
@@ -51,7 +48,6 @@ const browseIntro = `${topics.length} topics, ${charts.length} charts. Each topi
     <div class="section-head plain">
       <div>
         <h2 class="display" id="browse">{home.browse.heading}</h2>
-        <p>{browseIntro}</p>
       </div>
       <a href="/topics/">{home.browse.link}</a>
     </div>
@@ -65,7 +61,6 @@ const browseIntro = `${topics.length} topics, ${charts.length} charts. Each topi
     <div class="section-head">
       <div>
         <h2 class="display" id="beside">{home.stateBeside.heading}</h2>
-        <p>{home.stateBeside.intro}</p>
       </div>
       <div class="picker"><StateSelect label="Choose a state or UT" /></div>
     </div>
@@ -91,19 +86,20 @@ const browseIntro = `${topics.length} topics, ${charts.length} charts. Each topi
     min-height: 340px;
     padding-block: 48px;
   }
+  /* The headline is one line at any width: it sizes to its column (container query units). */
   .text {
     flex: 1;
-    max-width: 700px;
+    min-width: 0;
+    container-type: inline-size;
   }
   h1 {
-    font-size: clamp(32px, 4vw, 48px);
-    line-height: 1.08;
+    white-space: nowrap;
+    font-size: min(44px, 5.1cqi);
+    line-height: 1.1;
   }
-  .standfirst {
-    margin-top: 10px;
-    font-size: 17px;
-    line-height: 28px;
-    color: var(--silver-dim);
+  .search,
+  .try {
+    max-width: 700px;
   }
   .search {
     display: flex;

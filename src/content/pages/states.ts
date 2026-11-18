@@ -65,7 +65,7 @@ const states: StatesPage = {
   title: 'States and union territories',
   hindi: 'राज्य और केंद्र शासित प्रदेश',
   intro:
-    `India has ${count.states} states and ${count.uts} union territories. Each one has a page that puts its figures beside India's on every topic. Pick a measure to colour the map, one at a time.`,
+    `India has ${count.states} states and ${count.uts} union territories.`,
   map: {
     number: '1',
     title: 'Income per person by state and UT, 2024-25',
@@ -94,7 +94,7 @@ const states: StatesPage = {
       rank: ({ rank, of, india }) => `${rank} highest of ${of} · India ${india}`,
       open: (state) => `Open the ${state} page →`,
     },
-    note: "Note: Each state and UT is one equal tile; the grid is not a map of borders. MoSPI's 2024-25 release has no figures for Nagaland, Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu. Assam and Haryana are MoSPI figures as on 1 Aug 2025, from the RBI Handbook. Jammu and Kashmir covers the union territory only, without Ladakh.",
+    note: "Note: MoSPI's 2024-25 release has no figures for Nagaland, Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu. Assam and Haryana are MoSPI figures as on 1 Aug 2025, from the RBI Handbook. Jammu and Kashmir covers the union territory only, without Ladakh.",
     source:
       'Source: National Statistics Office, MoSPI, state-wise per capita NSDP (base 2011-12), eSankhyiki API, state data released 15 Apr 2026. India: RBI, Handbook of Statistics on Indian Economy 2025-26, Table 9, 31 Jul 2026. Checked 18 Nov 2026.',
   },

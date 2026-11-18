@@ -28,8 +28,8 @@ const max = Math.max(...list.map((p) => p.n))
 const barName = (short: string) => short.split(/[ ,]/)[0]
 ---
 
-<Base title={page.title} description={page.intro}>
-  <PageHeader title={page.title} hindi={page.hindi} intro={page.intro}>
+<Base title={page.title} description={page.description}>
+  <PageHeader title={page.title} hindi={page.hindi}>
     <p class="label muted">{page.checked}</p>
   </PageHeader>
 

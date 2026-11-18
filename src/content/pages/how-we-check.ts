@@ -86,7 +86,7 @@ const howWeCheck: HowWeCheck = {
   title: 'How we check',
   hindi: 'हम कैसे जाँचते हैं',
   intro:
-    "Every figure comes from a publisher's own release. This page says what we do to it, and what we never do.",
+    "Every figure comes from a publisher's own release.",
   checked: 'Page checked 18 Nov 2026',
   object: {
     caption:

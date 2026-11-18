@@ -85,7 +85,7 @@ const files = [
 
     {chart.know && chart.know.length > 0 && (
       <section aria-labelledby="know">
-        <h2 class="display" id="know">What you should know about this data</h2>
+        <h2 class="display" id="know">About this data</h2>
         <ul class="prose bullets">{chart.know.map((k) => <li>{k}</li>)}</ul>
       </section>
     )}
@@ -119,7 +119,7 @@ const files = [
     </section>
 
     <section aria-labelledby="related">
-      <p class="appears">This chart appears in <TopicTag topic={topic} /> <a href={`/${topic.slug}/#${partId(placed.partNo)}`}>Part {placed.partNo}, {placed.part.title}</a></p>
+      <p class="appears">Appears in <TopicTag topic={topic} /> <a href={`/${topic.slug}/#${partId(placed.partNo)}`}>Part {placed.partNo}, {placed.part.title}</a></p>
       {related.length > 0 && (
         <>
           <h2 class="display" id="related">Related charts</h2>

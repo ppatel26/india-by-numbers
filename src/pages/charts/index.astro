@@ -8,8 +8,8 @@ import { dateRange } from '~/lib/metadata'
 const kinds: Record<string, string> = { line: 'Line', columns: 'Columns', area: 'Area', states: 'States', dots: 'Dots', bars: 'Bars', pyramid: 'Pyramid', table: 'Table' }
 ---
 
-<Base title="All charts" description={`Every chart has a table, a source and a CSV. ${charts.length} charts.`}>
-  <PageHeader title="All charts" intro="Every chart has a table, a source and a CSV.">
+<Base title="All charts" description={`${charts.length} charts of India's official statistics, by topic.`}>
+  <PageHeader title="All charts">
     <label class="filter">
       <span class="visually-hidden">Filter charts</span>
       <input type="search" placeholder={`Filter ${charts.length} charts`} data-filter=".chart-list li" />

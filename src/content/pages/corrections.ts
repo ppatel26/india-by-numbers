@@ -48,7 +48,7 @@ const corrections: CorrectionsPage = {
   },
   policy: {
     heading: 'Our policy',
-    body: "We reply to every report within 2 working days and fix or explain within 7 working days. A fixed error keeps a dated note on its chart for 12 months. Each row here names the cause: our error or the publisher's. A publisher revision is not a correction, so it goes in the change log above.",
+    body: "We reply to every report within 2 working days and fix or explain within 7 working days. A fixed error keeps a dated note on its chart for 12 months. A publisher revision is not a correction, so it goes in the change log above.",
   },
   form: {
     heading: 'Report a problem',
