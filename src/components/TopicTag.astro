@@ -1,0 +1,28 @@
+---
+import type { Topic } from '~/content/types'
+import { pigments } from '~/lib/tokens'
+
+interface Props {
+  topic: Topic
+}
+const { topic } = Astro.props
+---
+
+<a class="tag label" href={`/${topic.slug}/`}><span style={`background:${pigments[topic.slug].hex}`}></span>{topic.name}</a>
+
+<style>
+  .tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 3px 10px 3px 8px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+    text-decoration: none;
+    color: var(--ink);
+  }
+  span {
+    width: 8px;
+    height: 8px;
+  }
+</style>

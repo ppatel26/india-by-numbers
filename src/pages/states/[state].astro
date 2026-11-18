@@ -1,0 +1,382 @@
+---
+/** One state or UT beside India, on every topic. Built for all 36 from the topic charts. */
+import Base from '~/layouts/Base.astro'
+import StateSelect from '~/components/StateSelect.astro'
+import TileNav from '~/components/TileNav.astro'
+import TopicTag from '~/components/TopicTag.astro'
+import Strip from '~/components/state/Strip.astro'
+import profile from '~/content/pages/state-profile'
+import { topic } from '~/content'
+import { show } from '~/lib/charts/model'
+import { places, type Place } from '~/lib/geography'
+import { formatDate } from '~/lib/period'
+import { rankText, row, sentence, periodOf } from '~/lib/profile'
+import { SITE } from '~/lib/site'
+import { releasedText } from '~/lib/sources'
+
+export function getStaticPaths() {
+  return places.map((p, i) => ({
+    params: { state: p.slug },
+    props: { place: p, prev: places[(i + places.length - 1) % places.length]!, next: places[(i + 1) % places.length]! },
+  }))
+}
+
+interface Props {
+  place: Place
+  prev: Place
+  next: Place
+}
+const { place, prev, next } = Astro.props
+const sections = profile.sections.map((sec) => {
+  const rows = sec.measures.map((m) => row(m, place.slug))
+  return { sec, t: topic(sec.topic), rows, text: sentence(sec.topic, place.slug, rows) }
+})
+const imr = sections.find((s) => s.sec.topic === 'health')?.rows[0]
+const standfirst =
+  imr?.value && imr.data.india
+    ? profile.standfirst({ year: periodOf(imr.chart), value: show(imr.chart, imr.value).text, state: place.name, india: show(imr.chart, imr.data.india).text })
+    : undefined
+const missing = sections.flatMap((s) => s.rows.filter((r) => !r.value).map((r) => ({ t: s.t, r })))
+const kind = place.type === 'ut' ? profile.typeLabel.ut : profile.typeLabel.state
+const sub = (r: (typeof sections)[number]['rows'][number]) => [r.chart.punches.period, r.chart.punches.unit, ...(r.chart.status ?? []).filter((s) => s !== 'Method break')].join(' · ')
+const src = (r: (typeof sections)[number]['rows'][number]) => {
+  const s = r.chart.sources[0]
+  return s ? `Source: ${s.publisher}, ${s.release}, ${releasedText(s)}` : ''
+}
+---
+
+<Base title={`${place.name}: figures beside India`} description={standfirst ?? `${place.name} beside India on prices, jobs, health, education and more.`} imageAlt={`${place.name} beside India`} pageState={place.slug}>
+  <header class="wrap head">
+    <div class="intro">
+      <p class="label muted"><a href="/">Home</a> / <a href="/states/">States</a> / {place.name}</p>
+      <p class="label kind">{kind}</p>
+      <h1 class="display">{place.name}</h1>
+      <p class="names">
+        {place.hindi && <span class="native" lang="hi">{place.hindi}</span>}
+        {place.native && place.native.name !== place.hindi && <span class="native" title={place.native.language}>{place.native.name}</span>}
+      </p>
+      {standfirst && <p class="lede">{standfirst}</p>}
+      <p class="label muted on">{profile.onThisPage(sections.length)}</p>
+      <p class="tags">{sections.map((s) => <a href={`#${s.t.slug}`} class="label tag">{s.t.name}</a>)}</p>
+    </div>
+    <div class="side">
+      <p class="label muted">{profile.picker}</p>
+      <div class="switch"><StateSelect label={profile.picker} navigate value={place.slug} /></div>
+      <TileNav current={place.slug} />
+      <p class="muted small">{profile.locator}</p>
+    </div>
+  </header>
+
+  <div class="wrap key">
+    <span class="label muted">{profile.stripKey.heading}</span>
+    <span><i class="dot"></i>{place.name}</span>
+    <span><i class="bar"></i>{profile.stripKey.india}</span>
+    <span><i class="tick"></i>{profile.stripKey.others}</span>
+    <span class="muted">{profile.stripKey.ends}</span>
+  </div>
+
+  {sections.map(({ sec, t, rows, text }) => (
+    <section class="wrap topic" id={t.slug} aria-labelledby={`${t.slug}-h`}>
+      <div class="lead">
+        <TopicTag topic={t} />
+        <h2 class="display" id={`${t.slug}-h`}>{sec.heading}</h2>
+        <p>{text ?? `${profile.noData(place.name)}.`}</p>
+        <a href={`/${t.slug}/`}><strong>{profile.seeAll(t.name)}</strong></a>
+      </div>
+      <div class="table">
+        <table class="ruled">
+          <thead>
+            <tr>
+              <th scope="col">{profile.columns.measure}</th>
+              <th scope="col">{profile.columns.state(place.name)}</th>
+              <th scope="col">{profile.columns.india}</th>
+              <th scope="col">{profile.columns.rank}</th>
+              <th scope="col" class="strip-col">{profile.columns.strip}</th>
+            </tr>
+          </thead>
+          <tbody>
+            {rows.map((r) => (
+              <tr>
+                <th scope="row">
+                  <div class="m">
+                    <a href={`/charts/${r.spec.chart}/`}>{r.label}</a>
+                    <span class="label muted">{sub(r)}</span>
+                    <span class="muted src">{src(r)}</span>
+                  </div>
+                </th>
+                <td class="v">{r.value ? <span data-alt={show(r.chart, r.value).alt}>{show(r.chart, r.value).text}</span> : <span class="muted">No data</span>}</td>
+                <td>
+                  {r.data.india ? <span data-alt={show(r.chart, r.data.india).alt}>{show(r.chart, r.data.india).text}</span> : <span class="muted">–</span>}
+                  {r.spec.indiaNote && <span class="muted note">{r.spec.indiaNote}</span>}
+                </td>
+                <td>{r.rank ? rankText(r.rank) : <span class="muted">–</span>}</td>
+                <td class="strip-col"><Strip row={r} /></td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+        <p class="foot muted">{sec.footnote} {profile.checked(formatDate(SITE.checked))}</p>
+      </div>
+    </section>
+  ))}
+
+  <section class="gaps on-dark" aria-labelledby="gaps-h">
+    <div class="wrap">
+      <p class="label muted">{profile.gaps.eyebrow}</p>
+      <h2 class="display" id="gaps-h">{profile.gaps.heading(place.name)}</h2>
+      <dl>
+        {missing.map(({ t, r }) => (
+          <div><dt class="label">{t.name}: {r.label}</dt><dd>{profile.noData(place.name)} in {r.chart.title.replace(/,? [^,]*$/, '')}.</dd></div>
+        ))}
+        {profile.gaps.rows.map((g) => (
+          <div><dt class="label">{g.heading}</dt><dd>{g.body}</dd></div>
+        ))}
+      </dl>
+    </div>
+  </section>
+
+  <nav class="wrap prevnext" aria-label="Other states">
+    <a href={`/states/${prev.slug}/`}><span class="label muted">{profile.prevNext.previous}</span>{prev.name}</a>
+    <a href="/states/">{profile.prevNext.all}</a>
+    <a href={`/states/${next.slug}/`}><span class="label muted">{profile.prevNext.next}</span>{next.name}</a>
+  </nav>
+</Base>
+
+<style>
+  .head {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 340px;
+    gap: 48px;
+    padding-block: 40px 32px;
+  }
+  .head a {
+    text-decoration: none;
+  }
+  .kind {
+    margin-top: 28px;
+  }
+  h1 {
+    margin-top: 8px;
+    font-size: clamp(44px, 5.6vw, 72px);
+  }
+  .names {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 24px;
+    margin-top: 8px;
+    font-size: 34px;
+    line-height: 1.5;
+    color: var(--slate);
+  }
+  .lede {
+    margin-top: 16px;
+  }
+  .on {
+    margin-top: 28px;
+  }
+  .tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 10px;
+  }
+  .tag {
+    padding: 4px 10px;
+    border: 1px solid var(--rule);
+    border-radius: 2px;
+  }
+  .tag:hover {
+    border-color: var(--ink);
+  }
+  .side {
+    display: grid;
+    gap: 12px;
+    align-content: start;
+    margin-top: 40px;
+  }
+  .switch {
+    padding: 10px 14px;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    margin-bottom: 12px;
+  }
+  .switch :global(select) {
+    border: 0;
+  }
+  .small {
+    font-size: 13px;
+  }
+  .key {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px 28px;
+    padding: 14px 16px;
+    background: var(--band);
+    font-size: 14px;
+  }
+  .key span {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .key i {
+    display: inline-block;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: var(--s1);
+  }
+  .bar {
+    width: 2px;
+    height: 16px;
+    background: var(--ink);
+  }
+  .tick {
+    width: 1px;
+    height: 10px;
+    background: var(--other-line);
+  }
+  .topic {
+    display: grid;
+    grid-template-columns: var(--rail) minmax(0, 1fr);
+    gap: 48px;
+    margin-top: 72px;
+  }
+  .lead {
+    padding-top: 20px;
+    border-top: 2px solid var(--ink);
+    display: grid;
+    gap: 16px;
+    align-content: start;
+  }
+  .lead h2 {
+    font-size: 36px;
+  }
+  .lead p {
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .table {
+    padding-top: 8px;
+    border-top: 2px solid var(--ink);
+    overflow-x: auto;
+  }
+  table {
+    table-layout: fixed;
+    min-width: 760px;
+  }
+  thead th:nth-child(2),
+  thead th:nth-child(3) {
+    width: 116px;
+  }
+  thead th:nth-child(4) {
+    width: 128px;
+  }
+  .strip-col {
+    width: 236px;
+  }
+  .m {
+    display: grid;
+    gap: 2px;
+  }
+  tbody th {
+    font: 400 15px/21px var(--font-ui);
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+    text-align: left;
+    padding: 14px 12px 14px 0;
+    border-bottom: 1px solid var(--rule);
+  }
+  tbody th a {
+    font-weight: 600;
+    text-decoration: none;
+  }
+  tbody th a:hover {
+    text-decoration: underline;
+  }
+  .src {
+    font-size: 13px;
+    line-height: 18px;
+  }
+  .v {
+    font-size: 24px;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  td {
+    vertical-align: middle !important;
+  }
+  .note {
+    display: block;
+    font-size: 13px;
+  }
+  .foot {
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 19px;
+  }
+  .gaps {
+    margin-top: 96px;
+    padding-block: 64px;
+    background: var(--kajal);
+  }
+  .gaps h2 {
+    margin-top: 8px;
+    font-size: 36px;
+  }
+  .gaps dl {
+    margin: 32px 0 0;
+  }
+  .gaps dl div {
+    display: grid;
+    grid-template-columns: 320px 1fr;
+    gap: 24px;
+    padding-block: 16px;
+    border-top: 1px solid var(--kajal-rule);
+  }
+  .gaps dd {
+    margin: 0;
+  }
+  .prevnext {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-block: 40px 72px;
+    font-weight: 600;
+  }
+  .prevnext a {
+    display: grid;
+    text-decoration: none;
+  }
+  .prevnext a:last-child {
+    text-align: right;
+  }
+  @media (max-width: 1100px) {
+    .head,
+    .topic {
+      grid-template-columns: 1fr;
+    }
+    .side {
+      margin-top: 0;
+    }
+  }
+  @media (max-width: 720px) {
+    .strip-col {
+      display: none;
+    }
+    table {
+      min-width: 0;
+    }
+    .names {
+      font-size: 26px;
+    }
+    .gaps dl div {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+  }
+</style>

@@ -1,0 +1,35 @@
+---
+/** Pick a state or UT. src/scripts/state.ts applies the choice to every chart on the page. */
+import { places } from '~/lib/geography'
+
+interface Props {
+  label: string
+  /** Go to the chosen state's page instead of marking it on this page. */
+  navigate?: boolean
+  /** The state shown as chosen. */
+  value?: string
+}
+const { label, navigate = false, value } = Astro.props
+---
+
+<label class="pick">
+  <span class="visually-hidden">{label}</span>
+  <select data-state-select={navigate ? undefined : ''} data-state-nav={navigate ? '' : undefined}>
+    {!navigate && <option value="">+ {label}</option>}
+    {places.map((p) => <option value={p.slug} selected={p.slug === value}>{p.name}</option>)}
+  </select>
+</label>
+
+<style>
+  select {
+    font: 600 15px var(--font-ui);
+    color: var(--ink);
+    padding: 6px 28px 6px 0;
+    border: 0;
+    border-bottom: 1px solid var(--ink);
+    background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6"><path d="M1 1l4 4 4-4" fill="none" stroke="%2316181D" stroke-width="1.5"/></svg>') no-repeat right 4px center;
+    appearance: none;
+    cursor: pointer;
+    width: 100%;
+  }
+</style>

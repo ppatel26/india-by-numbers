@@ -1,0 +1,155 @@
+---
+import Wordmark from './Wordmark.astro'
+import NumberSwitch from './NumberSwitch.astro'
+import { charts, topics } from '~/content'
+import { places } from '~/lib/geography'
+
+const links = [
+  ['Topics', '/topics/'],
+  ['States', '/states/'],
+  ['All charts', '/charts/'],
+  ['Sources', '/sources/'],
+  ['How we check', '/how-we-check/'],
+] as const
+const here = Astro.url.pathname
+const placeholder = `Search ${charts.length} charts, ${topics.length} topics and ${places.length} states and UTs`
+---
+
+<nav class="site" aria-label="Main">
+  <div class="bar">
+    <Wordmark />
+    <ul class="links">
+      {links.map(([label, href]) => (
+        <li>
+          <a href={href} aria-current={here.startsWith(href) ? 'page' : undefined}>{label}</a>
+        </li>
+      ))}
+    </ul>
+    <form class="search" action="/search/" method="get" role="search">
+      <label class="visually-hidden" for="nav-q">Search</label>
+      <svg viewBox="0 0 16 16" width="16" height="16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.5"></path></svg>
+      <input id="nav-q" name="q" type="search" placeholder="Search charts, topics and states" title={placeholder} autocomplete="off" data-search />
+    </form>
+    <NumberSwitch class="in-bar" />
+    <details class="menu">
+      <summary>Menu</summary>
+      <ul>
+        {links.map(([label, href]) => <li><a href={href}>{label}</a></li>)}
+        <li><a href="/search/">Search</a></li>
+        <li class="in-menu"><NumberSwitch /></li>
+      </ul>
+    </details>
+  </div>
+</nav>
+
+<style>
+  .site {
+    position: relative;
+    z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--rule);
+  }
+  .bar {
+    height: 64px;
+    display: flex;
+    align-items: center;
+    gap: 24px;
+    padding-inline: 32px;
+  }
+  .links {
+    display: flex;
+    gap: 24px;
+    margin: 0 0 0 auto;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+  }
+  .links a {
+    text-decoration: none;
+  }
+  .links a[aria-current='page'],
+  .links a:hover {
+    text-decoration: underline;
+  }
+  .search {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 280px;
+    height: 40px;
+    padding: 0 14px;
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    color: var(--slate);
+  }
+  .search input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: none;
+    font: 400 14px var(--font-ui);
+    color: var(--ink);
+  }
+  .menu,
+  .in-menu {
+    display: none;
+  }
+  @media (max-width: 1180px) {
+    .links {
+      display: none;
+    }
+    .search {
+      margin-left: auto;
+    }
+    .menu {
+      display: block;
+      position: relative;
+    }
+    .menu summary {
+      list-style: none;
+      cursor: pointer;
+      font-weight: 500;
+      font-size: 15px;
+    }
+    .menu summary::-webkit-details-marker {
+      display: none;
+    }
+    .menu ul {
+      position: absolute;
+      right: 0;
+      top: 36px;
+      min-width: 200px;
+      margin: 0;
+      padding: 8px 0;
+      list-style: none;
+      background: var(--paper);
+      border: 1px solid var(--rule);
+      border-radius: 4px;
+      box-shadow: 0 8px 24px rgb(22 24 29 / 0.12);
+    }
+    .menu li a {
+      display: block;
+      padding: 10px 16px;
+      text-decoration: none;
+    }
+  }
+  @media (max-width: 720px) {
+    .bar {
+      padding-inline: 16px;
+      gap: 12px;
+    }
+    .search,
+    .bar > :global(.in-bar) {
+      display: none;
+    }
+    .menu {
+      margin-left: auto;
+    }
+    .in-menu {
+      display: block;
+      padding: 8px 16px;
+    }
+  }
+</style>

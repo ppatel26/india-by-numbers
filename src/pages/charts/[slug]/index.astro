@@ -1,0 +1,263 @@
+---
+/** One chart with its data page: OWID's grapher and data page, with UK by Numbers' notes. */
+import Base from '~/layouts/Base.astro'
+import ChartFrame from '~/components/ChartFrame.astro'
+import StateSelect from '~/components/StateSelect.astro'
+import TopicTag from '~/components/TopicTag.astro'
+import { charts, partId, type Placed } from '~/content'
+import { citation, dateRange, geographyOf } from '~/lib/metadata'
+import { formatDate } from '~/lib/period'
+import { SITE } from '~/lib/site'
+import { releasedText } from '~/lib/sources'
+
+export function getStaticPaths() {
+  return charts.map((placed) => ({ params: { slug: placed.chart.slug }, props: { placed } }))
+}
+
+interface Props {
+  placed: Placed
+}
+const { placed } = Astro.props
+const { chart, topic } = placed
+const byState = chart.kind === 'states' || (chart.kind === 'dots' && !!chart.map)
+const cite = citation(placed, (Astro.site?.origin ?? '').replace(/\/$/, ''))
+const facts = [
+  ['Source', [...new Set(chart.sources.map((s) => s.publisher))].join('; ')],
+  ['Unit', chart.punches.unit],
+  ['Date range', dateRange(placed)],
+  ['Released', chart.sources[0] ? releasedText(chart.sources[0]) : ''],
+  ['Last updated', formatDate(SITE.checked)],
+  ['Next expected update', chart.nextRelease && chart.nextRelease !== 'not announced' ? formatDate(chart.nextRelease) : 'Not announced'],
+  ['Geography', geographyOf(placed)],
+] as const
+const related = [
+  ...charts.filter((c) => c.topic === topic && c.part === placed.part && c !== placed),
+  ...charts.filter((c) => c.topic === topic && c.part !== placed.part),
+].slice(0, 4)
+const files = [
+  ...(chart.kind === 'table'
+    ? []
+    : [
+        ['Image (PNG)', 'Title, hallmark, status and source line on the image.', `/charts/${chart.slug}.png`],
+        ['Vector graphic (SVG)', 'For print and editing. Same title and source line.', `/charts/${chart.slug}.svg`],
+      ]),
+  ['Displayed data (CSV)', 'The values in this chart, with unit and source on every row.', `/charts/${chart.slug}.csv`],
+  ...[...new Set(sourceFiles(chart))].map((f) => ['Full data (CSV)', `The whole file this chart reads: ${f}.`, `/data/${f}`]),
+  ['Metadata (JSON)', 'Source, release date, unit, status, notes and processing steps.', `/charts/${chart.slug}.json`],
+] as const
+
+function sourceFiles(c: typeof chart): string[] {
+  if (c.kind === 'states' || c.kind === 'table') return [c.data.file]
+  if (c.kind === 'pyramid') return [c.left.file, c.right.file]
+  return c.series.map((s) => s.file)
+}
+---
+
+<Base title={chart.title} description={chart.subtitle} imageAlt={`Chart: ${chart.title}`} type="article">
+  <div class="wrap page">
+    <p class="crumbs"><TopicTag topic={topic} /> <span class="muted">/</span> <a href={`/${topic.slug}/#${partId(placed.partNo)}`}>{placed.part.title}</a></p>
+    {byState && (
+      <div class="pick">
+        <span class="label muted">Highlight</span>
+        <StateSelect label="Choose a state or UT" />
+      </div>
+    )}
+    <ChartFrame chart={chart} page />
+
+    <section aria-labelledby="files">
+      <h2 class="display" id="files">Download</h2>
+      <ul class="files">
+        {files.map(([name, about, href]) => (
+          <li>
+            <a href={href} download><strong>{name}</strong></a>
+            <span class="muted">{about}</span>
+          </li>
+        ))}
+      </ul>
+    </section>
+
+    <section aria-labelledby="about">
+      <h2 class="display" id="about">About this data</h2>
+      <dl class="facts">
+        {facts.map(([k, v]) => (
+          <div>
+            <dt class="label muted">{k}</dt>
+            <dd>{v}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+
+    {chart.know && chart.know.length > 0 && (
+      <section aria-labelledby="know">
+        <h2 class="display" id="know">What you should know about this data</h2>
+        <ul class="prose bullets">{chart.know.map((k) => <li>{k}</li>)}</ul>
+      </section>
+    )}
+
+    <section aria-labelledby="sources">
+      <h2 class="display" id="sources">Sources and processing</h2>
+      <table class="ruled sources">
+        <tbody>
+          {chart.sources.map((s) => (
+            <>
+              <tr><th scope="row">Publisher</th><td>{s.publisher}</td></tr>
+              <tr><th scope="row">Release</th><td><a href={s.url} rel="external">{s.release}</a></td></tr>
+              <tr><th scope="row">Release date</th><td>{releasedText(s)}</td></tr>
+            </>
+          ))}
+          <tr><th scope="row">Retrieved and checked</th><td>{formatDate(SITE.checked)}</td></tr>
+          <tr><th scope="row">Licence</th><td>{SITE.licence.replace(/^Licence: /, '')}</td></tr>
+        </tbody>
+      </table>
+      {chart.processing && chart.processing.length > 0 && (
+        <>
+          <h3 class="label muted sub">How we process this figure</h3>
+          <ol class="prose steps">{chart.processing.map((s) => <li>{s}</li>)}</ol>
+        </>
+      )}
+      <h3 class="label muted sub">How to cite this chart</h3>
+      <dl class="cite">
+        <div><dt class="label muted">In-line</dt><dd>{cite.inline}</dd></div>
+        <div><dt class="label muted">Full</dt><dd>{cite.full}</dd></div>
+      </dl>
+    </section>
+
+    <section aria-labelledby="related">
+      <p class="appears">This chart appears in <TopicTag topic={topic} /> <a href={`/${topic.slug}/#${partId(placed.partNo)}`}>Part {placed.partNo}, {placed.part.title}</a></p>
+      {related.length > 0 && (
+        <>
+          <h2 class="display" id="related">Related charts</h2>
+          <ul class="related">
+            {related.map((r) => (
+              <li>
+                <a href={`/charts/${r.chart.slug}/`}><strong>{r.chart.title}</strong></a>
+                <span class="muted">{r.chart.subtitle}</span>
+              </li>
+            ))}
+          </ul>
+        </>
+      )}
+      <p class="report"><a href={`/corrections/?chart=${chart.slug}#report`}>Report a problem with this chart</a></p>
+    </section>
+  </div>
+</Base>
+
+<style>
+  .page {
+    max-width: 1000px;
+    padding-block: 32px 96px;
+  }
+  .crumbs {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 24px;
+    font-size: 15px;
+  }
+  .pick {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    max-width: 360px;
+    margin-bottom: 16px;
+  }
+  section {
+    margin-top: 72px;
+    padding-top: 20px;
+    border-top: 2px solid var(--ink);
+  }
+  section h2 {
+    font-size: clamp(26px, 3vw, 32px);
+    margin-bottom: 24px;
+  }
+  .files {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  .files li,
+  .related li {
+    display: grid;
+    gap: 2px;
+    padding-block: 12px;
+    border-bottom: 1px solid var(--rule);
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 24px;
+    margin: 0;
+  }
+  dd {
+    margin: 6px 0 0;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .bullets,
+  .steps {
+    padding-left: 20px;
+    display: grid;
+    gap: 10px;
+  }
+  .sources th {
+    width: 220px;
+    font: 400 11px/22px var(--font-mono);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--slate);
+    text-align: left;
+    padding: 10px 12px 10px 0;
+    border-bottom: 1px solid var(--rule);
+    vertical-align: top;
+  }
+  .sub {
+    margin: 32px 0 12px;
+  }
+  .cite div {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    padding-block: 10px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .cite dd {
+    margin: 0;
+  }
+  .appears {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+    margin-bottom: 40px;
+  }
+  .related {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0 32px;
+  }
+  .report {
+    margin-top: 32px;
+    font-weight: 600;
+  }
+  @media (max-width: 720px) {
+    .files,
+    .related {
+      grid-template-columns: 1fr;
+    }
+    .cite div {
+      grid-template-columns: 1fr;
+    }
+    .sources th {
+      width: 120px;
+    }
+  }
+</style>

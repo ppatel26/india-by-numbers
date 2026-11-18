@@ -1,0 +1,101 @@
+---
+/** The topic rail: parts on this page, the state comparison, and short notes. */
+import StateSelect from '../StateSelect.astro'
+import type { Topic } from '~/content/types'
+import { partId } from '~/content'
+
+interface Props {
+  topic: Topic
+}
+const { topic } = Astro.props
+---
+
+<aside class="rail" aria-label="On this page">
+  <div class="block">
+    <h2 class="label muted">On this page</h2>
+    <ol>
+      {topic.parts.map((p, i) => <li><a href={`#${partId(i + 1)}`}>{p.title}</a></li>)}
+      <li><a href="#about-the-data">About the data</a></li>
+    </ol>
+  </div>
+  <div class="block">
+    <h2 class="label muted">Comparing</h2>
+    <p class="key"><span class="swatch india"></span>India</p>
+    <p class="key" data-state-only hidden><span class="swatch state"></span><span data-state-name></span></p>
+    <StateSelect label="Add a state" />
+  </div>
+  {topic.rail?.map((n) => (
+    <div class="block note">
+      <h2 class="label muted">{n.title}</h2>
+      <p>{n.body}</p>
+    </div>
+  ))}
+</aside>
+
+<style>
+  .rail {
+    min-width: 0;
+    position: sticky;
+    top: 24px;
+    align-self: start;
+    display: grid;
+    gap: 32px;
+  }
+  .block {
+    padding-top: 16px;
+    border-top: 1px solid var(--ink);
+  }
+  h2 {
+    margin-bottom: 14px;
+  }
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    counter-reset: part;
+    display: grid;
+    gap: 12px;
+    font-size: 15px;
+    line-height: 20px;
+  }
+  li {
+    counter-increment: part;
+    display: grid;
+    grid-template-columns: 20px 1fr;
+  }
+  li::before {
+    content: counter(part);
+    color: var(--slate);
+  }
+  li a {
+    text-decoration: none;
+  }
+  li a:hover {
+    text-decoration: underline;
+  }
+  .key {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+    margin-bottom: 8px;
+  }
+  .swatch {
+    width: 18px;
+    height: 2px;
+    background: var(--ink);
+  }
+  .swatch.state {
+    background: var(--s1);
+  }
+  .note p {
+    font-size: 14px;
+    line-height: 21px;
+    color: var(--slate);
+  }
+  @media (max-width: 1100px) {
+    .rail {
+      position: static;
+    }
+  }
+</style>

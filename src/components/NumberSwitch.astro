@@ -1,0 +1,34 @@
+---
+/** Lakh and crore, or million: src/scripts/numbers.ts swaps every [data-alt] text. */
+interface Props {
+  class?: string
+}
+---
+
+<div class:list={['numbers', Astro.props.class]} role="group" aria-label="Number format">
+  <button type="button" data-numbers="indian" aria-pressed="true">Lakh · crore</button>
+  <button type="button" data-numbers="intl" aria-pressed="false">Million</button>
+</div>
+
+<style>
+  .numbers {
+    display: inline-flex;
+    padding: 3px;
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+    flex-shrink: 0;
+  }
+  button {
+    border: 0;
+    background: none;
+    padding: 5px 10px;
+    border-radius: 16px;
+    font: 500 13px var(--font-ui);
+    color: var(--slate);
+    cursor: pointer;
+  }
+  button[aria-pressed='true'] {
+    background: var(--ink);
+    color: var(--paper);
+  }
+</style>

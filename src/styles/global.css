@@ -1,0 +1,297 @@
+/* India by Numbers: site styles. Colours come from src/lib/tokens.ts as custom properties. */
+@import '@fontsource/marcellus/400.css';
+@import '@fontsource/hanken-grotesk/400.css';
+@import '@fontsource/hanken-grotesk/500.css';
+@import '@fontsource/hanken-grotesk/600.css';
+@import '@fontsource/geist-mono/400.css';
+@import '@fontsource/tiro-devanagari-hindi/400.css';
+@import './scripts.css';
+
+:root {
+  --font-display: 'Marcellus', 'Tiro Devanagari Hindi', Georgia, serif;
+  --font-ui: 'Hanken Grotesk', system-ui, sans-serif;
+  --font-mono: 'Geist Mono', ui-monospace, monospace;
+  --font-deva: 'Tiro Devanagari Hindi', 'Noto Sans Devanagari', serif;
+  --page: 1200px;
+  --gutter: clamp(16px, 8.33vw, 120px);
+  --rail: 240px;
+  --main: 912px;
+  color-scheme: light;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 17px/28px var(--font-ui);
+  font-variant-numeric: tabular-nums;
+  -webkit-font-smoothing: antialiased;
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+svg.plot {
+  height: auto;
+  overflow: visible;
+}
+
+a {
+  color: inherit;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 3px;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 2px solid var(--s5);
+  outline-offset: 2px;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  margin: 0;
+  font-weight: 400;
+}
+
+p {
+  margin: 0;
+}
+
+.wrap {
+  width: min(var(--page), 100% - 2 * var(--gutter));
+  margin-inline: auto;
+}
+
+.display {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  line-height: 1.05;
+}
+
+.label {
+  font: 400 11px/16px var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.muted {
+  color: var(--slate);
+}
+
+.deva {
+  font-family: var(--font-deva);
+  text-transform: none;
+}
+
+.rule-top {
+  border-top: 1px solid var(--rule);
+}
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+.lede {
+  font-size: 19px;
+  line-height: 30px;
+  max-width: 640px;
+}
+
+.prose p + p {
+  margin-top: 16px;
+}
+
+.prose {
+  max-width: 640px;
+}
+
+.link-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 32px;
+  font-weight: 600;
+}
+
+/* Dark grounds: kajal and dark pigments. */
+.on-dark {
+  color: var(--silver);
+}
+
+.on-dark .muted {
+  color: var(--silver-dim);
+}
+
+/* Section headings on index pages (Newest figures, Browse by topic). */
+.section {
+  padding-block: 72px 0;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 24px;
+  flex-wrap: wrap;
+  padding-bottom: 16px;
+  border-bottom: 2px solid var(--ink);
+}
+
+.section-head h2 {
+  font-size: clamp(32px, 4vw, 44px);
+}
+
+.section-head p {
+  margin-top: 8px;
+  color: var(--slate);
+}
+
+/* Ruled tables (sources, releases, chart tables). */
+.ruled {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 15px;
+  line-height: 22px;
+}
+
+.ruled th {
+  font: 400 11px/16px var(--font-mono);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--slate);
+  text-align: left;
+  padding: 0 12px 8px 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: bottom;
+}
+
+.ruled td {
+  padding: 12px 12px 12px 0;
+  border-bottom: 1px solid var(--rule);
+  vertical-align: top;
+}
+
+.ruled td.num,
+.ruled th.num {
+  text-align: right;
+}
+
+.on-dark .ruled th {
+  color: var(--silver-dim);
+  border-color: var(--kajal-rule);
+}
+
+.on-dark .ruled td {
+  border-color: var(--kajal-rule);
+}
+
+/* The page tooltip (src/scripts/chart.ts). */
+.tip {
+  position: fixed;
+  z-index: 50;
+  pointer-events: none;
+  max-width: 280px;
+  padding: 10px 12px;
+  background: var(--paper);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  box-shadow: 0 0 0 1px rgb(0 0 0 / 0.02), 0 8px 24px rgb(22 24 29 / 0.12);
+  font-size: 13px;
+  line-height: 19px;
+  white-space: pre-line;
+}
+
+.tip strong {
+  display: block;
+  font-weight: 600;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .tip {
+    transition: opacity 80ms ease-out;
+  }
+}
+
+@media print {
+  nav.site,
+  .chart-tabs,
+  .tip {
+    display: none !important;
+  }
+}
+
+/* Search typeahead (src/scripts/search.ts). */
+.typeahead {
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 0;
+  right: 0;
+  z-index: 40;
+  min-width: 320px;
+  max-height: 440px;
+  overflow: auto;
+  margin: 0;
+  padding: 6px 0;
+  list-style: none;
+  background: var(--paper);
+  color: var(--ink);
+  border: 1px solid var(--rule);
+  border-radius: 4px;
+  box-shadow: 0 8px 24px rgb(22 24 29 / 0.12);
+  text-align: left;
+}
+
+.typeahead a {
+  display: grid;
+  grid-template-columns: 56px 1fr;
+  column-gap: 12px;
+  padding: 8px 14px;
+  text-decoration: none;
+}
+
+.typeahead .t {
+  font-size: 15px;
+  line-height: 21px;
+  font-weight: 600;
+}
+
+.typeahead .d {
+  grid-column: 2;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.typeahead a:hover,
+.typeahead a:focus-visible {
+  background: var(--band);
+  outline: none;
+}

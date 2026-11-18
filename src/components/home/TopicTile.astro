@@ -1,0 +1,90 @@
+---
+/** A topic as a flat pigment block: chart count, emblem, name, two questions, one figure. */
+import Emblem from '../Emblem.astro'
+import FigureValue from '../FigureValue.astro'
+import { charts } from '~/content'
+import type { Tile } from '~/content/pages/tiles'
+import type { Topic } from '~/content/types'
+import { EMBLEM_ALT } from '~/lib/emblems'
+import { pigments } from '~/lib/tokens'
+
+interface Props {
+  topic: Topic
+  tile: Tile
+}
+const { topic, tile } = Astro.props
+const p = pigments[topic.slug]
+const count = charts.filter((c) => c.topic.slug === topic.slug).length
+---
+
+<li class:list={['tile', p.text === 'light' ? 'on-dark' : 'on-light']} style={`--ground:${p.hex}`}>
+  <p class="label count">{count} charts</p>
+  <Emblem name={topic.slug} alt={EMBLEM_ALT[topic.slug]} size={180} />
+  <h3>
+    <a href={`/${topic.slug}/`} class="display">{topic.name}</a>
+    <span class="deva" lang="hi">{topic.hindi}</span>
+  </h3>
+  <ul class="questions">{tile.questions.map((q) => <li>{q}</li>)}</ul>
+  <div class="fig"><FigureValue figure={tile.figure} size="tile" /></div>
+</li>
+
+<style>
+  .tile {
+    position: relative;
+    display: grid;
+    grid-template-rows: auto 1fr auto auto auto;
+    padding: 24px;
+    background: var(--ground);
+    border-radius: 4px;
+    min-height: 460px;
+  }
+  .on-light {
+    color: var(--ink);
+  }
+  .tile > :global(.emblem) {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+  }
+  .count {
+    opacity: 0.85;
+  }
+  h3 {
+    margin-top: 180px;
+    display: grid;
+  }
+  h3 a {
+    font-size: 30px;
+    text-decoration: none;
+  }
+  h3 a::after {
+    /* The whole tile is the link. */
+    content: '';
+    position: absolute;
+    inset: 0;
+  }
+  h3 a:hover {
+    text-decoration: underline;
+  }
+  .deva {
+    font-size: 19px;
+    line-height: 28px;
+  }
+  .questions {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .fig {
+    position: relative;
+    z-index: 1;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid color-mix(in srgb, currentColor 35%, transparent);
+  }
+  .on-light .fig :global(.punch) {
+    color: var(--on-light-dim);
+  }
+</style>

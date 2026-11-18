@@ -1,0 +1,184 @@
+---
+/**
+ * "Your state beside India": paired bars per measure and the tile map.
+ * Every state's bars are in the page; src/scripts/state.ts shows the chosen one.
+ */
+import StateSelect from '../StateSelect.astro'
+import TileNav from '../TileNav.astro'
+import type { Home } from '~/content/pages/home'
+import { placed } from '~/content'
+import { byState, ranked, show, statesOf } from '~/lib/charts/model'
+import { ordinal } from '~/lib/format'
+import { places } from '~/lib/geography'
+
+interface Props {
+  content: Home['stateBeside']
+}
+const { content } = Astro.props
+const rows = content.pairs.map((pair) => {
+  const chart = byState(placed(pair.chart).chart)
+  if (!chart) throw new Error(`${pair.chart} has no value per state`)
+  const data = statesOf(chart)
+  const max = Math.max(data.india?.y ?? 0, ...data.values.map((v) => v.pt?.y ?? 0))
+  const pct = (y: number) => `${Math.max(0.5, (y / max) * 100).toFixed(2)}%`
+  return { pair, chart, data, pct }
+})
+const first = rows[0]!
+const order = ranked(first.data).filter((v) => v.pt?.y != null)
+const sentence = (slug: string): string => {
+  const i = order.findIndex((v) => v.place.slug === slug)
+  if (i < 0) return `Each tile opens a state profile.`
+  const above = order.slice(0, i).map((v) => v.place.name)
+  const text = content.map.text({
+    state: order[i]!.place.name,
+    rank: ordinal(i + 1),
+    of: order.length,
+    measure: first.pair.label.replace(/^Inflation/, 'inflation'),
+    above: above.length > 2 ? `${above.length} others` : above.join(' and '),
+  })
+  return above.length ? text : text.replace(/, after \.$/, '.')
+}
+---
+
+<div class="beside">
+  <div class="bars">
+    <div class="head">
+      <p class="key"><span class="sw state"></span><span data-state-name></span><span class="sw india"></span>India</p>
+      <p class="label muted">{content.legendNote}</p>
+    </div>
+    {rows.map(({ pair, chart, data, pct }) => (
+      <div class="row">
+        <div>
+          <a href={`/charts/${chart.slug}/`}><strong>{pair.label}</strong></a>
+          <p class="label muted">{pair.meta}</p>
+        </div>
+        <div class="pair">
+          <div class="per-state">
+            {data.values.map((v) =>
+              v.pt?.y != null ? (
+                <p class="bar-row" data-geo={v.place.slug}><span class="bar state" style={`width:${pct(v.pt.y)}`}></span><strong data-alt={show(chart, v.pt).alt}>{show(chart, v.pt).text}</strong></p>
+              ) : (
+                <p class="bar-row" data-geo={v.place.slug}><span class="muted">No data</span></p>
+              ),
+            )}
+          </div>
+          {data.india && (
+            <p class="bar-row"><span class="bar india" style={`width:${pct(data.india.y!)}`}></span><span data-alt={show(chart, data.india).alt}>{show(chart, data.india).text}</span></p>
+          )}
+        </div>
+      </div>
+    ))}
+    <p class="note">{content.note}</p>
+    <p class="note">{content.sources}</p>
+  </div>
+  <div class="map">
+    <p class="label muted">{content.map.eyebrow}</p>
+    <div class="per-state">
+      {places.map((p) => <p data-geo={p.slug}>{sentence(p.slug)}</p>)}
+    </div>
+    <TileNav />
+    <p class="links">
+      <a data-state-link href="/states/">See the profile</a>
+      <a href="/states/">{content.map.allLink}</a>
+    </p>
+  </div>
+</div>
+
+<style>
+  .beside {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 400px;
+    gap: 64px;
+    margin-top: 32px;
+  }
+  .head {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    padding-bottom: 12px;
+  }
+  .key {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 15px;
+  }
+  .sw {
+    width: 12px;
+    height: 12px;
+  }
+  .sw.india {
+    margin-left: 12px;
+  }
+  .state {
+    background: var(--s1);
+  }
+  .india {
+    background: var(--ink);
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 300px minmax(0, 1fr);
+    gap: 24px;
+    padding-block: 14px;
+    border-top: 1px solid var(--rule);
+  }
+  .row a {
+    text-decoration: none;
+  }
+  .row a:hover {
+    text-decoration: underline;
+  }
+  .pair {
+    display: grid;
+    gap: 6px;
+  }
+  .bar-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    line-height: 18px;
+  }
+  .bar {
+    display: block;
+    height: 14px;
+    max-width: calc(100% - 90px);
+  }
+  .per-state > [data-geo] {
+    display: none;
+  }
+  .per-state > [data-geo]:global(.is-sel) {
+    display: flex;
+  }
+  .map .per-state > [data-geo]:global(.is-sel) {
+    display: block;
+    margin: 8px 0 16px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .note {
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 19px;
+    color: var(--slate);
+  }
+  .links {
+    display: grid;
+    gap: 8px;
+    margin-top: 16px;
+    font-weight: 600;
+  }
+  @media (max-width: 1100px) {
+    .beside {
+      grid-template-columns: 1fr;
+    }
+  }
+  @media (max-width: 720px) {
+    .row {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+  }
+</style>

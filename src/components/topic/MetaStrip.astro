@@ -1,0 +1,39 @@
+---
+import type { Topic } from '~/content/types'
+import { charts } from '~/content'
+import { formatDate } from '~/lib/period'
+import { SITE } from '~/lib/site'
+
+interface Props {
+  topic: Topic
+}
+const { topic } = Astro.props
+const count = charts.filter((c) => c.topic.slug === topic.slug).length
+const publishers = [...new Set(topic.sources.map((s) => s.publisher))].join(', ')
+const items = [`Last updated ${formatDate(SITE.checked)}`, `Next release ${topic.nextRelease}`, `${count} charts`, `Sources: ${publishers}`]
+---
+
+<div class="strip">
+  <div class="wrap row">
+    <p class="label muted">{items.join(' · ')}</p>
+    <a href="/releases/">All releases</a>
+  </div>
+</div>
+
+<style>
+  .strip {
+    border-bottom: 1px solid var(--rule);
+  }
+  .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 16px;
+    padding-block: 12px;
+  }
+  a {
+    font-size: 14px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+</style>

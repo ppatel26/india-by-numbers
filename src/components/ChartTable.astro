@@ -1,0 +1,56 @@
+---
+import type { Chart } from '~/content/types'
+import { tableOf } from '~/lib/charts/table'
+import { isPlace } from '~/lib/geography'
+
+interface Props {
+  chart: Chart
+}
+const { chart } = Astro.props
+const t = tableOf(chart)
+---
+
+<div class="scroll" tabindex="0" role="region" aria-label={`${chart.title}: table`}>
+  <table class="ruled">
+    <caption class="visually-hidden">{chart.title}</caption>
+    <thead>
+      <tr>{t.columns.map((c, i) => <th scope="col" class:list={{ num: i > 0 }}>{c}</th>)}</tr>
+    </thead>
+    <tbody>
+      {t.rows.map((r) => (
+        <tr data-geo={isPlace(r.key) || r.key === 'india' ? r.key : undefined}>
+          <th scope="row">{isPlace(r.key) ? <a href={`/states/${r.key}/`}>{r.head}</a> : r.head}</th>
+          {r.cells.map((c) => <td class="num" data-alt={c.shown.alt}>{c.shown.text}</td>)}
+        </tr>
+      ))}
+    </tbody>
+  </table>
+</div>
+
+<style>
+  .scroll {
+    max-height: 560px;
+    overflow: auto;
+  }
+  thead th {
+    position: sticky;
+    top: 0;
+    background: var(--paper);
+  }
+  tbody th {
+    font: inherit;
+    text-align: left;
+    padding: 10px 12px 10px 0;
+    border-bottom: 1px solid var(--rule);
+    letter-spacing: 0;
+    text-transform: none;
+    color: var(--ink);
+  }
+  tr[data-geo='india'] th,
+  tr[data-geo='india'] td {
+    font-weight: 600;
+  }
+  :global(.is-sel) th {
+    font-weight: 600;
+  }
+</style>

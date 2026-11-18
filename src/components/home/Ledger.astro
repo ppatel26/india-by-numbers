@@ -1,0 +1,114 @@
+---
+/** "Newest figures": one ruled row per release, newest first. Values come from chart data. */
+import Hallmark from '../Hallmark.astro'
+import { placed, topic } from '~/content'
+import type { LedgerRow } from '~/content/pages/home'
+import { figureValue } from '~/lib/figures'
+import { pigments } from '~/lib/tokens'
+
+interface Props {
+  rows: readonly LedgerRow[]
+}
+const rows = Astro.props.rows.map((r) => {
+  const f = figureValue({ chart: r.chart, series: r.series, x: r.x, label: r.measure })
+  return { r, f, t: topic(r.topic), punches: placed(r.chart).chart.punches }
+})
+---
+
+<ol class="ledger">
+  {rows.map(({ r, f, t, punches }) => (
+    <li>
+      <p class="when">
+        <span class="label"><span class="dot" style={`background:${pigments[t.slug].hex}`}></span>{t.name}</span>
+        <span class="muted">{r.released}</span>
+      </p>
+      <a class="value" href={f.href} data-alt={f.value.alt}>{f.value.text}</a>
+      <p class="what">
+        <a href={f.href}><strong>{r.measure}</strong></a>
+        <span class="muted">{r.compare}</span>
+      </p>
+      <Hallmark office={punches.office} unit={punches.unit} period={punches.period} status={f.status} />
+    </li>
+  ))}
+</ol>
+
+<style>
+  .ledger {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: grid;
+    grid-template-columns: 200px 194px minmax(0, 1fr) 340px;
+    gap: 24px;
+    align-items: start;
+    padding-block: 22px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .when {
+    display: grid;
+    gap: 2px;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .when .label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .dot {
+    width: 8px;
+    height: 8px;
+  }
+  .value {
+    font: 500 44px/48px var(--font-ui);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+  .what {
+    display: grid;
+    gap: 2px;
+    font-size: 15px;
+    line-height: 22px;
+  }
+  .what a {
+    text-decoration: none;
+    font-size: 17px;
+  }
+  .what a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 1100px) {
+    li {
+      grid-template-columns: 160px minmax(0, 1fr);
+    }
+    li > :global(.hallmark) {
+      grid-column: 2;
+    }
+    .what {
+      grid-column: 2;
+    }
+    .value {
+      grid-row: 1;
+      grid-column: 2;
+    }
+    .when {
+      grid-row: 1;
+    }
+  }
+  @media (max-width: 600px) {
+    li {
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    li > * {
+      grid-column: 1 !important;
+      grid-row: auto !important;
+    }
+    .value {
+      font-size: 36px;
+      line-height: 40px;
+    }
+  }
+</style>

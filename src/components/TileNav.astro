@@ -1,0 +1,103 @@
+---
+/** The 36 states and UTs as a tile grid of links. No data colour: this is navigation. */
+import { GRID, places } from '~/lib/geography'
+
+interface Props {
+  /** small: two-letter codes; large: names. */
+  size?: 'small' | 'large'
+  /** Mark this state as the current one. */
+  current?: string
+}
+const { size = 'small', current } = Astro.props
+---
+
+<ol class:list={['tiles', size]} style={`--cols:${GRID.cols};--rows:${GRID.rows}`} aria-label="States and union territories">
+  {places.map((p) => (
+    <li style={`grid-column:${p.col};grid-row:${p.row}`}>
+      <a href={`/states/${p.slug}/`} data-geo={p.slug} class:list={[p.type, { current: p.slug === current }]} title={p.name} aria-current={p.slug === current ? 'page' : undefined}>
+        <span class="code" aria-hidden="true">{p.code}</span>
+        <span class="name" aria-hidden="true">{p.short.replace('-', '')}</span>
+        <span class="visually-hidden">{p.name}</span>
+      </a>
+    </li>
+  ))}
+</ol>
+
+<style>
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(var(--cols), var(--tile));
+    grid-template-rows: repeat(var(--rows), var(--tile));
+    gap: 4px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    --tile: 40px;
+  }
+  .large {
+    --tile: 72px;
+  }
+  .name,
+  .large .code {
+    display: none;
+  }
+  .large .name {
+    display: block;
+  }
+  a {
+    position: relative;
+    display: grid;
+    place-items: center;
+    width: 100%;
+    height: 100%;
+    background: var(--band);
+    border-radius: 2px;
+    font: 500 11px/1.1 var(--font-mono);
+    letter-spacing: 0.04em;
+    color: var(--slate);
+    text-decoration: none;
+    text-align: center;
+    padding: 2px;
+  }
+  .large a {
+    font: 600 11.5px/1.15 var(--font-ui);
+    letter-spacing: 0;
+    color: var(--ink);
+    place-items: end start;
+    text-align: left;
+    padding: 6px;
+  }
+  a.ut::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-top: 8px solid var(--slate);
+    border-left: 8px solid transparent;
+  }
+  a:hover,
+  a:global(.is-sel),
+  a.current {
+    background: var(--paper);
+    outline: 2px solid var(--ink);
+    outline-offset: -2px;
+    color: var(--ink);
+    font-weight: 600;
+  }
+  @media (max-width: 720px) {
+    .large {
+      --tile: 40px;
+    }
+    .large a {
+      font: 500 10.5px/1 var(--font-mono);
+      place-items: center;
+      padding: 2px;
+    }
+    .large .code {
+      display: block;
+    }
+    .large .name {
+      display: none;
+    }
+  }
+</style>

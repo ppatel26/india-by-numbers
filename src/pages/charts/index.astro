@@ -1,0 +1,112 @@
+---
+import Base from '~/layouts/Base.astro'
+import TopicTag from '~/components/TopicTag.astro'
+import { charts, topics } from '~/content'
+import { dateRange } from '~/lib/metadata'
+
+const kinds: Record<string, string> = { line: 'Line', columns: 'Columns', area: 'Area', states: 'States', dots: 'Dots', bars: 'Bars', pyramid: 'Pyramid', table: 'Table' }
+---
+
+<Base title="All charts" description={`Every chart has a table, a source and a CSV. ${charts.length} charts.`}>
+  <header class="wrap head">
+    <p class="label muted"><a href="/">Home</a> / All charts</p>
+    <h1 class="display">All charts</h1>
+    <p class="lede">Every chart has a table, a source and a CSV.</p>
+    <label class="filter">
+      <span class="visually-hidden">Filter charts</span>
+      <input type="search" placeholder={`Filter ${charts.length} charts`} data-filter=".chart-list li" />
+    </label>
+  </header>
+  <div class="wrap">
+    {topics.map((t) => (
+      <section aria-labelledby={`t-${t.slug}`}>
+        <h2 id={`t-${t.slug}`}><TopicTag topic={t} /></h2>
+        <ol class="chart-list">
+          {charts
+            .filter((c) => c.topic === t)
+            .map((c) => (
+              <li data-words={`${c.chart.title} ${c.chart.subtitle} ${t.name}`.toLowerCase()}>
+                <span class="label muted">{c.number}</span>
+                <a href={`/charts/${c.chart.slug}/`}><strong>{c.chart.title}</strong></a>
+                <span class="muted sub">{c.chart.subtitle}</span>
+                <span class="label muted meta">{kinds[c.chart.kind]} · {dateRange(c)}</span>
+              </li>
+            ))}
+        </ol>
+      </section>
+    ))}
+  </div>
+  <div class="end"></div>
+</Base>
+
+<style>
+  .head {
+    padding-block: 40px 24px;
+  }
+  .head a {
+    text-decoration: none;
+  }
+  h1 {
+    margin-top: 16px;
+    font-size: clamp(40px, 5vw, 64px);
+  }
+  .lede {
+    margin-top: 12px;
+  }
+  .filter input {
+    margin-top: 24px;
+    width: min(420px, 100%);
+    padding: 10px 14px;
+    font: 400 16px var(--font-ui);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+  }
+  section {
+    margin-top: 48px;
+  }
+  h2 {
+    padding-bottom: 12px;
+    border-bottom: 2px solid var(--ink);
+  }
+  ol {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  li {
+    display: grid;
+    grid-template-columns: 48px minmax(0, 1fr) 240px;
+    gap: 4px 16px;
+    padding-block: 14px;
+    border-bottom: 1px solid var(--rule);
+  }
+  li a {
+    text-decoration: none;
+  }
+  li a:hover {
+    text-decoration: underline;
+  }
+  .sub {
+    grid-column: 2;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .meta {
+    grid-column: 3;
+    grid-row: 1;
+    text-align: right;
+  }
+  .end {
+    height: 96px;
+  }
+  @media (max-width: 720px) {
+    li {
+      grid-template-columns: 40px minmax(0, 1fr);
+    }
+    .meta {
+      grid-column: 2;
+      grid-row: auto;
+      text-align: left;
+    }
+  }
+</style>

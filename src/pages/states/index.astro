@@ -1,0 +1,249 @@
+---
+import Base from '~/layouts/Base.astro'
+import states from '~/content/pages/states'
+import { placed } from '~/content'
+import { renderTiles } from '~/lib/charts/states'
+import { byState, statesOf } from '~/lib/charts/model'
+import { places } from '~/lib/geography'
+import { sourceLine } from '~/lib/sources'
+
+const maps = states.map.measures.map((m, i) => {
+  const chart = byState(placed(m.chart).chart)
+  if (!chart) throw new Error(`${m.chart} has no value per state`)
+  const n = statesOf(chart).values.filter((v) => v.pt?.y != null).length
+  return { m, chart: { ...chart, slug: `states-${chart.slug}` }, slug: chart.slug, n, open: i === 1 }
+})
+const groups = [
+  { id: 'states', label: `States (${places.filter((p) => p.type === 'state').length})`, list: places.filter((p) => p.type === 'state') },
+  { id: 'uts', label: `Union territories (${places.filter((p) => p.type === 'ut').length})`, list: places.filter((p) => p.type === 'ut') },
+]
+---
+
+<Base title={states.title} description={states.intro}>
+  <header class="wrap head">
+    <p class="label muted"><a href="/">Home</a> / States</p>
+    <h1 class="display">{states.title} <span class="deva" lang="hi">{states.hindi}</span></h1>
+    <p class="lede">{states.intro.replace(/ The map below shows one measure: .*$/, '')}</p>
+  </header>
+
+  <section class="wrap" aria-label="Map">
+    <label class="switch">
+      <span class="label muted">{states.map.switcherLabel}</span>
+      <select data-map-switch>
+        {maps.map((x) => <option value={x.slug} selected={x.open}>{x.m.label} ({states.map.coverage(x.n, places.length)})</option>)}
+      </select>
+    </label>
+    {maps.map((x) => (
+      <figure class="map" data-map={x.slug} hidden={!x.open}>
+        <h2><a href={`/charts/${x.slug}/`}>{x.chart.title}</a></h2>
+        <p class="muted">{x.chart.subtitle}</p>
+        <div class="w-wide" set:html={renderTiles(x.chart, 'wide').html} />
+        <div class="w-narrow" set:html={renderTiles(x.chart, 'narrow').html} />
+        {x.chart.note && <p class="note">Note: {x.chart.note}</p>}
+        <figcaption class="note">{sourceLine(x.chart.sources)}</figcaption>
+      </figure>
+    ))}
+  </section>
+
+  <section class="wrap section" aria-labelledby="a-z">
+    <div class="section-head">
+      <div>
+        <p class="label muted">{states.aToZ.eyebrow}</p>
+        <h2 class="display" id="a-z">{states.aToZ.heading}</h2>
+      </div>
+      <label class="filter">
+        <span class="visually-hidden">{states.aToZ.filterPlaceholder}</span>
+        <input type="search" placeholder={states.aToZ.filterPlaceholder} data-filter="#a-z-lists li" />
+      </label>
+    </div>
+    <div class="lists" id="a-z-lists">
+      {groups.map((g) => (
+        <div id={g.id}>
+          <h3 class="label muted">{g.label}</h3>
+          <ul>
+            {g.list.map((p) => (
+              <li data-words={`${p.name} ${p.hindi ?? ''} ${p.native?.name ?? ''} ${p.code}`.toLowerCase()}>
+                <a href={`/states/${p.slug}/`}>{p.name}</a>
+                <span class="native muted">{p.native?.name ?? p.hindi}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+    <p class="note">{states.aToZ.note}</p>
+  </section>
+
+  <section class="wrap section" aria-labelledby="bounds">
+    <div class="section-head">
+      <div>
+        <p class="label muted">{states.boundaries.eyebrow}</p>
+        <h2 class="display" id="bounds">{states.boundaries.heading}</h2>
+        <p>{states.boundaries.intro}</p>
+      </div>
+    </div>
+    <dl class="changes">
+      {states.boundaries.changes.map((c) => (
+        <div><dt><strong>{c.heading}</strong></dt><dd>{c.body}</dd></div>
+      ))}
+    </dl>
+    <p><a href="/how-we-check/#geography"><strong>{states.boundaries.link}</strong></a></p>
+    <table class="ruled cover">
+      <thead>
+        <tr>
+          <th scope="col">{states.boundaries.coverageHeads.dataSet}</th>
+          <th scope="col">{states.boundaries.coverageHeads.period}</th>
+          <th scope="col" class="num">{states.boundaries.coverageHeads.of36}</th>
+          <th scope="col">{states.boundaries.coverageHeads.gaps}</th>
+        </tr>
+      </thead>
+      <tbody>
+        {states.boundaries.coverage.map((r) => (
+          <tr><td>{r.dataSet}</td><td>{r.period}</td><td class="num">{r.of36}</td><td>{r.gaps}</td></tr>
+        ))}
+      </tbody>
+    </table>
+  </section>
+  <div class="end"></div>
+</Base>
+
+<script>
+  document.querySelector<HTMLSelectElement>('[data-map-switch]')?.addEventListener('change', (e) => {
+    const v = (e.target as HTMLSelectElement).value
+    document.querySelectorAll<HTMLElement>('[data-map]').forEach((m) => (m.hidden = m.dataset.map !== v))
+  })
+</script>
+
+<style>
+  .head {
+    padding-block: 40px 24px;
+  }
+  .head a {
+    text-decoration: none;
+  }
+  h1 {
+    margin-top: 16px;
+    font-size: clamp(40px, 5vw, 64px);
+  }
+  h1 .deva {
+    display: block;
+    font-size: 0.5em;
+    margin-top: 6px;
+    color: var(--slate);
+  }
+  .lede {
+    margin-top: 16px;
+  }
+  .switch {
+    display: inline-grid;
+    gap: 6px;
+    margin-block: 8px 24px;
+  }
+  .switch select {
+    font: 500 15px var(--font-ui);
+    padding: 8px 12px;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    background: var(--paper);
+  }
+  .map {
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+  }
+  .map h2 {
+    font: 600 20px/28px var(--font-ui);
+  }
+  .map h2 a {
+    text-decoration: none;
+  }
+  .map > p {
+    margin-block: 4px 20px;
+    font-size: 15px;
+  }
+  .w-narrow {
+    display: none;
+  }
+  @media (max-width: 720px) {
+    .w-wide {
+      display: none;
+    }
+    .w-narrow {
+      display: block;
+    }
+  }
+  .note {
+    margin-top: 12px;
+    font-size: 13px;
+    line-height: 19px;
+    color: var(--slate);
+    max-width: 760px;
+  }
+  .filter input {
+    width: 280px;
+    padding: 8px 12px;
+    font: 400 15px var(--font-ui);
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+  }
+  .lists {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 48px;
+    margin-top: 24px;
+  }
+  .lists ul {
+    margin: 12px 0 0;
+    padding: 0;
+    list-style: none;
+    columns: 2;
+    column-gap: 32px;
+  }
+  #uts ul {
+    columns: 1;
+  }
+  .lists li {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    padding-block: 8px;
+    border-bottom: 1px solid var(--rule);
+    break-inside: avoid;
+  }
+  .lists li a {
+    font-weight: 600;
+    text-decoration: none;
+  }
+  .lists li a:hover {
+    text-decoration: underline;
+  }
+  .changes {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    margin: 24px 0;
+  }
+  .changes dd {
+    margin: 8px 0 0;
+    font-size: 15px;
+    line-height: 23px;
+  }
+  .cover {
+    margin-top: 32px;
+  }
+  .end {
+    height: 96px;
+  }
+  @media (max-width: 900px) {
+    .lists,
+    .changes {
+      grid-template-columns: 1fr;
+    }
+    .lists ul {
+      columns: 1;
+    }
+    .filter input {
+      width: 100%;
+    }
+  }
+</style>

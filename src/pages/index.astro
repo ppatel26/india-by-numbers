@@ -1,0 +1,253 @@
+---
+import Base from '~/layouts/Base.astro'
+import Emblem from '~/components/Emblem.astro'
+import StateSelect from '~/components/StateSelect.astro'
+import Ledger from '~/components/home/Ledger.astro'
+import TopicTile from '~/components/home/TopicTile.astro'
+import StateBeside from '~/components/home/StateBeside.astro'
+import home from '~/content/pages/home'
+import tiles from '~/content/pages/tiles'
+import { charts, topics } from '~/content'
+import { EMBLEM_ALT } from '~/lib/emblems'
+import { places } from '~/lib/geography'
+import { SITE } from '~/lib/site'
+
+const placeholder = `Search ${topics.length} topics, ${charts.length} charts and ${places.length} states and UTs`
+const browseIntro = `${topics.length} topics, ${charts.length} charts. Each topic page answers a few plain questions with charts, tables and sources.`
+---
+
+<Base title={SITE.name} description={home.standfirst} imageAlt="India by Numbers: India's official statistics, checked and charted" defaultState={home.stateBeside.defaultState}>
+  <header class="hero on-dark">
+    <div class="wrap inner">
+      <div class="text">
+        <p class="label">{home.eyebrow}</p>
+        <h1 class="display">{home.title}</h1>
+        <p class="standfirst">{home.standfirst}</p>
+        <form class="search" action="/search/" method="get" role="search">
+          <label class="visually-hidden" for="home-q">Search</label>
+          <svg viewBox="0 0 16 16" width="20" height="20" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5"></circle><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.5"></path></svg>
+          <input id="home-q" name="q" type="search" placeholder={placeholder} autocomplete="off" data-search />
+        </form>
+        <p class="try">
+          <span>{home.search.tryLabel}</span>
+          {home.search.tryTerms.map((t) => <a href={`/search/?q=${encodeURIComponent(t)}`}>{t}</a>)}
+        </p>
+      </div>
+      <Emblem name="home" alt={EMBLEM_ALT.home} size={340} eager />
+    </div>
+  </header>
+
+  <section class="wrap section" aria-labelledby="newest">
+    <div class="section-head">
+      <div>
+        <h2 class="display" id="newest">{home.newest.heading}</h2>
+        <p>{home.newest.intro}</p>
+      </div>
+      <a href="/releases/">{home.newest.link}</a>
+    </div>
+    <Ledger rows={home.newest.rows} />
+  </section>
+
+  <section class="wrap section" aria-labelledby="browse">
+    <div class="section-head plain">
+      <div>
+        <h2 class="display" id="browse">{home.browse.heading}</h2>
+        <p>{browseIntro}</p>
+      </div>
+      <a href="/topics/">{home.browse.link}</a>
+    </div>
+    <ul class="tiles">
+      {topics.map((t) => <TopicTile topic={t} tile={tiles[t.slug]} />)}
+    </ul>
+    <p class="later"><strong>{home.comingLater.label}</strong> <span class="muted">{home.comingLater.topics.join(' · ')}</span></p>
+  </section>
+
+  <section class="wrap section" aria-labelledby="beside">
+    <div class="section-head">
+      <div>
+        <h2 class="display" id="beside">{home.stateBeside.heading}</h2>
+        <p>{home.stateBeside.intro}</p>
+      </div>
+      <div class="picker"><StateSelect label="Choose a state or UT" /></div>
+    </div>
+    <StateBeside content={home.stateBeside} />
+  </section>
+
+  <section class="methods on-dark" aria-labelledby="methods">
+    <div class="wrap">
+      <div class="m-top">
+        <div>
+          <p class="label muted">{home.howWeCheck.eyebrow}</p>
+          <h2 class="display" id="methods">{home.howWeCheck.heading}</h2>
+          <p class="lede">{home.howWeCheck.body}</p>
+          <p><a href="/how-we-check/"><strong>{home.howWeCheck.link}</strong></a></p>
+        </div>
+        <Emblem name="methods" alt={EMBLEM_ALT.methods} size={300} screen />
+      </div>
+      <ol class="steps">
+        {home.howWeCheck.steps.map((s) => (
+          <li>
+            <h3 class="label">{s.heading}</h3>
+            <p>{s.body}</p>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+</Base>
+
+<style>
+  .hero {
+    background: var(--lac);
+  }
+  .inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 40px;
+    min-height: 480px;
+    padding-block: 56px;
+  }
+  .text {
+    flex: 1;
+    max-width: 700px;
+  }
+  h1 {
+    margin-top: 12px;
+    font-size: clamp(48px, 6.4vw, 80px);
+  }
+  .standfirst {
+    margin-top: 12px;
+    font-size: 19px;
+    line-height: 28px;
+    color: var(--silver-dim);
+  }
+  .search {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    margin-top: 32px;
+    height: 60px;
+    padding: 0 20px;
+    background: var(--paper);
+    color: var(--ink);
+    border-radius: 2px;
+  }
+  .search input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    font: 400 18px var(--font-ui);
+    color: var(--ink);
+    background: none;
+  }
+  .try {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    font-size: 15px;
+  }
+  .try a {
+    padding: 4px 12px;
+    border: 1px solid var(--silver-dim);
+    border-radius: 16px;
+    text-decoration: none;
+  }
+  .try a:hover {
+    background: rgb(255 255 255 / 0.1);
+  }
+  .section-head a {
+    font-weight: 600;
+  }
+  .plain {
+    border-bottom: 0;
+  }
+  .tiles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin: 24px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .later {
+    margin-top: 24px;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+    font-size: 15px;
+  }
+  .picker {
+    width: 320px;
+    padding: 10px 14px;
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+  }
+  .picker :global(select) {
+    border: 0;
+  }
+  .methods {
+    margin-top: 120px;
+    padding-block: 96px;
+    background: var(--kajal);
+  }
+  .m-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 40px;
+  }
+  .methods h2 {
+    margin: 12px 0 20px;
+    font-size: clamp(36px, 4.4vw, 56px);
+    max-width: 720px;
+  }
+  .methods .lede {
+    color: var(--silver-dim);
+    margin-bottom: 24px;
+  }
+  .steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 24px;
+    margin: 56px 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .steps li {
+    padding-top: 20px;
+    border-top: 1px solid var(--kajal-rule);
+  }
+  .steps p {
+    margin-top: 12px;
+    font-size: 15px;
+    line-height: 23px;
+  }
+  @media (max-width: 1000px) {
+    .tiles {
+      grid-template-columns: 1fr 1fr;
+    }
+    .steps {
+      grid-template-columns: 1fr 1fr;
+    }
+    .inner > :global(.emblem),
+    .m-top > :global(.emblem) {
+      display: none;
+    }
+  }
+  @media (max-width: 640px) {
+    .tiles,
+    .steps {
+      grid-template-columns: 1fr;
+    }
+    .search input {
+      font-size: 16px;
+    }
+    .picker {
+      width: 100%;
+    }
+  }
+</style>

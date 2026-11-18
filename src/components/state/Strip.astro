@@ -1,0 +1,26 @@
+---
+/** Where one state sits among all states and UTs: a tick per state, India in ink, this state in series-1. */
+import type { Row } from '~/lib/profile'
+import { fmt } from '~/lib/format'
+
+interface Props {
+  row: Row
+}
+const { row } = Astro.props
+const vals = row.data.values.flatMap((v) => (v.pt?.y != null ? [v.pt.y] : []))
+const lo = Math.min(...vals)
+const hi = Math.max(...vals)
+const W = 220
+const x = (y: number) => 4 + ((y - lo) / (hi - lo || 1)) * (W - 8)
+const india = row.data.india?.y
+const label = (y: number) => fmt(y, { ...row.chart.format, unit: '' })
+---
+
+<svg class="strip" viewBox={`0 0 ${W} 34`} width={W} height="34" aria-hidden="true">
+  <line x1="4" x2={W - 4} y1="10" y2="10" stroke="var(--rule)"></line>
+  {vals.map((y) => <line x1={x(y)} x2={x(y)} y1="5" y2="15" stroke="var(--other-line)"></line>)}
+  {india != null && india >= lo && india <= hi && <line x1={x(india)} x2={x(india)} y1="1" y2="19" stroke="var(--ink)" stroke-width="2"></line>}
+  {row.value && <circle cx={x(row.value.y!)} cy="10" r="5" fill="var(--s1)"></circle>}
+  <text x="4" y="31" font-family="var(--font-mono)" font-size="10.5" fill="var(--slate)">{label(lo)}</text>
+  <text x={W - 4} y="31" text-anchor="end" font-family="var(--font-mono)" font-size="10.5" fill="var(--slate)">{label(hi)}</text>
+</svg>

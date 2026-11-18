@@ -1,0 +1,42 @@
+---
+import Seal from './Seal.astro'
+import { SITE } from '~/lib/site'
+---
+
+<a class="wordmark" href="/" aria-label={`${SITE.name}, home`}>
+  <Seal size={32} />
+  <span>
+    <span class="name">{SITE.name}</span>
+    <span class="hi" lang="hi">{SITE.hindiName}</span>
+  </span>
+</a>
+
+<style>
+  .wordmark {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    text-decoration: none;
+    color: inherit;
+  }
+  .wordmark :global(.seal) {
+    color: var(--lac);
+  }
+  :global(.on-dark) .wordmark :global(.seal) {
+    color: var(--silver);
+  }
+  .name {
+    display: block;
+    font: 400 19px/20px var(--font-display);
+    text-transform: uppercase;
+    letter-spacing: 0.02em;
+  }
+  .hi {
+    display: block;
+    font: 400 13px/16px var(--font-deva);
+    color: var(--slate);
+  }
+  :global(.on-dark) .hi {
+    color: var(--silver-dim);
+  }
+</style>

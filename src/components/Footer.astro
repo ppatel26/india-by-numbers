@@ -1,0 +1,113 @@
+---
+import Wordmark from './Wordmark.astro'
+import { topics } from '~/content'
+import { formatDate } from '~/lib/period'
+import { places } from '~/lib/geography'
+import { SITE } from '~/lib/site'
+
+const states = places.filter((p) => p.type === 'state').length
+const uts = places.length - states
+const groups = [
+  { head: 'Topics', links: topics.map((t) => [t.name, `/${t.slug}/`]) },
+  {
+    head: 'States',
+    links: [
+      [`All ${places.length} states and UTs`, '/states/'],
+      [`States (${states})`, '/states/#states'],
+      [`Union territories (${uts})`, '/states/#uts'],
+    ],
+  },
+  {
+    head: 'About the data',
+    links: [
+      ['How we check', '/how-we-check/'],
+      ['Sources', '/sources/'],
+      ['Releases', '/releases/'],
+      ['Corrections', '/corrections/'],
+      ['All charts', '/charts/'],
+    ],
+  },
+  {
+    head: 'Project',
+    links: [
+      ['About', '/about/'],
+      ['Reuse and licence', '/about/#reuse'],
+      ['Report a problem', '/corrections/#report'],
+      ['Contact', '/about/#contact'],
+    ],
+  },
+]
+---
+
+<footer class="site on-dark">
+  <div class="wrap grid">
+    <div class="intro">
+      <Wordmark />
+      <p class="muted">An independent project. Not affiliated with the Government of India.</p>
+    </div>
+    {groups.map((g) => (
+      <div>
+        <h2 class="label muted">{g.head}</h2>
+        <ul>
+          {g.links.map(([label, href]) => <li><a href={href}>{label}</a></li>)}
+        </ul>
+      </div>
+    ))}
+  </div>
+  <div class="wrap base">
+    <p>{SITE.licence}</p>
+    <p class="label">Checked {formatDate(SITE.checked)}</p>
+  </div>
+</footer>
+
+<style>
+  .site {
+    background: var(--kajal);
+    padding: 64px 0 40px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr repeat(4, 1fr);
+    gap: 32px;
+  }
+  .intro p {
+    margin-top: 20px;
+    max-width: 320px;
+    font-size: 15px;
+    line-height: 24px;
+  }
+  h2 {
+    margin-bottom: 16px;
+  }
+  ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 15px;
+    line-height: 30px;
+  }
+  a {
+    text-decoration: none;
+  }
+  a:hover {
+    text-decoration: underline;
+  }
+  .base {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    flex-wrap: wrap;
+    margin-top: 56px;
+    padding-top: 24px;
+    border-top: 1px solid var(--kajal-rule);
+    font-size: 13px;
+  }
+  @media (max-width: 900px) {
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
+    .intro {
+      grid-column: 1 / -1;
+    }
+  }
+</style>

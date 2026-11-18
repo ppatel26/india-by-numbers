@@ -1,0 +1,190 @@
+---
+/**
+ * The chart frame, in a fixed order: number, title, subtitle, tabs, views,
+ * note, then the footer (hallmark, source line, files). Every view is
+ * rendered at build time; src/scripts/chart.ts switches tabs.
+ */
+import ChartTable from './ChartTable.astro'
+import Hallmark from './Hallmark.astro'
+import type { Chart } from '~/content/types'
+import { openView, renderPlot, viewsOf, type View } from '~/lib/charts'
+import { sourceLine } from '~/lib/sources'
+
+interface Props {
+  chart: Chart
+  /** "2.1" on topic pages; none on the chart's own page. */
+  number?: string
+  /** The chart page uses h1 and links to nothing. */
+  page?: boolean
+}
+const { chart, number, page = false } = Astro.props
+const views = viewsOf(chart)
+const open = openView(chart)
+const names: Record<View, string> = { chart: 'Chart', table: 'Table', map: 'Map' }
+const id = `c-${chart.slug}`
+const Heading = page ? 'h1' : 'h3'
+const href = `/charts/${chart.slug}/`
+---
+
+<figure class="chart" id={chart.slug} data-chart={chart.slug} aria-labelledby={`${id}-title`}>
+  {number && <p class="label muted number">{number}</p>}
+  <Heading class="chart-title" id={`${id}-title`}>{page ? chart.title : <a href={href}>{chart.title}</a>}</Heading>
+  <p class="subtitle">{chart.subtitle}</p>
+  {views.length > 1 && (
+    <div class="chart-tabs" role="tablist" aria-label="View">
+      {views.map((v) => (
+        <button type="button" role="tab" id={`${id}-tab-${v}`} aria-controls={`${id}-${v}`} aria-selected={v === open ? 'true' : 'false'} tabindex={v === open ? 0 : -1} data-view={v}>
+          {names[v]}
+        </button>
+      ))}
+    </div>
+  )}
+  {views.map((v) => (
+    <div class:list={['view', v]} id={`${id}-${v}`} role={views.length > 1 ? 'tabpanel' : undefined} aria-labelledby={views.length > 1 ? `${id}-tab-${v}` : undefined} hidden={v !== open}>
+      {v === 'table' ? (
+        <ChartTable chart={chart} />
+      ) : (
+        <>
+          <div class="w-wide" set:html={renderPlot(chart, v, 'wide').html} />
+          <div class="w-narrow" set:html={renderPlot(chart, v, 'narrow').html} />
+        </>
+      )}
+    </div>
+  ))}
+  {chart.note && <p class="note">Note: {chart.note}</p>}
+  <figcaption class="foot">
+    <Hallmark {...chart.punches} status={chart.status} />
+    <p class="source">{sourceLine(chart.sources)}</p>
+    <p class="files">
+      <a href={`${href}?tab=table`} data-view-link="table">Table</a> · <a href={`/charts/${chart.slug}.csv`} download>CSV</a> ·{' '}
+      <a href={`/charts/${chart.slug}.png`} download>PNG</a> · <a href={`/charts/${chart.slug}.svg`} download>SVG</a>
+    </p>
+  </figcaption>
+</figure>
+
+<style>
+  .chart {
+    margin: 0;
+    padding-top: 20px;
+    border-top: 1px solid var(--rule);
+  }
+  .number {
+    margin-bottom: 8px;
+  }
+  .chart-title {
+    font: 600 20px/28px var(--font-ui);
+  }
+  h1.chart-title {
+    font-size: clamp(26px, 3vw, 34px);
+    line-height: 1.2;
+  }
+  .chart-title a {
+    text-decoration: none;
+  }
+  .chart-title a:hover {
+    text-decoration: underline;
+  }
+  .subtitle {
+    margin-top: 4px;
+    color: var(--slate);
+    font-size: 15px;
+    line-height: 22px;
+    max-width: 912px;
+  }
+  .chart-tabs {
+    display: inline-flex;
+    margin-top: 16px;
+    padding: 3px;
+    border: 1px solid var(--rule);
+    border-radius: 20px;
+  }
+  .chart-tabs button {
+    border: 0;
+    background: none;
+    padding: 6px 16px;
+    border-radius: 16px;
+    font: 500 15px var(--font-ui);
+    color: var(--ink);
+    cursor: pointer;
+  }
+  .chart-tabs button[aria-selected='true'] {
+    background: var(--ink);
+    color: var(--paper);
+  }
+  .view {
+    margin-top: 24px;
+  }
+  .w-narrow {
+    display: none;
+  }
+  @media (max-width: 720px) {
+    .w-wide {
+      display: none;
+    }
+    .w-narrow {
+      display: block;
+    }
+  }
+  .note {
+    margin-top: 16px;
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--slate);
+    max-width: 760px;
+  }
+  .foot {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 16px 24px;
+    align-items: start;
+    margin-top: 20px;
+    padding-top: 16px;
+    border-top: 1px solid var(--rule);
+  }
+  .source {
+    font-size: 13px;
+    line-height: 20px;
+    color: var(--slate);
+    max-width: 420px;
+  }
+  .files {
+    font-size: 13px;
+    font-weight: 600;
+    white-space: nowrap;
+  }
+  .files a {
+    text-decoration: none;
+  }
+  .files a:hover {
+    text-decoration: underline;
+  }
+  @media (max-width: 900px) {
+    .foot {
+      grid-template-columns: 1fr;
+    }
+  }
+  /* Selected state (src/scripts/state.ts). */
+  .chart :global(.is-sel .bar) {
+    fill: var(--s1);
+  }
+  .chart :global(.is-sel .name) {
+    font-weight: 600;
+  }
+  .chart :global(.is-sel .value.inside) {
+    fill: var(--paper);
+  }
+  .chart :global(.tile.is-sel rect) {
+    stroke: var(--ink);
+    stroke-width: 2.5;
+  }
+  .chart :global(.hit:hover),
+  .chart :global(.row:hover) {
+    fill-opacity: 1;
+  }
+  .chart :global(.hit:hover) {
+    fill: rgb(22 24 29 / 0.05);
+  }
+  .chart :global(.row:hover .name) {
+    text-decoration: underline;
+  }
+</style>

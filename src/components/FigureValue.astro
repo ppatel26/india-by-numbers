@@ -1,0 +1,48 @@
+---
+/** A headline figure: value, label, then its period, status and office in mono. */
+import type { Figure } from '~/content/types'
+import { figureValue } from '~/lib/figures'
+
+interface Props {
+  figure: Figure
+  size?: 'hero' | 'tile'
+}
+const { figure, size = 'hero' } = Astro.props
+const f = figureValue(figure)
+const punch = [f.period, ...f.status, f.office].join(' · ')
+---
+
+<a class:list={['figure', size]} href={f.href}>
+  <span class="value" data-alt={f.value.alt}>{f.value.text}</span>
+  <span class="name">{f.label}</span>
+  <span class="label punch">{punch}</span>
+</a>
+
+<style>
+  .figure {
+    display: flex;
+    flex-direction: column;
+    text-decoration: none;
+    color: inherit;
+  }
+  .value {
+    font: 500 40px/48px var(--font-ui);
+    letter-spacing: -0.01em;
+  }
+  .tile .value {
+    font-size: 32px;
+    line-height: 40px;
+  }
+  .name {
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 4px;
+  }
+  .punch {
+    margin-top: 4px;
+    opacity: 0.85;
+  }
+  .figure:hover .name {
+    text-decoration: underline;
+  }
+</style>

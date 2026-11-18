@@ -1,0 +1,93 @@
+---
+/** The hallmark: office, unit, our check, period. Then the status words. */
+import Seal from './Seal.astro'
+import type { Status } from '~/content/types'
+import { formatDate } from '~/lib/period'
+import { SITE } from '~/lib/site'
+
+interface Props {
+  office: string
+  unit: string
+  period: string
+  status?: readonly Status[]
+}
+const { office, unit, period, status = [] } = Astro.props
+const mark: Record<Status, string> = {
+  Provisional: 'provisional',
+  Projection: 'projection',
+  'Survey estimate': 'survey',
+  'Method break': 'break',
+}
+---
+
+<div class="hallmark">
+  <span class="punch office">{office}</span>
+  <span class="punch">{unit}</span>
+  <a class="assay" href="/how-we-check/#hallmark" title={`Checked ${formatDate(SITE.checked)}`}>
+    <Seal size={16} />
+    <span class="visually-hidden">Checked {formatDate(SITE.checked)}</span>
+  </a>
+  <span class="punch">{period}</span>
+  {status.map((s) => <span class:list={['status', mark[s]]}>{s}</span>)}
+</div>
+
+<style>
+  .hallmark {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 6px;
+  }
+  .punch {
+    font: 400 11px/16px var(--font-mono);
+    letter-spacing: 0.04em;
+    padding: 3px 9px;
+    border: 1px solid var(--ink);
+    border-radius: 11px;
+    white-space: nowrap;
+  }
+  .office {
+    border-radius: 0;
+  }
+  .assay {
+    display: grid;
+    place-items: center;
+    width: 24px;
+    height: 24px;
+    background: var(--lac);
+    color: var(--silver);
+    border-radius: 2px;
+  }
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin-left: 6px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .status::before {
+    content: '';
+    width: 9px;
+    height: 9px;
+    border: 1.5px solid var(--ink);
+  }
+  .provisional::before {
+    border-radius: 50%;
+  }
+  .projection::before {
+    width: 14px;
+    height: 0;
+    border-width: 1.5px 0 0;
+    border-style: dashed;
+  }
+  .survey::before {
+    border-style: dotted;
+  }
+  .break::before {
+    width: 0;
+    height: 12px;
+    border-width: 0 0 0 2px;
+    border-style: dotted;
+  }
+</style>

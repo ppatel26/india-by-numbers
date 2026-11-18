@@ -1,0 +1,127 @@
+---
+/** The last part of every topic page, on kajal: six fixed rows, sources, related charts. */
+import type { Topic } from '~/content/types'
+import { releasedText } from '~/lib/sources'
+
+interface Props {
+  topic: Topic
+  partNo: number
+}
+const { topic, partNo } = Astro.props
+const rows = [
+  ['Publisher', topic.about.publisher],
+  ['Frequency', topic.about.frequency],
+  ['Revisions', topic.about.revisions],
+  ['Base years and breaks', topic.about.breaks],
+  ['Coverage', topic.about.coverage],
+  ['What is missing', topic.about.missing],
+] as const
+const host = (url: string) => new URL(url).hostname.replace(/^www\./, '')
+---
+
+<section class="about on-dark" id="about-the-data" aria-labelledby="about-title">
+  <div class="wrap grid">
+    <div></div>
+    <div>
+      <p class="label muted">Part {partNo}</p>
+      <h2 class="display" id="about-title">About the data</h2>
+      {topic.about.intro && <p class="intro">{topic.about.intro}</p>}
+      <dl>
+        {rows.map(([k, v]) => (
+          <div class="row">
+            <dt class="label muted">{k}</dt>
+            <dd>{v}</dd>
+          </div>
+        ))}
+      </dl>
+      <h3 class="label muted sub">Sources</h3>
+      <table class="ruled">
+        <thead>
+          <tr><th>Publisher</th><th>Release</th><th>Release date</th><th>Link</th></tr>
+        </thead>
+        <tbody>
+          {topic.sources.map((s) => (
+            <tr>
+              <td><strong>{s.publisher}</strong></td>
+              <td>{s.release}</td>
+              <td class="nowrap">{releasedText(s)}</td>
+              <td><a href={s.url} rel="external">{host(s.url)}</a></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+      {topic.related.length > 0 && (
+        <>
+          <h3 class="label muted sub">Related charts</h3>
+          <p class="link-row">{topic.related.map((r) => <a href={r.href}>{r.label}</a>)}</p>
+        </>
+      )}
+    </div>
+  </div>
+</section>
+
+<style>
+  .about {
+    background: var(--kajal);
+    padding-block: 72px 96px;
+    margin-top: 96px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: var(--rail) minmax(0, 1fr);
+    gap: 48px;
+  }
+  h2 {
+    margin-top: 8px;
+    font-size: clamp(32px, 4vw, 44px);
+  }
+  .intro {
+    margin-top: 16px;
+    max-width: 640px;
+  }
+  dl {
+    margin: 32px 0 0;
+  }
+  .row {
+    display: grid;
+    grid-template-columns: 220px 1fr;
+    gap: 24px;
+    padding-block: 20px;
+    border-top: 1px solid var(--kajal-rule);
+  }
+  .row:last-child {
+    border-bottom: 1px solid var(--kajal-rule);
+  }
+  dt {
+    padding-top: 4px;
+  }
+  dd {
+    margin: 0;
+    font-size: 16px;
+    line-height: 25px;
+  }
+  .sub {
+    margin: 56px 0 16px;
+  }
+  .nowrap {
+    white-space: nowrap;
+  }
+  @media (max-width: 1100px) {
+    .grid {
+      grid-template-columns: 1fr;
+    }
+    .grid > div:first-child {
+      display: none;
+    }
+  }
+  @media (max-width: 720px) {
+    .row {
+      grid-template-columns: 1fr;
+      gap: 6px;
+    }
+    table th:nth-child(3),
+    table td:nth-child(3) {
+      display: none;
+    }
+  }
+</style>

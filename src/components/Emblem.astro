@@ -1,0 +1,37 @@
+---
+/** A topic's silver object, on its own pigment. The radial mask melts the edge into the ground. */
+interface Props {
+  name: string
+  alt: string
+  size?: number
+  /** Kajal grounds: the object was made on black and uses the screen blend. */
+  screen?: boolean
+  eager?: boolean
+}
+const { name, alt, size = 280, screen = false, eager = false } = Astro.props
+---
+
+<img
+  class:list={['emblem', { screen }]}
+  src={`/emblems/${name}.webp`}
+  alt={alt}
+  width={size}
+  height={size}
+  loading={eager ? 'eager' : 'lazy'}
+  decoding="async"
+  style={`width:${size}px;height:${size}px`}
+/>
+
+<style>
+  .emblem {
+    object-fit: contain;
+    flex-shrink: 0;
+    -webkit-mask-image: radial-gradient(closest-side, black 74%, transparent 98%);
+    mask-image: radial-gradient(closest-side, black 74%, transparent 98%);
+  }
+  .screen {
+    mix-blend-mode: screen;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+</style>

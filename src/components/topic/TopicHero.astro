@@ -1,0 +1,93 @@
+---
+import Emblem from '../Emblem.astro'
+import FigureValue from '../FigureValue.astro'
+import type { Topic } from '~/content/types'
+import { EMBLEM_ALT } from '~/lib/emblems'
+import { pigments } from '~/lib/tokens'
+
+interface Props {
+  topic: Topic
+}
+const { topic } = Astro.props
+const pigment = pigments[topic.slug]
+---
+
+<header class:list={['hero', pigment.text === 'light' ? 'on-dark' : 'on-light']} style={`--ground:${pigment.hex}`}>
+  <div class="wrap inner">
+    <div class="text">
+      <p class="label crumb"><a href="/topics/">Topics</a> / {topic.name}</p>
+      <h1 class="display title">
+        {topic.name} <span class="deva" lang="hi">{topic.hindi}</span>
+      </h1>
+      <p class="standfirst">{topic.standfirst}</p>
+      <div class="figures">
+        {topic.figures.map((f) => <FigureValue figure={f} />)}
+      </div>
+    </div>
+    <Emblem name={topic.slug} alt={EMBLEM_ALT[topic.slug]} eager />
+  </div>
+</header>
+
+<style>
+  .hero {
+    background: var(--ground);
+    color: var(--ink);
+  }
+  .on-dark {
+    color: var(--silver);
+  }
+  .inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    min-height: 320px;
+    padding-block: 24px 28px;
+  }
+  .crumb a {
+    text-decoration: none;
+  }
+  .title {
+    margin-top: 10px;
+    font-size: clamp(40px, 5vw, 64px);
+  }
+  .deva {
+    font-size: 0.62em;
+    margin-left: 8px;
+  }
+  .standfirst {
+    margin-top: 12px;
+    max-width: 640px;
+    font-size: 18px;
+    line-height: 28px;
+  }
+  .figures {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 264px));
+    gap: 24px;
+    margin-top: 24px;
+  }
+  .figures > :global(*) {
+    padding-top: 14px;
+    border-top: 1px solid currentColor;
+    border-top-color: color-mix(in srgb, currentColor 40%, transparent);
+  }
+  .on-light :global(.punch) {
+    color: var(--on-light-dim);
+  }
+  @media (max-width: 900px) {
+    .inner {
+      flex-direction: column-reverse;
+      align-items: flex-start;
+    }
+    .inner > :global(.emblem) {
+      width: 160px !important;
+      height: 160px !important;
+      margin-bottom: -8px;
+    }
+    .figures {
+      grid-template-columns: 1fr;
+      gap: 16px;
+    }
+  }
+</style>

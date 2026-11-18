@@ -1,0 +1,23 @@
+/* Fonts for state names in their own scripts. Each face loads only when its glyphs appear. */
+@import '@fontsource/noto-sans-bengali/500.css';
+@import '@fontsource/noto-sans-tamil/500.css';
+@import '@fontsource/noto-sans-telugu/500.css';
+@import '@fontsource/noto-sans-kannada/500.css';
+@import '@fontsource/noto-sans-malayalam/500.css';
+@import '@fontsource/noto-sans-gujarati/500.css';
+@import '@fontsource/noto-sans-gurmukhi/500.css';
+@import '@fontsource/noto-sans-oriya/500.css';
+@import '@fontsource/noto-sans-meetei-mayek/500.css';
+@import '@fontsource/noto-nastaliq-urdu/500.css';
+
+:root {
+  --font-native: 'Tiro Devanagari Hindi', 'Noto Sans Bengali', 'Noto Sans Tamil', 'Noto Sans Telugu', 'Noto Sans Kannada',
+    'Noto Sans Malayalam', 'Noto Sans Gujarati', 'Noto Sans Gurmukhi', 'Noto Sans Oriya', 'Noto Sans Meetei Mayek',
+    'Noto Nastaliq Urdu', serif;
+}
+
+.native {
+  font-family: var(--font-native);
+  text-transform: none;
+  letter-spacing: 0;
+}
