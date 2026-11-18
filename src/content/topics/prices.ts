@@ -408,8 +408,8 @@ const topic: Topic = {
             sources: [CPI_RELEASE, CPI_API],
             format: { unit: '%' },
             series: [
-              { key: 'rural-2012', label: 'Rural, base 2012=100', color: 's4', file: RURAL_URBAN, where: { sector: 'rural', base: '2012=100' } },
-              { key: 'rural-2024', label: 'Rural', color: 's4', file: RURAL_URBAN, where: { sector: 'rural', base: '2024=100' } },
+              { key: 'rural-2012', label: 'Rural, base 2012=100', color: 's8', file: RURAL_URBAN, where: { sector: 'rural', base: '2012=100' } },
+              { key: 'rural-2024', label: 'Rural', color: 's8', file: RURAL_URBAN, where: { sector: 'rural', base: '2024=100' } },
               { key: 'urban-2012', label: 'Urban, base 2012=100', color: 's5', file: RURAL_URBAN, where: { sector: 'urban', base: '2012=100' } },
               { key: 'urban-2024', label: 'Urban', color: 's5', file: RURAL_URBAN, where: { sector: 'urban', base: '2024=100' } },
             ],

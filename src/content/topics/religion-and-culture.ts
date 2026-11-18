@@ -7,7 +7,8 @@ const RELIGION_COLORS = {
   Hindu: 's1',
   Muslim: 's2',
   Christian: 's3',
-  Sikh: 's4',
+  // Sikh is orange, not green, so it never sits beside Muslim teal in a look-alike hue.
+  Sikh: 's8',
   Buddhist: 's5',
   Jain: 's6',
   'Other religions and persuasions': 's7',
@@ -368,7 +369,7 @@ const topic: Topic = {
               religionSeries('Hindu', 'hindu', 'Hindu', 's1'),
               religionSeries('Muslim', 'muslim', 'Muslim', 's2'),
               religionSeries('Christian', 'christian', 'Christian', 's3'),
-              religionSeries('Sikh', 'sikh', 'Sikh', 's4'),
+              religionSeries('Sikh', 'sikh', 'Sikh', 's8'),
               religionSeries('Buddhist', 'buddhist', 'Buddhist', 's5'),
               religionSeries('Jain', 'jain', 'Jain', 's6'),
               religionSeries('Other religions and persuasions', 'other', 'Other religions and persuasions', 's7'),

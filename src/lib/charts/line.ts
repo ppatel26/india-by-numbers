@@ -86,7 +86,8 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
   const axis = own ? undefined : chart.y
   // Room above the plot: the panel label, a key for the band and reference lines, and the
   // labels of method breaks and markers, so none of them sits on the data.
-  const keyed = !!chart.band || (chart.refs ?? []).length > 0
+  // The key names the band; each reference line is labelled at its own right end.
+  const keyed = !!chart.band
   const ruled = (chart.breaks ?? []).length + (chart.markers ?? []).length > 0
   const top = (panel.label ? 34 : 16) + (keyed ? 24 : 0) + (ruled ? 24 : 0)
   const m = { top, right: endLabels ? Math.min(labelRoom, W * (narrow ? 0.4 : 0.22)) : 12, bottom: 28, left: yRoom(values, axis, f) }
@@ -122,7 +123,8 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
   const bandX0 = band ? x(Math.max(x.domain()[0]!, parseBandStart(band))) : 0
   const bandEl = band ? svg`<rect x="${bandX0}" y="${y(band.to)}" width="${W - m.right - bandX0}" height="${y(band.from) - y(band.to)}" fill="var(--band)"/>` : null
   const refs = (chart.refs ?? []).map(
-    (r) => svg`<line x1="${m.left}" x2="${W - m.right}" y1="${y(r.y)}" y2="${y(r.y)}" stroke="var(--slate)" stroke-dasharray="2 3"/>`,
+    (r) => svg`<line x1="${m.left}" x2="${W - m.right}" y1="${y(r.y)}" y2="${y(r.y)}" stroke="var(--slate)" stroke-dasharray="2 3"/>
+${note(W - m.right - 4, y(r.y) - 5, r.label, 'end')}`,
   )
   // The key names the band and the reference lines above the plot, not on top of the lines.
   const keyY = (panel.label ? 34 : 16) + 6
@@ -132,11 +134,7 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
         const at = kx
         kx += 26 + band.label.length * 6.6 + 18
         return svg`<rect x="${at}" y="${keyY - 9}" width="18" height="12" fill="var(--band)" stroke="var(--rule)"/><text x="${at + 24}" y="${keyY + 1}" font-size="12" fill="var(--slate)">${band.label}</text>`
-      })() : null}${(chart.refs ?? []).map((r) => {
-        const at = kx
-        kx += 26 + r.label.length * 6.6 + 18
-        return svg`<line x1="${at}" x2="${at + 18}" y1="${keyY - 3}" y2="${keyY - 3}" stroke="var(--slate)" stroke-dasharray="2 3"/><text x="${at + 24}" y="${keyY + 1}" font-size="12" fill="var(--slate)">${r.label}</text>`
-      })}`
+      })() : null}`
     : null
 
   const segs = panel.series.map((s) => segments(s.points, !chart.step))

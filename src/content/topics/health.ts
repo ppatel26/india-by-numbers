@@ -371,8 +371,11 @@ const topic: Topic = {
             sources: [withTable(NHA_2023_24, 'Table 1')],
             format: { decimals: 1, unit: '%' },
             y: { min: 0, max: 70, step: 10 },
-            breaks: [{ x: '2017-18', label: 'NSS 2017-18 survey', before: 'NSS 2014 survey' }],
-            markers: [{ x: '2022-23', label: 'New sources' }],
+            // Both are changes of method, so both are dotted breaks.
+            breaks: [
+              { x: '2017-18', label: 'NSS 2017-18 survey', before: 'NSS 2014 survey' },
+              { x: '2022-23', label: 'New sources' },
+            ],
             series: [
               { key: 'oope-nss71', label: 'Out of pocket', color: 's7', file: 'health/out-of-pocket-health-spending.csv', where: { geography: 'india', series: 'oope-share-of-the', period: ['2013-14', '2014-15', '2015-16', '2016-17'] } },
               { key: 'oope', label: 'Out of pocket', color: 's7', file: 'health/out-of-pocket-health-spending.csv', where: { geography: 'india', series: 'oope-share-of-the', period: ['2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'] } },
