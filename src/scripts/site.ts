@@ -1,5 +1,6 @@
 import './chart'
 import './numbers'
 import './state'
+import './picker'
 import './search'
 import './filter'

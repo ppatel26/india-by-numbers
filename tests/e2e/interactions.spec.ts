@@ -43,7 +43,11 @@ test('the number switch changes crore to million and is remembered', async ({ pa
 
 test('choosing a state marks it on every chart and carries to other pages', async ({ page }) => {
   await page.goto('/prices/')
-  await page.locator('[data-state-select]').first().selectOption('kerala')
+  const picker = page.locator('[data-pick="select"]').first()
+  await picker.locator('.trigger').click()
+  await page.keyboard.type('kera')
+  await page.keyboard.press('Enter')
+  await expect(picker.locator('[data-pick-name]')).toHaveText('Kerala')
   await expect(page.locator('.row[data-geo="kerala"].is-sel').first()).toBeAttached()
   await expect(page.locator('[data-state-name]').first()).toHaveText('Kerala')
   await page.goto('/jobs/')
@@ -64,7 +68,8 @@ test('a state page shows its names, ranks and the switch to other states', async
   await page.goto('/states/tamil-nadu/')
   await expect(page.locator('.names')).toContainText('தமிழ்நாடு')
   await expect(page.getByRole('row', { name: /Inflation, rural and urban/ })).toContainText('3rd highest of 36')
-  await page.locator('[data-state-nav]').selectOption('kerala')
+  await page.locator('[data-pick="nav"] .trigger').click()
+  await page.getByRole('option', { name: /Kerala/ }).click()
   await expect(page).toHaveURL(/\/states\/kerala\/$/)
   await expect(page.locator('.names')).toContainText('കേരളം')
 })

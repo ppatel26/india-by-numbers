@@ -1,5 +1,8 @@
 ---
-/** Pick a state or UT. src/scripts/state.ts applies the choice to every chart on the page. */
+/**
+ * Pick a state or UT: a button that opens a filterable list of all 36.
+ * src/scripts/picker.ts runs the list; src/scripts/state.ts applies the choice to the page.
+ */
 import { places } from '~/lib/geography'
 
 interface Props {
@@ -10,26 +13,192 @@ interface Props {
   value?: string
 }
 const { label, navigate = false, value } = Astro.props
+const chosen = places.find((p) => p.slug === value)
+const groups = [
+  { heading: 'States', list: places.filter((p) => p.type === 'state') },
+  { heading: 'Union territories', list: places.filter((p) => p.type === 'ut') },
+]
 ---
 
-<label class="pick">
-  <span class="visually-hidden">{label}</span>
-  <select data-state-select={navigate ? undefined : ''} data-state-nav={navigate ? '' : undefined}>
-    {!navigate && <option value="">+ {label}</option>}
-    {places.map((p) => <option value={p.slug} selected={p.slug === value}>{p.name}</option>)}
-  </select>
-</label>
+<div class="pick" data-pick={navigate ? 'nav' : 'select'} data-placeholder={label}>
+  <button type="button" class="trigger">
+    <span class="visually-hidden">{label}: </span>
+    <span class="code" data-pick-code hidden={!chosen}>{chosen?.code}</span>
+    <span class="name" data-pick-name>{chosen?.name ?? label}</span>
+    <svg class="chev" width="12" height="8" viewBox="0 0 12 8" aria-hidden="true"><path d="M1 1.5l5 5 5-5" fill="none" stroke="currentColor" stroke-width="1.6" /></svg>
+  </button>
+  <div class="panel" popover data-pick-panel>
+    <div class="top">
+      <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><circle cx="7" cy="7" r="5" fill="none" stroke="currentColor" stroke-width="1.5" /><path d="M11 11l3.5 3.5" stroke="currentColor" stroke-width="1.5" /></svg>
+      <input type="text" role="combobox" aria-expanded="true" aria-autocomplete="list" aria-label={label} placeholder="Type a name or code" autocomplete="off" spellcheck="false" data-pick-input />
+      {!navigate && <button type="button" class="clear" data-pick-clear hidden>Clear</button>}
+    </div>
+    <div class="list" role="listbox" aria-label={label} data-pick-list>
+      {groups.map((g) => (
+        <div role="group" aria-label={g.heading} data-pick-group>
+          <p class="label muted" aria-hidden="true">{g.heading}</p>
+          <div class="grid">
+            {g.list.map((p) => (
+              <div role="option" class="opt" aria-selected={p.slug === value ? 'true' : 'false'} data-value={p.slug} data-code={p.code} data-terms={[p.name, p.code, p.short.replace('-', ''), p.hindi ?? ''].join(' ').toLowerCase()}>
+                <span class="code">{p.code}</span><span class="n">{p.name}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+    <p class="none muted" hidden data-pick-none>No state or UT matches.</p>
+  </div>
+</div>
 
 <style>
-  select {
-    font: 600 15px var(--font-ui);
-    color: var(--ink);
-    padding: 6px 28px 6px 0;
-    border: 0;
-    border-bottom: 1px solid var(--ink);
-    background: transparent url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="10" height="6"><path d="M1 1l4 4 4-4" fill="none" stroke="%2316181D" stroke-width="1.5"/></svg>') no-repeat right 4px center;
-    appearance: none;
-    cursor: pointer;
+  .pick {
     width: 100%;
+  }
+  .trigger {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    min-height: 46px;
+    padding: 10px 14px;
+    font: 600 15px/20px var(--font-ui);
+    color: var(--ink);
+    text-align: left;
+    background: var(--paper);
+    border: 1px solid var(--ink);
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .trigger:hover {
+    background: var(--band);
+  }
+  .trigger .name {
+    flex: 1;
+    min-width: 0;
+  }
+  .chev {
+    flex: none;
+    transition: transform 160ms ease;
+  }
+  .pick:has(.panel:popover-open) .chev {
+    transform: rotate(180deg);
+  }
+  .code {
+    flex: none;
+    display: inline-block;
+    min-width: 30px;
+    padding: 2px 5px;
+    font: 500 11px/16px var(--font-mono);
+    letter-spacing: 0.04em;
+    text-align: center;
+    color: var(--slate);
+    background: var(--band);
+    border-radius: 2px;
+  }
+  .trigger .code {
+    color: var(--paper);
+    background: var(--s1);
+  }
+  .panel {
+    position: fixed;
+    inset: auto;
+    margin: 0;
+    padding: 0;
+    flex-direction: column;
+    color: var(--ink);
+    background: var(--paper);
+    border: 1px solid var(--rule);
+    border-radius: 4px;
+    box-shadow: 0 12px 32px rgb(22 24 29 / 0.16);
+    overflow: hidden;
+  }
+  .panel:popover-open {
+    display: flex;
+  }
+  .top {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 4px 8px 4px 14px;
+    border-bottom: 1px solid var(--rule);
+    color: var(--slate);
+  }
+  .top input {
+    flex: 1;
+    min-width: 0;
+    padding: 10px 0;
+    font: 16px/22px var(--font-ui);
+    color: var(--ink);
+    background: transparent;
+    border: 0;
+    outline: none;
+  }
+  .clear {
+    padding: 6px 10px;
+    font: 600 13px var(--font-ui);
+    color: var(--ink);
+    background: none;
+    border: 0;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .clear:hover {
+    background: var(--band);
+  }
+  .list {
+    min-height: 0;
+    overflow: auto;
+    overscroll-behavior: contain;
+    padding: 6px 8px 10px;
+  }
+  .list .label {
+    padding: 10px 8px 6px;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(176px, 1fr));
+  }
+  .opt {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 7px 8px;
+    font-size: 15px;
+    line-height: 20px;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+  .opt .code {
+    margin-top: 1px;
+  }
+  .opt[data-active] {
+    background: var(--band);
+  }
+  .opt[aria-selected='true'] {
+    font-weight: 600;
+  }
+  .opt[aria-selected='true'] .code {
+    color: var(--paper);
+    background: var(--s1);
+  }
+  .none {
+    padding: 16px 22px 20px;
+    font-size: 15px;
+  }
+  @media (max-width: 560px) {
+    .panel {
+      inset: auto 0 0 0;
+      width: 100%;
+      max-width: none;
+      max-height: 78vh;
+      border-radius: 12px 12px 0 0;
+    }
+    .panel::backdrop {
+      background: rgb(22 24 29 / 0.35);
+    }
+    .grid {
+      grid-template-columns: 1fr 1fr;
+    }
   }
 </style>
