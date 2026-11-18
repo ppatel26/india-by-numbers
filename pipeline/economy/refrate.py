@@ -1,5 +1,5 @@
 """Post the RBI Reference Rate Archive form for USD and save the result page.
-First save the form page: curl -sS -A Mozilla/5.0 -o raw/economy/rbi/refarchive.html https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx
+First save the form page: curl -sS -A 'IndiaByNumbers/1.0 (+https://indiabynumbers.org/about/)' -o raw/economy/rbi/refarchive.html https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx
 Usage: python3 -I pipeline/economy/refrate.py --raw raw/economy <from dd/mm/yyyy> <to dd/mm/yyyy> <out name>
 Reads <raw>/rbi/refarchive.html and writes <raw>/rbi/<out name>, for example refrate_usd_2026.html."""
 import argparse, os, re, sys, html, urllib.request, urllib.parse
@@ -18,7 +18,7 @@ data.update({"__EVENTTARGET": "", "__EVENTARGUMENT": "", "txtFromDate": frm, "tx
              "chkUSD": "on", "btnSubmit": "Submit"})
 req = urllib.request.Request("https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx",
                              data=urllib.parse.urlencode(data).encode(), method="POST",
-                             headers={"User-Agent": "Mozilla/5.0", "Content-Type": "application/x-www-form-urlencoded",
+                             headers={"User-Agent": "IndiaByNumbers/1.0 (+https://indiabynumbers.org/about/)", "Content-Type": "application/x-www-form-urlencoded",
                                       "Referer": "https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx"})
 r = urllib.request.urlopen(req, timeout=120).read()
 open(out, "wb").write(r)

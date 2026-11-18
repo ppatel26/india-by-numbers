@@ -149,7 +149,7 @@ Handbook tables 163 and 243 (monthly CPI indices and variation) were also downlo
 
 ## Rebuild
 
-The CSVs are built by `pipeline/prices/build_prices_economy.py` (run with `python3 -I`), from the raw files in `raw/prices/` and `raw/economy/`. Raw downloads are not kept in the repository; the URL and sha256 below identify each file. Fetch scripts: `pipeline/common/fetch_api.py` (paged API), `pipeline/prices/fetch_cpi12.py` (one month per request), `pipeline/common/dl.mjs` (Playwright, for the RBI document server, which blocks plain HTTP clients), `pipeline/economy/refrate.py` (RBI reference rate archive form).
+The CSVs are built by `pipeline/prices/build_prices_economy.py` (run with `python3 -I`), from the raw files in `raw/prices/` and `raw/economy/`. Raw downloads are not kept in the repository; the URL and sha256 below identify each file. Fetch scripts: `pipeline/common/fetch_api.py` (paged API), `pipeline/prices/fetch_cpi12.py` (one month per request). RBI Handbook files were downloaded by hand from the RBI website in a browser; the sha256 below identifies each one. Other script: `pipeline/economy/refrate.py` (RBI reference rate archive form).
 
 ## Raw files
 

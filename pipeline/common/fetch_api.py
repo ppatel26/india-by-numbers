@@ -14,7 +14,7 @@ base, out, limit = args.url, os.path.join(args.raw, args.name), args.limit
 rows, page = [], 1
 while True:
     url = f"{base}&limit={limit}&page={page}"
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "IndiaByNumbers/1.0 (+https://indiabynumbers.org/about/)"})
     raw = urllib.request.urlopen(req, timeout=180).read()
     with open(f"{out}.p{page}.json", "wb") as f:
         f.write(raw)

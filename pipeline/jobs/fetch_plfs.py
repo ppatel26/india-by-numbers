@@ -20,7 +20,7 @@ BASE = "https://api.mospi.gov.in/api/plfs/getData"
 
 def get(params):
     url = BASE + "?" + urllib.parse.urlencode(params)
-    req = urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"})
+    req = urllib.request.Request(url, headers={"User-Agent": "IndiaByNumbers/1.0 (+https://indiabynumbers.org/about/)"})
     for attempt in range(4):
         try:
             with urllib.request.urlopen(req, timeout=90) as r:

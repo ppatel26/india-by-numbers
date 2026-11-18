@@ -137,7 +137,7 @@ Other Handbook tables (1, 2, 3, 5, 6, 157, 158, 159, 205, 223, 228) were downloa
 
 ## Rebuild
 
-The CSVs are built by `pipeline/prices/build_prices_economy.py` (run with `python3 -I`), from the raw files in `raw/economy/` and `raw/prices/`. Raw downloads are not kept in the repository; the URL and sha256 below identify each file. The RBI document server (`rbidocs.rbi.org.in`) blocks plain HTTP clients, so the Handbook files were fetched with a headless browser (`pipeline/common/dl.mjs`).
+The CSVs are built by `pipeline/prices/build_prices_economy.py` (run with `python3 -I`), from the raw files in `raw/economy/` and `raw/prices/`. Raw downloads are not kept in the repository; the URL and sha256 below identify each file. The RBI document server (`rbidocs.rbi.org.in`) does not serve automated clients, so download the Handbook files by hand from the RBI website in a browser. The sha256 below identifies each file.
 
 ## Raw files
 

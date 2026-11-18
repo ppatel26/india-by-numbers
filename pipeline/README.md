@@ -15,14 +15,17 @@ each file.
   current folder or the script folder, so a planted file such as `json.py` cannot run.
 - Run the scripts from the repository root. Do not run them from inside `raw/`.
 - The scripts read downloads only as data. No script runs code from a download. The exception is
-  `common/dl.mjs` and `common/text.mjs`, which load publisher pages in headless Chromium.
+  `common/text.mjs`, which loads a publisher page in headless Chromium.
+- The scripts identify themselves as `IndiaByNumbers/1.0 (+https://indiabynumbers.org/about/)`. If a
+  publisher blocks automated access, stop. Download the file by hand from the publisher's page and
+  record its sha256 in the topic README.
 
 ## Requirements
 
 - Python 3.11 or later, with `openpyxl` and `xlrd` (`python3 -m pip install openpyxl xlrd`).
 - `pdftotext` from Poppler (`brew install poppler` or `apt install poppler-utils`).
 - `curl`.
-- Node and the repository dependencies (`pnpm install`), for `common/dl.mjs` and `common/text.mjs` only.
+- Node and the repository dependencies (`pnpm install`), for `common/text.mjs` only.
 
 ## Run a topic
 
@@ -70,7 +73,6 @@ Some CSVs were made in more than one step. Run the steps in this order:
 | `common/fetch.sh` | None. Downloads one file and logs URL and sha256 to `<raw>/_log.tsv` | Any |
 | `common/fetch_api.py` | None. Downloads every page of a MoSPI API query | MoSPI (eSankhyiki API) |
 | `common/fetch_batch.py` | None. Downloads a list of URLs, one folder each | Any |
-| `common/dl.mjs` | None. Downloads files behind the RBI bot check with Playwright | RBI |
 | `common/text.mjs` | None. Saves the rendered HTML of a page with Playwright | PIB, RBI |
 | `common/gunzip.py` | None. Decompresses pages that were saved gzipped | Any |
 | `common/state_languages.py` | `state-languages.csv` (values entered by hand, with a source per row) | State and UT governments, Commissioner for Linguistic Minorities |

@@ -19,7 +19,7 @@ def fetch(entry):
     key, url = entry
     directory = Path(tempfile.mkdtemp(prefix=key + '-', dir=RAW))
     body = directory / 'body'
-    result = subprocess.run(['curl','-sSL','--connect-timeout','8','--max-time','32','--max-filesize','100000000','-A','Mozilla/5.0','-D',str(directory/'headers'),'-o',str(body),'-w','%{http_code} %{content_type} %{url_effective}',url],capture_output=True,text=True)
+    result = subprocess.run(['curl','-sSL','--connect-timeout','8','--max-time','32','--max-filesize','100000000','-A','IndiaByNumbers/1.0 (+https://indiabynumbers.org/about/)','-D',str(directory/'headers'),'-o',str(body),'-w','%{http_code} %{content_type} %{url_effective}',url],capture_output=True,text=True)
     (directory/'url').write_text(url)
     digest = hashlib.sha256(body.read_bytes()).hexdigest() if body.is_file() else '-'
     return f'{key}\t{directory}\t{digest}\t{result.stdout} {result.stderr.strip()}'

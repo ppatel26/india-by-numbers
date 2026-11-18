@@ -18,7 +18,7 @@ for y in years:
                f"&year={y}&month_code={m}&limit=100&page=1")
         for attempt in range(3):
             try:
-                d = json.loads(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "Mozilla/5.0"}), timeout=60).read())
+                d = json.loads(urllib.request.urlopen(urllib.request.Request(url, headers={"User-Agent": "IndiaByNumbers/1.0 (+https://indiabynumbers.org/about/)"}), timeout=60).read())
                 break
             except Exception:
                 time.sleep(2)

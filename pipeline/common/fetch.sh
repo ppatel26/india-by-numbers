@@ -9,7 +9,7 @@ fi
 raw="$2"; url="$3"; name="$4"
 mkdir -p "$raw"
 out="$raw/$name"
-curl -sS -L -m 900 -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/141.0.0.0 Safari/537.36" -o "$out" -w "%{http_code} %{size_download}\n" "$url"
+curl -sS -L -m 900 -A "IndiaByNumbers/1.0 (+https://indiabynumbers.org/about/)" -o "$out" -w "%{http_code} %{size_download}\n" "$url"
 h=$(shasum -a 256 "$out" | cut -d' ' -f1)
 printf "%s\t%s\t%s\t%s\n" "$name" "$url" "$h" "$(date -u +%Y-%m-%dT%H:%MZ)" >> "$raw/_log.tsv"
 echo "$h"
