@@ -144,7 +144,7 @@ export const heat = (edges: readonly number[], v: number): Token => {
 }
 
 /** One row per published value: who or what, when, the value as published, its unit, status and note. */
-function observations(chart: Chart): { entity: string; series: string; pt: Point }[] {
+function observations(chart: Chart): { entity: string; series: string; pt: Point; y?: string; x?: string }[] {
   if (chart.kind === 'states') {
     const d = statesOf(chart)
     return [...(d.india ? [{ entity: 'India', series: chart.short, pt: d.india }] : []), ...d.values.flatMap((v) => (v.pt ? [{ entity: v.place.name, series: chart.short, pt: v.pt }] : []))]
@@ -153,8 +153,31 @@ function observations(chart: Chart): { entity: string; series: string; pt: Point
   // Over time, the row's place names the entity; by category, the category does.
   const time = chart.kind === 'line' || chart.kind === 'columns' || chart.kind === 'area'
   const entity = (pt: Point) => (time ? rowName(pt.row.geography ?? 'india') : name(pt.x))
-  return seriesOf(chart).flatMap((s) => s.points.map((pt) => ({ entity: entity(pt), series: s.label, pt })))
+  // A panel names the measure: "Enrolment: Primary, 1-5", as in the Table view.
+  const panels = 'panels' in chart ? (chart.panels ?? []) : []
+  const label = (s: SeriesData) => {
+    const panel = panels.find((p) => p.series.includes(s.key))?.label
+    return panel && panel !== s.label ? `${panel}: ${s.label}` : s.label
+  }
+  const defs = chart.kind === 'pyramid' ? [chart.left, chart.right] : 'series' in chart ? chart.series : []
+  const def = (key: string) => defs.find((d) => d.key === key)
+  const obs = seriesOf(chart).flatMap((s) => s.points.map((pt) => ({ entity: entity(pt), series: label(s), pt, y: def(s.key)?.y, x: def(s.key)?.x })))
+  // Rows that still share entity, series and period (a season, an area, or the parts of a summed
+  // series) are told apart by the text columns that differ between them.
+  const key = (o: (typeof obs)[number]) => `${o.entity}|${o.series}|${o.pt.row.period ?? o.pt.label}`
+  const groups = Map.groupBy(obs, key)
+  return obs.map((o) => {
+    const same = groups.get(key(o))!
+    if (same.length < 2) return o
+    const differ = Object.keys(o.pt.row).filter((c) => c !== 'note' && !/^-?[\d,.]*$/.test(o.pt.row[c] ?? '') && new Set(same.map((x) => x.pt.row[c])).size > 1)
+    // The series' own category column says it best (season_name, not season and season_name).
+    const cols = o.x && differ.includes(o.x) ? [o.x] : differ
+    return cols.length ? { ...o, series: `${o.series}: ${cols.map((c) => o.pt.row[c]).join(', ')}` } : o
+  })
 }
+
+/** A series that plots a column other than `value` (a share beside a count) takes the chart's unit, not the row's. */
+const unitOf = (chart: Chart, pt: Point, s?: { y?: string }): string => (s?.y && s.y !== 'value' ? chart.punches.unit : (pt.row.unit ?? chart.punches.unit))
 
 const SOURCE_COLUMNS = ['period', 'value', 'unit', 'status', 'note', 'sources'] as const
 
@@ -165,12 +188,12 @@ export function tableCsv(chart: Chart): string {
     const t = tableOf(chart)
     return csvFormatRows([[...t.columns, 'sources'], ...t.rows.map((r) => [r.head, ...r.cells.map((c) => c.raw), sources])]) + '\n'
   }
-  const lines = observations(chart).map(({ entity, series, pt }) => [
+  const lines = observations(chart).map(({ entity, series, pt, y }) => [
     entity,
     series,
     pt.row.period ?? pt.label,
     pt.raw,
-    pt.row.unit ?? chart.punches.unit,
+    unitOf(chart, pt, { y }),
     pt.row.status ?? pt.row.estimate ?? '',
     pt.note ?? '',
     sources,
