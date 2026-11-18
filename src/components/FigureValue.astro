@@ -1,5 +1,5 @@
 ---
-/** A headline figure: value, label, then its period, status and office in mono. */
+/** A headline figure: value, label, then its period in mono. Source and status are on its chart. */
 import type { Figure } from '~/content/types'
 import { figureValue } from '~/lib/figures'
 
@@ -9,13 +9,12 @@ interface Props {
 }
 const { figure, size = 'hero' } = Astro.props
 const f = figureValue(figure)
-const punch = [f.period, ...f.status, f.office].join(' · ')
 ---
 
 <a class:list={['figure', size]} href={f.href}>
   <span class="value" data-alt={f.value.alt}>{f.value.text}</span>
   <span class="name">{f.label}</span>
-  <span class="label punch">{punch}</span>
+  <span class="label punch">{f.period}</span>
 </a>
 
 <style>

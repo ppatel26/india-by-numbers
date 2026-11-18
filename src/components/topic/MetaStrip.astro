@@ -9,8 +9,8 @@ interface Props {
 }
 const { topic } = Astro.props
 const count = charts.filter((c) => c.topic.slug === topic.slug).length
-const publishers = [...new Set(topic.sources.map((s) => s.publisher))].join(', ')
-const items = [`Last updated ${formatDate(SITE.checked)}`, `Next release ${topic.nextRelease}`, `${count} charts`, `Sources: ${publishers}`]
+// One short line: when we last checked, and how many charts. Sources are on each chart and in About the data.
+const items = [`Updated ${formatDate(SITE.checked)}`, `${count} charts`]
 ---
 
 <div class="strip">

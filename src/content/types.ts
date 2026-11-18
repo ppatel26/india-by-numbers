@@ -41,6 +41,8 @@ export interface Pick {
   x?: string
   /** Column that holds the number. Default 'value'. */
   y?: string
+  /** Multiply each value, to put two files on one axis (projections in thousands beside counts in persons). The CSV keeps the published value and unit. */
+  multiply?: number
   /** Column with the label to show for each x, when x is not the label (for example x 'mid_year', label 'period'). */
   xLabel?: string
   /** Column with a note for each value, shown in tooltips and tables (for example an estimate basis). */
@@ -320,5 +322,6 @@ export interface Topic {
   sources: readonly Source[]
   related: readonly { label: string; href: string }[]
   /** Short notes in the rail, under "Comparing", for example the Census 2027 note. */
-  rail?: readonly { title: string; body: string }[]
+  /** Short notes in the rail: a date or a word, then what happens. */
+  rail?: readonly { title: string; rows: readonly (readonly [string, string])[]; source?: string }[]
 }

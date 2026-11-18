@@ -140,33 +140,43 @@ const topic: Topic = {
   parts: [
     {
       title: 'How many people live in India?',
-      lede: "India's population in 2011 was more than three times its 1951 count of 36,10,88,090. Growth over the decade to 2011 was 17.70%, the slowest since the decade to 1951 (13.31%).",
+      lede: "India had 36.1 crore people in 1951 and 121.1 crore at the last census, in 2011. Official projections put it at 142.6 crore on 1 March 2026. Growth over the decade to 2011 was 17.70%, the slowest since the decade to 1951 (13.31%).",
       blocks: [
         {
-          // LATER: the board prints the change since the previous census (change_since_previous_census_pct) as a second row of labels.
           chart: {
             slug: 'population-by-census',
-            kind: 'columns',
-            title: "India's population at each census, 1901 to 2011",
+            kind: 'line',
+            title: "India's population, 1901 to 2026",
             subtitle:
-              'Number of people counted, India, census years 1901 to 2011.',
-            punches: { office: 'ORGI', unit: 'persons', period: '1901-2011' },
-            note: 'There has been no census since 2011. Census 2027 is under way, and its first results are not out yet. Assam in 1981 and Jammu and Kashmir in 1991 had no census; ORGI gives interpolated figures. The 2001 total includes an estimate for three sub-divisions of Senapati district, Manipur.',
-            sources: [censusA02],
+              'Number of people, India: census counts every ten years from 1901 to 2011, then official projections for 1 March of each year to 2026.',
+            punches: { office: 'ORGI', unit: 'persons', period: '1901-2026' },
+            status: ['Projection'],
+            note: 'There has been no census since 2011; Census 2027 is under way. From 2012 the line is the MoHFW projection of July 2020, in thousands. Assam in 1981 and Jammu and Kashmir in 1991 had no census; ORGI gives interpolated figures.',
+            sources: [censusA02, projectionsT8],
             format: { scale: 'crore' },
-            y: { min: 0, step: 200000000 },
+            y: { min: 0, max: 1600000000, step: 400000000 },
             series: [
               {
                 key: 'population',
-                label: 'People counted',
+                label: 'Census count',
                 color: 'ink',
                 file: 'population/population-census-1901-2011.csv',
                 y: 'population',
+              },
+              {
+                key: 'projected',
+                label: 'Projected',
+                color: 'ink',
+                dash: true,
+                file: PROJ,
+                where: { geography: 'india', period: Array.from({ length: 16 }, (_, i) => String(2011 + i)) },
+                multiply: 1000,
               },
             ],
             callouts: [
               { series: 'population', x: '1901' },
               { series: 'population', x: '1951' },
+              { series: 'population', x: '2011', label: 'Census 2011: 121.1 crore' },
             ],
             // LATER: the board also labels 2011; a callout on the last column is cut off.
             know: [
@@ -175,9 +185,11 @@ const topic: Topic = {
               'The 2001 total includes an estimate for the Mao Maram, Paomata and Purul sub-divisions of Senapati district, Manipur.',
               'The decade to 1921 is the only one in which the count fell (−0.31%).',
               'Census 2027 is under way. Its results will be the first new count since 2011.',
+              'From 2012 the line is a projection, not a count: the Technical Group on Population Projections (MoHFW, July 2020) projects the population on 1 March of each year from Census 2011 and SRS trends. Part 5 shows it to 2036.',
             ],
             processing: [
               'Read the India population at each census, 1901 to 2011, from Table A-02 (Excel).',
+              'Read the projections for 1 March 2011 to 2026 from Table 8 of the projections report, in thousands, and multiply by 1,000 to draw them on the same axis. The CSV keeps the published thousands.',
               'Check the 2011 growth rate, 17.70%, against the PDF of the same table.',
               'Keep the change since the previous census as ORGI publishes it, in persons and in percent.',
               'Carry the A-02 footnotes into the note column: the interpolated years and the Senapati estimate.',
@@ -558,7 +570,14 @@ const topic: Topic = {
   rail: [
     {
       title: 'Census 2027',
-      body: 'The next count is under way. No results are published yet. 1 Apr to 30 Sep 2026: House-listing, all states and UTs. Done. 1 Dec 2026 to 4 Jan 2027: Count in Goa, Uttar Pradesh, Punjab and Uttarakhand. 25 Jan to 28 Feb 2027: Count in all other states and UTs. Reference date 1 Mar 2027. Manipur: dates not yet set. Source: ORGI gazette notifications, 16 Jun 2025 to 30 Oct 2026.',
+      rows: [
+        ['Apr-Sep 2026', 'House-listing, done'],
+        ['Dec 2026-Jan 2027', 'Count in Goa, Uttar Pradesh, Punjab and Uttarakhand'],
+        ['Jan-Feb 2027', 'Count in the other states and UTs (Manipur: not set)'],
+        ['1 Mar 2027', 'Reference date'],
+        ['Results', 'Not announced'],
+      ],
+      source: 'ORGI gazette notifications',
     },
   ],
   related: [

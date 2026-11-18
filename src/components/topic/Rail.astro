@@ -19,15 +19,20 @@ const { topic } = Astro.props
     </ol>
   </div>
   <div class="block">
-    <h2 class="label muted">Comparing</h2>
-    <p class="key"><span class="swatch india"></span>India</p>
-    <p class="key" data-state-only hidden><span class="swatch state"></span><span data-state-name></span></p>
-    <StateSelect label="Add a state" />
+    <h2 class="label muted">Your state</h2>
+    <StateSelect label="Choose a state" />
+    <p class="on" data-state-on hidden></p>
+    <a class="page-link" data-state-only data-state-link hidden href="/states/">All figures for <span data-state-name></span></a>
   </div>
   {topic.rail?.map((n) => (
     <div class="block note">
       <h2 class="label muted">{n.title}</h2>
-      <p>{n.body}</p>
+      <dl>
+        {n.rows.map(([when, what]) => (
+          <div><dt class="label muted">{when}</dt><dd>{what}</dd></div>
+        ))}
+      </dl>
+      {n.source && <p class="source">{n.source}</p>}
     </div>
   ))}
 </aside>
@@ -73,24 +78,37 @@ const { topic } = Astro.props
   li a:hover {
     text-decoration: underline;
   }
-  .key {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    font-size: 15px;
-    margin-bottom: 8px;
-  }
-  .swatch {
-    width: 18px;
-    height: 2px;
-    background: var(--ink);
-  }
-  .swatch.state {
-    background: var(--s1);
-  }
-  .note p {
+  .on {
+    margin-top: 12px;
     font-size: 14px;
-    line-height: 21px;
+    line-height: 20px;
+    color: var(--slate);
+  }
+  .on a {
+    color: var(--ink);
+  }
+  .page-link {
+    display: inline-block;
+    margin-top: 8px;
+    font-size: 14px;
+    font-weight: 600;
+  }
+  .note dl {
+    display: grid;
+    gap: 8px;
+    margin: 0;
+  }
+  .note dt {
+    line-height: 18px;
+  }
+  .note dd {
+    margin: 0;
+    font-size: 14px;
+    line-height: 20px;
+  }
+  .note .source {
+    margin-top: 12px;
+    font-size: 12px;
     color: var(--slate);
   }
   @media (max-width: 1100px) {

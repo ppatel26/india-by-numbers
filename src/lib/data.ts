@@ -98,7 +98,8 @@ export function points(p: Pick, axis: 'time' | 'category' = 'time', defaultX = '
     const note = (p.note && r[p.note]) || undefined
     const [lo, hi] = p.interval ? p.interval.map((c) => toNumber(r[c])) : [null, null]
     const interval = lo !== null && hi !== null ? ([lo!, hi!] as const) : undefined
-    out.push({ x, label, t: period?.t ?? (axis === 'time' ? out.length : NaN), y: toNumber(raw), raw: raw.trim(), row: r, note, interval })
+    const n = toNumber(raw)
+    out.push({ x, label, t: period?.t ?? (axis === 'time' ? out.length : NaN), y: n === null || !p.multiply ? n : n * p.multiply, raw: raw.trim(), row: r, note, interval })
   }
   return time ? out.sort((a, b) => a.t - b.t) : out
 }

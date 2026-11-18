@@ -455,7 +455,13 @@ const topic: Topic = {
   rail: [
     {
       title: 'Census 2027',
-      body: 'Census 2027 asks about religion and mother tongue again. No results are published yet. 25 Jan to 28 Feb 2027: Count in most states and UTs. 1 to 5 Mar 2027: Revision round. Not announced: Religion and language tables. Source: ORGI gazette notifications, 14 Aug and 30 Oct 2026.',
+      rows: [
+        ['Asks', 'Religion and mother tongue'],
+        ['Jan-Feb 2027', 'Count in most states and UTs'],
+        ['1-5 Mar 2027', 'Revision round'],
+        ['Tables', 'Not announced'],
+      ],
+      source: 'ORGI gazette notifications',
     },
   ],
   related: [

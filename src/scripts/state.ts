@@ -38,6 +38,26 @@ function apply(slug: string, peek = false): void {
   document.querySelectorAll<HTMLElement>('[data-state-name]').forEach((el) => (el.textContent = name))
   document.querySelectorAll<HTMLElement>('[data-state-only]').forEach((el) => (el.hidden = !slug))
   document.querySelectorAll<HTMLAnchorElement>('[data-state-link]').forEach((a) => (a.href = `/states/${slug}/`))
+  if (!peek) document.querySelectorAll<HTMLElement>('[data-state-on]').forEach((el) => onCharts(el, slug, name))
+}
+
+/** Say which charts on the page mark the state, each number a link to its chart. */
+function onCharts(el: HTMLElement, slug: string, name: string): void {
+  el.hidden = !slug
+  if (!slug) return
+  const hits = [...document.querySelectorAll<HTMLElement>('figure.chart[data-chart]')].filter((f) => f.querySelector(`[data-geo="${CSS.escape(slug)}"]`))
+  const numbers = [...new Map(hits.map((f) => [f.querySelector('.number')?.textContent?.trim() ?? '', f.id])).entries()].filter(([n]) => n)
+  if (!numbers.length) {
+    el.textContent = `${name} is not in the charts on this page.`
+    return
+  }
+  el.replaceChildren(`Marked on ${numbers.length === 1 ? 'chart' : `${numbers.length} charts:`} `)
+  numbers.forEach(([n, id], i) => {
+    const a = document.createElement('a')
+    a.href = `#${id}`
+    a.textContent = n
+    el.append(...(i ? [', ', a] : [a]))
+  })
 }
 
 /** Mark a state on this page and remember it for the next one. An empty slug clears it. */
