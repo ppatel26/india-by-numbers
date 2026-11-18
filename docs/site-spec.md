@@ -346,7 +346,7 @@ A figure that cannot carry all of these does not publish. A figure from a portal
 ### Corrections
 
 - Anyone can report a problem from any chart page or from `/corrections/`.
-- We reply within 2 working days and fix or explain within 7 working days (proposed targets).
+- Decided: no promised reply times. Reports go to D1 with no alert, so the site promises only what it does: check each report, log each fix, and reply where an email is given.
 - A fixed error gets a note on the affected chart for 12 months and a row in the corrections log.
 - A publisher revision is not a correction. It goes in `/releases/` only.
 - When we find an error in a publisher's own data, we tell the publisher and record it. OWID does this too (data insight, Nov 2024).
@@ -365,7 +365,7 @@ A figure that cannot carry all of these does not publish. A figure from a portal
 | Census | ORGI | Each census; Census 2027 counting runs to 4 Jan 2027 |
 | Elections | ECI | After each election |
 
-Rhythms to confirm per source before launch. Our target: a reviewed update within 5 working days of a publisher release (proposed). Nothing publishes on its own. A person merges each update (`docs/build-exploration.md`).
+Rhythms to confirm per source before launch. Nothing publishes on its own. A person merges each update (`docs/build-exploration.md`).
 
 ### Compared with the two models
 
@@ -479,5 +479,4 @@ Use plain verbs instead: "see", "compare", "find", "shows", "rose", "fell".
 
 1. Confirm the legal position on India's boundary before any outline map or district map.
 2. Check each tile's neighbours on the tile grid.
-3. Confirm the correction and update targets (2, 7 and 5 working days).
-4. Get a native-speaker review of all Hindi labels.
+3. Get a native-speaker review of all Hindi labels.
