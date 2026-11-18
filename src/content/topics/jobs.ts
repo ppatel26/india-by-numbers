@@ -60,6 +60,22 @@ const plfsQuarterlyJanMar2023: Source = {
   url: 'https://www.mospi.gov.in/sites/default/files/publication_reports/QuarterlyBulletinPLFS%20JanuaryMarch2023.pdf',
 }
 
+// The bulletin has no cover date; its PDF is dated 16 Jun 2022, so the month is June 2022.
+const plfsQuarterlyJanMar2022: Source = {
+  publisher: 'NSO, MoSPI',
+  release: 'PLFS Quarterly Bulletin, January to March 2022',
+  released: '2022-06',
+  url: 'https://www.mospi.gov.in/sites/default/files/publication_reports/Quarterly%20Bulletin%20PLFS%20January%20-%20March%202022.pdf',
+}
+
+// The bulletin has no cover date; its PDF is dated 14 Mar 2022, so the month is March 2022.
+const plfsQuarterlyAprJun2021: Source = {
+  publisher: 'NSO, MoSPI',
+  release: 'PLFS Quarterly Bulletin, April to June 2021',
+  released: '2022-03',
+  url: 'https://www.mospi.gov.in/sites/default/files/publication_reports/Quarterly%20Bulletin%20PLFS%20April-June%202021.pdf',
+}
+
 // The file carries no date; this is the MoSPI archive date (README).
 const plfsQuarterlyPressOctDec2021: Source = {
   publisher: 'NSO, MoSPI',
@@ -111,7 +127,9 @@ const quarterlySources = [
   plfsQuarterlyOctDec2024,
   plfsQuarterlyAprJun2024,
   plfsQuarterlyJanMar2023,
+  plfsQuarterlyJanMar2022,
   plfsQuarterlyPressOctDec2021,
+  plfsQuarterlyAprJun2021,
   plfsQuarterlyJulSep2020,
   plfsQuarterlyJulSep2019,
 ] as const
@@ -309,12 +327,12 @@ const topic: Topic = {
             know: [
               'Before 2025 the quarterly bulletins covered towns and cities only. The urban series is the one that runs across both survey designs.',
               'PLFS moved to a new sample design in January 2025. The new urban series starts in April to June 2025. MoSPI says to take the change into account when comparing with releases up to December 2024.',
-              'There is no estimate for January to March 2025. For ages 15 to 29 there is no urban rate for October 2020 to December 2021.',
+              'There is no estimate for January to March 2025.',
               'The rate uses the current weekly status: activity in the 7 days before the interview.',
             ],
             processing: [
               'Read each quarter from the bulletin tables (Statement 5 in the old design), not from the eSankhyiki API, because the API gives wrong values for some past quarters.',
-              'Use the latest bulletin that carries each quarter: Jul-Sep 2019, Jul-Sep 2020, the Oct-Dec 2021 press note, Jan-Mar 2023, Apr-Jun 2024, Oct-Dec 2024, Apr-Jun 2025 and Jul-Sep 2026.',
+              'Use the latest bulletin that carries each quarter: Jul-Sep 2019, Jul-Sep 2020, Apr-Jun 2021, the Oct-Dec 2021 press note, Jan-Mar 2022, Jan-Mar 2023, Apr-Jun 2024, Oct-Dec 2024, Apr-Jun 2025 and Jul-Sep 2026. The Oct-Dec 2021 press note gives ages 15 and over only; ages 15 to 29 for 2021 come from the Jan-Mar 2022 bulletin.',
               'Check April to June 2025 between the API and the bulletin.',
               'Tag each row with its survey design and keep the old and new designs as separate series.',
             ],
@@ -429,7 +447,7 @@ const topic: Topic = {
             slug: 'employment-by-industry',
             title: 'Workers in India by industry, 2025',
             subtitle:
-              'Share of all workers and of women workers, India, all ages, usual status, %, 2025, with the 2022 share for all workers.',
+              'Share of all workers and of women workers, India, all ages, usual status, %, 2025, with the 2022 share for all workers. Ranked by the share of all workers in 2025.',
             punches: { office: 'MoSPI', unit: '% workers', period: '2025' },
             status: ['Survey estimate'],
             note: 'Industries follow the National Industrial Classification (NIC) 2008. Shares may not add to 100 because of rounding.',
@@ -459,14 +477,14 @@ const topic: Topic = {
             series: [
               {
                 key: 'all-2025',
-                label: 'All workers',
+                label: 'All workers, 2025',
                 color: 'ink',
                 file: INDUSTRY,
                 where: { geography: 'india', period: '2025', sector: 'rural+urban', sex: 'person' },
               },
               {
                 key: 'women-2025',
-                label: 'Women workers',
+                label: 'Women workers, 2025',
                 color: 's3',
                 file: INDUSTRY,
                 where: { geography: 'india', period: '2025', sector: 'rural+urban', sex: 'female' },
@@ -543,7 +561,7 @@ const topic: Topic = {
             slug: 'women-labour-force-by-state',
             title: 'Women in the labour force by state and UT, 2025',
             subtitle:
-              'Share of women aged 15 and over who work or look for work, usual status, rural and urban combined, %, all 36 states and UTs, 2025.',
+              'Share of women aged 15 and over who work or look for work, usual status, rural and urban combined (Chandigarh: urban only), %, all 36 states and UTs, 2025.',
             punches: { office: 'MoSPI', unit: '% women', period: '2025' },
             status: ['Survey estimate'],
             note: 'This is the usual-status rate for 2025 (India 40.0%). The monthly rate for October 2026, on the current weekly status, was 35.0%; the two are different measures. Samples are small in Lakshadweep, the Andaman and Nicobar Islands, Ladakh, Chandigarh and Dadra and Nagar Haveli and Daman and Diu; Chandigarh has urban data only.',
@@ -553,7 +571,7 @@ const topic: Topic = {
             open: 'map',
             scale: 'seq',
             better: 'high',
-            short: 'Women in work',
+            short: 'Women in the labour force',
             know: [
               'The rate is the share of women aged 15 and over who work or look for work, on the usual status (principal plus subsidiary), which counts activity over the 365 days before the interview.',
               'It is a different measure from the monthly rate on the current weekly status: 40.0% for India in 2025 on the usual status, 35.0% in October 2026 on the weekly status.',
@@ -577,7 +595,7 @@ const topic: Topic = {
             slug: 'unemployment-by-state',
             title: 'Unemployment rate by state and UT, all adults and young people, 2025',
             subtitle:
-              'Unemployed people as a share of the labour force, all 36 states and UTs, ages 15 and over and 15 to 29, usual status, %, 2025. Sorted by the rate for ages 15 to 29.',
+              'Unemployed people as a share of the labour force, all 36 states and UTs, ages 15 and over and 15 to 29, usual status, %, 2025.',
             punches: { office: 'MoSPI', unit: '%', period: '2025' },
             status: ['Survey estimate'],
             note: 'India is shown as two reference lines, not a rank. Samples are small in the smaller states and UTs, so their rates are less reliable.',

@@ -178,7 +178,7 @@ const topic: Topic = {
               { series: 'cpi-iw', x: '1998-99' },
               { series: 'cpi-iw', x: '2009-10' },
               { series: 'cpi-iw', x: '2025-26' },
-              { series: 'cpi-combined', x: '2024-25' },
+              { series: 'cpi-combined', x: '2024-25', label: 'CPI Combined: 4.6% in 2024-25' },
             ],
             know: [
               'Each value is the change in the average index for the financial year (April to March) on the year before, not a change on the same month.',
@@ -248,7 +248,7 @@ const topic: Topic = {
             slug: 'cpi-inflation-by-division',
             title: 'Inflation by spending division, India, October 2026',
             subtitle:
-              "Annual change in the Consumer Price Index (2024=100), rural and urban combined, %, October 2026. Divisions follow COICOP 2018.",
+              "Annual change in the Consumer Price Index (2024=100), rural and urban combined, %, October 2026. Divisions follow COICOP 2018, ranked by October inflation, highest first.",
             punches: { office: 'MoSPI', unit: '% y/y', period: 'OCT 2026' },
             status: ['Provisional'],
             note: 'The release has no division 12. Division 13 is personal care, social protection and miscellaneous goods and services. MoSPI names gold and silver jewellery among the fastest-rising items (silver jewellery: 52.39%).',
@@ -293,9 +293,10 @@ const topic: Topic = {
           chart: {
             kind: 'line',
             slug: 'cpi-inflation-by-division-2026',
-            title: 'Inflation by spending division, India, 2026',
+            title: 'Inflation by spending division, India, January to October 2026',
             subtitle:
               'Annual change in the Consumer Price Index (2024=100), rural and urban combined, %, January to October 2026. The four largest divisions by weight. Same scale in every panel.',
+            note: 'The grey line in each panel is all items. The food panel has two lines: the Food and beverages division, and the Consumer Food Price Index (CFPI), which covers food items only, with its own weights.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'OCT 2026' },
             status: ['Provisional'],
             sources: [CPI_API, CFPI_RELEASES],
@@ -349,6 +350,7 @@ const topic: Topic = {
             subtitle:
               'Annual change in the Consumer Price Index (2012=100), rural and urban combined, %, January 2014 to December 2025. Four of the 2012 groups. Same scale in every panel. These groups do not match the 2024 divisions in 3.1 and 3.2.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'DEC 2025' },
+            note: 'The grey line in each panel is all items, the general index. MoSPI gives no rate for April and May 2020, the lockdown months, so every line has a gap there. Housing is an urban index only.',
             // The board cites the 2012=100 group indices, final series to December
             // 2025 (getCPIIndex). The API row carries the latest update date.
             sources: [CPI_API],

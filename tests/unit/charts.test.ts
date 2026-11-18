@@ -8,7 +8,7 @@ import { heat, tableOf } from '~/lib/charts/table'
 describe('chart features', () => {
   it('draws one panel per assembly, each with its majority line', () => {
     const svg = renderPlot(placed('assembly-elections-2025-2026').chart, 'chart', 'wide').html
-    for (const state of ['Delhi', 'Bihar', 'West Bengal']) expect(svg).toContain(`>${state}<`)
+    for (const state of ['Delhi 2025, 70 seats', 'Bihar 2025, 243 seats', 'West Bengal 2026, 294 seats']) expect(svg).toContain(`>${state}<`)
     expect(svg).toContain('MAJORITY 148')
   })
 

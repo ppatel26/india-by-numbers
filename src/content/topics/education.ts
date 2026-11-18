@@ -146,7 +146,7 @@ const topic: Topic = {
               'Enrolment (crore), gross enrolment ratio and dropout rate (%) by school level, India, 2020-21 to 2025-26.',
             punches: { office: 'MoE', unit: 'crore · %', period: '2025-26' },
             status: ['Method break'],
-            note: 'From 2022-23, UDISE+ records each student and uses new population projections. The booklet says ratios are strictly not comparable with figures up to 2021-22, so the lines are not joined. Each year is as first published. Levels follow the existing structure (classes 1-5, 6-8, 9-10, 11-12), not the NEP 2020 structure.',
+            note: 'From 2022-23, UDISE+ records each student and uses new population projections. The booklet says ratios are strictly not comparable with figures up to 2021-22, so the lines are not joined. Each year is as first published. Levels follow the existing structure (classes 1-5, 6-8, 9-10, 11-12), not the NEP 2020 structure. UDISE+ gives dropout rates for classes 1 to 10 only. The gross enrolment ratio divides enrolment at a level, of any age, by the population of the official age for that level, so it can pass 100.',
             sources: [udise2025_26, udise2024_25, udise2023_24, udise2022_23, udise2021_22],
             series: [
               ...trendSeries,
@@ -387,7 +387,7 @@ const topic: Topic = {
             slug: 'college-enrolment-ratio-by-state',
             title: 'College enrolment ratio by state and UT, women and men, 2023-24',
             subtitle:
-              'Gross enrolment ratio in higher education, per cent of people aged 18 to 23, 36 states and UTs, 2023-24. Sorted by the ratio for women.',
+              'Gross enrolment ratio in higher education, per cent of people aged 18 to 23, 36 states and UTs, 2023-24.',
             punches: { office: 'MoE', unit: 'GER 18-23', period: '2023-24' },
             note: 'India is a reference line, not a rank. Ratios use population projections based on Census 2011. Institutions submit data to AISHE voluntarily.',
             sources: [aishe2023_24],

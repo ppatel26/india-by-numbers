@@ -267,7 +267,7 @@ const topic: Topic = {
             kind: 'columns',
             slug: 'women-candidates-and-mps',
             title: 'Women candidates and women MPs, 1957 to 2024',
-            subtitle: 'Number of women who stood for the Lok Sabha, and number elected, at each general election.',
+            subtitle: 'Number of women who stood for the Lok Sabha, and number elected, at each general election. The two panels have different scales: in 2024, 74 of 800 women candidates won.',
             punches: { office: 'MoSPI', unit: 'people', period: '1957-2024' },
             // The board marks the 1999 bar with "*" and starts the note's second sentence with "*".
             // LATER: no way to mark one column with a footnote symbol.
@@ -352,7 +352,7 @@ const topic: Topic = {
             kind: 'bars',
             slug: 'lok-sabha-seats-women-mps-by-state',
             title: 'Lok Sabha seats and women MPs by state and UT, 2024',
-            subtitle: 'Seats in the 18th Lok Sabha and the number held by women, as on 20 Dec 2024.',
+            subtitle: 'Seats in the 18th Lok Sabha and the number held by women, as on 20 Dec 2024. Ranked by seats.',
             punches: { office: 'MoSPI', unit: 'seats', period: '20 DEC 2024' },
             note: 'India: 74 women MPs of 543 seats, 13.62% as published. These counts are from the Lok Sabha Secretariat and include Surat. The source gives state shares as whole numbers.',
             sources: [WMI_5_3],
@@ -434,7 +434,7 @@ const topic: Topic = {
             kind: 'table',
             slug: 'lok-sabha-party-results-2024',
             title: 'Seats and vote share by party, 2024 general election',
-            subtitle: 'Seats won (of 543) and share of valid votes, %. Parties with at least 1% of valid votes or at least 5 seats; all other parties combined.',
+            subtitle: 'Seats won (of 543) and share of valid votes, %. Each party with at least 1% of valid votes or at least 5 seats. Independent candidates are one group; the last row combines all remaining parties.',
             punches: { office: 'ECI', unit: 'seats · %', period: '2024' },
             note: '"ECI" shares are as published in ECI Report 20 for national parties. "Derived" shares are our calculation: votes in ECI Report 33 divided by 63,89,90,692 valid votes, the ECI total. NOTA is not part of valid votes. The BJP\'s 240 seats include Surat, won unopposed; ECI Report 20 counts 239. Party names are as ECI prints them.',
             sources: [ECI_RESULTS_JUN_2024, ECI_REPORT_20, ECI_REPORT_33],
@@ -469,7 +469,7 @@ const topic: Topic = {
             kind: 'bars',
             slug: 'assembly-elections-2025-2026',
             title: 'State assembly elections, 2025 and 2026',
-            subtitle: 'Seats won by party. Seven states and UTs voted between February 2025 and April 2026.',
+            subtitle: 'Seats won by party, seven states and UTs. Main polls February 2025 to April 2026; West Bengal includes the re-poll of 21 May 2026. Each panel has its own scale.',
             punches: { office: 'ECI', unit: 'seats · %', period: '2025-2026' },
             status: ['Provisional'],
             // Board note said "West Bengal: results for 293 of 294 seats; ECI ordered a re-poll in
@@ -490,13 +490,13 @@ const topic: Topic = {
             by: 'party_abbr',
             // Each assembly on its own scale, with the seats needed for a majority.
             panels: [
-              { label: 'Delhi', series: ['delhi'], own: true, refs: [{ value: 36, label: 'Majority 36' }] },
-              { label: 'Bihar', series: ['bihar'], own: true, refs: [{ value: 122, label: 'Majority 122' }] },
-              { label: 'Assam', series: ['assam'], own: true, refs: [{ value: 64, label: 'Majority 64' }] },
-              { label: 'Kerala', series: ['kerala'], own: true, refs: [{ value: 71, label: 'Majority 71' }] },
-              { label: 'Puducherry', series: ['puducherry'], own: true, refs: [{ value: 16, label: 'Majority 16' }] },
-              { label: 'Tamil Nadu', series: ['tamil-nadu'], own: true, refs: [{ value: 118, label: 'Majority 118' }] },
-              { label: 'West Bengal', series: ['west-bengal'], own: true, refs: [{ value: 148, label: 'Majority 148' }] },
+              { label: 'Delhi 2025, 70 seats', series: ['delhi'], own: true, refs: [{ value: 36, label: 'Majority 36' }] },
+              { label: 'Bihar 2025, 243 seats', series: ['bihar'], own: true, refs: [{ value: 122, label: 'Majority 122' }] },
+              { label: 'Assam 2026, 126 seats', series: ['assam'], own: true, refs: [{ value: 64, label: 'Majority 64' }] },
+              { label: 'Kerala 2026, 140 seats', series: ['kerala'], own: true, refs: [{ value: 71, label: 'Majority 71' }] },
+              { label: 'Puducherry 2026, 30 seats', series: ['puducherry'], own: true, refs: [{ value: 16, label: 'Majority 16' }] },
+              { label: 'Tamil Nadu 2026, 234 seats', series: ['tamil-nadu'], own: true, refs: [{ value: 118, label: 'Majority 118' }] },
+              { label: 'West Bengal 2026, 294 seats', series: ['west-bengal'], own: true, refs: [{ value: 148, label: 'Majority 148' }] },
             ],
             series: [
               assembly('delhi', 'Delhi'),

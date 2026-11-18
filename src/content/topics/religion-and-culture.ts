@@ -193,11 +193,11 @@ const topic: Topic = {
             kind: 'bars',
             title: 'Religion in India, 2011',
             subtitle:
-              'People by the religion they reported, % of all people and number of people, India, Census 2011.',
+              'People by the religion they reported, % of all people, India, Census 2011.',
             punches: { office: 'ORGI', unit: '% of people', period: '2011' },
             // The board gives Sarna's count (from the C-01 Appendix). No CSV holds it, so the note names
             // the group without the number.
-            note: '"Other religions and persuasions" groups many smaller faiths; the largest within it is Sarna. Shares are our arithmetic on the published counts (people ÷ all people × 100).',
+            note: '"Other religions and persuasions" groups many smaller faiths; the largest within it is Sarna. Shares are our arithmetic on the published counts (people ÷ all people × 100); rounded, they add to 100.02%.',
             sources: [c01, c01Appendix],
             format: { unit: '%', decimals: 2 },
             by: 'religion',
@@ -239,9 +239,9 @@ const topic: Topic = {
             kind: 'bars',
             title: 'Religion in India, 2001 and 2011',
             subtitle:
-              'People by the religion they reported, % of all people, India, Census 2001 and Census 2011. Change in percentage points.',
+              'People by the religion they reported, % of all people, India, Census 2001 and Census 2011.',
             punches: { office: 'ORGI', unit: '% of people', period: '2001, 2011' },
-            note: 'The 2001 total (1,02,86,10,328) leaves out three sub-divisions of Senapati district, Manipur, so it is 1,27,108 lower than the total in Table A-02. This has no visible effect on the shares. Change is the 2011 share minus the 2001 share.',
+            note: 'The 2001 total (1,02,86,10,328) leaves out three sub-divisions of Senapati district, Manipur, so it is 1,27,108 lower than the total in Table A-02. This has no visible effect on the shares.',
             sources: [c01Census2001, c01],
             format: { unit: '%', decimals: 2 },
             by: 'religion',
@@ -294,10 +294,10 @@ const topic: Topic = {
             kind: 'bars',
             title: 'Mother tongues in India, 15 largest languages, 2011',
             subtitle:
-              'People by the language group of the mother tongue they reported, % of all people and number of people, India, Census 2011.',
+              'People by the language group of the mother tongue they reported, % of all people, India, Census 2011. The 15 shown cover 95.87% of people.',
             punches: { office: 'ORGI', unit: '% of people', period: '2011' },
             // The board gives Bhojpuri's count. No CSV holds it, so the note names it without the number.
-            note: 'The Census groups mother tongues under a language. "Hindi" here includes Bhojpuri and other mother tongues grouped under Hindi, so it counts more people than those who reported Hindi itself. This chart shows mother tongue, not every language a person speaks. ORGI publishes second and third languages in Table C-17.',
+            note: 'The Census groups mother tongues under a language. "Hindi" here includes Bhojpuri and other mother tongues grouped under Hindi, so it counts more people than those who reported Hindi itself. This chart shows mother tongue, not every language a person speaks. ORGI publishes second and third languages in Table C-17. * Bhili/Bhilodi is the only one of the 15 that is not among the 22 scheduled languages.',
             sources: [c16],
             format: { unit: '%', decimals: 2 },
             by: 'language',
@@ -409,11 +409,11 @@ const topic: Topic = {
             by: 'geography',
             columns: [
               { key: 'first', label: 'Largest', where: { rank: '1' }, y: 'language' },
-              { key: 'first-share', label: '%', where: { rank: '1' }, y: 'share_pct', format: { decimals: 2 } },
+              { key: 'first-share', label: 'Largest, %', where: { rank: '1' }, y: 'share_pct', format: { decimals: 2 } },
               { key: 'second', label: 'Second', where: { rank: '2' }, y: 'language' },
-              { key: 'second-share', label: '%', where: { rank: '2' }, y: 'share_pct', format: { decimals: 2 } },
+              { key: 'second-share', label: 'Second, %', where: { rank: '2' }, y: 'share_pct', format: { decimals: 2 } },
               { key: 'third', label: 'Third', where: { rank: '3' }, y: 'language' },
-              { key: 'third-share', label: '%', where: { rank: '3' }, y: 'share_pct', format: { decimals: 2 } },
+              { key: 'third-share', label: 'Third, %', where: { rank: '3' }, y: 'share_pct', format: { decimals: 2 } },
             ],
             know: [
               'Mother tongue is the language a person reported as their mother tongue, grouped into languages as the Census groups them.',

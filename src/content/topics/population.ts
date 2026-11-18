@@ -199,7 +199,7 @@ const topic: Topic = {
             slug: 'population-pyramid',
             kind: 'pyramid',
             title: 'Population pyramid of India, 2011',
-            subtitle: 'Number of men and women in each five-year age group, India, Census 2011.',
+            subtitle: 'Men and women in each five-year age group, India, Census 2011. Bars show the share of all people with a stated age; the table gives the counts.',
             punches: { office: 'ORGI', unit: 'persons', period: '2011' },
             note: '44,89,802 people did not state their age. They are not in the pyramid.',
             sources: [censusC14],
@@ -299,7 +299,7 @@ const topic: Topic = {
             kind: 'dots',
             title: 'Birth rate and death rate by state, 2024',
             subtitle:
-              'Live births and deaths in the year per 1,000 people, all 36 states and UTs, 2024, sorted by birth rate.',
+              'Live births and deaths in the year per 1,000 people, all 36 states and UTs, 2024.',
             punches: { office: 'ORGI · SRS', unit: 'per 1,000', period: '2024' },
             status: ['Survey estimate'],
             note: 'The SRS is a sample survey. Values for small states and UTs rest on small samples; the Manipur estimate rests on 130 sample units.',
@@ -441,9 +441,9 @@ const topic: Topic = {
             slug: 'urban-share-by-state',
             kind: 'states',
             title: 'Share of people living in towns, by state and UT, 2011',
-            subtitle: 'People in urban areas as a share of all people, %, states and UTs as in Census 2011.',
+            subtitle: 'People in urban areas as a share of all people, %, Census 2011, shown on today\'s states and UTs.',
             punches: { office: 'ORGI', unit: '% of people', period: '2011' },
-            note: '"Urban" follows the Census 2011 definition: statutory towns and census towns. Each share is derived from the published counts (urban people ÷ all people × 100).',
+            note: '"Urban" follows the Census 2011 definition: statutory towns and census towns. Each share is derived from the published counts (urban people ÷ all people × 100). Telangana and Ladakh have no 2011 figures of their own: they were counted in Andhra Pradesh and in Jammu and Kashmir. Dadra and Nagar Haveli and Daman and Diu were two UTs in 2011; the tile shows the two together (derived).',
             sources: [censusA01],
             format: { unit: '%', decimals: 2 },
             data: {
@@ -503,7 +503,7 @@ const topic: Topic = {
               },
               {
                 key: 'census',
-                label: 'Census 2011 count',
+                label: 'Census 2011 count, rounded to thousands',
                 color: 'ink',
                 file: PROJ,
                 where: { geography: 'india', period: '2011' },

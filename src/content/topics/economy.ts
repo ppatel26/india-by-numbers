@@ -173,7 +173,7 @@ const topic: Topic = {
               'Change in real GDP on the same quarter a year earlier, %. Base 2011-12 to Q4 2022-23; base 2022-23 from Q1 2023-24. Quarters follow the financial year (Q1 = April to June).',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'Q1 2026-27' },
             status: ['Method break'],
-            note: 'The two bases overlap from Q1 2023-24 to Q2 2025-26 and give different numbers for the same quarter (Q1 2025-26: 7.8% on base 2011-12, 6.9% on base 2022-23). The chart shows the new base where it exists, after a gap at the break.',
+            note: 'The two bases overlap from Q1 2023-24 to Q2 2025-26 and give different numbers for the same quarter (Q1 2025-26: 7.8% on base 2011-12, 6.9% on base 2022-23). The chart shows the new base where it exists. The marker shows the change of base between Q4 2022-23 and Q1 2023-24, two consecutive quarters.',
             sources: [GDP_PRESS_NOTE, NAS_API],
             format: { unit: '%', decimals: 1 },
             callouts: [
@@ -261,10 +261,10 @@ const topic: Topic = {
             slug: 'gva-sector-shares',
             title: 'Shares of the economy by sector, India, 1950-51 to 2025-26',
             subtitle:
-              'Share of gross value added (GVA) at current prices, %. Derived by us from published GVA by industry. Base 2011-12 to 2022-23; base 2022-23 from 2022-23.',
+              'Share of gross value added (GVA) at current prices, %. Derived by us from published GVA by industry. Base 2011-12 to 2021-22; base 2022-23 from 2022-23.',
             punches: { office: 'MoSPI', unit: '% of GVA', period: '2025-26' },
             status: ['Method break'],
-            note: 'Derived from published GVA. Primary is agriculture, livestock, forestry and fishing, plus mining and quarrying. Industry (secondary) is manufacturing, utilities and construction. Services (tertiary) is total GVA minus the two. In 2022-23 the bases differ: primary 20.12% on base 2011-12, 22.04% on base 2022-23.',
+            note: 'Derived from published GVA. Primary is agriculture, livestock, forestry and fishing, plus mining and quarrying. Industry (secondary) is manufacturing, utilities and construction. Services (tertiary) is total GVA minus the two. In 2022-23 the bases differ: primary 20.12% on base 2011-12, 22.04% on base 2022-23. Shares may not add to 100 because of rounding.',
             sources: [NAS_API],
             format: { unit: '%', decimals: 2 },
             // Each sector is two series, one per base; both bases have a 2022-23 row, so the
@@ -311,7 +311,7 @@ const topic: Topic = {
             subtitle:
               'Net state domestic product per person, rupees a year, current prices, 2024-25. State accounts are on the 2011-12 base. Darker means higher.',
             punches: { office: 'MoSPI', unit: '₹ a year', period: '2024-25' },
-            note: 'India is per capita net national income, the comparator the RBI uses. Assam and Haryana: MoSPI data as on 1 August 2025, from the RBI Handbook.',
+            note: 'India is per capita net national income, the comparator the RBI uses. 32 of 36 states and UTs: there is no 2024-25 figure for Nagaland (latest 2023-24), Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu. Assam and Haryana: MoSPI data as on 1 August 2025, from the RBI Handbook.',
             sources: [STATE_API, RBI_TABLE_9],
             format: { unit: '₹', decimals: 0, scale: 'none' },
             data: { file: 'economy/per-capita-nsdp-by-state.csv', where: { price_basis: 'current prices' } },
@@ -342,7 +342,7 @@ const topic: Topic = {
             subtitle:
               'Change in real gross state domestic product (GSDP) on 2023-24, %, constant 2011-12 prices. State accounts are on the 2011-12 base. India: GDP growth on base 2011-12 (6.4%), not the 7.2% headline on base 2022-23.',
             punches: { office: 'MoSPI', unit: '% y/y', period: '2024-25' },
-            note: 'India is a reference line, not a rank. Only 15 states have 2025-26 figures, so the chart shows 2024-25. State accounts are on base 2011-12; do not compare them with the national headline on base 2022-23.',
+            note: 'India is a reference line, not a rank. 30 of 36 states and UTs: the MoSPI release has no 2024-25 figure for Assam, Haryana, Nagaland, Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu. Only 15 states have 2025-26 figures, so the chart shows 2024-25. State accounts are on base 2011-12; do not compare them with the national headline on base 2022-23.',
             sources: [STATE_API],
             format: { unit: '%', decimals: 1 },
             data: { file: 'economy/gsdp-growth-by-state.csv' },
@@ -429,7 +429,7 @@ const topic: Topic = {
               'Change in the IIP (base 2022-23) on the same month a year earlier, %. September 2026 quick estimate; August 2026 final.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'SEP 2026' },
             status: ['Provisional'],
-            note: 'MoSPI revises each quick estimate the next month.',
+            note: 'The overall index comes first; the three sectors after it are not ranked. MoSPI revises each quick estimate the next month.',
             sources: [IIP_RELEASE],
             format: { unit: '%', decimals: 1 },
             by: 'category',
