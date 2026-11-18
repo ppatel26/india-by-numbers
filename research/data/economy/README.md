@@ -93,6 +93,18 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in` (`getNASData` 
 - Sentence: "On 18 November 2026 a dollar cost ₹93.3558, up from ₹89.9792 on 1 January. The rupee was weakest on 20 May 2026, at ₹96.8441 per dollar."
 - Source: FBIL reference rates from the RBI Reference Rate Archive. The RBI home page confirms the 18 Nov 2026 rate as of 1:00 pm IST.
 
+### E9. The rupee since 1998, month by month
+
+- Type: line, monthly. On the topic page, E8, E9 and E7 share one card with a period switch.
+- Unit: rupees per US dollar, monthly average of daily reference rates.
+- Geography: India. Period: September 1998 to November 2026 (November is 1 to 18 November).
+- CSV: `usd-inr-monthly.csv`. The `days` column counts the working days in each average; `source` names the rate.
+- Source: RBI Reference Rate Archive (RBI reference rate, 25 Aug 1998 to 9 Jul 2018); FBIL reference rates from `https://www.fbil.org.in/wasdm/refrates/fetchfiltered` (10 Jul 2018 to 31 Dec 2025); `usd-inr-daily-2026.csv` (2026).
+- **Derived.** We compute each monthly average. RBI publishes monthly averages (Handbook Table 205), but only from 2022.
+- Check: the mean of all days in each financial year, 1999-00 to 2025-26, is within ₹0.08 of the Table 133 financial-year average (E7); 2025-26 matches to four decimals. Table 133 uses FEDAI rates to 2011-12, so small differences are expected. FBIL and the 2026 CSV agree on all 207 shared days.
+- Gap: FBIL gives no rate for 1 to 15 Feb 2021 or 19 Feb 2021, and the RBI archive has no rows for those days. February 2021 is the average of 8 days.
+- Rebuild: `python3 -I pipeline/economy/build_usd_inr_monthly.py`, after any change to `usd-inr-daily-2026.csv`.
+
 ## Headline figures
 
 | Figure | Value | Period | Source |
@@ -119,6 +131,8 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in` (`getNASData` 
 | RBI | Handbook 2025-26, Table 227: growth rates at constant prices (cross-check) | 31 Jul 2026 | 2019-20 to 2025-26 | https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/227T_HBIE31072026194AD11D84C94DDFB2BC11DB074BA738.XLSX | 17 Nov 2026 | Not stated | `economy/rbi/227T_*.XLSX` |
 | RBI (source FBIL) | Reference Rate Archive, USD | Daily | 1 Jan 2016 to 17 Nov 2026 (with gaps, see below) | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx | 17 Nov 2026 | Not stated | `economy/rbi/refrate_usd_*.html` |
 | RBI | Home page, "Current Rates" box | Live | 17 Nov 2026 | https://www.rbi.org.in/ | 17 Nov 2026 | Not stated | `economy/rbi/rbi_home.html` |
+| RBI | Reference Rate Archive, USD (RBI reference rate) | Daily | 25 Aug 1998 to 24 Jul 2018 | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx | 18 Nov 2026 | Not stated | `economy/rbi/refrate_usd_hist_*.html` |
+| FBIL | Reference rates, USD/INR, public date-range feed | Daily | 10 Jul 2018 to 11 Nov 2026 | https://www.fbil.org.in/wasdm/refrates/fetchfiltered | 18 Nov 2026 | Not stated | `economy/fbil/refrates_*.json` |
 
 Other Handbook tables (1, 2, 3, 5, 6, 157, 158, 159, 205, 223, 228) were downloaded as cross-checks. They are not used in a chart.
 
@@ -132,7 +146,7 @@ Other Handbook tables (1, 2, 3, 5, 6, 157, 158, 159, 205, 223, 228) were downloa
 - **State base.** State accounts are on base 2011-12. Do not compare state growth with the national 2022-23-base headline.
 - **2025-26 state data.** Only 15 states have 2025-26 figures. We used 2024-25 so that the ranked bar covers more states.
 - **IIP base change.** The 2011-12 series ends in March 2026; the 2022-23 series begins in April 2023 but its growth rates are only valid from April 2024 (see E6). The two series overlap from April 2024 to March 2026 with different values.
-- **Exchange rate archive.** The RBI Reference Rate Archive returned no rows between 24 Jul 2018 and 12 Apr 2022. We did not need these days for E8. The Handbook monthly table (205) covers 2022 to June 2026 only. Long-run rates come from the financial-year table (E7). The 93.77 rupees per dollar on the 12 Nov RBI ticker (in `research/india-sources.md`) is still not traced to a dated source; the archive gives 93.7650 for 12 Nov 2026.
+- **Exchange rate archive.** The RBI Reference Rate Archive starts on 25 Aug 1998 and returned no rows between 24 Jul 2018 and 12 Apr 2022. E9 takes those days from FBIL. The Handbook monthly table (205) covers 2022 to June 2026 only. On 18 Nov 2026 the RBI document server served a bot check page for Table 205, not the workbook. The 93.77 rupees per dollar on the 12 Nov RBI ticker (in `research/india-sources.md`) is still not traced to a dated source; the archive gives 93.7650 for 12 Nov 2026.
 - **Licence.** None of the pages read states a reuse licence for these data.
 
 ## Rebuild
@@ -276,6 +290,36 @@ Paths are relative to `raw/`. Raw downloads are not kept in the repository; the 
 | `economy/rbi/refrate_usd_2025.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2025 to end of year or 17/11/2026) | `5a062616c3b972134bf4dc67baa4dcee71f2bba34165ceaca4b05b1a8800792f` |
 | `economy/rbi/refrate_usd_2026.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2026 to end of year or 17/11/2026) | `1ec94498d7eadb2c32c6ac5f1b0653d0f15e80433333b7fa3b4bfccf5b00327b` |
 | `economy/rbi/refrate_usd_jul_nov2026.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/07/2026 to 17/11/2026) | `f39a55547e670df3b091ecb0cf93dcb9368ea9853166b5be7f09a8e13bd000ff` |
+| `economy/rbi/refrate_usd_hist_1998.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/1998 to 31/12/1998) | `adef65c4b67b8f7c25a80963eada794364e31b48bd2554ad811b3be385500f7a` |
+| `economy/rbi/refrate_usd_hist_1999.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/1999 to 31/12/1999) | `f8488fe2982feb4afb2b26b4a548811239024b6d4bd3c905314d01b25c433943` |
+| `economy/rbi/refrate_usd_hist_2000.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2000 to 31/12/2000) | `ec5fb564f2b3c344f9137e1e61a51cc39a538131087eaf77574623b86d290116` |
+| `economy/rbi/refrate_usd_hist_2001.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2001 to 31/12/2001) | `702fc4b78695244cdbacbeff829fc2d29745f602280f540822574f9437871248` |
+| `economy/rbi/refrate_usd_hist_2002.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2002 to 31/12/2002) | `29be9a7aee4686b7f21c468b0da6fcbdfc9b196bc1a171c10807d511a41f363b` |
+| `economy/rbi/refrate_usd_hist_2003.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2003 to 31/12/2003) | `670e383592ab098374c4766bc0502ad729081efedb0241f260641b2b15542dcf` |
+| `economy/rbi/refrate_usd_hist_2004.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2004 to 31/12/2004) | `26511d936dfb537a31861eb98831ee6d44b51e08d57f17081f0aa31d330c130a` |
+| `economy/rbi/refrate_usd_hist_2005.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2005 to 31/12/2005) | `1b96b3ce68b890c802f1bf21824dbdba8f1cba2e629b2432f3361c8f74e2c075` |
+| `economy/rbi/refrate_usd_hist_2006.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2006 to 31/12/2006) | `d12ba8a0589e557bb7d938dfa011d11a6acbd3af79f74d629157cdc06ccc19bd` |
+| `economy/rbi/refrate_usd_hist_2007.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2007 to 31/12/2007) | `386f924fba0df799a56767b41db97d5674a9de0a0d6ca94acfc6ccc0cef600cb` |
+| `economy/rbi/refrate_usd_hist_2008.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2008 to 31/12/2008) | `ec7faa233739fb8625a8632d0a3c9af1033c48a111a61213455fc867dd49b8c8` |
+| `economy/rbi/refrate_usd_hist_2009.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2009 to 31/12/2009) | `df382a066025230a74efd43c5aeee78efc97c0755a5ca8bae430446733abf3f4` |
+| `economy/rbi/refrate_usd_hist_2010.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2010 to 31/12/2010) | `ce2557e2717818b1c60e70c08c49bac9ca15b4d2dcacea59cf78a58a43a8f056` |
+| `economy/rbi/refrate_usd_hist_2011.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2011 to 31/12/2011) | `9384f5a1677e60ae745b560ddd2e897ac7ee92de4f247080087cc5d5bd6fc170` |
+| `economy/rbi/refrate_usd_hist_2012.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2012 to 31/12/2012) | `9fdbc2b9dbe46394762e0725d4ddbed7a3d20b812af53a299ede54d20d51f38b` |
+| `economy/rbi/refrate_usd_hist_2013.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2013 to 31/12/2013) | `00752dd420cdda5f71dec3f632b09b56c9a0107883d723c4588f082ae0c3bffc` |
+| `economy/rbi/refrate_usd_hist_2014.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2014 to 31/12/2014) | `1273290aa76a03c10220b53a8d56f047b40aae26278c009db2cc57bef7258bfb` |
+| `economy/rbi/refrate_usd_hist_2015.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2015 to 31/12/2015) | `654159a80d8685086fb06f067c27cbbf2f39765877338200a6caa312a4bdf576` |
+| `economy/rbi/refrate_usd_hist_2016.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2016 to 31/12/2016) | `67a2b5aea39fedd85fb51563b6d67acbafdf17051ab262d1d4ec29ad95e857ec` |
+| `economy/rbi/refrate_usd_hist_2017.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2017 to 31/12/2017) | `c80af9cdd7804ecc9d782eeece8a87314da2994451718b8ebb5d979ac2b9fffc` |
+| `economy/rbi/refrate_usd_hist_2018.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2018 to 31/07/2018) | `6cf4a5079c67cdcb31cc0db8ca35ed7ba0cf5ef3b61f115a2577e7ffd0dcf650` |
+| `economy/fbil/refrates_2018.json` | https://www.fbil.org.in/wasdm/refrates/fetchfiltered?fromDate=2018-7-1&toDate=2018-12-31&authenticated=false | `f9e18238943bb109dd17c6ca6e5310a2039592baeb7ee33f525ed7d468166b5e` |
+| `economy/fbil/refrates_2019.json` | https://www.fbil.org.in/wasdm/refrates/fetchfiltered?fromDate=2019-1-1&toDate=2019-12-31&authenticated=false | `bfddbe8955ddeed07c121df6aef102784e84c8a7efa1b29a132f55f20eb8c4ee` |
+| `economy/fbil/refrates_2020.json` | https://www.fbil.org.in/wasdm/refrates/fetchfiltered?fromDate=2020-1-1&toDate=2020-12-31&authenticated=false | `dcb73e0a3a5491066bfaf6a4acfa854259d8cbf6dfc2bda0f57ee01d138f1b43` |
+| `economy/fbil/refrates_2021.json` | https://www.fbil.org.in/wasdm/refrates/fetchfiltered?fromDate=2021-1-1&toDate=2021-12-31&authenticated=false | `3b5aa51e38633a12cbf394e4b190cc183b2e011a7ee9b8dd1221845bb7369417` |
+| `economy/fbil/refrates_2022.json` | https://www.fbil.org.in/wasdm/refrates/fetchfiltered?fromDate=2022-1-1&toDate=2022-12-31&authenticated=false | `f4aff9ed6557ac4e659ebf274dbe4a4ce918b2dd0fb0c2dd5ba56f4c39f73811` |
+| `economy/fbil/refrates_2023.json` | https://www.fbil.org.in/wasdm/refrates/fetchfiltered?fromDate=2023-1-1&toDate=2023-12-31&authenticated=false | `985b39534f14d8ccc287b6af60b3d9088f2a65aa3ea912b599c061944e09eec7` |
+| `economy/fbil/refrates_2024.json` | https://www.fbil.org.in/wasdm/refrates/fetchfiltered?fromDate=2024-1-1&toDate=2024-12-31&authenticated=false | `b17448bafdf66aaf0c404309d04c46fd45e1aa3dd78cc93a10f9ddf93f6aafb4` |
+| `economy/fbil/refrates_2025.json` | https://www.fbil.org.in/wasdm/refrates/fetchfiltered?fromDate=2025-1-1&toDate=2025-12-31&authenticated=false | `bd3ad1e723aa7f5313df3335c0cec7a290ce91b16424f1ee7f365f72389801fc` |
+| `economy/fbil/refrates_2026.json` | https://www.fbil.org.in/wasdm/refrates/fetchfiltered?fromDate=2026-1-1&toDate=2026-11-18&authenticated=false | `2eb05d01d041194dbe8f0f2d104d66421d4e7a319e761e8626c126e30efd569f` |
 
 ## Publisher check on 18 Nov 2026
 
