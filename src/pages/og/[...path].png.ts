@@ -22,7 +22,10 @@ const plain: Record<string, [string, string]> = {
 
 export function getStaticPaths() {
   return [
-    ...Object.entries(plain).map(([path, [title, line]]) => ({ params: { path }, props: { make: () => plainImage(title, line) } })),
+    ...Object.entries(plain).map(([path, [title, line]]) => ({
+      params: { path },
+      props: { make: () => plainImage(title, line, path === 'how-we-check' ? 'methods' : 'topics') },
+    })),
     ...topics.map((t) => ({ params: { path: t.slug }, props: { make: () => topicImage(t) } })),
     ...charts.map((c) => ({ params: { path: `charts/${c.chart.slug}` }, props: { make: () => chartImage(c) } })),
     ...places.map((p) => ({ params: { path: `states/${p.slug}` }, props: { make: () => stateImage(p) } })),

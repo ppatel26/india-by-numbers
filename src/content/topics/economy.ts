@@ -498,8 +498,7 @@ const topic: Topic = {
             punches: { office: 'FBIL', unit: '₹ per US$', period: '17 NOV 2026' },
             note: 'The rate for 17 November 2026 is as at 1:00 pm on the RBI home page.',
             sources: [FBIL_ARCHIVE, RBI_HOME],
-            // LATER: the board prints four decimals with the last two smaller (₹93.57|03); Format has one `decimals`.
-            format: { unit: '₹' },
+            format: { unit: '₹', decimals: 2 },
             series: [
               { key: 'fbil', label: 'FBIL reference rate', color: 'ink', file: 'economy/usd-inr-daily-2026.csv', x: 'date' },
             ],

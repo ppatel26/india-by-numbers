@@ -7,7 +7,7 @@ import { readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import type { Placed } from '~/content'
 import profile from '~/content/pages/state-profile'
-import type { Topic } from '~/content/types'
+import { TOPICS, type Topic } from '~/content/types'
 import { openView, renderPlot } from './charts'
 import { FONT } from './charts/axes'
 import { show } from './charts/model'
@@ -39,7 +39,7 @@ ${shaped(SITE.hindiName, 'Devanagari', x + 54, y + 42, 15, color).el}`
 
 /** An emblem melted into its ground with a radial mask. */
 function object(name: string, x: number, y: number, size: number, screen = false): Markup {
-  const id = `m-${name}`
+  const id = `m-${name}-${Math.round(x)}-${Math.round(y)}`
   return svg`<defs><radialGradient id="${id}-g"><stop offset="0.72" stop-color="#fff"/><stop offset="0.98" stop-color="#000"/></radialGradient>
 <mask id="${id}"><rect x="${x}" y="${y}" width="${size}" height="${size}" fill="url(#${id}-g)"/></mask></defs>
 <image href="${emblem(name)}" x="${x}" y="${y}" width="${size}" height="${size}" preserveAspectRatio="xMidYMid meet"${screen ? null : svg` mask="url(#${id})"`}/>`
@@ -70,9 +70,9 @@ ${shaped(t.hindi, 'Devanagari', 66, 350, 40, ink).el}
 ${figs.map((f, i) => {
   const x = 64 + i * 260
   return svg`<line x1="${x}" x2="${x + 230}" y1="430" y2="430" stroke="${dim}" stroke-opacity="0.6"/>
-<text x="${x}" y="484" font-size="44" font-weight="500" fill="${ink}">${f.value.text}</text>
-${textBlock(f.label, x, 496, 230, 16, svg` fill="${ink}"`, 21, 2).el}
-<text x="${x}" y="566" font-family="${FONT.mono}" font-size="12.5" letter-spacing="0.6" fill="${dim}">${upper([f.period, ...f.status].join(' · '))}</text>`
+<text x="${x}" y="484" font-size="40" font-weight="500" fill="${ink}">${f.value.text}</text>
+${textBlock(f.label, x, 494, 230, 18, svg` fill="${ink}"`, 23, 2).el}
+<text x="${x}" y="572" font-family="${FONT.mono}" font-size="14" letter-spacing="0.6" fill="${dim}">${upper([f.period, ...f.status].join(' · '))}</text>`
 })}`,
     p.hex,
   )
@@ -158,8 +158,23 @@ ${locator(pl.slug, W - 64 - GRID.cols * (size + 5) + 5, 150, size)}`,
   )
 }
 
-export function plainImage(title: string, line: string): Buffer {
-  const t = textBlock(upper(title), 64, 190, 640, 64, svg` font-family="${DISPLAY}" fill="var(--silver)"`, 72, 3)
-  const l = textBlock(line, 64, 210 + t.height, 620, 24, svg` fill="var(--silver-dim)"`, 34, 3)
-  return page(svg`${object('home', 740, 110, 410)}${wordmark(64, 56, colors.silver)}${t.el}${l.el}`, colors.lac)
+/** The nine topics as pigment tiles, each with its object: the site at a glance. */
+function mosaic(x0: number, y0: number, size: number): Markup {
+  const gap = 8
+  return svg`${TOPICS.map((t, i) => {
+    const x = x0 + (i % 3) * (size + gap)
+    const y = y0 + Math.floor(i / 3) * (size + gap)
+    return svg`<rect x="${x}" y="${y}" width="${size}" height="${size}" rx="4" fill="${pigments[t].hex}"/>${object(t, x + size * 0.1, y + size * 0.1, size * 0.8)}`
+  })}`
+}
+
+/**
+ * Index and about pages: their title on lac, beside the nine topics. How we check
+ * sits on kajal with the merchant and scribe relief, as on its page.
+ */
+export function plainImage(title: string, line: string, look: 'topics' | 'methods' = 'topics'): Buffer {
+  const t = textBlock(upper(title), 64, 176, 560, 64, svg` font-family="${DISPLAY}" fill="var(--silver)"`, 72, 3)
+  const l = textBlock(line, 64, 200 + t.height, 540, 26, svg` fill="var(--silver-dim)"`, 36, 4)
+  const art = look === 'methods' ? object('methods', 680, 75, 480) : mosaic(660, 57, 166)
+  return page(svg`${art}${wordmark(64, 56, colors.silver)}${t.el}${l.el}`, look === 'methods' ? colors.kajal : colors.lac)
 }
