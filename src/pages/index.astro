@@ -5,6 +5,7 @@ import StateSelect from '~/components/StateSelect.astro'
 import Ledger from '~/components/home/Ledger.astro'
 import TopicTile from '~/components/home/TopicTile.astro'
 import StateBeside from '~/components/home/StateBeside.astro'
+import KolamField from '~/components/home/KolamField.astro'
 import home from '~/content/pages/home'
 import tiles from '~/content/pages/tiles'
 import { charts, topics } from '~/content'
@@ -18,6 +19,7 @@ const browseIntro = `${topics.length} topics, ${charts.length} charts. Each topi
 
 <Base title={SITE.name} description={home.standfirst} imageAlt="India by Numbers: India's official statistics, checked and charted" defaultState={home.stateBeside.defaultState}>
   <header class="hero on-dark">
+    <KolamField />
     <div class="wrap inner">
       <div class="text">
         <p class="label">{home.eyebrow}</p>
@@ -33,7 +35,7 @@ const browseIntro = `${topics.length} topics, ${charts.length} charts. Each topi
           {home.search.tryTerms.map((t) => <a href={`/search/?q=${encodeURIComponent(t)}`}>{t}</a>)}
         </p>
       </div>
-      <Emblem name="home" alt={EMBLEM_ALT.home} size={340} eager />
+      <Emblem name="home" alt={EMBLEM_ALT.home} size={280} eager />
     </div>
   </header>
 
@@ -98,7 +100,12 @@ const browseIntro = `${topics.length} topics, ${charts.length} charts. Each topi
 
 <style>
   .hero {
+    position: relative;
+    overflow: hidden;
     background: var(--lac);
+  }
+  .inner {
+    position: relative;
   }
   .inner {
     display: flex;

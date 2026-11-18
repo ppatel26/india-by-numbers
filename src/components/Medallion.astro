@@ -1,0 +1,43 @@
+---
+/**
+ * A topic object on a medallion: a disc of the topic's pigment with a thin silver rim, like a
+ * struck coin. On a pigment ground (`deep`) the disc is a darker shade of it.
+ */
+import Emblem from './Emblem.astro'
+import type { TopicSlug } from '~/content/types'
+import { EMBLEM_ALT } from '~/lib/emblems'
+import { pigments } from '~/lib/tokens'
+
+interface Props {
+  topic: TopicSlug
+  size: number
+  deep?: boolean
+}
+const { topic, size, deep = false } = Astro.props
+---
+
+<div class:list={['medallion', { deep }]} style={`--ground:${pigments[topic].hex};--size:${size}px`}>
+  <Emblem name={topic} alt={EMBLEM_ALT[topic]} size={Math.round(size * 0.78)} />
+</div>
+
+<style>
+  .medallion {
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    width: var(--size);
+    height: var(--size);
+    border-radius: 50%;
+    background: var(--ground);
+    box-shadow:
+      inset 0 0 0 3px rgb(255 255 255 / 0.55),
+      0 0 0 1px var(--rule);
+  }
+  .deep {
+    background: color-mix(in srgb, var(--ground) 80%, black);
+    box-shadow: inset 0 0 0 3px rgb(255 255 255 / 0.35);
+  }
+  .medallion > :global(.emblem) {
+    margin-top: calc(var(--size) * -0.04);
+  }
+</style>

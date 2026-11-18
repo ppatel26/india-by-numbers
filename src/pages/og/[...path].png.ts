@@ -5,10 +5,10 @@ import { places } from '~/lib/geography'
 import { chartImage, plainImage, stateImage, topicImage } from '~/lib/og'
 import { SITE } from '~/lib/site'
 
-const counts = `${topics.length} topics, ${charts.length} charts and ${places.length} states and UTs. Every figure carries its publisher, its period and the date we checked it.`
+const counts = `Charts of India's official statistics: ${topics.length} topics, ${charts.length} charts and ${places.length} states and UTs, each figure with its source and period.`
 
 const plain: Record<string, [string, string]> = {
-  home: ['India, counted.', counts],
+  home: ['India by Numbers', counts],
   topics: ['Topics', 'Each topic page answers a few plain questions. Every chart has a table, a source and a CSV.'],
   charts: ['All charts', `${charts.length} charts. Every chart has a table, a source and a CSV.`],
   states: ['States and union territories', "One state's figures beside India's, on every topic."],

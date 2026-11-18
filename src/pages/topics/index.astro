@@ -1,7 +1,7 @@
 ---
 /** Every topic with its questions and releases, then every chart by topic. */
 import Base from '~/layouts/Base.astro'
-import Niche from '~/components/Niche.astro'
+import Medallion from '~/components/Medallion.astro'
 import PageHeader from '~/components/PageHeader.astro'
 import page from '~/content/pages/topics'
 import { charts, topics } from '~/content'
@@ -58,7 +58,7 @@ function kindOf(c: Chart): string {
         const row = page.rows[t.slug]
         return (
           <li class="topic">
-            <div class="tile"><Niche topic={t.slug} size={128} /></div>
+            <div class="tile"><Medallion topic={t.slug} size={128} /></div>
             <div>
               <h2 class="display name">{t.name}</h2>
               <p class="deva muted" lang="hi">{t.hindi}</p>
@@ -346,12 +346,12 @@ function kindOf(c: Chart): string {
     .tile {
       width: 96px;
     }
-    .tile :global(.niche) {
+    .tile :global(.medallion) {
       --size: 96px !important;
     }
     .tile :global(.emblem) {
-      width: 83px !important;
-      height: 83px !important;
+      width: 75px !important;
+      height: 75px !important;
     }
     .later,
     .groups {

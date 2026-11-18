@@ -1,0 +1,112 @@
+---
+/**
+ * The home hero's background: a kolam dot grid (pulli). Near the pointer, loops are drawn
+ * around the dots the way a kolam weaves around its grid; away from it, only faint dots.
+ * Sits behind the hero content and takes no clicks. Still for readers who ask for less motion.
+ */
+---
+
+<canvas class="kolam" aria-hidden="true" data-kolam></canvas>
+
+<style>
+  .kolam {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  const GAP = 30 // grid spacing, CSS px
+  const REACH = 170 // how far from the pointer the loops are drawn
+  const INK = '255, 255, 255'
+
+  for (const canvas of document.querySelectorAll<HTMLCanvasElement>('[data-kolam]')) {
+    const host = canvas.parentElement!
+    const ctx = canvas.getContext('2d')!
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches
+    let w = 0
+    let h = 0
+    // Pointer target and the eased position the loops follow; off-screen until the first move.
+    const target = { x: -1e4, y: -1e4 }
+    const at = { x: -1e4, y: -1e4 }
+    let frame = 0
+    let visible = true
+
+    const size = () => {
+      const r = host.getBoundingClientRect()
+      const dpr = Math.min(devicePixelRatio || 1, 2)
+      w = r.width
+      h = r.height
+      canvas.width = Math.round(w * dpr)
+      canvas.height = Math.round(h * dpr)
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+    }
+
+    /** A rounded diamond around a dot: neighbouring loops touch at their tips, like a sikku kolam. */
+    const loop = (x: number, y: number, r: number) => {
+      ctx.beginPath()
+      ctx.moveTo(x, y - r)
+      ctx.quadraticCurveTo(x + r * 0.95, y - r * 0.95, x + r, y)
+      ctx.quadraticCurveTo(x + r * 0.95, y + r * 0.95, x, y + r)
+      ctx.quadraticCurveTo(x - r * 0.95, y + r * 0.95, x - r, y)
+      ctx.quadraticCurveTo(x - r * 0.95, y - r * 0.95, x, y - r)
+      ctx.stroke()
+    }
+
+    const draw = () => {
+      ctx.clearRect(0, 0, w, h)
+      const ox = (w % GAP) / 2 + GAP / 2
+      const oy = (h % GAP) / 2 + GAP / 2
+      ctx.lineWidth = 1.2
+      for (let y = oy; y < h; y += GAP) {
+        for (let x = ox; x < w; x += GAP) {
+          const d = Math.hypot(x - at.x, y - at.y)
+          const near = Math.max(0, 1 - d / REACH)
+          const k = near * near
+          ctx.fillStyle = `rgba(${INK}, ${0.1 + 0.45 * k})`
+          ctx.beginPath()
+          ctx.arc(x, y, 1.3 + 1.4 * k, 0, Math.PI * 2)
+          ctx.fill()
+          if (k > 0.02) {
+            ctx.strokeStyle = `rgba(${INK}, ${0.35 * k})`
+            loop(x, y, (GAP / 2) * (0.6 + 0.4 * k))
+          }
+        }
+      }
+    }
+
+    const tick = () => {
+      frame = 0
+      at.x += (target.x - at.x) * 0.18
+      at.y += (target.y - at.y) * 0.18
+      draw()
+      if (visible && Math.hypot(target.x - at.x, target.y - at.y) > 0.5) frame = requestAnimationFrame(tick)
+    }
+    const wake = () => {
+      if (!frame && visible && !still) frame = requestAnimationFrame(tick)
+    }
+
+    host.addEventListener('pointermove', (e) => {
+      const r = host.getBoundingClientRect()
+      target.x = e.clientX - r.left
+      target.y = e.clientY - r.top
+      if (at.x < -1e3) Object.assign(at, target)
+      wake()
+    })
+    host.addEventListener('pointerleave', () => {
+      target.x = target.y = -1e4
+      wake()
+    })
+    new IntersectionObserver(([entry]) => {
+      visible = !!entry?.isIntersecting
+      if (visible) wake()
+    }).observe(host)
+    new ResizeObserver(() => {
+      size()
+      draw()
+    }).observe(host)
+  }
+</script>

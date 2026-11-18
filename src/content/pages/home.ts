@@ -60,11 +60,10 @@ export interface Home {
 }
 
 const home: Home = {
-  eyebrow: "India's official statistics, checked and charted",
-  title: 'India, counted.',
-  standfirst: 'Every figure carries its publisher, its period and the date we checked it.',
+  eyebrow: `${count.topics} topics · ${count.charts} charts · ${count.places} states and UTs`,
+  title: 'India by Numbers',
+  standfirst: "Charts of India's official statistics. Each figure shows who published it, the period it covers and the day we checked it.",
   search: {
-    // The counts (9, 69, 36) are live counts on the built site.
     placeholder: `Search ${count.topics} topics, ${count.charts} charts and ${count.places} states and UTs`,
     key: '/',
     tryLabel: 'Try',
