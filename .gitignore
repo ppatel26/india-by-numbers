@@ -1,0 +1,23 @@
+# Dependencies and build output
+node_modules/
+dist/
+.astro/
+.wrangler/
+.alchemy/
+
+# Tests
+playwright-report/
+test-results/
+coverage/
+
+# Local env and secrets
+.env
+.env.*
+.dev.vars*
+
+# UK by Numbers mirror and captures: third-party content, kept local only
+research/reference/raw/
+research/reference/screenshots/
+
+.DS_Store
+__pycache__/
