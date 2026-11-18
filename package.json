@@ -39,11 +39,13 @@
   "devDependencies": {
     "@astrojs/check": "^0.9.12",
     "@axe-core/playwright": "^4.14.0",
+    "@cloudflare/workers-types": "^5.20261117.1",
     "@playwright/test": "^1.65.1",
     "@types/d3-dsv": "^3.0.7",
     "@types/d3-scale": "^4.0.9",
     "@types/d3-shape": "^3.2.0",
     "@types/node": "^26.6.6",
+    "harfbuzzjs": "^1.6.4",
     "typescript": "^6.0.3",
     "vitest": "^5.1.0",
     "wrangler": "^4.164.0"

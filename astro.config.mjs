@@ -2,7 +2,7 @@
 import { defineConfig } from 'astro/config'
 
 export default defineConfig({
-  site: 'https://india-by-numbers.ppatel26.workers.dev',
+  site: 'https://india-by-numbers.parv-personal.workers.dev',
   output: 'static',
   trailingSlash: 'always',
   compressHTML: true,
