@@ -277,7 +277,16 @@ export interface Figure {
   format?: Format
 }
 
-export type Block = { text: string } | { chart: Chart }
+/** One chart at each of several time scales (2026 day by day, since 1998 month by month): one card with a period switch. */
+export interface Period {
+  /** The switch label: "2026, daily". */
+  label: string
+  /** On phones: "Daily". */
+  short: string
+  chart: Chart
+}
+
+export type Block = { text: string } | { chart: Chart } | { periods: readonly Period[] }
 
 export interface Part {
   title: string

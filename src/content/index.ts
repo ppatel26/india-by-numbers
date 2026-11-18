@@ -1,5 +1,5 @@
 /** The site's content: topics in order, and every chart with its place on its topic page. */
-import { TOPICS, type Chart, type Part, type Topic, type TopicSlug } from './types'
+import { TOPICS, type Block, type Chart, type Part, type Topic, type TopicSlug } from './types'
 
 const modules = import.meta.glob<{ default: Topic }>('./topics/*.ts', { eager: true })
 
@@ -20,15 +20,31 @@ export interface Placed {
   part: Part
   /** 1-based part number. */
   partNo: number
-  /** "2.1": part number, then position in the part. */
+  /** "2.1": part number, then position in the part. The charts of one period switch share it. */
   number: string
+  /** The period switch the chart sits in, this chart included. */
+  periods?: readonly PeriodLink[]
 }
+
+export interface PeriodLink {
+  label: string
+  short: string
+  slug: string
+}
+
+/** The charts in a block: none, one, or one per period. */
+export const chartsIn = (b: Block): Chart[] => ('chart' in b ? [b.chart] : 'periods' in b ? b.periods.map((p) => p.chart) : [])
 
 export const charts: readonly Placed[] = topics.flatMap((t) =>
   t.parts.flatMap((part, i) =>
     part.blocks
-      .flatMap((b) => ('chart' in b ? [b.chart] : []))
-      .map((chart, j) => ({ chart, topic: t, part, partNo: i + 1, number: `${i + 1}.${j + 1}` })),
+      .flatMap((b) => ('text' in b ? [] : [b]))
+      .flatMap((b, j): Placed[] => {
+        const at = { topic: t, part, partNo: i + 1, number: `${i + 1}.${j + 1}` }
+        if ('chart' in b) return [{ chart: b.chart, ...at }]
+        const periods = b.periods.map((p) => ({ label: p.label, short: p.short, slug: p.chart.slug }))
+        return b.periods.map((p) => ({ chart: p.chart, ...at, periods }))
+      }),
   ),
 )
 

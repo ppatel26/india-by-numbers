@@ -10,4 +10,4 @@ export const meta = (html: string, key: string): string | undefined =>
   html.match(new RegExp(`<meta (?:name|property)="${key}" content="([^"]*)"`))?.[1]
 
 /** Sample pages of every kind, for browser and accessibility checks. */
-export const SAMPLE = ['/', '/topics/', '/prices/', '/population/', '/charts/cpi-inflation-by-state/', '/charts/', '/states/', '/states/tamil-nadu/', '/how-we-check/', '/sources/', '/releases/', '/corrections/', '/about/', '/search/?q=inflation']
+export const SAMPLE = ['/', '/topics/', '/prices/', '/population/', '/economy/', '/charts/cpi-inflation-by-state/', '/charts/usd-inr-monthly/', '/charts/', '/states/', '/states/tamil-nadu/', '/how-we-check/', '/sources/', '/releases/', '/corrections/', '/about/', '/search/?q=inflation']

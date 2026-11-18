@@ -33,6 +33,40 @@ document.addEventListener('keydown', (e) => {
   select(tab.closest('[data-chart]')!, tabs[next]!.dataset.view!, true)
 })
 
+/** Show another period of the same card, in the view the reader had open. */
+function swap(from: HTMLElement, to: HTMLElement, focus: boolean): void {
+  const view = from.querySelector<HTMLButtonElement>('[role="tab"][aria-selected="true"]')?.dataset.view
+  from.hidden = true
+  to.hidden = false
+  if (view) select(to, view)
+  if (focus) to.querySelector<HTMLAnchorElement>(`[data-period="${to.dataset.chart}"]`)?.focus()
+}
+
+// A period link swaps the card in place on a topic page; on a chart page it is a plain link.
+document.addEventListener('click', (e) => {
+  const link = (e.target as Element).closest<HTMLAnchorElement>('[data-period]')
+  if (!link || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return
+  const from = link.closest<HTMLElement>('[data-chart]')
+  const to = document.querySelector<HTMLElement>(`[data-chart="${link.dataset.period}"]`)
+  if (!from || !to) return
+  e.preventDefault()
+  if (to !== from) swap(from, to, true)
+})
+
+// /economy/#usd-inr-monthly opens that period.
+function openHashed(): void {
+  const hashed = location.hash && document.querySelector<HTMLElement>(`[data-chart="${CSS.escape(location.hash.slice(1))}"][hidden]`)
+  if (!hashed) return
+  const shown = [...hashed.parentElement!.querySelectorAll<HTMLElement>('[data-chart]')].find(
+    (f) => !f.hidden && f.querySelector(`[data-period="${hashed.dataset.chart}"]`),
+  )
+  if (!shown) return
+  swap(shown, hashed, false)
+  hashed.scrollIntoView()
+}
+openHashed()
+addEventListener('hashchange', openHashed)
+
 // ?tab=table opens that view on a chart page.
 const tab = new URLSearchParams(location.search).get('tab')
 if (tab) document.querySelectorAll('[data-chart]').forEach((f) => select(f, tab))

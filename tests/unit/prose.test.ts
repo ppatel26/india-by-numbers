@@ -3,7 +3,7 @@
  * Years, dates, ages, ranks, base years and denominators are not data values and are skipped.
  */
 import { describe, expect, it } from 'vitest'
-import { topics } from '~/content'
+import { chartsIn, topics } from '~/content'
 import type { Topic } from '~/content/types'
 import { picksOf } from '~/lib/metadata'
 import { readdirSync, readFileSync } from 'node:fs'
@@ -12,7 +12,7 @@ import { DATA_DIR, rows } from '~/lib/data'
 
 /** Every number in the topic's data folders (CSVs and the README headline tables), as printed. */
 function pool(t: Topic): Set<string> {
-  const dirs = new Set(t.parts.flatMap((p) => p.blocks.flatMap((b) => ('chart' in b ? picksOf(b.chart).map((k) => k.file.split('/')[0]!) : []))))
+  const dirs = new Set(t.parts.flatMap((p) => p.blocks.flatMap((b) => chartsIn(b).flatMap((c) => picksOf(c).map((k) => k.file.split('/')[0]!)))))
   const out = new Set<string>()
   const add = (n: string) => {
     const x = Math.abs(Number(n))

@@ -110,8 +110,22 @@ const RBI_TABLE_133: Source = {
 const FBIL_ARCHIVE: Source = {
   publisher: 'RBI (FBIL)',
   release: 'Reference Rate Archive, US dollar, working days 1 Jan to 18 Nov 2026',
-  released: '2026-11-17',
+  released: '2026-11-18',
   url: 'https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx',
+}
+
+const RBI_ARCHIVE_LONG: Source = {
+  publisher: 'RBI',
+  release: 'Reference Rate Archive, US dollar, working days 25 Aug 1998 to 24 Jul 2018',
+  released: 'not stated',
+  url: 'https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx',
+}
+
+const FBIL_RATES: Source = {
+  publisher: 'RBI (FBIL)',
+  release: 'FBIL Reference Rates, US dollar, working days 10 Jul 2018 to 31 Dec 2025',
+  released: 'not stated',
+  url: 'https://www.fbil.org.in/',
 }
 
 const RBI_HOME: Source = {
@@ -449,77 +463,121 @@ const topic: Topic = {
       title: 'How many rupees does a US dollar cost?',
       lede: 'A US dollar cost ₹12.78 on average in 1986-87 and ₹88.31 in 2025-26. At the end of March 2026 it cost ₹94.65.',
       blocks: [
-        {
-          chart: {
-            kind: 'line',
-            slug: 'usd-inr-annual',
-            title: 'Rupees per US dollar, 1986-87 to 2025-26',
-            subtitle: 'Average exchange rate for the financial year, rupees per US dollar, 1986-87 to 2025-26.',
-            punches: { office: 'RBI', unit: '₹ per US$', period: '2025-26' },
-            note: 'To 1991-92, official rates; from 1992-93, FEDAI indicative rates; from May 2012, RBI reference rates; from 10 July 2018, FBIL reference rates.',
-            sources: [RBI_TABLE_133],
-            format: { unit: '₹', decimals: 2 },
-            series: [
-              {
-                key: 'average',
-                label: 'Rupees per US dollar',
-                color: 'ink',
-                file: 'economy/usd-inr-annual.csv',
-                where: { measure: 'financial-year average' },
-              },
-            ],
-            y: { min: 0, max: 100, step: 20 },
-            callouts: [
-              { series: 'average', x: '1986-87' },
-              { series: 'average', x: '1991-92', label: '1991-92 and 1992-93: devaluation, then a market rate' },
-              { series: 'average', x: '2025-26' },
-            ],
-            know: [
-              'Each value is the average rate for the financial year (April to March). A higher value means a weaker rupee.',
-              'The rate source changes over time: official rates to 1991-92, FEDAI indicative rates from 1992-93, RBI reference rates from May 2012 and FBIL reference rates from 10 July 2018.',
-              'The jumps in 1991-92 and 1992-93 reflect the 1991 devaluation and the move to a market rate.',
-              'The same table gives the rate at the end of each financial year: ₹94.65 at the end of March 2026.',
-            ],
-            processing: [
-              'Read Table 133 of the RBI Handbook of Statistics on Indian Economy 2025-26 (31 Jul 2026).',
-              'Keep the financial-year average and the end-of-year rate as separate series; the chart shows the average.',
-              "Keep the publisher's four decimals in the data; the chart shows two.",
-            ],
-            nextRelease: 'not announced',
-          },
-        },
         { text: 'On 18 November 2026 a dollar cost ₹93.3558, up from ₹89.9792 on 1 January. The rupee was weakest on 20 May 2026, at ₹96.8441 per dollar.' },
         {
-          chart: {
-            kind: 'line',
-            slug: 'usd-inr-daily',
-            title: 'The rupee in 2026, day by day',
-            subtitle: 'FBIL reference rate, rupees per US dollar, working days, 1 January to 18 November 2026. A higher line means a weaker rupee.',
-            punches: { office: 'FBIL', unit: '₹ per US$', period: '18 NOV 2026' },
-            note: 'The rate for 17 November 2026 is as at 1:00 pm on the RBI home page.',
-            sources: [FBIL_ARCHIVE, RBI_HOME],
-            format: { unit: '₹', decimals: 2 },
-            series: [
-              { key: 'fbil', label: 'FBIL reference rate', color: 'ink', file: 'economy/usd-inr-daily-2026.csv', x: 'date' },
-            ],
-            y: { min: 88, max: 98, step: 2 },
-            callouts: [
-              { series: 'fbil', x: '2026-01-01' },
-              { series: 'fbil', x: '2026-05-20' },
-            ],
-            know: [
-              'The FBIL reference rate is the benchmark rate for the rupee against the US dollar, set by Financial Benchmarks India each working day.',
-              'A higher value means a weaker rupee: more rupees for one dollar.',
-              'The rate for 18 November 2026 is as at 1:00 pm, from the RBI home page.',
-              'Weekends and market holidays have no rate.',
-            ],
-            processing: [
-              'Read the US dollar rate for each working day from 1 January to 18 November 2026 in the RBI Reference Rate Archive (source FBIL).',
-              'Check 18 November 2026 against the "Current Rates" box on the RBI home page.',
-              "Keep the publisher's four decimals in the data. Days with no rate have no row.",
-            ],
-            nextRelease: '2026-11-18',
-          },
+          periods: [
+            {
+              label: '2026, daily',
+              short: 'Daily',
+              chart: {
+                kind: 'line',
+                slug: 'usd-inr-daily',
+                title: 'The rupee in 2026, day by day',
+                subtitle: 'FBIL reference rate, rupees per US dollar, working days, 1 January to 18 November 2026. A higher line means a weaker rupee.',
+                punches: { office: 'FBIL', unit: '₹ per US$', period: '18 NOV 2026' },
+                note: 'The rate for 18 November 2026 is as at 1:00 pm on the RBI home page.',
+                sources: [FBIL_ARCHIVE, RBI_HOME],
+                format: { unit: '₹', decimals: 2 },
+                series: [
+                  { key: 'fbil', label: 'FBIL reference rate', color: 'ink', file: 'economy/usd-inr-daily-2026.csv', x: 'date' },
+                ],
+                y: { min: 88, max: 98, step: 2 },
+                callouts: [
+                  { series: 'fbil', x: '2026-01-01' },
+                  { series: 'fbil', x: '2026-05-20' },
+                ],
+                know: [
+                  'The FBIL reference rate is the benchmark rate for the rupee against the US dollar, set by Financial Benchmarks India each working day.',
+                  'A higher value means a weaker rupee: more rupees for one dollar.',
+                  'The rate for 18 November 2026 is as at 1:00 pm, from the RBI home page.',
+                  'Weekends and market holidays have no rate.',
+                ],
+                processing: [
+                  'Read the US dollar rate for each working day from 1 January to 18 November 2026 in the RBI Reference Rate Archive (source FBIL).',
+                  'Check 18 November 2026 against the "Current Rates" box on the RBI home page.',
+                  "Keep the publisher's four decimals in the data. Days with no rate have no row.",
+                ],
+                nextRelease: '2026-11-18',
+              },
+            },
+
+            {
+              label: 'Since 1998, monthly',
+              short: 'Monthly',
+              chart: {
+                kind: 'line',
+                slug: 'usd-inr-monthly',
+                title: 'The rupee since 1998, month by month',
+                subtitle: 'Monthly average of the daily reference rate, rupees per US dollar, September 1998 to November 2026. A higher line means a weaker rupee.',
+                punches: { office: 'RBI', unit: '₹ per US$', period: 'NOV 2026' },
+                status: ['Provisional'],
+                note: 'RBI reference rate to 9 July 2018, FBIL reference rate from 10 July 2018. November 2026 is 1 to 18 November. February 2021 is the average of 8 days: FBIL gives no rate for 1 to 15 or 19 February 2021.',
+                sources: [RBI_ARCHIVE_LONG, FBIL_RATES, FBIL_ARCHIVE],
+                format: { unit: '₹', decimals: 2 },
+                series: [{ key: 'monthly', label: 'Rupees per US dollar', color: 'ink', file: 'economy/usd-inr-monthly.csv' }],
+                y: { min: 0, max: 100, step: 20 },
+                callouts: [
+                  { series: 'monthly', x: '1998-09' },
+                  { series: 'monthly', x: '2008-01' },
+                  { series: 'monthly', x: '2026-07' },
+                ],
+                know: [
+                  'Each value is the average of the reference rates for the working days of that month. A higher value means a weaker rupee.',
+                  'The rupee was strongest in January 2008, at an average of ₹39.37 per dollar, and weakest in July 2026, at ₹95.82.',
+                  'RBI set the reference rate until 9 July 2018. Financial Benchmarks India (FBIL) has set it since 10 July 2018.',
+                  'November 2026 is a part month and can change.',
+                ],
+                processing: [
+                  'Read the US dollar rate for each working day from 25 August 1998 to 24 July 2018 in the RBI Reference Rate Archive.',
+                  'Read the FBIL US dollar reference rate for each working day from 10 July 2018 to 31 December 2025 from fbil.org.in. For 2026, use the daily series of chart "The rupee in 2026, day by day".',
+                  'Take each day from one source: RBI to 9 July 2018, FBIL after. Average the days of each month. August 1998 starts on the 25th, so the series starts in September 1998.',
+                  'Check: the average of all days in each financial year from 1999-00 to 2025-26 is within ₹0.08 of the financial-year average in RBI Handbook Table 133.',
+                ],
+                nextRelease: '2026-11-18',
+              },
+            },
+            {
+              label: 'Since 1986-87, yearly',
+              short: 'Yearly',
+              chart: {
+                kind: 'line',
+                slug: 'usd-inr-annual',
+                title: 'Rupees per US dollar, 1986-87 to 2025-26',
+                subtitle: 'Average exchange rate for the financial year, rupees per US dollar, 1986-87 to 2025-26.',
+                punches: { office: 'RBI', unit: '₹ per US$', period: '2025-26' },
+                note: 'To 1991-92, official rates; from 1992-93, FEDAI indicative rates; from May 2012, RBI reference rates; from 10 July 2018, FBIL reference rates.',
+                sources: [RBI_TABLE_133],
+                format: { unit: '₹', decimals: 2 },
+                series: [
+                  {
+                    key: 'average',
+                    label: 'Rupees per US dollar',
+                    color: 'ink',
+                    file: 'economy/usd-inr-annual.csv',
+                    where: { measure: 'financial-year average' },
+                  },
+                ],
+                y: { min: 0, max: 100, step: 20 },
+                callouts: [
+                  { series: 'average', x: '1986-87' },
+                  { series: 'average', x: '1991-92', label: '1991-92 and 1992-93: devaluation, then a market rate' },
+                  { series: 'average', x: '2025-26' },
+                ],
+                know: [
+                  'Each value is the average rate for the financial year (April to March). A higher value means a weaker rupee.',
+                  'The rate source changes over time: official rates to 1991-92, FEDAI indicative rates from 1992-93, RBI reference rates from May 2012 and FBIL reference rates from 10 July 2018.',
+                  'The jumps in 1991-92 and 1992-93 reflect the 1991 devaluation and the move to a market rate.',
+                  'The same table gives the rate at the end of each financial year: ₹94.65 at the end of March 2026.',
+                ],
+                processing: [
+                  'Read Table 133 of the RBI Handbook of Statistics on Indian Economy 2025-26 (31 Jul 2026).',
+                  'Keep the financial-year average and the end-of-year rate as separate series; the chart shows the average.',
+                  "Keep the publisher's four decimals in the data; the chart shows two.",
+                ],
+                nextRelease: 'not announced',
+              },
+            },
+          ],
         },
       ],
     },

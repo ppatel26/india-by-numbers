@@ -5,7 +5,7 @@ import TopicHero from '~/components/topic/TopicHero.astro'
 import MetaStrip from '~/components/topic/MetaStrip.astro'
 import Rail from '~/components/topic/Rail.astro'
 import AboutData from '~/components/topic/AboutData.astro'
-import { charts, partId, topics } from '~/content'
+import { charts, partId, placed, topics } from '~/content'
 import type { Topic } from '~/content/types'
 
 export function getStaticPaths() {
@@ -33,6 +33,10 @@ const numbered = new Map(charts.filter((c) => c.topic.slug === topic.slug).map((
           {part.blocks.map((b) =>
             'chart' in b ? (
               <ChartFrame chart={b.chart} number={numbered.get(b.chart.slug)} />
+            ) : 'periods' in b ? (
+              b.periods.map((p, k) => (
+                <ChartFrame chart={p.chart} number={numbered.get(p.chart.slug)} periods={placed(p.chart.slug).periods} hidden={k > 0} />
+              ))
             ) : (
               <p class="finding">{b.text}</p>
             ),

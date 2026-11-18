@@ -7,6 +7,7 @@
 import ChartTable from './ChartTable.astro'
 import Hallmark from './Hallmark.astro'
 import type { Chart } from '~/content/types'
+import type { PeriodLink } from '~/content'
 import { openView, renderPlot, viewsOf, type View } from '~/lib/charts'
 import { timelineOf } from '~/lib/charts/model'
 import { sourceLine } from '~/lib/sources'
@@ -17,8 +18,12 @@ interface Props {
   number?: string
   /** The chart page uses h1 and links to nothing. */
   page?: boolean
+  /** The period switch: the same measure at other time scales, each its own chart. */
+  periods?: readonly PeriodLink[]
+  /** A period not shown first on a topic page. */
+  hidden?: boolean
 }
-const { chart, number, page = false } = Astro.props
+const { chart, number, page = false, periods = [], hidden = false } = Astro.props
 const views = viewsOf(chart)
 const open = openView(chart)
 const names: Record<View, string> = { chart: 'Chart', table: 'Table', map: 'Map' }
@@ -29,18 +34,31 @@ const href = `/charts/${chart.slug}/`
 const steps = page && chart.kind === 'states' ? timelineOf(chart) : []
 ---
 
-<figure class="chart" id={chart.slug} data-chart={chart.slug} aria-labelledby={`${id}-title`}>
+<figure class="chart" id={chart.slug} data-chart={chart.slug} aria-labelledby={`${id}-title`} hidden={hidden}>
   {number && <p class="label muted number">{number}</p>}
   <Heading class="chart-title" id={`${id}-title`}>{page ? chart.title : <a href={href}>{chart.title}</a>}</Heading>
   <p class="subtitle">{chart.subtitle}</p>
+  {(periods.length > 1 || views.length > 1) && (
+  <div class="controls">
+  {periods.length > 1 && (
+    <nav class="switch periods" aria-label="Period">
+      {periods.map((p) => (
+        <a href={`/charts/${p.slug}/`} data-period={p.slug} aria-current={p.slug === chart.slug ? (page ? 'page' : 'true') : undefined}>
+          <span class="long">{p.label}</span><span class="short">{p.short}</span>
+        </a>
+      ))}
+    </nav>
+  )}
   {views.length > 1 && (
-    <div class="chart-tabs" role="tablist" aria-label="View">
+    <div class="switch chart-tabs" role="tablist" aria-label="View">
       {views.map((v) => (
         <button type="button" role="tab" id={`${id}-tab-${v}`} aria-controls={`${id}-${v}`} aria-selected={v === open ? 'true' : 'false'} tabindex={v === open ? 0 : -1} data-view={v}>
           {names[v]}
         </button>
       ))}
     </div>
+  )}
+  </div>
   )}
   {views.map((v) => (
     <div class:list={['view', v]} id={`${id}-${v}`} role={views.length > 1 ? 'tabpanel' : undefined} aria-labelledby={views.length > 1 ? `${id}-tab-${v}` : undefined} hidden={v !== open}>
@@ -113,23 +131,49 @@ const steps = page && chart.kind === 'states' ? timelineOf(chart) : []
     line-height: 22px;
     max-width: 912px;
   }
-  .chart-tabs {
-    display: inline-flex;
+  .controls {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 12px;
     margin-top: 16px;
+    max-width: 912px;
+  }
+  .switch {
+    display: inline-flex;
+    flex-wrap: wrap;
     padding: 3px;
     border: 1px solid var(--rule);
     border-radius: 20px;
   }
-  .chart-tabs button {
+  .switch button,
+  .switch a {
     border: 0;
     background: none;
     padding: 6px 16px;
     border-radius: 16px;
     font: 500 15px var(--font-ui);
     color: var(--ink);
+    text-decoration: none;
     cursor: pointer;
   }
-  .chart-tabs button[aria-selected='true'] {
+  .switch a:not([aria-current]):hover,
+  .switch button[aria-selected='false']:hover {
+    background: rgb(22 24 29 / 0.06);
+  }
+  .periods .short {
+    display: none;
+  }
+  @media (max-width: 720px) {
+    .periods .long {
+      display: none;
+    }
+    .periods .short {
+      display: inline;
+    }
+  }
+  .switch button[aria-selected='true'],
+  .switch a[aria-current] {
     background: var(--ink);
     color: var(--paper);
   }
