@@ -139,8 +139,9 @@ const files = [
 </Base>
 
 <style>
+  /* The page is as wide as the chart it shows, so the chart fills it. */
   .page {
-    max-width: 1000px;
+    max-width: var(--main);
     padding-block: 32px 96px;
   }
   .crumbs {
