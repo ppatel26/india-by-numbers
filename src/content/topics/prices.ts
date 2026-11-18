@@ -1,4 +1,6 @@
 import type { Source, Topic } from '../types'
+import { formatDate } from '~/lib/period'
+import { SITE } from '~/lib/site'
 
 // Data: research/data/prices. tests/unit/prose.test.ts checks every number in the prose.
 
@@ -442,13 +444,13 @@ const topic: Topic = {
             kind: 'line',
             slug: 'repo-rate',
             title: 'RBI policy repo rate, June 2008 to November 2026',
-            subtitle: 'Policy repo rate, % a year, by effective date of each change, 12 June 2008 to 17 November 2026.',
+            subtitle: `Policy repo rate, % a year, by effective date of each change, 12 June 2008 to ${formatDate(SITE.checked, 'long')}.`,
             punches: { office: 'RBI', unit: '% a year', period: '7 OCT 2026' },
             note: 'The repo rate became the single policy rate on 3 May 2011. The MPC kept the rate at 5.25% in April, June and August 2026.',
             sources: [RBI_TABLE_40, RBI_HIKE, RBI_HOLDS],
             format: { unit: '%', decimals: 2 },
             step: true,
-            extendTo: '2026-11-17',
+            extendTo: SITE.checked,
             // The note gives the full text: the repo rate became the single policy rate on 3 May 2011.
             markers: [{ x: '2011-05-03', label: 'Single policy rate' }],
             series: [
@@ -470,7 +472,7 @@ const topic: Topic = {
               'Read every repo rate change from 12 June 2008 to 5 December 2025 in Table 40 of the RBI Handbook of Statistics on Indian Economy 2025-26.',
               "Add the rise to 5.50% from the Governor's Statement of 7 October 2026.",
               "Check the 2026 meetings with no change against the Governor's Statements of 8 April, 5 June and 5 August 2026.",
-              'Check the current rate against the RBI home page on 17 November 2026.',
+              'Check the current rate against the RBI home page on 18 November 2026.',
             ],
             nextRelease: '2026-12-04',
           },
@@ -481,7 +483,7 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each prices figure is made, where it breaks, and what is missing.") has no field.
   about: {
     intro:
-      'All values are as published. We read every source on 17 November 2026. The October 2026 values match the MoSPI CPI press release of 12 November 2026, table by table.',
+      'All values are as published. We last checked every source on 18 November 2026. The October 2026 values match the MoSPI CPI press release of 12 November 2026, table by table.',
     publisher:
       'The National Statistics Office (NSO), MoSPI, compiles the Consumer Price Index (CPI) for rural, urban and combined India, for each state and UT, and for 12 spending divisions. The Reserve Bank of India (RBI) sets the repo rate and publishes CPI for industrial workers (CPI-IW) from the Labour Bureau in its Handbook of Statistics.',
     frequency:

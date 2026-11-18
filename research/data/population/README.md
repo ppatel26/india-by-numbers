@@ -187,3 +187,14 @@ Parsing scripts: pipeline/build_population.py and pipeline/parse_proj.py (run wi
   census towns.
 - Licence: no open licence is stated on censusindia.gov.in or the MoHFW file. The catalog pages say
   "Rights Reserved". Confirm reuse terms before publishing.
+
+## Publisher check on 18 Nov 2026
+
+ORGI still lists the SRS Statistical Report and Bulletin for 2024. Both files match their 17 Nov checksums, along with the Census 2011 tables, Census 2027 gazette notices and population projections. The 16 Nov PIB notice describes self-enumeration for the next census phase.
+
+| Release or file checked | Release date | URL | Fetched | SHA-256 |
+| --- | --- | --- | --- | --- |
+| ORGI SRS catalogue search | Live list | https://censusindia.gov.in/nada/index.php/catalog/?sk=SRS | 18 Nov 2026 | `46d3e7d88d806a2398ad407f2b9fd808ffd7248487d5af8c8be5ea4db103d57f` |
+| ORGI SRS Statistical Report 2024 | 20 May 2026 | https://censusindia.gov.in/nada/index.php/catalog/47152/download/51396/SRS_STAT_2024.pdf | 18 Nov 2026 | `f922a4a817e612c78a7827e4f526f69dc433d68c4af287b76d418337637c946a` |
+| ORGI Census 2027 catalogue search | Live list | https://censusindia.gov.in/nada/index.php/catalog/?sk=2027 | 18 Nov 2026 | `cc443d26b5f38ab98d7d9b9151b353fd7e3d8babb3cf899ae4d76f277222d2ad` |
+| PIB PRID 2337054, Census 2027 phase II self-enumeration | 16 Nov 2026 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2337054&reg=48&lang=1 | 18 Nov 2026 | `229d718662af42e7090dde234f91dede4b1f41924218fcc6586a16b37dc2739a` |

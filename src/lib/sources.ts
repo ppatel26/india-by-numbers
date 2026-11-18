@@ -8,7 +8,7 @@ export function releasedText(s: Source): string {
   return /^\d{4}-\d{2}$/.test(s.released) ? parsePeriod(s.released, 'month').label : formatDate(s.released)
 }
 
-/** "Source: MoSPI, CPI release for October 2026, 12 Nov 2026. Checked 17 Nov 2026." */
+/** "Source: MoSPI, CPI release for October 2026, 12 Nov 2026. Checked 18 Nov 2026." */
 export function sourceLine(sources: readonly Source[]): string {
   const list = sources.map((s) => `${s.publisher}, ${s.release}, ${releasedText(s)}`).join('; ')
   return `Source${sources.length > 1 ? 's' : ''}: ${list}. Checked ${formatDate(SITE.checked)}.`

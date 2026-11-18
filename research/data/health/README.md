@@ -127,7 +127,7 @@ All read on 17 Nov 2026. Raw files are in `raw/health/` (not in the repo). No pa
 | PIB (MoHFW) | "Union Health Ministry Releases National Family Health Survey - 6", Release ID 2266600 | 29 May 2026 | 2023-24 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2266600 | caeb939052f8106e8fb4f7477defc2c1d85ec350d4361e349517aa8c222c08f0 |
 | PIB (MoHFW) | "Update on NFHS-6", Release ID 2294277 (Rajya Sabha reply) | 4 Aug 2026 | n/a | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294277 | 0f533189750ee1ddfb2e6e9afc8bf8d37e9983b013636d587f69ae499bf6bcd0 |
 | PIB (Ministry of Women and Child Development) | "Study on impact of PMMVY", Release 1782638, Annexure-I (Lok Sabha reply) | 17 Dec 2021 | NFHS-5, 2019-21 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=1782638 | 70eeb06710894aec3ded97d2d9c649faeb82f125206a935af1a394e4aa59d612 |
-| MoHFW, NHSRC (NHA Technical Secretariat) | National Health Accounts Estimates for India 2023-24 | Nov 2026: foreword dated 7 Sep 2026; file in the Nov 2026 folder; PDF dated 6 Nov 2026 (checked 18 Nov 2026). News reports date the launch 15 Nov 2026; no ministry or PIB page found | 2013-14 to 2023-24 | https://nhsrcindia.org/sites/default/files/2026-11/NHA%20Report%202023-24.pdf | cf60c3fd530a585f9426595505c1301a2877e317adca4f8d17097c84e190e119 |
+| MoHFW, NHSRC (NHA Technical Secretariat) | National Health Accounts Estimates for India 2023-24 | Public release confirmed by 15 Nov 2026 (PIB PRID 2336478). Foreword dated 7 Sep 2026. PDF dated 6 Nov 2026 | 2013-14 to 2023-24 | https://nhsrcindia.org/sites/default/files/2026-11/NHA%20Report%202023-24.pdf | cf60c3fd530a585f9426595505c1301a2877e317adca4f8d17097c84e190e119 |
 
 Parsing: `pdftotext -layout`, then `pipeline/health/build.py` run with `python3 -I`. The script checks row counts and some known values (for example IMR 129 in 1971 and 24 in 2024, NFHS-5 anaemia 57.0 for India).
 
@@ -193,3 +193,18 @@ Parsing: `pdftotext -layout`, then `pipeline/health/build.py` run with `python3 
 | Assam | Stunting | 30.3 | 35.3 |
 | Bihar | Stunting | 35.6 | 42.9 |
 - The release date of the National Health Accounts 2023-24: news reports say about 15 Nov 2026 (unverified). The PIB release was not opened.
+
+## Publisher check on 18 Nov 2026
+
+ORGI still lists the 2024 SRS statistical report and bulletin, the 2022-24 maternal mortality bulletin and the 2020-24 life tables. Their checksums match the initial read. The Ministry of Health still lists the NFHS-6 fact sheets from 29 May. Its PDF matches the previous ministry copy. The IIPS download failed its TLS certificate check.
+
+NHSRC still lists the 2023-24 National Health Accounts as its latest report. The PDF matches the 17 Nov checksum. PIB PRID 2336478 confirms that the Ministry had released the report by 15 Nov 2026 and repeats its headline 42.7% share for household out-of-pocket spending in 2023-24.
+
+| Release or file checked | Release date | URL | Fetched | SHA-256 |
+| --- | --- | --- | --- | --- |
+| ORGI SRS catalogue search | Live list | https://censusindia.gov.in/nada/index.php/catalog/?sk=SRS | 18 Nov 2026 | `46d3e7d88d806a2398ad407f2b9fd808ffd7248487d5af8c8be5ea4db103d57f` |
+| ORGI SRS Statistical Report 2024 | 20 May 2026 | https://censusindia.gov.in/nada/index.php/catalog/47152/download/51396/SRS_STAT_2024.pdf | 18 Nov 2026 | `f922a4a817e612c78a7827e4f526f69dc433d68c4af287b76d418337637c946a` |
+| MoHFW NFHS-6 fact sheets | 29 May 2026 | https://www.mohfw-dohfw.gov.in/static/uploads/2026/05/111ff4a13ca36b5cabb7f94aec5bb0ce.pdf | 18 Nov 2026 | `6b7d4eef047ddc5f37b6afa3935dab997a3b7ffff51ceb609eead44c34e25994` |
+| MoHFW NFHS media list | Live list | https://master-mohfw-dohfw.digifootprint.gov.in/cms/wp-json/wp/v2/media?search=NFHS&per_page=50 | 18 Nov 2026 | `19c1583e169d4232fabb85d3d013acfbcc1b95cafd1c1dbf58d386bdca401826` |
+| NHSRC National Health Accounts Estimates for India 2023-24 | Public release confirmed by 15 Nov 2026 | https://nhsrcindia.org/sites/default/files/2026-11/NHA%20Report%202023-24.pdf | 18 Nov 2026 | `cf60c3fd530a585f9426595505c1301a2877e317adca4f8d17097c84e190e119` |
+| PIB PRID 2336478, National Health Accounts 2023-24 | 15 Nov 2026, 2:13 pm IST | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2336478&reg=48&lang=1 | 18 Nov 2026 | `d412ad2b2eeb6805cb9190045e7347e6512fdc7c0f62da79100cb01bb76e4784` |

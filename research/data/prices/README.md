@@ -261,3 +261,15 @@ Saved on 18 Nov 2026 under `raw/`. Text extracted with `pdftotext -layout`.
 | August 2026 | 14 Sep 2026 | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1789381904344_6c792dcf-8a9f-4fca-93d3-99d833bdb358_Press_Release_of_CPI_for_August_2026.pdf | `efed906339562651b94218b35079f4fc3a04f6aa43c0d6901bde8985478fda57` |
 | September 2026 | 12 Oct 2026 | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1791800601071_643518af-5320-4e52-b78c-75c92b83885b_Press_Release_for_the_month_of_September,_2026.pdf | `a6087e10a1bdb64ebdc9dc32f80605d2905d147602d41cce5879871b5ccefa37` |
 | October 2026 | 12 Nov 2026 | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1794478693814_7c90e80f-9e64-4aa4-b44a-1dc727b0fed9_Press_Release_of_CPI_for_October_2026_.pdf | `ef81780a6b0198bd10cefec46f68362fdf9f82b7912fdb476309986976a8240d` |
+
+## Publisher check on 18 Nov 2026
+
+MoSPI still lists the 12 Nov October CPI release. The eSankhyiki current and back general CPI records on base 2024 and the three sector division extracts for January to October match the previous data. The November 2026 query returned no data. The CFPI press release PDFs match their previous checksums. The RBI policy repo rate remains 5.50%, and the policy page still gives 2 to 4 Dec for the next meeting. The July Handbook is still listed. Its workbook links served HTML to this check.
+
+| Release or file checked | Release date | URL | Fetched | SHA-256 |
+| --- | --- | --- | --- | --- |
+| MoSPI press release list, POST response | Live list | https://www.mospi.gov.in/api/latest-release/get-web-latest-release-list | 18 Nov 2026 | `7f3da46fedf29f0cb39396c7b2cc2896dab455ec01b10b6edccfc19649a80358` |
+| eSankhyiki CPI base 2024, page 1 | 12 Nov 2026 | https://api.mospi.gov.in/api/cpi/getCPIData?base_year=2024&series=Current&year=2025,2026&division_code=0&limit=100&page=1 | 18 Nov 2026 | `65336e4d30d3d6526c023d17ae564e2c6f923fe4ebb8fac62be79e1f940f0a53` |
+| eSankhyiki CPI base 2012, final month sample | December 2025 data | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2025&month_code=12&limit=100&page=1 | 18 Nov 2026 | `c3830c74c1b4cf247feb367dc91eb87ae1381128ac1adc5b45093bcea0069f1d` |
+| RBI monetary policy list | Live list | https://www.rbi.org.in/scripts/annualpolicy.aspx | 18 Nov 2026 | `0d00f9a881a9c029bc9f9a994adfb379dbe735831f0b352cac5cd8f41e746f7e` |
+| RBI Current Rates | 18 Nov 2026 snapshot | https://www.rbi.org.in/ | 18 Nov 2026 | `2bc7550260255980fbc76339318b614f6b3a70a9056261ec044373eefc4f4b23` |

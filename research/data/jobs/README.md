@@ -140,3 +140,15 @@ Raw files are in `raw/jobs/`. Parsing scripts are in `pipeline/` (`fetch_plfs.py
 - **EPFO net payroll additions: not collected.** It is administrative data, not a measure of new jobs. I did not fetch it in this pass.
 - **Wages.** PLFS also publishes average earnings (eSankhyiki indicators 6 to 8). Not collected in this pass.
 - **Licence.** None of the pages read states a reuse licence.
+
+## Publisher check on 18 Nov 2026
+
+The latest MoSPI monthly release remains the October 2026 bulletin of 16 Nov. The annual 2025 report and July to September 2026 quarterly bulletin match their earlier file checksums. All three monthly eSankhyiki series and the annual and quarterly comparison queries for the charts match their prior records.
+
+| Release or file checked | Release date | URL | Fetched | SHA-256 |
+| --- | --- | --- | --- | --- |
+| MoSPI press release list, POST response | Live list | https://www.mospi.gov.in/api/latest-release/get-web-latest-release-list | 18 Nov 2026 | `7f3da46fedf29f0cb39396c7b2cc2896dab455ec01b10b6edccfc19649a80358` |
+| MoSPI PLFS product list, POST for product 69 | Live list | https://www.mospi.gov.in/api/product/get-product-data | 18 Nov 2026 | `e4e0b60823e339ab3f54fc729072876e561192e4a8c4c6681fe51209200589d7` |
+| PLFS monthly labour force participation rate, page 1 | 16 Nov 2026 | https://api.mospi.gov.in/api/plfs/getData?indicator_code=1&frequency_code=3&limit=200&page=1 | 18 Nov 2026 | `66e8396effd0afd16a5f01a4a1ee4a708032b99ccd8aa67876692e411789d58f` |
+| PLFS monthly worker population ratio, page 1 | 16 Nov 2026 | https://api.mospi.gov.in/api/plfs/getData?indicator_code=2&frequency_code=3&limit=200&page=1 | 18 Nov 2026 | `02bf957321cc4f2a092cd9999af7efa59e3d7d7042e10f7586ee176f4c30b978` |
+| PLFS monthly unemployment rate, page 1 | 16 Nov 2026 | https://api.mospi.gov.in/api/plfs/getData?indicator_code=3&frequency_code=3&limit=200&page=1 | 18 Nov 2026 | `727e58cb4067ace6dce37527d1a449495fe44885797e2922c61d777117d892d8` |

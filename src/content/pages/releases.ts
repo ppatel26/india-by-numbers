@@ -56,7 +56,7 @@ const releases: ReleasesPage = {
   intro:
     'What changed on this site, what is due next, and every error we fix. Each row below is a publisher release that the site carries.',
   feed: 'Feed (RSS)',
-  checked: 'Page checked 17 Nov 2026',
+  checked: 'Page checked 18 Nov 2026',
   dueNext: {
     eyebrow: 'Upcoming',
     heading: 'Due next',
@@ -249,7 +249,7 @@ const releases: ReleasesPage = {
       },
     ],
     footnote:
-      "Not in this list, because the publisher states no release date: CEA's Installed Capacity report as on 31 Oct 2026, and the National Health Accounts 2023-24 from MoHFW and NHSRC (foreword dated 7 Sep 2026). Both feed charts on this site. Daily FBIL reference rates are not logged as releases.",
+      "Not in this list, because the publisher states no release date: CEA's Installed Capacity report as on 31 Oct 2026, which feeds charts on this site. Daily FBIL reference rates are not logged as releases.",
   },
 }
 

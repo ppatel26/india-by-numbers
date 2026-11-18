@@ -131,3 +131,13 @@ Parsing script: pipeline/build_religion.py (run with `python3 -I`).
   (Uttaranchal), Odisha (Orissa) and Puducherry (Pondicherry) appear under older names in 2001.
 - Licence: no open licence is stated. The catalog pages say "Rights Reserved". Confirm reuse terms
   before publishing.
+
+## Publisher check on 18 Nov 2026
+
+The Census religion and language tables and the Census 2027 question notice all match their 17 Nov checksums. The ORGI catalogue shows no newer religion or mother-tongue counts.
+
+| Release or file checked | Release date | URL | Fetched | SHA-256 |
+| --- | --- | --- | --- | --- |
+| ORGI Census 2027 catalogue search | Live list | https://censusindia.gov.in/nada/index.php/catalog/?sk=2027 | 18 Nov 2026 | `cc443d26b5f38ab98d7d9b9151b353fd7e3d8babb3cf899ae4d76f277222d2ad` |
+| ORGI Census 2011 Table C-01, religion | Catalogue entry 21 Jan 2021 | https://censusindia.gov.in/nada/index.php/catalog/11361/download/14474/DDW00C-01%20MDDS.XLS | 18 Nov 2026 | `c3fee2bb235f4ef511d9aaeceaf5f8026b48908f813c6d1cc06413a6c8a0d9cd` |
+| ORGI Census 2011 Table C-16, mother tongue | Catalogue entry 4 Jul 2022 | https://censusindia.gov.in/nada/index.php/catalog/10191/download/13303/DDW-C16-STMT-MDDS-0000.XLSX | 18 Nov 2026 | `b800cd544d7196c9bbc3c88ec1814138b8b7c8d4ccb7a5a2263a84e4bbf28f83` |

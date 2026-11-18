@@ -98,7 +98,7 @@ const states: StatesPage = {
     },
     note: "Note: Each state and UT is one equal tile; the grid is not a map of borders. MoSPI's 2024-25 release has no figures for Nagaland, Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu. Assam and Haryana are MoSPI figures as on 1 Aug 2025, from the RBI Handbook. Jammu and Kashmir covers the union territory only, without Ladakh.",
     source:
-      'Source: National Statistics Office, MoSPI, state-wise per capita NSDP (base 2011-12), eSankhyiki API, state data released 15 Apr 2026. India: RBI, Handbook of Statistics on Indian Economy 2025-26, Table 9, 31 Jul 2026. Checked 17 Nov 2026.',
+      'Source: National Statistics Office, MoSPI, state-wise per capita NSDP (base 2011-12), eSankhyiki API, state data released 15 Apr 2026. India: RBI, Handbook of Statistics on Indian Economy 2025-26, Table 9, 31 Jul 2026. Checked 18 Nov 2026.',
   },
   aToZ: {
     eyebrow: `${count.states} states · ${count.uts} union territories`,

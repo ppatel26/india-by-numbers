@@ -78,8 +78,8 @@ const topics: TopicsPage = {
         'How is industry doing month by month?',
         'How many rupees does a US dollar cost, and how has that changed?',
       ],
-      latest: { date: '17 Nov 2026', label: 'FBIL reference rate, via RBI' },
-      next: { date: '28 Nov 2026', label: 'IIP for October 2026, expected' },
+      latest: { date: '18 Nov 2026', label: 'FBIL reference rate, via RBI' },
+      next: { date: '30 Nov 2026', label: 'IIP for October 2026 and GDP for Q2 FY 2026-27' },
     },
     jobs: {
       questions: [

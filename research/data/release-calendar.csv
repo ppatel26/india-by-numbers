@@ -1,5 +1,6 @@
 publisher,release,period_covered,expected_date,status,source_url,topics
-FBIL,USD/INR reference rate,2026-11-18,2026-11-18,estimated,https://www.fbil.org.in/,economy
+FBIL,USD/INR reference rate,2026-11-17,2026-11-17,released,https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx,economy
+FBIL,USD/INR reference rate,2026-11-18,2026-11-18,released,https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx,economy
 FBIL,USD/INR reference rate,2026-11-19,2026-11-19,estimated,https://www.fbil.org.in/,economy
 FBIL,USD/INR reference rate,2026-11-20,2026-11-20,estimated,https://www.fbil.org.in/,economy
 FBIL,USD/INR reference rate,2026-11-23,2026-11-23,estimated,https://www.fbil.org.in/,economy

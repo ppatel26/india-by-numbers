@@ -87,7 +87,7 @@ const PUBLISHERS: readonly Publisher[] = [
     whatWeTake:
       'Policy repo rate; Handbook of Statistics on Indian Economy 2025-26, tables 9, 10, 40, 133 and 236. Table 236 carries CPI series from the Labour Bureau (via RBI) and NSO. FBIL (via RBI): reference rate for the US dollar.',
     rhythm: 'Repo rate at each Monetary Policy Committee meeting. Handbook yearly. Reference rate each working day.',
-    latestRelease: "Governor's Statement, 7 Oct 2026 (repo rate raised to 5.50%). FBIL (via RBI) reference rate for 17 Nov 2026: ₹93.57 per US$.",
+    latestRelease: "Governor's Statement, 7 Oct 2026 (repo rate raised to 5.50%). FBIL (via RBI) reference rate for 18 Nov 2026: ₹93.36 per US$.",
     licence: "Not stated on the publisher's site.",
     howItPublishes:
       'Handbook tables in Excel (rbidocs.rbi.org.in), policy statements on rbi.org.in, and the FBIL (via RBI) reference rate for each working day.',
@@ -155,7 +155,7 @@ const PUBLISHERS: readonly Publisher[] = [
       'NFHS-6 (2023-24) India and state fact sheets, provisional, which print NFHS-5 (2019-21) beside them; National Health Accounts Estimates for India 2023-24.',
     rhythm: 'NFHS rounds come several years apart.',
     latestRelease:
-      'NFHS-6 fact sheets, 29 May 2026. National Health Accounts 2023-24: foreword dated 7 Sep 2026, file posted in November 2026; release date not confirmed.',
+      'NFHS-6 fact sheets, 29 May 2026. National Health Accounts 2023-24, released by 15 Nov 2026 (PIB).',
     licence: "Not stated on the publisher's site.",
     howItPublishes: 'NFHS-6 fact sheets on nfhsiips.in, for India and each state. They print the NFHS-5 value beside each NFHS-6 value.',
     site: 'https://www.nfhsiips.in',
@@ -192,7 +192,7 @@ const sources: SourcesPage = {
   title: 'Sources',
   hindi: 'स्रोत',
   intro: `Every figure on this site comes from one of these ${PUBLISHERS.length} publishers. The first release has ${count.charts} charts.`,
-  checked: 'Page checked 17 Nov 2026',
+  checked: 'Page checked 18 Nov 2026',
   summary: {
     finding: `Two offices, MoSPI and ORGI, supply the data for most of the ${count.charts} charts. Some charts combine two publishers, so the bars add up to more than ${count.charts}.`,
     licence:
@@ -203,8 +203,8 @@ const sources: SourcesPage = {
   chart: {
     number: '1.1',
     title: 'Charts that use each publisher',
-    subtitle: 'Number of charts in release 1, by publisher of the release each chart uses, 17 Nov 2026',
-    note: "Note: Derived. We count the publisher on the source line of each chart. Five election charts use MoSPI's tables of ECI data and count under MoSPI. Source: India by Numbers, chart register, 17 Nov 2026. Checked 17 Nov 2026.",
+    subtitle: 'Number of charts in release 1, by publisher of the release each chart uses, 18 Nov 2026',
+    note: "Note: Derived. We count the publisher on the source line of each chart. Five election charts use MoSPI's tables of ECI data and count under MoSPI. Source: India by Numbers, chart register, 18 Nov 2026. Checked 18 Nov 2026.",
   },
   publishers: {
     eyebrow: 'Publishers, by number of charts',

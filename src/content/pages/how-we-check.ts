@@ -86,7 +86,7 @@ const howWeCheck: HowWeCheck = {
   hindi: 'हम कैसे जाँचते हैं',
   intro:
     "Every figure on this site comes from a publisher's own release. This page says what we do to it before it reaches a chart, and what we never do.",
-  checked: 'Page checked 17 Nov 2026',
+  checked: 'Page checked 18 Nov 2026',
   object: {
     caption:
       'Recast · A merchant and a scribe weigh goods. Red sandstone relief, made with an image model. It stands in for no data.',
@@ -206,7 +206,7 @@ const howWeCheck: HowWeCheck = {
         note: 'Note: MoSPI also publishes a 2024-base back series from 2013. Its rates match the 2012 series, so it is a rescaled link, not a new measure. We do not use it.',
         hallmark: { office: 'MoSPI', unit: '% y/y', period: 'OCT 2026', status: ['Provisional', 'Method break'] },
         source:
-          'Source: MoSPI, Consumer Price Index (2012=100) to December 2025 and (2024=100) from January 2026, October 2026 release, 12 Nov 2026. Checked 17 Nov 2026.',
+          'Source: MoSPI, Consumer Price Index (2012=100) to December 2025 and (2024=100) from January 2026, October 2026 release, 12 Nov 2026. Checked 18 Nov 2026.',
       },
       {
         chart: 'urban-unemployment-quarterly',
@@ -216,7 +216,7 @@ const howWeCheck: HowWeCheck = {
           'PLFS moved to a new sample design in January 2025. There is no quarterly estimate for January to March 2025. Urban unemployment was 6.4% in October to December 2024 on the old design and 6.8% in April to June 2025 on the new one.',
         note: 'Note: MoSPI says to take the new design into account when comparing with releases up to December 2024.',
         hallmark: { office: 'MoSPI', unit: '% 15+', period: 'Q2 2026-27', status: ['Survey estimate', 'Method break'] },
-        source: 'Source: MoSPI NSO, PLFS Quarterly Bulletin, July to September 2026, 10 Nov 2026. Checked 17 Nov 2026.',
+        source: 'Source: MoSPI NSO, PLFS Quarterly Bulletin, July to September 2026, 10 Nov 2026. Checked 18 Nov 2026.',
       },
     ],
     revisions: {

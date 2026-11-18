@@ -4,7 +4,7 @@ export const SITE = {
   hindiName: 'आँकड़ों में भारत',
   tagline: "India's official statistics, checked and charted",
   /** The date we last checked every figure against its publisher. */
-  checked: '2026-11-17',
+  checked: '2026-11-18',
   licence: 'Licence: text, charts and data files CC BY 4.0; code MIT. Publisher data stays under each publisher’s terms.',
   repo: 'https://github.com/ppatel26/india-by-numbers',
   author: { name: 'Parv', handle: '@patel_parv', url: 'https://x.com/patel_parv' },

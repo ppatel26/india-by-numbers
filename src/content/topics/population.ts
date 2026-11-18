@@ -1,4 +1,6 @@
 import type { Source, Topic } from '../types'
+import { formatDate } from '~/lib/period'
+import { SITE } from '~/lib/site'
 
 // Data: research/data/population/README.md.
 
@@ -491,7 +493,7 @@ const topic: Topic = {
             // The two markers are 3.5 months apart: "Today" is labelled left of its line, Census 2027 right
             // of its line (a blank `before` puts the label on the right).
             markers: [
-              { x: '2026-11-17', label: 'Today, 17 Nov 2026' },
+              { x: SITE.checked, label: `Today, ${formatDate(SITE.checked)}` },
               { x: '2027-03-01', label: 'Census 2027, ref. date 1 Mar 2027', before: ' ' },
             ],
             series: [

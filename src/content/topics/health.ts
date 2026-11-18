@@ -48,12 +48,11 @@ const PIB_ANAEMIA: Source = {
   url: 'https://www.pib.gov.in/PressReleasePage.aspx?PRID=1782638',
 }
 
-// NHSRC gives no day: the file sits in its November 2026 folder and the PDF is dated 6 Nov 2026.
-// News reports date the launch 15 Nov 2026; no ministry or PIB page confirms the day.
+// PIB release 2336478 confirms the report was public by 15 Nov 2026.
 const NHA_2023_24: Source = {
   publisher: 'MoHFW and NHSRC',
   release: 'National Health Accounts Estimates for India 2023-24',
-  released: '2026-11',
+  released: '2026-11-15',
   url: 'https://nhsrcindia.org/sites/default/files/2026-11/NHA%20Report%202023-24.pdf',
 }
 
@@ -502,7 +501,7 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each health measure is made, which are surveys, where the series break, and what is missing.") has no field.
   about: {
     intro:
-      'All values are as published. We read every source on 17 November 2026. SRS and NFHS are sample surveys, so most figures on this page are survey estimates.',
+      'All values are as published. We last checked every source on 18 November 2026. SRS and NFHS are sample surveys, so most figures on this page are survey estimates.',
     publisher:
       'The Office of the Registrar General of India (ORGI) runs the Sample Registration System (SRS), a large sample survey of births and deaths. It publishes infant and maternal mortality and life tables from it. The International Institute for Population Sciences (IIPS) runs the National Family Health Survey (NFHS) for the Ministry of Health and Family Welfare (MoHFW). The National Health Systems Resource Centre (NHSRC) compiles the National Health Accounts for MoHFW.',
     frequency:

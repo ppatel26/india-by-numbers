@@ -633,7 +633,7 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each jobs figure is made, where it breaks, and what is missing.") has no field.
   about: {
     intro:
-      'All values are as published. We read every source on 17 November 2026. The monthly rates for June to October 2026 match Statement 3 of the MoSPI bulletin of 16 November 2026.',
+      'All values are as published. We last checked every source on 18 November 2026. The monthly rates for June to October 2026 match Statement 3 of the MoSPI bulletin of 16 November 2026.',
     publisher:
       'The National Statistics Office (NSO), Ministry of Statistics and Programme Implementation (MoSPI), runs the Periodic Labour Force Survey (PLFS), a household survey. Every figure on this page is a survey estimate from it.',
     frequency:

@@ -529,7 +529,7 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each election figure is made, where it breaks, and what is missing.") has no field.
   about: {
     intro:
-      "All values are as published, except those marked Derived. We read every source on 17 November 2026. ECI's reports are the source; we read archived copies of the original ECI pages.",
+      "All values are as published, except those marked Derived. We last checked every source on 18 November 2026. ECI's reports are the source; we read archived copies of the original ECI pages.",
     publisher:
       'The Election Commission of India (ECI) runs national and state elections and publishes electors, votes and results. MoSPI republishes the Lok Sabha series by sex in Women and Men in India 2025. The Lok Sabha Secretariat gives the count of women MPs.',
     frequency:

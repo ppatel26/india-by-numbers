@@ -116,7 +116,7 @@ All read on 17 Nov 2026. Raw files are under `raw/climate/` (not in the repo). N
 | S4 | IMD Pune, CRS | Rainfall statistics, monsoon season 2026 (image) | Not stated | Jun to Sep 2026 | https://imdpune.gov.in/seasons_previous/swmonsoon/swmonsoon26/rfstats.gif | c1887a78140b00442925bf104aa1c44690a158289e084d62981e54729f715708 |
 | S5 | IMD Pune, CRS | End of season report, SW monsoon 2026 (same text as S1, plus forecast verification) | Not stated | Jun to Sep 2026 | https://imdpune.gov.in/seasons_previous/swmonsoon/swmonsoon26/end_of_season_report.pdf | 14c8d348b85c68437f695e2a4dae74e3cd5305b07c028c1aeb7904f17a41f4bd |
 | S6 | IMD (MoES) | Statement on the Climate of India during 2025 (press release 4602) | 1 Jan 2026 | 2025; trend 1901 to 2025 | https://internal.imd.gov.in/press_release/20260101_pr_4602.pdf | 93f4e4f0767dbe7c4b1abe2b1eba255fd4b0a4d03e2ae3e7594be680d76347c9 |
-| S7 | CEA | Installed Capacity report, as on 31.10.2026 (PDF and Excel) | Monthly report; listed on 17 Nov 2026 | 31 Oct 2026 | https://cea.nic.in/api/dashboardReports/download-pdf/en/e555d23c-f02b-4c6a-8324-f6f8f02e32b2 and .../download-excel/en/e555d23c-f02b-4c6a-8324-f6f8f02e32b2 (list: https://cea.nic.in/reports/dashboardView?headingId=107&subHeadingId=1003&subSubHeadingId=10014&lang=en) | PDF 469533103e2656467468a92a0ed3f617d587a789cdb6f3bc2e56aea677258fcd; XLSX 7071b89cc58c9f90f181bb6b62ea530bb2e0c3310eda2383eea592acf9d4fc8e |
+| S7 | CEA | Installed Capacity report, as on 31.10.2026 (PDF and Excel) | Monthly report; listed on 17 Nov 2026 | 31 Oct 2026 | https://cea.nic.in/api/dashboardReports/download-pdf/en/30fb43c2-dbf0-49f4-be3d-95546a5fbe90 and .../download-excel/en/30fb43c2-dbf0-49f4-be3d-95546a5fbe90 (list: https://cea.nic.in/reports/dashboardView?headingId=107&subHeadingId=1003&subSubHeadingId=10014&lang=en) | PDF 469533103e2656467468a92a0ed3f617d587a789cdb6f3bc2e56aea677258fcd; XLSX 7071b89cc58c9f90f181bb6b62ea530bb2e0c3310eda2383eea592acf9d4fc8e |
 | S8 | CEA | Installed Capacity reports, March editions 2014 to 2026 | Monthly | 31 Mar of each year | Same list page; one download-pdf id per edition (see table below) | See table below |
 | S9 | MNRE | State-wise (Location based) installed capacity of Renewable Power as on 31.10.2026 | 12 Nov 2026 | 31 Oct 2026 | https://mnre.gov.in/static/uploads/2026/11/4519bf2a3faca1ef18d71b8a267812a6.pdf (found through https://mnre.gov.in/cms/wp-json/wp/v2/media/23331) | 1a47d414a775f7824906148f12ccec59c6c9568a92bf3bc2e3b160125244797f |
 
@@ -124,19 +124,19 @@ CEA March editions (S8). URL pattern: `https://cea.nic.in/api/dashboardReports/d
 
 | Edition | id | sha256 |
 | --- | --- | --- |
-| 2014-03 | ad188008-b0b5-478c-a020-9126c0356da0 | 264e6f33c872aa55cdea5d3237a401467fa203ee5829817cc05d3dfd207c9a69 |
-| 2015-03 | 8620778a-0562-4107-9f28-d04b67d9ea0e | 22acbed6a45d9ecf99b57d4bac507f17d640dd1467b5eed9c25664b5c3abe107 |
-| 2016-03 | 4d709c0f-6154-4ab8-a350-f773749d5d75 | 155038f50c9580289f5d5b32767f42850495c84fec04c7e13058a27919475fc7 |
-| 2017-03 | 7d2b2ef4-24e4-4003-8b62-768cd2a7f9bb | 6f19d7817cf441e278875018268234882c97bd7489019157144c4ea29b938a7d |
-| 2018-03 | f5145f09-0006-44b0-ae0b-7ceec4d03508 | a4d25ab9775bfd3b05ca3aef3774d52cb7d8acca0494351803aee11e7b742072 |
-| 2019-03 | 70bdb226-87b9-4d3f-891c-b215a36dcf95 | 0f97554ae1ce81fe040dab8b0d5dcfcae7decaaca6c4a38ba9f28b5c2bed2ec5 |
-| 2020-03 | 79b340bb-926e-4204-a02b-bd7bda898ad2 | 2c01b27acdb5076218362a02ddfa1a082ec392cdbdf97012731c17d5ed7620b1 |
-| 2021-03 | a678ed94-3dd0-4219-a7af-9439ec62aa2a | 9c48c9fff23350567532cf75a460ef2b94f085a16db899d80d5a4e1a71533c67 |
-| 2022-03 | e6c85dad-ddd8-4bcf-a4b4-0fd9d42c6e88 | eb81cb38a2d77b457f04461714cc4d9075570675b71ccc1da731f26f9e123049 |
-| 2023-03 | cdb0a97e-ae95-45c0-b372-b8e775129f6e | 5befa505c12631de2cfc2c9117746e5f45a9d45179f4d768598677491595cbff |
-| 2024-03 | d46f2691-9cf2-4a0a-ac53-817a4d5e9f29 | 92115eb6006f814bc27887c20739b39fc29041bd276635fa06f45a991afccc89 |
-| 2025-03 | 5617fcb8-e486-485e-97b2-8a1203b28d70 | 03f262fc775ec00740a465311a3542f75135eeba32e52f8ef20c3ae9be405446 |
-| 2026-03 | 0fd0398d-45fb-4108-8799-44f0325bbd79 | b5d9dbf33520d03bf1006d46cac713b1c5dd483efe6499bf5c4d60b6a79ea9f2 |
+| 2014-03 | 3d051401-772d-47aa-b037-6d51e5e6bbb4 | 264e6f33c872aa55cdea5d3237a401467fa203ee5829817cc05d3dfd207c9a69 |
+| 2015-03 | 105d3845-aa1c-45fd-a721-31cb9c1476b8 | 22acbed6a45d9ecf99b57d4bac507f17d640dd1467b5eed9c25664b5c3abe107 |
+| 2016-03 | 803a4ba1-757d-41a2-8b54-8f67b5765b9d | 155038f50c9580289f5d5b32767f42850495c84fec04c7e13058a27919475fc7 |
+| 2017-03 | 91384aaa-75c6-4d53-b8b8-ff1ab6165aeb | 6f19d7817cf441e278875018268234882c97bd7489019157144c4ea29b938a7d |
+| 2018-03 | a9c7dafe-4ec0-48a3-8a4c-ea14479b4151 | a4d25ab9775bfd3b05ca3aef3774d52cb7d8acca0494351803aee11e7b742072 |
+| 2019-03 | 817be473-e30e-4c25-9f9c-c234d2d3966d | 0f97554ae1ce81fe040dab8b0d5dcfcae7decaaca6c4a38ba9f28b5c2bed2ec5 |
+| 2020-03 | e0d59eec-a511-4374-a3a2-0797fb8de532 | 2c01b27acdb5076218362a02ddfa1a082ec392cdbdf97012731c17d5ed7620b1 |
+| 2021-03 | 25385ffd-cf77-4b8f-942d-231f85d4daa8 | 9c48c9fff23350567532cf75a460ef2b94f085a16db899d80d5a4e1a71533c67 |
+| 2022-03 | 6d2f22da-246c-41e3-8da9-c4542261c733 | eb81cb38a2d77b457f04461714cc4d9075570675b71ccc1da731f26f9e123049 |
+| 2023-03 | 613e6546-8490-4b20-8274-f13a904ca5a6 | 5befa505c12631de2cfc2c9117746e5f45a9d45179f4d768598677491595cbff |
+| 2024-03 | 768d25e8-7f39-4656-a9c8-2549263d0f1e | 92115eb6006f814bc27887c20739b39fc29041bd276635fa06f45a991afccc89 |
+| 2025-03 | 4a1262fb-1426-4846-b1d0-811f662b84e3 | 03f262fc775ec00740a465311a3542f75135eeba32e52f8ef20c3ae9be405446 |
+| 2026-03 | 36ba4e08-d75a-4d7b-bf9b-6dd02d2702b5 | b5d9dbf33520d03bf1006d46cac713b1c5dd483efe6499bf5c4d60b6a79ea9f2 |
 
 Files checked but not used for a chart:
 
@@ -169,3 +169,15 @@ Parsing scripts: `pipeline/climate/` (`build_rain.py`, `build_subdiv.py`, `parse
 ## Checks (18 Nov 2026)
 
 - Downloaded IMD's Special Daily Weather Report, 30 Sep 2026, Table 2, page 14. Compared rainfall, normal rainfall, departure and category in all 41 rows with the image. All 36 subdivisions, four homogeneous regions and the India row match. The subdivision counts also match the IMD season release (S1). SHA-256 of the image is `7feac617a8e9a401abd55345c21966665a17b3f2a6f7c97f85dc74fbfd603cad`. [IMD table](https://mausam.imd.gov.in/backend/assets/pdf_to_img_nwfc_monsoon/14_IMD%20SDWR%2030%20September%202026_6abce82b302f8.png) · [IMD season release](https://internal.imd.gov.in/press_release/20260930_pr_5361.pdf)
+
+## Publisher check on 18 Nov 2026
+
+The IMD monsoon and annual temperature files match their earlier checksums. The October monthly climate summary is still the latest, and the new IMD press notices concern weather forecasts. The CEA list still ends in October 2026. Its download addresses changed for October and the March reports. The October PDF and workbook and all 13 March PDFs match their earlier checksums. The MNRE October state capacity PDF also matches.
+
+| Release or file checked | Release date | URL | Fetched | SHA-256 |
+| --- | --- | --- | --- | --- |
+| IMD press release list | Live list | https://internal.imd.gov.in/pages/press_release_mausam.php | 18 Nov 2026 | `19a8772b773cc53425d08e58a162968d17eb872d879bcfa2485d2f1767c0e29b` |
+| IMD Pune monthly climate summary list | Latest period October 2026 | https://imdpune.gov.in/mcs.php | 18 Nov 2026 | `32bda92c6fc5942bc3f586eb5adf9bc3cb7a8c8a63fec659e3a88d914044886a` |
+| CEA installed capacity report list | Latest period 31 Oct 2026 | https://cea.nic.in/reports/dashboardView?headingId=107&subHeadingId=1003&subSubHeadingId=10014&lang=en | 18 Nov 2026 | `bd43ed25bacbacc2c3bd78101a191ecdf48603be33249056013eaa2360676948` |
+| MNRE state-wise renewable power capacity, October | 12 Nov 2026 | https://mnre.gov.in/static/uploads/2026/11/4519bf2a3faca1ef18d71b8a267812a6.pdf | 18 Nov 2026 | `1a47d414a775f7824906148f12ccec59c6c9568a92bf3bc2e3b160125244797f` |
+| MNRE media uploads from 17 to 18 Nov | Live list | https://mnre.gov.in/cms/wp-json/wp/v2/media?after=2026-11-16T00:00:00&before=2026-11-19T00:00:00&per_page=100 | 18 Nov 2026 | `69502ba9a77fd5dc75138dd5e6a99836cfc1d5d279b71d9dcad83c7fd15a2fde` |

@@ -109,15 +109,15 @@ const RBI_TABLE_133: Source = {
 
 const FBIL_ARCHIVE: Source = {
   publisher: 'RBI (FBIL)',
-  release: 'Reference Rate Archive, US dollar, working days 1 Jan to 17 Nov 2026',
+  release: 'Reference Rate Archive, US dollar, working days 1 Jan to 18 Nov 2026',
   released: '2026-11-17',
   url: 'https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx',
 }
 
 const RBI_HOME: Source = {
   publisher: 'RBI',
-  release: 'Home page, Current Rates: ₹93.5703 per US dollar at 1:00 pm (source FBIL)',
-  released: '2026-11-17',
+  release: 'Home page, Current Rates: ₹93.3558 per US dollar at 1:00 pm (source FBIL)',
+  released: '2026-11-18',
   url: 'https://www.rbi.org.in/',
 }
 
@@ -488,7 +488,7 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
-        { text: 'On 17 November 2026 a dollar cost ₹93.5703, up from ₹89.9792 on 1 January. The rupee was weakest on 20 May 2026, at ₹96.8441 per dollar.' },
+        { text: 'On 18 November 2026 a dollar cost ₹93.3558, up from ₹89.9792 on 1 January. The rupee was weakest on 20 May 2026, at ₹96.8441 per dollar.' },
         {
           chart: {
             kind: 'line',
@@ -511,12 +511,12 @@ const topic: Topic = {
             know: [
               'The FBIL reference rate is the benchmark rate for the rupee against the US dollar, set by Financial Benchmarks India each working day.',
               'A higher value means a weaker rupee: more rupees for one dollar.',
-              'The rate for 17 November 2026 is as at 1:00 pm, from the RBI home page.',
+              'The rate for 18 November 2026 is as at 1:00 pm, from the RBI home page.',
               'Weekends and market holidays have no rate.',
             ],
             processing: [
-              'Read the US dollar rate for each working day from 1 January to 17 November 2026 in the RBI Reference Rate Archive (source FBIL).',
-              'Check 17 November 2026 against the "Current Rates" box on the RBI home page.',
+              'Read the US dollar rate for each working day from 1 January to 18 November 2026 in the RBI Reference Rate Archive (source FBIL).',
+              'Check 18 November 2026 against the "Current Rates" box on the RBI home page.',
               "Keep the publisher's four decimals in the data. Days with no rate have no row.",
             ],
             nextRelease: '2026-11-18',
@@ -528,7 +528,7 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each economy figure is made, where it breaks, and what is missing.") has no field.
   about: {
     intro:
-      'All values are as published, except where a chart says derived. We read every source on 17 November 2026. The national accounts values match the GDP press note of 31 August 2026 and the IIP release of 28 October 2026.',
+      'All values are as published, except where a chart says derived. We last checked every source on 18 November 2026. The national accounts values match the GDP press note of 31 August 2026 and the IIP release of 28 October 2026.',
     publisher:
       'The National Statistics Office (NSO), MoSPI, publishes the national accounts (GDP, GVA by industry), the state accounts and the Index of Industrial Production (IIP). The Reserve Bank of India (RBI) publishes the exchange rate tables; the daily reference rate comes from Financial Benchmarks India (FBIL).',
     frequency:

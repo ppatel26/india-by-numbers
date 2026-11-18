@@ -141,3 +141,21 @@ Raw files are in `raw/education/`. The parsing script is `pipeline/build_educati
 - **Census 2011 literacy rates are derived.** They are literates divided by (total population minus population aged 0 to 6), from the PCA counts. Values are shown to 2 decimals, the same precision as published Census rates.
 - **Census 2027 is under way.** House-listing ran from April to September 2026. Population enumeration runs to early 2027. New literacy counts will replace the 2011 values.
 - **Licence.** None of the pages read states a reuse licence.
+
+## Publisher check on 18 Nov 2026
+
+PIB release 2282141 and both UDISE+ 2025-26 booklets are from 7 Jul 2026. The PIB release body matches the 17 Nov copy. The two booklet files also match their 17 Nov checksums.
+
+PIB agrees with the existing-structure data for total teachers (10,273,020), upper primary enrolment ratio (89.6%), dropout (3.6%), pupils per teacher (17), and schools with internet (67.4%). The CSVs still use the existing-structure booklet. Table 1 supplies the national trend, Tables 6.1, 6.13 and 4.12 supply the state ratios, and Tables 2.5, 8.6 and 8.8 supply school facilities. The internet rate also has PIB confirmation.
+
+PIB's secondary enrolment ratio (71.7%), dropout (7.0%) and pupils per teacher (21) agree with Table 1 of the NEP booklet for classes 9 to 12. The existing-structure values for classes 9 and 10 are 81.5%, 9.5% and 15. PIB gives 95.0% for schools with an electricity connection and 98.5% for schools with girls' toilets. The existing-structure facilities CSV uses the functional measures, 93.5% and 95.8% for India.
+
+The AISHE final report list still starts at 2023-24. The final report, GER time series, PLFS literacy report and Census Primary Census Abstract match the 17 Nov checksums.
+
+| Release or file checked | Release date | URL | Fetched | SHA-256 |
+| --- | --- | --- | --- | --- |
+| UDISE+ 2025-26 booklet, existing structure | 7 Jul 2026 | https://dashboard.udiseplus.gov.in/report2026/static/media/UDISE+2025_26_Booklet_existing.edd7cd16d934a10377ba.pdf | 18 Nov 2026 | `f20bfc4296acdb0f84a36f65587002c7899272ea67b6d91497a172a76982d9c4` |
+| UDISE+ 2025-26 booklet, NEP structure | 7 Jul 2026 | https://dashboard.udiseplus.gov.in/report2026/static/media/UDISE+2025_26_Booklet_nep.94ceae1e8c2210549d21.pdf | 18 Nov 2026 | `d212a8c04deb55689bae658e49c65cee4b7ed6190dfa604df5a09ae0702c408c` |
+| PIB PRID 2282141, English release | 7 Jul 2026, 6:10 pm IST | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2282141&reg=48&lang=1 | 18 Nov 2026 | `a1eeee49e575fb3e87f62427ae0663f056cb51e7a6fc39eb1a3f6f4a959c2011` |
+| AISHE Final Report 2023-24 | 8 Jul 2026 | https://cdnbbsr.s3waas.gov.in/s392049debbe566ca5782a3045cf300a3c/uploads/2026/07/202607131602421770.pdf | 18 Nov 2026 | `2f99b6cfd00c1131620be85f41ed3f57a433b81cb0ce0906dbf5ac11874b7fa9` |
+| AISHE final report list | Live list | https://aishe.gov.in/aishe-final-report/ | 18 Nov 2026 | `76891e08f340198d6f4eda5cb2cf4c06b982eb06bd611250f27c37a3d3c86636` |

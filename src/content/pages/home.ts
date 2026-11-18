@@ -73,15 +73,15 @@ const home: Home = {
   newest: {
     heading: 'Newest figures',
     intro: 'The latest headline number from each release, newest release first.',
-    checked: 'Checked 17 Nov 2026',
+    checked: 'Checked 18 Nov 2026',
     link: 'All releases',
     rows: [
       {
         topic: 'economy',
         chart: 'usd-inr-daily',
-        measure: 'Rupees per US dollar, 17 November 2026',
-        compare: 'Down from ₹94.12 on 16 November · FBIL reference rate',
-        released: 'Released 17 Nov 2026',
+        measure: 'Rupees per US dollar, 18 November 2026',
+        compare: 'Down from ₹93.57 on 17 November · FBIL reference rate',
+        released: 'Released 18 Nov 2026',
       },
       {
         topic: 'jobs',

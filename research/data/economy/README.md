@@ -1,6 +1,6 @@
 # Economy
 
-Data gathered on 17 Nov 2026 from MoSPI (NSO), the Reserve Bank of India (RBI), FBIL (through RBI) and PIB. All values are as published, except where a row says "derived". Read date for every source: 17 Nov 2026.
+Data gathered on 17 Nov 2026 from MoSPI (NSO), the Reserve Bank of India (RBI), FBIL (through RBI) and PIB. All values are as published, except where a row says "derived". Initial read on 17 Nov 2026. See the publisher check for the 18 Nov update.
 
 The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in` (`getNASData` for national accounts, `getIIPData` for industrial production). Its values match the GDP press note of 31 Aug 2026 and the IIP release of 28 Oct 2026.
 
@@ -88,10 +88,10 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in` (`getNASData` 
 
 - Type: line, daily.
 - Unit: rupees per US dollar (FBIL reference rate).
-- Geography: India. Period: 1 Jan 2026 to 17 Nov 2026 (working days).
+- Geography: India. Period: 1 Jan 2026 to 18 Nov 2026 (working days).
 - CSV: `usd-inr-daily-2026.csv`
-- Sentence: "On 17 November 2026 a dollar cost ₹93.5703, up from ₹89.9792 on 1 January. The rupee was weakest on 20 May 2026, at ₹96.8441 per dollar."
-- Source: RBI, Reference Rate Archive (USD), source FBIL; RBI home page, 17 Nov 2026 ("INR / 1 USD : 93.5703 ... As at 1.00pm of November 17, 2026 (Source : FBIL)").
+- Sentence: "On 18 November 2026 a dollar cost ₹93.3558, up from ₹89.9792 on 1 January. The rupee was weakest on 20 May 2026, at ₹96.8441 per dollar."
+- Source: FBIL reference rates from the RBI Reference Rate Archive. The RBI home page confirms the 18 Nov 2026 rate as of 1:00 pm IST.
 
 ## Headline figures
 
@@ -100,7 +100,7 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in` (`getNASData` 
 | Real GDP growth, latest quarter | 7.8% | Q1 2026-27 (April to June 2026) | MoSPI press note, 31 Aug 2026 |
 | Real GDP growth, latest year | 7.8% (Provisional Estimate) | 2025-26 | MoSPI eSankhyiki API, base 2022-23 |
 | Industrial production growth | 6.7% (quick estimate) | September 2026 | PIB/MoSPI release, 28 Oct 2026 |
-| Rupees per US dollar (FBIL reference rate) | 93.5703 | 17 Nov 2026, 1:00 pm | RBI home page and Reference Rate Archive |
+| Rupees per US dollar (FBIL reference rate) | 93.3558 | 18 Nov 2026, 1:00 pm IST | RBI home page and Reference Rate Archive |
 | Income per person, India (per capita NNI, base 2011-12, current prices) | ₹2,05,324 | 2024-25 | RBI Handbook 2025-26, Table 9 |
 | Highest and lowest state income per person | Sikkim ₹6,46,183; Bihar ₹69,211 | 2024-25 | MoSPI eSankhyiki API, base 2011-12 |
 
@@ -276,3 +276,21 @@ Saved under `raw/`. Files ending `.pN.json` are single API pages; `.all.json` me
 | `economy/rbi/refrate_usd_2025.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2025 to end of year or 17/11/2026) | `5a062616c3b972134bf4dc67baa4dcee71f2bba34165ceaca4b05b1a8800792f` |
 | `economy/rbi/refrate_usd_2026.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/01/2026 to end of year or 17/11/2026) | `1ec94498d7eadb2c32c6ac5f1b0653d0f15e80433333b7fa3b4bfccf5b00327b` |
 | `economy/rbi/refrate_usd_jul_nov2026.html` | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx (POST, USD, 01/07/2026 to 17/11/2026) | `f39a55547e670df3b091ecb0cf93dcb9368ea9853166b5be7f09a8e13bd000ff` |
+
+## Publisher check on 18 Nov 2026
+
+The RBI archive gives 93.5703 rupees per US dollar for 17 Nov and 93.3558 for 18 Nov, both from FBIL. The 17 Nov row was already in the CSV. The 18 Nov row is new and agrees with the RBI home page at 1:00 pm IST. All 212 CSV rows match the archive query for 1 Jan to 18 Nov 2026. FBIL's public feed showed rates through 11 Nov.
+
+The eSankhyiki national accounts, state accounts and industrial production records match the 17 Nov extracts. The MoSPI release list and calendar show no newer GDP or IIP release. RBI still lists the July 2026 Handbook. The workbook links served HTML to this check, so the archived workbooks remain the basis for those series.
+
+| Release or file checked | Release date | URL | Fetched | SHA-256 |
+| --- | --- | --- | --- | --- |
+| FBIL USD/INR reference rates for 17 and 18 Nov, RBI date-range result | 17 and 18 Nov 2026 | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx | 18 Nov 2026 | `1a91edf9b8a0feb061ec3af6e851bac143298ee5b07e18a2bc3286a92642afec` |
+| FBIL USD/INR reference rates for 1 Jan to 18 Nov, RBI date-range result | Daily through 18 Nov 2026 | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx | 18 Nov 2026 | `a1808ae6afe7f7edf5130f5f77e611084674039f0500e3f2f64366ff76269228` |
+| RBI Current Rates, source FBIL | 18 Nov 2026, 1:00 pm IST | https://www.rbi.org.in/ | 18 Nov 2026 | `2bc7550260255980fbc76339318b614f6b3a70a9056261ec044373eefc4f4b23` |
+| FBIL public reference rate feed | Latest rate in this response 11 Nov 2026 | https://www.fbil.org.in/wasdm/refrates/fetch?authenticated=false | 18 Nov 2026 | `fd5a6ae4bf71c899c587ad7f83c97ef05a65052eed2e0c0b047010ab404250ee` |
+| eSankhyiki quarterly GDP growth, page 1 | 31 Aug 2026 | https://api.mospi.gov.in/api/nas/getNASData?Format=JSON&base_year=2022-23&series=Current&frequency_code=Quarterly&indicator_code=22&limit=13&page=1 | 18 Nov 2026 | `d930ec6981626071e5c1ab912d24948ef55667c5d0e8597948294ca39318a7cf` |
+| eSankhyiki IIP, page 1 | 28 Oct 2026 | https://api.mospi.gov.in/api/iip/getIIPData?Format=JSON&base_year=2022-23&frequency=Monthly&category_code=4,12,2,13&limit=100&page=1 | 18 Nov 2026 | `95a6894bd472cd4b53186027764339dc6b7eed0855a4da5ef8f6abc8b6ce693f` |
+| MoSPI press release list, POST response | Live list | https://www.mospi.gov.in/api/latest-release/get-web-latest-release-list | 18 Nov 2026 | `7f3da46fedf29f0cb39396c7b2cc2896dab455ec01b10b6edccfc19649a80358` |
+| MoSPI Advance Release Calendar, 2026-27 | 6 Nov 2026 upload | https://www.mospi.gov.in/uploads/documents/releaseCalender/1793948871564-ARC%202026-27%20updated%20till%20October%202026.pdf | 18 Nov 2026 | `5640fc8661b3ac5a16e72f2621151503fd5bc59a6281b21187b7e18ff4cbd149` |
+| RBI Handbook list | 31 Jul 2026 edition | https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook%20of%20Statistics%20on%20Indian%20Economy | 18 Nov 2026 | `a6b0d174566dd5e0b3f5af0bcb60c60a0732364f6831cc6254a63e550db6e485` |

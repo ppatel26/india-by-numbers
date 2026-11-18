@@ -420,7 +420,7 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each climate figure is made, where it breaks, and what is missing.") has no field.
   about: {
     intro:
-      'All values are as published. Every figure on this page is a measurement or a count by IMD, CEA or MNRE, not a survey estimate. We read every source on 17 November 2026.',
+      'All values are as published. Every figure on this page is a measurement or a count by IMD, CEA or MNRE, not a survey estimate. We last checked every source on 18 November 2026.',
     publisher:
       'The India Meteorological Department (IMD), Ministry of Earth Sciences, measures rainfall and temperature for India, its four homogeneous regions and 36 meteorological subdivisions. The Central Electricity Authority (CEA) counts the installed power capacity of utilities. The Ministry of New and Renewable Energy (MNRE) publishes renewable capacity by state.',
     frequency:
