@@ -3,6 +3,8 @@
   "name": "india-by-numbers",
   "main": "worker/index.ts",
   "compatibility_date": "2026-11-18",
+  "workers_dev": false,
+  "preview_urls": false,
   "routes": [
     { "pattern": "indiabynumbers.org", "custom_domain": true },
     { "pattern": "www.indiabynumbers.org", "custom_domain": true }
