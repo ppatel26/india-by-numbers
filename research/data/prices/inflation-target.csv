@@ -1,0 +1,4 @@
+period_start,period_end,target,lower_tolerance,upper_tolerance,unit,measure
+2016-08-05,2021-03-31,4,2,6,percent,"CPI Combined, year on year"
+2021-04-01,2026-03-31,4,2,6,percent,"CPI Combined, year on year"
+2026-04-01,2031-03-31,4,2,6,percent,"CPI Combined, year on year"

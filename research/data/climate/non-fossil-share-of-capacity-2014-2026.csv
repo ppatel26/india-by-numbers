@@ -1,0 +1,57 @@
+geography,period,series,value,unit,note
+india,2014-03-31,non-fossil,32.31,% of installed capacity,"derived: (nuclear + hydro + RES) / total, from published MW"
+india,2014-03-31,renewable-incl-large-hydro,30.38,% of installed capacity,derived from published MW
+india,2014-03-31,wind-solar-other-re,14.08,% of installed capacity,derived from published MW
+india,2014-03-31,solar,1.06,% of installed capacity,derived from published MW
+india,2015-03-31,non-fossil,31.29,% of installed capacity,"derived: (nuclear + hydro + RES) / total, from published MW"
+india,2015-03-31,renewable-incl-large-hydro,29.18,% of installed capacity,derived from published MW
+india,2015-03-31,wind-solar-other-re,14.17,% of installed capacity,derived from published MW
+india,2015-03-31,solar,1.36,% of installed capacity,derived from published MW
+india,2016-03-31,non-fossil,30.96,% of installed capacity,"derived: (nuclear + hydro + RES) / total, from published MW"
+india,2016-03-31,renewable-incl-large-hydro,29.07,% of installed capacity,derived from published MW
+india,2016-03-31,wind-solar-other-re,15.05,% of installed capacity,derived from published MW
+india,2016-03-31,solar,2.22,% of installed capacity,derived from published MW
+india,2017-03-31,non-fossil,33.20,% of installed capacity,"derived: (nuclear + hydro + RES) / total, from published MW"
+india,2017-03-31,renewable-incl-large-hydro,31.12,% of installed capacity,derived from published MW
+india,2017-03-31,wind-solar-other-re,17.51,% of installed capacity,derived from published MW
+india,2017-03-31,solar,3.76,% of installed capacity,derived from published MW
+india,2018-03-31,non-fossil,35.20,% of installed capacity,"derived: (nuclear + hydro + RES) / total, from published MW"
+india,2018-03-31,renewable-incl-large-hydro,33.23,% of installed capacity,derived from published MW
+india,2018-03-31,wind-solar-other-re,20.06,% of installed capacity,derived from published MW
+india,2018-03-31,solar,6.29,% of installed capacity,derived from published MW
+india,2019-03-31,non-fossil,36.46,% of installed capacity,"derived: (nuclear + hydro + RES) / total, from published MW"
+india,2019-03-31,renewable-incl-large-hydro,34.55,% of installed capacity,derived from published MW
+india,2019-03-31,wind-solar-other-re,21.80,% of installed capacity,derived from published MW
+india,2019-03-31,solar,7.91,% of installed capacity,derived from published MW
+india,2020-03-31,non-fossil,37.69,% of installed capacity,"derived: (nuclear + hydro + RES) / total, from published MW"
+india,2020-03-31,renewable-incl-large-hydro,35.86,% of installed capacity,derived from published MW
+india,2020-03-31,wind-solar-other-re,23.51,% of installed capacity,derived from published MW
+india,2020-03-31,solar,9.36,% of installed capacity,derived from published MW
+india,2021-03-31,non-fossil,38.58,% of installed capacity,"derived: (nuclear + hydro + RES) / total, from published MW"
+india,2021-03-31,renewable-incl-large-hydro,36.80,% of installed capacity,derived from published MW
+india,2021-03-31,wind-solar-other-re,24.71,% of installed capacity,derived from published MW
+india,2021-03-31,solar,10.49,% of installed capacity,derived from published MW
+india,2022-03-31,non-fossil,40.90,% of installed capacity,"derived: (nuclear + hydro + RES) / total, from published MW"
+india,2022-03-31,renewable-incl-large-hydro,39.20,% of installed capacity,derived from published MW
+india,2022-03-31,wind-solar-other-re,27.51,% of installed capacity,derived from published MW
+india,2022-03-31,solar,13.52,% of installed capacity,derived from published MW
+india,2023-03-31,non-fossil,42.97,% of installed capacity,"derived: (nuclear + hydro + RES) / total, from published MW"
+india,2023-03-31,renewable-incl-large-hydro,41.34,% of installed capacity,derived from published MW
+india,2023-03-31,wind-solar-other-re,30.08,% of installed capacity,derived from published MW
+india,2023-03-31,solar,16.05,% of installed capacity,derived from published MW
+india,2024-03-31,non-fossil,44.97,% of installed capacity,"derived: (nuclear + hydro + RES) / total, from published MW"
+india,2024-03-31,renewable-incl-large-hydro,43.12,% of installed capacity,derived from published MW
+india,2024-03-31,wind-solar-other-re,32.50,% of installed capacity,derived from published MW
+india,2024-03-31,solar,18.51,% of installed capacity,derived from published MW
+india,2025-03-31,non-fossil,48.04,% of installed capacity,"derived: (nuclear + hydro + RES) / total, from published MW"
+india,2025-03-31,renewable-incl-large-hydro,46.32,% of installed capacity,derived from published MW
+india,2025-03-31,wind-solar-other-re,36.27,% of installed capacity,derived from published MW
+india,2025-03-31,solar,22.23,% of installed capacity,derived from published MW
+india,2026-03-31,non-fossil,53.21,% of installed capacity,"derived: (nuclear + hydro + RES) / total, from published MW"
+india,2026-03-31,renewable-incl-large-hydro,51.56,% of installed capacity,derived from published MW
+india,2026-03-31,wind-solar-other-re,41.91,% of installed capacity,derived from published MW
+india,2026-03-31,solar,28.21,% of installed capacity,derived from published MW
+india,2026-10-31,non-fossil,55.45,% of installed capacity,"derived: (nuclear + hydro + RES) / total, from published MW"
+india,2026-10-31,renewable-incl-large-hydro,53.89,% of installed capacity,derived from published MW
+india,2026-10-31,wind-solar-other-re,44.60,% of installed capacity,derived from published MW
+india,2026-10-31,solar,31.00,% of installed capacity,derived from published MW

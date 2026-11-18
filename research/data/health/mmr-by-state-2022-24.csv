@@ -1,0 +1,25 @@
+geography,period,value,unit,ci95_lower,ci95_upper,maternal_mortality_rate_per_100000_women_15_49,lifetime_risk_pct
+india,2022-24,87,"maternal deaths per 100,000 live births",78,95,5,0.18
+assam,2022-24,84,"maternal deaths per 100,000 live births",35,134,5,0.17
+bihar,2022-24,96,"maternal deaths per 100,000 live births",62,130,9,0.32
+jharkhand,2022-24,82,"maternal deaths per 100,000 live births",29,136,6,0.20
+madhya-pradesh,2022-24,135,"maternal deaths per 100,000 live births",93,176,11,0.38
+chhattisgarh,2022-24,124,"maternal deaths per 100,000 live births",48,199,9,0.31
+odisha,2022-24,124,"maternal deaths per 100,000 live births",74,175,7,0.24
+rajasthan,2022-24,87,"maternal deaths per 100,000 live births",51,124,7,0.25
+uttar-pradesh,2022-24,154,"maternal deaths per 100,000 live births",115,192,13,0.44
+uttarakhand,2022-24,99,"maternal deaths per 100,000 live births",52,146,6,0.21
+andhra-pradesh,2022-24,39,"maternal deaths per 100,000 live births",9,69,2,0.07
+telangana,2022-24,48,"maternal deaths per 100,000 live births",8,89,3,0.09
+karnataka,2022-24,73,"maternal deaths per 100,000 live births",37,108,3,0.12
+kerala,2022-24,24,"maternal deaths per 100,000 live births",0,50,1,0.04
+tamil-nadu,2022-24,25,"maternal deaths per 100,000 live births",3,46,1,0.04
+gujarat,2022-24,64,"maternal deaths per 100,000 live births",33,95,4,0.14
+haryana,2022-24,94,"maternal deaths per 100,000 live births",47,141,6,0.22
+maharashtra,2022-24,37,"maternal deaths per 100,000 live births",14,61,2,0.07
+punjab,2022-24,77,"maternal deaths per 100,000 live births",23,132,4,0.13
+west-bengal,2022-24,94,"maternal deaths per 100,000 live births",56,132,4,0.15
+other-states,2022-24,84,"maternal deaths per 100,000 live births",62,107,4,0.14
+eag-assam-subtotal,2022-24,116,"maternal deaths per 100,000 live births",101,131,9,0.30
+south-subtotal,2022-24,41,"maternal deaths per 100,000 live births",27,55,2,0.07
+other-subtotal,2022-24,75,"maternal deaths per 100,000 live births",62,88,4,0.13

@@ -1,0 +1,73 @@
+geography,period,lok_sabha,series,value,unit,notes
+india,1952,1st,total,61.2,percent of electors,Total calculated on valid votes polled; no sex-wise break-up
+india,1952,1st,men,,percent of electors,not published
+india,1952,1st,women,,percent of electors,not published
+india,1952,1st,gap_women_minus_men,,percentage points,not published
+india,1957,2nd,total,62.2,percent of electors,Total calculated on valid votes polled; no sex-wise break-up
+india,1957,2nd,men,,percent of electors,not published
+india,1957,2nd,women,,percent of electors,not published
+india,1957,2nd,gap_women_minus_men,,percentage points,not published
+india,1962,3rd,total,55.4,percent of electors,
+india,1962,3rd,men,62.0,percent of electors,
+india,1962,3rd,women,46.6,percent of electors,
+india,1962,3rd,gap_women_minus_men,-15.4,percentage points,Derived: women minus men
+india,1967,4th,total,61.3,percent of electors,
+india,1967,4th,men,66.7,percent of electors,
+india,1967,4th,women,55.5,percent of electors,
+india,1967,4th,gap_women_minus_men,-11.2,percentage points,Derived: women minus men
+india,1971,5th,total,55.3,percent of electors,No sex-wise break-up of turnout
+india,1971,5th,men,,percent of electors,not published
+india,1971,5th,women,,percent of electors,not published
+india,1971,5th,gap_women_minus_men,,percentage points,not published
+india,1977,6th,total,60.5,percent of electors,
+india,1977,6th,men,65.6,percent of electors,
+india,1977,6th,women,54.9,percent of electors,
+india,1977,6th,gap_women_minus_men,-10.7,percentage points,Derived: women minus men
+india,1980,7th,total,56.9,percent of electors,
+india,1980,7th,men,62.2,percent of electors,
+india,1980,7th,women,51.2,percent of electors,
+india,1980,7th,gap_women_minus_men,-11.0,percentage points,Derived: women minus men
+india,1984,8th,total,63.6,percent of electors,
+india,1984,8th,men,68.4,percent of electors,
+india,1984,8th,women,59.2,percent of electors,
+india,1984,8th,gap_women_minus_men,-9.2,percentage points,Derived: women minus men
+india,1989,9th,total,62.0,percent of electors,
+india,1989,9th,men,66.1,percent of electors,
+india,1989,9th,women,57.3,percent of electors,
+india,1989,9th,gap_women_minus_men,-8.8,percentage points,Derived: women minus men
+india,1991,10th,total,56.7,percent of electors,
+india,1991,10th,men,61.6,percent of electors,
+india,1991,10th,women,51.4,percent of electors,
+india,1991,10th,gap_women_minus_men,-10.2,percentage points,Derived: women minus men
+india,1996,11th,total,57.9,percent of electors,
+india,1996,11th,men,62.1,percent of electors,
+india,1996,11th,women,53.4,percent of electors,
+india,1996,11th,gap_women_minus_men,-8.7,percentage points,Derived: women minus men
+india,1998,12th,total,62.0,percent of electors,
+india,1998,12th,men,65.7,percent of electors,
+india,1998,12th,women,57.9,percent of electors,
+india,1998,12th,gap_women_minus_men,-7.8,percentage points,Derived: women minus men
+india,1999,13th,total,59.9,percent of electors,
+india,1999,13th,men,63.9,percent of electors,
+india,1999,13th,women,55.6,percent of electors,
+india,1999,13th,gap_women_minus_men,-8.3,percentage points,Derived: women minus men
+india,2004,14th,total,58.1,percent of electors,
+india,2004,14th,men,62.2,percent of electors,
+india,2004,14th,women,53.6,percent of electors,
+india,2004,14th,gap_women_minus_men,-8.6,percentage points,Derived: women minus men
+india,2009,15th,total,58.1,percent of electors,
+india,2009,15th,men,60.3,percent of electors,
+india,2009,15th,women,55.8,percent of electors,
+india,2009,15th,gap_women_minus_men,-4.5,percentage points,Derived: women minus men
+india,2014,16th,total,66.4,percent of electors,Total includes third gender (others)
+india,2014,16th,men,67.1,percent of electors,
+india,2014,16th,women,65.6,percent of electors,
+india,2014,16th,gap_women_minus_men,-1.5,percentage points,Derived: women minus men
+india,2019,17th,total,67.4,percent of electors,Total includes third gender (others)
+india,2019,17th,men,67.0,percent of electors,
+india,2019,17th,women,67.2,percent of electors,
+india,2019,17th,gap_women_minus_men,0.2,percentage points,Derived: women minus men
+india,2024,18th,total,65.7,percent of electors,Total includes third gender (others)
+india,2024,18th,men,65.6,percent of electors,
+india,2024,18th,women,65.8,percent of electors,
+india,2024,18th,gap_women_minus_men,0.2,percentage points,Derived: women minus men

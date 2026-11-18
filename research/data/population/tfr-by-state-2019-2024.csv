@@ -1,0 +1,415 @@
+geography,name,period,residence,value,unit
+india,India,2019,total,2.1,children per woman
+india,India,2020,total,2.0,children per woman
+india,India,2021,total,2.0,children per woman
+india,India,2022,total,2.0,children per woman
+india,India,2023,total,1.9,children per woman
+india,India,2024,total,1.9,children per woman
+india,India,2019,rural,2.3,children per woman
+india,India,2020,rural,2.2,children per woman
+india,India,2021,rural,2.2,children per woman
+india,India,2022,rural,2.2,children per woman
+india,India,2023,rural,2.1,children per woman
+india,India,2024,rural,2.1,children per woman
+india,India,2019,urban,1.7,children per woman
+india,India,2020,urban,1.6,children per woman
+india,India,2021,urban,1.6,children per woman
+india,India,2022,urban,1.6,children per woman
+india,India,2023,urban,1.5,children per woman
+india,India,2024,urban,1.5,children per woman
+andhra-pradesh,Andhra Pradesh,2019,total,1.5,children per woman
+andhra-pradesh,Andhra Pradesh,2020,total,1.5,children per woman
+andhra-pradesh,Andhra Pradesh,2021,total,1.5,children per woman
+andhra-pradesh,Andhra Pradesh,2022,total,1.6,children per woman
+andhra-pradesh,Andhra Pradesh,2023,total,1.5,children per woman
+andhra-pradesh,Andhra Pradesh,2024,total,1.4,children per woman
+andhra-pradesh,Andhra Pradesh,2019,rural,1.6,children per woman
+andhra-pradesh,Andhra Pradesh,2020,rural,1.5,children per woman
+andhra-pradesh,Andhra Pradesh,2021,rural,1.6,children per woman
+andhra-pradesh,Andhra Pradesh,2022,rural,1.6,children per woman
+andhra-pradesh,Andhra Pradesh,2023,rural,1.6,children per woman
+andhra-pradesh,Andhra Pradesh,2024,rural,1.5,children per woman
+andhra-pradesh,Andhra Pradesh,2019,urban,1.4,children per woman
+andhra-pradesh,Andhra Pradesh,2020,urban,1.4,children per woman
+andhra-pradesh,Andhra Pradesh,2021,urban,1.4,children per woman
+andhra-pradesh,Andhra Pradesh,2022,urban,1.4,children per woman
+andhra-pradesh,Andhra Pradesh,2023,urban,1.3,children per woman
+andhra-pradesh,Andhra Pradesh,2024,urban,1.3,children per woman
+assam,Assam,2019,total,2.2,children per woman
+assam,Assam,2020,total,2.1,children per woman
+assam,Assam,2021,total,2.1,children per woman
+assam,Assam,2022,total,2.1,children per woman
+assam,Assam,2023,total,2.0,children per woman
+assam,Assam,2024,total,1.9,children per woman
+assam,Assam,2019,rural,2.3,children per woman
+assam,Assam,2020,rural,2.2,children per woman
+assam,Assam,2021,rural,2.3,children per woman
+assam,Assam,2022,rural,2.2,children per woman
+assam,Assam,2023,rural,2.1,children per woman
+assam,Assam,2024,rural,2.1,children per woman
+assam,Assam,2019,urban,1.5,children per woman
+assam,Assam,2020,urban,1.4,children per woman
+assam,Assam,2021,urban,1.4,children per woman
+assam,Assam,2022,urban,1.4,children per woman
+assam,Assam,2023,urban,1.3,children per woman
+assam,Assam,2024,urban,1.3,children per woman
+bihar,Bihar,2019,total,3.1,children per woman
+bihar,Bihar,2020,total,3.0,children per woman
+bihar,Bihar,2021,total,3.0,children per woman
+bihar,Bihar,2022,total,3.0,children per woman
+bihar,Bihar,2023,total,2.8,children per woman
+bihar,Bihar,2024,total,2.9,children per woman
+bihar,Bihar,2019,rural,3.2,children per woman
+bihar,Bihar,2020,rural,3.1,children per woman
+bihar,Bihar,2021,rural,3.1,children per woman
+bihar,Bihar,2022,rural,3.1,children per woman
+bihar,Bihar,2023,rural,2.9,children per woman
+bihar,Bihar,2024,rural,3.0,children per woman
+bihar,Bihar,2019,urban,2.4,children per woman
+bihar,Bihar,2020,urban,2.3,children per woman
+bihar,Bihar,2021,urban,2.3,children per woman
+bihar,Bihar,2022,urban,2.4,children per woman
+bihar,Bihar,2023,urban,2.2,children per woman
+bihar,Bihar,2024,urban,2.3,children per woman
+chhattisgarh,Chhattisgarh,2019,total,2.3,children per woman
+chhattisgarh,Chhattisgarh,2020,total,2.2,children per woman
+chhattisgarh,Chhattisgarh,2021,total,2.2,children per woman
+chhattisgarh,Chhattisgarh,2022,total,2.3,children per woman
+chhattisgarh,Chhattisgarh,2023,total,2.2,children per woman
+chhattisgarh,Chhattisgarh,2024,total,2.2,children per woman
+chhattisgarh,Chhattisgarh,2019,rural,2.5,children per woman
+chhattisgarh,Chhattisgarh,2020,rural,2.4,children per woman
+chhattisgarh,Chhattisgarh,2021,rural,2.4,children per woman
+chhattisgarh,Chhattisgarh,2022,rural,2.5,children per woman
+chhattisgarh,Chhattisgarh,2023,rural,2.5,children per woman
+chhattisgarh,Chhattisgarh,2024,rural,2.4,children per woman
+chhattisgarh,Chhattisgarh,2019,urban,1.7,children per woman
+chhattisgarh,Chhattisgarh,2020,urban,1.7,children per woman
+chhattisgarh,Chhattisgarh,2021,urban,1.7,children per woman
+chhattisgarh,Chhattisgarh,2022,urban,1.7,children per woman
+chhattisgarh,Chhattisgarh,2023,urban,1.6,children per woman
+chhattisgarh,Chhattisgarh,2024,urban,1.6,children per woman
+delhi,Delhi,2019,total,1.5,children per woman
+delhi,Delhi,2020,total,1.4,children per woman
+delhi,Delhi,2021,total,1.4,children per woman
+delhi,Delhi,2022,total,1.3,children per woman
+delhi,Delhi,2023,total,1.2,children per woman
+delhi,Delhi,2024,total,1.2,children per woman
+delhi,Delhi,2019,rural,1.5,children per woman
+delhi,Delhi,2020,rural,1.4,children per woman
+delhi,Delhi,2021,rural,1.4,children per woman
+delhi,Delhi,2022,rural,1.4,children per woman
+delhi,Delhi,2023,rural,1.3,children per woman
+delhi,Delhi,2024,rural,1.3,children per woman
+delhi,Delhi,2019,urban,1.5,children per woman
+delhi,Delhi,2020,urban,1.4,children per woman
+delhi,Delhi,2021,urban,1.4,children per woman
+delhi,Delhi,2022,urban,1.3,children per woman
+delhi,Delhi,2023,urban,1.2,children per woman
+delhi,Delhi,2024,urban,1.2,children per woman
+gujarat,Gujarat,2019,total,2.1,children per woman
+gujarat,Gujarat,2020,total,2.0,children per woman
+gujarat,Gujarat,2021,total,2.0,children per woman
+gujarat,Gujarat,2022,total,1.9,children per woman
+gujarat,Gujarat,2023,total,1.8,children per woman
+gujarat,Gujarat,2024,total,1.7,children per woman
+gujarat,Gujarat,2019,rural,2.3,children per woman
+gujarat,Gujarat,2020,rural,2.2,children per woman
+gujarat,Gujarat,2021,rural,2.2,children per woman
+gujarat,Gujarat,2022,rural,2.2,children per woman
+gujarat,Gujarat,2023,rural,2.1,children per woman
+gujarat,Gujarat,2024,rural,1.9,children per woman
+gujarat,Gujarat,2019,urban,1.8,children per woman
+gujarat,Gujarat,2020,urban,1.7,children per woman
+gujarat,Gujarat,2021,urban,1.7,children per woman
+gujarat,Gujarat,2022,urban,1.7,children per woman
+gujarat,Gujarat,2023,urban,1.6,children per woman
+gujarat,Gujarat,2024,urban,1.5,children per woman
+haryana,Haryana,2019,total,2.1,children per woman
+haryana,Haryana,2020,total,2.0,children per woman
+haryana,Haryana,2021,total,2.0,children per woman
+haryana,Haryana,2022,total,2.0,children per woman
+haryana,Haryana,2023,total,1.9,children per woman
+haryana,Haryana,2024,total,1.9,children per woman
+haryana,Haryana,2019,rural,2.3,children per woman
+haryana,Haryana,2020,rural,2.2,children per woman
+haryana,Haryana,2021,rural,2.1,children per woman
+haryana,Haryana,2022,rural,2.1,children per woman
+haryana,Haryana,2023,rural,2.1,children per woman
+haryana,Haryana,2024,rural,2.0,children per woman
+haryana,Haryana,2019,urban,1.9,children per woman
+haryana,Haryana,2020,urban,1.7,children per woman
+haryana,Haryana,2021,urban,1.8,children per woman
+haryana,Haryana,2022,urban,1.8,children per woman
+haryana,Haryana,2023,urban,1.7,children per woman
+haryana,Haryana,2024,urban,1.6,children per woman
+himachal-pradesh,Himachal Pradesh,2019,total,1.6,children per woman
+himachal-pradesh,Himachal Pradesh,2020,total,1.5,children per woman
+himachal-pradesh,Himachal Pradesh,2021,total,1.6,children per woman
+himachal-pradesh,Himachal Pradesh,2022,total,1.5,children per woman
+himachal-pradesh,Himachal Pradesh,2023,total,1.6,children per woman
+himachal-pradesh,Himachal Pradesh,2024,total,1.5,children per woman
+himachal-pradesh,Himachal Pradesh,2019,rural,1.6,children per woman
+himachal-pradesh,Himachal Pradesh,2020,rural,1.5,children per woman
+himachal-pradesh,Himachal Pradesh,2021,rural,1.6,children per woman
+himachal-pradesh,Himachal Pradesh,2022,rural,1.6,children per woman
+himachal-pradesh,Himachal Pradesh,2023,rural,1.6,children per woman
+himachal-pradesh,Himachal Pradesh,2024,rural,1.5,children per woman
+himachal-pradesh,Himachal Pradesh,2019,urban,1.1,children per woman
+himachal-pradesh,Himachal Pradesh,2020,urban,1.1,children per woman
+himachal-pradesh,Himachal Pradesh,2021,urban,1.1,children per woman
+himachal-pradesh,Himachal Pradesh,2022,urban,1.1,children per woman
+himachal-pradesh,Himachal Pradesh,2023,urban,1.1,children per woman
+himachal-pradesh,Himachal Pradesh,2024,urban,1.0,children per woman
+jammu-kashmir,Jammu and Kashmir,2019,total,1.5,children per woman
+jammu-kashmir,Jammu and Kashmir,2020,total,1.5,children per woman
+jammu-kashmir,Jammu and Kashmir,2021,total,1.5,children per woman
+jammu-kashmir,Jammu and Kashmir,2022,total,1.6,children per woman
+jammu-kashmir,Jammu and Kashmir,2023,total,1.5,children per woman
+jammu-kashmir,Jammu and Kashmir,2024,total,1.4,children per woman
+jammu-kashmir,Jammu and Kashmir,2019,rural,1.7,children per woman
+jammu-kashmir,Jammu and Kashmir,2020,rural,1.6,children per woman
+jammu-kashmir,Jammu and Kashmir,2021,rural,1.7,children per woman
+jammu-kashmir,Jammu and Kashmir,2022,rural,1.7,children per woman
+jammu-kashmir,Jammu and Kashmir,2023,rural,1.6,children per woman
+jammu-kashmir,Jammu and Kashmir,2024,rural,1.5,children per woman
+jammu-kashmir,Jammu and Kashmir,2019,urban,1.1,children per woman
+jammu-kashmir,Jammu and Kashmir,2020,urban,1.1,children per woman
+jammu-kashmir,Jammu and Kashmir,2021,urban,1.1,children per woman
+jammu-kashmir,Jammu and Kashmir,2022,urban,1.3,children per woman
+jammu-kashmir,Jammu and Kashmir,2023,urban,1.2,children per woman
+jammu-kashmir,Jammu and Kashmir,2024,urban,1.2,children per woman
+jharkhand,Jharkhand,2019,total,2.4,children per woman
+jharkhand,Jharkhand,2020,total,2.4,children per woman
+jharkhand,Jharkhand,2021,total,2.3,children per woman
+jharkhand,Jharkhand,2022,total,2.2,children per woman
+jharkhand,Jharkhand,2023,total,2.1,children per woman
+jharkhand,Jharkhand,2024,total,2.2,children per woman
+jharkhand,Jharkhand,2019,rural,2.6,children per woman
+jharkhand,Jharkhand,2020,rural,2.6,children per woman
+jharkhand,Jharkhand,2021,rural,2.5,children per woman
+jharkhand,Jharkhand,2022,rural,2.4,children per woman
+jharkhand,Jharkhand,2023,rural,2.3,children per woman
+jharkhand,Jharkhand,2024,rural,2.3,children per woman
+jharkhand,Jharkhand,2019,urban,1.8,children per woman
+jharkhand,Jharkhand,2020,urban,1.8,children per woman
+jharkhand,Jharkhand,2021,urban,1.8,children per woman
+jharkhand,Jharkhand,2022,urban,1.8,children per woman
+jharkhand,Jharkhand,2023,urban,1.7,children per woman
+jharkhand,Jharkhand,2024,urban,1.7,children per woman
+karnataka,Karnataka,2019,total,1.7,children per woman
+karnataka,Karnataka,2020,total,1.6,children per woman
+karnataka,Karnataka,2021,total,1.6,children per woman
+karnataka,Karnataka,2022,total,1.6,children per woman
+karnataka,Karnataka,2023,total,1.5,children per woman
+karnataka,Karnataka,2024,total,1.5,children per woman
+karnataka,Karnataka,2019,rural,1.7,children per woman
+karnataka,Karnataka,2020,rural,1.7,children per woman
+karnataka,Karnataka,2021,rural,1.7,children per woman
+karnataka,Karnataka,2022,rural,1.7,children per woman
+karnataka,Karnataka,2023,rural,1.7,children per woman
+karnataka,Karnataka,2024,rural,1.6,children per woman
+karnataka,Karnataka,2019,urban,1.5,children per woman
+karnataka,Karnataka,2020,urban,1.4,children per woman
+karnataka,Karnataka,2021,urban,1.5,children per woman
+karnataka,Karnataka,2022,urban,1.5,children per woman
+karnataka,Karnataka,2023,urban,1.4,children per woman
+karnataka,Karnataka,2024,urban,1.3,children per woman
+kerala,Kerala,2019,total,1.6,children per woman
+kerala,Kerala,2020,total,1.5,children per woman
+kerala,Kerala,2021,total,1.5,children per woman
+kerala,Kerala,2022,total,1.5,children per woman
+kerala,Kerala,2023,total,1.5,children per woman
+kerala,Kerala,2024,total,1.3,children per woman
+kerala,Kerala,2019,rural,1.6,children per woman
+kerala,Kerala,2020,rural,1.5,children per woman
+kerala,Kerala,2021,rural,1.5,children per woman
+kerala,Kerala,2022,rural,1.5,children per woman
+kerala,Kerala,2023,rural,1.5,children per woman
+kerala,Kerala,2024,rural,1.3,children per woman
+kerala,Kerala,2019,urban,1.6,children per woman
+kerala,Kerala,2020,urban,1.5,children per woman
+kerala,Kerala,2021,urban,1.6,children per woman
+kerala,Kerala,2022,urban,1.5,children per woman
+kerala,Kerala,2023,urban,1.5,children per woman
+kerala,Kerala,2024,urban,1.4,children per woman
+madhya-pradesh,Madhya Pradesh,2019,total,2.7,children per woman
+madhya-pradesh,Madhya Pradesh,2020,total,2.6,children per woman
+madhya-pradesh,Madhya Pradesh,2021,total,2.6,children per woman
+madhya-pradesh,Madhya Pradesh,2022,total,2.5,children per woman
+madhya-pradesh,Madhya Pradesh,2023,total,2.4,children per woman
+madhya-pradesh,Madhya Pradesh,2024,total,2.4,children per woman
+madhya-pradesh,Madhya Pradesh,2019,rural,2.9,children per woman
+madhya-pradesh,Madhya Pradesh,2020,rural,2.8,children per woman
+madhya-pradesh,Madhya Pradesh,2021,rural,2.8,children per woman
+madhya-pradesh,Madhya Pradesh,2022,rural,2.7,children per woman
+madhya-pradesh,Madhya Pradesh,2023,rural,2.6,children per woman
+madhya-pradesh,Madhya Pradesh,2024,rural,2.6,children per woman
+madhya-pradesh,Madhya Pradesh,2019,urban,2.0,children per woman
+madhya-pradesh,Madhya Pradesh,2020,urban,1.9,children per woman
+madhya-pradesh,Madhya Pradesh,2021,urban,1.9,children per woman
+madhya-pradesh,Madhya Pradesh,2022,urban,1.9,children per woman
+madhya-pradesh,Madhya Pradesh,2023,urban,1.8,children per woman
+madhya-pradesh,Madhya Pradesh,2024,urban,1.8,children per woman
+maharashtra,Maharashtra,2019,total,1.6,children per woman
+maharashtra,Maharashtra,2020,total,1.5,children per woman
+maharashtra,Maharashtra,2021,total,1.5,children per woman
+maharashtra,Maharashtra,2022,total,1.5,children per woman
+maharashtra,Maharashtra,2023,total,1.4,children per woman
+maharashtra,Maharashtra,2024,total,1.4,children per woman
+maharashtra,Maharashtra,2019,rural,1.7,children per woman
+maharashtra,Maharashtra,2020,rural,1.6,children per woman
+maharashtra,Maharashtra,2021,rural,1.6,children per woman
+maharashtra,Maharashtra,2022,rural,1.7,children per woman
+maharashtra,Maharashtra,2023,rural,1.6,children per woman
+maharashtra,Maharashtra,2024,rural,1.5,children per woman
+maharashtra,Maharashtra,2019,urban,1.5,children per woman
+maharashtra,Maharashtra,2020,urban,1.4,children per woman
+maharashtra,Maharashtra,2021,urban,1.4,children per woman
+maharashtra,Maharashtra,2022,urban,1.4,children per woman
+maharashtra,Maharashtra,2023,urban,1.3,children per woman
+maharashtra,Maharashtra,2024,urban,1.3,children per woman
+odisha,Odisha,2019,total,1.8,children per woman
+odisha,Odisha,2020,total,1.8,children per woman
+odisha,Odisha,2021,total,1.8,children per woman
+odisha,Odisha,2022,total,1.7,children per woman
+odisha,Odisha,2023,total,1.7,children per woman
+odisha,Odisha,2024,total,1.6,children per woman
+odisha,Odisha,2019,rural,1.9,children per woman
+odisha,Odisha,2020,rural,1.9,children per woman
+odisha,Odisha,2021,rural,1.9,children per woman
+odisha,Odisha,2022,rural,1.8,children per woman
+odisha,Odisha,2023,rural,1.8,children per woman
+odisha,Odisha,2024,rural,1.7,children per woman
+odisha,Odisha,2019,urban,1.3,children per woman
+odisha,Odisha,2020,urban,1.2,children per woman
+odisha,Odisha,2021,urban,1.2,children per woman
+odisha,Odisha,2022,urban,1.2,children per woman
+odisha,Odisha,2023,urban,1.2,children per woman
+odisha,Odisha,2024,urban,1.2,children per woman
+punjab,Punjab,2019,total,1.5,children per woman
+punjab,Punjab,2020,total,1.5,children per woman
+punjab,Punjab,2021,total,1.5,children per woman
+punjab,Punjab,2022,total,1.5,children per woman
+punjab,Punjab,2023,total,1.5,children per woman
+punjab,Punjab,2024,total,1.4,children per woman
+punjab,Punjab,2019,rural,1.6,children per woman
+punjab,Punjab,2020,rural,1.6,children per woman
+punjab,Punjab,2021,rural,1.6,children per woman
+punjab,Punjab,2022,rural,1.6,children per woman
+punjab,Punjab,2023,rural,1.5,children per woman
+punjab,Punjab,2024,rural,1.5,children per woman
+punjab,Punjab,2019,urban,1.4,children per woman
+punjab,Punjab,2020,urban,1.4,children per woman
+punjab,Punjab,2021,urban,1.4,children per woman
+punjab,Punjab,2022,urban,1.4,children per woman
+punjab,Punjab,2023,urban,1.4,children per woman
+punjab,Punjab,2024,urban,1.4,children per woman
+rajasthan,Rajasthan,2019,total,2.5,children per woman
+rajasthan,Rajasthan,2020,total,2.4,children per woman
+rajasthan,Rajasthan,2021,total,2.4,children per woman
+rajasthan,Rajasthan,2022,total,2.5,children per woman
+rajasthan,Rajasthan,2023,total,2.3,children per woman
+rajasthan,Rajasthan,2024,total,2.3,children per woman
+rajasthan,Rajasthan,2019,rural,2.6,children per woman
+rajasthan,Rajasthan,2020,rural,2.5,children per woman
+rajasthan,Rajasthan,2021,rural,2.6,children per woman
+rajasthan,Rajasthan,2022,rural,2.6,children per woman
+rajasthan,Rajasthan,2023,rural,2.4,children per woman
+rajasthan,Rajasthan,2024,rural,2.4,children per woman
+rajasthan,Rajasthan,2019,urban,2.1,children per woman
+rajasthan,Rajasthan,2020,urban,2.0,children per woman
+rajasthan,Rajasthan,2021,urban,2.1,children per woman
+rajasthan,Rajasthan,2022,urban,2.1,children per woman
+rajasthan,Rajasthan,2023,urban,2.1,children per woman
+rajasthan,Rajasthan,2024,urban,2.1,children per woman
+tamil-nadu,Tamil Nadu,2019,total,1.5,children per woman
+tamil-nadu,Tamil Nadu,2020,total,1.4,children per woman
+tamil-nadu,Tamil Nadu,2021,total,1.5,children per woman
+tamil-nadu,Tamil Nadu,2022,total,1.3,children per woman
+tamil-nadu,Tamil Nadu,2023,total,1.3,children per woman
+tamil-nadu,Tamil Nadu,2024,total,1.3,children per woman
+tamil-nadu,Tamil Nadu,2019,rural,1.5,children per woman
+tamil-nadu,Tamil Nadu,2020,rural,1.4,children per woman
+tamil-nadu,Tamil Nadu,2021,rural,1.4,children per woman
+tamil-nadu,Tamil Nadu,2022,rural,1.3,children per woman
+tamil-nadu,Tamil Nadu,2023,rural,1.3,children per woman
+tamil-nadu,Tamil Nadu,2024,rural,1.3,children per woman
+tamil-nadu,Tamil Nadu,2019,urban,1.5,children per woman
+tamil-nadu,Tamil Nadu,2020,urban,1.5,children per woman
+tamil-nadu,Tamil Nadu,2021,urban,1.5,children per woman
+tamil-nadu,Tamil Nadu,2022,urban,1.3,children per woman
+tamil-nadu,Tamil Nadu,2023,urban,1.3,children per woman
+tamil-nadu,Tamil Nadu,2024,urban,1.3,children per woman
+telangana,Telangana,2019,total,1.6,children per woman
+telangana,Telangana,2020,total,1.5,children per woman
+telangana,Telangana,2021,total,1.6,children per woman
+telangana,Telangana,2022,total,1.6,children per woman
+telangana,Telangana,2023,total,1.5,children per woman
+telangana,Telangana,2024,total,1.5,children per woman
+telangana,Telangana,2019,rural,1.7,children per woman
+telangana,Telangana,2020,rural,1.6,children per woman
+telangana,Telangana,2021,rural,1.6,children per woman
+telangana,Telangana,2022,rural,1.7,children per woman
+telangana,Telangana,2023,rural,1.6,children per woman
+telangana,Telangana,2024,rural,1.6,children per woman
+telangana,Telangana,2019,urban,1.5,children per woman
+telangana,Telangana,2020,urban,1.5,children per woman
+telangana,Telangana,2021,urban,1.5,children per woman
+telangana,Telangana,2022,urban,1.5,children per woman
+telangana,Telangana,2023,urban,1.5,children per woman
+telangana,Telangana,2024,urban,1.4,children per woman
+uttar-pradesh,Uttar Pradesh,2019,total,2.9,children per woman
+uttar-pradesh,Uttar Pradesh,2020,total,2.7,children per woman
+uttar-pradesh,Uttar Pradesh,2021,total,2.7,children per woman
+uttar-pradesh,Uttar Pradesh,2022,total,2.6,children per woman
+uttar-pradesh,Uttar Pradesh,2023,total,2.6,children per woman
+uttar-pradesh,Uttar Pradesh,2024,total,2.6,children per woman
+uttar-pradesh,Uttar Pradesh,2019,rural,3.1,children per woman
+uttar-pradesh,Uttar Pradesh,2020,rural,2.9,children per woman
+uttar-pradesh,Uttar Pradesh,2021,rural,2.9,children per woman
+uttar-pradesh,Uttar Pradesh,2022,rural,2.8,children per woman
+uttar-pradesh,Uttar Pradesh,2023,rural,2.7,children per woman
+uttar-pradesh,Uttar Pradesh,2024,rural,2.7,children per woman
+uttar-pradesh,Uttar Pradesh,2019,urban,2.4,children per woman
+uttar-pradesh,Uttar Pradesh,2020,urban,2.3,children per woman
+uttar-pradesh,Uttar Pradesh,2021,urban,2.3,children per woman
+uttar-pradesh,Uttar Pradesh,2022,urban,2.2,children per woman
+uttar-pradesh,Uttar Pradesh,2023,urban,2.2,children per woman
+uttar-pradesh,Uttar Pradesh,2024,urban,2.1,children per woman
+uttarakhand,Uttarakhand,2019,total,1.9,children per woman
+uttarakhand,Uttarakhand,2020,total,1.8,children per woman
+uttarakhand,Uttarakhand,2021,total,1.8,children per woman
+uttarakhand,Uttarakhand,2022,total,1.8,children per woman
+uttarakhand,Uttarakhand,2023,total,1.7,children per woman
+uttarakhand,Uttarakhand,2024,total,1.7,children per woman
+uttarakhand,Uttarakhand,2019,rural,1.9,children per woman
+uttarakhand,Uttarakhand,2020,rural,1.8,children per woman
+uttarakhand,Uttarakhand,2021,rural,1.8,children per woman
+uttarakhand,Uttarakhand,2022,rural,1.9,children per woman
+uttarakhand,Uttarakhand,2023,rural,1.8,children per woman
+uttarakhand,Uttarakhand,2024,rural,1.8,children per woman
+uttarakhand,Uttarakhand,2019,urban,1.8,children per woman
+uttarakhand,Uttarakhand,2020,urban,1.7,children per woman
+uttarakhand,Uttarakhand,2021,urban,1.7,children per woman
+uttarakhand,Uttarakhand,2022,urban,1.6,children per woman
+uttarakhand,Uttarakhand,2023,urban,1.6,children per woman
+uttarakhand,Uttarakhand,2024,urban,1.5,children per woman
+west-bengal,West Bengal,2019,total,1.5,children per woman
+west-bengal,West Bengal,2020,total,1.4,children per woman
+west-bengal,West Bengal,2021,total,1.4,children per woman
+west-bengal,West Bengal,2022,total,1.4,children per woman
+west-bengal,West Bengal,2023,total,1.3,children per woman
+west-bengal,West Bengal,2024,total,1.3,children per woman
+west-bengal,West Bengal,2019,rural,1.6,children per woman
+west-bengal,West Bengal,2020,rural,1.5,children per woman
+west-bengal,West Bengal,2021,rural,1.5,children per woman
+west-bengal,West Bengal,2022,rural,1.5,children per woman
+west-bengal,West Bengal,2023,rural,1.4,children per woman
+west-bengal,West Bengal,2024,rural,1.4,children per woman
+west-bengal,West Bengal,2019,urban,1.2,children per woman
+west-bengal,West Bengal,2020,urban,1.1,children per woman
+west-bengal,West Bengal,2021,urban,1.2,children per woman
+west-bengal,West Bengal,2022,urban,1.2,children per woman
+west-bengal,West Bengal,2023,urban,1.1,children per woman
+west-bengal,West Bengal,2024,urban,1.1,children per woman

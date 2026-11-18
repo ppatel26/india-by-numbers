@@ -1,0 +1,24 @@
+geography,name,period,poll_dates,series,value,unit,status,source_id,notes
+delhi,Delhi,2025,2025-02-05,turnout_total,,percent of electors,not found,,No ECI or PIB turnout release reached. 60.54% is reported by All India Radio citing ECI (unverified).
+delhi,Delhi,2025,2025-02-05,electors_total,15537634,electors,final roll 06.01.2025,S9,"Includes 12,776 service voters; 1,55,24,858 general electors"
+bihar,Bihar,2025,two phases; phase II 2025-11-11,turnout_total,67.13,percent of electors,provisional,S7,ECI says final figures come through the Index Card
+bihar,Bihar,2025,two phases; phase II 2025-11-11,turnout_men,62.98,percent of electors,provisional,S7,
+bihar,Bihar,2025,two phases; phase II 2025-11-11,turnout_women,71.78,percent of electors,provisional,S7,
+bihar,Bihar,2025,two phases; phase II 2025-11-11,electors_total,74526858,electors,after Special Intensive Revision 2025,S7,
+assam,Assam,2026,2026-04-09,turnout_total,85.38,percent of electors,provisional poll-day,S10,Excludes service voters and postal ballots; data from 3469 polling stations (all three states) not yet updated
+assam,Assam,2026,2026-04-09,turnout_men,84.80,percent of electors,provisional poll-day,S10,
+assam,Assam,2026,2026-04-09,turnout_women,85.96,percent of electors,provisional poll-day,S10,
+kerala,Kerala,2026,2026-04-09,turnout_total,78.03,percent of electors,provisional poll-day,S10,Excludes service voters and postal ballots
+kerala,Kerala,2026,2026-04-09,turnout_men,75.01,percent of electors,provisional poll-day,S10,
+kerala,Kerala,2026,2026-04-09,turnout_women,80.86,percent of electors,provisional poll-day,S10,
+puducherry,Puducherry,2026,2026-04-09,turnout_total,89.83,percent of electors,provisional poll-day,S10,Excludes service voters and postal ballots
+puducherry,Puducherry,2026,2026-04-09,turnout_men,88.09,percent of electors,provisional poll-day,S10,
+puducherry,Puducherry,2026,2026-04-09,turnout_women,91.33,percent of electors,provisional poll-day,S10,
+tamil-nadu,Tamil Nadu,2026,2026-04-23,turnout_total,84.69,percent of electors,provisional poll-day,S11,Excludes service voters and postal ballots; data from 6411 polling stations not yet updated
+tamil-nadu,Tamil Nadu,2026,2026-04-23,turnout_men,83.57,percent of electors,provisional poll-day,S11,
+tamil-nadu,Tamil Nadu,2026,2026-04-23,turnout_women,85.76,percent of electors,provisional poll-day,S11,
+tamil-nadu,Tamil Nadu,2026,2026-04-23,votes_counted_share,85.91,percent of electors,derived from final statistical report,S13,"Derived: 49,324,125 valid votes plus NOTA (incl. postal) / 57,411,793 electors, summed over 234 ACs in ECI Report 10. Not the official turnout (excludes rejected votes)."
+tamil-nadu,Tamil Nadu,2026,2026-04-23,electors_total,57411793,electors,final statistical report,S13,Sum of AC electors in ECI Report 10
+west-bengal,West Bengal,2026,2026-04-23;2026-04-29,turnout_total,92.47,percent of electors,provisional poll-day,S12,Two phases combined; excludes service voters and postal ballots; data from 5343 polling stations not yet updated
+west-bengal,West Bengal,2026,2026-04-23;2026-04-29,turnout_men,91.74,percent of electors,provisional poll-day,S12,
+west-bengal,West Bengal,2026,2026-04-23;2026-04-29,turnout_women,93.24,percent of electors,provisional poll-day,S12,

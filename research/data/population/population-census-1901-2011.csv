@@ -1,0 +1,13 @@
+geography,period,population,change_since_previous_census,change_since_previous_census_pct,males,females,unit,note
+india,1901,238396327,,,120791301,117358672,persons,Sex split excludes Puducherry for this year (A-02 footnote $)
+india,1911,252093390,13697063,5.75,128385368,123708022,persons,
+india,1921,251321213,-772177,-0.31,128546225,122774988,persons,
+india,1931,278977238,27656025,11.00,142929689,135788921,persons,Sex split excludes Puducherry for this year (A-02 footnote $)
+india,1941,318660580,39683342,14.22,163685302,154690267,persons,Sex split excludes Puducherry for this year (A-02 footnote $)
+india,1951,361088090,42420485,13.31,185528462,175559628,persons,Nagaland Tuensang and Mon not comparable for 1941-61 (A-02 footnote @)
+india,1961,439234771,77682873,21.51,226293201,212941570,persons,Nagaland Tuensang and Mon not comparable for 1941-61 (A-02 footnote @)
+india,1971,548159652,108924881,24.80,284049276,264110376,persons,
+india,1981,683329097,135169445,24.66,353374460,329954637,persons,"Assam 1981 interpolated, no census held (A-02 footnote #)"
+india,1991,846421039,163091942,23.87,439358440,407062599,persons,"Jammu and Kashmir 1991 interpolated, no census held (A-02 footnote +)"
+india,2001,1028737436,182316397,21.54,532223090,496514346,persons,"Manipur 2001 includes estimated population of Mao Maram, Paomata and Purul sub-divisions (A-02 footnote ++)"
+india,2011,1210854977,182117541,17.70,623270258,587584719,persons,

@@ -1,0 +1,164 @@
+geography,period,source,value,unit,note
+india,2014-03-31,coal-incl-lignite,145273.39,MW,RES revised by MNRE letter of 23.08.2017
+india,2014-03-31,gas,21781.85,MW,RES revised by MNRE letter of 23.08.2017
+india,2014-03-31,diesel,1199.75,MW,RES revised by MNRE letter of 23.08.2017
+india,2014-03-31,nuclear,4780.00,MW,RES revised by MNRE letter of 23.08.2017
+india,2014-03-31,large-hydro,40531.41,MW,RES revised by MNRE letter of 23.08.2017
+india,2014-03-31,small-hydro,3803.68,MW,RES revised by MNRE letter of 23.08.2017
+india,2014-03-31,wind,21042.58,MW,RES revised by MNRE letter of 23.08.2017
+india,2014-03-31,bio-power,7419.23,MW,RES revised by MNRE letter of 23.08.2017
+india,2014-03-31,waste-to-energy,90.58,MW,RES revised by MNRE letter of 23.08.2017
+india,2014-03-31,solar,2631.93,MW,RES revised by MNRE letter of 23.08.2017
+india,2014-03-31,total,248554.39,MW,RES revised by MNRE letter of 23.08.2017
+india,2015-03-31,coal-incl-lignite,164635.88,MW,RES revised by MNRE letter of 23.08.2017
+india,2015-03-31,gas,23062.15,MW,RES revised by MNRE letter of 23.08.2017
+india,2015-03-31,diesel,1199.75,MW,RES revised by MNRE letter of 23.08.2017
+india,2015-03-31,nuclear,5780.00,MW,RES revised by MNRE letter of 23.08.2017
+india,2015-03-31,large-hydro,41267.43,MW,RES revised by MNRE letter of 23.08.2017
+india,2015-03-31,small-hydro,4055.36,MW,RES revised by MNRE letter of 23.08.2017
+india,2015-03-31,wind,23354.35,MW,RES revised by MNRE letter of 23.08.2017
+india,2015-03-31,bio-power,7714.90,MW,RES revised by MNRE letter of 23.08.2017
+india,2015-03-31,waste-to-energy,90.58,MW,RES revised by MNRE letter of 23.08.2017
+india,2015-03-31,solar,3743.97,MW,RES revised by MNRE letter of 23.08.2017
+india,2015-03-31,total,274904.37,MW,RES revised by MNRE letter of 23.08.2017
+india,2016-03-31,coal-incl-lignite,185172.88,MW,RES revised by MNRE letter of 23.08.2017
+india,2016-03-31,gas,24508.63,MW,RES revised by MNRE letter of 23.08.2017
+india,2016-03-31,diesel,993.53,MW,RES revised by MNRE letter of 23.08.2017
+india,2016-03-31,nuclear,5780.00,MW,RES revised by MNRE letter of 23.08.2017
+india,2016-03-31,large-hydro,42783.42,MW,RES revised by MNRE letter of 23.08.2017
+india,2016-03-31,small-hydro,4273.47,MW,RES revised by MNRE letter of 23.08.2017
+india,2016-03-31,wind,26777.40,MW,RES revised by MNRE letter of 23.08.2017
+india,2016-03-31,bio-power,8019.75,MW,RES revised by MNRE letter of 23.08.2017
+india,2016-03-31,waste-to-energy,90.58,MW,RES revised by MNRE letter of 23.08.2017
+india,2016-03-31,solar,6762.85,MW,RES revised by MNRE letter of 23.08.2017
+india,2016-03-31,total,305162.50,MW,RES revised by MNRE letter of 23.08.2017
+india,2017-03-31,coal-incl-lignite,192162.88,MW,RES revised by MNRE letter of 23.08.2017
+india,2017-03-31,gas,25329.38,MW,RES revised by MNRE letter of 23.08.2017
+india,2017-03-31,diesel,837.63,MW,RES revised by MNRE letter of 23.08.2017
+india,2017-03-31,nuclear,6780.00,MW,RES revised by MNRE letter of 23.08.2017
+india,2017-03-31,large-hydro,44478.42,MW,RES revised by MNRE letter of 23.08.2017
+india,2017-03-31,small-hydro,4379.86,MW,RES revised by MNRE letter of 23.08.2017
+india,2017-03-31,wind,32279.77,MW,RES revised by MNRE letter of 23.08.2017
+india,2017-03-31,bio-power,8181.70,MW,RES revised by MNRE letter of 23.08.2017
+india,2017-03-31,waste-to-energy,114.08,MW,RES revised by MNRE letter of 23.08.2017
+india,2017-03-31,solar,12288.83,MW,RES revised by MNRE letter of 23.08.2017
+india,2017-03-31,total,326832.53,MW,RES revised by MNRE letter of 23.08.2017
+india,2018-03-31,coal-incl-lignite,197171.50,MW,
+india,2018-03-31,gas,24897.46,MW,
+india,2018-03-31,diesel,837.63,MW,
+india,2018-03-31,nuclear,6780.00,MW,
+india,2018-03-31,large-hydro,45293.42,MW,
+india,2018-03-31,small-hydro,4485.81,MW,
+india,2018-03-31,wind,34046.00,MW,
+india,2018-03-31,bio-power,8700.80,MW,
+india,2018-03-31,waste-to-energy,138.30,MW,
+india,2018-03-31,solar,21651.48,MW,
+india,2018-03-31,total,344002.39,MW,
+india,2019-03-31,coal,194444.50,MW,
+india,2019-03-31,lignite,6260.00,MW,
+india,2019-03-31,gas,24937.22,MW,
+india,2019-03-31,diesel,637.63,MW,
+india,2019-03-31,nuclear,6780.00,MW,
+india,2019-03-31,large-hydro,45399.22,MW,
+india,2019-03-31,small-hydro,4593.15,MW,
+india,2019-03-31,wind,35625.97,MW,
+india,2019-03-31,bio-power,9103.50,MW,
+india,2019-03-31,waste-to-energy,138.30,MW,
+india,2019-03-31,solar,28180.71,MW,
+india,2019-03-31,total,356100.19,MW,
+india,2020-03-31,coal,198524.50,MW,
+india,2020-03-31,lignite,6610.00,MW,
+india,2020-03-31,gas,24955.36,MW,
+india,2020-03-31,diesel,509.71,MW,
+india,2020-03-31,nuclear,6780.00,MW,
+india,2020-03-31,large-hydro,45699.22,MW,
+india,2020-03-31,small-hydro,4683.16,MW,
+india,2020-03-31,wind,37693.75,MW,
+india,2020-03-31,bio-power,9875.31,MW,
+india,2020-03-31,waste-to-energy,147.64,MW,
+india,2020-03-31,solar,34627.82,MW,
+india,2020-03-31,total,370106.46,MW,
+india,2021-03-31,coal,202674.50,MW,
+india,2021-03-31,lignite,6620.00,MW,
+india,2021-03-31,gas,24924.01,MW,
+india,2021-03-31,diesel,509.71,MW,
+india,2021-03-31,nuclear,6780.00,MW,
+india,2021-03-31,large-hydro,46209.22,MW,
+india,2021-03-31,small-hydro,4786.81,MW,
+india,2021-03-31,wind,39247.05,MW,
+india,2021-03-31,bio-power,10145.92,MW,
+india,2021-03-31,waste-to-energy,168.64,MW,
+india,2021-03-31,solar,40085.37,MW,
+india,2021-03-31,total,382151.22,MW,
+india,2022-03-31,coal,204079.50,MW,
+india,2022-03-31,lignite,6620.00,MW,
+india,2022-03-31,gas,24899.51,MW,
+india,2022-03-31,diesel,509.71,MW,
+india,2022-03-31,nuclear,6780.00,MW,
+india,2022-03-31,large-hydro,46722.52,MW,
+india,2022-03-31,small-hydro,4848.90,MW,
+india,2022-03-31,wind,40357.58,MW,
+india,2022-03-31,bio-power,10205.61,MW,
+india,2022-03-31,waste-to-energy,476.75,MW,
+india,2022-03-31,solar,53996.54,MW,
+india,2022-03-31,total,399496.61,MW,
+india,2023-03-31,coal,205235.50,MW,
+india,2023-03-31,lignite,6620.00,MW,
+india,2023-03-31,gas,24824.21,MW,
+india,2023-03-31,diesel,589.20,MW,
+india,2023-03-31,nuclear,6780.00,MW,
+india,2023-03-31,large-hydro,46850.17,MW,
+india,2023-03-31,small-hydro,4944.30,MW,
+india,2023-03-31,wind,42633.13,MW,
+india,2023-03-31,bio-power,10248.01,MW,
+india,2023-03-31,waste-to-energy,554.03,MW,
+india,2023-03-31,solar,66780.34,MW,
+india,2023-03-31,total,416058.89,MW,
+india,2024-03-31,coal,210969.46,MW,
+india,2024-03-31,lignite,6620.00,MW,
+india,2024-03-31,gas,25038.21,MW,
+india,2024-03-31,diesel,589.20,MW,
+india,2024-03-31,nuclear,8180.00,MW,
+india,2024-03-31,large-hydro,46928.17,MW,
+india,2024-03-31,small-hydro,5003.25,MW,
+india,2024-03-31,wind,45886.51,MW,
+india,2024-03-31,bio-power,10355.35,MW,
+india,2024-03-31,waste-to-energy,585.80,MW,
+india,2024-03-31,solar,81813.60,MW,
+india,2024-03-31,total,441969.55,MW,
+india,2025-03-31,coal,215193.00,MW,
+india,2025-03-31,lignite,6620.00,MW,
+india,2025-03-31,gas,24533.26,MW,
+india,2025-03-31,diesel,589.20,MW,
+india,2025-03-31,nuclear,8180.00,MW,
+india,2025-03-31,large-hydro,47728.16,MW,
+india,2025-03-31,small-hydro,5100.55,MW,
+india,2025-03-31,wind,50037.82,MW,
+india,2025-03-31,bio-power,10743.11,MW,
+india,2025-03-31,waste-to-energy,840.21,MW,
+india,2025-03-31,solar,105646.49,MW,
+india,2025-03-31,total,475211.80,MW,
+india,2026-03-31,coal,221940.00,MW,
+india,2026-03-31,lignite,6620.00,MW,
+india,2026-03-31,gas,20122.42,MW,
+india,2026-03-31,diesel,589.20,MW,
+india,2026-03-31,nuclear,8780.00,MW,
+india,2026-03-31,large-hydro,51414.66,MW,
+india,2026-03-31,small-hydro,5171.36,MW,
+india,2026-03-31,wind,56094.84,MW,
+india,2026-03-31,bio-power,10869.17,MW,
+india,2026-03-31,waste-to-energy,877.36,MW,
+india,2026-03-31,solar,150260.70,MW,
+india,2026-03-31,total,532739.71,MW,
+india,2026-10-31,coal,225067.50,MW,latest monthly report
+india,2026-10-31,lignite,6370.00,MW,latest monthly report
+india,2026-10-31,gas,19144.02,MW,latest monthly report
+india,2026-10-31,diesel,288.34,MW,latest monthly report
+india,2026-10-31,nuclear,8780.00,MW,latest monthly report
+india,2026-10-31,large-hydro,52314.66,MW,latest monthly report
+india,2026-10-31,small-hydro,5189.26,MW,latest monthly report
+india,2026-10-31,wind,59529.67,MW,latest monthly report
+india,2026-10-31,bio-power,10869.17,MW,latest monthly report
+india,2026-10-31,waste-to-energy,1013.66,MW,latest monthly report
+india,2026-10-31,solar,174547.05,MW,latest monthly report
+india,2026-10-31,total,563113.34,MW,latest monthly report

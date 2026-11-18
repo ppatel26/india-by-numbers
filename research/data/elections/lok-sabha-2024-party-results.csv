@@ -1,0 +1,21 @@
+geography,period,party_abbr,party_name,seats_won,votes,vote_share_pct,notes
+india,2024,BJP,Bharatiya Janata Party,240,235974144,36.93,Vote share published in ECI Report 20
+india,2024,INC,Indian National Congress,99,136758952,21.4,Vote share published in ECI Report 20
+india,2024,SP,Samajwadi Party,37,29549389,4.62,Vote share computed from ECI Report 33
+india,2024,AITC,All India Trinamool Congress,29,28213393,4.42,Vote share computed from ECI Report 33
+india,2024,YSRCP,Yuvajana Sramika Rythu Congress Party,4,13316134,2.08,Vote share computed from ECI Report 33
+india,2024,BSP,Bahujan Samaj Party,0,13153830,2.06,Vote share published in ECI Report 20
+india,2024,TDP,Telugu Desam,16,12775270,2.00,Vote share computed from ECI Report 33
+india,2024,DMK,Dravida Munnetra Kazhagam,22,11754710,1.84,Vote share computed from ECI Report 33
+india,2024,CPI(M),Communist Party of India (Marxist),4,11342553,1.78,Vote share published in ECI Report 20
+india,2024,RJD,Rashtriya Janata Dal,4,10107402,1.58,Vote share computed from ECI Report 33
+india,2024,SHSUBT,Shiv Sena (Uddhav Balasaheb Thackrey),9,9567779,1.50,Vote share computed from ECI Report 33
+india,2024,BJD,Biju Janata Dal,0,9412674,1.47,Vote share computed from ECI Report 33
+india,2024,ADMK,All India Anna Dravida Munnetra Kazhagam,0,8952587,1.40,Vote share computed from ECI Report 33
+india,2024,JD(U),Janata Dal (United),12,8039663,1.26,Vote share computed from ECI Report 33
+india,2024,SHS,Shiv Sena,7,7401447,1.16,Vote share computed from ECI Report 33
+india,2024,AAAP,Aam Aadmi Party,3,7147800,1.12,Vote share published in ECI Report 20
+india,2024,NCPSP,Nationalist Congress Party – Sharadchandra Pawar,8,5921162,0.93,Vote share computed from ECI Report 33
+india,2024,LJPRV,Lok Janshakti Party(Ram Vilas),5,2810250,0.44,Vote share computed from ECI Report 33
+india,2024,IND,Independent,7,17850062,2.79,Vote share computed from ECI Report 33
+india,2024,OTHERS,All other parties (725),37,58941491,9.22,Vote share computed from ECI Report 33

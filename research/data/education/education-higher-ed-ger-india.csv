@@ -1,0 +1,40 @@
+geography,period,sex,value,unit,table
+india,2011-12,female,19.7,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2012-13,female,20.2,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2013-14,female,21.9,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2014-15,female,22.9,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2015-16,female,23.0,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2016-17,female,23.8,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2017-18,female,24.6,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2018-19,female,25.5,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2019-20,female,26.4,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2020-21,female,27.9,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2021-22,female,28.5,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2022-23,female,30.2,ratio (per cent of population aged 18-23),"AISHE 2023-24, Table 47 (All India)"
+india,2023-24,female,31.2,ratio (per cent of population aged 18-23),"AISHE 2023-24, Table 47 (All India)"
+india,2011-12,male,22.5,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2012-13,male,22.8,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2013-14,male,23.6,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2014-15,male,24.5,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2015-16,male,24.2,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2016-17,male,24.3,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2017-18,male,24.5,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2018-19,male,24.4,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2019-20,male,24.8,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2020-21,male,26.7,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2021-22,male,28.3,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2022-23,male,28.9,ratio (per cent of population aged 18-23),"AISHE 2023-24, Table 47 (All India)"
+india,2023-24,male,28.9,ratio (per cent of population aged 18-23),"AISHE 2023-24, Table 47 (All India)"
+india,2011-12,total,21.2,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2012-13,total,21.6,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2013-14,total,22.8,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2014-15,total,23.7,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2015-16,total,23.7,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2016-17,total,24.1,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2017-18,total,24.6,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2018-19,total,24.9,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2019-20,total,25.6,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2020-21,total,27.3,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2021-22,total,28.4,ratio (per cent of population aged 18-23),AISHE GER time series based on 2011 population projection
+india,2022-23,total,29.5,ratio (per cent of population aged 18-23),"AISHE 2023-24, Table 47 (All India)"
+india,2023-24,total,30.0,ratio (per cent of population aged 18-23),"AISHE 2023-24, Table 47 (All India)"

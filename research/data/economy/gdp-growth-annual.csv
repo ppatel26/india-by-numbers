@@ -1,0 +1,76 @@
+geography,period,value,unit,base,method,estimate
+india,1951-52,2.95,percent,2011-12,derived from constant-price GDP levels,back series
+india,1952-53,2.63,percent,2011-12,derived from constant-price GDP levels,back series
+india,1953-54,6.15,percent,2011-12,derived from constant-price GDP levels,back series
+india,1954-55,4.81,percent,2011-12,derived from constant-price GDP levels,back series
+india,1955-56,3.24,percent,2011-12,derived from constant-price GDP levels,back series
+india,1956-57,5.58,percent,2011-12,derived from constant-price GDP levels,back series
+india,1957-58,-0.41,percent,2011-12,derived from constant-price GDP levels,back series
+india,1958-59,7.39,percent,2011-12,derived from constant-price GDP levels,back series
+india,1959-60,2.62,percent,2011-12,derived from constant-price GDP levels,back series
+india,1960-61,5.50,percent,2011-12,derived from constant-price GDP levels,back series
+india,1961-62,3.72,percent,2011-12,derived from constant-price GDP levels,back series
+india,1962-63,2.93,percent,2011-12,derived from constant-price GDP levels,back series
+india,1963-64,5.99,percent,2011-12,derived from constant-price GDP levels,back series
+india,1964-65,7.45,percent,2011-12,derived from constant-price GDP levels,back series
+india,1965-66,-2.64,percent,2011-12,derived from constant-price GDP levels,back series
+india,1966-67,-0.06,percent,2011-12,derived from constant-price GDP levels,back series
+india,1967-68,7.83,percent,2011-12,derived from constant-price GDP levels,back series
+india,1968-69,3.39,percent,2011-12,derived from constant-price GDP levels,back series
+india,1969-70,6.54,percent,2011-12,derived from constant-price GDP levels,back series
+india,1970-71,5.16,percent,2011-12,derived from constant-price GDP levels,back series
+india,1971-72,1.64,percent,2011-12,derived from constant-price GDP levels,back series
+india,1972-73,-0.55,percent,2011-12,derived from constant-price GDP levels,back series
+india,1973-74,3.30,percent,2011-12,derived from constant-price GDP levels,back series
+india,1974-75,1.19,percent,2011-12,derived from constant-price GDP levels,back series
+india,1975-76,9.15,percent,2011-12,derived from constant-price GDP levels,back series
+india,1976-77,1.66,percent,2011-12,derived from constant-price GDP levels,back series
+india,1977-78,7.25,percent,2011-12,derived from constant-price GDP levels,back series
+india,1978-79,5.71,percent,2011-12,derived from constant-price GDP levels,back series
+india,1979-80,-5.24,percent,2011-12,derived from constant-price GDP levels,back series
+india,1980-81,6.74,percent,2011-12,derived from constant-price GDP levels,back series
+india,1981-82,6.01,percent,2011-12,derived from constant-price GDP levels,back series
+india,1982-83,3.48,percent,2011-12,derived from constant-price GDP levels,back series
+india,1983-84,7.29,percent,2011-12,derived from constant-price GDP levels,back series
+india,1984-85,3.82,percent,2011-12,derived from constant-price GDP levels,back series
+india,1985-86,5.25,percent,2011-12,derived from constant-price GDP levels,back series
+india,1986-87,4.78,percent,2011-12,derived from constant-price GDP levels,back series
+india,1987-88,3.97,percent,2011-12,derived from constant-price GDP levels,back series
+india,1988-89,9.63,percent,2011-12,derived from constant-price GDP levels,back series
+india,1989-90,5.95,percent,2011-12,derived from constant-price GDP levels,back series
+india,1990-91,5.53,percent,2011-12,derived from constant-price GDP levels,back series
+india,1991-92,1.06,percent,2011-12,derived from constant-price GDP levels,back series
+india,1992-93,5.48,percent,2011-12,derived from constant-price GDP levels,back series
+india,1993-94,4.75,percent,2011-12,derived from constant-price GDP levels,back series
+india,1994-95,6.66,percent,2011-12,derived from constant-price GDP levels,back series
+india,1995-96,7.57,percent,2011-12,derived from constant-price GDP levels,back series
+india,1996-97,7.55,percent,2011-12,derived from constant-price GDP levels,back series
+india,1997-98,4.05,percent,2011-12,derived from constant-price GDP levels,back series
+india,1998-99,6.18,percent,2011-12,derived from constant-price GDP levels,back series
+india,1999-00,8.85,percent,2011-12,derived from constant-price GDP levels,back series
+india,2000-01,3.84,percent,2011-12,derived from constant-price GDP levels,back series
+india,2001-02,4.82,percent,2011-12,derived from constant-price GDP levels,back series
+india,2002-03,3.80,percent,2011-12,derived from constant-price GDP levels,back series
+india,2003-04,7.86,percent,2011-12,derived from constant-price GDP levels,back series
+india,2004-05,7.92,percent,2011-12,derived from constant-price GDP levels,back series
+india,2005-06,7.92,percent,2011-12,derived from constant-price GDP levels,back series
+india,2006-07,8.06,percent,2011-12,derived from constant-price GDP levels,back series
+india,2007-08,7.66,percent,2011-12,derived from constant-price GDP levels,back series
+india,2008-09,3.09,percent,2011-12,derived from constant-price GDP levels,back series
+india,2009-10,7.86,percent,2011-12,derived from constant-price GDP levels,back series
+india,2010-11,8.50,percent,2011-12,derived from constant-price GDP levels,back series
+india,2011-12,5.24,percent,2011-12,derived from constant-price GDP levels,back series
+india,2012-13,5.46,percent,2011-12,derived from constant-price GDP levels,current series (Additional Revision)
+india,2013-14,6.39,percent,2011-12,derived from constant-price GDP levels,current series (Additional Revision)
+india,2014-15,7.41,percent,2011-12,derived from constant-price GDP levels,current series (Third Revised Estimates)
+india,2015-16,8.00,percent,2011-12,derived from constant-price GDP levels,current series (Third Revised Estimates)
+india,2016-17,8.26,percent,2011-12,derived from constant-price GDP levels,current series (Third Revised Estimates)
+india,2017-18,6.80,percent,2011-12,derived from constant-price GDP levels,current series (Third Revised Estimates)
+india,2018-19,6.45,percent,2011-12,derived from constant-price GDP levels,current series (Third Revised Estimates)
+india,2019-20,3.87,percent,2011-12,derived from constant-price GDP levels,current series (Third Revised Estimates)
+india,2020-21,-5.78,percent,2011-12,derived from constant-price GDP levels,current series (Third Revised Estimates)
+india,2021-22,9.69,percent,2011-12,derived from constant-price GDP levels,current series (Second Revised Estimates)
+india,2022-23,7.61,percent,2011-12,derived from constant-price GDP levels,current series (Final Estimates)
+india,2023-24,7.3,percent,2022-23,published growth rate,Final Estimates
+india,2024-25,7.2,percent,2022-23,published growth rate,First Revised Estimates
+india,2025-26,7.8,percent,2022-23,published growth rate,Provisional Estimates

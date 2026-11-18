@@ -1,0 +1,179 @@
+geography,period,lok_sabha,series,value,unit,notes
+india,1952,1st,seats_available,489,seats,Sex-wise break-up of candidates not available
+india,1952,1st,candidates_total,1874,candidates,Sex-wise break-up of candidates not available
+india,1952,1st,candidates_men,,candidates,Sex-wise break-up of candidates not available
+india,1952,1st,candidates_women,,candidates,Sex-wise break-up of candidates not available
+india,1952,1st,elected_men,,members,Sex-wise break-up of candidates not available
+india,1952,1st,elected_women,,members,Sex-wise break-up of candidates not available
+india,1952,1st,success_rate_men,,percent of candidates elected,Sex-wise break-up of candidates not available
+india,1952,1st,success_rate_women,,percent of candidates elected,Sex-wise break-up of candidates not available
+india,1957,2nd,seats_available,494,seats,
+india,1957,2nd,candidates_total,1518,candidates,
+india,1957,2nd,candidates_men,1473,candidates,
+india,1957,2nd,candidates_women,45,candidates,
+india,1957,2nd,elected_men,467,members,
+india,1957,2nd,elected_women,27,members,
+india,1957,2nd,success_rate_men,31.7,percent of candidates elected,
+india,1957,2nd,success_rate_women,60.0,percent of candidates elected,
+india,1957,2nd,women_share_of_elected,5.5,percent of members elected,Derived: women elected / (men + women elected)
+india,1957,2nd,women_share_of_candidates,3.0,percent of candidates,Derived: women candidates / total candidates
+india,1962,3rd,seats_available,494,seats,
+india,1962,3rd,candidates_total,1985,candidates,
+india,1962,3rd,candidates_men,1915,candidates,
+india,1962,3rd,candidates_women,70,candidates,
+india,1962,3rd,elected_men,459,members,
+india,1962,3rd,elected_women,35,members,
+india,1962,3rd,success_rate_men,24.0,percent of candidates elected,
+india,1962,3rd,success_rate_women,50.0,percent of candidates elected,
+india,1962,3rd,women_share_of_elected,7.1,percent of members elected,Derived: women elected / (men + women elected)
+india,1962,3rd,women_share_of_candidates,3.5,percent of candidates,Derived: women candidates / total candidates
+india,1967,4th,seats_available,520,seats,
+india,1967,4th,candidates_total,2369,candidates,
+india,1967,4th,candidates_men,2302,candidates,
+india,1967,4th,candidates_women,67,candidates,
+india,1967,4th,elected_men,490,members,
+india,1967,4th,elected_women,30,members,
+india,1967,4th,success_rate_men,21.3,percent of candidates elected,
+india,1967,4th,success_rate_women,44.8,percent of candidates elected,
+india,1967,4th,women_share_of_elected,5.8,percent of members elected,Derived: women elected / (men + women elected)
+india,1967,4th,women_share_of_candidates,2.8,percent of candidates,Derived: women candidates / total candidates
+india,1971,5th,seats_available,520,seats,
+india,1971,5th,candidates_total,2784,candidates,
+india,1971,5th,candidates_men,2698,candidates,
+india,1971,5th,candidates_women,86,candidates,
+india,1971,5th,elected_men,499,members,
+india,1971,5th,elected_women,21,members,
+india,1971,5th,success_rate_men,18.5,percent of candidates elected,
+india,1971,5th,success_rate_women,24.4,percent of candidates elected,
+india,1971,5th,women_share_of_elected,4.0,percent of members elected,Derived: women elected / (men + women elected)
+india,1971,5th,women_share_of_candidates,3.1,percent of candidates,Derived: women candidates / total candidates
+india,1977,6th,seats_available,542,seats,
+india,1977,6th,candidates_total,2439,candidates,
+india,1977,6th,candidates_men,2369,candidates,
+india,1977,6th,candidates_women,70,candidates,
+india,1977,6th,elected_men,523,members,
+india,1977,6th,elected_women,19,members,
+india,1977,6th,success_rate_men,22.1,percent of candidates elected,
+india,1977,6th,success_rate_women,27.1,percent of candidates elected,
+india,1977,6th,women_share_of_elected,3.5,percent of members elected,Derived: women elected / (men + women elected)
+india,1977,6th,women_share_of_candidates,2.9,percent of candidates,Derived: women candidates / total candidates
+india,1980,7th,seats_available,542,seats,
+india,1980,7th,candidates_total,4620,candidates,
+india,1980,7th,candidates_men,4478,candidates,
+india,1980,7th,candidates_women,142,candidates,
+india,1980,7th,elected_men,514,members,
+india,1980,7th,elected_women,28,members,
+india,1980,7th,success_rate_men,11.5,percent of candidates elected,
+india,1980,7th,success_rate_women,19.7,percent of candidates elected,
+india,1980,7th,women_share_of_elected,5.2,percent of members elected,Derived: women elected / (men + women elected)
+india,1980,7th,women_share_of_candidates,3.1,percent of candidates,Derived: women candidates / total candidates
+india,1984,8th,seats_available,542,seats,
+india,1984,8th,candidates_total,5574,candidates,
+india,1984,8th,candidates_men,5406,candidates,
+india,1984,8th,candidates_women,164,candidates,
+india,1984,8th,elected_men,500,members,
+india,1984,8th,elected_women,42,members,
+india,1984,8th,success_rate_men,9.2,percent of candidates elected,
+india,1984,8th,success_rate_women,25.6,percent of candidates elected,
+india,1984,8th,women_share_of_elected,7.7,percent of members elected,Derived: women elected / (men + women elected)
+india,1984,8th,women_share_of_candidates,2.9,percent of candidates,Derived: women candidates / total candidates
+india,1989,9th,seats_available,529,seats,
+india,1989,9th,candidates_total,6160,candidates,
+india,1989,9th,candidates_men,5962,candidates,
+india,1989,9th,candidates_women,198,candidates,
+india,1989,9th,elected_men,502,members,
+india,1989,9th,elected_women,27,members,
+india,1989,9th,success_rate_men,8.4,percent of candidates elected,
+india,1989,9th,success_rate_women,13.6,percent of candidates elected,
+india,1989,9th,women_share_of_elected,5.1,percent of members elected,Derived: women elected / (men + women elected)
+india,1989,9th,women_share_of_candidates,3.2,percent of candidates,Derived: women candidates / total candidates
+india,1991,10th,seats_available,521,seats,
+india,1991,10th,candidates_total,8699,candidates,
+india,1991,10th,candidates_men,8374,candidates,
+india,1991,10th,candidates_women,325,candidates,
+india,1991,10th,elected_men,484,members,
+india,1991,10th,elected_women,37,members,
+india,1991,10th,success_rate_men,5.8,percent of candidates elected,
+india,1991,10th,success_rate_women,11.4,percent of candidates elected,
+india,1991,10th,women_share_of_elected,7.1,percent of members elected,Derived: women elected / (men + women elected)
+india,1991,10th,women_share_of_candidates,3.7,percent of candidates,Derived: women candidates / total candidates
+india,1996,11th,seats_available,543,seats,
+india,1996,11th,candidates_total,13952,candidates,
+india,1996,11th,candidates_men,13353,candidates,
+india,1996,11th,candidates_women,599,candidates,
+india,1996,11th,elected_men,503,members,
+india,1996,11th,elected_women,40,members,
+india,1996,11th,success_rate_men,3.8,percent of candidates elected,
+india,1996,11th,success_rate_women,6.7,percent of candidates elected,
+india,1996,11th,women_share_of_elected,7.4,percent of members elected,Derived: women elected / (men + women elected)
+india,1996,11th,women_share_of_candidates,4.3,percent of candidates,Derived: women candidates / total candidates
+india,1998,12th,seats_available,543,seats,
+india,1998,12th,candidates_total,4750,candidates,
+india,1998,12th,candidates_men,4476,candidates,
+india,1998,12th,candidates_women,274,candidates,
+india,1998,12th,elected_men,500,members,
+india,1998,12th,elected_women,43,members,
+india,1998,12th,success_rate_men,11.2,percent of candidates elected,
+india,1998,12th,success_rate_women,15.7,percent of candidates elected,
+india,1998,12th,women_share_of_elected,7.9,percent of members elected,Derived: women elected / (men + women elected)
+india,1998,12th,women_share_of_candidates,5.8,percent of candidates,Derived: women candidates / total candidates
+india,1999,13th,seats_available,543,seats,"As published: men elected + women elected = 546, more than the 543 seats"
+india,1999,13th,candidates_total,5155,candidates,"As published: men elected + women elected = 546, more than the 543 seats"
+india,1999,13th,candidates_men,4859,candidates,"As published: men elected + women elected = 546, more than the 543 seats"
+india,1999,13th,candidates_women,296,candidates,"As published: men elected + women elected = 546, more than the 543 seats"
+india,1999,13th,elected_men,494,members,"As published: men elected + women elected = 546, more than the 543 seats"
+india,1999,13th,elected_women,52,members,"As published: men elected + women elected = 546, more than the 543 seats"
+india,1999,13th,success_rate_men,10.2,percent of candidates elected,"As published: men elected + women elected = 546, more than the 543 seats"
+india,1999,13th,success_rate_women,17.6,percent of candidates elected,"As published: men elected + women elected = 546, more than the 543 seats"
+india,1999,13th,women_share_of_elected,9.5,percent of members elected,Derived: women elected / (men + women elected)
+india,1999,13th,women_share_of_candidates,5.7,percent of candidates,Derived: women candidates / total candidates
+india,2004,14th,seats_available,543,seats,
+india,2004,14th,candidates_total,5435,candidates,
+india,2004,14th,candidates_men,5080,candidates,
+india,2004,14th,candidates_women,355,candidates,
+india,2004,14th,elected_men,498,members,
+india,2004,14th,elected_women,45,members,
+india,2004,14th,success_rate_men,9.8,percent of candidates elected,
+india,2004,14th,success_rate_women,12.7,percent of candidates elected,
+india,2004,14th,women_share_of_elected,8.3,percent of members elected,Derived: women elected / (men + women elected)
+india,2004,14th,women_share_of_candidates,6.5,percent of candidates,Derived: women candidates / total candidates
+india,2009,15th,seats_available,543,seats,
+india,2009,15th,candidates_total,8070,candidates,
+india,2009,15th,candidates_men,7514,candidates,
+india,2009,15th,candidates_women,556,candidates,
+india,2009,15th,elected_men,484,members,
+india,2009,15th,elected_women,59,members,
+india,2009,15th,success_rate_men,6.4,percent of candidates elected,
+india,2009,15th,success_rate_women,10.6,percent of candidates elected,
+india,2009,15th,women_share_of_elected,10.9,percent of members elected,Derived: women elected / (men + women elected)
+india,2009,15th,women_share_of_candidates,6.9,percent of candidates,Derived: women candidates / total candidates
+india,2014,16th,seats_available,543,seats,
+india,2014,16th,candidates_total,8251,candidates,
+india,2014,16th,candidates_men,7583,candidates,
+india,2014,16th,candidates_women,668,candidates,
+india,2014,16th,elected_men,481,members,
+india,2014,16th,elected_women,62,members,
+india,2014,16th,success_rate_men,6.3,percent of candidates elected,
+india,2014,16th,success_rate_women,9.3,percent of candidates elected,
+india,2014,16th,women_share_of_elected,11.4,percent of members elected,Derived: women elected / (men + women elected)
+india,2014,16th,women_share_of_candidates,8.1,percent of candidates,Derived: women candidates / total candidates
+india,2019,17th,seats_available,543,seats,
+india,2019,17th,candidates_total,8054,candidates,
+india,2019,17th,candidates_men,7322,candidates,
+india,2019,17th,candidates_women,726,candidates,
+india,2019,17th,elected_men,465,members,
+india,2019,17th,elected_women,78,members,
+india,2019,17th,success_rate_men,6.4,percent of candidates elected,
+india,2019,17th,success_rate_women,10.7,percent of candidates elected,
+india,2019,17th,women_share_of_elected,14.4,percent of members elected,Derived: women elected / (men + women elected)
+india,2019,17th,women_share_of_candidates,9.0,percent of candidates,Derived: women candidates / total candidates
+india,2024,18th,seats_available,542,seats,Total contesting includes 6 third gender candidates; 542 seats (Surat elected unopposed)
+india,2024,18th,candidates_total,8359,candidates,Total contesting includes 6 third gender candidates; 542 seats (Surat elected unopposed)
+india,2024,18th,candidates_men,7553,candidates,Total contesting includes 6 third gender candidates; 542 seats (Surat elected unopposed)
+india,2024,18th,candidates_women,800,candidates,Total contesting includes 6 third gender candidates; 542 seats (Surat elected unopposed)
+india,2024,18th,elected_men,468,members,Total contesting includes 6 third gender candidates; 542 seats (Surat elected unopposed)
+india,2024,18th,elected_women,74,members,Total contesting includes 6 third gender candidates; 542 seats (Surat elected unopposed)
+india,2024,18th,success_rate_men,6.2,percent of candidates elected,Total contesting includes 6 third gender candidates; 542 seats (Surat elected unopposed)
+india,2024,18th,success_rate_women,9.3,percent of candidates elected,Total contesting includes 6 third gender candidates; 542 seats (Surat elected unopposed)
+india,2024,18th,women_share_of_elected,13.7,percent of members elected,Derived: women elected / (men + women elected)
+india,2024,18th,women_share_of_candidates,9.6,percent of candidates,Derived: women candidates / total candidates

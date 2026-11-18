@@ -1,0 +1,297 @@
+geography,name,name_as_published,period,religion,value,unit,share_pct,note
+india,India,INDIA,2011,Hindu,966257353,persons,79.80,Share derived.
+india,India,INDIA,2011,Muslim,172245158,persons,14.23,Share derived.
+india,India,INDIA,2011,Christian,27819588,persons,2.30,Share derived.
+india,India,INDIA,2011,Sikh,20833116,persons,1.72,Share derived.
+india,India,INDIA,2011,Buddhist,8442972,persons,0.70,Share derived.
+india,India,INDIA,2011,Jain,4451753,persons,0.37,Share derived.
+india,India,INDIA,2011,Other religions and persuasions,7937734,persons,0.66,Share derived.
+india,India,INDIA,2011,Religion not stated,2867303,persons,0.24,Share derived.
+andhra-pradesh,Andhra Pradesh,ANDHRA PRADESH,2011,Hindu,74824149,persons,88.46,"Share derived. Census 2011 unit: undivided Andhra Pradesh, includes present-day Telangana"
+andhra-pradesh,Andhra Pradesh,ANDHRA PRADESH,2011,Muslim,8082412,persons,9.56,"Share derived. Census 2011 unit: undivided Andhra Pradesh, includes present-day Telangana"
+andhra-pradesh,Andhra Pradesh,ANDHRA PRADESH,2011,Christian,1129784,persons,1.34,"Share derived. Census 2011 unit: undivided Andhra Pradesh, includes present-day Telangana"
+andhra-pradesh,Andhra Pradesh,ANDHRA PRADESH,2011,Sikh,40244,persons,0.05,"Share derived. Census 2011 unit: undivided Andhra Pradesh, includes present-day Telangana"
+andhra-pradesh,Andhra Pradesh,ANDHRA PRADESH,2011,Buddhist,36692,persons,0.04,"Share derived. Census 2011 unit: undivided Andhra Pradesh, includes present-day Telangana"
+andhra-pradesh,Andhra Pradesh,ANDHRA PRADESH,2011,Jain,53849,persons,0.06,"Share derived. Census 2011 unit: undivided Andhra Pradesh, includes present-day Telangana"
+andhra-pradesh,Andhra Pradesh,ANDHRA PRADESH,2011,Other religions and persuasions,9547,persons,0.01,"Share derived. Census 2011 unit: undivided Andhra Pradesh, includes present-day Telangana"
+andhra-pradesh,Andhra Pradesh,ANDHRA PRADESH,2011,Religion not stated,404100,persons,0.48,"Share derived. Census 2011 unit: undivided Andhra Pradesh, includes present-day Telangana"
+arunachal-pradesh,Arunachal Pradesh,ARUNACHAL PRADESH,2011,Hindu,401876,persons,29.04,Share derived.
+arunachal-pradesh,Arunachal Pradesh,ARUNACHAL PRADESH,2011,Muslim,27045,persons,1.95,Share derived.
+arunachal-pradesh,Arunachal Pradesh,ARUNACHAL PRADESH,2011,Christian,418732,persons,30.26,Share derived.
+arunachal-pradesh,Arunachal Pradesh,ARUNACHAL PRADESH,2011,Sikh,3287,persons,0.24,Share derived.
+arunachal-pradesh,Arunachal Pradesh,ARUNACHAL PRADESH,2011,Buddhist,162815,persons,11.77,Share derived.
+arunachal-pradesh,Arunachal Pradesh,ARUNACHAL PRADESH,2011,Jain,771,persons,0.06,Share derived.
+arunachal-pradesh,Arunachal Pradesh,ARUNACHAL PRADESH,2011,Other religions and persuasions,362553,persons,26.20,Share derived.
+arunachal-pradesh,Arunachal Pradesh,ARUNACHAL PRADESH,2011,Religion not stated,6648,persons,0.48,Share derived.
+assam,Assam,ASSAM,2011,Hindu,19180759,persons,61.47,Share derived.
+assam,Assam,ASSAM,2011,Muslim,10679345,persons,34.22,Share derived.
+assam,Assam,ASSAM,2011,Christian,1165867,persons,3.74,Share derived.
+assam,Assam,ASSAM,2011,Sikh,20672,persons,0.07,Share derived.
+assam,Assam,ASSAM,2011,Buddhist,54993,persons,0.18,Share derived.
+assam,Assam,ASSAM,2011,Jain,25949,persons,0.08,Share derived.
+assam,Assam,ASSAM,2011,Other religions and persuasions,27118,persons,0.09,Share derived.
+assam,Assam,ASSAM,2011,Religion not stated,50873,persons,0.16,Share derived.
+bihar,Bihar,BIHAR,2011,Hindu,86078686,persons,82.69,Share derived.
+bihar,Bihar,BIHAR,2011,Muslim,17557809,persons,16.87,Share derived.
+bihar,Bihar,BIHAR,2011,Christian,129247,persons,0.12,Share derived.
+bihar,Bihar,BIHAR,2011,Sikh,23779,persons,0.02,Share derived.
+bihar,Bihar,BIHAR,2011,Buddhist,25453,persons,0.02,Share derived.
+bihar,Bihar,BIHAR,2011,Jain,18914,persons,0.02,Share derived.
+bihar,Bihar,BIHAR,2011,Other religions and persuasions,13437,persons,0.01,Share derived.
+bihar,Bihar,BIHAR,2011,Religion not stated,252127,persons,0.24,Share derived.
+chhattisgarh,Chhattisgarh,CHHATTISGARH,2011,Hindu,23819789,persons,93.25,Share derived.
+chhattisgarh,Chhattisgarh,CHHATTISGARH,2011,Muslim,514998,persons,2.02,Share derived.
+chhattisgarh,Chhattisgarh,CHHATTISGARH,2011,Christian,490542,persons,1.92,Share derived.
+chhattisgarh,Chhattisgarh,CHHATTISGARH,2011,Sikh,70036,persons,0.27,Share derived.
+chhattisgarh,Chhattisgarh,CHHATTISGARH,2011,Buddhist,70467,persons,0.28,Share derived.
+chhattisgarh,Chhattisgarh,CHHATTISGARH,2011,Jain,61510,persons,0.24,Share derived.
+chhattisgarh,Chhattisgarh,CHHATTISGARH,2011,Other religions and persuasions,494594,persons,1.94,Share derived.
+chhattisgarh,Chhattisgarh,CHHATTISGARH,2011,Religion not stated,23262,persons,0.09,Share derived.
+goa,Goa,GOA,2011,Hindu,963877,persons,66.08,Share derived.
+goa,Goa,GOA,2011,Muslim,121564,persons,8.33,Share derived.
+goa,Goa,GOA,2011,Christian,366130,persons,25.10,Share derived.
+goa,Goa,GOA,2011,Sikh,1473,persons,0.10,Share derived.
+goa,Goa,GOA,2011,Buddhist,1095,persons,0.08,Share derived.
+goa,Goa,GOA,2011,Jain,1109,persons,0.08,Share derived.
+goa,Goa,GOA,2011,Other religions and persuasions,258,persons,0.02,Share derived.
+goa,Goa,GOA,2011,Religion not stated,3039,persons,0.21,Share derived.
+gujarat,Gujarat,GUJARAT,2011,Hindu,53533988,persons,88.57,Share derived.
+gujarat,Gujarat,GUJARAT,2011,Muslim,5846761,persons,9.67,Share derived.
+gujarat,Gujarat,GUJARAT,2011,Christian,316178,persons,0.52,Share derived.
+gujarat,Gujarat,GUJARAT,2011,Sikh,58246,persons,0.10,Share derived.
+gujarat,Gujarat,GUJARAT,2011,Buddhist,30483,persons,0.05,Share derived.
+gujarat,Gujarat,GUJARAT,2011,Jain,579654,persons,0.96,Share derived.
+gujarat,Gujarat,GUJARAT,2011,Other religions and persuasions,16480,persons,0.03,Share derived.
+gujarat,Gujarat,GUJARAT,2011,Religion not stated,57902,persons,0.10,Share derived.
+haryana,Haryana,HARYANA,2011,Hindu,22171128,persons,87.46,Share derived.
+haryana,Haryana,HARYANA,2011,Muslim,1781342,persons,7.03,Share derived.
+haryana,Haryana,HARYANA,2011,Christian,50353,persons,0.20,Share derived.
+haryana,Haryana,HARYANA,2011,Sikh,1243752,persons,4.91,Share derived.
+haryana,Haryana,HARYANA,2011,Buddhist,7514,persons,0.03,Share derived.
+haryana,Haryana,HARYANA,2011,Jain,52613,persons,0.21,Share derived.
+haryana,Haryana,HARYANA,2011,Other religions and persuasions,2548,persons,0.01,Share derived.
+haryana,Haryana,HARYANA,2011,Religion not stated,42212,persons,0.17,Share derived.
+himachal-pradesh,Himachal Pradesh,HIMACHAL PRADESH,2011,Hindu,6532765,persons,95.17,Share derived.
+himachal-pradesh,Himachal Pradesh,HIMACHAL PRADESH,2011,Muslim,149881,persons,2.18,Share derived.
+himachal-pradesh,Himachal Pradesh,HIMACHAL PRADESH,2011,Christian,12646,persons,0.18,Share derived.
+himachal-pradesh,Himachal Pradesh,HIMACHAL PRADESH,2011,Sikh,79896,persons,1.16,Share derived.
+himachal-pradesh,Himachal Pradesh,HIMACHAL PRADESH,2011,Buddhist,78659,persons,1.15,Share derived.
+himachal-pradesh,Himachal Pradesh,HIMACHAL PRADESH,2011,Jain,1805,persons,0.03,Share derived.
+himachal-pradesh,Himachal Pradesh,HIMACHAL PRADESH,2011,Other religions and persuasions,856,persons,0.01,Share derived.
+himachal-pradesh,Himachal Pradesh,HIMACHAL PRADESH,2011,Religion not stated,8094,persons,0.12,Share derived.
+jharkhand,Jharkhand,JHARKHAND,2011,Hindu,22376051,persons,67.83,Share derived.
+jharkhand,Jharkhand,JHARKHAND,2011,Muslim,4793994,persons,14.53,Share derived.
+jharkhand,Jharkhand,JHARKHAND,2011,Christian,1418608,persons,4.30,Share derived.
+jharkhand,Jharkhand,JHARKHAND,2011,Sikh,71422,persons,0.22,Share derived.
+jharkhand,Jharkhand,JHARKHAND,2011,Buddhist,8956,persons,0.03,Share derived.
+jharkhand,Jharkhand,JHARKHAND,2011,Jain,14974,persons,0.05,Share derived.
+jharkhand,Jharkhand,JHARKHAND,2011,Other religions and persuasions,4235786,persons,12.84,Share derived.
+jharkhand,Jharkhand,JHARKHAND,2011,Religion not stated,68343,persons,0.21,Share derived.
+karnataka,Karnataka,KARNATAKA,2011,Hindu,51317472,persons,84.00,Share derived.
+karnataka,Karnataka,KARNATAKA,2011,Muslim,7893065,persons,12.92,Share derived.
+karnataka,Karnataka,KARNATAKA,2011,Christian,1142647,persons,1.87,Share derived.
+karnataka,Karnataka,KARNATAKA,2011,Sikh,28773,persons,0.05,Share derived.
+karnataka,Karnataka,KARNATAKA,2011,Buddhist,95710,persons,0.16,Share derived.
+karnataka,Karnataka,KARNATAKA,2011,Jain,440280,persons,0.72,Share derived.
+karnataka,Karnataka,KARNATAKA,2011,Other religions and persuasions,11263,persons,0.02,Share derived.
+karnataka,Karnataka,KARNATAKA,2011,Religion not stated,166087,persons,0.27,Share derived.
+kerala,Kerala,KERALA,2011,Hindu,18282492,persons,54.73,Share derived.
+kerala,Kerala,KERALA,2011,Muslim,8873472,persons,26.56,Share derived.
+kerala,Kerala,KERALA,2011,Christian,6141269,persons,18.38,Share derived.
+kerala,Kerala,KERALA,2011,Sikh,3814,persons,0.01,Share derived.
+kerala,Kerala,KERALA,2011,Buddhist,4752,persons,0.01,Share derived.
+kerala,Kerala,KERALA,2011,Jain,4489,persons,0.01,Share derived.
+kerala,Kerala,KERALA,2011,Other religions and persuasions,7618,persons,0.02,Share derived.
+kerala,Kerala,KERALA,2011,Religion not stated,88155,persons,0.26,Share derived.
+madhya-pradesh,Madhya Pradesh,MADHYA PRADESH,2011,Hindu,66007121,persons,90.89,Share derived.
+madhya-pradesh,Madhya Pradesh,MADHYA PRADESH,2011,Muslim,4774695,persons,6.57,Share derived.
+madhya-pradesh,Madhya Pradesh,MADHYA PRADESH,2011,Christian,213282,persons,0.29,Share derived.
+madhya-pradesh,Madhya Pradesh,MADHYA PRADESH,2011,Sikh,151412,persons,0.21,Share derived.
+madhya-pradesh,Madhya Pradesh,MADHYA PRADESH,2011,Buddhist,216052,persons,0.30,Share derived.
+madhya-pradesh,Madhya Pradesh,MADHYA PRADESH,2011,Jain,567028,persons,0.78,Share derived.
+madhya-pradesh,Madhya Pradesh,MADHYA PRADESH,2011,Other religions and persuasions,599594,persons,0.83,Share derived.
+madhya-pradesh,Madhya Pradesh,MADHYA PRADESH,2011,Religion not stated,97625,persons,0.13,Share derived.
+maharashtra,Maharashtra,MAHARASHTRA,2011,Hindu,89703057,persons,79.83,Share derived.
+maharashtra,Maharashtra,MAHARASHTRA,2011,Muslim,12971152,persons,11.54,Share derived.
+maharashtra,Maharashtra,MAHARASHTRA,2011,Christian,1080073,persons,0.96,Share derived.
+maharashtra,Maharashtra,MAHARASHTRA,2011,Sikh,223247,persons,0.20,Share derived.
+maharashtra,Maharashtra,MAHARASHTRA,2011,Buddhist,6531200,persons,5.81,Share derived.
+maharashtra,Maharashtra,MAHARASHTRA,2011,Jain,1400349,persons,1.25,Share derived.
+maharashtra,Maharashtra,MAHARASHTRA,2011,Other religions and persuasions,178965,persons,0.16,Share derived.
+maharashtra,Maharashtra,MAHARASHTRA,2011,Religion not stated,286290,persons,0.25,Share derived.
+manipur,Manipur,MANIPUR,2011,Hindu,1181876,persons,41.39,Share derived.
+manipur,Manipur,MANIPUR,2011,Muslim,239836,persons,8.40,Share derived.
+manipur,Manipur,MANIPUR,2011,Christian,1179043,persons,41.29,Share derived.
+manipur,Manipur,MANIPUR,2011,Sikh,1527,persons,0.05,Share derived.
+manipur,Manipur,MANIPUR,2011,Buddhist,7084,persons,0.25,Share derived.
+manipur,Manipur,MANIPUR,2011,Jain,1692,persons,0.06,Share derived.
+manipur,Manipur,MANIPUR,2011,Other religions and persuasions,233767,persons,8.19,Share derived.
+manipur,Manipur,MANIPUR,2011,Religion not stated,10969,persons,0.38,Share derived.
+meghalaya,Meghalaya,MEGHALAYA,2011,Hindu,342078,persons,11.53,Share derived.
+meghalaya,Meghalaya,MEGHALAYA,2011,Muslim,130399,persons,4.40,Share derived.
+meghalaya,Meghalaya,MEGHALAYA,2011,Christian,2213027,persons,74.59,Share derived.
+meghalaya,Meghalaya,MEGHALAYA,2011,Sikh,3045,persons,0.10,Share derived.
+meghalaya,Meghalaya,MEGHALAYA,2011,Buddhist,9864,persons,0.33,Share derived.
+meghalaya,Meghalaya,MEGHALAYA,2011,Jain,627,persons,0.02,Share derived.
+meghalaya,Meghalaya,MEGHALAYA,2011,Other religions and persuasions,258271,persons,8.71,Share derived.
+meghalaya,Meghalaya,MEGHALAYA,2011,Religion not stated,9578,persons,0.32,Share derived.
+mizoram,Mizoram,MIZORAM,2011,Hindu,30136,persons,2.75,Share derived.
+mizoram,Mizoram,MIZORAM,2011,Muslim,14832,persons,1.35,Share derived.
+mizoram,Mizoram,MIZORAM,2011,Christian,956331,persons,87.16,Share derived.
+mizoram,Mizoram,MIZORAM,2011,Sikh,286,persons,0.03,Share derived.
+mizoram,Mizoram,MIZORAM,2011,Buddhist,93411,persons,8.51,Share derived.
+mizoram,Mizoram,MIZORAM,2011,Jain,376,persons,0.03,Share derived.
+mizoram,Mizoram,MIZORAM,2011,Other religions and persuasions,808,persons,0.07,Share derived.
+mizoram,Mizoram,MIZORAM,2011,Religion not stated,1026,persons,0.09,Share derived.
+nagaland,Nagaland,NAGALAND,2011,Hindu,173054,persons,8.75,Share derived.
+nagaland,Nagaland,NAGALAND,2011,Muslim,48963,persons,2.47,Share derived.
+nagaland,Nagaland,NAGALAND,2011,Christian,1739651,persons,87.93,Share derived.
+nagaland,Nagaland,NAGALAND,2011,Sikh,1890,persons,0.10,Share derived.
+nagaland,Nagaland,NAGALAND,2011,Buddhist,6759,persons,0.34,Share derived.
+nagaland,Nagaland,NAGALAND,2011,Jain,2655,persons,0.13,Share derived.
+nagaland,Nagaland,NAGALAND,2011,Other religions and persuasions,3214,persons,0.16,Share derived.
+nagaland,Nagaland,NAGALAND,2011,Religion not stated,2316,persons,0.12,Share derived.
+odisha,Odisha,ODISHA,2011,Hindu,39300341,persons,93.63,Share derived.
+odisha,Odisha,ODISHA,2011,Muslim,911670,persons,2.17,Share derived.
+odisha,Odisha,ODISHA,2011,Christian,1161708,persons,2.77,Share derived.
+odisha,Odisha,ODISHA,2011,Sikh,21991,persons,0.05,Share derived.
+odisha,Odisha,ODISHA,2011,Buddhist,13852,persons,0.03,Share derived.
+odisha,Odisha,ODISHA,2011,Jain,9420,persons,0.02,Share derived.
+odisha,Odisha,ODISHA,2011,Other religions and persuasions,478317,persons,1.14,Share derived.
+odisha,Odisha,ODISHA,2011,Religion not stated,76919,persons,0.18,Share derived.
+punjab,Punjab,PUNJAB,2011,Hindu,10678138,persons,38.49,Share derived.
+punjab,Punjab,PUNJAB,2011,Muslim,535489,persons,1.93,Share derived.
+punjab,Punjab,PUNJAB,2011,Christian,348230,persons,1.26,Share derived.
+punjab,Punjab,PUNJAB,2011,Sikh,16004754,persons,57.69,Share derived.
+punjab,Punjab,PUNJAB,2011,Buddhist,33237,persons,0.12,Share derived.
+punjab,Punjab,PUNJAB,2011,Jain,45040,persons,0.16,Share derived.
+punjab,Punjab,PUNJAB,2011,Other religions and persuasions,10886,persons,0.04,Share derived.
+punjab,Punjab,PUNJAB,2011,Religion not stated,87564,persons,0.32,Share derived.
+rajasthan,Rajasthan,RAJASTHAN,2011,Hindu,60657103,persons,88.49,Share derived.
+rajasthan,Rajasthan,RAJASTHAN,2011,Muslim,6215377,persons,9.07,Share derived.
+rajasthan,Rajasthan,RAJASTHAN,2011,Christian,96430,persons,0.14,Share derived.
+rajasthan,Rajasthan,RAJASTHAN,2011,Sikh,872930,persons,1.27,Share derived.
+rajasthan,Rajasthan,RAJASTHAN,2011,Buddhist,12185,persons,0.02,Share derived.
+rajasthan,Rajasthan,RAJASTHAN,2011,Jain,622023,persons,0.91,Share derived.
+rajasthan,Rajasthan,RAJASTHAN,2011,Other religions and persuasions,4676,persons,0.01,Share derived.
+rajasthan,Rajasthan,RAJASTHAN,2011,Religion not stated,67713,persons,0.10,Share derived.
+sikkim,Sikkim,SIKKIM,2011,Hindu,352662,persons,57.76,Share derived.
+sikkim,Sikkim,SIKKIM,2011,Muslim,9867,persons,1.62,Share derived.
+sikkim,Sikkim,SIKKIM,2011,Christian,60522,persons,9.91,Share derived.
+sikkim,Sikkim,SIKKIM,2011,Sikh,1868,persons,0.31,Share derived.
+sikkim,Sikkim,SIKKIM,2011,Buddhist,167216,persons,27.39,Share derived.
+sikkim,Sikkim,SIKKIM,2011,Jain,314,persons,0.05,Share derived.
+sikkim,Sikkim,SIKKIM,2011,Other religions and persuasions,16300,persons,2.67,Share derived.
+sikkim,Sikkim,SIKKIM,2011,Religion not stated,1828,persons,0.30,Share derived.
+tamil-nadu,Tamil Nadu,TAMIL NADU,2011,Hindu,63188168,persons,87.58,Share derived.
+tamil-nadu,Tamil Nadu,TAMIL NADU,2011,Muslim,4229479,persons,5.86,Share derived.
+tamil-nadu,Tamil Nadu,TAMIL NADU,2011,Christian,4418331,persons,6.12,Share derived.
+tamil-nadu,Tamil Nadu,TAMIL NADU,2011,Sikh,14601,persons,0.02,Share derived.
+tamil-nadu,Tamil Nadu,TAMIL NADU,2011,Buddhist,11186,persons,0.02,Share derived.
+tamil-nadu,Tamil Nadu,TAMIL NADU,2011,Jain,89265,persons,0.12,Share derived.
+tamil-nadu,Tamil Nadu,TAMIL NADU,2011,Other religions and persuasions,7414,persons,0.01,Share derived.
+tamil-nadu,Tamil Nadu,TAMIL NADU,2011,Religion not stated,188586,persons,0.26,Share derived.
+telangana,Telangana,,2011,Hindu,,persons,,Not a separate unit in Census 2011 tables; counted in andhra-pradesh
+telangana,Telangana,,2011,Muslim,,persons,,Not a separate unit in Census 2011 tables; counted in andhra-pradesh
+telangana,Telangana,,2011,Christian,,persons,,Not a separate unit in Census 2011 tables; counted in andhra-pradesh
+telangana,Telangana,,2011,Sikh,,persons,,Not a separate unit in Census 2011 tables; counted in andhra-pradesh
+telangana,Telangana,,2011,Buddhist,,persons,,Not a separate unit in Census 2011 tables; counted in andhra-pradesh
+telangana,Telangana,,2011,Jain,,persons,,Not a separate unit in Census 2011 tables; counted in andhra-pradesh
+telangana,Telangana,,2011,Other religions and persuasions,,persons,,Not a separate unit in Census 2011 tables; counted in andhra-pradesh
+telangana,Telangana,,2011,Religion not stated,,persons,,Not a separate unit in Census 2011 tables; counted in andhra-pradesh
+tripura,Tripura,TRIPURA,2011,Hindu,3063903,persons,83.40,Share derived.
+tripura,Tripura,TRIPURA,2011,Muslim,316042,persons,8.60,Share derived.
+tripura,Tripura,TRIPURA,2011,Christian,159882,persons,4.35,Share derived.
+tripura,Tripura,TRIPURA,2011,Sikh,1070,persons,0.03,Share derived.
+tripura,Tripura,TRIPURA,2011,Buddhist,125385,persons,3.41,Share derived.
+tripura,Tripura,TRIPURA,2011,Jain,860,persons,0.02,Share derived.
+tripura,Tripura,TRIPURA,2011,Other religions and persuasions,1514,persons,0.04,Share derived.
+tripura,Tripura,TRIPURA,2011,Religion not stated,5261,persons,0.14,Share derived.
+uttar-pradesh,Uttar Pradesh,UTTAR PRADESH,2011,Hindu,159312654,persons,79.73,Share derived.
+uttar-pradesh,Uttar Pradesh,UTTAR PRADESH,2011,Muslim,38483967,persons,19.26,Share derived.
+uttar-pradesh,Uttar Pradesh,UTTAR PRADESH,2011,Christian,356448,persons,0.18,Share derived.
+uttar-pradesh,Uttar Pradesh,UTTAR PRADESH,2011,Sikh,643500,persons,0.32,Share derived.
+uttar-pradesh,Uttar Pradesh,UTTAR PRADESH,2011,Buddhist,206285,persons,0.10,Share derived.
+uttar-pradesh,Uttar Pradesh,UTTAR PRADESH,2011,Jain,213267,persons,0.11,Share derived.
+uttar-pradesh,Uttar Pradesh,UTTAR PRADESH,2011,Other religions and persuasions,13598,persons,0.01,Share derived.
+uttar-pradesh,Uttar Pradesh,UTTAR PRADESH,2011,Religion not stated,582622,persons,0.29,Share derived.
+uttarakhand,Uttarakhand,UTTARAKHAND,2011,Hindu,8368636,persons,82.97,Share derived.
+uttarakhand,Uttarakhand,UTTARAKHAND,2011,Muslim,1406825,persons,13.95,Share derived.
+uttarakhand,Uttarakhand,UTTARAKHAND,2011,Christian,37781,persons,0.37,Share derived.
+uttarakhand,Uttarakhand,UTTARAKHAND,2011,Sikh,236340,persons,2.34,Share derived.
+uttarakhand,Uttarakhand,UTTARAKHAND,2011,Buddhist,14926,persons,0.15,Share derived.
+uttarakhand,Uttarakhand,UTTARAKHAND,2011,Jain,9183,persons,0.09,Share derived.
+uttarakhand,Uttarakhand,UTTARAKHAND,2011,Other religions and persuasions,993,persons,0.01,Share derived.
+uttarakhand,Uttarakhand,UTTARAKHAND,2011,Religion not stated,11608,persons,0.12,Share derived.
+west-bengal,West Bengal,WEST BENGAL,2011,Hindu,64385546,persons,70.54,Share derived.
+west-bengal,West Bengal,WEST BENGAL,2011,Muslim,24654825,persons,27.01,Share derived.
+west-bengal,West Bengal,WEST BENGAL,2011,Christian,658618,persons,0.72,Share derived.
+west-bengal,West Bengal,WEST BENGAL,2011,Sikh,63523,persons,0.07,Share derived.
+west-bengal,West Bengal,WEST BENGAL,2011,Buddhist,282898,persons,0.31,Share derived.
+west-bengal,West Bengal,WEST BENGAL,2011,Jain,60141,persons,0.07,Share derived.
+west-bengal,West Bengal,WEST BENGAL,2011,Other religions and persuasions,942297,persons,1.03,Share derived.
+west-bengal,West Bengal,WEST BENGAL,2011,Religion not stated,228267,persons,0.25,Share derived.
+andaman-nicobar,Andaman and Nicobar Islands,ANDAMAN & NICOBAR ISLANDS,2011,Hindu,264296,persons,69.45,Share derived.
+andaman-nicobar,Andaman and Nicobar Islands,ANDAMAN & NICOBAR ISLANDS,2011,Muslim,32413,persons,8.52,Share derived.
+andaman-nicobar,Andaman and Nicobar Islands,ANDAMAN & NICOBAR ISLANDS,2011,Christian,80984,persons,21.28,Share derived.
+andaman-nicobar,Andaman and Nicobar Islands,ANDAMAN & NICOBAR ISLANDS,2011,Sikh,1286,persons,0.34,Share derived.
+andaman-nicobar,Andaman and Nicobar Islands,ANDAMAN & NICOBAR ISLANDS,2011,Buddhist,338,persons,0.09,Share derived.
+andaman-nicobar,Andaman and Nicobar Islands,ANDAMAN & NICOBAR ISLANDS,2011,Jain,31,persons,0.01,Share derived.
+andaman-nicobar,Andaman and Nicobar Islands,ANDAMAN & NICOBAR ISLANDS,2011,Other religions and persuasions,564,persons,0.15,Share derived.
+andaman-nicobar,Andaman and Nicobar Islands,ANDAMAN & NICOBAR ISLANDS,2011,Religion not stated,669,persons,0.18,Share derived.
+chandigarh,Chandigarh,CHANDIGARH,2011,Hindu,852574,persons,80.78,Share derived.
+chandigarh,Chandigarh,CHANDIGARH,2011,Muslim,51447,persons,4.87,Share derived.
+chandigarh,Chandigarh,CHANDIGARH,2011,Christian,8720,persons,0.83,Share derived.
+chandigarh,Chandigarh,CHANDIGARH,2011,Sikh,138329,persons,13.11,Share derived.
+chandigarh,Chandigarh,CHANDIGARH,2011,Buddhist,1160,persons,0.11,Share derived.
+chandigarh,Chandigarh,CHANDIGARH,2011,Jain,1960,persons,0.19,Share derived.
+chandigarh,Chandigarh,CHANDIGARH,2011,Other religions and persuasions,246,persons,0.02,Share derived.
+chandigarh,Chandigarh,CHANDIGARH,2011,Religion not stated,1014,persons,0.10,Share derived.
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,Dadra & Nagar Haveli + Daman & Diu,2011,Hindu,543007,persons,92.51,Share derived. Derived: sum of Dadra and Nagar Haveli and Daman and Diu as published in 2011
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,Dadra & Nagar Haveli + Daman & Diu,2011,Muslim,32199,persons,5.49,Share derived. Derived: sum of Dadra and Nagar Haveli and Daman and Diu as published in 2011
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,Dadra & Nagar Haveli + Daman & Diu,2011,Christian,7933,persons,1.35,Share derived. Derived: sum of Dadra and Nagar Haveli and Daman and Diu as published in 2011
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,Dadra & Nagar Haveli + Daman & Diu,2011,Sikh,389,persons,0.07,Share derived. Derived: sum of Dadra and Nagar Haveli and Daman and Diu as published in 2011
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,Dadra & Nagar Haveli + Daman & Diu,2011,Buddhist,851,persons,0.14,Share derived. Derived: sum of Dadra and Nagar Haveli and Daman and Diu as published in 2011
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,Dadra & Nagar Haveli + Daman & Diu,2011,Jain,1473,persons,0.25,Share derived. Derived: sum of Dadra and Nagar Haveli and Daman and Diu as published in 2011
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,Dadra & Nagar Haveli + Daman & Diu,2011,Other religions and persuasions,372,persons,0.06,Share derived. Derived: sum of Dadra and Nagar Haveli and Daman and Diu as published in 2011
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,Dadra & Nagar Haveli + Daman & Diu,2011,Religion not stated,732,persons,0.12,Share derived. Derived: sum of Dadra and Nagar Haveli and Daman and Diu as published in 2011
+delhi,Delhi,NCT OF DELHI,2011,Hindu,13712100,persons,81.68,Share derived.
+delhi,Delhi,NCT OF DELHI,2011,Muslim,2158684,persons,12.86,Share derived.
+delhi,Delhi,NCT OF DELHI,2011,Christian,146093,persons,0.87,Share derived.
+delhi,Delhi,NCT OF DELHI,2011,Sikh,570581,persons,3.40,Share derived.
+delhi,Delhi,NCT OF DELHI,2011,Buddhist,18449,persons,0.11,Share derived.
+delhi,Delhi,NCT OF DELHI,2011,Jain,166231,persons,0.99,Share derived.
+delhi,Delhi,NCT OF DELHI,2011,Other religions and persuasions,2197,persons,0.01,Share derived.
+delhi,Delhi,NCT OF DELHI,2011,Religion not stated,13606,persons,0.08,Share derived.
+jammu-kashmir,Jammu and Kashmir,JAMMU & KASHMIR,2011,Hindu,3566674,persons,28.44,"Share derived. Census 2011 unit: former state of Jammu and Kashmir, includes present-day Ladakh"
+jammu-kashmir,Jammu and Kashmir,JAMMU & KASHMIR,2011,Muslim,8567485,persons,68.31,"Share derived. Census 2011 unit: former state of Jammu and Kashmir, includes present-day Ladakh"
+jammu-kashmir,Jammu and Kashmir,JAMMU & KASHMIR,2011,Christian,35631,persons,0.28,"Share derived. Census 2011 unit: former state of Jammu and Kashmir, includes present-day Ladakh"
+jammu-kashmir,Jammu and Kashmir,JAMMU & KASHMIR,2011,Sikh,234848,persons,1.87,"Share derived. Census 2011 unit: former state of Jammu and Kashmir, includes present-day Ladakh"
+jammu-kashmir,Jammu and Kashmir,JAMMU & KASHMIR,2011,Buddhist,112584,persons,0.90,"Share derived. Census 2011 unit: former state of Jammu and Kashmir, includes present-day Ladakh"
+jammu-kashmir,Jammu and Kashmir,JAMMU & KASHMIR,2011,Jain,2490,persons,0.02,"Share derived. Census 2011 unit: former state of Jammu and Kashmir, includes present-day Ladakh"
+jammu-kashmir,Jammu and Kashmir,JAMMU & KASHMIR,2011,Other religions and persuasions,1508,persons,0.01,"Share derived. Census 2011 unit: former state of Jammu and Kashmir, includes present-day Ladakh"
+jammu-kashmir,Jammu and Kashmir,JAMMU & KASHMIR,2011,Religion not stated,20082,persons,0.16,"Share derived. Census 2011 unit: former state of Jammu and Kashmir, includes present-day Ladakh"
+ladakh,Ladakh,,2011,Hindu,,persons,,Not a separate unit in Census 2011 tables; counted in jammu-kashmir
+ladakh,Ladakh,,2011,Muslim,,persons,,Not a separate unit in Census 2011 tables; counted in jammu-kashmir
+ladakh,Ladakh,,2011,Christian,,persons,,Not a separate unit in Census 2011 tables; counted in jammu-kashmir
+ladakh,Ladakh,,2011,Sikh,,persons,,Not a separate unit in Census 2011 tables; counted in jammu-kashmir
+ladakh,Ladakh,,2011,Buddhist,,persons,,Not a separate unit in Census 2011 tables; counted in jammu-kashmir
+ladakh,Ladakh,,2011,Jain,,persons,,Not a separate unit in Census 2011 tables; counted in jammu-kashmir
+ladakh,Ladakh,,2011,Other religions and persuasions,,persons,,Not a separate unit in Census 2011 tables; counted in jammu-kashmir
+ladakh,Ladakh,,2011,Religion not stated,,persons,,Not a separate unit in Census 2011 tables; counted in jammu-kashmir
+lakshadweep,Lakshadweep,LAKSHADWEEP,2011,Hindu,1788,persons,2.77,Share derived.
+lakshadweep,Lakshadweep,LAKSHADWEEP,2011,Muslim,62268,persons,96.58,Share derived.
+lakshadweep,Lakshadweep,LAKSHADWEEP,2011,Christian,317,persons,0.49,Share derived.
+lakshadweep,Lakshadweep,LAKSHADWEEP,2011,Sikh,8,persons,0.01,Share derived.
+lakshadweep,Lakshadweep,LAKSHADWEEP,2011,Buddhist,10,persons,0.02,Share derived.
+lakshadweep,Lakshadweep,LAKSHADWEEP,2011,Jain,11,persons,0.02,Share derived.
+lakshadweep,Lakshadweep,LAKSHADWEEP,2011,Other religions and persuasions,7,persons,0.01,Share derived.
+lakshadweep,Lakshadweep,LAKSHADWEEP,2011,Religion not stated,64,persons,0.10,Share derived.
+puducherry,Puducherry,PUDUCHERRY,2011,Hindu,1089409,persons,87.30,Share derived.
+puducherry,Puducherry,PUDUCHERRY,2011,Muslim,75556,persons,6.05,Share derived.
+puducherry,Puducherry,PUDUCHERRY,2011,Christian,78550,persons,6.29,Share derived.
+puducherry,Puducherry,PUDUCHERRY,2011,Sikh,297,persons,0.02,Share derived.
+puducherry,Puducherry,PUDUCHERRY,2011,Buddhist,451,persons,0.04,Share derived.
+puducherry,Puducherry,PUDUCHERRY,2011,Jain,1400,persons,0.11,Share derived.
+puducherry,Puducherry,PUDUCHERRY,2011,Other religions and persuasions,168,persons,0.01,Share derived.
+puducherry,Puducherry,PUDUCHERRY,2011,Religion not stated,2122,persons,0.17,Share derived.

@@ -1,0 +1,75 @@
+geography,name,period,series,value,unit,notes
+india,India,2024,nota_votes,6371839,votes,Computed from ECI Report 33 (542 PCs; excludes Surat)
+india,India,2024,nota_share,0.99,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33 (542 PCs; excludes Surat)
+andaman-nicobar,Andaman and Nicobar Islands,2024,nota_votes,1809,votes,Computed from ECI Report 33
+andaman-nicobar,Andaman and Nicobar Islands,2024,nota_share,0.89,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+andhra-pradesh,Andhra Pradesh,2024,nota_votes,402368,votes,Computed from ECI Report 33
+andhra-pradesh,Andhra Pradesh,2024,nota_share,1.19,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+arunachal-pradesh,Arunachal Pradesh,2024,nota_votes,7191,votes,Computed from ECI Report 33
+arunachal-pradesh,Arunachal Pradesh,2024,nota_share,0.99,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+assam,Assam,2024,nota_votes,240301,votes,Computed from ECI Report 33
+assam,Assam,2024,nota_share,1.20,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+bihar,Bihar,2024,nota_votes,899616,votes,Computed from ECI Report 33
+bihar,Bihar,2024,nota_share,2.07,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+chandigarh,Chandigarh,2024,nota_votes,2912,votes,Computed from ECI Report 33
+chandigarh,Chandigarh,2024,nota_share,0.65,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+chhattisgarh,Chhattisgarh,2024,nota_votes,135725,votes,Computed from ECI Report 33
+chhattisgarh,Chhattisgarh,2024,nota_share,0.90,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+delhi,Delhi,2024,nota_votes,45287,votes,Computed from ECI Report 33
+delhi,Delhi,2024,nota_share,0.51,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,2024,nota_votes,6129,votes,Computed from ECI Report 33
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,2024,nota_share,2.06,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+goa,Goa,2024,nota_votes,11171,votes,Computed from ECI Report 33
+goa,Goa,2024,nota_share,1.23,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+gujarat,Gujarat,2024,nota_votes,460359,votes,Computed from ECI Report 33 (542 PCs; excludes Surat)
+gujarat,Gujarat,2024,nota_share,1.58,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33 (542 PCs; excludes Surat)
+haryana,Haryana,2024,nota_votes,43542,votes,Computed from ECI Report 33
+haryana,Haryana,2024,nota_share,0.33,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+himachal-pradesh,Himachal Pradesh,2024,nota_votes,23125,votes,Computed from ECI Report 33
+himachal-pradesh,Himachal Pradesh,2024,nota_share,0.57,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+jammu-kashmir,Jammu and Kashmir,2024,nota_votes,34788,votes,Computed from ECI Report 33
+jammu-kashmir,Jammu and Kashmir,2024,nota_share,0.68,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+jharkhand,Jharkhand,2024,nota_votes,195472,votes,Computed from ECI Report 33
+jharkhand,Jharkhand,2024,nota_share,1.13,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+karnataka,Karnataka,2024,nota_votes,218343,votes,Computed from ECI Report 33
+karnataka,Karnataka,2024,nota_share,0.56,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+kerala,Kerala,2024,nota_votes,158456,votes,Computed from ECI Report 33
+kerala,Kerala,2024,nota_share,0.79,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+ladakh,Ladakh,2024,nota_votes,912,votes,Computed from ECI Report 33
+ladakh,Ladakh,2024,nota_share,0.67,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+lakshadweep,Lakshadweep,2024,nota_votes,133,votes,Computed from ECI Report 33
+lakshadweep,Lakshadweep,2024,nota_share,0.27,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+madhya-pradesh,Madhya Pradesh,2024,nota_votes,533705,votes,Computed from ECI Report 33
+madhya-pradesh,Madhya Pradesh,2024,nota_share,1.41,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+maharashtra,Maharashtra,2024,nota_votes,415580,votes,Computed from ECI Report 33
+maharashtra,Maharashtra,2024,nota_share,0.73,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+manipur,Manipur,2024,nota_votes,11022,votes,Computed from ECI Report 33
+manipur,Manipur,2024,nota_share,0.69,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+meghalaya,Meghalaya,2024,nota_votes,16848,votes,Computed from ECI Report 33
+meghalaya,Meghalaya,2024,nota_share,0.98,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+mizoram,Mizoram,2024,nota_votes,1893,votes,Computed from ECI Report 33
+mizoram,Mizoram,2024,nota_share,0.39,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+nagaland,Nagaland,2024,nota_votes,1646,votes,Computed from ECI Report 33
+nagaland,Nagaland,2024,nota_share,0.22,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+odisha,Odisha,2024,nota_votes,325447,votes,Computed from ECI Report 33
+odisha,Odisha,2024,nota_share,1.30,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+puducherry,Puducherry,2024,nota_votes,9763,votes,Computed from ECI Report 33
+puducherry,Puducherry,2024,nota_share,1.21,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+punjab,Punjab,2024,nota_votes,67158,votes,Computed from ECI Report 33
+punjab,Punjab,2024,nota_share,0.50,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+rajasthan,Rajasthan,2024,nota_votes,279464,votes,Computed from ECI Report 33
+rajasthan,Rajasthan,2024,nota_share,0.84,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+sikkim,Sikkim,2024,nota_votes,2527,votes,Computed from ECI Report 33
+sikkim,Sikkim,2024,nota_share,0.66,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+tamil-nadu,Tamil Nadu,2024,nota_votes,467068,votes,Computed from ECI Report 33
+tamil-nadu,Tamil Nadu,2024,nota_share,1.07,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+telangana,Telangana,2024,nota_votes,104244,votes,Computed from ECI Report 33
+telangana,Telangana,2024,nota_share,0.47,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+tripura,Tripura,2024,nota_votes,32915,votes,Computed from ECI Report 33
+tripura,Tripura,2024,nota_share,1.40,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+uttar-pradesh,Uttar Pradesh,2024,nota_votes,636855,votes,Computed from ECI Report 33
+uttar-pradesh,Uttar Pradesh,2024,nota_share,0.72,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+uttarakhand,Uttarakhand,2024,nota_votes,53111,votes,Computed from ECI Report 33
+uttarakhand,Uttarakhand,2024,nota_share,1.10,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33
+west-bengal,West Bengal,2024,nota_votes,524954,votes,Computed from ECI Report 33
+west-bengal,West Bengal,2024,nota_share,0.87,percent of votes counted (valid votes plus NOTA),Computed from ECI Report 33

@@ -1,0 +1,334 @@
+geography,period,level,sex,value,unit,table
+india,2025-26,primary (1-5),boys,0.4,per cent,Table 6.13
+india,2025-26,primary (1-5),girls,0.1,per cent,Table 6.13
+india,2025-26,primary (1-5),total,0.3,per cent,Table 6.13
+india,2025-26,upper primary (6-8),boys,3.8,per cent,Table 6.13
+india,2025-26,upper primary (6-8),girls,3.4,per cent,Table 6.13
+india,2025-26,upper primary (6-8),total,3.6,per cent,Table 6.13
+india,2025-26,secondary (9-10),boys,10.9,per cent,Table 6.13
+india,2025-26,secondary (9-10),girls,8.0,per cent,Table 6.13
+india,2025-26,secondary (9-10),total,9.5,per cent,Table 6.13
+andaman-nicobar,2025-26,primary (1-5),boys,0.1,per cent,Table 6.13
+andaman-nicobar,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+andaman-nicobar,2025-26,primary (1-5),total,0.0,per cent,Table 6.13
+andaman-nicobar,2025-26,upper primary (6-8),boys,0.9,per cent,Table 6.13
+andaman-nicobar,2025-26,upper primary (6-8),girls,0.8,per cent,Table 6.13
+andaman-nicobar,2025-26,upper primary (6-8),total,0.9,per cent,Table 6.13
+andaman-nicobar,2025-26,secondary (9-10),boys,4.3,per cent,Table 6.13
+andaman-nicobar,2025-26,secondary (9-10),girls,2.8,per cent,Table 6.13
+andaman-nicobar,2025-26,secondary (9-10),total,3.6,per cent,Table 6.13
+andhra-pradesh,2025-26,primary (1-5),boys,0.0,per cent,Table 6.13
+andhra-pradesh,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+andhra-pradesh,2025-26,primary (1-5),total,0.0,per cent,Table 6.13
+andhra-pradesh,2025-26,upper primary (6-8),boys,0.0,per cent,Table 6.13
+andhra-pradesh,2025-26,upper primary (6-8),girls,0.0,per cent,Table 6.13
+andhra-pradesh,2025-26,upper primary (6-8),total,0.0,per cent,Table 6.13
+andhra-pradesh,2025-26,secondary (9-10),boys,12.0,per cent,Table 6.13
+andhra-pradesh,2025-26,secondary (9-10),girls,7.2,per cent,Table 6.13
+andhra-pradesh,2025-26,secondary (9-10),total,9.7,per cent,Table 6.13
+arunachal-pradesh,2025-26,primary (1-5),boys,3.7,per cent,Table 6.13
+arunachal-pradesh,2025-26,primary (1-5),girls,2.8,per cent,Table 6.13
+arunachal-pradesh,2025-26,primary (1-5),total,3.3,per cent,Table 6.13
+arunachal-pradesh,2025-26,upper primary (6-8),boys,4.3,per cent,Table 6.13
+arunachal-pradesh,2025-26,upper primary (6-8),girls,4.3,per cent,Table 6.13
+arunachal-pradesh,2025-26,upper primary (6-8),total,4.3,per cent,Table 6.13
+arunachal-pradesh,2025-26,secondary (9-10),boys,13.5,per cent,Table 6.13
+arunachal-pradesh,2025-26,secondary (9-10),girls,12.4,per cent,Table 6.13
+arunachal-pradesh,2025-26,secondary (9-10),total,13.0,per cent,Table 6.13
+assam,2025-26,primary (1-5),boys,1.7,per cent,Table 6.13
+assam,2025-26,primary (1-5),girls,1.0,per cent,Table 6.13
+assam,2025-26,primary (1-5),total,1.4,per cent,Table 6.13
+assam,2025-26,upper primary (6-8),boys,5.3,per cent,Table 6.13
+assam,2025-26,upper primary (6-8),girls,3.4,per cent,Table 6.13
+assam,2025-26,upper primary (6-8),total,4.3,per cent,Table 6.13
+assam,2025-26,secondary (9-10),boys,14.7,per cent,Table 6.13
+assam,2025-26,secondary (9-10),girls,13.9,per cent,Table 6.13
+assam,2025-26,secondary (9-10),total,14.3,per cent,Table 6.13
+bihar,2025-26,primary (1-5),boys,3.1,per cent,Table 6.13
+bihar,2025-26,primary (1-5),girls,1.9,per cent,Table 6.13
+bihar,2025-26,primary (1-5),total,2.5,per cent,Table 6.13
+bihar,2025-26,upper primary (6-8),boys,10.0,per cent,Table 6.13
+bihar,2025-26,upper primary (6-8),girls,8.0,per cent,Table 6.13
+bihar,2025-26,upper primary (6-8),total,9.0,per cent,Table 6.13
+bihar,2025-26,secondary (9-10),boys,8.9,per cent,Table 6.13
+bihar,2025-26,secondary (9-10),girls,9.1,per cent,Table 6.13
+bihar,2025-26,secondary (9-10),total,9.0,per cent,Table 6.13
+chandigarh,2025-26,primary (1-5),boys,0.0,per cent,Table 6.13
+chandigarh,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+chandigarh,2025-26,primary (1-5),total,0.0,per cent,Table 6.13
+chandigarh,2025-26,upper primary (6-8),boys,0.0,per cent,Table 6.13
+chandigarh,2025-26,upper primary (6-8),girls,0.0,per cent,Table 6.13
+chandigarh,2025-26,upper primary (6-8),total,0.0,per cent,Table 6.13
+chandigarh,2025-26,secondary (9-10),boys,2.5,per cent,Table 6.13
+chandigarh,2025-26,secondary (9-10),girls,0.0,per cent,Table 6.13
+chandigarh,2025-26,secondary (9-10),total,1.3,per cent,Table 6.13
+chhattisgarh,2025-26,primary (1-5),boys,1.3,per cent,Table 6.13
+chhattisgarh,2025-26,primary (1-5),girls,0.9,per cent,Table 6.13
+chhattisgarh,2025-26,primary (1-5),total,1.1,per cent,Table 6.13
+chhattisgarh,2025-26,upper primary (6-8),boys,5.8,per cent,Table 6.13
+chhattisgarh,2025-26,upper primary (6-8),girls,3.6,per cent,Table 6.13
+chhattisgarh,2025-26,upper primary (6-8),total,4.7,per cent,Table 6.13
+chhattisgarh,2025-26,secondary (9-10),boys,20.6,per cent,Table 6.13
+chhattisgarh,2025-26,secondary (9-10),girls,11.8,per cent,Table 6.13
+chhattisgarh,2025-26,secondary (9-10),total,16.1,per cent,Table 6.13
+dnh-dd,2025-26,primary (1-5),boys,0.0,per cent,Table 6.13
+dnh-dd,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+dnh-dd,2025-26,primary (1-5),total,0.0,per cent,Table 6.13
+dnh-dd,2025-26,upper primary (6-8),boys,2.6,per cent,Table 6.13
+dnh-dd,2025-26,upper primary (6-8),girls,1.2,per cent,Table 6.13
+dnh-dd,2025-26,upper primary (6-8),total,1.9,per cent,Table 6.13
+dnh-dd,2025-26,secondary (9-10),boys,15.8,per cent,Table 6.13
+dnh-dd,2025-26,secondary (9-10),girls,8.6,per cent,Table 6.13
+dnh-dd,2025-26,secondary (9-10),total,12.4,per cent,Table 6.13
+delhi,2025-26,primary (1-5),boys,0.0,per cent,Table 6.13
+delhi,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+delhi,2025-26,primary (1-5),total,0.0,per cent,Table 6.13
+delhi,2025-26,upper primary (6-8),boys,1.6,per cent,Table 6.13
+delhi,2025-26,upper primary (6-8),girls,1.0,per cent,Table 6.13
+delhi,2025-26,upper primary (6-8),total,1.3,per cent,Table 6.13
+delhi,2025-26,secondary (9-10),boys,8.3,per cent,Table 6.13
+delhi,2025-26,secondary (9-10),girls,5.9,per cent,Table 6.13
+delhi,2025-26,secondary (9-10),total,7.1,per cent,Table 6.13
+goa,2025-26,primary (1-5),boys,0.2,per cent,Table 6.13
+goa,2025-26,primary (1-5),girls,0.1,per cent,Table 6.13
+goa,2025-26,primary (1-5),total,0.2,per cent,Table 6.13
+goa,2025-26,upper primary (6-8),boys,1.3,per cent,Table 6.13
+goa,2025-26,upper primary (6-8),girls,1.0,per cent,Table 6.13
+goa,2025-26,upper primary (6-8),total,1.1,per cent,Table 6.13
+goa,2025-26,secondary (9-10),boys,8.0,per cent,Table 6.13
+goa,2025-26,secondary (9-10),girls,4.7,per cent,Table 6.13
+goa,2025-26,secondary (9-10),total,6.4,per cent,Table 6.13
+gujarat,2025-26,primary (1-5),boys,0.0,per cent,Table 6.13
+gujarat,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+gujarat,2025-26,primary (1-5),total,0.0,per cent,Table 6.13
+gujarat,2025-26,upper primary (6-8),boys,4.0,per cent,Table 6.13
+gujarat,2025-26,upper primary (6-8),girls,5.6,per cent,Table 6.13
+gujarat,2025-26,upper primary (6-8),total,4.8,per cent,Table 6.13
+gujarat,2025-26,secondary (9-10),boys,17.6,per cent,Table 6.13
+gujarat,2025-26,secondary (9-10),girls,13.3,per cent,Table 6.13
+gujarat,2025-26,secondary (9-10),total,15.7,per cent,Table 6.13
+haryana,2025-26,primary (1-5),boys,0.0,per cent,Table 6.13
+haryana,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+haryana,2025-26,primary (1-5),total,0.0,per cent,Table 6.13
+haryana,2025-26,upper primary (6-8),boys,2.0,per cent,Table 6.13
+haryana,2025-26,upper primary (6-8),girls,2.1,per cent,Table 6.13
+haryana,2025-26,upper primary (6-8),total,2.1,per cent,Table 6.13
+haryana,2025-26,secondary (9-10),boys,6.7,per cent,Table 6.13
+haryana,2025-26,secondary (9-10),girls,3.8,per cent,Table 6.13
+haryana,2025-26,secondary (9-10),total,5.4,per cent,Table 6.13
+himachal-pradesh,2025-26,primary (1-5),boys,0.4,per cent,Table 6.13
+himachal-pradesh,2025-26,primary (1-5),girls,0.4,per cent,Table 6.13
+himachal-pradesh,2025-26,primary (1-5),total,0.4,per cent,Table 6.13
+himachal-pradesh,2025-26,upper primary (6-8),boys,1.4,per cent,Table 6.13
+himachal-pradesh,2025-26,upper primary (6-8),girls,1.3,per cent,Table 6.13
+himachal-pradesh,2025-26,upper primary (6-8),total,1.3,per cent,Table 6.13
+himachal-pradesh,2025-26,secondary (9-10),boys,6.8,per cent,Table 6.13
+himachal-pradesh,2025-26,secondary (9-10),girls,4.2,per cent,Table 6.13
+himachal-pradesh,2025-26,secondary (9-10),total,5.6,per cent,Table 6.13
+jammu-kashmir,2025-26,primary (1-5),boys,1.3,per cent,Table 6.13
+jammu-kashmir,2025-26,primary (1-5),girls,1.0,per cent,Table 6.13
+jammu-kashmir,2025-26,primary (1-5),total,1.1,per cent,Table 6.13
+jammu-kashmir,2025-26,upper primary (6-8),boys,2.7,per cent,Table 6.13
+jammu-kashmir,2025-26,upper primary (6-8),girls,3.0,per cent,Table 6.13
+jammu-kashmir,2025-26,upper primary (6-8),total,2.8,per cent,Table 6.13
+jammu-kashmir,2025-26,secondary (9-10),boys,12.0,per cent,Table 6.13
+jammu-kashmir,2025-26,secondary (9-10),girls,11.1,per cent,Table 6.13
+jammu-kashmir,2025-26,secondary (9-10),total,11.6,per cent,Table 6.13
+jharkhand,2025-26,primary (1-5),boys,0.3,per cent,Table 6.13
+jharkhand,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+jharkhand,2025-26,primary (1-5),total,0.1,per cent,Table 6.13
+jharkhand,2025-26,upper primary (6-8),boys,3.0,per cent,Table 6.13
+jharkhand,2025-26,upper primary (6-8),girls,1.9,per cent,Table 6.13
+jharkhand,2025-26,upper primary (6-8),total,2.5,per cent,Table 6.13
+jharkhand,2025-26,secondary (9-10),boys,7.5,per cent,Table 6.13
+jharkhand,2025-26,secondary (9-10),girls,5.9,per cent,Table 6.13
+jharkhand,2025-26,secondary (9-10),total,6.6,per cent,Table 6.13
+karnataka,2025-26,primary (1-5),boys,0.0,per cent,Table 6.13
+karnataka,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+karnataka,2025-26,primary (1-5),total,0.0,per cent,Table 6.13
+karnataka,2025-26,upper primary (6-8),boys,1.3,per cent,Table 6.13
+karnataka,2025-26,upper primary (6-8),girls,1.0,per cent,Table 6.13
+karnataka,2025-26,upper primary (6-8),total,1.2,per cent,Table 6.13
+karnataka,2025-26,secondary (9-10),boys,22.0,per cent,Table 6.13
+karnataka,2025-26,secondary (9-10),girls,13.9,per cent,Table 6.13
+karnataka,2025-26,secondary (9-10),total,18.1,per cent,Table 6.13
+kerala,2025-26,primary (1-5),boys,0.3,per cent,Table 6.13
+kerala,2025-26,primary (1-5),girls,0.1,per cent,Table 6.13
+kerala,2025-26,primary (1-5),total,0.2,per cent,Table 6.13
+kerala,2025-26,upper primary (6-8),boys,0.1,per cent,Table 6.13
+kerala,2025-26,upper primary (6-8),girls,0.0,per cent,Table 6.13
+kerala,2025-26,upper primary (6-8),total,0.1,per cent,Table 6.13
+kerala,2025-26,secondary (9-10),boys,5.1,per cent,Table 6.13
+kerala,2025-26,secondary (9-10),girls,3.0,per cent,Table 6.13
+kerala,2025-26,secondary (9-10),total,4.1,per cent,Table 6.13
+ladakh,2025-26,primary (1-5),boys,3.5,per cent,Table 6.13
+ladakh,2025-26,primary (1-5),girls,0.8,per cent,Table 6.13
+ladakh,2025-26,primary (1-5),total,2.2,per cent,Table 6.13
+ladakh,2025-26,upper primary (6-8),boys,5.5,per cent,Table 6.13
+ladakh,2025-26,upper primary (6-8),girls,2.1,per cent,Table 6.13
+ladakh,2025-26,upper primary (6-8),total,3.7,per cent,Table 6.13
+ladakh,2025-26,secondary (9-10),boys,18.2,per cent,Table 6.13
+ladakh,2025-26,secondary (9-10),girls,15.6,per cent,Table 6.13
+ladakh,2025-26,secondary (9-10),total,16.8,per cent,Table 6.13
+lakshadweep,2025-26,primary (1-5),boys,2.1,per cent,Table 6.13
+lakshadweep,2025-26,primary (1-5),girls,0.1,per cent,Table 6.13
+lakshadweep,2025-26,primary (1-5),total,1.1,per cent,Table 6.13
+lakshadweep,2025-26,upper primary (6-8),boys,4.0,per cent,Table 6.13
+lakshadweep,2025-26,upper primary (6-8),girls,2.7,per cent,Table 6.13
+lakshadweep,2025-26,upper primary (6-8),total,3.4,per cent,Table 6.13
+lakshadweep,2025-26,secondary (9-10),boys,0.4,per cent,Table 6.13
+lakshadweep,2025-26,secondary (9-10),girls,4.8,per cent,Table 6.13
+lakshadweep,2025-26,secondary (9-10),total,2.6,per cent,Table 6.13
+madhya-pradesh,2025-26,primary (1-5),boys,0.2,per cent,Table 6.13
+madhya-pradesh,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+madhya-pradesh,2025-26,primary (1-5),total,0.1,per cent,Table 6.13
+madhya-pradesh,2025-26,upper primary (6-8),boys,6.2,per cent,Table 6.13
+madhya-pradesh,2025-26,upper primary (6-8),girls,6.1,per cent,Table 6.13
+madhya-pradesh,2025-26,upper primary (6-8),total,6.2,per cent,Table 6.13
+madhya-pradesh,2025-26,secondary (9-10),boys,14.7,per cent,Table 6.13
+madhya-pradesh,2025-26,secondary (9-10),girls,11.3,per cent,Table 6.13
+madhya-pradesh,2025-26,secondary (9-10),total,13.0,per cent,Table 6.13
+maharashtra,2025-26,primary (1-5),boys,0.0,per cent,Table 6.13
+maharashtra,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+maharashtra,2025-26,primary (1-5),total,0.0,per cent,Table 6.13
+maharashtra,2025-26,upper primary (6-8),boys,0.0,per cent,Table 6.13
+maharashtra,2025-26,upper primary (6-8),girls,0.0,per cent,Table 6.13
+maharashtra,2025-26,upper primary (6-8),total,0.0,per cent,Table 6.13
+maharashtra,2025-26,secondary (9-10),boys,9.8,per cent,Table 6.13
+maharashtra,2025-26,secondary (9-10),girls,8.0,per cent,Table 6.13
+maharashtra,2025-26,secondary (9-10),total,9.0,per cent,Table 6.13
+manipur,2025-26,primary (1-5),boys,6.8,per cent,Table 6.13
+manipur,2025-26,primary (1-5),girls,6.0,per cent,Table 6.13
+manipur,2025-26,primary (1-5),total,6.4,per cent,Table 6.13
+manipur,2025-26,upper primary (6-8),boys,2.3,per cent,Table 6.13
+manipur,2025-26,upper primary (6-8),girls,1.3,per cent,Table 6.13
+manipur,2025-26,upper primary (6-8),total,1.8,per cent,Table 6.13
+manipur,2025-26,secondary (9-10),boys,8.9,per cent,Table 6.13
+manipur,2025-26,secondary (9-10),girls,8.2,per cent,Table 6.13
+manipur,2025-26,secondary (9-10),total,8.6,per cent,Table 6.13
+meghalaya,2025-26,primary (1-5),boys,4.5,per cent,Table 6.13
+meghalaya,2025-26,primary (1-5),girls,2.9,per cent,Table 6.13
+meghalaya,2025-26,primary (1-5),total,3.7,per cent,Table 6.13
+meghalaya,2025-26,upper primary (6-8),boys,8.1,per cent,Table 6.13
+meghalaya,2025-26,upper primary (6-8),girls,5.1,per cent,Table 6.13
+meghalaya,2025-26,upper primary (6-8),total,6.5,per cent,Table 6.13
+meghalaya,2025-26,secondary (9-10),boys,9.1,per cent,Table 6.13
+meghalaya,2025-26,secondary (9-10),girls,5.0,per cent,Table 6.13
+meghalaya,2025-26,secondary (9-10),total,6.7,per cent,Table 6.13
+mizoram,2025-26,primary (1-5),boys,1.7,per cent,Table 6.13
+mizoram,2025-26,primary (1-5),girls,1.6,per cent,Table 6.13
+mizoram,2025-26,primary (1-5),total,1.7,per cent,Table 6.13
+mizoram,2025-26,upper primary (6-8),boys,2.7,per cent,Table 6.13
+mizoram,2025-26,upper primary (6-8),girls,1.4,per cent,Table 6.13
+mizoram,2025-26,upper primary (6-8),total,2.1,per cent,Table 6.13
+mizoram,2025-26,secondary (9-10),boys,9.7,per cent,Table 6.13
+mizoram,2025-26,secondary (9-10),girls,8.9,per cent,Table 6.13
+mizoram,2025-26,secondary (9-10),total,9.3,per cent,Table 6.13
+nagaland,2025-26,primary (1-5),boys,3.8,per cent,Table 6.13
+nagaland,2025-26,primary (1-5),girls,2.9,per cent,Table 6.13
+nagaland,2025-26,primary (1-5),total,3.3,per cent,Table 6.13
+nagaland,2025-26,upper primary (6-8),boys,4.9,per cent,Table 6.13
+nagaland,2025-26,upper primary (6-8),girls,3.5,per cent,Table 6.13
+nagaland,2025-26,upper primary (6-8),total,4.2,per cent,Table 6.13
+nagaland,2025-26,secondary (9-10),boys,14.2,per cent,Table 6.13
+nagaland,2025-26,secondary (9-10),girls,12.4,per cent,Table 6.13
+nagaland,2025-26,secondary (9-10),total,13.3,per cent,Table 6.13
+odisha,2025-26,primary (1-5),boys,0.3,per cent,Table 6.13
+odisha,2025-26,primary (1-5),girls,0.2,per cent,Table 6.13
+odisha,2025-26,primary (1-5),total,0.2,per cent,Table 6.13
+odisha,2025-26,upper primary (6-8),boys,2.5,per cent,Table 6.13
+odisha,2025-26,upper primary (6-8),girls,1.9,per cent,Table 6.13
+odisha,2025-26,upper primary (6-8),total,2.2,per cent,Table 6.13
+odisha,2025-26,secondary (9-10),boys,16.1,per cent,Table 6.13
+odisha,2025-26,secondary (9-10),girls,11.2,per cent,Table 6.13
+odisha,2025-26,secondary (9-10),total,13.7,per cent,Table 6.13
+puducherry,2025-26,primary (1-5),boys,0.0,per cent,Table 6.13
+puducherry,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+puducherry,2025-26,primary (1-5),total,0.0,per cent,Table 6.13
+puducherry,2025-26,upper primary (6-8),boys,0.0,per cent,Table 6.13
+puducherry,2025-26,upper primary (6-8),girls,0.0,per cent,Table 6.13
+puducherry,2025-26,upper primary (6-8),total,0.0,per cent,Table 6.13
+puducherry,2025-26,secondary (9-10),boys,4.4,per cent,Table 6.13
+puducherry,2025-26,secondary (9-10),girls,1.3,per cent,Table 6.13
+puducherry,2025-26,secondary (9-10),total,2.9,per cent,Table 6.13
+punjab,2025-26,primary (1-5),boys,0.7,per cent,Table 6.13
+punjab,2025-26,primary (1-5),girls,0.6,per cent,Table 6.13
+punjab,2025-26,primary (1-5),total,0.7,per cent,Table 6.13
+punjab,2025-26,upper primary (6-8),boys,2.0,per cent,Table 6.13
+punjab,2025-26,upper primary (6-8),girls,1.5,per cent,Table 6.13
+punjab,2025-26,upper primary (6-8),total,1.8,per cent,Table 6.13
+punjab,2025-26,secondary (9-10),boys,6.3,per cent,Table 6.13
+punjab,2025-26,secondary (9-10),girls,4.8,per cent,Table 6.13
+punjab,2025-26,secondary (9-10),total,5.6,per cent,Table 6.13
+rajasthan,2025-26,primary (1-5),boys,3.0,per cent,Table 6.13
+rajasthan,2025-26,primary (1-5),girls,2.6,per cent,Table 6.13
+rajasthan,2025-26,primary (1-5),total,2.8,per cent,Table 6.13
+rajasthan,2025-26,upper primary (6-8),boys,4.7,per cent,Table 6.13
+rajasthan,2025-26,upper primary (6-8),girls,4.4,per cent,Table 6.13
+rajasthan,2025-26,upper primary (6-8),total,4.6,per cent,Table 6.13
+rajasthan,2025-26,secondary (9-10),boys,9.7,per cent,Table 6.13
+rajasthan,2025-26,secondary (9-10),girls,7.8,per cent,Table 6.13
+rajasthan,2025-26,secondary (9-10),total,8.8,per cent,Table 6.13
+sikkim,2025-26,primary (1-5),boys,1.3,per cent,Table 6.13
+sikkim,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+sikkim,2025-26,primary (1-5),total,0.2,per cent,Table 6.13
+sikkim,2025-26,upper primary (6-8),boys,2.8,per cent,Table 6.13
+sikkim,2025-26,upper primary (6-8),girls,0.8,per cent,Table 6.13
+sikkim,2025-26,upper primary (6-8),total,1.8,per cent,Table 6.13
+sikkim,2025-26,secondary (9-10),boys,16.1,per cent,Table 6.13
+sikkim,2025-26,secondary (9-10),girls,10.2,per cent,Table 6.13
+sikkim,2025-26,secondary (9-10),total,13.1,per cent,Table 6.13
+tamil-nadu,2025-26,primary (1-5),boys,0.0,per cent,Table 6.13
+tamil-nadu,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+tamil-nadu,2025-26,primary (1-5),total,0.0,per cent,Table 6.13
+tamil-nadu,2025-26,upper primary (6-8),boys,0.0,per cent,Table 6.13
+tamil-nadu,2025-26,upper primary (6-8),girls,0.0,per cent,Table 6.13
+tamil-nadu,2025-26,upper primary (6-8),total,0.0,per cent,Table 6.13
+tamil-nadu,2025-26,secondary (9-10),boys,9.1,per cent,Table 6.13
+tamil-nadu,2025-26,secondary (9-10),girls,3.2,per cent,Table 6.13
+tamil-nadu,2025-26,secondary (9-10),total,6.2,per cent,Table 6.13
+telangana,2025-26,primary (1-5),boys,0.7,per cent,Table 6.13
+telangana,2025-26,primary (1-5),girls,0.4,per cent,Table 6.13
+telangana,2025-26,primary (1-5),total,0.5,per cent,Table 6.13
+telangana,2025-26,upper primary (6-8),boys,1.6,per cent,Table 6.13
+telangana,2025-26,upper primary (6-8),girls,1.1,per cent,Table 6.13
+telangana,2025-26,upper primary (6-8),total,1.3,per cent,Table 6.13
+telangana,2025-26,secondary (9-10),boys,7.2,per cent,Table 6.13
+telangana,2025-26,secondary (9-10),girls,4.3,per cent,Table 6.13
+telangana,2025-26,secondary (9-10),total,5.8,per cent,Table 6.13
+tripura,2025-26,primary (1-5),boys,0.0,per cent,Table 6.13
+tripura,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+tripura,2025-26,primary (1-5),total,0.0,per cent,Table 6.13
+tripura,2025-26,upper primary (6-8),boys,3.7,per cent,Table 6.13
+tripura,2025-26,upper primary (6-8),girls,2.7,per cent,Table 6.13
+tripura,2025-26,upper primary (6-8),total,3.2,per cent,Table 6.13
+tripura,2025-26,secondary (9-10),boys,11.1,per cent,Table 6.13
+tripura,2025-26,secondary (9-10),girls,9.7,per cent,Table 6.13
+tripura,2025-26,secondary (9-10),total,10.4,per cent,Table 6.13
+uttar-pradesh,2025-26,primary (1-5),boys,0.0,per cent,Table 6.13
+uttar-pradesh,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+uttar-pradesh,2025-26,primary (1-5),total,0.0,per cent,Table 6.13
+uttar-pradesh,2025-26,upper primary (6-8),boys,6.6,per cent,Table 6.13
+uttar-pradesh,2025-26,upper primary (6-8),girls,6.8,per cent,Table 6.13
+uttar-pradesh,2025-26,upper primary (6-8),total,6.7,per cent,Table 6.13
+uttar-pradesh,2025-26,secondary (9-10),boys,9.4,per cent,Table 6.13
+uttar-pradesh,2025-26,secondary (9-10),girls,7.3,per cent,Table 6.13
+uttar-pradesh,2025-26,secondary (9-10),total,8.4,per cent,Table 6.13
+uttarakhand,2025-26,primary (1-5),boys,1.9,per cent,Table 6.13
+uttarakhand,2025-26,primary (1-5),girls,1.8,per cent,Table 6.13
+uttarakhand,2025-26,primary (1-5),total,1.9,per cent,Table 6.13
+uttarakhand,2025-26,upper primary (6-8),boys,3.4,per cent,Table 6.13
+uttarakhand,2025-26,upper primary (6-8),girls,2.8,per cent,Table 6.13
+uttarakhand,2025-26,upper primary (6-8),total,3.1,per cent,Table 6.13
+uttarakhand,2025-26,secondary (9-10),boys,7.2,per cent,Table 6.13
+uttarakhand,2025-26,secondary (9-10),girls,4.8,per cent,Table 6.13
+uttarakhand,2025-26,secondary (9-10),total,6.1,per cent,Table 6.13
+west-bengal,2025-26,primary (1-5),boys,0.0,per cent,Table 6.13
+west-bengal,2025-26,primary (1-5),girls,0.0,per cent,Table 6.13
+west-bengal,2025-26,primary (1-5),total,0.0,per cent,Table 6.13
+west-bengal,2025-26,upper primary (6-8),boys,1.8,per cent,Table 6.13
+west-bengal,2025-26,upper primary (6-8),girls,0.4,per cent,Table 6.13
+west-bengal,2025-26,upper primary (6-8),total,1.1,per cent,Table 6.13
+west-bengal,2025-26,secondary (9-10),boys,6.1,per cent,Table 6.13
+west-bengal,2025-26,secondary (9-10),girls,5.0,per cent,Table 6.13
+west-bengal,2025-26,secondary (9-10),total,5.5,per cent,Table 6.13

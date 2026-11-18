@@ -1,0 +1,381 @@
+geography,name,period,series,value,unit,note
+india,India,2026-10-31,solar_total,174547.05,MW,"all-India total incl. ""Others"""
+india,India,2026-10-31,wind,59529.67,MW,"all-India total incl. ""Others"""
+india,India,2026-10-31,bio_power_total,11882.83,MW,"all-India total incl. ""Others"""
+india,India,2026-10-31,small_hydro,5189.26,MW,"all-India total incl. ""Others"""
+india,India,2026-10-31,large_hydro,52314.67,MW,"all-India total incl. ""Others"""
+india,India,2026-10-31,total_re,303463.48,MW,"all-India total incl. ""Others"""
+india,India,2026-10-31,solar_ground_mounted,127330.66,MW,"all-India total incl. ""Others"""
+india,India,2026-10-31,solar_rooftop,34966.92,MW,"all-India total incl. ""Others"""
+india,India,2026-10-31,solar_hybrid_component,5620.21,MW,"all-India total incl. ""Others"""
+india,India,2026-10-31,solar_offgrid_kusum,6629.26,MW,"all-India total incl. ""Others"""
+andhra-pradesh,Andhra Pradesh,2026-10-31,solar_total,8981.95,MW,
+andhra-pradesh,Andhra Pradesh,2026-10-31,wind,4604.68,MW,
+andhra-pradesh,Andhra Pradesh,2026-10-31,bio_power_total,637.52,MW,
+andhra-pradesh,Andhra Pradesh,2026-10-31,small_hydro,164.51,MW,
+andhra-pradesh,Andhra Pradesh,2026-10-31,large_hydro,3290.00,MW,
+andhra-pradesh,Andhra Pradesh,2026-10-31,total_re,17678.66,MW,
+andhra-pradesh,Andhra Pradesh,2026-10-31,solar_ground_mounted,6898.83,MW,
+andhra-pradesh,Andhra Pradesh,2026-10-31,solar_rooftop,1314.54,MW,
+andhra-pradesh,Andhra Pradesh,2026-10-31,solar_hybrid_component,679.76,MW,
+andhra-pradesh,Andhra Pradesh,2026-10-31,solar_offgrid_kusum,88.82,MW,
+arunachal-pradesh,Arunachal Pradesh,2026-10-31,solar_total,17.12,MW,
+arunachal-pradesh,Arunachal Pradesh,2026-10-31,wind,,MW,blank in source
+arunachal-pradesh,Arunachal Pradesh,2026-10-31,bio_power_total,,MW,blank in source
+arunachal-pradesh,Arunachal Pradesh,2026-10-31,small_hydro,140.61,MW,
+arunachal-pradesh,Arunachal Pradesh,2026-10-31,large_hydro,2365.00,MW,
+arunachal-pradesh,Arunachal Pradesh,2026-10-31,total_re,2522.73,MW,
+arunachal-pradesh,Arunachal Pradesh,2026-10-31,solar_ground_mounted,1.27,MW,
+arunachal-pradesh,Arunachal Pradesh,2026-10-31,solar_rooftop,6.68,MW,
+arunachal-pradesh,Arunachal Pradesh,2026-10-31,solar_hybrid_component,,MW,blank in source
+arunachal-pradesh,Arunachal Pradesh,2026-10-31,solar_offgrid_kusum,9.17,MW,
+assam,Assam,2026-10-31,solar_total,892.77,MW,
+assam,Assam,2026-10-31,wind,,MW,blank in source
+assam,Assam,2026-10-31,bio_power_total,8.00,MW,
+assam,Assam,2026-10-31,small_hydro,34.11,MW,
+assam,Assam,2026-10-31,large_hydro,346.00,MW,
+assam,Assam,2026-10-31,total_re,1280.88,MW,
+assam,Assam,2026-10-31,solar_ground_mounted,220.96,MW,
+assam,Assam,2026-10-31,solar_rooftop,659.17,MW,
+assam,Assam,2026-10-31,solar_hybrid_component,,MW,blank in source
+assam,Assam,2026-10-31,solar_offgrid_kusum,12.64,MW,
+bihar,Bihar,2026-10-31,solar_total,613.55,MW,
+bihar,Bihar,2026-10-31,wind,,MW,blank in source
+bihar,Bihar,2026-10-31,bio_power_total,146.47,MW,
+bihar,Bihar,2026-10-31,small_hydro,70.70,MW,
+bihar,Bihar,2026-10-31,large_hydro,,MW,blank in source
+bihar,Bihar,2026-10-31,total_re,830.72,MW,
+bihar,Bihar,2026-10-31,solar_ground_mounted,315.74,MW,
+bihar,Bihar,2026-10-31,solar_rooftop,276.53,MW,
+bihar,Bihar,2026-10-31,solar_hybrid_component,,MW,blank in source
+bihar,Bihar,2026-10-31,solar_offgrid_kusum,21.28,MW,
+chhattisgarh,Chhattisgarh,2026-10-31,solar_total,2312.71,MW,
+chhattisgarh,Chhattisgarh,2026-10-31,wind,,MW,blank in source
+chhattisgarh,Chhattisgarh,2026-10-31,bio_power_total,289.92,MW,
+chhattisgarh,Chhattisgarh,2026-10-31,small_hydro,116.40,MW,
+chhattisgarh,Chhattisgarh,2026-10-31,large_hydro,120.00,MW,
+chhattisgarh,Chhattisgarh,2026-10-31,total_re,2839.03,MW,
+chhattisgarh,Chhattisgarh,2026-10-31,solar_ground_mounted,1490.05,MW,
+chhattisgarh,Chhattisgarh,2026-10-31,solar_rooftop,431.59,MW,
+chhattisgarh,Chhattisgarh,2026-10-31,solar_hybrid_component,,MW,blank in source
+chhattisgarh,Chhattisgarh,2026-10-31,solar_offgrid_kusum,391.07,MW,
+goa,Goa,2026-10-31,solar_total,104.81,MW,
+goa,Goa,2026-10-31,wind,,MW,blank in source
+goa,Goa,2026-10-31,bio_power_total,1.94,MW,
+goa,Goa,2026-10-31,small_hydro,0.05,MW,
+goa,Goa,2026-10-31,large_hydro,,MW,blank in source
+goa,Goa,2026-10-31,total_re,106.80,MW,
+goa,Goa,2026-10-31,solar_ground_mounted,8.52,MW,
+goa,Goa,2026-10-31,solar_rooftop,94.80,MW,
+goa,Goa,2026-10-31,solar_hybrid_component,,MW,blank in source
+goa,Goa,2026-10-31,solar_offgrid_kusum,1.49,MW,
+gujarat,Gujarat,2026-10-31,solar_total,36791.84,MW,
+gujarat,Gujarat,2026-10-31,wind,17253.26,MW,
+gujarat,Gujarat,2026-10-31,bio_power_total,140.11,MW,
+gujarat,Gujarat,2026-10-31,small_hydro,113.30,MW,
+gujarat,Gujarat,2026-10-31,large_hydro,1990.00,MW,
+gujarat,Gujarat,2026-10-31,total_re,56288.51,MW,
+gujarat,Gujarat,2026-10-31,solar_ground_mounted,26202.27,MW,
+gujarat,Gujarat,2026-10-31,solar_rooftop,8735.39,MW,
+gujarat,Gujarat,2026-10-31,solar_hybrid_component,1653.66,MW,
+gujarat,Gujarat,2026-10-31,solar_offgrid_kusum,200.53,MW,
+haryana,Haryana,2026-10-31,solar_total,2946.73,MW,
+haryana,Haryana,2026-10-31,wind,,MW,blank in source
+haryana,Haryana,2026-10-31,bio_power_total,335.57,MW,
+haryana,Haryana,2026-10-31,small_hydro,73.50,MW,
+haryana,Haryana,2026-10-31,large_hydro,,MW,blank in source
+haryana,Haryana,2026-10-31,total_re,3355.80,MW,
+haryana,Haryana,2026-10-31,solar_ground_mounted,267.76,MW,
+haryana,Haryana,2026-10-31,solar_rooftop,1464.77,MW,
+haryana,Haryana,2026-10-31,solar_hybrid_component,,MW,blank in source
+haryana,Haryana,2026-10-31,solar_offgrid_kusum,1214.20,MW,
+himachal-pradesh,Himachal Pradesh,2026-10-31,solar_total,390.09,MW,
+himachal-pradesh,Himachal Pradesh,2026-10-31,wind,,MW,blank in source
+himachal-pradesh,Himachal Pradesh,2026-10-31,bio_power_total,10.20,MW,
+himachal-pradesh,Himachal Pradesh,2026-10-31,small_hydro,1013.46,MW,
+himachal-pradesh,Himachal Pradesh,2026-10-31,large_hydro,11571.02,MW,
+himachal-pradesh,Himachal Pradesh,2026-10-31,total_re,12984.77,MW,
+himachal-pradesh,Himachal Pradesh,2026-10-31,solar_ground_mounted,284.00,MW,
+himachal-pradesh,Himachal Pradesh,2026-10-31,solar_rooftop,71.50,MW,
+himachal-pradesh,Himachal Pradesh,2026-10-31,solar_hybrid_component,,MW,blank in source
+himachal-pradesh,Himachal Pradesh,2026-10-31,solar_offgrid_kusum,34.58,MW,
+jammu-kashmir,Jammu & Kashmir,2026-10-31,solar_total,283.84,MW,
+jammu-kashmir,Jammu & Kashmir,2026-10-31,wind,,MW,blank in source
+jammu-kashmir,Jammu & Kashmir,2026-10-31,bio_power_total,5.00,MW,
+jammu-kashmir,Jammu & Kashmir,2026-10-31,small_hydro,189.93,MW,
+jammu-kashmir,Jammu & Kashmir,2026-10-31,large_hydro,3360.00,MW,
+jammu-kashmir,Jammu & Kashmir,2026-10-31,total_re,3838.77,MW,
+jammu-kashmir,Jammu & Kashmir,2026-10-31,solar_ground_mounted,2.49,MW,
+jammu-kashmir,Jammu & Kashmir,2026-10-31,solar_rooftop,242.60,MW,
+jammu-kashmir,Jammu & Kashmir,2026-10-31,solar_hybrid_component,,MW,blank in source
+jammu-kashmir,Jammu & Kashmir,2026-10-31,solar_offgrid_kusum,38.75,MW,
+jharkhand,Jharkhand,2026-10-31,solar_total,447.40,MW,
+jharkhand,Jharkhand,2026-10-31,wind,,MW,blank in source
+jharkhand,Jharkhand,2026-10-31,bio_power_total,20.14,MW,
+jharkhand,Jharkhand,2026-10-31,small_hydro,4.05,MW,
+jharkhand,Jharkhand,2026-10-31,large_hydro,210.00,MW,
+jharkhand,Jharkhand,2026-10-31,total_re,681.59,MW,
+jharkhand,Jharkhand,2026-10-31,solar_ground_mounted,121.00,MW,
+jharkhand,Jharkhand,2026-10-31,solar_rooftop,98.66,MW,
+jharkhand,Jharkhand,2026-10-31,solar_hybrid_component,,MW,blank in source
+jharkhand,Jharkhand,2026-10-31,solar_offgrid_kusum,227.74,MW,
+karnataka,Karnataka,2026-10-31,solar_total,12696.07,MW,
+karnataka,Karnataka,2026-10-31,wind,8989.94,MW,
+karnataka,Karnataka,2026-10-31,bio_power_total,1923.77,MW,
+karnataka,Karnataka,2026-10-31,small_hydro,1284.73,MW,
+karnataka,Karnataka,2026-10-31,large_hydro,3689.20,MW,
+karnataka,Karnataka,2026-10-31,total_re,28583.71,MW,
+karnataka,Karnataka,2026-10-31,solar_ground_mounted,10924.47,MW,
+karnataka,Karnataka,2026-10-31,solar_rooftop,953.21,MW,
+karnataka,Karnataka,2026-10-31,solar_hybrid_component,586.75,MW,
+karnataka,Karnataka,2026-10-31,solar_offgrid_kusum,231.65,MW,
+kerala,Kerala,2026-10-31,solar_total,2753.08,MW,
+kerala,Kerala,2026-10-31,wind,71.52,MW,
+kerala,Kerala,2026-10-31,bio_power_total,2.50,MW,
+kerala,Kerala,2026-10-31,small_hydro,276.52,MW,
+kerala,Kerala,2026-10-31,large_hydro,2008.15,MW,
+kerala,Kerala,2026-10-31,total_re,5111.77,MW,
+kerala,Kerala,2026-10-31,solar_ground_mounted,342.27,MW,
+kerala,Kerala,2026-10-31,solar_rooftop,2385.74,MW,
+kerala,Kerala,2026-10-31,solar_hybrid_component,,MW,blank in source
+kerala,Kerala,2026-10-31,solar_offgrid_kusum,25.07,MW,
+ladakh,Ladakh,2026-10-31,solar_total,19.61,MW,
+ladakh,Ladakh,2026-10-31,wind,,MW,blank in source
+ladakh,Ladakh,2026-10-31,bio_power_total,,MW,blank in source
+ladakh,Ladakh,2026-10-31,small_hydro,45.79,MW,
+ladakh,Ladakh,2026-10-31,large_hydro,89.00,MW,
+ladakh,Ladakh,2026-10-31,total_re,154.40,MW,
+ladakh,Ladakh,2026-10-31,solar_ground_mounted,6.00,MW,
+ladakh,Ladakh,2026-10-31,solar_rooftop,12.26,MW,
+ladakh,Ladakh,2026-10-31,solar_hybrid_component,,MW,blank in source
+ladakh,Ladakh,2026-10-31,solar_offgrid_kusum,1.35,MW,
+madhya-pradesh,Madhya Pradesh,2026-10-31,solar_total,6744.00,MW,
+madhya-pradesh,Madhya Pradesh,2026-10-31,wind,3756.45,MW,
+madhya-pradesh,Madhya Pradesh,2026-10-31,bio_power_total,165.37,MW,
+madhya-pradesh,Madhya Pradesh,2026-10-31,small_hydro,123.71,MW,
+madhya-pradesh,Madhya Pradesh,2026-10-31,large_hydro,2235.00,MW,
+madhya-pradesh,Madhya Pradesh,2026-10-31,total_re,13024.53,MW,
+madhya-pradesh,Madhya Pradesh,2026-10-31,solar_ground_mounted,5421.36,MW,
+madhya-pradesh,Madhya Pradesh,2026-10-31,solar_rooftop,1124.88,MW,
+madhya-pradesh,Madhya Pradesh,2026-10-31,solar_hybrid_component,,MW,blank in source
+madhya-pradesh,Madhya Pradesh,2026-10-31,solar_offgrid_kusum,197.77,MW,
+maharashtra,Maharashtra,2026-10-31,solar_total,20648.39,MW,
+maharashtra,Maharashtra,2026-10-31,wind,6542.11,MW,
+maharashtra,Maharashtra,2026-10-31,bio_power_total,3042.26,MW,
+maharashtra,Maharashtra,2026-10-31,small_hydro,384.28,MW,
+maharashtra,Maharashtra,2026-10-31,large_hydro,3047.00,MW,
+maharashtra,Maharashtra,2026-10-31,total_re,33664.04,MW,
+maharashtra,Maharashtra,2026-10-31,solar_ground_mounted,12196.30,MW,
+maharashtra,Maharashtra,2026-10-31,solar_rooftop,6202.16,MW,
+maharashtra,Maharashtra,2026-10-31,solar_hybrid_component,,MW,blank in source
+maharashtra,Maharashtra,2026-10-31,solar_offgrid_kusum,2249.93,MW,
+manipur,Manipur,2026-10-31,solar_total,18.45,MW,
+manipur,Manipur,2026-10-31,wind,,MW,blank in source
+manipur,Manipur,2026-10-31,bio_power_total,,MW,blank in source
+manipur,Manipur,2026-10-31,small_hydro,5.45,MW,
+manipur,Manipur,2026-10-31,large_hydro,105.00,MW,
+manipur,Manipur,2026-10-31,total_re,128.90,MW,
+manipur,Manipur,2026-10-31,solar_ground_mounted,0.60,MW,
+manipur,Manipur,2026-10-31,solar_rooftop,11.46,MW,
+manipur,Manipur,2026-10-31,solar_hybrid_component,,MW,blank in source
+manipur,Manipur,2026-10-31,solar_offgrid_kusum,6.39,MW,
+meghalaya,Meghalaya,2026-10-31,solar_total,4.28,MW,
+meghalaya,Meghalaya,2026-10-31,wind,,MW,blank in source
+meghalaya,Meghalaya,2026-10-31,bio_power_total,13.80,MW,
+meghalaya,Meghalaya,2026-10-31,small_hydro,55.03,MW,
+meghalaya,Meghalaya,2026-10-31,large_hydro,322.00,MW,
+meghalaya,Meghalaya,2026-10-31,total_re,395.11,MW,
+meghalaya,Meghalaya,2026-10-31,solar_ground_mounted,,MW,blank in source
+meghalaya,Meghalaya,2026-10-31,solar_rooftop,0.21,MW,
+meghalaya,Meghalaya,2026-10-31,solar_hybrid_component,,MW,blank in source
+meghalaya,Meghalaya,2026-10-31,solar_offgrid_kusum,4.07,MW,
+mizoram,Mizoram,2026-10-31,solar_total,35.87,MW,
+mizoram,Mizoram,2026-10-31,wind,,MW,blank in source
+mizoram,Mizoram,2026-10-31,bio_power_total,,MW,blank in source
+mizoram,Mizoram,2026-10-31,small_hydro,45.47,MW,
+mizoram,Mizoram,2026-10-31,large_hydro,60.00,MW,
+mizoram,Mizoram,2026-10-31,total_re,141.34,MW,
+mizoram,Mizoram,2026-10-31,solar_ground_mounted,22.00,MW,
+mizoram,Mizoram,2026-10-31,solar_rooftop,6.75,MW,
+mizoram,Mizoram,2026-10-31,solar_hybrid_component,,MW,blank in source
+mizoram,Mizoram,2026-10-31,solar_offgrid_kusum,7.12,MW,
+nagaland,Nagaland,2026-10-31,solar_total,4.77,MW,
+nagaland,Nagaland,2026-10-31,wind,,MW,blank in source
+nagaland,Nagaland,2026-10-31,bio_power_total,,MW,blank in source
+nagaland,Nagaland,2026-10-31,small_hydro,35.07,MW,
+nagaland,Nagaland,2026-10-31,large_hydro,75.00,MW,
+nagaland,Nagaland,2026-10-31,total_re,114.84,MW,
+nagaland,Nagaland,2026-10-31,solar_ground_mounted,,MW,blank in source
+nagaland,Nagaland,2026-10-31,solar_rooftop,2.19,MW,
+nagaland,Nagaland,2026-10-31,solar_hybrid_component,,MW,blank in source
+nagaland,Nagaland,2026-10-31,solar_offgrid_kusum,2.58,MW,
+odisha,Odisha,2026-10-31,solar_total,1361.25,MW,
+odisha,Odisha,2026-10-31,wind,,MW,blank in source
+odisha,Odisha,2026-10-31,bio_power_total,64.22,MW,
+odisha,Odisha,2026-10-31,small_hydro,140.63,MW,
+odisha,Odisha,2026-10-31,large_hydro,2154.55,MW,
+odisha,Odisha,2026-10-31,total_re,3720.65,MW,
+odisha,Odisha,2026-10-31,solar_ground_mounted,727.96,MW,
+odisha,Odisha,2026-10-31,solar_rooftop,548.62,MW,
+odisha,Odisha,2026-10-31,solar_hybrid_component,,MW,blank in source
+odisha,Odisha,2026-10-31,solar_offgrid_kusum,84.67,MW,
+punjab,Punjab,2026-10-31,solar_total,1706.65,MW,
+punjab,Punjab,2026-10-31,wind,,MW,blank in source
+punjab,Punjab,2026-10-31,bio_power_total,584.17,MW,
+punjab,Punjab,2026-10-31,small_hydro,176.10,MW,
+punjab,Punjab,2026-10-31,large_hydro,1096.30,MW,
+punjab,Punjab,2026-10-31,total_re,3563.22,MW,
+punjab,Punjab,2026-10-31,solar_ground_mounted,886.77,MW,
+punjab,Punjab,2026-10-31,solar_rooftop,702.86,MW,
+punjab,Punjab,2026-10-31,solar_hybrid_component,,MW,blank in source
+punjab,Punjab,2026-10-31,solar_offgrid_kusum,117.02,MW,
+rajasthan,Rajasthan,2026-10-31,solar_total,45627.96,MW,
+rajasthan,Rajasthan,2026-10-31,wind,5840.29,MW,
+rajasthan,Rajasthan,2026-10-31,bio_power_total,229.20,MW,
+rajasthan,Rajasthan,2026-10-31,small_hydro,23.85,MW,
+rajasthan,Rajasthan,2026-10-31,large_hydro,412.50,MW,
+rajasthan,Rajasthan,2026-10-31,total_re,52133.80,MW,
+rajasthan,Rajasthan,2026-10-31,solar_ground_mounted,39618.95,MW,
+rajasthan,Rajasthan,2026-10-31,solar_rooftop,2434.53,MW,
+rajasthan,Rajasthan,2026-10-31,solar_hybrid_component,2700.04,MW,
+rajasthan,Rajasthan,2026-10-31,solar_offgrid_kusum,874.44,MW,
+sikkim,Sikkim,2026-10-31,solar_total,7.56,MW,
+sikkim,Sikkim,2026-10-31,wind,,MW,blank in source
+sikkim,Sikkim,2026-10-31,bio_power_total,,MW,blank in source
+sikkim,Sikkim,2026-10-31,small_hydro,55.11,MW,
+sikkim,Sikkim,2026-10-31,large_hydro,2282.00,MW,
+sikkim,Sikkim,2026-10-31,total_re,2344.67,MW,
+sikkim,Sikkim,2026-10-31,solar_ground_mounted,0.52,MW,
+sikkim,Sikkim,2026-10-31,solar_rooftop,5.12,MW,
+sikkim,Sikkim,2026-10-31,solar_hybrid_component,,MW,blank in source
+sikkim,Sikkim,2026-10-31,solar_offgrid_kusum,1.92,MW,
+tamil-nadu,Tamil Nadu,2026-10-31,solar_total,14680.62,MW,
+tamil-nadu,Tamil Nadu,2026-10-31,wind,12339.02,MW,
+tamil-nadu,Tamil Nadu,2026-10-31,bio_power_total,1055.12,MW,
+tamil-nadu,Tamil Nadu,2026-10-31,small_hydro,123.05,MW,
+tamil-nadu,Tamil Nadu,2026-10-31,large_hydro,2203.20,MW,
+tamil-nadu,Tamil Nadu,2026-10-31,total_re,30401.01,MW,
+tamil-nadu,Tamil Nadu,2026-10-31,solar_ground_mounted,12927.72,MW,
+tamil-nadu,Tamil Nadu,2026-10-31,solar_rooftop,1676.98,MW,
+tamil-nadu,Tamil Nadu,2026-10-31,solar_hybrid_component,,MW,blank in source
+tamil-nadu,Tamil Nadu,2026-10-31,solar_offgrid_kusum,75.91,MW,
+telangana,Telangana,2026-10-31,solar_total,5188.00,MW,
+telangana,Telangana,2026-10-31,wind,128.10,MW,
+telangana,Telangana,2026-10-31,bio_power_total,246.48,MW,
+telangana,Telangana,2026-10-31,small_hydro,89.67,MW,
+telangana,Telangana,2026-10-31,large_hydro,2405.60,MW,
+telangana,Telangana,2026-10-31,total_re,8057.85,MW,
+telangana,Telangana,2026-10-31,solar_ground_mounted,4360.49,MW,
+telangana,Telangana,2026-10-31,solar_rooftop,818.76,MW,
+telangana,Telangana,2026-10-31,solar_hybrid_component,,MW,blank in source
+telangana,Telangana,2026-10-31,solar_offgrid_kusum,8.75,MW,
+tripura,Tripura,2026-10-31,solar_total,50.83,MW,
+tripura,Tripura,2026-10-31,wind,,MW,blank in source
+tripura,Tripura,2026-10-31,bio_power_total,,MW,blank in source
+tripura,Tripura,2026-10-31,small_hydro,16.01,MW,
+tripura,Tripura,2026-10-31,large_hydro,,MW,blank in source
+tripura,Tripura,2026-10-31,total_re,66.84,MW,
+tripura,Tripura,2026-10-31,solar_ground_mounted,7.94,MW,
+tripura,Tripura,2026-10-31,solar_rooftop,19.25,MW,
+tripura,Tripura,2026-10-31,solar_hybrid_component,,MW,blank in source
+tripura,Tripura,2026-10-31,solar_offgrid_kusum,23.64,MW,
+uttar-pradesh,Uttar Pradesh,2026-10-31,solar_total,6968.58,MW,
+uttar-pradesh,Uttar Pradesh,2026-10-31,wind,,MW,blank in source
+uttar-pradesh,Uttar Pradesh,2026-10-31,bio_power_total,2358.80,MW,
+uttar-pradesh,Uttar Pradesh,2026-10-31,small_hydro,50.60,MW,
+uttar-pradesh,Uttar Pradesh,2026-10-31,large_hydro,501.60,MW,
+uttar-pradesh,Uttar Pradesh,2026-10-31,total_re,9879.58,MW,
+uttar-pradesh,Uttar Pradesh,2026-10-31,solar_ground_mounted,3193.12,MW,
+uttar-pradesh,Uttar Pradesh,2026-10-31,solar_rooftop,3394.83,MW,
+uttar-pradesh,Uttar Pradesh,2026-10-31,solar_hybrid_component,,MW,blank in source
+uttar-pradesh,Uttar Pradesh,2026-10-31,solar_offgrid_kusum,380.63,MW,
+uttarakhand,Uttarakhand,2026-10-31,solar_total,1005.37,MW,
+uttarakhand,Uttarakhand,2026-10-31,wind,,MW,blank in source
+uttarakhand,Uttarakhand,2026-10-31,bio_power_total,161.49,MW,
+uttarakhand,Uttarakhand,2026-10-31,small_hydro,233.82,MW,
+uttarakhand,Uttarakhand,2026-10-31,large_hydro,5035.35,MW,
+uttarakhand,Uttarakhand,2026-10-31,total_re,6436.03,MW,
+uttarakhand,Uttarakhand,2026-10-31,solar_ground_mounted,541.05,MW,
+uttarakhand,Uttarakhand,2026-10-31,solar_rooftop,431.64,MW,
+uttarakhand,Uttarakhand,2026-10-31,solar_hybrid_component,,MW,blank in source
+uttarakhand,Uttarakhand,2026-10-31,solar_offgrid_kusum,32.68,MW,
+west-bengal,West Bengal,2026-10-31,solar_total,363.50,MW,
+west-bengal,West Bengal,2026-10-31,wind,,MW,blank in source
+west-bengal,West Bengal,2026-10-31,bio_power_total,351.86,MW,
+west-bengal,West Bengal,2026-10-31,small_hydro,98.50,MW,
+west-bengal,West Bengal,2026-10-31,large_hydro,1341.20,MW,
+west-bengal,West Bengal,2026-10-31,total_re,2155.06,MW,
+west-bengal,West Bengal,2026-10-31,solar_ground_mounted,281.23,MW,
+west-bengal,West Bengal,2026-10-31,solar_rooftop,69.13,MW,
+west-bengal,West Bengal,2026-10-31,solar_hybrid_component,,MW,blank in source
+west-bengal,West Bengal,2026-10-31,solar_offgrid_kusum,13.14,MW,
+andaman-nicobar,Andaman & Nicobar Islands,2026-10-31,solar_total,33.14,MW,
+andaman-nicobar,Andaman & Nicobar Islands,2026-10-31,wind,,MW,blank in source
+andaman-nicobar,Andaman & Nicobar Islands,2026-10-31,bio_power_total,,MW,blank in source
+andaman-nicobar,Andaman & Nicobar Islands,2026-10-31,small_hydro,5.25,MW,
+andaman-nicobar,Andaman & Nicobar Islands,2026-10-31,large_hydro,,MW,blank in source
+andaman-nicobar,Andaman & Nicobar Islands,2026-10-31,total_re,38.39,MW,
+andaman-nicobar,Andaman & Nicobar Islands,2026-10-31,solar_ground_mounted,25.05,MW,
+andaman-nicobar,Andaman & Nicobar Islands,2026-10-31,solar_rooftop,7.82,MW,
+andaman-nicobar,Andaman & Nicobar Islands,2026-10-31,solar_hybrid_component,,MW,blank in source
+andaman-nicobar,Andaman & Nicobar Islands,2026-10-31,solar_offgrid_kusum,0.27,MW,
+chandigarh,Chandigarh,2026-10-31,solar_total,80.24,MW,
+chandigarh,Chandigarh,2026-10-31,wind,,MW,blank in source
+chandigarh,Chandigarh,2026-10-31,bio_power_total,,MW,blank in source
+chandigarh,Chandigarh,2026-10-31,small_hydro,,MW,blank in source
+chandigarh,Chandigarh,2026-10-31,large_hydro,,MW,blank in source
+chandigarh,Chandigarh,2026-10-31,total_re,80.24,MW,
+chandigarh,Chandigarh,2026-10-31,solar_ground_mounted,6.34,MW,
+chandigarh,Chandigarh,2026-10-31,solar_rooftop,73.09,MW,
+chandigarh,Chandigarh,2026-10-31,solar_hybrid_component,,MW,blank in source
+chandigarh,Chandigarh,2026-10-31,solar_offgrid_kusum,0.81,MW,
+dnh-dd,Dadra & Nagar Haveli and Daman & Diu,2026-10-31,solar_total,144.02,MW,
+dnh-dd,Dadra & Nagar Haveli and Daman & Diu,2026-10-31,wind,,MW,blank in source
+dnh-dd,Dadra & Nagar Haveli and Daman & Diu,2026-10-31,bio_power_total,3.75,MW,
+dnh-dd,Dadra & Nagar Haveli and Daman & Diu,2026-10-31,small_hydro,,MW,blank in source
+dnh-dd,Dadra & Nagar Haveli and Daman & Diu,2026-10-31,large_hydro,,MW,blank in source
+dnh-dd,Dadra & Nagar Haveli and Daman & Diu,2026-10-31,total_re,147.77,MW,
+dnh-dd,Dadra & Nagar Haveli and Daman & Diu,2026-10-31,solar_ground_mounted,14.30,MW,
+dnh-dd,Dadra & Nagar Haveli and Daman & Diu,2026-10-31,solar_rooftop,129.72,MW,
+dnh-dd,Dadra & Nagar Haveli and Daman & Diu,2026-10-31,solar_hybrid_component,,MW,blank in source
+dnh-dd,Dadra & Nagar Haveli and Daman & Diu,2026-10-31,solar_offgrid_kusum,,MW,blank in source
+delhi,Delhi,2026-10-31,solar_total,472.63,MW,
+delhi,Delhi,2026-10-31,wind,,MW,blank in source
+delhi,Delhi,2026-10-31,bio_power_total,85.17,MW,
+delhi,Delhi,2026-10-31,small_hydro,,MW,blank in source
+delhi,Delhi,2026-10-31,large_hydro,,MW,blank in source
+delhi,Delhi,2026-10-31,total_re,557.80,MW,
+delhi,Delhi,2026-10-31,solar_ground_mounted,9.84,MW,
+delhi,Delhi,2026-10-31,solar_rooftop,461.33,MW,
+delhi,Delhi,2026-10-31,solar_hybrid_component,,MW,blank in source
+delhi,Delhi,2026-10-31,solar_offgrid_kusum,1.46,MW,
+lakshadweep,Lakshadweep,2026-10-31,solar_total,9.60,MW,
+lakshadweep,Lakshadweep,2026-10-31,wind,,MW,blank in source
+lakshadweep,Lakshadweep,2026-10-31,bio_power_total,,MW,blank in source
+lakshadweep,Lakshadweep,2026-10-31,small_hydro,,MW,blank in source
+lakshadweep,Lakshadweep,2026-10-31,large_hydro,,MW,blank in source
+lakshadweep,Lakshadweep,2026-10-31,total_re,9.60,MW,
+lakshadweep,Lakshadweep,2026-10-31,solar_ground_mounted,2.45,MW,
+lakshadweep,Lakshadweep,2026-10-31,solar_rooftop,4.63,MW,
+lakshadweep,Lakshadweep,2026-10-31,solar_hybrid_component,,MW,blank in source
+lakshadweep,Lakshadweep,2026-10-31,solar_offgrid_kusum,2.52,MW,
+puducherry,Puducherry,2026-10-31,solar_total,94.73,MW,
+puducherry,Puducherry,2026-10-31,wind,,MW,blank in source
+puducherry,Puducherry,2026-10-31,bio_power_total,,MW,blank in source
+puducherry,Puducherry,2026-10-31,small_hydro,,MW,blank in source
+puducherry,Puducherry,2026-10-31,large_hydro,,MW,blank in source
+puducherry,Puducherry,2026-10-31,total_re,94.73,MW,
+puducherry,Puducherry,2026-10-31,solar_ground_mounted,1.03,MW,
+puducherry,Puducherry,2026-10-31,solar_rooftop,93.52,MW,
+puducherry,Puducherry,2026-10-31,solar_hybrid_component,,MW,blank in source
+puducherry,Puducherry,2026-10-31,solar_offgrid_kusum,0.18,MW,
+others,Others,2026-10-31,solar_total,45.01,MW,
+others,Others,2026-10-31,wind,4.30,MW,
+others,Others,2026-10-31,bio_power_total,,MW,blank in source
+others,Others,2026-10-31,small_hydro,,MW,blank in source
+others,Others,2026-10-31,large_hydro,,MW,blank in source
+others,Others,2026-10-31,total_re,49.31,MW,
+others,Others,2026-10-31,solar_ground_mounted,,MW,blank in source
+others,Others,2026-10-31,solar_rooftop,,MW,blank in source
+others,Others,2026-10-31,solar_hybrid_component,,MW,blank in source
+others,Others,2026-10-31,solar_offgrid_kusum,45.01,MW,

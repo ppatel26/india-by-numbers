@@ -1,0 +1,67 @@
+geography,period,value,unit,price_basis,base,source
+india,2024-25,114710,rupees,constant 2011-12 prices,2011-12,RBI HBIE 2025-26 Table 9/10 (All-India per capita NNI)
+andaman-nicobar,2024-25,192936,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+andhra-pradesh,2024-25,141847,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+arunachal-pradesh,2024-25,123399,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+assam,2024-25,85988,rupees,constant 2011-12 prices,2011-12,RBI HBIE 2025-26 Table 9/10 (MoSPI data as on 1 Aug 2025)
+bihar,2024-25,36264,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+chandigarh,2024-25,288392,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+chhattisgarh,2024-25,93994,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+delhi,2024-25,285207,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+goa,2024-25,342404,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+gujarat,2024-25,208895,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+haryana,2024-25,194285,rupees,constant 2011-12 prices,2011-12,RBI HBIE 2025-26 Table 9/10 (MoSPI data as on 1 Aug 2025)
+himachal-pradesh,2024-25,161167,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+jammu-kashmir,2024-25,80262,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+jharkhand,2024-25,68357,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+karnataka,2024-25,208397,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+kerala,2024-25,173818,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+madhya-pradesh,2024-25,71945,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+maharashtra,2024-25,181580,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+manipur,2024-25,67083,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+meghalaya,2024-25,84578,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+mizoram,2024-25,167121,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+odisha,2024-25,98887,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+puducherry,2024-25,154213,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+punjab,2024-25,137092,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+rajasthan,2024-25,95762,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+sikkim,2024-25,303797,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+tamil-nadu,2024-25,197747,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+telangana,2024-25,188436,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+tripura,2024-25,104342,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+uttar-pradesh,2024-25,57685,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+uttarakhand,2024-25,156165,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+west-bengal,2024-25,84349,rupees,constant 2011-12 prices,2011-12,MoSPI NAS API
+india,2024-25,205324,rupees,current prices,2011-12,RBI HBIE 2025-26 Table 9/10 (All-India per capita NNI)
+andaman-nicobar,2024-25,288584,rupees,current prices,2011-12,MoSPI NAS API
+andhra-pradesh,2024-25,266699,rupees,current prices,2011-12,MoSPI NAS API
+arunachal-pradesh,2024-25,249075,rupees,current prices,2011-12,MoSPI NAS API
+assam,2024-25,159185,rupees,current prices,2011-12,RBI HBIE 2025-26 Table 9/10 (MoSPI data as on 1 Aug 2025)
+bihar,2024-25,69211,rupees,current prices,2011-12,MoSPI NAS API
+chandigarh,2024-25,489173,rupees,current prices,2011-12,MoSPI NAS API
+chhattisgarh,2024-25,162848,rupees,current prices,2011-12,MoSPI NAS API
+delhi,2024-25,492592,rupees,current prices,2011-12,MoSPI NAS API
+goa,2024-25,636703,rupees,current prices,2011-12,MoSPI NAS API
+gujarat,2024-25,327195,rupees,current prices,2011-12,MoSPI NAS API
+haryana,2024-25,353182,rupees,current prices,2011-12,RBI HBIE 2025-26 Table 9/10 (MoSPI data as on 1 Aug 2025)
+himachal-pradesh,2024-25,258196,rupees,current prices,2011-12,MoSPI NAS API
+jammu-kashmir,2024-25,155398,rupees,current prices,2011-12,MoSPI NAS API
+jharkhand,2024-25,116663,rupees,current prices,2011-12,MoSPI NAS API
+karnataka,2024-25,386156,rupees,current prices,2011-12,MoSPI NAS API
+kerala,2024-25,308338,rupees,current prices,2011-12,MoSPI NAS API
+madhya-pradesh,2024-25,154124,rupees,current prices,2011-12,MoSPI NAS API
+maharashtra,2024-25,317801,rupees,current prices,2011-12,MoSPI NAS API
+manipur,2024-25,138535,rupees,current prices,2011-12,MoSPI NAS API
+meghalaya,2024-25,157141,rupees,current prices,2011-12,MoSPI NAS API
+mizoram,2024-25,268145,rupees,current prices,2011-12,MoSPI NAS API
+odisha,2024-25,171025,rupees,current prices,2011-12,MoSPI NAS API
+puducherry,2024-25,281478,rupees,current prices,2011-12,MoSPI NAS API
+punjab,2024-25,216592,rupees,current prices,2011-12,MoSPI NAS API
+rajasthan,2024-25,185095,rupees,current prices,2011-12,MoSPI NAS API
+sikkim,2024-25,646183,rupees,current prices,2011-12,MoSPI NAS API
+tamil-nadu,2024-25,361619,rupees,current prices,2011-12,MoSPI NAS API
+telangana,2024-25,380031,rupees,current prices,2011-12,MoSPI NAS API
+tripura,2024-25,187049,rupees,current prices,2011-12,MoSPI NAS API
+uttar-pradesh,2024-25,109844,rupees,current prices,2011-12,MoSPI NAS API
+uttarakhand,2024-25,250736,rupees,current prices,2011-12,MoSPI NAS API
+west-bengal,2024-25,164141,rupees,current prices,2011-12,MoSPI NAS API

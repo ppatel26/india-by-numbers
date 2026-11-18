@@ -1,0 +1,37 @@
+geography,period,age_group,sex,value,unit
+india,2011,0-4,male,58632074,persons
+india,2011,0-4,female,54174704,persons
+india,2011,5-9,male,66300466,persons
+india,2011,5-9,female,60627660,persons
+india,2011,10-14,male,69418835,persons
+india,2011,10-14,female,63290377,persons
+india,2011,15-19,male,63982396,persons
+india,2011,15-19,female,56544053,persons
+india,2011,20-24,male,57584693,persons
+india,2011,20-24,female,53839529,persons
+india,2011,25-29,male,51344208,persons
+india,2011,25-29,female,50069757,persons
+india,2011,30-34,male,44660674,persons
+india,2011,30-34,female,43934277,persons
+india,2011,35-39,male,42919381,persons
+india,2011,35-39,female,42221303,persons
+india,2011,40-44,male,37545386,persons
+india,2011,40-44,female,34892726,persons
+india,2011,45-49,male,32138114,persons
+india,2011,45-49,female,30180213,persons
+india,2011,50-54,male,25843266,persons
+india,2011,50-54,female,23225988,persons
+india,2011,55-59,male,19456012,persons
+india,2011,55-59,female,19690043,persons
+india,2011,60-64,male,18701749,persons
+india,2011,60-64,female,18961958,persons
+india,2011,65-69,male,12944326,persons
+india,2011,65-69,female,13510657,persons
+india,2011,70-74,male,9651499,persons
+india,2011,70-74,female,9557343,persons
+india,2011,75-79,male,4490603,persons
+india,2011,75-79,female,4741900,persons
+india,2011,80+,male,5283695,persons
+india,2011,80+,female,6005310,persons
+india,2011,Age not stated,male,2372881,persons
+india,2011,Age not stated,female,2116921,persons

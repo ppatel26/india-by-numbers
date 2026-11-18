@@ -1,0 +1,149 @@
+geography,period,level,value,unit,table
+india,2025-26,primary (1-5),19,pupils per teacher,Table 4.12
+india,2025-26,upper primary (6-8),17,pupils per teacher,Table 4.12
+india,2025-26,secondary (9-10),15,pupils per teacher,Table 4.12
+india,2025-26,higher secondary (11-12),23,pupils per teacher,Table 4.12
+andaman-nicobar,2025-26,primary (1-5),9,pupils per teacher,Table 4.12
+andaman-nicobar,2025-26,upper primary (6-8),7,pupils per teacher,Table 4.12
+andaman-nicobar,2025-26,secondary (9-10),6,pupils per teacher,Table 4.12
+andaman-nicobar,2025-26,higher secondary (11-12),10,pupils per teacher,Table 4.12
+andhra-pradesh,2025-26,primary (1-5),20,pupils per teacher,Table 4.12
+andhra-pradesh,2025-26,upper primary (6-8),16,pupils per teacher,Table 4.12
+andhra-pradesh,2025-26,secondary (9-10),10,pupils per teacher,Table 4.12
+andhra-pradesh,2025-26,higher secondary (11-12),31,pupils per teacher,Table 4.12
+arunachal-pradesh,2025-26,primary (1-5),9,pupils per teacher,Table 4.12
+arunachal-pradesh,2025-26,upper primary (6-8),7,pupils per teacher,Table 4.12
+arunachal-pradesh,2025-26,secondary (9-10),9,pupils per teacher,Table 4.12
+arunachal-pradesh,2025-26,higher secondary (11-12),15,pupils per teacher,Table 4.12
+assam,2025-26,primary (1-5),18,pupils per teacher,Table 4.12
+assam,2025-26,upper primary (6-8),13,pupils per teacher,Table 4.12
+assam,2025-26,secondary (9-10),12,pupils per teacher,Table 4.12
+assam,2025-26,higher secondary (11-12),19,pupils per teacher,Table 4.12
+bihar,2025-26,primary (1-5),23,pupils per teacher,Table 4.12
+bihar,2025-26,upper primary (6-8),20,pupils per teacher,Table 4.12
+bihar,2025-26,secondary (9-10),24,pupils per teacher,Table 4.12
+bihar,2025-26,higher secondary (11-12),27,pupils per teacher,Table 4.12
+chandigarh,2025-26,primary (1-5),20,pupils per teacher,Table 4.12
+chandigarh,2025-26,upper primary (6-8),14,pupils per teacher,Table 4.12
+chandigarh,2025-26,secondary (9-10),10,pupils per teacher,Table 4.12
+chandigarh,2025-26,higher secondary (11-12),23,pupils per teacher,Table 4.12
+chhattisgarh,2025-26,primary (1-5),17,pupils per teacher,Table 4.12
+chhattisgarh,2025-26,upper primary (6-8),15,pupils per teacher,Table 4.12
+chhattisgarh,2025-26,secondary (9-10),13,pupils per teacher,Table 4.12
+chhattisgarh,2025-26,higher secondary (11-12),12,pupils per teacher,Table 4.12
+dnh-dd,2025-26,primary (1-5),28,pupils per teacher,Table 4.12
+dnh-dd,2025-26,upper primary (6-8),24,pupils per teacher,Table 4.12
+dnh-dd,2025-26,secondary (9-10),20,pupils per teacher,Table 4.12
+dnh-dd,2025-26,higher secondary (11-12),24,pupils per teacher,Table 4.12
+delhi,2025-26,primary (1-5),27,pupils per teacher,Table 4.12
+delhi,2025-26,upper primary (6-8),28,pupils per teacher,Table 4.12
+delhi,2025-26,secondary (9-10),16,pupils per teacher,Table 4.12
+delhi,2025-26,higher secondary (11-12),20,pupils per teacher,Table 4.12
+goa,2025-26,primary (1-5),21,pupils per teacher,Table 4.12
+goa,2025-26,upper primary (6-8),13,pupils per teacher,Table 4.12
+goa,2025-26,secondary (9-10),8,pupils per teacher,Table 4.12
+goa,2025-26,higher secondary (11-12),15,pupils per teacher,Table 4.12
+gujarat,2025-26,primary (1-5),24,pupils per teacher,Table 4.12
+gujarat,2025-26,upper primary (6-8),23,pupils per teacher,Table 4.12
+gujarat,2025-26,secondary (9-10),26,pupils per teacher,Table 4.12
+gujarat,2025-26,higher secondary (11-12),25,pupils per teacher,Table 4.12
+haryana,2025-26,primary (1-5),20,pupils per teacher,Table 4.12
+haryana,2025-26,upper primary (6-8),16,pupils per teacher,Table 4.12
+haryana,2025-26,secondary (9-10),10,pupils per teacher,Table 4.12
+haryana,2025-26,higher secondary (11-12),12,pupils per teacher,Table 4.12
+himachal-pradesh,2025-26,primary (1-5),13,pupils per teacher,Table 4.12
+himachal-pradesh,2025-26,upper primary (6-8),8,pupils per teacher,Table 4.12
+himachal-pradesh,2025-26,secondary (9-10),6,pupils per teacher,Table 4.12
+himachal-pradesh,2025-26,higher secondary (11-12),9,pupils per teacher,Table 4.12
+jammu-kashmir,2025-26,primary (1-5),12,pupils per teacher,Table 4.12
+jammu-kashmir,2025-26,upper primary (6-8),9,pupils per teacher,Table 4.12
+jammu-kashmir,2025-26,secondary (9-10),12,pupils per teacher,Table 4.12
+jammu-kashmir,2025-26,higher secondary (11-12),23,pupils per teacher,Table 4.12
+jharkhand,2025-26,primary (1-5),26,pupils per teacher,Table 4.12
+jharkhand,2025-26,upper primary (6-8),24,pupils per teacher,Table 4.12
+jharkhand,2025-26,secondary (9-10),31,pupils per teacher,Table 4.12
+jharkhand,2025-26,higher secondary (11-12),52,pupils per teacher,Table 4.12
+karnataka,2025-26,primary (1-5),20,pupils per teacher,Table 4.12
+karnataka,2025-26,upper primary (6-8),16,pupils per teacher,Table 4.12
+karnataka,2025-26,secondary (9-10),17,pupils per teacher,Table 4.12
+karnataka,2025-26,higher secondary (11-12),27,pupils per teacher,Table 4.12
+kerala,2025-26,primary (1-5),21,pupils per teacher,Table 4.12
+kerala,2025-26,upper primary (6-8),18,pupils per teacher,Table 4.12
+kerala,2025-26,secondary (9-10),13,pupils per teacher,Table 4.12
+kerala,2025-26,higher secondary (11-12),20,pupils per teacher,Table 4.12
+ladakh,2025-26,primary (1-5),5,pupils per teacher,Table 4.12
+ladakh,2025-26,upper primary (6-8),3,pupils per teacher,Table 4.12
+ladakh,2025-26,secondary (9-10),5,pupils per teacher,Table 4.12
+ladakh,2025-26,higher secondary (11-12),8,pupils per teacher,Table 4.12
+lakshadweep,2025-26,primary (1-5),19,pupils per teacher,Table 4.12
+lakshadweep,2025-26,upper primary (6-8),16,pupils per teacher,Table 4.12
+lakshadweep,2025-26,secondary (9-10),8,pupils per teacher,Table 4.12
+lakshadweep,2025-26,higher secondary (11-12),10,pupils per teacher,Table 4.12
+madhya-pradesh,2025-26,primary (1-5),16,pupils per teacher,Table 4.12
+madhya-pradesh,2025-26,upper primary (6-8),13,pupils per teacher,Table 4.12
+madhya-pradesh,2025-26,secondary (9-10),14,pupils per teacher,Table 4.12
+madhya-pradesh,2025-26,higher secondary (11-12),15,pupils per teacher,Table 4.12
+maharashtra,2025-26,primary (1-5),24,pupils per teacher,Table 4.12
+maharashtra,2025-26,upper primary (6-8),24,pupils per teacher,Table 4.12
+maharashtra,2025-26,secondary (9-10),20,pupils per teacher,Table 4.12
+maharashtra,2025-26,higher secondary (11-12),37,pupils per teacher,Table 4.12
+manipur,2025-26,primary (1-5),12,pupils per teacher,Table 4.12
+manipur,2025-26,upper primary (6-8),9,pupils per teacher,Table 4.12
+manipur,2025-26,secondary (9-10),9,pupils per teacher,Table 4.12
+manipur,2025-26,higher secondary (11-12),15,pupils per teacher,Table 4.12
+meghalaya,2025-26,primary (1-5),18,pupils per teacher,Table 4.12
+meghalaya,2025-26,upper primary (6-8),12,pupils per teacher,Table 4.12
+meghalaya,2025-26,secondary (9-10),10,pupils per teacher,Table 4.12
+meghalaya,2025-26,higher secondary (11-12),19,pupils per teacher,Table 4.12
+mizoram,2025-26,primary (1-5),11,pupils per teacher,Table 4.12
+mizoram,2025-26,upper primary (6-8),6,pupils per teacher,Table 4.12
+mizoram,2025-26,secondary (9-10),8,pupils per teacher,Table 4.12
+mizoram,2025-26,higher secondary (11-12),11,pupils per teacher,Table 4.12
+nagaland,2025-26,primary (1-5),9,pupils per teacher,Table 4.12
+nagaland,2025-26,upper primary (6-8),7,pupils per teacher,Table 4.12
+nagaland,2025-26,secondary (9-10),7,pupils per teacher,Table 4.12
+nagaland,2025-26,higher secondary (11-12),15,pupils per teacher,Table 4.12
+odisha,2025-26,primary (1-5),15,pupils per teacher,Table 4.12
+odisha,2025-26,upper primary (6-8),14,pupils per teacher,Table 4.12
+odisha,2025-26,secondary (9-10),17,pupils per teacher,Table 4.12
+odisha,2025-26,higher secondary (11-12),35,pupils per teacher,Table 4.12
+puducherry,2025-26,primary (1-5),14,pupils per teacher,Table 4.12
+puducherry,2025-26,upper primary (6-8),11,pupils per teacher,Table 4.12
+puducherry,2025-26,secondary (9-10),9,pupils per teacher,Table 4.12
+puducherry,2025-26,higher secondary (11-12),15,pupils per teacher,Table 4.12
+punjab,2025-26,primary (1-5),19,pupils per teacher,Table 4.12
+punjab,2025-26,upper primary (6-8),14,pupils per teacher,Table 4.12
+punjab,2025-26,secondary (9-10),9,pupils per teacher,Table 4.12
+punjab,2025-26,higher secondary (11-12),16,pupils per teacher,Table 4.12
+rajasthan,2025-26,primary (1-5),17,pupils per teacher,Table 4.12
+rajasthan,2025-26,upper primary (6-8),11,pupils per teacher,Table 4.12
+rajasthan,2025-26,secondary (9-10),11,pupils per teacher,Table 4.12
+rajasthan,2025-26,higher secondary (11-12),16,pupils per teacher,Table 4.12
+sikkim,2025-26,primary (1-5),5,pupils per teacher,Table 4.12
+sikkim,2025-26,upper primary (6-8),5,pupils per teacher,Table 4.12
+sikkim,2025-26,secondary (9-10),5,pupils per teacher,Table 4.12
+sikkim,2025-26,higher secondary (11-12),6,pupils per teacher,Table 4.12
+tamil-nadu,2025-26,primary (1-5),19,pupils per teacher,Table 4.12
+tamil-nadu,2025-26,upper primary (6-8),17,pupils per teacher,Table 4.12
+tamil-nadu,2025-26,secondary (9-10),12,pupils per teacher,Table 4.12
+tamil-nadu,2025-26,higher secondary (11-12),20,pupils per teacher,Table 4.12
+telangana,2025-26,primary (1-5),18,pupils per teacher,Table 4.12
+telangana,2025-26,upper primary (6-8),11,pupils per teacher,Table 4.12
+telangana,2025-26,secondary (9-10),9,pupils per teacher,Table 4.12
+telangana,2025-26,higher secondary (11-12),26,pupils per teacher,Table 4.12
+tripura,2025-26,primary (1-5),16,pupils per teacher,Table 4.12
+tripura,2025-26,upper primary (6-8),15,pupils per teacher,Table 4.12
+tripura,2025-26,secondary (9-10),12,pupils per teacher,Table 4.12
+tripura,2025-26,higher secondary (11-12),14,pupils per teacher,Table 4.12
+uttar-pradesh,2025-26,primary (1-5),19,pupils per teacher,Table 4.12
+uttar-pradesh,2025-26,upper primary (6-8),21,pupils per teacher,Table 4.12
+uttar-pradesh,2025-26,secondary (9-10),23,pupils per teacher,Table 4.12
+uttar-pradesh,2025-26,higher secondary (11-12),33,pupils per teacher,Table 4.12
+uttarakhand,2025-26,primary (1-5),14,pupils per teacher,Table 4.12
+uttarakhand,2025-26,upper primary (6-8),13,pupils per teacher,Table 4.12
+uttarakhand,2025-26,secondary (9-10),10,pupils per teacher,Table 4.12
+uttarakhand,2025-26,higher secondary (11-12),14,pupils per teacher,Table 4.12
+west-bengal,2025-26,primary (1-5),21,pupils per teacher,Table 4.12
+west-bengal,2025-26,upper primary (6-8),26,pupils per teacher,Table 4.12
+west-bengal,2025-26,secondary (9-10),20,pupils per teacher,Table 4.12
+west-bengal,2025-26,higher secondary (11-12),29,pupils per teacher,Table 4.12

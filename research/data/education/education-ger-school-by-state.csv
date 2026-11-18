@@ -1,0 +1,556 @@
+geography,period,level,sex,value,unit,table
+india,2025-26,primary (1-5),boys,88.2,ratio (per cent of age group),Table 6.1
+india,2025-26,primary (1-5),girls,90.8,ratio (per cent of age group),Table 6.1
+india,2025-26,primary (1-5),total,89.4,ratio (per cent of age group),Table 6.1
+india,2025-26,upper primary (6-8),boys,87.2,ratio (per cent of age group),Table 6.1
+india,2025-26,upper primary (6-8),girls,92.4,ratio (per cent of age group),Table 6.1
+india,2025-26,upper primary (6-8),total,89.6,ratio (per cent of age group),Table 6.1
+india,2025-26,elementary (1-8),boys,87.8,ratio (per cent of age group),Table 6.1
+india,2025-26,elementary (1-8),girls,91.4,ratio (per cent of age group),Table 6.1
+india,2025-26,elementary (1-8),total,89.5,ratio (per cent of age group),Table 6.1
+india,2025-26,secondary (9-10),boys,79.7,ratio (per cent of age group),Table 6.1
+india,2025-26,secondary (9-10),girls,83.4,ratio (per cent of age group),Table 6.1
+india,2025-26,secondary (9-10),total,81.5,ratio (per cent of age group),Table 6.1
+india,2025-26,higher secondary (11-12),boys,58.9,ratio (per cent of age group),Table 6.1
+india,2025-26,higher secondary (11-12),girls,64.8,ratio (per cent of age group),Table 6.1
+india,2025-26,higher secondary (11-12),total,61.7,ratio (per cent of age group),Table 6.1
+andaman-nicobar,2025-26,primary (1-5),boys,87.1,ratio (per cent of age group),Table 6.1
+andaman-nicobar,2025-26,primary (1-5),girls,87.0,ratio (per cent of age group),Table 6.1
+andaman-nicobar,2025-26,primary (1-5),total,87.1,ratio (per cent of age group),Table 6.1
+andaman-nicobar,2025-26,upper primary (6-8),boys,82.3,ratio (per cent of age group),Table 6.1
+andaman-nicobar,2025-26,upper primary (6-8),girls,89.7,ratio (per cent of age group),Table 6.1
+andaman-nicobar,2025-26,upper primary (6-8),total,85.8,ratio (per cent of age group),Table 6.1
+andaman-nicobar,2025-26,elementary (1-8),boys,85.2,ratio (per cent of age group),Table 6.1
+andaman-nicobar,2025-26,elementary (1-8),girls,88.1,ratio (per cent of age group),Table 6.1
+andaman-nicobar,2025-26,elementary (1-8),total,86.6,ratio (per cent of age group),Table 6.1
+andaman-nicobar,2025-26,secondary (9-10),boys,89.4,ratio (per cent of age group),Table 6.1
+andaman-nicobar,2025-26,secondary (9-10),girls,93.2,ratio (per cent of age group),Table 6.1
+andaman-nicobar,2025-26,secondary (9-10),total,91.2,ratio (per cent of age group),Table 6.1
+andaman-nicobar,2025-26,higher secondary (11-12),boys,79.8,ratio (per cent of age group),Table 6.1
+andaman-nicobar,2025-26,higher secondary (11-12),girls,97.4,ratio (per cent of age group),Table 6.1
+andaman-nicobar,2025-26,higher secondary (11-12),total,87.9,ratio (per cent of age group),Table 6.1
+andhra-pradesh,2025-26,primary (1-5),boys,91.8,ratio (per cent of age group),Table 6.1
+andhra-pradesh,2025-26,primary (1-5),girls,92.5,ratio (per cent of age group),Table 6.1
+andhra-pradesh,2025-26,primary (1-5),total,92.1,ratio (per cent of age group),Table 6.1
+andhra-pradesh,2025-26,upper primary (6-8),boys,101.3,ratio (per cent of age group),Table 6.1
+andhra-pradesh,2025-26,upper primary (6-8),girls,103.5,ratio (per cent of age group),Table 6.1
+andhra-pradesh,2025-26,upper primary (6-8),total,102.3,ratio (per cent of age group),Table 6.1
+andhra-pradesh,2025-26,elementary (1-8),boys,95.4,ratio (per cent of age group),Table 6.1
+andhra-pradesh,2025-26,elementary (1-8),girls,96.7,ratio (per cent of age group),Table 6.1
+andhra-pradesh,2025-26,elementary (1-8),total,96.1,ratio (per cent of age group),Table 6.1
+andhra-pradesh,2025-26,secondary (9-10),boys,92.5,ratio (per cent of age group),Table 6.1
+andhra-pradesh,2025-26,secondary (9-10),girls,95.1,ratio (per cent of age group),Table 6.1
+andhra-pradesh,2025-26,secondary (9-10),total,93.7,ratio (per cent of age group),Table 6.1
+andhra-pradesh,2025-26,higher secondary (11-12),boys,68.4,ratio (per cent of age group),Table 6.1
+andhra-pradesh,2025-26,higher secondary (11-12),girls,76.5,ratio (per cent of age group),Table 6.1
+andhra-pradesh,2025-26,higher secondary (11-12),total,72.3,ratio (per cent of age group),Table 6.1
+arunachal-pradesh,2025-26,primary (1-5),boys,116.1,ratio (per cent of age group),Table 6.1
+arunachal-pradesh,2025-26,primary (1-5),girls,117.6,ratio (per cent of age group),Table 6.1
+arunachal-pradesh,2025-26,primary (1-5),total,116.8,ratio (per cent of age group),Table 6.1
+arunachal-pradesh,2025-26,upper primary (6-8),boys,82.4,ratio (per cent of age group),Table 6.1
+arunachal-pradesh,2025-26,upper primary (6-8),girls,89.4,ratio (per cent of age group),Table 6.1
+arunachal-pradesh,2025-26,upper primary (6-8),total,85.8,ratio (per cent of age group),Table 6.1
+arunachal-pradesh,2025-26,elementary (1-8),boys,101.9,ratio (per cent of age group),Table 6.1
+arunachal-pradesh,2025-26,elementary (1-8),girls,105.8,ratio (per cent of age group),Table 6.1
+arunachal-pradesh,2025-26,elementary (1-8),total,103.8,ratio (per cent of age group),Table 6.1
+arunachal-pradesh,2025-26,secondary (9-10),boys,71.2,ratio (per cent of age group),Table 6.1
+arunachal-pradesh,2025-26,secondary (9-10),girls,79.2,ratio (per cent of age group),Table 6.1
+arunachal-pradesh,2025-26,secondary (9-10),total,75.1,ratio (per cent of age group),Table 6.1
+arunachal-pradesh,2025-26,higher secondary (11-12),boys,43.2,ratio (per cent of age group),Table 6.1
+arunachal-pradesh,2025-26,higher secondary (11-12),girls,48.1,ratio (per cent of age group),Table 6.1
+arunachal-pradesh,2025-26,higher secondary (11-12),total,45.6,ratio (per cent of age group),Table 6.1
+assam,2025-26,primary (1-5),boys,104.1,ratio (per cent of age group),Table 6.1
+assam,2025-26,primary (1-5),girls,108.9,ratio (per cent of age group),Table 6.1
+assam,2025-26,primary (1-5),total,106.4,ratio (per cent of age group),Table 6.1
+assam,2025-26,upper primary (6-8),boys,86.5,ratio (per cent of age group),Table 6.1
+assam,2025-26,upper primary (6-8),girls,99.6,ratio (per cent of age group),Table 6.1
+assam,2025-26,upper primary (6-8),total,92.8,ratio (per cent of age group),Table 6.1
+assam,2025-26,elementary (1-8),boys,97.2,ratio (per cent of age group),Table 6.1
+assam,2025-26,elementary (1-8),girls,105.3,ratio (per cent of age group),Table 6.1
+assam,2025-26,elementary (1-8),total,101.1,ratio (per cent of age group),Table 6.1
+assam,2025-26,secondary (9-10),boys,74.4,ratio (per cent of age group),Table 6.1
+assam,2025-26,secondary (9-10),girls,96.3,ratio (per cent of age group),Table 6.1
+assam,2025-26,secondary (9-10),total,85.0,ratio (per cent of age group),Table 6.1
+assam,2025-26,higher secondary (11-12),boys,41.3,ratio (per cent of age group),Table 6.1
+assam,2025-26,higher secondary (11-12),girls,49.0,ratio (per cent of age group),Table 6.1
+assam,2025-26,higher secondary (11-12),total,45.1,ratio (per cent of age group),Table 6.1
+bihar,2025-26,primary (1-5),boys,70.2,ratio (per cent of age group),Table 6.1
+bihar,2025-26,primary (1-5),girls,73.0,ratio (per cent of age group),Table 6.1
+bihar,2025-26,primary (1-5),total,71.5,ratio (per cent of age group),Table 6.1
+bihar,2025-26,upper primary (6-8),boys,66.9,ratio (per cent of age group),Table 6.1
+bihar,2025-26,upper primary (6-8),girls,73.8,ratio (per cent of age group),Table 6.1
+bihar,2025-26,upper primary (6-8),total,70.2,ratio (per cent of age group),Table 6.1
+bihar,2025-26,elementary (1-8),boys,68.9,ratio (per cent of age group),Table 6.1
+bihar,2025-26,elementary (1-8),girls,73.3,ratio (per cent of age group),Table 6.1
+bihar,2025-26,elementary (1-8),total,71.0,ratio (per cent of age group),Table 6.1
+bihar,2025-26,secondary (9-10),boys,49.5,ratio (per cent of age group),Table 6.1
+bihar,2025-26,secondary (9-10),girls,56.9,ratio (per cent of age group),Table 6.1
+bihar,2025-26,secondary (9-10),total,53.1,ratio (per cent of age group),Table 6.1
+bihar,2025-26,higher secondary (11-12),boys,39.8,ratio (per cent of age group),Table 6.1
+bihar,2025-26,higher secondary (11-12),girls,44.5,ratio (per cent of age group),Table 6.1
+bihar,2025-26,higher secondary (11-12),total,42.1,ratio (per cent of age group),Table 6.1
+chandigarh,2025-26,primary (1-5),boys,88.0,ratio (per cent of age group),Table 6.1
+chandigarh,2025-26,primary (1-5),girls,95.5,ratio (per cent of age group),Table 6.1
+chandigarh,2025-26,primary (1-5),total,91.5,ratio (per cent of age group),Table 6.1
+chandigarh,2025-26,upper primary (6-8),boys,110.0,ratio (per cent of age group),Table 6.1
+chandigarh,2025-26,upper primary (6-8),girls,129.6,ratio (per cent of age group),Table 6.1
+chandigarh,2025-26,upper primary (6-8),total,118.4,ratio (per cent of age group),Table 6.1
+chandigarh,2025-26,elementary (1-8),boys,96.8,ratio (per cent of age group),Table 6.1
+chandigarh,2025-26,elementary (1-8),girls,108.1,ratio (per cent of age group),Table 6.1
+chandigarh,2025-26,elementary (1-8),total,101.9,ratio (per cent of age group),Table 6.1
+chandigarh,2025-26,secondary (9-10),boys,102.2,ratio (per cent of age group),Table 6.1
+chandigarh,2025-26,secondary (9-10),girls,120.3,ratio (per cent of age group),Table 6.1
+chandigarh,2025-26,secondary (9-10),total,110.0,ratio (per cent of age group),Table 6.1
+chandigarh,2025-26,higher secondary (11-12),boys,96.6,ratio (per cent of age group),Table 6.1
+chandigarh,2025-26,higher secondary (11-12),girls,124.3,ratio (per cent of age group),Table 6.1
+chandigarh,2025-26,higher secondary (11-12),total,108.2,ratio (per cent of age group),Table 6.1
+chhattisgarh,2025-26,primary (1-5),boys,87.6,ratio (per cent of age group),Table 6.1
+chhattisgarh,2025-26,primary (1-5),girls,89.2,ratio (per cent of age group),Table 6.1
+chhattisgarh,2025-26,primary (1-5),total,88.4,ratio (per cent of age group),Table 6.1
+chhattisgarh,2025-26,upper primary (6-8),boys,87.1,ratio (per cent of age group),Table 6.1
+chhattisgarh,2025-26,upper primary (6-8),girls,91.3,ratio (per cent of age group),Table 6.1
+chhattisgarh,2025-26,upper primary (6-8),total,89.1,ratio (per cent of age group),Table 6.1
+chhattisgarh,2025-26,elementary (1-8),boys,87.4,ratio (per cent of age group),Table 6.1
+chhattisgarh,2025-26,elementary (1-8),girls,90.0,ratio (per cent of age group),Table 6.1
+chhattisgarh,2025-26,elementary (1-8),total,88.7,ratio (per cent of age group),Table 6.1
+chhattisgarh,2025-26,secondary (9-10),boys,74.7,ratio (per cent of age group),Table 6.1
+chhattisgarh,2025-26,secondary (9-10),girls,83.7,ratio (per cent of age group),Table 6.1
+chhattisgarh,2025-26,secondary (9-10),total,79.1,ratio (per cent of age group),Table 6.1
+chhattisgarh,2025-26,higher secondary (11-12),boys,47.0,ratio (per cent of age group),Table 6.1
+chhattisgarh,2025-26,higher secondary (11-12),girls,62.8,ratio (per cent of age group),Table 6.1
+chhattisgarh,2025-26,higher secondary (11-12),total,54.8,ratio (per cent of age group),Table 6.1
+dnh-dd,2025-26,primary (1-5),boys,110.2,ratio (per cent of age group),Table 6.1
+dnh-dd,2025-26,primary (1-5),girls,110.6,ratio (per cent of age group),Table 6.1
+dnh-dd,2025-26,primary (1-5),total,110.4,ratio (per cent of age group),Table 6.1
+dnh-dd,2025-26,upper primary (6-8),boys,104.1,ratio (per cent of age group),Table 6.1
+dnh-dd,2025-26,upper primary (6-8),girls,117.1,ratio (per cent of age group),Table 6.1
+dnh-dd,2025-26,upper primary (6-8),total,110.0,ratio (per cent of age group),Table 6.1
+dnh-dd,2025-26,elementary (1-8),boys,107.9,ratio (per cent of age group),Table 6.1
+dnh-dd,2025-26,elementary (1-8),girls,113.0,ratio (per cent of age group),Table 6.1
+dnh-dd,2025-26,elementary (1-8),total,110.2,ratio (per cent of age group),Table 6.1
+dnh-dd,2025-26,secondary (9-10),boys,99.8,ratio (per cent of age group),Table 6.1
+dnh-dd,2025-26,secondary (9-10),girls,116.0,ratio (per cent of age group),Table 6.1
+dnh-dd,2025-26,secondary (9-10),total,106.9,ratio (per cent of age group),Table 6.1
+dnh-dd,2025-26,higher secondary (11-12),boys,57.9,ratio (per cent of age group),Table 6.1
+dnh-dd,2025-26,higher secondary (11-12),girls,107.5,ratio (per cent of age group),Table 6.1
+dnh-dd,2025-26,higher secondary (11-12),total,76.9,ratio (per cent of age group),Table 6.1
+delhi,2025-26,primary (1-5),boys,97.0,ratio (per cent of age group),Table 6.1
+delhi,2025-26,primary (1-5),girls,106.9,ratio (per cent of age group),Table 6.1
+delhi,2025-26,primary (1-5),total,101.5,ratio (per cent of age group),Table 6.1
+delhi,2025-26,upper primary (6-8),boys,112.6,ratio (per cent of age group),Table 6.1
+delhi,2025-26,upper primary (6-8),girls,124.9,ratio (per cent of age group),Table 6.1
+delhi,2025-26,upper primary (6-8),total,118.1,ratio (per cent of age group),Table 6.1
+delhi,2025-26,elementary (1-8),boys,103.0,ratio (per cent of age group),Table 6.1
+delhi,2025-26,elementary (1-8),girls,113.7,ratio (per cent of age group),Table 6.1
+delhi,2025-26,elementary (1-8),total,107.8,ratio (per cent of age group),Table 6.1
+delhi,2025-26,secondary (9-10),boys,100.1,ratio (per cent of age group),Table 6.1
+delhi,2025-26,secondary (9-10),girls,108.3,ratio (per cent of age group),Table 6.1
+delhi,2025-26,secondary (9-10),total,103.8,ratio (per cent of age group),Table 6.1
+delhi,2025-26,higher secondary (11-12),boys,78.2,ratio (per cent of age group),Table 6.1
+delhi,2025-26,higher secondary (11-12),girls,88.8,ratio (per cent of age group),Table 6.1
+delhi,2025-26,higher secondary (11-12),total,83.1,ratio (per cent of age group),Table 6.1
+goa,2025-26,primary (1-5),boys,117.1,ratio (per cent of age group),Table 6.1
+goa,2025-26,primary (1-5),girls,114.3,ratio (per cent of age group),Table 6.1
+goa,2025-26,primary (1-5),total,115.8,ratio (per cent of age group),Table 6.1
+goa,2025-26,upper primary (6-8),boys,110.3,ratio (per cent of age group),Table 6.1
+goa,2025-26,upper primary (6-8),girls,119.2,ratio (per cent of age group),Table 6.1
+goa,2025-26,upper primary (6-8),total,114.4,ratio (per cent of age group),Table 6.1
+goa,2025-26,elementary (1-8),boys,114.3,ratio (per cent of age group),Table 6.1
+goa,2025-26,elementary (1-8),girls,116.2,ratio (per cent of age group),Table 6.1
+goa,2025-26,elementary (1-8),total,115.2,ratio (per cent of age group),Table 6.1
+goa,2025-26,secondary (9-10),boys,108.3,ratio (per cent of age group),Table 6.1
+goa,2025-26,secondary (9-10),girls,112.8,ratio (per cent of age group),Table 6.1
+goa,2025-26,secondary (9-10),total,110.4,ratio (per cent of age group),Table 6.1
+goa,2025-26,higher secondary (11-12),boys,86.8,ratio (per cent of age group),Table 6.1
+goa,2025-26,higher secondary (11-12),girls,104.4,ratio (per cent of age group),Table 6.1
+goa,2025-26,higher secondary (11-12),total,95.0,ratio (per cent of age group),Table 6.1
+gujarat,2025-26,primary (1-5),boys,78.4,ratio (per cent of age group),Table 6.1
+gujarat,2025-26,primary (1-5),girls,82.8,ratio (per cent of age group),Table 6.1
+gujarat,2025-26,primary (1-5),total,80.4,ratio (per cent of age group),Table 6.1
+gujarat,2025-26,upper primary (6-8),boys,87.8,ratio (per cent of age group),Table 6.1
+gujarat,2025-26,upper primary (6-8),girls,93.4,ratio (per cent of age group),Table 6.1
+gujarat,2025-26,upper primary (6-8),total,90.3,ratio (per cent of age group),Table 6.1
+gujarat,2025-26,elementary (1-8),boys,81.9,ratio (per cent of age group),Table 6.1
+gujarat,2025-26,elementary (1-8),girls,86.8,ratio (per cent of age group),Table 6.1
+gujarat,2025-26,elementary (1-8),total,84.1,ratio (per cent of age group),Table 6.1
+gujarat,2025-26,secondary (9-10),boys,78.3,ratio (per cent of age group),Table 6.1
+gujarat,2025-26,secondary (9-10),girls,75.2,ratio (per cent of age group),Table 6.1
+gujarat,2025-26,secondary (9-10),total,76.9,ratio (per cent of age group),Table 6.1
+gujarat,2025-26,higher secondary (11-12),boys,50.2,ratio (per cent of age group),Table 6.1
+gujarat,2025-26,higher secondary (11-12),girls,54.1,ratio (per cent of age group),Table 6.1
+gujarat,2025-26,higher secondary (11-12),total,52.0,ratio (per cent of age group),Table 6.1
+haryana,2025-26,primary (1-5),boys,89.2,ratio (per cent of age group),Table 6.1
+haryana,2025-26,primary (1-5),girls,92.6,ratio (per cent of age group),Table 6.1
+haryana,2025-26,primary (1-5),total,90.7,ratio (per cent of age group),Table 6.1
+haryana,2025-26,upper primary (6-8),boys,99.5,ratio (per cent of age group),Table 6.1
+haryana,2025-26,upper primary (6-8),girls,104.3,ratio (per cent of age group),Table 6.1
+haryana,2025-26,upper primary (6-8),total,101.7,ratio (per cent of age group),Table 6.1
+haryana,2025-26,elementary (1-8),boys,93.2,ratio (per cent of age group),Table 6.1
+haryana,2025-26,elementary (1-8),girls,97.0,ratio (per cent of age group),Table 6.1
+haryana,2025-26,elementary (1-8),total,94.9,ratio (per cent of age group),Table 6.1
+haryana,2025-26,secondary (9-10),boys,93.2,ratio (per cent of age group),Table 6.1
+haryana,2025-26,secondary (9-10),girls,95.9,ratio (per cent of age group),Table 6.1
+haryana,2025-26,secondary (9-10),total,94.4,ratio (per cent of age group),Table 6.1
+haryana,2025-26,higher secondary (11-12),boys,76.9,ratio (per cent of age group),Table 6.1
+haryana,2025-26,higher secondary (11-12),girls,81.8,ratio (per cent of age group),Table 6.1
+haryana,2025-26,higher secondary (11-12),total,79.1,ratio (per cent of age group),Table 6.1
+himachal-pradesh,2025-26,primary (1-5),boys,94.8,ratio (per cent of age group),Table 6.1
+himachal-pradesh,2025-26,primary (1-5),girls,96.5,ratio (per cent of age group),Table 6.1
+himachal-pradesh,2025-26,primary (1-5),total,95.6,ratio (per cent of age group),Table 6.1
+himachal-pradesh,2025-26,upper primary (6-8),boys,99.9,ratio (per cent of age group),Table 6.1
+himachal-pradesh,2025-26,upper primary (6-8),girls,104.8,ratio (per cent of age group),Table 6.1
+himachal-pradesh,2025-26,upper primary (6-8),total,102.2,ratio (per cent of age group),Table 6.1
+himachal-pradesh,2025-26,elementary (1-8),boys,96.8,ratio (per cent of age group),Table 6.1
+himachal-pradesh,2025-26,elementary (1-8),girls,99.8,ratio (per cent of age group),Table 6.1
+himachal-pradesh,2025-26,elementary (1-8),total,98.2,ratio (per cent of age group),Table 6.1
+himachal-pradesh,2025-26,secondary (9-10),boys,99.3,ratio (per cent of age group),Table 6.1
+himachal-pradesh,2025-26,secondary (9-10),girls,102.6,ratio (per cent of age group),Table 6.1
+himachal-pradesh,2025-26,secondary (9-10),total,100.8,ratio (per cent of age group),Table 6.1
+himachal-pradesh,2025-26,higher secondary (11-12),boys,82.7,ratio (per cent of age group),Table 6.1
+himachal-pradesh,2025-26,higher secondary (11-12),girls,90.7,ratio (per cent of age group),Table 6.1
+himachal-pradesh,2025-26,higher secondary (11-12),total,86.5,ratio (per cent of age group),Table 6.1
+jammu-kashmir,2025-26,primary (1-5),boys,113.5,ratio (per cent of age group),Table 6.1
+jammu-kashmir,2025-26,primary (1-5),girls,115.4,ratio (per cent of age group),Table 6.1
+jammu-kashmir,2025-26,primary (1-5),total,114.4,ratio (per cent of age group),Table 6.1
+jammu-kashmir,2025-26,upper primary (6-8),boys,74.1,ratio (per cent of age group),Table 6.1
+jammu-kashmir,2025-26,upper primary (6-8),girls,80.4,ratio (per cent of age group),Table 6.1
+jammu-kashmir,2025-26,upper primary (6-8),total,77.0,ratio (per cent of age group),Table 6.1
+jammu-kashmir,2025-26,elementary (1-8),boys,95.5,ratio (per cent of age group),Table 6.1
+jammu-kashmir,2025-26,elementary (1-8),girls,100.1,ratio (per cent of age group),Table 6.1
+jammu-kashmir,2025-26,elementary (1-8),total,97.7,ratio (per cent of age group),Table 6.1
+jammu-kashmir,2025-26,secondary (9-10),boys,65.7,ratio (per cent of age group),Table 6.1
+jammu-kashmir,2025-26,secondary (9-10),girls,68.8,ratio (per cent of age group),Table 6.1
+jammu-kashmir,2025-26,secondary (9-10),total,67.1,ratio (per cent of age group),Table 6.1
+jammu-kashmir,2025-26,higher secondary (11-12),boys,45.2,ratio (per cent of age group),Table 6.1
+jammu-kashmir,2025-26,higher secondary (11-12),girls,48.5,ratio (per cent of age group),Table 6.1
+jammu-kashmir,2025-26,higher secondary (11-12),total,46.8,ratio (per cent of age group),Table 6.1
+jharkhand,2025-26,primary (1-5),boys,90.1,ratio (per cent of age group),Table 6.1
+jharkhand,2025-26,primary (1-5),girls,90.7,ratio (per cent of age group),Table 6.1
+jharkhand,2025-26,primary (1-5),total,90.4,ratio (per cent of age group),Table 6.1
+jharkhand,2025-26,upper primary (6-8),boys,82.5,ratio (per cent of age group),Table 6.1
+jharkhand,2025-26,upper primary (6-8),girls,87.2,ratio (per cent of age group),Table 6.1
+jharkhand,2025-26,upper primary (6-8),total,84.8,ratio (per cent of age group),Table 6.1
+jharkhand,2025-26,elementary (1-8),boys,87.1,ratio (per cent of age group),Table 6.1
+jharkhand,2025-26,elementary (1-8),girls,89.4,ratio (per cent of age group),Table 6.1
+jharkhand,2025-26,elementary (1-8),total,88.2,ratio (per cent of age group),Table 6.1
+jharkhand,2025-26,secondary (9-10),boys,73.2,ratio (per cent of age group),Table 6.1
+jharkhand,2025-26,secondary (9-10),girls,78.5,ratio (per cent of age group),Table 6.1
+jharkhand,2025-26,secondary (9-10),total,75.8,ratio (per cent of age group),Table 6.1
+jharkhand,2025-26,higher secondary (11-12),boys,52.2,ratio (per cent of age group),Table 6.1
+jharkhand,2025-26,higher secondary (11-12),girls,57.9,ratio (per cent of age group),Table 6.1
+jharkhand,2025-26,higher secondary (11-12),total,55.0,ratio (per cent of age group),Table 6.1
+karnataka,2025-26,primary (1-5),boys,101.8,ratio (per cent of age group),Table 6.1
+karnataka,2025-26,primary (1-5),girls,103.8,ratio (per cent of age group),Table 6.1
+karnataka,2025-26,primary (1-5),total,102.8,ratio (per cent of age group),Table 6.1
+karnataka,2025-26,upper primary (6-8),boys,100.5,ratio (per cent of age group),Table 6.1
+karnataka,2025-26,upper primary (6-8),girls,104.8,ratio (per cent of age group),Table 6.1
+karnataka,2025-26,upper primary (6-8),total,102.5,ratio (per cent of age group),Table 6.1
+karnataka,2025-26,elementary (1-8),boys,101.3,ratio (per cent of age group),Table 6.1
+karnataka,2025-26,elementary (1-8),girls,104.2,ratio (per cent of age group),Table 6.1
+karnataka,2025-26,elementary (1-8),total,102.7,ratio (per cent of age group),Table 6.1
+karnataka,2025-26,secondary (9-10),boys,100.7,ratio (per cent of age group),Table 6.1
+karnataka,2025-26,secondary (9-10),girls,101.1,ratio (per cent of age group),Table 6.1
+karnataka,2025-26,secondary (9-10),total,100.9,ratio (per cent of age group),Table 6.1
+karnataka,2025-26,higher secondary (11-12),boys,55.2,ratio (per cent of age group),Table 6.1
+karnataka,2025-26,higher secondary (11-12),girls,72.6,ratio (per cent of age group),Table 6.1
+karnataka,2025-26,higher secondary (11-12),total,63.7,ratio (per cent of age group),Table 6.1
+kerala,2025-26,primary (1-5),boys,91.6,ratio (per cent of age group),Table 6.1
+kerala,2025-26,primary (1-5),girls,91.9,ratio (per cent of age group),Table 6.1
+kerala,2025-26,primary (1-5),total,91.8,ratio (per cent of age group),Table 6.1
+kerala,2025-26,upper primary (6-8),boys,95.3,ratio (per cent of age group),Table 6.1
+kerala,2025-26,upper primary (6-8),girls,98.6,ratio (per cent of age group),Table 6.1
+kerala,2025-26,upper primary (6-8),total,96.9,ratio (per cent of age group),Table 6.1
+kerala,2025-26,elementary (1-8),boys,93.1,ratio (per cent of age group),Table 6.1
+kerala,2025-26,elementary (1-8),girls,94.5,ratio (per cent of age group),Table 6.1
+kerala,2025-26,elementary (1-8),total,93.8,ratio (per cent of age group),Table 6.1
+kerala,2025-26,secondary (9-10),boys,98.4,ratio (per cent of age group),Table 6.1
+kerala,2025-26,secondary (9-10),girls,100.4,ratio (per cent of age group),Table 6.1
+kerala,2025-26,secondary (9-10),total,99.4,ratio (per cent of age group),Table 6.1
+kerala,2025-26,higher secondary (11-12),boys,89.7,ratio (per cent of age group),Table 6.1
+kerala,2025-26,higher secondary (11-12),girls,94.3,ratio (per cent of age group),Table 6.1
+kerala,2025-26,higher secondary (11-12),total,91.9,ratio (per cent of age group),Table 6.1
+ladakh,2025-26,primary (1-5),boys,108.3,ratio (per cent of age group),Table 6.1
+ladakh,2025-26,primary (1-5),girls,110.0,ratio (per cent of age group),Table 6.1
+ladakh,2025-26,primary (1-5),total,109.1,ratio (per cent of age group),Table 6.1
+ladakh,2025-26,upper primary (6-8),boys,75.3,ratio (per cent of age group),Table 6.1
+ladakh,2025-26,upper primary (6-8),girls,94.5,ratio (per cent of age group),Table 6.1
+ladakh,2025-26,upper primary (6-8),total,84.2,ratio (per cent of age group),Table 6.1
+ladakh,2025-26,elementary (1-8),boys,94.7,ratio (per cent of age group),Table 6.1
+ladakh,2025-26,elementary (1-8),girls,104.0,ratio (per cent of age group),Table 6.1
+ladakh,2025-26,elementary (1-8),total,99.2,ratio (per cent of age group),Table 6.1
+ladakh,2025-26,secondary (9-10),boys,72.2,ratio (per cent of age group),Table 6.1
+ladakh,2025-26,secondary (9-10),girls,82.1,ratio (per cent of age group),Table 6.1
+ladakh,2025-26,secondary (9-10),total,77.1,ratio (per cent of age group),Table 6.1
+ladakh,2025-26,higher secondary (11-12),boys,50.7,ratio (per cent of age group),Table 6.1
+ladakh,2025-26,higher secondary (11-12),girls,67.0,ratio (per cent of age group),Table 6.1
+ladakh,2025-26,higher secondary (11-12),total,58.6,ratio (per cent of age group),Table 6.1
+lakshadweep,2025-26,primary (1-5),boys,104.1,ratio (per cent of age group),Table 6.1
+lakshadweep,2025-26,primary (1-5),girls,102.2,ratio (per cent of age group),Table 6.1
+lakshadweep,2025-26,primary (1-5),total,103.2,ratio (per cent of age group),Table 6.1
+lakshadweep,2025-26,upper primary (6-8),boys,82.7,ratio (per cent of age group),Table 6.1
+lakshadweep,2025-26,upper primary (6-8),girls,81.2,ratio (per cent of age group),Table 6.1
+lakshadweep,2025-26,upper primary (6-8),total,81.9,ratio (per cent of age group),Table 6.1
+lakshadweep,2025-26,elementary (1-8),boys,95.7,ratio (per cent of age group),Table 6.1
+lakshadweep,2025-26,elementary (1-8),girls,93.5,ratio (per cent of age group),Table 6.1
+lakshadweep,2025-26,elementary (1-8),total,94.6,ratio (per cent of age group),Table 6.1
+lakshadweep,2025-26,secondary (9-10),boys,74.1,ratio (per cent of age group),Table 6.1
+lakshadweep,2025-26,secondary (9-10),girls,85.8,ratio (per cent of age group),Table 6.1
+lakshadweep,2025-26,secondary (9-10),total,79.8,ratio (per cent of age group),Table 6.1
+lakshadweep,2025-26,higher secondary (11-12),boys,69.1,ratio (per cent of age group),Table 6.1
+lakshadweep,2025-26,higher secondary (11-12),girls,66.1,ratio (per cent of age group),Table 6.1
+lakshadweep,2025-26,higher secondary (11-12),total,67.6,ratio (per cent of age group),Table 6.1
+madhya-pradesh,2025-26,primary (1-5),boys,76.7,ratio (per cent of age group),Table 6.1
+madhya-pradesh,2025-26,primary (1-5),girls,76.7,ratio (per cent of age group),Table 6.1
+madhya-pradesh,2025-26,primary (1-5),total,76.7,ratio (per cent of age group),Table 6.1
+madhya-pradesh,2025-26,upper primary (6-8),boys,77.7,ratio (per cent of age group),Table 6.1
+madhya-pradesh,2025-26,upper primary (6-8),girls,79.6,ratio (per cent of age group),Table 6.1
+madhya-pradesh,2025-26,upper primary (6-8),total,78.6,ratio (per cent of age group),Table 6.1
+madhya-pradesh,2025-26,elementary (1-8),boys,77.0,ratio (per cent of age group),Table 6.1
+madhya-pradesh,2025-26,elementary (1-8),girls,77.8,ratio (per cent of age group),Table 6.1
+madhya-pradesh,2025-26,elementary (1-8),total,77.4,ratio (per cent of age group),Table 6.1
+madhya-pradesh,2025-26,secondary (9-10),boys,69.4,ratio (per cent of age group),Table 6.1
+madhya-pradesh,2025-26,secondary (9-10),girls,70.3,ratio (per cent of age group),Table 6.1
+madhya-pradesh,2025-26,secondary (9-10),total,69.8,ratio (per cent of age group),Table 6.1
+madhya-pradesh,2025-26,higher secondary (11-12),boys,46.5,ratio (per cent of age group),Table 6.1
+madhya-pradesh,2025-26,higher secondary (11-12),girls,50.9,ratio (per cent of age group),Table 6.1
+madhya-pradesh,2025-26,higher secondary (11-12),total,48.7,ratio (per cent of age group),Table 6.1
+maharashtra,2025-26,primary (1-5),boys,102.2,ratio (per cent of age group),Table 6.1
+maharashtra,2025-26,primary (1-5),girls,108.9,ratio (per cent of age group),Table 6.1
+maharashtra,2025-26,primary (1-5),total,105.3,ratio (per cent of age group),Table 6.1
+maharashtra,2025-26,upper primary (6-8),boys,93.6,ratio (per cent of age group),Table 6.1
+maharashtra,2025-26,upper primary (6-8),girls,100.3,ratio (per cent of age group),Table 6.1
+maharashtra,2025-26,upper primary (6-8),total,96.7,ratio (per cent of age group),Table 6.1
+maharashtra,2025-26,elementary (1-8),boys,98.8,ratio (per cent of age group),Table 6.1
+maharashtra,2025-26,elementary (1-8),girls,105.6,ratio (per cent of age group),Table 6.1
+maharashtra,2025-26,elementary (1-8),total,101.9,ratio (per cent of age group),Table 6.1
+maharashtra,2025-26,secondary (9-10),boys,96.3,ratio (per cent of age group),Table 6.1
+maharashtra,2025-26,secondary (9-10),girls,96.1,ratio (per cent of age group),Table 6.1
+maharashtra,2025-26,secondary (9-10),total,96.2,ratio (per cent of age group),Table 6.1
+maharashtra,2025-26,higher secondary (11-12),boys,72.8,ratio (per cent of age group),Table 6.1
+maharashtra,2025-26,higher secondary (11-12),girls,75.2,ratio (per cent of age group),Table 6.1
+maharashtra,2025-26,higher secondary (11-12),total,74.0,ratio (per cent of age group),Table 6.1
+manipur,2025-26,primary (1-5),boys,139.0,ratio (per cent of age group),Table 6.1
+manipur,2025-26,primary (1-5),girls,141.7,ratio (per cent of age group),Table 6.1
+manipur,2025-26,primary (1-5),total,140.3,ratio (per cent of age group),Table 6.1
+manipur,2025-26,upper primary (6-8),boys,93.1,ratio (per cent of age group),Table 6.1
+manipur,2025-26,upper primary (6-8),girls,100.1,ratio (per cent of age group),Table 6.1
+manipur,2025-26,upper primary (6-8),total,96.5,ratio (per cent of age group),Table 6.1
+manipur,2025-26,elementary (1-8),boys,119.5,ratio (per cent of age group),Table 6.1
+manipur,2025-26,elementary (1-8),girls,124.2,ratio (per cent of age group),Table 6.1
+manipur,2025-26,elementary (1-8),total,121.7,ratio (per cent of age group),Table 6.1
+manipur,2025-26,secondary (9-10),boys,79.4,ratio (per cent of age group),Table 6.1
+manipur,2025-26,secondary (9-10),girls,85.8,ratio (per cent of age group),Table 6.1
+manipur,2025-26,secondary (9-10),total,82.5,ratio (per cent of age group),Table 6.1
+manipur,2025-26,higher secondary (11-12),boys,62.4,ratio (per cent of age group),Table 6.1
+manipur,2025-26,higher secondary (11-12),girls,65.2,ratio (per cent of age group),Table 6.1
+manipur,2025-26,higher secondary (11-12),total,63.8,ratio (per cent of age group),Table 6.1
+meghalaya,2025-26,primary (1-5),boys,183.8,ratio (per cent of age group),Table 6.1
+meghalaya,2025-26,primary (1-5),girls,185.7,ratio (per cent of age group),Table 6.1
+meghalaya,2025-26,primary (1-5),total,184.7,ratio (per cent of age group),Table 6.1
+meghalaya,2025-26,upper primary (6-8),boys,106.7,ratio (per cent of age group),Table 6.1
+meghalaya,2025-26,upper primary (6-8),girls,129.3,ratio (per cent of age group),Table 6.1
+meghalaya,2025-26,upper primary (6-8),total,117.6,ratio (per cent of age group),Table 6.1
+meghalaya,2025-26,elementary (1-8),boys,152.3,ratio (per cent of age group),Table 6.1
+meghalaya,2025-26,elementary (1-8),girls,162.8,ratio (per cent of age group),Table 6.1
+meghalaya,2025-26,elementary (1-8),total,157.4,ratio (per cent of age group),Table 6.1
+meghalaya,2025-26,secondary (9-10),boys,72.9,ratio (per cent of age group),Table 6.1
+meghalaya,2025-26,secondary (9-10),girls,100.8,ratio (per cent of age group),Table 6.1
+meghalaya,2025-26,secondary (9-10),total,86.5,ratio (per cent of age group),Table 6.1
+meghalaya,2025-26,higher secondary (11-12),boys,45.8,ratio (per cent of age group),Table 6.1
+meghalaya,2025-26,higher secondary (11-12),girls,66.8,ratio (per cent of age group),Table 6.1
+meghalaya,2025-26,higher secondary (11-12),total,56.2,ratio (per cent of age group),Table 6.1
+mizoram,2025-26,primary (1-5),boys,137.3,ratio (per cent of age group),Table 6.1
+mizoram,2025-26,primary (1-5),girls,139.1,ratio (per cent of age group),Table 6.1
+mizoram,2025-26,primary (1-5),total,138.2,ratio (per cent of age group),Table 6.1
+mizoram,2025-26,upper primary (6-8),boys,104.0,ratio (per cent of age group),Table 6.1
+mizoram,2025-26,upper primary (6-8),girls,109.0,ratio (per cent of age group),Table 6.1
+mizoram,2025-26,upper primary (6-8),total,106.4,ratio (per cent of age group),Table 6.1
+mizoram,2025-26,elementary (1-8),boys,123.6,ratio (per cent of age group),Table 6.1
+mizoram,2025-26,elementary (1-8),girls,126.9,ratio (per cent of age group),Table 6.1
+mizoram,2025-26,elementary (1-8),total,125.2,ratio (per cent of age group),Table 6.1
+mizoram,2025-26,secondary (9-10),boys,92.5,ratio (per cent of age group),Table 6.1
+mizoram,2025-26,secondary (9-10),girls,104.7,ratio (per cent of age group),Table 6.1
+mizoram,2025-26,secondary (9-10),total,98.4,ratio (per cent of age group),Table 6.1
+mizoram,2025-26,higher secondary (11-12),boys,53.7,ratio (per cent of age group),Table 6.1
+mizoram,2025-26,higher secondary (11-12),girls,62.4,ratio (per cent of age group),Table 6.1
+mizoram,2025-26,higher secondary (11-12),total,58.0,ratio (per cent of age group),Table 6.1
+nagaland,2025-26,primary (1-5),boys,94.7,ratio (per cent of age group),Table 6.1
+nagaland,2025-26,primary (1-5),girls,97.7,ratio (per cent of age group),Table 6.1
+nagaland,2025-26,primary (1-5),total,96.1,ratio (per cent of age group),Table 6.1
+nagaland,2025-26,upper primary (6-8),boys,65.9,ratio (per cent of age group),Table 6.1
+nagaland,2025-26,upper primary (6-8),girls,75.1,ratio (per cent of age group),Table 6.1
+nagaland,2025-26,upper primary (6-8),total,70.2,ratio (per cent of age group),Table 6.1
+nagaland,2025-26,elementary (1-8),boys,82.5,ratio (per cent of age group),Table 6.1
+nagaland,2025-26,elementary (1-8),girls,88.3,ratio (per cent of age group),Table 6.1
+nagaland,2025-26,elementary (1-8),total,85.2,ratio (per cent of age group),Table 6.1
+nagaland,2025-26,secondary (9-10),boys,56.4,ratio (per cent of age group),Table 6.1
+nagaland,2025-26,secondary (9-10),girls,66.8,ratio (per cent of age group),Table 6.1
+nagaland,2025-26,secondary (9-10),total,61.4,ratio (per cent of age group),Table 6.1
+nagaland,2025-26,higher secondary (11-12),boys,37.6,ratio (per cent of age group),Table 6.1
+nagaland,2025-26,higher secondary (11-12),girls,43.9,ratio (per cent of age group),Table 6.1
+nagaland,2025-26,higher secondary (11-12),total,40.7,ratio (per cent of age group),Table 6.1
+odisha,2025-26,primary (1-5),boys,87.0,ratio (per cent of age group),Table 6.1
+odisha,2025-26,primary (1-5),girls,86.9,ratio (per cent of age group),Table 6.1
+odisha,2025-26,primary (1-5),total,87.0,ratio (per cent of age group),Table 6.1
+odisha,2025-26,upper primary (6-8),boys,92.0,ratio (per cent of age group),Table 6.1
+odisha,2025-26,upper primary (6-8),girls,94.8,ratio (per cent of age group),Table 6.1
+odisha,2025-26,upper primary (6-8),total,93.3,ratio (per cent of age group),Table 6.1
+odisha,2025-26,elementary (1-8),boys,89.0,ratio (per cent of age group),Table 6.1
+odisha,2025-26,elementary (1-8),girls,90.0,ratio (per cent of age group),Table 6.1
+odisha,2025-26,elementary (1-8),total,89.4,ratio (per cent of age group),Table 6.1
+odisha,2025-26,secondary (9-10),boys,88.1,ratio (per cent of age group),Table 6.1
+odisha,2025-26,secondary (9-10),girls,90.3,ratio (per cent of age group),Table 6.1
+odisha,2025-26,secondary (9-10),total,89.2,ratio (per cent of age group),Table 6.1
+odisha,2025-26,higher secondary (11-12),boys,57.5,ratio (per cent of age group),Table 6.1
+odisha,2025-26,higher secondary (11-12),girls,65.0,ratio (per cent of age group),Table 6.1
+odisha,2025-26,higher secondary (11-12),total,61.2,ratio (per cent of age group),Table 6.1
+puducherry,2025-26,primary (1-5),boys,96.0,ratio (per cent of age group),Table 6.1
+puducherry,2025-26,primary (1-5),girls,95.6,ratio (per cent of age group),Table 6.1
+puducherry,2025-26,primary (1-5),total,95.8,ratio (per cent of age group),Table 6.1
+puducherry,2025-26,upper primary (6-8),boys,95.0,ratio (per cent of age group),Table 6.1
+puducherry,2025-26,upper primary (6-8),girls,98.1,ratio (per cent of age group),Table 6.1
+puducherry,2025-26,upper primary (6-8),total,96.5,ratio (per cent of age group),Table 6.1
+puducherry,2025-26,elementary (1-8),boys,95.6,ratio (per cent of age group),Table 6.1
+puducherry,2025-26,elementary (1-8),girls,96.6,ratio (per cent of age group),Table 6.1
+puducherry,2025-26,elementary (1-8),total,96.1,ratio (per cent of age group),Table 6.1
+puducherry,2025-26,secondary (9-10),boys,95.6,ratio (per cent of age group),Table 6.1
+puducherry,2025-26,secondary (9-10),girls,103.2,ratio (per cent of age group),Table 6.1
+puducherry,2025-26,secondary (9-10),total,99.2,ratio (per cent of age group),Table 6.1
+puducherry,2025-26,higher secondary (11-12),boys,88.2,ratio (per cent of age group),Table 6.1
+puducherry,2025-26,higher secondary (11-12),girls,102.8,ratio (per cent of age group),Table 6.1
+puducherry,2025-26,higher secondary (11-12),total,95.1,ratio (per cent of age group),Table 6.1
+punjab,2025-26,primary (1-5),boys,104.8,ratio (per cent of age group),Table 6.1
+punjab,2025-26,primary (1-5),girls,106.1,ratio (per cent of age group),Table 6.1
+punjab,2025-26,primary (1-5),total,105.4,ratio (per cent of age group),Table 6.1
+punjab,2025-26,upper primary (6-8),boys,98.6,ratio (per cent of age group),Table 6.1
+punjab,2025-26,upper primary (6-8),girls,102.9,ratio (per cent of age group),Table 6.1
+punjab,2025-26,upper primary (6-8),total,100.6,ratio (per cent of age group),Table 6.1
+punjab,2025-26,elementary (1-8),boys,102.4,ratio (per cent of age group),Table 6.1
+punjab,2025-26,elementary (1-8),girls,104.9,ratio (per cent of age group),Table 6.1
+punjab,2025-26,elementary (1-8),total,103.5,ratio (per cent of age group),Table 6.1
+punjab,2025-26,secondary (9-10),boys,91.2,ratio (per cent of age group),Table 6.1
+punjab,2025-26,secondary (9-10),girls,96.5,ratio (per cent of age group),Table 6.1
+punjab,2025-26,secondary (9-10),total,93.6,ratio (per cent of age group),Table 6.1
+punjab,2025-26,higher secondary (11-12),boys,78.0,ratio (per cent of age group),Table 6.1
+punjab,2025-26,higher secondary (11-12),girls,85.0,ratio (per cent of age group),Table 6.1
+punjab,2025-26,higher secondary (11-12),total,81.2,ratio (per cent of age group),Table 6.1
+rajasthan,2025-26,primary (1-5),boys,83.8,ratio (per cent of age group),Table 6.1
+rajasthan,2025-26,primary (1-5),girls,86.4,ratio (per cent of age group),Table 6.1
+rajasthan,2025-26,primary (1-5),total,85.0,ratio (per cent of age group),Table 6.1
+rajasthan,2025-26,upper primary (6-8),boys,87.7,ratio (per cent of age group),Table 6.1
+rajasthan,2025-26,upper primary (6-8),girls,91.9,ratio (per cent of age group),Table 6.1
+rajasthan,2025-26,upper primary (6-8),total,89.7,ratio (per cent of age group),Table 6.1
+rajasthan,2025-26,elementary (1-8),boys,85.3,ratio (per cent of age group),Table 6.1
+rajasthan,2025-26,elementary (1-8),girls,88.4,ratio (per cent of age group),Table 6.1
+rajasthan,2025-26,elementary (1-8),total,86.8,ratio (per cent of age group),Table 6.1
+rajasthan,2025-26,secondary (9-10),boys,82.7,ratio (per cent of age group),Table 6.1
+rajasthan,2025-26,secondary (9-10),girls,81.5,ratio (per cent of age group),Table 6.1
+rajasthan,2025-26,secondary (9-10),total,82.2,ratio (per cent of age group),Table 6.1
+rajasthan,2025-26,higher secondary (11-12),boys,68.3,ratio (per cent of age group),Table 6.1
+rajasthan,2025-26,higher secondary (11-12),girls,68.0,ratio (per cent of age group),Table 6.1
+rajasthan,2025-26,higher secondary (11-12),total,68.1,ratio (per cent of age group),Table 6.1
+sikkim,2025-26,primary (1-5),boys,98.5,ratio (per cent of age group),Table 6.1
+sikkim,2025-26,primary (1-5),girls,95.3,ratio (per cent of age group),Table 6.1
+sikkim,2025-26,primary (1-5),total,96.9,ratio (per cent of age group),Table 6.1
+sikkim,2025-26,upper primary (6-8),boys,73.0,ratio (per cent of age group),Table 6.1
+sikkim,2025-26,upper primary (6-8),girls,77.9,ratio (per cent of age group),Table 6.1
+sikkim,2025-26,upper primary (6-8),total,75.4,ratio (per cent of age group),Table 6.1
+sikkim,2025-26,elementary (1-8),boys,87.2,ratio (per cent of age group),Table 6.1
+sikkim,2025-26,elementary (1-8),girls,87.6,ratio (per cent of age group),Table 6.1
+sikkim,2025-26,elementary (1-8),total,87.4,ratio (per cent of age group),Table 6.1
+sikkim,2025-26,secondary (9-10),boys,66.8,ratio (per cent of age group),Table 6.1
+sikkim,2025-26,secondary (9-10),girls,70.2,ratio (per cent of age group),Table 6.1
+sikkim,2025-26,secondary (9-10),total,68.5,ratio (per cent of age group),Table 6.1
+sikkim,2025-26,higher secondary (11-12),boys,42.8,ratio (per cent of age group),Table 6.1
+sikkim,2025-26,higher secondary (11-12),girls,54.6,ratio (per cent of age group),Table 6.1
+sikkim,2025-26,higher secondary (11-12),total,48.6,ratio (per cent of age group),Table 6.1
+tamil-nadu,2025-26,primary (1-5),boys,90.9,ratio (per cent of age group),Table 6.1
+tamil-nadu,2025-26,primary (1-5),girls,93.7,ratio (per cent of age group),Table 6.1
+tamil-nadu,2025-26,primary (1-5),total,92.2,ratio (per cent of age group),Table 6.1
+tamil-nadu,2025-26,upper primary (6-8),boys,93.7,ratio (per cent of age group),Table 6.1
+tamil-nadu,2025-26,upper primary (6-8),girls,97.0,ratio (per cent of age group),Table 6.1
+tamil-nadu,2025-26,upper primary (6-8),total,95.2,ratio (per cent of age group),Table 6.1
+tamil-nadu,2025-26,elementary (1-8),boys,92.0,ratio (per cent of age group),Table 6.1
+tamil-nadu,2025-26,elementary (1-8),girls,95.0,ratio (per cent of age group),Table 6.1
+tamil-nadu,2025-26,elementary (1-8),total,93.4,ratio (per cent of age group),Table 6.1
+tamil-nadu,2025-26,secondary (9-10),boys,95.3,ratio (per cent of age group),Table 6.1
+tamil-nadu,2025-26,secondary (9-10),girls,99.6,ratio (per cent of age group),Table 6.1
+tamil-nadu,2025-26,secondary (9-10),total,97.4,ratio (per cent of age group),Table 6.1
+tamil-nadu,2025-26,higher secondary (11-12),boys,79.5,ratio (per cent of age group),Table 6.1
+tamil-nadu,2025-26,higher secondary (11-12),girls,91.0,ratio (per cent of age group),Table 6.1
+tamil-nadu,2025-26,higher secondary (11-12),total,85.1,ratio (per cent of age group),Table 6.1
+telangana,2025-26,primary (1-5),boys,115.9,ratio (per cent of age group),Table 6.1
+telangana,2025-26,primary (1-5),girls,118.4,ratio (per cent of age group),Table 6.1
+telangana,2025-26,primary (1-5),total,117.1,ratio (per cent of age group),Table 6.1
+telangana,2025-26,upper primary (6-8),boys,108.0,ratio (per cent of age group),Table 6.1
+telangana,2025-26,upper primary (6-8),girls,112.4,ratio (per cent of age group),Table 6.1
+telangana,2025-26,upper primary (6-8),total,110.1,ratio (per cent of age group),Table 6.1
+telangana,2025-26,elementary (1-8),boys,112.8,ratio (per cent of age group),Table 6.1
+telangana,2025-26,elementary (1-8),girls,116.1,ratio (per cent of age group),Table 6.1
+telangana,2025-26,elementary (1-8),total,114.4,ratio (per cent of age group),Table 6.1
+telangana,2025-26,secondary (9-10),boys,102.4,ratio (per cent of age group),Table 6.1
+telangana,2025-26,secondary (9-10),girls,107.9,ratio (per cent of age group),Table 6.1
+telangana,2025-26,secondary (9-10),total,105.0,ratio (per cent of age group),Table 6.1
+telangana,2025-26,higher secondary (11-12),boys,77.8,ratio (per cent of age group),Table 6.1
+telangana,2025-26,higher secondary (11-12),girls,86.3,ratio (per cent of age group),Table 6.1
+telangana,2025-26,higher secondary (11-12),total,81.9,ratio (per cent of age group),Table 6.1
+tripura,2025-26,primary (1-5),boys,113.6,ratio (per cent of age group),Table 6.1
+tripura,2025-26,primary (1-5),girls,117.0,ratio (per cent of age group),Table 6.1
+tripura,2025-26,primary (1-5),total,115.2,ratio (per cent of age group),Table 6.1
+tripura,2025-26,upper primary (6-8),boys,98.3,ratio (per cent of age group),Table 6.1
+tripura,2025-26,upper primary (6-8),girls,106.1,ratio (per cent of age group),Table 6.1
+tripura,2025-26,upper primary (6-8),total,102.0,ratio (per cent of age group),Table 6.1
+tripura,2025-26,elementary (1-8),boys,107.1,ratio (per cent of age group),Table 6.1
+tripura,2025-26,elementary (1-8),girls,112.4,ratio (per cent of age group),Table 6.1
+tripura,2025-26,elementary (1-8),total,109.6,ratio (per cent of age group),Table 6.1
+tripura,2025-26,secondary (9-10),boys,78.1,ratio (per cent of age group),Table 6.1
+tripura,2025-26,secondary (9-10),girls,87.8,ratio (per cent of age group),Table 6.1
+tripura,2025-26,secondary (9-10),total,82.8,ratio (per cent of age group),Table 6.1
+tripura,2025-26,higher secondary (11-12),boys,51.9,ratio (per cent of age group),Table 6.1
+tripura,2025-26,higher secondary (11-12),girls,60.5,ratio (per cent of age group),Table 6.1
+tripura,2025-26,higher secondary (11-12),total,56.0,ratio (per cent of age group),Table 6.1
+uttar-pradesh,2025-26,primary (1-5),boys,81.3,ratio (per cent of age group),Table 6.1
+uttar-pradesh,2025-26,primary (1-5),girls,83.0,ratio (per cent of age group),Table 6.1
+uttar-pradesh,2025-26,primary (1-5),total,82.1,ratio (per cent of age group),Table 6.1
+uttar-pradesh,2025-26,upper primary (6-8),boys,81.4,ratio (per cent of age group),Table 6.1
+uttar-pradesh,2025-26,upper primary (6-8),girls,86.3,ratio (per cent of age group),Table 6.1
+uttar-pradesh,2025-26,upper primary (6-8),total,83.7,ratio (per cent of age group),Table 6.1
+uttar-pradesh,2025-26,elementary (1-8),boys,81.3,ratio (per cent of age group),Table 6.1
+uttar-pradesh,2025-26,elementary (1-8),girls,84.2,ratio (per cent of age group),Table 6.1
+uttar-pradesh,2025-26,elementary (1-8),total,82.7,ratio (per cent of age group),Table 6.1
+uttar-pradesh,2025-26,secondary (9-10),boys,65.7,ratio (per cent of age group),Table 6.1
+uttar-pradesh,2025-26,secondary (9-10),girls,67.9,ratio (per cent of age group),Table 6.1
+uttar-pradesh,2025-26,secondary (9-10),total,66.7,ratio (per cent of age group),Table 6.1
+uttar-pradesh,2025-26,higher secondary (11-12),boys,54.9,ratio (per cent of age group),Table 6.1
+uttar-pradesh,2025-26,higher secondary (11-12),girls,56.0,ratio (per cent of age group),Table 6.1
+uttar-pradesh,2025-26,higher secondary (11-12),total,55.4,ratio (per cent of age group),Table 6.1
+uttarakhand,2025-26,primary (1-5),boys,103.6,ratio (per cent of age group),Table 6.1
+uttarakhand,2025-26,primary (1-5),girls,109.5,ratio (per cent of age group),Table 6.1
+uttarakhand,2025-26,primary (1-5),total,106.3,ratio (per cent of age group),Table 6.1
+uttarakhand,2025-26,upper primary (6-8),boys,99.4,ratio (per cent of age group),Table 6.1
+uttarakhand,2025-26,upper primary (6-8),girls,106.4,ratio (per cent of age group),Table 6.1
+uttarakhand,2025-26,upper primary (6-8),total,102.6,ratio (per cent of age group),Table 6.1
+uttarakhand,2025-26,elementary (1-8),boys,102.0,ratio (per cent of age group),Table 6.1
+uttarakhand,2025-26,elementary (1-8),girls,108.3,ratio (per cent of age group),Table 6.1
+uttarakhand,2025-26,elementary (1-8),total,104.8,ratio (per cent of age group),Table 6.1
+uttarakhand,2025-26,secondary (9-10),boys,91.7,ratio (per cent of age group),Table 6.1
+uttarakhand,2025-26,secondary (9-10),girls,96.4,ratio (per cent of age group),Table 6.1
+uttarakhand,2025-26,secondary (9-10),total,93.9,ratio (per cent of age group),Table 6.1
+uttarakhand,2025-26,higher secondary (11-12),boys,76.7,ratio (per cent of age group),Table 6.1
+uttarakhand,2025-26,higher secondary (11-12),girls,84.2,ratio (per cent of age group),Table 6.1
+uttarakhand,2025-26,higher secondary (11-12),total,80.2,ratio (per cent of age group),Table 6.1
+west-bengal,2025-26,primary (1-5),boys,103.9,ratio (per cent of age group),Table 6.1
+west-bengal,2025-26,primary (1-5),girls,106.0,ratio (per cent of age group),Table 6.1
+west-bengal,2025-26,primary (1-5),total,104.9,ratio (per cent of age group),Table 6.1
+west-bengal,2025-26,upper primary (6-8),boys,98.2,ratio (per cent of age group),Table 6.1
+west-bengal,2025-26,upper primary (6-8),girls,103.8,ratio (per cent of age group),Table 6.1
+west-bengal,2025-26,upper primary (6-8),total,100.9,ratio (per cent of age group),Table 6.1
+west-bengal,2025-26,elementary (1-8),boys,101.6,ratio (per cent of age group),Table 6.1
+west-bengal,2025-26,elementary (1-8),girls,105.2,ratio (per cent of age group),Table 6.1
+west-bengal,2025-26,elementary (1-8),total,103.3,ratio (per cent of age group),Table 6.1
+west-bengal,2025-26,secondary (9-10),boys,107.0,ratio (per cent of age group),Table 6.1
+west-bengal,2025-26,secondary (9-10),girls,115.5,ratio (per cent of age group),Table 6.1
+west-bengal,2025-26,secondary (9-10),total,111.1,ratio (per cent of age group),Table 6.1
+west-bengal,2025-26,higher secondary (11-12),boys,60.0,ratio (per cent of age group),Table 6.1
+west-bengal,2025-26,higher secondary (11-12),girls,76.0,ratio (per cent of age group),Table 6.1
+west-bengal,2025-26,higher secondary (11-12),total,67.9,ratio (per cent of age group),Table 6.1

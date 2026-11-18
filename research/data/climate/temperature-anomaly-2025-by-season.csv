@@ -1,0 +1,6 @@
+geography,period,season,value,unit,base_period,note
+india,2025,annual,0.28,degC anomaly in mean land surface air temperature,1991-2020,8th warmest year since 1901
+india,2025,winter (jan-feb),1.17,degC anomaly in mean land surface air temperature,1991-2020,highest winter anomaly since 1901
+india,2025,pre-monsoon (mar-may),0.29,degC anomaly in mean land surface air temperature,1991-2020,
+india,2025,monsoon (jun-sep),0.09,degC anomaly in mean land surface air temperature,1991-2020,
+india,2025,post-monsoon (oct-dec),-0.10,degC anomaly in mean land surface air temperature,1991-2020,

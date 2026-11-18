@@ -1,0 +1,108 @@
+geography,name,name_as_published,period,rank,language,value,unit,share_pct,note
+india,India,INDIA,2011,1,Hindi,528347193,persons,43.63,Share derived.
+india,India,INDIA,2011,2,Bengali,97237669,persons,8.03,Share derived.
+india,India,INDIA,2011,3,Marathi,83026680,persons,6.86,Share derived.
+andhra-pradesh,Andhra Pradesh,ANDHRA PRADESH,2011,1,Telugu,70667780,persons,83.55,"Share derived. Census 2011 unit: undivided Andhra Pradesh, includes present-day Telangana"
+andhra-pradesh,Andhra Pradesh,ANDHRA PRADESH,2011,2,Urdu,7505623,persons,8.87,"Share derived. Census 2011 unit: undivided Andhra Pradesh, includes present-day Telangana"
+andhra-pradesh,Andhra Pradesh,ANDHRA PRADESH,2011,3,Hindi,3120413,persons,3.69,"Share derived. Census 2011 unit: undivided Andhra Pradesh, includes present-day Telangana"
+arunachal-pradesh,Arunachal Pradesh,ARUNACHAL PRADESH,2011,1,Nissi/Dafla,395745,persons,28.60,Share derived.
+arunachal-pradesh,Arunachal Pradesh,ARUNACHAL PRADESH,2011,2,Adi,240026,persons,17.35,Share derived.
+arunachal-pradesh,Arunachal Pradesh,ARUNACHAL PRADESH,2011,3,Bengali,100579,persons,7.27,Share derived.
+assam,Assam,ASSAM,2011,1,Assamese,15095797,persons,48.38,Share derived.
+assam,Assam,ASSAM,2011,2,Bengali,9024324,persons,28.92,Share derived.
+assam,Assam,ASSAM,2011,3,Hindi,2101435,persons,6.73,Share derived.
+bihar,Bihar,BIHAR,2011,1,Hindi,80698466,persons,77.52,Share derived.
+bihar,Bihar,BIHAR,2011,2,Maithili,13063042,persons,12.55,Share derived.
+bihar,Bihar,BIHAR,2011,3,Urdu,8770002,persons,8.42,Share derived.
+chhattisgarh,Chhattisgarh,CHHATTISGARH,2011,1,Hindi,21361927,persons,83.62,Share derived.
+chhattisgarh,Chhattisgarh,CHHATTISGARH,2011,2,Gondi,1071400,persons,4.19,Share derived.
+chhattisgarh,Chhattisgarh,CHHATTISGARH,2011,3,Odia,913581,persons,3.58,Share derived.
+goa,Goa,GOA,2011,1,Konkani,964305,persons,66.11,Share derived.
+goa,Goa,GOA,2011,2,Marathi,158787,persons,10.89,Share derived.
+goa,Goa,GOA,2011,3,Hindi,150017,persons,10.29,Share derived.
+gujarat,Gujarat,GUJARAT,2011,1,Gujarati,51958730,persons,85.97,Share derived.
+gujarat,Gujarat,GUJARAT,2011,2,Hindi,4264868,persons,7.06,Share derived.
+gujarat,Gujarat,GUJARAT,2011,3,Sindhi,1184024,persons,1.96,Share derived.
+haryana,Haryana,HARYANA,2011,1,Hindi,22322157,persons,88.05,Share derived.
+haryana,Haryana,HARYANA,2011,2,Punjabi,2400883,persons,9.47,Share derived.
+haryana,Haryana,HARYANA,2011,3,Urdu,374353,persons,1.48,Share derived.
+himachal-pradesh,Himachal Pradesh,HIMACHAL PRADESH,2011,1,Hindi,5895529,persons,85.88,Share derived.
+himachal-pradesh,Himachal Pradesh,HIMACHAL PRADESH,2011,2,Punjabi,615022,persons,8.96,Share derived.
+himachal-pradesh,Himachal Pradesh,HIMACHAL PRADESH,2011,3,Nepali,89508,persons,1.30,Share derived.
+jharkhand,Jharkhand,JHARKHAND,2011,1,Hindi,20436026,persons,61.95,Share derived.
+jharkhand,Jharkhand,JHARKHAND,2011,2,Santali,3269897,persons,9.91,Share derived.
+jharkhand,Jharkhand,JHARKHAND,2011,3,Bengali,3213423,persons,9.74,Share derived.
+karnataka,Karnataka,KARNATAKA,2011,1,Kannada,40651090,persons,66.54,Share derived.
+karnataka,Karnataka,KARNATAKA,2011,2,Urdu,6618324,persons,10.83,Share derived.
+karnataka,Karnataka,KARNATAKA,2011,3,Telugu,3569400,persons,5.84,Share derived.
+kerala,Kerala,KERALA,2011,1,Malayalam,32413213,persons,97.03,Share derived.
+kerala,Kerala,KERALA,2011,2,Tamil,502516,persons,1.50,Share derived.
+kerala,Kerala,KERALA,2011,3,Tulu,124266,persons,0.37,Share derived.
+madhya-pradesh,Madhya Pradesh,MADHYA PRADESH,2011,1,Hindi,64324963,persons,88.57,Share derived.
+madhya-pradesh,Madhya Pradesh,MADHYA PRADESH,2011,2,Bhili/Bhilodi,3587810,persons,4.94,Share derived.
+madhya-pradesh,Madhya Pradesh,MADHYA PRADESH,2011,3,Marathi,1231285,persons,1.70,Share derived.
+maharashtra,Maharashtra,MAHARASHTRA,2011,1,Marathi,77461172,persons,68.93,Share derived.
+maharashtra,Maharashtra,MAHARASHTRA,2011,2,Hindi,14481513,persons,12.89,Share derived.
+maharashtra,Maharashtra,MAHARASHTRA,2011,3,Urdu,7540324,persons,6.71,Share derived.
+manipur,Manipur,MANIPUR,2011,1,Manipuri,1522132,persons,53.30,Share derived.
+manipur,Manipur,MANIPUR,2011,2,Mao,224361,persons,7.86,Share derived.
+manipur,Manipur,MANIPUR,2011,3,Thado,223779,persons,7.84,Share derived.
+meghalaya,Meghalaya,MEGHALAYA,2011,1,Khasi,1382278,persons,46.59,Share derived.
+meghalaya,Meghalaya,MEGHALAYA,2011,2,Garo,936496,persons,31.56,Share derived.
+meghalaya,Meghalaya,MEGHALAYA,2011,3,Bengali,232525,persons,7.84,Share derived.
+mizoram,Mizoram,MIZORAM,2011,1,Lushai/Mizo,802763,persons,73.16,Share derived.
+mizoram,Mizoram,MIZORAM,2011,2,Bengali,107840,persons,9.83,Share derived.
+mizoram,Mizoram,MIZORAM,2011,3,Lakher,41876,persons,3.82,Share derived.
+nagaland,Nagaland,NAGALAND,2011,1,Konyak,244135,persons,12.34,Share derived.
+nagaland,Nagaland,NAGALAND,2011,2,Ao,231084,persons,11.68,Share derived.
+nagaland,Nagaland,NAGALAND,2011,3,Lotha,177488,persons,8.97,Share derived.
+odisha,Odisha,ODISHA,2011,1,Odia,34712170,persons,82.70,Share derived.
+odisha,Odisha,ODISHA,2011,2,Hindi,1239037,persons,2.95,Share derived.
+odisha,Odisha,ODISHA,2011,3,Kui,939283,persons,2.24,Share derived.
+punjab,Punjab,PUNJAB,2011,1,Punjabi,24917885,persons,89.82,Share derived.
+punjab,Punjab,PUNJAB,2011,2,Hindi,2594831,persons,9.35,Share derived.
+punjab,Punjab,PUNJAB,2011,3,Urdu,27387,persons,0.10,Share derived.
+rajasthan,Rajasthan,RAJASTHAN,2011,1,Hindi,61274274,persons,89.39,Share derived.
+rajasthan,Rajasthan,RAJASTHAN,2011,2,Bhili/Bhilodi,3592208,persons,5.24,Share derived.
+rajasthan,Rajasthan,RAJASTHAN,2011,3,Punjabi,2274342,persons,3.32,Share derived.
+sikkim,Sikkim,SIKKIM,2011,1,Nepali,382200,persons,62.60,Share derived.
+sikkim,Sikkim,SIKKIM,2011,2,Hindi,48586,persons,7.96,Share derived.
+sikkim,Sikkim,SIKKIM,2011,3,Bhotia,41889,persons,6.86,Share derived.
+tamil-nadu,Tamil Nadu,TAMIL NADU,2011,1,Tamil,63753997,persons,88.37,Share derived.
+tamil-nadu,Tamil Nadu,TAMIL NADU,2011,2,Telugu,4234302,persons,5.87,Share derived.
+tamil-nadu,Tamil Nadu,TAMIL NADU,2011,3,Kannada,1286175,persons,1.78,Share derived.
+telangana,Telangana,,2011,1,,,persons,,Not a separate unit in Census 2011 tables; counted in andhra-pradesh
+tripura,Tripura,TRIPURA,2011,1,Bengali,2414774,persons,65.73,Share derived.
+tripura,Tripura,TRIPURA,2011,2,Tripuri,950875,persons,25.88,Share derived.
+tripura,Tripura,TRIPURA,2011,3,Hindi,77701,persons,2.11,Share derived.
+uttar-pradesh,Uttar Pradesh,UTTAR PRADESH,2011,1,Hindi,187979055,persons,94.08,Share derived.
+uttar-pradesh,Uttar Pradesh,UTTAR PRADESH,2011,2,Urdu,10820232,persons,5.42,Share derived.
+uttar-pradesh,Uttar Pradesh,UTTAR PRADESH,2011,3,Punjabi,508736,persons,0.25,Share derived.
+uttarakhand,Uttarakhand,UTTARAKHAND,2011,1,Hindi,8992114,persons,89.15,Share derived.
+uttarakhand,Uttarakhand,UTTARAKHAND,2011,2,Urdu,425752,persons,4.22,Share derived.
+uttarakhand,Uttarakhand,UTTARAKHAND,2011,3,Punjabi,263310,persons,2.61,Share derived.
+west-bengal,West Bengal,WEST BENGAL,2011,1,Bengali,78698852,persons,86.22,Share derived.
+west-bengal,West Bengal,WEST BENGAL,2011,2,Hindi,6356059,persons,6.96,Share derived.
+west-bengal,West Bengal,WEST BENGAL,2011,3,Santali,2429073,persons,2.66,Share derived.
+andaman-nicobar,Andaman and Nicobar Islands,ANDAMAN & NICOBAR ISLANDS,2011,1,Bengali,108432,persons,28.49,Share derived.
+andaman-nicobar,Andaman and Nicobar Islands,ANDAMAN & NICOBAR ISLANDS,2011,2,Hindi,73424,persons,19.29,Share derived.
+andaman-nicobar,Andaman and Nicobar Islands,ANDAMAN & NICOBAR ISLANDS,2011,3,Tamil,57830,persons,15.20,Share derived.
+chandigarh,Chandigarh,CHANDIGARH,2011,1,Hindi,776775,persons,73.60,Share derived.
+chandigarh,Chandigarh,CHANDIGARH,2011,2,Punjabi,232516,persons,22.03,Share derived.
+chandigarh,Chandigarh,CHANDIGARH,2011,3,Urdu,10595,persons,1.00,Share derived.
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,Dadra & Nagar Haveli + Daman & Diu,2011,1,Gujarati,197479,persons,33.64,Share derived. Derived: sum of Dadra and Nagar Haveli and Daman and Diu as published in 2011
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,Dadra & Nagar Haveli + Daman & Diu,2011,2,Hindi,178217,persons,30.36,Share derived. Derived: sum of Dadra and Nagar Haveli and Daman and Diu as published in 2011
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,Dadra & Nagar Haveli + Daman & Diu,2011,3,Bhili/Bhilodi,128596,persons,21.91,Share derived. Derived: sum of Dadra and Nagar Haveli and Daman and Diu as published in 2011
+delhi,Delhi,NCT OF DELHI,2011,1,Hindi,14255526,persons,84.92,Share derived.
+delhi,Delhi,NCT OF DELHI,2011,2,Punjabi,873477,persons,5.20,Share derived.
+delhi,Delhi,NCT OF DELHI,2011,3,Urdu,867673,persons,5.17,Share derived.
+jammu-kashmir,Jammu and Kashmir,JAMMU & KASHMIR,2011,1,Kashmiri,6680837,persons,53.27,"Share derived. Census 2011 unit: former state of Jammu and Kashmir, includes present-day Ladakh"
+jammu-kashmir,Jammu and Kashmir,JAMMU & KASHMIR,2011,2,Hindi,2612631,persons,20.83,"Share derived. Census 2011 unit: former state of Jammu and Kashmir, includes present-day Ladakh"
+jammu-kashmir,Jammu and Kashmir,JAMMU & KASHMIR,2011,3,Dogri,2513712,persons,20.04,"Share derived. Census 2011 unit: former state of Jammu and Kashmir, includes present-day Ladakh"
+ladakh,Ladakh,,2011,1,,,persons,,Not a separate unit in Census 2011 tables; counted in jammu-kashmir
+lakshadweep,Lakshadweep,LAKSHADWEEP,2011,1,Malayalam,54264,persons,84.17,Share derived.
+lakshadweep,Lakshadweep,LAKSHADWEEP,2011,2,Tamil,364,persons,0.56,Share derived.
+lakshadweep,Lakshadweep,LAKSHADWEEP,2011,3,Hindi,160,persons,0.25,Share derived.
+puducherry,Puducherry,PUDUCHERRY,2011,1,Tamil,1100976,persons,88.22,Share derived.
+puducherry,Puducherry,PUDUCHERRY,2011,2,Telugu,74347,persons,5.96,Share derived.
+puducherry,Puducherry,PUDUCHERRY,2011,3,Malayalam,47973,persons,3.84,Share derived.

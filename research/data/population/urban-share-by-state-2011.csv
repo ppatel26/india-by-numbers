@@ -1,0 +1,112 @@
+geography,name,name_as_published,period,series,value,unit,note
+india,India,INDIA,2011,total_population,1210854977,persons,
+india,India,INDIA,2011,urban_population,377106125,persons,
+india,India,INDIA,2011,urban_share_pct,31.14,percent,Derived: urban / total x 100.
+andhra-pradesh,Andhra Pradesh,ANDHRA PRADESH,2011,total_population,84580777,persons,"Census 2011 unit: undivided Andhra Pradesh, includes present-day Telangana"
+andhra-pradesh,Andhra Pradesh,ANDHRA PRADESH,2011,urban_population,28219075,persons,"Census 2011 unit: undivided Andhra Pradesh, includes present-day Telangana"
+andhra-pradesh,Andhra Pradesh,ANDHRA PRADESH,2011,urban_share_pct,33.36,percent,"Derived: urban / total x 100. Census 2011 unit: undivided Andhra Pradesh, includes present-day Telangana"
+arunachal-pradesh,Arunachal Pradesh,ARUNACHAL PRADESH,2011,total_population,1383727,persons,
+arunachal-pradesh,Arunachal Pradesh,ARUNACHAL PRADESH,2011,urban_population,317369,persons,
+arunachal-pradesh,Arunachal Pradesh,ARUNACHAL PRADESH,2011,urban_share_pct,22.94,percent,Derived: urban / total x 100.
+assam,Assam,ASSAM,2011,total_population,31205576,persons,
+assam,Assam,ASSAM,2011,urban_population,4398542,persons,
+assam,Assam,ASSAM,2011,urban_share_pct,14.10,percent,Derived: urban / total x 100.
+bihar,Bihar,BIHAR,2011,total_population,104099452,persons,
+bihar,Bihar,BIHAR,2011,urban_population,11758016,persons,
+bihar,Bihar,BIHAR,2011,urban_share_pct,11.29,percent,Derived: urban / total x 100.
+chhattisgarh,Chhattisgarh,CHHATTISGARH,2011,total_population,25545198,persons,
+chhattisgarh,Chhattisgarh,CHHATTISGARH,2011,urban_population,5937237,persons,
+chhattisgarh,Chhattisgarh,CHHATTISGARH,2011,urban_share_pct,23.24,percent,Derived: urban / total x 100.
+goa,Goa,GOA,2011,total_population,1458545,persons,
+goa,Goa,GOA,2011,urban_population,906814,persons,
+goa,Goa,GOA,2011,urban_share_pct,62.17,percent,Derived: urban / total x 100.
+gujarat,Gujarat,GUJARAT,2011,total_population,60439692,persons,
+gujarat,Gujarat,GUJARAT,2011,urban_population,25745083,persons,
+gujarat,Gujarat,GUJARAT,2011,urban_share_pct,42.60,percent,Derived: urban / total x 100.
+haryana,Haryana,HARYANA,2011,total_population,25351462,persons,
+haryana,Haryana,HARYANA,2011,urban_population,8842103,persons,
+haryana,Haryana,HARYANA,2011,urban_share_pct,34.88,percent,Derived: urban / total x 100.
+himachal-pradesh,Himachal Pradesh,HIMACHAL PRADESH,2011,total_population,6864602,persons,
+himachal-pradesh,Himachal Pradesh,HIMACHAL PRADESH,2011,urban_population,688552,persons,
+himachal-pradesh,Himachal Pradesh,HIMACHAL PRADESH,2011,urban_share_pct,10.03,percent,Derived: urban / total x 100.
+jharkhand,Jharkhand,JHARKHAND,2011,total_population,32988134,persons,
+jharkhand,Jharkhand,JHARKHAND,2011,urban_population,7933061,persons,
+jharkhand,Jharkhand,JHARKHAND,2011,urban_share_pct,24.05,percent,Derived: urban / total x 100.
+karnataka,Karnataka,KARNATAKA,2011,total_population,61095297,persons,
+karnataka,Karnataka,KARNATAKA,2011,urban_population,23625962,persons,
+karnataka,Karnataka,KARNATAKA,2011,urban_share_pct,38.67,percent,Derived: urban / total x 100.
+kerala,Kerala,KERALA,2011,total_population,33406061,persons,
+kerala,Kerala,KERALA,2011,urban_population,15934926,persons,
+kerala,Kerala,KERALA,2011,urban_share_pct,47.70,percent,Derived: urban / total x 100.
+madhya-pradesh,Madhya Pradesh,MADHYA PRADESH,2011,total_population,72626809,persons,
+madhya-pradesh,Madhya Pradesh,MADHYA PRADESH,2011,urban_population,20069405,persons,
+madhya-pradesh,Madhya Pradesh,MADHYA PRADESH,2011,urban_share_pct,27.63,percent,Derived: urban / total x 100.
+maharashtra,Maharashtra,MAHARASHTRA,2011,total_population,112374333,persons,
+maharashtra,Maharashtra,MAHARASHTRA,2011,urban_population,50818259,persons,
+maharashtra,Maharashtra,MAHARASHTRA,2011,urban_share_pct,45.22,percent,Derived: urban / total x 100.
+manipur,Manipur,MANIPUR,2011,total_population,2855794,persons,
+manipur,Manipur,MANIPUR,2011,urban_population,834154,persons,
+manipur,Manipur,MANIPUR,2011,urban_share_pct,29.21,percent,Derived: urban / total x 100.
+meghalaya,Meghalaya,MEGHALAYA,2011,total_population,2966889,persons,
+meghalaya,Meghalaya,MEGHALAYA,2011,urban_population,595450,persons,
+meghalaya,Meghalaya,MEGHALAYA,2011,urban_share_pct,20.07,percent,Derived: urban / total x 100.
+mizoram,Mizoram,MIZORAM,2011,total_population,1097206,persons,
+mizoram,Mizoram,MIZORAM,2011,urban_population,571771,persons,
+mizoram,Mizoram,MIZORAM,2011,urban_share_pct,52.11,percent,Derived: urban / total x 100.
+nagaland,Nagaland,NAGALAND,2011,total_population,1978502,persons,
+nagaland,Nagaland,NAGALAND,2011,urban_population,570966,persons,
+nagaland,Nagaland,NAGALAND,2011,urban_share_pct,28.86,percent,Derived: urban / total x 100.
+odisha,Odisha,ODISHA,2011,total_population,41974218,persons,
+odisha,Odisha,ODISHA,2011,urban_population,7003656,persons,
+odisha,Odisha,ODISHA,2011,urban_share_pct,16.69,percent,Derived: urban / total x 100.
+punjab,Punjab,PUNJAB,2011,total_population,27743338,persons,
+punjab,Punjab,PUNJAB,2011,urban_population,10399146,persons,
+punjab,Punjab,PUNJAB,2011,urban_share_pct,37.48,percent,Derived: urban / total x 100.
+rajasthan,Rajasthan,RAJASTHAN,2011,total_population,68548437,persons,
+rajasthan,Rajasthan,RAJASTHAN,2011,urban_population,17048085,persons,
+rajasthan,Rajasthan,RAJASTHAN,2011,urban_share_pct,24.87,percent,Derived: urban / total x 100.
+sikkim,Sikkim,SIKKIM,2011,total_population,610577,persons,
+sikkim,Sikkim,SIKKIM,2011,urban_population,153578,persons,
+sikkim,Sikkim,SIKKIM,2011,urban_share_pct,25.15,percent,Derived: urban / total x 100.
+tamil-nadu,Tamil Nadu,TAMIL NADU,2011,total_population,72147030,persons,
+tamil-nadu,Tamil Nadu,TAMIL NADU,2011,urban_population,34917440,persons,
+tamil-nadu,Tamil Nadu,TAMIL NADU,2011,urban_share_pct,48.40,percent,Derived: urban / total x 100.
+telangana,Telangana,,2011,total_population,,persons,Not a separate unit in Census 2011 tables; counted in andhra-pradesh
+telangana,Telangana,,2011,urban_population,,persons,Not a separate unit in Census 2011 tables; counted in andhra-pradesh
+telangana,Telangana,,2011,urban_share_pct,,percent,Not a separate unit in Census 2011 tables; counted in andhra-pradesh
+tripura,Tripura,TRIPURA,2011,total_population,3673917,persons,
+tripura,Tripura,TRIPURA,2011,urban_population,961453,persons,
+tripura,Tripura,TRIPURA,2011,urban_share_pct,26.17,percent,Derived: urban / total x 100.
+uttar-pradesh,Uttar Pradesh,UTTAR PRADESH,2011,total_population,199812341,persons,
+uttar-pradesh,Uttar Pradesh,UTTAR PRADESH,2011,urban_population,44495063,persons,
+uttar-pradesh,Uttar Pradesh,UTTAR PRADESH,2011,urban_share_pct,22.27,percent,Derived: urban / total x 100.
+uttarakhand,Uttarakhand,UTTARAKHAND,2011,total_population,10086292,persons,
+uttarakhand,Uttarakhand,UTTARAKHAND,2011,urban_population,3049338,persons,
+uttarakhand,Uttarakhand,UTTARAKHAND,2011,urban_share_pct,30.23,percent,Derived: urban / total x 100.
+west-bengal,West Bengal,WEST BENGAL,2011,total_population,91276115,persons,
+west-bengal,West Bengal,WEST BENGAL,2011,urban_population,29093002,persons,
+west-bengal,West Bengal,WEST BENGAL,2011,urban_share_pct,31.87,percent,Derived: urban / total x 100.
+andaman-nicobar,Andaman and Nicobar Islands,ANDAMAN & NICOBAR ISLANDS,2011,total_population,380581,persons,
+andaman-nicobar,Andaman and Nicobar Islands,ANDAMAN & NICOBAR ISLANDS,2011,urban_population,143488,persons,
+andaman-nicobar,Andaman and Nicobar Islands,ANDAMAN & NICOBAR ISLANDS,2011,urban_share_pct,37.70,percent,Derived: urban / total x 100.
+chandigarh,Chandigarh,CHANDIGARH,2011,total_population,1055450,persons,
+chandigarh,Chandigarh,CHANDIGARH,2011,urban_population,1026459,persons,
+chandigarh,Chandigarh,CHANDIGARH,2011,urban_share_pct,97.25,percent,Derived: urban / total x 100.
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,Dadra & Nagar Haveli + Daman & Diu,2011,total_population,586956,persons,Derived: sum of Dadra and Nagar Haveli and Daman and Diu as published in 2011
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,Dadra & Nagar Haveli + Daman & Diu,2011,urban_population,343446,persons,Derived: sum of Dadra and Nagar Haveli and Daman and Diu as published in 2011
+dnh-dd,Dadra and Nagar Haveli and Daman and Diu,Dadra & Nagar Haveli + Daman & Diu,2011,urban_share_pct,58.51,percent,Derived: urban / total x 100. Derived: sum of Dadra and Nagar Haveli and Daman and Diu as published in 2011
+delhi,Delhi,NCT OF DELHI,2011,total_population,16787941,persons,
+delhi,Delhi,NCT OF DELHI,2011,urban_population,16368899,persons,
+delhi,Delhi,NCT OF DELHI,2011,urban_share_pct,97.50,percent,Derived: urban / total x 100.
+jammu-kashmir,Jammu and Kashmir,JAMMU & KASHMIR,2011,total_population,12541302,persons,"Census 2011 unit: former state of Jammu and Kashmir, includes present-day Ladakh"
+jammu-kashmir,Jammu and Kashmir,JAMMU & KASHMIR,2011,urban_population,3433242,persons,"Census 2011 unit: former state of Jammu and Kashmir, includes present-day Ladakh"
+jammu-kashmir,Jammu and Kashmir,JAMMU & KASHMIR,2011,urban_share_pct,27.38,percent,"Derived: urban / total x 100. Census 2011 unit: former state of Jammu and Kashmir, includes present-day Ladakh"
+ladakh,Ladakh,,2011,total_population,,persons,Not a separate unit in Census 2011 tables; counted in jammu-kashmir
+ladakh,Ladakh,,2011,urban_population,,persons,Not a separate unit in Census 2011 tables; counted in jammu-kashmir
+ladakh,Ladakh,,2011,urban_share_pct,,percent,Not a separate unit in Census 2011 tables; counted in jammu-kashmir
+lakshadweep,Lakshadweep,LAKSHADWEEP,2011,total_population,64473,persons,
+lakshadweep,Lakshadweep,LAKSHADWEEP,2011,urban_population,50332,persons,
+lakshadweep,Lakshadweep,LAKSHADWEEP,2011,urban_share_pct,78.07,percent,Derived: urban / total x 100.
+puducherry,Puducherry,PUDUCHERRY,2011,total_population,1247953,persons,
+puducherry,Puducherry,PUDUCHERRY,2011,urban_population,852753,persons,
+puducherry,Puducherry,PUDUCHERRY,2011,urban_share_pct,68.33,percent,Derived: urban / total x 100.

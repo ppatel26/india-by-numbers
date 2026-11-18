@@ -1,0 +1,17 @@
+geography,period,religion,value,unit,share_pct,note
+india,2001,Hindu,827578868,persons,80.46,"Census 2001 C-01. Total excludes Mao-Maram, Paomata and Purul sub-divisions of Senapati district, Manipur; share derived"
+india,2001,Muslim,138188240,persons,13.43,"Census 2001 C-01. Total excludes Mao-Maram, Paomata and Purul sub-divisions of Senapati district, Manipur; share derived"
+india,2001,Christian,24080016,persons,2.34,"Census 2001 C-01. Total excludes Mao-Maram, Paomata and Purul sub-divisions of Senapati district, Manipur; share derived"
+india,2001,Sikh,19215730,persons,1.87,"Census 2001 C-01. Total excludes Mao-Maram, Paomata and Purul sub-divisions of Senapati district, Manipur; share derived"
+india,2001,Buddhist,7955207,persons,0.77,"Census 2001 C-01. Total excludes Mao-Maram, Paomata and Purul sub-divisions of Senapati district, Manipur; share derived"
+india,2001,Jain,4225053,persons,0.41,"Census 2001 C-01. Total excludes Mao-Maram, Paomata and Purul sub-divisions of Senapati district, Manipur; share derived"
+india,2001,Other religions and persuasions,6639626,persons,0.65,"Census 2001 C-01. Total excludes Mao-Maram, Paomata and Purul sub-divisions of Senapati district, Manipur; share derived"
+india,2001,Religion not stated,727588,persons,0.07,"Census 2001 C-01. Total excludes Mao-Maram, Paomata and Purul sub-divisions of Senapati district, Manipur; share derived"
+india,2011,Hindu,966257353,persons,79.80,Census 2011 C-01; share derived
+india,2011,Muslim,172245158,persons,14.23,Census 2011 C-01; share derived
+india,2011,Christian,27819588,persons,2.30,Census 2011 C-01; share derived
+india,2011,Sikh,20833116,persons,1.72,Census 2011 C-01; share derived
+india,2011,Buddhist,8442972,persons,0.70,Census 2011 C-01; share derived
+india,2011,Jain,4451753,persons,0.37,Census 2011 C-01; share derived
+india,2011,Other religions and persuasions,7937734,persons,0.66,Census 2011 C-01; share derived
+india,2011,Religion not stated,2867303,persons,0.24,Census 2011 C-01; share derived

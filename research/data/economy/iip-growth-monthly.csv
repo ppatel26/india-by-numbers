@@ -1,0 +1,288 @@
+geography,period,value,unit,category,base,index
+india,2012-04,-0.7,percent,General,2011-12,99.3
+india,2012-05,5.0,percent,General,2011-12,105.0
+india,2012-06,2.3,percent,General,2011-12,102.3
+india,2012-07,1.5,percent,General,2011-12,101.5
+india,2012-08,-0.1,percent,General,2011-12,99.9
+india,2012-09,-1.0,percent,General,2011-12,99.0
+india,2012-10,3.7,percent,General,2011-12,103.7
+india,2012-11,-1.7,percent,General,2011-12,98.3
+india,2012-12,7.1,percent,General,2011-12,107.1
+india,2013-01,7.2,percent,General,2011-12,107.2
+india,2013-02,1.4,percent,General,2011-12,101.4
+india,2013-03,15.2,percent,General,2011-12,115.2
+india,2013-04,3.3,percent,General,2011-12,102.6
+india,2013-05,1.0,percent,General,2011-12,106.0
+india,2013-06,-1.0,percent,General,2011-12,101.3
+india,2013-07,3.2,percent,General,2011-12,104.7
+india,2013-08,4.4,percent,General,2011-12,104.3
+india,2013-09,6.8,percent,General,2011-12,105.7
+india,2013-10,1.9,percent,General,2011-12,105.7
+india,2013-11,3.7,percent,General,2011-12,101.9
+india,2013-12,3.5,percent,General,2011-12,110.9
+india,2014-01,4.8,percent,General,2011-12,112.3
+india,2014-02,5.2,percent,General,2011-12,106.7
+india,2014-03,2.9,percent,General,2011-12,118.5
+india,2014-04,3.9,percent,General,2011-12,106.6
+india,2014-05,4.7,percent,General,2011-12,111.0
+india,2014-06,8.3,percent,General,2011-12,109.7
+india,2014-07,5.4,percent,General,2011-12,110.4
+india,2014-08,3.5,percent,General,2011-12,108.0
+india,2014-09,4.3,percent,General,2011-12,110.2
+india,2014-10,0.3,percent,General,2011-12,106.0
+india,2014-11,7.4,percent,General,2011-12,109.4
+india,2014-12,4.0,percent,General,2011-12,115.3
+india,2015-01,1.8,percent,General,2011-12,114.3
+india,2015-02,3.0,percent,General,2011-12,109.9
+india,2015-03,2.4,percent,General,2011-12,121.3
+india,2015-04,0.7,percent,General,2011-12,107.3
+india,2015-05,1.8,percent,General,2011-12,113.0
+india,2015-06,1.0,percent,General,2011-12,110.8
+india,2015-07,1.3,percent,General,2011-12,111.8
+india,2015-08,3.7,percent,General,2011-12,112.0
+india,2015-09,2.2,percent,General,2011-12,112.6
+india,2015-10,9.0,percent,General,2011-12,115.5
+india,2015-11,0.8,percent,General,2011-12,110.3
+india,2015-12,3.1,percent,General,2011-12,118.9
+india,2016-01,4.0,percent,General,2011-12,118.9
+india,2016-02,7.2,percent,General,2011-12,117.8
+india,2016-03,5.2,percent,General,2011-12,127.6
+india,2016-04,6.0,percent,General,2011-12,113.7
+india,2016-05,7.3,percent,General,2011-12,121.3
+india,2016-06,8.0,percent,General,2011-12,119.7
+india,2016-07,4.5,percent,General,2011-12,116.8
+india,2016-08,4.0,percent,General,2011-12,116.5
+india,2016-09,5.0,percent,General,2011-12,118.2
+india,2016-10,4.2,percent,General,2011-12,120.3
+india,2016-11,5.1,percent,General,2011-12,115.9
+india,2016-12,2.4,percent,General,2011-12,121.7
+india,2017-01,3.5,percent,General,2011-12,123.1
+india,2017-02,1.2,percent,General,2011-12,119.2
+india,2017-03,4.4,percent,General,2011-12,133.2
+india,2017-04,3.2,percent,General,2011-12,117.3
+india,2017-05,2.9,percent,General,2011-12,124.8
+india,2017-06,-0.3,percent,General,2011-12,119.3
+india,2017-07,1.0,percent,General,2011-12,118.0
+india,2017-08,4.8,percent,General,2011-12,122.1
+india,2017-09,4.1,percent,General,2011-12,123.1
+india,2017-10,1.8,percent,General,2011-12,122.5
+india,2017-11,8.5,percent,General,2011-12,125.8
+india,2017-12,7.3,percent,General,2011-12,130.6
+india,2018-01,7.5,percent,General,2011-12,132.3
+india,2018-02,6.9,percent,General,2011-12,127.4
+india,2018-03,5.3,percent,General,2011-12,140.3
+india,2018-04,4.5,percent,General,2011-12,122.6
+india,2018-05,3.8,percent,General,2011-12,129.6
+india,2018-06,7.0,percent,General,2011-12,127.7
+india,2018-07,6.5,percent,General,2011-12,125.7
+india,2018-08,4.8,percent,General,2011-12,128.0
+india,2018-09,4.6,percent,General,2011-12,128.8
+india,2018-10,8.4,percent,General,2011-12,132.8
+india,2018-11,0.2,percent,General,2011-12,126.1
+india,2018-12,2.5,percent,General,2011-12,133.9
+india,2019-01,1.6,percent,General,2011-12,134.4
+india,2019-02,0.2,percent,General,2011-12,127.6
+india,2019-03,2.7,percent,General,2011-12,144.1
+india,2019-04,3.2,percent,General,2011-12,126.5
+india,2019-05,4.5,percent,General,2011-12,135.4
+india,2019-06,1.3,percent,General,2011-12,129.3
+india,2019-07,4.9,percent,General,2011-12,131.8
+india,2019-08,-1.4,percent,General,2011-12,126.2
+india,2019-09,-4.6,percent,General,2011-12,122.9
+india,2019-10,-6.6,percent,General,2011-12,124.0
+india,2019-11,2.1,percent,General,2011-12,128.8
+india,2019-12,0.4,percent,General,2011-12,134.5
+india,2020-01,2.2,percent,General,2011-12,137.4
+india,2020-02,5.2,percent,General,2011-12,134.2
+india,2020-03,-18.7,percent,General,2011-12,117.2
+india,2020-04,-57.3,percent,General,2011-12,54.0
+india,2020-05,-33.4,percent,General,2011-12,90.2
+india,2020-06,-16.6,percent,General,2011-12,107.9
+india,2020-07,-10.5,percent,General,2011-12,117.9
+india,2020-08,-7.1,percent,General,2011-12,117.2
+india,2020-09,1.0,percent,General,2011-12,124.1
+india,2020-10,4.5,percent,General,2011-12,129.6
+india,2020-11,-1.6,percent,General,2011-12,126.7
+india,2020-12,2.2,percent,General,2011-12,137.4
+india,2021-01,-0.6,percent,General,2011-12,136.6
+india,2021-02,-3.2,percent,General,2011-12,129.9
+india,2021-03,24.2,percent,General,2011-12,145.6
+india,2021-05,27.6,percent,General,2011-12,115.1
+india,2021-06,13.8,percent,General,2011-12,122.8
+india,2021-07,11.5,percent,General,2011-12,131.5
+india,2021-08,13.0,percent,General,2011-12,132.4
+india,2021-09,4.4,percent,General,2011-12,129.5
+india,2021-10,4.2,percent,General,2011-12,135.0
+india,2021-11,1.0,percent,General,2011-12,128.0
+india,2021-12,1.0,percent,General,2011-12,138.8
+india,2022-01,2.0,percent,General,2011-12,139.3
+india,2022-02,1.2,percent,General,2011-12,131.4
+india,2022-03,2.2,percent,General,2011-12,148.8
+india,2022-04,6.7,percent,General,2011-12,134.5
+india,2022-05,19.7,percent,General,2011-12,137.8
+india,2022-06,12.6,percent,General,2011-12,138.3
+india,2022-07,2.2,percent,General,2011-12,134.4
+india,2022-08,-0.7,percent,General,2011-12,131.5
+india,2022-09,3.3,percent,General,2011-12,133.8
+india,2022-10,-4.1,percent,General,2011-12,129.5
+india,2022-11,7.6,percent,General,2011-12,137.7
+india,2022-12,5.1,percent,General,2011-12,145.9
+india,2023-01,5.8,percent,General,2011-12,147.4
+india,2023-02,6.0,percent,General,2011-12,139.3
+india,2023-03,1.9,percent,General,2011-12,151.7
+india,2023-04,4.6,percent,General,2011-12,140.7
+india,2023-05,5.7,percent,General,2011-12,145.6
+india,2023-06,4.0,percent,General,2011-12,143.9
+india,2023-07,6.2,percent,General,2011-12,142.7
+india,2023-08,10.9,percent,General,2011-12,145.8
+india,2023-09,6.4,percent,General,2011-12,142.3
+india,2023-10,11.9,percent,General,2011-12,144.9
+india,2023-11,2.5,percent,General,2011-12,141.1
+india,2023-12,4.4,percent,General,2011-12,152.3
+india,2024-01,4.2,percent,General,2011-12,153.6
+india,2024-02,5.6,percent,General,2011-12,147.1
+india,2024-03,5.5,percent,General,2011-12,160.0
+india,2024-04,5.2,percent,General,2011-12,148.0
+india,2024-05,6.3,percent,General,2011-12,154.7
+india,2024-06,4.9,percent,General,2011-12,151.0
+india,2024-07,5.0,percent,General,2011-12,149.8
+india,2024-08,0.0,percent,General,2011-12,145.8
+india,2024-09,3.2,percent,General,2011-12,146.9
+india,2024-10,3.7,percent,General,2011-12,150.3
+india,2024-11,5.0,percent,General,2011-12,148.1
+india,2024-12,3.7,percent,General,2011-12,158.0
+india,2025-01,5.2,percent,General,2011-12,161.6
+india,2025-02,2.7,percent,General,2011-12,151.1
+india,2025-03,3.9,percent,General,2011-12,166.3
+india,2025-04,2.6,percent,General,2011-12,151.8
+india,2025-05,1.9,percent,General,2011-12,157.6
+india,2025-06,1.5,percent,General,2011-12,153.3
+india,2025-07,4.3,percent,General,2011-12,156.2
+india,2025-08,4.0,percent,General,2011-12,151.7
+india,2025-09,4.6,percent,General,2011-12,153.7
+india,2025-10,0.5,percent,General,2011-12,151.1
+india,2025-11,7.2,percent,General,2011-12,158.7
+india,2025-12,8.0,percent,General,2011-12,170.7
+india,2026-01,5.1,percent,General,2011-12,169.9
+india,2026-02,5.1,percent,General,2011-12,158.8
+india,2026-03,4.1,percent,General,2011-12,173.2
+india,2024-04,7.1,percent,General,2022-23,107.5
+india,2024-05,7.3,percent,General,2022-23,112.9
+india,2024-06,7.3,percent,General,2022-23,112.2
+india,2024-07,7.8,percent,General,2022-23,111.0
+india,2024-08,2.1,percent,General,2022-23,109.1
+india,2024-09,4.7,percent,General,2022-23,109.8
+india,2024-10,5.6,percent,General,2022-23,112.6
+india,2024-11,5.9,percent,General,2022-23,107.1
+india,2024-12,6.1,percent,General,2022-23,115.7
+india,2025-01,6.3,percent,General,2022-23,118.1
+india,2025-02,2.9,percent,General,2022-23,112.9
+india,2025-03,5.8,percent,General,2022-23,125.9
+india,2025-04,4.8,percent,General,2022-23,112.7
+india,2025-05,3.4,percent,General,2022-23,116.7
+india,2025-06,2.2,percent,General,2022-23,114.7
+india,2025-07,5.4,percent,General,2022-23,117.0
+india,2025-08,4.7,percent,General,2022-23,114.2
+india,2025-09,6.1,percent,General,2022-23,116.5
+india,2025-10,-0.9,percent,General,2022-23,111.6
+india,2025-11,7.0,percent,General,2022-23,114.6
+india,2025-12,6.7,percent,General,2022-23,123.5
+india,2026-01,4.1,percent,General,2022-23,123.0
+india,2026-02,4.4,percent,General,2022-23,117.9
+india,2026-03,3.0,percent,General,2022-23,129.7
+india,2026-04,4.9,percent,General,2022-23,118.2
+india,2026-05,5.0,percent,General,2022-23,122.5
+india,2026-06,8.8,percent,General,2022-23,124.8
+india,2026-07,7.4,percent,General,2022-23,125.6
+india,2026-08,7.8,percent,General,2022-23,123.1
+india,2026-09,6.7,percent,General,2022-23,124.3
+india,2024-04,9.9,percent,Electricity & Gas Supply,2022-23,114.1
+india,2024-05,13.9,percent,Electricity & Gas Supply,2022-23,124.3
+india,2024-06,9.4,percent,Electricity & Gas Supply,2022-23,120.8
+india,2024-07,9.0,percent,Electricity & Gas Supply,2022-23,119.9
+india,2024-08,-3.4,percent,Electricity & Gas Supply,2022-23,115.0
+india,2024-09,0.7,percent,Electricity & Gas Supply,2022-23,111.9
+india,2024-10,3.0,percent,Electricity & Gas Supply,2022-23,113.6
+india,2024-11,4.5,percent,Electricity & Gas Supply,2022-23,100.3
+india,2024-12,6.1,percent,Electricity & Gas Supply,2022-23,104.9
+india,2025-01,1.6,percent,Electricity & Gas Supply,2022-23,108.9
+india,2025-02,3.0,percent,Electricity & Gas Supply,2022-23,105.0
+india,2025-03,6.1,percent,Electricity & Gas Supply,2022-23,117.8
+india,2025-04,1.9,percent,Electricity & Gas Supply,2022-23,116.3
+india,2025-05,-5.1,percent,Electricity & Gas Supply,2022-23,117.9
+india,2025-06,-2.0,percent,Electricity & Gas Supply,2022-23,118.4
+india,2025-07,2.4,percent,Electricity & Gas Supply,2022-23,122.8
+india,2025-08,3.7,percent,Electricity & Gas Supply,2022-23,119.2
+india,2025-09,3.3,percent,Electricity & Gas Supply,2022-23,115.6
+india,2025-10,-7.0,percent,Electricity & Gas Supply,2022-23,105.6
+india,2025-11,-1.6,percent,Electricity & Gas Supply,2022-23,98.7
+india,2025-12,5.9,percent,Electricity & Gas Supply,2022-23,111.1
+india,2026-01,5.6,percent,Electricity & Gas Supply,2022-23,115.0
+india,2026-02,1.9,percent,Electricity & Gas Supply,2022-23,107.0
+india,2026-03,1.2,percent,Electricity & Gas Supply,2022-23,119.2
+india,2026-04,4.6,percent,Electricity & Gas Supply,2022-23,121.7
+india,2026-05,10.3,percent,Electricity & Gas Supply,2022-23,130.1
+india,2026-06,11.3,percent,Electricity & Gas Supply,2022-23,131.8
+india,2026-07,8.7,percent,Electricity & Gas Supply,2022-23,133.5
+india,2026-08,12.3,percent,Electricity & Gas Supply,2022-23,133.9
+india,2026-09,11.2,percent,Electricity & Gas Supply,2022-23,128.6
+india,2024-04,5.7,percent,Manufacturing,2022-23,105.8
+india,2024-05,6.0,percent,Manufacturing,2022-23,111.5
+india,2024-06,7.2,percent,Manufacturing,2022-23,111.7
+india,2024-07,7.8,percent,Manufacturing,2022-23,112.9
+india,2024-08,3.4,percent,Manufacturing,2022-23,112.2
+india,2024-09,5.5,percent,Manufacturing,2022-23,112.8
+india,2024-10,6.4,percent,Manufacturing,2022-23,113.3
+india,2024-11,6.2,percent,Manufacturing,2022-23,107.8
+india,2024-12,6.4,percent,Manufacturing,2022-23,116.6
+india,2025-01,7.2,percent,Manufacturing,2022-23,118.5
+india,2025-02,3.1,percent,Manufacturing,2022-23,112.8
+india,2025-03,7.0,percent,Manufacturing,2022-23,126.4
+india,2025-04,5.8,percent,Manufacturing,2022-23,111.9
+india,2025-05,4.2,percent,Manufacturing,2022-23,116.2
+india,2025-06,2.4,percent,Manufacturing,2022-23,114.4
+india,2025-07,5.1,percent,Manufacturing,2022-23,118.7
+india,2025-08,3.6,percent,Manufacturing,2022-23,116.2
+india,2025-09,5.5,percent,Manufacturing,2022-23,119.0
+india,2025-10,-0.7,percent,Manufacturing,2022-23,112.5
+india,2025-11,8.8,percent,Manufacturing,2022-23,117.3
+india,2025-12,7.7,percent,Manufacturing,2022-23,125.6
+india,2026-01,4.6,percent,Manufacturing,2022-23,124.0
+india,2026-02,5.7,percent,Manufacturing,2022-23,119.2
+india,2026-03,4.0,percent,Manufacturing,2022-23,131.4
+india,2026-04,6.1,percent,Manufacturing,2022-23,118.7
+india,2026-05,5.2,percent,Manufacturing,2022-23,122.2
+india,2026-06,9.5,percent,Manufacturing,2022-23,125.3
+india,2026-07,8.2,percent,Manufacturing,2022-23,128.4
+india,2026-08,8.6,percent,Manufacturing,2022-23,126.2
+india,2026-09,7.6,percent,Manufacturing,2022-23,128.0
+india,2024-04,12.5,percent,Mining & Quarrying,2022-23,109.6
+india,2024-05,7.6,percent,Mining & Quarrying,2022-23,108.4
+india,2024-06,4.7,percent,Mining & Quarrying,2022-23,104.6
+india,2024-07,4.0,percent,Mining & Quarrying,2022-23,86.1
+india,2024-08,-5.0,percent,Mining & Quarrying,2022-23,78.4
+india,2024-09,0.4,percent,Mining & Quarrying,2022-23,83.3
+india,2024-10,1.4,percent,Mining & Quarrying,2022-23,103.0
+india,2024-11,3.9,percent,Mining & Quarrying,2022-23,103.5
+india,2024-12,3.9,percent,Mining & Quarrying,2022-23,116.9
+india,2025-01,3.3,percent,Mining & Quarrying,2022-23,121.2
+india,2025-02,0.5,percent,Mining & Quarrying,2022-23,117.5
+india,2025-03,-2.5,percent,Mining & Quarrying,2022-23,128.7
+india,2025-04,0.6,percent,Mining & Quarrying,2022-23,110.3
+india,2025-05,5.8,percent,Mining & Quarrying,2022-23,114.7
+india,2025-06,4.1,percent,Mining & Quarrying,2022-23,108.9
+india,2025-07,10.7,percent,Mining & Quarrying,2022-23,95.3
+india,2025-08,15.8,percent,Mining & Quarrying,2022-23,90.8
+india,2025-09,15.7,percent,Mining & Quarrying,2022-23,96.4
+india,2025-10,2.8,percent,Mining & Quarrying,2022-23,105.9
+india,2025-11,3.3,percent,Mining & Quarrying,2022-23,106.9
+india,2025-12,0.8,percent,Mining & Quarrying,2022-23,117.8
+india,2026-01,-0.5,percent,Mining & Quarrying,2022-23,120.6
+india,2026-02,-2.4,percent,Mining & Quarrying,2022-23,114.7
+india,2026-03,-2.6,percent,Mining & Quarrying,2022-23,125.4
+india,2026-04,-3.8,percent,Mining & Quarrying,2022-23,106.1
+india,2026-05,-1.4,percent,Mining & Quarrying,2022-23,113.1
+india,2026-06,1.6,percent,Mining & Quarrying,2022-23,110.6
+india,2026-07,-0.9,percent,Mining & Quarrying,2022-23,94.4
+india,2026-08,-4.6,percent,Mining & Quarrying,2022-23,86.6
+india,2026-09,-6.2,percent,Mining & Quarrying,2022-23,90.4

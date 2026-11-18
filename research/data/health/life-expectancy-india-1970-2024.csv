@@ -1,0 +1,343 @@
+geography,period,mid_year,residence,sex,value,unit,note
+india,1970-75,1973,total,total,49.7,years,
+india,1970-75,1973,total,male,50.5,years,
+india,1970-75,1973,total,female,49.0,years,
+india,1970-75,1973,rural,total,48.0,years,
+india,1970-75,1973,rural,male,48.9,years,
+india,1970-75,1973,rural,female,47.1,years,
+india,1970-75,1973,urban,total,58.9,years,
+india,1970-75,1973,urban,male,58.8,years,
+india,1970-75,1973,urban,female,59.2,years,
+india,1976-80,1978,total,total,52.3,years,
+india,1976-80,1978,total,male,52.5,years,
+india,1976-80,1978,total,female,52.1,years,
+india,1976-80,1978,rural,total,50.6,years,
+india,1976-80,1978,rural,male,51.0,years,
+india,1976-80,1978,rural,female,50.3,years,
+india,1976-80,1978,urban,total,60.1,years,
+india,1976-80,1978,urban,male,59.6,years,
+india,1976-80,1978,urban,female,60.8,years,
+india,1981-85,1983,total,total,55.4,years,
+india,1981-85,1983,total,male,55.4,years,
+india,1981-85,1983,total,female,55.7,years,
+india,1981-85,1983,rural,total,53.7,years,
+india,1981-85,1983,rural,male,54.0,years,
+india,1981-85,1983,rural,female,53.6,years,
+india,1981-85,1983,urban,total,62.8,years,
+india,1981-85,1983,urban,male,61.6,years,
+india,1981-85,1983,urban,female,64.1,years,
+india,1986-90,1988,total,total,57.7,years,
+india,1986-90,1988,total,male,57.7,years,
+india,1986-90,1988,total,female,58.1,years,
+india,1986-90,1988,rural,total,56.1,years,
+india,1986-90,1988,rural,male,56.1,years,
+india,1986-90,1988,rural,female,56.2,years,
+india,1986-90,1988,urban,total,63.4,years,
+india,1986-90,1988,urban,male,62.0,years,
+india,1986-90,1988,urban,female,64.9,years,
+india,1987-91,1989,total,total,58.3,years,excludes Jammu and Kashmir
+india,1987-91,1989,total,male,58.1,years,excludes Jammu and Kashmir
+india,1987-91,1989,total,female,58.6,years,excludes Jammu and Kashmir
+india,1987-91,1989,rural,total,56.8,years,excludes Jammu and Kashmir
+india,1987-91,1989,rural,male,56.7,years,excludes Jammu and Kashmir
+india,1987-91,1989,rural,female,56.9,years,excludes Jammu and Kashmir
+india,1987-91,1989,urban,total,63.8,years,excludes Jammu and Kashmir
+india,1987-91,1989,urban,male,62.3,years,excludes Jammu and Kashmir
+india,1987-91,1989,urban,female,65.3,years,excludes Jammu and Kashmir
+india,1988-92,1990,total,total,58.7,years,excludes Jammu and Kashmir
+india,1988-92,1990,total,male,58.6,years,excludes Jammu and Kashmir
+india,1988-92,1990,total,female,59.0,years,excludes Jammu and Kashmir
+india,1988-92,1990,rural,total,57.4,years,excludes Jammu and Kashmir
+india,1988-92,1990,rural,male,57.2,years,excludes Jammu and Kashmir
+india,1988-92,1990,rural,female,57.4,years,excludes Jammu and Kashmir
+india,1988-92,1990,urban,total,64.1,years,excludes Jammu and Kashmir
+india,1988-92,1990,urban,male,62.8,years,excludes Jammu and Kashmir
+india,1988-92,1990,urban,female,65.5,years,excludes Jammu and Kashmir
+india,1989-93,1991,total,total,59.4,years,excludes Jammu and Kashmir
+india,1989-93,1991,total,male,59.0,years,excludes Jammu and Kashmir
+india,1989-93,1991,total,female,59.7,years,excludes Jammu and Kashmir
+india,1989-93,1991,rural,total,58.0,years,excludes Jammu and Kashmir
+india,1989-93,1991,rural,male,57.9,years,excludes Jammu and Kashmir
+india,1989-93,1991,rural,female,58.1,years,excludes Jammu and Kashmir
+india,1989-93,1991,urban,total,64.9,years,excludes Jammu and Kashmir
+india,1989-93,1991,urban,male,63.5,years,excludes Jammu and Kashmir
+india,1989-93,1991,urban,female,66.3,years,excludes Jammu and Kashmir
+india,1990-94,1992,total,total,60.0,years,excludes Jammu and Kashmir
+india,1990-94,1992,total,male,59.4,years,excludes Jammu and Kashmir
+india,1990-94,1992,total,female,60.4,years,excludes Jammu and Kashmir
+india,1990-94,1992,rural,total,58.6,years,excludes Jammu and Kashmir
+india,1990-94,1992,rural,male,58.2,years,excludes Jammu and Kashmir
+india,1990-94,1992,rural,female,58.7,years,excludes Jammu and Kashmir
+india,1990-94,1992,urban,total,65.4,years,excludes Jammu and Kashmir
+india,1990-94,1992,urban,male,64.1,years,excludes Jammu and Kashmir
+india,1990-94,1992,urban,female,66.7,years,excludes Jammu and Kashmir
+india,1991-95,1993,total,total,60.3,years,excludes Jammu and Kashmir
+india,1991-95,1993,total,male,59.7,years,excludes Jammu and Kashmir
+india,1991-95,1993,total,female,60.9,years,excludes Jammu and Kashmir
+india,1991-95,1993,rural,total,58.9,years,excludes Jammu and Kashmir
+india,1991-95,1993,rural,male,58.5,years,excludes Jammu and Kashmir
+india,1991-95,1993,rural,female,59.3,years,excludes Jammu and Kashmir
+india,1991-95,1993,urban,total,65.9,years,excludes Jammu and Kashmir
+india,1991-95,1993,urban,male,64.5,years,excludes Jammu and Kashmir
+india,1991-95,1993,urban,female,67.3,years,excludes Jammu and Kashmir
+india,1992-96,1994,total,total,60.7,years,excludes Jammu and Kashmir
+india,1992-96,1994,total,male,60.1,years,excludes Jammu and Kashmir
+india,1992-96,1994,total,female,61.4,years,excludes Jammu and Kashmir
+india,1992-96,1994,rural,total,59.4,years,excludes Jammu and Kashmir
+india,1992-96,1994,rural,male,58.9,years,excludes Jammu and Kashmir
+india,1992-96,1994,rural,female,59.8,years,excludes Jammu and Kashmir
+india,1992-96,1994,urban,total,66.3,years,excludes Jammu and Kashmir
+india,1992-96,1994,urban,male,64.9,years,excludes Jammu and Kashmir
+india,1992-96,1994,urban,female,67.7,years,excludes Jammu and Kashmir
+india,1993-97,1995,total,total,61.1,years,excludes Jammu and Kashmir
+india,1993-97,1995,total,male,60.4,years,excludes Jammu and Kashmir
+india,1993-97,1995,total,female,61.8,years,excludes Jammu and Kashmir
+india,1993-97,1995,rural,total,59.9,years,excludes Jammu and Kashmir
+india,1993-97,1995,rural,male,59.3,years,excludes Jammu and Kashmir
+india,1993-97,1995,rural,female,60.2,years,excludes Jammu and Kashmir
+india,1993-97,1995,urban,total,66.6,years,excludes Jammu and Kashmir
+india,1993-97,1995,urban,male,65.1,years,excludes Jammu and Kashmir
+india,1993-97,1995,urban,female,68.0,years,excludes Jammu and Kashmir
+india,1994-98,1996,total,total,61.4,years,excludes Jammu and Kashmir
+india,1994-98,1996,total,male,60.6,years,excludes Jammu and Kashmir
+india,1994-98,1996,total,female,62.2,years,excludes Jammu and Kashmir
+india,1994-98,1996,rural,total,60.1,years,excludes Jammu and Kashmir
+india,1994-98,1996,rural,male,59.5,years,excludes Jammu and Kashmir
+india,1994-98,1996,rural,female,60.5,years,excludes Jammu and Kashmir
+india,1994-98,1996,urban,total,66.8,years,excludes Jammu and Kashmir
+india,1994-98,1996,urban,male,65.3,years,excludes Jammu and Kashmir
+india,1994-98,1996,urban,female,68.2,years,excludes Jammu and Kashmir
+india,1995-99,1997,total,total,61.5,years,excludes Jammu and Kashmir
+india,1995-99,1997,total,male,60.8,years,excludes Jammu and Kashmir
+india,1995-99,1997,total,female,62.3,years,excludes Jammu and Kashmir
+india,1995-99,1997,rural,total,60.3,years,excludes Jammu and Kashmir
+india,1995-99,1997,rural,male,59.7,years,excludes Jammu and Kashmir
+india,1995-99,1997,rural,female,60.9,years,excludes Jammu and Kashmir
+india,1995-99,1997,urban,total,66.4,years,excludes Jammu and Kashmir
+india,1995-99,1997,urban,male,65.1,years,excludes Jammu and Kashmir
+india,1995-99,1997,urban,female,67.9,years,excludes Jammu and Kashmir
+india,1996-00,1998,total,total,61.9,years,excludes Jammu and Kashmir
+india,1996-00,1998,total,male,61.2,years,excludes Jammu and Kashmir
+india,1996-00,1998,total,female,62.7,years,excludes Jammu and Kashmir
+india,1996-00,1998,rural,total,60.7,years,excludes Jammu and Kashmir
+india,1996-00,1998,rural,male,60.1,years,excludes Jammu and Kashmir
+india,1996-00,1998,rural,female,61.3,years,excludes Jammu and Kashmir
+india,1996-00,1998,urban,total,66.7,years,excludes Jammu and Kashmir
+india,1996-00,1998,urban,male,65.4,years,excludes Jammu and Kashmir
+india,1996-00,1998,urban,female,68.3,years,excludes Jammu and Kashmir
+india,1997-01,1999,total,total,62.3,years,excludes Jammu and Kashmir
+india,1997-01,1999,total,male,61.4,years,excludes Jammu and Kashmir
+india,1997-01,1999,total,female,63.3,years,excludes Jammu and Kashmir
+india,1997-01,1999,rural,total,61.1,years,excludes Jammu and Kashmir
+india,1997-01,1999,rural,male,60.3,years,excludes Jammu and Kashmir
+india,1997-01,1999,rural,female,61.9,years,excludes Jammu and Kashmir
+india,1997-01,1999,urban,total,67.1,years,excludes Jammu and Kashmir
+india,1997-01,1999,urban,male,65.7,years,excludes Jammu and Kashmir
+india,1997-01,1999,urban,female,68.7,years,excludes Jammu and Kashmir
+india,1998-02,2000,total,total,62.9,years,
+india,1998-02,2000,total,male,61.9,years,
+india,1998-02,2000,total,female,64.0,years,
+india,1998-02,2000,rural,total,61.6,years,
+india,1998-02,2000,rural,male,60.7,years,
+india,1998-02,2000,rural,female,62.5,years,
+india,1998-02,2000,urban,total,67.6,years,
+india,1998-02,2000,urban,male,66.1,years,
+india,1998-02,2000,urban,female,69.2,years,
+india,1999-03,2001,total,total,63.4,years,
+india,1999-03,2001,total,male,62.3,years,
+india,1999-03,2001,total,female,64.6,years,
+india,1999-03,2001,rural,total,62.2,years,
+india,1999-03,2001,rural,male,61.1,years,
+india,1999-03,2001,rural,female,63.2,years,
+india,1999-03,2001,urban,total,68.0,years,
+india,1999-03,2001,urban,male,66.5,years,
+india,1999-03,2001,urban,female,69.7,years,
+india,2000-04,2002,total,total,63.9,years,
+india,2000-04,2002,total,male,62.8,years,
+india,2000-04,2002,total,female,65.2,years,
+india,2000-04,2002,rural,total,62.7,years,
+india,2000-04,2002,rural,male,61.6,years,
+india,2000-04,2002,rural,female,63.8,years,
+india,2000-04,2002,urban,total,68.4,years,
+india,2000-04,2002,urban,male,66.9,years,
+india,2000-04,2002,urban,female,70.0,years,
+india,2001-05,2003,total,total,64.3,years,
+india,2001-05,2003,total,male,63.1,years,
+india,2001-05,2003,total,female,65.6,years,
+india,2001-05,2003,rural,total,63.0,years,
+india,2001-05,2003,rural,male,61.9,years,
+india,2001-05,2003,rural,female,64.2,years,
+india,2001-05,2003,urban,total,68.6,years,
+india,2001-05,2003,urban,male,67.2,years,
+india,2001-05,2003,urban,female,70.3,years,
+india,2002-06,2004,total,total,64.7,years,
+india,2002-06,2004,total,male,63.5,years,
+india,2002-06,2004,total,female,66.1,years,
+india,2002-06,2004,rural,total,63.5,years,
+india,2002-06,2004,rural,male,62.3,years,
+india,2002-06,2004,rural,female,64.7,years,
+india,2002-06,2004,urban,total,68.9,years,
+india,2002-06,2004,urban,male,67.4,years,
+india,2002-06,2004,urban,female,70.6,years,
+india,2003-07,2005,total,total,65.0,years,
+india,2003-07,2005,total,male,63.7,years,
+india,2003-07,2005,total,female,66.5,years,
+india,2003-07,2005,rural,total,63.8,years,
+india,2003-07,2005,rural,male,62.6,years,
+india,2003-07,2005,rural,female,65.2,years,
+india,2003-07,2005,urban,total,69.0,years,
+india,2003-07,2005,urban,male,67.5,years,
+india,2003-07,2005,urban,female,70.7,years,
+india,2004-08,2006,total,total,65.4,years,
+india,2004-08,2006,total,male,64.0,years,
+india,2004-08,2006,total,female,66.9,years,
+india,2004-08,2006,rural,total,64.2,years,
+india,2004-08,2006,rural,male,62.9,years,
+india,2004-08,2006,rural,female,65.7,years,
+india,2004-08,2006,urban,total,69.0,years,
+india,2004-08,2006,urban,male,67.5,years,
+india,2004-08,2006,urban,female,70.8,years,
+india,2005-09,2007,total,total,65.7,years,
+india,2005-09,2007,total,male,64.3,years,
+india,2005-09,2007,total,female,67.2,years,
+india,2005-09,2007,rural,total,64.5,years,
+india,2005-09,2007,rural,male,63.2,years,
+india,2005-09,2007,rural,female,66.0,years,
+india,2005-09,2007,urban,total,69.2,years,
+india,2005-09,2007,urban,male,67.6,years,
+india,2005-09,2007,urban,female,71.0,years,
+india,2006-10,2008,total,total,66.1,years,
+india,2006-10,2008,total,male,64.6,years,
+india,2006-10,2008,total,female,67.7,years,
+india,2006-10,2008,rural,total,64.9,years,
+india,2006-10,2008,rural,male,63.5,years,
+india,2006-10,2008,rural,female,66.5,years,
+india,2006-10,2008,urban,total,69.6,years,
+india,2006-10,2008,urban,male,68.0,years,
+india,2006-10,2008,urban,female,71.4,years,
+india,2007-11,2009,total,total,66.5,years,
+india,2007-11,2009,total,male,64.9,years,
+india,2007-11,2009,total,female,68.2,years,
+india,2007-11,2009,rural,total,65.3,years,
+india,2007-11,2009,rural,male,63.8,years,
+india,2007-11,2009,rural,female,67.0,years,
+india,2007-11,2009,urban,total,70.1,years,
+india,2007-11,2009,urban,male,68.4,years,
+india,2007-11,2009,urban,female,71.9,years,
+india,2008-12,2010,total,total,67.0,years,
+india,2008-12,2010,total,male,65.4,years,
+india,2008-12,2010,total,female,68.8,years,
+india,2008-12,2010,rural,total,65.8,years,
+india,2008-12,2010,rural,male,64.2,years,
+india,2008-12,2010,rural,female,67.6,years,
+india,2008-12,2010,urban,total,70.6,years,
+india,2008-12,2010,urban,male,69.0,years,
+india,2008-12,2010,urban,female,72.4,years,
+india,2009-13,2011,total,total,67.5,years,
+india,2009-13,2011,total,male,65.8,years,
+india,2009-13,2011,total,female,69.3,years,
+india,2009-13,2011,rural,total,66.3,years,
+india,2009-13,2011,rural,male,64.6,years,
+india,2009-13,2011,rural,female,68.1,years,
+india,2009-13,2011,urban,total,71.2,years,
+india,2009-13,2011,urban,male,69.6,years,
+india,2009-13,2011,urban,female,73.0,years,
+india,2010-14,2012,total,total,67.9,years,
+india,2010-14,2012,total,male,66.4,years,
+india,2010-14,2012,total,female,69.6,years,
+india,2010-14,2012,rural,total,66.7,years,
+india,2010-14,2012,rural,male,65.1,years,
+india,2010-14,2012,rural,female,68.4,years,
+india,2010-14,2012,urban,total,71.5,years,
+india,2010-14,2012,urban,male,70.0,years,
+india,2010-14,2012,urban,female,73.2,years,
+india,2011-15,2013,total,total,68.3,years,
+india,2011-15,2013,total,male,66.9,years,
+india,2011-15,2013,total,female,70.0,years,
+india,2011-15,2013,rural,total,67.1,years,
+india,2011-15,2013,rural,male,65.6,years,
+india,2011-15,2013,rural,female,68.7,years,
+india,2011-15,2013,urban,total,71.9,years,
+india,2011-15,2013,urban,male,70.5,years,
+india,2011-15,2013,urban,female,73.5,years,
+india,2012-16,2014,total,total,68.7,years,
+india,2012-16,2014,total,male,67.4,years,
+india,2012-16,2014,total,female,70.2,years,
+india,2012-16,2014,rural,total,67.4,years,
+india,2012-16,2014,rural,male,66.0,years,
+india,2012-16,2014,rural,female,68.9,years,
+india,2012-16,2014,urban,total,72.2,years,
+india,2012-16,2014,urban,male,70.9,years,
+india,2012-16,2014,urban,female,73.5,years,
+india,2013-17,2015,total,total,69.0,years,
+india,2013-17,2015,total,male,67.8,years,
+india,2013-17,2015,total,female,70.4,years,
+india,2013-17,2015,rural,total,67.7,years,
+india,2013-17,2015,rural,male,66.4,years,
+india,2013-17,2015,rural,female,69.0,years,
+india,2013-17,2015,urban,total,72.4,years,
+india,2013-17,2015,urban,male,71.2,years,
+india,2013-17,2015,urban,female,73.7,years,
+india,2014-18,2016,total,total,69.4,years,
+india,2014-18,2016,total,male,68.2,years,
+india,2014-18,2016,total,female,70.7,years,
+india,2014-18,2016,rural,total,68.0,years,
+india,2014-18,2016,rural,male,66.7,years,
+india,2014-18,2016,rural,female,69.3,years,
+india,2014-18,2016,urban,total,72.6,years,
+india,2014-18,2016,urban,male,71.5,years,
+india,2014-18,2016,urban,female,73.8,years,
+india,2015-19,2017,total,total,69.7,years,
+india,2015-19,2017,total,male,68.4,years,
+india,2015-19,2017,total,female,71.1,years,
+india,2015-19,2017,rural,total,68.3,years,
+india,2015-19,2017,rural,male,66.9,years,
+india,2015-19,2017,rural,female,69.7,years,
+india,2015-19,2017,urban,total,73.0,years,
+india,2015-19,2017,urban,male,71.8,years,
+india,2015-19,2017,urban,female,74.2,years,
+india,2016-20,2018,total,total,70.0,years,
+india,2016-20,2018,total,male,68.6,years,
+india,2016-20,2018,total,female,71.4,years,
+india,2016-20,2018,rural,total,68.6,years,
+india,2016-20,2018,rural,male,67.2,years,
+india,2016-20,2018,rural,female,70.1,years,
+india,2016-20,2018,urban,total,73.2,years,
+india,2016-20,2018,urban,male,71.9,years,
+india,2016-20,2018,urban,female,74.5,years,
+india,2017-21,2019,total,total,69.8,years,
+india,2017-21,2019,total,male,68.2,years,
+india,2017-21,2019,total,female,71.6,years,
+india,2017-21,2019,rural,total,68.5,years,
+india,2017-21,2019,rural,male,66.8,years,
+india,2017-21,2019,rural,female,70.3,years,
+india,2017-21,2019,urban,total,72.9,years,
+india,2017-21,2019,urban,male,71.4,years,
+india,2017-21,2019,urban,female,74.6,years,
+india,2018-22,2020,total,total,69.9,years,
+india,2018-22,2020,total,male,68.2,years,
+india,2018-22,2020,total,female,71.9,years,
+india,2018-22,2020,rural,total,68.6,years,
+india,2018-22,2020,rural,male,66.8,years,
+india,2018-22,2020,rural,female,70.7,years,
+india,2018-22,2020,urban,total,72.9,years,
+india,2018-22,2020,urban,male,71.3,years,
+india,2018-22,2020,urban,female,74.7,years,
+india,2019-23,2021,total,total,70.3,years,
+india,2019-23,2021,total,male,68.5,years,
+india,2019-23,2021,total,female,72.5,years,
+india,2019-23,2021,rural,total,69.1,years,
+india,2019-23,2021,rural,male,67.1,years,
+india,2019-23,2021,rural,female,71.4,years,
+india,2019-23,2021,urban,total,73.1,years,
+india,2019-23,2021,urban,male,71.4,years,
+india,2019-23,2021,urban,female,75.0,years,
+india,2020-24,2022,total,total,70.6,years,
+india,2020-24,2022,total,male,68.7,years,
+india,2020-24,2022,total,female,72.8,years,
+india,2020-24,2022,rural,total,69.4,years,
+india,2020-24,2022,rural,male,67.4,years,
+india,2020-24,2022,rural,female,71.8,years,
+india,2020-24,2022,urban,total,73.2,years,
+india,2020-24,2022,urban,male,71.6,years,
+india,2020-24,2022,urban,female,75.1,years,
