@@ -1,0 +1,157 @@
+---
+/**
+ * The home hero's background: a lattice of rangoli. At rest each motif is a faint ring of dots.
+ * Near the pointer it blooms: two rings of petals in haldi and white open out and turn, ringed
+ * with kesar dots. Sits behind the hero content and takes no clicks. Still for readers who ask
+ * for less motion.
+ */
+import { pigments } from '~/lib/tokens'
+
+const inks = { haldi: pigments.economy.hex, kesar: pigments['religion-and-culture'].hex }
+---
+
+<canvas class="rangoli" aria-hidden="true" data-rangoli={JSON.stringify(inks)}></canvas>
+
+<style>
+  .rangoli {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  const GAP = 92 // distance between motifs, CSS px
+  const REACH = 190 // how far from the pointer the motifs bloom
+  const TAU = Math.PI * 2
+
+  const rgba = (hex: string, a: number) => {
+    const n = parseInt(hex.slice(1), 16)
+    return `rgba(${n >> 16}, ${(n >> 8) & 255}, ${n & 255}, ${a})`
+  }
+
+  for (const canvas of document.querySelectorAll<HTMLCanvasElement>('[data-rangoli]')) {
+    const inks = JSON.parse(canvas.dataset.rangoli!) as { haldi: string; kesar: string }
+    const host = canvas.parentElement!
+    const ctx = canvas.getContext('2d')!
+    const still = matchMedia('(prefers-reduced-motion: reduce)').matches
+    let w = 0
+    let h = 0
+    let centres: { x: number; y: number }[] = []
+    // Pointer target and the eased position the bloom follows; off-screen until the first move.
+    const target = { x: -1e4, y: -1e4 }
+    const at = { x: -1e4, y: -1e4 }
+    let frame = 0
+    let visible = true
+    let dpr = 1
+
+    const size = () => {
+      const r = host.getBoundingClientRect()
+      dpr = Math.min(devicePixelRatio || 1, 2)
+      w = r.width
+      h = r.height
+      canvas.width = Math.round(w * dpr)
+      canvas.height = Math.round(h * dpr)
+      // A triangular lattice: every other row shifts by half a step.
+      const dy = GAP * 0.866
+      centres = []
+      for (let row = 0, y = (h % dy) / 2; y < h + dy; row++, y += dy)
+        for (let x = (row % 2) * (GAP / 2) - GAP / 2; x < w + GAP; x += GAP) centres.push({ x, y })
+    }
+
+    /** A ring of `n` petals: lens shapes from radius `r0` to `r1`, `wide` across, turned by `turn`. */
+    const petals = (n: number, r0: number, r1: number, wide: number, turn: number, fill: string) => {
+      ctx.fillStyle = fill
+      ctx.beginPath()
+      for (let i = 0; i < n; i++) {
+        const a = turn + (i * TAU) / n
+        const c = Math.cos(a)
+        const s = Math.sin(a)
+        const mid = (r0 + r1) / 2
+        ctx.moveTo(c * r0, s * r0)
+        ctx.quadraticCurveTo(c * mid - s * wide, s * mid + c * wide, c * r1, s * r1)
+        ctx.quadraticCurveTo(c * mid + s * wide, s * mid - c * wide, c * r0, s * r0)
+      }
+      ctx.fill()
+    }
+
+    const dots = (n: number, r: number, size: number, turn: number, fill: string) => {
+      ctx.fillStyle = fill
+      ctx.beginPath()
+      for (let i = 0; i < n; i++) {
+        const a = turn + (i * TAU) / n
+        ctx.moveTo(Math.cos(a) * r + size, Math.sin(a) * r)
+        ctx.arc(Math.cos(a) * r, Math.sin(a) * r, size, 0, TAU)
+      }
+      ctx.fill()
+    }
+
+    const draw = () => {
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
+      ctx.clearRect(0, 0, w, h)
+      for (const c of centres) {
+        const d = Math.hypot(c.x - at.x, c.y - at.y)
+        const near = Math.max(0, 1 - d / REACH)
+        const k = near * near * (3 - 2 * near) // smoothstep: a soft edge to the bloom
+        ctx.setTransform(dpr, 0, 0, dpr, dpr * c.x, dpr * c.y)
+        if (k < 0.02) {
+          dots(8, 7, 1.1, 0, 'rgba(255, 255, 255, 0.1)')
+          continue
+        }
+        const turn = (1 - k) * (Math.PI / 4) // the petals unfurl as the pointer comes close
+        petals(8, 9, 9 + 28 * k, 8 * k, turn, rgba(inks.haldi, 0.42 * k))
+        petals(8, 3, 3 + 15 * k, 4.5 * k, turn + Math.PI / 8, `rgba(255, 255, 255, ${0.4 * k})`)
+        dots(16, 13 + 30 * k, 1.2 + 0.9 * k, -turn, rgba(inks.kesar, 0.75 * k))
+        dots(1, 0, 1.6 + 1.2 * k, 0, `rgba(255, 255, 255, ${0.35 + 0.4 * k})`)
+      }
+    }
+
+    const tick = () => {
+      frame = 0
+      at.x += (target.x - at.x) * 0.16
+      at.y += (target.y - at.y) * 0.16
+      draw()
+      if (visible && Math.hypot(target.x - at.x, target.y - at.y) > 0.5) frame = requestAnimationFrame(tick)
+    }
+    const wake = () => {
+      if (!frame && visible && !still) frame = requestAnimationFrame(tick)
+    }
+
+    host.addEventListener('pointermove', (e) => {
+      const r = host.getBoundingClientRect()
+      target.x = e.clientX - r.left
+      target.y = e.clientY - r.top
+      if (at.x < -1e3) Object.assign(at, target)
+      wake()
+    })
+    host.addEventListener('pointerleave', (e) => {
+      if (e.pointerType !== 'mouse') return // a lifted finger also "leaves"; the tap timer clears it
+      target.x = target.y = -1e4
+      wake()
+    })
+    // A tap blooms the motifs under the finger for a moment; there is no hover on a touch screen.
+    let lift = 0
+    host.addEventListener('pointerdown', (e) => {
+      if (e.pointerType === 'mouse') return
+      const r = host.getBoundingClientRect()
+      target.x = at.x = e.clientX - r.left
+      target.y = at.y = e.clientY - r.top
+      draw()
+      clearTimeout(lift)
+      lift = window.setTimeout(() => {
+        target.x = target.y = -1e4
+        wake()
+      }, 1200)
+    })
+    new IntersectionObserver(([entry]) => {
+      visible = !!entry?.isIntersecting
+      if (visible) wake()
+    }).observe(host)
+    new ResizeObserver(() => {
+      size()
+      draw()
+    }).observe(host)
+  }
+</script>

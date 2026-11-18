@@ -26,7 +26,6 @@ export interface StatePair {
 }
 
 export interface Home {
-  eyebrow: string
   title: string
   standfirst: string
   search: { placeholder: string; key: string; tryLabel: string; tryTerms: readonly string[] }
@@ -56,11 +55,10 @@ export interface Home {
 }
 
 const home: Home = {
-  eyebrow: `${count.topics} topics · ${count.charts} charts · ${count.places} states and UTs`,
-  title: 'India by Numbers',
-  standfirst: "Charts of India's official statistics. Each figure shows who published it, the period it covers and the day we checked it.",
+  title: "Charts of India's official statistics",
+  standfirst: 'Each figure shows who published it, the period it covers and the day we checked it.',
   search: {
-    placeholder: `Search ${count.topics} topics, ${count.charts} charts and ${count.places} states and UTs`,
+    placeholder: 'Search charts, topics and states',
     key: '/',
     tryLabel: 'Try',
     tryTerms: ['Inflation by state, October 2026', 'Youth unemployment', 'Monsoon rainfall since 1901'],
