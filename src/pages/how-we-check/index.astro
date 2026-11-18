@@ -38,6 +38,7 @@ const punchClass = ['office', 'unit', 'seal', 'period'] as const
               <dl>
                 <div><dt class="label muted">{part1.labels.machine}</dt><dd>{c.machine}</dd></div>
                 <div><dt class="label muted">{part1.labels.person}</dt><dd>{c.person}</dd></div>
+                {c.example && <div class="example"><dt class="label muted">{part1.labels.example}</dt><dd>{c.example}</dd></div>}
               </dl>
             </li>
           ))}
@@ -76,7 +77,11 @@ const punchClass = ['office', 'unit', 'seal', 'period'] as const
       </table>
       <div class="rule">
         <h3 class="label muted">{part2.rule.heading}</h3>
-        <p>{part2.rule.body}</p>
+        <dl>
+          {part2.rule.items.map((r) => (
+            <div><dt>{r.word}</dt><dd>{r.series}</dd></div>
+          ))}
+        </dl>
       </div>
     </section>
 
@@ -230,6 +235,12 @@ const punchClass = ['office', 'unit', 'seal', 'period'] as const
   .checks dd {
     margin: 0;
   }
+  .checks .example dd {
+    color: var(--silver-dim);
+  }
+  .checks .example {
+    margin-top: 6px;
+  }
   .cols {
     grid-template-columns: repeat(4, minmax(0, 1fr));
     gap: 32px;
@@ -294,6 +305,25 @@ const punchClass = ['office', 'unit', 'seal', 'period'] as const
     padding-top: 28px;
     font-size: 15px;
     line-height: 24px;
+  }
+  .rule dl {
+    margin: 0;
+  }
+  .rule dl div {
+    display: grid;
+    grid-template-columns: 150px minmax(0, 1fr);
+    gap: 16px;
+    padding-block: 8px;
+    border-bottom: 1px solid var(--rule);
+  }
+  .rule dl div:first-child {
+    padding-top: 0;
+  }
+  .rule dt {
+    font-weight: 600;
+  }
+  .rule dd {
+    margin: 0;
   }
   /* One full-width frame per example: method breaks need the room to be read. */
   .examples {
