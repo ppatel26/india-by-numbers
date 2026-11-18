@@ -48,7 +48,6 @@ const related = [
     )}
     <ChartFrame chart={chart} page periods={placed.periods} />
 
-
     <section aria-labelledby="about">
       <h2 class="display" id="about">About this data</h2>
       <dl class="facts">
@@ -59,14 +58,8 @@ const related = [
           </div>
         ))}
       </dl>
+      {chart.know && chart.know.length > 0 && <ul class="prose bullets know">{chart.know.map((k) => <li>{k}</li>)}</ul>}
     </section>
-
-    {chart.know && chart.know.length > 0 && (
-      <section aria-labelledby="know">
-        <h2 class="display" id="know">What to know</h2>
-        <ul class="prose bullets">{chart.know.map((k) => <li>{k}</li>)}</ul>
-      </section>
-    )}
 
     <section aria-labelledby="sources">
       <h2 class="display" id="sources">Sources and processing</h2>
@@ -164,6 +157,9 @@ const related = [
     margin: 6px 0 0;
     font-size: 15px;
     line-height: 22px;
+  }
+  .know {
+    margin-top: 40px;
   }
   .bullets,
   .steps {
