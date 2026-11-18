@@ -374,7 +374,7 @@ const topic: Topic = {
             kind: 'bars',
             slug: 'employment-status',
             title: 'Workers in India by type of work, 2022 to 2025',
-            subtitle: 'Share of workers of all ages, India, usual status, %, 2022 to 2025, and by sex for 2025.',
+            subtitle: 'Share of workers of all ages, India, usual status, %, 2022 to 2025.',
             punches: { office: 'MoSPI', unit: '% workers', period: '2025' },
             status: ['Survey estimate'],
             note: 'Self-employed covers own-account workers, employers and unpaid helpers in a household business. Shares may not add to 100 because of rounding.',

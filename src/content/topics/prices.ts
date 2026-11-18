@@ -248,7 +248,7 @@ const topic: Topic = {
             slug: 'cpi-inflation-by-division',
             title: 'Inflation by spending division, India, October 2026',
             subtitle:
-              "Annual change in the Consumer Price Index (2024=100), rural and urban combined, %, October 2026. Weight is the division's share of the basket, %. Divisions follow COICOP 2018.",
+              "Annual change in the Consumer Price Index (2024=100), rural and urban combined, %, October 2026. Divisions follow COICOP 2018.",
             punches: { office: 'MoSPI', unit: '% y/y', period: 'OCT 2026' },
             status: ['Provisional'],
             note: 'The release has no division 12. Division 13 is personal care, social protection and miscellaneous goods and services. MoSPI names gold and silver jewellery among the fastest-rising items (silver jewellery: 52.39%).',

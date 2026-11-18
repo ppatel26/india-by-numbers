@@ -469,7 +469,7 @@ const topic: Topic = {
             kind: 'states',
             slug: 'maternal-mortality-by-state',
             title: 'Maternal mortality by state, 2022-24',
-            subtitle: 'Maternal deaths per 1,00,000 live births, 19 states and one group for all other states and UTs, 2022-24, with 95% confidence intervals.',
+            subtitle: 'Maternal deaths per 1,00,000 live births, 19 states, 2022-24, with 95% confidence intervals.',
             punches: { office: 'ORGI', unit: 'per 1,00,000', period: '2022-24' },
             status: ['Survey estimate'],
             note: "SRS gives a ratio for 19 bigger states and one ratio for all other states and UTs together, so the map shows the 19 states only. The intervals are wide: Kerala's runs from 0 to 50, and Chhattisgarh's from 48 to 199.",

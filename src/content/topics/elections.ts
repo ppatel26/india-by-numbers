@@ -352,7 +352,7 @@ const topic: Topic = {
             kind: 'bars',
             slug: 'lok-sabha-seats-women-mps-by-state',
             title: 'Lok Sabha seats and women MPs by state and UT, 2024',
-            subtitle: "Seats in the 18th Lok Sabha and the number held by women, as on 20 Dec 2024. Share: women MPs as % of the state's seats.",
+            subtitle: 'Seats in the 18th Lok Sabha and the number held by women, as on 20 Dec 2024.',
             punches: { office: 'MoSPI', unit: 'seats', period: '20 DEC 2024' },
             note: 'India: 74 women MPs of 543 seats, 13.62% as published. These counts are from the Lok Sabha Secretariat and include Surat. The source gives state shares as whole numbers.',
             sources: [WMI_5_3],
@@ -469,7 +469,7 @@ const topic: Topic = {
             kind: 'bars',
             slug: 'assembly-elections-2025-2026',
             title: 'State assembly elections, 2025 and 2026',
-            subtitle: 'Seats won by party, and turnout as a share of electors, %. Seven states and UTs voted between February 2025 and April 2026.',
+            subtitle: 'Seats won by party. Seven states and UTs voted between February 2025 and April 2026.',
             punches: { office: 'ECI', unit: 'seats · %', period: '2025-2026' },
             status: ['Provisional'],
             // Board note said "West Bengal: results for 293 of 294 seats; ECI ordered a re-poll in
