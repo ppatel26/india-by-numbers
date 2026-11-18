@@ -3,7 +3,7 @@
 India's official statistics, checked and charted. A static site in the spirit of
 [UK by Numbers](https://ukbynumbers.org/) and [Our World in Data](https://ourworldindata.org/).
 
-Preview: <https://india-by-numbers.parv-personal.workers.dev> (noindex until the site has a domain).
+Live: <https://indiabynumbers.org>. Built by Parv ([@patel_parv](https://x.com/patel_parv)).
 
 ## What is here
 

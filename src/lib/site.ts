@@ -7,13 +7,11 @@ export const SITE = {
   checked: '2026-11-17',
   licence: 'Licence: CC BY 4.0. Publisher data stays under each publisher’s terms.',
   repo: 'https://github.com/ppatel26/india-by-numbers',
+  author: { name: 'Parv', handle: '@patel_parv', url: 'https://x.com/patel_parv' },
   searchPlaceholder: 'Search charts, topics and states',
 } as const
 
-/**
- * Keep search engines out until the site has its own domain. Also set in
- * public/_headers (X-Robots-Tag) and src/pages/robots.txt.ts.
- */
-export const NOINDEX = true
+/** Keep search engines out (robots meta and robots.txt), for example on a preview copy. */
+export const NOINDEX = false
 
 export const ogImagePath = (path: string): string => `/og${path === '/' ? '/home' : path.replace(/\/$/, '')}.png`

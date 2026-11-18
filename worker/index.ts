@@ -1,7 +1,9 @@
 /**
  * The site's one dynamic route: "Report a problem" (POST /api/report) stores
- * the report in D1. Every other request is a static file from dist/.
+ * the report in D1. Every other request is a static file from dist/, served
+ * on one host: www and the workers.dev address redirect to it.
  */
+const HOST = 'indiabynumbers.org'
 interface Env {
   ASSETS: Fetcher
   DB: D1Database
@@ -35,6 +37,11 @@ async function report(request: Request, env: Env): Promise<Response> {
 export default {
   async fetch(request, env): Promise<Response> {
     const url = new URL(request.url)
+    // www and the old workers.dev preview move to the one public host. Local dev stays local.
+    if (url.hostname === `www.${HOST}` || url.hostname.endsWith('.workers.dev')) {
+      url.hostname = HOST
+      return Response.redirect(url.toString(), 301)
+    }
     if (url.pathname === '/api/report') {
       return request.method === 'POST' ? report(request, env) : new Response('Method not allowed', { status: 405, headers: { Allow: 'POST' } })
     }

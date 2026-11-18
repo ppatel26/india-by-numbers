@@ -1,6 +1,7 @@
 // Copy for the About page.
 
 import { count } from './counts'
+import { SITE } from '~/lib/site'
 import sources from './sources'
 
 export interface Section {
@@ -42,9 +43,10 @@ const about: AboutPage = {
       heading: 'Who makes it?',
       body: [
         {
-          text: 'An independent project. It is not affiliated with the Government of India or with any ministry, and no publisher reviews what we write. We take sides on no policy.',
+          text: `${SITE.author.name} builds and runs India by Numbers. It is an independent project, not affiliated with the Government of India or with any ministry, and no publisher reviews what we write. We take sides on no policy.`,
         },
       ],
+      links: [`${SITE.author.name} on X`],
     },
     {
       id: 'why',

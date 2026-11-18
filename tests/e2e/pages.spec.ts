@@ -12,7 +12,7 @@ test('every page in the sitemap has a title, a description, one h1, a canonical 
     expect(html.match(/<h1[\s>]/g)?.length, `${path}: one h1`).toBe(1)
     expect(html, path).toMatch(/<title>[^<]*India by Numbers[^<]*<\/title>/)
     expect(meta(html, 'description')?.length, `${path}: description`).toBeGreaterThan(20)
-    expect(html).toContain(`<link rel="canonical" href="https://india-by-numbers.parv-personal.workers.dev${path}"`)
+    expect(html).toContain(`<link rel="canonical" href="https://indiabynumbers.org${path}"`)
     const og = meta(html, 'og:image')
     expect(og, `${path}: og:image`).toBeTruthy()
     images.add(new URL(og!).pathname)
@@ -63,7 +63,9 @@ test('unknown pages return the 404 page', async ({ request }) => {
   expect(await res.text()).toContain('<h1')
 })
 
-test('robots, sitemap and headers keep the preview out of search', async ({ request }) => {
-  expect(await (await request.get('/robots.txt')).text()).toContain('Disallow: /')
-  expect((await request.get('/')).headers()['x-robots-tag']).toBe('noindex')
+test('robots.txt points search engines at the sitemap', async ({ request }) => {
+  const robots = await (await request.get('/robots.txt')).text()
+  expect(robots).toContain('Allow: /')
+  expect(robots).toContain('Sitemap: https://indiabynumbers.org/sitemap.xml')
+  expect((await request.get('/')).headers()['x-robots-tag']).toBeUndefined()
 })

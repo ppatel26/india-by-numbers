@@ -44,6 +44,7 @@ const groups = [
     <div class="intro">
       <Wordmark />
       <p class="muted">An independent project. Not affiliated with the Government of India.</p>
+      <p class="muted">Built by <a href={SITE.author.url} rel="me">{SITE.author.name} ({SITE.author.handle})</a>.</p>
     </div>
     {groups.map((g) => (
       <div>
@@ -71,7 +72,7 @@ const groups = [
     gap: 32px;
   }
   .intro p {
-    margin-top: 20px;
+    margin-top: 12px;
     max-width: 320px;
     font-size: 15px;
     line-height: 24px;

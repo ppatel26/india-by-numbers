@@ -3,6 +3,10 @@
   "name": "india-by-numbers",
   "main": "worker/index.ts",
   "compatibility_date": "2026-11-18",
+  "routes": [
+    { "pattern": "indiabynumbers.org", "custom_domain": true },
+    { "pattern": "www.indiabynumbers.org", "custom_domain": true }
+  ],
   "assets": {
     "directory": "./dist",
     "binding": "ASSETS",

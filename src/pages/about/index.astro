@@ -3,9 +3,10 @@
 import Base from '~/layouts/Base.astro'
 import PageHeader from '~/components/PageHeader.astro'
 import page from '~/content/pages/about'
+import { SITE } from '~/lib/site'
 
 /** Link targets for the section links. "Contact" has none yet: it is this section. */
-const HREF: Readonly<Record<string, string>> = { 'Report a problem': '/corrections/#report' }
+const HREF: Readonly<Record<string, string>> = { 'Report a problem': '/corrections/#report', [`${SITE.author.name} on X`]: SITE.author.url }
 ---
 
 <Base title={page.title} description={page.intro}>
