@@ -1,9 +1,12 @@
 /** Every chart reads real rows, and the content follows the site rules. */
 import { describe, expect, it } from 'vitest'
-import { charts, topics } from '~/content'
+import { charts, placed, topics } from '~/content'
+import home from '~/content/pages/home'
+import tiles from '~/content/pages/tiles'
+import { figureValue } from '~/lib/figures'
 import { TOPICS } from '~/content/types'
 import { renderPlot, viewsOf } from '~/lib/charts'
-import { byState, seriesOf, statesOf } from '~/lib/charts/model'
+import { byState, seriesOf, statesOf, type Of } from '~/lib/charts/model'
 import { tableOf } from '~/lib/charts/table'
 import { GRID, places } from '~/lib/geography'
 import { rows } from '~/lib/data'
@@ -20,38 +23,38 @@ describe('topics', () => {
   })
 })
 
-describe.each(charts.map((c) => [c.chart.slug, c] as const))('chart %s', (_, { chart }) => {
+// One check over all charts; a failure names the chart.
+describe('every chart', () => {
   it('reads values from its CSV', () => {
-    const s = byState(chart)
-    const values = s ? statesOf(s).values.flatMap((v) => (v.pt?.y != null ? [v.pt.y] : [])) : seriesOf(chart).flatMap((x) => x.points.flatMap((p) => (p.y === null ? [] : [p.y])))
-    if (chart.kind !== 'table') expect(values.length).toBeGreaterThan(0)
-    expect(tableOf(chart).rows.length).toBeGreaterThan(0)
-  })
-
-  it('renders every view', () => {
-    for (const v of viewsOf(chart)) if (v !== 'table') expect(renderPlot(chart, v, 'wide').html).toMatch(/^<svg/)
-  })
-
-  it('names its source with a release date and link', () => {
-    expect(chart.sources.length).toBeGreaterThan(0)
-    for (const s of chart.sources) {
-      expect(s.released).toMatch(/^(\d{4}(-\d{2}(-\d{2})?)?|not stated)$/)
-      expect(s.url).toMatch(/^https?:\/\//)
+    for (const { chart } of charts) {
+      const s = byState(chart)
+      const values = s ? statesOf(s).values.flatMap((v) => (v.pt?.y != null ? [v.pt.y] : [])) : seriesOf(chart).flatMap((x) => x.points.flatMap((p) => (p.y === null ? [] : [p.y])))
+      if (chart.kind !== 'table') expect(values.length, chart.slug).toBeGreaterThan(0)
+      expect(tableOf(chart).rows.length, chart.slug).toBeGreaterThan(0)
     }
   })
-
-  it('uses four-digit years in its period punch', () => {
-    expect(chart.punches.period).not.toMatch(/\b'\d{2}\b/)
+  it('renders every view', () => {
+    for (const { chart } of charts) for (const v of viewsOf(chart)) if (v !== 'table') expect(renderPlot(chart, v, 'wide').html, `${chart.slug} ${v}`).toMatch(/^<svg/)
+  })
+  it('names its sources with a release date and link, and uses four-digit years', () => {
+    for (const { chart } of charts) {
+      expect(chart.sources.length, chart.slug).toBeGreaterThan(0)
+      for (const s of chart.sources) {
+        expect(s.released, chart.slug).toMatch(/^(\d{4}(-\d{2}(-\d{2})?)?|not stated)$/)
+        expect(s.url, chart.slug).toMatch(/^https?:\/\//)
+      }
+      expect(chart.punches.period, chart.slug).not.toMatch(/\b'\d{2}\b/)
+    }
   })
 })
 
 describe('copy', () => {
   const text = JSON.stringify(topics)
   it('has no em dashes', () => expect(text).not.toContain('—'))
-  it.each(['dive into', 'deep dive', 'unlock', 'insights', 'at a glance', 'comprehensive', "it's worth noting", 'tapestry', 'delve', 'robust', 'seamless', 'leverage', 'empower', 'key takeaways', 'shed light'])(
-    'avoids "%s"',
-    (phrase) => expect(text.toLowerCase()).not.toContain(phrase),
-  )
+  it('avoids stock phrases', () => {
+    for (const phrase of ['dive into', 'deep dive', 'unlock', 'insights', 'at a glance', 'comprehensive', "it's worth noting", 'tapestry', 'delve', 'robust', 'seamless', 'leverage', 'empower', 'key takeaways', 'shed light'])
+      expect(text.toLowerCase(), phrase).not.toContain(phrase)
+  })
   it('does not point at the interface', () => expect(text).not.toMatch(/the (Table|Map|Chart) tab/))
 })
 
@@ -95,5 +98,34 @@ describe('sources page', () => {
     for (const p of sourcesPage.publishers.list)
       for (const d of p.dataSets)
         expect(all.some((s) => publisherOf(s.publisher) === p.short && d.match.test(s.release)), `${p.short}: ${d.name}`).toBe(true)
+  })
+})
+
+describe('headline figures read a value from data', () => {
+  const figures = [
+    ...topics.flatMap((t) => t.figures.map((f) => [`${t.slug} hero: ${f.label}`, f] as const)),
+    ...Object.entries(tiles).map(([slug, t]) => [`${slug} tile`, t.figure] as const),
+    ...home.newest.rows.map((r) => [`home: ${r.measure}`, { chart: r.chart, series: r.series, x: r.x, label: r.measure }] as const),
+  ]
+  it('every hero, tile and home figure', () => {
+    for (const [name, f] of figures) {
+      const { text } = figureValue(f).value
+      expect(text, name).toMatch(/\d/)
+      // A count of a crore or more reads in crore or lakh, never as eight or more raw digits.
+      expect(text.replace(/[^\d.]/g, '').split('.')[0]!.length, name).toBeLessThan(8)
+    }
+  })
+})
+
+describe('chart features', () => {
+  it('gives each assembly its own panel and majority line', () => {
+    const chart = placed('assembly-elections-2025-2026').chart as Of<'bars'>
+    const svg = renderPlot(chart, 'chart', 'wide').html
+    expect(svg.match(/MAJORITY \d+/g)?.length).toBe(chart.panels?.length)
+  })
+  it('shows a confidence interval in the table as published', () => {
+    const chart = placed('maternal-mortality-by-state').chart as Of<'states'>
+    const [lo, hi] = statesOf(chart).india!.interval!
+    expect(tableOf(chart).rows.find((r) => r.key === 'india')?.cells[1]?.shown.text).toBe(`${lo} to ${hi}`)
   })
 })

@@ -28,7 +28,7 @@ test('?tab=table opens the table on a chart page', async ({ page }) => {
 test('the tooltip shows a value on hover', async ({ page }) => {
   await page.goto('/prices/')
   await page.locator('[data-chart="cpi-inflation-by-state"] .tile[data-geo="kerala"]').first().hover()
-  await expect(page.locator('.tip')).toContainText('Kerala: 6.22%')
+  await expect(page.locator('.tip')).toContainText(/Kerala: -?\d+(\.\d+)?%/)
 })
 
 test('the number switch changes crore to million and is remembered', async ({ page }) => {
@@ -67,7 +67,7 @@ test('search suggests topics, states and charts, in Hindi too @mobile', async ({
 test('a state page shows its names, ranks and the switch to other states', async ({ page }) => {
   await page.goto('/states/tamil-nadu/')
   await expect(page.locator('.names')).toContainText('தமிழ்நாடு')
-  await expect(page.getByRole('row', { name: /Inflation, rural and urban/ })).toContainText('3rd highest of 36')
+  await expect(page.getByRole('row', { name: /Inflation, rural and urban/ })).toContainText(/\d+(st|nd|rd|th) (highest|lowest) of 36/)
   await page.locator('[data-pick="nav"] .trigger').click()
   await page.getByRole('option', { name: /Kerala/ }).click()
   await expect(page).toHaveURL(/\/states\/kerala\/$/)

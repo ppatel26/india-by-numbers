@@ -65,10 +65,13 @@ const prose = (t: Topic): [string, string][] => [
   ]),
 ]
 
-describe.each(topics.map((t) => [t.slug, t] as const))('%s prose', (_, t) => {
-  const values = pool(t)
-  it.each(prose(t))('%s quotes only published values', (_, text) => {
-    const missing = numbers(text).filter((n) => !values.has(n) && !values.has(String(Number(n))) && !DERIVED[t.slug]?.includes(n))
-    expect(missing, text).toEqual([])
+// One test per topic; a failure names the passage and the numbers not found in the data.
+describe('prose quotes only published values', () => {
+  it.each(topics.map((t) => [t.slug, t] as const))('%s', (_, t) => {
+    const values = pool(t)
+    for (const [where, text] of prose(t)) {
+      const missing = numbers(text).filter((n) => !values.has(n) && !values.has(String(Number(n))) && !DERIVED[t.slug]?.includes(n))
+      expect(missing, `${where}: ${text}`).toEqual([])
+    }
   })
 })
