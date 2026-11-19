@@ -1,6 +1,6 @@
 # Jobs
 
-Data for the India by Numbers "Jobs" topic. All values come from the Periodic Labour Force Survey (PLFS) of the National Statistics Office (NSO), Ministry of Statistics and Programme Implementation (MoSPI). PLFS is a household survey. Every value is a survey estimate.
+Data for the India by Numbers "Jobs" topic. Values come from two MoSPI household surveys. The National Sample Survey (NSS) measured employment before the Periodic Labour Force Survey (PLFS). Every value is a survey estimate or a calculation from survey estimates.
 
 Read on 17 Nov 2026.
 
@@ -36,13 +36,11 @@ Read on 17 Nov 2026.
 - Sentence: "Urban unemployment jumped to 20.8% in April to June 2020, during the first COVID-19 lockdown. By July to September 2026 it was 6.8%."
 - Source: MoSPI NSO, PLFS Quarterly Bulletins (CWS, age 15+). Old design: bulletins for Jul-Sep 2019, Jul-Sep 2020, Apr-Jun 2021, Oct-Dec 2021 (press note), Jan-Mar 2022, Jan-Mar 2023, Apr-Jun 2024 and Oct-Dec 2024. New design: bulletins for Apr-Jun 2025 and Jul-Sep 2026 (released 10 Nov 2026).
 
-### jobs-3 Labour force participation, worker population and unemployment, by sex, every year
+### jobs-3 Labour force participation, worker population and unemployment by sex
 
-- Type: small multiples (LFPR, WPR, UR), lines for male, female, person. Two segments: agricultural years 2017-18 to 2023-24, and calendar years 2022 to 2025. Show them as two series, not one line.
-- Unit: per cent. Geography: India. Period: 2017-18 to 2025.
-- File: `jobs-lfpr-wpr-ur-annual.csv`.
-- Sentence: "Female labour force participation rose from 23.3% in 2017-18 to 41.7% in 2023-24. In calendar year 2025 it was 40.0%, against 79.1% for men."
-- Source: MoSPI NSO, PLFS Annual Report 2023-24 press note (23 Sep 2024), Tables 1 to 3; PLFS Annual Report 2025 (27 Mar 2026), Highlights Tables 1 to 3. Usual status (ps+ss), age 15+.
+- Small multiples for India, ages 15 and over, usual status (ps+ss).
+- NSS rounds 50, 55, 61, 66 and 68 cover 1993-94, 1999-2000, 2004-05, 2009-10 and 2011-12. PLFS covers July to June years 2017-18 to 2023-24 and calendar years 2022 to 2025.
+- Files `jobs-annual-rates-history.csv` and `jobs-lfpr-wpr-ur-annual.csv`. The history file uses the NSS appendix tables listed below and Tables 1 to 3 of the PLFS 2023-24 press note. The calendar values come from Highlights Tables 1 to 3 of the PLFS Annual Report 2025.
 
 ### jobs-4 Women in the labour force, by state
 
@@ -60,29 +58,88 @@ Read on 17 Nov 2026.
 - Sentence: "In 2025, unemployment among people aged 15 and over ranged from 0.9% in Gujarat to 10.0% in the Andaman and Nicobar Islands. Among states, Goa had the highest rate, 8.3%."
 - Source: MoSPI NSO, PLFS Annual Report 2025, Appendix A, Table 18.0 (usual status ps+ss, rural+urban).
 
-### jobs-6 What kind of work people do
+### jobs-6 Workers by employment status
 
-- Type: stacked bar (own-account worker or employer, unpaid helper in a household enterprise, regular wage or salary, casual labour), one bar per year. Toggle: male, female; rural, urban.
-- Unit: per cent of workers. Geography: India. Period: calendar years 2022 to 2025.
-- File: `jobs-employment-status.csv`. The rows "all self-employed" and "all" are totals. Do not stack them.
-- Sentence: "In 2025, 56.2% of workers were self-employed. Only 23.6% had a regular wage or salary, up from 22.4% in 2024. Casual labourers made up 20.2%."
-- Source: MoSPI NSO, PLFS Annual Report 2025, Statement 7 (usual status ps+ss, all ages).
+- Small multiples for self-employed workers, workers with a regular wage or salary, and casual labour. India, all ages, usual status (ps+ss).
+- Five NSS rounds from 1993-94 to 2011-12, seven PLFS July to June years from 2017-18 to 2023-24 and four PLFS calendar years from 2022 to 2025.
+- Files `jobs-employment-status-history.csv` and `jobs-employment-status.csv`. Use the three broad groups. The PLFS tables also split self-employment into own-account workers and employers, and helpers.
 
-### jobs-7 Jobs by industry
+### jobs-7 Workers by industry
 
-- Type: stacked bar or ranked bar by industry. Toggle: male, female; rural, urban.
-- Unit: per cent of workers. Geography: India. Period: calendar years 2022 to 2025.
-- File: `jobs-employment-by-industry.csv`. The row "all" is the total.
-- Sentence: "Agriculture still employed 43.0% of workers in 2025, down from 45.5% in 2022. For women the share was 59.8%."
-- Source: MoSPI NSO, PLFS Annual Report 2025, Statement 8 (usual status ps+ss, all ages, NIC 2008).
+- Grouped bars, India, all ages, usual status (ps+ss). The bars compare 2011-12, 2017-18, 2022 and 2025. The chart also gives the 2025 share for women.
+- Files `jobs-employment-by-industry-history.csv` and `jobs-employment-by-industry.csv`. The table also includes all other PLFS July to June years through 2023-24 and calendar years 2023 and 2024.
+- NSS 68 and PLFS use the same NIC 2008 groups. NSS 66 used NIC 2004. NSS 61 and 55 used NIC 1998. NSS 50 used NIC 1987. The series starts in 2011-12.
 
 ### jobs-8 Youth unemployment
 
-- Type: grouped bar or slope (2022 to 2025), by sex and by rural or urban.
-- Unit: per cent of the labour force aged 15-29. Geography: India. Period: calendar years 2022 to 2025.
-- File: `jobs-youth-unemployment-annual.csv`.
-- Sentence: "In 2025, 9.9% of young people aged 15 to 29 in the labour force were unemployed. For young women in towns and cities the rate was 18.9%."
-- Source: MoSPI NSO, PLFS Annual Report 2025, Statement 18 (usual status ps+ss).
+- Small multiples by area and sex, ages 15 to 29, usual status (ps+ss).
+- Five NSS rounds from 1993-94 to 2011-12, seven PLFS July to June years from 2017-18 to 2023-24 and four PLFS calendar years from 2022 to 2025.
+- Files `jobs-youth-unemployment-history.csv` and `jobs-youth-unemployment-annual.csv`.
+
+## Annual history build
+
+Run `python3 -I pipeline/jobs/build_jobs_history.py` from the repo root. Save each PDF to the path below under `raw/jobs/`. Fetch with User-Agent `IndiaByNumbers/1.0 (+https://indiabynumbers.org/about/)`. The script uses `pdftotext -layout` and the existing PLFS CSVs. It writes LF line endings. `period_basis` identifies the survey and period group. `plot_period` puts July to June estimates at the start of July. `table` identifies each observation's source. `derived` identifies calculated values. `published_per_1000` keeps the original digits when the script expresses a published NSS rate in per cent.
+
+| CSV | History rows | Source and calculation |
+| --- | ---: | --- |
+| `jobs-annual-rates-history.csv` | 108 | Ages 15 and over. NSS 409 Table 32B, 458 Table 48B, 515 Table 19, 537 Table 20 and 554 Table 18 give persons by usual activity. For participation use code 11 to 81. For worker population use code 11 to 51. Divide the unemployed (code 81) by the labour force (11 to 81) for unemployment. Use the estimates in hundreds for 1993-94 and 1999-2000 and the published rates per thousand of persons aged 15+ for the three later rounds. The latter unemployment estimates can differ slightly because the inputs are rounded. The PLFS July to June rows come from the 2023-24 press note. |
+| `jobs-youth-unemployment-history.csv` | 108 | NSS Reports 537 and 554, Statement 6.4, publish the adjusted usual-status rate for rural and urban men and women aged 15 to 29. For the five other area and sex groups, sum the estimates for ages 15 to 19, 20 to 24 and 25 to 29. Use NSS 409 Table 30B, 458 Table 46, 515 Table 19, 537 Table 20 and 554 Table 18. Apply the tabulated proportions to the age-group totals. For 1999-2000, the table gives the age distribution within each activity, so apply it to the activity totals and sum rural and urban estimates for India. Compute the ratio of unemployed to labour force and round to one decimal. PLFS history comes from the 2020-21 (Statement 26) and 2023-24 (Statement 16) annual reports. Calendar values come from Statement 18 of the 2025 report. |
+| `jobs-employment-status-history.csv` | 558 | NSS Report 554 Statement 5.9 publishes rural and urban shares for men and women for all five rounds. Use the appendix tables named in the youth row for the other groups. Compute shares from estimates in hundreds for codes 11, 12 and 21 (self-employed), 31 (regular wage or salary), 41 and 51 (casual labour) and 11 to 51 (all workers). Sum the rural and urban counts for 1999-2000. PLFS history comes from the 2020-21 (Statement 12) and 2023-24 (Statement 6) annual reports. Calendar values come from Statement 7 of the 2025 report. |
+| `jobs-employment-by-industry-history.csv` | 648 | NSS 554 Table 27 gives shares per 10,000 workers by NIC 2008 section. Use A, B, C, D plus E, F, G plus I, H plus J, and K through U, as defined by the PLFS report. The NSS rural table has no entry for section U. Keep two decimal places after conversion to per cent. Flag section sums as derived. PLFS history comes from the 2020-21 (Statement 13) and 2023-24 (Statement 7) annual reports. Calendar values come from Statement 8 of the 2025 report. |
+
+From NSS 61 onward, subsidiary work required at least 30 days of work in the past year. NSS 50 and 55 used a shorter-time criterion. PLFS began in July 2017 with a different sample design, including a rotating urban panel. Calendar estimates from 2022 to 2024 overlap the July to June estimates. MoSPI switched the annual report to calendar years and changed the sample design in 2025. The three time charts mark the start of the 30-day rule, the start of PLFS and the switch in 2025. Dashed lines identify the calendar estimates for 2022 to 2024. A separate dot marks the 2025 estimate from the new sample design.
+
+### Annual history sources
+
+All rows below are MoSPI files read on 18 Nov 2026. The PLFS 2025 revised report was checked again. Its checksum matches the earlier source entry.
+
+| Raw directory under `raw/jobs/` (file `report.pdf`) | Release | Released | URL | SHA-256 |
+| --- | --- | --- | --- | --- |
+| `nss-50-full` | NSS Report 409, 50th round | Mar 1997 | https://www.mospi.gov.in/sites/default/files/publication_reports/409_final.pdf | `6b2c1b3b4b4cf6dfc8c537195b916ebdaad66a14a64f2bbcbe76deb02830a205` |
+| `nss-55-part2` | NSS Report 458, 55th round, Part II | May 2001 | https://microdata.gov.in/NADA/index.php/catalog/90/download/6116 | `89172e06a4014da4fcc0180012b9059310690d6f519d6e4fd213fcdc1cf7627f` |
+| `nss-61-part1` | NSS Report 515, 61st round, Part I | Sep 2006 | https://microdata.gov.in/NADA/index.php/catalog/109/download/4351 | `9c171944ec92dfc6b62840747638c066ae6242467c9ae833be7a27e19f09a083` |
+| `nss-66-catalog-pdf` | NSS Report 537, 66th round | Nov 2011 | https://microdata.gov.in/NADA/index.php/catalog/124/download/4371 | `33bbb4216cf915c567e7b9f6c1b739ea90317afff3ca35e22b496eaa19fe121e` |
+| `nss-68` | NSS Report 554, 68th round | Jan 2014 | https://www.mospi.gov.in/sites/default/files/publication_reports/nss_report_554_31jan14.pdf | `73ef9c2e0a15f7a6b98d9d2976fa2746e2e0db91fb5781a9fa4eb50449d4352f` |
+| `plfs-2017-18` | PLFS Annual Report 2017-18 | May 2019 | https://www.mospi.gov.in/sites/default/files/publication_reports/Annual%20Report%2C%20PLFS%202017-18_31052019.pdf | `2ff169b5b587bfffb20da891dc664d0996c1ae902150f7b21b38d3707bb1b4e3` |
+| `plfs-2018-19` | PLFS Annual Report 2018-19 | Jun 2020 | https://www.mospi.gov.in/sites/default/files/publication_reports/Annual_Report_PLFS_2018_19_HL.pdf | `c63f7cb1c80dc0f3f6204ab8b89de75a8e0a3638ea906eec0e96ec27261e07aa` |
+| `plfs-2019-20` | PLFS Annual Report 2019-20 | Jul 2021 | https://www.mospi.gov.in/sites/default/files/publication_reports/Annual_Report_PLFS_2019_20F1.pdf | `916315d4396c4ee37614ad496ef19343d5849cca1fef2ca257419e3a92f32be4` |
+| `plfs-2020-21` | PLFS Annual Report 2020-21 | Jun 2022 | https://www.mospi.gov.in/sites/default/files/publication_reports/Annual_Report_PLFS_2020%2021_0.pdf | `b73caddeb04a4da65ea59f8d0bb9c6b681fe7e7031f35052e108e0bf8638f666` |
+| `plfs-2021-22-official` | PLFS Annual Report 2021-22 | Feb 2023 | https://www.mospi.gov.in/sites/default/files/publication_reports/AnnualReportPLFS2021-22F1.pdf | `a3a69de38eb89bf915f5f8309b39449dea202b3f7eb32e966c98d6994ad876e5` |
+| `plfs-2022-23` | PLFS Annual Report 2022-23 | Oct 2023 | https://www.mospi.gov.in/sites/default/files/publication_reports/AR_PLFS_2022_23N.pdf | `c7695a00a16c1002a58dbc203cfcf0847e526adcd794dc200694b7f901cc696f` |
+| `plfs-2023-24` | PLFS Annual Report 2023-24 | 23 Sep 2024 | https://www.mospi.gov.in/sites/default/files/publication_reports/AnnualReport_PLFS2023-24L2.pdf | `ab4ead2cee181a13c7ab40f164d2dceb46419cfb58f30f8baa58e35f79d33d39` |
+| `plfs-2025` | PLFS Annual Report 2025, revised 29 May 2026 | 27 Mar 2026 | https://www.mospi.gov.in/uploads/publications_reports/publications_reports1780040415321_0624fb13-fb47-40bc-b470-7c7e9635c3ef_PLFS_2025_F_REV_29052026.pdf | `134bf2de5e4b1142d3bae4899c90ec5be3bf5ec03a2ff4b3f7b0bba34eee0da7` |
+
+The legacy paths `NSS_Report_409.pdf`, `NSS_Report_458.pdf`, `NSS_Report_515.pdf`, `NSS_Report_537.pdf` and `Annual_Report_PLFS_2021_22_0.pdf` returned HTTP 404. The official routes in the table supplied the reports. No round required substituting a different age group. The two surveys do not cover the same years.
+
+### Other official files read
+
+Downloaded on 18 Nov 2026 during the source search. The build uses the files listed under Annual history sources.
+
+| Raw path under `raw/jobs/` | Release or catalogue entry | Released | URL | SHA-256 |
+| --- | --- | --- | --- | --- |
+| `nss-50-key/report.pdf` | NSS Report 406, revised key results, 50th round | Oct 1996 | https://microdata.gov.in/NADA/index.php/catalog/77/download/4409 | `3158389d75b798c29417b7318830f6d389da0eb9b7c1f0996239028b66eda0ea` |
+| `nss-50-unemployment/report.pdf` | NSS Report 418, unemployment, 50th round | Sep 1997 | https://microdata.gov.in/NADA/index.php/catalog/77/download/4413 | `94a90a1ebc1ac85f4497059b11f9ee9dbc56b27f946a067c27b8862863a578aa` |
+| `nss-55-part1/report.pdf` | NSS Report 458, 55th round, Part I | May 2001 | https://microdata.gov.in/NADA/index.php/catalog/90/download/6106 | `42b48e2f44ef0214918dde1b9bf8b193bc56d45ffec057f9bef43817855ee603` |
+| `nss-61-part2/report.pdf` | NSS Report 515, 61st round, Part II | Sep 2006 | https://microdata.gov.in/NADA/index.php/catalog/109/download/4352 | `7a7738bf8f74b57f25966581830489b97e9bc4acc89da06999154e10a7265002` |
+| `nss-68-catalog-pdf/report.pdf` | NSS Report 554, 68th round, catalogue copy | Jan 2014 | https://microdata.gov.in/NADA/index.php/catalog/127/download/4291 | `73ef9c2e0a15f7a6b98d9d2976fa2746e2e0db91fb5781a9fa4eb50449d4352f` |
+| `microdata-49/page.html` | NSS 38 employment survey | Live catalogue | https://microdata.gov.in/NADA/index.php/catalog/49/related-materials | `6e8f73811fd911856aba574ea45ff2502b11da64daada0df59538143d50c70d1` |
+| `microdata-55/page.html` | NSS 43 employment survey | Live catalogue | https://microdata.gov.in/NADA/index.php/catalog/55/related-materials | `e2dd696c417d3e11f91797fb8df42eabe2bc0a38d2c6a30d83b930c0ad289a4a` |
+| `microdata-71/page.html` | NSS 48 land and livestock survey | Live catalogue | https://microdata.gov.in/NADA/index.php/catalog/71/related-materials | `3539acf8024b503ed8dfc602551be89d085723b692978ef44808cd3fde33c2fb` |
+| `microdata-77/page.html` | NSS 50 employment survey | Live catalogue | https://microdata.gov.in/NADA/index.php/catalog/77/related-materials | `ae920fcc5bb32326fed370c5d40acf227676fa1bb692b10b1b4ec992a69b7b53` |
+| `microdata-90/page.html` | NSS 55 employment survey | Live catalogue | https://microdata.gov.in/NADA/index.php/catalog/90/related-materials | `c09a446c68d832da8a3f94ee72f23b707221171075373f93c4bdb4e786c284d6` |
+| `microdata-109/page.html` | NSS 61 employment survey | Live catalogue | https://microdata.gov.in/NADA/index.php/catalog/109/related-materials | `9f129de9fa37995ff80e60a43d1afb4a236a812f9253b1a64bff994d4bff1670` |
+| `microdata-124/page.html` | NSS 66 employment survey | Live catalogue | https://microdata.gov.in/NADA/index.php/catalog/124/related-materials | `08b808654a7129aef77cba31ba23dfa20403ffd0794cbb4a89aa0602f61b26f7` |
+| `microdata-127/page.html` | NSS 68 employment survey | Live catalogue | https://microdata.gov.in/NADA/index.php/catalog/127/related-materials | `9d3bd6af2cc31a4c0303536c308a94fa42b0a2bbe59e4f7e58d5f411d8a539cb` |
+| `microdata-213/page.html` | PLFS 2023-24 | Live catalogue | https://microdata.gov.in/NADA/index.php/catalog/213/related-materials | `000f38fa47bda8573fe696d20ab80b742510f9d43609dacc74b70a578cd05cb9` |
+| `microdata-search/page.html` | Catalogue search for Employment and Unemployment | Live catalogue | https://microdata.gov.in/NADA/index.php/catalog/?sk=Employment+and+Unemployment&ps=100 | `9d37fcb4aa8d62c61ba959646754c5d83f239f7e82ad8e3e30fdea48a119e40b` |
+
+### Annual history overlap checks
+
+- **Annual rates.** All 18 NSS participation and worker population rates for 2004-05, 2009-10 and 2011-12 agree with Statements 8 and 11 of the 2017-18 PLFS report. The six equivalent 2017-18 rates agree with the 2023-24 press note.
+- **Youth unemployment.** Reports 537 and 554 agree on all 12 published rates for the three overlapping NSS rounds. The 2018-19, 2019-20, 2021-22 and 2022-23 PLFS reports agree with the extracted July to June series on all 99 common values.
+- **Employment status.** The same four PLFS overlap checks agree on all 594 values. NSS appendix count ratios match 44 of 60 published shares by sex and area in Report 554 Statement 5.9. All 36 values match from 2004-05 onward. The earlier differences range from 0.1 to 1.0 percentage points. For example, the 1993-94 share of self-employed urban women is 44.8% in the appendix ratio and 45.8% in the published summary. Use the published summary for those groups. Use the appendix counts for groups absent from the summary, including all workers in India.
+- **Industry.** The four PLFS overlap reports agree on all 891 values. All 32 extracted NSS groups for rural and urban men and women agree with Report 554 Statement 5.11 when rounded to the precision of that statement.
+- **July to June against calendar.** Match by start year to compare the overlapping windows in 2022 and 2023. Equal values account for 1 of 18 annual rates, 1 of 18 youth rates, 25 of 108 employment status shares and 64 of 162 industry shares. The last two counts include totals. The estimates cover different months. For example, participation for ages 15 and over was 59.6% in calendar 2024 and 60.1% in 2023-24.
 
 ## Headline figures
 
