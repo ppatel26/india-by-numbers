@@ -133,12 +133,16 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
   })
 
   const band = chart.band
-  const bandX0 = band ? x(Math.max(x.domain()[0]!, parseBandStart(band))) : 0
-  const bandEl = band ? svg`<rect x="${bandX0}" y="${y(band.to)}" width="${W - m.right - bandX0}" height="${y(band.from) - y(band.to)}" fill="var(--band)"/>` : null
-  const refs = (chart.refs ?? []).map(
-    (r) => svg`<line x1="${m.left}" x2="${W - m.right}" y1="${y(r.y)}" y2="${y(r.y)}" stroke="var(--slate)" stroke-dasharray="2 3"/>
-${note(W - m.right - 4, y(r.y) - 5, r.label, 'end')}`,
-  )
+  const annotationStart = (since?: string) => since ? Math.max(m.left, x(tOf.get(since) ?? parsePeriod(since).t)) : m.left
+  const right = W - m.right
+  const bandX0 = annotationStart(band?.since)
+  const bandEl = band && bandX0 < right ? svg`<rect x="${bandX0}" y="${y(band.to)}" width="${right - bandX0}" height="${y(band.from) - y(band.to)}" fill="var(--band)"/>` : null
+  const refs = (chart.refs ?? []).map((r) => {
+    const start = annotationStart(r.since)
+    if (start >= right) return null
+    return svg`<line x1="${start}" x2="${right}" y1="${y(r.y)}" y2="${y(r.y)}" stroke="var(--slate)" stroke-dasharray="2 3"/>
+${note(right - 4, y(r.y) - 5, r.label, 'end')}`
+  })
   // The key names the band and the reference lines above the plot, not on top of the lines.
   const keyY = (panel.label ? 34 : 16) + 6
   let kx = m.left
@@ -225,9 +229,5 @@ function extend(s: SeriesData, to: string): SeriesData {
   const last = s.points.at(-1)
   if (!last || last.x >= to) return s
   return { ...s, points: [...s.points, { ...last, x: to, label: parsePeriod(to).label, t: parsePeriod(to).t }] }
-}
-
-function parseBandStart(band: NonNullable<Of<'line'>['band']>): number {
-  return band.since ? parsePeriod(band.since).t : -Infinity
 }
 

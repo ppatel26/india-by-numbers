@@ -154,7 +154,8 @@ export type Chart =
         y?: Axis
         /** Shaded range, for example the RBI tolerance band; `since` is the x where it starts. */
         band?: { from: number; to: number; label: string; since?: string }
-        refs?: readonly { y: number; label: string }[]
+        /** Reference lines, with an optional start period for each line. */
+        refs?: readonly { y: number; label: string; since?: string }[]
         /** Small multiples: one panel per group of series keys. */
         panels?: readonly Panel[]
         /** Draw steps: a value holds until the next one (policy rates). */

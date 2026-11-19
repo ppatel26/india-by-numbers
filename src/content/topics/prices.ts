@@ -101,6 +101,27 @@ const RBI_TABLE_236: Source = {
   url: 'https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/236T_HBIE310720260380CC1834364289AF00337B7FFD8336.XLSX',
 }
 
+const RBI_CPI_IW_2008: Source = {
+  publisher: 'RBI',
+  release: 'Handbook of Statistics on Indian Economy 2007-08, Table 250, monthly CPI-IW rates from the Labour Bureau',
+  released: '2008-10-08',
+  url: 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=10771',
+}
+
+const RBI_CPI_IW_2011: Source = {
+  publisher: 'RBI',
+  release: 'Handbook of Statistics on Indian Economy 2010-11, Table 240, monthly CPI-IW rates from the Labour Bureau',
+  released: '2011-09-15',
+  url: 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=13832',
+}
+
+const LABOUR_CPI_IW_2011: Source = {
+  publisher: 'Labour Bureau',
+  release: 'Annual Report on CPI-IW for 2011, Figure 3, monthly general inflation',
+  released: 'not stated',
+  url: 'https://labourbureau.gov.in/uploads/pdf/CPI_IW_AR_2011.pdf',
+}
+
 const RBI_HIKE: Source = {
   publisher: 'RBI',
   release: 'Monetary Policy Committee resolution, 7 October 2026, repo rate at 5.50%',
@@ -132,8 +153,10 @@ const CFPI_RELEASES: Source = {
 }
 
 const CPI_NEXT = '2026-12-14'
+const RBI_TARGET_START = '2016-08-05'
 
 const MONTHLY = 'prices/cpi-inflation-monthly.csv'
+const CPI_IW = 'prices/cpi-iw-inflation-monthly.csv'
 const CPI_2010 = 'prices/cpi-inflation-2013-base-2010.csv'
 const DIVISIONS_LATEST = 'prices/cpi-inflation-by-division-latest.csv'
 const DIVISIONS_2026 = 'prices/cpi-inflation-by-division-2026.csv'
@@ -146,7 +169,7 @@ const topic: Topic = {
   slug: 'prices',
   name: 'Prices',
   hindi: 'कीमतें',
-  question: 'How fast are prices rising in India now, and how does that compare with the RBI target?',
+  question: 'How fast are prices rising in India, and how does that compare with the past?',
   standfirst: "Consumer prices rose by 6.09% in the year to October 2026, above the RBI's upper limit of 6%.",
   figures: [
     { chart: 'cpi-inflation', series: 'base-2024', label: 'Consumer price inflation' },
@@ -157,47 +180,56 @@ const topic: Topic = {
   parts: [
     {
       title: 'How fast are prices rising?',
-      lede: 'The RBI aims for 4%, within a band of 2% to 6%. Before October 2026, inflation was last above that band in October 2024, at 6.21%. In October 2025 it was 0.25%, the lowest since the series began in January 2012.',
+      lede: 'The RBI aims for 4%, within a band of 2% to 6%. Before October 2026, CPI Combined inflation was last above that band in October 2024, at 6.21%. It fell to 0.25% in October 2025, its lowest since January 2012.',
       blocks: [
         {
           chart: {
             kind: 'line',
             slug: 'cpi-inflation',
-            title: 'Inflation in India, January 2012 to October 2026',
+            title: 'Monthly consumer price inflation in India, January 1994 to October 2026',
             subtitle:
-              'Annual change in consumer prices for rural and urban India combined, %. June to December 2013 uses base 2010=100.',
-            punches: { office: 'MoSPI', unit: '% y/y', period: 'OCT 2026' },
+              'Change from the same month a year earlier. CPI for industrial workers through December 2011. CPI Combined for rural and urban India from January 2012.',
+            punches: { office: 'MoSPI · Labour Bureau', unit: '% y/y', period: 'OCT 2026' },
             status: ['Provisional', 'Method break'],
-            note: 'June to December 2013 uses base 2010=100 from archived MoSPI publications. Earlier months and January 2014 to December 2025 use base 2012=100. Base 2024=100 starts in January 2026.',
-            sources: [CPI_RELEASE, CPI_API, CPI_2010_PAPER, ...CPI_2010_LATE_RELEASES, RBI_TARGET],
+            note: 'CPI-IW covers industrial workers only. Its base changed from 1982=100 to 2001=100 in January 2006. CPI Combined uses base 2010=100 from June to December 2013. The other months through December 2025 use base 2012=100. Base 2024=100 starts in January 2026.',
+            sources: [CPI_RELEASE, CPI_API, CPI_2010_PAPER, ...CPI_2010_LATE_RELEASES, RBI_CPI_IW_2008, RBI_CPI_IW_2011, LABOUR_CPI_IW_2011, RBI_TARGET],
             format: { unit: '%' },
             series: [
-              { key: 'back-2012', label: 'India, base 2012=100', color: 'ink', file: MONTHLY, where: { series: 'back series' } },
-              { key: 'base-2010', label: 'India, base 2010=100', color: 'ink', file: CPI_2010, where: { sector: 'combined', group: 'General' } },
-              { key: 'base-2012', label: 'India, base 2012=100', color: 'ink', file: MONTHLY, where: { base: '2012=100', series: 'current series' } },
-              { key: 'base-2024', label: 'India, base 2024=100', color: 'ink', file: MONTHLY, where: { base: '2024=100' } },
+              { key: 'iw-1982', label: 'CPI-IW, base 1982=100', color: 's2', file: CPI_IW, where: { base: '1982=100' } },
+              { key: 'iw-2001', label: 'CPI-IW, base 2001=100', color: 's2', file: CPI_IW, where: { base: '2001=100' } },
+              { key: 'back-2012', label: 'CPI Combined, base 2012=100', color: 'ink', file: MONTHLY, where: { series: 'back series' } },
+              { key: 'base-2010', label: 'CPI Combined, base 2010=100', color: 'ink', file: CPI_2010, where: { sector: 'combined', group: 'General' } },
+              { key: 'base-2012', label: 'CPI Combined, base 2012=100', color: 'ink', file: MONTHLY, where: { base: '2012=100', series: 'current series' } },
+              { key: 'base-2024', label: 'CPI Combined', color: 'ink', file: MONTHLY, where: { base: '2024=100' } },
             ],
-            y: { min: 0, max: 12, step: 2 },
-            band: { from: 2, to: 6, label: 'RBI tolerance band 2% to 6%' },
-            refs: [{ y: 4, label: 'Target 4%' }],
+            y: { min: 0, max: 20, step: 4 },
+            band: { from: 2, to: 6, label: 'RBI target 4%, tolerance band 2% to 6%', since: RBI_TARGET_START },
+            refs: [{ y: 4, label: '', since: RBI_TARGET_START }],
             // 2013 months come from the older 2010=100 series; a band marks them.
             spans: [{ from: '2013-06', to: '2013-12', label: 'Base 2010' }],
-            breaks: [{ x: '2026-01', label: 'Base 2024=100' }],
-            callouts: [{ series: 'base-2024', x: '2026-10' }],
+            breaks: [
+              { x: '2006-01', label: 'Base 2001=100' },
+              { x: '2012-01', label: 'CPI Combined' },
+              { x: '2026-01', label: 'Base 2024=100' },
+            ],
+            markers: [{ x: RBI_TARGET_START, label: 'Target starts' }],
+            callouts: [{ series: 'iw-1982', x: '1998-11', label: 'CPI-IW 19.7% in Nov 1998' }, { series: 'base-2024', x: '2026-10' }],
             know: [
-              'This is the change in consumer prices on the same month a year earlier, for rural and urban India combined.',
+              'The Labour Bureau compiles CPI-IW for industrial workers. MoSPI compiles CPI Combined for rural and urban India.',
+              'The Labour Bureau moved CPI-IW to base 2016=100 in September 2020. The annual chart includes that base.',
               'October 2026 is provisional. MoSPI finalises it with the November release, due on 14 December 2026.',
-              'CPI moved to base 2024=100 in January 2026, with a new basket and new weights. The 2012=100 series ends in December 2025. The two series are not joined.',
+              'CPI Combined moved to base 2024=100 in January 2026, with a new basket and new weights.',
               'MoSPI gives no rate for April and May 2020, the lockdown months.',
-              'The RBI target is 4%, with a band of 2% to 6%, retained for 1 April 2026 to 31 March 2031.',
+              'The 4% target and the band of 2% to 6% apply to CPI Combined from 5 August 2016.',
             ],
             processing: [
+              'Read the published monthly CPI-IW rates from the RBI Handbook and the Labour Bureau annual report.',
               'Read the base 2012=100 back and current series and the base 2024=100 series from the MoSPI eSankhyiki API.',
               'Read the published base 2010=100 rates for June to December 2013 from the archived MoSPI paper and press releases.',
               'Check October 2026 against the press release of 12 Nov 2026.',
               'Leave April and May 2020 empty.',
-              'Draw each base as a separate line. Mark each change of base.',
-              'Draw the RBI target and band from the Monetary Policy Framework page.',
+              'Use CPI-IW through December 2011. Keep its bases and CPI Combined separate.',
+              'Use the start date for the target and band from the RBI Monetary Policy Framework.',
             ],
             nextRelease: CPI_NEXT,
           },
@@ -570,7 +602,7 @@ const topic: Topic = {
     missing:
       'MoSPI gives no all-items inflation rate for April and May 2020. The RBI Handbook first records a repo rate for April 2001.',
   },
-  sources: [CPI_RELEASE, CFPI_RELEASES, CPI_API, CPI_2010_PAPER, RBI_HANDBOOK, RBI_HIKE, RBI_TARGET],
+  sources: [CPI_RELEASE, CFPI_RELEASES, CPI_API, CPI_2010_PAPER, RBI_CPI_IW_2008, RBI_CPI_IW_2011, LABOUR_CPI_IW_2011, RBI_HANDBOOK, RBI_HIKE, RBI_TARGET],
   related: [
     { label: 'Economy: Industrial production, month by month', href: '/charts/iip-growth/' },
     { label: 'Economy: Rupees per US dollar since 1986-87', href: '/charts/usd-inr-annual/' },
