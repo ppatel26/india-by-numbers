@@ -180,11 +180,9 @@ const topic: Topic = {
             y: { min: 0, max: 12, step: 2 },
             band: { from: 2, to: 6, label: 'RBI tolerance band 2% to 6%' },
             refs: [{ y: 4, label: 'Target 4%' }],
-            breaks: [
-              { x: '2013-06', label: '' },
-              { x: '2014-01', label: '' },
-              { x: '2026-01', label: 'Base 2024=100' },
-            ],
+            // 2013 months come from the older 2010=100 series; a band marks them.
+            spans: [{ from: '2013-06', to: '2013-12', label: 'Base 2010' }],
+            breaks: [{ x: '2026-01', label: 'Base 2024=100' }],
             callouts: [{ series: 'base-2024', x: '2026-10' }],
             know: [
               'This is the change in consumer prices on the same month a year earlier, for rural and urban India combined.',
@@ -432,11 +430,7 @@ const topic: Topic = {
               { key: 'general', label: 'All items (General)', color: 'other', file: GROUPS_2012, where: { group: 'General', series: 'current series' } },
             ],
             y: { step: 5 },
-            breaks: [
-              { x: '2013-01', label: '' },
-              { x: '2013-06', label: '' },
-              { x: '2014-01', label: '' },
-            ],
+            spans: [{ from: '2013-01', to: '2013-12', label: 'Base 2010' }],
             panels: [
               { label: 'Food and beverages', series: ['food-back', 'food-2010', 'food', 'general-back', 'general-2010', 'general'] },
               { label: 'Fuel and light', series: ['fuel-back', 'fuel-2010', 'fuel', 'general-back', 'general-2010', 'general'] },
@@ -493,12 +487,8 @@ const topic: Topic = {
               { key: 'urban-2024', label: 'Urban', color: 's5', file: RURAL_URBAN, where: { sector: 'urban', base: '2024=100' } },
             ],
             y: { min: -2, max: 12, step: 2 },
-            breaks: [
-              { x: '2013-01', label: '' },
-              { x: '2013-06', label: '' },
-              { x: '2014-01', label: '' },
-              { x: '2026-01', label: 'Base 2024=100' },
-            ],
+            spans: [{ from: '2013-01', to: '2013-12', label: 'Base 2010' }],
+            breaks: [{ x: '2026-01', label: 'Base 2024=100' }],
             callouts: [
               { series: 'rural-2024', x: '2026-10' },
               { series: 'urban-2024', x: '2026-10' },
