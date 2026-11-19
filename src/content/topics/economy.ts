@@ -75,6 +75,13 @@ const IIP_API: Source = {
   url: 'https://api.mospi.gov.in/api/iip/getIIPData',
 }
 
+const IIP_2004_API: Source = {
+  publisher: 'MoSPI (NSO)',
+  release: 'eSankhyiki API, monthly Index of Industrial Production on base 2004-05, final series to March 2017',
+  released: '2017-05-12',
+  url: 'https://api.mospi.gov.in/api/iip/getIIPData?Format=JSON&base_year=2004-05&frequency=Monthly&category_code=4&limit=100&page=1',
+}
+
 const IIP_RELEASE: Source = {
   publisher: 'PIB for MoSPI',
   release: 'Quick Estimates of IIP and Use-Based Index for September 2026 (base 2022-23=100)',
@@ -376,28 +383,38 @@ const topic: Topic = {
           chart: {
             kind: 'line',
             slug: 'iip-growth',
-            title: 'Industrial production growth in India, April 2012 to September 2026',
+            title: 'Industrial production growth in India, April 2006 to September 2026',
             subtitle:
-              'Change in the Index of Industrial Production (IIP) on the same month a year earlier, %. Base 2011-12, April 2012 to March 2024; base 2022-23, April 2024 to September 2026.',
+              'Change in the Index of Industrial Production (IIP) on the same month a year earlier. Each base year has a separate line.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'SEP 2026' },
             status: ['Provisional', 'Method break'],
-            note: 'The two bases overlap from April 2024 to March 2026 with different values; the chart shows the new base from April 2024. On the new base, rates for April 2023 to March 2024 compare with the base-year average, not the same month, so they are left out. MoSPI gives no IIP rate for April 2021 on the 2011-12 base.',
-            sources: [IIP_API, IIP_RELEASE],
+            note: 'The lines switch to base 2011-12 in April 2013 and to base 2022-23 in April 2024. MoSPI gives no rate for April 2021 on base 2011-12.',
+            sources: [IIP_2004_API, IIP_API, IIP_RELEASE],
             format: { unit: '%', decimals: 1 },
             // The CSV has no row for April 2021, so the line breaks there (a two-month step).
             // LATER: the board labels the gap "No data, Apr 2021"; a span label there collides with the May 2021 callout and the break label.
             series: [
               {
+                key: 'base-2004-05',
+                label: 'India, base 2004-05',
+                color: 'slate',
+                file: 'economy/iip-growth-base-2004-05.csv',
+                where: { period: months('2006-04', '2013-03') },
+              },
+              {
                 key: 'base-2011-12',
                 label: 'India, base 2011-12',
                 color: 'ink',
                 file: IIP,
-                where: { category: 'General', base: '2011-12', period: months('2012-04', '2024-03') },
+                where: { category: 'General', base: '2011-12', period: months('2013-04', '2024-03') },
               },
               { key: 'base-2022-23', label: 'India, base 2022-23', color: 'ink', file: IIP, where: { category: 'General', base: '2022-23' } },
             ],
             y: { min: -60, max: 30, step: 15 },
-            breaks: [{ x: '2024-04', label: 'Base 2022-23 from Apr 2024' }],
+            breaks: [
+              { x: '2013-04', before: 'Base 2004-05', label: 'Base 2011-12' },
+              { x: '2024-04', label: 'Base 2022-23' },
+            ],
             callouts: [
               { series: 'base-2011-12', x: '2020-04' },
               { series: 'base-2011-12', x: '2021-05' },
@@ -406,15 +423,15 @@ const topic: Topic = {
             know: [
               'The IIP measures the volume of output in mining, manufacturing, and electricity and gas. Each point compares a month with the same month a year earlier.',
               'September 2026 is a quick estimate. MoSPI revises it with the next release: August 2026 went from 8.0% to 7.8%.',
-              'IIP moved to base 2022-23. Its growth rates are valid from April 2024; for April 2023 to March 2024 the API rates compare with the base-year average, so we leave them out.',
-              'The two bases overlap from April 2024 to March 2026 with different values. The chart shows base 2011-12 to March 2024 and base 2022-23 from April 2024.',
-              'The 2020 and 2021 swings come from the COVID-19 lockdown: -57.3% in April 2020, then 27.6% in May 2021 on the low base.',
+              'The published year-on-year rates on base 2004-05 and base 2011-12 differ in all 48 months that overlap.',
+              'The 2011-12 and 2022-23 bases overlap from April 2024 to March 2026 and give different rates.',
+              'Output fell 57.3% in April 2020 during the COVID-19 lockdown. It grew 27.6% in May 2021 from a low level.',
             ],
             processing: [
-              'Fetch the monthly general index and growth rate for both bases from the MoSPI eSankhyiki API (getIIPData).',
+              'Read the monthly general index and growth rate for each base from the MoSPI eSankhyiki API.',
               'Check September 2026 against the PIB release of 28 Oct 2026.',
-              'Drop the new-base rates for April 2023 to March 2024.',
-              'Draw base 2011-12 to March 2024 and base 2022-23 from April 2024, and mark the break.',
+              'Omit the first year of rates on each base because the API compares those months with the base-year average.',
+              'Compare the rates where the bases overlap. Use the latest base that has a year-on-year rate and mark each switch.',
             ],
             nextRelease: IIP_NEXT,
           },
@@ -600,7 +617,7 @@ const topic: Topic = {
   sources: [GDP_PRESS_NOTE, ESANKHYIKI, IIP_RELEASE, RBI_HANDBOOK, FBIL_ARCHIVE, RBI_HOME],
   related: [
     { label: 'Prices: Consumer price inflation since 2012', href: '/charts/cpi-inflation/' },
-    { label: 'Prices: RBI policy repo rate since 2008', href: '/charts/repo-rate/' },
+    { label: 'Prices: RBI repo rate since 2001', href: '/charts/repo-rate/' },
     { label: 'Jobs: Unemployment rate by state', href: '/charts/unemployment-by-state/' },
     { label: 'States: Tamil Nadu profile', href: '/states/tamil-nadu/' },
     { label: 'How we check: derived values', href: '/how-we-check/#hallmark' },

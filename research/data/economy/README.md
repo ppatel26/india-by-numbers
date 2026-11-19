@@ -66,13 +66,13 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in` (`getNASData` 
 
 ### E6. Industrial production, month by month
 
-- Type: column chart (or line), monthly. Method break at April 2024 (start of the new-base growth series).
+- Type: monthly line, with breaks at April 2013 and April 2024.
 - Unit: % change in the Index of Industrial Production (IIP) on the same month a year earlier.
-- Geography: India. Period: April 2012 to March 2026 (base 2011-12); April 2024 to September 2026 (base 2022-23). Sector rows (mining, manufacturing, electricity and gas) for the new base.
-- CSV: `iip-growth-monthly.csv`
+- Geography: India. The chart covers April 2006 to March 2013 on base 2004-05, April 2013 to March 2024 on base 2011-12, and April 2024 to September 2026 on base 2022-23.
+- CSVs: `iip-growth-base-2004-05.csv` holds 132 published year-on-year rates from April 2006 to March 2017. `iip-growth-monthly.csv` holds base 2011-12 and base 2022-23, with mining, manufacturing, and electricity and gas for the latest base.
 - Sentence: "Industrial output grew by 6.7% in September 2026, with manufacturing up 7.6% and electricity and gas up 11.2%. Mining fell by 6.2%."
-- Source: MoSPI, IIP (base 2011-12 and base 2022-23), `getIIPData`; PIB release "Quick Estimates of Index of Industrial Production ... September 2026 (Base 2022-23=100)", 28 Oct 2026, 4:00 pm.
-- Notes: September 2026 is a quick estimate; August 2026 is final (7.8%, revised from the 8.0% quick estimate). On the new base, the API's growth rates for April 2023 to March 2024 equal the index minus 100, so they compare with the base-year average, not with the same month. We dropped them. The old base shows the lockdown fall: -57.3% in April 2020.
+- Source: MoSPI eSankhyiki `getIIPData`, all three bases. PIB published the latest release for MoSPI on 28 October 2026.
+- The first 12 API growth rates on each base equal the index minus 100. Exclude those rates because they compare with the base-year average. Base 2004-05 supplies year-on-year rates for April 2012 to March 2013. The three bases give different rates in the overlap. September 2026 is a quick estimate. The final rate for August 2026 is 7.8%. The base 2011-12 series gives a fall of 57.3% in April 2020 during the lockdown.
 
 ### E7. Rupees per US dollar since 1986-87
 
@@ -145,7 +145,7 @@ Other Handbook tables (1, 2, 3, 5, 6, 157, 158, 159, 205, 223, 228) were downloa
 - **Jammu and Kashmir.** From 2019-20 the data cover the union territory of Jammu and Kashmir only, without Ladakh (RBI Table 9, note 2). Do not compare its level before and after 2019-20.
 - **State base.** State accounts are on base 2011-12. Do not compare state growth with the national 2022-23-base headline.
 - **2025-26 state data.** Only 15 states have 2025-26 figures. We used 2024-25 so that the ranked bar covers more states.
-- **IIP base change.** The 2011-12 series ends in March 2026; the 2022-23 series begins in April 2023 but its growth rates are only valid from April 2024 (see E6). The two series overlap from April 2024 to March 2026 with different values.
+- **IIP base changes.** Base 2004-05 and base 2011-12 have 48 overlapping year-on-year rates from April 2013 to March 2017. All 48 differ. The greatest difference is 7.3 percentage points in April 2016 (-1.3% on base 2004-05 and 6.0% on base 2011-12). The 2011-12 and 2022-23 bases differ in all 24 months from April 2024 to March 2026. The greatest difference is 2.8 percentage points. Use the latest base with a year-on-year rate at each switch.
 - **Exchange rate archive.** The RBI Reference Rate Archive starts on 25 Aug 1998 and returned no rows between 24 Jul 2018 and 12 Apr 2022. E9 takes those days from FBIL. The Handbook monthly table (205) covers 2022 to June 2026 only. On 18 Nov 2026 the RBI document server served a bot check page for Table 205, not the workbook. The 93.77 rupees per dollar on the 12 Nov RBI ticker (in `research/india-sources.md`) is still not traced to a dated source; the archive gives 93.7650 for 12 Nov 2026.
 - **Licence.** None of the pages read states a reuse licence for these data.
 
@@ -338,3 +338,16 @@ The eSankhyiki national accounts, state accounts and industrial production recor
 | MoSPI press release list, POST response | Live list | https://www.mospi.gov.in/api/latest-release/get-web-latest-release-list | 18 Nov 2026 | `7f3da46fedf29f0cb39396c7b2cc2896dab455ec01b10b6edccfc19649a80358` |
 | MoSPI Advance Release Calendar, 2026-27 | 6 Nov 2026 upload | https://www.mospi.gov.in/uploads/documents/releaseCalender/1793948871564-ARC%202026-27%20updated%20till%20October%202026.pdf | 18 Nov 2026 | `5640fc8661b3ac5a16e72f2621151503fd5bc59a6281b21187b7e18ff4cbd149` |
 | RBI Handbook list | 31 Jul 2026 edition | https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook%20of%20Statistics%20on%20Indian%20Economy | 18 Nov 2026 | `a6b0d174566dd5e0b3f5af0bcb60c60a0732364f6831cc6254a63e550db6e485` |
+
+## IIP historical source files
+
+Source: MoSPI eSankhyiki, monthly general index on base 2004-05 through March 2017, with early samples from the 2011-12 and 2022-23 series. Read on 18 Nov 2026. Paths start at `raw/`.
+
+Run `python3 -I pipeline/economy/build_iip_2004.py` from the repository root to build `iip-growth-base-2004-05.csv`. The script checks both API pages for complete monthly coverage and compares the rates with the base 2011-12 CSV.
+
+| File | Request URL | SHA-256 |
+| --- | --- | --- |
+| `economy/iip-history/page-1/body.json` | https://api.mospi.gov.in/api/iip/getIIPData?Format=JSON&base_year=2004-05&frequency=Monthly&category_code=4&limit=100&page=1 | `38c02c391fe1bd4d0fd910ec0586c08ebb6a90fb6803360b084ecafc13f98375` |
+| `economy/iip-history/page-2/body.json` | https://api.mospi.gov.in/api/iip/getIIPData?Format=JSON&base_year=2004-05&frequency=Monthly&category_code=4&limit=100&page=2 | `322f67e9f0df7fb57178875e2704acd09539895d6b347ca07053d7fdaae8fba1` |
+| `economy/iip-history/2011-base-sample/body.json` | https://api.mospi.gov.in/api/iip/getIIPData?Format=JSON&base_year=2011-12&frequency=Monthly&category_code=4&year=2012,2013&limit=100&page=1 | `0b2b22925d52d6e4beb9ffcfbed2bad8b6d215aefc6efcc18c2230a6bd82c1a9` |
+| `economy/iip-history/2022-base-sample/body.json` | https://api.mospi.gov.in/api/iip/getIIPData?Format=JSON&base_year=2022-23&frequency=Monthly&category_code=4&year=2023,2024&limit=100&page=1 | `0396c92a2ce5c878e82ebd9f3f1a3f486cb74cb4a690e16b7f6e02d9e87d1184` |

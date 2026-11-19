@@ -1,6 +1,6 @@
 # Prices
 
-Data gathered on 17 Nov 2026 from MoSPI (NSO), the Reserve Bank of India (RBI) and the Labour Bureau, as reported by RBI. All values are as published, except where a row says "derived". Read date for every source: 17 Nov 2026.
+Data from MoSPI (NSO), the Reserve Bank of India (RBI) and Labour Bureau data published by RBI. The first collection was on 17 Nov 2026. See each source table for the read date. The CSV notes identify derived values.
 
 The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in`. It serves the same numbers as the eSankhyiki portal and the official MoSPI MCP server (`mcp.mospi.gov.in/mcp`). The October 2026 values match the MoSPI CPI press release of 12 Nov 2026, table by table.
 
@@ -55,34 +55,33 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in`. It serves the
 - Sentence: "Headline inflation rose in every month of 2026, from 2.74% in January to 6.09% in October."
 - Source: MoSPI, CPI (base 2024=100), `getCPIData`, one request per month and sector.
 
-### P5. Food, fuel, housing and clothing inflation, 2014 to 2025
+### P5. Food, fuel, housing and clothing inflation, 2012 to 2025
 
 - Type: small multiples or a line chart with a group picker.
 - Unit: % change on the same month a year earlier.
-- Geography: India, combined. Period: January 2014 to December 2025.
-- CSV: `cpi-inflation-by-group-2012-base.csv`
-- Sentence: "Food prices swing far more than other prices. Food and drink inflation peaked at 12.16% in December 2019 and fell to -3.72% in October 2025. Fuel and light inflation peaked at 14.35% in October 2021."
-- Source: MoSPI, CPI (base 2012=100), group indices, current series.
-- Notes: these are the old (2012) groups. They do not map one to one onto the 2024 divisions. "Housing" in the 2012 series is an urban index. Keep this chart separate from P3 and P4.
+- Geography: India, combined. Period: January 2012 to December 2025.
+- CSV: `cpi-inflation-by-group-2012-base.csv`. The `series` column identifies the API series.
+- Source: MoSPI, CPI (base 2012=100), back and current series.
+- Back-series rates end in May 2013 for housing and all items, and December 2012 for the other groups. Current-series rates start in January 2014. The chart marks the switch and separates the lines. The CSV adds 106 published rates and 86 rows with an index and no rate. Housing covers urban areas.
 
 ### P6. Rural and urban inflation
 
 - Type: line, two lines (rural, urban), with combined as an option.
 - Unit: % change on the same month a year earlier.
-- Geography: India. Period: January 2014 to October 2026. Method break at January 2026.
+- Geography: India. Period: January 2012 to October 2026. Breaks at January 2014 and January 2026.
 - CSV: `cpi-inflation-rural-urban.csv`
 - Sentence: "In October 2026 prices rose faster in villages than in towns: 6.63% in rural areas and 5.41% in urban areas."
-- Source: MoSPI, CPI (base 2012=100) to December 2025 and CPI (base 2024=100) from January 2026.
+- Source: MoSPI, CPI (base 2012=100) back and current series to December 2025, and CPI (base 2024=100) from January 2026.
+- The back series gives rural rates through December 2012 and urban and combined rates through May 2013. The CSV adds 46 published rates and 26 rows with an index and no rate. The January 2026 break marks the start of base 2024=100, which uses a new basket and weights.
 
-### P7. The RBI policy repo rate since 2008
+### P7. The RBI repo rate since 2001
 
 - Type: step line.
 - Unit: % a year.
-- Geography: India. Period: 12 June 2008 to 7 October 2026 (every change, by effective date).
-- CSV: `repo-rate.csv`
-- Sentence: "The RBI raised its repo rate by 0.25 points to 5.50% on 7 October 2026, the first rise since February 2023. It had cut the rate from 6.50% to 5.25% during 2025."
-- Source: RBI, Handbook of Statistics on Indian Economy 2025-26, Table 40 (to 5 Dec 2025); RBI Governor's Statement, 7 Oct 2026 (the hike). The MPC kept the rate at 5.25% in April, June and August 2026 (Governor's Statements of 8 Apr, 5 Jun and 5 Aug 2026). The RBI home page showed "Policy Repo Rate: 5.50%" on 17 Nov 2026.
-- Notes: Table 40 starts in April 2008. The repo rate became the single policy rate on 3 May 2011 (Table 40, note 5).
+- Geography: India. Period: 27 April 2001 to 18 November 2026. The latest change took effect on 7 October 2026.
+- CSV: `repo-rate.csv`. The `regime` column separates the variable-auction and fixed-rate periods. The `change_bps` column gives the calculated change from the previous rate in the same period. The `status` column marks the derived 28 March 2004 endpoint and the 18 November 2026 snapshot.
+- Sources: RBI Handbook 2010-11, Table 46, and RBI Handbook 2025-26, Table 40. The 2004 policy statement supplies the first fixed rate and its effective date. RBI policy statements and minutes confirm decisions from April 2025. The October 2026 MPC resolution supplies the latest change.
+- The RBI launched the Liquidity Adjustment Facility on 5 June 2000 with variable auctions. Table 46 first reports a lending rate on 27 April 2001. The RBI switched to fixed rates on 29 March 2004. The chart marks this break and separates the lines. The Handbook uses the current term for the lending rate throughout, including before the October 2004 swap of the terms repo and reverse repo. The repo rate became the single independently varying policy rate on 3 May 2011.
 
 ### P8. Inflation over the long run, 1993-94 to 2025-26
 
@@ -142,14 +141,22 @@ Handbook tables 163 and 243 (monthly CPI indices and variation) were also downlo
 - **Provisional data.** October 2026 is provisional. MoSPI finalises it with the November release, due on 14 Dec 2026.
 - **States.** All 36 states and union territories are present for October 2026. State indices use thinner samples than the national index. MoSPI says to use state-level item indices with caution.
 - **Groups versus divisions.** P5 (2012 groups) and P3/P4 (2024 divisions) are not comparable. "Food and beverages" exists in both but with different contents and weights (36.75% in 2024).
-- **Repo history before 2008.** Not collected. Table 40 starts in April 2008. Older rates are in earlier editions of the Handbook.
+- **Repo history before April 2001.** The facility began with variable auctions in June 2000. The Handbook's policy-rate table has no lending-rate setting for this first phase.
 - **CPI-IW is not CPI Combined.** CPI-IW covers industrial workers only, and is compiled by the Labour Bureau. Label it clearly. Its base changed in 2005-06 and 2020-21.
 - **A pagination fault in the API.** The base-2012 endpoint returned duplicate rows across pages (and so dropped others) when we paged through 13,104 rows. We refetched one month per request, checked that every month has unique keys, and used that file. The base-2024 endpoint did not show this fault (every key unique).
 - **Licence.** None of the pages read states a reuse licence for these data.
 
 ## Rebuild
 
-The CSVs are built by `pipeline/prices/build_prices_economy.py` (run with `python3 -I`), from the raw files in `raw/prices/` and `raw/economy/`. Raw downloads are not kept in the repository; the URL and sha256 below identify each file. Fetch scripts: `pipeline/common/fetch_api.py` (paged API), `pipeline/prices/fetch_cpi12.py` (one month per request). RBI Handbook files were downloaded by hand from the RBI website in a browser; the sha256 below identifies each one. Other script: `pipeline/economy/refrate.py` (RBI reference rate archive form).
+Run `python3 -I pipeline/prices/build_prices_economy.py` from the repository root to build the CSVs from `raw/prices/` and `raw/economy/`. To regenerate the two CPI extensions from the checked-in CSVs, run `python3 -I pipeline/prices/extend_cpi12.py`. Add `--fetch` to download the source responses first. Run `python3 -I pipeline/prices/build_repo_rate.py` to rebuild the repo rate CSV from the saved RBI pages. The URL and SHA-256 below identify each file.
+
+## Historical overlap checks
+
+- CPI, base 2012=100. The back and current extracts share 20 index observations in January to May 2013. All 20 indices differ. The current series supplies no rates for those months, so there are zero rates to compare. For example, the January 2013 combined index is 105.1 in the back series and 104.6 in the current series. The back series gives a rate of 10.52%. Keep the two series separate. The 11 entries in the January 2014 CSV boundary sample, three sector rows and eight group rows, match the current API rates, indices and status flags.
+- RBI Handbook. Tables 46 and 40 agree on all 20 lending-rate dates from 12 June 2008 to 26 July 2011. Use Table 40 from June 2008. All 56 effective dates and rates in the previous CSV match the rebuilt data. The September 2010 edition of Table 46 omits the 24 January 2006 and 5 January 2009 entries. The September 2011 edition includes both.
+- First fixed rate. Table 46 and paragraph 74 of the Annual Policy Statement for 2004-05 give 6.00%. Table 46 places the rate on 31 March 2004. The policy statement gives the effective date as 29 March 2004. It uses the term reverse repo for liquidity injection.
+- RBI statements. The 9 April, 6 June and 5 December 2025 decisions agree with Table 40. The 6 August and 1 October 2025 statements confirm holds at 5.50%. The February, April, June and August 2026 statements and MPC resolutions confirm holds at 5.25%. The 7 October statement and resolution and the 21 October minutes confirm the rise to 5.50%. The RBI monetary policy list and home page confirmed on 18 November that October was the latest decision and 5.50% was still in effect.
+- The Table 40 XLSX URL served an HTML bot challenge. The RBI's Table 40 HTML page supplied the data.
 
 ## Raw files
 
@@ -273,3 +280,93 @@ MoSPI still lists the 12 Nov October CPI release. The eSankhyiki current and bac
 | eSankhyiki CPI base 2012, final month sample | December 2025 data | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2025&month_code=12&limit=100&page=1 | 18 Nov 2026 | `c3830c74c1b4cf247feb367dc91eb87ae1381128ac1adc5b45093bcea0069f1d` |
 | RBI monetary policy list | Live list | https://www.rbi.org.in/scripts/annualpolicy.aspx | 18 Nov 2026 | `0d00f9a881a9c029bc9f9a994adfb379dbe735831f0b352cac5cd8f41e746f7e` |
 | RBI Current Rates | 18 Nov 2026 snapshot | https://www.rbi.org.in/ | 18 Nov 2026 | `2bc7550260255980fbc76339318b614f6b3a70a9056261ec044373eefc4f4b23` |
+
+## Repo rate history source files
+
+All files in this table are from the RBI. Read on 18 Nov 2026. Paths start at `raw/`.
+
+| File | Release | URL | SHA-256 |
+| --- | --- | --- | --- |
+| `prices/repo/table46-2011/body.html` | Handbook 2010-11, Table 46, 15 Sep 2011 | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=13634 | `43b2f637de8146a47186627501e293cd7791c0d3c9417878187c5de2f43c06e6` |
+| `prices/repo/table46-2010/body.html` | Handbook 2009-10, Table 46, 15 Sep 2010 | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=12737 | `deb36ec2e8adb8349686d9c896911ab43e8938068b8fd96b1c5aab75ea56c739` |
+| `prices/repo/table40/table.html` | Handbook 2025-26, Table 40, 31 Jul 2026 | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23865 | `d4bf2436c9427f6e57c67748d6ca48bd8647777a71ead58e7daa08f26a755786` |
+| `prices/repo/policy-launch/body.html` | Monetary and Credit Policy for 2000-01, 27 Apr 2000, Annexure I | https://www.rbi.org.in/Scripts/BS_ViewMonetaryCreditPolicy.aspx?Id=2261 | `08009721c0ce34f0217399a8a07c9b7fa309c4f66d1f7febd7ed2b733ccca5e4` |
+| `prices/repo/policy-2001-statement/body.html` | Monetary and Credit Policy for 2001-02, 19 Apr 2001, paragraphs 51 to 56 | https://www.rbi.org.in/Scripts/BS_ViewMonetaryCreditPolicy.aspx?Id=2260 | `e92892b4542bf43456562358bc673359f2631c90611e90b5613f13cb1e8ac4e8` |
+| `prices/repo/policy-2004-statement/body.html` | Annual Policy Statement for 2004-05, 18 May 2004, paragraphs 73 and 74 | https://www.rbi.org.in/Scripts/BS_ViewMonetaryCreditPolicy.aspx?Id=1634 | `f677674bbd5c9a0102d47fe7e90910a7d9222d0b76ecdcac78ff63bcbd4a5ed7` |
+| `prices/repo/apr-2025/body.html` | Governor's Statement, 9 Apr 2025 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=60177 | `417fc0cfb51a157b7c4a3d5da6b43fd63b1efc089b0e5fe6a1ef6ee6da2641aa` |
+| `prices/repo/jun-2025/body.html` | Governor's Statement, 6 Jun 2025 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=60605 | `f64d0dcbfbb6e9e83ec808225fcb8fae371045a787bb7a9fa0b9047c2c8e110d` |
+| `prices/repo/aug-2025/body.html` | Governor's Statement, 6 Aug 2025 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=60958 | `a388fa42e9f9181b29c53810ad4bc105bfa0183572475bb891d88a5f9b17ed66` |
+| `prices/repo/oct-2025/body.html` | Governor's Statement, 1 Oct 2025 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=61333 | `094b754d520d24c2fdc52fc20044baa2926edc357d2e7599103714e2dc0f842d` |
+| `prices/repo/dec-2025/body.html` | Governor's Statement, 5 Dec 2025 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=61750 | `447b35edb55b2c52c0b621daaa74ab3ba4b4f6bc090007b0ad0a5884cfc7856b` |
+| `prices/repo/feb-2026/body.html` | Governor's Statement, 6 Feb 2026 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62170 | `3a8fd5a047b515d454a060b2ccd77b9e17866a5fd483a15df5e15a72f43ac96c` |
+| `prices/repo/apr-2026/statement.html` | Governor's Statement, 8 Apr 2026 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62515 | `0dfb170a0ed96490d79e80983d9636ae6f950af50459c175ee29ae84b3a854db` |
+| `prices/repo/jun-2026/statement.html` | Governor's Statement, 5 Jun 2026 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62864 | `b1931ffbed3836e851f683c2d1b2c9bdb8b27ab58db5c436b8c4549fc9519eb0` |
+| `prices/repo/aug-2026/statement.html` | Governor's Statement, 5 Aug 2026 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63288 | `fbde0fbfc45263b60d70af3e57da2493b9ba20d9eb8e18be8c3714762d71428b` |
+| `prices/repo/oct-2026/statement.html` | Governor's Statement, 7 Oct 2026 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63744 | `9b6c2fba13ae387f9208a923a451d9dfa313e93970ae1edb3122087ad6d3bcfc` |
+| `prices/repo/feb-2026-resolution/body.html` | MPC resolution, 6 Feb 2026 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62169 | `248778789de1a2f474d7934036cb987675b25549950220ae767abf4bb72fcebd` |
+| `prices/repo/apr-2026-resolution/body.html` | MPC resolution, 8 Apr 2026 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62514 | `042ba8e1db251851f4fad82354be58d4492d95369e23a372217856a44fed5655` |
+| `prices/repo/jun-2026-resolution/body.html` | MPC resolution, 5 Jun 2026 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=62863 | `d55f4b523851775c9a77460b61aacb2bc46f54541d09bcb60723ccd196cb8872` |
+| `prices/repo/aug-2026-resolution/body.html` | MPC resolution, 5 Aug 2026 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63287 | `6996ee5916d09860eb6c2d7a50cc8f081e4bb682200f279b9102bee6c07c6627` |
+| `prices/repo/oct-2026-resolution/body.html` | MPC resolution, 7 Oct 2026 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63742 | `1965c5ceb907531660ed33bb5b0d8f7e1b359e0edb63e1da8f448b4533c63bba` |
+| `prices/repo/oct-2026-minutes/statement.html` | MPC minutes, 21 Oct 2026 | https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63839 | `dd1eda5735274bdff689af15885148866b82f88bae023adbf032f73878d964ca` |
+| `prices/repo/policy-list/index.html` | Monetary policy archive, 2026-27 | https://www.rbi.org.in/scripts/annualpolicy.aspx | `49fc04d45d455b25dc2d332f3d7377d4799a651ec0e3742f217c8433e158c4c9` |
+| `prices/repo/policy-2026/index.html` | Monetary policy archive, 2025-26 (select the year in the form) | https://www.rbi.org.in/scripts/annualpolicy.aspx | `b329de5256603080434c81ceb2e54bec203887d709f5dea08e429cfb120f8dfc` |
+| `prices/repo/current-rates/index.html` | Current Rates, live | https://www.rbi.org.in/ | `2c56c5564aafb76febfd2ae66e022992c5a6cd3cbac9fb4ba3c5df950b0717d9` |
+| `prices/repo/table40-xlsx/body` | Table 40 workbook request (HTML challenge response) | https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/40T_HBIE31072026FF3E894445944DA8A3C011F1653F999A.XLSX | `42db3c655d35e920d091ec7bdff1af6c77657ab20a3f15a6c11b7c5f972dd4ae` |
+
+## CPI history source files
+
+Source: MoSPI eSankhyiki, base 2012=100. The final current series ends in December 2025. Read on 18 Nov 2026. Paths start at `raw/`.
+
+| File | Request URL | SHA-256 |
+| --- | --- | --- |
+| `prices/cpi-history/back-2011-01/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2011&month_code=1&limit=100&page=1 | `aafa72479e2eb53eafb73026a2826afb4bfc92ac2db488c84e3e2d804f5ae9b8` |
+| `prices/cpi-history/back-2011-02/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2011&month_code=2&limit=100&page=1 | `312e01e73c17f8c5883b97a7e9c11daa22ff5c57a7c064ab648dc68512cb192a` |
+| `prices/cpi-history/back-2011-03/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2011&month_code=3&limit=100&page=1 | `3191459020732e557d1022213bce1db34b77cd002606c0eaed0b3d2c095af420` |
+| `prices/cpi-history/back-2011-04/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2011&month_code=4&limit=100&page=1 | `e30d470f769f3f48591f413f1bf91c5cf65f76d69606e6581a36be7f06a44a75` |
+| `prices/cpi-history/back-2011-05/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2011&month_code=5&limit=100&page=1 | `0547fbbea1ba9388fa814f587c74c41f27144fd69f9e4696d8252152128ccb5d` |
+| `prices/cpi-history/back-2011-06/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2011&month_code=6&limit=100&page=1 | `5fe1700b3059930eab0331829b5fb811e764223e5dc099b34a0ee5f064fa1410` |
+| `prices/cpi-history/back-2011-07/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2011&month_code=7&limit=100&page=1 | `67888f69461162a3a8de673fca4e0fdb4a4ba7ba6b48f1c4a4d9e0b951559001` |
+| `prices/cpi-history/back-2011-08/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2011&month_code=8&limit=100&page=1 | `bbc2882b8101aee96d038f813d7f8c1d01e1a5e731b7a17420345d2580f9b56d` |
+| `prices/cpi-history/back-2011-09/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2011&month_code=9&limit=100&page=1 | `317ca50653f1c46a3fbc2c81df6ff8ae631ab645003d777b739fe473dc59c06e` |
+| `prices/cpi-history/back-2011-10/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2011&month_code=10&limit=100&page=1 | `83688b044e72241dfd2e46cc209a3cffb2c929d1235e3af4809be44fe3579e02` |
+| `prices/cpi-history/back-2011-11/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2011&month_code=11&limit=100&page=1 | `1668954c20f4bdc3a304920e9dc46e5a10831d8ab00dd0eee5026414a8674acf` |
+| `prices/cpi-history/back-2011-12/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2011&month_code=12&limit=100&page=1 | `d6cbaa8d4188d071882988aca6f7f27d5d564822385c87caada311a4e2deae3f` |
+| `prices/cpi-history/back-2012-01/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2012&month_code=1&limit=100&page=1 | `1080f3007636790d471453da89627bf0a40b00a0b5ab558275330e65f01c69c5` |
+| `prices/cpi-history/back-2012-02/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2012&month_code=2&limit=100&page=1 | `6cfbbd8c722d8024bef33c7c40e064187dfdc69d5f2576ef0c5d6a0c681ab0dd` |
+| `prices/cpi-history/back-2012-03/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2012&month_code=3&limit=100&page=1 | `0c6ca36d8cb03b51e46cc9f1b658d83b0d998b3d1fba1669bf0452679f29adc6` |
+| `prices/cpi-history/back-2012-04/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2012&month_code=4&limit=100&page=1 | `bc16646e6c04ba317b2ed3e24d84210d26b4428875b7f7169b6e94aeefec1bd3` |
+| `prices/cpi-history/back-2012-05/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2012&month_code=5&limit=100&page=1 | `6ad7e9130d9884b81d434ad5ef3bfa2cb228316938f76ec2ee028c93cc2853b5` |
+| `prices/cpi-history/back-2012-06/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2012&month_code=6&limit=100&page=1 | `6ac2d6989359375dffce670ddf4bfe243f62f3ac5e74024c0008aac11ef84457` |
+| `prices/cpi-history/back-2012-07/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2012&month_code=7&limit=100&page=1 | `cd34c300279cef95ada3f9ca00f5817f88275e90542192ef593c19ccfdf89909` |
+| `prices/cpi-history/back-2012-08/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2012&month_code=8&limit=100&page=1 | `d258e9821e42d8952fe061aac6bd4cf7eceba535b1fa98b6e1ba273f7d468959` |
+| `prices/cpi-history/back-2012-09/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2012&month_code=9&limit=100&page=1 | `cbd614a2d6acc423686966f9f311bf77f5e85dbb9e3c49c086e1a858e3dd8c27` |
+| `prices/cpi-history/back-2012-10/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2012&month_code=10&limit=100&page=1 | `457d69494b711a2d5be5a8046a769ef7c280218be384c99c0775496a3060e0af` |
+| `prices/cpi-history/back-2012-11/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2012&month_code=11&limit=100&page=1 | `a9123ddd4e1fa6f3866d0c6dba99bac9d8bebc9a68a692d4ce300e9157caece1` |
+| `prices/cpi-history/back-2012-12/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2012&month_code=12&limit=100&page=1 | `039e9b5efca06f98c934765f72593747d90c4e627ffcc9ad71b1d7ded7bc6510` |
+| `prices/cpi-history/back-2013-01/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2013&month_code=1&limit=100&page=1 | `3f311722f4d14b1e95a9a1dbf0eb5565af727c04fcf36f8993ac5f9d7c2528af` |
+| `prices/cpi-history/back-2013-02/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2013&month_code=2&limit=100&page=1 | `0f83a99e3a44bc098961da21c5520d265b9e64c36e04d69dcf4b24de68b67c90` |
+| `prices/cpi-history/back-2013-03/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2013&month_code=3&limit=100&page=1 | `159e641448e4b9c4c4723030ed817792645723bd5c6e246ffab78977313cb459` |
+| `prices/cpi-history/back-2013-04/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2013&month_code=4&limit=100&page=1 | `ea2e28a6106d1d7e6a16bf7437d46a3b7208ebe563bc47a81d15563f41d7f39f` |
+| `prices/cpi-history/back-2013-05/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2013&month_code=5&limit=100&page=1 | `7a28ddfbc16f9259fea01df17a87179438af9b751476d666ebdadc683d75e0bc` |
+| `prices/cpi-history/back-2013-06/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2013&month_code=6&limit=100&page=1 | `ab8bc9dd51190bee5da5478bd2e8b37074c787b085ca82efe1c6371148ca8c53` |
+| `prices/cpi-history/back-2013-07/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2013&month_code=7&limit=100&page=1 | `ab8bc9dd51190bee5da5478bd2e8b37074c787b085ca82efe1c6371148ca8c53` |
+| `prices/cpi-history/back-2013-08/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2013&month_code=8&limit=100&page=1 | `ab8bc9dd51190bee5da5478bd2e8b37074c787b085ca82efe1c6371148ca8c53` |
+| `prices/cpi-history/back-2013-09/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2013&month_code=9&limit=100&page=1 | `ab8bc9dd51190bee5da5478bd2e8b37074c787b085ca82efe1c6371148ca8c53` |
+| `prices/cpi-history/back-2013-10/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2013&month_code=10&limit=100&page=1 | `ab8bc9dd51190bee5da5478bd2e8b37074c787b085ca82efe1c6371148ca8c53` |
+| `prices/cpi-history/back-2013-11/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2013&month_code=11&limit=100&page=1 | `ab8bc9dd51190bee5da5478bd2e8b37074c787b085ca82efe1c6371148ca8c53` |
+| `prices/cpi-history/back-2013-12/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2013&month_code=12&limit=100&page=1 | `ab8bc9dd51190bee5da5478bd2e8b37074c787b085ca82efe1c6371148ca8c53` |
+| `prices/cpi-history/back-2014-01/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Back&state_code=99&year=2014&month_code=1&limit=100&page=1 | `ab8bc9dd51190bee5da5478bd2e8b37074c787b085ca82efe1c6371148ca8c53` |
+| `prices/cpi-history/current-2013-01/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2013&month_code=1&limit=100&page=1 | `a3d8a18117f29810b655a651965f62d944e35af183b1805beac04f2539ba9058` |
+| `prices/cpi-history/current-2013-02/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2013&month_code=2&limit=100&page=1 | `da261cdd6bc54976db09233c69d4df601e112bf684d478afb8af409a97ac2b86` |
+| `prices/cpi-history/current-2013-03/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2013&month_code=3&limit=100&page=1 | `4b5f844e20111cc955dd7f4632a107046ae612563dc96616dada2c293542af6f` |
+| `prices/cpi-history/current-2013-04/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2013&month_code=4&limit=100&page=1 | `376c3bc0f6c5ec2afe65715419dc1dfa4edb8162e5a87c85edb75de606f72a8d` |
+| `prices/cpi-history/current-2013-05/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2013&month_code=5&limit=100&page=1 | `352cc8b9d2e8caa236d9e84b926ef945da611937711bd987f5ea24fed0c030e4` |
+| `prices/cpi-history/current-2013-06/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2013&month_code=6&limit=100&page=1 | `4f9c248a3166e66481593c85e8b834f7c5ae287607806ee880522e4686ffd937` |
+| `prices/cpi-history/current-2013-07/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2013&month_code=7&limit=100&page=1 | `bb81b7debbb5afe3b6a5aeb6c1069c9096977b445aa701e29a53600642218184` |
+| `prices/cpi-history/current-2013-08/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2013&month_code=8&limit=100&page=1 | `4859c70dce44b2866e9fed486d9f80618e6f52b7820859ab84c731a05359ccda` |
+| `prices/cpi-history/current-2013-09/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2013&month_code=9&limit=100&page=1 | `df4ea93116435da2afe8d1292c1f2b06d1403c07d2d0aed0ee1e1aec4a554549` |
+| `prices/cpi-history/current-2013-10/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2013&month_code=10&limit=100&page=1 | `c331b7b2bb53da09aa19fb8fc2f3789412d7b58c25b951c3261387bae9dd544a` |
+| `prices/cpi-history/current-2013-11/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2013&month_code=11&limit=100&page=1 | `9507a06287d706b9125c306c0d8e238915f5455cf5dd28f741f795df2eb032a3` |
+| `prices/cpi-history/current-2013-12/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2013&month_code=12&limit=100&page=1 | `2b2dc4c8f20f9a98ae3fa9ae93fc4087fe5e8dc1263b56bdafaa9681fb6811be` |
+| `prices/cpi-history/current-2014-01/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2014&month_code=1&limit=100&page=1 | `ba136cb2eecc4f197c827e84082341fee6fc4fde10f143d09c192352d658850f` |

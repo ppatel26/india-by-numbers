@@ -1,6 +1,4 @@
 import type { Source, Topic } from '../types'
-import { formatDate } from '~/lib/period'
-import { SITE } from '~/lib/site'
 
 // Data: research/data/prices. tests/unit/prose.test.ts checks every number in the prose.
 
@@ -22,6 +20,13 @@ const CPI_API: Source = {
   url: 'https://api.mospi.gov.in/api/cpi/getCPIData',
 }
 
+const CPI_2012_API: Source = {
+  publisher: 'MoSPI (NSO)',
+  release: 'eSankhyiki API, CPI base 2012=100, back and current series',
+  released: '2026-01-12',
+  url: 'https://api.mospi.gov.in/api/cpi/getCPIIndex',
+}
+
 // The board row covers Tables 40 and 236. Its link is the Handbook page named in the
 // README; the charts cite each table file below.
 const RBI_HANDBOOK: Source = {
@@ -35,7 +40,21 @@ const RBI_TABLE_40: Source = {
   publisher: 'RBI',
   release: 'Handbook of Statistics on Indian Economy 2025-26, Table 40: Major Monetary Policy Rates and Reserve Requirements',
   released: '2026-07-31',
-  url: 'https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/40T_HBIE31072026FF3E894445944DA8A3C011F1653F999A.XLSX',
+  url: 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23865',
+}
+
+const RBI_TABLE_46: Source = {
+  publisher: 'RBI',
+  release: 'Handbook of Statistics on Indian Economy 2010-11, Table 46, Major Monetary Policy Rates and Reserve Requirements',
+  released: '2011-09-15',
+  url: 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=13634',
+}
+
+const RBI_FIXED_REPO: Source = {
+  publisher: 'RBI',
+  release: 'Annual Policy Statement for 2004-05, revised Liquidity Adjustment Facility',
+  released: '2004-05-18',
+  url: 'https://www.rbi.org.in/scripts/BS_ViewMonetaryCreditPolicy.aspx?Id=1634',
 }
 
 const RBI_TABLE_236: Source = {
@@ -47,18 +66,16 @@ const RBI_TABLE_236: Source = {
 
 const RBI_HIKE: Source = {
   publisher: 'RBI',
-  release: "Governor's Statement: repo rate raised to 5.50%",
+  release: 'Monetary Policy Committee resolution, 7 October 2026, repo rate at 5.50%',
   released: '2026-10-07',
-  url: 'https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63744',
+  url: 'https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63742',
 }
 
-// One README row for three statements (8 Apr, 5 Jun, 5 Aug 2026). This is the
-// 5 Aug one; the others are prid=62515 (8 Apr) and prid=62864 (5 Jun).
 const RBI_HOLDS: Source = {
   publisher: 'RBI',
-  release: "Governor's Statements, 8 Apr, 5 Jun and 5 Aug 2026: repo rate unchanged at 5.25%",
-  released: '2026-08-05',
-  url: 'https://www.rbi.org.in/Scripts/BS_PressReleaseDisplay.aspx?prid=63288',
+  release: "Governor's statements and Monetary Policy Committee minutes",
+  released: '2026-10-21',
+  url: 'https://www.rbi.org.in/scripts/annualpolicy.aspx',
 }
 
 // A live page. 25 Mar 2026 is the date the RBI retained the target (board row).
@@ -96,7 +113,7 @@ const topic: Topic = {
   figures: [
     { chart: 'cpi-inflation', series: 'base-2024', label: 'Consumer price inflation' },
     { chart: 'cpi-inflation-by-division-2026', series: 'cfpi', label: 'Consumer Food Price Index (CFPI)' },
-    { chart: 'repo-rate', label: 'RBI policy repo rate', period: 'From 7 Oct 2026' },
+    { chart: 'repo-rate', series: 'repo', label: 'RBI policy repo rate', period: 'From 7 Oct 2026' },
   ],
   nextRelease: 'CPI for November 2026, expected 14 Dec 2026',
   parts: [
@@ -341,52 +358,54 @@ const topic: Topic = {
             nextRelease: CPI_NEXT,
           },
         },
-        { text: 'Food prices swing far more than other prices. On the old 2012 base, food and drink inflation peaked at 12.16% in December 2019 and fell to -3.72% in October 2025. Fuel and light peaked at 14.35% in October 2021.' },
+        { text: 'Food and beverage inflation reached 12.18% in December 2012 and fell to -3.72% in October 2025. Fuel and light inflation reached 14.35% in October 2021.' },
         {
           chart: {
             kind: 'line',
             slug: 'cpi-inflation-by-group-2012',
-            title: 'Inflation by group, India, 2014 to 2025 (old 2012 base)',
+            title: 'Inflation by group in India, 2012 to 2025 (base 2012)',
             subtitle:
-              'Annual change in the Consumer Price Index (2012=100), rural and urban combined, %, January 2014 to December 2025. Four of the 2012 groups. Same scale in every panel. These groups do not match the 2024 divisions in 3.1 and 3.2.',
+              'Annual change in consumer prices (2012=100). The grey line gives the all-items rate.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'DEC 2025' },
-            note: 'The grey line in each panel is all items, the general index. MoSPI gives no rate for April and May 2020, the lockdown months, so every line has a gap there. Housing is an urban index only.',
-            // The board cites the 2012=100 group indices, final series to December
-            // 2025 (getCPIIndex). The API row carries the latest update date.
-            sources: [CPI_API],
+            status: ['Method break'],
+            note: 'Back-series rates end in May 2013 for housing and all items, and December 2012 for the other groups. Current-series rates start in January 2014. April and May 2020 also have gaps.',
+            sources: [CPI_2012_API],
             format: { unit: '%' },
-            // LATER: each panel on the board has a sub-label with the peak ("Peak 12.16 · Dec 2019"); the peaks are callouts here.
             series: [
-              { key: 'food', label: 'Food and beverages', color: 'ink', file: GROUPS_2012, where: { sector: 'combined', group: 'Food and Beverages' } },
-              { key: 'fuel', label: 'Fuel and light', color: 'ink', file: GROUPS_2012, where: { sector: 'combined', group: 'Fuel and Light' } },
-              { key: 'housing', label: 'Housing (urban only)', color: 'ink', file: GROUPS_2012, where: { sector: 'combined', group: 'Housing' } },
-              { key: 'clothing', label: 'Clothing and footwear', color: 'ink', file: GROUPS_2012, where: { sector: 'combined', group: 'Clothing and Footwear' } },
-              { key: 'general', label: 'All items (General)', color: 'other', file: GROUPS_2012, where: { sector: 'combined', group: 'General' } },
+              { key: 'food-back', label: 'Food and beverages', color: 'ink', file: GROUPS_2012, where: { group: 'Food and Beverages', series: 'back series' } },
+              { key: 'food', label: 'Food and beverages', color: 'ink', file: GROUPS_2012, where: { group: 'Food and Beverages', series: 'current series' } },
+              { key: 'fuel-back', label: 'Fuel and light', color: 'ink', file: GROUPS_2012, where: { group: 'Fuel and Light', series: 'back series' } },
+              { key: 'fuel', label: 'Fuel and light', color: 'ink', file: GROUPS_2012, where: { group: 'Fuel and Light', series: 'current series' } },
+              { key: 'housing-back', label: 'Housing (urban only)', color: 'ink', file: GROUPS_2012, where: { group: 'Housing', series: 'back series' } },
+              { key: 'housing', label: 'Housing (urban only)', color: 'ink', file: GROUPS_2012, where: { group: 'Housing', series: 'current series' } },
+              { key: 'clothing-back', label: 'Clothing and footwear', color: 'ink', file: GROUPS_2012, where: { group: 'Clothing and Footwear', series: 'back series' } },
+              { key: 'clothing', label: 'Clothing and footwear', color: 'ink', file: GROUPS_2012, where: { group: 'Clothing and Footwear', series: 'current series' } },
+              { key: 'general-back', label: 'All items (General)', color: 'other', file: GROUPS_2012, where: { group: 'General', series: 'back series' } },
+              { key: 'general', label: 'All items (General)', color: 'other', file: GROUPS_2012, where: { group: 'General', series: 'current series' } },
             ],
             y: { step: 5 },
+            breaks: [{ x: '2014-01', before: 'Back', label: 'Current series' }],
             panels: [
-              { label: 'Food and beverages', series: ['food', 'general'] },
-              { label: 'Fuel and light', series: ['fuel', 'general'] },
-              { label: 'Housing (urban only)', series: ['housing', 'general'] },
-              { label: 'Clothing and footwear', series: ['clothing', 'general'] },
+              { label: 'Food and beverages', series: ['food-back', 'food', 'general-back', 'general'] },
+              { label: 'Fuel and light', series: ['fuel-back', 'fuel', 'general-back', 'general'] },
+              { label: 'Housing (urban only)', series: ['housing-back', 'housing', 'general-back', 'general'] },
+              { label: 'Clothing and footwear', series: ['clothing-back', 'clothing', 'general-back', 'general'] },
             ],
             callouts: [
-              { series: 'food', x: '2019-12' },
+              { series: 'food-back', x: '2012-12' },
               { series: 'food', x: '2025-10' },
-              { series: 'fuel', x: '2021-10' },
+              { series: 'fuel', x: '2021-10', label: '14.35%' },
               { series: 'housing', x: '2014-05' },
-              { series: 'clothing', x: '2022-09' },
+              { series: 'clothing', x: '2022-09', label: '10.17%' },
             ],
             know: [
-              'These are the six groups of the 2012=100 series; the chart shows four of them and the general index. The series ends in December 2025.',
-              'The 2012 groups do not map one to one onto the 2024 divisions. "Food and beverages" exists in both, with different contents and weights.',
-              'Housing in the 2012 series is an urban index only.',
+              'The 2012=100 series ends in December 2025. The 2024=100 series uses new divisions and weights.',
+              'The housing index covers urban areas.',
               'MoSPI gives no general index rate for April and May 2020, the lockdown months.',
             ],
             processing: [
-              'Fetch the all-India group indices and rates for January 2014 to December 2025 from the MoSPI eSankhyiki API (getCPIIndex, base 2012=100, current series), one month per request.',
-              'Check that every month and group appears once.',
-              'Draw each group with the general index in the same panel, on one shared scale.',
+              'Read the back and current series from the MoSPI eSankhyiki API on base 2012=100.',
+              'Compare indices where the two series overlap. The values differ, so plot separate lines.',
             ],
             nextRelease: 'not announced',
           },
@@ -401,22 +420,24 @@ const topic: Topic = {
           chart: {
             kind: 'line',
             slug: 'cpi-inflation-rural-urban',
-            title: 'Rural and urban inflation in India, January 2014 to October 2026',
+            title: 'Rural and urban inflation in India, January 2012 to October 2026',
             subtitle:
-              'Annual change in the Consumer Price Index for rural and urban areas, %, January 2014 to October 2026. Base 2012=100 to December 2025; base 2024=100 from January 2026.',
+              'Annual change in consumer prices in rural and urban areas. MoSPI introduced the 2024 base in January 2026.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'OCT 2026' },
             status: ['Provisional', 'Method break'],
-            note: 'MoSPI gives no rate for April and May 2020 (lockdown). The two bases use different baskets and weights, so the lines are not joined at January 2026. Rural and urban combined: 6.09% in October 2026.',
-            sources: [CPI_RELEASE, CPI_API],
+            note: 'Back-series rates end in December 2012 for rural areas and May 2013 for urban areas. Current-series rates start in January 2014 and have gaps in April and May 2020.',
+            sources: [CPI_RELEASE, CPI_2012_API, CPI_API],
             format: { unit: '%' },
             series: [
-              { key: 'rural-2012', label: 'Rural, base 2012=100', color: 's8', file: RURAL_URBAN, where: { sector: 'rural', base: '2012=100' } },
+              { key: 'rural-back', label: 'Rural, back series', color: 's8', file: RURAL_URBAN, where: { sector: 'rural', series: 'back series' } },
+              { key: 'rural-2012', label: 'Rural, base 2012=100', color: 's8', file: RURAL_URBAN, where: { sector: 'rural', base: '2012=100', series: 'current series' } },
               { key: 'rural-2024', label: 'Rural', color: 's8', file: RURAL_URBAN, where: { sector: 'rural', base: '2024=100' } },
-              { key: 'urban-2012', label: 'Urban, base 2012=100', color: 's5', file: RURAL_URBAN, where: { sector: 'urban', base: '2012=100' } },
+              { key: 'urban-back', label: 'Urban, back series', color: 's5', file: RURAL_URBAN, where: { sector: 'urban', series: 'back series' } },
+              { key: 'urban-2012', label: 'Urban, base 2012=100', color: 's5', file: RURAL_URBAN, where: { sector: 'urban', base: '2012=100', series: 'current series' } },
               { key: 'urban-2024', label: 'Urban', color: 's5', file: RURAL_URBAN, where: { sector: 'urban', base: '2024=100' } },
             ],
-            y: { min: -2, max: 10, step: 2 },
-            breaks: [{ x: '2026-01', label: 'Method break: new base 2024=100' }],
+            y: { min: -2, max: 12, step: 2 },
+            breaks: [{ x: '2014-01', before: 'Back', label: 'Current series' }, { x: '2026-01', label: 'Base 2024=100' }],
             callouts: [
               { series: 'rural-2024', x: '2026-10' },
               { series: 'urban-2024', x: '2026-10' },
@@ -428,7 +449,8 @@ const topic: Topic = {
               'MoSPI gives no rate for April and May 2020, the lockdown months.',
             ],
             processing: [
-              'Fetch the all-India rural and urban general indices and rates from the MoSPI eSankhyiki API: base 2012=100 to December 2025, base 2024=100 from January 2026.',
+              'Read all-India rates from the MoSPI eSankhyiki API. Base 2012=100 includes a back series and a current series.',
+              'Compare indices where the back and current series overlap. The values differ, so plot separate lines.',
               'Check October 2026 against the press release of 12 Nov 2026.',
               'Keep each sector and base as a separate series and mark the break at January 2026.',
             ],
@@ -445,36 +467,36 @@ const topic: Topic = {
           chart: {
             kind: 'line',
             slug: 'repo-rate',
-            title: 'RBI policy repo rate, June 2008 to November 2026',
-            subtitle: `Policy repo rate, % a year, by effective date of each change, 12 June 2008 to ${formatDate(SITE.checked, 'long')}.`,
+            title: 'RBI repo rate, April 2001 to November 2026',
+            subtitle: 'RBI lending rate under the Liquidity Adjustment Facility, % a year.',
             punches: { office: 'RBI', unit: '% a year', period: '7 OCT 2026' },
-            note: 'The repo rate became the single policy rate on 3 May 2011. The MPC kept the rate at 5.25% in April, June and August 2026.',
-            sources: [RBI_TABLE_40, RBI_HIKE, RBI_HOLDS],
+            status: ['Method break'],
+            note: 'The RBI switched from variable auctions to a fixed rate on 29 March 2004. The repo rate became the single policy rate on 3 May 2011.',
+            sources: [RBI_TABLE_46, RBI_FIXED_REPO, RBI_TABLE_40, RBI_HIKE, RBI_HOLDS],
             format: { unit: '%', decimals: 2 },
             step: true,
-            extendTo: SITE.checked,
-            // The note gives the full text: the repo rate became the single policy rate on 3 May 2011.
-            markers: [{ x: '2011-05-03', label: 'Single policy rate' }],
+            breaks: [{ x: '2004-03-29', before: 'Auctions', label: 'Fixed rate' }],
+            markers: [{ x: '2011-05-03', label: 'Policy rate' }],
             series: [
-              { key: 'repo', label: 'RBI policy repo rate', color: 'ink', file: 'prices/repo-rate.csv', x: 'effective_date' },
+              { key: 'auction', label: 'Rate during variable auctions', color: 'slate', file: 'prices/repo-rate.csv', where: { regime: 'auction' }, note: 'note' },
+              { key: 'repo', label: 'RBI policy repo rate', color: 'ink', file: 'prices/repo-rate.csv', where: { regime: 'fixed' }, note: 'note' },
             ],
             y: { min: 0, max: 10, step: 2 },
             callouts: [
-              { series: 'repo', x: '2008-07-30', label: '9.00%, 30 Jul 2008' },
+              { series: 'repo', x: '2008-07-30', label: '9.00%' },
               { series: 'repo', x: '2020-05-22', label: '4.00%, May 2020 to May 2022' },
               { series: 'repo', x: '2023-02-08', label: '6.50%, 8 Feb 2023' },
             ],
             know: [
-              "The repo rate is the RBI's policy rate: the rate at which it lends to banks. The Monetary Policy Committee (MPC) sets it.",
-              'Each point is a change, dated by the day it took effect. The rate holds until the next change.',
-              'The repo rate became the single policy rate on 3 May 2011 (Table 40, note 5).',
-              'The data start in June 2008. Older rates are in earlier editions of the RBI Handbook.',
+              'The RBI started the Liquidity Adjustment Facility in June 2000 with variable auctions. The Handbook first records a lending rate for 27 April 2001.',
+              'From March 2004 the fixed rate holds until the next change.',
+              'In October 2004 the RBI switched the names repo and reverse repo. The Handbook uses the current name for the lending rate throughout.',
+              'The Monetary Policy Committee kept the rate at 5.25% in February, April, June and August 2026. It raised the rate to 5.50% in October.',
             ],
             processing: [
-              'Read every repo rate change from 12 June 2008 to 5 December 2025 in Table 40 of the RBI Handbook of Statistics on Indian Economy 2025-26.',
-              "Add the rise to 5.50% from the Governor's Statement of 7 October 2026.",
-              "Check the 2026 meetings with no change against the Governor's Statements of 8 April, 5 June and 5 August 2026.",
-              'Check the current rate against the RBI home page on 18 November 2026.',
+              'Compare Table 46 of the 2010-11 Handbook with Table 40 of the 2025-26 Handbook. The rates agree on all overlapping dates.',
+              'Use the 2004 policy statement for the effective date of the first fixed rate.',
+              'Check the 2025 and 2026 decisions against RBI statements. Check the latest rate against the RBI home page.',
             ],
             nextRelease: '2026-12-04',
           },
@@ -495,7 +517,7 @@ const topic: Topic = {
     coverage:
       'All India, rural, urban and combined. All 36 states and UTs have a combined value for October 2026. State indices use thinner samples than the national index, and MoSPI asks users to read state item indices with caution. CPI-IW covers industrial workers only.',
     missing:
-      'MoSPI gives no inflation rate for June to December 2013 in either 2012-base series, and none for April and May 2020, the lockdown months. Repo rates before April 2008 are in earlier editions of the RBI Handbook. No publisher states a reuse licence for these data.',
+      'MoSPI gives no all-items inflation rate for June to December 2013 or for April and May 2020. The RBI Handbook first records a repo rate for April 2001.',
   },
   sources: [CPI_RELEASE, CFPI_RELEASES, CPI_API, RBI_HANDBOOK, RBI_HIKE, RBI_TARGET],
   related: [
