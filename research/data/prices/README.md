@@ -1,12 +1,12 @@
 # Prices
 
-Data from MoSPI (NSO), the Reserve Bank of India (RBI) and Labour Bureau data published by RBI. The first collection was on 17 Nov 2026. See each source table for the read date. The CSV notes identify derived values.
+Data from MoSPI (NSO), the Reserve Bank of India (RBI) and the Labour Bureau. The first collection was on 17 Nov 2026. See each source table for the read date. The CSV notes and derived flags identify calculated values.
 
 The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in`. It serves the same numbers as the eSankhyiki portal and the official MoSPI MCP server (`mcp.mospi.gov.in/mcp`). The October 2026 values match the MoSPI CPI press release of 12 Nov 2026, table by table.
 
 ## Questions this topic answers
 
-1. How fast are prices rising in India now, and how does that compare with the RBI target?
+1. How fast are prices rising in India, and how does that compare with the past?
 2. Which states have the highest and the lowest inflation?
 3. Which goods and services are driving inflation: food, fuel, housing or something else?
 4. Is inflation higher in villages or in towns?
@@ -14,15 +14,41 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in`. It serves the
 
 ## Charts
 
-### P1. Consumer price inflation since 2012
+### P1. Monthly consumer price inflation, January 1994 to October 2026
 
-- Type: line, with a shaded band for the RBI tolerance range (2% to 6%) and a reference line at the 4% target. Mark each change of base.
+- Type: separate lines by measure and base. The RBI band (2% to 6%) and target (4%) start on 5 August 2016.
 - Unit: % change on the same month a year earlier.
-- Geography: India. Period: January 2012 to October 2026, monthly. Combined (rural plus urban).
-- CSV: `cpi-inflation-monthly.csv` and `cpi-inflation-2013-base-2010.csv`, with the band in `inflation-target.csv`.
-- Sentence: "Consumer prices rose by 6.09% in the year to October 2026, above the RBI's upper limit of 6%. The last rate above 6% was 6.21% in October 2024, on the old 2012 base. A year earlier, in October 2025, inflation was 0.25%, the lowest since the series began."
-- Source: MoSPI eSankhyiki, base 2012=100 from January 2012 to May 2013 and January 2014 to December 2025, and base 2024=100 from January 2026. Archived MoSPI publications give the June to December 2013 rates on base 2010=100. October 2026 is provisional.
+- Geography: India. CPI-IW covers industrial workers from January 1994 to December 2011. CPI Combined covers rural and urban India from January 2012 to October 2026.
+- CSVs: `cpi-iw-inflation-monthly.csv`, `cpi-inflation-monthly.csv`, `cpi-inflation-2013-base-2010.csv` and `inflation-target.csv`.
+- CPI-IW: 216 published monthly rates. The base changes from 1982=100 to 2001=100 in January 2006. The Labour Bureau introduced base 2016=100 in September 2020. The annual chart includes that base.
+- CPI Combined: MoSPI eSankhyiki, base 2012=100 from January 2012 to May 2013 and January 2014 to December 2025, and base 2024=100 from January 2026. Archived MoSPI publications give the June to December 2013 rates on base 2010=100. October 2026 is provisional.
 - MoSPI gives no rate for April and May 2020, the lockdown months. The CSV keeps these rows with an empty value.
+
+#### Monthly CPI-IW sources and checks
+
+| Publisher | Release or table | Months used | Source kind | URL |
+| --- | --- | --- | --- | --- |
+| RBI, Labour Bureau data | Handbook 2007-08, Table 250 | Jan 1994 to Jul 2008 | official | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=10771 |
+| RBI, Labour Bureau data | Handbook 2010-11, Table 240 | Aug 2008 to Dec 2010 | official | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=13832 |
+| Labour Bureau | Annual Report on CPI-IW for 2011, Figure 3 | Jan to Dec 2011 | official | https://labourbureau.gov.in/uploads/pdf/CPI_IW_AR_2011.pdf |
+
+- Rebuild with `python3 -I pipeline/prices/build_cpi_iw.py` from the repository root. Read the files under “Monthly CPI-IW raw files”. Use Poppler's `pdftotext` for the PDFs. Each row gives the base, source URL, `source_kind=official` and `derived=false`.
+- RBI Handbook rates agree exactly over 171 months between the 2004 and 2008 editions, 28 months between the 2008 and 2011 editions, and 27 months between the 2011 and 2014 editions. The Labour Bureau's rates for 2011 and 2012 agree with the 2014 Handbook within 0.05 percentage points for all 24 months. In March 2012 the Labour Bureau reports 8.65% and the RBI reports 8.6%.
+- The Labour Bureau's Compendium Tables C1 and D1 reproduce all 216 monthly rates at their published precision. Table 2 in Volume IV gives the all-India linking factor of 4.63. Multiply base 2001=100 by 4.63 to express it on base 1982=100 for the checks. The 2007-08 Handbook and the Labour Bureau Compendium date the change to January 2006. A note in the 2010-11 Handbook gives January 2007.
+- The annual chart uses the change in financial-year average indices from the previous year. The monthly rate average gives equal weight to each month. All 19 changes in the average indices from 1993-94 through 2011-12 agree with RBI Table 236 when rounded directly to one decimal place. The largest difference between a monthly rate average and Table 236 was about 0.13 percentage points in 2010-11.
+- CPI-IW and CPI Combined both have rates in 2012. In January 2012 they were 5.32% and 6.26%. In December 2012 they were 11.17% and 10.45%. CPI-IW stops in December 2011 in the monthly chart. The annual chart shows both measures over their overlap.
+
+| Financial year | Mean of monthly CPI-IW rates (%) | Change in mean CPI-IW index (%) | RBI Table 236 (%) |
+| --- | ---: | ---: | ---: |
+| 1993-94 | 7.26 | 7.28 | 7.3 |
+| 1994-95 | 10.28 | 10.27 | 10.3 |
+| 1998-99 | 13.14 | 13.13 | 13.1 |
+| 1999-00 | 3.52 | 3.42 | 3.4 |
+| 2005-06 | 4.39 | 4.41 | 4.4 |
+| 2006-07 | 6.69 | 6.70 | 6.7 |
+| 2009-10 | 12.32 | 12.37 | 12.4 |
+| 2010-11 | 10.53 | 10.45 | 10.4 |
+| 2011-12 | 8.42 | 8.39 | 8.4 |
 
 ### P2. Inflation by state, October 2026
 
@@ -443,3 +469,66 @@ The four live MoSPI API files are POST responses. Each request used `page=1`, `p
 | `prices/cpi2010/mospi-t4-jul2013/body.pdf` | https://web.archive.org/web/20130809185517if_/http://mospi.nic.in/Mospi_New/upload/t4.pdf | 18 Nov 2026 | `1fe9676ff1a8a786aab5a89d584eb5e6bdcba58ab2125fd2e893f225d9d72dfc` |
 | `prices/cpi2010/rbi-2014-index/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=15962 | 18 Nov 2026 | `122d4d041048550caa1464ddaeec555928fa680b86fb81b37dfcfff06db2288c` |
 | `prices/cpi2010/rbi-2014-variation/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=16034 | 18 Nov 2026 | `9bdd3a4d8ade4932748d0c22bcb4584729c869779367acf0cb211a8a88428c04` |
+
+## Monthly CPI-IW raw files
+
+Paths start at `raw/`. Use the files marked “Rebuild” to regenerate the CSV. The other files record source discovery or checks. The RBI framework page confirms the start date of the target.
+
+The download requests used `IndiaByNumbers/1.0 (+https://indiabynumbers.org/about/)`. The three file requests to `rbidocs.rbi.org.in` returned HTML bot checks. The RBI Handbook HTML tables and the Labour Bureau publications supplied the required data. The Internet Archive CDX lookup returned HTTP 503. The PIB lookup returned HTTP 403.
+
+| File | URL read | Read date | SHA-256 | Use |
+| --- | --- | --- | --- | --- |
+| `prices/cpi-iw/labour-2008/body.pdf` | https://labourbureau.gov.in/uploads/pdf/CPIW_AR_2008.pdf | 18 Nov 2026 | `9ce93216d85a4fc4fcf8887a438e31da1e6d6548d5d9013ce4d9154b20a85a37` | Discovery or check |
+| `prices/cpi-iw/labour-2009/body.pdf` | https://labourbureau.gov.in/uploads/pdf/CPI_AR_IW_2009.pdf | 18 Nov 2026 | `8ef5cabe76c83743410759515b859038fe0d8c5bc33d3161984123981010354f` | Discovery or check |
+| `prices/cpi-iw/labour-2010/body.pdf` | https://labourbureau.gov.in/uploads/pdf/CPI_AR_IW_2010.pdf | 18 Nov 2026 | `a9cbbf7dcb82489bfbba74f8768cc1a17f2f0be21d29e9f7f36c426dc0f6e0f8` | Discovery or check |
+| `prices/cpi-iw/labour-2011/body.pdf` | https://labourbureau.gov.in/uploads/pdf/CPI_IW_AR_2011.pdf | 18 Nov 2026 | `4f2f0d624062866ba5d9c968b3e28518c5564f8dd127d47d9701f5363a465152` | Rebuild |
+| `prices/cpi-iw/labour-2012/body.pdf` | https://labourbureau.gov.in/uploads/pdf/REPORT_CPI_IW_2012_F.pdf | 18 Nov 2026 | `4dcc372a9cb093c430b108421224895c9964ee40a2a9f81bdb7546737dbf91de` | Rebuild |
+| `prices/cpi-iw/labour-archive-page/body.html` | https://labourbureau.gov.in/archive | 18 Nov 2026 | `5ce01f27b61f7523e8740e7a059af4410a95fdbda75b9fdaaaaf239d6f2232cd` | Discovery or check |
+| `prices/cpi-iw/labour-centre-index/body.html` | https://labourbureau.gov.in/centre-index | 18 Nov 2026 | `08db20fc24491f3acf54a2ba73eb47ec889a58cc651e6eedf96c9c6fd269eaa8` | Discovery or check |
+| `prices/cpi-iw/labour-compendium/body.html` | https://labourbureau.gov.in/compendiumoncpi-iw | 18 Nov 2026 | `45cef01776c2049eabf0e3de46d3bf9ad654aa533cfc0db68f0829675b7ed3b4` | Discovery or check |
+| `prices/cpi-iw/labour-cpi-iw/body.html` | https://labourbureau.gov.in/consumer-price-index-numbers-for-industrial-workers | 18 Nov 2026 | `ea6496ebd5cb8f246e13d4acd8b017486e061be8ba78e8914dc3719f1c8941a8` | Discovery or check |
+| `prices/cpi-iw/labour-home/body.html` | https://labourbureau.gov.in/ | 18 Nov 2026 | `6cc545ad6f84a4e36893c195a83f87fc08cc48387ab70ed5614ad26ea610b29e` | Discovery or check |
+| `prices/cpi-iw/labour-index-review/body.pdf` | https://labourbureau.gov.in/uploads/public/notice/Report-of-Index-Review-Committee-on-CPI-IW--CPI-ALRLpdf-092b5af658e4039a4b369e8ce0cf05b3.pdf | 18 Nov 2026 | `4bf170dbf8372ca16b5fb07b7e6afc560c16d9d4ddda2a01e25915ac25e394f8` | Discovery or check |
+| `prices/cpi-iw/labour-link-2016/body.pdf` | https://labourbureau.gov.in/uploads/public/notice/MIL_CPI_IW_SEP_2020_EH.pdf | 18 Nov 2026 | `da340468fe54cad7214f65e7bc0601320298b2e9adf268b3fe9f8d1b72ddc571` | Discovery or check |
+| `prices/cpi-iw/labour-new-series/body.html` | https://labourbureau.gov.in/cpiiw-new-series1 | 18 Nov 2026 | `3b9fb72bd1bc14703fd0a5a1f17ce5e2217f6e836a0ec9988102bf5a377a65c9` | Discovery or check |
+| `prices/cpi-iw/labour-press/body.html` | https://labourbureau.gov.in/newscontent/pr | 18 Nov 2026 | `05f29ecfb0867e500c5cbb65ec9c13a6079c2f85b3c67cea30d41690248f0e72` | Discovery or check |
+| `prices/cpi-iw/labour-press-history/body.html` | https://labourbureau.gov.in/press-note-consumer-price-index-for-industrial-workers | 18 Nov 2026 | `d841514e2228e8491ebf4e977934676bf31376adaf9da1703a54755a08d3ae8e` | Discovery or check |
+| `prices/cpi-iw/labour-publications/body.html` | https://labourbureau.gov.in/publications-2 | 18 Nov 2026 | `d9e9356f1320e1dbb3b79d4390e21cd225c55b1d8a0cef884bbef4d26d11aed8` | Discovery or check |
+| `prices/cpi-iw/labour-reports-2001/body.html` | https://labourbureau.gov.in/reports-on-cpi-iw-base-2001100 | 18 Nov 2026 | `8dc5488e421b34418ba1d67769671af515b61ea19f4923bfa4135045d7852fb0` | Discovery or check |
+| `prices/cpi-iw/labour-statistics/body.html` | https://labourbureau.gov.in/labour-statistics | 18 Nov 2026 | `a9f0b753d0ee1bcc121a5907f6847ac700cbca44ec43a83518721fa2b8061aa4` | Discovery or check |
+| `prices/cpi-iw/labour-volume-i/body.pdf` | https://labourbureau.gov.in/uploads/pdf/Compendium_CPI_Volume_I.pdf | 18 Nov 2026 | `73371431163e005479057b3dada1704c45cbf9f20864a69357557d020698a9e4` | Discovery or check |
+| `prices/cpi-iw/labour-volume-ii/body.pdf` | https://labourbureau.gov.in/uploads/pdf/Compendium_CPI_Volume_II.pdf | 18 Nov 2026 | `6758ea878cae0fc079acd22b087dcc8c2ca55beb5ef52536a99d3f0b193d3708` | Discovery or check |
+| `prices/cpi-iw/labour-volume-iii/body.pdf` | https://labourbureau.gov.in/uploads/pdf/Compendium_CPI_Volume_III.pdf | 18 Nov 2026 | `e96a0fc0471d102773dca0b8413ad55c2f77350d7331f98565e831d382d53ad1` | Rebuild |
+| `prices/cpi-iw/labour-volume-iv/body.pdf` | https://labourbureau.gov.in/uploads/pdf/Compendium_CPI_Volume_IV.pdf | 18 Nov 2026 | `b20d7449b00cdf6951e626095e60d7b68dbc7a85dcaf28b6eb0ecb6b9a42bdd7` | Rebuild |
+| `prices/cpi-iw/labour-www-home/body.html` | https://www.labourbureau.gov.in/ | 18 Nov 2026 | `ab2d68870b13f64abd90f623098e0a8e3ce7578637dac38f2c099a861252e3b7` | Discovery or check |
+| `prices/cpi-iw/rbi-1999-list/body.html` | https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook%20of%20Statistics%20on%20Indian%20Economy&fromdate=01/01/1999&todate=12/31/1999 | 18 Nov 2026 | `e2cabdae9e20a22a22bdedca8b3f1d87b58e69aafff4875bd64466f9d72b1f94` | Discovery or check |
+| `prices/cpi-iw/rbi-2000-list/body.html` | https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook%20of%20Statistics%20on%20Indian%20Economy&fromdate=01/01/2000&todate=12/31/2000 | 18 Nov 2026 | `f4d9592eb734cfcaa53126c0e8177a6339c19be150682eed2c4f61070b0d4f58` | Discovery or check |
+| `prices/cpi-iw/rbi-2001-list/body.html` | https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook%20of%20Statistics%20on%20Indian%20Economy&fromdate=01/01/2001&todate=12/31/2001 | 18 Nov 2026 | `9a86dff5dfa1838750ec12c77f1e839c5b71c4bac0460ce264355f4b9714843d` | Discovery or check |
+| `prices/cpi-iw/rbi-2001-variation/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=2776 | 18 Nov 2026 | `1c5a49a320457cf145ee82fca0804de3df761d593c60acf273739265d71a8191` | Discovery or check |
+| `prices/cpi-iw/rbi-2002-index/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=3636 | 18 Nov 2026 | `05ac9410806bf1f4653e1f21553c119460f37d306b8d5410a55adf0cc6d6d0b2` | Discovery or check |
+| `prices/cpi-iw/rbi-2002-list/body.html` | https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook%20of%20Statistics%20on%20Indian%20Economy&fromdate=01/01/2002&todate=12/31/2002 | 18 Nov 2026 | `8c312c016f5b5f53549f8f1cf6fe501d9e4b9eee18536b3542edcb79d662bf64` | Discovery or check |
+| `prices/cpi-iw/rbi-2002-variation/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=3734 | 18 Nov 2026 | `142c90bd26b260be023d7d378ce516cdb452eea6afdad9f419aa77511eaaecc1` | Discovery or check |
+| `prices/cpi-iw/rbi-2004-handbook/body.html` | https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook%20of%20Statistics%20on%20Indian%20Economy&fromdate=09/01/2004&todate=09/30/2004 | 18 Nov 2026 | `be4d4ddb62b01ac3de9c10322c189e3f0df2b7075d847089106850565352e4c7` | Discovery or check |
+| `prices/cpi-iw/rbi-2004-index/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=6730 | 18 Nov 2026 | `bc156956a4b46228ec8a224aa477bcb2205eabfc42effa7e680f9db33cdd3bcc` | Discovery or check |
+| `prices/cpi-iw/rbi-2004-list/body.html` | https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook%20of%20Statistics%20on%20Indian%20Economy&fromdate=01/01/2004&todate=12/31/2004 | 18 Nov 2026 | `7940188ed72fc5f505c252bece426492f56ec058c7b59c308f9313771b786944` | Discovery or check |
+| `prices/cpi-iw/rbi-2004-variation/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=6796 | 18 Nov 2026 | `db76a55af52a4e6cfd98484ae5e81d8020db3b2e3d02d2dcd42c75ac9010489a` | Rebuild |
+| `prices/cpi-iw/rbi-2006-index/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=8733 | 18 Nov 2026 | `c54663c265bb9567b56904453149a3c9006498ded951a0be15b9b6d5a2ca4294` | Discovery or check |
+| `prices/cpi-iw/rbi-2006-list/body.html` | https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook%20of%20Statistics%20on%20Indian%20Economy&fromdate=01/01/2006&todate=12/31/2006 | 18 Nov 2026 | `78b715d59f80a819ed1387bee793de289375544b40c8ef32c058b3a3d1558987` | Discovery or check |
+| `prices/cpi-iw/rbi-2006-variation/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=8804 | 18 Nov 2026 | `1e1bf1c996b920bcb63d63941feecd99d8845cb9ba5c54627c6d8b624e2bc825` | Discovery or check |
+| `prices/cpi-iw/rbi-2008-index/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=10698 | 18 Nov 2026 | `a117cdf984ecf07ed35759ab3550ff2453590df180a027aca39f311a85444dd5` | Discovery or check |
+| `prices/cpi-iw/rbi-2008-list/body.html` | https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook%20of%20Statistics%20on%20Indian%20Economy&fromdate=01/01/2008&todate=12/31/2008 | 18 Nov 2026 | `ee0bfc25bd3b296f0f72f9e619c3d10447fe3ac7d02aa5d92a050cc75251391e` | Discovery or check |
+| `prices/cpi-iw/rbi-2008-variation/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=10771 | 18 Nov 2026 | `89911d7d51a419f58bb74d2cde38cd4661485ec23bf7c4b1fd457b8c45a5d995` | Rebuild |
+| `prices/cpi-iw/rbi-2010-handbook/body.html` | https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook%20of%20Statistics%20on%20Indian%20Economy&fromdate=09/01/2011&todate=09/30/2011 | 18 Nov 2026 | `c942d42c19ee1c7df18728114293f86bb0c0ce2c4cf6bb07b83da7ab5cc9f030` | Discovery or check |
+| `prices/cpi-iw/rbi-2011-index/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=13760 | 18 Nov 2026 | `5e71e32e4d0cdc7d8c9b4fe6a3646009fe4756b052419e9f47f5e96a174b98e9` | Discovery or check |
+| `prices/cpi-iw/rbi-2011-variation/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=13832 | 18 Nov 2026 | `2bf625dc1c2baf6f8a1ec16012967faeafc11f1d52ab876afb5e51d44b9765a6` | Rebuild |
+| `prices/cpi-iw/rbi-2014-index/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=15962 | 18 Nov 2026 | `926c35d991f3c69d3467ba5e1c06ac0fccd1eb0344c78d0998a31de3b2fc0c88` | Discovery or check |
+| `prices/cpi-iw/rbi-2014-variation/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=16034 | 18 Nov 2026 | `93c1c247a31aaef169ef24e6eaae0956b071adf60a4c4bb081a2e4e0ad4d499e` | Rebuild |
+| `prices/cpi-iw/rbi-2014-variation-pdf/body.html` | https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/240T_SHE130914L.pdf | 18 Nov 2026 | `955ce38d4deff955c6ed6ea2001c0d16ba5411dd3e81fa42903459f3abc392cb` | Discovery or check |
+| `prices/cpi-iw/rbi-2026-annual-page/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=24061 | 18 Nov 2026 | `8752bfee6c22e70fcdd9926fcc40825f4f8ee594ec7346f7aae0d7e79fee2dae` | Discovery or check |
+| `prices/cpi-iw/rbi-2026-index/body.html` | https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/163T_HBIE3107202614BC4318E5204F5596C41CBF5C5C7863.XLSX | 18 Nov 2026 | `4bcbca886aa99f0bccda0c7bf33bb5909cc496186702b610f8df3007d296f94e` | Discovery or check |
+| `prices/cpi-iw/rbi-2026-index-page/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23988 | 18 Nov 2026 | `c89a8f916bb3641aeda900fa2ff36a74e6fef61296080cc6c490ea1faa19dc9f` | Discovery or check |
+| `prices/cpi-iw/rbi-2026-variation/body.html` | https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/243T_HBIE31072026A3C0546A907841AC9F3E62D6E639C052.XLSX | 18 Nov 2026 | `386f544742451adaa9d08504fe2b75773f609cdb08ac68506344663a10907d9f` | Discovery or check |
+| `prices/cpi-iw/rbi-2026-variation-page/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=24068 | 18 Nov 2026 | `feb5b7fd74af58b301dd8733c658e3a7dd67cd64e4abb1d6c90b37177136f47d` | Discovery or check |
+| `prices/cpi-iw/rbi-bulletins/body.html` | https://www.rbi.org.in/Scripts/BS_ViewBulletin.aspx | 18 Nov 2026 | `40ac30b85b517190af2dfbd47895ceb0fd4f4b7ff3d985507ddf76b08c061bd1` | Discovery or check |
+| `prices/cpi-iw/rbi-framework/body.html` | https://www.rbi.org.in/scripts/fs_overview.aspx?fn=2752 | 18 Nov 2026 | `34f2ecdf5244af1d06e78b8a7dbad44dc8ae52e25bfa1c9fb3b2955ddd6ac68f` | Framework date |
+| `prices/cpi-iw/rbi-handbook/body.html` | https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook%20of%20Statistics%20on%20Indian%20Economy | 18 Nov 2026 | `beda4762c3b80a043f2a688b5fb7f50df2115ae7fe2f2093e0673e54c18ba9fd` | Discovery or check |

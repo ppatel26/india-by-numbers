@@ -126,6 +126,18 @@ const PUBLISHERS: readonly Publisher[] = [
     site: 'https://www.rbi.org.in',
   },
   {
+    short: 'Labour Bureau',
+    logos: [],
+    full: 'Labour Bureau, Ministry of Labour and Employment',
+    topics: ['prices'],
+    dataSets: [
+      { name: 'Consumer Price Index for Industrial Workers', detail: 'All-India index and inflation rates', rhythm: 'Monthly', match: /CPI-IW/ },
+    ],
+    licence: NOT_STATED,
+    access: ['Monthly index letters and annual reports as PDF'],
+    site: 'https://labourbureau.gov.in',
+  },
+  {
     short: 'IMD',
     logos: ['imd'],
     full: 'India Meteorological Department, Ministry of Earth Sciences',

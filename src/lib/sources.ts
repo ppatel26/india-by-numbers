@@ -43,6 +43,7 @@ const PUBLISHER_RULES: readonly (readonly [RegExp, string])[] = [
   [/MoSPI|\bNSO\b/, 'MoSPI'],
   [/Ministry of Education/, 'MoE'],
   [/\bRBI\b/, 'RBI'],
+  [/Labour Bureau/, 'Labour Bureau'],
   [/\bIMD\b/, 'IMD'],
   [/\bECI\b/, 'ECI'],
   [/\bCEA\b/, 'CEA'],
