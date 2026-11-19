@@ -465,7 +465,7 @@ const topic: Topic = {
             subtitle: 'Share of women aged 15 to 49 with anaemia. In 2005-06 the survey reports both groups.',
             punches: { office: 'IIPS', unit: '%', period: '2019-21' },
             status: ['Survey estimate', 'Method break'],
-            note: 'NFHS-2 tested ever-married women. NFHS-3 reported estimates for ever-married women and for all women, and excluded Nagaland from both. NFHS-1 did not test haemoglobin. NFHS-6 did not report anaemia.',
+            note: 'NFHS-2 tested ever-married women. NFHS-3 reported estimates for ever-married women and for all women, and excluded Nagaland from both. NFHS-1 did not test haemoglobin. NFHS-6 did not report anaemia: MoHFW moved the measure to the ICMR-NIN Diet and Biomarkers Survey (DABS-I), which uses venous blood and has not published results.',
             sources: [withTable(NFHS_3, 'Table 10.24.1'), withTable(NFHS_4, 'Table 10.21.1'), PIB_ANAEMIA],
             format: { decimals: 1, unit: '%' },
             y: { min: 45, max: 60, step: 5 },
