@@ -46,6 +46,39 @@ const c01Census2001: Source = {
   url: 'https://censusindia.gov.in/nada/index.php/catalog/21462/download/24594/PC01_C01_00.xls',
 }
 
+const historicalReligion: Source[] = [
+  {
+    publisher: 'ORGI',
+    release: 'Census 1961, Paper 1 of 1963, religion, India totals for 1951',
+    released: '1963',
+    url: 'https://censusindia.gov.in/nada/index.php/catalog/31326/download/34507/53027_1961_REL.pdf',
+  },
+  {
+    publisher: 'ORGI',
+    release: 'Census 1971, Religion, Statement I, India totals for 1961 and 1971',
+    released: '1972',
+    url: 'https://censusindia.gov.in/nada/index.php/catalog/31626/download/34807/24477_1971_REI.pdf',
+  },
+  {
+    publisher: 'ORGI',
+    release: 'Census 1981, Paper 3 of 1984, Table HH-15, Household population by religion of head of household',
+    released: '1984',
+    url: 'https://censusindia.gov.in/nada/index.php/catalog/30879/download/34060/26795_1981_HH.pdf',
+  },
+  {
+    publisher: 'ORGI',
+    release: 'Census 1991, Table C-9, Religion, India',
+    released: '2021-11-17',
+    url: 'https://censusindia.gov.in/nada/index.php/catalog/35737/download/39400/1991-C09T-0100.xlsx',
+  },
+  {
+    publisher: 'ORGI',
+    release: 'Census 1991, Religion, Paper 1 of 1995, coverage notes for Table C-9',
+    released: '1995',
+    url: 'https://censusindia.gov.in/nada/index.php/catalog/32995/download/36813/48848_1991_REL.pdf',
+  },
+]
+
 const c16: Source = {
   publisher: 'ORGI',
   release: 'Census of India 2011, Table C-16, Population by mother tongue (language statement)',
@@ -82,6 +115,40 @@ const RELIGIONS = [
   'Other religions and persuasions',
   'Religion not stated',
 ] as const
+
+const RELIGION_TREND = 'religion-culture/religion-india-1951-2011.csv'
+
+const trendLabel = (religion: (typeof RELIGIONS)[number]) => {
+  if (religion === 'Other religions and persuasions') return 'Other religions'
+  if (religion === 'Religion not stated') return 'Unstated'
+  return religion
+}
+
+const religionTrend: Series[] = RELIGIONS.flatMap((religion, i) =>
+  ([
+    ['early', ['1951', '1961', '1971']],
+    ['household', ['1981']],
+    ['later', ['1991', '2001', '2011']],
+  ] as const).map(([key, years]) => ({
+    key: `religion-${i}-${key}`,
+    label: trendLabel(religion),
+    color: RELIGION_COLORS[religion],
+    file: RELIGION_TREND,
+    where: { religion, period: years },
+    y: 'share_pct',
+  })),
+)
+
+const religionOthers1951: Series = {
+  key: 'others-1951',
+  label: '1951 Others',
+  color: 'slate',
+  file: RELIGION_TREND,
+  where: { religion: 'Others' },
+  y: 'share_pct',
+}
+
+const religionTrendKeys = (label: string) => religionTrend.filter((s) => s.label === label).map((s) => s.key)
 
 const RELIGION_BY_STATE = 'religion-culture/religion-by-state-2011.csv'
 
@@ -166,7 +233,7 @@ const topic: Topic = {
   name: 'Religion and culture',
   hindi: 'धर्म और संस्कृति',
   question: 'What religions do people in India report, and in what numbers?',
-  standfirst: 'All figures on this page come from Census 2011, the latest count of religion and mother tongue.',
+  standfirst: 'Census 2011 is the latest count of religion and mother tongue. Earlier censuses record how religion shares changed.',
   figures: [
     { chart: 'religion-in-india', series: 'share', x: 'Hindu', label: 'Reported their religion as Hindu' },
     { chart: 'religion-in-india', series: 'share', x: 'Muslim', label: 'Reported their religion as Muslim' },
@@ -230,52 +297,42 @@ const topic: Topic = {
           },
         },
         {
-          text: "The Hindu share of the population was 79.80% in 2011, against 80.46% in 2001. The Muslim share was 14.23%, against 13.43%. No other group's share moved by more than 0.2 percentage points.",
+          text: 'The Hindu share was 84.98% in 1951 and 79.80% in 2011. The Muslim share was 9.91% in 1951 and 14.23% in 2011. Census coverage changed over this period.',
         },
         {
-          // LATER: the board adds a "Change" column (2011 minus 2001, pp); 'bars' has no derived column. 2001 is slate, 2011 ink.
           chart: {
             slug: 'religion-change',
-            kind: 'bars',
-            title: 'Religion in India, 2001 and 2011',
-            subtitle:
-              'People by the religion they reported, % of all people, India, Census 2001 and Census 2011.',
-            punches: { office: 'ORGI', unit: '% of people', period: '2001, 2011' },
-            note: 'The 2001 total (1,02,86,10,328) leaves out three sub-divisions of Senapati district, Manipur, so it is 1,27,108 lower than the total in Table A-02. This has no visible effect on the shares.',
-            sources: [c01Census2001, c01],
+            kind: 'line',
+            title: 'Population share by religion in India, 1951 to 2011',
+            subtitle: 'Shares use all people covered by each religion table. In 1981 the Census usually used the household head’s religion.',
+            punches: { office: 'ORGI', unit: '% of people', period: '1951 to 2011' },
+            status: ['Method break'],
+            note: 'The Census could not count Assam in 1981 or Jammu and Kashmir in 1991. Other exclusions affect the 1951, 1961, 1971, 1991 and 2001 totals.',
+            sources: [...historicalReligion, c01Census2001, c01],
             format: { unit: '%', decimals: 2 },
-            by: 'religion',
-            order: RELIGIONS,
-            series: [
+            series: [...religionTrend, religionOthers1951],
+            panels: [
+              { label: 'Hindu', series: religionTrendKeys('Hindu') },
+              { label: 'Muslim', series: religionTrendKeys('Muslim'), own: true },
               {
-                key: '2001',
-                label: '2001',
-                color: 'other',
-                file: 'religion-culture/religion-india-2001-2011.csv',
-                where: { period: '2001' },
-                x: 'religion',
-                y: 'share_pct',
-              },
-              {
-                key: '2011',
-                label: '2011',
-                color: 'ink',
-                file: 'religion-culture/religion-india-2001-2011.csv',
-                where: { period: '2011' },
-                x: 'religion',
-                y: 'share_pct',
+                label: 'Other categories',
+                series: [...RELIGIONS.slice(2).map(trendLabel).flatMap(religionTrendKeys), religionOthers1951.key],
+                own: true,
               },
             ],
+            y: { min: 75, max: 90, step: 5 },
+            breaks: [{ x: '1981', label: '1981 method' }],
             know: [
-              'Both censuses use the same eight categories, so the shares compare directly.',
-              'The 2001 table leaves out the Mao-Maram, Paomata and Purul sub-divisions of Senapati district, Manipur. Its total is 1,27,108 lower than the total in Table A-02.',
-              'A change in share is in percentage points: the 2011 share minus the 2001 share.',
-              'The 2001 tables use older state names: Uttaranchal, Orissa and Pondicherry.',
+              '1951 excludes Jammu and Kashmir, Pondicherry and the North East Frontier Agency. The religion breakdown also excludes 268,602 people in Punjab. ORGI gives one combined Others category for this census.',
+              'The 1961 and 1971 totals in the 1971 report exclude Sikkim. The 1961 religion breakdown also excludes Arunachal Pradesh, where the Census used an abridged schedule.',
+              'In 1981 the Census used the head’s religion for normal and houseless households. It used individual returns for institutional households. The Census could not count Assam because of disturbed conditions.',
+              'In 1991 the Census could not count Jammu and Kashmir or 33 villages of Akrani and Akkalkuwa tehsils in Dhule district, Maharashtra. ORGI included the village population from secondary sources in the total. The villages have no religion breakdown.',
+              'The 2001 C-01 table excludes the Mao-Maram, Paomata and Purul sub-divisions of Senapati district, Manipur.',
             ],
             processing: [
-              'Read the India rows of Table C-01 for Census 2001 and Census 2011 (Excel).',
-              'Divide each count by the total of the same census and round to two decimals.',
-              'Subtract the 2001 share from the 2011 share for each religion.',
+              'Read the published India counts in the ORGI reports and workbooks.',
+              'Divide each count by the population covered by the religion breakdown. Round to two decimals.',
+              'Plot 1981 as separate points. Plot the combined 1951 Others category as a separate point.',
             ],
             nextRelease: 'not announced',
           },
@@ -444,14 +501,14 @@ const topic: Topic = {
     revisions:
       'Census 2011 tables are final. Census 2027 tables will replace them when ORGI publishes them; no date is announced.',
     breaks:
-      'Chart 1.2 compares the same eight categories in Census 2001 and Census 2011. The 2001 total (1,02,86,10,328) leaves out three sub-divisions of Senapati district, Manipur, so it is 1,27,108 lower than the total in Table A-02. The 2001 tables use older names: Uttaranchal, Orissa and Pondicherry.',
+      'The 1981 Census used the household head’s religion for most people. Before and after 1981, the returns give each person’s religion. The population covered also changes between censuses.',
     coverage:
       'Census 2011 had 35 units. Telangana is inside Andhra Pradesh, and Ladakh inside Jammu and Kashmir. Dadra and Nagar Haveli and Daman and Diu were two UTs; we add their counts and mark the sum "Derived", so the 2011 data on this page has 34 units. Mother tongues are grouped into languages as the Census groups them: "Hindi" includes Bhojpuri and other mother tongues. Table C-16 lists 22 scheduled languages and 99 others with 10,000 or more speakers.',
     missing:
       'There is no official count of religion or language after 2011. NFHS-5 (2019-21, IIPS for MoHFW) reports the religion of household heads; it is a sample survey, not a count. ORGI publishes bilingual and trilingual counts in Table C-17. ORGI states no open licence; its catalog pages say "Rights Reserved".',
   },
   // The board lists Table C-01 and its Appendix on one line; they are two files with two URLs.
-  sources: [c01States, c01Appendix, c01Census2001, c16, gazette4505, gazette5913],
+  sources: [c01States, c01Appendix, c01Census2001, ...historicalReligion, c16, gazette4505, gazette5913],
   rail: [
     {
       title: 'Census 2027',

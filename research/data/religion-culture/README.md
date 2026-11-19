@@ -1,20 +1,19 @@
 # Religion and culture
 
-Data gathered on 17 Nov 2026 from ORGI (Census of India). Every value was read from the publisher's own
-file on that date.
+Read the original topic tables on 17 Nov 2026. Read the national religion trend sources on 18 Nov 2026.
 
-All religion and language figures here come from Census 2011, the latest count. They are 15 years old.
+Census 2011 is the latest count of religion and language. The India religion trend also uses earlier censuses.
 Census 2027 will ask about religion, caste and mother tongue again (questionnaire notified 14 Aug 2026).
 No results from it are published yet. No newer official count of religion or language exists.
 
-Religion data in this folder reports what people told the census. Shares are exact arithmetic on the
-published counts. Use the census category names as given.
+The religion tables count the religion reported to the Census. In 1981 most records use the religion
+of the household head. The shares use published counts and cover the population in each religion table.
 
 ## Questions this topic answers
 
 1. What religions do people in India report, and in what numbers?
 2. How does the religious makeup differ between states?
-3. How did the shares change between the 2001 and 2011 censuses?
+3. How did the shares change between 1951 and 2011?
 4. Which languages do people speak as their mother tongue?
 5. What is the main language in each state?
 
@@ -47,18 +46,28 @@ Source blocks give publisher, table and period. See "Sources" for URLs and check
 - Notes: `andhra-pradesh` is undivided (includes Telangana). `jammu-kashmir` includes Ladakh. `telangana`
   and `ladakh` rows are empty. `dnh-dd` is the sum of two 2011 UTs.
 
-### rel-03: Religion shares, India, 2001 and 2011
+### rel-03: Population share by religion in India, 1951 to 2011
 
-- Type: slope chart or paired bar.
-- Unit: percent of population (derived); persons.
-- Geography: India. Period: Census 2001 and Census 2011.
-- CSV: `religion-india-2001-2011.csv`.
-- Sentence: "The Hindu share of the population was 79.80% in 2011, against 80.46% in 2001. The Muslim
-  share was 14.23%, against 13.43%."
-- Source: ORGI, Census of India 2001 and 2011, Table C-01, India.
-- Notes: the 2001 total (1,028,610,328) leaves out three sub-divisions of Senapati district, Manipur,
-  so it is 127,108 lower than the A-02 total that includes their estimate. Shares are not affected in a
-  visible way, but say so in the chart note.
+- The line chart uses three scales. The 1981 household-head values are separate points. The 1951
+  Others category is also a separate point because the paper uses one combined category.
+- Each row of `religion-india-1951-2011.csv` gives a published count and a derived share of all
+  people covered by the religion table. `population_covered_type` identifies derived denominators.
+- Run `python3 -I pipeline/religion-culture/build_religion_trend.py` from the repository root. The
+  script uses verified transcriptions from the printed tables and reads the three workbooks.
+- All 16 counts and shares for 2001 and 2011 match `religion-india-2001-2011.csv`. The eight 2011
+  values also match the India total rows in `religion-india-2011.csv`.
+
+#### Coverage and overlap checks
+
+| Census | Coverage and check |
+| --- | --- |
+| 1951 | Paper 1 of 1963, pp. ii-vii, gives a population total of 361,088,090. Its religion columns exclude Jammu and Kashmir, Pondicherry and the North East Frontier Agency. The percentage denominator also excludes 268,602 people in Punjab because their religion breakdown was unavailable. The denominator of 357,248,383 is the sum of the published counts. All seven calculated shares match the printed shares to two decimals. The paper also says the 1951-61 total population growth comparison excludes Tuensang district of Nagaland because comparable 1951 figures are unavailable. |
+| 1961 | Statement I in the 1971 report gives an India total of 439,072,582. This excludes Sikkim. Its religion columns exclude Arunachal Pradesh, where the Census could not use the general all-India schedule. Subtract Arunachal Pradesh's population of 336,558 for a denominator of 438,736,024. Paper 1 of 1963 gives a broader total of 439,234,771 and includes Sikkim separately. Its counts differ from the 1971 report's comparison row. Use Statement I because it puts 1961 and 1971 on the report's India boundary and splits Others and Religion not stated. |
+| 1971 | Statement I and Union Table C-VII give 547,949,809. This India total excludes Sikkim, which the 1984 paper lists separately for 1971. The 1984 paper gives a different 1971 comparator total of 533,534,500 and excludes Assam from its India comparison. Use the 1972 release for 1971. The Hindu share is 82.73% from the counts. The release prints 82.72%. |
+| 1981 | Table HH-15 gives 665,287,849 people. It says Assam was excluded because the census could not be held in the conditions prevailing there. Normal and houseless households use the head's religion. Institutional households use individual returns. The 1981 handbook also reports this method. Its Table 65 prints some shares at different rounding, for example 82.63% Hindu and 11.36% Muslim. The chart uses the Table HH-15 counts, which give 82.64% and 11.35%. |
+| 1991 | Table C-9 excludes Jammu and Kashmir, where the census was not held. The workbook and Paper 1 of 1995 agree on the India total and all eight counts. The paper explains the gap of 16,052 between the counts and the total. The census could not be conducted in 33 villages of Akrani and Akkalkuwa tehsils of Dhule district, Maharashtra. ORGI included their population from secondary sources and had no further detail. Subtract it from 838,583,988 to get the religion denominator, 838,567,936. |
+| 2001 | C-01 excludes Mao-Maram, Paomata and Purul sub-divisions of Senapati district, Manipur. Its total of 1,028,610,328 is 127,108 below Table A-02, which includes estimates for those areas. The 2011 drop-in article gives rounded 2001 shares plus approximate counts. The article rounds Hindu, Muslim, Christian, Sikh, Buddhist and Jain shares to the same one-decimal values as the C-01 counts. Its Other religions share is 0.6% from the unrounded counts (0.65% at two decimals). |
+| 2011 | Use the national C-01 total of 1,210,854,977. All eight counts sum to that total. |
 
 ### lang-01: Languages by mother-tongue speakers, India, 2011
 
@@ -111,6 +120,22 @@ Parsing script: pipeline/religion-culture/build_religion.py (run with `python3 -
 | ORGI, Census of India | Census 2001 Table C-01, Population by religious community, India and States | Catalog entry 13 Feb 2021 | 2001 | https://censusindia.gov.in/nada/index.php/catalog/21462/download/24594/PC01_C01_00.xls | As above | b459efe12563a9a11650de36fa13570b619c9df4c136f07624593e59c745cc4e |
 | ORGI, Census of India | Census 2011 Table C-16, Population by mother tongue, India and States (language statement) | Catalog entry 4 Jul 2022 | 2011 | https://censusindia.gov.in/nada/index.php/catalog/10191/download/13303/DDW-C16-STMT-MDDS-0000.XLSX | As above | b800cd544d7196c9bbc3c88ec1814138b8b7c8d4ccb7a5a2263a84e4bbf28f83 |
 | ORGI | Gazette S.O. 4505(E): questions for Census 2027 phase II (includes religion, SC/ST/caste, mother tongue) | 14 Aug 2026 | Census 2027 | https://censusindia.gov.in/nada/index.php/catalog/47163/download/51410/GAZ_NOTIFICATION_15.pdf | As above | 02a1273c2f61c2f29f01969d801a6d66436225a28f581341df4c4058d8ae2170 |
+
+### National religion trend inputs
+
+ORGI published all the files below. Read on 18 Nov 2026. Paths are under `raw/religion-culture/`.
+
+| Release | Release date | Local path | URL | SHA-256 |
+| --- | --- | --- | --- | --- |
+| Census 1961, Religion, Paper 1 of 1963 | 1963 | `census-1961-paper/report.pdf` | https://censusindia.gov.in/nada/index.php/catalog/31326/download/34507/53027_1961_REL.pdf | `1865419bd2855286199ea1d7479269b2390ce4445ca945627b9b376d1b8a9850` |
+| Census 1971, Religion, Series 1 | 1972 | `census-1971-religion/report.pdf` | https://censusindia.gov.in/nada/index.php/catalog/31626/download/34807/24477_1971_REI.pdf | `ae2f34771312e5b99542186d9a61e30001ffb97fdc08ed6b68228317a885ff63` |
+| Census 1981, Household Population by Religion of Head of Household, Paper 3 of 1984 | 1984 | `census-1981-religion/report.pdf` | https://censusindia.gov.in/nada/index.php/catalog/30879/download/34060/26795_1981_HH.pdf | `64fc02ea663d8e3b42295b10b7b7d857476bc04c347d1370d69c41701c277b94` |
+| Census 1991, Table C-9, Religion, India | 17 Nov 2021 (catalogue entry) | `census-1991-c09/table.xlsx` | https://censusindia.gov.in/nada/index.php/catalog/35737/download/39400/1991-C09T-0100.xlsx | `62c7d9070465ff07637b197176f6e5a3764483173376b2872762fa0fcb0041ba` |
+| Census 1991, Religion, Paper 1 of 1995 | 1995 | `census-1991-paper/report.pdf` | https://censusindia.gov.in/nada/index.php/catalog/32995/download/36813/48848_1991_REL.pdf | `a1a356e8c09ada29c603904061c53a9dc434aa037a3a1590d24787d1536adba2` |
+| Census 2001, Table C-01, India | 13 Feb 2021 (catalogue entry) | `census-2001-c01/table.xls` | https://censusindia.gov.in/nada/index.php/catalog/21462/download/24594/PC01_C01_00.xls | `b459efe12563a9a11650de36fa13570b619c9df4c136f07624593e59c745cc4e` |
+| Census 2011, Table C-01, India | 21 Jan 2021 (catalogue entry) | `census-2011-c01/table.xls` | https://censusindia.gov.in/nada/index.php/catalog/11361/download/14474/DDW00C-01%20MDDS.XLS | `c3fee2bb235f4ef511d9aaeceaf5f8026b48908f813c6d1cc06413a6c8a0d9cd` |
+| Census 1981, A Hand Book of Population Statistics (cross-check) | 1988 | `census-1981-handbook/report.pdf` | https://censusindia.gov.in/nada/index.php/catalog/28122/download/31304/49962_1981_POR.pdf | `fd173d4d7a1ce63a9e5cffd170ce275adbfc9af933e9527cba8e3111bae8ec15` |
+| Census 2011, Drop-in-Article No. 4, Distribution of Population by Religions (cross-check) | 2011 | `orgi-drop-in-article-04/article.pdf` | https://censusindia.gov.in/nada/index.php/catalog/40443/download/44077/DROP_IN_ARTICLE-04.pdf | `6aecb0686fc3a8e5b393e449e0dfcabbc02e47cff811c8bbfb14e4b812afb8c9` |
 
 ## Gaps and cautions
 

@@ -5,7 +5,7 @@ import { svg, attr, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
 import { parsePeriod } from '~/lib/period'
 import { WIDTH, frame, note, yRoom, hit, spread, tickRoom, timeTicks, xLabels, yGrid, yScale, yTicks, type Width } from './axes'
-import { legend } from './dots'
+import { legend, legendItemWidth } from './dots'
 import { drawn, show, tipLine, when, type Of, type SeriesData } from './model'
 import { timeNotes } from './notes'
 
@@ -63,13 +63,25 @@ export function renderLine(chart: Of<'line'>, width: Width): Markup {
   // which the panel title already names, so it gets no entry.
   const named = [...new Map(all.map((s) => [`${s.label}|${s.color}`, s])).values()]
   const seen = named.filter((s) => named.filter((o) => o.color === s.color).length === 1)
-  const keyed = panels.length > 1 && seen.length > 1
-  const keyH = keyed ? 26 : 0
+  const keyRows: SeriesData[][] = []
+  if (panels.length > 1 && seen.length > 1) {
+    let used = 0
+    for (const item of seen) {
+      const width = legendItemWidth(item.label)
+      if (keyRows.length === 0 || used + width > W) {
+        keyRows.push([])
+        used = 0
+      }
+      keyRows.at(-1)!.push(item)
+      used += width
+    }
+  }
+  const keyH = keyRows.length * 26
   return frame(
     width,
     keyH + rows * panelH + (rows - 1) * 24,
     chart.title,
-    svg`${keyed ? legend(seen) : null}<g transform="translate(0,${keyH})">${body}</g>`,
+    svg`${keyRows.map((row, i) => legend(row, [], 12 + i * 26))}<g transform="translate(0,${keyH})">${body}</g>`,
   )
 }
 
@@ -185,12 +197,19 @@ ${note(W - m.right - 4, y(r.y) - 5, r.label, 'end')}`,
       })
     : []
 
+  const byLabel = Map.groupBy(panel.series, (s) => `${s.label}|${s.color}`)
   const hits = sorted.map((p, i) => {
     const prev = sorted[i - 1]
     const next = sorted[i + 1]
     const x0 = prev ? (x(prev.t) + x(p.t)) / 2 : x(p.t) - 4
     const x1 = next ? (x(next.t) + x(p.t)) / 2 : x(p.t) + 4
-    const lines = panel.series.map((s) => tipLine(chart, s, s.points.find((q) => q.x === p.x)))
+    const lines = [...byLabel.values()].flatMap((group) => {
+      const available = group.flatMap((s) => {
+        const point = s.points.find((q) => q.x === p.x && q.y !== null)
+        return point ? [tipLine(chart, s, point)] : []
+      })
+      return available.length ? available : [tipLine(chart, group[0]!, undefined)]
+    })
     return hit(x0, m.top, x1 - x0, H - m.top - m.bottom, [p.label, ...lines].join('\n'))
   })
 
