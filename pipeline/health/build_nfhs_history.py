@@ -19,7 +19,7 @@ BIRTHS = "institutional-births"
 ANAEMIA = "anaemia-women-15-49"
 UNDER_FIVE = "under-five-who"
 UNDER_THREE = "under-three-who"
-FIELDS = ("geography", "period", "value", "unit", "round", "round_axis", "indicator", "basis", "source_doc", "note")
+FIELDS = ("geography", "period", "value", "unit", "round", "mid_year", "indicator", "basis", "source_doc", "note")
 
 
 def read_csv(path):
@@ -74,10 +74,14 @@ def state_growth(page):
     return rows
 
 
+# Each round sits at the middle of its fieldwork on the time axis (NFHS-5 ran 2019 to 2021).
+MID_YEARS = ("1993", "1999", "2006", "2016", "2020", "2024")
+
+
 def observation(round_number, indicator, basis, value, source_doc, note="", geography="india"):
     return dict(
         geography=geography, period=PERIODS[round_number - 1], value=value, unit="percent",
-        round=f"NFHS-{round_number}", round_axis=f"{round_number:04}", indicator=indicator,
+        round=f"NFHS-{round_number}", mid_year=MID_YEARS[round_number - 1], indicator=indicator,
         basis=basis, source_doc=source_doc, note=note,
     )
 

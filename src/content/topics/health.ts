@@ -149,7 +149,7 @@ const MMR_STATES = [
 const nfhsTrend = (key: string, label: string, color: Series['color'], indicator: string, basis: string): Series => ({
   key, label, color,
   file: 'health/nfhs-india-history.csv',
-  x: 'round_axis',
+  x: 'mid_year',
   xLabel: 'period',
   where: { geography: 'india', indicator, basis },
   note: 'note',
@@ -365,14 +365,14 @@ const topic: Topic = {
             kind: 'line',
             slug: 'child-nutrition',
             title: 'Child stunting and wasting in India, 1998-99 to 2023-24',
-            subtitle: 'Share of children with stunting, wasting or severe wasting. The axis gives each survey round equal space.',
+            subtitle: 'Share of children with stunting, wasting or severe wasting.',
             punches: { office: 'IIPS', unit: '%', period: '2023-24' },
             status: ['Survey estimate', 'Method break', 'Provisional'],
             note: 'The dashed lines cover the last two children under age 3 of ever-married women. NFHS-3 recalculated both rounds on the WHO growth standards. The solid lines cover all children under age 5. Both groups have a value in 2005-06. NFHS-1 used an older growth reference and did not measure height in five states, so it has no comparable national estimate here.',
             sources: [withTable(NFHS_3, 'Tables 10.2 and 10.3'), withTable(NFHS_4, 'Table 10.2'), NFHS_6],
             format: { decimals: 1, unit: '%' },
             y: { min: 0, max: 60, step: 10 },
-            breaks: [{ x: '0003', before: 'Under 3', label: 'Under 5' }],
+            breaks: [{ x: '2006', before: 'Under 3', label: 'Under 5' }],
             series: [
               { ...nfhsTrend('stunted-under-3', 'Stunting, under 3', 'ink', 'stunted', 'under-three-who'), dash: true },
               { ...nfhsTrend('wasted-under-3', 'Wasting, under 3', 's4', 'wasted', 'under-three-who'), dash: true },
@@ -407,7 +407,7 @@ const topic: Topic = {
             sources: [withTable(NFHS_3, 'Tables 8.12 and 8.23'), withTable(NFHS_4, 'Table 8.27'), NFHS_6],
             format: { decimals: 1, unit: '%' },
             y: { min: 0, max: 100, step: 20 },
-            breaks: [{ x: '0003', before: 'Last two births', label: 'All births' }],
+            breaks: [{ x: '2006', before: 'Last two births', label: 'All births' }],
             series: [
               { ...nfhsTrend('last-two', 'Last two births', 'ink', 'institutional-births', 'last-two-births'), dash: true },
               nfhsTrend('all', 'Facility births', 'ink', 'institutional-births', 'all-births'),
@@ -416,7 +416,6 @@ const topic: Topic = {
               'The NFHS-3 report aligns the first three rounds to the last two births in the prior three years.',
               'NFHS-3 to NFHS-5 also report all births in the prior five years. The NFHS-6 fact sheet gives its own result beside the NFHS-5 estimate.',
               'NFHS-6 results are provisional.',
-              'The axis gives each survey round equal space.',
             ],
             processing: [
               'Take the early series from Table 8.23 of the NFHS-3 report.',
@@ -438,7 +437,7 @@ const topic: Topic = {
             sources: [withTable(NFHS_1, 'Table 9.10'), withTable(NFHS_2, 'Table 6.9'), withTable(NFHS_3, 'Tables 9.3 and 9.6'), withTable(NFHS_4, 'Tables 9.3 and 9.6'), NFHS_6],
             format: { decimals: 1, unit: '%' },
             y: { min: 0, max: 100, step: 20 },
-            breaks: [{ x: '0005', label: 'NFHS-5 method' }],
+            breaks: [{ x: '2020', label: 'NFHS-5 method' }],
             series: [
               nfhsTrend('basic-dpt', 'Card or recall, early', 'ink', 'full-immunisation-card-or-recall', 'basic-vaccines-dpt'),
               nfhsTrend('card-seen', 'Card seen', 's4', 'full-immunisation-card', 'card-seen'),
@@ -449,7 +448,6 @@ const topic: Topic = {
               'The early schedule includes BCG, measles and three doses each of DPT and polio. It excludes the polio dose at birth.',
               'Card or recall uses the vaccination card or the mother’s answers.',
               'The card-only and card-or-recall rates have different denominators in the early reports.',
-              'The axis gives each survey round equal space.',
             ],
             processing: [
               'Use the vaccine source tables in the first four national reports for the share among children whose cards were seen.',
@@ -471,7 +469,7 @@ const topic: Topic = {
             sources: [withTable(NFHS_3, 'Table 10.24.1'), withTable(NFHS_4, 'Table 10.21.1'), PIB_ANAEMIA],
             format: { decimals: 1, unit: '%' },
             y: { min: 45, max: 60, step: 5 },
-            breaks: [{ x: '0003', before: 'Ever married', label: 'All women' }],
+            breaks: [{ x: '2006', before: 'Ever married', label: 'All women' }],
             series: [
               { ...nfhsTrend('ever-married', 'Ever-married women', 'ink', 'anaemia-women-15-49', 'ever-married-women'), dash: true },
               nfhsTrend('all', 'All women', 'ink', 'anaemia-women-15-49', 'all-women'),
@@ -480,7 +478,6 @@ const topic: Topic = {
               'The survey uses a finger-prick blood sample to measure haemoglobin.',
               'The threshold is below 12 grams per decilitre for women who are not pregnant and below 11 for pregnant women.',
               'MoHFW plans to use a different test with venous blood in a separate survey.',
-              'The axis gives each survey round equal space.',
             ],
             processing: [
               'Take the estimates for ever-married women from Table 10.24.1 of the NFHS-3 report.',

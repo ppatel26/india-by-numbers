@@ -90,7 +90,7 @@ Data gathered on 17 Nov 2026 from primary sources: ORGI Sample Registration Syst
 
 ### H9. NFHS national trends and state stunting history
 
-The original national chart compared NFHS-5 and NFHS-6. The national time series uses four chart cards, so each method change has its own marker. `nfhs-india-history.csv` contains 42 India observations. `basis` identifies the group or method. `round_axis` is a plotting coordinate that gives the rounds equal space. `source_doc` and `note` identify the table and coverage. All estimates retain the published digits.
+The original national chart compared NFHS-5 and NFHS-6. The national time series uses four chart cards, so each method change has its own marker. `nfhs-india-history.csv` contains 42 India observations. `basis` identifies the group or method. `mid_year` is the middle year of each round's fieldwork (NFHS-5: 2020), which places the round on the time axis. `source_doc` and `note` identify the table and coverage. All estimates retain the published digits.
 
 | Chart | Rounds and source | Comparability |
 | --- | --- | --- |

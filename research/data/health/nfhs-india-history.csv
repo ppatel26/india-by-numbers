@@ -1,43 +1,43 @@
-geography,period,value,unit,round,round_axis,indicator,basis,source_doc,note
-india,1992-93,60.6,percent,NFHS-1,0001,full-immunisation-card,card-seen,"NFHS-1 India report, Table 9.10",Among children whose vaccination card was seen
-india,1992-93,35.4,percent,NFHS-1,0001,full-immunisation-card-or-recall,basic-vaccines-dpt,"NFHS-3 India report, Table 9.6","BCG, measles, and three doses each of DPT and polio excluding the polio birth dose"
-india,1992-93,26.1,percent,NFHS-1,0001,institutional-births,last-two-births,"NFHS-3 India report, Table 8.23",Last two births to ever-married women in the prior three years
-india,1998-99,51.8,percent,NFHS-2,0002,anaemia-women-15-49,ever-married-women,"NFHS-3 India report, Table 10.24.1",Ever-married women aged 15 to 49
-india,1998-99,69.1,percent,NFHS-2,0002,full-immunisation-card,card-seen,"NFHS-2 India report, Table 6.9",Among children whose vaccination card was seen
-india,1998-99,42.0,percent,NFHS-2,0002,full-immunisation-card-or-recall,basic-vaccines-dpt,"NFHS-3 India report, Table 9.6","BCG, measles, and three doses each of DPT and polio excluding the polio birth dose"
-india,1998-99,33.6,percent,NFHS-2,0002,institutional-births,last-two-births,"NFHS-3 India report, Table 8.23",Last two births to ever-married women in the prior three years
-india,1998-99,6.7,percent,NFHS-2,0002,severely-wasted,under-three-who,"NFHS-3 India report, Table 10.3","Last two children under age 3 of ever-married women, WHO standards"
-india,1998-99,51.0,percent,NFHS-2,0002,stunted,under-three-who,"NFHS-3 India report, Table 10.3","Last two children under age 3 of ever-married women, WHO standards"
-india,1998-99,19.7,percent,NFHS-2,0002,wasted,under-three-who,"NFHS-3 India report, Table 10.3","Last two children under age 3 of ever-married women, WHO standards"
-india,2005-06,55.3,percent,NFHS-3,0003,anaemia-women-15-49,all-women,"NFHS-3 India report, Table 10.24.1",Excludes Nagaland.
-india,2005-06,56.2,percent,NFHS-3,0003,anaemia-women-15-49,ever-married-women,"NFHS-3 India report, Table 10.24.1",Ever-married women aged 15 to 49. Excludes Nagaland.
-india,2005-06,76.1,percent,NFHS-3,0003,full-immunisation-card,card-seen,"NFHS-3 India report, Table 9.3",Among children whose vaccination card was seen
-india,2005-06,43.5,percent,NFHS-3,0003,full-immunisation-card-or-recall,basic-vaccines-dpt,"NFHS-3 India report, Table 9.6","BCG, measles, and three doses each of DPT and polio excluding the polio birth dose"
-india,2005-06,38.7,percent,NFHS-3,0003,institutional-births,all-births,"NFHS-4 India report, Table 8.27",All births in the prior five years
-india,2005-06,40.8,percent,NFHS-3,0003,institutional-births,last-two-births,"NFHS-3 India report, Table 8.23",Last two births to ever-married women in the prior three years
-india,2005-06,6.4,percent,NFHS-3,0003,severely-wasted,under-five-who,"NFHS-3 India report, Table 10.2",
-india,2005-06,7.9,percent,NFHS-3,0003,severely-wasted,under-three-who,"NFHS-3 India report, Table 10.3","Last two children under age 3 of ever-married women, WHO standards"
-india,2005-06,48.0,percent,NFHS-3,0003,stunted,under-five-who,"NFHS-3 India report, Table 10.2",
-india,2005-06,44.9,percent,NFHS-3,0003,stunted,under-three-who,"NFHS-3 India report, Table 10.3","Last two children under age 3 of ever-married women, WHO standards"
-india,2005-06,19.8,percent,NFHS-3,0003,wasted,under-five-who,"NFHS-3 India report, Table 10.2",
-india,2005-06,22.9,percent,NFHS-3,0003,wasted,under-three-who,"NFHS-3 India report, Table 10.3","Last two children under age 3 of ever-married women, WHO standards"
-india,2015-16,53.1,percent,NFHS-4,0004,anaemia-women-15-49,all-women,"NFHS-4 India report, Table 10.21.1",
-india,2015-16,82.9,percent,NFHS-4,0004,full-immunisation-card,card-seen,"NFHS-4 India report, Table 9.3",Among children whose vaccination card was seen
-india,2015-16,62.0,percent,NFHS-4,0004,full-immunisation-card-or-recall,basic-vaccines-dpt,"NFHS-4 India report, Table 9.6","BCG, measles, and three doses each of DPT and polio excluding the polio birth dose"
-india,2015-16,78.9,percent,NFHS-4,0004,institutional-births,all-births,"NFHS-4 India report, Table 8.27",All births in the prior five years
-india,2015-16,7.4,percent,NFHS-4,0004,severely-wasted,under-five-who,"NFHS-4 India report, Table 10.2",
-india,2015-16,38.4,percent,NFHS-4,0004,stunted,under-five-who,"NFHS-4 India report, Table 10.2",
-india,2015-16,21.0,percent,NFHS-4,0004,wasted,under-five-who,"NFHS-4 India report, Table 10.2",
-india,2019-21,57.0,percent,NFHS-5,0005,anaemia-women-15-49,all-women,"PIB release 1782638 (17 Dec 2021), text",
-india,2019-21,83.8,percent,NFHS-5,0005,full-immunisation-card,factsheet-card-only,NFHS-6 India and State/UT Fact Sheets (May 2026),
-india,2019-21,76.6,percent,NFHS-5,0005,full-immunisation-card-or-recall,factsheet-card-or-recall,NFHS-6 India and State/UT Fact Sheets (May 2026),
-india,2019-21,88.6,percent,NFHS-5,0005,institutional-births,all-births,NFHS-6 India and State/UT Fact Sheets (May 2026),
-india,2019-21,7.7,percent,NFHS-5,0005,severely-wasted,under-five-who,NFHS-6 India and State/UT Fact Sheets (May 2026),
-india,2019-21,35.5,percent,NFHS-5,0005,stunted,under-five-who,NFHS-6 India and State/UT Fact Sheets (May 2026),
-india,2019-21,19.3,percent,NFHS-5,0005,wasted,under-five-who,NFHS-6 India and State/UT Fact Sheets (May 2026),
-india,2023-24,87.1,percent,NFHS-6,0006,full-immunisation-card,factsheet-card-only,NFHS-6 India and State/UT Fact Sheets (May 2026),Provisional
-india,2023-24,82.6,percent,NFHS-6,0006,full-immunisation-card-or-recall,factsheet-card-or-recall,NFHS-6 India and State/UT Fact Sheets (May 2026),Provisional
-india,2023-24,90.6,percent,NFHS-6,0006,institutional-births,all-births,NFHS-6 India and State/UT Fact Sheets (May 2026),Provisional
-india,2023-24,5.2,percent,NFHS-6,0006,severely-wasted,under-five-who,NFHS-6 India and State/UT Fact Sheets (May 2026),Provisional
-india,2023-24,29.3,percent,NFHS-6,0006,stunted,under-five-who,NFHS-6 India and State/UT Fact Sheets (May 2026),Provisional
-india,2023-24,19.0,percent,NFHS-6,0006,wasted,under-five-who,NFHS-6 India and State/UT Fact Sheets (May 2026),Provisional
+geography,period,value,unit,round,mid_year,indicator,basis,source_doc,note
+india,1992-93,60.6,percent,NFHS-1,1993,full-immunisation-card,card-seen,"NFHS-1 India report, Table 9.10",Among children whose vaccination card was seen
+india,1992-93,35.4,percent,NFHS-1,1993,full-immunisation-card-or-recall,basic-vaccines-dpt,"NFHS-3 India report, Table 9.6","BCG, measles, and three doses each of DPT and polio excluding the polio birth dose"
+india,1992-93,26.1,percent,NFHS-1,1993,institutional-births,last-two-births,"NFHS-3 India report, Table 8.23",Last two births to ever-married women in the prior three years
+india,1998-99,51.8,percent,NFHS-2,1999,anaemia-women-15-49,ever-married-women,"NFHS-3 India report, Table 10.24.1",Ever-married women aged 15 to 49
+india,1998-99,69.1,percent,NFHS-2,1999,full-immunisation-card,card-seen,"NFHS-2 India report, Table 6.9",Among children whose vaccination card was seen
+india,1998-99,42.0,percent,NFHS-2,1999,full-immunisation-card-or-recall,basic-vaccines-dpt,"NFHS-3 India report, Table 9.6","BCG, measles, and three doses each of DPT and polio excluding the polio birth dose"
+india,1998-99,33.6,percent,NFHS-2,1999,institutional-births,last-two-births,"NFHS-3 India report, Table 8.23",Last two births to ever-married women in the prior three years
+india,1998-99,6.7,percent,NFHS-2,1999,severely-wasted,under-three-who,"NFHS-3 India report, Table 10.3","Last two children under age 3 of ever-married women, WHO standards"
+india,1998-99,51.0,percent,NFHS-2,1999,stunted,under-three-who,"NFHS-3 India report, Table 10.3","Last two children under age 3 of ever-married women, WHO standards"
+india,1998-99,19.7,percent,NFHS-2,1999,wasted,under-three-who,"NFHS-3 India report, Table 10.3","Last two children under age 3 of ever-married women, WHO standards"
+india,2005-06,55.3,percent,NFHS-3,2006,anaemia-women-15-49,all-women,"NFHS-3 India report, Table 10.24.1",Excludes Nagaland.
+india,2005-06,56.2,percent,NFHS-3,2006,anaemia-women-15-49,ever-married-women,"NFHS-3 India report, Table 10.24.1",Ever-married women aged 15 to 49. Excludes Nagaland.
+india,2005-06,76.1,percent,NFHS-3,2006,full-immunisation-card,card-seen,"NFHS-3 India report, Table 9.3",Among children whose vaccination card was seen
+india,2005-06,43.5,percent,NFHS-3,2006,full-immunisation-card-or-recall,basic-vaccines-dpt,"NFHS-3 India report, Table 9.6","BCG, measles, and three doses each of DPT and polio excluding the polio birth dose"
+india,2005-06,38.7,percent,NFHS-3,2006,institutional-births,all-births,"NFHS-4 India report, Table 8.27",All births in the prior five years
+india,2005-06,40.8,percent,NFHS-3,2006,institutional-births,last-two-births,"NFHS-3 India report, Table 8.23",Last two births to ever-married women in the prior three years
+india,2005-06,6.4,percent,NFHS-3,2006,severely-wasted,under-five-who,"NFHS-3 India report, Table 10.2",
+india,2005-06,7.9,percent,NFHS-3,2006,severely-wasted,under-three-who,"NFHS-3 India report, Table 10.3","Last two children under age 3 of ever-married women, WHO standards"
+india,2005-06,48.0,percent,NFHS-3,2006,stunted,under-five-who,"NFHS-3 India report, Table 10.2",
+india,2005-06,44.9,percent,NFHS-3,2006,stunted,under-three-who,"NFHS-3 India report, Table 10.3","Last two children under age 3 of ever-married women, WHO standards"
+india,2005-06,19.8,percent,NFHS-3,2006,wasted,under-five-who,"NFHS-3 India report, Table 10.2",
+india,2005-06,22.9,percent,NFHS-3,2006,wasted,under-three-who,"NFHS-3 India report, Table 10.3","Last two children under age 3 of ever-married women, WHO standards"
+india,2015-16,53.1,percent,NFHS-4,2016,anaemia-women-15-49,all-women,"NFHS-4 India report, Table 10.21.1",
+india,2015-16,82.9,percent,NFHS-4,2016,full-immunisation-card,card-seen,"NFHS-4 India report, Table 9.3",Among children whose vaccination card was seen
+india,2015-16,62.0,percent,NFHS-4,2016,full-immunisation-card-or-recall,basic-vaccines-dpt,"NFHS-4 India report, Table 9.6","BCG, measles, and three doses each of DPT and polio excluding the polio birth dose"
+india,2015-16,78.9,percent,NFHS-4,2016,institutional-births,all-births,"NFHS-4 India report, Table 8.27",All births in the prior five years
+india,2015-16,7.4,percent,NFHS-4,2016,severely-wasted,under-five-who,"NFHS-4 India report, Table 10.2",
+india,2015-16,38.4,percent,NFHS-4,2016,stunted,under-five-who,"NFHS-4 India report, Table 10.2",
+india,2015-16,21.0,percent,NFHS-4,2016,wasted,under-five-who,"NFHS-4 India report, Table 10.2",
+india,2019-21,57.0,percent,NFHS-5,2020,anaemia-women-15-49,all-women,"PIB release 1782638 (17 Dec 2021), text",
+india,2019-21,83.8,percent,NFHS-5,2020,full-immunisation-card,factsheet-card-only,NFHS-6 India and State/UT Fact Sheets (May 2026),
+india,2019-21,76.6,percent,NFHS-5,2020,full-immunisation-card-or-recall,factsheet-card-or-recall,NFHS-6 India and State/UT Fact Sheets (May 2026),
+india,2019-21,88.6,percent,NFHS-5,2020,institutional-births,all-births,NFHS-6 India and State/UT Fact Sheets (May 2026),
+india,2019-21,7.7,percent,NFHS-5,2020,severely-wasted,under-five-who,NFHS-6 India and State/UT Fact Sheets (May 2026),
+india,2019-21,35.5,percent,NFHS-5,2020,stunted,under-five-who,NFHS-6 India and State/UT Fact Sheets (May 2026),
+india,2019-21,19.3,percent,NFHS-5,2020,wasted,under-five-who,NFHS-6 India and State/UT Fact Sheets (May 2026),
+india,2023-24,87.1,percent,NFHS-6,2024,full-immunisation-card,factsheet-card-only,NFHS-6 India and State/UT Fact Sheets (May 2026),Provisional
+india,2023-24,82.6,percent,NFHS-6,2024,full-immunisation-card-or-recall,factsheet-card-or-recall,NFHS-6 India and State/UT Fact Sheets (May 2026),Provisional
+india,2023-24,90.6,percent,NFHS-6,2024,institutional-births,all-births,NFHS-6 India and State/UT Fact Sheets (May 2026),Provisional
+india,2023-24,5.2,percent,NFHS-6,2024,severely-wasted,under-five-who,NFHS-6 India and State/UT Fact Sheets (May 2026),Provisional
+india,2023-24,29.3,percent,NFHS-6,2024,stunted,under-five-who,NFHS-6 India and State/UT Fact Sheets (May 2026),Provisional
+india,2023-24,19.0,percent,NFHS-6,2024,wasted,under-five-who,NFHS-6 India and State/UT Fact Sheets (May 2026),Provisional
