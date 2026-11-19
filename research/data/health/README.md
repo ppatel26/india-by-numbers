@@ -1,6 +1,6 @@
 # Health
 
-Data gathered on 17 Nov 2026 from primary sources: ORGI Sample Registration System (SRS), NFHS (IIPS for MoHFW), PIB and the National Health Accounts (NHSRC for MoHFW). All values are as published. Nothing is interpolated.
+Data gathered on 17 and 18 Nov 2026 from ORGI, IIPS, PIB, MoHFW, NHSRC and WHO. The notes identify shares calculated from published figures. No values were interpolated.
 
 ## Questions this topic answers
 
@@ -81,12 +81,60 @@ Data gathered on 17 Nov 2026 from primary sources: ORGI Sample Registration Syst
 
 ### H8. Out-of-pocket health spending
 
-- Type: line for India (OOPE and government health expenditure, as a share of total health expenditure), with a method-break marker between 2016-17 and 2017-18. A ranked bar of the 21 states for 2023-24 as a second view.
-- Unit: percent of total health expenditure (THE).
-- Geography: India (2013-14 to 2023-24); 21 states (2023-24).
-- CSV: `out-of-pocket-health-spending.csv`
+- Type: line for India. The annual Indian series breaks at the 2017-18 survey change. A marker shows the addition of new sources in 2022-23. The state view ranks the 21 states for 2023-24.
+- Unit: percent of total health expenditure (THE) for Indian sources. Percent of current health expenditure (CHE) for WHO. THE includes capital spending. CHE excludes it. Indian government health expenditure (GHE) can include donor funds channelled through government. WHO measures domestic general government health expenditure (GGHE-D).
+- Geography: India (2000 to 2023-24); 21 states (2023-24).
+- CSV: `out-of-pocket-health-spending.csv`. The `period` column keeps each publisher's period label. The `year` column holds the year used to align sources. The `source_kind` column gives `official`, `archived copy` or `international estimate`. The `source` column identifies the release. The `use` column marks rows for the chart and WHO rows kept for overlap checks.
 - Sentence: "Households paid 42.7% of India's health bill out of their own pockets in 2023-24, down from 64.2% in 2013-14."
-- Source: MoHFW and NHSRC, National Health Accounts Estimates for India 2023-24, Table 1 (India) and Table A.6 (states).
+
+#### Indian accounts and WHO estimates
+
+- **2001-02.** The standalone MoHFW report was unavailable. Use the archived MoHFW commission report. Divide the direct household payments in Table 2.14 (₹72,758.71 crore, extrapolated from the NSS) by total spending in Figure 2.5 (₹1,08,732 crore). This gives 66.92% out of pocket. The 68.8% household slice in Figure 2.5 covers household spending as a whole. Add the three government slices (7.2%, 14.4% and 2.2%) for 23.8%. This sum covers central, state and local governments. The 2004-05 NHA says its reassessment found that the 2001-02 method overestimated out-of-pocket spending (p. 18).
+- **2004-05.** Divide archived NHA Table 4.1 out-of-pocket spending by Table 1.1 total spending. The result is 69.52%. Table 6 of the 2013-14 NHA cites those amounts and prints 69.4%. Keep the ratio from the original amounts. Use the 22.5% government share from the 2013-14 comparison. The 2004-05 report gives 19.67% for the narrower public spending measure in Table 1.1. Both early accounts use SHA 1.0. The annual accounts use SHA 2011.
+- **2005-06 to 2008-09.** Divide public expenditure by total expenditure in Table 1.5 of the archived 2004-05 NHA. Keep these provisional shares in a separate series. The 2007-08 input is a revised estimate. The 2008-09 input is a budget estimate. The table gives no direct household payments.
+- **2013-14 to 2023-24.** Keep the published India shares from Table 1 of the 2023-24 NHA. State shares come from Table A.6. The 2013-14 results match Table 6 of the 2013-14 report at 64.2% and 28.6%.
+- **WHO 2000 to 2023.** Use the published values of `GHED_OOPSCHE_SHA2011` and `GHED_GGHE-DCHE_SHA2011` for India. The December 2025 workbook has both shares through 2023 for India. Use the WHO shares where the chart has no corresponding Indian figure. Keep the other WHO values in the CSV for comparison. Use separate solid series for Indian values and dashed series for WHO estimates. The early Indian benchmarks each have one point per share.
+- **Gaps.** No source checked supplied either comparable share before 2000. The 2005 commission report gives household amounts for 1995-96 and 2003-04 but no matching total expenditure in Table 2.14. The ministry's [Health Sector Financing by Centre and States-UTs PDF](https://mohfw-dohfw.gov.in/static/uploads/2025/10/1fbdeda91f31ab2efbeb61c54dce63b7.pdf) and the [2013-14 to 2015-16 edition](https://mohfw-dohfw.gov.in/static/uploads/2025/10/6b5f71ce0dba20e70f2d172eee6b0c0c.pdf) returned HTTP 403. No figures were taken from them.
+
+#### Overlap checks
+
+Match the WHO year to the start of the Indian financial year and keep the published period labels. Differences are WHO minus India, in percentage points. The Indian column uses THE and the WHO column uses CHE. Indian public expenditure replaces the government column for the four provisional periods.
+
+| NHA period | WHO year | India out of pocket | WHO out of pocket | Difference | India government or public | WHO domestic government | Difference |
+| --- | ---: | ---: | ---: | ---: | ---: | ---: | ---: |
+| 2001-02 | 2001 | 66.92 | 74.11 | +7.19 | 23.8 | 18.88 | -4.92 |
+| 2004-05 | 2004 | 69.52 | 72.48 | +2.96 | 22.5 | 17.98 | -4.52 |
+| 2005-06 | 2005 | | | | 22.72 | 20.13 | -2.59 |
+| 2006-07 | 2006 | | | | 23.82 | 20.51 | -3.31 |
+| 2007-08 | 2007 | | | | 25.09 | 20.90 | -4.19 |
+| 2008-09 | 2008 | | | | 26.70 | 22.63 | -4.07 |
+| 2013-14 | 2013 | 64.2 | 69.07 | +4.87 | 28.6 | 23.07 | -5.53 |
+| 2014-15 | 2014 | 62.6 | 67.01 | +4.41 | 29.0 | 23.66 | -5.34 |
+| 2015-16 | 2015 | 60.6 | 64.66 | +4.06 | 30.6 | 25.64 | -4.96 |
+| 2016-17 | 2016 | 58.7 | 63.21 | +4.51 | 32.4 | 26.84 | -5.56 |
+| 2017-18 | 2017 | 48.8 | 55.11 | +6.31 | 40.8 | 32.95 | -7.85 |
+| 2018-19 | 2018 | 48.2 | 53.23 | +5.03 | 40.6 | 34.29 | -6.31 |
+| 2019-20 | 2019 | 47.1 | 52.00 | +4.90 | 41.4 | 35.07 | -6.33 |
+| 2020-21 | 2020 | 44.4 | 49.51 | +5.11 | 42.8 | 36.25 | -6.55 |
+| 2021-22 | 2021 | 39.4 | 45.11 | +5.71 | 48.0 | 40.40 | -7.60 |
+| 2022-23 | 2022 | 43.4 | 44.54 | +1.14 | 43.7 | 40.40 | -3.30 |
+| 2023-24 | 2023 | 42.7 | 43.89 | +1.19 | 43.5 | 39.02 | -4.48 |
+
+On a CHE basis, the out-of-pocket shares in Table 2 of the latest NHA match WHO to one decimal place from 2017-18 to 2021-22. The last two Indian shares are 49.9% and 48.5%. The WHO shares are 44.54% and 43.89%. The government shares also differ on a CHE basis. For 2023-24 the Indian government current share was 36.0%, and WHO reports 39.02% for 2023.
+
+#### Raw health spending files
+
+Read all files on 18 Nov 2026. Store them as data under `raw/health/`. Use the WHO workbook to cross-check the API values. Build the CSV from the PDFs and the two JSON files with `python3 -I pipeline/health/build_health_spending.py` at the repository root. The script calls `pdftotext -layout`.
+
+| Raw file under `raw/health/` | Source kind | URL | SHA-256 |
+| --- | --- | --- | --- |
+| `macroeconomics-and-health/report.pdf` | archived copy | https://archive.org/download/PARI.report-of-the-national-commission-on-macroeconomics-and-health/report-of-the-national-commission-on-macroeconomics-and-health.pdf | `25fd60c008a4a980a0dd3d3e254befdc31831da4c13823ea2ab94d1b926058d6` |
+| `nha-2004-05/report.pdf` | archived copy | https://archive.org/download/PARI.national-health-accounts-2004-05/national-health-accounts-2004-05.pdf | `8e9d739e36dbffd5ea3e9cfe22e155f6ba18cd7aaee6e216edebcf699cc11c65` |
+| `nha-2013-14/report.pdf` | official | https://nhsrcindia.org/sites/default/files/2021-06/NATIONAL%20HEALTH%20ACCOUNTS-%20Estimates%20for%20India-2013-14.pdf | `672eac9b24fb5edfe7d737ff13ebf58a116f2970602835163b55c47ee5e4189d` |
+| `nha-2023-24/report.pdf` | official | https://nhsrcindia.org/sites/default/files/2026-11/NHA%20Report%202023-24.pdf | `cf60c3fd530a585f9426595505c1301a2877e317adca4f8d17097c84e190e119` |
+| `who-ghed/out-of-pocket/out-of-pocket.json` | international estimate | https://ghoapi.azureedge.net/api/GHED_OOPSCHE_SHA2011?$filter=SpatialDim%20eq%20%27IND%27 | `091b6d22056e5dfb4560fc6cf0b9e05e3fb6d282ebf0b23be05d5f3b2aab0842` |
+| `who-ghed/government/government.json` | international estimate | https://ghoapi.azureedge.net/api/GHED_GGHE-DCHE_SHA2011?$filter=SpatialDim%20eq%20%27IND%27 | `660f01bc7c22acdb3cd452a5c10ad4c186d70f9221a159d6a321a30a3eed4204` |
+| `who-ghed/workbook/indicators.xlsx` | international estimate | https://apps.who.int/nha/database/Home/IndicatorsDownload/en | `8cf7c04ede53281ab9003353806b55329068a090d32a68e8df1766676a886b3c` |
 
 ### H9. NFHS national trends and state stunting history
 

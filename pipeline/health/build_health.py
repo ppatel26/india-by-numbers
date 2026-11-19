@@ -1,7 +1,7 @@
 """Build health CSVs from pdftotext output and saved HTML.
 First run pipeline/health/extract_text.sh (PDF text into the work folder).
 Run: python3 -I pipeline/health/build_health.py --raw raw/health --work work/health --out research/data/health"""
-import argparse, csv, html, re, sys
+import argparse, csv, html, re, subprocess, sys
 from pathlib import Path
 
 ap = argparse.ArgumentParser()
@@ -258,46 +258,11 @@ assert len(an) == 36
 write("nfhs-key-indicators-by-state.csv", ["geography", "period", "round", "indicator", "indicator_label", "value", "unit", "source_doc", "note"], rows)
 
 # 8. OOPE share: India time series and states 2023-24
-nha = lines("nha.txt")
-yrs = ["2013-14", "2014-15", "2015-16", "2016-17", "2017-18", "2018-19", "2019-20", "2020-21", "2021-22", "2022-23", "2023-24"]
-l6 = next(l for l in nha if re.search(r"^\s+6\s+Out of Pocket Expenditure\s+64\.2", l))
-v6 = re.findall(r"\d+\.\d", l6)
-assert len(v6) == 11
-l5 = None
-for k, l in enumerate(nha):
-    if re.search(r"^\s+5\s+Government Health\s+28\.6", l):
-        l5 = re.findall(r"\d+\.\d", l); break
-assert l5 and len(l5) == 11
-rows = []
-for y, a, g in zip(yrs, v6, l5):
-    note = []
-    if y in ("2013-14", "2014-15", "2015-16", "2016-17"):
-        note.append("OOPE extrapolated from NSS 71st round (2014)")
-    if y in ("2017-18", "2018-19", "2019-20", "2023-24"):
-        note.append("OOPE from NSS 75th round (2017-18)")
-    if y in ("2022-23", "2023-24"):
-        note.append("new data sources added from NHA 2022-23")
-    rows.append(["india", y, "oope-share-of-the", a, "percent of total health expenditure", "; ".join(note)])
-    rows.append(["india", y, "ghe-share-of-the", g, "percent of total health expenditure", ""])
-# state table A.6
-i = next(i for i, l in enumerate(nha) if "Table A. 6: Key Health Financing Indicators for select States" in l and i > 1000)
-j = next(k for k in range(i, len(nha)) if "Table A. 7" in nha[k])
-prev = ""
-for k in range(i, j):
-    l = nha[k]
-    m = re.match(r"^\s+(\d{1,2})\s+([A-Za-z ]+?)\s+([\d,]+)\s+([\d.]+)\s+([\d,]+)\s+([\d,]+)\s+([\d.]+)\s+([\d.]+)\s+([\d.]+)\s+([\d,]+)\s+([\d,]+)\s+([\d.]+)\s+", l)
-    if not m:
-        continue
-    name = m.group(2).strip()
-    nxt = nha[k + 1].strip()
-    if name in ("Andhra", "Madhya", "Himachal", "Uttar") and nxt in ("Pradesh",):
-        name += " Pradesh"
-    if name == "Jammu and" and nxt == "Kashmir":
-        name = "Jammu and Kashmir"
-    rows.append([slug(name), "2023-24", "oope-share-of-the", m.group(12), "percent of total health expenditure", "state estimate; OOPE from NSS 75th round (2017-18)"])
-    rows.append([slug(name), "2023-24", "ghe-share-of-the", m.group(7), "percent of total health expenditure", ""])
-write("out-of-pocket-health-spending.csv", ["geography", "period", "series", "value", "unit", "note"], rows)
-assert sum(1 for r in rows if r[1] == "2023-24" and r[0] != "india") == 42, "21 states x 2"
+subprocess.run(
+    [sys.executable, "-I", Path(__file__).with_name("build_health_spending.py"),
+     "--raw", RAW, "--out", OUT, "--geo", GEO],
+    check=True,
+)
 
 # Extra: U5MR and NMR by state 2024 (Statements 53 and 48)
 sr = lines("srs-statreport-2024.txt")
