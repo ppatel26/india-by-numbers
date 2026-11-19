@@ -1,6 +1,6 @@
 # Education
 
-Data for the India by Numbers "Education" topic. School data come from UDISE+ (Ministry of Education, Department of School Education and Literacy). Higher education data come from the All India Survey on Higher Education (AISHE, Ministry of Education). Literacy comes from the PLFS 2025 survey (MoSPI) and the Census 2011 full count (ORGI).
+Data for the India by Numbers "Education" topic. School data come from UDISE Flash Statistics (NIEPA and Ministry of Education) and UDISE+ (Ministry of Education, Department of School Education and Literacy). Higher education data come from the All India Survey on Higher Education (AISHE, Ministry of Education). Literacy comes from the PLFS 2025 survey (MoSPI) and the Census 2011 full count (ORGI).
 
 Read on 17 Nov 2026.
 
@@ -21,13 +21,13 @@ Read on 17 Nov 2026.
 
 ## Charts
 
-### edu-1 School enrolment and dropout in India, 2018-19 to 2025-26
+### edu-1 School enrolment and dropout in India, 2012-13 to 2025-26
 
-- Type: line, small multiples (enrolment by level; GER by level; dropout rate by level). Method break marker between 2021-22 and 2022-23.
+- Three line charts show enrolment, GER and dropout by level. Method breaks start in 2018-19 and 2022-23. The lines stop at each break.
 - The India totals give students, gross enrolment ratios and dropout rates in per cent.
 - File: `education-school-trend-india.csv`.
 - Sentence: "In 2025-26, 24.72 crore children were enrolled from pre-primary to class 12, slightly more than the 24.69 crore of 2024-25. Primary enrolment (classes 1 to 5) fell to 10.19 crore, from 10.44 crore in 2024-25."
-- Use UDISE+ Tables 3.1, 5.1 and 5.13 for 2018-19 to 2020-21. Use Table 1, "National Highlights", for 2021-22 to 2025-26. The chart converts counts to crore. The CSV keeps all published digits.
+- Use UDISE Flash Statistics through 2017-18. Use UDISE+ Tables 3.1, 5.1 and 5.13 for 2018-19 to 2020-21. Use Table 1, "National Highlights", for 2021-22 to 2025-26. The chart converts counts to crore. The CSV keeps all published digits and records the source kind for each row.
 
 ### edu-2 Gross enrolment ratio by state
 
@@ -119,7 +119,7 @@ Raw downloads are not kept in the repository; the URL and sha256 above identify 
 
 ### National school trend inputs
 
-Read on 18 Nov 2026. The Ministry of Education, Department of School Education and Literacy, publishes all eight annual reports. Keep one file per directory under `raw/education/`.
+Read on 18 Nov 2026. The Ministry of Education, Department of School Education and Literacy, publishes the eight UDISE+ annual reports below. These rows have source kind `official`. Keep one raw file per directory under `raw/education/`.
 
 | Release | Release date | Path under `raw/education/` | URL | SHA-256 |
 | --- | --- | --- | --- | --- |
@@ -135,6 +135,119 @@ Read on 18 Nov 2026. The Ministry of Education, Department of School Education a
 From the repository root, run `python3 -I pipeline/education/build_school_trend.py` to write
 `education-school-trend-india.csv`. The script reads Word table XML and uses `pdftotext -layout`
 for the PDFs. The full education pipeline runs the same script.
+
+### Historical school trend inputs
+
+NIEPA, then called NUEPA, and the Ministry of Education, then called the Ministry of Human Resource
+Development, published the Flash Statistics. Each historical row has source kind `archived copy`.
+The archive timestamp is part of each capture URL. Read all files in this section on 18 Nov 2026.
+
+| Release | Use | Path under `raw/education/` | Original URL | Capture URL | SHA-256 |
+| --- | --- | --- | --- | --- | --- |
+| DISE 2012-13 Elementary Flash Statistics (2013) | Enrolment p. 27 and GER p. 36, classes 1 to 8 | `flash-2012-13-elementary/report.pdf` | http://udise.in/Downloads/Publications/Documents/Flash%20Statistics%202012-13.pdf | https://web.archive.org/web/20220121184043id_/http://udise.in/Downloads/Publications/Documents/Flash%20Statistics%202012-13.pdf | `a2ce32d1c5bcac61967c68125fcd5601c253be7d77428d96c9261ffbf534f69d` |
+| UDISE 2012-13 Secondary Flash Statistics (2013) | Enrolment p. 18 and GER p. 30, classes 9 to 12 | `flash-2012-13-secondary/report.pdf` | http://udise.in/Downloads/Publications/Documents/SEMIS-FLASH-Statistics-2012-13.pdf | https://web.archive.org/web/20220121184114id_/http://udise.in/Downloads/Publications/Documents/SEMIS-FLASH-Statistics-2012-13.pdf | `7b290729d7f7f260ee9f365e33393817146ac29106a7e57e0ad96773bcee9d11` |
+| UDISE 2013-14 Flash Statistics (Jul 2014) | Enrolment Table 3.2, GER Table 3.17, dropout Table 3.15 for 2012-13 | `flash-2013-14/report.pdf` | http://udise.in/Downloads/Publications/Documents/U-DISE-SchoolEducationInIndia-2013-14.pdf | https://web.archive.org/web/20220119021654id_/http://udise.in/Downloads/Publications/Documents/U-DISE-SchoolEducationInIndia-2013-14.pdf | `75958bd596261a36b4e8bc460ccb42e55571c7c764d7d0923a248dcbb5a10927` |
+| UDISE 2014-15 Flash Statistics (2015) | Enrolment Table 3.2, GER Table 3.26, dropout Table 3.19 for 2013-14 | `flash-2014-15/report.pdf` | http://www.dise.in/Downloads/Publications/Documents/U-DISE-SchoolEducationInIndia-2014-15.pdf | https://web.archive.org/web/20220214122726id_/http://www.dise.in/Downloads/Publications/Documents/U-DISE-SchoolEducationInIndia-2014-15.pdf | `fb2749a16f4daa154fe669d3236cbf9d8ae76bc25b8725c0f6f53d4022ea3e6a` |
+| UDISE 2015-16 Flash Statistics (2016) | Enrolment Table 3.2, GER Table 3.28, dropout Table 3.20 for 2014-15 | `flash-2015-16/report.pdf` | http://udise.in/Downloads/Publications/Documents/U-DISE-SchoolEducationInIndia-2015-16.pdf | https://web.archive.org/web/20201222145336id_/http://udise.in/Downloads/Publications/Documents/U-DISE-SchoolEducationInIndia-2015-16.pdf | `439525e900e1587ce601977d03657d776c08685b5f803343e013f5408f881749` |
+| UDISE 2016-17 Flash Statistics (2018) | Enrolment Table 1.31, GER Table 1.41, dropout Table 1.52 for the 2015-16 cohort | `udise-2016-17-wayback-2020/report.pdf` | http://udise.in/Downloads/Publications/Documents/Flash_Statistics_on_School_Education-2016-17.pdf | https://web.archive.org/web/20201228051951id_/http://udise.in/Downloads/Publications/Documents/Flash_Statistics_on_School_Education-2016-17.pdf | `e7d40520fad3eac4da8c868bf6e38fa6df1d106dad0b8a0bf11311241b8b2f76` |
+| UDISE 2017-18 Flash Statistics, provisional (2020) | Enrolment Table 1.31, GER Table 1.41, dropout Table 1.52 for the 2016-17 cohort | `flash-2017-18-provisional/report.pdf` | http://udise.in/Downloads/Publications/Documents/Flash_Statistics_on_School_Education-2017-18_Provisional.pdf | https://web.archive.org/web/20210410164422id_/http://udise.in/Downloads/Publications/Documents/Flash_Statistics_on_School_Education-2017-18_Provisional.pdf | `b14c034ed03653ae1c2506cf6d4b3ce8a2dfe0df563b3969cfc0757d76f65073` |
+
+The files below support discovery or checks. They supply no CSV rows.
+
+| File | Source kind | Path under `raw/education/` | Original URL, where known | URL read | SHA-256 |
+| --- | --- | --- | --- | --- | --- |
+| UDISE Flash Statistics index | archived copy | `flash-publication-index/index.html` | http://udise.in/flash.htm | https://web.archive.org/web/20230109081523id_/http://udise.in/flash.htm | `a6b7686f86e28c61fd7aaf4e0e5dbcb3ad74b23c2ec701606fc51bc11a14d792` |
+| NIEPA October 2026 publications catalogue, PDF p. 38 links the UDISE report | official | `niepa-publications-catalogue/report.pdf` | https://www.niepa.ac.in/download/Publications/2026/PUBLICATIONS_CATALOGUE_as_on_Oct%202026.pdf | Same as original | `9b2240de162e9700305409ce08adc125528cc72f5df081f6479dfbf949bed692` |
+| UDISE 2017-18 Flash Statistics, as linked by NIEPA | third-party copy | `udise-2017-18-copy/report.pdf` | http://udise.in/Downloads/Publications/Documents/Flash_Statistics_on_School_Education-2017-18_Provisional.pdf | https://educationforallinindia.com/wp-content/uploads/2021/04/School-Education-in-India-Flash-Statistics-2017-18-NIEPA.pdf | `b14c034ed03653ae1c2506cf6d4b3ce8a2dfe0df563b3969cfc0757d76f65073` |
+| UDISE 2014-15 Flash Statistics, second capture | archived copy | `flash-2014-15-udise/report.pdf` | http://udise.in/Downloads/Publications/Documents/U-DISE-SchoolEducationInIndia-2014-15.pdf | https://web.archive.org/web/20220119014147id_/http://udise.in/Downloads/Publications/Documents/U-DISE-SchoolEducationInIndia-2014-15.pdf | `fb2749a16f4daa154fe669d3236cbf9d8ae76bc25b8725c0f6f53d4022ea3e6a` |
+| DISE 2014-15 Elementary Flash Statistics | archived copy | `flash-2014-15-elementary/report.pdf` | http://udise.in/Downloads/Publications/Documents/ElementaryFlash2014-15.pdf | https://web.archive.org/web/20220119061652id_/http://udise.in/Downloads/Publications/Documents/ElementaryFlash2014-15.pdf | `c8602a698f1f2d38de89d29481ae87742c80239ac02b29c8329ca4073955c198` |
+| UDISE 2014-15 Secondary Flash Statistics | archived copy | `flash-2014-15-secondary/report.pdf` | http://udise.in/Downloads/Publications/Documents/SecondaryFlash%20Statistics-2014-15.pdf | https://web.archive.org/web/20220120060021id_/http://udise.in/Downloads/Publications/Documents/SecondaryFlash%20Statistics-2014-15.pdf | `9ffa3bfdf07fb9fced9d7b21ce1b780f17742c2ba46ecd88b5f587fc821cc966` |
+| Ministry of Education, Educational Statistics at a Glance 2018 (ESAG) | archived copy | `esag-2018/report.pdf` | https://www.education.gov.in/sites/upload_files/mhrd/files/statistics-new/ESAG-2018.pdf | https://web.archive.org/web/20210323135145id_/https://www.education.gov.in/sites/upload_files/mhrd/files/statistics-new/ESAG-2018.pdf | `6a6bfa9a18b68618d29dc41956fcabe0340428a54c14274d79a397218c6ac402` |
+| Ministry of Education, Educational Statistics at a Glance 2014 | third-party copy | `esag-2014-copy/report.pdf` | Unknown | https://www.educationforallinindia.com/educational_statistics_at_glance-MHRD_2014.pdf | `e5f1cbabdb419bed7d87bd44006bc50f2f8c455bec2180ca481068fba2cbd677` |
+| Statistics on Education, MoSPI technical paper by Tilak, Panchamukhi and Biswal | official host | `mospi-education/report.pdf` | https://www.mospi.gov.in/sites/default/files/reports_and_publication/technical_paper/Them_Paper_Education.pdf | Same as original | `f42d891fe573eb8aa58cdaa7a9a91e7a6b1f93dbaf6eee561173895cb5e30aee` |
+
+### Historical overlap checks
+
+- **Copies.** The 2017-18 archived PDF matches the NIEPA catalogue's third-party PDF byte for byte.
+  Both captures of the combined 2014-15 report also match byte for byte.
+- **Enrolment.** The 2014-15 elementary and secondary reports agree with the combined report
+  across the four levels. The 2016-17 and 2017-18 reports restate all four counts for 2014-15
+  and 2015-16 exactly. The 2017-18 report also restates all four 2016-17 counts exactly.
+  The 2016-17 national count for classes 11 and 12 includes the publisher's estimates for Andhra
+  Pradesh and Karnataka. The two states lacked complete returns for those classes.
+- **Enrolment against Ministry summaries.** Chart 1 of UDISE+ 2019-20 gives 13.5, 6.5, 3.5 and
+  2.0 crore for 2012-13. These agree with the Flash Statistics after rounding to one decimal
+  crore. ESAG 2018 Table 27A rounds to lakh. For 2012-13 it gives 650 lakh in upper primary and
+  200 lakh in higher secondary. The Flash counts round to 649 lakh and 199 lakh. For 2013-14
+  it gives 664 lakh in upper primary. The Flash count rounds to 665 lakh. The other 13 counts
+  for 2012-13 to 2015-16 agree at the table's precision.
+- **GER.** ESAG 2018 Table 29A agrees with all 16 Flash Statistics totals for 2012-13 to
+  2015-16 after rounding to one decimal place. ESAG Table 40 also agrees with all 12 totals
+  for 2013-14 to 2015-16 at two decimals. The provisional 2013-14 figures in ESAG 2014
+  Tables 6A and 7 differ from the later Flash Statistics figures at all four levels. The 2016-17
+  and 2017-18 retrospectively report 2014-15 GER as 99.89, 90.26, 76.91 and 52.54 and 2015-16
+  GER as 99.02, 91.82, 79.30 and 55.73. These differ from the annual editions, so the CSV uses
+  the values from the edition for each year. The two later reports give the same 2016-17 GER.
+  The retrospective UDISE+ 2019-20 text gives different 2012-13 GER values at all four levels
+  (primary above 109%, then 84.1%, 69.2% and 40.1%). It does not explain the differences.
+- **Dropout.** ESAG 2018 Table 32A agrees with all nine primary to secondary values for the
+  2012-13 to 2014-15 cohorts in the 2013-14, 2014-15 and 2015-16 Flash Statistics.
+  ESAG 2014 Table 10 gives cumulative dropout from class 1. The chart uses annual rates for each level.
+- **Dropout dates.** The 2014-15 Flash Statistics use 2013-14 enrolment and 2014-15 repeaters.
+  They label rates by the cohort start, 2013-14. Table 1.52 of both later Flash editions labels
+  the same four national values (4.34, 3.77, 17.86 and 1.54) as 2014-15. It labels the 2014-15
+  cohort's values (4.13, 4.03 and 17.06, with a dash for higher secondary) as 2015-16.
+  The 2015-16 Flash Statistics Table 3.20 and 2017-18 Table 5.25 also match under these different
+  year labels for the Andaman and Nicobar Islands and Andhra Pradesh. The 2016-17 edition and
+  2017-18 edition give the same national totals in their 2016-17 row. Use the cohort start year
+  for these UDISE rates. Keep the printed row year in the `table` column where it differs.
+- **UDISE+ starts in 2018-19.** The 2017-18 Flash Statistics end with 2017-18 data. They supply
+  no 2018-19 values for a direct overlap with UDISE+. Chart 1 in the 2019-20 UDISE+ report
+  restates all four 2018-19 counts to one decimal crore. They agree with Table 3.1 of the 2018-19
+  report at that precision.
+
+### Historical access and gaps
+
+- The original UDISE file links in the archived index return HTTP 404 after the HTTPS redirect.
+  Direct requests to the old DISE host for the 2015-16 and 2016-17 reports return parking pages.
+  The NIEPA publications page and catalogue give no NIEPA-hosted copy of the 2017-18 report.
+  A guessed NIEPA file path for 2016-17 returns 404. The old school report cards publications
+  list also returns 404. http://schoolreportcards.in/SRC-New/Links/DISEPublication.aspx
+- The Ministry's statistics listing, linked older tables and candidate ESAG PDFs on
+  education.gov.in return HTTP 403. The dsel.education.gov.in statistics list and candidate ESAG
+  path return 404. The new DoSE&L and Higher Education sites and the Goa statistics page return
+  HTTP 403. The old Higher Education subdomain fails DNS. PIB returns HTTP 403.
+  https://www.education.gov.in/en/statistics-new
+  https://www.education.gov.in/hi/statistics-new?shs_term_node_tid_depth=394&Apply=Apply
+  https://dsel.education.gov.in/statistics
+  https://www.dsel-education.gov.in/statistics
+  https://education.goa.gov.in/statistical-publications/
+- The UDISE+ archive and microdata catalogue timed out in the earlier check. The dashboard's
+  archive page loads and links to UDISE+ reports from 2019-20. The Rajasthan mirror for 2013-14
+  and the Ministry of Tribal Affairs statistics PDF time out. The NITI Aayog report returns
+  HTTP 403. The MoSPI technical paper predates these years.
+  https://data.udiseplus.gov.in/archive
+  https://microdata.udiseplus.gov.in/
+  https://dashboard.udiseplus.gov.in/udiseplus-archive/
+  https://rajsmsa.nic.in/public/Documents/21-04-2015-160339~U-DISE_2013-14.pdf
+  https://tribal.nic.in/ST/Statistics8518.pdf
+  https://www.niti.gov.in/sites/default/files/2026-05/School-Education-System-in-India.pdf
+- Internet Archive CDX requests timed out or failed to complete. The Wayback availability
+  API found the snapshots above. The 2015-16 capture dated `20261115130506` and the 2016-17
+  capture dated `20250425091931` contain HTML. The alternate 2017-18 capture dated
+  `20220408235321` did not complete. The availability API found no capture for the candidate
+  2017-18 path without the provisional suffix. The archived 2014-15 elementary and secondary
+  editions and both ESAG editions provided checks. The NIEPA-linked copy confirms the
+  archived 2017-18 report. General web searches and the third-party UDISE publications list
+  provided links and no additional cohort rates. https://archive.org/wayback/available
+  https://educationforallinindia.com/u-dise-publications/
+- Dropout for the 2017-18 cohort remains unverified for all levels. It requires a return for the
+  following year, when UDISE+ already used online collection. The 2017-18 Flash Statistics
+  stop with 2017-18 returns. The UDISE+ report publishes its own 2018-19 rates. The original
+  Ministry links, archived Flash Statistics, ESAG, official mirror leads and the
+  NIEPA-linked copy above supplied no separate comparable value. Higher secondary dropout is
+  also absent in 2012-13 and 2014-15. The relevant national totals show a dash. The UDISE+
+  series gives annual rates through class 10.
 
 ## Checks done
 
@@ -155,20 +268,9 @@ for the PDFs. The full education pipeline runs the same script.
 
 - **UDISE+ break in 2022-23.** Student-level data collection and new population projections began in 2022-23. Primary GER fell from 103.39 (2021-22) to 96.2 (2022-23) and dropout rates jumped (primary 1.45% to 7.8%). This is mostly a change of method. Show a break marker. Do not describe the 2021-22 to 2022-23 change as a real fall in enrolment.
 - **UDISE to UDISE+ in 2018-19.** UDISE used paper school returns and digitised them at block or district
-  level. UDISE+ introduced mandatory online upload and built-in validation checks. The chart begins
-  with UDISE+. The 2018-19 file on the dashboard is the Ministry's annual report. Its metadata shows a
-  later save, so the original publication date and any revision to that file could not be verified.
-- **UDISE years 2012-13 to 2017-18.** The Ministry's [statistics page](https://www.education.gov.in/en/statistics-new)
-  and the [older tables link](https://www.education.gov.in/hi/statistics-new?shs_term_node_tid_depth=394&Apply=Apply)
-  cited in the 2019-20 report returned HTTP 403. The [UDISE+ archive](https://data.udiseplus.gov.in/archive)
-  and [microdata catalogue](https://microdata.udiseplus.gov.in/) timed out. The old UDISE domain returned
-  404 for the Flash Statistics file and now serves unrelated content. The [school report cards publications list](http://schoolreportcards.in/SRC-New/Links/DISEPublication.aspx)
-  linked by NIEPA returned 404. NIEPA's [October 2026 publications catalogue](https://www.niepa.ac.in/download/Publications/2026/PUBLICATIONS_CATALOGUE_as_on_Oct%202026.pdf)
-  lists Flash Statistics, but links to a third-party copy. Read the catalogue on 18 Nov 2026. Raw file
-  `raw/education/niepa-publications-catalogue/report.pdf`, SHA-256
-  `9b2240de162e9700305409ce08adc125528cc72f5df081f6479dfbf949bed692`.
-  Chart 1 in the 2019-20 report gives a rounded retrospective enrolment comparison for 2012-13.
-  The original digits and intervening years remain unverified.
+  level. UDISE+ introduced mandatory online upload and built-in validation checks. The chart has a
+  break at 2018-19. The 2018-19 file on the dashboard is the Ministry's annual report. Its metadata
+  shows a later save. The original release date and revision history remain unverified.
 - **GER above 100.** Many states show GER above 100 (Meghalaya primary 184.7). This means over-age or under-age enrolment, cross-state enrolment, or a low population projection. Cap nothing; explain it in the chart note.
 - **Small UTs.** The UDISE+ booklet warns that ratios for UTs and some small states changed with the new population projections. Chandigarh's higher secondary GER (108.2) and similar values need a note.
 - **Girls' toilet and electricity.** Table 1 reports "having electricity connection" (95.0%) and "girls' toilet facility" (98.5%). The state file uses the "functional" versions (93.5% and 95.8%), which are lower. Do not mix them.
