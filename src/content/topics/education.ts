@@ -104,7 +104,50 @@ const LITERACY = 'education/education-literacy-by-state.csv'
 
 const SCHOOL_TREND_SOURCES = [
   udise2025_26, udise2024_25, udise2023_24, udise2022_23, udise2021_22, udise2020_21, udise2019_20, udise2018_19,
-]
+  {
+    publisher: 'Ministry of Education and NIEPA',
+    release: 'UDISE 2017-18 Flash Statistics, provisional, archived copy',
+    released: '2020',
+    url: 'https://web.archive.org/web/20210410164422id_/http://udise.in/Downloads/Publications/Documents/Flash_Statistics_on_School_Education-2017-18_Provisional.pdf',
+  },
+  {
+    publisher: 'Ministry of Education and NIEPA',
+    release: 'UDISE 2016-17 Flash Statistics, archived copy',
+    released: '2018',
+    url: 'https://web.archive.org/web/20201228051951id_/http://udise.in/Downloads/Publications/Documents/Flash_Statistics_on_School_Education-2016-17.pdf',
+  },
+  {
+    publisher: 'Ministry of Education and NIEPA',
+    release: 'UDISE 2015-16 Flash Statistics, archived copy',
+    released: '2016',
+    url: 'https://web.archive.org/web/20201222145336id_/http://udise.in/Downloads/Publications/Documents/U-DISE-SchoolEducationInIndia-2015-16.pdf',
+  },
+  {
+    publisher: 'Ministry of Education and NIEPA',
+    release: 'UDISE 2014-15 Flash Statistics, archived copy',
+    released: '2015',
+    url: 'https://web.archive.org/web/20220214122726id_/http://www.dise.in/Downloads/Publications/Documents/U-DISE-SchoolEducationInIndia-2014-15.pdf',
+  },
+  {
+    publisher: 'Ministry of Education and NIEPA',
+    release: 'UDISE 2013-14 Flash Statistics, archived copy',
+    released: '2014-07',
+    url: 'https://web.archive.org/web/20220119021654id_/http://udise.in/Downloads/Publications/Documents/U-DISE-SchoolEducationInIndia-2013-14.pdf',
+  },
+  {
+    publisher: 'Ministry of Education and NIEPA',
+    release: 'DISE 2012-13 Elementary Flash Statistics, archived copy',
+    released: '2013',
+    url: 'https://web.archive.org/web/20220121184043id_/http://udise.in/Downloads/Publications/Documents/Flash%20Statistics%202012-13.pdf',
+  },
+  {
+    publisher: 'Ministry of Education and NIEPA',
+    release: 'UDISE 2012-13 Secondary Flash Statistics, archived copy',
+    released: '2013',
+    url: 'https://web.archive.org/web/20220121184114id_/http://udise.in/Downloads/Publications/Documents/SEMIS-FLASH-Statistics-2012-13.pdf',
+  },
+] satisfies Source[]
+const HISTORICAL_YEARS = ['2012-13', '2013-14', '2014-15', '2015-16', '2016-17', '2017-18']
 const OLD_YEARS = ['2018-19', '2019-20', '2020-21', '2021-22']
 const NEW_YEARS = ['2022-23', '2023-24', '2024-25', '2025-26']
 
@@ -121,23 +164,28 @@ const INDICATORS = [
   ['dropout', 'dropout rate'],
 ] as const
 
-/** Chart 1.1: one series per indicator, level and method (to 2021-22, from 2022-23). */
+/** Keep each method in its own series. */
 const trendSeries: Series[] = INDICATORS.flatMap(([ind, indicator]) =>
-  LEVELS.filter(([lvl]) => !(ind === 'dropout' && lvl === 'higher-secondary')).flatMap(([lvl, level, label, color]) =>
-    (
-      [
-        ['old', OLD_YEARS],
-        ['new', NEW_YEARS],
-      ] as const
-    ).map(([m, years]) => ({
-      key: `${ind}-${lvl}-${m}`,
+  LEVELS.flatMap(([lvl, level, label, color]) => {
+    const periods = ind === 'dropout' && lvl === 'higher-secondary'
+      ? [
+          ['udise-early', ['2013-14']],
+          ['udise-late', ['2015-16', '2016-17']],
+        ] as const
+      : [
+          ['udise', HISTORICAL_YEARS],
+          ['old', OLD_YEARS],
+          ['new', NEW_YEARS],
+        ] as const
+    return periods.map(([method, years]) => ({
+      key: `${ind}-${lvl}-${method}`,
       label,
       color,
       ...(ind === 'enrol' ? { format: { scale: 'crore', decimals: 2 } as const } : {}),
       file: TREND,
       where: { indicator, level, period: years },
-    })),
-  ),
+    }))
+  }),
 )
 
 const trendPanel = (ind: string) => trendSeries.filter((s) => s.key.startsWith(`${ind}-`)).map((s) => s.key)
@@ -165,12 +213,12 @@ const topic: Topic = {
           chart: {
             kind: 'line',
             slug: 'school-enrolment-trend',
-            title: 'School enrolment and dropout in India, 2018-19 to 2025-26',
+            title: 'School enrolment and dropout in India, 2012-13 to 2025-26',
             subtitle:
               'Enrolment in crore, gross enrolment ratio and dropout rate by school level.',
             punches: { office: 'MoE', unit: 'crore · %', period: '2025-26' },
             status: ['Method break'],
-            note: 'UDISE+ began in 2018-19. From 2022-23 it records each student and uses new population projections. The lines stop at that change. Levels cover classes 1-5, 6-8, 9-10 and 11-12. UDISE+ publishes dropout rates for classes 1 to 10.',
+            note: 'Figures for 2012-13 to 2017-18 come from archived copies of the UDISE Flash Statistics. UDISE+ began in 2018-19. It began to record each student and use new population projections in 2022-23.',
             sources: SCHOOL_TREND_SOURCES,
             series: [
               ...trendSeries,
@@ -190,18 +238,21 @@ const topic: Topic = {
               { label: 'Gross enrolment ratio', series: trendPanel('ger') },
               { label: 'Dropout rate, %', series: trendPanel('dropout'), own: true },
             ],
-            breaks: [{ x: '2022-23', label: 'New method' }],
+            breaks: [{ x: '2018-19', label: 'UDISE+' }, { x: '2022-23', label: 'New data' }],
             know: [
               'UDISE+ replaced UDISE in 2018-19. Schools began to upload their returns to a system with built-in validation checks.',
               'From 2022-23, UDISE+ collects data for each student and uses revised population projections. The Ministry advises against comparing ratios across this break.',
               'The gross enrolment ratio (GER) divides enrolment at a level, of any age, by the population of the official age for that level, so it can be above 100.',
-              'Each year uses the figures from its own report. The NEP 2020 structure groups classes differently and gives different ratios.',
+              'The 2016-17 report estimates enrolment for classes 11 and 12 in Andhra Pradesh and Karnataka.',
+              'The last verified UDISE dropout cohort began in 2016-17.',
+              'Classes 11 and 12 have dropout figures for some UDISE years. UDISE+ publishes dropout rates for classes 1 to 10.',
+              'The NEP 2020 structure groups classes differently and gives different ratios.',
             ],
             processing: [
+              'Read the UDISE national totals and keep the published digits. Assign each UDISE dropout rate to the year the cohort started.',
               'Read the India totals in Tables 3.1, 5.1 and 5.13 for 2018-19 to 2020-21. Use Table 1 in each booklet from 2021-22.',
               'Check the 2020-21 values against Table 1 of the 2021-22 booklet. All 13 values agree.',
-              'Display enrolment in crore. Keep the published digits for ratios and rates.',
-              'Split the series at 2022-23, when student-level data began.',
+              'Display enrolment in crore.',
             ],
             nextRelease: 'not announced',
           },
@@ -547,13 +598,13 @@ const topic: Topic = {
     frequency:
       'UDISE+: once a year. The 2025-26 booklet came out on 7 Jul 2026, with a reference date of 31 Mar 2026. AISHE: once a year, about two years after the academic year; the 2023-24 report came out on 8 Jul 2026. PLFS annual report: once a year. Census: the last full count was in 2011.',
     revisions:
-      'School trend values come from each year’s UDISE+ report. AISHE and Census figures are final as published. MoSPI released the PLFS 2025 report on 27 Mar 2026 and a revised file on 29 May 2026.',
+      'School trend values come from UDISE Flash Statistics and UDISE+ reports. AISHE and Census figures are final as published. MoSPI released the PLFS 2025 report on 27 Mar 2026 and a revised file on 29 May 2026.',
     breaks:
-      'From 2022-23, UDISE+ collects data for each student, not school totals, and uses revised population projections. The booklet says ratios are strictly not comparable with figures up to 2021-22. Primary GER fell from 103.39 to 96.2 and the primary dropout rate rose from 1.45% to 7.8%, mostly because of the change of method. AISHE ratios use population projections based on Census 2011. Literacy in 2011 is a full count and in 2025 a sample survey, so the two are not joined.',
+      'UDISE+ introduced mandatory online returns and validation checks in 2018-19. From 2022-23, UDISE+ collects data for each student and uses revised population projections. The Ministry advises against comparing ratios with figures up to 2021-22. AISHE ratios use population projections based on Census 2011. Literacy in 2011 is a full count and in 2025 a sample survey.',
     coverage:
       'India and all 36 states and UTs. School figures use the existing structure: primary (classes 1-5), upper primary (6-8), secondary (9-10) and higher secondary (11-12). UDISE+ also publishes NEP 2020 figures, such as a secondary GER of 71.7% for classes 9 to 12, which is a different measure. College ratios cover people aged 18 to 23; literacy covers people aged 7 and over. In 2011, Andhra Pradesh included present Telangana and Jammu and Kashmir included Ladakh.',
     missing:
-      'The school series starts with UDISE+ in 2018-19. Earlier UDISE editions are unavailable from the Ministry routes checked. The latest AISHE report covers 2023-24. AISHE gives no SC or ST ratio for several UTs, and its 2023-24 highlights give two ST ratios for 2022-23 (23.5 and 22.6); this page uses no ST figures. Census 2027 enumeration runs to early 2027 and will replace the 2011 literacy counts. No publisher states a reuse licence for these data.',
+      'UDISE dropout rates for 2017-18 could not be verified by cohort year. The latest AISHE report covers 2023-24. AISHE gives no SC or ST ratio for several UTs. Its 2023-24 highlights give two ST ratios for 2022-23 (23.5 and 22.6). Census 2027 enumeration runs to early 2027 and will replace the 2011 literacy counts. No publisher states a reuse licence for these data.',
   },
   sources: [
     ...SCHOOL_TREND_SOURCES,

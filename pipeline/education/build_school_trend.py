@@ -1,4 +1,4 @@
-"""Build the national school trend from annual UDISE+ reports.
+"""Build the national school trend from UDISE Flash Statistics and UDISE+ reports.
 
 Run at the repository root: python3 -I pipeline/education/build_school_trend.py
 Requires Poppler's pdftotext. Read downloaded PDF and DOCX files as data only.
@@ -72,6 +72,84 @@ def pdf_text(path):
     ).stdout
 
 
+def archive_row(text, label, width):
+    found = re.findall(rf"^[ \t]*{re.escape(label)}\*?[ \t]+(.+)$", text, re.MULTILINE)
+    if len(found) != 1 or len(values := found[0].split()) != width:
+        raise ValueError(f"Expected one {label} row with {width} values, found {found}")
+    return values
+
+
+def archive_rows(period, indicator, levels, values, release, table):
+    for level, value in zip(levels, values, strict=True):
+        # A dash is a suppressed or unavailable value in the report.
+        if value == "-":
+            continue
+        if not re.fullmatch(r"\d+(?:\.\d+)?", value):
+            raise ValueError(f"{release}, {table}: unexpected value {value!r}")
+        yield ("india", period, value, UNITS[indicator], indicator, level,
+               f"{release}, {table}", "published", "archived copy")
+
+
+def historical_rows(raw):
+    def pages(folder):
+        # Poppler separates PDF pages with form feeds. Index by the PDF page number.
+        return ["", *pdf_text(raw / folder / "report.pdf").split("\f")]
+
+    elementary = pages("flash-2012-13-elementary")
+    secondary = pages("flash-2012-13-secondary")
+    for source, levels, tables in (
+        ("DISE 2012-13 Elementary Flash Statistics", LEVELS[:2], (
+            ("enrolment", "p. 27", archive_row(elementary[36], "All States", 16), (2, 5)),
+            ("GER", "p. 36", archive_row(elementary[45], "All States", 15), (11, 13)),
+        )),
+        ("UDISE 2012-13 Secondary Flash Statistics", LEVELS[2:], (
+            ("enrolment", "p. 18", archive_row(secondary[22], "All India", 9), (2, 5)),
+            ("GER", "p. 30", archive_row(secondary[34], "All India", 12), (2, 5)),
+        )),
+    ):
+        for indicator, page, values, columns in tables:
+            yield from archive_rows("2012-13", indicator, levels,
+                                    [values[i] for i in columns], source, page)
+
+    for year, ger_page, ger_table, ger_columns, enrol_page, dropout_page, dropout_table, dropout_columns in (
+        ("2013-14", 57, "3.17", (2, 5, 11, 14), 41, 55, "3.15", (2, 5, 8, 11)),
+        ("2014-15", 70, "3.26", (3, 7, 15, 19), 43, 61, "3.19", (3, 7, 11, 15)),
+        ("2015-16", 73, "3.28", (3, 7, 15, 19), 44, 63, "3.20", (3, 7, 14, 18)),
+    ):
+        report = pages(f"flash-{year}")
+        release = f"UDISE {year} Flash Statistics"
+        previous = f"{int(year[:4]) - 1}-{year[2:4]}"
+        for period, indicator, values, table, columns in (
+            (year, "enrolment", archive_row(report[enrol_page], "All India", 12), "3.2", (2, 5, 8, 11)),
+            (year, "GER", archive_row(report[ger_page], "All India", ger_columns[-1] + 1), ger_table, ger_columns),
+            (previous, "dropout rate", archive_row(report[dropout_page], "All India", dropout_columns[-1] + 1),
+             dropout_table, dropout_columns),
+        ):
+            yield from archive_rows(period, indicator, LEVELS, [values[i] for i in columns],
+                                    release, f"Table {table}")
+
+    for year, folder, enrol_page, ger_page, dropout_page in (
+        ("2016-17", "udise-2016-17-wayback-2020", 46, 51, 55),
+        ("2017-18", "flash-2017-18-provisional", 49, 55, 59),
+    ):
+        report = pages(folder)
+        release = f"UDISE {year} Flash Statistics"
+        early, late = re.findall(
+            r"^[ \t]*All Areas[ \t]*\n(.*?)^[ \t]*Rural Areas[ \t]*$",
+            report[enrol_page], re.MULTILINE | re.DOTALL,
+        )
+        enrolment = [*archive_row(early, year, 9)[:6], *archive_row(late, year, 9)[:6]]
+        yield from archive_rows(year, "enrolment", LEVELS, enrolment[2::3], release, "Table 1.31")
+        ger = archive_row(report[ger_page].split("1.41:")[1].split("Scheduled Castes")[0], year, 15)
+        yield from archive_rows(year, "GER", LEVELS, [ger[i] for i in (2, 5, 11, 14)], release, "Table 1.41")
+        dropout = archive_row(report[dropout_page].split("1.52:")[1].split("Government")[0], year, 15)
+        # These editions label the dropout row by the second year of data. Use the
+        # cohort year, as in the earlier Flash Statistics and ESAG. See the README.
+        cohort = f"{int(year[:4]) - 1}-{year[2:4]}"
+        yield from archive_rows(cohort, "dropout rate", LEVELS, [dropout[i] for i in (2, 5, 11, 14)],
+                                release, f"Table 1.52 (row {year})")
+
+
 def detailed_rows(folder, year):
     if year == "2018-19":
         lines = word_rows(folder / "booklet.docx")
@@ -91,7 +169,7 @@ def detailed_rows(folder, year):
             raise ValueError(f"{year}, Table {table}: unexpected India row {line}")
         found[table] = [
             ("india", year, values[column].replace(",", ""), UNITS[indicator], indicator, level,
-             f"UDISE+ {year} report, Table {table}", "published")
+             f"UDISE+ {year} report, Table {table}", "published", "official")
             for level, column in zip(levels, columns, strict=True)
         ]
     if found.keys() != DETAIL_TABLES.keys():
@@ -113,7 +191,7 @@ def highlights(folder, year):
         for period, value in zip(years, match[1].split(), strict=True):
             yield (
                 "india", period, value, UNITS[indicator], indicator, level,
-                f"UDISE+ {year} booklet, Table 1", "published",
+                f"UDISE+ {year} booklet, Table 1", "published", "official",
             )
 
 
@@ -134,11 +212,13 @@ def build(raw, out):
         raise ValueError(f"2020-21 differs from the 2021-22 booklet: {first_2020} vs {overlap}")
     print(f"2020-21: all {len(overlap)} overlap values match the 2021-22 booklet")
 
+    historical = sorted(historical_rows(raw), key=lambda row: (row[1], list(UNITS).index(row[4]), LEVELS.index(row[5])))
     with (out / "education-school-trend-india.csv").open("w", newline="") as file:
         writer = csv.writer(file, lineterminator="\n")
-        writer.writerow(["geography", "period", "value", "unit", "indicator", "level", "table", "value_type"])
+        writer.writerow(["geography", "period", "value", "unit", "indicator", "level", "table", "value_type", "source_kind"])
+        writer.writerows(historical)
         writer.writerows(sorted(rows, key=lambda row: row[1]))
-    print(f"education-school-trend-india.csv: {len(rows)} rows")
+    print(f"education-school-trend-india.csv: {len(historical) + len(rows)} rows")
 
 
 if __name__ == "__main__":
