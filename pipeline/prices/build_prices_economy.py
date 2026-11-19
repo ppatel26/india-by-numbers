@@ -272,14 +272,17 @@ print("E5 missing:", sorted(set(GEONAME) - {r[0] for r in rows}))
 # E6 IIP growth monthly
 rows = []
 for r in load(f"{RAWE}/api/iip1112_monthly_general.all.json"):
-    if r["growth_rate"] not in (None, ""):
-        rows.append(["india", ym(r["year"], r["month"]), r["growth_rate"], "percent", "General", "2011-12", r["index"]])
+    p = ym(r["year"], r["month"])
+    if p >= "2013-04" and r["growth_rate"] not in (None, ""):
+        rows.append(["india", p, r["growth_rate"], "percent", "General", "2011-12", r["index"]])
 for r in load(f"{RAWE}/api/iip2223_monthly.all.json"):
     p = ym(r["year"], r["month"])
     if r["sub_category"] or p < "2024-04": continue  # growth before Apr 2024 compares with the base-year average, not the same month
     rows.append(["india", p, r["growth_rate"], "percent", r["category"], "2022-23", r["index"]])
 rows = sorted({tuple(x) for x in rows}, key=lambda r: (r[5], r[4] != "General", r[4], r[1]))
 write(f"{OUTE}/iip-growth-monthly.csv", ["geography", "period", "value", "unit", "category", "base", "index"], rows)
+subprocess.run([sys.executable, "-I", "pipeline/economy/build_iip_2004.py",
+                "--raw", f"{RAWE}/iip-history", "--out", OUTE], check=True)
 
 # E7 rupee per dollar, financial-year average and end-year (Handbook Table 133)
 wb = openpyxl.load_workbook(glob.glob(f"{RAWE}/rbi/133T_*.XLSX")[0], data_only=True)
