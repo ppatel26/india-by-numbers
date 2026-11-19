@@ -111,7 +111,21 @@ const RBI_TABLE_133: Source = {
   publisher: 'RBI',
   release: 'Handbook of Statistics on Indian Economy 2025-26, Table 133: Exchange Rate of the Rupee (financial year average and end-year)',
   released: '2026-07-31',
-  url: 'https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/133T_HBIE3107202637939AFB4EE946719F742BEB8AEC5E18.XLSX',
+  url: 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23958',
+}
+
+const RBI_TABLE_133_2002: Source = {
+  publisher: 'RBI',
+  release: 'Handbook of Statistics on Indian Economy, Table 133, financial-year exchange rates',
+  released: '2002-01-08',
+  url: 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=3615',
+}
+
+const IMF_IFS: Source = {
+  publisher: 'IMF via DBnomics',
+  release: 'International Financial Statistics, India, calendar-year average exchange rates',
+  released: 'not stated',
+  url: 'https://db.nomics.world/IMF/IFS/A.IN.ENDA_XDC_USD_RATE',
 }
 
 const FBIL_ARCHIVE: Source = {
@@ -147,6 +161,7 @@ const ANNUAL = 'economy/gdp-growth-annual.csv'
 const SHARES = 'economy/gva-sector-shares.csv'
 const IIP = 'economy/iip-growth-monthly.csv'
 const IIP_NEXT = '2026-11-30'
+const USD_ANNUAL = 'economy/usd-inr-annual.csv'
 
 /** Financial years 1950-51 to 2021-22: the 2011-12 base rows before the 2022-23 base starts. */
 const BEFORE_2022_23 = Array.from({ length: 72 }, (_, i) => `${1950 + i}-${String((51 + i) % 100).padStart(2, '0')}`)
@@ -478,7 +493,7 @@ const topic: Topic = {
     },
     {
       title: 'How many rupees does a US dollar cost?',
-      lede: 'A US dollar cost ₹12.78 on average in 1986-87 and ₹88.31 in 2025-26. At the end of March 2026 it cost ₹94.65.',
+      lede: 'A US dollar cost ₹4.76 on average in calendar year 1950, according to the IMF. RBI gives an average of ₹7.56 for 1970-71 and ₹88.31 for 2025-26. At the end of March 2026 it cost ₹94.65.',
       blocks: [
         { text: 'On 18 November 2026 a dollar cost ₹93.3558, up from ₹89.9792 on 1 January. The rupee was weakest on 20 May 2026, at ₹96.8441 per dollar.' },
         {
@@ -554,42 +569,64 @@ const topic: Topic = {
               },
             },
             {
-              label: 'Since 1986-87, yearly',
+              label: 'Since 1950, yearly',
               short: 'Yearly',
               chart: {
                 kind: 'line',
                 slug: 'usd-inr-annual',
-                title: 'Rupees per US dollar, 1986-87 to 2025-26',
-                subtitle: 'Average exchange rate for the financial year, rupees per US dollar, 1986-87 to 2025-26.',
-                punches: { office: 'RBI', unit: '₹ per US$', period: '2025-26' },
-                note: 'To 1991-92, official rates; from 1992-93, FEDAI indicative rates; from May 2012, RBI reference rates; from 10 July 2018, FBIL reference rates.',
-                sources: [RBI_TABLE_133],
+                title: 'Rupees per US dollar, yearly average, 1950 to 2025-26',
+                subtitle: 'IMF calendar years to 1969. RBI financial years from 1970-71.',
+                punches: { office: 'RBI · IMF', unit: '₹ per US$', period: '2025-26' },
+                status: ['Method break'],
+                note: 'The solid lines show RBI financial-year averages, and the dashed line shows IMF calendar-year estimates.',
+                sources: [RBI_TABLE_133, RBI_TABLE_133_2002, IMF_IFS],
                 format: { unit: '₹', decimals: 2 },
                 series: [
                   {
                     key: 'average',
-                    label: 'Rupees per US dollar',
+                    label: 'RBI average',
                     color: 'ink',
-                    file: 'economy/usd-inr-annual.csv',
-                    where: { measure: 'financial-year average' },
+                    file: USD_ANNUAL,
+                    where: { measure: 'financial-year average', source_kind: 'official', source: 'RBI Handbook Table 133 (2026)' },
+                  },
+                  {
+                    key: 'rbi-2002',
+                    label: 'RBI (2002)',
+                    color: 'ink',
+                    file: USD_ANNUAL,
+                    where: { measure: 'financial-year average', source_kind: 'official', source: 'RBI Handbook Table 133 (2002)' },
+                  },
+                  {
+                    key: 'imf',
+                    label: 'IMF estimate',
+                    color: 'slate',
+                    dash: true,
+                    file: USD_ANNUAL,
+                    where: { measure: 'calendar-year average', source_kind: 'international estimate' },
                   },
                 ],
                 y: { min: 0, max: 100, step: 20 },
+                breaks: [
+                  { x: '1970-71', label: 'RBI' },
+                  { x: '1986-87', label: 'RBI 2026 table' },
+                ],
+                markers: [{ x: '1966', label: '1966 deval.' }],
                 callouts: [
-                  { series: 'average', x: '1986-87' },
-                  { series: 'average', x: '1991-92', label: '1991-92 and 1992-93: devaluation, then a market rate' },
-                  { series: 'average', x: '2025-26' },
+                  { series: 'imf', x: '1950', label: 'After 1949 devaluation' },
+                  { series: 'average', x: '1991-92', label: '1991 rate reform' },
                 ],
                 know: [
-                  'Each value is the average rate for the financial year (April to March). A higher value means a weaker rupee.',
-                  'The rate source changes over time: official rates to 1991-92, FEDAI indicative rates from 1992-93, RBI reference rates from May 2012 and FBIL reference rates from 10 July 2018.',
-                  'The jumps in 1991-92 and 1992-93 reflect the 1991 devaluation and the move to a market rate.',
-                  'The same table gives the rate at the end of each financial year: ₹94.65 at the end of March 2026.',
+                  'The IMF averages use January to December. The RBI averages use April to March.',
+                  'India devalued the rupee in September 1949. India pegged the rupee to sterling before 1971. The official rate rose from ₹4.76 to ₹7.50 per US dollar in June 1966.',
+                  'India devalued the rupee in July 1991. A dual exchange rate began in March 1992. India adopted a single market rate in 1993.',
+                  'RBI uses official rates to 1991-92 and FEDAI indicative rates from 1992-93. It uses RBI reference rates from May 2012 and FBIL reference rates from 10 July 2018.',
+                  'Table 133 also gives the rate at the end of March 2026. It was ₹94.65.',
                 ],
                 processing: [
-                  'Read Table 133 of the RBI Handbook of Statistics on Indian Economy 2025-26 (31 Jul 2026).',
-                  'Keep the financial-year average and the end-of-year rate as separate series; the chart shows the average.',
-                  "Keep the publisher's four decimals in the data; the chart shows two.",
+                  'Read IMF calendar-year averages for 1950 to 1969 from International Financial Statistics via DBnomics.',
+                  'Read RBI financial-year averages for 1970-71 to 1985-86 from the 2002 Table 133. Use the 2026 Table 133 from 1986-87.',
+                  'Compare the financial-year rates where the RBI tables overlap. Compare the IMF rates with the RBI calendar-year tables.',
+                  'Keep end-of-year rates from the 2026 Table 133 in the data file.',
                 ],
                 nextRelease: 'not announced',
               },
@@ -614,7 +651,7 @@ const topic: Topic = {
     missing:
       'MoSPI has no 2024-25 income per person for Nagaland (latest 2023-24: ₹1.55 lakh), Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu, and no 2024-25 GSDP growth for those four plus Assam and Haryana. Only 15 states have 2025-26 figures. MoSPI gives no IIP rate for April 2021 on the 2011-12 base. No publisher states a reuse licence for these data.',
   },
-  sources: [GDP_PRESS_NOTE, ESANKHYIKI, IIP_RELEASE, RBI_HANDBOOK, FBIL_ARCHIVE, RBI_HOME],
+  sources: [GDP_PRESS_NOTE, ESANKHYIKI, IIP_RELEASE, RBI_HANDBOOK, RBI_TABLE_133_2002, IMF_IFS, FBIL_ARCHIVE, RBI_HOME],
   related: [
     { label: 'Prices: Consumer price inflation since 2012', href: '/charts/cpi-inflation/' },
     { label: 'Prices: RBI repo rate since 2001', href: '/charts/repo-rate/' },

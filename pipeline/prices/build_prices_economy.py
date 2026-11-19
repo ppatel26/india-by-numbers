@@ -284,15 +284,9 @@ write(f"{OUTE}/iip-growth-monthly.csv", ["geography", "period", "value", "unit",
 subprocess.run([sys.executable, "-I", "pipeline/economy/build_iip_2004.py",
                 "--raw", f"{RAWE}/iip-history", "--out", OUTE], check=True)
 
-# E7 rupee per dollar, financial-year average and end-year (Handbook Table 133)
-wb = openpyxl.load_workbook(glob.glob(f"{RAWE}/rbi/133T_*.XLSX")[0], data_only=True)
-rows = []
-for ws in wb.worksheets:
-    for row in ws.iter_rows(min_row=7, values_only=True):
-        if isinstance(row[1], str) and re.match(r"\d{4}-\d{2}$", row[1]) and isinstance(row[4], (int, float)):
-            rows.append(["india", row[1], f"{row[4]}", "rupees per US dollar", "financial-year average"])
-            if isinstance(row[5], (int, float)): rows.append(["india", row[1], f"{row[5]}", "rupees per US dollar", "end of financial year"])
-write(f"{OUTE}/usd-inr-annual.csv", ["geography", "period", "value", "unit", "measure"], rows)
+# E7 rupees per US dollar, annual averages
+subprocess.run([sys.executable, "-I", "pipeline/economy/build_usd_inr_annual.py",
+                "--raw", RAWE, "--out", OUTE], check=True)
 
 # E8 daily FBIL reference rate, 2026
 t = open(f"{RAWE}/rbi/refrate_usd_2026.html", encoding="utf-8", errors="replace").read()

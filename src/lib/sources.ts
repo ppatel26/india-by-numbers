@@ -44,6 +44,7 @@ const PUBLISHER_RULES: readonly (readonly [RegExp, string])[] = [
   [/Ministry of Education/, 'MoE'],
   [/\bRBI\b/, 'RBI'],
   [/Labour Bureau/, 'Labour Bureau'],
+  [/\bIMF\b/, 'IMF'],
   [/\bIMD\b/, 'IMD'],
   [/\bECI\b/, 'ECI'],
   [/\bCEA\b/, 'CEA'],
