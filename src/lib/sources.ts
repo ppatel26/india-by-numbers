@@ -37,6 +37,7 @@ export function uniqueSources(sources: Iterable<Source>): Source[] {
 const PUBLISHER_RULES: readonly (readonly [RegExp, string])[] = [
   [/\bPIB\b/, 'PIB'],
   [/National Commission on Population/, 'NCP, MoHFW'],
+  [/United Nations Population Division/, 'UN Population Division'],
   [/\bIIPS\b|NHSRC/, 'MoHFW and IIPS'],
   [/\bORGI\b/, 'ORGI'],
   [/MoSPI|\bNSO\b/, 'MoSPI'],

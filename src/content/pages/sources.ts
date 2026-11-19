@@ -185,9 +185,10 @@ const PUBLISHERS: readonly Publisher[] = [
     short: 'MoHFW and IIPS',
     logos: ['mohfw', 'iips'],
     full: 'Ministry of Health and Family Welfare, with the International Institute for Population Sciences and NHSRC',
-    topics: ['health'],
+    topics: ['health', 'population'],
     dataSets: [
       { name: 'National Family Health Survey (NFHS-6)', detail: 'India and state fact sheets, 2023-24, provisional', rhythm: 'Rounds several years apart', match: /NFHS-6/ },
+      { name: 'National Family Health Survey (1992-93)', detail: 'The urban share from Census 1991, as cited by IIPS.', rhythm: 'Historical report', match: /National Family Health Survey 1992-93/ },
       { name: 'National Health Accounts', detail: 'Estimates for 2023-24', rhythm: NOT_STATED, match: /National Health Accounts/ },
     ],
     licence: NOT_STATED,
@@ -219,6 +220,18 @@ const PUBLISHERS: readonly Publisher[] = [
     access: ['The Technical Group report (mohfw-dohfw.gov.in)'],
     note: 'The report predates SRS data for 2020 onward.',
     site: 'https://mohfw-dohfw.gov.in',
+  },
+  {
+    short: 'UN Population Division',
+    logos: [],
+    full: 'United Nations Department of Economic and Social Affairs, Population Division',
+    topics: ['population'],
+    dataSets: [
+      { name: 'World Population Prospects 2024', detail: 'Age and sex estimates for 1951 and annual national rates through 2026.', rhythm: 'Periodic revisions', match: /World Population Prospects 2024/ },
+    ],
+    licence: NOT_STATED,
+    access: ['CSV files for the medium projection variant'],
+    site: 'https://population.un.org/wpp/',
   },
 ]
 
