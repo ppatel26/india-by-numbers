@@ -1,4 +1,4 @@
-import type { Source, Topic } from '../types'
+import type { Chart, Series, Source, Topic } from '../types'
 
 
 // The ORGI catalogue gives "Date published 2026-05-20".
@@ -32,6 +32,68 @@ const SRS_COMPENDIUM: Source = {
   release: "SRS Compendium of India's Fertility and Mortality Indicators 1971-2013",
   released: '2014',
   url: 'https://censusindia.gov.in/nada/index.php/catalog/33218/download/37035',
+}
+
+const SRS_BIRTH_RATIO_REPORTS: readonly Source[] = [
+  {
+    publisher: 'ORGI',
+    release: 'SRS Statistical Report 2017',
+    released: '2020',
+    url: 'https://censusindia.gov.in/nada/index.php/catalog/44373/download/48042/SRS_STAT_2017.pdf',
+  },
+  {
+    publisher: 'ORGI',
+    release: 'SRS Statistical Report 2019',
+    released: '2022-03-01',
+    url: 'https://censusindia.gov.in/nada/index.php/catalog/44375/download/48046/SRS_STAT_2019.pdf',
+  },
+  {
+    publisher: 'ORGI',
+    release: 'SRS Statistical Report 2020',
+    released: '2022-09-22',
+    url: 'https://censusindia.gov.in/nada/index.php/catalog/44376/download/48048/SRS_STAT_2020.pdf',
+  },
+  {
+    publisher: 'ORGI',
+    release: 'SRS Statistical Report 2024',
+    released: '2026-05-20',
+    url: 'https://censusindia.gov.in/nada/index.php/catalog/47152/download/51396',
+  },
+]
+
+const NFHS_1: Source = {
+  publisher: 'IIPS for MoHFW · DHS Program archive',
+  release: 'NFHS-1 (1992-93) India report',
+  released: '1995-08',
+  url: 'https://dhsprogram.com/pubs/pdf/FRIND1/FRIND1.pdf',
+}
+
+const NFHS_2: Source = {
+  publisher: 'IIPS and ORC Macro · DHS Program archive',
+  release: 'NFHS-2 (1998-99) India report',
+  released: '2000-10',
+  url: 'https://dhsprogram.com/pubs/pdf/FRIND2/FRIND2.pdf',
+}
+
+const NFHS_3: Source = {
+  publisher: 'IIPS and Macro International · DHS Program archive',
+  release: 'NFHS-3 (2005-06) India report, Volume I',
+  released: '2007-09',
+  url: 'https://dhsprogram.com/pubs/pdf/FRIND3/FRIND3-Vol1AndVol2.pdf',
+}
+
+const NFHS_4: Source = {
+  publisher: 'IIPS and ICF · DHS Program archive',
+  release: 'NFHS-4 (2015-16) India report',
+  released: '2017-12',
+  url: 'https://dhsprogram.com/pubs/pdf/FR339/FR339.pdf',
+}
+
+const NFHS_5: Source = {
+  publisher: 'IIPS and ICF · DHS Program archive',
+  release: 'NFHS-5 (2019-21) India report, Volume I',
+  released: '2022-03',
+  url: 'https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf',
 }
 
 const NFHS_6: Source = {
@@ -84,15 +146,42 @@ const MMR_STATES = [
   'kerala',
 ] as const
 
-const NFHS_INDIA_INDICATORS = [
-  'stunted',
-  'wasted',
-  'severely-wasted',
-  'institutional-births',
-  'full-immunisation-card',
-  'full-immunisation-card-or-recall',
-  'anaemia-women-15-49',
-] as const
+const nfhsTrend = (key: string, label: string, color: Series['color'], indicator: string, basis: string): Series => ({
+  key, label, color,
+  file: 'health/nfhs-india-history.csv',
+  x: 'round_axis',
+  xLabel: 'period',
+  where: { geography: 'india', indicator, basis },
+  note: 'note',
+})
+
+export const sexRatioAtBirthIndia: Chart = {
+  kind: 'line',
+  slug: 'sex-ratio-at-birth-india',
+  title: 'Sex ratio at birth in India, 1998-00 to 2022-24',
+  subtitle: 'Girls born per 1,000 boys born. Each estimate covers three years.',
+  punches: { office: 'ORGI · SRS', unit: 'per 1,000 boys', period: '2022-24' },
+  status: ['Survey estimate'],
+  sources: [SRS_COMPENDIUM, ...SRS_BIRTH_RATIO_REPORTS].map((source) => withTable(source, 'Table 16')),
+  format: { decimals: 0 },
+  note: 'The Sample Registration System (SRS) replaced its sample in 2004 and 2014. Each point sits at the middle year of its three-year period, so neighbouring points share two years. The national estimates agree where the reports overlap.',
+  y: { min: 870, max: 930, step: 10 },
+  markers: [{ x: '2004', label: '2004 sample' }, { x: '2014', label: '2014 sample' }],
+  series: [
+    { key: 'total', label: 'India', color: 'ink', file: 'health/sex-ratio-at-birth-india.csv', x: 'mid_year', xLabel: 'period', where: { residence: 'total' } },
+  ],
+  know: [
+    'The ratio counts girls born for every 1,000 boys born. A ratio of 1,000 means equal numbers.',
+    'The SRS estimates the ratio from a sample of births.',
+    'Some three-year periods include more than one sample design.',
+  ],
+  processing: [
+    'Read the national row from Table 16 of the SRS Compendium and the SRS Statistical Reports.',
+    'Check that the figures agree in overlapping periods before joining the tables.',
+    'Use the total for the trend. The data file also keeps the rural and urban ratios.',
+  ],
+  nextRelease: 'not announced',
+}
 
 const topic: Topic = {
   slug: 'health',
@@ -271,46 +360,132 @@ const topic: Topic = {
       title: 'Are children better nourished?',
       lede: '29.3% of children under 5 in India were stunted in 2023-24, down from 35.5% in 2019-21. These NFHS-6 results are provisional.',
       blocks: [
-        { text: 'Births in a health facility rose from 88.6% to 90.6%, and full vaccination, by card only, from 83.8% to 87.1%.' },
         {
           chart: {
-            kind: 'bars',
+            kind: 'line',
             slug: 'child-nutrition',
-            title: 'Child nutrition and care in India, NFHS-5 and NFHS-6',
-            subtitle: 'Share of children or women, %, India, NFHS-5 (2019-21) and NFHS-6 (2023-24).',
+            title: 'Child stunting and wasting in India, 1998-99 to 2023-24',
+            subtitle: 'Share of children with stunting, wasting or severe wasting. The axis gives each survey round equal space.',
             punches: { office: 'IIPS', unit: '%', period: '2023-24' },
-            status: ['Survey estimate', 'Provisional'],
-            note: 'A stunted child is too short for their age, a sign of long-term undernutrition; a wasted child is too thin for their height. NFHS-6 did not report anaemia; MoHFW will use a separate ICMR survey with a different blood test, so the two cannot be compared. NFHS-5 values are as printed in the NFHS-6 fact sheets.',
-            sources: [NFHS_6, PIB_ANAEMIA],
+            status: ['Survey estimate', 'Method break', 'Provisional'],
+            note: 'The dashed lines cover the last two children under age 3 of ever-married women. NFHS-3 recalculated both rounds on the WHO growth standards. The solid lines cover all children under age 5. Both groups have a value in 2005-06. NFHS-1 used an older growth reference and did not measure height in five states, so it has no comparable national estimate here.',
+            sources: [withTable(NFHS_3, 'Tables 10.2 and 10.3'), withTable(NFHS_4, 'Table 10.2'), NFHS_6],
             format: { decimals: 1, unit: '%' },
-            by: 'indicator',
-            order: NFHS_INDIA_INDICATORS,
-            labels: {
-              stunted: 'Children under 5 stunted',
-              wasted: 'Children under 5 wasted',
-              'severely-wasted': 'Children under 5 severely wasted',
-              'institutional-births': 'Births in a health facility',
-              'full-immunisation-card': 'Fully vaccinated, card only (12-23 months)',
-              'full-immunisation-card-or-recall': 'Fully vaccinated, card or recall',
-              'anaemia-women-15-49': 'Women 15-49 with anaemia',
-            },
-            missing: { 'anaemia-women-15-49': 'Not in NFHS-6' },
+            y: { min: 0, max: 60, step: 10 },
+            breaks: [{ x: '0003', before: 'Under 3', label: 'Under 5' }],
             series: [
-              { key: 'nfhs5', label: 'NFHS-5 (2019-21)', color: 'other', file: 'health/nfhs-key-indicators-by-state.csv', x: 'indicator', where: { geography: 'india', round: 'NFHS-5', indicator: NFHS_INDIA_INDICATORS } },
-              { key: 'nfhs6', label: 'NFHS-6 (2023-24), provisional', color: 'ink', file: 'health/nfhs-key-indicators-by-state.csv', x: 'indicator', where: { geography: 'india', round: 'NFHS-6', indicator: NFHS_INDIA_INDICATORS } },
+              { ...nfhsTrend('stunted-under-3', 'Stunting, under 3', 'ink', 'stunted', 'under-three-who'), dash: true },
+              { ...nfhsTrend('wasted-under-3', 'Wasting, under 3', 's4', 'wasted', 'under-three-who'), dash: true },
+              { ...nfhsTrend('severely-wasted-under-3', 'Severe wasting, under 3', 's3', 'severely-wasted', 'under-three-who'), dash: true },
+              nfhsTrend('stunted', 'Stunting', 'ink', 'stunted', 'under-five-who'),
+              nfhsTrend('wasted', 'Wasting', 's4', 'wasted', 'under-five-who'),
+              nfhsTrend('severely-wasted', 'Severe wasting', 's3', 'severely-wasted', 'under-five-who'),
             ],
             know: [
-              'The National Family Health Survey (NFHS) is a sample survey run by the International Institute for Population Sciences (IIPS) for the Ministry of Health and Family Welfare (MoHFW).',
-              'NFHS-6 results are provisional, as the fact sheets say. Fieldwork ran from May 2023 to December 2024.',
-              'Two vaccination measures exist. "Card only" counts children whose card shows every dose; "card or recall" also uses the mother\'s answers.',
-              'NFHS-6 did not report anaemia. The anaemia figure is from NFHS-5, and a future ICMR figure will use a different blood test.',
-              'The NFHS-5 values are as printed in the NFHS-6 fact sheets. IIPS may have recalculated a few of them.',
+              'Stunting means a child is too short for their age. Wasting means a child is too thin for their height.',
+              'Wasting includes severe wasting. A child can have both stunting and wasting.',
+              'NFHS-6 results are provisional, as the fact sheets say.',
             ],
             processing: [
-              'We take the India values for both rounds from the NFHS-6 India and State/UT Fact Sheets, which print NFHS-5 beside NFHS-6.',
-              'We take NFHS-5 anaemia among women aged 15 to 49 from Annexure-I of PIB release 1782638.',
-              'We keep the values as published, to one decimal place.',
-              'We leave the NFHS-6 anaemia value empty, because the survey did not report it.',
+              'Use the like-for-like estimates that the NFHS-3 report tabulates for children under age 3 in NFHS-2 and NFHS-3.',
+              'Use the WHO standards for all children under age 5 from NFHS-3 to NFHS-6.',
+              'Keep the two age groups on separate lines.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        { text: 'Births in a health facility rose from 88.6% to 90.6% between the two latest rounds.' },
+        {
+          chart: {
+            kind: 'line',
+            slug: 'births-in-health-facilities',
+            title: 'Births in health facilities in India, 1992-93 to 2023-24',
+            subtitle: 'Share of births in a health facility. In 2005-06 the survey reports both definitions.',
+            punches: { office: 'IIPS', unit: '%', period: '2023-24' },
+            status: ['Survey estimate', 'Method break', 'Provisional'],
+            note: 'The early definition covers the last two births to ever-married women in the three years before the survey. The later definition uses all births. In 2005-06 the early definition gives 40.8% and the later definition gives 38.7%.',
+            sources: [withTable(NFHS_3, 'Tables 8.12 and 8.23'), withTable(NFHS_4, 'Table 8.27'), NFHS_6],
+            format: { decimals: 1, unit: '%' },
+            y: { min: 0, max: 100, step: 20 },
+            breaks: [{ x: '0003', before: 'Last two births', label: 'All births' }],
+            series: [
+              { ...nfhsTrend('last-two', 'Last two births', 'ink', 'institutional-births', 'last-two-births'), dash: true },
+              nfhsTrend('all', 'Facility births', 'ink', 'institutional-births', 'all-births'),
+            ],
+            know: [
+              'The NFHS-3 report aligns the first three rounds to the last two births in the prior three years.',
+              'NFHS-3 to NFHS-5 also report all births in the prior five years. The NFHS-6 fact sheet gives its own result beside the NFHS-5 estimate.',
+              'NFHS-6 results are provisional.',
+              'The axis gives each survey round equal space.',
+            ],
+            processing: [
+              'Take the early series from Table 8.23 of the NFHS-3 report.',
+              'Take both all-birth estimates from Table 8.27 of the NFHS-4 report, then use the NFHS-6 fact sheet for the latest two rounds.',
+              'Separate the lines where the survey changes the group of births.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          chart: {
+            kind: 'line',
+            slug: 'childhood-vaccination',
+            title: 'Full childhood vaccination in India, 1992-93 to 2023-24',
+            subtitle: 'Share of children aged 12 to 23 months with all basic doses. The two lines use different sources of vaccination records.',
+            punches: { office: 'IIPS', unit: '%', period: '2023-24' },
+            status: ['Survey estimate', 'Method break', 'Provisional'],
+            note: 'In the first four rounds, the card-only rate covers children whose cards the interviewer saw. Keep those rates separate from the later fact-sheet rates. From NFHS-5 the questionnaire counts the pentavalent vaccine alongside DPT. The break marks the change. The NFHS-6 estimates are provisional.',
+            sources: [withTable(NFHS_1, 'Table 9.10'), withTable(NFHS_2, 'Table 6.9'), withTable(NFHS_3, 'Tables 9.3 and 9.6'), withTable(NFHS_4, 'Tables 9.3 and 9.6'), NFHS_6],
+            format: { decimals: 1, unit: '%' },
+            y: { min: 0, max: 100, step: 20 },
+            breaks: [{ x: '0005', label: 'NFHS-5 method' }],
+            series: [
+              nfhsTrend('basic-dpt', 'Card or recall, early', 'ink', 'full-immunisation-card-or-recall', 'basic-vaccines-dpt'),
+              nfhsTrend('card-seen', 'Card seen', 's4', 'full-immunisation-card', 'card-seen'),
+              nfhsTrend('card-or-recall', 'Card or recall', 'ink', 'full-immunisation-card-or-recall', 'factsheet-card-or-recall'),
+              nfhsTrend('card-only', 'Card only', 's4', 'full-immunisation-card', 'factsheet-card-only'),
+            ],
+            know: [
+              'The early schedule includes BCG, measles and three doses each of DPT and polio. It excludes the polio dose at birth.',
+              'Card or recall uses the vaccination card or the mother’s answers.',
+              'The card-only and card-or-recall rates have different denominators in the early reports.',
+              'The axis gives each survey round equal space.',
+            ],
+            processing: [
+              'Use the vaccine source tables in the first four national reports for the share among children whose cards were seen.',
+              'Use the NFHS-3 and NFHS-4 trend tables for the early card-or-recall series.',
+              'Keep the NFHS-5 and NFHS-6 values as paired in the NFHS-6 fact sheet.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          chart: {
+            kind: 'line',
+            slug: 'anaemia-among-women',
+            title: 'Anaemia among women in India, 1998-99 to 2019-21',
+            subtitle: 'Share of women aged 15 to 49 with anaemia. In 2005-06 the survey reports both groups.',
+            punches: { office: 'IIPS', unit: '%', period: '2019-21' },
+            status: ['Survey estimate', 'Method break'],
+            note: 'NFHS-2 tested ever-married women. NFHS-3 reported estimates for ever-married women and for all women, and excluded Nagaland from both. NFHS-1 did not test haemoglobin. NFHS-6 did not report anaemia.',
+            sources: [withTable(NFHS_3, 'Table 10.24.1'), withTable(NFHS_4, 'Table 10.21.1'), PIB_ANAEMIA],
+            format: { decimals: 1, unit: '%' },
+            y: { min: 45, max: 60, step: 5 },
+            breaks: [{ x: '0003', before: 'Ever married', label: 'All women' }],
+            series: [
+              { ...nfhsTrend('ever-married', 'Ever-married women', 'ink', 'anaemia-women-15-49', 'ever-married-women'), dash: true },
+              nfhsTrend('all', 'All women', 'ink', 'anaemia-women-15-49', 'all-women'),
+            ],
+            know: [
+              'The survey uses a finger-prick blood sample to measure haemoglobin.',
+              'The threshold is below 12 grams per decilitre for women who are not pregnant and below 11 for pregnant women.',
+              'MoHFW plans to use a different test with venous blood in a separate survey.',
+              'The axis gives each survey round equal space.',
+            ],
+            processing: [
+              'Take the estimates for ever-married women from Table 10.24.1 of the NFHS-3 report.',
+              'Take the estimates for all women from the NFHS-3 and NFHS-4 reports and PIB release 1782638.',
+              'Use each source’s estimate for any anaemia, which includes mild, moderate and severe anaemia.',
             ],
             nextRelease: 'not announced',
           },
@@ -320,34 +495,35 @@ const topic: Topic = {
           chart: {
             kind: 'dots',
             slug: 'stunting-by-state',
-            title: 'Children under 5 who are stunted, by state and UT, NFHS-5 and NFHS-6',
-            subtitle: 'Share of children under 5 too short for their age, %, 35 states and UTs, NFHS-5 (2019-21) and NFHS-6 (2023-24).',
+            title: 'Stunting among children under 5 by state and UT, 2015-16 to 2023-24',
+            subtitle: 'Share of children under 5 who are too short for their age. NFHS-4 to NFHS-6 use the same WHO growth standards.',
             punches: { office: 'IIPS', unit: '%', period: '2023-24' },
             status: ['Survey estimate', 'Provisional'],
-            note: 'NFHS-6 was not carried out in Manipur. In 2023-24, Dadra and Nagar Haveli and Daman and Diu had the highest share, 37.1%, and Puducherry the lowest, 16.6%. Samples in Andaman and Nicobar Islands and Lakshadweep are small.',
-            sources: [{ ...NFHS_6, release: `${NFHS_6.release}, which print NFHS-5 values beside NFHS-6` }],
+            note: 'NFHS-4 uses older boundaries for Jammu and Kashmir, Ladakh, and Dadra and Nagar Haveli and Daman and Diu. Those rows start at NFHS-5. Manipur has no NFHS-6 estimate because the survey did not run there.',
+            sources: [withTable(NFHS_4, 'Table 10.2'), withTable(NFHS_5, 'Table 10.2, Manipur'), NFHS_6],
             format: { decimals: 1, unit: '%' },
             by: 'geography',
-            hollow: ['nfhs5'],
+            hollow: ['nfhs4'],
+            pin: ['india'],
             sortBy: 'nfhs6',
             map: { series: 'nfhs6', scale: 'seq', better: 'low' },
             missing: { manipur: 'NFHS-6 did not survey Manipur' },
-            // LATER: the board colours the selected state's NFHS-6 dot series-1 and adds a row "Manipur: Not surveyed in NFHS-6".
             series: [
-              { key: 'nfhs5', label: 'NFHS-5 (2019-21)', color: 'slate', file: 'health/nfhs-key-indicators-by-state.csv', x: 'geography', where: { indicator: 'stunted', round: 'NFHS-5' } },
-              { key: 'nfhs6', label: 'NFHS-6 (2023-24), provisional', color: 'ink', file: 'health/nfhs-key-indicators-by-state.csv', x: 'geography', where: { indicator: 'stunted', round: 'NFHS-6' } },
+              { key: 'nfhs4', label: '2015-16', color: 's3', file: 'health/nfhs-stunting-history-by-state.csv', where: { round: 'NFHS-4' } },
+              { key: 'nfhs5', label: '2019-21', color: 'slate', file: 'health/nfhs-stunting-history-by-state.csv', where: { round: 'NFHS-5' } },
+              { key: 'nfhs6', label: '2023-24', color: 'ink', file: 'health/nfhs-stunting-history-by-state.csv', where: { round: 'NFHS-6' } },
             ],
             know: [
               'A stunted child is too short for their age, a sign of long-term undernutrition.',
-              'NFHS-6 covers 35 states and UTs. The survey was not carried out in Manipur.',
+              'NFHS-4 reports Andhra Pradesh and Telangana separately. Three current UTs have different boundaries from the areas in the NFHS-4 report.',
               'NFHS-6 results are provisional, as the fact sheets say.',
+              'In 2023-24, Dadra and Nagar Haveli and Daman and Diu had the highest share at 37.1%. Puducherry had the lowest at 16.6%.',
               'Samples in Andaman and Nicobar Islands and Lakshadweep are small, so their changes are less certain.',
             ],
             processing: [
-              'We take the share of children under 5 who are stunted (height-for-age) for each state and UT from the NFHS-6 State/UT Fact Sheets.',
-              'We take the NFHS-5 value printed beside it on the same fact sheet.',
-              'We sort the states and UTs by the NFHS-6 value.',
-              'We show Manipur as not surveyed, with no value.',
+              'Take the NFHS-4 estimates from Table 10.2 of the national report where boundaries match.',
+              'Take both recent estimates from the NFHS-6 state and UT fact sheets. Use the NFHS-5 national report for Manipur.',
+              'Sort the states and UTs by the NFHS-6 value. Place India first.',
             ],
             nextRelease: 'not announced',
           },
@@ -516,10 +692,14 @@ const topic: Topic = {
     missing:
       'NFHS-6 did not report anaemia; MoHFW will use a separate ICMR survey with a different blood test. NFHS-6 gives no infant or child mortality, so this page uses SRS. SRS publishes no life expectancy, under-5 or neonatal mortality for the smaller states and UTs. None of the publishers states a reuse licence for these data.',
   },
-  sources: [SRS_BULLETIN_2024, SRS_MMR_2022_24, SRS_LIFE_TABLES, SRS_COMPENDIUM, NFHS_6, PIB_ANAEMIA, NHA_2023_24],
+  sources: [
+    SRS_BULLETIN_2024, SRS_MMR_2022_24, SRS_LIFE_TABLES, SRS_COMPENDIUM, ...SRS_BIRTH_RATIO_REPORTS,
+    NFHS_1, NFHS_2, NFHS_3, NFHS_4, NFHS_5, NFHS_6, PIB_ANAEMIA, NHA_2023_24,
+  ],
   related: [
     { label: 'Population: Fertility rate by state', href: '/charts/fertility-rate-by-state/' },
     { label: 'Population: Birth rate and death rate', href: '/charts/birth-death-rates-by-state/' },
+    { label: 'Population: Sex ratio at birth in India', href: '/charts/sex-ratio-at-birth-india/' },
     { label: 'Population: Sex ratio at birth by state', href: '/charts/sex-ratio-at-birth-by-state/' },
     { label: 'States: Tamil Nadu profile', href: '/states/tamil-nadu/' },
     { label: 'How we check: survey estimates', href: '/how-we-check/' },

@@ -7,8 +7,9 @@ Data gathered on 17 Nov 2026 from primary sources: ORGI Sample Registration Syst
 1. How many babies die before their first birthday, and how fast has that fallen since 1971?
 2. How many women die from pregnancy and childbirth, and where is the risk highest?
 3. How long do people in India live, and how large is the gap between states and between women and men?
-4. Are children better nourished and better protected than five years ago?
+4. How have child nutrition and care changed across the NFHS rounds?
 5. How much of the health bill do households pay from their own pockets?
+6. How has India's sex ratio at birth changed?
 
 ## Charts
 
@@ -86,6 +87,69 @@ Data gathered on 17 Nov 2026 from primary sources: ORGI Sample Registration Syst
 - CSV: `out-of-pocket-health-spending.csv`
 - Sentence: "Households paid 42.7% of India's health bill out of their own pockets in 2023-24, down from 64.2% in 2013-14."
 - Source: MoHFW and NHSRC, National Health Accounts Estimates for India 2023-24, Table 1 (India) and Table A.6 (states).
+
+### H9. NFHS national trends and state stunting history
+
+The original national chart compared NFHS-5 and NFHS-6. The national time series uses four chart cards, so each method change has its own marker. `nfhs-india-history.csv` contains 42 India observations. `basis` identifies the group or method. `round_axis` is a plotting coordinate that gives the rounds equal space. `source_doc` and `note` identify the table and coverage. All estimates retain the published digits.
+
+| Chart | Rounds and source | Comparability |
+| --- | --- | --- |
+| Child stunting and wasting | NFHS-2 and NFHS-3, NFHS-3 Table 10.3. NFHS-3 and NFHS-4, each report's Table 10.2. NFHS-5 and NFHS-6, NFHS-6 India fact sheet. | The NFHS-3 report places both early rounds on the WHO 2006 growth standards for the last two children under age 3 of ever-married women. Keep those estimates on dashed lines. Start the under-5 lines at NFHS-3. Omit the original NFHS-1 and NFHS-2 estimates on the NCHS reference. NFHS-1 also did not measure height in five states, as NFHS-2 explains in §7.5. |
+| Births in health facilities | NFHS-1 to NFHS-3, NFHS-3 Table 8.23. NFHS-3 and NFHS-4, NFHS-4 Table 8.27. NFHS-5 and NFHS-6, NFHS-6 India fact sheet. | The early estimate covers the last two births in three years to ever-married women. The later estimate uses all births. NFHS-3 to NFHS-5 use five years. NFHS-3 gives 40.8% and 38.7% on the two bases. Show both at the break. |
+| Full childhood vaccination | NFHS-1 Table 9.10, NFHS-2 Table 6.9 and NFHS-3 and NFHS-4 Table 9.3 for card seen. NFHS-3 and NFHS-4 Table 9.6 for card or recall. NFHS-6 India fact sheet for NFHS-5 and NFHS-6. | Early card-only rates cover children whose cards the interviewer saw. Keep them separate from the late fact-sheet rates. The early card-or-recall trend uses the basic doses in the national reports. NFHS-5 first records pentavalent doses alongside DPT, so split the card-or-recall line at NFHS-5 too. NFHS-2 Table 6.9 limits its estimates to surviving children among the two most recent births in three years. The NFHS-3 report uses NFHS-1 and NFHS-2 in its published trend table. |
+| Anaemia among women | NFHS-2 and NFHS-3, NFHS-3 Table 10.24.1. NFHS-4, Table 10.21.1. NFHS-5, PIB release 1782638. | Keep the ever-married and all-women estimates on separate lines. Both are for ages 15 to 49. NFHS-3 reports both and excludes Nagaland. NFHS-1 did not test haemoglobin. NFHS-6 did not report anaemia. |
+
+`nfhs-stunting-history-by-state.csv` contains 107 observations. NFHS-4 Table 10.2 adds India and 33 current states and UTs, including Andhra Pradesh and Telangana. Exclude the NFHS-4 Jammu and Kashmir row because it includes Ladakh. Exclude the separate Dadra and Nagar Haveli and Daman and Diu rows because NFHS-5 and NFHS-6 report a single UT. Omit the three NFHS-4 points for these current UTs. The NFHS-5 report, Table 10.2, supplies Manipur (23.4%). The rest of NFHS-5 and all of NFHS-6 come from the existing `nfhs-key-indicators-by-state.csv`. Manipur has no NFHS-6 estimate.
+
+**NFHS overlap checks**
+
+- The NFHS-4 report, Table 10.3, repeats NFHS-3 stunting, wasting and severe wasting at 48.0%, 19.8% and 6.4%. The NFHS-5 report, Table 10.3, repeats NFHS-4 at 38.4%, 21.0% and 7.4%. The NFHS-5 report matches all three India values from the NFHS-6 fact sheet at 35.5%, 19.3% and 7.7%.
+- All 36 shared NFHS-5 stunting estimates (India and 35 states and UTs) match between NFHS-5 Table 10.2 and the NFHS-5 columns in the NFHS-6 fact sheets.
+- NFHS-3 Table 8.12 agrees with the NFHS-4 trend table on 38.7% for all births. NFHS-5 Table 8.29 repeats NFHS-4 at 78.9% and agrees with the NFHS-6 fact sheet on the NFHS-5 value of 88.6%.
+- The NFHS-1 and NFHS-2 source-of-information tables give the same national card-or-recall estimates as NFHS-3 Table 9.6 (35.4% and 42.0%). NFHS-4 Table 9.6 repeats NFHS-3 at 43.5%. NFHS-5 Table 9.6 repeats NFHS-4 at 62.0% and agrees with the NFHS-6 fact sheet on the NFHS-5 estimate of 76.6%. NFHS-5 Table 9.3 reports 74.2% for the share of all children whose doses are documented by card. That tabulation is different from the fact-sheet card-only rate of 83.8%. Keep the fact-sheet estimate and use it only with its paired NFHS-6 estimate.
+- NFHS-4 Table 10.21.1 repeats NFHS-3 anaemia among all women at 55.3%. NFHS-5 Table 10.23.1 repeats NFHS-4 at 53.1% and agrees with the PIB NFHS-5 estimate of 57.0%. NFHS-2 Table 7.6 reports 51.8% among ever-married women, the same as the NFHS-3 trend table.
+
+### H10. Sex ratio at birth in India, 1998-00 to 2022-24
+
+`sex-ratio-at-birth-india.csv` contains 75 observations for total, rural and urban residence across 25 overlapping three-year periods. The line uses the national total. The SRS Compendium starts at 1998-00. Its table labels each window by the middle year. The CSV gives both the middle year and the full period. All ratios retain the published integers.
+
+Use Table 16 from each source. Use the newest report for a period with more than one source. The compendium supplies 1998-00 to 2010-12. The 2017 report supplies 2011-13 and 2012-14. The 2019 report supplies 2013-15. The 2020 report supplies 2014-16 to 2017-19. The 2024 report supplies 2018-20 to 2022-24.
+
+The releases agree in every overlap checked, for total, rural and urban. The compendium and 2017 report share 2011-13. The 2019 report shares 2013-15 to 2015-17 with the 2017 report. The 2020 report shares 2014-16 to 2017-19 with the 2019 report. The 2024 report shares 2018-20 with the 2020 report. Table 16 in 2024 also agrees with the existing population CSV for all 15 India observations. The ORGI corrigendum for the 2015 to 2020 reports changes other tables and leaves Table 16 intact.
+
+ORGI replaced its sample in 2004 and 2014. The chart marks both years. Some three-year periods straddle a sample change. The line follows ORGI's continuous series for the same national ratio.
+
+### History source files
+
+Read 18 Nov 2026. Paths are relative to `raw/health/`. The PDF reports come from IIPS and its partners, and ORGI. The DHS Program hosts the IIPS reports. The [IIPS NFHS project site](https://rchiips.org/NFHS/) and its [NFHS-4 India fact sheet](https://rchiips.org/NFHS/pdf/NFHS4/India.pdf) failed certificate validation. The alternate IIPS NFHS project site also failed certificate validation for the NFHS-6 fact sheets. The MoHFW PDF and PIB release 2266600 returned HTTP 403. The historical build uses the previously verified NFHS-6 values already in `nfhs-key-indicators-by-state.csv`. The source register below gives the URLs and hashes for those fact sheets and the PIB anaemia release.
+
+| Raw file | Publisher and release | URL | SHA-256 |
+| --- | --- | --- | --- |
+| `nfhs-1/report.pdf` | IIPS for MoHFW, NFHS-1 India report, Aug 1995, DHS Program archive | https://dhsprogram.com/pubs/pdf/FRIND1/FRIND1.pdf | `424f8612d23fa2a6fbf506a33d1d19c0f39386c90c23b26a79c483f92c126555` |
+| `nfhs-2/report.pdf` | IIPS and ORC Macro, NFHS-2 India report, Oct 2000, DHS Program archive | https://dhsprogram.com/pubs/pdf/FRIND2/FRIND2.pdf | `08c7b5cb1776a2ac9247f69e639cd1a31328181f3d0aa89dfb12973d03655a32` |
+| `nfhs-3/report.pdf` | IIPS and Macro International, NFHS-3 India report, Sep 2007, DHS Program archive | https://dhsprogram.com/pubs/pdf/FRIND3/FRIND3-Vol1AndVol2.pdf | `c1fb9db3227ef6dea264bd5babdbbd9fabcb5a80c640bfdfb12c9d070d3a270f` |
+| `nfhs-4/report.pdf` | IIPS and ICF, NFHS-4 India report, Dec 2017, DHS Program archive | https://dhsprogram.com/pubs/pdf/FR339/FR339.pdf | `ae829501207767caf54c935f696bb4a39c4ee763f2261d2c1a87ded89cc1e19d` |
+| `nfhs-5/report.pdf` | IIPS and ICF, NFHS-5 India report, Vol. I, Mar 2022 cover date, DHS Program archive | https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf | `ce1fa5e3c93e5f0019583688e0431c9ec1c2c028b624a4dd76f07c5f5e81128a` |
+| `srs-compendium/report.pdf` | ORGI, SRS Compendium 1971-2013, 2014 | https://censusindia.gov.in/nada/index.php/catalog/33218/download/37035 | `8085ab18a367ab6fe96718641c04de93c494522588135e72f51bb3dcb3394984` |
+| `srs-2017/report.pdf` | ORGI, SRS Statistical Report 2017, 2020 catalogue year | https://censusindia.gov.in/nada/index.php/catalog/44373/download/48042/SRS_STAT_2017.pdf | `a82bf4df15f910ca769441349972303e5213a8160c5fc00d511a2f308330e5f4` |
+| `srs-2019/report.pdf` | ORGI, SRS Statistical Report 2019, 1 Mar 2022 catalogue date | https://censusindia.gov.in/nada/index.php/catalog/44375/download/48046/SRS_STAT_2019.pdf | `50efe7a9f00db7df697f4f71ee8db0c4991a4a80f35f6a02d204689809f79ac9` |
+| `srs-2020/report.pdf` | ORGI, SRS Statistical Report 2020, 22 Sep 2022 catalogue date | https://censusindia.gov.in/nada/index.php/catalog/44376/download/48048/SRS_STAT_2020.pdf | `aae760b4f2b4d16bfa275a6f0690c19bc203bdd7ef7f82bfd66fe3304373e56a` |
+| `srs-2024/report.pdf` | ORGI, SRS Statistical Report 2024, 20 May 2026 | https://censusindia.gov.in/nada/index.php/catalog/47152/download/51396 | `f922a4a817e612c78a7827e4f526f69dc433d68c4af287b76d418337637c946a` |
+| `srs-corrigendum/report.pdf` | ORGI, Corrigendum No. 09/6/2020-VS(SRS), date not stated | https://censusindia.gov.in/nada/index.php/catalog/44375/download/48047/Corrigendum_to_SRS_Reports.pdf | `04e3f41129a113be3292dc05c7e5b5d460880b00fa93a158cfc2168cead8e861` |
+| `srs-catalog/index.html` | ORGI, statistical report catalogue search, live list | https://censusindia.gov.in/nada/index.php/catalog/?sk=SRS%20Statistical%20Report | `f5cc57d82a839b9de11b71c3c155e1c356f73116f17ae1d7e4ebd8f` |
+| `srs-2007-search/source` | ORGI, 2007 report catalogue search, live list | https://censusindia.gov.in/nada/index.php/catalog/?sk=SRS%20Statistical%20Report%202007 | `11a20dd0b335e3fadc97e712fb86bcd19bd18f17178bb9d6a68a9685b6c17ffe` |
+| `srs-2010-search/source` | ORGI, 2010 report catalogue search, live list | https://censusindia.gov.in/nada/index.php/catalog/?sk=SRS%20Statistical%20Report%202010 | `9f6ba300f519475c4ea13f13ddbf17d966341da1a996b91eda41249c2fd297ff` |
+| `srs-2016-catalog/source` | ORGI, SRS Statistical Report 2016 catalogue entry, live page | https://censusindia.gov.in/nada/index.php/catalog/44372 | `f455235403c42a49bae8cba4fb92b988373c7af06a00f0ccf6f3d4d406827a33` |
+| `srs-2017-catalog/source` | ORGI, SRS Statistical Report 2017 catalogue entry, live page | https://censusindia.gov.in/nada/index.php/catalog/44373 | `fcdb4f0017085fa809415bb6b963f819b9438d714b768be95f7226b454ca334b` |
+| `srs-2019-catalog/source` | ORGI, SRS Statistical Report 2019 catalogue entry, live page | https://censusindia.gov.in/nada/index.php/catalog/44375 | `c2cfbc9d1ee8b435ef2b4a0a1ee9f7e0cd276300999b2899b96a6c6f3ae98254` |
+| `srs-2020-catalog/source` | ORGI, SRS Statistical Report 2020 catalogue entry, live page | https://censusindia.gov.in/nada/index.php/catalog/44376 | `96b2441cd432a76afa393c91e6c81def26bbbe73654bef3a2fef24b18175715e` |
+
+To rebuild the three history CSVs, run both scripts from the repository root. They call `pdftotext -layout` on the local raw PDFs and keep the published digits.
+
+```sh
+python3 -I pipeline/health/build_nfhs_history.py
+python3 -I pipeline/health/build_sex_ratio_at_birth.py
+```
 
 ## Headline figures
 

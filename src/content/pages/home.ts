@@ -116,11 +116,9 @@ const home: Home = {
         released: 'Released 31 Aug 2026',
       },
       {
-        // In src/content/topics/health.ts: bars chart, series 'nfhs6', category 'stunted'.
         topic: 'health',
         chart: 'child-nutrition',
-        series: 'nfhs6',
-        x: 'stunted',
+        series: 'stunted',
         measure: 'Children under 5 who are stunted, NFHS-6 (2023-24)',
         compare: 'Down from 35.5% in NFHS-5 (2019-21) · provisional fact sheet',
         released: 'Released 29 May 2026',

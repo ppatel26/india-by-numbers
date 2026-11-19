@@ -1,4 +1,5 @@
 import type { Source, Topic } from '../types'
+import { sexRatioAtBirthIndia } from './health'
 
 // Data: research/data/population/README.md.
 
@@ -354,6 +355,7 @@ const topic: Topic = {
         {
           text: 'For every 1,000 boys born in India in 2022-24, 918 girls were born, up from 907 in 2018-20. Chhattisgarh had the highest ratio (978) and Uttarakhand the lowest (872).',
         },
+        { chart: sexRatioAtBirthIndia },
         {
           chart: {
             pin: ['india'],
