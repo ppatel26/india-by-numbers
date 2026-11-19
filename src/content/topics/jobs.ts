@@ -271,6 +271,24 @@ const statusSeries = statusGroups.flatMap(({ key, label, category }) => seriesBy
   { geography: 'india', sector: 'rural+urban', sex: 'person', status: category },
 ))
 
+const broadIndustryGroups = [
+  { key: 'agriculture', label: 'Agriculture', color: 'ink', industry: 'agriculture' },
+  { key: 'other-services', label: 'Other services', color: 's2', industry: 'other services' },
+  { key: 'trade', label: 'Trade and hospitality', color: 's3', industry: 'trade, hotel & restaurant' },
+  { key: 'manufacturing', label: 'Manufacturing', color: 's4', industry: 'manufacturing' },
+  { key: 'construction', label: 'Construction', color: 's5', industry: 'construction' },
+  { key: 'transport', label: 'Transport services', color: 's6', industry: 'transport, storage & communications' },
+  { key: 'utilities', label: 'Electricity and water', color: 's7', industry: 'electricity, water, etc.' },
+  { key: 'mining', label: 'Mining and quarrying', color: 's8', industry: 'mining & quarrying' },
+] as const
+
+const broadIndustrySeries = broadIndustryGroups.flatMap(({ key, label, color, industry }) => seriesByPeriod(
+  { key, label, color },
+  'employment-by-industry',
+  INDUSTRY,
+  { geography: 'india', sector: 'rural+urban', sex: 'person', industry },
+))
+
 const industrySeries = (
   period: string,
   color: Color,
@@ -508,7 +526,37 @@ const topic: Topic = {
           },
         },
         {
-          text: 'Agriculture employed nearly half of all workers in the 2011-12 NSS survey. In 2025, it employed 43.0% of all workers and 59.8% of women workers.',
+          text: 'Agriculture employed 64.9% of workers in 1993-94 and 43.0% in 2025. Over the same period, the share in construction rose from 3.2% to 12.0%.',
+        },
+        {
+          chart: {
+            kind: 'line',
+            slug: 'employment-by-industry-history',
+            title: 'Workers in India by broad industry, 1993-94 to 2025',
+            subtitle: 'Share of workers of all ages, usual status. Dashed lines show calendar estimates for 2022 to 2024.',
+            punches: { office: 'MoSPI', unit: '% workers', period: '2025' },
+            status: ['Survey estimate', 'Method break'],
+            note: 'PLFS replaced the NSS survey in 2017-18. Calendar estimates for 2022 to 2024 overlap the July to June surveys. PLFS changed its sample design in 2025 and moved its annual report to calendar years.',
+            sources: historySources,
+            format: { unit: '%', decimals: 1 },
+            y: { min: 0, max: 70, step: 10 },
+            series: broadIndustrySeries,
+            breaks: [...surveyBreaks.slice(0, 2), { x: '2025', before: 'Old', label: '2025 redesign' }],
+            know: [
+              'Usual status includes principal and subsidiary work.',
+              'MoSPI compares these eight broad industry groups across NSS rounds. The transport group includes storage and communications. The trade group includes hotels and restaurants.',
+              subsidiaryRule,
+              'The NSS table has no electricity and water share for rural women in 1993-94 and 1999-2000. The national estimate uses zero for those two shares.',
+            ],
+            processing: [
+              'Use the broad industry shares in NSS Report 554 for rural and urban men and women. Weight them by the published worker counts for each group to estimate the national shares before 2011-12.',
+              'Combine NIC 2008 sections as specified by MoSPI for 2011-12. Use the published PLFS shares from 2017-18 onward.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'In 2025, agriculture employed 59.8% of women who worked.',
         },
         {
           chart: {

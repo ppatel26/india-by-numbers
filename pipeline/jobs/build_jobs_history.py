@@ -24,6 +24,7 @@ INDUSTRIES = {
     "transport, storage & communications": "HJ",
     "other services": "KLMNOPQRSTU",
 }
+INDUSTRY_GROUPS = (("rural", "male"), ("rural", "female"), ("urban", "male"), ("urban", "female"))
 NSS = "NSS employment and unemployment survey"
 NSS_EARLY = "NSS before the 30-day rule"
 PLFS = "PLFS July to June"
@@ -97,9 +98,9 @@ def plfs_industry(report, number):
         line = line.strip().lower()
         if line.startswith("note"):
             break
-        year = re.fullmatch(rf"plfs \(({PERIOD})\)", line)
+        year = re.fullmatch(rf"plfs (?:\(({PERIOD})\)|(20\d{{2}}))", line)
         if year:
-            period = year[1]
+            period = year[1] or year[2]
             continue
         if not period:
             continue
@@ -287,6 +288,41 @@ def nss_industry(report):
     return result
 
 
+def nss_cross_round_industry(report, number, rounds):
+    """Read the all-worker columns in MoSPI's broad-industry concordance."""
+    title = rf"(?m)^ *Statement {number}: Per 1000 distribution of usually employed persons by broad industry division"
+    pages = [report[match.start():].split("\f", 1)[0] for match in re.finditer(title, report)]
+    require(len(pages) == (2 if number == "5.11" else 1), f"Statement {number}: unexpected page count")
+    table = "\n".join(pages)
+    rows = list(re.finditer(r"(?m)^.*?\b(\d+)(?:st|nd|rd|th)? +\((\d{4}(?:-\d{2})?)\)"
+                            r" +((?:(?:\d+|-) +){7}(?:\d+|-)) *$", table))
+    require(len(rows) == len(INDUSTRIES) * len(rounds), f"Statement {number}: unexpected row count")
+    result = {}
+    for index, industry in enumerate(INDUSTRIES):
+        block = rows[index * len(rounds):(index + 1) * len(rounds)]
+        require(tuple(int(row[1]) for row in block) == rounds, f"Statement {number}: {industry} round order")
+        label = industry.split(",")[0].split(" &")[0]
+        require(re.search(rf"(?m)^ *{re.escape(label)}\b", table[block[0].start():block[-1].end()]),
+                f"Statement {number}: missing group {industry}")
+        for row in block:
+            result[row[2], industry] = dict(zip(INDUSTRY_GROUPS, row[3].split()[1::2]))
+    return result
+
+
+def national_industry(shares, period, industry, counts):
+    """Weight the published shares by the estimated number of workers in each group."""
+    group_shares = shares[period, industry]
+    missing = {group for group, share in group_shares.items() if share == "-"}
+    # The two early rounds print a dash for rural women in electricity and water.
+    expected_missing = {("rural", "female")} if industry == "electricity, water, etc." and period in (
+        "1993-94", "1999-00"
+    ) else set()
+    require(missing == expected_missing, f"Unexpected unavailable industry shares: {period}, {industry}, {missing}")
+    total = sum(counts[group]["all"] for group in INDUSTRY_GROUPS)
+    weighted = sum(int(share) * counts[group]["all"] for group, share in group_shares.items() if group not in missing)
+    return Decimal(weighted) / (10 * total)
+
+
 def check_overlap(first, second, label, detail=True):
     overlap = first.keys() & second.keys()
     differences = {key: (first[key], second[key]) for key in sorted(overlap) if first[key] != second[key]}
@@ -318,16 +354,18 @@ def read_csv(path):
         return list(csv.DictReader(source))
 
 
-def write_csv(out, stem, fields, rows):
+def write_csv(out, stem, fields, rows, source_kind=None):
+    provenance = ("source_kind",) if source_kind else ()
+    source_value = (source_kind,) if source_kind else ()
     with (out / f"jobs-{stem}-history.csv").open("w", newline="") as file:
         writer = csv.writer(file, lineterminator="\n")
         writer.writerow(("geography", "period", "value", "unit", *fields,
-                         "period_basis", "plot_period", "table", "derived", "published_per_1000"))
+                         "period_basis", "plot_period", "table", "derived", "published_per_1000", *provenance))
         for period, value, unit, dimensions, basis, source, derived, published in sorted(
             rows, key=lambda row: (row[0], row[3])
         ):
             writer.writerow(("india", period, value, unit, *dimensions, basis,
-                             f"{period[:4]}-07-01", source, derived, published))
+                             f"{period[:4]}-07-01", source, derived, published, *source_value))
     print(f"{stem}: {len(rows)} rows")
 
 
@@ -354,6 +392,12 @@ def main():
     check_overlap(youth_nss, youth_check, "NSS 537 / 554, ages 15 to 29")
     youth_nss.update(youth_check)
     status_nss = published_nss_status(report68)
+    industry_nss = nss_cross_round_industry(report68, "5.11", (68, 66, 61, 55, 50, 43, 38, 32))
+    industry_check = nss_cross_round_industry(report66, "5.9", (66, 61, 55, 50, 43, 38, 32))
+    overlap = {(p, i) for p in ("1993-94", "1999-00", "2004-05", "2009-10") for i in INDUSTRIES}
+    require(all(industry_nss[key] == industry_check[key] for key in overlap), "NSS broad industry tables disagree")
+    print(f"NSS 537 / 554 historical broad industries: {len(overlap) * len(INDUSTRY_GROUPS)} entries match")
+    industry_2011 = nss_industry(report68)
 
     annual, youth, status, industry = [], [], [], []
     nss_ages, nss_status_check = {}, {}
@@ -381,6 +425,18 @@ def main():
                                derived, published))
 
         worker_counts = {key: nss_status(rows) for key, rows in records.items()}
+        for category in INDUSTRIES:
+            value = national_industry(industry_nss, period, category, worker_counts)
+            if round_number == 68:
+                published = Decimal(industry_2011["rural+urban", "person", category][0])
+                difference = abs(value - published)
+                require(difference <= Decimal("0.1"), f"NSS 68 industry overlap: {category}, {value:.3f} vs {published}")
+                print(f"NSS 68 national {category}: {value:.3f} vs {published} per cent")
+            else:
+                entry = ("rural+urban", "person", category, "all ages", USUAL)
+                industry.append((period, f"{value:.1f}", "per cent of workers", entry, basis,
+                                 f"NSS Report 554, Statement 5.11; {source}",
+                                 "weighted by rural and urban worker counts by sex", ""))
         youth_counts = {key: nss_youth_counts(page, records[key], round_number) for key, page in pages.items()}
         for sex in SEXES:
             if ("rural+urban", sex) not in worker_counts:
@@ -411,7 +467,7 @@ def main():
 
     check_overlap(nss_status_check, {k: percent(int(v), 1000) for k, v in status_nss.items()},
                   "NSS appendix counts / published employment shares")
-    for (sector, sex, category), (value, derived) in nss_industry(report68).items():
+    for (sector, sex, category), (value, derived) in industry_2011.items():
         industry.append(("2011-12", value, "per cent of workers", (sector, sex, category, "all ages", USUAL),
                          NSS, "NSS Report 554, Table 27", derived, ""))
 
@@ -466,10 +522,17 @@ def main():
         check_overlap({(p[:4], *key): v for (p, *key), v in all_values.items()}, calendar,
                       f"{name} with same start year, July to June / calendar", detail=False)
 
+    published_industry = plfs_industry(pdf(raw, "plfs-2025"), 8)
+    calendar_industry = {(row["period"], row["sector"], row["sex"], row["industry"]): row["value"]
+                         for row in read_csv(args.current / "jobs-employment-by-industry.csv")}
+    require(calendar_industry == published_industry, "Calendar industry data differ from PLFS 2025, Statement 8")
+    print(f"PLFS 2025, Statement 8: {len(published_industry)} calendar industry entries match")
+
     write_csv(out, "annual-rates", ("indicator", "sex", "age_group", "activity_status"), annual)
     write_csv(out, "youth-unemployment", ("sector", "sex", "age_group", "activity_status"), youth)
     write_csv(out, "employment-status", ("sector", "sex", "status", "age_group", "activity_status"), status)
-    write_csv(out, "employment-by-industry", ("sector", "sex", "industry", "age_group", "activity_status"), industry)
+    write_csv(out, "employment-by-industry", ("sector", "sex", "industry", "age_group", "activity_status"),
+              industry, source_kind="official")
 
 
 if __name__ == "__main__":
