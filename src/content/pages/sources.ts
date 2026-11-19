@@ -233,6 +233,18 @@ const PUBLISHERS: readonly Publisher[] = [
     access: ['CSV files for the medium projection variant'],
     site: 'https://population.un.org/wpp/',
   },
+  {
+    short: 'IMF',
+    logos: [],
+    full: 'International Monetary Fund',
+    topics: ['economy'],
+    dataSets: [
+      { name: 'International Financial Statistics', detail: 'India, calendar-year average rupees per US dollar, 1950 to 1969', rhythm: 'Historical series', match: /International Financial Statistics/ },
+    ],
+    licence: NOT_STATED,
+    access: ['International Financial Statistics via DBnomics'],
+    site: 'https://data.imf.org/en',
+  },
 ]
 
 const sources: SourcesPage = {

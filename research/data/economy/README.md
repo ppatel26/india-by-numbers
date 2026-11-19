@@ -74,15 +74,20 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in` (`getNASData` 
 - Source: MoSPI eSankhyiki `getIIPData`, all three bases. PIB published the latest release for MoSPI on 28 October 2026.
 - The first 12 API growth rates on each base equal the index minus 100. Exclude those rates because they compare with the base-year average. Base 2004-05 supplies year-on-year rates for April 2012 to March 2013. The three bases give different rates in the overlap. September 2026 is a quick estimate. The final rate for August 2026 is 7.8%. The base 2011-12 series gives a fall of 57.3% in April 2020 during the lockdown.
 
-### E7. Rupees per US dollar since 1986-87
+### E7. Rupees per US dollar, yearly average, 1950 to 2025-26
 
-- Type: line, financial-year average (end-of-year rate in the same CSV).
-- Unit: rupees per US dollar.
-- Geography: India. Period: 1986-87 to 2025-26.
-- CSV: `usd-inr-annual.csv`
-- Sentence: "A US dollar cost ₹12.78 on average in 1986-87 and ₹88.31 in 2025-26. At the end of March 2026 it cost ₹94.65."
-- Source: RBI, Handbook of Statistics on Indian Economy 2025-26, Table 133.
-- Notes: rates to 1991-92 are official rates; from 1992-93 FEDAI indicative rates; from May 2012 RBI reference rates; from 10 Jul 2018 FBIL reference rates (table notes). The 1991-92 and 1992-93 jumps reflect the 1991 devaluation and the move to a market rate.
+- The solid lines show RBI financial-year averages, and the dashed line shows IMF calendar-year estimates.
+- `usd-inr-annual.csv` holds 20 IMF averages from January to December for 1950 to 1969 (`international estimate`). It holds 16 RBI averages from April to March for 1970-71 to 1985-86 (`official`, Table 133 released in 2002). The latest Table 133 supplies 40 averages and 40 end-of-year rates from 1986-87 to 2025-26 (`official`). Each row gives its source and `source_kind`.
+- A US dollar cost ₹4.76 on average in calendar year 1950, according to the IMF. RBI gives an average of ₹7.56 for 1970-71 and ₹88.31 for 2025-26. At the end of March 2026 it cost ₹94.65.
+- RBI used official exchange rates through 1991-92 and FEDAI indicative rates from 1992-93. It used RBI reference rates from May 2012 and FBIL reference rates from 10 July 2018.
+- India devalued the rupee in September 1949, before the first average in this series. India pegged the rupee to sterling before 1971. The par rate changed from ₹4.76 to ₹7.50 per US dollar on 6 June 1966. The IMF average for calendar year 1966 is ₹6.36. India devalued the rupee in July 1991, introduced a dual rate in March 1992 and moved to one market rate in 1993. [RBI chronology, 1949](https://www.rbi.org.in/Scripts/chro_1935.aspx) · [RBI Report on Currency and Finance 1966-67, Notes on the Statements](https://web.archive.org/web/20261114093654id_/https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/31CF10062020_1966ED505EE590504051B3AC56061AE190EC.PDF) · [RBI chronology, 1991 to 2000](https://www.rbi.org.in/Scripts/chro_1991.aspx)
+
+**Overlap checks**
+
+- The 2002 and 2026 editions of Table 133 match to four decimals in all 15 shared financial years, 1986-87 to 2000-01. This holds for both the averages and the end-of-year rates. The 2026 HTML table also matches all 80 values in the previous CSV.
+- Compare IMF calendar-year averages with RBI Table 132 for the same calendar years. The 2002 table overlaps in 31 years (1970 to 2000). The largest difference is ₹0.9506 per US dollar in 1993 (RBI ₹31.4439, IMF ₹30.4933). The 2026 table overlaps in 38 years (1987 to 2024). The largest difference is ₹0.9525, also in 1993 (RBI ₹31.4458, IMF ₹30.4933).
+- The Handbook HTML tables checked start at 1970-71 for financial-year averages. RBI's document server returned a bot check for the earlier Report on Currency and Finance PDFs. The Internet Archive copies of the 1965-66 and 1966-67 reports gave no table of annual dollar averages. The 1966-67 report confirms the par values. No published RBI financial-year averages were verified for 1950-51 to 1969-70.
+- Rebuild from the five HTML and JSON data files listed below. Run `python3 -I pipeline/economy/build_usd_inr_annual.py`. The script prints the overlap checks.
 
 ### E8. The rupee in 2026, day by day
 
@@ -128,6 +133,9 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in` (`getNASData` 
 | PIB for MoSPI | Quick Estimates of Index of Industrial Production and Use-Based Index for September 2026 (Base 2022-23=100) | 28 Oct 2026, 4:00 pm | Sep 2026 (quick), Aug 2026 (final) | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2329475 | 17 Nov 2026 | Not stated | `economy/pib/pib_2329475.html` |
 | RBI | Handbook of Statistics on Indian Economy 2025-26, Tables 9 and 10: Per Capita NSDP, state-wise (current and constant prices) | 31 Jul 2026 | 2001-02 to 2025-26 | https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/9T_HBIE31072026A3F18AB442CE4A23BEC929D29B406162.XLSX ; .../10T_HBIE310720268B682995CC224C51B22FC6036E99B7D1.XLSX | 17 Nov 2026 | Not stated | `economy/rbi/9T_*.XLSX`, `10T_*.XLSX` |
 | RBI | Handbook 2025-26, Table 133: Exchange rate of the rupee (financial year average and end-year) | 31 Jul 2026 | 1986-87 to 2025-26 | https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/133T_HBIE3107202637939AFB4EE946719F742BEB8AEC5E18.XLSX | 17 Nov 2026 | Not stated | `economy/rbi/133T_*.XLSX` |
+| RBI | Handbook 2025-26, Table 133, HTML | 31 Jul 2026 | 1986-87 to 2025-26 | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23958 | 18 Nov 2026 | Not stated | `economy/usd-inr-2026-handbook-fy/table-133.html` |
+| RBI | Handbook, Table 133, financial-year exchange rates | 8 Jan 2002 | 1970-71 to 2000-01 | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=3615 | 18 Nov 2026 | Not stated | `economy/usd-inr-2002-handbook-fy/table-133.html` |
+| IMF via DBnomics | International Financial Statistics, India, calendar-year average exchange rate | Not stated | 1950 to 2024 | https://api.db.nomics.world/v22/series/IMF/IFS/A.IN.ENDA_XDC_USD_RATE?observations=1 | 18 Nov 2026 | Not stated | `economy/usd-inr-imf-ifs/india-annual.json` |
 | RBI | Handbook 2025-26, Table 227: growth rates at constant prices (cross-check) | 31 Jul 2026 | 2019-20 to 2025-26 | https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/227T_HBIE31072026194AD11D84C94DDFB2BC11DB074BA738.XLSX | 17 Nov 2026 | Not stated | `economy/rbi/227T_*.XLSX` |
 | RBI (source FBIL) | Reference Rate Archive, USD | Daily | 1 Jan 2016 to 17 Nov 2026 (with gaps, see below) | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx | 17 Nov 2026 | Not stated | `economy/rbi/refrate_usd_*.html` |
 | RBI | Home page, "Current Rates" box | Live | 17 Nov 2026 | https://www.rbi.org.in/ | 17 Nov 2026 | Not stated | `economy/rbi/rbi_home.html` |
@@ -156,6 +164,22 @@ The CSVs are built by `pipeline/prices/build_prices_economy.py` (run with `pytho
 ## Raw files
 
 Paths are relative to `raw/`. Raw downloads are not kept in the repository; the URL and sha256 below identify each file. Files ending `.pN.json` are single API pages; `.all.json` merges them.
+
+### E7 annual exchange rates
+
+| File | URL read | Read date | Source kind | SHA-256 |
+| --- | --- | --- | --- | --- |
+| `economy/usd-inr-2002-handbook-fy/table-133.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=3615 | 18 Nov 2026 | official | `4f785ee53d5190ef88df77afaac35388ee72c74f7d0867687aefe00b9f8c68a2` |
+| `economy/usd-inr-2026-handbook-fy/table-133.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23958 | 18 Nov 2026 | official | `b67ea99898ba1fd6d7e6c7a8134ad3901de7ef5e861017783125e943476a1f8a` |
+| `economy/usd-inr-2002-handbook-calendar/table-132.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=3614 | 18 Nov 2026 | official | `bd254c10044391b810722d3886706be30ecea84d655868081cea618be2929729` |
+| `economy/usd-inr-2026-handbook-calendar/table-132.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23957 | 18 Nov 2026 | official | `b316b830ea143edba710196b4cb6820c4f543486f21cc1ac805eb5b3ada349db` |
+| `economy/usd-inr-imf-ifs/india-annual.json` | https://api.db.nomics.world/v22/series/IMF/IFS/A.IN.ENDA_XDC_USD_RATE?observations=1 | 18 Nov 2026 | international estimate | `3a7672363dcfd63d178b0219e5656742f4e7110f3bfd3fdd624f1ce4535da264` |
+| `economy/usd-inr-rbi-rcf-1965-66/report.pdf` | https://web.archive.org/web/20261114093603id_/https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/30CF10062020_19657B5EB9F13B3B47718270AB62C5142966.PDF | 18 Nov 2026 | archived copy | `0b9e8339aea7d8cc33b000d35f103c764a19bfa67473df8d53c060a06115ced9` |
+| `economy/usd-inr-rbi-rcf-1966-67/report.pdf` | https://web.archive.org/web/20261114093654id_/https://rbidocs.rbi.org.in/rdocs/Publications/PDFs/31CF10062020_1966ED505EE590504051B3AC56061AE190EC.PDF | 18 Nov 2026 | archived copy | `7e6a75f95c9c04f702212ce586943bdfbb0eacbf1ddd0e713746a4f186876006` |
+| `economy/usd-inr-rbi-chronology-1949/chronology.html` | https://www.rbi.org.in/Scripts/chro_1935.aspx | 18 Nov 2026 | official | `e175181fc346131209c0e7441a57cd09a4c4945c8bddb26b747352f7a7b6426b` |
+| `economy/usd-inr-rbi-chronology-1991/chronology.html` | https://www.rbi.org.in/Scripts/chro_1991.aspx | 18 Nov 2026 | official | `46b7e92aab7316bd6c15918f6adaf747f1adf55866cbe9b3afd6643478cabcd4` |
+
+### Other economy files
 
 | File | Source URL | sha256 |
 | --- | --- | --- |

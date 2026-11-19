@@ -1,81 +1,117 @@
-geography,period,value,unit,measure
-india,1986-87,12.7782,rupees per US dollar,financial-year average
-india,1986-87,12.8882,rupees per US dollar,end of financial year
-india,1987-88,12.9658,rupees per US dollar,financial-year average
-india,1987-88,13.0318,rupees per US dollar,end of financial year
-india,1988-89,14.4817,rupees per US dollar,financial-year average
-india,1988-89,15.663,rupees per US dollar,end of financial year
-india,1989-90,16.6492,rupees per US dollar,financial-year average
-india,1989-90,17.3248,rupees per US dollar,end of financial year
-india,1990-91,17.9428,rupees per US dollar,financial-year average
-india,1990-91,19.6429,rupees per US dollar,end of financial year
-india,1991-92,24.4737,rupees per US dollar,financial-year average
-india,1991-92,31.2256,rupees per US dollar,end of financial year
-india,1992-93,30.6488,rupees per US dollar,financial-year average
-india,1992-93,31.2354,rupees per US dollar,end of financial year
-india,1993-94,31.3655,rupees per US dollar,financial-year average
-india,1993-94,31.3725,rupees per US dollar,end of financial year
-india,1994-95,31.3986,rupees per US dollar,financial-year average
-india,1994-95,31.495,rupees per US dollar,end of financial year
-india,1995-96,33.4498,rupees per US dollar,financial-year average
-india,1995-96,34.35,rupees per US dollar,end of financial year
-india,1996-97,35.4999,rupees per US dollar,financial-year average
-india,1996-97,35.915,rupees per US dollar,end of financial year
-india,1997-98,37.1648,rupees per US dollar,financial-year average
-india,1997-98,39.495,rupees per US dollar,end of financial year
-india,1998-99,42.0706,rupees per US dollar,financial-year average
-india,1998-99,42.435,rupees per US dollar,end of financial year
-india,1999-00,43.3327,rupees per US dollar,financial-year average
-india,1999-00,43.605,rupees per US dollar,end of financial year
-india,2000-01,45.6844,rupees per US dollar,financial-year average
-india,2000-01,46.64,rupees per US dollar,end of financial year
-india,2001-02,47.6919,rupees per US dollar,financial-year average
-india,2001-02,48.8,rupees per US dollar,end of financial year
-india,2002-03,48.3953,rupees per US dollar,financial-year average
-india,2002-03,47.505,rupees per US dollar,end of financial year
-india,2003-04,45.9516,rupees per US dollar,financial-year average
-india,2003-04,43.445,rupees per US dollar,end of financial year
-india,2004-05,44.9315,rupees per US dollar,financial-year average
-india,2004-05,43.755,rupees per US dollar,end of financial year
-india,2005-06,44.2735,rupees per US dollar,financial-year average
-india,2005-06,44.605,rupees per US dollar,end of financial year
-india,2006-07,45.2495,rupees per US dollar,financial-year average
-india,2006-07,43.595,rupees per US dollar,end of financial year
-india,2007-08,40.2607,rupees per US dollar,financial-year average
-india,2007-08,39.985,rupees per US dollar,end of financial year
-india,2008-09,45.9933,rupees per US dollar,financial-year average
-india,2008-09,50.945,rupees per US dollar,end of financial year
-india,2009-10,47.4433,rupees per US dollar,financial-year average
-india,2009-10,45.135,rupees per US dollar,end of financial year
-india,2010-11,45.5626,rupees per US dollar,financial-year average
-india,2010-11,44.645,rupees per US dollar,end of financial year
-india,2011-12,47.9229,rupees per US dollar,financial-year average
-india,2011-12,51.16,rupees per US dollar,end of financial year
-india,2012-13,54.4099,rupees per US dollar,financial-year average
-india,2012-13,54.3893,rupees per US dollar,end of financial year
-india,2013-14,60.5019,rupees per US dollar,financial-year average
-india,2013-14,60.0998,rupees per US dollar,end of financial year
-india,2014-15,61.1436,rupees per US dollar,financial-year average
-india,2014-15,62.5908,rupees per US dollar,end of financial year
-india,2015-16,65.4685,rupees per US dollar,financial-year average
-india,2015-16,66.3329,rupees per US dollar,end of financial year
-india,2016-17,67.072,rupees per US dollar,financial-year average
-india,2016-17,64.8386,rupees per US dollar,end of financial year
-india,2017-18,64.4549,rupees per US dollar,financial-year average
-india,2017-18,65.0441,rupees per US dollar,end of financial year
-india,2018-19,69.9229,rupees per US dollar,financial-year average
-india,2018-19,69.1713,rupees per US dollar,end of financial year
-india,2019-20,70.897,rupees per US dollar,financial-year average
-india,2019-20,75.3859,rupees per US dollar,end of financial year
-india,2020-21,74.225,rupees per US dollar,financial-year average
-india,2020-21,73.5047,rupees per US dollar,end of financial year
-india,2021-22,74.5039,rupees per US dollar,financial-year average
-india,2021-22,75.8071,rupees per US dollar,end of financial year
-india,2022-23,80.3635,rupees per US dollar,financial-year average
-india,2022-23,82.2169,rupees per US dollar,end of financial year
-india,2023-24,82.7897,rupees per US dollar,financial-year average
-india,2023-24,83.3739,rupees per US dollar,end of financial year
-india,2024-25,84.5756,rupees per US dollar,financial-year average
-india,2024-25,85.5814,rupees per US dollar,end of financial year
-india,2025-26,88.3071,rupees per US dollar,financial-year average
-india,2025-26,94.6543,rupees per US dollar,end of financial year
+geography,period,value,unit,measure,source_kind,source
+india,1950,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1951,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1952,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1953,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1954,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1955,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1956,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1957,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1958,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1959,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1960,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1961,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1962,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1963,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1964,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1965,4.7619000037619,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1966,6.35912500535913,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1967,7.5000000065,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1968,7.5000000065,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1969,7.5000000065,rupees per US dollar,calendar-year average,international estimate,IMF IFS via DBnomics
+india,1970-71,7.5578,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1971-72,7.4731,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1972-73,7.675,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1973-74,7.7925,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1974-75,7.9408,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1975-76,8.6825,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1976-77,8.9775,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1977-78,8.5858,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1978-79,8.2267,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1979-80,8.0975,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1980-81,7.9092,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1981-82,8.9683,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1982-83,9.666,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1983-84,10.34,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1984-85,11.8886,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1985-86,12.2349,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2002)
+india,1986-87,12.7782,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,1986-87,12.8882,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,1987-88,12.9658,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,1987-88,13.0318,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,1988-89,14.4817,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,1988-89,15.663,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,1989-90,16.6492,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,1989-90,17.3248,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,1990-91,17.9428,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,1990-91,19.6429,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,1991-92,24.4737,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,1991-92,31.2256,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,1992-93,30.6488,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,1992-93,31.2354,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,1993-94,31.3655,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,1993-94,31.3725,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,1994-95,31.3986,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,1994-95,31.495,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,1995-96,33.4498,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,1995-96,34.35,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,1996-97,35.4999,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,1996-97,35.915,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,1997-98,37.1648,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,1997-98,39.495,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,1998-99,42.0706,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,1998-99,42.435,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,1999-00,43.3327,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,1999-00,43.605,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2000-01,45.6844,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2000-01,46.64,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2001-02,47.6919,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2001-02,48.8,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2002-03,48.3953,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2002-03,47.505,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2003-04,45.9516,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2003-04,43.445,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2004-05,44.9315,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2004-05,43.755,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2005-06,44.2735,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2005-06,44.605,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2006-07,45.2495,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2006-07,43.595,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2007-08,40.2607,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2007-08,39.985,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2008-09,45.9933,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2008-09,50.945,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2009-10,47.4433,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2009-10,45.135,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2010-11,45.5626,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2010-11,44.645,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2011-12,47.9229,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2011-12,51.16,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2012-13,54.4099,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2012-13,54.3893,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2013-14,60.5019,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2013-14,60.0998,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2014-15,61.1436,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2014-15,62.5908,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2015-16,65.4685,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2015-16,66.3329,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2016-17,67.072,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2016-17,64.8386,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2017-18,64.4549,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2017-18,65.0441,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2018-19,69.9229,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2018-19,69.1713,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2019-20,70.897,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2019-20,75.3859,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2020-21,74.225,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2020-21,73.5047,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2021-22,74.5039,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2021-22,75.8071,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2022-23,80.3635,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2022-23,82.2169,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2023-24,82.7897,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2023-24,83.3739,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2024-25,84.5756,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2024-25,85.5814,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
+india,2025-26,88.3071,rupees per US dollar,financial-year average,official,RBI Handbook Table 133 (2026)
+india,2025-26,94.6543,rupees per US dollar,end of financial year,official,RBI Handbook Table 133 (2026)
