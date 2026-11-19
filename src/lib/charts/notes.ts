@@ -67,13 +67,24 @@ function crosses([x0, y0, x1, y1]: Seg, r: { l: number; t: number; r: number; b:
 }
 
 
-function rule(b: Breakpoint, box: NoteBox, dotted: boolean): Markup | null {
+/** Width of a rule label: 10.5 px mono capitals. */
+const ruleText = (s: string): number => s.length * 6.4
+
+/**
+ * A break or marker line with its labels. `prev` and `next` are the neighbouring rules' x;
+ * a label that would run into one is left out (in narrow small multiples), the line stays.
+ */
+function rule(b: Breakpoint, box: NoteBox, dotted: boolean, prev = -Infinity, next = Infinity): Markup | null {
   const bx = box.xOf(b.x)
   if (bx === undefined) return null
   const stroke = dotted ? 'var(--ink)' : 'var(--slate)'
+  const fitsLeft = (s: string) => bx - 6 - ruleText(s) >= prev + 4
+  const fitsRight = (s: string) => bx + 6 + ruleText(s) <= next - 4
+  const before = b.before && fitsLeft(b.before) ? mono(bx - 6, box.top - 12, b.before, 'end', stroke) : null
+  const label = !b.label ? null : b.before ? (fitsRight(b.label) ? mono(bx + 6, box.top - 12, b.label, 'start', stroke) : null) : fitsLeft(b.label) ? mono(bx - 6, box.top - 12, b.label, 'end', stroke) : null
   // Labels sit in the band above the plot (callers leave 24 px for them), clear of the lines.
   return svg`<line x1="${bx}" x2="${bx}" y1="${box.top - 22}" y2="${box.bottom}" stroke="${stroke}"${dotted ? svg` stroke-dasharray="2 3"` : null}/>
-${b.before ? mono(bx - 6, box.top - 12, b.before, 'end', stroke) : null}${mono(b.before ? bx + 6 : bx - 6, box.top - 12, b.label, b.before ? 'start' : 'end', stroke)}`
+${before}${label}`
 }
 
 function callout(c: Callout, chart: WithNotes, box: NoteBox): Markup | null {
@@ -131,6 +142,11 @@ function capLabel(text: string, px: number, box: NoteBox, below = false, rules: 
 
 /** `under` goes below the data marks, `over` above them. */
 export function timeNotes(chart: WithNotes, box: NoteBox): { under: Markup; over: Markup } {
+  // Markers and breaks in x order, so each label knows how much room it has.
+  const rules = [...(chart.markers ?? []).map((b) => ({ b, dotted: false })), ...(chart.breaks ?? []).map((b) => ({ b, dotted: true }))]
+    .map((r) => ({ ...r, x: box.xOf(r.b.x) }))
+    .filter((r): r is typeof r & { x: number } => r.x !== undefined)
+    .sort((a, c) => a.x - c.x)
   const spans = (chart.spans ?? []).map((s) => {
     const a = box.xOf(s.from)
     const b = box.xOf(s.to)
@@ -138,7 +154,7 @@ export function timeNotes(chart: WithNotes, box: NoteBox): { under: Markup; over
     return svg`<rect x="${a}" y="${box.top}" width="${Math.max(2, b - a)}" height="${box.bottom - box.top}" fill="var(--band)"/>${mono(a + 4, box.top + 12, s.label)}`
   })
   return {
-    under: svg`${spans}${(chart.markers ?? []).map((m) => rule(m, box, false))}${(chart.breaks ?? []).map((b) => rule(b, box, true))}`,
+    under: svg`${spans}${rules.map(({ b, dotted }, i) => rule(b, box, dotted, rules[i - 1]?.x, rules[i + 1]?.x))}`,
     over: svg`${(chart.callouts ?? []).map((c) => callout(c, chart, box))}`,
   }
 }

@@ -42,7 +42,8 @@ export function renderLine(chart: Of<'line'>, width: Width): Markup {
     ? chart.panels.map((p) => ({ label: p.label, series: all.filter((s) => p.series.includes(s.key)) }))
     : [{ series: all }]
   const narrow = width === 'narrow'
-  const perRow = narrow ? 1 : panels.length
+  // At most four panels to a row; more wrap to the next row.
+  const perRow = narrow ? 1 : Math.min(4, panels.length)
   const W = WIDTH[width]
   const panelW = (W - (perRow - 1) * 24) / perRow
   const panelH = panels.length > 1 ? (narrow ? 200 : 240) : narrow ? 280 : 380

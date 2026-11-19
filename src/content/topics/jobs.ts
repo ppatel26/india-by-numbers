@@ -273,13 +273,13 @@ const statusSeries = statusGroups.flatMap(({ key, label, category }) => seriesBy
 
 const broadIndustryGroups = [
   { key: 'agriculture', label: 'Agriculture', color: 'ink', industry: 'agriculture' },
-  { key: 'other-services', label: 'Other services', color: 's2', industry: 'other services' },
-  { key: 'trade', label: 'Trade and hospitality', color: 's3', industry: 'trade, hotel & restaurant' },
-  { key: 'manufacturing', label: 'Manufacturing', color: 's4', industry: 'manufacturing' },
-  { key: 'construction', label: 'Construction', color: 's5', industry: 'construction' },
-  { key: 'transport', label: 'Transport services', color: 's6', industry: 'transport, storage & communications' },
-  { key: 'utilities', label: 'Electricity and water', color: 's7', industry: 'electricity, water, etc.' },
-  { key: 'mining', label: 'Mining and quarrying', color: 's8', industry: 'mining & quarrying' },
+  { key: 'other-services', label: 'Other services', color: 'ink', industry: 'other services' },
+  { key: 'trade', label: 'Trade and hospitality', color: 'ink', industry: 'trade, hotel & restaurant' },
+  { key: 'manufacturing', label: 'Manufacturing', color: 'ink', industry: 'manufacturing' },
+  { key: 'construction', label: 'Construction', color: 'ink', industry: 'construction' },
+  { key: 'transport', label: 'Transport services', color: 'ink', industry: 'transport, storage & communications' },
+  { key: 'utilities', label: 'Electricity and water', color: 'ink', industry: 'electricity, water, etc.' },
+  { key: 'mining', label: 'Mining and quarrying', color: 'ink', industry: 'mining & quarrying' },
 ] as const
 
 const broadIndustrySeries = broadIndustryGroups.flatMap(({ key, label, color, industry }) => seriesByPeriod(
@@ -533,14 +533,15 @@ const topic: Topic = {
             kind: 'line',
             slug: 'employment-by-industry-history',
             title: 'Workers in India by broad industry, 1993-94 to 2025',
-            subtitle: 'Share of workers of all ages, usual status. Dashed lines show calendar estimates for 2022 to 2024.',
+            subtitle: 'Share of workers of all ages, usual status. Each panel has its own scale. Dashed lines show calendar estimates for 2022 to 2024.',
             punches: { office: 'MoSPI', unit: '% workers', period: '2025' },
             status: ['Survey estimate', 'Method break'],
             note: 'PLFS replaced the NSS survey in 2017-18. Calendar estimates for 2022 to 2024 overlap the July to June surveys. PLFS changed its sample design in 2025 and moved its annual report to calendar years.',
             sources: historySources,
             format: { unit: '%', decimals: 1 },
-            y: { min: 0, max: 70, step: 10 },
             series: broadIndustrySeries,
+            // One panel per group, each on its own scale: agriculture and mining differ a hundredfold.
+            panels: broadIndustryGroups.map(({ key, label }) => ({ label, own: true, series: broadIndustrySeries.filter((s) => s.key.startsWith(`${key}-`)).map((s) => s.key) })),
             breaks: [...surveyBreaks.slice(0, 2), { x: '2025', before: 'Old', label: '2025 redesign' }],
             know: [
               'Usual status includes principal and subsidiary work.',
