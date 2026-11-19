@@ -66,9 +66,28 @@ Read on 17 Nov 2026.
 
 ### jobs-7 Workers by industry
 
-- Grouped bars, India, all ages, usual status (ps+ss). The bars compare 2011-12, 2017-18, 2022 and 2025. The chart also gives the 2025 share for women.
-- Files `jobs-employment-by-industry-history.csv` and `jobs-employment-by-industry.csv`. The table also includes all other PLFS July to June years through 2023-24 and calendar years 2023 and 2024.
-- NSS 68 and PLFS use the same NIC 2008 groups. NSS 66 used NIC 2004. NSS 61 and 55 used NIC 1998. NSS 50 used NIC 1987. The series starts in 2011-12.
+- The line chart follows eight broad industries from 1993-94 to 2025. It covers India, rural and urban workers of both sexes, all ages, usual status (ps+ss). It marks the 30-day rule in 2004-05, the start of PLFS in 2017-18 and the PLFS redesign in 2025. Dashed lines show overlapping calendar estimates from 2022 to 2024. A separate dot shows the 2025 estimate.
+- The grouped bars compare 2011-12, 2017-18, 2022 and 2025. They also give the 2025 shares for women. The table includes all PLFS July to June years through 2023-24 and calendar years from 2022 to 2025.
+- Both charts use `jobs-employment-by-industry-history.csv` and `jobs-employment-by-industry.csv`. Every row gives its `source_kind`. All sources are `official`.
+
+#### Broad industry concordance
+
+NSS Report 554, section 5.9.1 and Statement 5.11 (pages 114 to 116), compare eight broad groups across rounds. They are agriculture, mining and quarrying, manufacturing, electricity and water, construction, trade and hotels and restaurants, transport and storage and communications, and other services. NSS 50 used NIC 1987. NSS 55 and 61 used NIC 1998. NSS 66 used NIC 2004. NSS 68 and PLFS use NIC 2008. Statement 5.11 defines the eight NIC 2008 groups as A, B, C, D plus E, F, G plus I, H plus J, and K through U. The PLFS statements use the same groups.
+
+Statement 5.11 publishes all-worker shares per 1,000 for rural men, rural women, urban men and urban women. For each industry before 2011-12, multiply each share by its group's estimated count of all usual-status workers. Divide the sum by the sum of the four worker counts. Convert to per cent and round to one decimal. The worker counts use activity codes 11 to 51, all ages, and are in hundreds. The electricity and water share for rural women is a dash in 1993-94 and 1999-2000. Use a zero share for those two entries and include their worker counts in the denominator. The eight shares can differ from 100% in total because of rounding.
+
+| Period | Survey | Values used | Source kind |
+| --- | --- | --- | --- |
+| 1993-94 | NSS 50 | Report 554 Statement 5.11. Worker counts from Report 409 Table 30B. | `official` |
+| 1999-2000 | NSS 55 | Report 554 Statement 5.11. Worker counts from Report 458 Part II Table 46. | `official` |
+| 2004-05 | NSS 61 | Report 554 Statement 5.11. Worker counts from Report 515 Part I Table 19. | `official` |
+| 2009-10 | NSS 66 | Report 554 Statement 5.11. Worker counts from Report 537 Table 20. | `official` |
+| 2011-12 | NSS 68 | Report 554 Table 27. Sum NIC 2008 sections using the groups in Statement 5.11. | `official` |
+| 2017-18 to 2020-21 | PLFS | Annual Report 2020-21, Statement 13. | `official` |
+| 2021-22 to 2023-24 | PLFS | Annual Report 2023-24, Statement 7. | `official` |
+| Calendar 2022 to 2025 | PLFS | Annual Report 2025, revised 29 May 2026, Statement 8. | `official` |
+
+The raw PDFs for both charts have URLs, read dates and SHA-256 checksums under Annual history sources. The older round files supply worker counts. Report 537 Statement 5.9 provides an independent check on the cross-round shares.
 
 ### jobs-8 Youth unemployment
 
@@ -85,9 +104,9 @@ Run `python3 -I pipeline/jobs/build_jobs_history.py` from the repo root. Save ea
 | `jobs-annual-rates-history.csv` | 108 | Ages 15 and over. NSS 409 Table 32B, 458 Table 48B, 515 Table 19, 537 Table 20 and 554 Table 18 give persons by usual activity. For participation use code 11 to 81. For worker population use code 11 to 51. Divide the unemployed (code 81) by the labour force (11 to 81) for unemployment. Use the estimates in hundreds for 1993-94 and 1999-2000 and the published rates per thousand of persons aged 15+ for the three later rounds. The latter unemployment estimates can differ slightly because the inputs are rounded. The PLFS July to June rows come from the 2023-24 press note. |
 | `jobs-youth-unemployment-history.csv` | 108 | NSS Reports 537 and 554, Statement 6.4, publish the adjusted usual-status rate for rural and urban men and women aged 15 to 29. For the five other area and sex groups, sum the estimates for ages 15 to 19, 20 to 24 and 25 to 29. Use NSS 409 Table 30B, 458 Table 46, 515 Table 19, 537 Table 20 and 554 Table 18. Apply the tabulated proportions to the age-group totals. For 1999-2000, the table gives the age distribution within each activity, so apply it to the activity totals and sum rural and urban estimates for India. Compute the ratio of unemployed to labour force and round to one decimal. PLFS history comes from the 2020-21 (Statement 26) and 2023-24 (Statement 16) annual reports. Calendar values come from Statement 18 of the 2025 report. |
 | `jobs-employment-status-history.csv` | 558 | NSS Report 554 Statement 5.9 publishes rural and urban shares for men and women for all five rounds. Use the appendix tables named in the youth row for the other groups. Compute shares from estimates in hundreds for codes 11, 12 and 21 (self-employed), 31 (regular wage or salary), 41 and 51 (casual labour) and 11 to 51 (all workers). Sum the rural and urban counts for 1999-2000. PLFS history comes from the 2020-21 (Statement 12) and 2023-24 (Statement 6) annual reports. Calendar values come from Statement 7 of the 2025 report. |
-| `jobs-employment-by-industry-history.csv` | 648 | NSS 554 Table 27 gives shares per 10,000 workers by NIC 2008 section. Use A, B, C, D plus E, F, G plus I, H plus J, and K through U, as defined by the PLFS report. The NSS rural table has no entry for section U. Keep two decimal places after conversion to per cent. Flag section sums as derived. PLFS history comes from the 2020-21 (Statement 13) and 2023-24 (Statement 7) annual reports. Calendar values come from Statement 8 of the 2025 report. |
+| `jobs-employment-by-industry-history.csv` | 680 | Before 2011-12, calculate national shares with Report 554 Statement 5.11 and the worker counts listed above. For 2011-12, group the sections in Table 27. The NSS rural table has no entry for section U. Keep two decimal places after conversion to per cent. Flag section sums as derived. PLFS history comes from the 2020-21 (Statement 13) and 2023-24 (Statement 7) annual reports. Check calendar values against Statement 8 of the 2025 report. |
 
-From NSS 61 onward, subsidiary work required at least 30 days of work in the past year. NSS 50 and 55 used a shorter-time criterion. PLFS began in July 2017 with a different sample design, including a rotating urban panel. Calendar estimates from 2022 to 2024 overlap the July to June estimates. MoSPI switched the annual report to calendar years and changed the sample design in 2025. The three time charts mark the start of the 30-day rule, the start of PLFS and the switch in 2025. Dashed lines identify the calendar estimates for 2022 to 2024. A separate dot marks the 2025 estimate from the new sample design.
+From NSS 61 onward, subsidiary work required at least 30 days of work in the past year. NSS 50 and 55 used a shorter-time criterion. PLFS began in July 2017 with a different sample design, including a rotating urban panel. Calendar estimates from 2022 to 2024 overlap the July to June estimates. MoSPI switched the annual report to calendar years and changed the sample design in 2025. The time charts mark the start of the 30-day rule, the start of PLFS and the switch in 2025. Dashed lines identify the calendar estimates for 2022 to 2024. A separate dot marks the 2025 estimate from the new sample design.
 
 ### Annual history sources
 
@@ -139,6 +158,7 @@ Downloaded on 18 Nov 2026 during the source search. The build uses the files lis
 - **Youth unemployment.** Reports 537 and 554 agree on all 12 published rates for the three overlapping NSS rounds. The 2018-19, 2019-20, 2021-22 and 2022-23 PLFS reports agree with the extracted July to June series on all 99 common values.
 - **Employment status.** The same four PLFS overlap checks agree on all 594 values. NSS appendix count ratios match 44 of 60 published shares by sex and area in Report 554 Statement 5.9. All 36 values match from 2004-05 onward. The earlier differences range from 0.1 to 1.0 percentage points. For example, the 1993-94 share of self-employed urban women is 44.8% in the appendix ratio and 45.8% in the published summary. Use the published summary for those groups. Use the appendix counts for groups absent from the summary, including all workers in India.
 - **Industry.** The four PLFS overlap reports agree on all 891 values. All 32 extracted NSS groups for rural and urban men and women agree with Report 554 Statement 5.11 when rounded to the precision of that statement.
+- **Broad industry history.** NSS Report 537 Statement 5.9 and Report 554 Statement 5.11 agree on all 128 entries for the four earlier rounds, including two dashes. For 2011-12, applying the national calculation to Statement 5.11 gives eight shares within 0.013 percentage points of Table 27. For example, it gives 48.904% for agriculture against 48.90% in Table 27. Both charts use Table 27 for 2011-12. All 32 shares by sex and area for 2017-18 agree between Statement 16 of the first PLFS annual report and Statement 13 of the 2020-21 report. All 324 calendar entries agree with PLFS Annual Report 2025 Statement 8, including totals.
 - **July to June against calendar.** Match by start year to compare the overlapping windows in 2022 and 2023. Equal values account for 1 of 18 annual rates, 1 of 18 youth rates, 25 of 108 employment status shares and 64 of 162 industry shares. The last two counts include totals. The estimates cover different months. For example, participation for ages 15 and over was 59.6% in calendar 2024 and 60.1% in 2023-24.
 
 ## Headline figures

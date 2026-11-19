@@ -233,9 +233,9 @@ for l in L[i0:i0 + 80]:
         continue
     e = expand(vals)
     for (sec, sex), v in e.items():
-        rows.append(["india", year, sec, sex, name, v, "per cent of workers", "usual status (ps+ss)"])
+        rows.append(["india", year, sec, sex, name, v, "per cent of workers", "usual status (ps+ss)", "official"])
 write("jobs-employment-by-industry.csv",
-      ["geography", "period", "sector", "sex", "industry", "value", "unit", "activity_status"], rows)
+      ["geography", "period", "sector", "sex", "industry", "value", "unit", "activity_status", "source_kind"], rows)
 
 # ---------- Chart: quarterly urban UR (old QBs + new QBs) ----------
 MONTHQ = {"July": "Q3", "October": "Q4", "January": "Q1", "April": "Q2"}
