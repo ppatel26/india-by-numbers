@@ -236,7 +236,8 @@ const full = page ? [...new Set(picksOf(chart).map((p) => p.file))] : []
     display: grid;
     grid-template-columns: auto 1fr auto;
     gap: 16px 24px;
-    align-items: start;
+    /* Hallmark, source and files share one text line, whatever their heights. */
+    align-items: baseline;
     margin-top: 20px;
     padding-top: 16px;
     border-top: 1px solid var(--rule);
