@@ -52,7 +52,7 @@ const topics: TopicsPage = {
       questions: [
         'How many people live in India, and how fast has the number grown since 1901?',
         'Where do people live: which states are largest, and how urban is each state?',
-        'How many people will live in India and in each state in 2026, and in 2036?',
+        'How many people will live in India and each state in 2026 and 2036?',
         'How many children do women have, and how does this differ by state?',
         'How many girls are born for every 1,000 boys, and is the ratio rising?',
       ],
@@ -61,9 +61,9 @@ const topics: TopicsPage = {
     },
     prices: {
       questions: [
-        'How fast are prices rising in India now, and how does that compare with the RBI target?',
+        'How fast are prices rising, and how does that compare with the RBI target?',
         'Which states have the highest and the lowest inflation?',
-        'Which goods and services are driving inflation: food, fuel, housing or something else?',
+        'What drives inflation: food, fuel, housing or something else?',
         'Is inflation higher in villages or in towns?',
         'How has the RBI moved its policy rate in response?',
       ],
@@ -72,7 +72,7 @@ const topics: TopicsPage = {
     },
     economy: {
       questions: [
-        "How fast is India's economy growing now, and how does that compare with the past 75 years?",
+        'How fast is the economy growing, against the past 75 years?',
         'How has the economy moved from farming to services?',
         'Which states are richest and poorest per person, and which are growing fastest?',
         'How is industry doing month by month?',
@@ -85,7 +85,7 @@ const topics: TopicsPage = {
       questions: [
         'How many people are out of work, and is the rate going up or down?',
         'How many women work or look for work, and how does this differ by state?',
-        'Which states have the highest unemployment, and how hard is it for young people to find a job?',
+        'Which states have the highest unemployment, and how many young people are out of work?',
         'What kind of work do Indians do: own businesses, salaried jobs or casual labour?',
         'Which industries employ the most people?',
       ],
@@ -96,7 +96,7 @@ const topics: TopicsPage = {
       questions: [
         'How many babies die before their first birthday, and how fast has that fallen since 1971?',
         'How many women die from pregnancy and childbirth, and where is the risk highest?',
-        'How long do people in India live, and how large is the gap between states and between women and men?',
+        'How long do people live, and how wide are the gaps between states and between women and men?',
         'Are children better nourished and better protected than five years ago?',
         'How much of the health bill do households pay from their own pockets?',
       ],
@@ -116,18 +116,18 @@ const topics: TopicsPage = {
     },
     elections: {
       questions: [
-        'How many Indians can vote, and how has that changed since the first election in 1951-52?',
+        'How many Indians can vote, and how has that changed since 1951-52?',
         'What share of electors vote, and do women now vote as often as men?',
         'Which states vote the most, and which the least?',
         'How many women stand for the Lok Sabha, and how many win?',
-        'What were the results of the 2024 general election and of the state assembly elections in 2025 and 2026?',
+        'Who won the 2024 general election, and the state elections of 2025 and 2026?',
       ],
       latest: { date: '8 May 2026', label: 'ECI statistical reports, 2026 assembly elections' },
       next: { date: 'Not announced', label: 'ECI publishes reports after each election.' },
     },
     climate: {
       questions: [
-        'How much rain did the 2026 monsoon bring, and how does it compare with 125 years of records?',
+        'How much rain did the 2026 monsoon bring, against 125 years of records?',
         'Which parts of India were short of rain in 2026?',
         'How much warmer is India now, and which years were the warmest?',
         'How fast is India moving its power capacity away from coal?',

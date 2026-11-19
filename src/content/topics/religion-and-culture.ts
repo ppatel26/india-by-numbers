@@ -251,7 +251,7 @@ const topic: Topic = {
   parts: [
     {
       title: 'Which religions do people report?',
-      lede: 'In 2011, 96.63 crore people in India (79.80%) reported their religion as Hindu, 17.22 crore (14.23%) as Muslim and 2.78 crore (2.30%) as Christian. 28.67 lakh people (0.24%) did not state a religion.',
+      lede: 'In 2011, 79.80% of people in India reported their religion as Hindu, 14.23% as Muslim and 2.30% as Christian.',
       blocks: [
         {
           // LATER: the board adds a 100% strip of the eight shares and prints the number of people (column 'value') beside each bar.
@@ -259,12 +259,11 @@ const topic: Topic = {
             slug: 'religion-in-india',
             kind: 'bars',
             title: 'Religion in India, 2011',
-            subtitle:
-              'People by the religion they reported, % of all people, India, Census 2011.',
+            subtitle: 'People by the religion they reported, India.',
             punches: { office: 'ORGI', unit: '% of people', period: '2011' },
             // The board gives Sarna's count (from the C-01 Appendix). No CSV holds it, so the note names
             // the group without the number.
-            note: '"Other religions and persuasions" groups many smaller faiths; the largest within it is Sarna. Shares are our arithmetic on the published counts (people ÷ all people × 100); rounded, they add to 100.02%.',
+            note: '"Other religions and persuasions" groups many smaller faiths. Sarna is the largest.',
             sources: [c01, c01Appendix],
             format: { unit: '%', decimals: 2 },
             by: 'religion',
@@ -284,7 +283,7 @@ const topic: Topic = {
             know: [
               'Religion is what each person reported to the census. The categories are the Census names, as published.',
               '"Other religions and persuasions" groups many smaller faiths. The C-01 Appendix lists them; Sarna is the largest.',
-              'ORGI publishes counts. Each share is the count divided by all people, times 100, to two decimals.',
+              'ORGI publishes counts. Each share is the count divided by all people, times 100, to two decimals. Rounded, they add to 100.02%.',
               'Table C-01 also splits each religion by rural and urban residence.',
               'No official count of religion exists after Census 2011. Census 2027 asks the question again.',
             ],
@@ -297,17 +296,17 @@ const topic: Topic = {
           },
         },
         {
-          text: 'The Hindu share was 84.98% in 1951 and 79.80% in 2011. The Muslim share was 9.91% in 1951 and 14.23% in 2011. Census coverage changed over this period.',
+          text: 'From 1951 to 2011, the Hindu share fell from 84.98% to 79.80%. The Muslim share rose from 9.91% to 14.23%.',
         },
         {
           chart: {
             slug: 'religion-change',
             kind: 'line',
             title: 'Population share by religion in India, 1951 to 2011',
-            subtitle: 'Shares use all people covered by each religion table. In 1981 the Census usually used the household head’s religion.',
+            subtitle: 'Share of people by reported religion, India. 1981 uses the household head’s religion.',
             punches: { office: 'ORGI', unit: '% of people', period: '1951 to 2011' },
             status: ['Method break'],
-            note: 'The Census could not count Assam in 1981 or Jammu and Kashmir in 1991. Other exclusions affect the 1951, 1961, 1971, 1991 and 2001 totals.',
+            note: 'The Census did not count Assam in 1981 or Jammu and Kashmir in 1991. Coverage also changed in other years.',
             sources: [...historicalReligion, c01Census2001, c01],
             format: { unit: '%', decimals: 2 },
             series: [...religionTrend, religionOthers1951],
@@ -323,10 +322,11 @@ const topic: Topic = {
             y: { min: 75, max: 90, step: 5 },
             breaks: [{ x: '1981', label: '1981 method' }],
             know: [
-              '1951 excludes Jammu and Kashmir, Pondicherry and the North East Frontier Agency. The religion breakdown also excludes 268,602 people in Punjab. ORGI gives one combined Others category for this census.',
-              'The 1961 and 1971 totals in the 1971 report exclude Sikkim. The 1961 religion breakdown also excludes Arunachal Pradesh, where the Census used an abridged schedule.',
-              'In 1981 the Census used the head’s religion for normal and houseless households. It used individual returns for institutional households. The Census could not count Assam because of disturbed conditions.',
-              'In 1991 the Census could not count Jammu and Kashmir or 33 villages of Akrani and Akkalkuwa tehsils in Dhule district, Maharashtra. ORGI included the village population from secondary sources in the total. The villages have no religion breakdown.',
+              '1951 shares exclude Jammu and Kashmir, Pondicherry, the North East Frontier Agency and 268,602 people in Punjab. ORGI gives one combined Others category.',
+              'The 1961 and 1971 totals exclude Sikkim. The 1961 religion breakdown also excludes Arunachal Pradesh, where the Census used an abridged schedule.',
+              'In 1981 the Census used the head’s religion for normal and houseless households, and individual returns for institutional households. Assam had no count (disturbed conditions).',
+              'In 1991 the Census could not count Jammu and Kashmir or 33 villages of Akrani and Akkalkuwa tehsils, Dhule district, Maharashtra.',
+              'ORGI added the village population to the total from secondary sources. The villages have no religion breakdown.',
               'The 2001 C-01 table excludes the Mao-Maram, Paomata and Purul sub-divisions of Senapati district, Manipur.',
             ],
             processing: [
@@ -341,7 +341,7 @@ const topic: Topic = {
     },
     {
       title: 'Which mother tongues do people report?',
-      lede: 'In 2011, 52.83 crore people (43.63%) gave a mother tongue grouped under Hindi. Bengali came second with 9.72 crore (8.03%), then Marathi with 8.30 crore (6.86%). The Census lists 22 scheduled languages and 99 other languages, each with 10,000 or more speakers.',
+      lede: 'In 2011, 43.63% of people gave a mother tongue grouped under Hindi. Bengali came second (8.03%), then Marathi (6.86%).',
       blocks: [
         {
           // LATER: the board draws languages outside the Eighth Schedule as hollow bars, prints the number of
@@ -350,11 +350,10 @@ const topic: Topic = {
             slug: 'mother-tongues',
             kind: 'bars',
             title: 'Mother tongues in India, 15 largest languages, 2011',
-            subtitle:
-              'People by the language group of the mother tongue they reported, % of all people, India, Census 2011. The 15 shown cover 95.87% of people.',
+            subtitle: 'Share of people by language of their mother tongue, India. These 15 cover 95.87%.',
             punches: { office: 'ORGI', unit: '% of people', period: '2011' },
             // The board gives Bhojpuri's count. No CSV holds it, so the note names it without the number.
-            note: 'The Census groups mother tongues under a language. "Hindi" here includes Bhojpuri and other mother tongues grouped under Hindi, so it counts more people than those who reported Hindi itself. This chart shows mother tongue, not every language a person speaks. ORGI publishes second and third languages in Table C-17. * Bhili/Bhilodi is the only one of the 15 that is not among the 22 scheduled languages.',
+            note: '"Hindi" includes Bhojpuri and other mother tongues the Census groups under it. * Not one of the 22 scheduled languages.',
             sources: [c16],
             format: { unit: '%', decimals: 2 },
             by: 'language',
@@ -402,7 +401,7 @@ const topic: Topic = {
     },
     {
       title: 'How do religion and language differ between states?',
-      lede: 'In 27 of the 34 units in the 2011 data, Hindus were the largest group. Muslims were the largest group in Lakshadweep (96.58%) and Jammu and Kashmir (68.31%), Sikhs in Punjab (57.69%), and Christians in Nagaland (87.93%), Mizoram (87.16%), Meghalaya (74.59%) and Arunachal Pradesh (30.26%). The 34 units are the 35 of Census 2011 with Dadra and Nagar Haveli and Daman and Diu counted as one.',
+      lede: 'In 2011, Hindus were the largest group in 27 of 34 states and UTs. Muslims, Sikhs or Christians were the largest in the other seven.',
       blocks: [
         {
           // LATER: the board opens this frame on its Table view and has a Map tab, one religion at a time; 'bars' has neither.
@@ -410,9 +409,8 @@ const topic: Topic = {
             slug: 'religion-by-state',
             kind: 'bars',
             title: 'Religion by state and UT, 2011',
-            subtitle: 'People by the religion they reported, % of each state or UT, states and UTs as in Census 2011.',
+            subtitle: 'People by the religion they reported, each state and UT as in Census 2011.',
             punches: { office: 'ORGI', unit: '% of people', period: '2011' },
-            note: 'Census 2011 had 35 units. Telangana (formed 2014) is counted inside Andhra Pradesh, and Ladakh (a UT since 2019) inside Jammu and Kashmir; they have no 2011 figures of their own. Dadra and Nagar Haveli and Daman and Diu were two UTs in 2011; their counts are added (derived), so the table has 34 units. Shares are derived from the published counts.',
             sources: [c01States],
             format: { unit: '%', decimals: 2 },
             by: 'geography',
@@ -435,7 +433,7 @@ const topic: Topic = {
             know: [
               'Religion is what each person reported to the census. The categories are the Census names, as published.',
               'Census 2011 had 35 units. Andhra Pradesh includes present-day Telangana, and Jammu and Kashmir includes present-day Ladakh.',
-              'Dadra and Nagar Haveli and Daman and Diu were two UTs in 2011. Their row adds the two counts, marked Derived, so the data has 34 units.',
+              'Dadra and Nagar Haveli and Daman and Diu were two UTs in 2011. Their row adds the two counts, marked Derived.',
               'Each share is the count divided by all people in the state or UT, times 100, to two decimals.',
             ],
             processing: [
@@ -448,7 +446,7 @@ const topic: Topic = {
           },
         },
         {
-          text: 'In 2011, 97.03% of people in Kerala gave Malayalam as their mother tongue. In Nagaland, the largest language, Konyak, was the mother tongue of 12.34%. Hindi was the largest language in 11 states and UTs.',
+          text: 'Malayalam was the mother tongue of 97.03% of people in Kerala. Hindi was the largest language in 11 states and UTs.',
         },
         {
           // LATER: the board has Map and Chart tabs (tiles coloured by the largest language), and rows for
@@ -457,10 +455,9 @@ const topic: Topic = {
             slug: 'mother-tongues-by-state',
             kind: 'table',
             title: 'Three largest mother tongues in each state and UT, 2011',
-            subtitle:
-              'Language groups by people who reported them as mother tongue, % of each state or UT, states and UTs as in Census 2011.',
+            subtitle: 'People by reported mother tongue, each state and UT as in Census 2011.',
             punches: { office: 'ORGI', unit: '% of people', period: '2011' },
-            note: 'The "Others" group is left out when ranking. Language groups follow the Census; "Hindi" includes mother tongues such as Bhojpuri. Telangana and Ladakh have no 2011 tables of their own. Values for Dadra and Nagar Haveli and Daman and Diu are our sums of two 2011 UTs.',
+            note: 'The ranking leaves out the "Others" group. "Hindi" includes mother tongues such as Bhojpuri.',
             sources: [c16States],
             data: { file: 'religion-culture/languages-top3-by-state-2011.csv', x: 'geography' },
             by: 'geography',
@@ -482,7 +479,7 @@ const topic: Topic = {
               'Read the state language statements of Table C-16 (Excel): people by language in each state and UT.',
               'Leave out the "Others" group and rank the languages by people in each unit.',
               'Keep the three largest, and divide each count by all people in the unit, to two decimals.',
-              'Map each Census 2011 unit to a present-day state or UT, and add the two 2011 UTs of Dadra and Nagar Haveli and Daman and Diu.',
+              'Map each Census 2011 unit to a present-day state or UT. Add the two 2011 UTs of Dadra and Nagar Haveli and Daman and Diu.',
             ],
             nextRelease: 'not announced',
           },
@@ -493,19 +490,19 @@ const topic: Topic = {
   // LATER: the About band's side line ("How the religion and language counts are made, and what they leave out.") has no field.
   about: {
     intro:
-      'Religion and mother tongue are what each person reported to the census. We use the Census category names as published. Shares are derived from the published counts, to two decimals.',
+      'Religion and mother tongue are what each person told the census. We use the Census category names. Shares are derived from the published counts.',
     publisher:
-      'The Office of the Registrar General and Census Commissioner, India (ORGI), Ministry of Home Affairs, runs the Census. Religion comes from Table C-01, Population by religious community. Mother tongue comes from Table C-16, Population by mother tongue.',
+      'The Office of the Registrar General and Census Commissioner, India (ORGI), Ministry of Home Affairs, runs the Census. Religion comes from Table C-01, mother tongue from Table C-16.',
     frequency:
-      'Each census. Census 2011 is the latest count of religion and language. Census 2027 asks about religion and mother tongue again (questions notified on 14 August 2026). In most states its count runs from 25 January to 28 February 2027, with a revision round from 1 to 5 March 2027.',
+      'Each census. Census 2011 is the latest. Census 2027 asks about religion and mother tongue again. In most states its count runs from 25 January to 28 February 2027.',
     revisions:
       'Census 2011 tables are final. Census 2027 tables will replace them when ORGI publishes them; no date is announced.',
     breaks:
       'The 1981 Census used the household head’s religion for most people. Before and after 1981, the returns give each person’s religion. The population covered also changes between censuses.',
     coverage:
-      'Census 2011 had 35 units. Telangana is inside Andhra Pradesh, and Ladakh inside Jammu and Kashmir. Dadra and Nagar Haveli and Daman and Diu were two UTs; we add their counts and mark the sum "Derived", so the 2011 data on this page has 34 units. Mother tongues are grouped into languages as the Census groups them: "Hindi" includes Bhojpuri and other mother tongues. Table C-16 lists 22 scheduled languages and 99 others with 10,000 or more speakers.',
+      'Census 2011 had 35 units: Andhra Pradesh includes Telangana, and Jammu and Kashmir includes Ladakh. We sum Dadra and Nagar Haveli and Daman and Diu, so the data has 34 units.',
     missing:
-      'There is no official count of religion or language after 2011. NFHS-5 (2019-21, IIPS for MoHFW) reports the religion of household heads; it is a sample survey, not a count. ORGI publishes bilingual and trilingual counts in Table C-17. ORGI states no open licence; its catalog pages say "Rights Reserved".',
+      'No official count of religion or language exists after 2011. NFHS-5 (2019-21) reports household heads’ religion, but it is a sample survey. ORGI states no open licence.',
   },
   // The board lists Table C-01 and its Appendix on one line; they are two files with two URLs.
   sources: [c01States, c01Appendix, c01Census2001, ...historicalReligion, c16, gazette4505, gazette5913],

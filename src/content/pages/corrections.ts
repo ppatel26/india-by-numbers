@@ -43,12 +43,12 @@ const corrections: CorrectionsPage = {
   heading: 'What have we got wrong?',
   log: {
     heads: { reported: 'Reported', fixed: 'Fixed', page: 'Page and what changed' },
-    empty: 'No corrections yet. When we fix an error, we list it here with the date and what changed.',
+    empty: 'No corrections yet.',
     rows: [],
   },
   policy: {
     heading: 'Our policy',
-    body: "We check every report against the publisher's release. A fixed error keeps a dated note on its chart for 12 months and a row in this log. If you leave an email, we reply. A publisher revision is not a correction, so it goes on the Releases page.",
+    body: "We check every report against the publisher's release. A fixed error keeps a dated note on its chart for 12 months and a row in this log. A publisher revision is not a correction: it goes on the Releases page.",
   },
   form: {
     heading: 'Report a problem',
@@ -66,7 +66,7 @@ const corrections: CorrectionsPage = {
     submit: 'Send report',
     status: {
       sent: 'Thank you. We have your report and will check it against the source.',
-      error: 'We could not send the report. Say in a few words what looks wrong, then try again.',
+      error: 'We could not send the report. Try again.',
     },
     links: { report: 'Report a problem', contact: 'Contact' },
   },

@@ -185,13 +185,13 @@ function agePyramid(period: '1951' | '1961' | '2026'): Chart {
     slug: `population-pyramid-${period}`,
     title: `Population by age and sex in India, ${period}`,
     subtitle: projected
-      ? 'MoHFW projection for 1 March. Each bar gives the share of the total population.'
+      ? 'Share of all people in each age group and sex, India, 1 March.'
       : historicalCensus
-        ? 'Census counts by age group. The groups from age 35 cover more years than the other groups.'
-        : 'UN estimate for 1 July. Each bar gives the share of the total population.',
+        ? 'People by age group and sex, India. Groups from age 35 span more years.'
+        : 'Share of all people in each age group and sex, India, 1 July.',
     punches: { office: projected ? 'MoHFW · NCP' : historicalCensus ? 'ORGI' : 'UN', unit: 'persons', period },
     ...(projected ? { status: ['Projection'] } : {}),
-    ...(historicalCensus ? { note: 'Table C-III excludes part of the North-East Frontier Agency. The pyramid excludes people whose age was unknown.' } : {}),
+    ...(historicalCensus ? { note: 'Excludes part of the North-East Frontier Agency, and people whose age was unknown.' } : {}),
     sources: [projected ? projectionsTable('18') : historicalCensus ? census1961 : wppAge],
     format: { scale: 'crore' },
     by: 'age_group',
@@ -229,10 +229,10 @@ const fertilityIndia: Chart = {
   slug: 'fertility-rate-india',
   kind: 'line',
   title: 'Total fertility rate in India, 1950 to 2026',
-  subtitle: 'Number of children a woman would have at the fertility rates of each year. The replacement level is 2.1.',
+  subtitle: 'Children a woman would have at the year’s rates, India. 2.1 is replacement level.',
   punches: { office: 'ORGI · UN', unit: 'per woman', period: '1950-2026' },
   status: ['Survey estimate', 'Projection'],
-  note: 'Solid shows SRS sample estimates for 1971 to 2024. Dashed shows UN estimates to 1970 and UN projections for 2025 and 2026.',
+  note: 'Solid lines are SRS sample estimates, 1971 to 2024. Dashed lines are UN estimates and projections.',
   sources: vitalSources,
   format: { decimals: 2 },
   y: { min: 0, max: 7, step: 1 },
@@ -249,10 +249,10 @@ const vitalRatesIndia: Chart = {
   slug: 'birth-death-rates-india',
   kind: 'line',
   title: 'Birth and death rates in India, 1950 to 2026',
-  subtitle: 'Live births and deaths per 1,000 people per year.',
+  subtitle: 'Live births and deaths per 1,000 people per year, India.',
   punches: { office: 'ORGI · UN', unit: 'per 1,000', period: '1950-2026' },
   status: ['Survey estimate', 'Projection'],
-  note: 'Solid shows SRS sample estimates for 1971 to 2024. Dashed shows UN estimates to 1970 and UN projections for 2025 and 2026.',
+  note: 'Solid lines are SRS sample estimates, 1971 to 2024. Dashed lines are UN estimates and projections.',
   sources: vitalSources,
   format: { decimals: 2 },
   y: { min: 0, max: 50, step: 10 },
@@ -272,10 +272,10 @@ const projectedFertilityStates: Chart = {
   slug: 'fertility-rate-by-state-projected',
   kind: 'dots',
   title: 'Assumed fertility rate by state and UT, 2026-30',
-  subtitle: 'Average number of children per woman under the assumptions in the MoHFW projections.',
+  subtitle: 'Children per woman assumed for each state and UT.',
   punches: { office: 'MoHFW · NCP', unit: 'per woman', period: '2026-30' },
   status: ['Projection'],
-  note: 'MoHFW gives one rate for the five-year period. It gives a single rate for the north-eastern states other than Assam.',
+  note: 'One rate covers the five years. The north-eastern states other than Assam share one rate.',
   sources: [projectionsTable('3')],
   format: { decimals: 2 },
   pin: ['india'],
@@ -288,10 +288,10 @@ const projectedVitalRatesStates: Chart = {
   slug: 'birth-death-rates-by-state-projected',
   kind: 'dots',
   title: 'Projected birth and death rates by state and UT, 2026-30',
-  subtitle: 'Live births and deaths per 1,000 people per year over the five-year period.',
+  subtitle: 'Live births and deaths per 1,000 people per year, by state and UT.',
   punches: { office: 'MoHFW · NCP', unit: 'per 1,000', period: '2026-30' },
   status: ['Projection'],
-  note: 'MoHFW gives separate rates for 22 states and UTs. It groups the north-eastern states other than Assam.',
+  note: 'MoHFW gives rates for 22 states and UTs. The north-eastern states other than Assam share one rate.',
   sources: [projectionsTable('17A')],
   format: { decimals: 1 },
   pin: ['india'],
@@ -303,10 +303,10 @@ const projectedBirthRatioStates: Chart = {
   slug: 'sex-ratio-at-birth-by-state-projected',
   kind: 'dots',
   title: 'Assumed sex ratio at birth by state and UT, 2026',
-  subtitle: 'Girls born per 1,000 boys under the assumptions in the MoHFW projections.',
+  subtitle: 'Assumed girls born per 1,000 boys, by state and UT.',
   punches: { office: 'MoHFW · NCP', unit: 'per 1,000 boys', period: '2026' },
   status: ['Projection'],
-  note: 'MoHFW gives separate ratios for 22 states and UTs. The SRS gives three-year sample estimates.',
+  note: 'MoHFW gives ratios for 22 states and UTs.',
   sources: [projectionsTable('6')],
   format: { decimals: 0 },
   pin: ['india'],
@@ -319,10 +319,10 @@ const birthRatioIndia: Chart = {
   slug: 'sex-ratio-at-birth-india',
   kind: 'line',
   title: 'Sex ratio at birth in India, 1950 to 2022-24',
-  subtitle: 'Girls born per 1,000 boys born. Each SRS estimate covers three years.',
+  subtitle: 'Girls born per 1,000 boys, India. SRS values are three-year averages.',
   punches: { office: 'ORGI · UN', unit: 'per 1,000 boys', period: '1950 to 2022-24' },
   status: ['Survey estimate'],
-  note: 'Dashed shows UN annual estimates to 1998. Solid shows SRS estimates at the middle year of each three-year period. The line stops at 2022-24: the MoHFW assumption for 2026 (905), made in 2020, is below the 918 SRS measured in 2022-24, and the UN projection (937) sits on a different level from SRS.',
+  note: 'Each SRS value sits at the middle year of its three-year period.',
   sources: [wpp, ...sexRatioAtBirthIndia.sources],
   format: { decimals: 0 },
   y: { min: 870, max: 970, step: 20 },
@@ -338,7 +338,8 @@ const birthRatioIndia: Chart = {
   know: [
     'The SRS estimates the ratio from a sample of births. It changed its sample in 2004 and 2014.',
     'Each UN estimate uses one year. Each SRS period shares two years with the next period.',
-    'MoHFW published state assumptions for 2026 in July 2020; the state view shows them as assumptions.',
+    'MoHFW published state assumptions for 2026 in July 2020. The state view shows them as assumptions.',
+    'The line stops at 2022-24. The MoHFW 2026 assumption (905, made in 2020) and the UN projection (937) sit on different levels from SRS.',
   ],
 }
 
@@ -346,10 +347,9 @@ const growthIndia: Chart = {
   slug: 'population-growth-india',
   kind: 'line',
   title: 'Average annual population growth in India, 1901 to 2026',
-  subtitle: 'Average growth per year between successive censuses and from Census 2011 to the 2026 projection.',
+  subtitle: 'Average yearly growth between censuses, India, and from 2011 to the 2026 projection.',
   punches: { office: 'ORGI · MoHFW', unit: '% per year', period: '1901-2026' },
   status: ['Projection'],
-  note: 'Solid uses Census counts. The separate point uses the MoHFW projection for 2026.',
   sources: [censusA02, projectionsTable('8')],
   format: { unit: '%', decimals: 2 },
   y: { min: -0.5, max: 2.5, step: 0.5 },
@@ -364,8 +364,8 @@ const projectedGrowthStates: Chart = {
   slug: 'population-growth-by-state-2026',
   kind: 'states',
   title: 'Projected population growth by state and UT, 2011 to 2026',
-  subtitle: 'Change from the Census 2011 base to the population projected for 1 March 2026.',
-  note: 'The MoHFW report gives separate figures for Telangana and Ladakh. The Census 2001 to 2011 view uses the boundaries at that time.',
+  subtitle: 'Change from Census 2011 to the projected population on 1 March 2026.',
+  note: 'MoHFW gives separate figures for Telangana and Ladakh.',
   punches: { office: 'MoHFW · NCP', unit: '% change', period: '2011-2026' },
   status: ['Projection'],
   sources: [projectionsTable('8')],
@@ -381,8 +381,8 @@ const projectedGrowthStates: Chart = {
 const projectedUrbanStates: Chart = {
   slug: 'urban-share-by-state-2026',
   kind: 'states',
-  title: 'Projected share of people in urban areas by state and UT, 2026',
-  subtitle: 'MoHFW projection for 1 March 2026. The share is a percentage of all people in each state or UT.',
+  title: 'Projected urban share by state and UT, 2026',
+  subtitle: 'Share of each state’s people in urban areas, on 1 March 2026.',
   punches: { office: 'MoHFW · NCP', unit: '% of people', period: '2026' },
   status: ['Projection'],
   sources: [projectionsTable('10'), projectionsTable('9'), projectionsTable('8')],
@@ -400,11 +400,11 @@ const projectedUrbanStates: Chart = {
 const urbanIndia: Chart = {
   slug: 'urban-share-india',
   kind: 'line',
-  title: 'Share of people in urban areas in India, 1901 to 2026',
-  subtitle: 'Percentage of India’s population living in urban areas at each census and in the MoHFW projection.',
+  title: 'Urban share of people in India, 1901 to 2026',
+  subtitle: 'Share of India’s people in urban areas, at each census and in the projection.',
   punches: { office: 'ORGI · MoHFW', unit: '% of people', period: '1901-2026' },
   status: ['Projection'],
-  note: 'Solid uses Census data. Dashed shows the MoHFW projection. The Census definition of urban areas changed over time.',
+  note: 'The Census definition of urban areas changed over time.',
   sources: [censusUrbanHistory, census1991Urban, census2001Pca, censusA01, projectionsTable('10')],
   format: { unit: '%', decimals: 2 },
   y: { min: 0, max: 40, step: 10 },
@@ -425,7 +425,7 @@ const topic: Topic = {
   hindi: 'जनसंख्या',
   question: 'How many people live in India, and how fast has the number grown since 1901?',
   standfirst:
-    'India had a projected 142.6 crore people on 1 March 2026. The last full count, Census 2011, found 121.09 crore people.',
+    'India had a projected 142.6 crore people on 1 March 2026. Census 2011 counted 121.09 crore.',
   figures: [
     {
       chart: 'population-projection',
@@ -441,18 +441,16 @@ const topic: Topic = {
   parts: [
     {
       title: 'How many people live in India?',
-      lede: "India had 36.1 crore people in 1951 and 121.1 crore at the last census, in 2011. Official projections put it at 142.6 crore on 1 March 2026. Growth over the decade to 2011 was 17.70%, the slowest since the decade to 1951 (13.31%).",
+      lede: 'India had 121.1 crore people at Census 2011, up from 36.1 crore in 1951. MoHFW projects 142.6 crore for 1 March 2026.',
       blocks: [
         {
           chart: {
             slug: 'population-by-census',
             kind: 'line',
             title: "India's population, 1901 to 2026",
-            subtitle:
-              'Number of people, India: census counts every ten years from 1901 to 2011, then official projections for 1 March of each year to 2026.',
+            subtitle: 'People in India: census counts to 2011, then projections to 2026.',
             punches: { office: 'ORGI', unit: 'persons', period: '1901-2026' },
             status: ['Projection'],
-            note: 'There has been no census since 2011; Census 2027 is under way. From 2012 the line is the MoHFW projection of July 2020, in thousands. Assam in 1981 and Jammu and Kashmir in 1991 had no census; ORGI gives interpolated figures.',
             sources: [censusA02, projectionsT8],
             format: { scale: 'crore' },
             y: { min: 0, max: 1600000000, step: 400000000 },
@@ -482,15 +480,15 @@ const topic: Topic = {
             // LATER: the board also labels 2011; a callout on the last column is cut off.
             know: [
               'Census 2011 is the latest full count. Its reference date was 00:00 on 1 March 2011.',
-              'Assam had no census in 1981, and Jammu and Kashmir had none in 1991. ORGI gives interpolated figures for them, so the India totals for those years include estimates.',
+              'Assam had no census in 1981, and Jammu and Kashmir none in 1991. The India totals for those years include interpolated figures from ORGI.',
               'The 2001 total includes an estimate for the Mao Maram, Paomata and Purul sub-divisions of Senapati district, Manipur.',
               'The decade to 1921 is the only one in which the count fell (−0.31%).',
               'Census 2027 is under way. Its results will be the first new count since 2011.',
-              'From 2012 the line is a projection, not a count: the Technical Group on Population Projections (MoHFW, July 2020) projects the population on 1 March of each year from Census 2011 and SRS trends. Part 5 shows it to 2036.',
+              'From 2012 the line is a MoHFW projection (July 2020), not a count. It starts from Census 2011 and SRS trends.',
             ],
             processing: [
               'Read the India population at each census, 1901 to 2011, from Table A-02 (Excel).',
-              'Read the projections for 1 March 2011 to 2026 from Table 8 of the projections report, in thousands, and multiply by 1,000 to draw them on the same axis. The CSV keeps the published thousands.',
+              'Read the projections for 1 March 2011 to 2026 from Table 8, in thousands. Multiply by 1,000. The CSV keeps the published thousands.',
               'Check the 2011 growth rate, 17.70%, against the PDF of the same table.',
               'Keep the change since the previous census as ORGI publishes it, in persons and in percent.',
               'Carry the A-02 footnotes into the note column: the interpolated years and the Senapati estimate.',
@@ -517,9 +515,8 @@ const topic: Topic = {
                 slug: 'population-pyramid',
                 kind: 'pyramid',
                 title: 'Population by age and sex in India, 2011',
-                subtitle: 'Men and women in each five-year age group, India, Census 2011. Bars show the share of all people with a stated age; the table gives the counts.',
+                subtitle: 'Share of people with a stated age, by five-year age group and sex, India.',
                 punches: { office: 'ORGI', unit: 'persons', period: '2011' },
-                note: '44.9 lakh people did not state their age. They are not in the pyramid.',
                 sources: [censusC14],
                 format: { scale: 'crore' },
                 by: 'age_group',
@@ -541,7 +538,7 @@ const topic: Topic = {
                 },
                 know: [
                   'The pyramid shows Census 2011, the latest full count. No newer count by age exists.',
-                  '44.9 lakh people did not state their age. The pyramid leaves them out; the data file keeps them as a separate row.',
+                  '44.9 lakh people did not state their age. The pyramid leaves them out. The data file keeps them as a separate row.',
                   'Each bar adds rural and urban people. Table C-14 also gives each age group by residence.',
                 ],
                 processing: [
@@ -560,7 +557,7 @@ const topic: Topic = {
     },
     {
       title: 'How many babies are born, and how many people die?',
-      lede: 'The total fertility rate fell from 5.2 children per woman in 1971 to 1.9 in 2024. That is below the replacement level of 2.1. Replacement level is the rate at which each generation replaces itself. Bihar had the highest rate (2.9) and Delhi the lowest (1.2). 16 of the 22 bigger states and UTs were below 2.1.',
+      lede: 'In 2024 India had 18.3 births per 1,000 people and 6.4 deaths. The fertility rate was 1.9 children per woman, below replacement level.',
       blocks: [
         {
           periods: [
@@ -575,11 +572,9 @@ const topic: Topic = {
                 slug: 'fertility-rate-by-state',
                 kind: 'dots',
                 title: 'Fertility rate by state, 2019 and 2024',
-                subtitle:
-                  'Total fertility rate: the average number of children a woman would have at current rates, 22 bigger states and UTs, 2019 and 2024.',
+                subtitle: 'Children a woman would have at current rates, 22 bigger states and UTs.',
                 punches: { office: 'ORGI · SRS', unit: 'per woman', period: '2024' },
                 status: ['Survey estimate'],
-                note: 'The SRS gives a fertility rate only for the 22 bigger states and UTs. The other 14 have no estimate. Values are rounded to one decimal in the source.',
                 sources: [srsReportT15],
                 format: { decimals: 1 },
                 sortBy: '2024',
@@ -621,7 +616,7 @@ const topic: Topic = {
           ],
         },
         {
-          text: "India's birth rate was 18.3 per 1,000 people in 2024, and its death rate was 6.4. Bihar had the highest birth rate (26.8) and Andaman and Nicobar Islands the lowest (9.9).",
+          text: 'Fertility was 5.2 children per woman in 1971. In 2024, 16 of the 22 bigger states and UTs were below 2.1.',
         },
         {
           periods: [
@@ -634,11 +629,10 @@ const topic: Topic = {
                 slug: 'birth-death-rates-by-state',
                 kind: 'dots',
                 title: 'Birth rate and death rate by state, 2024',
-                subtitle:
-                  'Live births and deaths per 1,000 people in 2024. The SRS gives rates for all 36 states and UTs.',
+                subtitle: 'Births and deaths per 1,000 people per year, 36 states and UTs.',
                 punches: { office: 'ORGI · SRS', unit: 'per 1,000', period: '2024' },
                 status: ['Survey estimate'],
-                note: 'The SRS is a sample survey. Values for small states and UTs rest on small samples; the Manipur estimate rests on 130 sample units.',
+                note: 'Rates for small states and UTs rest on small samples.',
                 sources: [srsBulletinT1],
                 format: { decimals: 1 },
                 axis: { min: 0, max: 30 },
@@ -669,7 +663,7 @@ const topic: Topic = {
                   'The natural growth rate is the birth rate minus the death rate. The SRS publishes it in the same table.',
                 ],
                 processing: [
-                  'Read Table 1 of the SRS Bulletin 2024, Volume 59 No. 1 (PDF): birth, death, natural growth and infant mortality rates by state, total, rural and urban.',
+                  'Read Table 1 of the SRS Bulletin 2024 (PDF): birth, death, natural growth and infant mortality rates by state, total, rural and urban.',
                   'Match each state name to the 36 present-day states and UTs.',
                   'Show the total birth and death rates for 2024, sorted by birth rate.',
                 ],
@@ -679,7 +673,7 @@ const topic: Topic = {
           ],
         },
         {
-          text: 'For every 1,000 boys born in India in 2022-24, 918 girls were born, up from 907 in 2018-20. Chhattisgarh had the highest ratio (978) and Uttarakhand the lowest (872).',
+          text: 'In 2022-24, 918 girls were born for every 1,000 boys, up from 907 in 2018-20.',
         },
         { chart: birthRatioIndia },
         {
@@ -694,11 +688,10 @@ const topic: Topic = {
                 slug: 'sex-ratio-at-birth-by-state',
                 kind: 'dots',
                 title: 'Sex ratio at birth by state, 2018-20 and 2022-24',
-                subtitle:
-                  'Girls born for every 1,000 boys born, three-year averages, 22 bigger states and UTs, 2018-20 and 2022-24.',
+                subtitle: 'Girls born per 1,000 boys, three-year averages, 22 bigger states and UTs.',
                 punches: { office: 'ORGI · SRS', unit: 'per 1,000 boys', period: '2022-24' },
                 status: ['Survey estimate'],
-                note: 'The SRS gives this ratio only for the 22 bigger states and UTs. Each value is an average over three years. The dotted line marks 1,000: equal numbers of girls and boys.',
+                note: 'The dotted line marks 1,000: equal numbers of girls and boys.',
                 sources: [srsReportT16],
                 format: { decimals: 0 },
                 sortBy: '2022-24',
@@ -743,7 +736,7 @@ const topic: Topic = {
     },
     {
       title: 'Where do people live?',
-      lede: 'Uttar Pradesh had 19.98 crore people in 2011, more than any other state. Nagaland was the only state whose population fell between 2001 and 2011 (−0.58%). MoHFW projects separate totals for Telangana and Ladakh.',
+      lede: 'Uttar Pradesh had 19.98 crore people in 2011, more than any other state. Nagaland was the only state whose population fell between 2001 and 2011 (−0.58%).',
       blocks: [
         {
           periods: [
@@ -757,10 +750,9 @@ const topic: Topic = {
                 slug: 'population-growth-by-state',
                 kind: 'states',
                 title: 'Population growth by state and UT, 2001 to 2011',
-                subtitle:
-                  'Percentage change in the population from Census 2001 to Census 2011. The results use 2011 boundaries.',
+                subtitle: 'Change in population from Census 2001 to Census 2011, on 2011 boundaries.',
                 punches: { office: 'ORGI', unit: '% change', period: '2001-2011' },
-                note: 'Telangana and Ladakh have no 2011 figures of their own: their people are counted in Andhra Pradesh and in Jammu and Kashmir. Dadra and Nagar Haveli and Daman and Diu were two UTs in 2011; the tile shows their sum (derived).',
+                note: 'Telangana and Ladakh have no 2011 figures. They are counted in Andhra Pradesh and in Jammu and Kashmir.',
                 sources: [censusA02States],
                 format: { unit: '%', decimals: 2 },
                 data: {
@@ -774,7 +766,7 @@ const topic: Topic = {
                 know: [
                   'Growth is the change in people counted between Census 2001 and Census 2011, as ORGI publishes it.',
                   'Census 2011 had 35 units. Andhra Pradesh includes present-day Telangana, and Jammu and Kashmir includes present-day Ladakh.',
-                  'Dadra and Nagar Haveli and Daman and Diu were two UTs in 2011. Their tile adds the two counts and computes growth from the sums, marked Derived.',
+                  'Dadra and Nagar Haveli and Daman and Diu were two UTs in 2011. Their tile uses the summed counts, marked Derived.',
                   'Nagaland is the only state whose count fell, by 0.58%.',
                 ],
                 processing: [
@@ -789,7 +781,7 @@ const topic: Topic = {
           ],
         },
         {
-          text: "The share of India's people living in urban areas rose from 10.84% in 1901 to 31.14% in 2011. MoHFW projects a share of 36.01% for 2026.",
+          text: 'The share of people in urban areas rose from 10.84% in 1901 to 31.14% in 2011. MoHFW projects 36.01% for 2026.',
         },
         {
           periods: [
@@ -801,10 +793,10 @@ const topic: Topic = {
               chart: {
                 slug: 'urban-share-by-state',
                 kind: 'states',
-                title: 'Share of people living in towns, by state and UT, 2011',
-                subtitle: 'People in urban areas as a share of all people, %, Census 2011, shown on today\'s states and UTs.',
+                title: 'Urban share by state and UT, 2011',
+                subtitle: 'Share of each state’s people in urban areas, Census 2011, on today’s states.',
                 punches: { office: 'ORGI', unit: '% of people', period: '2011' },
-                note: '"Urban" follows the Census 2011 definition: statutory towns and census towns. Each share is derived from the published counts (urban people ÷ all people × 100). Telangana and Ladakh have no 2011 figures of their own: they were counted in Andhra Pradesh and in Jammu and Kashmir. Dadra and Nagar Haveli and Daman and Diu were two UTs in 2011; the tile shows the two together (derived).',
+                note: 'Telangana and Ladakh have no 2011 figures. They are counted in Andhra Pradesh and in Jammu and Kashmir.',
                 sources: [censusA01],
                 format: { unit: '%', decimals: 2 },
                 data: {
@@ -834,7 +826,7 @@ const topic: Topic = {
     },
     {
       title: 'How might the population change?',
-      lede: 'The Technical Group on Population Projections (MoHFW, National Commission on Population) projects 152.2 crore people in India by 1 March 2036, up from 142.6 crore in 2026. Uttar Pradesh alone is projected at 24.3 crore in 2026. These are projections made in 2020, not counts. Census 2027 will give the first new count.',
+      lede: 'MoHFW projects 152.2 crore people in India on 1 March 2036, up from 142.6 crore in 2026. These are projections made in 2020, not counts.',
       blocks: [
         {
           // LATER: the board frame has a Map tab (state projections for 2026, same file); 'line' has no map view.
@@ -842,11 +834,9 @@ const topic: Topic = {
             slug: 'population-projection',
             kind: 'line',
             title: 'Population of India with projections, 1901 to 2036',
-            subtitle:
-              'Census counts from 1901 to 2011. MoHFW projects the population for 1 March of each year from 2012 to 2036.',
+            subtitle: 'People in India: census counts to 2011, then projections for 1 March to 2036.',
             punches: { office: 'ORGI · MoHFW', unit: 'crore', period: '1901-2036' },
             status: ['Projection'],
-            note: 'These are projections made in July 2020 from Census 2011 and SRS trends. They are not counts, and they do not use the SRS rates for 2020 onward. The report gives values in thousands; 1 crore is 10,000 thousand.',
             sources: [censusA02, projectionsT8],
             // The report gives thousand persons: 1,425,908 thousand prints as 142.6 crore.
             format: { scale: 'crore', decimals: 1 },
@@ -879,12 +869,12 @@ const topic: Topic = {
             know: [
               'These are projections, not counts. The Technical Group made them in July 2020 from Census 2011 and SRS trends.',
               'The projections predate the SRS estimates for 2020 onward, so they do not use the latest birth and death rates.',
-              'The report uses a cohort component method for the 22 bigger states and the north-east as a group, and a simpler mathematical method for Goa and the small UTs.',
+              'The report uses a cohort component method for the 22 bigger states and the north-east group. Goa and the small UTs use a simpler method.',
               'The projected values are for 1 March of each year.',
               'Census 2027 will give the first new count. Its reference date is 1 March 2027 in most states.',
             ],
             processing: [
-              'Read Table 8 of the Technical Group report (PDF): people on 1 March of each year, 2011 to 2036, for India and each state, in thousands.',
+              'Read Table 8 of the Technical Group report (PDF): people on 1 March of each year, 2011 to 2036, by state, in thousands.',
               'Multiply the report values by 1,000 to get persons.',
               'Read the Census counts from Table A-02. Keep the count and projection series separate.',
               'Add the Dadra and Nagar Haveli and the Daman and Diu columns for the present-day UT, marked Derived.',
@@ -900,20 +890,20 @@ const topic: Topic = {
     intro:
       'Census 2011 is a count of every person. The SRS is a sample survey. The 2026 and 2036 values are projections.',
     publisher:
-      'The Office of the Registrar General and Census Commissioner, India (ORGI), Ministry of Home Affairs, runs the Census and the Sample Registration System (SRS). The National Commission on Population, Ministry of Health and Family Welfare (MoHFW), publishes the population projections of its Technical Group.',
+      'The Office of the Registrar General and Census Commissioner, India (ORGI), Ministry of Home Affairs, runs the Census and the Sample Registration System (SRS). The National Commission on Population (MoHFW) publishes the projections.',
     frequency:
-      'Census: the latest full count is Census 2011, with 00:00 on 1 March 2011 as its reference date. Census 2027 is under way; its reference date is 1 March 2027 in most states. SRS: once a year; the 2024 report and bulletin came out on 20 May 2026. Projections: one report, dated July 2020.',
+      'Census: latest full count 2011. Census 2027 is under way, reference date 1 March 2027 in most states. SRS: yearly. The 2024 report came out on 20 May 2026. Projections: one report, July 2020.',
     revisions:
-      'Census 2011 tables are final. Census 2027 counts will replace them when ORGI publishes results; no date is announced. SRS rates are rounded to one decimal, and the bulletin gives 95% confidence limits in Tables 2 and 3.',
+      'Census 2011 tables are final. Census 2027 counts will replace them. ORGI has announced no date. SRS rates are rounded to one decimal. The SRS bulletin gives 95% confidence limits.',
     breaks:
-      'Census figures are counts on the reference date. The projections start from Census 2011 and use SRS trends; they predate the SRS estimates for 2020 onward. We never join projections to Census counts as one series. The SRS 2024 sample frame is Census 2011.',
+      'Census figures are counts on the reference date. The projections start from Census 2011 and SRS trends. They do not use SRS estimates from 2020. We never join projections and counts as one series.',
     coverage:
-      'Census 2011 had 35 units. Telangana (formed 2014) is inside Andhra Pradesh, and Ladakh (a UT since 2019) is inside Jammu and Kashmir. Dadra and Nagar Haveli and Daman and Diu were two UTs until 2020; we add their 2011 counts and mark the sum "Derived". The SRS and the projections use the present 36 units. The SRS gives birth and death rates for all 36, but fertility rate and sex ratio at birth only for the 22 bigger states and UTs.',
-    // The board quotes Daman and Diu 2036 figures (19.69 lakh people, 16.70 lakh male) from the report.
-    // No CSV holds them (the file has the merged dnh-dd total only), so the sentence names the oddity
-    // without the numbers.
+      'Census 2011 had 35 units: Andhra Pradesh includes Telangana, and Jammu and Kashmir includes Ladakh. We sum Dadra and Nagar Haveli and Daman and Diu. The SRS and projections use the present 36 units.',
+    // The report's Daman and Diu 2036 figures (19.69 lakh people, 16.70 lakh male) look odd. No CSV
+    // holds them (the file has the merged dnh-dd total only), so "Small-UT projections can look odd"
+    // names the oddity without the numbers.
     missing:
-      'There is no count after 2011. The 2026 values are projections, and the 2024 values are sample estimates. The SRS gives no fertility rate or sex ratio at birth for the 14 smaller states and UTs. For Goa and the small UTs the projections use a simpler method, and some look odd: for Daman and Diu the report projects far more males than females in 2036. ORGI and MoHFW state no open licence for these files.',
+      'No count exists after 2011. The SRS gives no fertility rate or sex ratio at birth for 14 smaller states and UTs. Small-UT projections can look odd. Neither publisher states an open licence.',
   },
   // The board lists the SRS report and bulletin on one line; they are two releases with two URLs.
   sources: [censusA02, censusA01, censusC14, census1961, censusUrbanHistory, census1991Urban, census2001Pca, srsCompendium, srsReport2018, srsReport, srsBulletin, projections, wpp, wppAge, ...gazettes],
@@ -922,8 +912,8 @@ const topic: Topic = {
       title: 'Census 2027',
       rows: [
         ['Apr-Sep 2026', 'House-listing, done'],
-        ['Dec 2026-Jan 2027', 'Count in Goa, Uttar Pradesh, Punjab and Uttarakhand'],
-        ['Jan-Feb 2027', 'Count in the other states and UTs (Manipur: not set)'],
+        ['Dec 2026-Jan 2027', 'Count in four states'],
+        ['Jan-Feb 2027', 'Count in other states (Manipur not set)'],
         ['1 Mar 2027', 'Reference date'],
         ['Results', 'Not announced'],
       ],

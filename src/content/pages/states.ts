@@ -70,7 +70,7 @@ const states: StatesPage = {
     number: '1',
     title: 'Income per person by state and UT, 2024-25',
     subtitle:
-      'Net state domestic product per person, rupees a year, current prices (base 2011-12), FY 2024-25. India is per capita net national income.',
+      'Net state domestic product per person, current prices, base 2011-12. India: per capita net national income.',
     switcherLabel: 'Colour the map by',
     coverage: (n, of) => `${n} of ${of}`,
     measures: [
@@ -94,7 +94,7 @@ const states: StatesPage = {
       rank: ({ rank, of, india }) => `${rank} highest of ${of} · India ${india}`,
       open: (state) => `Open the ${state} page →`,
     },
-    note: "Note: MoSPI's 2024-25 release has no figures for Nagaland, Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu. Assam and Haryana are MoSPI figures as on 1 Aug 2025, from the RBI Handbook. Jammu and Kashmir covers the union territory only, without Ladakh.",
+    note: 'Note: No 2024-25 figures for Nagaland, Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu. Assam and Haryana: MoSPI figures as on 1 Aug 2025, via the RBI Handbook. Jammu and Kashmir excludes Ladakh.',
     source:
       'Source: National Statistics Office, MoSPI, state-wise per capita NSDP (base 2011-12), eSankhyiki API, state data released 15 Apr 2026. India: RBI, Handbook of Statistics on Indian Economy 2025-26, Table 9, 31 Jul 2026. Checked 18 Nov 2026.',
   },
@@ -114,7 +114,7 @@ const states: StatesPage = {
     changes: [
       {
         heading: 'Telangana',
-        body: 'Formed from Andhra Pradesh in 2014. Census 2011 counts it inside undivided Andhra Pradesh, so Telangana has no 2011 figures, and 2011 Andhra Pradesh figures do not compare with later ones.',
+        body: 'Formed from Andhra Pradesh in 2014. Census 2011 counts it inside Andhra Pradesh, so Telangana has no 2011 figures. 2011 Andhra Pradesh figures do not compare with later ones.',
       },
       {
         heading: 'Ladakh',

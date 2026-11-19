@@ -170,7 +170,7 @@ const topic: Topic = {
   name: 'Prices',
   hindi: 'कीमतें',
   question: 'How fast are prices rising in India, and how does that compare with the past?',
-  standfirst: "Consumer prices rose by 6.09% in the year to October 2026, above the RBI's upper limit of 6%.",
+  standfirst: "Consumer prices rose 6.09% in the year to October 2026, above the RBI's upper limit of 6%.",
   figures: [
     { chart: 'cpi-inflation', series: 'base-2024', label: 'Consumer price inflation' },
     { chart: 'cpi-inflation-by-division-2026', series: 'cfpi', label: 'Consumer Food Price Index (CFPI)' },
@@ -180,18 +180,16 @@ const topic: Topic = {
   parts: [
     {
       title: 'How fast are prices rising?',
-      lede: 'The RBI aims for 4%, within a band of 2% to 6%. Before October 2026, CPI Combined inflation was last above that band in October 2024, at 6.21%. It fell to 0.25% in October 2025, its lowest since January 2012.',
+      lede: 'Inflation is above the RBI band of 2% to 6% for the first time since October 2024. A year earlier it was 0.25%, its lowest since January 2012.',
       blocks: [
         {
           chart: {
             kind: 'line',
             slug: 'cpi-inflation',
-            title: 'Monthly consumer price inflation in India, January 1994 to October 2026',
-            subtitle:
-              'Change from the same month a year earlier. CPI for industrial workers through December 2011. CPI Combined for rural and urban India from January 2012.',
+            title: 'Consumer price inflation in India, January 1994 to October 2026',
+            subtitle: 'Prices for industrial workers (CPI-IW) to 2011, then rural and urban India (CPI Combined).',
             punches: { office: 'MoSPI · Labour Bureau', unit: '% y/y', period: 'OCT 2026' },
             status: ['Provisional', 'Method break'],
-            note: 'CPI-IW covers industrial workers only. Its base changed from 1982=100 to 2001=100 in January 2006. CPI Combined uses base 2010=100 from June to December 2013. The other months through December 2025 use base 2012=100. Base 2024=100 starts in January 2026.',
             sources: [CPI_RELEASE, CPI_API, CPI_2010_PAPER, ...CPI_2010_LATE_RELEASES, RBI_CPI_IW_2008, RBI_CPI_IW_2011, LABOUR_CPI_IW_2011, RBI_TARGET],
             format: { unit: '%' },
             series: [
@@ -216,8 +214,9 @@ const topic: Topic = {
             callouts: [{ series: 'iw-1982', x: '1998-11', label: 'CPI-IW 19.7% in Nov 1998' }, { series: 'base-2024', x: '2026-10' }],
             know: [
               'The Labour Bureau compiles CPI-IW for industrial workers. MoSPI compiles CPI Combined for rural and urban India.',
-              'The Labour Bureau moved CPI-IW to base 2016=100 in September 2020. The annual chart includes that base.',
+              'CPI-IW moved from base 1982=100 to 2001=100 in January 2006, and to 2016=100 in September 2020. The annual chart shows the later base.',
               'October 2026 is provisional. MoSPI finalises it with the November release, due on 14 December 2026.',
+              'CPI Combined uses base 2010=100 for June to December 2013, and base 2012=100 for the other months to December 2025.',
               'CPI Combined moved to base 2024=100 in January 2026, with a new basket and new weights.',
               'MoSPI gives no rate for April and May 2020, the lockdown months.',
               'The 4% target and the band of 2% to 6% apply to CPI Combined from 5 August 2016.',
@@ -234,16 +233,14 @@ const topic: Topic = {
             nextRelease: CPI_NEXT,
           },
         },
-        { text: 'Inflation for industrial workers reached 13.1% in 1998-99 and 12.4% in 2009-10. In 2024-25 it was 3.4%, and the CPI Combined was 4.6%.' },
         {
           chart: {
             kind: 'line',
             slug: 'cpi-inflation-long-run',
             title: 'Inflation in India over the long run, 1993-94 to 2025-26',
-            subtitle:
-              'Change in the average Consumer Price Index for the financial year, %. CPI for industrial workers (CPI-IW) from 1993-94; CPI Combined from 2012-13 to 2024-25.',
+            subtitle: 'Change in the financial-year average, for industrial workers (CPI-IW) and all India (CPI Combined).',
             punches: { office: 'RBI', unit: '% y/y', period: '2025-26' },
-            note: 'CPI-IW covers industrial workers only and is compiled by the Labour Bureau. Its base changed in 2005-06 and 2020-21; RBI links the series. CPI Combined for 2025-26 spans two bases (1.7% for April to December 2025 on 2012=100; 3.1% for January to March 2026 on 2024=100), so we do not plot one value for that year.',
+            note: 'CPI Combined has no value for 2025-26 because the year spans two bases.',
             sources: [RBI_TABLE_236],
             format: { unit: '%', decimals: 1 },
             series: [
@@ -271,10 +268,10 @@ const topic: Topic = {
               { series: 'cpi-combined', x: '2024-25', label: 'CPI Combined: 4.6% in 2024-25' },
             ],
             know: [
-              'Each value is the change in the average index for the financial year (April to March) on the year before, not a change on the same month.',
-              'CPI-IW covers industrial workers only. The Labour Bureau compiles it. It is a different measure from the CPI Combined.',
+              'Each value is the change in the average index for the financial year (April to March) on the year before.',
+              'CPI-IW covers industrial workers only, and the Labour Bureau compiles it. CPI Combined starts in 2012-13.',
               'CPI-IW changed base in 2005-06 (2001=100) and 2020-21 (2016=100). RBI links the series with factors given in the table notes.',
-              'CPI Combined starts in 2012-13. For 2025-26 RBI gives two values: 1.7% for April to December 2025 (base 2012=100) and 3.1% for January to March 2026 (base 2024=100).',
+              'For 2025-26 RBI gives 1.7% for April to December 2025 (base 2012=100) and 3.1% for January to March 2026 (base 2024=100).',
             ],
             processing: [
               'Read Table 236 of the RBI Handbook of Statistics on Indian Economy 2025-26 (31 Jul 2026).',
@@ -288,19 +285,17 @@ const topic: Topic = {
     },
     {
       title: 'Which states have the highest inflation?',
-      lede: 'In October 2026 inflation was highest in Puducherry, at 7.96%, and lowest in Mizoram, at 2.85%. Among the large states, Tamil Nadu (7.29%), Telangana (7.26%) and Andhra Pradesh (7.25%) had the highest rates.',
+      lede: 'In October 2026 inflation was highest in Puducherry, at 7.96%, and lowest in Mizoram, at 2.85%. Among large states, Tamil Nadu was highest, at 7.29%.',
       blocks: [
-        { text: "All eight north-eastern states had lower inflation than India's 6.09%. Eight states and UTs were more than 0.5 percentage points above it, led by Puducherry (7.96%)." },
+        { text: "All eight north-eastern states were below India's 6.09%. Eight states and UTs were more than 0.5 percentage points above it." },
         {
           chart: {
             kind: 'states',
             slug: 'cpi-inflation-by-state',
             title: 'Inflation by state and UT, October 2026',
-            subtitle:
-              'Annual change in the Consumer Price Index (2024=100), rural and urban combined, %, 36 states and UTs, October 2026. Colour shows the gap from India.',
+            subtitle: "Consumer prices, rural and urban combined. Colour shows the gap from India's rate.",
             punches: { office: 'MoSPI', unit: '% y/y', period: 'OCT 2026' },
             status: ['Provisional'],
-            note: 'MoSPI says state indices use thinner samples than the national index.',
             sources: [CPI_RELEASE, CPI_API],
             format: { unit: '%' },
             data: { file: 'prices/cpi-inflation-by-state.csv', where: { period: '2026-10', sector: 'combined' } },
@@ -312,8 +307,8 @@ const topic: Topic = {
             // From the chart page design, "What you should know about this indicator".
             know: [
               'October 2026 is provisional. MoSPI finalises it with the November release, due on 14 December 2026.',
-              'CPI moved to a new base, 2024=100, in January 2026, with a new basket and new weights. Rates on the old base, 2012=100, end in December 2025. Do not compare them with this chart without the break.',
-              "Each value combines rural and urban prices. In October 2026 India's rural rate was 6.63% and its urban rate 5.41%. Chandigarh has no rural index, so its combined rate equals its urban rate, 5.23%.",
+              'CPI moved to base 2024=100 in January 2026, with a new basket and new weights. Base 2012=100 rates end in December 2025.',
+              'Each value combines rural and urban prices. Chandigarh has no rural index, so its value is its urban rate, 5.23%.',
               'State indices rest on thinner samples than the national index. MoSPI asks users to treat state-level item indices with caution.',
             ],
             // From the chart page design, "How we process this figure".
@@ -330,18 +325,16 @@ const topic: Topic = {
     },
     {
       title: 'What is driving inflation?',
-      lede: 'Food and drink, 36.75% of the basket, rose by 8.51% in the year to October 2026. Personal care and miscellaneous goods rose by 10.14%, and restaurants and accommodation by 10.06%. Health rose by only 2.05%.',
+      lede: 'Food and beverages, 36.75% of the basket, rose 8.51% in the year to October 2026. Personal care and miscellaneous goods rose fastest, by 10.14%.',
       blocks: [
         {
           chart: {
             kind: 'bars',
             slug: 'cpi-inflation-by-division',
             title: 'Inflation by spending division, India, October 2026',
-            subtitle:
-              "Annual change in the Consumer Price Index (2024=100), rural and urban combined, %, October 2026. Divisions follow COICOP 2018, ranked by October inflation, highest first.",
+            subtitle: 'Consumer prices for each COICOP 2018 division, rural and urban combined.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'OCT 2026' },
             status: ['Provisional'],
-            note: 'The release has no division 12. Division 13 is personal care, social protection and miscellaneous goods and services. MoSPI names gold and silver jewellery among the fastest-rising items (silver jewellery: 52.39%).',
             sources: [CPI_RELEASE],
             format: { unit: '%' },
             by: 'division',
@@ -367,7 +360,9 @@ const topic: Topic = {
             know: [
               'Each bar is the change in prices for one of the 12 spending divisions on October 2025, for rural and urban India combined.',
               'The divisions follow COICOP 2018 and are new with base 2024=100. They do not match the six groups of the 2012 series.',
-              "The weight is the division's share of the basket, from Annexure I of the press release. Food and beverages has the largest weight, 36.75%.",
+              'Food and beverages has the largest weight in the basket, 36.75%.',
+              'Personal care and miscellaneous is division 13: personal care, social protection and miscellaneous goods and services. The release has no division 12.',
+              'MoSPI names gold and silver jewellery among the fastest-rising items. Silver jewellery rose 52.39%.',
               'October 2026 is provisional. MoSPI finalises it with the November release, due on 14 December 2026.',
             ],
             processing: [
@@ -378,15 +373,14 @@ const topic: Topic = {
             nextRelease: CPI_NEXT,
           },
         },
-        { text: 'Headline inflation rose in every month of 2026, from 2.74% in January to 6.09% in October. Of the four largest divisions, food and beverages rose fastest, to 8.51%.' },
+        { text: 'All-items inflation went up every month in 2026, from 2.74% in January to 6.09% in October.' },
         {
           chart: {
             kind: 'line',
             slug: 'cpi-inflation-by-division-2026',
             title: 'Inflation by spending division, India, January to October 2026',
-            subtitle:
-              'Annual change in the Consumer Price Index (2024=100), rural and urban combined, %, January to October 2026. The four largest divisions by weight. Same scale in every panel.',
-            note: 'The grey line in each panel is all items. The food panel has two lines: the Food and beverages division, and the Consumer Food Price Index (CFPI), which covers food items only, with its own weights.',
+            subtitle: 'Consumer prices in the four largest divisions by weight, rural and urban combined.',
+            note: 'The grey line in each panel is all items.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'OCT 2026' },
             status: ['Provisional'],
             sources: [CPI_API, CFPI_RELEASES],
@@ -420,28 +414,26 @@ const topic: Topic = {
               'The four divisions shown carry the largest weights: food and beverages (36.75%), housing, water and fuels (17.66%), transport (8.80%), and clothing and footwear (6.38%).',
               'The series starts in January 2026, the first month on base 2024=100. January to September are final; October is provisional.',
               'All items is the general index, 6.09% in October 2026.',
-              'The Consumer Food Price Index (CFPI) covers food items only, with its own weights. It is not the same as the food and beverages division: 8.94% against 8.51% in October 2026.',
+              'The Consumer Food Price Index (CFPI) covers food items only, with its own weights. In October 2026 it was 8.94%, against 8.51% for the division.',
             ],
             processing: [
               'Fetch the all-India division indices and rates from the MoSPI eSankhyiki API, one request per month and sector (base 2024=100).',
               'Pick the four divisions with the largest weights in Annexure I of the press release.',
               'Draw each division with the general index in the same panel, on one shared scale.',
-              'Read the CFPI for each month from the monthly press releases: the final value from the next release, and October 2026 (provisional) from the release of 12 Nov 2026.',
+              'Read the CFPI from the monthly press releases: each final value from the next release, and October 2026 from the release of 12 Nov 2026.',
             ],
             nextRelease: CPI_NEXT,
           },
         },
-        { text: 'Food and beverage inflation reached 12.18% in December 2012 and fell to -3.72% in October 2025. Fuel and light inflation reached 14.35% in October 2021.' },
         {
           chart: {
             kind: 'line',
             slug: 'cpi-inflation-by-group-2012',
             title: 'Inflation by group in India, 2012 to 2025 (base 2012)',
-            subtitle:
-              'Annual change in consumer prices, %. Base 2010=100 fills gaps in 2013. The grey line gives the all-items rate.',
+            subtitle: 'Consumer prices in four groups, all India.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'DEC 2025' },
             status: ['Method break'],
-            note: 'Archived MoSPI publications give the base 2010=100 rates. They cover June to December 2013 for housing and all items, and all of 2013 for the other groups. Other months use base 2012=100.',
+            note: 'The grey line is all items. In the 2013 band, base 2010=100 rates fill gaps in the 2012=100 series.',
             sources: [CPI_2012_API, CPI_2010_PAPER, ...CPI_2010_LATE_RELEASES],
             format: { unit: '%' },
             series: [
@@ -479,6 +471,7 @@ const topic: Topic = {
             know: [
               'The 2012=100 series ends in December 2025. The 2024=100 series uses new divisions and weights.',
               'The housing index covers urban areas.',
+              'Base 2010=100 rates cover all of 2013 for food, fuel and clothing, and June to December 2013 for housing and all items.',
               'The base 2010=100 clothing group includes bedding.',
               'MoSPI gives no general index rate for April and May 2020, the lockdown months.',
             ],
@@ -494,18 +487,17 @@ const topic: Topic = {
     },
     {
       title: 'Is inflation higher in villages or in towns?',
-      lede: 'In October 2026 prices rose faster in villages than in towns: 6.63% in rural areas and 5.41% in urban areas. Rural inflation has been higher than urban in every month since February 2026.',
+      lede: 'In October 2026 inflation was 6.63% in rural areas and 5.41% in urban areas. Rural inflation has been higher in every month since February 2026.',
       blocks: [
         {
           chart: {
             kind: 'line',
             slug: 'cpi-inflation-rural-urban',
-            title: 'Rural and urban inflation in India, January 2012 to October 2026',
-            subtitle:
-              'Annual change in consumer prices in rural and urban areas, %. Base 2010=100 fills gaps in 2013.',
+            title: 'Rural and urban inflation in India, 2012 to 2026',
+            subtitle: 'Consumer prices in rural and urban India, each with its own index.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'OCT 2026' },
             status: ['Provisional', 'Method break'],
-            note: 'Archived MoSPI publications give the base 2010=100 rates. They cover all of 2013 in rural areas and June to December 2013 in urban areas. Other months to December 2025 use base 2012=100. Base 2024=100 starts in January 2026.',
+            note: 'In the 2013 band, base 2010=100 rates fill gaps in the 2012=100 series.',
             sources: [CPI_RELEASE, CPI_2012_API, CPI_API, CPI_2010_PAPER, ...CPI_2010_RURAL_RELEASES, ...CPI_2010_LATE_RELEASES],
             format: { unit: '%' },
             series: [
@@ -528,6 +520,7 @@ const topic: Topic = {
             know: [
               'Rural and urban are separate price indices with their own baskets and weights. The combined index is not a simple average of the two.',
               'October 2026 is provisional. MoSPI finalises it with the November release, due on 14 December 2026.',
+              'Base 2010=100 rates cover all of 2013 for rural areas and June to December 2013 for urban areas.',
               'CPI moved to base 2024=100 in January 2026. The 2012=100 series ends in December 2025, and the lines do not join across the break.',
               'MoSPI gives no rate for April and May 2020, the lockdown months.',
             ],
@@ -544,17 +537,17 @@ const topic: Topic = {
     },
     {
       title: 'How has the RBI responded?',
-      lede: 'The RBI raised its repo rate by 0.25 percentage points to 5.50% on 7 October 2026, the first rise since February 2023. It had cut the rate from 6.50% to 5.25% during 2025.',
+      lede: 'The RBI raised the repo rate to 5.50% on 7 October 2026, its first rise since February 2023. During 2025 it cut the rate from 6.50% to 5.25%.',
       blocks: [
         {
           chart: {
             kind: 'line',
             slug: 'repo-rate',
             title: 'RBI repo rate, April 2001 to November 2026',
-            subtitle: 'RBI lending rate under the Liquidity Adjustment Facility, % a year.',
+            subtitle: 'RBI lending rate under the Liquidity Adjustment Facility.',
             punches: { office: 'RBI', unit: '% a year', period: '7 OCT 2026' },
             status: ['Method break'],
-            note: 'The RBI switched from variable auctions to a fixed rate on 29 March 2004. The repo rate became the single policy rate on 3 May 2011.',
+            note: "From 3 May 2011 the repo rate is the RBI's single policy rate.",
             sources: [RBI_TABLE_46, RBI_FIXED_REPO, RBI_TABLE_40, RBI_HIKE, RBI_HOLDS],
             format: { unit: '%', decimals: 2 },
             step: true,
@@ -572,7 +565,7 @@ const topic: Topic = {
             ],
             know: [
               'The RBI started the Liquidity Adjustment Facility in June 2000 with variable auctions. The Handbook first records a lending rate for 27 April 2001.',
-              'From March 2004 the fixed rate holds until the next change.',
+              'The RBI switched from variable auctions to a fixed rate on 29 March 2004. The fixed rate holds until the next change.',
               'In October 2004 the RBI switched the names repo and reverse repo. The Handbook uses the current name for the lending rate throughout.',
               'The Monetary Policy Committee kept the rate at 5.25% in February, April, June and August 2026. It raised the rate to 5.50% in October.',
             ],
@@ -590,15 +583,15 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each prices figure is made, where it breaks, and what is missing.") has no field.
   about: {
     publisher:
-      'The National Statistics Office (NSO), MoSPI, compiles the Consumer Price Index (CPI) for rural, urban and combined India, for each state and UT, and for 12 spending divisions. The Reserve Bank of India (RBI) sets the repo rate and publishes CPI for industrial workers (CPI-IW) from the Labour Bureau in its Handbook of Statistics.',
+      "MoSPI's National Statistics Office (NSO) compiles the Consumer Price Index (CPI). The RBI sets the repo rate and republishes the Labour Bureau's CPI for industrial workers (CPI-IW).",
     frequency:
-      'CPI: monthly. MoSPI released the October 2026 figures on 12 November 2026. The November 2026 release is expected on 14 December 2026. Repo rate: set at each Monetary Policy Committee meeting. CPI-IW long-run table: once a year, in the RBI Handbook (latest 31 July 2026).',
+      'CPI: monthly. MoSPI released October 2026 on 12 November and expects November on 14 December 2026. Repo rate: at each Monetary Policy Committee meeting. CPI-IW long-run table: yearly, in the RBI Handbook.',
     revisions:
-      'The latest month is provisional. MoSPI makes October 2026 final with the November release. September 2026 is final.',
+      'The latest month is provisional. MoSPI makes October 2026 final with the November release.',
     breaks:
-      'Some months in 2013 use base 2010=100. From January 2026 the CPI uses base 2024=100, a new basket and new weights, and 12 COICOP 2018 divisions. The base 2012=100 series ends in December 2025. CPI-IW changed base in 2005-06 and 2020-21. The RBI links it.',
+      'Some months in 2013 use base 2010=100. Base 2012=100 ends in December 2025. Base 2024=100 starts in January 2026, with a new basket, new weights and 12 divisions. CPI-IW changed base in 2005-06 and 2020-21.',
     coverage:
-      'All India, rural, urban and combined. All 36 states and UTs have a combined value for October 2026. State indices use thinner samples than the national index, and MoSPI asks users to read state item indices with caution. CPI-IW covers industrial workers only.',
+      'All India, rural, urban and combined, and all 36 states and UTs. State indices use thinner samples than the national index. CPI-IW covers industrial workers only.',
     missing:
       'MoSPI gives no all-items inflation rate for April and May 2020. The RBI Handbook first records a repo rate for April 2001.',
   },

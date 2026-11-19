@@ -156,7 +156,7 @@ const topic: Topic = {
   // Home tile (S01) lists two questions; the first is used here.
   question: 'What share of electors vote?',
   standfirst:
-    'India had 97.80 crore electors at the 2024 general election, up from 17.32 crore at the first general election in 1951-52.',
+    'India had 97.80 crore electors in 2024, up from 17.32 crore at the first general election in 1951-52.',
   // LATER: the board's figure punch says "ECI"; a Figure takes the chart's office (MoSPI, which compiles ECI data).
   // LATER: Figure 2 has a footnote on the board ("* MoSPI's Women and Men in India 2025 gives 66.10% in Table 5.7 and 65.7% in Table 5.6.").
   // Figure 3 reads 74 from chart 2.1 (Table 5.2); Table 5.3 (chart 3.2) also gives 74 of 543.
@@ -176,16 +176,16 @@ const topic: Topic = {
   parts: [
     {
       title: 'How many people vote?',
-      lede: "In 2024, 65.8% of women electors voted, against 65.6% of men. In 1962, the figures were 46.6% and 62.0%. Women's turnout first passed men's in 2019, at 67.2% against 67.0%, in the elections with figures by sex.",
+      lede: "In 2024, 65.8% of women electors voted, against 65.6% of men. Women's turnout was 46.6% in 1962 and first passed men's on record in 2019.",
       blocks: [
         {
           chart: {
             kind: 'line',
             slug: 'lok-sabha-turnout-by-sex',
             title: 'Lok Sabha turnout, women and men, 1952 to 2024',
-            subtitle: 'Share of electors who voted at each general election, %. Women, men and all electors.',
+            subtitle: 'Women, men and all electors who voted at each general election.',
             punches: { office: 'MoSPI', unit: '% of electors', period: '1952-2024' },
-            note: 'This chart uses MoSPI Table 5.6, which gives 65.7% for all electors in 2024. Table 5.7 gives 66.10%, used in the headline figure and the state charts. The tables do not say why they differ. There are no figures by sex for 1952, 1957 and 1971. The 1952 and 1957 totals are calculated on valid votes polled. Both tables are MoSPI compilations of Election Commission of India data.',
+            note: 'The 2024 total here is 65.7%. The headline figure and state charts use another MoSPI table: 66.10%.',
             sources: [WMI_5_6],
             format: { decimals: 1, unit: '%' },
             y: { min: 40, max: 80, step: 10 },
@@ -206,7 +206,7 @@ const topic: Topic = {
             ],
             know: [
               'Turnout is the share of electors on the roll who voted. MoSPI compiles these figures from Election Commission of India (ECI) data.',
-              'MoSPI gives two values for 2024: 65.7% in Table 5.6 and 66.10% in Table 5.7. The tables do not say why. This chart uses Table 5.6 for every year.',
+              'MoSPI gives 65.7% for 2024 in Table 5.6 and 66.10% in Table 5.7, without a reason. This chart uses Table 5.6.',
               'There are no figures by sex for 1952, 1957 and 1971, so the women and men lines have gaps there.',
               'The totals for 1952 and 1957 are calculated on valid votes polled, not on all votes.',
               'The first general election ran from October 1951 to February 1952. MoSPI dates it 1952.',
@@ -214,9 +214,7 @@ const topic: Topic = {
             processing: [
               'We take every value from Table 5.6 of MoSPI, Women and Men in India 2025.',
               'The table has no text layer, so we type the values from the page and check doubtful digits at a higher zoom.',
-              'We keep the values as published, to one decimal place.',
-              'We leave the years with no figures by sex empty. We do not estimate them.',
-              'We do not put Table 5.7 values on this chart.',
+              'We keep the values as published, to one decimal place. We do not estimate the years with no figures by sex.',
             ],
             nextRelease: 'not announced',
           },
@@ -227,9 +225,9 @@ const topic: Topic = {
             kind: 'line',
             slug: 'lok-sabha-electors',
             title: 'Number of electors, 1952 to 2024',
-            subtitle: 'Electors on the roll at each Lok Sabha general election, crore.',
+            subtitle: 'Electors on the roll at each Lok Sabha general election.',
             punches: { office: 'MoSPI', unit: 'crore', period: '1952-2024' },
-            note: 'The first general election ran in 1951-52; the source dates it 1952. Totals for 2014 to 2024 include third-gender electors.',
+            note: 'The first general election ran in 1951-52. The source dates it 1952.',
             sources: [WMI_5_6],
             // The CSV holds million electors (978.0); the chart prints crore (97.80 crore).
             format: { decimals: 2, scale: 'crore', multiply: 1e6 },
@@ -250,7 +248,7 @@ const topic: Topic = {
             processing: [
               'We take the totals from Table 5.6 of MoSPI, Women and Men in India 2025.',
               'The table has no text layer, so we type the values from the page and check doubtful digits at a higher zoom.',
-              'MoSPI gives millions of electors. We show crore: 10 million is 1 crore.',
+              'MoSPI gives the counts in units of 10 lakh. We convert them to crore.',
               'We keep the values as published and do not correct the 1991 totals.',
             ],
             nextRelease: 'not announced',
@@ -260,18 +258,18 @@ const topic: Topic = {
     },
     {
       title: 'How many women stand, and how many win?',
-      lede: '800 women stood for the Lok Sabha in 2024, 9.6% of the 8,359 candidates. 74 of them won. In 1957, 45 women stood and 27 won. A woman who stood in 2024 was more likely to win than a man: 9.3% of women candidates won, against 6.2% of men.',
+      lede: 'In 2024, 800 women stood for the Lok Sabha and 74 won, 9.3% of them. Women candidates were more likely to win than men.',
       blocks: [
         {
           chart: {
             kind: 'columns',
             slug: 'women-candidates-and-mps',
             title: 'Women candidates and women MPs, 1957 to 2024',
-            subtitle: 'Number of women who stood for the Lok Sabha, and number elected, at each general election. The two panels have different scales: in 2024, 74 of 800 women candidates won.',
+            subtitle: 'Women who stood and women elected, each Lok Sabha election. Panels have different scales.',
             punches: { office: 'MoSPI', unit: 'people', period: '1957-2024' },
             // The board marks the 1999 bar with "*" and starts the note's second sentence with "*".
             // LATER: no way to mark one column with a footnote symbol.
-            note: 'There are no figures by sex for 1951-52. For 1999 the source gives 494 men and 52 women elected, 546 in total, more than the 543 seats; we show the values as published. The 2024 counts are for 542 seats polled; Surat was won unopposed.',
+            note: 'The chart starts in 1957: there are no figures by sex for 1951-52.',
             sources: [WMI_5_2],
             format: { decimals: 0 },
             panels: [
@@ -299,7 +297,7 @@ const topic: Topic = {
               'There is no break-up of candidates by sex for the first general election, in 1951-52.',
               'For 1999 the source gives 494 men and 52 women elected, 546 in all, more than the 543 seats. We keep the values as published.',
               'The 2024 counts cover the 542 seats that went to a poll. Surat was won unopposed.',
-              'The Lok Sabha Secretariat gives a second count for the 18th Lok Sabha: 74 women MPs, 13.62% of 543 seats, as on 20 December 2024 (chart 3.2).',
+              'The Lok Sabha Secretariat also counts 74 women MPs, 13.62% of 543 seats, as on 20 December 2024 (chart 3.2).',
             ],
             processing: [
               'We take the counts from Table 5.2 of MoSPI, Women and Men in India 2025.',
@@ -314,16 +312,16 @@ const topic: Topic = {
     },
     {
       title: 'Which states vote the most?',
-      lede: '66.10% of electors voted in 2024. Turnout was lowest in Bihar, at 56.28%, and highest in Lakshadweep, at 84.98%. Among states with more than 2 crore electors, Assam (81.87%) and Andhra Pradesh (81.78%) had the highest turnout.',
+      lede: 'Turnout in 2024 was highest in Lakshadweep, at 84.98%, and lowest in Bihar, at 56.28%. Among states with more than 2 crore electors, Assam was highest, at 81.87%.',
       blocks: [
         {
           chart: {
             kind: 'states',
             slug: 'lok-sabha-turnout-by-state',
             title: 'Turnout by state and UT, 2024 general election',
-            subtitle: 'Share of electors who voted, %, 18th Lok Sabha election, 2024. Darker tiles had higher turnout.',
+            subtitle: 'Electors who voted in each state and UT. Darker tiles mean higher turnout.',
             punches: { office: 'MoSPI', unit: '% of electors', period: '2024' },
-            note: "Tamil Nadu, outlined, was 70.14%, above India's 66.10%. Gujarat excludes Surat, where the seat was won unopposed and no poll was held. Lakshadweep counts are rounded to thousands in the source.",
+            note: "Tamil Nadu, outlined, was 70.14%, above India's 66.10%. Gujarat excludes Surat, where no poll was held.",
             sources: [WMI_5_7],
             format: { decimals: 2, unit: '%' },
             data: { file: TURNOUT_BY_STATE, where: { series: 'turnout_total' }, x: 'geography' },
@@ -351,10 +349,10 @@ const topic: Topic = {
           chart: {
             kind: 'bars',
             slug: 'lok-sabha-seats-women-mps-by-state',
-            title: 'Lok Sabha seats and women MPs by state and UT, 2024',
-            subtitle: 'Seats in the 18th Lok Sabha and the number held by women, as on 20 Dec 2024. Ranked by seats.',
+            title: 'Lok Sabha seats and women MPs, states and UTs, 2024',
+            subtitle: 'Seats in the 18th Lok Sabha, and seats held by women. Ranked by seats.',
             punches: { office: 'MoSPI', unit: 'seats', period: '20 DEC 2024' },
-            note: 'India: 74 women MPs of 543 seats, 13.62% as published. These counts are from the Lok Sabha Secretariat and include Surat. The source gives state shares as whole numbers.',
+            note: 'India: 74 women MPs of 543 seats, 13.62%. The 543 seats include Surat, won unopposed.',
             sources: [WMI_5_3],
             format: { decimals: 0 },
             by: 'name',
@@ -398,9 +396,9 @@ const topic: Topic = {
             kind: 'states',
             slug: 'nota-share-by-state',
             title: 'NOTA share by state and UT, 2024 general election',
-            subtitle: 'Votes for "None of the above" as a share of votes counted (valid votes plus NOTA), %. Derived by India by Numbers.',
+            subtitle: 'Votes for "None of the above" (NOTA). Votes counted are valid votes plus NOTA.',
             punches: { office: 'ECI', unit: '% of votes counted', period: '2024' },
-            note: 'Derived. ECI Report 33 gives NOTA votes for each constituency. We added them by state, with postal votes, over 542 constituencies. Gujarat excludes Surat, where no poll was held.',
+            note: 'We derive these shares from ECI constituency counts. Gujarat excludes Surat, where no poll was held.',
             sources: [ECI_REPORT_33],
             format: { decimals: 2, unit: '%' },
             data: { file: NOTA_BY_STATE, where: { series: 'nota_share' }, x: 'geography' },
@@ -427,16 +425,16 @@ const topic: Topic = {
     },
     {
       title: 'Who won seats in 2024, and in the states since?',
-      lede: 'The Bharatiya Janata Party won 240 of 543 seats with 36.93% of valid votes. The Indian National Congress won 99 seats with 21.4%. Independents won 7 seats. The other 725 parties not shown by name won 37 seats between them.',
+      lede: 'The Bharatiya Janata Party won 240 seats, with 36.93% of valid votes. The Indian National Congress came second, with 99 seats.',
       blocks: [
         {
           chart: {
             kind: 'table',
             slug: 'lok-sabha-party-results-2024',
             title: 'Seats and vote share by party, 2024 general election',
-            subtitle: 'Seats won (of 543) and share of valid votes, %. Each party with at least 1% of valid votes or at least 5 seats. Independent candidates are one group; the last row combines all remaining parties.',
+            subtitle: 'Parties with at least 1% of valid votes or 5 seats, then all others.',
             punches: { office: 'ECI', unit: 'seats · %', period: '2024' },
-            note: '"ECI" shares are as published in ECI Report 20 for national parties. "Derived" shares are our calculation: votes in ECI Report 33 divided by 63.90 crore valid votes, the ECI total. NOTA is not part of valid votes. The BJP\'s 240 seats include Surat, won unopposed; ECI Report 20 counts 239. Party names are as ECI prints them.',
+            note: 'Basis: "ECI" shares are as published; "Derived" shares are our calculation from ECI vote counts.',
             sources: [ECI_RESULTS_JUN_2024, ECI_REPORT_20, ECI_REPORT_33],
             data: { file: PARTY_RESULTS },
             by: 'party_name',
@@ -450,8 +448,8 @@ const topic: Topic = {
             know: [
               'Seats are from the final ECI results page. They include Surat, won unopposed, so the BJP has 240 here and 239 in ECI Report 20.',
               'Vote shares are of valid votes. NOTA is not a valid vote, so ECI leaves it out of the denominator.',
-              'ECI Report 20 publishes vote shares for the six national parties. For every other party we divide its votes in ECI Report 33 by the ECI total of valid votes.',
-              'The chart names every party with at least 1% of valid votes or at least 5 seats. The other 725 parties are one row; independents have their own row.',
+              'ECI Report 20 gives vote shares for the six national parties. For other parties, we divide votes in Report 33 by 63.90 crore valid votes.',
+              'The chart names each party with at least 1% of valid votes or 5 seats. The other 725 parties are one row, and independents another.',
               'Party names are as ECI prints them, including spelling.',
             ],
             processing: [
@@ -469,13 +467,13 @@ const topic: Topic = {
             kind: 'bars',
             slug: 'assembly-elections-2025-2026',
             title: 'State assembly elections, 2025 and 2026',
-            subtitle: 'Seats won by party, seven states and UTs. Main polls February 2025 to April 2026; West Bengal includes the re-poll of 21 May 2026. Each panel has its own scale.',
+            subtitle: 'Seats won by party, seven states and UTs. Each panel has its own scale.',
             punches: { office: 'ECI', unit: 'seats · %', period: '2025-2026' },
             status: ['Provisional'],
             // Board note said "West Bengal: results for 293 of 294 seats; ECI ordered a re-poll in
             // 144-Falta for 21 May 2026." The data now includes the Falta result (README check,
             // 18 Nov 2026: BJP 208, all 294 seats), so that sentence is rewritten from the data.
-            note: "Turnout for 2026 is the provisional poll-day figure from ECI releases. It excludes service voters and postal ballots. Bihar's 67.13% is also provisional; ECI gives final turnout in its Index Cards. Delhi 2025: no ECI turnout figure is shown. West Bengal: the seat count includes the 144-Falta re-poll of 21 May 2026. Puducherry counts 30 elected seats, not nominated members.",
+            note: 'West Bengal includes the 144-Falta re-poll of 21 May 2026.',
             sources: [
               ECI_RESULTS_DELHI_2025,
               ECI_RESULTS_BIHAR_2025,
@@ -508,8 +506,8 @@ const topic: Topic = {
               assembly('west-bengal', 'West Bengal'),
             ],
             know: [
-              'Seven states and UTs held a general assembly election between February 2025 and April 2026: Delhi and Bihar in 2025; Assam, Kerala, Puducherry, Tamil Nadu and West Bengal in 2026.',
-              'Turnout is the poll-day figure from ECI releases. It excludes service voters and postal ballots, so the final figure in ECI Index Cards can be higher.',
+              'Delhi and Bihar held assembly elections in 2025; Assam, Kerala, Puducherry, Tamil Nadu and West Bengal in 2026. Polls ran February 2025 to April 2026.',
+              'Turnout is the provisional poll-day figure from ECI. It excludes service voters and postal ballots, so the final Index Card figure can be higher.',
               'ECI gives no turnout release for Delhi 2025, so the chart shows no Delhi turnout.',
               'West Bengal includes the result of the re-poll in 144-Falta, held on 21 May 2026.',
               'Puducherry has 30 elected seats. Nominated members are not counted.',
@@ -531,17 +529,17 @@ const topic: Topic = {
     intro:
       "ECI's reports are the source; we read archived copies of the original ECI pages.",
     publisher:
-      'The Election Commission of India (ECI) runs national and state elections and publishes electors, votes and results. MoSPI republishes the Lok Sabha series by sex in Women and Men in India 2025. The Lok Sabha Secretariat gives the count of women MPs.',
+      'The Election Commission of India (ECI) runs elections and publishes the results. MoSPI republishes the Lok Sabha series by sex. The Lok Sabha Secretariat counts women MPs.',
     frequency:
-      'Lok Sabha general elections take place every five years; the latest was in 2024. Each state holds its assembly election at the end of its own five-year term. ECI publishes results on counting day and statistical reports later. Women and Men in India is annual; the 2025 edition came out on 29 April 2026.',
+      'Lok Sabha elections are every five years, most recently in 2024. Each state assembly has its own five-year term. Women and Men in India is annual; the 2025 edition came out on 29 April 2026.',
     revisions:
-      'Results are final when ECI declares them. Poll-day turnout for assembly elections is provisional: it excludes postal ballots and service voters, and ECI gives final turnout in its Index Cards. The Lok Sabha counts on this page are final.',
+      'Results are final when ECI declares them. Poll-day turnout for assembly elections is provisional: it excludes postal ballots and service voters. The Lok Sabha counts on this page are final.',
     breaks:
-      'Counts have no base year. The state charts use 2024 boundaries: Jammu and Kashmir and Ladakh are separate, and Dadra and Nagar Haveli and Daman and Diu are one UT. Earlier elections used other boundaries, so no state series goes back before 2024. MoSPI dates the first general election 1952; it ran from October 1951 to February 1952.',
+      'Counts have no base year. The state charts use 2024 boundaries, so no state series goes back before 2024. MoSPI dates the first general election, held October 1951 to February 1952, as 1952.',
     coverage:
-      'All 543 Lok Sabha seats. Surat was won unopposed in 2024, so turnout and votes cover 542 constituencies and seat counts cover 543. MoSPI gives 65.7% turnout for 2024 in Table 5.6 and 66.10% in Table 5.7, without saying why they differ; chart 1.1 uses Table 5.6, the headline figure and chart 3.1 use Table 5.7. Assembly elections: Delhi and Bihar (2025); Assam, Kerala, Puducherry, Tamil Nadu and West Bengal (2026).',
+      'All 543 Lok Sabha seats. Surat was won unopposed in 2024, so turnout and votes cover 542 constituencies. Assembly elections: Delhi and Bihar (2025); Assam, Kerala, Puducherry, Tamil Nadu and West Bengal (2026).',
     missing:
-      'No turnout by sex for 1952, 1957 and 1971, and no electors by sex for 1952 and 1957. ECI Report 20 gives vote shares for the six national parties; we derived the other party shares, and NOTA by state, from ECI Report 33. This page shows no party vote shares for the 2025 and 2026 assembly elections and no turnout for Delhi 2025. For 1999, MoSPI gives 494 men and 52 women elected, 546 in all; we keep the values as published. No ECI or MoSPI file states a reuse licence.',
+      'No turnout or electors by sex for 1952 and 1957, and no turnout by sex for 1971. No assembly vote shares, and no Delhi 2025 turnout. No ECI or MoSPI file states a reuse licence.',
   },
   // The board has six rows; rows that name two releases are split so each has its own link and date.
   sources: [

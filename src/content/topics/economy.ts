@@ -184,18 +184,16 @@ const topic: Topic = {
   parts: [
     {
       title: 'How fast is the economy growing?',
-      lede: 'The fastest quarter on the new 2022-23 base was January to March 2026, at 8.6%. On the old base, output fell by 23.1% in April to June 2020, during the COVID-19 lockdown.',
+      lede: 'The fastest quarter on the new base was January to March 2026, at 8.6%. On the old base, output fell 23.1% in April to June 2020, in the COVID-19 lockdown.',
       blocks: [
         {
           chart: {
             kind: 'columns',
             slug: 'gdp-growth-quarterly',
             title: 'Quarterly GDP growth in India, Q1 2012-13 to Q1 2026-27',
-            subtitle:
-              'Change in real GDP on the same quarter a year earlier, %. Base 2011-12 to Q4 2022-23; base 2022-23 from Q1 2023-24. Quarters follow the financial year (Q1 = April to June).',
+            subtitle: 'Real GDP, all India. Financial-year quarters: Q1 is April to June.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'Q1 2026-27' },
             status: ['Method break'],
-            note: 'The two bases overlap from Q1 2023-24 to Q2 2025-26 and give different numbers for the same quarter (Q1 2025-26: 7.8% on base 2011-12, 6.9% on base 2022-23). The chart shows the new base where it exists. The marker shows the change of base between Q4 2022-23 and Q1 2023-24, two consecutive quarters.',
             sources: [GDP_PRESS_NOTE, NAS_API],
             format: { unit: '%', decimals: 1 },
             callouts: [
@@ -216,10 +214,9 @@ const topic: Topic = {
             y: { step: 10 },
             breaks: [{ x: '2023-24 Q1', label: 'Base 2022-23 from Q1 2023-24' }],
             know: [
-              'Real GDP is output at constant prices, so the rate shows growth after inflation. Each bar compares a quarter with the same quarter a year earlier.',
-              'Quarters follow the financial year: Q1 is April to June.',
-              'MoSPI moved GDP to base 2022-23 on 27 February 2026. The new base starts in 2022-23, so its growth rates start in Q1 2023-24. Earlier quarters are on base 2011-12.',
-              'The two bases give different rates where they overlap, Q1 2023-24 to Q2 2025-26. For Q1 2025-26 they give 7.8% (base 2011-12) and 6.9% (base 2022-23).',
+              'Real GDP is output at constant prices, so growth excludes inflation. Each bar compares a quarter with the same quarter a year earlier.',
+              'MoSPI moved GDP to base 2022-23 on 27 February 2026. Its growth rates start in Q1 2023-24. Earlier quarters use base 2011-12.',
+              'The bases overlap from Q1 2023-24 to Q2 2025-26 and differ. Q1 2025-26 is 7.8% on base 2011-12 and 6.9% on base 2022-23.',
               'MoSPI revises recent quarters with each release. The release of 31 August 2026 revised Q1 2022-23 to Q4 2025-26.',
             ],
             processing: [
@@ -231,17 +228,16 @@ const topic: Topic = {
             nextRelease: '2026-11-30',
           },
         },
-        { text: "India's economy grew by 7.8% in 2025-26. It shrank in six years since 1951. The largest fall was 5.78% in 2020-21, during COVID-19; the one before that was 5.24% in 1979-80." },
+        { text: "India's economy grew 7.8% in 2025-26. It shrank in six years since 1951, most in 2020-21, during COVID-19." },
         {
           chart: {
             kind: 'columns',
             slug: 'gdp-growth-annual',
             title: 'Annual GDP growth in India, 1951-52 to 2025-26',
-            subtitle:
-              'Change in real GDP on the year before, %. 1951-52 to 2022-23 derived by us from constant-price GDP levels (base 2011-12); 2023-24 to 2025-26 as published (base 2022-23).',
+            subtitle: 'Real GDP, all India, by financial year.',
             punches: { office: 'MoSPI', unit: '% y/y', period: '2025-26' },
             status: ['Method break'],
-            note: 'Derived. Growth for 1951-52 to 2022-23 is computed from published constant-price GDP; it matches RBI Handbook Table 227 for 2019-20 to 2022-23 (3.87%, -5.78%, 9.69%, 7.61%). 2025-26 is a Provisional Estimate and 2024-25 a First Revised Estimate. The revision of 31 August 2026 raised 2023-24 to 7.3% and 2024-25 to 7.2%.',
+            note: 'We derive growth to 2022-23 from published GDP levels. 2025-26 is a Provisional Estimate.',
             sources: [NAS_API],
             format: { unit: '%' },
             callouts: [
@@ -257,13 +253,13 @@ const topic: Topic = {
             breaks: [{ x: '2023-24', label: 'Base 2022-23 from 2023-24' }],
             know: [
               'Each bar is the change in real GDP for the financial year (April to March) on the year before.',
-              'For 1951-52 to 2022-23 we derive the rate from the constant-price GDP levels that MoSPI publishes on base 2011-12. For 2023-24 to 2025-26 the rate is as MoSPI publishes it on base 2022-23.',
+              'We derive the rates for 1951-52 to 2022-23 from MoSPI constant-price GDP on base 2011-12. Later rates are as published on base 2022-23.',
               'The derived rates match RBI Handbook Table 227 for 2019-20 to 2022-23.',
               '2025-26 is a Provisional Estimate and 2024-25 a First Revised Estimate. Both can change.',
-              'The RBI Handbook of 31 July 2026 has older rates for 2023-24 (7.21%) and 2024-25 (7.1%). The release of 31 August 2026 revised them to 7.3% and 7.2%.',
+              'The release of 31 August 2026 revised 2023-24 to 7.3% and 2024-25 to 7.2%. The RBI Handbook has the older 7.21% and 7.1%.',
             ],
             processing: [
-              'Fetch GDP at constant 2011-12 prices from the MoSPI eSankhyiki API: the back series (1950-51 to 2011-12) and the current series (2011-12 to 2022-23, latest estimate for each year).',
+              'Fetch GDP at constant 2011-12 prices from the MoSPI eSankhyiki API: back series 1950-51 to 2011-12, current series to 2022-23 (latest estimates).',
               'Compute growth on the year before from the levels, for 1951-52 to 2022-23.',
               'Check the derived rates against RBI Handbook Table 227 for 2019-20 to 2022-23.',
               'Add the published growth rates on base 2022-23 for 2023-24 to 2025-26, and mark the break.',
@@ -282,11 +278,10 @@ const topic: Topic = {
             kind: 'area',
             slug: 'gva-sector-shares',
             title: 'Shares of the economy by sector, India, 1950-51 to 2025-26',
-            subtitle:
-              'Share of gross value added (GVA) at current prices, %. Derived by us from published GVA by industry. Base 2011-12 to 2021-22; base 2022-23 from 2022-23.',
+            subtitle: 'Share of gross value added (GVA) at current prices, all India.',
             punches: { office: 'MoSPI', unit: '% of GVA', period: '2025-26' },
             status: ['Method break'],
-            note: 'Derived from published GVA. Primary is agriculture, livestock, forestry and fishing, plus mining and quarrying. Industry (secondary) is manufacturing, utilities and construction. Services (tertiary) is total GVA minus the two. In 2022-23 the bases differ: primary 20.12% on base 2011-12, 22.04% on base 2022-23. Shares may not add to 100 because of rounding.',
+            note: 'Primary is farming, forestry, fishing and mining. Industry is manufacturing, utilities and construction. Services is the rest.',
             sources: [NAS_API],
             format: { unit: '%', decimals: 2 },
             // Each sector is two series, one per base; both bases have a 2022-23 row, so the
@@ -304,13 +299,13 @@ const topic: Topic = {
             breaks: [{ x: '2022-23', label: 'Base 2022-23', before: 'Base 2011-12' }],
             y: { min: 0, max: 100, step: 25 },
             know: [
-              "Each share is the sector's part of gross value added (GVA) at current prices. The three shares add to 100%.",
+              "Each share is the sector's part of gross value added (GVA) at current prices. The three shares add to 100%, except for rounding.",
               'Primary is agriculture, livestock, forestry and fishing, plus mining and quarrying. Industry is manufacturing, utilities and construction. Services is the rest.',
               'We derive the shares from the GVA levels that MoSPI publishes. The grouping follows the MoSPI press note of 31 August 2026.',
-              'The 2022-23 base starts in 2022-23. That year has a value on both bases, and they differ by about 2 points for the primary sector.',
+              '2022-23 has a value on both bases. The primary share is 20.12% on base 2011-12 and 22.04% on base 2022-23.',
             ],
             processing: [
-              'Fetch GVA by industry at current prices (indicator 1) from the MoSPI eSankhyiki API: back series and current series on base 2011-12, and current series on base 2022-23.',
+              'Fetch GVA by industry at current prices (indicator 1) from the MoSPI eSankhyiki API, for both bases and the 2011-12 back series.',
               'Add the industries into the primary and secondary sectors, and take services as total GVA minus the two.',
               'Divide each sector by total GVA for the year.',
               'Keep each base as a separate series and mark the break at 2022-23.',
@@ -322,18 +317,17 @@ const topic: Topic = {
     },
     {
       title: 'Which states are richest and poorest per person?',
-      lede: "In 2024-25 income per person was highest in Sikkim, at ₹6.46 lakh, and in Goa, at ₹6.37 lakh. It was lowest in Bihar, at ₹69,211: less than a ninth of Sikkim's. The national figure was ₹2.05 lakh.",
+      lede: 'In 2024-25 income per person was highest in Sikkim, at ₹6.46 lakh, and lowest in Bihar, at ₹69,211. The national figure was ₹2.05 lakh.',
       blocks: [
-        { text: 'Income per person was above the national figure in 19 of the 32 states and UTs with data. Four had more than ₹4 lakh a year: Sikkim, Goa, Delhi and Chandigarh.' },
+        { text: 'Income per person was above the national figure in 19 of the 32 states and UTs with data.' },
         {
           chart: {
             kind: 'states',
             slug: 'income-per-person-by-state',
             title: 'Income per person by state and UT, 2024-25',
-            subtitle:
-              'Net state domestic product per person, rupees a year, current prices, 2024-25. State accounts are on the 2011-12 base. Darker means higher.',
+            subtitle: 'Net state domestic product (NSDP) per person, at current prices. Darker means higher.',
             punches: { office: 'MoSPI', unit: '₹ a year', period: '2024-25' },
-            note: 'India is per capita net national income, the comparator the RBI uses. 32 of 36 states and UTs: there is no 2024-25 figure for Nagaland (latest 2023-24), Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu. Assam and Haryana: MoSPI data as on 1 August 2025, from the RBI Handbook.',
+            note: 'India is per capita net national income. Four states and UTs have no 2024-25 figure.',
             sources: [STATE_API, RBI_TABLE_9],
             format: { unit: '₹', decimals: 0 },
             data: { file: 'economy/per-capita-nsdp-by-state.csv', where: { price_basis: 'current prices' } },
@@ -344,8 +338,9 @@ const topic: Topic = {
             know: [
               'Income per person is net state domestic product (NSDP) per person, in rupees a year at current prices. It is not household income.',
               'The India value is per capita net national income, the comparator the RBI uses in the same table.',
-              'MoSPI has no 2024-25 value for Nagaland (latest 2023-24: ₹1.55 lakh), Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu. Assam and Haryana are MoSPI data as on 1 August 2025, from the RBI Handbook.',
-              'State accounts are on base 2011-12. From 2019-20 Jammu and Kashmir covers the union territory only, without Ladakh, so its values before and after do not compare.',
+              'MoSPI has no 2024-25 value for Nagaland, Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu. Nagaland had ₹1.55 lakh in 2023-24.',
+              'Assam and Haryana are MoSPI data as on 1 August 2025, from the RBI Handbook.',
+              'State accounts are on base 2011-12. From 2019-20 Jammu and Kashmir excludes Ladakh, so earlier values do not compare.',
             ],
             processing: [
               'Fetch per capita NSDP at current prices for 2024-25 (indicator 25, base 2011-12) from the MoSPI eSankhyiki API.',
@@ -355,16 +350,15 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
-        { text: 'Arunachal Pradesh grew fastest in 2024-25, at 13.8%, followed by Goa (12.0%) and Mizoram (11.3%). The Andaman and Nicobar Islands grew slowest, at 4.5%.' },
+        { text: 'Arunachal Pradesh grew fastest in 2024-25, at 13.8%. The Andaman and Nicobar Islands grew slowest, at 4.5%.' },
         {
           chart: {
             kind: 'states',
             slug: 'gsdp-growth-by-state',
             title: 'Economic growth by state and UT, 2024-25',
-            subtitle:
-              'Change in real gross state domestic product (GSDP) on 2023-24, %, constant 2011-12 prices. State accounts are on the 2011-12 base. India: GDP growth on base 2011-12 (6.4%), not the 7.2% headline on base 2022-23.',
+            subtitle: 'Real gross state domestic product (GSDP), at constant 2011-12 prices.',
             punches: { office: 'MoSPI', unit: '% y/y', period: '2024-25' },
-            note: 'India is a reference line, not a rank. 30 of 36 states and UTs: the MoSPI release has no 2024-25 figure for Assam, Haryana, Nagaland, Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu. Only 15 states have 2025-26 figures, so the chart shows 2024-25. State accounts are on base 2011-12; do not compare them with the national headline on base 2022-23.',
+            note: 'India is GDP growth on base 2011-12, 6.4%, not the 7.2% headline. Six states and UTs have no data.',
             sources: [STATE_API],
             format: { unit: '%', decimals: 1 },
             data: { file: 'economy/gsdp-growth-by-state.csv' },
@@ -392,18 +386,17 @@ const topic: Topic = {
     },
     {
       title: 'How is industry doing month by month?',
-      lede: 'Industrial output grew by 6.7% in September 2026, with manufacturing up 7.6% and electricity and gas up 11.2%. Mining fell by 6.2%.',
+      lede: 'Industrial output grew 6.7% in September 2026. Manufacturing rose 7.6%, and mining fell 6.2%.',
       blocks: [
         {
           chart: {
             kind: 'line',
             slug: 'iip-growth',
             title: 'Industrial production growth in India, April 2006 to September 2026',
-            subtitle:
-              'Change in the Index of Industrial Production (IIP) on the same month a year earlier. Each base year has a separate line.',
+            subtitle: 'Index of Industrial Production (IIP), all India. Each base has its own line.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'SEP 2026' },
             status: ['Provisional', 'Method break'],
-            note: 'The lines switch to base 2011-12 in April 2013 and to base 2022-23 in April 2024. MoSPI gives no rate for April 2021 on base 2011-12.',
+            note: 'MoSPI gives no rate for April 2021, so the line has a gap.',
             sources: [IIP_2004_API, IIP_API, IIP_RELEASE],
             format: { unit: '%', decimals: 1 },
             // The CSV has no row for April 2021, so the line breaks there (a two-month step).
@@ -436,7 +429,7 @@ const topic: Topic = {
               { series: 'base-2022-23', x: '2026-09' },
             ],
             know: [
-              'The IIP measures the volume of output in mining, manufacturing, and electricity and gas. Each point compares a month with the same month a year earlier.',
+              'The IIP measures output volume in mining, manufacturing, and electricity and gas. Each point compares a month with the same month a year earlier.',
               'September 2026 is a quick estimate. MoSPI revises it with the next release: August 2026 went from 8.0% to 7.8%.',
               'The published year-on-year rates on base 2004-05 and base 2011-12 differ in all 48 months that overlap.',
               'The 2011-12 and 2022-23 bases overlap from April 2024 to March 2026 and give different rates.',
@@ -451,17 +444,16 @@ const topic: Topic = {
             nextRelease: IIP_NEXT,
           },
         },
-        { text: 'August 2026 is now final at 7.8%, down from the 8.0% quick estimate. Mining fell in both months: by 4.6% in August and 6.2% in September.' },
+        { text: 'MoSPI revised August 2026 from 8.0% to 7.8%. Mining fell in both months.' },
         {
           chart: {
             kind: 'bars',
             slug: 'iip-growth-by-sector',
             title: 'Industrial production growth by sector, August and September 2026',
-            subtitle:
-              'Change in the IIP (base 2022-23) on the same month a year earlier, %. September 2026 quick estimate; August 2026 final.',
+            subtitle: 'Index of Industrial Production (IIP), all India, base 2022-23.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'SEP 2026' },
             status: ['Provisional'],
-            note: 'The overall index comes first; the three sectors after it are not ranked. MoSPI revises each quick estimate the next month.',
+            note: 'The general index comes first. The three sectors are not ranked.',
             sources: [IIP_RELEASE],
             format: { unit: '%', decimals: 1 },
             by: 'category',
@@ -493,9 +485,9 @@ const topic: Topic = {
     },
     {
       title: 'How many rupees does a US dollar cost?',
-      lede: 'A US dollar cost ₹4.76 on average in calendar year 1950, according to the IMF. RBI gives an average of ₹7.56 for 1970-71 and ₹88.31 for 2025-26. At the end of March 2026 it cost ₹94.65.',
+      lede: 'A US dollar cost ₹88.31 on average in 2025-26, up from ₹4.76 in 1950. At the end of March 2026 it cost ₹94.65.',
       blocks: [
-        { text: 'On 18 November 2026 a dollar cost ₹93.3558, up from ₹89.9792 on 1 January. The rupee was weakest on 20 May 2026, at ₹96.8441 per dollar.' },
+        { text: 'On 18 November 2026 a dollar cost ₹93.3558. The rupee was weakest on 20 May 2026, at ₹96.8441.' },
         {
           periods: [
             {
@@ -505,9 +497,8 @@ const topic: Topic = {
                 kind: 'line',
                 slug: 'usd-inr-daily',
                 title: 'The rupee in 2026, day by day',
-                subtitle: 'FBIL reference rate, rupees per US dollar, working days, 1 January to 18 November 2026. A higher line means a weaker rupee.',
+                subtitle: 'FBIL reference rate on each working day. A higher line means a weaker rupee.',
                 punches: { office: 'FBIL', unit: '₹ per US$', period: '18 NOV 2026' },
-                note: 'The rate for 18 November 2026 is as at 1:00 pm on the RBI home page.',
                 sources: [FBIL_ARCHIVE, RBI_HOME],
                 format: { unit: '₹', decimals: 2 },
                 series: [
@@ -540,10 +531,10 @@ const topic: Topic = {
                 kind: 'line',
                 slug: 'usd-inr-monthly',
                 title: 'The rupee since 1998, month by month',
-                subtitle: 'Monthly average of the daily reference rate, rupees per US dollar, September 1998 to November 2026. A higher line means a weaker rupee.',
+                subtitle: 'Monthly average of the daily reference rate. A higher line means a weaker rupee.',
                 punches: { office: 'RBI', unit: '₹ per US$', period: 'NOV 2026' },
                 status: ['Provisional'],
-                note: 'RBI reference rate to 9 July 2018, FBIL reference rate from 10 July 2018. November 2026 is 1 to 18 November. February 2021 is the average of 8 days: FBIL gives no rate for 1 to 15 or 19 February 2021.',
+                note: 'November 2026 covers 1 to 18 November. February 2021 averages only 8 days.',
                 sources: [RBI_ARCHIVE_LONG, FBIL_RATES, FBIL_ARCHIVE],
                 format: { unit: '₹', decimals: 2 },
                 series: [{ key: 'monthly', label: 'Rupees per US dollar', color: 'ink', file: 'economy/usd-inr-monthly.csv' }],
@@ -558,12 +549,13 @@ const topic: Topic = {
                   'The rupee was strongest in January 2008, at an average of ₹39.37 per dollar, and weakest in July 2026, at ₹95.82.',
                   'RBI set the reference rate until 9 July 2018. Financial Benchmarks India (FBIL) has set it since 10 July 2018.',
                   'November 2026 is a part month and can change.',
+                  'FBIL gives no rate for 1 to 15 or 19 February 2021, so that month averages 8 days.',
                 ],
                 processing: [
                   'Read the US dollar rate for each working day from 25 August 1998 to 24 July 2018 in the RBI Reference Rate Archive.',
-                  'Read the FBIL US dollar reference rate for each working day from 10 July 2018 to 31 December 2025 from fbil.org.in. For 2026, use the daily series of chart "The rupee in 2026, day by day".',
-                  'Take each day from one source: RBI to 9 July 2018, FBIL after. Average the days of each month. August 1998 starts on the 25th, so the series starts in September 1998.',
-                  'Check: the average of all days in each financial year from 1999-00 to 2025-26 is within ₹0.08 of the financial-year average in RBI Handbook Table 133.',
+                  "Read the FBIL rate for each working day from 10 July 2018 to 31 December 2025 from fbil.org.in. For 2026, use the daily chart's series.",
+                  'Take RBI rates to 9 July 2018 and FBIL rates after. Average the days of each month. Start in September 1998, the first full month.',
+                  'Check each financial-year average of the days, 1999-00 to 2025-26, against RBI Handbook Table 133. All are within ₹0.08.',
                 ],
                 nextRelease: '2026-11-18',
               },
@@ -578,7 +570,7 @@ const topic: Topic = {
                 subtitle: 'IMF calendar years to 1969. RBI financial years from 1970-71.',
                 punches: { office: 'RBI · IMF', unit: '₹ per US$', period: '2025-26' },
                 status: ['Method break'],
-                note: 'The solid lines show RBI financial-year averages, and the dashed line shows IMF calendar-year estimates.',
+                note: 'The dashed line shows IMF estimates.',
                 sources: [RBI_TABLE_133, RBI_TABLE_133_2002, IMF_IFS],
                 format: { unit: '₹', decimals: 2 },
                 series: [
@@ -608,9 +600,10 @@ const topic: Topic = {
                 ],
                 know: [
                   'The IMF averages use January to December. The RBI averages use April to March.',
-                  'India devalued the rupee in September 1949. India pegged the rupee to sterling before 1971. The official rate rose from ₹4.76 to ₹7.50 per US dollar in June 1966.',
+                  'India devalued the rupee in September 1949. In June 1966 the official rate rose from ₹4.76 to ₹7.50 per US dollar.',
+                  'India pegged the rupee to sterling before 1971.',
                   'India devalued the rupee in July 1991. A dual exchange rate began in March 1992. India adopted a single market rate in 1993.',
-                  'RBI uses official rates to 1991-92 and FEDAI indicative rates from 1992-93. It uses RBI reference rates from May 2012 and FBIL reference rates from 10 July 2018.',
+                  'RBI uses official rates to 1991-92, FEDAI indicative rates from 1992-93, RBI reference rates from May 2012, and FBIL rates from 10 July 2018.',
                   'Table 133 also gives the rate at the end of March 2026. It was ₹94.65.',
                 ],
                 processing: [
@@ -630,17 +623,17 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each economy figure is made, where it breaks, and what is missing.") has no field.
   about: {
     publisher:
-      'The National Statistics Office (NSO), MoSPI, publishes the national accounts (GDP, GVA by industry), the state accounts and the Index of Industrial Production (IIP). The Reserve Bank of India (RBI) publishes the exchange rate tables; the daily reference rate comes from Financial Benchmarks India (FBIL).',
+      "MoSPI's National Statistics Office (NSO) publishes the national and state accounts and the Index of Industrial Production (IIP). The RBI publishes exchange rate tables. Financial Benchmarks India (FBIL) sets the daily reference rate.",
     frequency:
-      'GDP: quarterly. MoSPI released the Q1 2026-27 estimates on 31 August 2026. IIP: monthly, on the 28th; the October 2026 release is expected on 28 November 2026. State accounts: as states report. RBI Handbook: once a year (latest 31 July 2026). FBIL reference rate: each working day.',
+      'GDP: quarterly (latest 31 August 2026). IIP: monthly; October 2026 is due on 30 November 2026. State accounts: as states report. RBI Handbook: yearly. FBIL rate: each working day.',
     revisions:
-      'The release of 31 August 2026 revised 2022-23 to 2025-26. The RBI Handbook of 31 July 2026 has the earlier growth rates (7.21% for 2023-24, 7.1% for 2024-25); this page uses the newer 7.3% and 7.2%. 2025-26 is a Provisional Estimate. MoSPI revises each IIP quick estimate the next month: August 2026 went from 8.0% to 7.8%.',
+      'MoSPI revised 2022-23 to 2025-26 on 31 August 2026. This page uses the new rates, not the older RBI Handbook rates. 2025-26 is a Provisional Estimate. MoSPI revises each IIP quick estimate the next month.',
     breaks:
-      'GDP moved to base 2022-23 on 27 February 2026; earlier years stay on base 2011-12, and every chart marks the break. State accounts are still on base 2011-12, so state growth does not compare with the national 2022-23 headline. IIP moved to base 2022-23; its growth rates are valid from April 2024. Derived: annual growth before 2023-24 (chart 1.2) and all sector shares (chart 2.1).',
+      'GDP moved to base 2022-23 on 27 February 2026. State accounts stay on base 2011-12. IIP growth on base 2022-23 starts in April 2024. We derive annual growth before 2023-24, and sector shares.',
     coverage:
-      'All India for GDP, GVA, IIP and the exchange rate. Income per person covers 32 of the 36 states and UTs for 2024-25; GSDP growth covers 30. India in chart 3.1 is per capita net national income, the comparator the RBI uses. From 2019-20 Jammu and Kashmir covers the union territory only, without Ladakh.',
+      'All India for GDP, GVA, IIP and the exchange rate. For 2024-25, income per person covers 32 of 36 states and UTs, and GSDP growth covers 30. Jammu and Kashmir excludes Ladakh from 2019-20.',
     missing:
-      'MoSPI has no 2024-25 income per person for Nagaland (latest 2023-24: ₹1.55 lakh), Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu, and no 2024-25 GSDP growth for those four plus Assam and Haryana. Only 15 states have 2025-26 figures. MoSPI gives no IIP rate for April 2021 on the 2011-12 base. No publisher states a reuse licence for these data.',
+      'MoSPI has no 2024-25 income per person for four states and UTs, and no GSDP growth for six. It has no IIP rate for April 2021. No publisher states a reuse licence.',
   },
   sources: [GDP_PRESS_NOTE, ESANKHYIKI, IIP_RELEASE, RBI_HANDBOOK, RBI_TABLE_133_2002, IMF_IFS, FBIL_ARCHIVE, RBI_HOME],
   related: [

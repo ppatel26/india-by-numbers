@@ -129,7 +129,7 @@ const stateProfile: StateProfile = {
         { label: 'Maternal mortality', chart: 'maternal-mortality-by-state' },
         { label: 'Children who are stunted', chart: 'stunting-by-state', series: 'nfhs6' },
       ],
-      footnote: 'Ranks count only states and UTs with data. SRS and NFHS figures are survey estimates. For the smaller states and UTs, infant mortality is a three-year average (2022-24); India and the bigger states are single-year 2024 values, so their ranks mix the two.',
+      footnote: 'Ranks count only states and UTs with data. SRS and NFHS figures are survey estimates. Infant mortality is a 2022-24 average for smaller states and UTs and a 2024 value for the others, so ranks mix the two.',
     },
     {
       topic: 'education',

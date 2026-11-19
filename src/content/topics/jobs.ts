@@ -192,6 +192,8 @@ const surveyBreaks = [
 ]
 
 const subsidiaryRule = 'From 2004-05, the survey counted subsidiary work if it lasted at least 30 days in the past year.'
+const surveyChange = 'PLFS replaced NSS in 2017-18 and changed its sample design in 2025. For 2022 to 2024 there are both calendar and July to June estimates.'
+const historyNote = 'Dashed lines and the 2025 dots are calendar years. Lines break at each change of survey method.'
 
 function seriesByPeriod(
   series: Pick<Series, 'key' | 'label' | 'color'>,
@@ -310,7 +312,7 @@ const topic: Topic = {
   hindi: 'रोज़गार',
   question: 'How many people are out of work, and is the rate going up or down?',
   standfirst:
-    'In October 2026, 4.9% of people aged 15 and over who were working or looking for work were unemployed, down from 5.2% a year earlier.',
+    'In October 2026, 4.9% of the labour force aged 15 and over was unemployed, down from 5.2% a year earlier.',
   figures: [
     { chart: 'unemployment-rate-monthly', series: 'india', label: 'Unemployment rate, ages 15+, current weekly status' },
     {
@@ -324,18 +326,17 @@ const topic: Topic = {
   parts: [
     {
       title: 'How many people are out of work?',
-      lede: 'The monthly survey counts what people did in the 7 days before the interview, the current weekly status. Since April 2025 the rate has stayed between 4.7% and 5.6%. In October 2026 it was 6.7% in towns and cities and 4.2% in villages.',
+      lede: 'Since April 2025 the monthly rate has stayed between 4.7% and 5.6%. It is higher in towns and cities than in villages.',
       blocks: [
         {
           chart: {
             kind: 'line',
             slug: 'unemployment-rate-monthly',
             title: 'Unemployment rate in India, April 2025 to October 2026',
-            subtitle:
-              'Unemployed people as a share of the labour force, India, ages 15 and over, current weekly status, %, monthly, April 2025 to October 2026.',
+            subtitle: 'Unemployed share of the labour force, current weekly status, rural and urban India.',
             punches: { office: 'MoSPI', unit: '% 15+', period: 'OCT 2026' },
             status: ['Survey estimate'],
-            note: 'Monthly estimates began in April 2025, after the survey design changed in January 2025. MoSPI gives no rural rate for March 2026; the overall and urban rates for that month come from its press note of 15 April 2026.',
+            note: 'The rural line has no value for March 2026. MoSPI did not publish one.',
             sources: [plfsMonthlyOct2026, plfsMonthlyPressOct2026, plfsMonthlyPressMar2026],
             format: { unit: '%', decimals: 1 },
             y: { min: 0, max: 8, step: 2 },
@@ -372,33 +373,32 @@ const topic: Topic = {
               },
             ],
             know: [
-              'The rate is the share of the labour force, people working or looking for work, who had no work in the 7 days before the interview (current weekly status). It covers people aged 15 and over.',
+              'The rate is the share of the labour force aged 15+ with no work in the 7 days before the interview (current weekly status).',
               'Monthly estimates start in April 2025, after PLFS moved to a new sample design in January 2025. There is no monthly series before that.',
-              'MoSPI gives no rural rate for March 2026, and no rates by sex or for ages 15 to 29 for that month. The overall rate (5.1%) and the urban rate (6.8%) for March 2026 come from the press note of 15 April 2026.',
-              'Weekly rates are higher than the usual-status rates in the annual report. In 2025 the usual-status rate was 3.1%, and the weekly rate was between 4.7% and 5.6% in every month from April to December.',
+              'MoSPI gives no rural rate for March 2026, and no rates by sex or age for that month.',
+              'Weekly rates run higher than the usual-status rates in the annual report. In 2025 the usual-status rate was 3.1%.',
             ],
             processing: [
               'Read the monthly LFPR, WPR and unemployment rates for April 2025 to October 2026 from the MoSPI eSankhyiki API (PLFS, current weekly status).',
-              'Add March 2026 from the sentences of the revised March 2026 press note, because the API skips that month.',
-              'Check June to October 2026 against Statement 3 of the October 2026 bulletin, and October 2025 to October 2026 against the chart in the October 2026 press note.',
+              'Add the overall and urban rates for March 2026 from the revised March 2026 press note, because the API skips that month.',
+              'Check June to October 2026 against Statement 3 of the October 2026 bulletin, and October 2025 to October 2026 against the press note chart.',
               'Keep rural, urban and rural plus urban as separate series, for persons aged 15 and over.',
             ],
             nextRelease: '2026-12-15',
           },
         },
         {
-          text: 'Urban unemployment reached 20.8% in April to June 2020, during the first COVID-19 lockdown, and was 6.8% in July to September 2026.',
+          text: 'Urban unemployment peaked at 20.8% in April to June 2020, during the first COVID-19 lockdown.',
         },
         {
           chart: {
             kind: 'line',
             slug: 'urban-unemployment-quarterly',
             title: 'Urban unemployment rate, July 2018 to September 2026',
-            subtitle:
-              'Unemployed people as a share of the labour force, India, urban areas, ages 15 and over and 15 to 29, current weekly status, %, quarterly, July to September 2018 to July to September 2026.',
+            subtitle: 'Unemployed share of the labour force, urban India, current weekly status.',
             punches: { office: 'MoSPI', unit: '% urban', period: 'JUL-SEP 2026' },
             status: ['Survey estimate', 'Method break'],
-            note: "Values come from the bulletin tables. For April to June 2019, MoSPI's data service gives 21.6% for ages 15 and over, which is the rate for ages 15 to 29; the bulletin gives 8.8%. The new survey design starts in April to June 2025, so the two parts of each line are not joined. There is no estimate for January to March 2025.",
+            note: 'The lines break where the survey design changed. There is no estimate for January to March 2025.',
             sources: quarterlySources,
             format: { unit: '%', decimals: 1 },
             y: { min: 0, max: 40, step: 10 },
@@ -436,13 +436,14 @@ const topic: Topic = {
             callouts: [{ series: 'adults-old', x: '2020-Q2' }],
             know: [
               'Before 2025 the quarterly bulletins covered towns and cities only. The urban series is the one that runs across both survey designs.',
-              'PLFS moved to a new sample design in January 2025. The new urban series starts in April to June 2025. MoSPI says to take the change into account when comparing with releases up to December 2024.',
-              'There is no estimate for January to March 2025.',
+              'PLFS moved to a new sample design in January 2025. MoSPI says to allow for this when comparing with releases up to December 2024.',
               'The rate uses the current weekly status: activity in the 7 days before the interview.',
+              "For April to June 2019, MoSPI's data service gives 21.6% for ages 15+, the rate for ages 15 to 29. The bulletin gives 8.8%.",
             ],
             processing: [
-              'Read each quarter from the bulletin tables (Statement 5 in the old design), not from the eSankhyiki API, because the API gives wrong values for some past quarters.',
-              'Use the latest bulletin that carries each quarter: Jul-Sep 2019, Jul-Sep 2020, Apr-Jun 2021, the Oct-Dec 2021 press note, Jan-Mar 2022, Jan-Mar 2023, Apr-Jun 2024, Oct-Dec 2024, Apr-Jun 2025 and Jul-Sep 2026. The Oct-Dec 2021 press note gives ages 15 and over only; ages 15 to 29 for 2021 come from the Jan-Mar 2022 bulletin.',
+              'Read each quarter from the bulletin tables (Statement 5 in the old design). The eSankhyiki API gives wrong values for some past quarters.',
+              'Use the latest bulletin that carries each quarter. The source list names each one.',
+              'The Oct-Dec 2021 press note gives ages 15+ only. Ages 15 to 29 for 2021 come from the Jan-Mar 2022 bulletin.',
               'Check April to June 2025 between the API and the bulletin.',
               'Tag each row with its survey design and keep the old and new designs as separate series.',
             ],
@@ -453,17 +454,17 @@ const topic: Topic = {
     },
     {
       title: 'How many people work?',
-      lede: 'Among women aged 15 and over, labour force participation fell from 42.7% in 2004-05 to 31.2% in 2011-12 in the NSS surveys. The first PLFS estimate was 23.3% in 2017-18. The rate rose to 40.0% in calendar year 2025.',
+      lede: "Women's labour force participation fell from 42.7% in 2004-05 to 23.3% in 2017-18. It then rose to 40.0% in 2025.",
       blocks: [
         {
           chart: {
             kind: 'line',
             slug: 'labour-force-by-sex-annual',
-            title: 'Labour force participation, work and unemployment in India, 1993-94 to 2025',
-            subtitle: 'Rates by sex, ages 15 and over, usual status. Dashed lines and the 2025 dots show calendar estimates.',
+            title: 'Labour force, work and unemployment in India, 1993-94 to 2025',
+            subtitle: 'Rates for women and men, ages 15 and over, usual status, India.',
             punches: { office: 'MoSPI', unit: '% 15+', period: '2025' },
             status: ['Survey estimate', 'Method break'],
-            note: 'PLFS replaced the NSS survey in 2017 and changed its sample design in 2025. July to June estimates overlap with calendar estimates for 2022 to 2024.',
+            note: historyNote,
             sources: [plfsAnnual2025, plfsAnnualPress2025, plfsAnnualPress2023_24, ...nssSources],
             format: { unit: '%', decimals: 1 },
             series: annualSeries,
@@ -476,9 +477,9 @@ const topic: Topic = {
             know: [
               'Usual status counts work and job search over the 365 days before the interview. It includes principal and subsidiary activity.',
               'Participation and worker population rates use all people aged 15 and over. The unemployment rate uses people in the labour force aged 15 and over.',
-              'NSS surveyed households at intervals. PLFS began in July 2017 with a different sample design.',
+              surveyChange,
               subsidiaryRule,
-              'PLFS reports used July to June years through 2023-24. The 2025 report also gives calendar estimates for 2022 to 2024.',
+              'PLFS reports used July to June years through 2023-24. The 2025 report moved to calendar years.',
             ],
             processing: [
               'Read the NSS rates for ages 15 and over in each report. Calculate unemployment as a share of the labour force in that age group.',
@@ -492,17 +493,17 @@ const topic: Topic = {
     },
     {
       title: 'What kind of work do people do?',
-      lede: 'The share of workers with a regular wage or salary rose in the NSS surveys. In 2025, 23.6% had a regular wage or salary, 56.2% were self-employed and 20.2% did casual labour.',
+      lede: 'Most workers are self-employed. In 2025, 56.2% were self-employed, 23.6% had a regular wage or salary and 20.2% did casual labour.',
       blocks: [
         {
           chart: {
             kind: 'line',
             slug: 'employment-status',
             title: 'Workers in India by type of work, 1993-94 to 2025',
-            subtitle: 'Share of workers of all ages, usual status. Dashed lines and the 2025 dots show calendar estimates.',
+            subtitle: 'Share of workers of all ages in each type of work, usual status, India.',
             punches: { office: 'MoSPI', unit: '% workers', period: '2025' },
             status: ['Survey estimate', 'Method break'],
-            note: 'PLFS replaced the NSS survey in 2017 and changed its sample design in 2025. July to June estimates overlap with calendar estimates for 2022 to 2024.',
+            note: historyNote,
             sources: historySources,
             format: { unit: '%', decimals: 1 },
             y: { min: 0, max: 70, step: 20 },
@@ -515,6 +516,7 @@ const topic: Topic = {
             know: [
               'Self-employed workers run their own business or farm, employ others, or help without pay in a household business.',
               'The shares cover workers of all ages on usual status. Shares can differ from 100% in total because of rounding.',
+              surveyChange,
               subsidiaryRule,
             ],
             processing: [
@@ -526,17 +528,17 @@ const topic: Topic = {
           },
         },
         {
-          text: 'Agriculture employed 64.9% of workers in 1993-94 and 43.0% in 2025. Over the same period, the share in construction rose from 3.2% to 12.0%.',
+          text: 'Agriculture employed 64.9% of workers in 1993-94 and 43.0% in 2025. Construction rose from 3.2% to 12.0%.',
         },
         {
           chart: {
             kind: 'line',
             slug: 'employment-by-industry-history',
             title: 'Workers in India by broad industry, 1993-94 to 2025',
-            subtitle: 'Share of workers of all ages, usual status. Each panel has its own scale. Dashed lines show calendar estimates for 2022 to 2024.',
+            subtitle: 'Share of workers of all ages in each industry, usual status, India.',
             punches: { office: 'MoSPI', unit: '% workers', period: '2025' },
             status: ['Survey estimate', 'Method break'],
-            note: 'PLFS replaced the NSS survey in 2017-18. Calendar estimates for 2022 to 2024 overlap the July to June surveys. PLFS changed its sample design in 2025 and moved its annual report to calendar years.',
+            note: 'Each panel has its own scale. Dashed lines are calendar years 2022 to 2024.',
             sources: historySources,
             format: { unit: '%', decimals: 1 },
             series: broadIndustrySeries,
@@ -545,12 +547,13 @@ const topic: Topic = {
             breaks: [...surveyBreaks.slice(0, 2), { x: '2025', before: 'Old', label: '2025 redesign' }],
             know: [
               'Usual status includes principal and subsidiary work.',
-              'MoSPI compares these eight broad industry groups across NSS rounds. The transport group includes storage and communications. The trade group includes hotels and restaurants.',
+              'MoSPI compares these eight broad industry groups across NSS rounds. Transport includes storage and communications. Trade includes hotels and restaurants.',
+              surveyChange,
               subsidiaryRule,
-              'The NSS table has no electricity and water share for rural women in 1993-94 and 1999-2000. The national estimate uses zero for those two shares.',
+              'The NSS table has no electricity and water share for rural women in 1993-94 and 1999-2000. The national estimate uses zero there.',
             ],
             processing: [
-              'Use the broad industry shares in NSS Report 554 for rural and urban men and women. Weight them by the published worker counts for each group to estimate the national shares before 2011-12.',
+              'Read the NSS Report 554 shares for rural and urban men and women. Weight them by published worker counts to get national shares before 2011-12.',
               'Combine NIC 2008 sections as specified by MoSPI for 2011-12. Use the published PLFS shares from 2017-18 onward.',
             ],
             nextRelease: 'not announced',
@@ -564,11 +567,10 @@ const topic: Topic = {
             kind: 'bars',
             slug: 'employment-by-industry',
             title: 'Workers in India by industry, 2011-12 to 2025',
-            subtitle:
-              'Share of workers of all ages, usual status. The shares for women are for 2025.',
+            subtitle: 'Share of workers of all ages in each industry, usual status, India.',
             punches: { office: 'MoSPI', unit: '% workers', period: '2025' },
             status: ['Survey estimate', 'Method break'],
-            note: 'The 2011-12 NSS estimate uses a different sample design from PLFS. The 2011-12 and 2017-18 estimates cover July to June. The 2022 and 2025 estimates cover January to December.',
+            note: 'The bars for women are for 2025. The 2011-12 value is from NSS, a different survey.',
             sources: [plfsAnnual2025, plfsAnnual2023_24, plfsAnnual2020_21, nssSources[4]!],
             format: { unit: '%', decimals: 1 },
             by: 'industry',
@@ -604,6 +606,7 @@ const topic: Topic = {
             ],
             know: [
               'The eight groups use the same sections of the National Industrial Classification 2008. Earlier NSS rounds used older classifications.',
+              'The 2011-12 and 2017-18 estimates cover July to June. The 2022 and 2025 estimates cover January to December.',
               'The data table includes all PLFS July to June years and all calendar years from 2022 to 2025.',
             ],
             processing: [
@@ -618,18 +621,17 @@ const topic: Topic = {
     },
     {
       title: 'How hard is it for young people to find a job?',
-      lede: 'Youth unemployment fell after the first PLFS survey. In 2025, 9.9% of people aged 15 to 29 in the labour force were unemployed. The rate for young women in towns and cities was 18.9%. The earlier NSS surveys used a different sample design.',
+      lede: 'Youth unemployment has fallen since the first PLFS survey, to 9.9% in 2025. Young women in towns and cities had the highest rate, 18.9%.',
       blocks: [
         {
           chart: {
             kind: 'line',
             slug: 'youth-unemployment',
-            title: 'Youth unemployment in India, by sex and area, 1993-94 to 2025',
-            subtitle:
-              'Share of the labour force aged 15 to 29 who are unemployed, usual status. Dashed lines and the 2025 dots show calendar estimates.',
+            title: 'Youth unemployment by sex and area, 1993-94 to 2025',
+            subtitle: 'Unemployed share of the labour force aged 15 to 29, usual status, India.',
             punches: { office: 'MoSPI', unit: '% 15-29', period: '2025' },
             status: ['Survey estimate', 'Method break'],
-            note: 'PLFS replaced the NSS survey in 2017 and changed its sample design in 2025. July to June estimates overlap with calendar estimates for 2022 to 2024.',
+            note: historyNote,
             sources: historySources,
             format: { unit: '%', decimals: 1 },
             y: { min: 0, max: 30, step: 10 },
@@ -641,12 +643,14 @@ const topic: Topic = {
             ],
             breaks: surveyBreaks,
             know: [
-              'The rate is the share of the labour force aged 15 to 29 with no work. Usual status counts activity over the 365 days before the interview.',
+              'The rate is the share of the labour force aged 15 to 29 with no work, over the 365 days before the interview (usual status).',
               'The NSS reports give rates for rural and urban women and men. Estimates for larger groups use the published age-group tables.',
+              surveyChange,
               subsidiaryRule,
             ],
             processing: [
-              'Read NSS Reports 537 and 554 for rural and urban rates by sex. Calculate other NSS rates from published data for ages 15 to 19, 20 to 24 and 25 to 29.',
+              'Read NSS Reports 537 and 554 for rural and urban rates by sex.',
+              'Calculate the other NSS rates from published data for ages 15 to 19, 20 to 24 and 25 to 29.',
               'Read PLFS rates from the 2020-21, 2023-24 and 2025 annual reports.',
               'Keep separate series for each survey design and period basis.',
             ],
@@ -657,18 +661,17 @@ const topic: Topic = {
     },
     {
       title: 'How do jobs differ between the states?',
-      lede: 'In 2025, 66.7% of women aged 15 and over in Sikkim were in the labour force, five times the rate in Delhi (13.1%). The India rate was 40.0% (usual status). Samples are small in the smaller states and UTs, so read their figures with care.',
+      lede: "Women's labour force participation in 2025 ranged from 66.7% in Sikkim to 13.1% in Delhi.",
       blocks: [
         {
           chart: {
             kind: 'states',
             slug: 'women-labour-force-by-state',
             title: 'Women in the labour force by state and UT, 2025',
-            subtitle:
-              'Share of women aged 15 and over who work or look for work, usual status, rural and urban combined (Chandigarh: urban only), %, all 36 states and UTs, 2025.',
+            subtitle: 'Women aged 15 and over who work or look for work, usual status.',
             punches: { office: 'MoSPI', unit: '% women', period: '2025' },
             status: ['Survey estimate'],
-            note: 'This is the usual-status rate for 2025 (India 40.0%). The monthly rate for October 2026, on the current weekly status, was 35.0%; the two are different measures. Samples are small in Lakshadweep, the Andaman and Nicobar Islands, Ladakh, Chandigarh and Dadra and Nagar Haveli and Daman and Diu; Chandigarh has urban data only.',
+            note: 'Samples are small in the smaller states and UTs. Read their values with care.',
             sources: [plfsAnnual2025],
             format: { unit: '%', decimals: 1 },
             data: { file: LFPR_STATE, where: { sex: 'female', age_group: '15+' }, x: 'geography' },
@@ -677,9 +680,10 @@ const topic: Topic = {
             better: 'high',
             short: 'Women in the labour force',
             know: [
-              'The rate is the share of women aged 15 and over who work or look for work, on the usual status (principal plus subsidiary), which counts activity over the 365 days before the interview.',
-              'It is a different measure from the monthly rate on the current weekly status: 40.0% for India in 2025 on the usual status, 35.0% in October 2026 on the weekly status.',
-              'MoSPI warns that samples for the smaller states and UTs may not support reliable estimates. Read Lakshadweep, the Andaman and Nicobar Islands, Ladakh, Chandigarh and Dadra and Nagar Haveli and Daman and Diu with care.',
+              'Usual status (principal plus subsidiary) counts activity over the 365 days before the interview.',
+              'The India rate was 40.0% in 2025 on usual status. The monthly weekly-status rate, 35.0% in October 2026, is a different measure.',
+              'MoSPI warns that small samples may not give reliable estimates.',
+              'Small samples: Lakshadweep, Andaman and Nicobar Islands, Ladakh, Chandigarh, and Dadra and Nagar Haveli and Daman and Diu.',
               'Chandigarh has urban data only. Ladakh is shown apart from Jammu and Kashmir, and Dadra and Nagar Haveli and Daman and Diu is one UT.',
             ],
             processing: [
@@ -697,12 +701,11 @@ const topic: Topic = {
           chart: {
             kind: 'dots',
             slug: 'unemployment-by-state',
-            title: 'Unemployment rate by state and UT, all adults and young people, 2025',
-            subtitle:
-              'Unemployed people as a share of the labour force, all 36 states and UTs, ages 15 and over and 15 to 29, usual status, %, 2025.',
+            title: 'Unemployment rate by state and UT, adults and youth, 2025',
+            subtitle: 'Unemployed share of the labour force, usual status, by state and UT.',
             punches: { office: 'MoSPI', unit: '%', period: '2025' },
             status: ['Survey estimate'],
-            note: 'India is shown as two reference lines, not a rank. Samples are small in the smaller states and UTs, so their rates are less reliable.',
+            note: 'The two lines show India. Rates for the smaller states and UTs are less reliable.',
             sources: [plfsAnnual2025],
             format: { unit: '%', decimals: 1 },
             by: 'geography',
@@ -731,8 +734,8 @@ const topic: Topic = {
               },
             ],
             know: [
-              'The rate is the share of the labour force with no work, on the usual status, which counts activity over the 365 days before the interview.',
-              'In 2025 the rate for ages 15 and over ranged from 0.9% in Gujarat to 10.0% in the Andaman and Nicobar Islands. Among states, Goa had the highest rate, 8.3%.',
+              'The rate is the share of the labour force with no work over the 365 days before the interview (usual status).',
+              'In 2025 the rate for ages 15+ ranged from 0.9% in Gujarat to 10.0% in Andaman and Nicobar Islands. Goa led the states (8.3%).',
               'MoSPI warns that samples for the smaller states and UTs may not support reliable estimates.',
               'Chandigarh has urban data only.',
             ],
@@ -750,17 +753,17 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each jobs figure is made, where it breaks, and what is missing.") has no field.
   about: {
     publisher:
-      'The National Statistics Office (NSO), Ministry of Statistics and Programme Implementation (MoSPI), runs the Periodic Labour Force Survey (PLFS). The National Sample Survey (NSS) measured employment before PLFS.',
+      'The National Statistics Office (NSO), MoSPI, runs the Periodic Labour Force Survey (PLFS). The National Sample Survey (NSS) measured employment before PLFS.',
     frequency:
-      'Monthly bulletin (current weekly status, India, rural and urban): the October 2026 bulletin came out on 16 Nov 2026. Quarterly bulletin: the July to September 2026 bulletin came out on 10 Nov 2026. Annual report (usual status, all states and UTs): the 2025 report came out on 27 Mar 2026.',
+      'Monthly bulletin (weekly status): latest on 16 Nov 2026. Quarterly bulletin: latest on 10 Nov 2026. Annual report (usual status, all states and UTs): latest on 27 Mar 2026.',
     revisions:
-      'MoSPI issued a revised file of the 2025 annual report on 29 May 2026 and a revised March 2026 press note on 15 Apr 2026. This page uses both.',
+      'MoSPI revised the 2025 annual report on 29 May 2026 and the March 2026 press note on 15 Apr 2026. This page uses both.',
     breaks:
-      'In January 2025 the survey moved to a new sample design. Monthly rates began in April 2025. Quarterly rates for rural areas began in April to June 2025; before that they covered towns and cities only. Annual reports moved from July to June years to calendar years. MoSPI says to take this into account when comparing with releases up to December 2024. Weekly and yearly rates are different measures: in 2025 the usual-status unemployment rate was 3.1%, and the weekly rate was between 4.7% and 5.6% in every month from April to December.',
+      'A new sample design started in January 2025. Monthly rates and rural quarterly rates began in April 2025. Annual reports moved to calendar years. Weekly and yearly rates are different measures.',
     coverage:
-      'India, rural and urban areas, people aged 15 and over and aged 15 to 29. The annual report covers all 36 states and UTs. Samples are small in Lakshadweep, the Andaman and Nicobar Islands, Ladakh, Chandigarh and Dadra and Nagar Haveli and Daman and Diu, and Chandigarh has urban data only. Counts of workers (61.6 crore in 2025: 41.6 crore men and 20.0 crore women) use MoHFW population projections, not a census.',
+      'India, rural and urban, ages 15 and over and 15 to 29. The annual report covers all 36 states and UTs. Counts of workers use MoHFW population projections, not a census.',
     missing:
-      'MoSPI gives no rural rate for March 2026, and no rates by sex or for young people for that month. There is no quarterly estimate for January to March 2025. This page has no urban rate for ages 15 to 29 for October 2020 to December 2021. Earnings and EPFO payroll data are not on this page. No publisher states a reuse licence for these data.',
+      'No rural rate for March 2026. No quarterly estimate for January to March 2025. No earnings or EPFO data. No stated reuse licence.',
   },
   sources: [
     plfsMonthlyOct2026,

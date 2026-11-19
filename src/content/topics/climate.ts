@@ -105,7 +105,7 @@ const topic: Topic = {
   hindi: 'जलवायु',
   question: 'How much rain did the 2026 monsoon bring, and how does it compare with 125 years of records?',
   standfirst:
-    'India got 759.4 mm of rain in the 2026 monsoon, 12.6% below the long-period average. Only 12 monsoons since 1901 were drier.',
+    "India's 2026 monsoon brought 759.4 mm, 12.6% below the long-period average. Only 12 monsoons since 1901 were drier.",
   figures: [
     {
       chart: 'monsoon-rainfall',
@@ -122,17 +122,17 @@ const topic: Topic = {
   parts: [
     {
       title: 'How much rain did the 2026 monsoon bring?',
-      lede: 'IMD measures monsoon rain against the long-period average (LPA): 868.6 mm, the mean June to September rainfall for 1971 to 2020. The driest monsoon since 1901 was in 1972, 22.3% below the LPA. The wettest was in 1917, 26.6% above.',
+      lede: 'The 2026 monsoon brought 87% of the long-period average (LPA) of 868.6 mm. The LPA is the mean June to September rain for 1971 to 2020.',
       blocks: [
         {
           chart: {
             kind: 'columns',
             slug: 'monsoon-rainfall',
             title: 'Monsoon rainfall in India, 1901 to 2026',
-            subtitle: 'Departure of June to September rainfall from the long-period average (LPA) of 868.6 mm (1971 to 2020), %, India.',
+            subtitle: 'June to September rainfall, departure from the LPA (1971 to 2020 mean), India.',
             punches: { office: 'IMD', unit: '% from LPA', period: 'JUN-SEP 2026' },
             status: ['Provisional'],
-            note: 'The 2026 value comes from real-time data. IMD may revise it in its final monsoon report. IMD gives the 2026 departure as -12.6% in its all-India table and rounds it to -13% in its daily weather report.',
+            note: 'Only the 2026 value is provisional. IMD may revise it in its final monsoon report.',
             sources: [IMD_PUNE_ALL_INDIA, IMD_SEASON_2026],
             format: { decimals: 1, unit: '%' },
             y: { min: -30, max: 30, step: 10 },
@@ -150,7 +150,7 @@ const topic: Topic = {
             // LATER: the board also labels "2026: 12.6% below"; a callout on the last column is cut off.
             know: [
               'The long-period average (LPA) is the mean June to September rainfall for India over 1971 to 2020: 868.6 mm.',
-              'The 2026 value comes from real-time data. IMD may revise it in its final monsoon report.',
+              'The 2026 value comes from real-time data.',
               'IMD gives the 2026 departure as -12.6% in its all-India table and rounds it to -13% in its daily weather report.',
             ],
             processing: [
@@ -167,11 +167,11 @@ const topic: Topic = {
           chart: {
             kind: 'columns',
             slug: 'monsoon-2026-by-month',
-            title: 'Monsoon rainfall in 2026 by month, India and its four regions',
-            subtitle: 'Departure of rainfall from the long-period average for each month and for the season (June to September), %, 2026.',
+            title: 'Monsoon rainfall by month, India and four regions, 2026',
+            subtitle: 'Departure from the long-period average for each month and the season, 2026.',
             punches: { office: 'IMD', unit: '% from LPA', period: 'JUN-SEP 2026' },
             status: ['Provisional'],
-            note: 'The regions are IMD\'s four homogeneous regions. IMD documents differ slightly: East and Northeast India got 1,017.1 mm in the season table and 1,016.3 mm in the season report table. The report text gives June rain for India as 104 mm; its table gives 106.8 mm. This chart uses the table values.',
+            note: 'Each month is compared with its own long-period average. The last column is the whole season.',
             sources: [IMD_PUNE_RFSTATS_2026, IMD_SEASON_2026],
             format: { decimals: 1, unit: '%' },
             y: { min: -60, max: 40, step: 20 },
@@ -193,12 +193,13 @@ const topic: Topic = {
             ],
             know: [
               'IMD divides India into four homogeneous regions: Northwest, Central, East and Northeast, and the South Peninsula.',
-              'Each monthly departure compares that month\'s rain with its own long-period average, so a wet month can follow a dry one in the same season.',
+              'A wet month can follow a dry one in the same season.',
               'The 2026 values come from real-time data. IMD may revise them in its final monsoon report.',
-              'IMD documents differ slightly on some 2026 totals. This chart uses the table values.',
+              'IMD documents differ slightly. East and Northeast India got 1,017.1 mm in the season table and 1,016.3 mm in the report table.',
+              'The report text gives June rain for India as 104 mm, and its table 106.8 mm. This chart uses the table values.',
             ],
             processing: [
-              'We take rainfall, normal rainfall and the departure for each month and for the season, for India and each region, from the IMD Pune rainfall statistics for the 2026 season.',
+              'For India and each region, we take rainfall, normal rainfall and the departure by month and season from the IMD Pune 2026 statistics.',
               'We check the season values against the IMD season press release of 30 September 2026.',
               'Where IMD\'s report text and table differ, we keep the table value and note the difference.',
               'We keep the departures as published, to one decimal place.',
@@ -210,18 +211,18 @@ const topic: Topic = {
     },
     {
       title: 'Which parts of India were short of rain?',
-      lede: 'IMD divides India into 36 meteorological subdivisions and four homogeneous regions. In 2026, two of the four regions had deficient rain: East and Northeast India, 26% below normal, and the South Peninsula, 24% below.',
+      lede: "Two of IMD's four homogeneous regions had deficient rain in 2026: East and Northeast India, 26% below normal, and the South Peninsula, 24% below.",
       blocks: [
-        { text: "17 of the 36 subdivisions had deficient rain in 2026, covering 42% of India's area. Arunachal Pradesh was 44% short and Punjab 41% short. Odisha was the only subdivision with excess rain, at 29% above normal." },
+        { text: "17 of the 36 subdivisions had deficient rain, covering 42% of India's area. Odisha was the only one with excess rain, 29% above normal." },
         {
           chart: {
             kind: 'dots',
             slug: 'monsoon-2026-by-subdivision',
             title: 'Monsoon rainfall by meteorological subdivision, 2026',
-            subtitle: 'Departure of rainfall from normal, %, IMD\'s 36 meteorological subdivisions, 1 Jun to 30 Sep 2026. Sorted from the wettest to the driest.',
+            subtitle: 'Rain against normal, IMD\'s 36 meteorological subdivisions, wettest to driest.',
             punches: { office: 'IMD', unit: '% from normal', period: '1 JUN-30 SEP 2026' },
             status: ['Provisional'],
-            note: "Colours show IMD's own category for each subdivision. Subdivisions do not follow state lines: Maharashtra has four, and Haryana, Chandigarh and Delhi share one. IMD rounds these departures to whole numbers; India's -13% is -12.6% in IMD's all-India table.",
+            note: "Subdivisions do not follow state lines. IMD rounds these values, so India's -12.6% shows here as -13%.",
             sources: [IMD_SDWR_2026_09_30, IMD_SEASON_2026],
             format: { decimals: 0, unit: '%' },
             by: 'name',
@@ -236,14 +237,14 @@ const topic: Topic = {
               { key: 'deficient', label: 'Deficient: drier than normal', color: 's1', file: SUBDIVISIONS, x: 'name', y: 'departure_pct', where: { geography_type: 'met-subdivision', category: 'deficient' } },
             ],
             know: [
-              'IMD publishes 2026 monsoon rainfall by meteorological subdivision, not by state. Subdivisions do not follow state lines.',
+              'IMD publishes 2026 rain by meteorological subdivision, not by state. Maharashtra has four subdivisions, and Haryana, Chandigarh and Delhi share one.',
               'IMD gives each subdivision a category: excess, normal or deficient. The colours follow it.',
-              'IMD rounds the subdivision departures to whole numbers.',
+              'IMD rounds the subdivision departures to whole numbers. India\'s -13% is -12.6% in IMD\'s all-India table.',
               'The 2026 values come from real-time data. IMD may revise them in its final monsoon report.',
             ],
             processing: [
-              'We take rainfall, normal rainfall, the departure and IMD\'s category for each of the 36 subdivisions from Table-2 of the IMD Special Daily Weather Report of 30 September 2026.',
-              'We compare all 41 rows (36 subdivisions, four regions and India) with the IMD table image, and the category counts with the IMD season press release.',
+              'We take rainfall, normal rainfall, the departure and the category for each subdivision from Table-2 of the IMD Special Daily Weather Report, 30 September 2026.',
+              'We check all 41 rows (36 subdivisions, four regions and India) against the IMD table image, and the category counts against the season press release.',
               'We colour each subdivision by the category IMD gives it. We do not set our own bins.',
               'We do not draw this chart on the state map, because subdivisions do not match states.',
             ],
@@ -254,17 +255,15 @@ const topic: Topic = {
     },
     {
       title: 'Which years were warmest, and how warm was 2025?',
-      lede: "The temperature anomaly is the difference between a year's mean land surface air temperature and the 1991 to 2020 mean.",
+      lede: "2024 was India's warmest year since 1901, 0.65°C above the 1991 to 2020 mean. IMD ranked 2025 eighth, 0.28°C above.",
       blocks: [
-        { text: "2024 was India's warmest year since 1901, at 0.65°C above the 1991 to 2020 mean. IMD ranked 2025 eighth, at 0.28°C above the mean." },
         {
           chart: {
             kind: 'line',
             slug: 'annual-temperature-anomaly',
             title: 'Annual mean temperature anomaly in India, 1901 to 2025',
-            subtitle: 'Difference from the 1991 to 2020 mean land surface air temperature, in °C.',
+            subtitle: 'Annual land surface air temperature, difference from the 1991 to 2020 mean, India.',
             punches: { office: 'IMD', unit: '°C vs 1991-2020', period: '1901 TO 2025' },
-            note: 'The 1901 to 2024 anomalies are calculated from IMD Pune’s annual means. The 2025 anomaly comes from the IMD climate statement.',
             sources: [IMD_PUNE_TEMPERATURE, IMD_CLIMATE_2025],
             format: { decimals: 2, unit: '°C', signed: true },
             y: { min: -1.5, max: 1, step: 0.5 },
@@ -288,13 +287,13 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
-        { text: 'January and February 2025 were 1.17°C warmer than the 1991 to 2020 average, the warmest winter since 1901. October to December was 0.10°C cooler than average.' },
+        { text: 'Winter 2025 (January and February) was the warmest since 1901, at 1.17°C above average. October to December was 0.10°C below average.' },
         {
           chart: {
             kind: 'columns',
             slug: 'temperature-2025-by-season',
             title: 'Temperature in India by season, 2025',
-            subtitle: 'Mean land surface air temperature, difference from the 1991 to 2020 average, °C, India, 2025.',
+            subtitle: 'Land surface air temperature by season, difference from the 1991 to 2020 average, India.',
             punches: { office: 'IMD', unit: '°C vs 1991-2020', period: '2025' },
             note: "IMD's seasons are winter (January and February), pre-monsoon (March to May), monsoon (June to September) and post-monsoon (October to December).",
             sources: [IMD_CLIMATE_2025],
@@ -307,7 +306,6 @@ const topic: Topic = {
               { key: 'anomaly', label: 'India', color: 'ink', file: 'climate/temperature-anomaly-2025-by-season.csv', x: 'season_name', where: { geography: 'india', period: '2025' } },
             ],
             know: [
-              'IMD\'s seasons are winter (January and February), pre-monsoon (March to May), monsoon (June to September) and post-monsoon (October to December).',
               'Each value is the difference from the 1991 to 2020 average for the same season.',
               'IMD says the 2025 winter anomaly, +1.17°C, is the highest since 1901.',
             ],
@@ -323,18 +321,18 @@ const topic: Topic = {
     },
     {
       title: 'How fast is power capacity moving away from coal?',
-      lede: 'The Central Electricity Authority (CEA) counts the power capacity of utilities every month. Capacity is the most power that plants can make at once. It is not the power that they made in a period.',
+      lede: "Non-fossil sources made up 55.45% of India's power capacity on 31 October 2026, up from 32.31% in March 2014. Capacity is the most power plants can make at once.",
       blocks: [
-        { text: 'Utilities had 1,362 MW of capacity in December 1947. Solar capacity grew from 2,632 MW in March 2014 to 1.75 lakh MW in October 2026. Coal and lignite capacity grew from 1.45 lakh MW to 2.31 lakh MW.' },
+        { text: 'Solar grew from 2,632 MW in March 2014 to 1.75 lakh MW in October 2026. Coal and lignite grew from 1.45 to 2.31 lakh MW.' },
         {
           chart: {
             kind: 'area',
             slug: 'power-capacity-by-source',
             title: 'Installed power capacity in India by source, 1947 to 2026',
-            subtitle: 'Utility capacity in megawatts (MW). The early groups are thermal, nuclear, and renewables including hydro.',
+            subtitle: 'Utility capacity by source. Before 2014: thermal, nuclear, and hydro with renewables.',
             punches: { office: 'CEA', unit: 'MW', period: '31 OCT 2026' },
             status: ['Method break'],
-            note: 'CEA reports December 1947 and 1950, selected March dates to 1997, then every March to 2026 and October 2026. The breaks mark changes in what CEA counts: wind listed separately from 1998, a broader renewables total from 2006, revised renewable totals with more detail from 2014, and off-grid renewables from August 2021.',
+            note: 'Dates are uneven before 1997. The breaks mark changes in what CEA counts.',
             sources: [CEA_GROWTH, CEA_EXECUTIVE, CEA_CAPACITY],
             format: { decimals: 0 },
             y: { min: 0, max: 600000, step: 100000 },
@@ -357,9 +355,9 @@ const topic: Topic = {
             ],
             know: [
               'Installed capacity is the most power that the plants can supply at once.',
-              'The historical booklet reports selected dates before 1997. Straight segments connect the available observations within each reporting method.',
-              'From March 1998 to March 2004, the historical table lists wind under non-conventional energy. It adds a separate renewables figure in March 2005. The annual editions use broader renewable totals from March 2006.',
-              'In March 2008, CEA moved 1,168 MW of small hydro from conventional hydro into renewable energy sources. Earlier sections combine hydro and other renewables to reduce the effect of this change.',
+              'CEA reports December 1947 and 1950, selected March dates to 1997, then every March, and October 2026. Straight segments join the dates.',
+              'From March 1998 to 2004, CEA lists wind under non-conventional energy. A renewables figure starts in March 2005, and broader totals in 2006.',
+              'In March 2008, CEA moved 1,168 MW of small hydro from hydro into renewables. Earlier sections combine hydro and other renewables for this reason.',
               'CEA counted lignite under coal before March 2019. Other renewable energy (RE) includes small hydro, bio-power and waste-to-energy.',
               'CEA counts off-grid renewables from August 2021. CEA removed plants on long outage in April 2025 and August 2026.',
             ],
@@ -371,16 +369,15 @@ const topic: Topic = {
             nextRelease: '2026-12-17 (estimated)',
           },
         },
-        { text: "On 31 October 2026, non-fossil sources made up 55.45% of India's 5.63 lakh MW of power capacity, up from 32.31% in March 2014." },
         {
           chart: {
             kind: 'line',
             slug: 'non-fossil-capacity-share',
-            title: 'Non-fossil share of installed power capacity in India, 1947 to 2026',
-            subtitle: 'Share of utility capacity in percent. March observations are annual from 1997.',
+            title: 'Non-fossil share of power capacity in India, 1947 to 2026',
+            subtitle: 'Non-fossil and other renewable shares of utility capacity, India.',
             punches: { office: 'CEA', unit: '%', period: '31 OCT 2026' },
             status: ['Method break'],
-            note: 'Non-fossil capacity includes nuclear, hydro and other renewables. The narrower renewables series starts in March 2008, when CEA moved small hydro into its renewables total. CEA added off-grid renewables in August 2021.',
+            note: 'Non-fossil is nuclear, hydro and other renewables. The other renewables line starts in March 2008.',
             sources: [CEA_GROWTH, CEA_EXECUTIVE, CEA_CAPACITY],
             format: { decimals: 2, unit: '%' },
             y: { min: 0, max: 60, step: 10 },
@@ -398,7 +395,8 @@ const topic: Topic = {
             know: [
               'The early CEA booklet gives selected dates. The archive begins its annual series in 1998.',
               'Other renewables include small hydro, wind, solar, bio-power and waste-to-energy. Large hydro is part of the non-fossil share.',
-              'From March 1998 to March 2004, the archive lists wind separately. March 2005 adds another renewables figure. CEA gives a broader renewables total from March 2006.',
+              'From March 1998 to 2004, the archive lists wind separately. March 2005 adds another renewables figure. CEA gives a broader renewables total from March 2006.',
+              'The other renewables line starts in March 2008, when CEA moved small hydro into its renewables total.',
               'The monthly figures include revised renewable totals from March 2014. The March 2022 observation is the first to include off-grid capacity.',
               'CEA removed plants on long outage in April 2025 and August 2026.',
             ],
@@ -414,17 +412,17 @@ const topic: Topic = {
     },
     {
       title: 'Which states have the most renewable power?',
-      lede: 'The Ministry of New and Renewable Energy (MNRE) publishes renewable power capacity for all 36 states and union territories. India had 3.03 lakh MW on 31 October 2026.',
+      lede: 'Gujarat has the most renewable capacity, 56,289 MW, then Rajasthan, 52,134 MW. India had 3.03 lakh MW on 31 October 2026.',
       blocks: [
-        { text: "Gujarat has the most renewable capacity, at 56,289 MW, followed by Rajasthan at 52,134 MW. Tamil Nadu is fourth, with 30,401 MW. The four states above 30,000 MW hold 56.84% of India's total." },
+        { text: "The four states above 30,000 MW hold 56.84% of India's total. Tamil Nadu is fourth, with 30,401 MW." },
         {
           chart: {
             kind: 'states',
             slug: 'renewable-capacity-by-state',
-            title: 'Renewable power capacity by state and union territory, 31 Oct 2026',
-            subtitle: 'Installed capacity of solar, wind, bio-power, small hydro and large hydro, MW, 36 states and UTs, as on 31 Oct 2026.',
+            title: 'Renewable power capacity by state and UT, 31 Oct 2026',
+            subtitle: 'Solar, wind, bio-power, small hydro and large hydro, 36 states and UTs.',
             punches: { office: 'MNRE', unit: 'MW', period: '31 OCT 2026' },
-            note: 'MNRE places each plant in the state where it stands. CEA\'s state tables add each state\'s share of central plants, so their figures differ. The total includes large hydro. MNRE lists a further 49.31 MW under "Others" with no state; it is in the India total.',
+            note: 'MNRE places each plant in the state where it stands, so its figures differ from CEA state tables.',
             sources: [MNRE_STATES_2026_10],
             format: { decimals: 0 },
             bins: [500, 2000, 5000, 10000, 30000],
@@ -435,12 +433,11 @@ const topic: Topic = {
             short: 'Renewable capacity',
             know: [
               'MNRE places each plant in the state where it stands. CEA\'s state tables add each state\'s share of central plants, so the two differ.',
-              'The total includes solar, wind, bio-power, small hydro and large hydro.',
               'MNRE lists 49.31 MW under "Others" with no state. It is in the India total but not on the map.',
               'Blank cells in the MNRE table stay blank. We do not set them to zero.',
             ],
             processing: [
-              'We take total renewable capacity for each of the 36 states and UTs, and for India, from the MNRE state-wise table as on 31 October 2026.',
+              'We take total renewable capacity for India and each of the 36 states and UTs from the MNRE state-wise table as on 31 October 2026.',
               'We check that the state rows and "Others" add up to MNRE\'s India total of 3.03 lakh MW.',
               'We round the values to whole megawatts for display.',
             ],
@@ -453,17 +450,17 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each climate figure is made, where it breaks, and what is missing.") has no field.
   about: {
     publisher:
-      'The India Meteorological Department (IMD), Ministry of Earth Sciences, measures rainfall and temperature for India, its four homogeneous regions and 36 meteorological subdivisions. The Central Electricity Authority (CEA) counts the installed power capacity of utilities. The Ministry of New and Renewable Energy (MNRE) publishes renewable capacity by state.',
+      'The India Meteorological Department (IMD) measures rainfall and temperature. The Central Electricity Authority (CEA) counts utility power capacity. The Ministry of New and Renewable Energy (MNRE) publishes renewable capacity by state.',
     frequency:
-      'Monsoon: daily during the season, with a season report after 30 September (30 Sep 2026). Temperature: one statement a year, each January (1 Jan 2026). CEA capacity: monthly (latest as on 31 Oct 2026). MNRE state table: monthly (latest 12 Nov 2026, as on 31 Oct 2026).',
+      'Monsoon: daily in the season, with a season report after 30 September. Temperature: one statement each January. CEA and MNRE capacity: monthly, latest as on 31 Oct 2026.',
     revisions:
-      'The 2026 monsoon figures come from real-time data, and IMD may revise them in its final monsoon report. In 2017 MNRE revised renewable capacity for March 2014 to March 2017, mainly by adding about 3,000 MW of captive bagasse cogeneration; we use the revised values. IMD documents differ slightly on some 2026 totals; we use the table values.',
+      'IMD may revise the 2026 monsoon figures in its final report. In 2017 MNRE revised 2014 to 2017 capacity, mainly by adding about 3,000 MW of captive bagasse cogeneration. We use the revised values.',
     breaks:
-      'Rainfall is compared with the long-period average, 868.6 mm, the mean for 1971 to 2020. Temperature anomalies use the 1991 to 2020 mean. The 2025 IMD statement uses the same normal period as the IMD Pune table. CEA changed its treatment of small hydro in March 2008. Monthly reports use revised renewable totals from March 2014. CEA counted lignite under coal before March 2019. It counts off-grid renewables from August 2021.',
+      'CEA moved small hydro into renewables in March 2008, used revised renewable totals from March 2014, counted lignite under coal before March 2019, and added off-grid renewables from August 2021.',
     coverage:
-      'Rainfall: India, 4 homogeneous regions and 36 meteorological subdivisions, which do not follow state lines. Capacity covers utilities from 1947. The records give selected dates to 1997 and annual March dates after that. MNRE places each plant in the state where it stands, for all 36 states and UTs; 49.31 MW under "Others" has no state.',
+      'Rainfall: India, 4 regions and 36 subdivisions, which do not follow state lines. Capacity: utilities from 1947, selected dates to 1997, then each March. MNRE: all 36 states and UTs.',
     missing:
-      'IMD publishes 2026 monsoon rainfall by meteorological subdivision. IMD, CEA and MNRE state no reuse licence for these data.',
+      'IMD publishes 2026 monsoon rain by subdivision, not by state. IMD, CEA and MNRE state no reuse licence.',
   },
   sources: [
     IMD_SEASON_2026,

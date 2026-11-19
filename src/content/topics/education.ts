@@ -206,19 +206,17 @@ const topic: Topic = {
   parts: [
     {
       title: 'How many children are in school?',
-      lede: 'UDISE+ is a yearly count of every school, run by the Ministry of Education. Schools enter their own data. The reference date for 2025-26 was 31 March 2026.',
+      lede: 'Total enrolment barely changed in 2025-26. Primary enrolment (classes 1 to 5) fell from 10.44 crore to 10.19 crore.',
       blocks: [
-        { text: 'Primary enrolment (classes 1 to 5) fell to 10.19 crore in 2025-26, from 10.44 crore in 2024-25.' },
         {
           chart: {
             kind: 'line',
             slug: 'school-enrolment-trend',
             title: 'School enrolment and dropout in India, 2012-13 to 2025-26',
-            subtitle:
-              'Enrolment in crore, gross enrolment ratio and dropout rate by school level.',
+            subtitle: 'Enrolment, gross enrolment ratio and dropout rate by school level, India.',
             punches: { office: 'MoE', unit: 'crore · %', period: '2025-26' },
             status: ['Method break'],
-            note: 'Figures for 2012-13 to 2017-18 come from archived copies of the UDISE Flash Statistics. UDISE+ began in 2018-19. It began to record each student and use new population projections in 2022-23.',
+            note: 'Lines break in 2018-19 and 2022-23, where the count changed method. Do not compare across them.',
             sources: SCHOOL_TREND_SOURCES,
             series: [
               ...trendSeries,
@@ -240,9 +238,11 @@ const topic: Topic = {
             ],
             breaks: [{ x: '2018-19', label: 'UDISE+' }, { x: '2022-23', label: 'New data' }],
             know: [
+              'UDISE+ is a yearly Ministry of Education count of every school. Schools enter their own data. The 2025-26 reference date was 31 March 2026.',
+              'Values for 2012-13 to 2017-18 come from archived copies of the UDISE Flash Statistics.',
               'UDISE+ replaced UDISE in 2018-19. Schools began to upload their returns to a system with built-in validation checks.',
               'From 2022-23, UDISE+ collects data for each student and uses revised population projections. The Ministry advises against comparing ratios across this break.',
-              'The gross enrolment ratio (GER) divides enrolment at a level, of any age, by the population of the official age for that level, so it can be above 100.',
+              'The gross enrolment ratio (GER) divides enrolment at a level, of any age, by the population of official age. It can exceed 100.',
               'The 2016-17 report estimates enrolment for classes 11 and 12 in Andhra Pradesh and Karnataka.',
               'The last verified UDISE dropout cohort began in 2016-17.',
               'Classes 11 and 12 have dropout figures for some UDISE years. UDISE+ publishes dropout rates for classes 1 to 10.',
@@ -261,19 +261,15 @@ const topic: Topic = {
     },
     {
       title: 'Which states keep children in school?',
-      lede: 'Two measures show who stays in school. The dropout rate is the share of students who leave a level during the year. The gross enrolment ratio (GER) divides enrolment at a level, of any age, by the population of the official age for that level, so it can be above 100.',
+      lede: 'In 2025-26 the dropout rate in classes 9 and 10 ranged from 18.1% in Karnataka to 1.3% in Chandigarh.',
       blocks: [
-        {
-          text: 'In 2025-26 the dropout rate in classes 9 and 10 was highest in Karnataka (18.1%) and lowest in Chandigarh (1.3%).',
-        },
         {
           chart: {
             kind: 'states',
             slug: 'dropout-rate-by-state',
-            title: 'Dropout rate in classes 9 and 10 by state and UT, 2025-26',
-            subtitle: 'Students in classes 9 and 10 who dropped out, %, 36 states and UTs, 2025-26.',
+            title: 'Dropout rate in classes 9 and 10 by state, 2025-26',
+            subtitle: 'Share of students in classes 9 and 10 who left school during the year.',
             punches: { office: 'MoE', unit: '%', period: '2025-26' },
-            note: 'Rates are as published in UDISE+ Table 6.13; the India rate fell from 11.5% in 2024-25 to 9.5%.',
             sources: [udise2025_26],
             format: { unit: '%', decimals: 1 },
             data: { file: DROPOUT, where: { level: 'secondary (9-10)', sex: 'total' }, x: 'geography' },
@@ -282,8 +278,8 @@ const topic: Topic = {
             better: 'low',
             short: 'Dropout, classes 9-10',
             know: [
-              'The dropout rate is the share of students in a level who leave school during the year. The rate here is for secondary level, classes 9 and 10.',
-              'In 2025-26 the rate was 9.5% for India, highest in Karnataka (18.1%) and lowest in Chandigarh (1.3%).',
+              'The dropout rate is the share of students at a level who leave school during the year. This chart shows classes 9 and 10.',
+              'The India rate fell from 11.5% in 2024-25 to 9.5% in 2025-26.',
               'Dropout rates from 2022-23 use student-level data and do not compare with rates up to 2021-22.',
               'UDISE+ is an administrative count. Schools enter their own data.',
             ],
@@ -296,17 +292,16 @@ const topic: Topic = {
           },
         },
         {
-          text: 'In 2025-26 the enrolment ratio in classes 11 and 12 was 61.7 for India, 42.1 in Bihar and 91.9 in Kerala.',
+          text: 'The enrolment ratio in classes 11 and 12 was 61.7 for India, 42.1 in Bihar and 91.9 in Kerala.',
         },
         {
           chart: {
             kind: 'states',
             slug: 'ger-higher-secondary-by-state',
-            title: 'Enrolment ratio in classes 11 and 12 by state and UT, 2025-26',
-            subtitle:
-              'Gross enrolment ratio, higher secondary (classes 11 and 12), boys and girls, 36 states and UTs, 2025-26.',
+            title: 'Enrolment ratio in classes 11 and 12 by state, 2025-26',
+            subtitle: 'Gross enrolment ratio in classes 11 and 12, boys and girls, by state.',
             punches: { office: 'MoE', unit: 'GER', period: '2025-26' },
-            note: 'India is a reference line, not a rank. GER counts enrolment of any age, so it can be above 100. The booklet warns that ratios for UTs and some small states changed with the new population projections.',
+            note: 'The ratio counts students of any age, so it can exceed 100.',
             sources: [udise2025_26],
             format: { decimals: 1 },
             data: { file: GER_SCHOOL, where: { level: 'higher secondary (11-12)', sex: 'total' }, x: 'geography' },
@@ -315,10 +310,10 @@ const topic: Topic = {
             better: 'high',
             short: 'GER, classes 11-12',
             know: [
-              'The gross enrolment ratio (GER) divides enrolment in classes 11 and 12, of any age, by the population of the official age for those classes. It can be above 100: Chandigarh has 108.2.',
+              'The GER divides enrolment in classes 11 and 12, of any age, by the population of official age. Chandigarh has 108.2.',
               'A ratio above 100 can mean over-age or under-age students, students from other states, or a low population projection.',
               'The booklet warns that ratios for UTs and some small states changed with the new population projections from 2022-23.',
-              'The ratio covers boys and girls together, all social groups.',
+              'The ratio covers all social groups.',
             ],
             processing: [
               'Read Table 6.1 of the UDISE+ 2025-26 booklet (existing structure), all social groups.',
@@ -332,19 +327,15 @@ const topic: Topic = {
     },
     {
       title: 'Do schools have teachers, power and internet?',
-      lede: "UDISE+ records teachers and facilities for each school. The figures for electricity and girls' toilets count only those that work.",
+      lede: 'India had 15 pupils for each secondary teacher in 2025-26. Two in three schools (67.4%) had internet.',
       blocks: [
-        {
-          text: 'India had 15 pupils for each teacher at secondary level in 2025-26, and Jharkhand had 31, the most of any state.',
-        },
         {
           chart: {
             kind: 'states',
             slug: 'pupils-per-teacher-by-state',
-            title: 'Pupils per teacher at secondary level by state and UT, 2025-26',
-            subtitle: 'Pupils per teacher, secondary (classes 9 and 10), 36 states and UTs, 2025-26.',
+            title: 'Pupils per secondary teacher by state, 2025-26',
+            subtitle: 'Pupils for each teacher in classes 9 and 10, by state and UT.',
             punches: { office: 'MoE', unit: 'pupils', period: '2025-26' },
-            note: 'India is a reference line, not a rank. A lower number means fewer pupils for each teacher.',
             sources: [udise2025_26],
             format: { decimals: 0 },
             data: { file: PTR, where: { level: 'secondary (9-10)' }, x: 'geography' },
@@ -367,7 +358,7 @@ const topic: Topic = {
           },
         },
         {
-          text: 'Two in three schools (67.4%) had internet in 2025-26, but in West Bengal it was one in five (19.7%).',
+          text: 'In West Bengal only one school in five (19.7%) had internet.',
         },
         {
           // Rows keep the CSV order, which is sorted by internet share.
@@ -375,10 +366,9 @@ const topic: Topic = {
             kind: 'table',
             slug: 'school-facilities-by-state',
             title: 'School facilities by state and UT, 2025-26',
-            subtitle:
-              "Share of schools with internet, working electricity and a working girls' toilet, %, India and 36 states and UTs, 2025-26. Sorted by internet.",
+            subtitle: "Schools with internet, working electricity and a working girls' toilet, by state.",
             punches: { office: 'MoE', unit: '% schools', period: '2025-26' },
-            note: 'Derived: internet shares are schools with internet divided by all schools, from Table 2.5. The India value (67.4%) matches the published figure. Electricity and toilets count only working facilities (Tables 8.6 and 8.8), so they are lower than the 95.0% and 98.5% in Table 1, which count any connection or toilet.',
+            note: 'Rows are sorted by internet. Electricity and toilets count only facilities that work.',
             sources: [udise2025_26],
             format: { unit: '%', decimals: 1 },
             data: { file: FACILITIES },
@@ -390,8 +380,9 @@ const topic: Topic = {
               { key: 'toilet', label: "Working girls' toilet", where: { facility: "functional girls' toilet" }, y: 'value' },
             ],
             know: [
-              'Internet shares are derived: schools with internet divided by all schools, from Table 2.5. For India the derived share is 67.4%, the same as the share Table 1 publishes.',
-              "Electricity and girls' toilets count only facilities that work (Tables 8.6 and 8.8). Table 1 also gives shares for any electricity connection or any girls' toilet, which are higher. The two do not mix.",
+              'Internet shares are derived: schools with internet divided by all schools (Table 2.5). The India share, 67.4%, matches Table 1.',
+              "Electricity and girls' toilets count only working facilities (Tables 8.6 and 8.8).",
+              "Table 1 counts any connection or toilet, so its shares are higher: 95.0% and 98.5%. Do not mix the two.",
               'In 2025-26 West Bengal had the lowest internet share, 19.7%, and Meghalaya the lowest share for working electricity, 28.7%.',
               'UDISE+ is an administrative count. Schools enter their own data.',
             ],
@@ -408,20 +399,16 @@ const topic: Topic = {
     },
     {
       title: 'How many young adults go to college?',
-      lede: 'The All India Survey on Higher Education (AISHE) covers universities and colleges, which submit data voluntarily. Its latest report covers 2023-24 and was released on 8 July 2026.',
+      lede: 'In 2023-24 the college enrolment ratio was 30.0. Women have been ahead of men since 2017-18.',
       blocks: [
-        {
-          text: 'Women overtook men in higher education in 2017-18, and in 2023-24 the ratio was 31.2 for women and 28.9 for men.',
-        },
         {
           chart: {
             kind: 'line',
             slug: 'college-enrolment-ratio',
             title: 'College enrolment ratio in India by sex, 2011-12 to 2023-24',
-            subtitle:
-              'Gross enrolment ratio in higher education, per cent of people aged 18 to 23, India, 2011-12 to 2023-24.',
+            subtitle: 'Gross enrolment ratio in higher education, people aged 18 to 23, India.',
             punches: { office: 'MoE', unit: 'GER 18-23', period: '2023-24' },
-            note: 'All years use population projections based on Census 2011. AISHE reports run two years behind; the 2023-24 report is the latest.',
+            note: 'AISHE reports run two years behind. The 2023-24 report is the latest.',
             sources: [aisheTimeSeries, aishe2023_24],
             format: { decimals: 1 },
             y: { min: 0 },
@@ -440,8 +427,8 @@ const topic: Topic = {
             know: [
               'The ratio divides enrolment in higher education, of any age, by the population aged 18 to 23.',
               'All years use population projections based on Census 2011, so the series is consistent from 2011-12.',
-              'In 2017-18 the ratio was 24.6 for women and 24.5 for men, the first year women were ahead. In 2023-24 it was 31.2 for women and 28.9 for men.',
-              'Universities and colleges submit data to AISHE voluntarily. The latest report covers 2023-24.',
+              'In 2017-18 women were ahead for the first year: 24.6 against 24.5. In 2023-24 it was 31.2 for women and 28.9 for men.',
+              'Universities and colleges submit data to AISHE voluntarily. The 2023-24 report came out on 8 July 2026.',
             ],
             processing: [
               'Read 2011-12 to 2021-22 from the AISHE time series for GER based on the 2011 population projection.',
@@ -452,18 +439,16 @@ const topic: Topic = {
           },
         },
         {
-          text: 'In 2023-24 the ratio ranged from 7.1 in Lakshadweep to 72.3 in Puducherry, and Tamil Nadu, at 52.3, was highest among large states.',
+          text: 'The ratio ranged from 7.1 in Lakshadweep to 72.3 in Puducherry. Tamil Nadu, at 52.3, was highest among large states.',
         },
         {
           chart: {
             sortBy: 'total',
             kind: 'dots',
             slug: 'college-enrolment-ratio-by-state',
-            title: 'College enrolment ratio by state and UT, women and men, 2023-24',
-            subtitle:
-              'Gross enrolment ratio in higher education, per cent of people aged 18 to 23, 36 states and UTs, 2023-24.',
+            title: 'College enrolment ratio by state, women and men, 2023-24',
+            subtitle: 'Gross enrolment ratio in higher education, ages 18 to 23, by state.',
             punches: { office: 'MoE', unit: 'GER 18-23', period: '2023-24' },
-            note: 'India is a reference line, not a rank. Ratios use population projections based on Census 2011. Institutions submit data to AISHE voluntarily.',
             sources: [aishe2023_24],
             format: { decimals: 1 },
             by: 'geography',
@@ -514,22 +499,18 @@ const topic: Topic = {
     },
     {
       title: 'How many people can read and write?',
-      lede: 'The last full count of literacy is the 2011 Census. Since then, the only national figures come from sample surveys. Census 2027 will give new counts.',
+      lede: 'A 2025 survey estimated that 81.1% of people aged 7 and over could read and write: 87.5% of men and 74.9% of women.',
       blocks: [
-        {
-          text: 'The PLFS survey estimated that 81.1% of people aged 7 and over could read and write in 2025: 87.5% of men and 74.9% of women.',
-        },
         {
           // LATER: the board draws 2025 as ranked bars (Tamil Nadu in series-1) with 2011 as rings; dots is the closest kind.
           chart: {
             kind: 'dots',
             slug: 'literacy-by-state',
             title: 'Literacy by state and UT, 2025 survey and 2011 Census',
-            subtitle:
-              'Share of people aged 7 and over who can read and write, %, 36 states and UTs. Filled dots: 2025 survey estimate. Rings: 2011 Census count.',
+            subtitle: 'People aged 7 and over who can read and write, by state.',
             punches: { office: 'MoSPI', unit: '% 7+', period: '2025' },
             status: ['Survey estimate'],
-            note: 'Telangana and Ladakh did not exist in 2011. * The 2011 Andhra Pradesh figure includes present Telangana, and Jammu and Kashmir includes Ladakh, so they do not compare with 2025. The 2011 Dadra and Nagar Haveli and Daman and Diu figure adds the two former UTs. India: 72.98% in 2011. Derived: Census 2011 rates are literates divided by the population aged 7 and over.',
+            note: 'Filled dots: 2025 survey. Rings: 2011 Census. In 2011, Andhra Pradesh included Telangana and Jammu and Kashmir included Ladakh.',
             sources: [plfsAnnual2025, census2011Pca],
             format: { unit: '%' },
             by: 'geography',
@@ -572,9 +553,11 @@ const topic: Topic = {
               },
             ],
             know: [
-              'The 2025 values are survey estimates from the Periodic Labour Force Survey. The 2011 values are a full count from the Census. The gap between them mixes real change with a change of method, so the two are not joined.',
+              'The 2025 values are PLFS survey estimates. The 2011 values are a full Census count. The gap mixes real change with a change of method.',
               'The 2011 Census counted 72.98% of people aged 7 and over as literate. The 2025 survey estimated 81.1%.',
-              'In 2011 Andhra Pradesh included present Telangana and Jammu and Kashmir included Ladakh, so those rows do not compare with 2025. Dadra and Nagar Haveli and Daman and Diu were two UTs in 2011; their counts are added.',
+              'In 2011 Andhra Pradesh included Telangana and Jammu and Kashmir included Ladakh. Those rows do not compare with 2025.',
+              'Dadra and Nagar Haveli and Daman and Diu were two UTs in 2011. Their counts are added.',
+              'The 2011 rates are derived: literates divided by the population aged 7 and over.',
               'Census 2027 enumeration runs to early 2027 and will replace the 2011 counts.',
             ],
             processing: [
@@ -592,19 +575,19 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each education figure is made, where it breaks, and what is missing.") has no field.
   about: {
     intro:
-      'School figures are an administrative count of schools, college figures come from a survey of institutions, and literacy comes from a household survey and the Census.',
+      'Schools report their own counts. Colleges answer a survey of institutions. Literacy comes from a household survey and the Census.',
     publisher:
-      'The Ministry of Education publishes school data through UDISE+ (Department of School Education and Literacy) and college data through the All India Survey on Higher Education, AISHE (Department of Higher Education). The National Statistics Office (NSO), MoSPI, publishes the PLFS literacy estimate. The Office of the Registrar General of India (ORGI) runs the Census.',
+      'The Ministry of Education publishes school data (UDISE+) and college data (AISHE). NSO, MoSPI, publishes the PLFS literacy estimate. The Registrar General of India (ORGI) runs the Census.',
     frequency:
-      'UDISE+: once a year. The 2025-26 booklet came out on 7 Jul 2026, with a reference date of 31 Mar 2026. AISHE: once a year, about two years after the academic year; the 2023-24 report came out on 8 Jul 2026. PLFS annual report: once a year. Census: the last full count was in 2011.',
+      'UDISE+: yearly, latest on 7 Jul 2026. AISHE: yearly, about two years behind; latest on 8 Jul 2026. PLFS: yearly. Census: last full count in 2011.',
     revisions:
-      'School trend values come from UDISE Flash Statistics and UDISE+ reports. AISHE and Census figures are final as published. MoSPI released the PLFS 2025 report on 27 Mar 2026 and a revised file on 29 May 2026.',
+      'AISHE and Census figures are final as published. MoSPI revised the PLFS 2025 report on 29 May 2026.',
     breaks:
-      'UDISE+ introduced mandatory online returns and validation checks in 2018-19. From 2022-23, UDISE+ collects data for each student and uses revised population projections. The Ministry advises against comparing ratios with figures up to 2021-22. AISHE ratios use population projections based on Census 2011. Literacy in 2011 is a full count and in 2025 a sample survey.',
+      'UDISE+ replaced UDISE in 2018-19. From 2022-23 it counts each student and uses new population projections; do not compare ratios across this break. Literacy: 2011 is a full count, 2025 a survey.',
     coverage:
-      'India and all 36 states and UTs. School figures use the existing structure: primary (classes 1-5), upper primary (6-8), secondary (9-10) and higher secondary (11-12). UDISE+ also publishes NEP 2020 figures, such as a secondary GER of 71.7% for classes 9 to 12, which is a different measure. College ratios cover people aged 18 to 23; literacy covers people aged 7 and over. In 2011, Andhra Pradesh included present Telangana and Jammu and Kashmir included Ladakh.',
+      'India and all 36 states and UTs. School levels use the existing structure, not NEP 2020. College ratios cover ages 18 to 23. Literacy covers ages 7 and over.',
     missing:
-      'UDISE dropout rates for 2017-18 could not be verified by cohort year. The latest AISHE report covers 2023-24. AISHE gives no SC or ST ratio for several UTs. Its 2023-24 highlights give two ST ratios for 2022-23 (23.5 and 22.6). Census 2027 enumeration runs to early 2027 and will replace the 2011 literacy counts. No publisher states a reuse licence for these data.',
+      'UDISE dropout rates for 2017-18 could not be checked by cohort year. AISHE gives no SC or ST ratio for several UTs. No publisher states a reuse licence.',
   },
   sources: [
     ...SCHOOL_TREND_SOURCES,

@@ -287,8 +287,8 @@ const sources: SourcesPage = {
   chart: {
     number: '1.1',
     title: 'Charts that use each publisher',
-    subtitle: 'Number of charts in release 1, by publisher of the release each chart uses, 18 Nov 2026',
-    note: "Note: Derived. We count the publisher on the source line of each chart. Five election charts use MoSPI's tables of ECI data and count under MoSPI. Source: India by Numbers, chart register, 18 Nov 2026. Checked 18 Nov 2026.",
+    subtitle: 'Number of charts in release 1, by publisher, 18 Nov 2026',
+    note: "Note: Derived from each chart's source line. Five election charts use MoSPI tables of ECI data and count under MoSPI. Source: India by Numbers, chart register, 18 Nov 2026. Checked 18 Nov 2026.",
   },
   publishers: {
     eyebrow: 'Publishers, by number of charts',
@@ -322,11 +322,11 @@ const sources: SourcesPage = {
       },
       {
         source: 'NFHS-5 fact sheets (rchiips.org)',
-        why: 'The NFHS-6 fact sheets print the NFHS-5 value beside each NFHS-6 value, so most NFHS-5 values come from them.',
+        why: 'The NFHS-6 fact sheets also print most NFHS-5 values, so we take them from there.',
       },
       {
         source: "India's 4th Biennial Update Report (unfccc.int)",
-        why: 'Not in release 1. Per-person CO2 emissions from this report come in a later release.',
+        why: 'Not in release 1. Its per-person CO2 emissions come in a later release.',
       },
       {
         source: 'MoSPI, EnviStats India 2025',
@@ -334,7 +334,7 @@ const sources: SourcesPage = {
       },
       {
         source: 'News reports of official figures',
-        why: 'Not a release. Example: All India Radio reported a 60.54% turnout for the Delhi 2025 election. We found no ECI release for it, so we leave it out and show "No data".',
+        why: 'Not a release. Example: All India Radio reported 60.54% turnout for Delhi 2025. We found no ECI release for it, so we show "No data".',
       },
     ],
   },

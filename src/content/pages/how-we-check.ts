@@ -106,7 +106,7 @@ const howWeCheck: HowWeCheck = {
         body: 'A script for each source turns the file into rows, each with a unit, a period and a base year.',
         machine: 'Reads PDF text, Excel and API files. Stops on a row it cannot read.',
         person: 'Types the values from tables that exist only as images, and marks them transcribed.',
-        example: 'Four election tables in Women and Men in India 2025 are images. We read them at 2.5x zoom and checked doubtful digits at 4x.',
+        example: 'Four election tables in Women and Men in India 2025 are images. We read them at 2.5x zoom, and doubtful digits at 4x.',
       },
       {
         number: '03',
@@ -216,7 +216,7 @@ const howWeCheck: HowWeCheck = {
         title: 'Urban unemployment, Jan-Mar 2022 to Jul-Sep 2026',
         subtitle: '% of the urban labour force aged 15+, current weekly status, by quarter',
         finding:
-          'PLFS changed its sample design in January 2025 and has no estimate for January to March 2025. Urban unemployment: 6.4% in October to December 2024 (old design), 6.8% in April to June 2025 (new design).',
+          'PLFS changed its sample design in January 2025, with no estimate for January to March 2025. Urban unemployment: 6.4% in October to December 2024 (old design), 6.8% in April to June 2025 (new design).',
         note: 'Note: MoSPI says to take the new design into account when comparing with releases up to December 2024.',
         hallmark: { office: 'MoSPI', unit: '% 15+', period: 'Q2 2026-27', status: ['Survey estimate', 'Method break'] },
         source: 'Source: MoSPI NSO, PLFS Quarterly Bulletin, July to September 2026, 10 Nov 2026. Checked 18 Nov 2026.',
@@ -258,7 +258,7 @@ const howWeCheck: HowWeCheck = {
   part5: {
     eyebrow: 'Part 5 · Corrections',
     heading: 'What if we get something wrong?',
-    lede: 'Report a problem from any chart page. A fixed error gets a dated note on the chart and a row in the corrections log. Publisher revisions go on the Releases page.',
+    lede: 'Report a problem from any chart page. Publisher revisions go on the Releases page.',
     heads: ['When', 'What we do'],
     targets: [
       { cells: ['A report arrives', "We check it against the publisher's release."] },
