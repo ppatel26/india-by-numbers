@@ -19,6 +19,17 @@ export function sourceLine(sources: readonly Source[], full = true): string {
   return `Source${sources.length > 1 ? 's' : ''}: ${list}. Checked ${formatDate(SITE.checked)}.`
 }
 
+/** "Sources: ORGI (1 Jun 2022) · NCP, MoHFW (Jul 2020)": one entry per publisher, with its latest release. */
+export function sourceBrief(sources: readonly Source[]): string {
+  const latest = new Map<string, Source>()
+  for (const s of sources) {
+    const name = publisherOf(s.publisher)
+    const had = latest.get(name)
+    if (!had || (s.released !== 'not stated' && (had.released === 'not stated' || s.released > had.released))) latest.set(name, s)
+  }
+  return `Source${latest.size > 1 ? 's' : ''}: ${[...latest].map(([name, s]) => (s.released === 'not stated' ? name : `${name} (${releasedText(s)})`)).join(' · ')}`
+}
+
 /** Unique sources, in first-seen order. */
 export function uniqueSources(sources: Iterable<Source>): Source[] {
   const seen = new Map<string, Source>()

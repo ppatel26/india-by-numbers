@@ -10,7 +10,7 @@ import type { Chart } from '~/content/types'
 import type { PeriodLink } from '~/content'
 import { openView, renderPlot, viewsOf, type View } from '~/lib/charts'
 import { timelineOf } from '~/lib/charts/model'
-import { sourceLine } from '~/lib/sources'
+import { sourceBrief, sourceLine } from '~/lib/sources'
 import { picksOf } from '~/lib/metadata'
 
 interface Props {
@@ -93,7 +93,11 @@ const full = page ? [...new Set(picksOf(chart).map((p) => p.file))] : []
   {chart.note && <p class="note">Note: {chart.note}</p>}
   <figcaption class="foot">
     <Hallmark {...chart.punches} status={chart.status} />
-    <p class="source">{sourceLine(chart.sources, page)}</p>
+    {page ? (
+      <p class="source">{sourceLine(chart.sources)}</p>
+    ) : (
+      <p class="source">{sourceBrief(chart.sources)}. <a href={`${href}#about`}>Details</a></p>
+    )}
     <p class="files">
       <a href={`${href}?tab=table`} data-view-link="table">Table</a> · <a href={`/charts/${chart.slug}.csv`} download title="The values in this chart, with unit and source on every row">CSV</a>
       {page &&
