@@ -48,6 +48,18 @@ const withUnit = (s: string, unit: Format['unit'], suffix = ''): string =>
  */
 export function formatNumber(value: number, fmt: Format = {}, raw?: string): Shown {
   if (fmt.multiply) return formatNumber(value * fmt.multiply, { ...fmt, multiply: undefined })
+  // A lakh or more, with no scale set, reads in lakh or crore: nobody should count digits.
+  // Tables and CSVs keep every digit (they pass scale 'none').
+  if (fmt.scale === undefined && Math.abs(value) >= 1e5) {
+    const scale = Math.abs(value) >= 1e7 ? 'crore' : 'lakh'
+    const n = Math.abs(value) / (scale === 'crore' ? 1e7 : 1e5)
+    const d = n < 10 ? 2 : n < 100 ? 1 : 0
+    // Drop trailing zeros: ₹6 lakh, not ₹6.00 lakh.
+    const s = scaled(value, scale, decimalsOf(String(Number(n.toFixed(d)))))
+    // Under a million the international reading is the plain number, not "157.14 thousand".
+    const alt = Math.abs(value) < 1e6 ? (value < 0 ? '-' : '') + grouped(Math.abs(value), raw ? decimalsOf(raw) : 0, intl) : s.alt
+    return { text: withUnit(s.text, fmt.unit, fmt.suffix), alt: alt && withUnit(alt, fmt.unit, fmt.suffix) }
+  }
   if (fmt.scale && fmt.scale !== 'none') {
     const s = scaled(value, fmt.scale, fmt.decimals)
     return { text: withUnit(s.text, fmt.unit, fmt.suffix), alt: s.alt && withUnit(s.alt, fmt.unit, fmt.suffix) }

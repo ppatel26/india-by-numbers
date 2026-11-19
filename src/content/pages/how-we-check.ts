@@ -114,7 +114,7 @@ const howWeCheck: HowWeCheck = {
         body: "The rows must add up to the publisher's own totals.",
         machine: 'Adds up the parts. A test fails if the text quotes a number that is not in the data.',
         person: 'Reads every revised value and rewrites any sentence it changes.',
-        example: 'ECI Report 33: candidate votes add up to the total in all 542 constituencies. CEA: the parts add up to 5,63,113 MW on 31 October 2026.',
+        example: 'ECI Report 33: candidate votes add up to the total in all 542 constituencies. CEA: the parts add up to 5.63 lakh MW on 31 October 2026.',
       },
       {
         number: '04',
@@ -180,7 +180,7 @@ const howWeCheck: HowWeCheck = {
       },
       {
         status: null,
-        means: 'Final, as the publisher says. Example: Census 2011 counted 1,21,08,54,977 people.',
+        means: 'Final, as the publisher says. Example: Census 2011 counted 121.09 crore people.',
         changes: 'A final figure can still be revised. Revisions go on the Releases page.',
       },
     ],

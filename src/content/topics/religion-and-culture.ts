@@ -251,7 +251,7 @@ const topic: Topic = {
   parts: [
     {
       title: 'Which religions do people report?',
-      lede: 'In 2011, 96,62,57,353 people in India (79.80%) reported their religion as Hindu, 17,22,45,158 (14.23%) as Muslim and 2,78,19,588 (2.30%) as Christian. 28,67,303 people (0.24%) did not state a religion.',
+      lede: 'In 2011, 96.63 crore people in India (79.80%) reported their religion as Hindu, 17.22 crore (14.23%) as Muslim and 2.78 crore (2.30%) as Christian. 28.67 lakh people (0.24%) did not state a religion.',
       blocks: [
         {
           // LATER: the board adds a 100% strip of the eight shares and prints the number of people (column 'value') beside each bar.
@@ -341,7 +341,7 @@ const topic: Topic = {
     },
     {
       title: 'Which mother tongues do people report?',
-      lede: 'In 2011, 52,83,47,193 people (43.63%) gave a mother tongue grouped under Hindi. Bengali came second with 9,72,37,669 (8.03%), then Marathi with 8,30,26,680 (6.86%). The Census lists 22 scheduled languages and 99 other languages, each with 10,000 or more speakers.',
+      lede: 'In 2011, 52.83 crore people (43.63%) gave a mother tongue grouped under Hindi. Bengali came second with 9.72 crore (8.03%), then Marathi with 8.30 crore (6.86%). The Census lists 22 scheduled languages and 99 other languages, each with 10,000 or more speakers.',
       blocks: [
         {
           // LATER: the board draws languages outside the Eighth Schedule as hollow bars, prints the number of

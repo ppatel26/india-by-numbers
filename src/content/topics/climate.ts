@@ -325,7 +325,7 @@ const topic: Topic = {
       title: 'How fast is power capacity moving away from coal?',
       lede: 'The Central Electricity Authority (CEA) counts the power capacity of utilities every month. Capacity is the most power that plants can make at once. It is not the power that they made in a period.',
       blocks: [
-        { text: 'Utilities had 1,362 MW of capacity in December 1947. Solar capacity grew from 2,632 MW in March 2014 to 1,74,547 MW in October 2026. Coal and lignite capacity grew from 1,45,273 MW to 2,31,438 MW.' },
+        { text: 'Utilities had 1,362 MW of capacity in December 1947. Solar capacity grew from 2,632 MW in March 2014 to 1.75 lakh MW in October 2026. Coal and lignite capacity grew from 1.45 lakh MW to 2.31 lakh MW.' },
         {
           chart: {
             kind: 'area',
@@ -336,7 +336,7 @@ const topic: Topic = {
             status: ['Method break'],
             note: 'CEA reports December 1947 and 1950, selected March dates to 1997, then every March to 2026 and October 2026. The breaks mark changes in what CEA counts: wind listed separately from 1998, a broader renewables total from 2006, revised renewable totals with more detail from 2014, and off-grid renewables from August 2021.',
             sources: [CEA_GROWTH, CEA_EXECUTIVE, CEA_CAPACITY],
-            format: { decimals: 0, scale: 'none' },
+            format: { decimals: 0 },
             y: { min: 0, max: 600000, step: 100000 },
             breaks: CAPACITY_BREAKS,
             series: [
@@ -371,7 +371,7 @@ const topic: Topic = {
             nextRelease: '2026-12-17 (estimated)',
           },
         },
-        { text: "On 31 October 2026, non-fossil sources made up 55.45% of India's 5,63,113 MW of power capacity, up from 32.31% in March 2014." },
+        { text: "On 31 October 2026, non-fossil sources made up 55.45% of India's 5.63 lakh MW of power capacity, up from 32.31% in March 2014." },
         {
           chart: {
             kind: 'line',
@@ -414,7 +414,7 @@ const topic: Topic = {
     },
     {
       title: 'Which states have the most renewable power?',
-      lede: 'The Ministry of New and Renewable Energy (MNRE) publishes renewable power capacity for all 36 states and union territories. India had 3,03,463 MW on 31 October 2026.',
+      lede: 'The Ministry of New and Renewable Energy (MNRE) publishes renewable power capacity for all 36 states and union territories. India had 3.03 lakh MW on 31 October 2026.',
       blocks: [
         { text: "Gujarat has the most renewable capacity, at 56,289 MW, followed by Rajasthan at 52,134 MW. Tamil Nadu is fourth, with 30,401 MW. The four states above 30,000 MW hold 56.84% of India's total." },
         {
@@ -426,7 +426,7 @@ const topic: Topic = {
             punches: { office: 'MNRE', unit: 'MW', period: '31 OCT 2026' },
             note: 'MNRE places each plant in the state where it stands. CEA\'s state tables add each state\'s share of central plants, so their figures differ. The total includes large hydro. MNRE lists a further 49.31 MW under "Others" with no state; it is in the India total.',
             sources: [MNRE_STATES_2026_10],
-            format: { decimals: 0, scale: 'none' },
+            format: { decimals: 0 },
             bins: [500, 2000, 5000, 10000, 30000],
             data: { file: 'climate/renewable-capacity-by-state-2026-10.csv', where: { series: 'total_re', geography: STATES_AND_INDIA } },
             total: true,
@@ -441,7 +441,7 @@ const topic: Topic = {
             ],
             processing: [
               'We take total renewable capacity for each of the 36 states and UTs, and for India, from the MNRE state-wise table as on 31 October 2026.',
-              'We check that the state rows and "Others" add up to MNRE\'s India total of 3,03,463 MW.',
+              'We check that the state rows and "Others" add up to MNRE\'s India total of 3.03 lakh MW.',
               'We round the values to whole megawatts for display.',
             ],
             nextRelease: '2026-12-14 (estimated)',

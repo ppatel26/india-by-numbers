@@ -12,9 +12,8 @@ import { topic } from '~/content'
 import { show } from '~/lib/charts/model'
 import { places, type Place } from '~/lib/geography'
 import { formatDate } from '~/lib/period'
-import { rankText, row, sentence, standfirst } from '~/lib/profile'
+import { rankText, row, standfirst } from '~/lib/profile'
 import { SITE } from '~/lib/site'
-import { releasedText } from '~/lib/sources'
 
 export function getStaticPaths() {
   return places.map((p, i) => ({
@@ -31,16 +30,14 @@ interface Props {
 const { place, prev, next } = Astro.props
 const sections = profile.sections.map((sec) => {
   const rows = sec.measures.map((m) => row(m, place.slug))
-  return { sec, t: topic(sec.topic), rows, text: sentence(sec.topic, place.slug, rows) }
+  return { sec, t: topic(sec.topic), rows }
 })
 const lede = standfirst(sections.find((s) => s.sec.topic === 'health')?.rows[0], place.name)
 const missing = sections.flatMap((s) => s.rows.filter((r) => !r.value).map((r) => ({ t: s.t, r })))
 const kind = place.type === 'ut' ? profile.typeLabel.ut : profile.typeLabel.state
-const sub = (r: (typeof sections)[number]['rows'][number]) => [r.chart.punches.period, r.chart.punches.unit, ...(r.chart.status ?? []).filter((s) => s !== 'Method break')].join(' · ')
-const src = (r: (typeof sections)[number]['rows'][number]) => {
-  const s = r.chart.sources[0]
-  return s ? `Source: ${s.publisher}, ${s.release}, ${releasedText(s)}` : ''
-}
+// Period, unit, status and publisher in one line; the full source is on the chart page.
+const sub = (r: (typeof sections)[number]['rows'][number]) =>
+  [r.chart.punches.period, r.chart.punches.unit, ...(r.chart.status ?? []).filter((s) => s !== 'Method break'), r.chart.punches.office].join(' · ')
 ---
 
 <Base title={`${place.name}: figures beside India`} description={lede ?? `${place.name} beside India on prices, jobs, health, education and more.`} imageAlt={`${place.name} beside India`} pageState={place.slug}>
@@ -73,12 +70,11 @@ const src = (r: (typeof sections)[number]['rows'][number]) => {
     <span class="muted">{profile.stripKey.ends}</span>
   </div>
 
-  {sections.map(({ sec, t, rows, text }) => (
+  {sections.map(({ sec, t, rows }) => (
     <section class="wrap topic" id={t.slug} aria-labelledby={`${t.slug}-h`}>
       <div class="lead">
         <TopicTag topic={t} />
         <h2 class="display" id={`${t.slug}-h`}>{sec.heading}</h2>
-        <p>{text ?? `${profile.noData(place.name)}.`}</p>
         <a href={`/${t.slug}/`}><strong>{profile.seeAll(t.name)}</strong></a>
       </div>
       <div class="table">
@@ -99,7 +95,6 @@ const src = (r: (typeof sections)[number]['rows'][number]) => {
                   <div class="m">
                     <a href={`/charts/${r.spec.chart}/`}>{r.label}</a>
                     <span class="label muted">{sub(r)}</span>
-                    <span class="muted src">{src(r)}</span>
                   </div>
                 </th>
                 <td class="v">
@@ -250,10 +245,6 @@ const src = (r: (typeof sections)[number]['rows'][number]) => {
   .lead h2 {
     font-size: 36px;
   }
-  .lead p {
-    font-size: 16px;
-    line-height: 25px;
-  }
   .table {
     padding-top: 8px;
     border-top: 2px solid var(--ink);
@@ -287,10 +278,6 @@ const src = (r: (typeof sections)[number]['rows'][number]) => {
   }
   tbody th a:hover {
     text-decoration: underline;
-  }
-  .src {
-    font-size: 13px;
-    line-height: 18px;
   }
   .v {
     font-size: 24px;

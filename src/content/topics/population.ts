@@ -125,7 +125,7 @@ const topic: Topic = {
   hindi: 'जनसंख्या',
   question: 'How many people live in India, and how fast has the number grown since 1901?',
   standfirst:
-    'India had a projected 142.6 crore people on 1 March 2026. The last full count, Census 2011, found 1,21,08,54,977 people.',
+    'India had a projected 142.6 crore people on 1 March 2026. The last full count, Census 2011, found 121.09 crore people.',
   figures: [
     {
       chart: 'population-projection',
@@ -204,7 +204,7 @@ const topic: Topic = {
       title: "How old is India's population?",
       // The board adds an SRS 2024 age split (24.0% aged 0 to 14, 9.7% aged 60+). No CSV holds it
       // (SRS Statistical Report 2024, Statement 3), so the sentence is left out until one does.
-      lede: 'In 2011, the largest age group was children aged 10 to 14: 13,27,09,212 people. There were 1,12,89,005 people aged 80 and over.',
+      lede: 'In 2011, the largest age group was children aged 10 to 14: 13.27 crore people. There were 1.13 crore people aged 80 and over.',
       blocks: [
         {
           // LATER: the board labels two bars ("Largest group, aged 10 to 14", "Aged 80 and over"); 'pyramid' has no callouts.
@@ -214,7 +214,7 @@ const topic: Topic = {
             title: 'Population pyramid of India, 2011',
             subtitle: 'Men and women in each five-year age group, India, Census 2011. Bars show the share of all people with a stated age; the table gives the counts.',
             punches: { office: 'ORGI', unit: 'persons', period: '2011' },
-            note: '44,89,802 people did not state their age. They are not in the pyramid.',
+            note: '44.9 lakh people did not state their age. They are not in the pyramid.',
             sources: [censusC14],
             format: { scale: 'crore' },
             by: 'age_group',
@@ -236,7 +236,7 @@ const topic: Topic = {
             },
             know: [
               'The pyramid shows Census 2011, the latest full count. No newer count by age exists.',
-              '44,89,802 people did not state their age. The pyramid leaves them out; the data file keeps them as a separate row.',
+              '44.9 lakh people did not state their age. The pyramid leaves them out; the data file keeps them as a separate row.',
               'Each bar adds rural and urban people. Table C-14 also gives each age group by residence.',
             ],
             processing: [
@@ -410,7 +410,7 @@ const topic: Topic = {
     },
     {
       title: 'Where do people live?',
-      lede: 'Uttar Pradesh had 19,98,12,341 people in 2011, more than any other state. Nagaland was the only state whose population fell between 2001 and 2011 (−0.58%). These are Census 2011 units, so Telangana and Ladakh have no figures of their own.',
+      lede: 'Uttar Pradesh had 19.98 crore people in 2011, more than any other state. Nagaland was the only state whose population fell between 2001 and 2011 (−0.58%). These are Census 2011 units, so Telangana and Ladakh have no figures of their own.',
       blocks: [
         {
           // LATER: the board's Table view adds "people counted in 2011" (series 'population'); 'states' takes one value per state.

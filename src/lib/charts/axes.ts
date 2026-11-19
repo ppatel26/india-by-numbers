@@ -45,7 +45,10 @@ export function yTicks(s: ScaleLinear<number, number>, axis: Axis = {}): number[
  * Unscaled ticks already drop trailing zeros; crore and lakh ticks need it worked out.
  */
 function tickLabels(ticks: readonly number[], f: Format | undefined): (t: number, withUnit: boolean) => Shown {
-  const base: Format = { ...f, decimals: undefined, unit: f?.unit === 'pp' ? '' : f?.unit }
+  // An axis that reaches a lakh reads in one unit on every tick: 0, 1 lakh, 2 lakh.
+  const peak = Math.max(...ticks.map((t) => Math.abs(t * (f?.multiply ?? 1))))
+  const auto: Format['scale'] = f?.scale === undefined && peak >= 1e5 ? (peak >= 1e7 ? 'crore' : 'lakh') : f?.scale
+  const base: Format = { ...f, scale: auto, decimals: undefined, unit: f?.unit === 'pp' ? '' : f?.unit }
   const per = (f?.scale === 'crore' ? 1e7 : f?.scale === 'lakh' ? 1e5 : 0) / (f?.multiply ?? 1)
   const exact = (d: number) => ticks.every((t) => Math.abs(Math.round((t / per) * 10 ** d) - (t / per) * 10 ** d) < 1e-6)
   const d = per ? ([0, 1, 2].find(exact) ?? 2) : 0

@@ -392,7 +392,7 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
-        { text: '63,71,839 voters chose "None of the above" (NOTA) in 2024, 0.99% of votes counted.' },
+        { text: '63.72 lakh voters chose "None of the above" (NOTA) in 2024, 0.99% of votes counted.' },
         {
           chart: {
             kind: 'states',
@@ -436,7 +436,7 @@ const topic: Topic = {
             title: 'Seats and vote share by party, 2024 general election',
             subtitle: 'Seats won (of 543) and share of valid votes, %. Each party with at least 1% of valid votes or at least 5 seats. Independent candidates are one group; the last row combines all remaining parties.',
             punches: { office: 'ECI', unit: 'seats · %', period: '2024' },
-            note: '"ECI" shares are as published in ECI Report 20 for national parties. "Derived" shares are our calculation: votes in ECI Report 33 divided by 63,89,90,692 valid votes, the ECI total. NOTA is not part of valid votes. The BJP\'s 240 seats include Surat, won unopposed; ECI Report 20 counts 239. Party names are as ECI prints them.',
+            note: '"ECI" shares are as published in ECI Report 20 for national parties. "Derived" shares are our calculation: votes in ECI Report 33 divided by 63.90 crore valid votes, the ECI total. NOTA is not part of valid votes. The BJP\'s 240 seats include Surat, won unopposed; ECI Report 20 counts 239. Party names are as ECI prints them.',
             sources: [ECI_RESULTS_JUN_2024, ECI_REPORT_20, ECI_REPORT_33],
             data: { file: PARTY_RESULTS },
             by: 'party_name',

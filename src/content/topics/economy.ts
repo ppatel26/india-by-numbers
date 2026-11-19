@@ -307,9 +307,9 @@ const topic: Topic = {
     },
     {
       title: 'Which states are richest and poorest per person?',
-      lede: "In 2024-25 income per person was highest in Sikkim, at ₹6,46,183, and in Goa, at ₹6,36,703. It was lowest in Bihar, at ₹69,211: less than a ninth of Sikkim's. The national figure was ₹2,05,324.",
+      lede: "In 2024-25 income per person was highest in Sikkim, at ₹6.46 lakh, and in Goa, at ₹6.37 lakh. It was lowest in Bihar, at ₹69,211: less than a ninth of Sikkim's. The national figure was ₹2.05 lakh.",
       blocks: [
-        { text: 'Income per person was above the national figure in 19 of the 32 states and UTs with data. Four had more than ₹4,00,000 a year: Sikkim, Goa, Delhi and Chandigarh.' },
+        { text: 'Income per person was above the national figure in 19 of the 32 states and UTs with data. Four had more than ₹4 lakh a year: Sikkim, Goa, Delhi and Chandigarh.' },
         {
           chart: {
             kind: 'states',
@@ -320,7 +320,7 @@ const topic: Topic = {
             punches: { office: 'MoSPI', unit: '₹ a year', period: '2024-25' },
             note: 'India is per capita net national income, the comparator the RBI uses. 32 of 36 states and UTs: there is no 2024-25 figure for Nagaland (latest 2023-24), Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu. Assam and Haryana: MoSPI data as on 1 August 2025, from the RBI Handbook.',
             sources: [STATE_API, RBI_TABLE_9],
-            format: { unit: '₹', decimals: 0, scale: 'none' },
+            format: { unit: '₹', decimals: 0 },
             data: { file: 'economy/per-capita-nsdp-by-state.csv', where: { price_basis: 'current prices' } },
             open: 'map',
             scale: 'seq',
@@ -329,7 +329,7 @@ const topic: Topic = {
             know: [
               'Income per person is net state domestic product (NSDP) per person, in rupees a year at current prices. It is not household income.',
               'The India value is per capita net national income, the comparator the RBI uses in the same table.',
-              'MoSPI has no 2024-25 value for Nagaland (latest 2023-24: ₹1,54,828), Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu. Assam and Haryana are MoSPI data as on 1 August 2025, from the RBI Handbook.',
+              'MoSPI has no 2024-25 value for Nagaland (latest 2023-24: ₹1.55 lakh), Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu. Assam and Haryana are MoSPI data as on 1 August 2025, from the RBI Handbook.',
               'State accounts are on base 2011-12. From 2019-20 Jammu and Kashmir covers the union territory only, without Ladakh, so its values before and after do not compare.',
             ],
             processing: [
@@ -612,7 +612,7 @@ const topic: Topic = {
     coverage:
       'All India for GDP, GVA, IIP and the exchange rate. Income per person covers 32 of the 36 states and UTs for 2024-25; GSDP growth covers 30. India in chart 3.1 is per capita net national income, the comparator the RBI uses. From 2019-20 Jammu and Kashmir covers the union territory only, without Ladakh.',
     missing:
-      'MoSPI has no 2024-25 income per person for Nagaland (latest 2023-24: ₹1,54,828), Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu, and no 2024-25 GSDP growth for those four plus Assam and Haryana. Only 15 states have 2025-26 figures. MoSPI gives no IIP rate for April 2021 on the 2011-12 base. No publisher states a reuse licence for these data.',
+      'MoSPI has no 2024-25 income per person for Nagaland (latest 2023-24: ₹1.55 lakh), Ladakh, Lakshadweep, and Dadra and Nagar Haveli and Daman and Diu, and no 2024-25 GSDP growth for those four plus Assam and Haryana. Only 15 states have 2025-26 figures. MoSPI gives no IIP rate for April 2021 on the 2011-12 base. No publisher states a reuse licence for these data.',
   },
   sources: [GDP_PRESS_NOTE, ESANKHYIKI, IIP_RELEASE, RBI_HANDBOOK, FBIL_ARCHIVE, RBI_HOME],
   related: [

@@ -10,7 +10,13 @@ describe('formatNumber', () => {
     expect(fmt(5.5, { unit: '%' }, '5.50')).toBe('5.50%')
   })
   it('groups digits the Indian way, with an international alternative', () => {
-    expect(formatNumber(361619, { unit: '₹', decimals: 0 })).toEqual({ text: '₹3,61,619', alt: '₹361,619' })
+    expect(formatNumber(61619, { unit: '₹', decimals: 0 })).toEqual({ text: '₹61,619' })
+    expect(formatNumber(361619, { unit: '₹', scale: 'none', decimals: 0 })).toEqual({ text: '₹3,61,619', alt: '₹361,619' })
+  })
+  it('reads a lakh or more in lakh or crore unless told not to', () => {
+    expect(formatNumber(157141, { unit: '₹', decimals: 0 })).toEqual({ text: '₹1.57 lakh', alt: '₹157,141' })
+    expect(formatNumber(600000, { unit: '₹' }).text).toBe('₹6 lakh')
+    expect(formatNumber(231438, {}).text).toBe('2.31 lakh')
     expect(fmt(999)).toBe('999')
   })
   it('writes crore and lakh, with billion and million in the other mode', () => {
