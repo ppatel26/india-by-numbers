@@ -16,13 +16,13 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in`. It serves the
 
 ### P1. Consumer price inflation since 2012
 
-- Type: line, with a shaded band for the RBI tolerance range (2% to 6%) and a reference line at the 4% target. Show a method break at January 2026.
+- Type: line, with a shaded band for the RBI tolerance range (2% to 6%) and a reference line at the 4% target. Mark each change of base.
 - Unit: % change on the same month a year earlier.
 - Geography: India. Period: January 2012 to October 2026, monthly. Combined (rural plus urban).
-- CSV: `cpi-inflation-monthly.csv`, with the band in `inflation-target.csv`.
+- CSV: `cpi-inflation-monthly.csv` and `cpi-inflation-2013-base-2010.csv`, with the band in `inflation-target.csv`.
 - Sentence: "Consumer prices rose by 6.09% in the year to October 2026, above the RBI's upper limit of 6%. The last rate above 6% was 6.21% in October 2024, on the old 2012 base. A year earlier, in October 2025, inflation was 0.25%, the lowest since the series began."
-- Source: MoSPI, CPI (base 2012=100) back series for January 2012 to May 2013 and current series for January 2014 to December 2025; CPI (base 2024=100) current series for January to October 2026. API `getCPIIndex` (base 2012) and `getCPIData` (base 2024). October 2026 is provisional.
-- Notes: the series has three gaps. MoSPI does not give a rate for June to December 2013 in either base-2012 series, or for April and May 2020 (COVID-19 lockdown). These rows are in the CSV with an empty value. The 2012 and 2024 series use different baskets and weights. Do not join them without the break marker.
+- Source: MoSPI eSankhyiki, base 2012=100 from January 2012 to May 2013 and January 2014 to December 2025, and base 2024=100 from January 2026. Archived MoSPI publications give the June to December 2013 rates on base 2010=100. October 2026 is provisional.
+- MoSPI gives no rate for April and May 2020, the lockdown months. The CSV keeps these rows with an empty value.
 
 ### P2. Inflation by state, October 2026
 
@@ -60,19 +60,19 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in`. It serves the
 - Type: small multiples or a line chart with a group picker.
 - Unit: % change on the same month a year earlier.
 - Geography: India, combined. Period: January 2012 to December 2025.
-- CSV: `cpi-inflation-by-group-2012-base.csv`. The `series` column identifies the API series.
-- Source: MoSPI, CPI (base 2012=100), back and current series.
-- Back-series rates end in May 2013 for housing and all items, and December 2012 for the other groups. Current-series rates start in January 2014. The chart marks the switch and separates the lines. The CSV adds 106 published rates and 86 rows with an index and no rate. Housing covers urban areas.
+- CSV: `cpi-inflation-by-group-2012-base.csv` and `cpi-inflation-2013-base-2010.csv`.
+- Source: MoSPI eSankhyiki, base 2012=100 back and current series. Archived MoSPI publications give base 2010=100 rates for the missing months in 2013.
+- Base 2012=100 back-series rates end in May 2013 for housing and all items, and in December 2012 for the other groups. Base 2010=100 covers the rest of 2013. The base 2012=100 current series starts in January 2014. Housing covers urban areas. The base 2010=100 clothing group includes bedding.
 
 ### P6. Rural and urban inflation
 
-- Type: line, two lines (rural, urban), with combined as an option.
+- Type: line, with rural and urban rates. The CSV also gives the combined rates.
 - Unit: % change on the same month a year earlier.
-- Geography: India. Period: January 2012 to October 2026. Breaks at January 2014 and January 2026.
-- CSV: `cpi-inflation-rural-urban.csv`
+- Geography: India. Period: January 2012 to October 2026. Mark each change of base.
+- CSV: `cpi-inflation-rural-urban.csv` and `cpi-inflation-2013-base-2010.csv`.
 - Sentence: "In October 2026 prices rose faster in villages than in towns: 6.63% in rural areas and 5.41% in urban areas."
-- Source: MoSPI, CPI (base 2012=100) back and current series to December 2025, and CPI (base 2024=100) from January 2026.
-- The back series gives rural rates through December 2012 and urban and combined rates through May 2013. The CSV adds 46 published rates and 26 rows with an index and no rate. The January 2026 break marks the start of base 2024=100, which uses a new basket and weights.
+- Source: MoSPI eSankhyiki, base 2012=100 back and current series, and base 2024=100 from January 2026. Archived MoSPI publications give base 2010=100 rates for the missing months in 2013.
+- Base 2010=100 covers January to December 2013 for rural CPI and June to December 2013 for urban and combined CPI. Other months through December 2025 use base 2012=100.
 
 ### P7. The RBI repo rate since 2001
 
@@ -136,7 +136,7 @@ Handbook tables 163 and 243 (monthly CPI indices and variation) were also downlo
 ## Gaps and cautions
 
 - **Method break, January 2026.** CPI moved to base 2024=100 with a new basket (COICOP 2018 divisions, 12 divisions in place of 6 groups) and new weights. The 2012 series ends in December 2025. MoSPI also publishes a 2024-base "Back" series for all-India from 2013. Its inflation rates match the 2012 series (for example 6.21% in October 2024), so it is a rescaled link, not a new measure. We did not use it.
-- **Gap, June to December 2013.** Not found. The 2012-base Back series stops at May 2013, and the 2012-base Current series gives no rate before January 2014. We tried both series in the API, month by month. The CSV marks these months as empty. Do not fill them in.
+- **Base change, 2013.** The base 2012=100 API series have gaps in 2013. The charts show published base 2010=100 rates for those months. See “CPI base 2010=100 gap fill” for coverage by series.
 - **Gap, April and May 2020.** The API gives the index but no inflation rate for the general index, with status flag `F*`. These were the national lockdown months. The API does not define the flags `F*` and `F+`.
 - **Provisional data.** October 2026 is provisional. MoSPI finalises it with the November release, due on 14 Dec 2026.
 - **States.** All 36 states and union territories are present for October 2026. State indices use thinner samples than the national index. MoSPI says to use state-level item indices with caution.
@@ -150,9 +150,35 @@ Handbook tables 163 and 243 (monthly CPI indices and variation) were also downlo
 
 Run `python3 -I pipeline/prices/build_prices_economy.py` from the repository root to build the CSVs from `raw/prices/` and `raw/economy/`. To regenerate the two CPI extensions from the checked-in CSVs, run `python3 -I pipeline/prices/extend_cpi12.py`. Add `--fetch` to download the source responses first. Run `python3 -I pipeline/prices/build_repo_rate.py` to rebuild the repo rate CSV from the saved RBI pages. The URL and SHA-256 below identify each file.
 
+Run `python3 -I pipeline/prices/fill_cpi_2013.py` after the base 2012=100 extensions. It reads the saved MoSPI PDFs and RBI Table 240, checks the overlaps, and writes `cpi-inflation-2013-base-2010.csv`. It needs Poppler's `pdftotext`. See “CPI base 2010=100 source files” for the paths and URLs.
+
+## CPI base 2010=100 gap fill
+
+The CSV contains 69 unique year-on-year rates as printed. Each row records `source_kind`, `source_url` and `status`. Every source used in the CSV is an `archived copy` of a MoSPI (Central Statistics Office) publication. Ashish Kumar and Dilip Kumar Sinha of the CSO wrote the June 2014 paper, *Opposite Behaviour of Food Market from that of Other Commodities*. The three charts draw separate lines for the different bases. The base 2012=100 CSVs keep their original index observations and rates.
+
+| Measure | Missing before | Published source used | Missing after |
+| --- | --- | --- | --- |
+| Rural all items | January to December 2013 | March and May final from the April and June releases. October and November final from the November and December releases. Other months from MoSPI's June 2014 paper, Table 1. | None in 2013 |
+| Urban and combined all items | June to December 2013 | October and November final from the November and December releases. Other months from the June 2014 paper, Table 1. | None in 2013 |
+| Food and beverages, fuel and light, clothing and footwear | January to December 2013 | June 2014 paper, Table 2, combined column. The base 2010=100 clothing group includes bedding. The food and beverages table excludes tobacco. | None in 2013 |
+| Housing | June to December 2013 | June 2014 paper, Table 2, urban column. Housing covers urban areas. | None in 2013 |
+
+Use the next monthly release when it prints a final rate. The CSV marks eight filled rates `final`. It marks rates from the June 2014 paper `retrospective` because the tables give past rates without a revision flag. The monthly release of 12 December 2013 printed provisional November rates of 11.74% rural and 11.24% combined. The 13 January 2014 release gave final rates of 11.66% and 11.16%. Both final rates match Table 1. Table 2 also gives a November food and beverages rate of 14.65%, compared with 14.72% provisional. For June and December 2013, Table 1 agrees with the three all-items rates in each month's first release. The CSV uses the Table 1 rates for those months.
+
+April and May 2020 still have gaps in all three charts. The base 2012=100 group CSV also contains unplotted Consumer Food Price, Miscellaneous, and Pan, Tobacco and Intoxicants rows. Their 2013 rate fields remain empty in that file.
+
+### Routes checked
+
+- **MoSPI live site.** The current release API returned newer releases for the 2013 to 2015 search. The legacy press-release path still serves the May 2014 release. Annex II gives provisional rates for May 2014 and lists May 2013 indices. The live paths tried for the June 2014 paper and the old monthly file returned 404. The old `mospi.nic.in` host did not resolve.
+- **Internet Archive.** The archived MoSPI home pages link to the paper and the monthly CPI page. The June 2014 paper supplies Tables 1 and 2. Wayback calendar and replay gave captures of the old `t4.pdf` file for the April, June, November and December 2013 releases and February 2014 release. The archived press-release lists use server-side actions for their month links. The old data portal redirects to an IP address. The broad MoSPI CDX and Common Crawl searches timed out.
+- **PIB.** The current and legacy release pages returned 403. The original PIB archive timed out. The Wayback index for old PIB releases provided capture IDs. No PIB rate enters the CSV.
+- **RBI.** The 2013-14 Handbook Tables 170 and 240 give base 2010=100 indices and rates for rural, urban and combined CPI. Table 240 prints one decimal place. It matches 35 of the 36 Table 1 rates for 2013 when rounded to one decimal. The remaining rate is May urban, printed as 9.6% by the RBI and 9.65% by MoSPI. The Handbook tables lack the spending-group rates needed here. The 2014-15 and 2025-26 rate tables and the RBI annual report and monetary-policy lists supplied no additional 2013 group rates.
+- **Other routes.** The India Budget and data.gov.in requests returned 403. Google, Bing, Yahoo, Brave and DuckDuckGo returned redirects, challenges, errors or unrelated results. The CEIC path redirected to a general India page. All plotted values came from MoSPI.
+
 ## Historical overlap checks
 
 - CPI, base 2012=100. The back and current extracts share 20 index observations in January to May 2013. All 20 indices differ. The current series supplies no rates for those months, so there are zero rates to compare. For example, the January 2013 combined index is 105.1 in the back series and 104.6 in the current series. The back series gives a rate of 10.52%. Keep the two series separate. The 11 entries in the January 2014 CSV boundary sample, three sector rows and eight group rows, match the current API rates, indices and status flags.
+- CPI, bases 2010=100 and 2012=100. Compare the published rates from January 2012 to March 2014 where both sources give a rate. All 20 combined rates differ. All 55 rural, urban and combined rates in the sector comparison differ. All 85 rates in the group comparison differ, including the 20 all-items rates. For January to May 2013, the base 2010=100 rates differ from every existing base 2012=100 rate for urban, combined and housing. January 2013 combined is 10.79% on base 2010=100 and 10.52% on base 2012=100. Keep the existing base 2012=100 rate at each overlap. The rebuild prints each comparison.
 - RBI Handbook. Tables 46 and 40 agree on all 20 lending-rate dates from 12 June 2008 to 26 July 2011. Use Table 40 from June 2008. All 56 effective dates and rates in the previous CSV match the rebuilt data. The September 2010 edition of Table 46 omits the 24 January 2006 and 5 January 2009 entries. The September 2011 edition includes both.
 - First fixed rate. Table 46 and paragraph 74 of the Annual Policy Statement for 2004-05 give 6.00%. Table 46 places the rate on 31 March 2004. The policy statement gives the effective date as 29 March 2004. It uses the term reverse repo for liquidity injection.
 - RBI statements. The 9 April, 6 June and 5 December 2025 decisions agree with Table 40. The 6 August and 1 October 2025 statements confirm holds at 5.50%. The February, April, June and August 2026 statements and MPC resolutions confirm holds at 5.25%. The 7 October statement and resolution and the 21 October minutes confirm the rise to 5.50%. The RBI monetary policy list and home page confirmed on 18 November that October was the latest decision and 5.50% was still in effect.
@@ -370,3 +396,50 @@ Source: MoSPI eSankhyiki, base 2012=100. The final current series ends in Decemb
 | `prices/cpi-history/current-2013-11/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2013&month_code=11&limit=100&page=1 | `9507a06287d706b9125c306c0d8e238915f5455cf5dd28f741f795df2eb032a3` |
 | `prices/cpi-history/current-2013-12/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2013&month_code=12&limit=100&page=1 | `2b2dc4c8f20f9a98ae3fa9ae93fc4087fe5e8dc1263b56bdafaa9681fb6811be` |
 | `prices/cpi-history/current-2014-01/body.json` | https://api.mospi.gov.in/api/cpi/getCPIIndex?base_year=2012&series=Current&state_code=99&year=2014&month_code=1&limit=100&page=1 | `ba136cb2eecc4f197c827e84082341fee6fc4fde10f143d09c192352d658850f` |
+
+## CPI base 2010=100 source files
+
+Paths start at `raw/`. The rebuild uses the June 2014 paper (`mospi-paper-pdf`), five monthly release PDFs (`mospi-t4-20130517`, `mospi-t4-jul2013`, `mospi-t4-dec2013`, `mospi-t4-feb2014` and `mospi-t4-20140911`), and RBI Table 240 (`rbi-2014-variation`). The other files record discovery and cross-checks.
+
+The four live MoSPI API files are POST responses. Each request used `page=1`, `page_size=50`, `sort_field=published_year`, `sort_order=ASC` and `end_date=2015-01-31`. The folder names give `data_source` and `start_date`. Requests with start date 1 January used an empty `search_term`. Requests with start date 2 January used `Consumer Price Index`.
+
+| File | URL read | Read date | SHA-256 |
+| --- | --- | --- | --- |
+| `prices/cpi2010/archive-cdx-pib/body.json` | https://web.archive.org/cdx/search/cdx?url=http%3A%2F%2Fpib.nic.in%2Fnewsite%2Ferelease.aspx&from=2013&to=2014&output=json&collapse=urlkey&matchType=prefix&filter=original%3A.%2A%5B%3F%5Drelid%3D10%5B012345%5D.%2A&limit=50 | 18 Nov 2026 | `43ee59f327e0908a48d217b35fe67563702018cc410fa3bb57e3ff21da1f0aaf` |
+| `prices/cpi2010/mospi-2012-inflation-pdf/body.pdf` | https://web.archive.org/web/20131220133952if_/http://mospi.nic.in/Mospi_New/upload/price_stat_8mar13.pdf?status=1&menu_id=215 | 18 Nov 2026 | `9fbb7cfaf8fcf7e0f2b1e78e43960b5f393a1c5d003cda34afd6292aec29cd7b` |
+| `prices/cpi2010/mospi-api-archive-2013-01-01/body.json` | https://www.mospi.gov.in/api/latest-release/get-web-latest-release-list | 18 Nov 2026 | `36d9346e2cfd00ea48b2e800e7033e337be18ede7367c1cf595d249f597c5cdd` |
+| `prices/cpi2010/mospi-api-archive-2013-01-02/body.json` | https://www.mospi.gov.in/api/latest-release/get-web-latest-release-list | 18 Nov 2026 | `84c12f3f5dca76fdc7e0fb4bdcaf415ba9682235df3b1f6e64b00cf578fc7e7e` |
+| `prices/cpi2010/mospi-api-web-2013-01-01/body.json` | https://www.mospi.gov.in/api/latest-release/get-web-latest-release-list | 18 Nov 2026 | `36d9346e2cfd00ea48b2e800e7033e337be18ede7367c1cf595d249f597c5cdd` |
+| `prices/cpi2010/mospi-api-web-2013-01-02/body.json` | https://www.mospi.gov.in/api/latest-release/get-web-latest-release-list | 18 Nov 2026 | `84c12f3f5dca76fdc7e0fb4bdcaf415ba9682235df3b1f6e64b00cf578fc7e7e` |
+| `prices/cpi2010/mospi-calendar-new_cpi_18feb11-2013/body.json` | https://web.archive.org/__wb/calendarcaptures/2?url=http%3A%2F%2Fmospi.nic.in%2FMospi_New%2Fupload%2Fnew_cpi_18feb11.htm&date=2013&groupby=day | 18 Nov 2026 | `82e94d106b96fbefaebfe401a098baf8ea59f8687f7c528ccd3045be4a3c9efd` |
+| `prices/cpi2010/mospi-calendar-new_cpi_18feb11-2014/body.json` | https://web.archive.org/__wb/calendarcaptures/2?url=http%3A%2F%2Fmospi.nic.in%2FMospi_New%2Fupload%2Fnew_cpi_18feb11.htm&date=2014&groupby=day | 18 Nov 2026 | `cefcaa13ff3b835edc3811e2abdeb27b9040cc83bfd97e1c61524b6dd081f0cb` |
+| `prices/cpi2010/mospi-calendar-t4-2013/body.json` | https://web.archive.org/__wb/calendarcaptures/2?url=http%3A%2F%2Fmospi.nic.in%2FMospi_New%2Fupload%2Ft4.pdf&date=2013&groupby=day | 18 Nov 2026 | `2af0d1201b453ec4842e5d5c12094787edd811c22acab3b2b1a6290e9ebd9864` |
+| `prices/cpi2010/mospi-calendar-t4-2014/body.json` | https://web.archive.org/__wb/calendarcaptures/2?url=http%3A%2F%2Fmospi.nic.in%2FMospi_New%2Fupload%2Ft4.pdf&date=2014&groupby=day | 18 Nov 2026 | `6f96cc9503da4e0a882766c649dbfdcb280f201a3a76978deba38fbf1616b4c6` |
+| `prices/cpi2010/mospi-cpi-archive/body.html` | https://web.archive.org/web/20140719095143/http://mospi.nic.in/Mospi_New/site/count_cpi.aspx?status=1&menu_id=54 | 18 Nov 2026 | `f498b4fbc9b194a5d6a1cf8089c3d6819459254d79bf02363f051d29de5e89d7` |
+| `prices/cpi2010/mospi-cpi-release-archive/body.html` | https://web.archive.org/web/20140411213836/http://mospi.nic.in/Mospi_New/upload/mospi_press_releases.htm | 18 Nov 2026 | `b96db4830d48de6b5fc4303b164417207731f3b6e391495acca7b45337b2d7b0` |
+| `prices/cpi2010/mospi-cpi-releases/body.html` | https://web.archive.org/web/20140626091247/http://mospi.nic.in/Mospi_New/upload/cpi_press_release.htm | 18 Nov 2026 | `dfc6826f123638f2771864cb03dd16e320a3cf5df7ed4076e7f106ee2c3a58c9` |
+| `prices/cpi2010/mospi-home-2013-12/body.html` | https://web.archive.org/web/20131209084917/http://mospi.nic.in/ | 18 Nov 2026 | `321f1064a132dee8ecdbbd28eb08e0520e64d5fab7f88601f2f22256299d1ac0` |
+| `prices/cpi2010/mospi-home-2014-02/body.html` | https://web.archive.org/web/20140203095750/http://mospi.nic.in/ | 18 Nov 2026 | `e95a3b89b6c6b72371376abb184e4c4344db77ce6ee060e870ef71ce76b4138f` |
+| `prices/cpi2010/mospi-inflation-paper/body.html` | https://web.archive.org/web/20140718231112/http://mospi.nic.in/Mospi_New/upload/Paper_on_Inflation_Rates_18June2014.pdf?status=1&menu_id=236 | 18 Nov 2026 | `212e4c99c7e5c6a6ff2466c33d0d140596816bb951eb4aa9248c32aa1cbc5864` |
+| `prices/cpi2010/mospi-jun14-release-pdf/body.pdf` | https://web.archive.org/web/20140630040047if_/http://mospi.nic.in/Mospi_New/upload/cpi_press_rele_12june14d.pdf | 18 Nov 2026 | `9e2e0948e006f11b0440f2246242d7ac96e34edfe6c41d27b4c1df2de6780a8f` |
+| `prices/cpi2010/mospi-national-price-indices-2012/body.html` | https://web.archive.org/web/20131220133952/http://mospi.nic.in/Mospi_New/upload/price_stat_8mar13.pdf?status=1&menu_id=215 | 18 Nov 2026 | `2ee45cd75a0f27f70dfee9de9dd145b09a86928824b688001bdd583c52558b0c` |
+| `prices/cpi2010/mospi-official-jun14/body.pdf` | https://www.mospi.gov.in/sites/default/files/press_release/cpi_press_rele_12june14d.pdf | 18 Nov 2026 | `9e2e0948e006f11b0440f2246242d7ac96e34edfe6c41d27b4c1df2de6780a8f` |
+| `prices/cpi2010/mospi-old-cpi-exact/body.html` | https://web.archive.org/web/20140209132313/http://mospi.nic.in/Mospi_New/upload/new_cpi_18feb11.htm | 18 Nov 2026 | `88d456769737b681faf38275f212238b61068ff9a9cb3a8d495f0ad865b67421` |
+| `prices/cpi2010/mospi-old-jun14/body.pdf` | https://web.archive.org/web/20140712093912id_/http://mospi.nic.in/Mospi_New/upload/cpi_press_rele_12june14d.pdf | 18 Nov 2026 | `9e2e0948e006f11b0440f2246242d7ac96e34edfe6c41d27b4c1df2de6780a8f` |
+| `prices/cpi2010/mospi-paper-pdf/body.pdf` | https://web.archive.org/web/20140718231112if_/http://mospi.nic.in/Mospi_New/upload/Paper_on_Inflation_Rates_18June2014.pdf?status=1&menu_id=236 | 18 Nov 2026 | `39e40fe6f8a76bcd58cc6c2d28e6a8236ea52933da75d28438ce5b9979e17a0c` |
+| `prices/cpi2010/mospi-press-list-feb2014/body.html` | https://web.archive.org/web/20140209135153/http://mospi.nic.in/Mospi_New/site/PressRelease.aspx?status=1&menu_id=39 | 18 Nov 2026 | `b854efd18dea248270138f7d2ddefb6f208d17eb091568ab6e471e29cc06ba44` |
+| `prices/cpi2010/mospi-press-list-jul2013/body.html` | https://web.archive.org/web/20130810085043/http://mospi.nic.in/Mospi_New/site/PressRelease.aspx?status=1&menu_id=39 | 18 Nov 2026 | `86a5cdb34529fefab0838b2019f8a13dd93021308323aa09884a4e05462defe0` |
+| `prices/cpi2010/mospi-press-statement/body.html` | https://web.archive.org/web/20140209135340/http://mospi.nic.in/Mospi_New/site/inner.aspx?status=3&menu_id=82 | 18 Nov 2026 | `aafbd5f7b9bf02e34dff5f2329bdcc19f1f75e393b23a01c0134a4fda42a12d8` |
+| `prices/cpi2010/mospi-site-2013-07/body.html` | https://web.archive.org/web/20130728003149/http://mospi.nic.in:80/Mospi_New/Site/home.aspx | 18 Nov 2026 | `d021e115d3f1829edabb6d1afec49381c01aa25a316ffeda1a4a5714d478b5b5` |
+| `prices/cpi2010/mospi-site-2013-12/body.html` | https://web.archive.org/web/20131209084920/http://mospi.nic.in/Mospi_New/site/home.aspx | 18 Nov 2026 | `8ebe7d0c83fce60f27147ffba22cd7e1195fadda0a47a0865abb76a3e5e1f940` |
+| `prices/cpi2010/mospi-site-2014-02/body.html` | https://web.archive.org/web/20140208030147/http://mospi.nic.in/Mospi_New/site/home.aspx | 18 Nov 2026 | `0aba0161d5d52d786742219457f7df37628b6b0069acd38f3be59c5f884eed42` |
+| `prices/cpi2010/mospi-site-2014-08/body.html` | https://web.archive.org/web/20140802025112/http://mospi.nic.in/Mospi_New/Site/home.aspx | 18 Nov 2026 | `9f091aa930220d11c839e71d3e5a574757e949bd702e177d55b6cf07df336dd9` |
+| `prices/cpi2010/mospi-t4-20130517/body.pdf` | https://web.archive.org/web/20130517084919if_/http://mospi.nic.in/Mospi_New/upload/t4.pdf | 18 Nov 2026 | `6504da5c5775aad47e9d07d874bec3d51c3a900d1648d7b28d664663c4a3a7ea` |
+| `prices/cpi2010/mospi-t4-20130809/body.pdf` | https://web.archive.org/web/20130809185517if_/http://mospi.nic.in/Mospi_New/upload/t4.pdf | 18 Nov 2026 | `1fe9676ff1a8a786aab5a89d584eb5e6bdcba58ab2125fd2e893f225d9d72dfc` |
+| `prices/cpi2010/mospi-t4-20131224/body.pdf` | https://web.archive.org/web/20131224184034if_/http://mospi.nic.in/mospi_new/upload/t4.pdf | 18 Nov 2026 | `a93e022a5e45d5871fc14fe586f6a0068ec745b57881c7b6990a19303978e579` |
+| `prices/cpi2010/mospi-t4-20140911/body.pdf` | https://web.archive.org/web/20140911192956if_/http://mospi.nic.in/mospi_new/upload/t4.pdf | 18 Nov 2026 | `0a4dc8986793ec5b88919c79cf951bb4b14e1665d68f9db405716dba4d490bfe` |
+| `prices/cpi2010/mospi-t4-dec2013/body.pdf` | https://web.archive.org/web/20131224184034if_/http://mospi.nic.in/mospi_new/upload/t4.pdf | 18 Nov 2026 | `a93e022a5e45d5871fc14fe586f6a0068ec745b57881c7b6990a19303978e579` |
+| `prices/cpi2010/mospi-t4-feb2014/body.pdf` | https://web.archive.org/web/20140209135925if_/http://mospi.nic.in/Mospi_New/upload/t4.pdf | 18 Nov 2026 | `fa839265b84d0475ada184f3d2b9880ac566a7f385d309276a917aec905717f6` |
+| `prices/cpi2010/mospi-t4-jul2013/body.pdf` | https://web.archive.org/web/20130809185517if_/http://mospi.nic.in/Mospi_New/upload/t4.pdf | 18 Nov 2026 | `1fe9676ff1a8a786aab5a89d584eb5e6bdcba58ab2125fd2e893f225d9d72dfc` |
+| `prices/cpi2010/rbi-2014-index/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=15962 | 18 Nov 2026 | `122d4d041048550caa1464ddaeec555928fa680b86fb81b37dfcfff06db2288c` |
+| `prices/cpi2010/rbi-2014-variation/body.html` | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=16034 | 18 Nov 2026 | `9bdd3a4d8ade4932748d0c22bcb4584729c869779367acf0cb211a8a88428c04` |

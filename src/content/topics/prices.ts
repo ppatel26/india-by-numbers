@@ -27,6 +27,43 @@ const CPI_2012_API: Source = {
   url: 'https://api.mospi.gov.in/api/cpi/getCPIIndex',
 }
 
+const CPI_2010_PAPER: Source = {
+  publisher: 'MoSPI (CSO)',
+  release: 'Opposite Behaviour of Food Market from that of Other Commodities, Tables 1 and 2 (archived copy)',
+  released: '2014-06-18',
+  url: 'https://web.archive.org/web/20140718231112if_/http://mospi.nic.in/Mospi_New/upload/Paper_on_Inflation_Rates_18June2014.pdf?status=1&menu_id=236',
+}
+
+const CPI_2010_RURAL_RELEASES: Source[] = [
+  {
+    publisher: 'MoSPI (CSO)',
+    release: 'CPI press release for April 2013, March final rates (archived copy)',
+    released: '2013-05-13',
+    url: 'https://web.archive.org/web/20130517084919if_/http://mospi.nic.in/Mospi_New/upload/t4.pdf',
+  },
+  {
+    publisher: 'MoSPI (CSO)',
+    release: 'CPI press release for June 2013, May final rates (archived copy)',
+    released: '2013-07-12',
+    url: 'https://web.archive.org/web/20130809185517if_/http://mospi.nic.in/Mospi_New/upload/t4.pdf',
+  },
+]
+
+const CPI_2010_LATE_RELEASES: Source[] = [
+  {
+    publisher: 'MoSPI (CSO)',
+    release: 'CPI press release for November 2013, October final rates (archived copy)',
+    released: '2013-12-12',
+    url: 'https://web.archive.org/web/20131224184034if_/http://mospi.nic.in/mospi_new/upload/t4.pdf',
+  },
+  {
+    publisher: 'MoSPI (CSO)',
+    release: 'CPI press release for December 2013, November final rates (archived copy)',
+    released: '2014-01-13',
+    url: 'https://web.archive.org/web/20140209135925if_/http://mospi.nic.in/Mospi_New/upload/t4.pdf',
+  },
+]
+
 // The board row covers Tables 40 and 236. Its link is the Handbook page named in the
 // README; the charts cite each table file below.
 const RBI_HANDBOOK: Source = {
@@ -97,6 +134,7 @@ const CFPI_RELEASES: Source = {
 const CPI_NEXT = '2026-12-14'
 
 const MONTHLY = 'prices/cpi-inflation-monthly.csv'
+const CPI_2010 = 'prices/cpi-inflation-2013-base-2010.csv'
 const DIVISIONS_LATEST = 'prices/cpi-inflation-by-division-latest.csv'
 const DIVISIONS_2026 = 'prices/cpi-inflation-by-division-2026.csv'
 const GROUPS_2012 = 'prices/cpi-inflation-by-group-2012-base.csv'
@@ -127,35 +165,40 @@ const topic: Topic = {
             slug: 'cpi-inflation',
             title: 'Inflation in India, January 2012 to October 2026',
             subtitle:
-              'Annual change in the Consumer Price Index, rural and urban combined, %, January 2012 to October 2026. Base 2012=100 to December 2025; base 2024=100 from January 2026.',
+              'Annual change in consumer prices for rural and urban India combined, %. June to December 2013 uses base 2010=100.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'OCT 2026' },
             status: ['Provisional', 'Method break'],
-            note: 'MoSPI gives no rate for June to December 2013 or for April and May 2020 (lockdown). The two bases use different baskets and weights, so the lines are not joined.',
-            sources: [CPI_RELEASE, CPI_API, RBI_TARGET],
+            note: 'June to December 2013 uses base 2010=100 from archived MoSPI publications. Earlier months and January 2014 to December 2025 use base 2012=100. Base 2024=100 starts in January 2026.',
+            sources: [CPI_RELEASE, CPI_API, CPI_2010_PAPER, ...CPI_2010_LATE_RELEASES, RBI_TARGET],
             format: { unit: '%' },
             series: [
-              // The base 2012=100 rows include the empty months (June to December 2013,
-              // April and May 2020), so the line breaks there.
-              { key: 'base-2012', label: 'India, base 2012=100', color: 'ink', file: MONTHLY, where: { base: '2012=100' } },
+              { key: 'back-2012', label: 'India, base 2012=100', color: 'ink', file: MONTHLY, where: { series: 'back series' } },
+              { key: 'base-2010', label: 'India, base 2010=100', color: 'ink', file: CPI_2010, where: { sector: 'combined', group: 'General' } },
+              { key: 'base-2012', label: 'India, base 2012=100', color: 'ink', file: MONTHLY, where: { base: '2012=100', series: 'current series' } },
               { key: 'base-2024', label: 'India, base 2024=100', color: 'ink', file: MONTHLY, where: { base: '2024=100' } },
             ],
             y: { min: 0, max: 12, step: 2 },
             band: { from: 2, to: 6, label: 'RBI tolerance band 2% to 6%' },
             refs: [{ y: 4, label: 'Target 4%' }],
-            breaks: [{ x: '2026-01', label: 'Method break: new base 2024=100' }],
+            breaks: [
+              { x: '2013-06', label: '' },
+              { x: '2014-01', label: '' },
+              { x: '2026-01', label: 'Base 2024=100' },
+            ],
             callouts: [{ series: 'base-2024', x: '2026-10' }],
             know: [
               'This is the change in consumer prices on the same month a year earlier, for rural and urban India combined.',
               'October 2026 is provisional. MoSPI finalises it with the November release, due on 14 December 2026.',
               'CPI moved to base 2024=100 in January 2026, with a new basket and new weights. The 2012=100 series ends in December 2025. The two series are not joined.',
-              'MoSPI gives no rate for June to December 2013: the 2012-base back series stops in May 2013 and the current series starts its rates in January 2014. It gives none for April and May 2020, the lockdown months.',
+              'MoSPI gives no rate for April and May 2020, the lockdown months.',
               'The RBI target is 4%, with a band of 2% to 6%, retained for 1 April 2026 to 31 March 2031.',
             ],
             processing: [
-              'Fetch the all-India general index and rate for each month from the MoSPI eSankhyiki API: base 2012=100 (back series to May 2013, current series from January 2014) and base 2024=100 (from January 2026).',
+              'Read the base 2012=100 back and current series and the base 2024=100 series from the MoSPI eSankhyiki API.',
+              'Read the published base 2010=100 rates for June to December 2013 from the archived MoSPI paper and press releases.',
               'Check October 2026 against the press release of 12 Nov 2026.',
-              'Keep the months with no published rate as empty rows. Do not fill them in.',
-              'Keep the two bases as separate series and mark the break at January 2026.',
+              'Leave April and May 2020 empty.',
+              'Draw each base as a separate line. Mark each change of base.',
               'Draw the RBI target and band from the Monetary Policy Framework page.',
             ],
             nextRelease: CPI_NEXT,
@@ -365,31 +408,40 @@ const topic: Topic = {
             slug: 'cpi-inflation-by-group-2012',
             title: 'Inflation by group in India, 2012 to 2025 (base 2012)',
             subtitle:
-              'Annual change in consumer prices (2012=100). The grey line gives the all-items rate.',
+              'Annual change in consumer prices, %. Base 2010=100 fills gaps in 2013. The grey line gives the all-items rate.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'DEC 2025' },
             status: ['Method break'],
-            note: 'Back-series rates end in May 2013 for housing and all items, and December 2012 for the other groups. Current-series rates start in January 2014. April and May 2020 also have gaps.',
-            sources: [CPI_2012_API],
+            note: 'Archived MoSPI publications give the base 2010=100 rates. They cover June to December 2013 for housing and all items, and all of 2013 for the other groups. Other months use base 2012=100.',
+            sources: [CPI_2012_API, CPI_2010_PAPER, ...CPI_2010_LATE_RELEASES],
             format: { unit: '%' },
             series: [
               { key: 'food-back', label: 'Food and beverages', color: 'ink', file: GROUPS_2012, where: { group: 'Food and Beverages', series: 'back series' } },
+              { key: 'food-2010', label: 'Food and beverages, base 2010=100', color: 'ink', file: CPI_2010, where: { group: 'Food and Beverages' } },
               { key: 'food', label: 'Food and beverages', color: 'ink', file: GROUPS_2012, where: { group: 'Food and Beverages', series: 'current series' } },
               { key: 'fuel-back', label: 'Fuel and light', color: 'ink', file: GROUPS_2012, where: { group: 'Fuel and Light', series: 'back series' } },
+              { key: 'fuel-2010', label: 'Fuel and light, base 2010=100', color: 'ink', file: CPI_2010, where: { group: 'Fuel and Light' } },
               { key: 'fuel', label: 'Fuel and light', color: 'ink', file: GROUPS_2012, where: { group: 'Fuel and Light', series: 'current series' } },
               { key: 'housing-back', label: 'Housing (urban only)', color: 'ink', file: GROUPS_2012, where: { group: 'Housing', series: 'back series' } },
+              { key: 'housing-2010', label: 'Housing, base 2010=100', color: 'ink', file: CPI_2010, where: { group: 'Housing' } },
               { key: 'housing', label: 'Housing (urban only)', color: 'ink', file: GROUPS_2012, where: { group: 'Housing', series: 'current series' } },
               { key: 'clothing-back', label: 'Clothing and footwear', color: 'ink', file: GROUPS_2012, where: { group: 'Clothing and Footwear', series: 'back series' } },
+              { key: 'clothing-2010', label: 'Clothing, bedding and footwear, base 2010=100', color: 'ink', file: CPI_2010, where: { group: 'Clothing, Bedding and Footwear' } },
               { key: 'clothing', label: 'Clothing and footwear', color: 'ink', file: GROUPS_2012, where: { group: 'Clothing and Footwear', series: 'current series' } },
               { key: 'general-back', label: 'All items (General)', color: 'other', file: GROUPS_2012, where: { group: 'General', series: 'back series' } },
+              { key: 'general-2010', label: 'All items, base 2010=100', color: 'other', file: CPI_2010, where: { sector: 'combined', group: 'General' } },
               { key: 'general', label: 'All items (General)', color: 'other', file: GROUPS_2012, where: { group: 'General', series: 'current series' } },
             ],
             y: { step: 5 },
-            breaks: [{ x: '2014-01', before: 'Back', label: 'Current series' }],
+            breaks: [
+              { x: '2013-01', label: '' },
+              { x: '2013-06', label: '' },
+              { x: '2014-01', label: '' },
+            ],
             panels: [
-              { label: 'Food and beverages', series: ['food-back', 'food', 'general-back', 'general'] },
-              { label: 'Fuel and light', series: ['fuel-back', 'fuel', 'general-back', 'general'] },
-              { label: 'Housing (urban only)', series: ['housing-back', 'housing', 'general-back', 'general'] },
-              { label: 'Clothing and footwear', series: ['clothing-back', 'clothing', 'general-back', 'general'] },
+              { label: 'Food and beverages', series: ['food-back', 'food-2010', 'food', 'general-back', 'general-2010', 'general'] },
+              { label: 'Fuel and light', series: ['fuel-back', 'fuel-2010', 'fuel', 'general-back', 'general-2010', 'general'] },
+              { label: 'Housing (urban only)', series: ['housing-back', 'housing-2010', 'housing', 'general-back', 'general-2010', 'general'] },
+              { label: 'Clothing and footwear', series: ['clothing-back', 'clothing-2010', 'clothing', 'general-back', 'general-2010', 'general'] },
             ],
             callouts: [
               { series: 'food-back', x: '2012-12' },
@@ -401,11 +453,13 @@ const topic: Topic = {
             know: [
               'The 2012=100 series ends in December 2025. The 2024=100 series uses new divisions and weights.',
               'The housing index covers urban areas.',
+              'The base 2010=100 clothing group includes bedding.',
               'MoSPI gives no general index rate for April and May 2020, the lockdown months.',
             ],
             processing: [
               'Read the back and current series from the MoSPI eSankhyiki API on base 2012=100.',
-              'Compare indices where the two series overlap. The values differ, so plot separate lines.',
+              'Read the published base 2010=100 rates from the archived MoSPI paper and press releases.',
+              'Keep the existing rates where the bases overlap. Draw separate lines at each change of base.',
             ],
             nextRelease: 'not announced',
           },
@@ -422,22 +476,29 @@ const topic: Topic = {
             slug: 'cpi-inflation-rural-urban',
             title: 'Rural and urban inflation in India, January 2012 to October 2026',
             subtitle:
-              'Annual change in consumer prices in rural and urban areas. MoSPI introduced the 2024 base in January 2026.',
+              'Annual change in consumer prices in rural and urban areas, %. Base 2010=100 fills gaps in 2013.',
             punches: { office: 'MoSPI', unit: '% y/y', period: 'OCT 2026' },
             status: ['Provisional', 'Method break'],
-            note: 'Back-series rates end in December 2012 for rural areas and May 2013 for urban areas. Current-series rates start in January 2014 and have gaps in April and May 2020.',
-            sources: [CPI_RELEASE, CPI_2012_API, CPI_API],
+            note: 'Archived MoSPI publications give the base 2010=100 rates. They cover all of 2013 in rural areas and June to December 2013 in urban areas. Other months to December 2025 use base 2012=100. Base 2024=100 starts in January 2026.',
+            sources: [CPI_RELEASE, CPI_2012_API, CPI_API, CPI_2010_PAPER, ...CPI_2010_RURAL_RELEASES, ...CPI_2010_LATE_RELEASES],
             format: { unit: '%' },
             series: [
-              { key: 'rural-back', label: 'Rural, back series', color: 's8', file: RURAL_URBAN, where: { sector: 'rural', series: 'back series' } },
+              { key: 'rural-back', label: 'Rural, base 2012=100', color: 's8', file: RURAL_URBAN, where: { sector: 'rural', series: 'back series' } },
+              { key: 'rural-2010', label: 'Rural, base 2010=100', color: 's8', file: CPI_2010, where: { sector: 'rural', group: 'General' } },
               { key: 'rural-2012', label: 'Rural, base 2012=100', color: 's8', file: RURAL_URBAN, where: { sector: 'rural', base: '2012=100', series: 'current series' } },
               { key: 'rural-2024', label: 'Rural', color: 's8', file: RURAL_URBAN, where: { sector: 'rural', base: '2024=100' } },
-              { key: 'urban-back', label: 'Urban, back series', color: 's5', file: RURAL_URBAN, where: { sector: 'urban', series: 'back series' } },
+              { key: 'urban-back', label: 'Urban, base 2012=100', color: 's5', file: RURAL_URBAN, where: { sector: 'urban', series: 'back series' } },
+              { key: 'urban-2010', label: 'Urban, base 2010=100', color: 's5', file: CPI_2010, where: { sector: 'urban', group: 'General' } },
               { key: 'urban-2012', label: 'Urban, base 2012=100', color: 's5', file: RURAL_URBAN, where: { sector: 'urban', base: '2012=100', series: 'current series' } },
               { key: 'urban-2024', label: 'Urban', color: 's5', file: RURAL_URBAN, where: { sector: 'urban', base: '2024=100' } },
             ],
             y: { min: -2, max: 12, step: 2 },
-            breaks: [{ x: '2014-01', before: 'Back', label: 'Current series' }, { x: '2026-01', label: 'Base 2024=100' }],
+            breaks: [
+              { x: '2013-01', label: '' },
+              { x: '2013-06', label: '' },
+              { x: '2014-01', label: '' },
+              { x: '2026-01', label: 'Base 2024=100' },
+            ],
             callouts: [
               { series: 'rural-2024', x: '2026-10' },
               { series: 'urban-2024', x: '2026-10' },
@@ -450,9 +511,9 @@ const topic: Topic = {
             ],
             processing: [
               'Read all-India rates from the MoSPI eSankhyiki API. Base 2012=100 includes a back series and a current series.',
-              'Compare indices where the back and current series overlap. The values differ, so plot separate lines.',
+              'Read the published base 2010=100 rates from the archived MoSPI paper and press releases.',
               'Check October 2026 against the press release of 12 Nov 2026.',
-              'Keep each sector and base as a separate series and mark the break at January 2026.',
+              'Keep each sector and base as a separate series. Mark each change of base.',
             ],
             nextRelease: CPI_NEXT,
           },
@@ -513,13 +574,13 @@ const topic: Topic = {
     revisions:
       'The latest month is provisional. MoSPI makes October 2026 final with the November release. September 2026 is final.',
     breaks:
-      'From January 2026 the CPI uses base 2024=100, a new basket and new weights, and 12 COICOP 2018 divisions in place of 6 groups. The 2012=100 series ends in December 2025. We show both and do not join them. The 2012 groups (chart 3.3) do not match the 2024 divisions (3.1, 3.2). CPI-IW changed base in 2005-06 and 2020-21; RBI links it.',
+      'Some months in 2013 use base 2010=100. From January 2026 the CPI uses base 2024=100, a new basket and new weights, and 12 COICOP 2018 divisions. The base 2012=100 series ends in December 2025. CPI-IW changed base in 2005-06 and 2020-21. The RBI links it.',
     coverage:
       'All India, rural, urban and combined. All 36 states and UTs have a combined value for October 2026. State indices use thinner samples than the national index, and MoSPI asks users to read state item indices with caution. CPI-IW covers industrial workers only.',
     missing:
-      'MoSPI gives no all-items inflation rate for June to December 2013 or for April and May 2020. The RBI Handbook first records a repo rate for April 2001.',
+      'MoSPI gives no all-items inflation rate for April and May 2020. The RBI Handbook first records a repo rate for April 2001.',
   },
-  sources: [CPI_RELEASE, CFPI_RELEASES, CPI_API, RBI_HANDBOOK, RBI_HIKE, RBI_TARGET],
+  sources: [CPI_RELEASE, CFPI_RELEASES, CPI_API, CPI_2010_PAPER, RBI_HANDBOOK, RBI_HIKE, RBI_TARGET],
   related: [
     { label: 'Economy: Industrial production, month by month', href: '/charts/iip-growth/' },
     { label: 'Economy: Rupees per US dollar since 1986-87', href: '/charts/usd-inr-annual/' },
