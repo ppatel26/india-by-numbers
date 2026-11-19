@@ -62,21 +62,21 @@ The original data come from IMD, IMD Pune, CEA and MNRE (read 17 to 18 Nov 2026)
 
 ### C6. Installed power capacity by source
 
-- Type: stacked bar (one bar per 31 March, plus 31 Oct 2026).
+- Type: stacked area with breaks at changes in reporting coverage.
 - Unit: MW.
-- Geography: India (utilities). Period: 31 Mar 2014 to 31 Oct 2026.
-- CSV: `installed-capacity-by-source-2014-2026.csv`
+- Geography: India (utilities). Period: 31 Dec 1947 to 31 Oct 2026. December observations for 1947 and 1950, selected March observations through 1997, then every March and October 2026.
+- CSVs: `historic-installed-capacity-1947-2013.csv` and `installed-capacity-by-source-2014-2026.csv`.
 - Sentence: "Solar capacity grew from 2,632 MW in March 2014 to 174,547 MW in October 2026. Coal and lignite capacity grew from 145,273 MW to 231,438 MW." (231,438 MW is the sum of the published coal, 225,068 MW, and lignite, 6,370 MW.)
-- Source: Central Electricity Authority, "Installed Capacity" monthly reports, editions for March 2014 to March 2026 and October 2026.
+- Sources: CEA growth booklet (S12), Executive Summary (S13), and Installed Capacity monthly reports (S7 and S8).
 
 ### C7. Non-fossil share of installed capacity
 
-- Type: line. Option: add a second line for wind, solar and other RE only.
+- Type: line chart. The second line gives the share of renewables excluding large hydro from March 2008.
 - Unit: % of total installed capacity.
-- Geography: India. Period: 31 Mar 2014 to 31 Oct 2026.
-- CSV: `non-fossil-share-of-capacity-2014-2026.csv`
+- Geography: India (utilities). Period: 31 Dec 1947 to 31 Oct 2026. Same observation dates as C6.
+- CSV: `non-fossil-share-of-capacity-1947-2026.csv`. Its monthly portion comes from `non-fossil-share-of-capacity-2014-2026.csv`.
 - Sentence: "On 31 Oct 2026, non-fossil sources made up 55.45% of India's 563,113 MW of power capacity, up from 32.31% in March 2014."
-- Source: CEA Installed Capacity reports. Shares before 2026 are derived from the published MW values. CEA itself prints 55.45% for 31 Oct 2026.
+- Sources: same as C6. The shares use the published MW values. CEA prints the non-fossil shares for 31 Mar and 31 Oct 2026.
 
 ### C8. Renewable power capacity by state
 
@@ -155,6 +155,8 @@ Parsing scripts: `pipeline/climate/` (`extract_text.sh`, `build_rain.py`, `build
 - **Heatwave days: not found.** IMD did not publish a count of heatwave days for 2026 on the press release list or the IMD Pune pages that I checked. The 2025 climate statement gives about 35 heatwave deaths in 2025. That figure comes from media and disaster-management reports, so it is not used here.
 - **Per-capita CO2: dropped.** The BUR-4 PDF on unfccc.int returned a bot check, not the file. MoEFCC hosts BUR-3 and the Third National Communication but not BUR-4. BUR-3 gives per-capita energy use but no per-capita emissions figure. PIB (2 Jan 2025) gives total 2020 emissions of 2,959 Mt CO2e without LULUCF and 2,437 Mt CO2e with LULUCF, but no per-capita value.
 - **CEA method breaks (C6, C7):**
+  - CEA's legacy table lists wind separately from 1998 and lists a separate renewables value in 2005. The executive summaries give a broader renewables total from March 2006. At March 2008 CEA moved 1,168 MW of small hydro from conventional hydro to the renewables total.
+  - Monthly reports use revised renewable figures from March 2014. The stack and the share chart split at March 1998, March 2006, March 2014 and March 2022.
   - Before March 2019 CEA had no lignite column. Lignite plants (for example NLC) appear under coal, so the CSV calls that series `coal-incl-lignite`.
   - In 2017 MNRE revised RES capacity for March 2014 to March 2017, mainly by adding about 3,000 MW of captive bagasse cogeneration. The CSV uses the revised values printed in those editions.
   - CEA counts off-grid RES from August 2021.
@@ -188,6 +190,59 @@ Run `python3 -I pipeline/climate/build_temperature.py` from the repository root.
 | 2025 | 25.3704 | +0.2804 | +0.28 |
 
 All six calculated anomalies round to the published values. The Pune annual means also reproduce the five warmest years in the same order and place 2025 eighth. The sixth and seventh years in the table are 2023 and 2022. The Annual Climate Summary confirms +0.28°C and gives the 2025 annual mean rounded to 25.37°C. The data.gov.in catalogue search returned HTTP 403. The direct IMD Pune table supplied the full series.
+
+## Power capacity series extension
+
+All files in this section are from CEA and were read on 18 Nov 2026. The live listings give periods for the Executive Summary and General Review PDFs. The individual files give the edition titles below.
+
+| # | Release and table | Release date | URL | Local raw file | SHA-256 |
+| --- | --- | --- | --- | --- | --- |
+| S12 | Growth of Electricity Sector in India, 1947 to 2025, Table 2 | 3 Sep 2026 on the CEA list | https://cea.nic.in/whats-new/file?path=/home/cea_website/reports/general/en/Growth_Book_2025_1788430103505.pdf&mode=view | `raw/climate/ceagrowth2025alt/download` | `2cd402537db758d494038a3d12013de75d536b0fa4da84802d6aae856113b8e4` |
+| S13 | Executive Summary archive, March 2006 to March 2014 editions | Not stated | https://cea.nic.in/reports/dashboardView?headingId=107&subHeadingId=1003&subSubHeadingId=10071&title=Executive%20Summary&lang=en | `raw/climate/ceaexec/download` | `b4509b96b582499407135edb404dfaca8e1cf5e0caf3288aafaaf0d4c218f949` |
+| S14 | All India Electricity Statistics, General Review 2020, Table 1.2 | 2020 edition, through March 2019 | https://cea.nic.in/api/dashboardReports/download-pdf/en/c7700cc7-e5a3-4857-a265-8037cc2ff061 | `raw/climate/ceareview2019/download` | `36b6bf2763a902b5d851c2662b4da85dc2fc1397c2e6b2bf6a4fd196ed3a06c0` |
+| S15 | All India Electricity Statistics, General Review 2025, Table 1.2 | 2025 edition, through March 2024 | https://cea.nic.in/api/dashboardReports/download-pdf/en/fa02d71e-25cc-4684-befd-4f840bb43dba | `raw/climate/ceareview2024/download` | `f710de8ee99efb4ae7b3381b32089ae60d766b863d978bff38b4f6354d8dd801` |
+| S16 | Growth of Electricity Sector in India, 1947 to 2023, Chart 8B | 2 Sep 2026 on the CEA list | https://cea.nic.in/whats-new/file?path=%2Fhome%2Fcea_website%2Freports%2Fgeneral%2Fen%2FGrowth_Book_2023_merged.pdf&mode=view | `raw/climate/ceagrowth2023/download` | `6c2a117a1b039e69a202b81fc826a7b860142c41f7ed0021ab87880fd56cd32d` |
+
+Executive Summary PDFs (S13). Each URL is `https://cea.nic.in/api/dashboardReports/download-pdf/en/<id>`. Each local path is `raw/climate/cea-exec-<year>/download`. Read the national total in the Installed Capacity table. Use the Growth of Installed Capacity Since Sixth Plans table in the March 2006 edition for 1998 to 2005. Use March 2014 only for comparison.
+
+| Edition | id | SHA-256 |
+| --- | --- | --- |
+| March 2006 | f81a5818-9dff-483a-bc0f-081b04c0bca4 | `1f1ae867ad5927aef10b9557f1136778ea2bfa57a12d574bb6be1a131e49943b` |
+| March 2007 | d41e49df-8379-423d-aea3-c8bb4695478c | `32192b2eb0da4d84746e2df72f02b7868572a85e5e2934690100ccdc87929755` |
+| March 2008 | c23317e4-78cc-456e-85e1-7144490c0a1b | `782a9e4c2c6f662109e8984c7d8a7ea46414fac03c3bcca05a60564aa7b4cf1c` |
+| March 2009 | 89584095-6d22-4081-9348-2016fc4b1b8e | `173c7d0f3fa00e24da2a9b10c8a150dd263cfd531a88d2774b2133e0dac39a80` |
+| March 2010 | 2bbef50d-aae6-4a59-9e74-b94c8cd84034 | `9572c2beee6696bbfbaab259c80f7407a331a847a957b18858c892c6663f994c` |
+| March 2011 | cbc3a9e1-3e10-43ea-860e-6dc25e6d2f1f | `71a4ade585b2bc66408502b8db43f9d1e01a6f48a93f6f0ec2430b9e979dcfb4` |
+| March 2012 | 6655a384-0a8e-48c7-9727-a76a4cf6ead2 | `4e1bad021940d38a88615e854ab9eb020717df6b5f76f7017361101af3d4c051` |
+| March 2013 | d94c4e69-89ae-4805-9c02-f966c4f20a6c | `d29438f8cd221a509d6e3f0a0585a4a4f616ae4d59ffdc6b8d68bf99ef75c325` |
+| March 2014 | 3c43ba1d-f204-45ec-b5df-01d4dacc9b73 | `71d6a650dcec1fa21f3912e6075d4739a4f015a77db79a2dcb6d1256a3d0b9a2` |
+
+Run `python3 -I pipeline/climate/build_cea_history.py` from the repository root. Keep the existing monthly CSVs as inputs. The script generates two CRLF CSVs. The `release` column identifies where each observation comes from. The `derived` column identifies calculations.
+
+- `historic-installed-capacity-1947-2013.csv` keeps the digits CEA prints, with grouping commas removed. It preserves each published source breakdown where available. It adds a derived `hydro-and-res` group for the historical stack. This group adds hydro to published RES, or to wind and the separately listed renewables where the legacy table uses those columns. Thermal and nuclear make up the other two bands. This grouping keeps the March 2008 small hydro transfer within one band. The chart starts a new stack with the detailed monthly sources in March 2014. Straight segments connect the selected historical dates within each method.
+- `non-fossil-share-of-capacity-1947-2026.csv` adds historical shares and keeps the monthly values. The non-fossil share is 100 times (nuclear + hydro + other renewables) divided by total installed capacity. The share of other renewables is 100 times RES divided by total. It starts in March 2008 with the newer small hydro split. The script rounds derived shares to two decimal places. It preserves the two shares that CEA prints in 2026, 53.21% for March and 55.45% for October. The `method` column records the coverage used by each segment.
+- The booklet gives 31 December for 1947 and 1950 and 31 March for its other dates. The booklet and archive supply annual 31 March observations from 1997. Earlier years between published dates remain absent from the CSV.
+
+### Overlap checks
+
+- **Booklet against the General Review before 1998.** In the 12 shared observations from December 1950 through March 1997, every broad mode and total agrees exactly or differs by at most 1 MW. In March 1990 the two publications differ by 1 MW each for hydro and thermal. Their totals agree.
+- **Booklet against the legacy Executive Summary.** Both give 105,046 MW in March 2002. The Executive Summary gives 120.54 MW more thermal capacity and reports 1,507.46 MW of wind where the booklet gives 1,628 MW of RES. The March 1997 legacy row puts 61912 MW under thermal and leaves the separate renewables cells blank. The booklet allocates 61010 MW to thermal and 902 MW to RES. The share line breaks when the legacy table takes over in 1998 and when the annual summaries take over in 2006.
+- **Booklet and General Review against the March Executive Summaries.** For March 2007 and 2012, the booklet is within 1 MW of the summary for each broad mode and the total. For 2007 to 2013, every broad mode and total in General Review 2020 is within 0.84 MW of the executive summaries. The five RES categories in Chart 8B add to the executive RES total in 2009 to 2013 within 0.01 MW. They match the monthly components within 0.01 MW in every shared year from 2014 to 2023.
+- **March 2014 Executive Summary against the revised March 2014 monthly report.** The coal, gas, diesel, nuclear and hydro values match. The Executive Summary uses September 2013 RES of 29,462.55 MW. The revised monthly report gives 34,988.00 MW for March 2014. The two totals differ by 5,525.44 MW. Keep the revised monthly figures and mark the break.
+- **General Review and growth booklet against monthly reports.** General Review 2020 matches all five broad figures within 0.50 MW in each of the six shared years from 2014 to 2019. General Review 2025 has 862.00 to 1,770.37 MW more RES than the monthly reports for 2014 to 2021. Its 2022 to 2024 figures match within 0.50 MW. The 2025 booklet has the same larger RES values as General Review 2025 in the shared years 2017 to 2021. The booklet matches monthly reports within 0.50 MW for 2022 to 2025. Retain the monthly report edition for the monthly segment. The script prints each difference in the order hydro, thermal, nuclear, RES, total.
+- **Grouping changes inside the monthly reports.** Before March 2019, coal includes lignite. The stack uses one colour for both. The first March observation that includes off-grid renewable capacity is 2022. Its rule marks the start of a new segment in both charts. CEA also removed plants on long outage in April 2025 and August 2026.
+
+### Publisher listings
+
+Read these live pages on 18 Nov 2026. Legacy CEA booklet addresses returned HTTP 404. The current CEA updates page links the booklet.
+
+| Publisher and page | URL | Local raw file | SHA-256 |
+| --- | --- | --- | --- |
+| CEA, All Updates | https://cea.nic.in/whats-new/all-updates?lang=en | `raw/climate/ceaupdates/download` | `db71138bbf6a040f8668b4e476324aa5363ce3d90d1daabf2f354b4e18ce6991` |
+| CEA, General Review | https://cea.nic.in/reports/dashboardView?headingId=107&subHeadingId=1001&subSubHeadingId=10084&title=General%20Review&lang=en | `raw/climate/ceageneral/download` | `5cebe30d9006dddb46726174b451953aa08d1e893ba6d70c3ce2b73f2c310a39` |
+| CEA, Installed Capacity | https://cea.nic.in/reports/dashboardView?headingId=107&subHeadingId=1003&subSubHeadingId=10014&lang=en | `raw/climate/cealist/download` | `99450ef793436f680e7f4984e579bf0e947086b4ca6a25e1d3614709c3f54bf8` |
+| IMD Pune, Climate Monitoring | https://imdpune.gov.in/lrfindex.php | `raw/climate/imdmonitor/download` | `21edc142d506348101dc70b1303037e875738142e39155890b39c79fd78de74a` |
+| IMD Pune, Annual Climate Summary | https://imdpune.gov.in/cmpg/Product/acs.php | `raw/climate/imdacs/download` | `ba88eca6d008935a0867e6417b64e6ed19c045b4fb8c91b6fa23c7b2ebac7b90` |
 
 ## Publisher check on 18 Nov 2026
 

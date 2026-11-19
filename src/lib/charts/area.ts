@@ -12,12 +12,16 @@ import { timeNotes } from './notes'
 type Stack = { series: SeriesData[]; xs: Point[]; layers: Series<Record<string, number>, string>[] }
 
 /**
- * Stack each method segment on its own. Series that start before a break form one
- * stack, the rest another, so shares on two bases never add up to 200%.
+ * Stack each method segment on its own. A series can supply observations on
+ * both sides of a break without the area connecting across it.
  */
 function stacksOf(chart: Of<'area'>, series: SeriesData[]): Stack[] {
-  const cut = chart.breaks?.[0] ? parsePeriod(chart.breaks[0].x).t : Infinity
-  const groups = [series.filter((s) => (s.points[0]?.t ?? 0) < cut), series.filter((s) => (s.points[0]?.t ?? 0) >= cut)]
+  const cuts = [-Infinity, ...(chart.breaks ?? []).map((b) => parsePeriod(b.x).t).sort((a, b) => a - b), Infinity]
+  const groups = cuts.slice(1).map((end, i) =>
+    series
+      .map((s) => ({ ...s, points: s.points.filter((p) => p.t >= cuts[i]! && p.t < end) }))
+      .filter((s) => s.points.length > 0),
+  )
   return groups
     .filter((g) => g.length > 0)
     .map((g) => {

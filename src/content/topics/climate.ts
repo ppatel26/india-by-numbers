@@ -45,6 +45,20 @@ const IMD_CLIMATE_2025: Source = {
   url: 'https://internal.imd.gov.in/press_release/20260101_pr_4602.pdf',
 }
 
+const CEA_GROWTH: Source = {
+  publisher: 'Central Electricity Authority (CEA)',
+  release: 'Growth of Electricity Sector in India, 1947 to 2025, Table 2',
+  released: '2026-09-03',
+  url: 'https://cea.nic.in/whats-new/file?path=/home/cea_website/reports/general/en/Growth_Book_2025_1788430103505.pdf&mode=view',
+}
+
+const CEA_EXECUTIVE: Source = {
+  publisher: 'Central Electricity Authority (CEA)',
+  release: 'Executive Summary, March editions 2006 to 2013',
+  released: 'not stated',
+  url: 'https://cea.nic.in/reports/dashboardView?headingId=107&subHeadingId=1003&subSubHeadingId=10071&title=Executive%20Summary&lang=en',
+}
+
 // CEA states no release date for its monthly reports; the list page shows none.
 // The URL is the CEA list page that holds every edition; the README gives one download id per edition.
 const CEA_CAPACITY: Source = {
@@ -63,6 +77,14 @@ const MNRE_STATES_2026_10: Source = {
 
 const RAIN_BY_MONTH = 'climate/monsoon-2026-by-month-and-region.csv'
 const CAPACITY = 'climate/installed-capacity-by-source-2014-2026.csv'
+const HISTORIC_CAPACITY = 'climate/historic-installed-capacity-1947-2013.csv'
+const CAPACITY_SHARE = 'climate/non-fossil-share-of-capacity-1947-2026.csv'
+const CAPACITY_BREAKS = [
+  { x: '1998-03-31', label: '1998 archive' },
+  { x: '2006-03-31', label: '' },
+  { x: '2014-03-31', label: '2014' },
+  { x: '2022-03-31', label: 'Off-grid', before: ' ' },
+] as const
 const SUBDIVISIONS = 'climate/monsoon-2026-by-subdivision.csv'
 
 // India and the 36 states and UTs. The MNRE table also has an "Others" row (49.31 MW, no state);
@@ -302,51 +324,48 @@ const topic: Topic = {
       title: 'How fast is power capacity moving away from coal?',
       lede: 'The Central Electricity Authority (CEA) counts the power capacity of utilities every month. Capacity is the most power that plants can make at once. It is not the power that they made in a period.',
       blocks: [
-        { text: 'Solar capacity grew from 2,632 MW in March 2014 to 1,74,547 MW in October 2026. Coal and lignite capacity grew from 1,45,273 MW to 2,31,438 MW.' },
+        { text: 'Utilities had 1,362 MW of capacity in December 1947. Solar capacity grew from 2,632 MW in March 2014 to 1,74,547 MW in October 2026. Coal and lignite capacity grew from 1,45,273 MW to 2,31,438 MW.' },
         {
           chart: {
             kind: 'area',
             slug: 'power-capacity-by-source',
-            title: 'Installed power capacity in India by source, 2014 to 2026',
-            subtitle: 'Megawatts (MW) of installed capacity at utilities, India, on 31 March of each year and on 31 Oct 2026.',
+            title: 'Installed power capacity in India by source, 1947 to 2026',
+            subtitle: 'Utility capacity in megawatts (MW). The early groups are thermal, nuclear, and renewables including hydro.',
             punches: { office: 'CEA', unit: 'MW', period: '31 OCT 2026' },
             status: ['Method break'],
-            note: 'Before March 2019, CEA counted lignite inside coal. In 2017 MNRE revised renewable capacity for March 2014 to March 2017. CEA counts off-grid renewable capacity from August 2021. CEA removed plants on long outage from its count in April 2025 and August 2026, which explains most of the fall in gas capacity. Other renewables are small hydro, bio-power and waste-to-energy. Captive plants are not included.',
-            sources: [CEA_CAPACITY],
+            note: 'CEA reports December 1947 and 1950, selected March dates to 1997, then every March to 2026 and October 2026. The monthly reports use revised renewable totals and give more detail from March 2014.',
+            sources: [CEA_GROWTH, CEA_EXECUTIVE, CEA_CAPACITY],
             format: { decimals: 0, scale: 'none' },
             y: { min: 0, max: 600000, step: 100000 },
-            // LATER: the board sums sources into seven bands, each labelled with its total ("Coal and
-            // lignite 2,31,438 MW"); a series reads one CSV row per x, so each source is its own series,
-            // in its band's colour. `coal` takes `coal-incl-lignite` to March 2018 and `coal` after.
-            breaks: [
-              { x: '2022-03-31', label: 'Off-grid renewables added' },
-              { x: '2026-03-31', label: 'Plants on long outage removed' },
-            ],
+            breaks: CAPACITY_BREAKS,
             series: [
-              { key: 'coal', label: 'Coal and lignite', color: 'other', file: CAPACITY, where: { geography: 'india', source: ['coal-incl-lignite', 'coal'] } },
-              { key: 'lignite', label: 'Coal and lignite', color: 'other', file: CAPACITY, where: { geography: 'india', source: 'lignite' } },
-              { key: 'gas', label: 'Gas and diesel', color: 's6', file: CAPACITY, where: { geography: 'india', source: 'gas' } },
-              { key: 'diesel', label: 'Gas and diesel', color: 's6', file: CAPACITY, where: { geography: 'india', source: 'diesel' } },
+              { key: 'historic-thermal', label: 'Thermal', color: 'other', file: HISTORIC_CAPACITY, where: { source: 'thermal' } },
+              { key: 'historic-nuclear', label: 'Nuclear', color: 's3', file: HISTORIC_CAPACITY, where: { source: 'nuclear' } },
+              { key: 'historic-hydro-and-res', label: 'Hydro and other renewables', color: 's5', file: HISTORIC_CAPACITY, where: { source: 'hydro-and-res' } },
+              { key: 'coal', label: 'Coal, lignite', color: 'other', file: CAPACITY, where: { geography: 'india', source: ['coal-incl-lignite', 'coal'] } },
+              { key: 'lignite', label: 'Coal, lignite', color: 'other', file: CAPACITY, where: { geography: 'india', source: 'lignite' } },
+              { key: 'gas', label: 'Gas, diesel', color: 's6', file: CAPACITY, where: { geography: 'india', source: 'gas' } },
+              { key: 'diesel', label: 'Gas, diesel', color: 's6', file: CAPACITY, where: { geography: 'india', source: 'diesel' } },
               { key: 'nuclear', label: 'Nuclear', color: 's3', file: CAPACITY, where: { geography: 'india', source: 'nuclear' } },
               { key: 'large-hydro', label: 'Large hydro', color: 's5', file: CAPACITY, where: { geography: 'india', source: 'large-hydro' } },
               { key: 'wind', label: 'Wind', color: 's2', file: CAPACITY, where: { geography: 'india', source: 'wind' } },
               { key: 'solar', label: 'Solar', color: 's8', file: CAPACITY, where: { geography: 'india', source: 'solar' } },
-              { key: 'small-hydro', label: 'Other renewables', color: 's4', file: CAPACITY, where: { geography: 'india', source: 'small-hydro' } },
-              { key: 'bio-power', label: 'Other renewables', color: 's4', file: CAPACITY, where: { geography: 'india', source: 'bio-power' } },
-              { key: 'waste-to-energy', label: 'Other renewables', color: 's4', file: CAPACITY, where: { geography: 'india', source: 'waste-to-energy' } },
+              { key: 'small-hydro', label: 'Other RE', color: 's4', file: CAPACITY, where: { geography: 'india', source: 'small-hydro' } },
+              { key: 'bio-power', label: 'Other RE', color: 's4', file: CAPACITY, where: { geography: 'india', source: 'bio-power' } },
+              { key: 'waste-to-energy', label: 'Other RE', color: 's4', file: CAPACITY, where: { geography: 'india', source: 'waste-to-energy' } },
             ],
             know: [
-              'Installed capacity is the most power that plants can make at once, in megawatts (MW). It is not the power that they made in a period.',
-              'CEA counts utilities only. Captive plants are not included.',
-              'Before March 2019 CEA had no lignite column; lignite plants are counted inside coal.',
-              'CEA counts off-grid renewable capacity from August 2021. In 2017 MNRE revised renewable capacity for March 2014 to March 2017.',
-              'CEA removed plants on long outage from 30 April 2025 and from 31 August 2026. This explains most of the fall in gas capacity.',
+              'Installed capacity is the most power that the plants can supply at once.',
+              'The historical booklet reports selected dates before 1997. Straight segments connect the available observations within each reporting method.',
+              'From March 1998 to March 2004, the historical table lists wind under non-conventional energy. It adds a separate renewables figure in March 2005. The annual editions use broader renewable totals from March 2006.',
+              'In March 2008, CEA moved 1,168 MW of small hydro from conventional hydro into renewable energy sources. Earlier sections combine hydro and other renewables to reduce the effect of this change.',
+              'CEA counted lignite under coal before March 2019. Other renewable energy (RE) includes small hydro, bio-power and waste-to-energy.',
+              'CEA counts off-grid renewables from August 2021. CEA removed plants on long outage in April 2025 and August 2026.',
             ],
             processing: [
-              'We take capacity by source for India from each March edition of the CEA Installed Capacity report, 2014 to 2026, and from the report as on 31 October 2026.',
-              'For March 2014 to March 2017 we use the renewable values that CEA prints as revised by MNRE.',
-              'We add coal and lignite, gas and diesel, and small hydro, bio-power and waste-to-energy, to make seven bands.',
-              'We check that the sources add up to CEA\'s total for each date.',
+              'Use the CEA growth booklet to March 1997. Use the historical table in the March 2006 Executive Summary for March 1998 to March 2005.',
+              'Use each March Executive Summary for 2006 to 2013. Group capacity by thermal, nuclear, and hydro and other renewables for all historical dates.',
+              'Use the monthly Installed Capacity reports from March 2014. Check the historical and monthly figures in their overlap.',
             ],
             nextRelease: '2026-12-17 (estimated)',
           },
@@ -356,28 +375,36 @@ const topic: Topic = {
           chart: {
             kind: 'line',
             slug: 'non-fossil-capacity-share',
-            title: 'Non-fossil share of installed power capacity in India, 2014 to 2026',
-            subtitle: 'Share of total installed capacity at utilities, %, India, on 31 March of each year and on 31 Oct 2026.',
+            title: 'Non-fossil share of installed power capacity in India, 1947 to 2026',
+            subtitle: 'Share of utility capacity in percent. March observations are annual from 1997.',
             punches: { office: 'CEA', unit: '%', period: '31 OCT 2026' },
-            note: "Derived. CEA prints the non-fossil share for 31 Oct 2026 (55.45%) and 31 Mar 2026. We computed the other shares from CEA's published MW: non-fossil = (nuclear + hydro + renewables) / total. CEA's method changes in 2019, 2021, 2025 and 2026 (chart 4.1) also affect these shares.",
-            sources: [CEA_CAPACITY],
+            status: ['Method break'],
+            note: 'Non-fossil capacity includes nuclear, hydro and other renewables. The narrower renewables series starts in March 2008, when CEA moved small hydro into its renewables total. CEA added off-grid renewables in August 2021.',
+            sources: [CEA_GROWTH, CEA_EXECUTIVE, CEA_CAPACITY],
             format: { decimals: 2, unit: '%' },
             y: { min: 0, max: 60, step: 10 },
-            refs: [{ y: 50, label: 'Half of all capacity' }],
+            breaks: CAPACITY_BREAKS,
             series: [
-              { key: 'non-fossil', label: 'Non-fossil', color: 's4', file: 'climate/non-fossil-share-of-capacity-2014-2026.csv', where: { geography: 'india', series: 'non-fossil' } },
-              { key: 'wind-solar-other', label: 'Wind, solar and others', color: 's8', file: 'climate/non-fossil-share-of-capacity-2014-2026.csv', where: { geography: 'india', series: 'wind-solar-other-re' } },
+              { key: 'non-fossil-plan', label: 'Non-fossil, booklet', color: 's4', file: CAPACITY_SHARE, where: { series: 'non-fossil', method: 'plan' } },
+              { key: 'non-fossil-legacy', label: 'Non-fossil, early archive', color: 's4', file: CAPACITY_SHARE, where: { series: 'non-fossil', method: 'legacy' } },
+              { key: 'non-fossil-executive', label: 'Non-fossil, March summaries', color: 's4', file: CAPACITY_SHARE, where: { series: 'non-fossil', method: 'executive' } },
+              { key: 'non-fossil-monthly', label: 'Non-fossil, grid only', color: 's4', file: CAPACITY_SHARE, where: { series: 'non-fossil', method: 'monthly' } },
+              { key: 'non-fossil', label: 'Non-fossil', color: 's4', file: CAPACITY_SHARE, where: { series: 'non-fossil', method: 'off-grid' } },
+              { key: 'renewables-executive', label: 'Other renewables, March summaries', color: 's8', file: CAPACITY_SHARE, where: { series: 'wind-solar-other-re', method: 'executive' } },
+              { key: 'renewables-monthly', label: 'Other renewables, grid only', color: 's8', file: CAPACITY_SHARE, where: { series: 'wind-solar-other-re', method: 'monthly' } },
+              { key: 'renewables-off-grid', label: 'Other renewables', color: 's8', file: CAPACITY_SHARE, where: { series: 'wind-solar-other-re', method: 'off-grid' } },
             ],
             know: [
-              'Non-fossil capacity is nuclear, large hydro and renewable capacity, as a share of all installed capacity at utilities.',
-              'CEA prints the non-fossil share for 31 October 2026 and 31 March 2026. We derived the other values from CEA\'s published MW.',
-              'CEA\'s method changes in 2019, 2021, 2025 and 2026 also change the shares (see chart 4.1).',
+              'The early CEA booklet gives selected dates. The archive begins its annual series in 1998.',
+              'Other renewables include small hydro, wind, solar, bio-power and waste-to-energy. Large hydro is part of the non-fossil share.',
+              'From March 1998 to March 2004, the archive lists wind separately. March 2005 adds another renewables figure. CEA gives a broader renewables total from March 2006.',
+              'The monthly figures include revised renewable totals from March 2014. The March 2022 observation is the first to include off-grid capacity.',
+              'CEA removed plants on long outage in April 2025 and August 2026.',
             ],
             processing: [
-              'We take capacity by source from each March edition of the CEA Installed Capacity report, 2014 to 2026, and from the report as on 31 October 2026.',
-              'We compute non-fossil = (nuclear + hydro + renewables) / total, and wind, solar and other renewables = renewables / total.',
-              'Where CEA prints the share, we check our value against it and publish CEA\'s figure.',
-              'We round the shares to two decimal places.',
+              'Add nuclear, hydro and other renewables. Divide by total capacity and multiply by 100.',
+              'Use the CEA published shares for March and October 2026.',
+              'Keep reporting methods in separate lines.',
             ],
             nextRelease: '2026-12-17 (estimated)',
           },
@@ -431,9 +458,9 @@ const topic: Topic = {
     revisions:
       'The 2026 monsoon figures come from real-time data, and IMD may revise them in its final monsoon report. In 2017 MNRE revised renewable capacity for March 2014 to March 2017, mainly by adding about 3,000 MW of captive bagasse cogeneration; we use the revised values. IMD documents differ slightly on some 2026 totals; we use the table values.',
     breaks:
-      'Rainfall is compared with the long-period average, 868.6 mm, the mean for 1971 to 2020. Temperature anomalies use the 1991 to 2020 mean. The 2025 IMD statement uses the same normal period as the IMD Pune table. CEA counted lignite inside coal before March 2019, counts off-grid renewables from August 2021, and removed plants on long outage from 30 April 2025 and 31 August 2026.',
+      'Rainfall is compared with the long-period average, 868.6 mm, the mean for 1971 to 2020. Temperature anomalies use the 1991 to 2020 mean. The 2025 IMD statement uses the same normal period as the IMD Pune table. CEA changed its treatment of small hydro in March 2008. Monthly reports use revised renewable totals from March 2014. CEA counted lignite under coal before March 2019. It counts off-grid renewables from August 2021.',
     coverage:
-      'Rainfall: India, 4 homogeneous regions and 36 meteorological subdivisions, which do not follow state lines. Capacity: utilities only; captive plants are not included. MNRE places each plant in the state where it stands, for all 36 states and UTs; 49.31 MW under "Others" has no state.',
+      'Rainfall: India, 4 homogeneous regions and 36 meteorological subdivisions, which do not follow state lines. Capacity covers utilities from 1947. The records give selected dates to 1997 and annual March dates after that. MNRE places each plant in the state where it stands, for all 36 states and UTs; 49.31 MW under "Others" has no state.',
     missing:
       'IMD publishes 2026 monsoon rainfall by meteorological subdivision. IMD, CEA and MNRE state no reuse licence for these data.',
   },
@@ -444,6 +471,8 @@ const topic: Topic = {
     IMD_PUNE_RFSTATS_2026,
     IMD_PUNE_TEMPERATURE,
     IMD_CLIMATE_2025,
+    CEA_GROWTH,
+    CEA_EXECUTIVE,
     CEA_CAPACITY,
     MNRE_STATES_2026_10,
   ],

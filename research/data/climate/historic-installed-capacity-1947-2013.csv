@@ -1,0 +1,264 @@
+geography,period,value,unit,source,release,derived
+india,1947-12-31,756,MW,coal-incl-lignite,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1947-12-31,0,MW,gas,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1947-12-31,98,MW,diesel,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1947-12-31,854,MW,thermal,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1947-12-31,0,MW,nuclear,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1947-12-31,508,MW,hydro,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1947-12-31,0,MW,res,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1947-12-31,1362,MW,total,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1947-12-31,508,MW,hydro-and-res,"Growth of Electricity Sector in India, 1947 to 2025",yes
+india,1950-12-31,1004,MW,coal-incl-lignite,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1950-12-31,0,MW,gas,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1950-12-31,149,MW,diesel,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1950-12-31,1153,MW,thermal,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1950-12-31,0,MW,nuclear,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1950-12-31,560,MW,hydro,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1950-12-31,0,MW,res,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1950-12-31,1713,MW,total,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1950-12-31,560,MW,hydro-and-res,"Growth of Electricity Sector in India, 1947 to 2025",yes
+india,1956-03-31,1597,MW,coal-incl-lignite,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1956-03-31,0,MW,gas,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1956-03-31,228,MW,diesel,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1956-03-31,1825,MW,thermal,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1956-03-31,0,MW,nuclear,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1956-03-31,1061,MW,hydro,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1956-03-31,0,MW,res,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1956-03-31,2886,MW,total,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1956-03-31,1061,MW,hydro-and-res,"Growth of Electricity Sector in India, 1947 to 2025",yes
+india,1961-03-31,2436,MW,coal-incl-lignite,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1961-03-31,0,MW,gas,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1961-03-31,300,MW,diesel,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1961-03-31,2736,MW,thermal,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1961-03-31,0,MW,nuclear,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1961-03-31,1917,MW,hydro,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1961-03-31,0,MW,res,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1961-03-31,4653,MW,total,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1961-03-31,1917,MW,hydro-and-res,"Growth of Electricity Sector in India, 1947 to 2025",yes
+india,1966-03-31,4417,MW,coal-incl-lignite,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1966-03-31,134,MW,gas,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1966-03-31,352,MW,diesel,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1966-03-31,4903,MW,thermal,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1966-03-31,0,MW,nuclear,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1966-03-31,4124,MW,hydro,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1966-03-31,0,MW,res,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1966-03-31,9027,MW,total,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1966-03-31,4124,MW,hydro-and-res,"Growth of Electricity Sector in India, 1947 to 2025",yes
+india,1969-03-31,6640,MW,coal-incl-lignite,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1969-03-31,134,MW,gas,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1969-03-31,276,MW,diesel,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1969-03-31,7050,MW,thermal,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1969-03-31,0,MW,nuclear,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1969-03-31,5907,MW,hydro,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1969-03-31,0,MW,res,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1969-03-31,12957,MW,total,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1969-03-31,5907,MW,hydro-and-res,"Growth of Electricity Sector in India, 1947 to 2025",yes
+india,1974-03-31,8652,MW,coal-incl-lignite,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1974-03-31,165,MW,gas,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1974-03-31,241,MW,diesel,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1974-03-31,9058,MW,thermal,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1974-03-31,640,MW,nuclear,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1974-03-31,6966,MW,hydro,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1974-03-31,0,MW,res,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1974-03-31,16664,MW,total,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1974-03-31,6966,MW,hydro-and-res,"Growth of Electricity Sector in India, 1947 to 2025",yes
+india,1979-03-31,14875,MW,coal-incl-lignite,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1979-03-31,168,MW,gas,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1979-03-31,164,MW,diesel,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1979-03-31,15207,MW,thermal,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1979-03-31,640,MW,nuclear,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1979-03-31,10833,MW,hydro,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1979-03-31,0,MW,res,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1979-03-31,26680,MW,total,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1979-03-31,10833,MW,hydro-and-res,"Growth of Electricity Sector in India, 1947 to 2025",yes
+india,1980-03-31,15991,MW,coal-incl-lignite,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1980-03-31,268,MW,gas,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1980-03-31,165,MW,diesel,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1980-03-31,16424,MW,thermal,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1980-03-31,640,MW,nuclear,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1980-03-31,11384,MW,hydro,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1980-03-31,0,MW,res,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1980-03-31,28448,MW,total,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1980-03-31,11384,MW,hydro-and-res,"Growth of Electricity Sector in India, 1947 to 2025",yes
+india,1985-03-31,26311,MW,coal-incl-lignite,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1985-03-31,542,MW,gas,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1985-03-31,177,MW,diesel,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1985-03-31,27030,MW,thermal,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1985-03-31,1095,MW,nuclear,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1985-03-31,14460,MW,hydro,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1985-03-31,0,MW,res,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1985-03-31,42585,MW,total,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1985-03-31,14460,MW,hydro-and-res,"Growth of Electricity Sector in India, 1947 to 2025",yes
+india,1990-03-31,41237,MW,coal-incl-lignite,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1990-03-31,2343,MW,gas,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1990-03-31,165,MW,diesel,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1990-03-31,43745,MW,thermal,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1990-03-31,1565,MW,nuclear,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1990-03-31,18308,MW,hydro,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1990-03-31,18,MW,res,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1990-03-31,63636,MW,total,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1990-03-31,18326,MW,hydro-and-res,"Growth of Electricity Sector in India, 1947 to 2025",yes
+india,1992-03-31,44791,MW,coal-incl-lignite,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1992-03-31,3095,MW,gas,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1992-03-31,168,MW,diesel,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1992-03-31,48054,MW,thermal,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1992-03-31,1785,MW,nuclear,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1992-03-31,19194,MW,hydro,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1992-03-31,32,MW,res,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1992-03-31,69065,MW,total,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1992-03-31,19226,MW,hydro-and-res,"Growth of Electricity Sector in India, 1947 to 2025",yes
+india,1997-03-31,54154,MW,coal-incl-lignite,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1997-03-31,6562,MW,gas,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1997-03-31,294,MW,diesel,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1997-03-31,61010,MW,thermal,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1997-03-31,2225,MW,nuclear,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1997-03-31,21658,MW,hydro,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1997-03-31,902,MW,res,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1997-03-31,85795,MW,total,"Growth of Electricity Sector in India, 1947 to 2025",no
+india,1997-03-31,22560,MW,hydro-and-res,"Growth of Electricity Sector in India, 1947 to 2025",yes
+india,1998-03-31,21904.51,MW,hydro,"Executive Summary, March 2006, historical table",no
+india,1998-03-31,64004.64,MW,thermal,"Executive Summary, March 2006, historical table",no
+india,1998-03-31,968.12,MW,wind,"Executive Summary, March 2006, historical table",no
+india,1998-03-31,2225.00,MW,nuclear,"Executive Summary, March 2006, historical table",no
+india,1998-03-31,89102.27,MW,total,"Executive Summary, March 2006, historical table",no
+india,1998-03-31,22872.63,MW,hydro-and-res,"Executive Summary, March 2006, historical table",yes
+india,1999-03-31,22479.13,MW,hydro,"Executive Summary, March 2006, historical table",no
+india,1999-03-31,67565.41,MW,thermal,"Executive Summary, March 2006, historical table",no
+india,1999-03-31,1024.01,MW,wind,"Executive Summary, March 2006, historical table",no
+india,1999-03-31,2225.00,MW,nuclear,"Executive Summary, March 2006, historical table",no
+india,1999-03-31,93293.55,MW,total,"Executive Summary, March 2006, historical table",no
+india,1999-03-31,23503.14,MW,hydro-and-res,"Executive Summary, March 2006, historical table",yes
+india,2000-03-31,23857,MW,hydro,"Executive Summary, March 2006, historical table",no
+india,2000-03-31,70493,MW,thermal,"Executive Summary, March 2006, historical table",no
+india,2000-03-31,1154.88,MW,wind,"Executive Summary, March 2006, historical table",no
+india,2000-03-31,2680.00,MW,nuclear,"Executive Summary, March 2006, historical table",no
+india,2000-03-31,98184.47,MW,total,"Executive Summary, March 2006, historical table",no
+india,2000-03-31,25011.88,MW,hydro-and-res,"Executive Summary, March 2006, historical table",yes
+india,2001-03-31,25142.00,MW,hydro,"Executive Summary, March 2006, historical table",no
+india,2001-03-31,72355.00,MW,thermal,"Executive Summary, March 2006, historical table",no
+india,2001-03-31,1269.00,MW,wind,"Executive Summary, March 2006, historical table",no
+india,2001-03-31,2860.00,MW,nuclear,"Executive Summary, March 2006, historical table",no
+india,2001-03-31,101626.00,MW,total,"Executive Summary, March 2006, historical table",no
+india,2001-03-31,26411.00,MW,hydro-and-res,"Executive Summary, March 2006, historical table",yes
+india,2002-03-31,26269.00,MW,hydro,"Executive Summary, March 2006, historical table",no
+india,2002-03-31,74549.54,MW,thermal,"Executive Summary, March 2006, historical table",no
+india,2002-03-31,1507.46,MW,wind,"Executive Summary, March 2006, historical table",no
+india,2002-03-31,2720.00,MW,nuclear,"Executive Summary, March 2006, historical table",no
+india,2002-03-31,105046.00,MW,total,"Executive Summary, March 2006, historical table",no
+india,2002-03-31,27776.46,MW,hydro-and-res,"Executive Summary, March 2006, historical table",yes
+india,2003-03-31,26910.23,MW,hydro,"Executive Summary, March 2006, historical table",no
+india,2003-03-31,76606.91,MW,thermal,"Executive Summary, March 2006, historical table",no
+india,2003-03-31,1735.66,MW,wind,"Executive Summary, March 2006, historical table",no
+india,2003-03-31,2720.00,MW,nuclear,"Executive Summary, March 2006, historical table",no
+india,2003-03-31,107972.80,MW,total,"Executive Summary, March 2006, historical table",no
+india,2003-03-31,28645.89,MW,hydro-and-res,"Executive Summary, March 2006, historical table",yes
+india,2004-03-31,29500.23,MW,hydro,"Executive Summary, March 2006, historical table",no
+india,2004-03-31,77968.53,MW,thermal,"Executive Summary, March 2006, historical table",no
+india,2004-03-31,1869.66,MW,wind,"Executive Summary, March 2006, historical table",no
+india,2004-03-31,2720.00,MW,nuclear,"Executive Summary, March 2006, historical table",no
+india,2004-03-31,112058.42,MW,total,"Executive Summary, March 2006, historical table",no
+india,2004-03-31,31369.89,MW,hydro-and-res,"Executive Summary, March 2006, historical table",yes
+india,2005-03-31,30935.63,MW,hydro,"Executive Summary, March 2006, historical table",no
+india,2005-03-31,80902.45,MW,thermal,"Executive Summary, March 2006, historical table",no
+india,2005-03-31,2979.70,MW,wind,"Executive Summary, March 2006, historical table",no
+india,2005-03-31,2770.00,MW,nuclear,"Executive Summary, March 2006, historical table",no
+india,2005-03-31,118419.09,MW,total,"Executive Summary, March 2006, historical table",no
+india,2005-03-31,831.31,MW,other-res,"Executive Summary, March 2006, historical table",no
+india,2005-03-31,34746.64,MW,hydro-and-res,"Executive Summary, March 2006, historical table",yes
+india,2006-03-31,68518.88,MW,coal-incl-lignite,"Executive Summary, March 2006",no
+india,2006-03-31,12689.91,MW,gas,"Executive Summary, March 2006",no
+india,2006-03-31,1201.75,MW,diesel,"Executive Summary, March 2006",no
+india,2006-03-31,82410.54,MW,thermal,"Executive Summary, March 2006",no
+india,2006-03-31,3360.00,MW,nuclear,"Executive Summary, March 2006",no
+india,2006-03-31,32325.77,MW,hydro,"Executive Summary, March 2006",no
+india,2006-03-31,6190.86,MW,res,"Executive Summary, March 2006",no
+india,2006-03-31,124287.17,MW,total,"Executive Summary, March 2006",no
+india,2006-03-31,38516.63,MW,hydro-and-res,"Executive Summary, March 2006",yes
+india,2007-03-31,71121.38,MW,coal-incl-lignite,"Executive Summary, March 2007",no
+india,2007-03-31,13691.71,MW,gas,"Executive Summary, March 2007",no
+india,2007-03-31,1201.75,MW,diesel,"Executive Summary, March 2007",no
+india,2007-03-31,86014.84,MW,thermal,"Executive Summary, March 2007",no
+india,2007-03-31,3900.00,MW,nuclear,"Executive Summary, March 2007",no
+india,2007-03-31,34653.77,MW,hydro,"Executive Summary, March 2007",no
+india,2007-03-31,7760.60,MW,res,"Executive Summary, March 2007",no
+india,2007-03-31,132329.21,MW,total,"Executive Summary, March 2007",no
+india,2007-03-31,42414.37,MW,hydro-and-res,"Executive Summary, March 2007",yes
+india,2008-03-31,76048.88,MW,coal-incl-lignite,"Executive Summary, March 2008",no
+india,2008-03-31,14656.21,MW,gas,"Executive Summary, March 2008",no
+india,2008-03-31,1201.75,MW,diesel,"Executive Summary, March 2008",no
+india,2008-03-31,91906.84,MW,thermal,"Executive Summary, March 2008",no
+india,2008-03-31,4120.00,MW,nuclear,"Executive Summary, March 2008",no
+india,2008-03-31,35908.76,MW,hydro,"Executive Summary, March 2008",no
+india,2008-03-31,11125.41,MW,res,"Executive Summary, March 2008",no
+india,2008-03-31,143061.01,MW,total,"Executive Summary, March 2008",no
+india,2008-03-31,47034.17,MW,hydro-and-res,"Executive Summary, March 2008",yes
+india,2009-03-31,77648.88,MW,coal-incl-lignite,"Executive Summary, March 2009",no
+india,2009-03-31,14876.61,MW,gas,"Executive Summary, March 2009",no
+india,2009-03-31,1199.75,MW,diesel,"Executive Summary, March 2009",no
+india,2009-03-31,93725.24,MW,thermal,"Executive Summary, March 2009",no
+india,2009-03-31,4120.00,MW,nuclear,"Executive Summary, March 2009",no
+india,2009-03-31,36877.76,MW,hydro,"Executive Summary, March 2009",no
+india,2009-03-31,13242.41,MW,res,"Executive Summary, March 2009",no
+india,2009-03-31,147965.41,MW,total,"Executive Summary, March 2009",no
+india,2009-03-31,50120.17,MW,hydro-and-res,"Executive Summary, March 2009",yes
+india,2009-03-31,2160.48,MW,small-hydro,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2009-03-31,9344.13,MW,wind,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2009-03-31,1650.43,MW,bio-power,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2009-03-31,85.25,MW,waste-to-energy,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2009-03-31,2.12,MW,solar,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2010-03-31,84198.38,MW,coal-incl-lignite,"Executive Summary, March 2010",no
+india,2010-03-31,17055.85,MW,gas,"Executive Summary, March 2010",no
+india,2010-03-31,1199.75,MW,diesel,"Executive Summary, March 2010",no
+india,2010-03-31,102453.98,MW,thermal,"Executive Summary, March 2010",no
+india,2010-03-31,4560.00,MW,nuclear,"Executive Summary, March 2010",no
+india,2010-03-31,36863.40,MW,hydro,"Executive Summary, March 2010",no
+india,2010-03-31,15521.11,MW,res,"Executive Summary, March 2010",no
+india,2010-03-31,159398.49,MW,total,"Executive Summary, March 2010",no
+india,2010-03-31,52384.51,MW,hydro-and-res,"Executive Summary, March 2010",yes
+india,2010-03-31,2604.92,MW,small-hydro,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2010-03-31,10647.45,MW,wind,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2010-03-31,2167.73,MW,bio-power,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2010-03-31,95.01,MW,waste-to-energy,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2010-03-31,6.00,MW,solar,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2011-03-31,93918.38,MW,coal-incl-lignite,"Executive Summary, March 2011",no
+india,2011-03-31,17706.35,MW,gas,"Executive Summary, March 2011",no
+india,2011-03-31,1199.75,MW,diesel,"Executive Summary, March 2011",no
+india,2011-03-31,112824.48,MW,thermal,"Executive Summary, March 2011",no
+india,2011-03-31,4780.00,MW,nuclear,"Executive Summary, March 2011",no
+india,2011-03-31,37567.40,MW,hydro,"Executive Summary, March 2011",no
+india,2011-03-31,18454.52,MW,res,"Executive Summary, March 2011",no
+india,2011-03-31,173626.40,MW,total,"Executive Summary, March 2011",no
+india,2011-03-31,56021.92,MW,hydro-and-res,"Executive Summary, March 2011",yes
+india,2011-03-31,2913,MW,small-hydro,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2011-03-31,12806.54,MW,wind,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2011-03-31,2600.13,MW,bio-power,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2011-03-31,102.46,MW,waste-to-energy,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2011-03-31,32.39,MW,solar,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2012-03-31,112022.38,MW,coal-incl-lignite,"Executive Summary, March 2012",no
+india,2012-03-31,18381.05,MW,gas,"Executive Summary, March 2012",no
+india,2012-03-31,1199.75,MW,diesel,"Executive Summary, March 2012",no
+india,2012-03-31,131603.18,MW,thermal,"Executive Summary, March 2012",no
+india,2012-03-31,4780.00,MW,nuclear,"Executive Summary, March 2012",no
+india,2012-03-31,38990.40,MW,hydro,"Executive Summary, March 2012",no
+india,2012-03-31,24503.45,MW,res,"Executive Summary, March 2012",no
+india,2012-03-31,199877.03,MW,total,"Executive Summary, March 2012",no
+india,2012-03-31,63493.85,MW,hydro-and-res,"Executive Summary, March 2012",yes
+india,2012-03-31,3410.52,MW,small-hydro,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2012-03-31,16896.60,MW,wind,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2012-03-31,3135.33,MW,bio-power,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2012-03-31,119.68,MW,waste-to-energy,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2012-03-31,941.31,MW,solar,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2013-03-31,130220.89,MW,coal-incl-lignite,"Executive Summary, March 2013",no
+india,2013-03-31,20109.85,MW,gas,"Executive Summary, March 2013",no
+india,2013-03-31,1199.75,MW,diesel,"Executive Summary, March 2013",no
+india,2013-03-31,151530.49,MW,thermal,"Executive Summary, March 2013",no
+india,2013-03-31,4780.00,MW,nuclear,"Executive Summary, March 2013",no
+india,2013-03-31,39491.40,MW,hydro,"Executive Summary, March 2013",no
+india,2013-03-31,27541.71,MW,res,"Executive Summary, March 2013",no
+india,2013-03-31,223343.60,MW,total,"Executive Summary, March 2013",no
+india,2013-03-31,67033.11,MW,hydro-and-res,"Executive Summary, March 2013",yes
+india,2013-03-31,3643.17,MW,small-hydro,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2013-03-31,18484.99,MW,wind,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2013-03-31,3601.03,MW,bio-power,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2013-03-31,126.08,MW,waste-to-energy,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
+india,2013-03-31,1686.44,MW,solar,"Growth of Electricity Sector in India, 1947 to 2023, Chart 8B",no
