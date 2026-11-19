@@ -1,0 +1,13 @@
+year,period,value,source_kind,source
+1911,1901-1911,0.56,official,"Census 2011, Table A-02"
+1921,1911-1921,-0.031,official,"Census 2011, Table A-02"
+1931,1921-1931,1.049,official,"Census 2011, Table A-02"
+1941,1931-1941,1.339,official,"Census 2011, Table A-02"
+1951,1941-1951,1.258,official,"Census 2011, Table A-02"
+1961,1951-1961,1.978,official,"Census 2011, Table A-02"
+1971,1961-1971,2.24,official,"Census 2011, Table A-02"
+1981,1971-1981,2.229,official,"Census 2011, Table A-02"
+1991,1981-1991,2.163,official,"Census 2011, Table A-02"
+2001,1991-2001,1.97,official,"Census 2011, Table A-02"
+2011,2001-2011,1.643,official,"Census 2011, Table A-02"
+2026,2011-2026,1.096,official projection,"MoHFW Technical Group, July 2020, Table 8"
