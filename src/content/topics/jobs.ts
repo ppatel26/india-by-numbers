@@ -1,6 +1,6 @@
-import type { Source, Topic } from '../types'
+import type { Color, Series, Source, Topic } from '../types'
 
-// Sources: research/data/jobs/README.md, "Sources". All MoSPI NSO, PLFS.
+// Sources: research/data/jobs/README.md.
 
 const plfsMonthlyOct2026: Source = {
   publisher: 'NSO, MoSPI',
@@ -121,6 +121,35 @@ const plfsAnnualPress2023_24: Source = {
   url: 'https://www.mospi.gov.in/uploads/documents/Press_note_AR_PLFS_2023_24_22092024.pdf',
 }
 
+const plfsAnnual2020_21: Source = {
+  publisher: 'NSO, MoSPI',
+  release: 'PLFS Annual Report, July 2020 to June 2021',
+  released: '2022-06',
+  url: 'https://www.mospi.gov.in/sites/default/files/publication_reports/Annual_Report_PLFS_2020%2021_0.pdf',
+}
+
+const plfsAnnual2023_24: Source = {
+  publisher: 'NSO, MoSPI',
+  release: 'PLFS Annual Report, July 2023 to June 2024',
+  released: '2024-09-23',
+  url: 'https://www.mospi.gov.in/sites/default/files/publication_reports/AnnualReport_PLFS2023-24L2.pdf',
+}
+
+const nssSources = ([
+  ['409', '1993-94', '1997-03', 'https://www.mospi.gov.in/sites/default/files/publication_reports/409_final.pdf'],
+  ['458, Part II', '1999-2000', '2001-05', 'https://microdata.gov.in/NADA/index.php/catalog/90/download/6116'],
+  ['515, Part I', '2004-05', '2006-09', 'https://microdata.gov.in/NADA/index.php/catalog/109/download/4351'],
+  ['537', '2009-10', '2011-11', 'https://microdata.gov.in/NADA/index.php/catalog/124/download/4371'],
+  ['554', '2011-12', '2014-01', 'https://www.mospi.gov.in/sites/default/files/publication_reports/nss_report_554_31jan14.pdf'],
+] as const).map(([report, period, released, url]): Source => ({
+  publisher: 'NSSO, MoSPI',
+  release: `NSS Report ${report}, Employment and Unemployment in India, ${period}`,
+  released,
+  url,
+}))
+
+const historySources = [plfsAnnual2025, plfsAnnual2023_24, plfsAnnual2020_21, ...nssSources]
+
 const quarterlySources = [
   plfsQuarterlyJulSep2026,
   plfsQuarterlyAprJun2025,
@@ -145,54 +174,117 @@ const UR_STATE = 'jobs/jobs-unemployment-by-state-2025.csv'
 
 const OLD_DESIGN = 'old design to Dec 2024: urban only'
 const NEW_DESIGN = 'new design from Jan 2025: rural and urban'
-const AG_YEAR = 'agricultural year (Jul-Jun)'
 const CAL_YEAR = 'calendar year (Jan-Dec)'
+const NSS = 'NSS employment and unemployment survey'
+const JUL_JUN = 'PLFS July to June'
+const history = (stem: string) => `jobs/jobs-${stem}-history.csv`
 
-/** Chart 2.1: one series per indicator, sex and survey segment. */
-const annualSeries = (['LFPR', 'WPR', 'UR'] as const).flatMap((indicator) =>
-  (
-    [
-      ['female', 'Women', 's3'],
-      ['male', 'Men', 's2'],
-      ['person', 'All people', 'ink'],
-    ] as const
-  ).flatMap(([sex, label, color]) =>
-    (
-      [
-        ['jul-jun', AG_YEAR],
-        ['calendar', CAL_YEAR],
-      ] as const
-    ).map(([seg, periodType]) => ({
-      key: `${indicator.toLowerCase()}-${sex}-${seg}`,
-      label,
-      color,
-      file: ANNUAL,
-      where: { geography: 'india', indicator, sex, period_type: periodType },
+const historyPeriods = [
+  { key: 'nss-early', basis: 'NSS before the 30-day rule' },
+  { key: 'nss', basis: NSS },
+  { key: 'jul-jun', basis: JUL_JUN },
+] as const
+
+const surveyBreaks = [
+  { x: '2004-07-01', label: '30-day rule' },
+  { x: '2017-07-01', label: 'PLFS starts' },
+  { x: '2025', label: 'Jan-Dec' },
+]
+
+const subsidiaryRule = 'From 2004-05, the survey counted subsidiary work if it lasted at least 30 days in the past year.'
+
+function seriesByPeriod(
+  series: Pick<Series, 'key' | 'label' | 'color'>,
+  stem: string,
+  currentFile: string,
+  where: NonNullable<Series['where']>,
+  currentWhere = where,
+): Series[] {
+  return [
+    ...historyPeriods.map(({ key, basis }) => ({
+      ...series,
+      key: `${series.key}-${key}`,
+      file: history(stem),
+      where: { ...where, period_basis: basis },
+      x: 'plot_period',
+      xLabel: 'period',
+      note: 'derived',
     })),
-  ),
+    {
+      ...series,
+      key: `${series.key}-calendar`,
+      file: currentFile,
+      where: { ...currentWhere, period: ['2022', '2023', '2024'] },
+      dash: true,
+    },
+    { ...series, file: currentFile, where: { ...currentWhere, period: '2025' } },
+  ]
+}
+
+const sexSeries = [
+  { key: 'female', label: 'Women', color: 's3' },
+  { key: 'male', label: 'Men', color: 's2' },
+  { key: 'person', label: 'All people', color: 'ink' },
+] as const
+
+const annualSeries = (['LFPR', 'WPR', 'UR'] as const).flatMap((indicator) =>
+  sexSeries.flatMap((series) => {
+    const where = { geography: 'india', indicator, sex: series.key }
+    return seriesByPeriod(
+      { ...series, key: `${indicator.toLowerCase()}-${series.key}` },
+      'annual-rates',
+      ANNUAL,
+      where,
+      { ...where, period_type: CAL_YEAR },
+    )
+  }),
 )
 
 const annualPanel = (indicator: string) =>
   annualSeries.filter((s) => s.key.startsWith(`${indicator}-`)).map((s) => s.key)
 
-/** Chart 4.1: one series per area and sex. */
 const youthSeries = (['rural+urban', 'urban', 'rural'] as const).flatMap((sector) =>
-  (
-    [
-      ['female', 'Young women', 's3'],
-      ['male', 'Young men', 's2'],
-      ['person', 'All aged 15-29', 'ink'],
-    ] as const
-  ).map(([sex, label, color]) => ({
-    key: `${sector === 'rural+urban' ? 'all' : sector}-${sex}`,
-    label,
-    color,
-    file: YOUTH,
-    where: { geography: 'india', sector, sex, age_group: '15-29' },
-  })),
+  sexSeries.flatMap((series) => seriesByPeriod(
+    {
+      ...series,
+      key: `${sector === 'rural+urban' ? 'all' : sector}-${series.key}`,
+      label: { female: 'Young women', male: 'Young men', person: 'All aged 15-29' }[series.key],
+    },
+    'youth-unemployment',
+    YOUTH,
+    { geography: 'india', sector, sex: series.key, age_group: '15-29' },
+  )),
 )
 
 const youthPanel = (prefix: string) => youthSeries.filter((s) => s.key.startsWith(`${prefix}-`)).map((s) => s.key)
+
+const statusGroups = [
+  { key: 'self-employed', label: 'Self-employed', category: 'all self-employed' },
+  { key: 'regular', label: 'Regular wage or salary', category: 'regular wage/salary' },
+  { key: 'casual', label: 'Casual labour', category: 'casual labour' },
+] as const
+
+const statusSeries = statusGroups.flatMap(({ key, label, category }) => seriesByPeriod(
+  { key, label, color: 'ink' },
+  'employment-status',
+  STATUS,
+  { geography: 'india', sector: 'rural+urban', sex: 'person', status: category },
+))
+
+const industrySeries = (
+  period: string,
+  color: Color,
+  { women = false, hidden = false } = {},
+): Series => ({
+  key: `${women ? 'women' : 'all'}-${period}`,
+  label: women ? 'Women' : period,
+  color,
+  file: period.includes('-') ? history('employment-by-industry') : INDUSTRY,
+  where: { geography: 'india', period, sector: 'rural+urban', sex: women ? 'female' : 'person' },
+  format: { unit: '%', decimals: period === '2011-12' ? 2 : 1 },
+  note: period === '2011-12' ? 'derived' : undefined,
+  hidden,
+})
 
 const topic: Topic = {
   slug: 'jobs',
@@ -343,20 +435,18 @@ const topic: Topic = {
     },
     {
       title: 'How many people work?',
-      lede: 'The annual report counts what people did over the 365 days before the interview, the usual status. Its rates are lower than the weekly rates. On this measure, 40.0% of women aged 15 and over were in the labour force in 2025, against 79.1% of men. In 2017-18 the rate for women was 23.3%.',
+      lede: 'Among women aged 15 and over, labour force participation fell from 42.7% in 2004-05 to 31.2% in 2011-12 in the NSS surveys. The first PLFS estimate was 23.3% in 2017-18. The rate rose to 40.0% in calendar year 2025.',
       blocks: [
         {
-          // LATER: the board puts July to June years and calendar years side by side, each on its own x range; here they share one axis.
           chart: {
             kind: 'line',
             slug: 'labour-force-by-sex-annual',
-            title: 'Work and unemployment in India, by sex, 2017-18 to 2025',
-            subtitle:
-              'Labour force participation rate, worker population ratio and unemployment rate, India, ages 15 and over, usual status, %, July to June years 2017-18 to 2023-24 and calendar years 2022 to 2025.',
+            title: 'Labour force participation, work and unemployment in India, 1993-94 to 2025',
+            subtitle: 'Rates by sex, ages 15 and over, usual status. Dashed lines and the 2025 dots show calendar estimates.',
             punches: { office: 'MoSPI', unit: '% 15+', period: '2025' },
             status: ['Survey estimate', 'Method break'],
-            note: 'Left of each dotted line: July to June years, from the 2023-24 report. Right: calendar years, from the 2025 report. The two series overlap in time and are not joined. The unemployment rate is a share of the labour force; the other two are shares of all people aged 15 and over. In 2025 the unemployment rate was 3.1% for women, men and all people.',
-            sources: [plfsAnnual2025, plfsAnnualPress2025, plfsAnnualPress2023_24],
+            note: 'PLFS replaced the NSS survey in 2017 and changed its sample design in 2025. July to June estimates overlap with calendar estimates for 2022 to 2024.',
+            sources: [plfsAnnual2025, plfsAnnualPress2025, plfsAnnualPress2023_24, ...nssSources],
             format: { unit: '%', decimals: 1 },
             series: annualSeries,
             panels: [
@@ -364,18 +454,18 @@ const topic: Topic = {
               { label: 'Worker population ratio', series: annualPanel('wpr') },
               { label: 'Unemployment rate', series: annualPanel('ur'), own: true },
             ],
-            breaks: [{ x: '2022', label: 'Calendar years' }],
+            breaks: surveyBreaks,
             know: [
-              'The usual status (principal plus subsidiary) counts activity over the 365 days before the interview. Its rates are lower than the weekly rates in the monthly bulletins.',
-              'Up to 2023-24 the annual reports covered July to June years. From 2025 they cover calendar years. MoSPI also published calendar-year estimates for 2022 to 2024 in the 2025 report.',
-              'The two series overlap in time but are not the same numbers: the participation rate was 59.6% for 2024 and 60.1% for 2023-24.',
-              'The participation rate and the worker population ratio are shares of all people aged 15 and over. The unemployment rate is a share of the labour force only.',
+              'Usual status counts work and job search over the 365 days before the interview. It includes principal and subsidiary activity.',
+              'Participation and worker population rates use all people aged 15 and over. The unemployment rate uses people in the labour force aged 15 and over.',
+              'NSS surveyed households at intervals. PLFS began in July 2017 with a different sample design.',
+              subsidiaryRule,
+              'PLFS reports used July to June years through 2023-24. The 2025 report also gives calendar estimates for 2022 to 2024.',
             ],
             processing: [
-              'Read July to June years 2017-18 to 2023-24 from Tables 1 to 3 of the 2023-24 press note (23 September 2024).',
-              'Read calendar years 2022 to 2025 from Highlights Tables 1 to 3 of the PLFS Annual Report 2025.',
-              'Check the 2025 headline values (LFPR 59.3%, WPR 57.4%, UR 3.1%) against the report tables.',
-              'Keep the two period types as separate series for each indicator and sex.',
+              'Read the NSS rates for ages 15 and over in each report. Calculate unemployment as a share of the labour force in that age group.',
+              'Read PLFS rates from Tables 1 to 3 of the 2023-24 press note and Highlights Tables 1 to 3 of the 2025 report.',
+              'Keep separate series for each survey design and period basis.',
             ],
             nextRelease: 'not announced',
           },
@@ -384,74 +474,53 @@ const topic: Topic = {
     },
     {
       title: 'What kind of work do people do?',
-      lede: 'Most workers in India run their own farm or small business, or help in a family one. In 2025, 56.2% of workers were self-employed, 23.6% had a regular wage or salary and 20.2% did casual labour.',
+      lede: 'The share of workers with a regular wage or salary rose in the NSS surveys. In 2025, 23.6% had a regular wage or salary, 56.2% were self-employed and 20.2% did casual labour.',
       blocks: [
         {
-          // LATER: the board adds rows "Men, 2025" and "Women, 2025" under "By sex"; bars read one category column.
           chart: {
-            kind: 'bars',
+            kind: 'line',
             slug: 'employment-status',
-            title: 'Workers in India by type of work, 2022 to 2025',
-            subtitle: 'Share of workers of all ages, India, usual status, %, 2022 to 2025.',
+            title: 'Workers in India by type of work, 1993-94 to 2025',
+            subtitle: 'Share of workers of all ages, usual status. Dashed lines and the 2025 dots show calendar estimates.',
             punches: { office: 'MoSPI', unit: '% workers', period: '2025' },
-            status: ['Survey estimate'],
-            note: 'Self-employed covers own-account workers, employers and unpaid helpers in a household business. Shares may not add to 100 because of rounding.',
-            sources: [plfsAnnual2025],
+            status: ['Survey estimate', 'Method break'],
+            note: 'PLFS replaced the NSS survey in 2017 and changed its sample design in 2025. July to June estimates overlap with calendar estimates for 2022 to 2024.',
+            sources: historySources,
             format: { unit: '%', decimals: 1 },
-            by: 'period',
-            stacked: true,
-            order: ['2022', '2023', '2024', '2025'],
-            highlight: '2025',
-            series: [
-              {
-                key: 'self-employed',
-                label: 'Self-employed',
-                color: 's2',
-                file: STATUS,
-                where: { geography: 'india', sector: 'rural+urban', sex: 'person', status: 'all self-employed' },
-              },
-              {
-                key: 'regular',
-                label: 'Regular wage or salary',
-                color: 's5',
-                file: STATUS,
-                where: { geography: 'india', sector: 'rural+urban', sex: 'person', status: 'regular wage/salary' },
-              },
-              {
-                key: 'casual',
-                label: 'Casual labour',
-                color: 's8',
-                file: STATUS,
-                where: { geography: 'india', sector: 'rural+urban', sex: 'person', status: 'casual labour' },
-              },
-            ],
+            y: { min: 0, max: 70, step: 20 },
+            series: statusSeries,
+            panels: statusGroups.map(({ key, label }) => ({
+              label,
+              series: statusSeries.filter((s) => s.key === key || s.key.startsWith(`${key}-`)).map((s) => s.key),
+            })),
+            breaks: surveyBreaks,
             know: [
-              'Self-employed workers run their own business or farm, employ others, or help without pay in a household business. MoSPI publishes the two parts separately; this chart shows their total.',
-              'Women workers are more often self-employed than men, mostly because more of them help without pay in a family business.',
-              'The shares cover workers of all ages on the usual status, which counts activity over the 365 days before the interview.',
+              'Self-employed workers run their own business or farm, employ others, or help without pay in a household business.',
+              'The shares cover workers of all ages on usual status. Shares can differ from 100% in total because of rounding.',
+              subsidiaryRule,
             ],
             processing: [
-              'Read Statement 7 of the PLFS Annual Report 2025 for calendar years 2022 to 2025, by sector and sex.',
-              'Keep the published total for self-employed; do not add its two parts again.',
-              'Check the 2025 headline values (self-employed 56.2%, regular wage or salary 23.6%) against the press note.',
+              'Use published NSS shares where available. Calculate the remaining shares from the published worker counts.',
+              'Read the July to June estimates from the 2020-21 and 2023-24 PLFS annual reports and the calendar estimates from Statement 7 of the 2025 report.',
+              'Keep separate series for each survey design and period basis.',
             ],
             nextRelease: 'not announced',
           },
         },
         {
-          text: 'Agriculture still employed 43.0% of workers in 2025, down from 45.5% in 2022, and 59.8% of women workers.',
+          text: 'Agriculture employed nearly half of all workers in the 2011-12 NSS survey. In 2025, it employed 43.0% of all workers and 59.8% of women workers.',
         },
         {
           chart: {
             kind: 'bars',
             slug: 'employment-by-industry',
-            title: 'Workers in India by industry, 2025',
+            title: 'Workers in India by industry, 2011-12 to 2025',
             subtitle:
-              'Share of all workers and of women workers, India, all ages, usual status, %, 2025, with the 2022 share for all workers. Ranked by the share of all workers in 2025.',
+              'Share of workers of all ages, usual status. The shares for women are for 2025.',
             punches: { office: 'MoSPI', unit: '% workers', period: '2025' },
-            status: ['Survey estimate'],
-            note: 'Industries follow the National Industrial Classification (NIC) 2008. Shares may not add to 100 because of rounding.',
-            sources: [plfsAnnual2025],
+            status: ['Survey estimate', 'Method break'],
+            note: 'The 2011-12 NSS estimate uses a different sample design from PLFS. The 2011-12 and 2017-18 estimates cover July to June. The 2022 and 2025 estimates cover January to December.',
+            sources: [plfsAnnual2025, plfsAnnual2023_24, plfsAnnual2020_21, nssSources[4]!],
             format: { unit: '%', decimals: 1 },
             by: 'industry',
             order: [
@@ -475,38 +544,23 @@ const topic: Topic = {
               'mining & quarrying': 'Mining and quarrying',
             },
             series: [
-              {
-                key: 'all-2025',
-                label: 'All workers, 2025',
-                color: 'ink',
-                file: INDUSTRY,
-                where: { geography: 'india', period: '2025', sector: 'rural+urban', sex: 'person' },
-              },
-              {
-                key: 'women-2025',
-                label: 'Women workers, 2025',
-                color: 's3',
-                file: INDUSTRY,
-                where: { geography: 'india', period: '2025', sector: 'rural+urban', sex: 'female' },
-              },
-              // LATER: the board draws 2022 as a triangle marker above each "All workers" bar; bars have no marker series.
-              {
-                key: 'all-2022',
-                label: 'All workers, 2022',
-                color: 'other',
-                file: INDUSTRY,
-                where: { geography: 'india', period: '2022', sector: 'rural+urban', sex: 'person' },
-              },
+              industrySeries('2011-12', 's5'),
+              industrySeries('2017-18', 's4'),
+              industrySeries('2022', 'other'),
+              industrySeries('2025', 'ink'),
+              industrySeries('2025', 's3', { women: true }),
+              ...['2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24', '2023', '2024'].map(
+                (period) => industrySeries(period, 'ink', { hidden: true }),
+              ),
             ],
             know: [
-              'Industries follow the National Industrial Classification (NIC) 2008. "Other services" includes public administration, education, health, finance and other services.',
-              'The shares cover workers of all ages on the usual status, which counts activity over the 365 days before the interview.',
-              'Agriculture fell from 45.5% of workers in 2022 to 43.0% in 2025. Construction fell from 13.4% to 12.0%.',
+              'The eight groups use the same sections of the National Industrial Classification 2008. Earlier NSS rounds used older classifications.',
+              'The data table includes all PLFS July to June years and all calendar years from 2022 to 2025.',
             ],
             processing: [
-              'Read Statement 8 of the PLFS Annual Report 2025 for calendar years 2022 to 2025, by sector and sex.',
-              'Drop the published "all" row, which is the total of 100.',
-              'Order the industries by their 2025 share of all workers.',
+              'Group sections from NSS Report 554, Table 27, using the PLFS definition of each industry.',
+              'Read the PLFS July to June shares from the 2020-21 and 2023-24 annual reports. Read the calendar shares from Statement 8 of the 2025 report.',
+              'Rank the industries by their 2025 share of all workers. The total row is 100%.',
             ],
             nextRelease: 'not announced',
           },
@@ -515,36 +569,37 @@ const topic: Topic = {
     },
     {
       title: 'How hard is it for young people to find a job?',
-      lede: 'In 2025, 9.9% of people aged 15 to 29 in the labour force were unemployed, against 3.1% of all adults (usual status). For young women in towns and cities the rate was 18.9%.',
+      lede: 'Youth unemployment fell after the first PLFS survey. In 2025, 9.9% of people aged 15 to 29 in the labour force were unemployed. The rate for young women in towns and cities was 18.9%. The earlier NSS surveys used a different sample design.',
       blocks: [
         {
           chart: {
             kind: 'line',
             slug: 'youth-unemployment',
-            title: 'Youth unemployment in India, by sex and area, 2022 to 2025',
+            title: 'Youth unemployment in India, by sex and area, 1993-94 to 2025',
             subtitle:
-              'Unemployed people aged 15 to 29 as a share of the labour force of that age, India, usual status, %, calendar years 2022 to 2025.',
+              'Share of the labour force aged 15 to 29 who are unemployed, usual status. Dashed lines and the 2025 dots show calendar estimates.',
             punches: { office: 'MoSPI', unit: '% 15-29', period: '2025' },
-            status: ['Survey estimate'],
-            note: 'Calendar-year figures from the 2025 annual report. Usual-status rates are lower than the weekly rates, so the two are not compared.',
-            sources: [plfsAnnual2025],
+            status: ['Survey estimate', 'Method break'],
+            note: 'PLFS replaced the NSS survey in 2017 and changed its sample design in 2025. July to June estimates overlap with calendar estimates for 2022 to 2024.',
+            sources: historySources,
             format: { unit: '%', decimals: 1 },
-            y: { min: 0, max: 20, step: 10 },
+            y: { min: 0, max: 30, step: 10 },
             series: youthSeries,
             panels: [
               { label: 'All areas', series: youthPanel('all') },
               { label: 'Towns and cities', series: youthPanel('urban') },
               { label: 'Villages', series: youthPanel('rural') },
             ],
+            breaks: surveyBreaks,
             know: [
-              'The rate is the share of the labour force aged 15 to 29 with no work, on the usual status, which counts activity over the 365 days before the interview.',
-              'Young women in towns and cities have the highest rate: 18.9% in 2025, down from 21.9% in 2022.',
-              'The series uses calendar years from the 2025 annual report. Earlier reports used July to June years, which are not shown here.',
+              'The rate is the share of the labour force aged 15 to 29 with no work. Usual status counts activity over the 365 days before the interview.',
+              'The NSS reports give rates for rural and urban women and men. Estimates for larger groups use the published age-group tables.',
+              subsidiaryRule,
             ],
             processing: [
-              'Read Statement 18 of the PLFS Annual Report 2025 for calendar years 2022 to 2025.',
-              'Keep each area (rural, urban, rural plus urban) and sex as a separate series.',
-              'Check the 2025 headline rate for ages 15 to 29 (9.9%) against the press note.',
+              'Read NSS Reports 537 and 554 for rural and urban rates by sex. Calculate other NSS rates from published data for ages 15 to 19, 20 to 24 and 25 to 29.',
+              'Read PLFS rates from the 2020-21, 2023-24 and 2025 annual reports.',
+              'Keep separate series for each survey design and period basis.',
             ],
             nextRelease: 'not announced',
           },
@@ -646,7 +701,7 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each jobs figure is made, where it breaks, and what is missing.") has no field.
   about: {
     publisher:
-      'The National Statistics Office (NSO), Ministry of Statistics and Programme Implementation (MoSPI), runs the Periodic Labour Force Survey (PLFS), a household survey.',
+      'The National Statistics Office (NSO), Ministry of Statistics and Programme Implementation (MoSPI), runs the Periodic Labour Force Survey (PLFS). The National Sample Survey (NSS) measured employment before PLFS.',
     frequency:
       'Monthly bulletin (current weekly status, India, rural and urban): the October 2026 bulletin came out on 16 Nov 2026. Quarterly bulletin: the July to September 2026 bulletin came out on 10 Nov 2026. Annual report (usual status, all states and UTs): the 2025 report came out on 27 Mar 2026.',
     revisions:
@@ -667,6 +722,9 @@ const topic: Topic = {
     plfsAnnual2025,
     plfsAnnualPress2025,
     plfsAnnualPress2023_24,
+    plfsAnnual2023_24,
+    plfsAnnual2020_21,
+    ...nssSources,
   ],
   related: [
     // The Economy and Population chart slugs belong to other modules; these point at the topic pages.

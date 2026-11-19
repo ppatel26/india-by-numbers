@@ -1,0 +1,109 @@
+geography,period,value,unit,sector,sex,age_group,activity_status,period_basis,plot_period,table,derived,published_per_1000
+india,1993-94,1.9,per cent,rural,female,15-29,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 537, Statement 6.4",,19
+india,1993-94,3.5,per cent,rural,male,15-29,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 537, Statement 6.4",,35
+india,1993-94,2.9,per cent,rural,person,15-29,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 409, Table 30B","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,1993-94,3.7,per cent,rural+urban,female,15-29,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 409, Table 30B","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,1993-94,5.1,per cent,rural+urban,male,15-29,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 409, Table 30B","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,1993-94,4.7,per cent,rural+urban,person,15-29,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 409, Table 30B","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,1993-94,15.0,per cent,urban,female,15-29,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 537, Statement 6.4",,150
+india,1993-94,9.6,per cent,urban,male,15-29,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 537, Statement 6.4",,96
+india,1993-94,10.8,per cent,urban,person,15-29,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 409, Table 30B","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,1999-00,2.7,per cent,rural,female,15-29,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 554, Statement 6.4",,27
+india,1999-00,4.3,per cent,rural,male,15-29,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 554, Statement 6.4",,43
+india,1999-00,3.7,per cent,rural,person,15-29,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 458, Table 46","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,1999-00,4.1,per cent,rural+urban,female,15-29,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 458, Table 46","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,1999-00,5.9,per cent,rural+urban,male,15-29,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 458, Table 46","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,1999-00,5.4,per cent,rural+urban,person,15-29,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 458, Table 46","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,1999-00,13.9,per cent,urban,female,15-29,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 554, Statement 6.4",,139
+india,1999-00,10.8,per cent,urban,male,15-29,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 554, Statement 6.4",,108
+india,1999-00,11.3,per cent,urban,person,15-29,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 458, Table 46","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2004-05,4.2,per cent,rural,female,15-29,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 554, Statement 6.4",,42
+india,2004-05,3.9,per cent,rural,male,15-29,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 554, Statement 6.4",,39
+india,2004-05,4.0,per cent,rural,person,15-29,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 515, Table 19","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2004-05,5.8,per cent,rural+urban,female,15-29,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 515, Table 19","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2004-05,5.2,per cent,rural+urban,male,15-29,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 515, Table 19","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2004-05,5.4,per cent,rural+urban,person,15-29,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 515, Table 19","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2004-05,14.9,per cent,urban,female,15-29,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 554, Statement 6.4",,149
+india,2004-05,8.8,per cent,urban,male,15-29,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 554, Statement 6.4",,88
+india,2004-05,10.1,per cent,urban,person,15-29,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 515, Table 19","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2009-10,4.6,per cent,rural,female,15-29,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 554, Statement 6.4",,46
+india,2009-10,4.7,per cent,rural,male,15-29,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 554, Statement 6.4",,47
+india,2009-10,4.7,per cent,rural,person,15-29,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 537, Table 20","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2009-10,6.4,per cent,rural+urban,female,15-29,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 537, Table 20","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2009-10,5.5,per cent,rural+urban,male,15-29,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 537, Table 20","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2009-10,5.7,per cent,rural+urban,person,15-29,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 537, Table 20","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2009-10,14.3,per cent,urban,female,15-29,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 554, Statement 6.4",,143
+india,2009-10,7.5,per cent,urban,male,15-29,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 554, Statement 6.4",,75
+india,2009-10,8.9,per cent,urban,person,15-29,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 537, Table 20","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2011-12,4.8,per cent,rural,female,15-29,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Statement 6.4",,48
+india,2011-12,5.0,per cent,rural,male,15-29,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Statement 6.4",,50
+india,2011-12,4.9,per cent,rural,person,15-29,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Table 18","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2011-12,6.5,per cent,rural+urban,female,15-29,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Table 18","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2011-12,5.9,per cent,rural+urban,male,15-29,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Table 18","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2011-12,6.1,per cent,rural+urban,person,15-29,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Table 18","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2011-12,13.1,per cent,urban,female,15-29,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Statement 6.4",,131
+india,2011-12,8.1,per cent,urban,male,15-29,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Statement 6.4",,81
+india,2011-12,9.2,per cent,urban,person,15-29,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Table 18","estimated from the published age groups 15-19, 20-24 and 25-29",
+india,2017-18,13.6,per cent,rural,female,15-29,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2017-18,17.4,per cent,rural,male,15-29,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2017-18,16.6,per cent,rural,person,15-29,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2017-18,17.9,per cent,rural+urban,female,15-29,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2017-18,17.8,per cent,rural+urban,male,15-29,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2017-18,17.8,per cent,rural+urban,person,15-29,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2017-18,27.2,per cent,urban,female,15-29,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2017-18,18.7,per cent,urban,male,15-29,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2017-18,20.6,per cent,urban,person,15-29,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2018-19,13.8,per cent,rural,female,15-29,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2018-19,16.6,per cent,rural,male,15-29,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2018-19,16.0,per cent,rural,person,15-29,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2018-19,17.7,per cent,rural+urban,female,15-29,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2018-19,17.2,per cent,rural+urban,male,15-29,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2018-19,17.3,per cent,rural+urban,person,15-29,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2018-19,25.7,per cent,urban,female,15-29,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2018-19,18.7,per cent,urban,male,15-29,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2018-19,20.2,per cent,urban,person,15-29,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2019-20,10.3,per cent,rural,female,15-29,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2019-20,13.8,per cent,rural,male,15-29,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2019-20,12.9,per cent,rural,person,15-29,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2019-20,14.6,per cent,rural+urban,female,15-29,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2019-20,15.1,per cent,rural+urban,male,15-29,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2019-20,15.0,per cent,rural+urban,person,15-29,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2019-20,24.9,per cent,urban,female,15-29,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2019-20,18.2,per cent,urban,male,15-29,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2019-20,19.9,per cent,urban,person,15-29,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2020-21,8.2,per cent,rural,female,15-29,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2020-21,11.6,per cent,rural,male,15-29,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2020-21,10.7,per cent,rural,person,15-29,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2020-21,12.5,per cent,rural+urban,female,15-29,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2020-21,13.0,per cent,rural+urban,male,15-29,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2020-21,12.9,per cent,rural+urban,person,15-29,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2020-21,24.9,per cent,urban,female,15-29,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2020-21,16.6,per cent,urban,male,15-29,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2020-21,18.5,per cent,urban,person,15-29,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2020-21, Statement 26",,
+india,2021-22,8.5,per cent,rural,female,15-29,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2021-22,11.4,per cent,rural,male,15-29,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2021-22,10.6,per cent,rural,person,15-29,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2021-22,11.8,per cent,rural+urban,female,15-29,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2021-22,12.6,per cent,rural+urban,male,15-29,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2021-22,12.4,per cent,rural+urban,person,15-29,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2021-22,21.6,per cent,urban,female,15-29,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2021-22,15.8,per cent,urban,male,15-29,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2021-22,17.2,per cent,urban,person,15-29,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2022-23,7.4,per cent,rural,female,15-29,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2022-23,8.3,per cent,rural,male,15-29,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2022-23,8.0,per cent,rural,person,15-29,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2022-23,10.6,per cent,rural+urban,female,15-29,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2022-23,9.7,per cent,rural+urban,male,15-29,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2022-23,10.0,per cent,rural+urban,person,15-29,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2022-23,21.7,per cent,urban,female,15-29,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2022-23,13.8,per cent,urban,male,15-29,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2022-23,15.7,per cent,urban,person,15-29,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2023-24,8.2,per cent,rural,female,15-29,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2023-24,8.7,per cent,rural,male,15-29,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2023-24,8.5,per cent,rural,person,15-29,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2023-24,11.0,per cent,rural+urban,female,15-29,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2023-24,9.8,per cent,rural+urban,male,15-29,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2023-24,10.2,per cent,rural+urban,person,15-29,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2023-24,20.1,per cent,urban,female,15-29,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2023-24,12.8,per cent,urban,male,15-29,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24, Statement 16",,
+india,2023-24,14.7,per cent,urban,person,15-29,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24, Statement 16",,

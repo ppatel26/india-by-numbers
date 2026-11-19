@@ -1,0 +1,109 @@
+geography,period,value,unit,indicator,sex,age_group,activity_status,period_basis,plot_period,table,derived,published_per_1000
+india,1993-94,42.7,per cent,LFPR,female,15+,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 409, Table 32B",,427
+india,1993-94,85.6,per cent,LFPR,male,15+,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 409, Table 32B",,856
+india,1993-94,64.6,per cent,LFPR,person,15+,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 409, Table 32B",,646
+india,1993-94,1.6,per cent,UR,female,15+,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 409, Table 32B","unemployed divided by labour force, ages 15+",
+india,1993-94,2.1,per cent,UR,male,15+,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 409, Table 32B","unemployed divided by labour force, ages 15+",
+india,1993-94,1.9,per cent,UR,person,15+,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 409, Table 32B","unemployed divided by labour force, ages 15+",
+india,1993-94,42.0,per cent,WPR,female,15+,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 409, Table 32B",,420
+india,1993-94,83.8,per cent,WPR,male,15+,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 409, Table 32B",,838
+india,1993-94,63.4,per cent,WPR,person,15+,usual status (ps+ss),NSS before the 30-day rule,1993-07-01,"NSS Report 409, Table 32B",,634
+india,1999-00,39.1,per cent,LFPR,female,15+,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 458, Table 48B",,391
+india,1999-00,83.6,per cent,LFPR,male,15+,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 458, Table 48B",,836
+india,1999-00,61.7,per cent,LFPR,person,15+,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 458, Table 48B",,617
+india,1999-00,1.7,per cent,UR,female,15+,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 458, Table 48B","unemployed divided by labour force, ages 15+",
+india,1999-00,2.4,per cent,UR,male,15+,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 458, Table 48B","unemployed divided by labour force, ages 15+",
+india,1999-00,2.2,per cent,UR,person,15+,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 458, Table 48B","unemployed divided by labour force, ages 15+",
+india,1999-00,38.5,per cent,WPR,female,15+,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 458, Table 48B",,385
+india,1999-00,81.6,per cent,WPR,male,15+,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 458, Table 48B",,816
+india,1999-00,60.4,per cent,WPR,person,15+,usual status (ps+ss),NSS before the 30-day rule,1999-07-01,"NSS Report 458, Table 48B",,604
+india,2004-05,42.7,per cent,LFPR,female,15+,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 515, Table 19",,427
+india,2004-05,84.0,per cent,LFPR,male,15+,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 515, Table 19",,840
+india,2004-05,63.7,per cent,LFPR,person,15+,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 515, Table 19",,637
+india,2004-05,2.6,per cent,UR,female,15+,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 515, Table 19","unemployed divided by labour force, ages 15+",
+india,2004-05,2.1,per cent,UR,male,15+,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 515, Table 19","unemployed divided by labour force, ages 15+",
+india,2004-05,2.4,per cent,UR,person,15+,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 515, Table 19","unemployed divided by labour force, ages 15+",
+india,2004-05,41.6,per cent,WPR,female,15+,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 515, Table 19",,416
+india,2004-05,82.2,per cent,WPR,male,15+,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 515, Table 19",,822
+india,2004-05,62.2,per cent,WPR,person,15+,usual status (ps+ss),NSS employment and unemployment survey,2004-07-01,"NSS Report 515, Table 19",,622
+india,2009-10,32.6,per cent,LFPR,female,15+,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 537, Table 20",,326
+india,2009-10,80.6,per cent,LFPR,male,15+,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 537, Table 20",,806
+india,2009-10,57.1,per cent,LFPR,person,15+,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 537, Table 20",,571
+india,2009-10,2.1,per cent,UR,female,15+,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 537, Table 20","unemployed divided by labour force, ages 15+",
+india,2009-10,2.0,per cent,UR,male,15+,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 537, Table 20","unemployed divided by labour force, ages 15+",
+india,2009-10,2.1,per cent,UR,person,15+,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 537, Table 20","unemployed divided by labour force, ages 15+",
+india,2009-10,31.8,per cent,WPR,female,15+,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 537, Table 20",,318
+india,2009-10,79.1,per cent,WPR,male,15+,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 537, Table 20",,791
+india,2009-10,55.9,per cent,WPR,person,15+,usual status (ps+ss),NSS employment and unemployment survey,2009-07-01,"NSS Report 537, Table 20",,559
+india,2011-12,31.2,per cent,LFPR,female,15+,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Table 18",,312
+india,2011-12,79.8,per cent,LFPR,male,15+,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Table 18",,798
+india,2011-12,55.9,per cent,LFPR,person,15+,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Table 18",,559
+india,2011-12,2.2,per cent,UR,female,15+,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Table 18","unemployed divided by labour force, ages 15+",
+india,2011-12,2.1,per cent,UR,male,15+,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Table 18","unemployed divided by labour force, ages 15+",
+india,2011-12,2.1,per cent,UR,person,15+,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Table 18","unemployed divided by labour force, ages 15+",
+india,2011-12,30.5,per cent,WPR,female,15+,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Table 18",,305
+india,2011-12,78.1,per cent,WPR,male,15+,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Table 18",,781
+india,2011-12,54.7,per cent,WPR,person,15+,usual status (ps+ss),NSS employment and unemployment survey,2011-07-01,"NSS Report 554, Table 18",,547
+india,2017-18,23.3,per cent,LFPR,female,15+,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2017-18,75.8,per cent,LFPR,male,15+,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2017-18,49.8,per cent,LFPR,person,15+,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2017-18,5.6,per cent,UR,female,15+,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2017-18,6.1,per cent,UR,male,15+,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2017-18,6.0,per cent,UR,person,15+,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2017-18,22.0,per cent,WPR,female,15+,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2017-18,71.2,per cent,WPR,male,15+,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2017-18,46.8,per cent,WPR,person,15+,usual status (ps+ss),PLFS July to June,2017-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2018-19,24.5,per cent,LFPR,female,15+,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2018-19,75.5,per cent,LFPR,male,15+,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2018-19,50.2,per cent,LFPR,person,15+,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2018-19,5.1,per cent,UR,female,15+,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2018-19,6.0,per cent,UR,male,15+,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2018-19,5.8,per cent,UR,person,15+,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2018-19,23.3,per cent,WPR,female,15+,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2018-19,71.0,per cent,WPR,male,15+,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2018-19,47.3,per cent,WPR,person,15+,usual status (ps+ss),PLFS July to June,2018-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2019-20,30.0,per cent,LFPR,female,15+,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2019-20,76.8,per cent,LFPR,male,15+,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2019-20,53.5,per cent,LFPR,person,15+,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2019-20,4.2,per cent,UR,female,15+,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2019-20,5.0,per cent,UR,male,15+,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2019-20,4.8,per cent,UR,person,15+,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2019-20,28.7,per cent,WPR,female,15+,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2019-20,73.0,per cent,WPR,male,15+,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2019-20,50.9,per cent,WPR,person,15+,usual status (ps+ss),PLFS July to June,2019-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2020-21,32.5,per cent,LFPR,female,15+,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2020-21,77.0,per cent,LFPR,male,15+,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2020-21,54.9,per cent,LFPR,person,15+,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2020-21,3.5,per cent,UR,female,15+,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2020-21,4.5,per cent,UR,male,15+,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2020-21,4.2,per cent,UR,person,15+,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2020-21,31.4,per cent,WPR,female,15+,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2020-21,73.5,per cent,WPR,male,15+,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2020-21,52.6,per cent,WPR,person,15+,usual status (ps+ss),PLFS July to June,2020-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2021-22,32.8,per cent,LFPR,female,15+,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2021-22,77.2,per cent,LFPR,male,15+,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2021-22,55.2,per cent,LFPR,person,15+,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2021-22,3.3,per cent,UR,female,15+,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2021-22,4.4,per cent,UR,male,15+,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2021-22,4.1,per cent,UR,person,15+,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2021-22,31.7,per cent,WPR,female,15+,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2021-22,73.8,per cent,WPR,male,15+,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2021-22,52.9,per cent,WPR,person,15+,usual status (ps+ss),PLFS July to June,2021-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2022-23,37.0,per cent,LFPR,female,15+,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2022-23,78.5,per cent,LFPR,male,15+,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2022-23,57.9,per cent,LFPR,person,15+,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2022-23,2.9,per cent,UR,female,15+,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2022-23,3.3,per cent,UR,male,15+,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2022-23,3.2,per cent,UR,person,15+,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2022-23,35.9,per cent,WPR,female,15+,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2022-23,76.0,per cent,WPR,male,15+,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2022-23,56.0,per cent,WPR,person,15+,usual status (ps+ss),PLFS July to June,2022-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2023-24,41.7,per cent,LFPR,female,15+,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2023-24,78.8,per cent,LFPR,male,15+,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2023-24,60.1,per cent,LFPR,person,15+,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2023-24,3.2,per cent,UR,female,15+,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2023-24,3.2,per cent,UR,male,15+,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2023-24,3.2,per cent,UR,person,15+,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2023-24,40.3,per cent,WPR,female,15+,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2023-24,76.3,per cent,WPR,male,15+,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
+india,2023-24,58.2,per cent,WPR,person,15+,usual status (ps+ss),PLFS July to June,2023-07-01,"PLFS Annual Report 2023-24 press note, Tables 1-3",,
