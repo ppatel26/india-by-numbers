@@ -80,10 +80,11 @@ const CAPACITY = 'climate/installed-capacity-by-source-2014-2026.csv'
 const HISTORIC_CAPACITY = 'climate/historic-installed-capacity-1947-2013.csv'
 const CAPACITY_SHARE = 'climate/non-fossil-share-of-capacity-1947-2026.csv'
 const CAPACITY_BREAKS = [
-  { x: '1998-03-31', label: '1998 archive' },
+  // Source changes in 1998 and 2006 share one label; the lines are too close for two.
+  { x: '1998-03-31', label: 'New sources' },
   { x: '2006-03-31', label: '' },
-  { x: '2014-03-31', label: '2014' },
-  { x: '2022-03-31', label: 'Off-grid', before: ' ' },
+  { x: '2014-03-31', label: 'Revised' },
+  { x: '2022-03-31', label: 'Off-grid added', before: ' ' },
 ] as const
 const SUBDIVISIONS = 'climate/monsoon-2026-by-subdivision.csv'
 
@@ -333,7 +334,7 @@ const topic: Topic = {
             subtitle: 'Utility capacity in megawatts (MW). The early groups are thermal, nuclear, and renewables including hydro.',
             punches: { office: 'CEA', unit: 'MW', period: '31 OCT 2026' },
             status: ['Method break'],
-            note: 'CEA reports December 1947 and 1950, selected March dates to 1997, then every March to 2026 and October 2026. The monthly reports use revised renewable totals and give more detail from March 2014.',
+            note: 'CEA reports December 1947 and 1950, selected March dates to 1997, then every March to 2026 and October 2026. The breaks mark changes in what CEA counts: wind listed separately from 1998, a broader renewables total from 2006, revised renewable totals with more detail from 2014, and off-grid renewables from August 2021.',
             sources: [CEA_GROWTH, CEA_EXECUTIVE, CEA_CAPACITY],
             format: { decimals: 0, scale: 'none' },
             y: { min: 0, max: 600000, step: 100000 },

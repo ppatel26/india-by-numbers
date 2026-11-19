@@ -1,0 +1,7 @@
+# Charts that were replaced keep their old addresses.
+/charts/warmest-years/ /charts/annual-temperature-anomaly/ 301
+/charts/warmest-years.png /charts/annual-temperature-anomaly.png 301
+/charts/warmest-years.svg /charts/annual-temperature-anomaly.svg 301
+/charts/warmest-years.csv /charts/annual-temperature-anomaly.csv 301
+/charts/warmest-years.json /charts/annual-temperature-anomaly.json 301
+/og/charts/warmest-years.png /og/charts/annual-temperature-anomaly.png 301
