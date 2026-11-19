@@ -21,11 +21,13 @@ export const rowName = (key: string, fit = true): string => {
 export const nameColumn = (names: readonly string[], narrow: boolean): number =>
   Math.min(narrow ? 118 : 240, 16 + Math.max(...names.map((n) => n.length)) * 6.8)
 
+export const legendItemWidth = (label: string): number => 30 + label.length * 7
+
 export function legend(series: readonly SeriesData[], hollow: readonly string[] = [], y = 12): Markup {
   let x = 0
   return svg`<g class="key">${series.map((s) => {
     const at = x
-    x += 30 + s.label.length * 7
+    x += legendItemWidth(s.label)
     const ring = hollow.includes(s.key)
     return svg`<circle cx="${at + 6}" cy="${y - 4}" r="5" fill="${ring ? 'var(--paper)' : colorVar(s.color)}" stroke="${colorVar(s.color)}" stroke-width="1.5"/>
 <text x="${at + 16}" y="${y}" font-size="12.5" fill="var(--ink)">${s.label}</text>`

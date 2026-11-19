@@ -1,101 +1,127 @@
-geography,period,indicator,level,value,unit,table
-india,2020-21,enrolment,pre-primary,10645526,students,"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,enrolment,pre-primary,9495207,students,"UDISE+ 2021-22 booklet, Table 1"
-india,2020-21,enrolment,primary (1-5),122021291,students,"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,enrolment,primary (1-5),121842250,students,"UDISE+ 2021-22 booklet, Table 1"
-india,2020-21,enrolment,upper primary (6-8),65854199,students,"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,enrolment,upper primary (6-8),66790692,students,"UDISE+ 2021-22 booklet, Table 1"
-india,2020-21,enrolment,secondary (9-10),39006375,students,"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,enrolment,secondary (9-10),38528631,students,"UDISE+ 2021-22 booklet, Table 1"
-india,2020-21,enrolment,higher secondary (11-12),26922596,students,"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,enrolment,higher secondary (11-12),28579050,students,"UDISE+ 2021-22 booklet, Table 1"
-india,2020-21,enrolment,total (pre-primary to higher secondary),264449987,students,"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,enrolment,total (pre-primary to higher secondary),265235830,students,"UDISE+ 2021-22 booklet, Table 1"
-india,2020-21,GER,primary (1-5),103.3,ratio (per cent of age group),"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,GER,primary (1-5),103.39,ratio (per cent of age group),"UDISE+ 2021-22 booklet, Table 1"
-india,2020-21,GER,upper primary (6-8),92.2,ratio (per cent of age group),"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,GER,upper primary (6-8),94.67,ratio (per cent of age group),"UDISE+ 2021-22 booklet, Table 1"
-india,2020-21,GER,secondary (9-10),79.8,ratio (per cent of age group),"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,GER,secondary (9-10),79.56,ratio (per cent of age group),"UDISE+ 2021-22 booklet, Table 1"
-india,2020-21,GER,higher secondary (11-12),53.8,ratio (per cent of age group),"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,GER,higher secondary (11-12),57.56,ratio (per cent of age group),"UDISE+ 2021-22 booklet, Table 1"
-india,2020-21,dropout rate,primary (1-5),0.8,per cent,"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,dropout rate,primary (1-5),1.45,per cent,"UDISE+ 2021-22 booklet, Table 1"
-india,2020-21,dropout rate,upper primary (6-8),1.9,per cent,"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,dropout rate,upper primary (6-8),3.02,per cent,"UDISE+ 2021-22 booklet, Table 1"
-india,2020-21,dropout rate,secondary (9-10),14.6,per cent,"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,dropout rate,secondary (9-10),12.61,per cent,"UDISE+ 2021-22 booklet, Table 1"
-india,2020-21,PTR,primary (1-5),26.25,pupils per teacher,"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,PTR,primary (1-5),26.17,pupils per teacher,"UDISE+ 2021-22 booklet, Table 1"
-india,2020-21,PTR,secondary (9-10),18.44,pupils per teacher,"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,PTR,secondary (9-10),17.60,pupils per teacher,"UDISE+ 2021-22 booklet, Table 1"
-india,2020-21,schools,all schools,1509136,schools,"UDISE+ 2021-22 booklet, Table 1"
-india,2021-22,schools,all schools,1489115,schools,"UDISE+ 2021-22 booklet, Table 1"
-india,2022-23,enrolment,pre-primary,10167812,students,"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,enrolment,primary (1-5),112421298,students,"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,enrolment,upper primary (6-8),63477860,students,"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,enrolment,secondary (9-10),37934094,students,"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,enrolment,higher secondary (11-12),27790658,students,"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,enrolment,total (pre-primary to higher secondary),251791722,students,"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,GER,primary (1-5),96.2,ratio (per cent of age group),"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,GER,upper primary (6-8),90.2,ratio (per cent of age group),"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,GER,secondary (9-10),79.2,ratio (per cent of age group),"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,GER,higher secondary (11-12),56.8,ratio (per cent of age group),"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,dropout rate,primary (1-5),7.8,per cent,"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,dropout rate,upper primary (6-8),8.1,per cent,"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,dropout rate,secondary (9-10),16.4,per cent,"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,PTR,primary (1-5),23,pupils per teacher,"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,PTR,secondary (9-10),17,pupils per teacher,"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,schools,all schools,1466109,schools,"UDISE+ 2022-23 booklet, Table 1"
-india,2022-23,teachers,all teachers,9483294,teachers,"UDISE+ 2022-23 booklet, Table 1"
-india,2023-24,enrolment,pre-primary,13082797,students,"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,enrolment,primary (1-5),107837711,students,"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,enrolment,upper primary (6-8),63126015,students,"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,enrolment,secondary (9-10),36863791,students,"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,enrolment,higher secondary (11-12),27135514,students,"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,enrolment,total (pre-primary to higher secondary),248045828,students,"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,GER,primary (1-5),93.0,ratio (per cent of age group),"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,GER,upper primary (6-8),89.7,ratio (per cent of age group),"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,GER,secondary (9-10),77.4,ratio (per cent of age group),"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,GER,higher secondary (11-12),56.2,ratio (per cent of age group),"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,dropout rate,primary (1-5),1.9,per cent,"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,dropout rate,upper primary (6-8),5.2,per cent,"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,dropout rate,secondary (9-10),14.1,per cent,"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,PTR,primary (1-5),21,pupils per teacher,"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,PTR,secondary (9-10),16,pupils per teacher,"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,schools,all schools,1471891,schools,"UDISE+ 2023-24 booklet, Table 1"
-india,2023-24,teachers,all teachers,9807600,teachers,"UDISE+ 2023-24 booklet, Table 1"
-india,2024-25,enrolment,pre-primary,14047080,students,"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,enrolment,primary (1-5),104381347,students,"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,enrolment,upper primary (6-8),63695100,students,"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,enrolment,secondary (9-10),37165436,students,"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,enrolment,higher secondary (11-12),27643717,students,"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,enrolment,total (pre-primary to higher secondary),246932680,students,"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,GER,primary (1-5),90.9,ratio (per cent of age group),"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,GER,upper primary (6-8),90.3,ratio (per cent of age group),"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,GER,secondary (9-10),78.7,ratio (per cent of age group),"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,GER,higher secondary (11-12),58.4,ratio (per cent of age group),"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,dropout rate,primary (1-5),0.3,per cent,"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,dropout rate,upper primary (6-8),3.5,per cent,"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,dropout rate,secondary (9-10),11.5,per cent,"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,PTR,primary (1-5),20,pupils per teacher,"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,PTR,secondary (9-10),15,pupils per teacher,"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,schools,all schools,1471473,schools,"UDISE+ 2024-25 booklet, Table 1"
-india,2024-25,teachers,all teachers,10122420,teachers,"UDISE+ 2024-25 booklet, Table 1"
-india,2025-26,enrolment,pre-primary,14912909,students,"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,enrolment,primary (1-5),101915874,students,"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,enrolment,upper primary (6-8),63241424,students,"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,enrolment,secondary (9-10),38290413,students,"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,enrolment,higher secondary (11-12),28859146,students,"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,enrolment,total (pre-primary to higher secondary),247219766,students,"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,GER,primary (1-5),89.4,ratio (per cent of age group),"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,GER,upper primary (6-8),89.6,ratio (per cent of age group),"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,GER,secondary (9-10),81.5,ratio (per cent of age group),"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,GER,higher secondary (11-12),61.7,ratio (per cent of age group),"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,dropout rate,primary (1-5),0.3,per cent,"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,dropout rate,upper primary (6-8),3.6,per cent,"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,dropout rate,secondary (9-10),9.5,per cent,"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,PTR,primary (1-5),19,pupils per teacher,"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,PTR,secondary (9-10),15,pupils per teacher,"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,schools,all schools,1466682,schools,"UDISE+ 2025-26 booklet, Table 1"
-india,2025-26,teachers,all teachers,10273020,teachers,"UDISE+ 2025-26 booklet, Table 1"
+geography,period,value,unit,indicator,level,table,value_type
+india,2018-19,260294216,students,enrolment,total (pre-primary to higher secondary),"UDISE+ 2018-19 report, Table 3.1",published
+india,2018-19,11955632,students,enrolment,pre-primary,"UDISE+ 2018-19 report, Table 3.1",published
+india,2018-19,120230170,students,enrolment,primary (1-5),"UDISE+ 2018-19 report, Table 3.1",published
+india,2018-19,64267026,students,enrolment,upper primary (6-8),"UDISE+ 2018-19 report, Table 3.1",published
+india,2018-19,38334571,students,enrolment,secondary (9-10),"UDISE+ 2018-19 report, Table 3.1",published
+india,2018-19,25506817,students,enrolment,higher secondary (11-12),"UDISE+ 2018-19 report, Table 3.1",published
+india,2018-19,101.3,ratio (per cent of age group),GER,primary (1-5),"UDISE+ 2018-19 report, Table 5.1",published
+india,2018-19,87.7,ratio (per cent of age group),GER,upper primary (6-8),"UDISE+ 2018-19 report, Table 5.1",published
+india,2018-19,76.9,ratio (per cent of age group),GER,secondary (9-10),"UDISE+ 2018-19 report, Table 5.1",published
+india,2018-19,50.1,ratio (per cent of age group),GER,higher secondary (11-12),"UDISE+ 2018-19 report, Table 5.1",published
+india,2018-19,4.5,per cent,dropout rate,primary (1-5),"UDISE+ 2018-19 report, Table 5.13",published
+india,2018-19,4.7,per cent,dropout rate,upper primary (6-8),"UDISE+ 2018-19 report, Table 5.13",published
+india,2018-19,17.9,per cent,dropout rate,secondary (9-10),"UDISE+ 2018-19 report, Table 5.13",published
+india,2019-20,264527575,students,enrolment,total (pre-primary to higher secondary),"UDISE+ 2019-20 report, Table 3.1",published
+india,2019-20,13555892,students,enrolment,pre-primary,"UDISE+ 2019-20 report, Table 3.1",published
+india,2019-20,121686703,students,enrolment,primary (1-5),"UDISE+ 2019-20 report, Table 3.1",published
+india,2019-20,64873387,students,enrolment,upper primary (6-8),"UDISE+ 2019-20 report, Table 3.1",published
+india,2019-20,38464433,students,enrolment,secondary (9-10),"UDISE+ 2019-20 report, Table 3.1",published
+india,2019-20,25947160,students,enrolment,higher secondary (11-12),"UDISE+ 2019-20 report, Table 3.1",published
+india,2019-20,102.7,ratio (per cent of age group),GER,primary (1-5),"UDISE+ 2019-20 report, Table 5.1",published
+india,2019-20,89.7,ratio (per cent of age group),GER,upper primary (6-8),"UDISE+ 2019-20 report, Table 5.1",published
+india,2019-20,77.9,ratio (per cent of age group),GER,secondary (9-10),"UDISE+ 2019-20 report, Table 5.1",published
+india,2019-20,51.4,ratio (per cent of age group),GER,higher secondary (11-12),"UDISE+ 2019-20 report, Table 5.1",published
+india,2019-20,1.5,per cent,dropout rate,primary (1-5),"UDISE+ 2019-20 report, Table 5.13",published
+india,2019-20,2.6,per cent,dropout rate,upper primary (6-8),"UDISE+ 2019-20 report, Table 5.13",published
+india,2019-20,16.1,per cent,dropout rate,secondary (9-10),"UDISE+ 2019-20 report, Table 5.13",published
+india,2020-21,264449987,students,enrolment,total (pre-primary to higher secondary),"UDISE+ 2020-21 report, Table 3.1",published
+india,2020-21,10645526,students,enrolment,pre-primary,"UDISE+ 2020-21 report, Table 3.1",published
+india,2020-21,122021291,students,enrolment,primary (1-5),"UDISE+ 2020-21 report, Table 3.1",published
+india,2020-21,65854199,students,enrolment,upper primary (6-8),"UDISE+ 2020-21 report, Table 3.1",published
+india,2020-21,39006375,students,enrolment,secondary (9-10),"UDISE+ 2020-21 report, Table 3.1",published
+india,2020-21,26922596,students,enrolment,higher secondary (11-12),"UDISE+ 2020-21 report, Table 3.1",published
+india,2020-21,103.3,ratio (per cent of age group),GER,primary (1-5),"UDISE+ 2020-21 report, Table 5.1",published
+india,2020-21,92.2,ratio (per cent of age group),GER,upper primary (6-8),"UDISE+ 2020-21 report, Table 5.1",published
+india,2020-21,79.8,ratio (per cent of age group),GER,secondary (9-10),"UDISE+ 2020-21 report, Table 5.1",published
+india,2020-21,53.8,ratio (per cent of age group),GER,higher secondary (11-12),"UDISE+ 2020-21 report, Table 5.1",published
+india,2020-21,0.8,per cent,dropout rate,primary (1-5),"UDISE+ 2020-21 report, Table 5.13",published
+india,2020-21,1.9,per cent,dropout rate,upper primary (6-8),"UDISE+ 2020-21 report, Table 5.13",published
+india,2020-21,14.6,per cent,dropout rate,secondary (9-10),"UDISE+ 2020-21 report, Table 5.13",published
+india,2020-21,26.25,pupils per teacher,PTR,primary (1-5),"UDISE+ 2021-22 booklet, Table 1",published
+india,2020-21,18.44,pupils per teacher,PTR,secondary (9-10),"UDISE+ 2021-22 booklet, Table 1",published
+india,2020-21,1509136,schools,schools,all schools,"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,9495207,students,enrolment,pre-primary,"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,121842250,students,enrolment,primary (1-5),"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,66790692,students,enrolment,upper primary (6-8),"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,38528631,students,enrolment,secondary (9-10),"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,28579050,students,enrolment,higher secondary (11-12),"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,265235830,students,enrolment,total (pre-primary to higher secondary),"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,103.39,ratio (per cent of age group),GER,primary (1-5),"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,94.67,ratio (per cent of age group),GER,upper primary (6-8),"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,79.56,ratio (per cent of age group),GER,secondary (9-10),"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,57.56,ratio (per cent of age group),GER,higher secondary (11-12),"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,1.45,per cent,dropout rate,primary (1-5),"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,3.02,per cent,dropout rate,upper primary (6-8),"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,12.61,per cent,dropout rate,secondary (9-10),"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,26.17,pupils per teacher,PTR,primary (1-5),"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,17.60,pupils per teacher,PTR,secondary (9-10),"UDISE+ 2021-22 booklet, Table 1",published
+india,2021-22,1489115,schools,schools,all schools,"UDISE+ 2021-22 booklet, Table 1",published
+india,2022-23,10167812,students,enrolment,pre-primary,"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,112421298,students,enrolment,primary (1-5),"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,63477860,students,enrolment,upper primary (6-8),"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,37934094,students,enrolment,secondary (9-10),"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,27790658,students,enrolment,higher secondary (11-12),"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,251791722,students,enrolment,total (pre-primary to higher secondary),"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,96.2,ratio (per cent of age group),GER,primary (1-5),"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,90.2,ratio (per cent of age group),GER,upper primary (6-8),"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,79.2,ratio (per cent of age group),GER,secondary (9-10),"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,56.8,ratio (per cent of age group),GER,higher secondary (11-12),"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,7.8,per cent,dropout rate,primary (1-5),"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,8.1,per cent,dropout rate,upper primary (6-8),"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,16.4,per cent,dropout rate,secondary (9-10),"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,23,pupils per teacher,PTR,primary (1-5),"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,17,pupils per teacher,PTR,secondary (9-10),"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,1466109,schools,schools,all schools,"UDISE+ 2022-23 booklet, Table 1",published
+india,2022-23,9483294,teachers,teachers,all teachers,"UDISE+ 2022-23 booklet, Table 1",published
+india,2023-24,13082797,students,enrolment,pre-primary,"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,107837711,students,enrolment,primary (1-5),"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,63126015,students,enrolment,upper primary (6-8),"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,36863791,students,enrolment,secondary (9-10),"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,27135514,students,enrolment,higher secondary (11-12),"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,248045828,students,enrolment,total (pre-primary to higher secondary),"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,93.0,ratio (per cent of age group),GER,primary (1-5),"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,89.7,ratio (per cent of age group),GER,upper primary (6-8),"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,77.4,ratio (per cent of age group),GER,secondary (9-10),"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,56.2,ratio (per cent of age group),GER,higher secondary (11-12),"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,1.9,per cent,dropout rate,primary (1-5),"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,5.2,per cent,dropout rate,upper primary (6-8),"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,14.1,per cent,dropout rate,secondary (9-10),"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,21,pupils per teacher,PTR,primary (1-5),"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,16,pupils per teacher,PTR,secondary (9-10),"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,1471891,schools,schools,all schools,"UDISE+ 2023-24 booklet, Table 1",published
+india,2023-24,9807600,teachers,teachers,all teachers,"UDISE+ 2023-24 booklet, Table 1",published
+india,2024-25,14047080,students,enrolment,pre-primary,"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,104381347,students,enrolment,primary (1-5),"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,63695100,students,enrolment,upper primary (6-8),"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,37165436,students,enrolment,secondary (9-10),"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,27643717,students,enrolment,higher secondary (11-12),"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,246932680,students,enrolment,total (pre-primary to higher secondary),"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,90.9,ratio (per cent of age group),GER,primary (1-5),"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,90.3,ratio (per cent of age group),GER,upper primary (6-8),"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,78.7,ratio (per cent of age group),GER,secondary (9-10),"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,58.4,ratio (per cent of age group),GER,higher secondary (11-12),"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,0.3,per cent,dropout rate,primary (1-5),"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,3.5,per cent,dropout rate,upper primary (6-8),"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,11.5,per cent,dropout rate,secondary (9-10),"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,20,pupils per teacher,PTR,primary (1-5),"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,15,pupils per teacher,PTR,secondary (9-10),"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,1471473,schools,schools,all schools,"UDISE+ 2024-25 booklet, Table 1",published
+india,2024-25,10122420,teachers,teachers,all teachers,"UDISE+ 2024-25 booklet, Table 1",published
+india,2025-26,14912909,students,enrolment,pre-primary,"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,101915874,students,enrolment,primary (1-5),"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,63241424,students,enrolment,upper primary (6-8),"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,38290413,students,enrolment,secondary (9-10),"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,28859146,students,enrolment,higher secondary (11-12),"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,247219766,students,enrolment,total (pre-primary to higher secondary),"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,89.4,ratio (per cent of age group),GER,primary (1-5),"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,89.6,ratio (per cent of age group),GER,upper primary (6-8),"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,81.5,ratio (per cent of age group),GER,secondary (9-10),"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,61.7,ratio (per cent of age group),GER,higher secondary (11-12),"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,0.3,per cent,dropout rate,primary (1-5),"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,3.6,per cent,dropout rate,upper primary (6-8),"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,9.5,per cent,dropout rate,secondary (9-10),"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,19,pupils per teacher,PTR,primary (1-5),"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,15,pupils per teacher,PTR,secondary (9-10),"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,1466682,schools,schools,all schools,"UDISE+ 2025-26 booklet, Table 1",published
+india,2025-26,10273020,teachers,teachers,all teachers,"UDISE+ 2025-26 booklet, Table 1",published

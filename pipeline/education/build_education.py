@@ -7,6 +7,7 @@ import argparse
 import csv
 import os
 import re
+import subprocess
 import sys
 
 import openpyxl
@@ -162,51 +163,11 @@ for sl, name, v in t:
 write("education-school-facilities-by-state.csv",
       ["geography", "period", "facility", "value", "unit", "value_type", "table"], rows)
 
-# ---------- National trend (Table 1 of each booklet) ----------
-PARAMS = [
-    ("enrolment", "pre-primary", r"Enrolment in Pre[- ]Primary"),
-    ("enrolment", "primary (1-5)", r"Enrolment in Primary"),
-    ("enrolment", "upper primary (6-8)", r"Enrolment in Upper Primary"),
-    ("enrolment", "secondary (9-10)", r"Enrolment in Secondary"),
-    ("enrolment", "higher secondary (11-12)", r"Enrolment in Higher Secondary"),
-    ("enrolment", "total (pre-primary to higher secondary)", r"Total Number of Enrolments \(Pre-Primary to Higher Secondary\)"),
-    ("GER", "primary (1-5)", r"Gross Enrolment Ratio \(GER\) – Primary"),
-    ("GER", "upper primary (6-8)", r"Gross Enrolment Ratio \(GER\) – Upper Primary"),
-    ("GER", "secondary (9-10)", r"Gross Enrolment Ratio \(GER\) – Secondary"),
-    ("GER", "higher secondary (11-12)", r"Gross Enrolment Ratio \(GER\) – Higher Secondary"),
-    ("dropout rate", "primary (1-5)", r"Dropout Rates - Primary"),
-    ("dropout rate", "upper primary (6-8)", r"Dropout Rates – Upper Primary"),
-    ("dropout rate", "secondary (9-10)", r"Dropout Rates - Secondary"),
-    ("PTR", "primary (1-5)", r"PTR at Primary level"),
-    ("PTR", "secondary (9-10)", r"PTR at Secondary level"),
-    ("schools", "all schools", r"Total Number of Schools-?"),
-    ("teachers", "all teachers", r"Total Number of teachers"),
-]
-UNITS = {"enrolment": "students", "GER": "ratio (per cent of age group)", "dropout rate": "per cent",
-         "PTR": "pupils per teacher", "schools": "schools", "teachers": "teachers"}
-books = [("UDISE+2021_22_Booklet.txt", ["2020-21", "2021-22"]),
-         ("UDISE+2022_23_Booklet_existing.txt", ["2022-23"]),
-         ("UDISE+2023_24_Booklet_existing.txt", ["2023-24"]),
-         ("UDISE+2024_25_Booklet_existing.txt", ["2024-25"]),
-         ("UDISE+2025_26_Booklet_existing.txt", ["2025-26"])]
-rows = []
-for fn, years in books:
-    L = lines(f"{EDU}/{fn}")
-    i0 = [i for i, l in enumerate(L) if l.strip().startswith("Table 1: National Highlights")][-1]
-    block = L[i0:i0 + 200]
-    for ind, lev, pat in PARAMS:
-        rx = re.compile(r"^\s*" + pat + r"\s+((?:\d+(?:\.\d+)?\s+)*\d+(?:\.\d+)?)\s*$")
-        hit = next((rx.match(l) for l in block if rx.match(l)), None)  # first = all categories
-        if not hit:
-            print("  not found", fn, ind, lev)
-            continue
-        vals = hit.group(1).split()
-        if len(vals) != len(years):
-            raise SystemExit(f"{fn} {pat} {vals}")
-        for y, v in zip(years, vals):
-            rows.append(["india", y, ind, lev, v, UNITS[ind], f"UDISE+ {years[-1]} booklet, Table 1"])
-write("education-school-trend-india.csv",
-      ["geography", "period", "indicator", "level", "value", "unit", "table"], rows)
+# ---------- National school trend ----------
+subprocess.run(
+    [sys.executable, "-I", "pipeline/education/build_school_trend.py", "--raw", _a.raw, "--out", OUT],
+    check=True,
+)
 
 # ---------- AISHE: higher education GER by state (Table 19) and India trend ----------
 AL = lines(f"{EDU}/aishe-2023-24-final.txt")
