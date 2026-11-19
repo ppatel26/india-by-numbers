@@ -587,14 +587,8 @@ const topic: Topic = {
                     label: 'RBI average',
                     color: 'ink',
                     file: USD_ANNUAL,
-                    where: { measure: 'financial-year average', source_kind: 'official', source: 'RBI Handbook Table 133 (2026)' },
-                  },
-                  {
-                    key: 'rbi-2002',
-                    label: 'RBI (2002)',
-                    color: 'ink',
-                    file: USD_ANNUAL,
-                    where: { measure: 'financial-year average', source_kind: 'official', source: 'RBI Handbook Table 133 (2002)' },
+                    // The 2002 table gives 1970-71 to 1985-86, the 2026 table the rest; they agree on every shared year.
+                    where: { measure: 'financial-year average', source_kind: 'official', source: ['RBI Handbook Table 133 (2002)', 'RBI Handbook Table 133 (2026)'] },
                   },
                   {
                     key: 'imf',
@@ -606,10 +600,7 @@ const topic: Topic = {
                   },
                 ],
                 y: { min: 0, max: 100, step: 20 },
-                breaks: [
-                  { x: '1970-71', label: 'RBI' },
-                  { x: '1986-87', label: 'RBI 2026 table' },
-                ],
+                breaks: [{ x: '1970-71', before: ' ', label: 'Financial years' }],
                 markers: [{ x: '1966', label: '1966 deval.' }],
                 callouts: [
                   { series: 'imf', x: '1950', label: 'After 1949 devaluation' },
