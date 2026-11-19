@@ -3,7 +3,7 @@ Run: python3 -I pipeline/prices/build_prices_economy.py --raw-prices raw/prices 
        --out-prices research/data/prices --out-economy research/data/economy
 Reads JSON from the MoSPI API, Excel from the RBI Handbook, and HTML from the RBI reference-rate archive.
 Executes nothing from the downloads."""
-import argparse, csv, glob, json, os, re, sys, html
+import argparse, csv, glob, json, os, re, subprocess, sys, html
 import openpyxl
 
 ap = argparse.ArgumentParser()
@@ -140,22 +140,11 @@ for r in c12:
 rows = sorted({tuple(x) for x in rows}, key=lambda r: (r[5] != "General", r[5], r[1]))
 write(f"{OUTP}/cpi-inflation-by-group-2012-base.csv", ["geography", "period", "value", "unit", "sector", "group", "index", "base", "status"], rows)
 
-# P7: repo rate
-wb = openpyxl.load_workbook(glob.glob(f"{RAWP}/rbi/40T_*.XLSX")[0], data_only=True)
-rep = []
-for ws in wb.worksheets:
-    for row in ws.iter_rows(values_only=True):
-        d, v = row[1], row[3]
-        if hasattr(d, "year") and isinstance(v, (int, float)):
-            rep.append((d.date().isoformat(), v))
-rep.sort()
-rows, prev = [], None
-for d, v in rep:
-    if v != prev:
-        rows.append(["india", d, f"{v:g}", "percent", "" if prev is None else f"{(v - prev) * 100:+.0f}", "RBI Handbook of Statistics on Indian Economy 2025-26, Table 40"])
-        prev = v
-rows.append(["india", "2026-10-07", "5.5", "percent", f"{(5.5 - prev) * 100:+.0f}", "RBI Governor's Statement, 7 Oct 2026 (press release prid=63744)"])
-write(f"{OUTP}/repo-rate.csv", ["geography", "effective_date", "value", "unit", "change_bps", "source"], rows)
+# Add verified CPI history to P5 and P6. Build P7 from the RBI's HTML tables.
+subprocess.run([sys.executable, "-I", "pipeline/prices/extend_cpi12.py",
+                "--raw", f"{RAWP}/cpi-history", "--out", OUTP], check=True)
+subprocess.run([sys.executable, "-I", "pipeline/prices/build_repo_rate.py",
+                "--raw", f"{RAWP}/repo", "--out", f"{OUTP}/repo-rate.csv"], check=True)
 
 # P8: annual CPI inflation long run (Handbook Table 236)
 wb = openpyxl.load_workbook(glob.glob(f"{RAWP}/rbi/236T_*.XLSX")[0], data_only=True)
