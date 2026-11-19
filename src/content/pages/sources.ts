@@ -201,7 +201,7 @@ const PUBLISHERS: readonly Publisher[] = [
     dataSets: [
       { name: 'National Family Health Survey (NFHS-6)', detail: 'India and state fact sheets, 2023-24, provisional', rhythm: 'Rounds several years apart', match: /NFHS-6/ },
       { name: 'National Family Health Survey (1992-93)', detail: 'The urban share from Census 1991, as cited by IIPS.', rhythm: 'Historical report', match: /National Family Health Survey 1992-93/ },
-      { name: 'National Health Accounts', detail: 'Estimates for 2023-24', rhythm: NOT_STATED, match: /National Health Accounts/ },
+      { name: 'National Health Accounts', detail: 'Health spending shares in India and the states', rhythm: 'Annual since 2013-14', match: /National Health Accounts|National Commission on Macroeconomics and Health/ },
     ],
     licence: NOT_STATED,
     access: ['NFHS fact sheets (nfhsiips.in)', 'Reports (mohfw.gov.in)'],
@@ -257,6 +257,18 @@ const PUBLISHERS: readonly Publisher[] = [
     access: ['International Financial Statistics via DBnomics'],
     site: 'https://data.imf.org/en',
   },
+  {
+    short: 'WHO',
+    logos: [],
+    full: 'World Health Organization',
+    topics: ['health'],
+    dataSets: [
+      { name: 'Global Health Expenditure Database', detail: 'Out-of-pocket and domestic government shares of current health spending in India', rhythm: 'Annually', match: /Global Health Expenditure Database/ },
+    ],
+    licence: NOT_STATED,
+    access: ['Excel and Global Health Observatory API'],
+    site: 'https://apps.who.int/nha/database/',
+  },
 ]
 
 const sources: SourcesPage = {
@@ -268,7 +280,7 @@ const sources: SourcesPage = {
   summary: {
     finding: `Two offices, MoSPI and ORGI, supply the data for most of the ${count.charts} charts. Some charts combine two publishers, so the bars add up to more than ${count.charts}.`,
     licence:
-      `None of the ${PUBLISHERS.length} publishers states an open reuse licence. ORGI's catalogue says "Rights Reserved". Publisher data stays under each publisher's terms.`,
+      'Publisher data stays under each publisher’s terms. The ORGI catalogue says "Rights Reserved".',
   },
   // A horizontal bar chart of charts by publisher. The Sources page counts the bars from the
   // source lines of every chart at build time.

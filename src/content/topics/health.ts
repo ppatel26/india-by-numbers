@@ -118,7 +118,44 @@ const NHA_2023_24: Source = {
   url: 'https://nhsrcindia.org/sites/default/files/2026-11/NHA%20Report%202023-24.pdf',
 }
 
+const NHA_2013_14: Source = {
+  publisher: 'MoHFW and NHSRC',
+  release: 'National Health Accounts Estimates for India 2013-14',
+  released: '2016-08',
+  url: 'https://nhsrcindia.org/sites/default/files/2021-06/NATIONAL%20HEALTH%20ACCOUNTS-%20Estimates%20for%20India-2013-14.pdf',
+}
+
+const NHA_2004_05: Source = {
+  publisher: 'MoHFW',
+  release: 'National Health Accounts India 2004-05 (archived copy)',
+  released: '2009',
+  url: 'https://archive.org/download/PARI.national-health-accounts-2004-05/national-health-accounts-2004-05.pdf',
+}
+
+const NCMH: Source = {
+  publisher: 'MoHFW',
+  release: 'Report of the National Commission on Macroeconomics and Health (archived copy)',
+  released: '2005',
+  url: 'https://archive.org/download/PARI.report-of-the-national-commission-on-macroeconomics-and-health/report-of-the-national-commission-on-macroeconomics-and-health.pdf',
+}
+
+const WHO_GHED: Source = {
+  publisher: 'WHO',
+  release: 'Global Health Expenditure Database, India',
+  released: '2025-12-12',
+  url: 'https://apps.who.int/nha/database/Home/IndicatorsDownload/en',
+}
+
 const withTable = (s: Source, table: string): Source => ({ ...s, release: `${s.release}, ${table}` })
+
+function healthSpendingSeries(
+  key: string, label: string, color: Series['color'], where: NonNullable<Series['where']>, dash = false,
+): Series {
+  return {
+    key, label, color, dash, file: 'health/out-of-pocket-health-spending.csv',
+    x: 'year', xLabel: 'period', note: 'note', where: { geography: 'india', use: 'chart', ...where },
+  }
+}
 
 // Bigger states and the one "other states" group that SRS gives a maternal mortality ratio for.
 // The CSV also has three regional subtotals; the board does not plot them.
@@ -531,40 +568,56 @@ const topic: Topic = {
       title: 'Who pays for health care?',
       lede: "Households paid 42.7% of India's health bill out of their own pockets in 2023-24, down from 64.2% in 2013-14. The government's share rose from 28.6% to 43.5%.",
       blocks: [
-        { text: 'Part of the fall comes from a change of method in 2017-18, when the accounts moved to a newer household survey with a bigger sample.' },
+        { text: 'The National Health Accounts list a change of household survey in 2017-18 as one possible reason for the fall.' },
         {
           chart: {
             kind: 'line',
             slug: 'out-of-pocket-health-spending',
-            title: 'Out-of-pocket and government shares of health spending, India, 2013-14 to 2023-24',
-            subtitle: 'Out-of-pocket spending by households and government health spending, % of total health expenditure, India, 2013-14 to 2023-24.',
-            punches: { office: 'NHSRC', unit: '% of total', period: '2023-24' },
+            title: 'Out-of-pocket and government health spending shares, India, 2000 to 2023-24',
+            subtitle: 'Dashed WHO estimates use current spending. Indian accounts use total spending.',
+            punches: { office: 'MoHFW · WHO', unit: '% of spending', period: '2000 to 2023-24' },
             status: ['Method break'],
-            note: 'The two shares do not add up to 100%: other private spending, such as health insurance, and donor funds make up the rest. The line breaks between 2016-17 and 2017-18 because the household survey behind the accounts changed, from NSS 2014 (six-month recall) to NSS 2017-18 (one-year recall, bigger sample). New data sources were added in 2022-23, when the share rose from 39.4% to 43.4%, so the 2021-22 low is not a clean trend point.',
-            sources: [withTable(NHA_2023_24, 'Table 1')],
+            note: 'Solid lines and dots show the Indian accounts, as shares of total spending. Dashed lines show WHO estimates for every year from 2000, as shares of current spending, so the two differ by a few points where both exist.',
+            sources: [
+              withTable(NHA_2023_24, 'Table 1'), withTable(NHA_2013_14, 'Table 6'),
+              withTable(NHA_2004_05, 'Tables 1.1, 1.5 and 4.1'), withTable(NCMH, 'Figure 2.5 and Table 2.14'), WHO_GHED,
+            ],
             format: { decimals: 1, unit: '%' },
-            y: { min: 0, max: 70, step: 10 },
-            // Both are changes of method, so both are dotted breaks.
+            y: { min: 0, max: 80, step: 20 },
             breaks: [
-              { x: '2017-18', label: 'NSS 2017-18 survey', before: 'NSS 2014 survey' },
-              { x: '2022-23', label: 'New sources' },
+              { x: '2013', label: 'Annual NHA starts' },
+              { x: '2017', label: 'New survey' },
+              { x: '2022', label: 'New sources' },
+            ],
+            callouts: [
+              { series: 'public-provisional', x: '2007', label: 'Public (provisional)' },
             ],
             series: [
-              { key: 'oope-nss71', label: 'Out of pocket', color: 's7', file: 'health/out-of-pocket-health-spending.csv', where: { geography: 'india', series: 'oope-share-of-the', period: ['2013-14', '2014-15', '2015-16', '2016-17'] } },
-              { key: 'oope', label: 'Out of pocket', color: 's7', file: 'health/out-of-pocket-health-spending.csv', where: { geography: 'india', series: 'oope-share-of-the', period: ['2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'] } },
-              { key: 'ghe-nss71', label: 'Government', color: 's6', file: 'health/out-of-pocket-health-spending.csv', where: { geography: 'india', series: 'ghe-share-of-the', period: ['2013-14', '2014-15', '2015-16', '2016-17'] } },
-              { key: 'ghe', label: 'Government', color: 's6', file: 'health/out-of-pocket-health-spending.csv', where: { geography: 'india', series: 'ghe-share-of-the', period: ['2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'] } },
+              // WHO runs unbroken from 2000, beside the Indian accounts where both exist.
+              healthSpendingSeries('oope-who', 'Out of pocket (WHO)', 's7', { series: 'oope-share-of-che', source_kind: 'international estimate', use: ['chart', 'overlap'] }, true),
+              healthSpendingSeries('ghe-who', 'Domestic government (WHO)', 's6', { series: 'gghed-share-of-che', source_kind: 'international estimate', use: ['chart', 'overlap'] }, true),
+              ...([
+                ['oope', 'Out of pocket', 's7', 'oope-share-of-the'],
+                ['ghe', 'Government', 's6', 'ghe-share-of-the'],
+              ] as const).flatMap(([key, label, color, series]) => [
+                healthSpendingSeries(`${key}-2001`, label, color, { series, period: '2001-02', source_kind: 'archived copy' }),
+                healthSpendingSeries(`${key}-2004`, label, color, { series, period: '2004-05', source_kind: key === 'oope' ? 'archived copy' : 'official' }),
+                healthSpendingSeries(`${key}-nss71`, label, color, { series, source: 'nha-2023-24', period: ['2013-14', '2014-15', '2015-16', '2016-17'] }),
+                healthSpendingSeries(key, label, color, { series, source: 'nha-2023-24', period: ['2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'] }),
+              ]),
+              healthSpendingSeries('public-provisional', 'Public spending (provisional)', 's6', { series: 'public-share-of-the', source_kind: 'archived copy' }),
             ],
             know: [
-              'Out-of-pocket spending is what households pay directly for care, at the point of use. Total health expenditure (THE) adds spending by government, insurers and others.',
-              'To 2016-17 the accounts extrapolate household spending from the NSS 71st round (2014, six-month recall). From 2017-18 they use the NSS 75th round (2017-18, one-year recall, bigger sample).',
-              'NHSRC says the change in the out-of-pocket share "may be attributed to several factors", including this change of survey.',
-              'The 2022-23 accounts added new data sources. The share rose from 39.4% in 2021-22 to 43.4% in 2022-23.',
+              'Out-of-pocket spending is what households pay directly for care. Governments, insurers and others pay other shares.',
+              'Total health expenditure includes capital spending. Current health expenditure excludes it. WHO counts domestic general government spending.',
+              'The early Indian accounts used a different method. Public spending from 2005-06 to 2008-09 is provisional.',
+              'The accounts used the 2014 household survey through 2016-17. A new survey with a bigger sample first informed the 2017-18 figures.',
+              'The 2022-23 accounts added new data sources. The out-of-pocket share rose from 39.4% to 43.4% that year.',
             ],
             processing: [
-              'We take the out-of-pocket and government shares of total health expenditure for India from Table 1 of the National Health Accounts Estimates for India 2023-24.',
-              'We split each line at 2017-18, where the household survey changes, and do not join the two parts.',
-              'We keep the shares as published, to one decimal place.',
+              'Draw the Indian accounts where they give a share, and the WHO estimates for every year from 2000 beside them.',
+              'Keep the 2001-02 and 2004-05 figures separate. Split the annual Indian series when the household survey changes in 2017-18.',
+              'Compare the shares by the start year of each Indian financial year. Keep the overlapping WHO figures in the data file.',
             ],
             nextRelease: 'not announced',
           },
@@ -691,7 +744,7 @@ const topic: Topic = {
   },
   sources: [
     SRS_BULLETIN_2024, SRS_MMR_2022_24, SRS_LIFE_TABLES, SRS_COMPENDIUM, ...SRS_BIRTH_RATIO_REPORTS,
-    NFHS_1, NFHS_2, NFHS_3, NFHS_4, NFHS_5, NFHS_6, PIB_ANAEMIA, NHA_2023_24,
+    NFHS_1, NFHS_2, NFHS_3, NFHS_4, NFHS_5, NFHS_6, PIB_ANAEMIA, NHA_2023_24, NHA_2013_14, NHA_2004_05, NCMH, WHO_GHED,
   ],
   related: [
     { label: 'Population: Fertility rate by state', href: '/charts/fertility-rate-by-state/' },

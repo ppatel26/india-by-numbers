@@ -1,65 +1,121 @@
-geography,period,series,value,unit,note
-india,2013-14,oope-share-of-the,64.2,percent of total health expenditure,OOPE extrapolated from NSS 71st round (2014)
-india,2013-14,ghe-share-of-the,28.6,percent of total health expenditure,
-india,2014-15,oope-share-of-the,62.6,percent of total health expenditure,OOPE extrapolated from NSS 71st round (2014)
-india,2014-15,ghe-share-of-the,29.0,percent of total health expenditure,
-india,2015-16,oope-share-of-the,60.6,percent of total health expenditure,OOPE extrapolated from NSS 71st round (2014)
-india,2015-16,ghe-share-of-the,30.6,percent of total health expenditure,
-india,2016-17,oope-share-of-the,58.7,percent of total health expenditure,OOPE extrapolated from NSS 71st round (2014)
-india,2016-17,ghe-share-of-the,32.4,percent of total health expenditure,
-india,2017-18,oope-share-of-the,48.8,percent of total health expenditure,OOPE from NSS 75th round (2017-18)
-india,2017-18,ghe-share-of-the,40.8,percent of total health expenditure,
-india,2018-19,oope-share-of-the,48.2,percent of total health expenditure,OOPE from NSS 75th round (2017-18)
-india,2018-19,ghe-share-of-the,40.6,percent of total health expenditure,
-india,2019-20,oope-share-of-the,47.1,percent of total health expenditure,OOPE from NSS 75th round (2017-18)
-india,2019-20,ghe-share-of-the,41.4,percent of total health expenditure,
-india,2020-21,oope-share-of-the,44.4,percent of total health expenditure,
-india,2020-21,ghe-share-of-the,42.8,percent of total health expenditure,
-india,2021-22,oope-share-of-the,39.4,percent of total health expenditure,
-india,2021-22,ghe-share-of-the,48.0,percent of total health expenditure,
-india,2022-23,oope-share-of-the,43.4,percent of total health expenditure,new data sources added from NHA 2022-23
-india,2022-23,ghe-share-of-the,43.7,percent of total health expenditure,
-india,2023-24,oope-share-of-the,42.7,percent of total health expenditure,OOPE from NSS 75th round (2017-18); new data sources added from NHA 2022-23
-india,2023-24,ghe-share-of-the,43.5,percent of total health expenditure,
-assam,2023-24,oope-share-of-the,34.8,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-assam,2023-24,ghe-share-of-the,59.5,percent of total health expenditure,
-andhra-pradesh,2023-24,oope-share-of-the,53.5,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-andhra-pradesh,2023-24,ghe-share-of-the,41.1,percent of total health expenditure,
-bihar,2023-24,oope-share-of-the,47.0,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-bihar,2023-24,ghe-share-of-the,48.2,percent of total health expenditure,
-chhattisgarh,2023-24,oope-share-of-the,32.2,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-chhattisgarh,2023-24,ghe-share-of-the,54.6,percent of total health expenditure,
-gujarat,2023-24,oope-share-of-the,38.0,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-gujarat,2023-24,ghe-share-of-the,45.8,percent of total health expenditure,
-haryana,2023-24,oope-share-of-the,38.3,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-haryana,2023-24,ghe-share-of-the,37.1,percent of total health expenditure,
-jammu-kashmir,2023-24,oope-share-of-the,33.5,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-jammu-kashmir,2023-24,ghe-share-of-the,62.6,percent of total health expenditure,
-jharkhand,2023-24,oope-share-of-the,58.7,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-jharkhand,2023-24,ghe-share-of-the,37.7,percent of total health expenditure,
-karnataka,2023-24,oope-share-of-the,28.5,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-karnataka,2023-24,ghe-share-of-the,31.6,percent of total health expenditure,
-kerala,2023-24,oope-share-of-the,65.2,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-kerala,2023-24,ghe-share-of-the,25.0,percent of total health expenditure,
-madhya-pradesh,2023-24,oope-share-of-the,46.2,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-madhya-pradesh,2023-24,ghe-share-of-the,48.3,percent of total health expenditure,
-maharashtra,2023-24,oope-share-of-the,38.8,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-maharashtra,2023-24,ghe-share-of-the,29.3,percent of total health expenditure,
-odisha,2023-24,oope-share-of-the,37.8,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-odisha,2023-24,ghe-share-of-the,57.9,percent of total health expenditure,
-punjab,2023-24,oope-share-of-the,60.7,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-punjab,2023-24,ghe-share-of-the,29.8,percent of total health expenditure,
-rajasthan,2023-24,oope-share-of-the,40.7,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-rajasthan,2023-24,ghe-share-of-the,49.8,percent of total health expenditure,
-tamil-nadu,2023-24,oope-share-of-the,39.1,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-tamil-nadu,2023-24,ghe-share-of-the,43.5,percent of total health expenditure,
-uttar-pradesh,2023-24,oope-share-of-the,67.1,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-uttar-pradesh,2023-24,ghe-share-of-the,27.5,percent of total health expenditure,
-uttarakhand,2023-24,oope-share-of-the,26.7,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-uttarakhand,2023-24,ghe-share-of-the,66.0,percent of total health expenditure,
-west-bengal,2023-24,oope-share-of-the,63.0,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-west-bengal,2023-24,ghe-share-of-the,30.0,percent of total health expenditure,
-telangana,2023-24,oope-share-of-the,37.9,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-telangana,2023-24,ghe-share-of-the,40.6,percent of total health expenditure,
-himachal-pradesh,2023-24,oope-share-of-the,43.7,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18)
-himachal-pradesh,2023-24,ghe-share-of-the,53.1,percent of total health expenditure,
+geography,period,series,value,unit,note,year,source,source_kind,use
+india,2001-02,oope-share-of-the,66.92,percent of total health expenditure,Derived from direct household payments in Table 2.14 and total spending in Figure 2.5,2001,macroeconomics-and-health,archived copy,chart
+india,2001-02,ghe-share-of-the,23.8,percent of total health expenditure,"Sum of central, state and local government shares in Figure 2.5",2001,macroeconomics-and-health,archived copy,chart
+india,2004-05,oope-share-of-the,69.52,percent of total health expenditure,Derived from Tables 4.1 and 1.1,2004,nha-2004-05,archived copy,chart
+india,2004-05,ghe-share-of-the,22.5,percent of total health expenditure,Table 6 comparison of the two accounts,2004,nha-2013-14,official,chart
+india,2005-06,public-share-of-the,22.72,percent of total health expenditure,Provisional public expenditure share derived from Table 1.5,2005,nha-2004-05,archived copy,chart
+india,2006-07,public-share-of-the,23.82,percent of total health expenditure,Provisional public expenditure share derived from Table 1.5,2006,nha-2004-05,archived copy,chart
+india,2007-08,public-share-of-the,25.09,percent of total health expenditure,Provisional public expenditure share derived from Table 1.5,2007,nha-2004-05,archived copy,chart
+india,2008-09,public-share-of-the,26.70,percent of total health expenditure,Provisional public expenditure share derived from Table 1.5,2008,nha-2004-05,archived copy,chart
+india,2013-14,oope-share-of-the,64.2,percent of total health expenditure,OOPE extrapolated from NSS 71st round (2014),2013,nha-2023-24,official,chart
+india,2013-14,ghe-share-of-the,28.6,percent of total health expenditure,,2013,nha-2023-24,official,chart
+india,2014-15,oope-share-of-the,62.6,percent of total health expenditure,OOPE extrapolated from NSS 71st round (2014),2014,nha-2023-24,official,chart
+india,2014-15,ghe-share-of-the,29.0,percent of total health expenditure,,2014,nha-2023-24,official,chart
+india,2015-16,oope-share-of-the,60.6,percent of total health expenditure,OOPE extrapolated from NSS 71st round (2014),2015,nha-2023-24,official,chart
+india,2015-16,ghe-share-of-the,30.6,percent of total health expenditure,,2015,nha-2023-24,official,chart
+india,2016-17,oope-share-of-the,58.7,percent of total health expenditure,OOPE extrapolated from NSS 71st round (2014),2016,nha-2023-24,official,chart
+india,2016-17,ghe-share-of-the,32.4,percent of total health expenditure,,2016,nha-2023-24,official,chart
+india,2017-18,oope-share-of-the,48.8,percent of total health expenditure,OOPE from NSS 75th round (2017-18),2017,nha-2023-24,official,chart
+india,2017-18,ghe-share-of-the,40.8,percent of total health expenditure,,2017,nha-2023-24,official,chart
+india,2018-19,oope-share-of-the,48.2,percent of total health expenditure,OOPE from NSS 75th round (2017-18),2018,nha-2023-24,official,chart
+india,2018-19,ghe-share-of-the,40.6,percent of total health expenditure,,2018,nha-2023-24,official,chart
+india,2019-20,oope-share-of-the,47.1,percent of total health expenditure,OOPE from NSS 75th round (2017-18),2019,nha-2023-24,official,chart
+india,2019-20,ghe-share-of-the,41.4,percent of total health expenditure,,2019,nha-2023-24,official,chart
+india,2020-21,oope-share-of-the,44.4,percent of total health expenditure,,2020,nha-2023-24,official,chart
+india,2020-21,ghe-share-of-the,42.8,percent of total health expenditure,,2020,nha-2023-24,official,chart
+india,2021-22,oope-share-of-the,39.4,percent of total health expenditure,,2021,nha-2023-24,official,chart
+india,2021-22,ghe-share-of-the,48.0,percent of total health expenditure,,2021,nha-2023-24,official,chart
+india,2022-23,oope-share-of-the,43.4,percent of total health expenditure,new data sources added from NHA 2022-23,2022,nha-2023-24,official,chart
+india,2022-23,ghe-share-of-the,43.7,percent of total health expenditure,,2022,nha-2023-24,official,chart
+india,2023-24,oope-share-of-the,42.7,percent of total health expenditure,OOPE from NSS 75th round (2017-18); new data sources added from NHA 2022-23,2023,nha-2023-24,official,chart
+india,2023-24,ghe-share-of-the,43.5,percent of total health expenditure,,2023,nha-2023-24,official,chart
+assam,2023-24,oope-share-of-the,34.8,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+assam,2023-24,ghe-share-of-the,59.5,percent of total health expenditure,,2023,nha-2023-24,official,chart
+andhra-pradesh,2023-24,oope-share-of-the,53.5,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+andhra-pradesh,2023-24,ghe-share-of-the,41.1,percent of total health expenditure,,2023,nha-2023-24,official,chart
+bihar,2023-24,oope-share-of-the,47.0,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+bihar,2023-24,ghe-share-of-the,48.2,percent of total health expenditure,,2023,nha-2023-24,official,chart
+chhattisgarh,2023-24,oope-share-of-the,32.2,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+chhattisgarh,2023-24,ghe-share-of-the,54.6,percent of total health expenditure,,2023,nha-2023-24,official,chart
+gujarat,2023-24,oope-share-of-the,38.0,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+gujarat,2023-24,ghe-share-of-the,45.8,percent of total health expenditure,,2023,nha-2023-24,official,chart
+haryana,2023-24,oope-share-of-the,38.3,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+haryana,2023-24,ghe-share-of-the,37.1,percent of total health expenditure,,2023,nha-2023-24,official,chart
+jammu-kashmir,2023-24,oope-share-of-the,33.5,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+jammu-kashmir,2023-24,ghe-share-of-the,62.6,percent of total health expenditure,,2023,nha-2023-24,official,chart
+jharkhand,2023-24,oope-share-of-the,58.7,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+jharkhand,2023-24,ghe-share-of-the,37.7,percent of total health expenditure,,2023,nha-2023-24,official,chart
+karnataka,2023-24,oope-share-of-the,28.5,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+karnataka,2023-24,ghe-share-of-the,31.6,percent of total health expenditure,,2023,nha-2023-24,official,chart
+kerala,2023-24,oope-share-of-the,65.2,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+kerala,2023-24,ghe-share-of-the,25.0,percent of total health expenditure,,2023,nha-2023-24,official,chart
+madhya-pradesh,2023-24,oope-share-of-the,46.2,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+madhya-pradesh,2023-24,ghe-share-of-the,48.3,percent of total health expenditure,,2023,nha-2023-24,official,chart
+maharashtra,2023-24,oope-share-of-the,38.8,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+maharashtra,2023-24,ghe-share-of-the,29.3,percent of total health expenditure,,2023,nha-2023-24,official,chart
+odisha,2023-24,oope-share-of-the,37.8,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+odisha,2023-24,ghe-share-of-the,57.9,percent of total health expenditure,,2023,nha-2023-24,official,chart
+punjab,2023-24,oope-share-of-the,60.7,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+punjab,2023-24,ghe-share-of-the,29.8,percent of total health expenditure,,2023,nha-2023-24,official,chart
+rajasthan,2023-24,oope-share-of-the,40.7,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+rajasthan,2023-24,ghe-share-of-the,49.8,percent of total health expenditure,,2023,nha-2023-24,official,chart
+tamil-nadu,2023-24,oope-share-of-the,39.1,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+tamil-nadu,2023-24,ghe-share-of-the,43.5,percent of total health expenditure,,2023,nha-2023-24,official,chart
+uttar-pradesh,2023-24,oope-share-of-the,67.1,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+uttar-pradesh,2023-24,ghe-share-of-the,27.5,percent of total health expenditure,,2023,nha-2023-24,official,chart
+uttarakhand,2023-24,oope-share-of-the,26.7,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+uttarakhand,2023-24,ghe-share-of-the,66.0,percent of total health expenditure,,2023,nha-2023-24,official,chart
+west-bengal,2023-24,oope-share-of-the,63.0,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+west-bengal,2023-24,ghe-share-of-the,30.0,percent of total health expenditure,,2023,nha-2023-24,official,chart
+telangana,2023-24,oope-share-of-the,37.9,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+telangana,2023-24,ghe-share-of-the,40.6,percent of total health expenditure,,2023,nha-2023-24,official,chart
+himachal-pradesh,2023-24,oope-share-of-the,43.7,percent of total health expenditure,state estimate; OOPE from NSS 75th round (2017-18),2023,nha-2023-24,official,chart
+himachal-pradesh,2023-24,ghe-share-of-the,53.1,percent of total health expenditure,,2023,nha-2023-24,official,chart
+india,2000,oope-share-of-che,71.70,percent of current health expenditure,,2000,who-ghed,international estimate,chart
+india,2001,oope-share-of-che,74.11,percent of current health expenditure,,2001,who-ghed,international estimate,overlap
+india,2002,oope-share-of-che,73.37,percent of current health expenditure,,2002,who-ghed,international estimate,chart
+india,2003,oope-share-of-che,73.42,percent of current health expenditure,,2003,who-ghed,international estimate,chart
+india,2004,oope-share-of-che,72.48,percent of current health expenditure,,2004,who-ghed,international estimate,overlap
+india,2005,oope-share-of-che,73.15,percent of current health expenditure,,2005,who-ghed,international estimate,chart
+india,2006,oope-share-of-che,72.26,percent of current health expenditure,,2006,who-ghed,international estimate,chart
+india,2007,oope-share-of-che,70.82,percent of current health expenditure,,2007,who-ghed,international estimate,chart
+india,2008,oope-share-of-che,69.15,percent of current health expenditure,,2008,who-ghed,international estimate,chart
+india,2009,oope-share-of-che,66.76,percent of current health expenditure,,2009,who-ghed,international estimate,chart
+india,2010,oope-share-of-che,65.18,percent of current health expenditure,,2010,who-ghed,international estimate,chart
+india,2011,oope-share-of-che,62.22,percent of current health expenditure,,2011,who-ghed,international estimate,chart
+india,2012,oope-share-of-che,63.00,percent of current health expenditure,,2012,who-ghed,international estimate,chart
+india,2013,oope-share-of-che,69.07,percent of current health expenditure,,2013,who-ghed,international estimate,overlap
+india,2014,oope-share-of-che,67.01,percent of current health expenditure,,2014,who-ghed,international estimate,overlap
+india,2015,oope-share-of-che,64.66,percent of current health expenditure,,2015,who-ghed,international estimate,overlap
+india,2016,oope-share-of-che,63.21,percent of current health expenditure,,2016,who-ghed,international estimate,overlap
+india,2017,oope-share-of-che,55.11,percent of current health expenditure,,2017,who-ghed,international estimate,overlap
+india,2018,oope-share-of-che,53.23,percent of current health expenditure,,2018,who-ghed,international estimate,overlap
+india,2019,oope-share-of-che,52.00,percent of current health expenditure,,2019,who-ghed,international estimate,overlap
+india,2020,oope-share-of-che,49.51,percent of current health expenditure,,2020,who-ghed,international estimate,overlap
+india,2021,oope-share-of-che,45.11,percent of current health expenditure,,2021,who-ghed,international estimate,overlap
+india,2022,oope-share-of-che,44.54,percent of current health expenditure,,2022,who-ghed,international estimate,overlap
+india,2023,oope-share-of-che,43.89,percent of current health expenditure,,2023,who-ghed,international estimate,overlap
+india,2000,gghed-share-of-che,20.68,percent of current health expenditure,,2000,who-ghed,international estimate,chart
+india,2001,gghed-share-of-che,18.88,percent of current health expenditure,,2001,who-ghed,international estimate,overlap
+india,2002,gghed-share-of-che,18.16,percent of current health expenditure,,2002,who-ghed,international estimate,chart
+india,2003,gghed-share-of-che,18.72,percent of current health expenditure,,2003,who-ghed,international estimate,chart
+india,2004,gghed-share-of-che,17.98,percent of current health expenditure,,2004,who-ghed,international estimate,overlap
+india,2005,gghed-share-of-che,20.13,percent of current health expenditure,,2005,who-ghed,international estimate,overlap
+india,2006,gghed-share-of-che,20.51,percent of current health expenditure,,2006,who-ghed,international estimate,overlap
+india,2007,gghed-share-of-che,20.90,percent of current health expenditure,,2007,who-ghed,international estimate,overlap
+india,2008,gghed-share-of-che,22.63,percent of current health expenditure,,2008,who-ghed,international estimate,overlap
+india,2009,gghed-share-of-che,25.61,percent of current health expenditure,,2009,who-ghed,international estimate,chart
+india,2010,gghed-share-of-che,26.21,percent of current health expenditure,,2010,who-ghed,international estimate,chart
+india,2011,gghed-share-of-che,28.87,percent of current health expenditure,,2011,who-ghed,international estimate,chart
+india,2012,gghed-share-of-che,27.99,percent of current health expenditure,,2012,who-ghed,international estimate,chart
+india,2013,gghed-share-of-che,23.07,percent of current health expenditure,,2013,who-ghed,international estimate,overlap
+india,2014,gghed-share-of-che,23.66,percent of current health expenditure,,2014,who-ghed,international estimate,overlap
+india,2015,gghed-share-of-che,25.64,percent of current health expenditure,,2015,who-ghed,international estimate,overlap
+india,2016,gghed-share-of-che,26.84,percent of current health expenditure,,2016,who-ghed,international estimate,overlap
+india,2017,gghed-share-of-che,32.95,percent of current health expenditure,,2017,who-ghed,international estimate,overlap
+india,2018,gghed-share-of-che,34.29,percent of current health expenditure,,2018,who-ghed,international estimate,overlap
+india,2019,gghed-share-of-che,35.07,percent of current health expenditure,,2019,who-ghed,international estimate,overlap
+india,2020,gghed-share-of-che,36.25,percent of current health expenditure,,2020,who-ghed,international estimate,overlap
+india,2021,gghed-share-of-che,40.40,percent of current health expenditure,,2021,who-ghed,international estimate,overlap
+india,2022,gghed-share-of-che,40.40,percent of current health expenditure,,2022,who-ghed,international estimate,overlap
+india,2023,gghed-share-of-che,39.02,percent of current health expenditure,,2023,who-ghed,international estimate,overlap
