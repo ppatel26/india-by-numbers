@@ -41,6 +41,27 @@ const udise2021_22: Source = {
   url: 'https://dashboard.udiseplus.gov.in/report2026/static/media/UDISE+2021_22_Booklet.f55c1a60ed700e6c7892.pdf',
 }
 
+const udise2020_21: Source = {
+  publisher: 'Ministry of Education',
+  release: 'UDISE+ 2020-21 report',
+  released: '2022',
+  url: 'https://dashboard.udiseplus.gov.in/report2026/static/media/UDISE+2020_21_Booklet.2cfe0df9249cc690d12d.pdf',
+}
+
+const udise2019_20: Source = {
+  publisher: 'Ministry of Education',
+  release: 'UDISE+ 2019-20 report',
+  released: '2021',
+  url: 'https://dashboard.udiseplus.gov.in/report2026/static/media/UDISE+2019_20_Booklet.2fea294ea7332fcb5f0c.pdf',
+}
+
+const udise2018_19: Source = {
+  publisher: 'Ministry of Education',
+  release: 'UDISE+ 2018-19 report',
+  released: 'not stated',
+  url: 'https://dashboard.udiseplus.gov.in/report2026/static/media/UDISE+2018_19_Booklet.61e6bf9d5e445574ee1d.docx',
+}
+
 // The report PDF is linked from https://aishe.gov.in/ (README).
 const aishe2023_24: Source = {
   publisher: 'Ministry of Education',
@@ -81,7 +102,10 @@ const GER_HE_STATE = 'education/education-higher-ed-ger-by-state.csv'
 const GER_HE_INDIA = 'education/education-higher-ed-ger-india.csv'
 const LITERACY = 'education/education-literacy-by-state.csv'
 
-const OLD_YEARS = ['2020-21', '2021-22']
+const SCHOOL_TREND_SOURCES = [
+  udise2025_26, udise2024_25, udise2023_24, udise2022_23, udise2021_22, udise2020_21, udise2019_20, udise2018_19,
+]
+const OLD_YEARS = ['2018-19', '2019-20', '2020-21', '2021-22']
 const NEW_YEARS = ['2022-23', '2023-24', '2024-25', '2025-26']
 
 const LEVELS = [
@@ -141,13 +165,13 @@ const topic: Topic = {
           chart: {
             kind: 'line',
             slug: 'school-enrolment-trend',
-            title: 'Children in school in India by level, 2020-21 to 2025-26',
+            title: 'School enrolment and dropout in India, 2018-19 to 2025-26',
             subtitle:
-              'Enrolment (crore), gross enrolment ratio and dropout rate (%) by school level, India, 2020-21 to 2025-26.',
+              'Enrolment in crore, gross enrolment ratio and dropout rate by school level.',
             punches: { office: 'MoE', unit: 'crore · %', period: '2025-26' },
             status: ['Method break'],
-            note: 'From 2022-23, UDISE+ records each student and uses new population projections. The booklet says ratios are strictly not comparable with figures up to 2021-22, so the lines are not joined. Each year is as first published. Levels follow the existing structure (classes 1-5, 6-8, 9-10, 11-12), not the NEP 2020 structure. UDISE+ gives dropout rates for classes 1 to 10 only. The gross enrolment ratio divides enrolment at a level, of any age, by the population of the official age for that level, so it can pass 100.',
-            sources: [udise2025_26, udise2024_25, udise2023_24, udise2022_23, udise2021_22],
+            note: 'UDISE+ began in 2018-19. From 2022-23 it records each student and uses new population projections. The lines stop at that change. Levels cover classes 1-5, 6-8, 9-10 and 11-12. UDISE+ publishes dropout rates for classes 1 to 10.',
+            sources: SCHOOL_TREND_SOURCES,
             series: [
               ...trendSeries,
               // Read for the first headline figure and the standfirst; not drawn.
@@ -168,17 +192,16 @@ const topic: Topic = {
             ],
             breaks: [{ x: '2022-23', label: 'New method' }],
             know: [
-              'UDISE+ is an administrative count. Each school enters its own data, with a reference date of 31 March at the end of the school year.',
-              'From 2022-23, UDISE+ collects data for each student, not school totals, and uses revised population projections. The booklet says ratios are strictly not comparable with figures up to 2021-22. Primary GER fell from 103.39 to 96.2 and the primary dropout rate rose from 1.45% to 7.8% across the break, mostly because of the change of method.',
+              'UDISE+ replaced UDISE in 2018-19. Schools began to upload their returns to a system with built-in validation checks.',
+              'From 2022-23, UDISE+ collects data for each student and uses revised population projections. The Ministry advises against comparing ratios across this break.',
               'The gross enrolment ratio (GER) divides enrolment at a level, of any age, by the population of the official age for that level, so it can be above 100.',
-              'Each year is as first published. Later booklets do not restate earlier years.',
-              'Levels follow the existing structure. The NEP 2020 structure groups classes differently and gives different ratios.',
+              'Each year uses the figures from its own report. The NEP 2020 structure groups classes differently and gives different ratios.',
             ],
             processing: [
-              'Read Table 1, "National Highlights", from each UDISE+ booklet (existing structure): 2021-22 (for 2020-21 and 2021-22), 2022-23, 2023-24, 2024-25 and 2025-26.',
-              'Take each year from its own booklet, as first published.',
-              'Show enrolment in crore of students; keep ratios and rates as published.',
-              'Split each level into two series at 2022-23, the start of student-level data.',
+              'Read the India totals in Tables 3.1, 5.1 and 5.13 for 2018-19 to 2020-21. Use Table 1 in each booklet from 2021-22.',
+              'Check the 2020-21 values against Table 1 of the 2021-22 booklet. All 13 values agree.',
+              'Display enrolment in crore. Keep the published digits for ratios and rates.',
+              'Split the series at 2022-23, when student-level data began.',
             ],
             nextRelease: 'not announced',
           },
@@ -524,20 +547,16 @@ const topic: Topic = {
     frequency:
       'UDISE+: once a year. The 2025-26 booklet came out on 7 Jul 2026, with a reference date of 31 Mar 2026. AISHE: once a year, about two years after the academic year; the 2023-24 report came out on 8 Jul 2026. PLFS annual report: once a year. Census: the last full count was in 2011.',
     revisions:
-      'Each UDISE+ year is shown as first published; later booklets do not restate earlier years. AISHE and Census figures are final as published. MoSPI released the PLFS 2025 report on 27 Mar 2026 and a revised file on 29 May 2026.',
+      'School trend values come from each year’s UDISE+ report. AISHE and Census figures are final as published. MoSPI released the PLFS 2025 report on 27 Mar 2026 and a revised file on 29 May 2026.',
     breaks:
       'From 2022-23, UDISE+ collects data for each student, not school totals, and uses revised population projections. The booklet says ratios are strictly not comparable with figures up to 2021-22. Primary GER fell from 103.39 to 96.2 and the primary dropout rate rose from 1.45% to 7.8%, mostly because of the change of method. AISHE ratios use population projections based on Census 2011. Literacy in 2011 is a full count and in 2025 a sample survey, so the two are not joined.',
     coverage:
       'India and all 36 states and UTs. School figures use the existing structure: primary (classes 1-5), upper primary (6-8), secondary (9-10) and higher secondary (11-12). UDISE+ also publishes NEP 2020 figures, such as a secondary GER of 71.7% for classes 9 to 12, which is a different measure. College ratios cover people aged 18 to 23; literacy covers people aged 7 and over. In 2011, Andhra Pradesh included present Telangana and Jammu and Kashmir included Ladakh.',
     missing:
-      'UDISE+ booklets before 2020-21 use a different layout, so the school series starts in 2020-21. The latest AISHE report covers 2023-24. AISHE gives no SC or ST ratio for several UTs, and its 2023-24 highlights give two ST ratios for 2022-23 (23.5 and 22.6); this page uses no ST figures. Census 2027 enumeration runs to early 2027 and will replace the 2011 literacy counts. No publisher states a reuse licence for these data.',
+      'The school series starts with UDISE+ in 2018-19. Earlier UDISE editions are unavailable from the Ministry routes checked. The latest AISHE report covers 2023-24. AISHE gives no SC or ST ratio for several UTs, and its 2023-24 highlights give two ST ratios for 2022-23 (23.5 and 22.6); this page uses no ST figures. Census 2027 enumeration runs to early 2027 and will replace the 2011 literacy counts. No publisher states a reuse licence for these data.',
   },
   sources: [
-    udise2025_26,
-    udise2024_25,
-    udise2023_24,
-    udise2022_23,
-    udise2021_22,
+    ...SCHOOL_TREND_SOURCES,
     aishe2023_24,
     aisheTimeSeries,
     plfsAnnual2025,
