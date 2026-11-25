@@ -12,6 +12,7 @@ import { openView, renderPlot } from './charts'
 import { FONT } from './charts/axes'
 import { show } from './charts/model'
 import { tableOf } from './charts/table'
+import { hasEmblem, type EmblemName } from './emblems'
 import { figureValue } from './figures'
 import { GRID, places, type Place } from './geography'
 import { embed, Markup, svg } from './markup'
@@ -26,7 +27,7 @@ const H = 630
 const DISPLAY = "'Marcellus', serif"
 
 /** Cut-out objects are PNG with transparency; the methods relief is a photo on black. */
-const emblem = (name: string): string => {
+const emblem = (name: EmblemName): string => {
   const file = name === 'methods' ? 'methods.jpg' : `${name}.png`
   const type = name === 'methods' ? 'jpeg' : 'png'
   return `data:image/${type};base64,${readFileSync(join(process.cwd(), 'src/assets/emblems', file)).toString('base64')}`
@@ -41,8 +42,12 @@ function wordmark(x: number, y: number, color: string): Markup {
 ${shaped(SITE.hindiName, 'Devanagari', x + 54, y + 42, 15, color).el}`
 }
 
-/** A topic object with a soft cast shadow. The methods relief keeps a radial fade into its dark ground. */
-function object(name: string, x: number, y: number, size: number): Markup {
+/**
+ * A topic object with a soft cast shadow. The methods relief keeps a radial fade into its dark ground.
+ * A topic with no object yet draws nothing.
+ */
+function object(name: EmblemName, x: number, y: number, size: number): Markup {
+  if (!hasEmblem(name)) return svg``
   const id = `o-${name}-${Math.round(x)}-${Math.round(y)}`
   const fade = name === 'methods'
   return svg`<defs>${
@@ -69,17 +74,20 @@ export function topicImage(t: Topic): Buffer {
   const ink = p.text === 'light' ? colors.silver : colors.ink
   const dim = p.text === 'light' ? colors['silver-dim'] : colors['on-light-dim']
   const figs = t.figures.map(figureValue)
+  // No object yet: the name and the figures take the full width of the card.
+  const full = !hasEmblem(t.slug)
+  const step = full ? 360 : 260
   return page(
     svg`${object(t.slug, 772, 56, 380)}
 ${wordmark(64, 56, ink)}
 <text x="64" y="196" font-family="${FONT.mono}" font-size="16" letter-spacing="2" fill="${dim}">TOPIC</text>
-<text x="64" y="292" font-family="${DISPLAY}" font-size="${fit(upper(t.name), 620, 92)}" fill="${ink}">${upper(t.name)}</text>
+<text x="64" y="292" font-family="${DISPLAY}" font-size="${fit(upper(t.name), full ? 1072 : 620, 92)}" fill="${ink}">${upper(t.name)}</text>
 ${shaped(t.hindi, 'Devanagari', 66, 350, 40, ink).el}
 ${figs.map((f, i) => {
-  const x = 64 + i * 260
-  return svg`<line x1="${x}" x2="${x + 230}" y1="430" y2="430" stroke="${dim}" stroke-opacity="0.6"/>
+  const x = 64 + i * step
+  return svg`<line x1="${x}" x2="${x + step - 30}" y1="430" y2="430" stroke="${dim}" stroke-opacity="0.6"/>
 <text x="${x}" y="484" font-size="40" font-weight="500" fill="${ink}">${f.value.text}</text>
-${textBlock(f.label, x, 494, 230, 18, svg` fill="${ink}"`, 23, 2).el}
+${textBlock(f.label, x, 494, step - 30, 18, svg` fill="${ink}"`, 23, 2).el}
 <text x="${x}" y="572" font-family="${FONT.mono}" font-size="14" letter-spacing="0.6" fill="${dim}">${upper([f.period, ...f.status].join(' · '))}</text>`
 })}`,
     p.hex,
@@ -138,7 +146,8 @@ function locator(current: string, x0: number, y0: number, size: number): Markup 
 }
 
 export function stateImage(pl: Place): Buffer {
-  const measures = [profile.sections[0]!.measures[0]!, profile.sections[1]!.measures[0]!, profile.sections[4]!.measures[0]!]
+  const first = (topic: string) => profile.sections.find((s) => s.topic === topic)!.measures[0]!
+  const measures = [first('prices'), first('economy'), first('health')]
   const rows = measures.map((m) => row(m, pl.slug))
   const native = pl.native && pl.native.name !== pl.hindi ? pl.native : undefined
   const size = 46
@@ -166,23 +175,32 @@ ${locator(pl.slug, W - 64 - GRID.cols * (size + 5) + 5, 150, size)}`,
   )
 }
 
-/** The nine topics as pigment tiles, each with its object: the site at a glance. */
-function mosaic(x0: number, y0: number, size: number): Markup {
+/**
+ * Every topic as a pigment tile, each with its object (none for a topic whose object is not made
+ * yet): the site at a glance. The grid is as near square as the topic count allows, centred in
+ * the box from (x0, y0), `width` by `height`.
+ */
+function mosaic(x0: number, y0: number, width: number, height: number): Markup {
   const gap = 8
+  const cols = Math.ceil(Math.sqrt(TOPICS.length))
+  const rows = Math.ceil(TOPICS.length / cols)
+  const size = Math.min((width - gap * (cols - 1)) / cols, (height - gap * (rows - 1)) / rows)
+  const left = x0 + (width - cols * size - gap * (cols - 1)) / 2
+  const top = y0 + (height - rows * size - gap * (rows - 1)) / 2
   return svg`${TOPICS.map((t, i) => {
-    const x = x0 + (i % 3) * (size + gap)
-    const y = y0 + Math.floor(i / 3) * (size + gap)
+    const x = left + (i % cols) * (size + gap)
+    const y = top + Math.floor(i / cols) * (size + gap)
     return svg`<rect x="${x}" y="${y}" width="${size}" height="${size}" rx="4" fill="${pigments[t].hex}"/>${object(t, x + size * 0.1, y + size * 0.1, size * 0.8)}`
   })}`
 }
 
 /**
- * Index and about pages: their title on lac, beside the nine topics. How we check
+ * Index and about pages: their title on lac, beside every topic. How we check
  * sits on kajal with the merchant and scribe relief, as on its page.
  */
 export function plainImage(title: string, line: string, look: 'topics' | 'methods' = 'topics'): Buffer {
   const t = textBlock(upper(title), 64, 176, 560, 64, svg` font-family="${DISPLAY}" fill="var(--silver)"`, 72, 3)
   const l = textBlock(line, 64, 200 + t.height, 540, 26, svg` fill="var(--silver-dim)"`, 36, 4)
-  const art = look === 'methods' ? object('methods', 680, 75, 480) : mosaic(660, 57, 166)
+  const art = look === 'methods' ? object('methods', 680, 75, 480) : mosaic(660, 57, 514, 514)
   return page(svg`${art}${wordmark(64, 56, colors.silver)}${t.el}${l.el}`, look === 'methods' ? colors.kajal : colors.lac)
 }

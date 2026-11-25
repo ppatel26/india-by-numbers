@@ -1,7 +1,16 @@
 import type { TopicSlug } from '~/content/types'
 
-/** Alt text for the topic objects. Each is an AI recast, not a photo of a real object. */
-export const EMBLEM_ALT: Record<TopicSlug | 'home' | 'methods', string> = {
+/** An object name: a topic, the home seal or the methods relief. */
+export type EmblemName = TopicSlug | 'home' | 'methods'
+
+/**
+ * Alt text for the objects. Each is an AI recast, not a photo of a real object.
+ * This is the one list of the objects that exist: each name here has `public/emblems/<name>.webp`
+ * and `src/assets/emblems/<name>.png` (the methods relief is a .jpg). A topic with no entry has no
+ * object yet. Its hero, medallion, home tile and social image leave the object out, and nothing
+ * stands in for it (docs/design-direction.md, the Crime and justice interim rule).
+ */
+export const EMBLEM_ALT: Partial<Record<EmblemName, string>> & Record<'home' | 'methods', string> = {
   home: 'A silver stamp seal with a zebu bull and a ritual stand, after the Indus seals',
   methods: 'A red sandstone relief of a merchant and a scribe weighing goods',
   prices: 'A silver punch-marked coin (karshapana) with a sun, a wheel, an elephant and a tree',
@@ -14,3 +23,9 @@ export const EMBLEM_ALT: Record<TopicSlug | 'home' | 'methods', string> = {
   climate: 'A silver model of the Samrat Yantra sundial at Jantar Mantar',
   'religion-and-culture': 'A silver Nataraja in the Chola style',
 }
+
+/** The object's alt text, or undefined when the object is not made yet. */
+export const emblemAlt = (name: EmblemName): string | undefined => EMBLEM_ALT[name]
+
+/** True when this topic has its object. */
+export const hasEmblem = (name: EmblemName): boolean => EMBLEM_ALT[name] !== undefined

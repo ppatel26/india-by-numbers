@@ -10,6 +10,7 @@ export const TOPICS = [
   'prices',
   'economy',
   'jobs',
+  'living-standards',
   'health',
   'education',
   'elections',

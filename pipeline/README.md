@@ -151,3 +151,5 @@ These CSVs have no script. For the topic CSVs, the topic README says how the val
 `emblems/cutout.py` cuts each topic's silver object out of the coloured backdrop it was generated on,
 so it sits on any ground: `public/emblems/*.webp` for the site and `src/assets/emblems/*.png` for the
 social images. The generated source images are not kept in the repository.
+A topic can have no object yet: it then has no entry in the script's `FILES` map and no alt text in
+`src/lib/emblems.ts`, and the site leaves its object out. Add both when the object is approved.

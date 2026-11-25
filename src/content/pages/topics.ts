@@ -136,6 +136,17 @@ const topics: TopicsPage = {
       latest: { date: '12 Nov 2026', label: 'MNRE state renewable capacity, 31 Oct 2026' },
       next: { date: 'Not announced', label: 'CEA and MNRE publish capacity every month.' },
     },
+    'living-standards': {
+      questions: [
+        'How much does a household spend on each person in a month, in villages and in towns?',
+        'How has that spending grown since 1999-00, after prices?',
+        'What share of spending goes on food?',
+        'How many households cook with clean fuel and have an improved source of drinking water?',
+        'How many people use the internet, and how many adults have a bank account?',
+      ],
+      latest: { date: '30 Jan 2025', label: 'HCES 2023-24 report, MoSPI' },
+      next: { date: 'Not announced', label: 'No release date published.' },
+    },
     'religion-and-culture': {
       questions: [
         'What religions do people in India report, and in what numbers?',
@@ -156,7 +167,7 @@ const topics: TopicsPage = {
       'Energy',
       'Air quality',
       'Crime',
-      'Housing and water',
+      'Housing',
       'Agriculture',
       'Migration',
       'Trade',

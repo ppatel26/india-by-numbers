@@ -1,5 +1,8 @@
-/** The small libraries every page leans on: number formats, periods and search. */
+/** The small libraries every page leans on: number formats, periods, search and the objects. */
+import { existsSync, readdirSync } from 'node:fs'
 import { describe, expect, it } from 'vitest'
+import { TOPICS } from '~/content/types'
+import { EMBLEM_ALT, hasEmblem } from '~/lib/emblems'
 import { fmt, formatNumber, ordinal } from '~/lib/format'
 import { formatDate, longPeriod, parsePeriod, yyMmOf } from '~/lib/period'
 import { match, normalise, SYNONYMS, type Entry } from '~/lib/search'
@@ -80,4 +83,20 @@ describe('search', () => {
     expect(match(index, 'കേരളം')[0]?.href).toBe('/states/kerala/')
   })
   it('needs every word', () => expect(match(index, 'inflation kerala')).toEqual([]))
+})
+
+describe('objects', () => {
+  const named = Object.keys(EMBLEM_ALT)
+  it('has both image files for every object with alt text', () => {
+    for (const name of named) {
+      expect(existsSync(`public/emblems/${name}.webp`), name).toBe(true)
+      expect(existsSync(`src/assets/emblems/${name}.${name === 'methods' ? 'jpg' : 'png'}`), name).toBe(true)
+    }
+  })
+  it('has alt text for every image file, so no object goes undescribed', () => {
+    for (const dir of ['public/emblems', 'src/assets/emblems']) for (const f of readdirSync(dir)) expect(named, `${dir}/${f}`).toContain(f.replace(/\.\w+$/, ''))
+  })
+  it('lets a topic have no object yet', () => {
+    for (const t of TOPICS) expect(hasEmblem(t), t).toBe(named.includes(t))
+  })
 })

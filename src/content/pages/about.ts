@@ -71,7 +71,7 @@ const about: AboutPage = {
       heading: 'The objects',
       body: [
         {
-          text: 'The object at the top of each topic, such as the punch-marked coin for Prices, is made with an image model and labelled as a recast. It is decoration, not data.',
+          text: 'The object at the top of each topic, such as the punch-marked coin for Prices, is made with an image model and labelled as a recast. It is decoration, not data. A new topic can appear before its object is made. It then shows no object, and nothing stands in for it.',
         },
       ],
     },

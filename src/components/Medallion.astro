@@ -2,10 +2,11 @@
 /**
  * A topic object on a medallion: a disc of the topic's pigment with a thin silver rim, like a
  * struck coin. On a pigment ground (`deep`) the disc is a darker shade of it.
+ * A topic with no object yet renders nothing: a bare disc would read as a stand-in.
  */
 import Emblem from './Emblem.astro'
 import type { TopicSlug } from '~/content/types'
-import { EMBLEM_ALT } from '~/lib/emblems'
+import { emblemAlt } from '~/lib/emblems'
 import { pigments } from '~/lib/tokens'
 
 interface Props {
@@ -14,11 +15,16 @@ interface Props {
   deep?: boolean
 }
 const { topic, size, deep = false } = Astro.props
+const alt = emblemAlt(topic)
 ---
 
-<div class:list={['medallion', { deep }]} style={`--ground:${pigments[topic].hex};--size:${size}px`}>
-  <Emblem name={topic} alt={EMBLEM_ALT[topic]} size={Math.round(size * 0.78)} />
-</div>
+{
+  alt !== undefined && (
+    <div class:list={['medallion', { deep }]} style={`--ground:${pigments[topic].hex};--size:${size}px`}>
+      <Emblem name={topic} alt={alt} size={Math.round(size * 0.78)} />
+    </div>
+  )
+}
 
 <style>
   .medallion {

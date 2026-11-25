@@ -3,7 +3,7 @@ import Crumbs from '../Crumbs.astro'
 import Emblem from '../Emblem.astro'
 import FigureValue from '../FigureValue.astro'
 import type { Topic } from '~/content/types'
-import { EMBLEM_ALT } from '~/lib/emblems'
+import { emblemAlt } from '~/lib/emblems'
 import { pigments } from '~/lib/tokens'
 
 interface Props {
@@ -11,9 +11,11 @@ interface Props {
 }
 const { topic } = Astro.props
 const pigment = pigments[topic.slug]
+/** No object yet: the text takes the full width, and nothing stands in for the object. */
+const alt = emblemAlt(topic.slug)
 ---
 
-<header class:list={['hero', pigment.text === 'light' ? 'on-dark' : 'on-light']} style={`--ground:${pigment.hex}`}>
+<header class:list={['hero', pigment.text === 'light' ? 'on-dark' : 'on-light', { bare: alt === undefined }]} style={`--ground:${pigment.hex}`}>
   <div class="wrap inner">
     <div class="text">
       <Crumbs trail={[['Topics', '/topics/']]} current={topic.name} />
@@ -25,7 +27,7 @@ const pigment = pigments[topic.slug]
         {topic.figures.map((f) => <FigureValue figure={f} />)}
       </div>
     </div>
-    <Emblem name={topic.slug} alt={EMBLEM_ALT[topic.slug]} eager />
+    {alt !== undefined && <Emblem name={topic.slug} alt={alt} eager />}
   </div>
 </header>
 
@@ -95,6 +97,9 @@ const pigment = pigments[topic.slug]
     }
     .title {
       padding-right: 92px;
+    }
+    .bare .title {
+      padding-right: 0;
     }
     .standfirst {
       font-size: 16px;
