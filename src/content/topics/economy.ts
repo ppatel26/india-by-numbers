@@ -1,4 +1,5 @@
 import type { Source, Topic } from '../types'
+import { WDI, WDI_ABOUT, comparison } from '../international'
 
 // Data: research/data/economy. tests/unit/prose.test.ts checks every number in the prose.
 
@@ -977,11 +978,36 @@ const topic: Topic = {
         },
       ],
     },
+    {
+      title: "How does India's income per person compare?",
+      lede: "India's GDP per person was 10,039 international dollars in 2025, up from 2,140 in 1990. China's was 25,067, and the world average 21,914.",
+      blocks: [
+        {
+          chart: comparison({
+            slug: 'gdp-per-person-comparison',
+            file: 'wdi-gdp-per-person-ppp.csv',
+            title: 'GDP per person at purchasing power parity, India and other countries, 1990 and 2025',
+            subtitle: 'GDP per person in constant 2021 international dollars, seven countries and the world.',
+            unit: 'intl $, 2021 prices',
+            latest: '2025',
+            format: { decimals: 0, suffix: ' intl $' },
+            sources: [WDI.gdp],
+            know: [
+              'GDP per person is the value of the goods and services an economy produces in a year, divided by its population.',
+              'An international dollar buys as much in each country as a US dollar buys in the United States. WDI converts each currency with purchasing power parities (PPPs) from the 2021 round of the International Comparison Program, and removes inflation.',
+              'WDI carries the 2021 PPPs forward to later years and the 2011 PPPs back to earlier years.',
+              'MoSPI publishes no figure at PPP, so no Indian figure compares directly. The income per person chart by state on this page is in rupees at current prices.',
+            ],
+            processing: ['Show each value to the nearest international dollar.', 'Rank the rows by the 2025 value.'],
+          }),
+        },
+      ],
+    },
   ],
   // LATER: the About band's side line ("How each economy figure is made, where it breaks, and what is missing.") has no field.
   about: {
     publisher:
-      "MoSPI's National Statistics Office (NSO) publishes the national and state accounts, the Index of Industrial Production (IIP), the Annual Survey of Industries (ASI) and the Annual Survey of Unincorporated Sector Enterprises (ASUSE). The RBI publishes exchange rate tables and the monthly Payment System Indicators. Financial Benchmarks India (FBIL) sets the daily reference rate.",
+      ["MoSPI's National Statistics Office (NSO) publishes the national and state accounts, the Index of Industrial Production (IIP), the Annual Survey of Industries (ASI) and the Annual Survey of Unincorporated Sector Enterprises (ASUSE). The RBI publishes exchange rate tables and the monthly Payment System Indicators. Financial Benchmarks India (FBIL) sets the daily reference rate.", WDI_ABOUT].join(' '),
     frequency:
       'GDP: quarterly (latest 31 August 2026). IIP: monthly; October 2026 is due on 30 November 2026. State accounts: as states report. ASI and ASUSE: yearly. RBI Handbook: yearly. RBI Payment System Indicators: monthly, with no release date stated. FBIL rate: each working day.',
     revisions:
@@ -993,7 +1019,7 @@ const topic: Topic = {
     missing:
       'MoSPI has no 2024-25 income per person for four states and UTs, and no GSDP growth for six. It has no IIP rate for April 2021, and no ASI estimate for Lakshadweep. Monthly payment data start in June 2020: the RBI archive starts with the June 2021 release, which also prints June 2020. The RBI allows accurate reproduction without modification, with acknowledgement. MoSPI states no reuse licence.',
   },
-  sources: [GDP_PRESS_NOTE, ESANKHYIKI, IIP_RELEASE, ASI_SUMMARY, ASUSE_REPORT, RBI_HANDBOOK, RBI_TABLE_133_2002, IMF_IFS, FBIL_ARCHIVE, RBI_HOME, RBI_PSI],
+  sources: [GDP_PRESS_NOTE, ESANKHYIKI, IIP_RELEASE, ASI_SUMMARY, ASUSE_REPORT, RBI_HANDBOOK, RBI_TABLE_133_2002, IMF_IFS, FBIL_ARCHIVE, RBI_HOME, RBI_PSI, WDI.gdp],
   related: [
     { label: 'Prices: Consumer price inflation since 2012', href: '/charts/cpi-inflation/' },
     { label: 'Prices: RBI repo rate since 2001', href: '/charts/repo-rate/' },

@@ -253,6 +253,24 @@ const PUBLISHERS: readonly Publisher[] = [
     site: 'https://population.un.org/wpp/',
   },
   {
+    short: 'World Bank',
+    logos: [],
+    full: 'World Bank, Development Data Group',
+    topics: ['economy', 'jobs', 'population', 'health', 'climate'],
+    dataSets: [
+      {
+        name: 'World Development Indicators',
+        detail: 'Comparison charts only: GDP per person at PPP, life expectancy and fertility (from UN WPP 2024), CO2 per person (from EDGAR) and women\'s labour force participation (ILO modelled estimates), for India, six other countries and the world',
+        rhythm: 'Several updates a year; this site uses the update of 11 Nov 2026',
+        match: /World Development Indicators/,
+      },
+    ],
+    licence: 'CC BY 4.0 for the five series we use, as each series\' metadata states. Some WDI series from other bodies carry other terms.',
+    access: ['WDI API (api.worldbank.org/v2), no key'],
+    note: 'We use WDI only to compare countries. For India alone we use the Indian publisher.',
+    site: 'https://data.worldbank.org',
+  },
+  {
     short: 'IMF',
     logos: [],
     full: 'International Monetary Fund',
