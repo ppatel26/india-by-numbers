@@ -70,6 +70,7 @@ Topic pigments (hero ground, home and topics tiles, topic tag; never a data colo
 | Living standards | firozi (turquoise) | #45C5B8 | ink 8.4:1 |
 | Trade | manjistha (Indian madder) | #F28DA0 | ink 7.7:1 |
 | Transport | neel (washed indigo) | #8CA8E7 | ink 7.5:1 |
+| Agriculture | dhani (young paddy) | #88CD65 | ink 9.3:1 |
 
 Kattha (added 25 Nov 2026) sits at OKLCH L 0.452, C 0.086, H 60, in the gap between lac (H 27) and mehendi (H 122). Its nearest pigment is mehendi (OKLab distance 0.092).
 
@@ -101,6 +102,7 @@ Made with Paper's image models: nano-banana-2-1 for objects, nano-banana-pro for
 | Living standards | Stacked tiffin carrier (not yet made) | Silver |
 | Trade | Uru, the Indian Ocean trading ship (not yet made) | Silver |
 | Transport | Harappan two-wheeled cart with solid wheels (not yet made) | Silver |
+| Agriculture | Hal, the Indian ard plough, after the Banawali model (not yet made) | Silver |
 
 Production rules:
 
@@ -185,6 +187,24 @@ settled each point.
   with solid disc wheels, a simple slatted frame and twin front shafts, crisp shadows, one soft key
   light from the top left, no text or engravings, centred on a flat matte neel backdrop (#8CA8E7),
   no gradient, no vignette."
+- Interim: 3 of 3. Publish with no object until the owner approves the image credits.
+
+### Agriculture (decided 25 Nov 2026)
+
+- Launch now with the NSS round 77 farm household charts, 3 of 3. The crop charts from
+  Agricultural Statistics at a Glance wait for the ministry's permission (its website policy asks
+  for a request by mail). The intro sets the scope: rural agricultural households, 2018-19.
+- Name "Agriculture", slug `agriculture`: 3 of 3. It keeps one address when the crop data arrives.
+- Pigment dhani (young paddy) #88CD65 with ink text: round 1 split three ways (ratanjot #6A4475,
+  pale geru #FBC6AA, dhani). Round 2 chose dhani, 2 of 3. It sits in the light band (L 0.779),
+  0.121 from firozi and far from the dark greens. Ratanjot sat 0.095 from rani. Pale geru, at
+  L 0.867, was lighter than every other pigment.
+- Object: a silver hal, the Indian ard plough, after the Banawali terracotta model, 3 of 3. It is
+  not the wheat sheaf on the Economy coin.
+- Prompt: "Three-quarter studio view of a traditional Indian ard plough (hal) in brushed silver,
+  after the Banawali model, with a curved beam, tapered ploughshare and single upright handle,
+  crisp shadows, one soft key light from the top left, no text or engravings, centred on a flat
+  matte dhani backdrop (#88CD65), no gradient, no vignette."
 - Interim: 3 of 3. Publish with no object until the owner approves the image credits.
 
 ## The design boards
