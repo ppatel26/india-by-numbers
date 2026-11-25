@@ -133,9 +133,10 @@ const stateProfile: StateProfile = {
         { label: 'Households with clean cooking fuel', chart: 'clean-cooking-fuel-by-state' },
         { label: 'Women who used the internet, age 15+', chart: 'internet-use-women-and-men', series: 'female' },
         { label: 'Women with a bank account, age 18+', chart: 'bank-accounts-women-and-men', series: 'female' },
+        { label: 'Rural households in debt', chart: 'household-debt-by-state', series: 'rural' },
       ],
       footnote:
-        'Ranks count only states and UTs with data. All values are survey estimates. Spending is in rupees at current prices, without imputation for free items (HCES 2023-24). Small states and UTs have small samples and wide errors.',
+        'Ranks count only states and UTs with data. All values are survey estimates. Spending is in rupees at current prices, without imputation for free items (HCES 2023-24). Households in debt are as on 30 June 2018 (AIDIS 2019), when Jammu and Kashmir included Ladakh. Small states and UTs have small samples and wide errors.',
     },
     {
       topic: 'health',

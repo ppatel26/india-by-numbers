@@ -469,6 +469,10 @@ Kinds are from `src/content/types.ts`.
 | `internet-use-women-and-men` | `dots` (female, male; Map tab on person) | `internet-and-ict-skills-by-state.csv` (used internet in last 3 months, 15+, rural+urban) | 2022-23 | The gender gap in internet use by state |
 | `digital-skills` | `bars` (grouped female and male) | `internet-and-ict-skills-by-state.csv` (India, 15-24, four skill measures) | 2022-23 | What young people can do online, beyond access |
 | `bank-accounts-women-and-men` | `dots` (female, male) | `bank-account-by-state.csv` (18+, rural+urban) | 2022-23 | Financial inclusion by state and sex |
+| `household-debt-by-state` | `dots` (rural and urban per state; Map tab on rural) | `household-assets-and-debt-by-state.csv` (IOI, all households) | 30 Jun 2018 | The share of households in debt, from 3.1% in rural Delhi to 67.2% in rural Telangana |
+| `household-assets-and-debt` | `bars` (panels: assets; debt per household and per indebted household) | `household-assets-and-debt-india.csv` | 30 Jun 2018 | What an average household owns and owes, in rupees, by household type |
+| `household-debt-by-lender` | `bars` (stacked: institutional and non-institutional) | `debt-by-credit-agency-india.csv` (totals) | 30 Jun 2018 | How much household debt comes from moneylenders, relatives and other informal lenders |
+| `household-debt-by-interest-rate` | `bars` (panels by lender, rural and urban) | `debt-by-interest-rate-by-state.csv` (India) | 30 Jun 2018 | The interest that informal loans carry: 44.0% of rural non-institutional debt at 20% to 25% a year |
 
 A possible eleventh chart: `households-with-a-computer` (`states`, `household-assets-by-state.csv`,
 2022-23). It is the only household asset that MoSPI publishes by state, apart from the phone.

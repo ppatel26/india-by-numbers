@@ -63,6 +63,22 @@ const nss76Api: Source = {
   url: 'https://api.mospi.gov.in/api/nss-76/getNss76Records?indicator_code=16&survey_code=2&Format=JSON',
 }
 
+// NSS round 77, January to December 2019; assets and debt as on 30 June 2018. The press note is
+// dated 10 Sep 2021; the PDF was created on 9 Sep 2021 and last changed on 10 Mar 2023.
+const aidis2019: Source = {
+  publisher: 'NSO, MoSPI',
+  release: 'NSS Report No. 588, All India Debt & Investment Survey - 2019 (NSS round 77)',
+  released: '2021-09-10',
+  url: 'https://www.mospi.gov.in/sites/default/files/publication_reports/Report_no588-AIDIS-77R-SeptFinal_0.pdf',
+}
+
+const aidisPress: Source = {
+  publisher: 'NSO, MoSPI',
+  release: 'Press note, All India Debt & Investment Survey, NSS 77th round (January to December 2019)',
+  released: '2021-09-10',
+  url: 'https://www.mospi.gov.in/sites/default/files/press_release/press_note-AIDIS-240821.pdf',
+}
+
 const MPCE_STATE = 'living-standards/mpce-by-state.csv'
 const MPCE_ROUNDS = 'living-standards/mpce-india-rounds.csv'
 const ITEM_SHARES = 'living-standards/mpce-item-shares-india-rounds.csv'
@@ -71,6 +87,11 @@ const GINI = 'living-standards/gini-mpce.csv'
 const AMENITIES = 'living-standards/household-amenities-by-state.csv'
 const INTERNET = 'living-standards/internet-and-ict-skills-by-state.csv'
 const BANK = 'living-standards/bank-account-by-state.csv'
+
+const AIDIS_STATE = 'living-standards/household-assets-and-debt-by-state.csv'
+const AIDIS_INDIA = 'living-standards/household-assets-and-debt-india.csv'
+const AIDIS_LENDER = 'living-standards/debt-by-credit-agency-india.csv'
+const AIDIS_INTEREST = 'living-standards/debt-by-interest-rate-by-state.csv'
 
 const CHECKED = '2026-11-25'
 
@@ -121,6 +142,47 @@ const SKILLS = [
   ['used copy and paste in last 3 months', 'Used copy and paste'],
   ['can send or receive email', 'Can send or receive email'],
 ] as const
+
+/** The six AIDIS household types, rural then urban, as the `household` column names them. */
+const HOUSEHOLDS = [
+  ['rural all', 'Rural, all households'],
+  ['rural cultivator', 'Rural, cultivators'],
+  ['rural non-cultivator', 'Rural, non-cultivators'],
+  ['urban all', 'Urban, all households'],
+  ['urban self-employed', 'Urban, self-employed'],
+  ['urban others', 'Urban, other households'],
+] as const
+
+/** Interest bands of Summary Statement 10, as the CSV writes them. */
+const INTEREST_BANDS = [
+  ['nil', 'No interest'],
+  ['less than 6', 'Under 6%'],
+  ['6 to 10', '6% to 10%'],
+  ['10 to 15', '10% to 15%'],
+  ['15 to 20', '15% to 20%'],
+  ['20 to 25', '20% to 25%'],
+  ['25 to 30', '25% to 30%'],
+  ['30 to 50', '30% to 50%'],
+  ['50 to 100', '50% to 100%'],
+  ['100 or more', '100% or more'],
+] as const
+
+const AIDIS_DATE_KNOW =
+  'Values are as on 30 June 2018. The survey visited households from January to August 2019 and asked about their assets and debt on that date.'
+
+const AIDIS_COMPARE_KNOW =
+  'AIDIS counts all households, rural and urban. The NSS survey of agricultural households (NSS Report No. 587) counts only rural agricultural households. MoSPI says that the two debt figures do not compare.'
+
+/** Rural and urban debt by interest band for one kind of lender. The panel label names the lender. */
+const interestSeries = (agency: string): Series[] =>
+  SECTORS.map(([sector, label, color]) => ({
+    key: `${sector}-${agency}`,
+    label,
+    color,
+    file: AIDIS_INTEREST,
+    where: { geography: 'india', sector, credit_agency: agency, interest_rate_band: INTEREST_BANDS.map(([b]) => b) },
+    x: 'interest_rate_band',
+  }))
 
 const topic: Topic = {
   slug: 'living-standards',
@@ -518,23 +580,190 @@ const topic: Topic = {
         },
       ],
     },
+    {
+      title: 'What do households own and owe?',
+      lede: 'On 30 June 2018, 35.0% of rural households and 22.4% of urban households were in debt. In villages, the share was highest in Telangana (67.2%) and Andhra Pradesh (62.8%).',
+      blocks: [
+        {
+          chart: {
+            kind: 'dots',
+            slug: 'household-debt-by-state',
+            checked: CHECKED,
+            title: 'Households in debt by state, rural and urban, 2018',
+            subtitle: 'Share of households with any outstanding cash debt on 30 June 2018, by state and UT.',
+            punches: { office: 'MoSPI', unit: '% households', period: '30 Jun 2018' },
+            status: ['Survey estimate'],
+            note: 'All households, as on 30 June 2018. Jammu and Kashmir includes Ladakh. Small states and UTs have small samples.',
+            sources: [aidis2019, aidisPress],
+            format: { unit: '%', decimals: 1 },
+            by: 'geography',
+            pin: ['india'],
+            sortBy: 'rural',
+            axis: { min: 0, max: 70 },
+            map: { series: 'rural', scale: 'seq' },
+            missing: { ladakh: 'Part of Jammu and Kashmir in 2018', 'dnh-dd': 'Two separate UTs in 2018' },
+            series: SECTORS.map(([sector, label, color]) => ({
+              key: sector,
+              label,
+              color,
+              file: AIDIS_STATE,
+              where: { sector, household_type: 'all', measure: 'incidence of indebtedness' },
+              x: 'geography',
+            })),
+            know: [
+              AIDIS_DATE_KNOW,
+              'A household counts as in debt if it owed any cash loan, to a bank, a moneylender, relatives or anyone else. Loans in kind and unpaid bills do not count.',
+              AIDIS_COMPARE_KNOW,
+              'In villages, 40.3% of cultivator households and 28.2% of other households were in debt. A cultivator household operated at least 0.002 hectare of land in the last year.',
+              'MoSPI gives relative standard errors for 18 major states only. For the rural share, the error was 2.89% for India, but 24.02% for Chhattisgarh and 19.27% for Haryana.',
+              'In 2018, Dadra and Nagar Haveli and Daman and Diu were two UTs, so the chart has no value for the merged UT. Jammu and Kashmir includes Ladakh.',
+            ],
+            processing: [
+              'Read Summary Statement 2 of NSS Report No. 588 from the PDF text: all households, rural and urban.',
+              'Check every value against the "All" column of Summary Statement 7, and the India values against Statement 3.8 and the press note. All agree.',
+              'Leave out Dadra and Nagar Haveli and Daman and Diu, two UTs in 2018. Match state names to the site geography table.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'On average, a rural household owned assets worth ₹15.92 lakh and owed ₹59,748. An urban household owned ₹27.17 lakh and owed ₹1,20,336. Households in debt owed ₹1,70,533 on average in villages and ₹5,36,861 in towns.',
+        },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'household-assets-and-debt',
+            checked: CHECKED,
+            title: 'Household assets and debt in India by type of household, 2018',
+            subtitle: 'Average value of assets and average outstanding cash debt per household on 30 June 2018, rupees.',
+            punches: { office: 'MoSPI', unit: '₹ per household', period: '30 Jun 2018' },
+            status: ['Survey estimate'],
+            note: 'Rupees at the values of 30 June 2018. Debt per indebted household counts only households in debt.',
+            sources: [aidis2019, aidisPress],
+            format: { unit: '₹' },
+            by: 'household',
+            rowHead: 'Household',
+            order: HOUSEHOLDS.map(([h]) => h),
+            labels: Object.fromEntries(HOUSEHOLDS),
+            series: [
+              { key: 'assets', label: 'Average value', color: 's4', file: AIDIS_INDIA, where: { measure: 'average value of assets' } },
+              { key: 'debt', label: 'Average per household', color: 's3', file: AIDIS_INDIA, where: { measure: 'average debt' } },
+              { key: 'debt-indebted', label: 'Average per household in debt', color: 's2', file: AIDIS_INDIA, where: { measure: 'average debt per indebted household' } },
+            ],
+            panels: [
+              { label: 'Assets', series: ['assets'], own: true },
+              { label: 'Debt', series: ['debt', 'debt-indebted'], own: true },
+            ],
+            know: [
+              AIDIS_DATE_KNOW,
+              'Assets include land, buildings, livestock, farm and business equipment, vehicles, and financial assets such as deposits, shares and loans given. Standing crops and stocks of goods are not assets.',
+              'Debt is outstanding cash loans, with the interest due. Loans in kind are not counted.',
+              'Rural households are cultivators, who operated at least 0.002 hectare of land in the last year, or non-cultivators. Urban households are self-employed or other households.',
+              'Debt was 3.8% of the value of assets for rural households and 4.4% for urban households.',
+              AIDIS_COMPARE_KNOW,
+            ],
+            processing: [
+              'Read average debt and debt per indebted household from Statement 3.8 of NSS Report No. 588.',
+              'Read the average value of assets from the press note of 10 Sep 2021, which gives it in rupees. The report gives it in thousand rupees.',
+              'Check that each value rounds to the thousand-rupee value in Summary Statement 2. All agree.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'In villages, households owed 66.1% of their debt to banks, co-operatives and other institutional lenders, and 33.8% to moneylenders, relatives and other non-institutional lenders. In towns, institutional lenders held 87.1% of household debt.',
+        },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'household-debt-by-lender',
+            checked: CHECKED,
+            title: 'Household debt by type of lender in India, 2018',
+            subtitle: 'Share of outstanding cash debt owed to institutional and non-institutional lenders on 30 June 2018, by type of household.',
+            punches: { office: 'MoSPI', unit: '% of debt', period: '30 Jun 2018' },
+            status: ['Survey estimate'],
+            note: 'Institutional lenders include banks, co-operatives, NBFCs and self-help groups. Non-institutional lenders include moneylenders, landlords, relatives and friends.',
+            sources: [aidis2019, aidisPress],
+            format: { unit: '%', decimals: 1 },
+            by: 'household',
+            rowHead: 'Household',
+            stacked: true,
+            order: HOUSEHOLDS.map(([h]) => h),
+            labels: Object.fromEntries(HOUSEHOLDS),
+            series: [
+              { key: 'institutional', label: 'Institutional lenders', color: 's2', file: AIDIS_LENDER, where: { credit_agency: 'all institutional agencies' } },
+              { key: 'non-institutional', label: 'Non-institutional lenders', color: 's3', file: AIDIS_LENDER, where: { credit_agency: 'all non-institutional agencies' } },
+            ],
+            know: [
+              AIDIS_DATE_KNOW,
+              'Institutional lenders are banks, co-operative societies and banks, insurance companies, provident funds, employers, financial institutions, NBFCs including microfinance institutions, and self-help and joint liability groups.',
+              'Non-institutional lenders are landlords, agricultural and professional moneylenders, input suppliers, relatives and friends, chit funds, and market commission agents and traders.',
+              'In villages, scheduled commercial banks held 41.9% of household debt and professional moneylenders 16.5%. In towns, banks held 68.4%.',
+              'The two shares may not add up to 100% because of rounding.',
+            ],
+            processing: [
+              'Read Statement 3.12 of NSS Report No. 588 from the PDF text.',
+              'Check that the lenders add up to each total, and that the totals equal the India row of Summary Statement 8. All agree.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'Non-institutional loans cost more. In villages, 44.0% of the debt owed to non-institutional lenders was in the band of 20% to 25% interest a year, and 18.7% in the band of 30% to 50%. In towns, 50.7% of the debt owed to institutional lenders was in the band of 6% to 10%.',
+        },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'household-debt-by-interest-rate',
+            checked: CHECKED,
+            title: 'Household debt by rate of interest in India, 2018',
+            subtitle: 'Share of outstanding cash debt in each band of annual interest on 30 June 2018, by type of lender, rural and urban.',
+            punches: { office: 'MoSPI', unit: '% of debt', period: '30 Jun 2018' },
+            status: ['Survey estimate'],
+            note: 'Each panel adds up to 100% for each sector. The rate is the annual rate of interest on the loan.',
+            sources: [aidis2019, aidisPress],
+            format: { unit: '%', decimals: 1 },
+            by: 'interest_rate_band',
+            rowHead: 'Interest a year',
+            order: INTEREST_BANDS.map(([b]) => b),
+            labels: Object.fromEntries(INTEREST_BANDS),
+            series: [...interestSeries('institutional'), ...interestSeries('non-institutional')],
+            panels: [
+              { label: 'Institutional lenders', series: ['rural-institutional', 'urban-institutional'] },
+              { label: 'Non-institutional lenders', series: ['rural-non-institutional', 'urban-non-institutional'] },
+            ],
+            know: [
+              AIDIS_DATE_KNOW,
+              'MoSPI groups each loan by its actual annual rate of interest, in the bands of the chart.',
+              'Across all lenders, 16.5% of rural household debt was in the band of 20% to 25% a year.',
+              'Institutional and non-institutional lenders are defined as in the chart of debt by lender.',
+            ],
+            processing: [
+              'Read the India rows of Summary Statement 10 of NSS Report No. 588 from the PDF text.',
+              'Check them against Statement 3.15, and check that each row adds up to 100% within rounding. All agree.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
   ],
   about: {
     intro:
-      'Every figure here comes from a household survey. This topic has no income, poverty line or housing stock data: the surveys measure spending and household amenities, not income or the houses people live in.',
+      'Every figure here comes from a household survey. This topic has no income, poverty line or housing stock data: the surveys measure spending, household amenities, and household assets and debt, not income or the houses people live in.',
     publisher:
-      "NSO, MoSPI, publishes all three surveys: the Household Consumption Expenditure Survey (HCES) 2022-23 and 2023-24, the CAMS 2022-23 survey (NSS round 79), and NSS round 76 (2018) on drinking water and housing.",
+      "NSO, MoSPI, publishes all four surveys: the Household Consumption Expenditure Survey (HCES) 2022-23 and 2023-24, the CAMS 2022-23 survey (NSS round 79), NSS round 76 (2018) on drinking water and housing, and the All India Debt & Investment Survey (AIDIS) 2019 (NSS round 77).",
     frequency:
-      'HCES: 2022-23 and 2023-24; the round before was 2011-12. The 2023-24 report came out on 30 Jan 2025. CAMS: 2022-23, report on 9 Oct 2024. NSS round 76: report on 22 Nov 2019. No release date published for the next rounds.',
+      'HCES: 2022-23 and 2023-24; the round before was 2011-12. The 2023-24 report came out on 30 Jan 2025. CAMS: 2022-23, report on 9 Oct 2024. NSS round 76: report on 22 Nov 2019. AIDIS 2019: assets and debt as on 30 June 2018, report on 10 Sep 2021; the round before was in 2013. No release date published for the next rounds.',
     revisions: 'This page uses the first published edition of each report.',
     breaks:
-      'HCES 2022-23 changed the method from the 2011-12 round: about 405 items instead of about 347, three questionnaires instead of one, three monthly visits instead of one, and computer-assisted interviews instead of pen and paper. A second break sits between 2004-05 and 2009-10, when the recall period changed. Drinking water uses one definition in 2018 and 2022-23, but the 2018 round ran for six months.',
+      'HCES 2022-23 changed the method from the 2011-12 round: about 405 items instead of about 347, three questionnaires instead of one, three monthly visits instead of one, and computer-assisted interviews instead of pen and paper. A second break sits between 2004-05 and 2009-10, when the recall period changed. Drinking water uses one definition in 2018 and 2022-23, but the 2018 round ran for six months. AIDIS debt counts all households; it does not compare with the debt of agricultural households in NSS Report No. 587.',
     coverage:
-      'India and all 36 states and UTs, rural and urban. Spending is in rupees per person per month, at current prices; only India has values at 2011-12 prices. Internet and skills cover ages 15 and over, bank accounts ages 18 and over. State series start in 2022-23.',
+      'India and all 36 states and UTs, rural and urban. Spending is in rupees per person per month, at current prices; only India has values at 2011-12 prices. Internet and skills cover ages 15 and over, bank accounts ages 18 and over. State series start in 2022-23, except drinking water (2018) and household debt (30 June 2018). AIDIS covers the 34 states and UTs of 2018, with Ladakh inside Jammu and Kashmir.',
     missing:
-      'No income, poverty line or housing stock. No ownership of durable goods such as fridges or vehicles: HCES publishes no table on it. Small states and UTs have small samples and wide errors. No publisher states a reuse licence.',
+      'No income, poverty line or housing stock. No ownership of durable goods such as fridges or vehicles: HCES publishes no table on it. Small states and UTs have small samples and wide errors. AIDIS gives no state value for Dadra and Nagar Haveli and Daman and Diu, two UTs in 2018. No publisher states a reuse licence.',
   },
-  sources: [hces2023_24, hcesPress2023_24, hces2022_23, hcesApi(1), hcesApi(4), hcesApi(9), cams2022_23, camsApi('indicators 14, 19, 21 to 23, 27 and 28', 14), nss76, nss76Api],
+  sources: [hces2023_24, hcesPress2023_24, hces2022_23, hcesApi(1), hcesApi(4), hcesApi(9), cams2022_23, camsApi('indicators 14, 19, 21 to 23, 27 and 28', 14), nss76, nss76Api, aidis2019, aidisPress],
   related: [
     { label: 'Prices: Consumer price inflation by state', href: '/charts/cpi-inflation-by-state/' },
     { label: 'Economy: Income per person by state', href: '/charts/income-per-person-by-state/' },
