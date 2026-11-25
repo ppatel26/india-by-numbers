@@ -94,9 +94,11 @@ const stateProfile: StateProfile = {
       measures: [
         { label: 'Income per person', chart: 'income-per-person-by-state', indiaNote: 'Per capita NNI' },
         { label: 'Growth of the state economy', chart: 'gsdp-growth-by-state', indiaNote: 'Base 2011-12' },
+        { label: 'Factory jobs', chart: 'factory-jobs-by-state' },
+        { label: 'Workers in small firms', chart: 'small-firm-workers-by-state' },
       ],
       footnote:
-        "Ranks count only states and UTs with data. State accounts are on base 2011-12; India's 2022-23-base GDP figures do not compare.",
+        "Ranks count only states and UTs with data. State accounts are on base 2011-12; India's 2022-23-base GDP figures do not compare. Factory jobs (ASI) and small-firm workers (ASUSE) come from different surveys; do not add them.",
     },
     {
       topic: 'population',

@@ -156,6 +156,49 @@ const RBI_HOME: Source = {
   url: 'https://www.rbi.org.in/',
 }
 
+// ASI 2024-25: PIB published the release on 4 Nov 2026 (PRID 2332475); the PDF is the copy on the
+// MoSPI microdata catalogue, entry 309.
+const ASI_SUMMARY: Source = {
+  publisher: 'MoSPI (NSO)',
+  release: 'Annual Survey of Industries 2024-25, Summary Results for Factory Sector, Statements 3A, 7A and 7B',
+  released: '2026-11-04',
+  url: 'https://microdata.gov.in/NADA/index.php/catalog/309/download/6675',
+}
+
+const ASI_API: Source = {
+  publisher: 'MoSPI (NSO)',
+  release: 'eSankhyiki API, Annual Survey of Industries, NIC 2008, all industries, all India, 2008-09 to 2023-24',
+  released: 'not stated',
+  url: 'https://api.mospi.gov.in/api/asi/getASIData?Format=JSON&classification_year=2008&sector_code=Combined&nic_type=2-digit&state_code=99&nic_code=99999',
+}
+
+// PIB published the full report on 6 May 2026 (PRID 2258362).
+const ASUSE_REPORT: Source = {
+  publisher: 'MoSPI (NSO)',
+  release: 'Annual Survey of Unincorporated Sector Enterprises (ASUSE) 2025, full report, Table 26',
+  released: '2026-05-06',
+  url: 'https://www.mospi.gov.in/uploads/publications_reports/publications_reports1778063953577_942565ce-f832-4fc4-aa99-90b0b2a5a6e1_ASUSE_2025_Full_Report.pdf',
+}
+
+const ASUSE_PRESS_NOTE: Source = {
+  publisher: 'MoSPI (NSO)',
+  release: 'Press Note on ASUSE 2025 (January to December 2025), Table 1',
+  released: '2026-03-24',
+  url: 'https://www.mospi.gov.in/uploads/latestReleases/latest_release_1774347321466_c16ddf22-bfff-4097-88a7-b3134e464d51_Press_Note_ASUSE_2025_English.pdf',
+}
+
+const ASUSE_API: Source = {
+  publisher: 'MoSPI (NSO)',
+  release: 'eSankhyiki API, ASUSE indicators 2 (establishments) and 27 (workers), 2021-22 to 2025',
+  released: 'not stated',
+  url: 'https://api.mospi.gov.in/api/asuse/getAsuseRecords?Format=JSON&indicator_code=27&sector_code=3&gender_code=4&broad_activity_category_code=4&establishment_type_code=3',
+}
+
+const ASI_INDIA = 'economy/asi-factory-sector-india.csv'
+const ASUSE_ROUNDS = 'economy/asuse-india-rounds.csv'
+/** The three ASUSE rounds that ran October to September. */
+const ASUSE_OCT_SEP = ['2021-22', '2022-23', '2023-24']
+
 const QUARTERLY = 'economy/gdp-growth-quarterly.csv'
 const ANNUAL = 'economy/gdp-growth-annual.csv'
 const SHARES = 'economy/gva-sector-shares.csv'
@@ -484,6 +527,171 @@ const topic: Topic = {
       ],
     },
     {
+      title: 'How many people work in factories and small firms?',
+      lede: 'Registered factories engaged 2.10 crore people in 2024-25. Small unincorporated firms outside farming had 12.81 crore workers in 2025. Two different surveys count them.',
+      blocks: [
+        { text: 'Factories engaged 2.10 crore people in 2024-25, up from 1.13 crore in 2008-09. Their gross value added was ₹26.94 lakh crore at current prices.' },
+        {
+          chart: {
+            kind: 'line',
+            slug: 'factory-jobs-and-gva',
+            title: 'Factory jobs and value added in India, 2008-09 to 2024-25',
+            subtitle: 'Persons engaged and gross value added (GVA) in registered factories, Annual Survey of Industries. GVA at current prices.',
+            punches: { office: 'MoSPI', unit: 'crore · ₹ lakh crore', period: '2024-25' },
+            status: ['Survey estimate'],
+            note: 'GVA is not adjusted for inflation. Factories in operation are in the table.',
+            sources: [ASI_SUMMARY, ASI_API],
+            series: [
+              {
+                key: 'persons',
+                label: 'India',
+                color: 'ink',
+                file: ASI_INDIA,
+                where: { indicator: 'persons-engaged' },
+                format: { scale: 'crore', decimals: 2 },
+              },
+              {
+                key: 'gva',
+                label: 'India',
+                color: 'ink',
+                file: ASI_INDIA,
+                where: { indicator: 'gva' },
+                format: { unit: '₹', multiply: 1e-7, suffix: ' lakh crore', decimals: 2 },
+              },
+              {
+                key: 'factories',
+                label: 'Factories in operation',
+                color: 'slate',
+                hidden: true,
+                file: ASI_INDIA,
+                where: { indicator: 'factories-in-operation' },
+                format: { scale: 'lakh', decimals: 2 },
+              },
+            ],
+            panels: [
+              { label: 'Persons engaged, crore', series: ['persons'], own: true },
+              { label: 'Gross value added, ₹ lakh crore', series: ['gva'], own: true },
+            ],
+            know: [
+              'The Annual Survey of Industries (ASI) covers registered factories: 10 or more workers with power, or 20 or more without power, under sections 2m(i) and 2m(ii) of the Factories Act, 1948. It also covers registered bidi and cigar units.',
+              'Persons engaged are all the people a factory engages, paid or not: workers, supervisors, managers, office staff and working owners.',
+              'GVA is the value of output minus inputs, at current prices. It is not adjusted for inflation.',
+              'Small unincorporated firms are not in the ASI. The ASUSE counts them (see the charts below). Do not add the two together: they are different surveys with different periods and methods.',
+              'Since ASI 2014-15, units with 100 or more employees that are on a state business register are also in scope.',
+              'Sixteen states raised the factory threshold to 20 workers with power and 40 without: Maharashtra and Rajasthan from 2015-16, Goa from 2022-23, ten states from 2023-24, and Bihar, Himachal Pradesh and Jharkhand from 2024-25.',
+              'Each factory reports for its accounting year that ends within the financial year. MoSPI does not mark any year as provisional.',
+            ],
+            processing: [
+              'Read factories in operation, persons engaged and GVA for 2020-21 to 2024-25 from Statement 3A of the ASI 2024-25 Summary Results.',
+              'Fetch the same three values for 2008-09 to 2019-20 from the MoSPI eSankhyiki API (NIC 2008, all industries, all India).',
+              'Check the API against Statement 3A of the 2023-24 and 2024-25 editions. Every value agrees except 2023-24 GVA, where the API is ₹1 lakh higher. We use the Statement.',
+              'Show GVA in lakh crore. MoSPI publishes it in ₹ lakh.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        { text: 'Tamil Nadu had the most factory jobs in 2024-25, at 31.48 lakh, or 14.99% of the national total. Maharashtra had 27.47 lakh and Gujarat 27.27 lakh.' },
+        {
+          chart: {
+            kind: 'states',
+            slug: 'factory-jobs-by-state',
+            title: 'Factory jobs by state and UT, 2024-25',
+            subtitle: 'Persons engaged in registered factories, Annual Survey of Industries. Darker means more.',
+            punches: { office: 'MoSPI', unit: 'persons', period: '2024-25' },
+            status: ['Survey estimate'],
+            note: 'MoSPI gives no separate estimate for Lakshadweep. Its factories are in the India total.',
+            sources: [ASI_SUMMARY],
+            format: { scale: 'none', decimals: 0 },
+            data: { file: 'economy/asi-by-state-2024-25.csv', where: { indicator: 'persons-engaged' } },
+            total: true,
+            open: 'map',
+            scale: 'seq',
+            short: 'Factory jobs',
+            missing: { lakshadweep: 'No separate estimate: fewer than 3 units surveyed' },
+            know: [
+              'Each value is the number of persons engaged in registered factories in the state, from Statement 7A of the ASI 2024-25 Summary Results.',
+              'The chart shows the count, not the share of India. The count reads in the same unit as the small-firm chart below, and the state pages compare it with India. The table gives the share from Statement 7B.',
+              'Big states have more factory jobs because they have more people. Use the count to see where factories are, not how industrial a state is.',
+              'The ASI threshold differs by state: 16 states count factories from 20 workers with power, the rest from 10.',
+              'The states add up to 11 fewer persons than the India total. The difference is Lakshadweep, which MoSPI includes only in India.',
+            ],
+            processing: [
+              'Read persons engaged for each state and UT, and India, from Statement 7A of the ASI 2024-25 Summary Results.',
+              'Read the share of India for each state from Statement 7B.',
+              'Check that the India row equals Statement 3A.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        { text: 'Uttar Pradesh had the most workers in small unincorporated firms in 2025, at 1.86 crore. West Bengal had 1.33 crore and Maharashtra 1.17 crore.' },
+        {
+          chart: {
+            kind: 'states',
+            slug: 'small-firm-workers-by-state',
+            title: 'Workers in small firms by state and UT, 2025',
+            subtitle: 'Workers in unincorporated non-farm establishments, January to December 2025. Darker means more.',
+            punches: { office: 'MoSPI', unit: 'workers', period: '2025' },
+            status: ['Survey estimate'],
+            note: 'Manufacturing, trade and other services. Construction and farming are not covered.',
+            sources: [ASUSE_REPORT, ASUSE_API],
+            format: { scale: 'none', decimals: 0 },
+            data: { file: 'economy/asuse-by-state-2025.csv', where: { indicator: 'workers' } },
+            total: true,
+            open: 'map',
+            scale: 'seq',
+            short: 'Workers in small firms',
+            know: [
+              'The Annual Survey of Unincorporated Sector Enterprises (ASUSE) covers non-farm establishments that are not companies: proprietors, partnerships, co-operatives, trusts and self-help groups, in manufacturing, trade and other services.',
+              'It leaves out construction, companies and LLPs, and factories that the ASI covers. Do not add these workers to the factory jobs above.',
+              'A worker is anyone who works in the establishment, paid or not: owners, family helpers, hired workers and apprentices, full time or part time.',
+              'These are survey estimates from a sample of 6,70,289 establishments.',
+              'Some villages in the Andaman and Nicobar Islands that are hard to reach were not surveyed.',
+            ],
+            processing: [
+              'Fetch the number of workers for each state and UT in 2025 (indicator 27, all activities, all establishments, rural and urban, all genders) from the MoSPI eSankhyiki API.',
+              'Check every state and India against column 10 of Table 26 in the ASUSE 2025 report. All 37 rows agree.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        { text: 'Small firms had 7.92 crore establishments and 12.81 crore workers in 2025. In 2021-22 they had 5.97 crore establishments and 9.79 crore workers.' },
+        {
+          chart: {
+            kind: 'line',
+            slug: 'small-firms-india',
+            title: 'Small firms and their workers in India, 2021-22 to 2025',
+            subtitle: 'Unincorporated non-farm establishments and their workers, by ASUSE round.',
+            punches: { office: 'MoSPI', unit: 'crore', period: '2025' },
+            status: ['Survey estimate', 'Method break'],
+            note: 'The first three rounds ran October to September. The 2025 round ran January to December, so its dots are not joined to the lines.',
+            sources: [ASUSE_API, ASUSE_PRESS_NOTE],
+            format: { scale: 'crore', decimals: 2 },
+            joined: true,
+            series: [
+              { key: 'workers', label: 'Workers, Oct to Sep rounds', color: 'ink', file: ASUSE_ROUNDS, x: 'reference_period', xLabel: 'period', where: { indicator: 'workers', period: ASUSE_OCT_SEP } },
+              { key: 'workers-2025', label: 'Workers, Jan to Dec 2025', color: 'ink', file: ASUSE_ROUNDS, x: 'reference_period', xLabel: 'period', where: { indicator: 'workers', period: '2025' } },
+              { key: 'establishments', label: 'Establishments, Oct to Sep rounds', color: 's2', file: ASUSE_ROUNDS, x: 'reference_period', xLabel: 'period', where: { indicator: 'establishments', period: ASUSE_OCT_SEP } },
+              { key: 'establishments-2025', label: 'Establishments, Jan to Dec 2025', color: 's2', file: ASUSE_ROUNDS, x: 'reference_period', xLabel: 'period', where: { indicator: 'establishments', period: '2025' } },
+            ],
+            y: { min: 0, max: 14e7, step: 2e7 },
+            breaks: [{ x: '2025-01/2025-12', before: 'Oct to Sep', label: 'Jan to Dec' }],
+            know: [
+              'ASUSE 2021-22, 2022-23 and 2023-24 each covered October to September. ASUSE 2025 covered January to December 2025. MoSPI compares 2025 with 2023-24, but the periods differ, so we mark a break.',
+              'ASUSE 2025 used a new sample design, with districts as strata and about 1.5 times the sample of the round before.',
+              'The rounds cover the same activities: manufacturing, trade and other services, without construction.',
+              'These firms are not in the Annual Survey of Industries. Do not add their workers to factory jobs.',
+            ],
+            processing: [
+              'Fetch establishments (indicator 2) and workers (indicator 27) for India from the MoSPI eSankhyiki API, for all four rounds.',
+              'Check 2022-23, 2023-24 and 2025 against Table 1 of the ASUSE 2025 press note, which gives the counts in hundreds. All six agree.',
+              'Plot each round at its own survey period, and keep the 2025 round apart.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
+    {
       title: 'How many rupees does a US dollar cost?',
       lede: 'A US dollar cost ₹88.31 on average in 2025-26, up from ₹4.76 in 1950. At the end of March 2026 it cost ₹94.65.',
       blocks: [
@@ -623,19 +831,19 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each economy figure is made, where it breaks, and what is missing.") has no field.
   about: {
     publisher:
-      "MoSPI's National Statistics Office (NSO) publishes the national and state accounts and the Index of Industrial Production (IIP). The RBI publishes exchange rate tables. Financial Benchmarks India (FBIL) sets the daily reference rate.",
+      "MoSPI's National Statistics Office (NSO) publishes the national and state accounts, the Index of Industrial Production (IIP), the Annual Survey of Industries (ASI) and the Annual Survey of Unincorporated Sector Enterprises (ASUSE). The RBI publishes exchange rate tables. Financial Benchmarks India (FBIL) sets the daily reference rate.",
     frequency:
-      'GDP: quarterly (latest 31 August 2026). IIP: monthly; October 2026 is due on 30 November 2026. State accounts: as states report. RBI Handbook: yearly. FBIL rate: each working day.',
+      'GDP: quarterly (latest 31 August 2026). IIP: monthly; October 2026 is due on 30 November 2026. State accounts: as states report. ASI and ASUSE: yearly. RBI Handbook: yearly. FBIL rate: each working day.',
     revisions:
       'MoSPI revised 2022-23 to 2025-26 on 31 August 2026. This page uses the new rates, not the older RBI Handbook rates. 2025-26 is a Provisional Estimate. MoSPI revises each IIP quick estimate the next month.',
     breaks:
-      'GDP moved to base 2022-23 on 27 February 2026. State accounts stay on base 2011-12. IIP growth on base 2022-23 starts in April 2024. We derive annual growth before 2023-24, and sector shares.',
+      'GDP moved to base 2022-23 on 27 February 2026. State accounts stay on base 2011-12. IIP growth on base 2022-23 starts in April 2024. We derive annual growth before 2023-24, and sector shares. ASUSE moved from October to September rounds to the calendar year in 2025.',
     coverage:
-      'All India for GDP, GVA, IIP and the exchange rate. For 2024-25, income per person covers 32 of 36 states and UTs, and GSDP growth covers 30. Jammu and Kashmir excludes Ladakh from 2019-20.',
+      'All India for GDP, GVA, IIP and the exchange rate. For 2024-25, income per person covers 32 of 36 states and UTs, and GSDP growth covers 30. Jammu and Kashmir excludes Ladakh from 2019-20. ASI covers registered factories; ASUSE covers small unincorporated firms outside farming and construction.',
     missing:
-      'MoSPI has no 2024-25 income per person for four states and UTs, and no GSDP growth for six. It has no IIP rate for April 2021. No publisher states a reuse licence.',
+      'MoSPI has no 2024-25 income per person for four states and UTs, and no GSDP growth for six. It has no IIP rate for April 2021, and no ASI estimate for Lakshadweep. No publisher states a reuse licence.',
   },
-  sources: [GDP_PRESS_NOTE, ESANKHYIKI, IIP_RELEASE, RBI_HANDBOOK, RBI_TABLE_133_2002, IMF_IFS, FBIL_ARCHIVE, RBI_HOME],
+  sources: [GDP_PRESS_NOTE, ESANKHYIKI, IIP_RELEASE, ASI_SUMMARY, ASUSE_REPORT, RBI_HANDBOOK, RBI_TABLE_133_2002, IMF_IFS, FBIL_ARCHIVE, RBI_HOME],
   related: [
     { label: 'Prices: Consumer price inflation since 2012', href: '/charts/cpi-inflation/' },
     { label: 'Prices: RBI repo rate since 2001', href: '/charts/repo-rate/' },
