@@ -267,6 +267,7 @@ const topic: Topic = {
               'RBI counts private transfers as "mostly remittances": money that Indians working abroad send to their families. They also include gifts and donations.',
               'Since 1992-93, gold and silver brought in by Indians returning from abroad count in imports, with a matching entry in private transfer receipts.',
               'Receipts fell in 2015-16 and 2016-17, and in 2020-21.',
+              'The Population topic shows how many people born in India live in other countries, and where, from UN DESA estimates.',
               PRELIMINARY_KNOW,
             ],
             processing: [
@@ -528,6 +529,7 @@ const topic: Topic = {
   related: [
     { label: 'Economy: Rupees per US dollar since 1950', href: '/charts/usd-inr-annual/' },
     { label: 'Economy: Real GDP growth', href: '/charts/gdp-growth-annual/' },
+    { label: 'Population: People born in India living abroad', href: '/charts/indians-abroad/' },
     { label: 'Prices: RBI repo rate since 2001', href: '/charts/repo-rate/' },
     { label: 'How we check: method breaks', href: '/how-we-check/#part-3' },
   ],
