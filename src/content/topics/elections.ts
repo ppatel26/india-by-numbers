@@ -230,7 +230,7 @@ const topic: Topic = {
             note: 'The first general election ran in 1951-52. The source dates it 1952.',
             sources: [WMI_5_6],
             // The CSV holds million electors (978.0); the chart prints crore (97.80 crore).
-            format: { decimals: 2, scale: 'crore', multiply: 1e6 },
+            format: { decimals: 1, scale: 'crore', multiply: 1e6 },
             y: { min: 0, max: 1000, step: 200 },
             series: [{ key: 'total', label: 'All electors', color: 'ink', file: ELECTORS, where: { series: 'total' } }],
             callouts: [
@@ -438,12 +438,18 @@ const topic: Topic = {
             sources: [ECI_RESULTS_JUN_2024, ECI_REPORT_20, ECI_REPORT_33],
             data: { file: PARTY_RESULTS },
             by: 'party_name',
+            rowHead: 'Party',
             // LATER: the board draws bars in the seats and share cells, a rule above the last two rows,
-            // "Independents" for the IND row, and BASIS as "ECI" or "Derived"; the CSV 'notes' column holds a sentence.
+            // and "Independents" for the IND row.
             columns: [
-              { key: 'seats', label: 'Seats won, of 543', y: 'seats_won', format: { decimals: 0 } },
-              { key: 'share', label: 'Share of valid votes, %', y: 'vote_share_pct', format: { unit: '%' } },
-              { key: 'basis', label: 'Basis', y: 'notes' },
+              { key: 'seats', label: 'Seats, of 543', y: 'seats_won', format: { decimals: 0 } },
+              { key: 'share', label: 'Vote share', y: 'vote_share_pct', format: { unit: '%', decimals: 2 } },
+              {
+                key: 'basis',
+                label: 'Basis',
+                y: 'notes',
+                text: { 'Vote share published in ECI Report 20': 'ECI', 'Vote share computed from ECI Report 33': 'Derived' },
+              },
             ],
             know: [
               'Seats are from the final ECI results page. They include Surat, won unopposed, so the BJP has 240 here and 239 in ECI Report 20.',

@@ -172,6 +172,8 @@ const SRB = 'population/sex-ratio-at-birth-by-state.csv'
 const PROJ = 'population/population-projections-2011-2036.csv'
 const PYRAMID = 'population/population-pyramid-2011.csv'
 const PYRAMID_HISTORY = 'population/population-pyramid-1951-2026.csv'
+/** One share axis for every pyramid period, so switching tabs compares like with like. */
+const PYRAMID_MAX = 8
 const URBAN_PROJECTION = 'population/urban-share-projected-2012-2026.csv'
 const CENSUS_COUNTS = 'population/population-census-1901-2011.csv'
 const SRB_HISTORY = 'population/sex-ratio-at-birth-india-1950-2026.csv'
@@ -187,7 +189,7 @@ function agePyramid(period: '1951' | '1961' | '2026'): Chart {
     subtitle: projected
       ? 'Share of all people in each age group and sex, India, 1 March.'
       : historicalCensus
-        ? 'People by age group and sex, India. Groups from age 35 span more years.'
+        ? 'People by age group and sex, India. Groups from age 35 span 10 to 15 years, so their bars are longer.'
         : 'Share of all people in each age group and sex, India, 1 July.',
     punches: { office: projected ? 'MoHFW · NCP' : historicalCensus ? 'ORGI' : 'UN', unit: 'persons', period },
     ...(projected ? { status: ['Projection'] } : {}),
@@ -195,6 +197,7 @@ function agePyramid(period: '1951' | '1961' | '2026'): Chart {
     sources: [projected ? projectionsTable('18') : historicalCensus ? census1961 : wppAge],
     format: { scale: 'crore' },
     by: 'age_group',
+    max: PYRAMID_MAX,
     left: {
       key: 'men', label: 'Men', color: 's2',
       file: PYRAMID_HISTORY, where: { period, sex: 'male' }, x: 'age_group',
@@ -254,7 +257,7 @@ const vitalRatesIndia: Chart = {
   status: ['Survey estimate', 'Projection'],
   note: 'Solid lines are SRS sample estimates, 1971 to 2024. Dashed lines are UN estimates and projections.',
   sources: vitalSources,
-  format: { decimals: 2 },
+  format: { decimals: 1 },
   y: { min: 0, max: 50, step: 10 },
   breaks: [{ x: '1971', label: 'SRS starts' }],
   series: [...vitalSeries('birth_rate', 'Births', 's5'), ...vitalSeries('death_rate', 'Deaths', 's8')],
@@ -355,7 +358,8 @@ const growthIndia: Chart = {
   y: { min: -0.5, max: 2.5, step: 0.5 },
   series: [
     { key: 'census', label: 'Census', color: 'ink', file: 'population/population-growth-india-1901-2026.csv', x: 'year', xLabel: 'period', where: { source_kind: 'official' } },
-    { key: 'projection', label: 'MoHFW projection', color: 's1', file: 'population/population-growth-india-1901-2026.csv', x: 'year', xLabel: 'period', where: { source_kind: 'official projection' } },
+    // The dashed projection starts at the 2011 census point, so it reads as the line's continuation.
+    { key: 'projection', label: 'Projected', color: 'ink', dash: true, file: 'population/population-growth-india-1901-2026.csv', x: 'year', xLabel: 'period', where: { year: ['2011', '2026'] } },
   ],
   processing: ['Divide the end count by the start count. Take the root for the number of years in the period. Subtract one and multiply by 100.'],
 }
@@ -386,7 +390,7 @@ const projectedUrbanStates: Chart = {
   punches: { office: 'MoHFW · NCP', unit: '% of people', period: '2026' },
   status: ['Projection'],
   sources: [projectionsTable('10'), projectionsTable('9'), projectionsTable('8')],
-  format: { unit: '%', decimals: 2 },
+  format: { unit: '%', decimals: 1 },
   data: { file: URBAN_PROJECTION, where: { period: '2026' } },
   open: 'map',
   scale: 'seq',
@@ -475,9 +479,8 @@ const topic: Topic = {
             callouts: [
               { series: 'population', x: '1901' },
               { series: 'population', x: '1951' },
-              { series: 'population', x: '2011', label: 'Census 2011: 121.1 crore' },
+              { series: 'population', x: '2011' },
             ],
-            // LATER: the board also labels 2011; a callout on the last column is cut off.
             know: [
               'Census 2011 is the latest full count. Its reference date was 00:00 on 1 March 2011.',
               'Assam had no census in 1981, and Jammu and Kashmir none in 1991. The India totals for those years include interpolated figures from ORGI.',
@@ -520,6 +523,7 @@ const topic: Topic = {
                 sources: [censusC14],
                 format: { scale: 'crore' },
                 by: 'age_group',
+                max: PYRAMID_MAX,
                 left: {
                   key: 'men',
                   label: 'Men',
@@ -752,7 +756,7 @@ const topic: Topic = {
                 title: 'Population growth by state and UT, 2001 to 2011',
                 subtitle: 'Change in population from Census 2001 to Census 2011, on 2011 boundaries.',
                 punches: { office: 'ORGI', unit: '% change', period: '2001-2011' },
-                note: 'Telangana and Ladakh have no 2011 figures. They are counted in Andhra Pradesh and in Jammu and Kashmir.',
+                note: 'In 2011, Telangana was part of Andhra Pradesh and Ladakh part of Jammu and Kashmir.',
                 sources: [censusA02States],
                 format: { unit: '%', decimals: 2 },
                 data: {
@@ -796,9 +800,9 @@ const topic: Topic = {
                 title: 'Urban share by state and UT, 2011',
                 subtitle: 'Share of each state’s people in urban areas, Census 2011, on today’s states.',
                 punches: { office: 'ORGI', unit: '% of people', period: '2011' },
-                note: 'Telangana and Ladakh have no 2011 figures. They are counted in Andhra Pradesh and in Jammu and Kashmir.',
+                note: 'In 2011, Telangana was part of Andhra Pradesh and Ladakh part of Jammu and Kashmir.',
                 sources: [censusA01],
-                format: { unit: '%', decimals: 2 },
+                format: { unit: '%', decimals: 1 },
                 data: {
                   file: 'population/urban-share-by-state-2011.csv',
                   where: { series: 'urban_share_pct' },

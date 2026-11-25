@@ -21,7 +21,7 @@ export function renderPyramid(chart: Of<'pyramid'>, width: Width): Markup {
   const gutter = 34
   const m = { top: 32, bottom: 26 }
   const H = m.top + groups.length * rowH + m.bottom
-  const x = scaleLinear().domain([0, max]).nice().range([0, mid - gutter - 8])
+  const x = scaleLinear().domain([0, Math.max(max, chart.max ?? 0)]).nice().range([0, mid - gutter - 8])
   const rows = [...groups].reverse().map((g, i) => {
     const y = m.top + i * rowH
     const l = left.points.find((p) => p.x === g)

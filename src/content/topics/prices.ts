@@ -265,7 +265,7 @@ const topic: Topic = {
               { series: 'cpi-iw', x: '1998-99' },
               { series: 'cpi-iw', x: '2009-10' },
               { series: 'cpi-iw', x: '2025-26' },
-              { series: 'cpi-combined', x: '2024-25', label: 'CPI Combined: 4.6% in 2024-25' },
+              { series: 'cpi-combined', x: '2024-25', label: 'CPI Combined 4.6% in 2024-25' },
             ],
             know: [
               'Each value is the change in the average index for the financial year (April to March) on the year before.',
@@ -293,7 +293,7 @@ const topic: Topic = {
             kind: 'states',
             slug: 'cpi-inflation-by-state',
             title: 'Inflation by state and UT, October 2026',
-            subtitle: "Consumer prices, rural and urban combined. Colour shows the gap from India's rate.",
+            subtitle: "Consumer prices, rural and urban combined, against India's rate.",
             punches: { office: 'MoSPI', unit: '% y/y', period: 'OCT 2026' },
             status: ['Provisional'],
             sources: [CPI_RELEASE, CPI_API],
@@ -403,8 +403,6 @@ const topic: Topic = {
             ],
             callouts: [
               { series: 'food', x: '2026-10' },
-              // The CFPI label sits at September so that it does not cover the food label at October.
-              { series: 'cfpi', x: '2026-09', label: 'CFPI' },
               { series: 'housing', x: '2026-10' },
               { series: 'transport', x: '2026-10' },
               { series: 'clothing', x: '2026-10' },

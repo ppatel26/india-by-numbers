@@ -255,6 +255,8 @@ export type Chart =
       right: Series
       /** Column that holds the age group. */
       by: string
+      /** Share axis maximum, in percent: one value for every period, so the tabs compare. */
+      max?: number
     })
   | (ChartBase & {
       kind: 'table'

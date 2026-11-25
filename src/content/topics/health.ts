@@ -374,7 +374,7 @@ const topic: Topic = {
             series: [
               { key: 'female', label: 'Women', color: 's3', file: 'health/life-expectancy-by-state-2020-24.csv', x: 'geography', where: { residence: 'total', sex: 'female' } },
               { key: 'male', label: 'Men', color: 's2', file: 'health/life-expectancy-by-state-2020-24.csv', x: 'geography', where: { residence: 'total', sex: 'male' } },
-              { key: 'total', label: 'Women and men', color: 'ink', hidden: true, file: 'health/life-expectancy-by-state-2020-24.csv', x: 'geography', where: { residence: 'total', sex: 'total' } },
+              { key: 'total', label: 'Total', color: 'ink', hidden: true, file: 'health/life-expectancy-by-state-2020-24.csv', x: 'geography', where: { residence: 'total', sex: 'total' } },
             ],
             know: [
               'SRS publishes life tables for India, the 21 bigger states and Himachal Pradesh. It gives no figure for the other 14 states and UTs.',
@@ -411,6 +411,7 @@ const topic: Topic = {
             format: { decimals: 1, unit: '%' },
             y: { min: 0, max: 60, step: 10 },
             breaks: [{ x: '2006', before: 'Under 3', label: 'Under 5' }],
+            joined: true,
             series: [
               { ...nfhsTrend('stunted-under-3', 'Stunting, under 3', 'ink', 'stunted', 'under-three-who'), dash: true },
               { ...nfhsTrend('wasted-under-3', 'Wasting, under 3', 's4', 'wasted', 'under-three-who'), dash: true },
@@ -447,6 +448,7 @@ const topic: Topic = {
             format: { decimals: 1, unit: '%' },
             y: { min: 0, max: 100, step: 20 },
             breaks: [{ x: '2006', before: 'Last two births', label: 'All births' }],
+            joined: true,
             series: [
               { ...nfhsTrend('last-two', 'Last two births', 'ink', 'institutional-births', 'last-two-births'), dash: true },
               nfhsTrend('all', 'Facility births', 'ink', 'institutional-births', 'all-births'),
@@ -478,6 +480,7 @@ const topic: Topic = {
             format: { decimals: 1, unit: '%' },
             y: { min: 0, max: 100, step: 20 },
             breaks: [{ x: '2020', label: 'NFHS-5 method' }],
+            joined: true,
             series: [
               nfhsTrend('basic-dpt', 'Card or recall, early', 'ink', 'full-immunisation-card-or-recall', 'basic-vaccines-dpt'),
               nfhsTrend('card-seen', 'Card seen', 's4', 'full-immunisation-card', 'card-seen'),
@@ -511,6 +514,7 @@ const topic: Topic = {
             format: { decimals: 1, unit: '%' },
             y: { min: 45, max: 60, step: 5 },
             breaks: [{ x: '2006', before: 'Ever married', label: 'All women' }],
+            joined: true,
             series: [
               { ...nfhsTrend('ever-married', 'Ever-married women', 'ink', 'anaemia-women-15-49', 'ever-married-women'), dash: true },
               nfhsTrend('all', 'All women', 'ink', 'anaemia-women-15-49', 'all-women'),
@@ -538,7 +542,7 @@ const topic: Topic = {
             subtitle: 'Share of children under 5 who are too short for their age.',
             punches: { office: 'IIPS', unit: '%', period: '2023-24' },
             status: ['Survey estimate', 'Provisional'],
-            note: 'Three UTs have no 2015-16 dot because their boundaries changed. NFHS-6 did not survey Manipur.',
+            note: 'Three UTs have no 2015-16 value because their boundaries changed. NFHS-6 did not survey Manipur.',
             sources: [withTable(NFHS_4, 'Table 10.2'), withTable(NFHS_5, 'Table 10.2, Manipur'), NFHS_6],
             format: { decimals: 1, unit: '%' },
             by: 'geography',
@@ -597,12 +601,12 @@ const topic: Topic = {
               { x: '2022', label: 'New sources' },
             ],
             callouts: [
-              { series: 'public-provisional', x: '2007', label: 'Public (provisional)' },
+              { series: 'public-provisional', x: '2007', label: 'Government (provisional)' },
             ],
             series: [
               // WHO runs unbroken from 2000, beside the Indian accounts where both exist.
               healthSpendingSeries('oope-who', 'Out of pocket (WHO)', 's7', { series: 'oope-share-of-che', source_kind: 'international estimate', use: ['chart', 'overlap'] }, true),
-              healthSpendingSeries('ghe-who', 'Domestic government (WHO)', 's6', { series: 'gghed-share-of-che', source_kind: 'international estimate', use: ['chart', 'overlap'] }, true),
+              healthSpendingSeries('ghe-who', 'Government (WHO)', 's6', { series: 'gghed-share-of-che', source_kind: 'international estimate', use: ['chart', 'overlap'] }, true),
               ...([
                 ['oope', 'Out of pocket', 's7', 'oope-share-of-the'],
                 ['ghe', 'Government', 's6', 'ghe-share-of-the'],
@@ -612,7 +616,7 @@ const topic: Topic = {
                 healthSpendingSeries(`${key}-nss71`, label, color, { series, source: 'nha-2023-24', period: ['2013-14', '2014-15', '2015-16', '2016-17'] }),
                 healthSpendingSeries(key, label, color, { series, source: 'nha-2023-24', period: ['2017-18', '2018-19', '2019-20', '2020-21', '2021-22', '2022-23', '2023-24'] }),
               ]),
-              healthSpendingSeries('public-provisional', 'Public spending (provisional)', 's6', { series: 'public-share-of-the', source_kind: 'archived copy' }),
+              healthSpendingSeries('public-provisional', 'Government (provisional)', 's6', { series: 'public-share-of-the', source_kind: 'archived copy' }),
             ],
             know: [
               'Out-of-pocket spending is what households pay directly for care. Governments, insurers and others pay other shares.',
@@ -705,7 +709,7 @@ const topic: Topic = {
             kind: 'states',
             slug: 'maternal-mortality-by-state',
             title: 'Maternal mortality by state, 2022-24',
-            subtitle: 'Deaths from pregnancy or childbirth, 19 states, with 95% confidence intervals.',
+            subtitle: 'Deaths from pregnancy or childbirth, 19 states. The chart shows 95% confidence intervals.',
             punches: { office: 'ORGI', unit: 'per 1,00,000', period: '2022-24' },
             status: ['Survey estimate'],
             note: 'SRS groups the other states and UTs into one ratio. The intervals are wide: small gaps may not be real.',

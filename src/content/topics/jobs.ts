@@ -297,11 +297,11 @@ const industrySeries = (
   { women = false, hidden = false } = {},
 ): Series => ({
   key: `${women ? 'women' : 'all'}-${period}`,
-  label: women ? 'Women' : period,
+  label: women ? `Women, ${period}` : period,
   color,
   file: period.includes('-') ? history('employment-by-industry') : INDUSTRY,
   where: { geography: 'india', period, sector: 'rural+urban', sex: women ? 'female' : 'person' },
-  format: { unit: '%', decimals: period === '2011-12' ? 2 : 1 },
+  format: { unit: '%', decimals: 1 },
   note: period === '2011-12' ? 'derived' : undefined,
   hidden,
 })

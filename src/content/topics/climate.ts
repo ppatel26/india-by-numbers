@@ -334,7 +334,7 @@ const topic: Topic = {
             status: ['Method break'],
             note: 'Dates are uneven before 1997. The breaks mark changes in what CEA counts.',
             sources: [CEA_GROWTH, CEA_EXECUTIVE, CEA_CAPACITY],
-            format: { decimals: 0 },
+            format: { scale: 'none', decimals: 0, suffix: ' MW' },
             y: { min: 0, max: 600000, step: 100000 },
             breaks: CAPACITY_BREAKS,
             series: [
@@ -379,7 +379,7 @@ const topic: Topic = {
             status: ['Method break'],
             note: 'Non-fossil is nuclear, hydro and other renewables. The other renewables line starts in March 2008.',
             sources: [CEA_GROWTH, CEA_EXECUTIVE, CEA_CAPACITY],
-            format: { decimals: 2, unit: '%' },
+            format: { decimals: 1, unit: '%' },
             y: { min: 0, max: 60, step: 10 },
             breaks: CAPACITY_BREAKS,
             series: [
@@ -424,7 +424,7 @@ const topic: Topic = {
             punches: { office: 'MNRE', unit: 'MW', period: '31 OCT 2026' },
             note: 'MNRE places each plant in the state where it stands, so its figures differ from CEA state tables.',
             sources: [MNRE_STATES_2026_10],
-            format: { decimals: 0 },
+            format: { scale: 'none', decimals: 0, suffix: ' MW' },
             bins: [500, 2000, 5000, 10000, 30000],
             data: { file: 'climate/renewable-capacity-by-state-2026-10.csv', where: { series: 'total_re', geography: STATES_AND_INDIA } },
             total: true,

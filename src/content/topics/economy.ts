@@ -283,7 +283,7 @@ const topic: Topic = {
             status: ['Method break'],
             note: 'Primary is farming, forestry, fishing and mining. Industry is manufacturing, utilities and construction. Services is the rest.',
             sources: [NAS_API],
-            format: { unit: '%', decimals: 2 },
+            format: { unit: '%', decimals: 1 },
             // Each sector is two series, one per base; both bases have a 2022-23 row, so the
             // 2011-12 series stop at 2021-22 and the stack holds 100% in every year.
             // LATER: the board labels the 1950-51 shares on the plot; area callouts sit at the raw value, not the stack.
@@ -329,7 +329,7 @@ const topic: Topic = {
             punches: { office: 'MoSPI', unit: '₹ a year', period: '2024-25' },
             note: 'India is per capita net national income. Four states and UTs have no 2024-25 figure.',
             sources: [STATE_API, RBI_TABLE_9],
-            format: { unit: '₹', decimals: 0 },
+            format: { unit: '₹', scale: 'lakh', decimals: 2 },
             data: { file: 'economy/per-capita-nsdp-by-state.csv', where: { price_basis: 'current prices' } },
             open: 'map',
             scale: 'seq',
