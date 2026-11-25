@@ -66,6 +66,8 @@ export function tableOf(chart: Chart): TableModel {
       const bars = chart.kind === 'bars' ? chart : undefined
       // A bar chart's table follows the chart's own row order, including rows it marks as missing.
       const keys = bars?.order ? [...bars.order] : [...new Set(series.flatMap((s) => s.points.map((p) => p.x)))]
+      // India comes first, as in the chart: a reference, not one of the states.
+      if (chart.kind === 'dots' && keys.includes(INDIA)) keys.sort((a, b) => Number(b === INDIA) - Number(a === INDIA))
       const label = bars ? (k: string) => bars.labels?.[k] ?? rowName(k, false) : (k: string) => rowName(k, false)
       const head = bars?.rowHead ?? (chart.kind === 'pyramid' ? 'Age group' : chart.kind === 'dots' && (chart.by ?? 'geography') === 'geography' ? 'State or UT' : 'Category')
       return {

@@ -83,7 +83,8 @@ export function renderDots(chart: Of<'dots'>, width: Width): Markup {
   const keys = [...new Set(series.flatMap((s) => s.points.map((p) => p.x)))]
   const val = (s: SeriesData, k: string) => s.points.find((p) => p.x === k)
   const first = seriesOf(chart).find((s) => s.key === chart.sortBy) ?? series[0]!
-  const pin = chart.pin ?? []
+  // India is a reference, never ranked among the states: a chart by state keeps India first.
+  const pin = chart.pin ?? ((chart.by ?? 'geography') === 'geography' && keys.includes(INDIA) ? [INDIA] : [])
   const rank = (k: string) => (pin.includes(k) ? Infinity : (val(first, k)?.y ?? -Infinity))
   keys.sort((a, b) => rank(b) - rank(a))
   // Say which series sets the order; with two years or two sexes the reader cannot tell.

@@ -705,16 +705,12 @@ const topic: Topic = {
             subtitle: 'Unemployed share of the labour force, usual status, by state and UT.',
             punches: { office: 'MoSPI', unit: '%', period: '2025' },
             status: ['Survey estimate'],
-            note: 'The two lines show India. Rates for the smaller states and UTs are less reliable.',
+            note: 'Rates for the smaller states and UTs are less reliable.',
             sources: [plfsAnnual2025],
             format: { unit: '%', decimals: 1 },
             by: 'geography',
             sortBy: 'youth',
             map: { series: 'adults', scale: 'seq', better: 'low' },
-            refs: [
-              { value: 3.1, label: 'India 3.1%, 15+' },
-              { value: 9.9, label: 'India 9.9%, 15-29' },
-            ],
             series: [
               {
                 key: 'adults',

@@ -452,7 +452,6 @@ const topic: Topic = {
             sources: [aishe2023_24],
             format: { decimals: 1 },
             by: 'geography',
-            refs: [{ value: 30.0, label: 'India 30.0 (women 31.2, men 28.9)' }],
             series: [
               {
                 key: 'women',
@@ -515,7 +514,6 @@ const topic: Topic = {
             format: { unit: '%' },
             by: 'geography',
             hollow: ['census-2011'],
-            refs: [{ value: 81.1, label: 'India 81.1% (2025)' }],
             series: [
               {
                 key: 'plfs-2025',
