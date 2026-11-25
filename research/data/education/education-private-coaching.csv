@@ -1,0 +1,1999 @@
+geography,period,level,sex,sector,value,unit,api_indicator,report_table
+india,2025,pre-primary,male,rural,11.1,% of students,38,Table 11
+india,2025,primary,male,rural,21.7,% of students,38,Table 11
+india,2025,middle,male,rural,29.4,% of students,38,Table 11
+india,2025,secondary,male,rural,37.8,% of students,38,Table 11
+india,2025,higher secondary,male,rural,34.3,% of students,38,Table 11
+india,2025,all levels,male,rural,26.0,% of students,38,Table 11
+india,2025,pre-primary,female,rural,10.3,% of students,38,Table 11
+india,2025,primary,female,rural,21.5,% of students,38,Table 11
+india,2025,middle,female,rural,28.7,% of students,38,Table 11
+india,2025,secondary,female,rural,35.5,% of students,38,Table 11
+india,2025,higher secondary,female,rural,31.7,% of students,38,Table 11
+india,2025,all levels,female,rural,25.0,% of students,38,Table 11
+india,2025,pre-primary,person,rural,10.7,% of students,38,Table 11
+india,2025,primary,person,rural,21.6,% of students,38,Table 11
+india,2025,middle,person,rural,29.1,% of students,38,Table 11
+india,2025,secondary,person,rural,36.7,% of students,38,Table 11
+india,2025,higher secondary,person,rural,33.1,% of students,38,Table 11
+india,2025,all levels,person,rural,25.5,% of students,38,Table 11
+india,2025,pre-primary,male,urban,15.5,% of students,38,Table 11
+india,2025,primary,male,urban,28.2,% of students,38,Table 11
+india,2025,middle,male,urban,33.2,% of students,38,Table 11
+india,2025,secondary,male,urban,42.6,% of students,38,Table 11
+india,2025,higher secondary,male,urban,44.6,% of students,38,Table 11
+india,2025,all levels,male,urban,32.4,% of students,38,Table 11
+india,2025,pre-primary,female,urban,11.5,% of students,38,Table 11
+india,2025,primary,female,urban,24.7,% of students,38,Table 11
+india,2025,middle,female,urban,28.8,% of students,38,Table 11
+india,2025,secondary,female,urban,37.4,% of students,38,Table 11
+india,2025,higher secondary,female,urban,44.5,% of students,38,Table 11
+india,2025,all levels,female,urban,28.8,% of students,38,Table 11
+india,2025,pre-primary,person,urban,13.6,% of students,38,Table 11
+india,2025,primary,person,urban,26.6,% of students,38,Table 11
+india,2025,middle,person,urban,31.0,% of students,38,Table 11
+india,2025,secondary,person,urban,40.2,% of students,38,Table 11
+india,2025,higher secondary,person,urban,44.6,% of students,38,Table 11
+india,2025,all levels,person,urban,30.7,% of students,38,Table 11
+india,2025,pre-primary,male,rural+urban,12.4,% of students,38,Table 11
+india,2025,primary,male,rural+urban,23.4,% of students,38,Table 11
+india,2025,middle,male,rural+urban,30.4,% of students,38,Table 11
+india,2025,secondary,male,rural+urban,39.3,% of students,38,Table 11
+india,2025,higher secondary,male,rural+urban,37.8,% of students,38,Table 11
+india,2025,all levels,male,rural+urban,27.8,% of students,38,Table 11
+india,2025,pre-primary,female,rural+urban,10.7,% of students,38,Table 11
+india,2025,primary,female,rural+urban,22.3,% of students,38,Table 11
+india,2025,middle,female,rural+urban,28.7,% of students,38,Table 11
+india,2025,secondary,female,rural+urban,36.1,% of students,38,Table 11
+india,2025,higher secondary,female,rural+urban,35.9,% of students,38,Table 11
+india,2025,all levels,female,rural+urban,26.0,% of students,38,Table 11
+india,2025,pre-primary,person,rural+urban,11.6,% of students,38,Table 11
+india,2025,primary,person,rural+urban,22.9,% of students,38,Table 11
+india,2025,middle,person,rural+urban,29.6,% of students,38,Table 11
+india,2025,secondary,person,rural+urban,37.8,% of students,38,Table 11
+india,2025,higher secondary,person,rural+urban,37.0,% of students,38,Table 11
+india,2025,all levels,person,rural+urban,27.0,% of students,38,Table 11
+andaman-nicobar,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+andaman-nicobar,2025,primary,male,rural,31.9,% of students,38,Table 11
+andaman-nicobar,2025,middle,male,rural,12.4,% of students,38,Table 11
+andaman-nicobar,2025,secondary,male,rural,19.4,% of students,38,Table 11
+andaman-nicobar,2025,higher secondary,male,rural,0.0,% of students,38,Table 11
+andaman-nicobar,2025,all levels,male,rural,20.7,% of students,38,Table 11
+andaman-nicobar,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+andaman-nicobar,2025,primary,female,rural,0.9,% of students,38,Table 11
+andaman-nicobar,2025,middle,female,rural,35.7,% of students,38,Table 11
+andaman-nicobar,2025,secondary,female,rural,55.1,% of students,38,Table 11
+andaman-nicobar,2025,higher secondary,female,rural,30.4,% of students,38,Table 11
+andaman-nicobar,2025,all levels,female,rural,23.0,% of students,38,Table 11
+andaman-nicobar,2025,pre-primary,person,rural,0.0,% of students,38,Table 11
+andaman-nicobar,2025,primary,person,rural,19.1,% of students,38,Table 11
+andaman-nicobar,2025,middle,person,rural,27.3,% of students,38,Table 11
+andaman-nicobar,2025,secondary,person,rural,39.6,% of students,38,Table 11
+andaman-nicobar,2025,higher secondary,person,rural,13.0,% of students,38,Table 11
+andaman-nicobar,2025,all levels,person,rural,21.6,% of students,38,Table 11
+andaman-nicobar,2025,pre-primary,male,urban,53.9,% of students,38,Table 11
+andaman-nicobar,2025,primary,male,urban,55.9,% of students,38,Table 11
+andaman-nicobar,2025,middle,male,urban,47.0,% of students,38,Table 11
+andaman-nicobar,2025,secondary,male,urban,100.0,% of students,38,Table 11
+andaman-nicobar,2025,higher secondary,male,urban,100.0,% of students,38,Table 11
+andaman-nicobar,2025,all levels,male,urban,68.9,% of students,38,Table 11
+andaman-nicobar,2025,pre-primary,female,urban,0.0,% of students,38,Table 11
+andaman-nicobar,2025,primary,female,urban,25.9,% of students,38,Table 11
+andaman-nicobar,2025,middle,female,urban,48.6,% of students,38,Table 11
+andaman-nicobar,2025,secondary,female,urban,100.0,% of students,38,Table 11
+andaman-nicobar,2025,higher secondary,female,urban,23.2,% of students,38,Table 11
+andaman-nicobar,2025,all levels,female,urban,35.3,% of students,38,Table 11
+andaman-nicobar,2025,pre-primary,person,urban,26.3,% of students,38,Table 11
+andaman-nicobar,2025,primary,person,urban,43.7,% of students,38,Table 11
+andaman-nicobar,2025,middle,person,urban,48.0,% of students,38,Table 11
+andaman-nicobar,2025,secondary,person,urban,100.0,% of students,38,Table 11
+andaman-nicobar,2025,higher secondary,person,urban,49.9,% of students,38,Table 11
+andaman-nicobar,2025,all levels,person,urban,52.2,% of students,38,Table 11
+andaman-nicobar,2025,pre-primary,male,rural+urban,8.1,% of students,38,Table 11
+andaman-nicobar,2025,primary,male,rural+urban,38.2,% of students,38,Table 11
+andaman-nicobar,2025,middle,male,rural+urban,32.8,% of students,38,Table 11
+andaman-nicobar,2025,secondary,male,rural+urban,50.1,% of students,38,Table 11
+andaman-nicobar,2025,higher secondary,male,rural+urban,50.5,% of students,38,Table 11
+andaman-nicobar,2025,all levels,male,rural+urban,36.6,% of students,38,Table 11
+andaman-nicobar,2025,pre-primary,female,rural+urban,0.0,% of students,38,Table 11
+andaman-nicobar,2025,primary,female,rural+urban,7.5,% of students,38,Table 11
+andaman-nicobar,2025,middle,female,rural+urban,42.9,% of students,38,Table 11
+andaman-nicobar,2025,secondary,female,rural+urban,60.2,% of students,38,Table 11
+andaman-nicobar,2025,higher secondary,female,rural+urban,25.2,% of students,38,Table 11
+andaman-nicobar,2025,all levels,female,rural+urban,27.7,% of students,38,Table 11
+andaman-nicobar,2025,pre-primary,person,rural+urban,6.1,% of students,38,Table 11
+andaman-nicobar,2025,primary,person,rural+urban,25.5,% of students,38,Table 11
+andaman-nicobar,2025,middle,person,rural+urban,39.1,% of students,38,Table 11
+andaman-nicobar,2025,secondary,person,rural+urban,55.0,% of students,38,Table 11
+andaman-nicobar,2025,higher secondary,person,rural+urban,36.1,% of students,38,Table 11
+andaman-nicobar,2025,all levels,person,rural+urban,32.4,% of students,38,Table 11
+andhra-pradesh,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+andhra-pradesh,2025,primary,male,rural,9.9,% of students,38,Table 11
+andhra-pradesh,2025,middle,male,rural,12.9,% of students,38,Table 11
+andhra-pradesh,2025,secondary,male,rural,13.7,% of students,38,Table 11
+andhra-pradesh,2025,higher secondary,male,rural,3.0,% of students,38,Table 11
+andhra-pradesh,2025,all levels,male,rural,9.6,% of students,38,Table 11
+andhra-pradesh,2025,pre-primary,female,rural,2.0,% of students,38,Table 11
+andhra-pradesh,2025,primary,female,rural,5.1,% of students,38,Table 11
+andhra-pradesh,2025,middle,female,rural,8.1,% of students,38,Table 11
+andhra-pradesh,2025,secondary,female,rural,14.5,% of students,38,Table 11
+andhra-pradesh,2025,higher secondary,female,rural,4.3,% of students,38,Table 11
+andhra-pradesh,2025,all levels,female,rural,6.9,% of students,38,Table 11
+andhra-pradesh,2025,pre-primary,person,rural,0.9,% of students,38,Table 11
+andhra-pradesh,2025,primary,person,rural,7.4,% of students,38,Table 11
+andhra-pradesh,2025,middle,person,rural,10.6,% of students,38,Table 11
+andhra-pradesh,2025,secondary,person,rural,14.0,% of students,38,Table 11
+andhra-pradesh,2025,higher secondary,person,rural,3.6,% of students,38,Table 11
+andhra-pradesh,2025,all levels,person,rural,8.2,% of students,38,Table 11
+andhra-pradesh,2025,pre-primary,male,urban,17.2,% of students,38,Table 11
+andhra-pradesh,2025,primary,male,urban,20.5,% of students,38,Table 11
+andhra-pradesh,2025,middle,male,urban,27.4,% of students,38,Table 11
+andhra-pradesh,2025,secondary,male,urban,6.7,% of students,38,Table 11
+andhra-pradesh,2025,higher secondary,male,urban,8.7,% of students,38,Table 11
+andhra-pradesh,2025,all levels,male,urban,16.3,% of students,38,Table 11
+andhra-pradesh,2025,pre-primary,female,urban,0.0,% of students,38,Table 11
+andhra-pradesh,2025,primary,female,urban,9.4,% of students,38,Table 11
+andhra-pradesh,2025,middle,female,urban,22.1,% of students,38,Table 11
+andhra-pradesh,2025,secondary,female,urban,20.1,% of students,38,Table 11
+andhra-pradesh,2025,higher secondary,female,urban,6.8,% of students,38,Table 11
+andhra-pradesh,2025,all levels,female,urban,12.6,% of students,38,Table 11
+andhra-pradesh,2025,pre-primary,person,urban,9.5,% of students,38,Table 11
+andhra-pradesh,2025,primary,person,urban,14.5,% of students,38,Table 11
+andhra-pradesh,2025,middle,person,urban,25.1,% of students,38,Table 11
+andhra-pradesh,2025,secondary,person,urban,12.7,% of students,38,Table 11
+andhra-pradesh,2025,higher secondary,person,urban,8.2,% of students,38,Table 11
+andhra-pradesh,2025,all levels,person,urban,14.6,% of students,38,Table 11
+andhra-pradesh,2025,pre-primary,male,rural+urban,5.5,% of students,38,Table 11
+andhra-pradesh,2025,primary,male,rural+urban,13.4,% of students,38,Table 11
+andhra-pradesh,2025,middle,male,rural+urban,18.0,% of students,38,Table 11
+andhra-pradesh,2025,secondary,male,rural+urban,11.0,% of students,38,Table 11
+andhra-pradesh,2025,higher secondary,male,rural+urban,6.7,% of students,38,Table 11
+andhra-pradesh,2025,all levels,male,rural+urban,12.2,% of students,38,Table 11
+andhra-pradesh,2025,pre-primary,female,rural+urban,1.4,% of students,38,Table 11
+andhra-pradesh,2025,primary,female,rural+urban,6.5,% of students,38,Table 11
+andhra-pradesh,2025,middle,female,rural+urban,12.2,% of students,38,Table 11
+andhra-pradesh,2025,secondary,female,rural+urban,16.6,% of students,38,Table 11
+andhra-pradesh,2025,higher secondary,female,rural+urban,5.4,% of students,38,Table 11
+andhra-pradesh,2025,all levels,female,rural+urban,8.8,% of students,38,Table 11
+andhra-pradesh,2025,pre-primary,person,rural+urban,3.6,% of students,38,Table 11
+andhra-pradesh,2025,primary,person,rural+urban,9.8,% of students,38,Table 11
+andhra-pradesh,2025,middle,person,rural+urban,15.3,% of students,38,Table 11
+andhra-pradesh,2025,secondary,person,rural+urban,13.5,% of students,38,Table 11
+andhra-pradesh,2025,higher secondary,person,rural+urban,6.2,% of students,38,Table 11
+andhra-pradesh,2025,all levels,person,rural+urban,10.6,% of students,38,Table 11
+arunachal-pradesh,2025,pre-primary,male,rural,4.8,% of students,38,Table 11
+arunachal-pradesh,2025,primary,male,rural,2.7,% of students,38,Table 11
+arunachal-pradesh,2025,middle,male,rural,8.8,% of students,38,Table 11
+arunachal-pradesh,2025,secondary,male,rural,16.6,% of students,38,Table 11
+arunachal-pradesh,2025,higher secondary,male,rural,13.8,% of students,38,Table 11
+arunachal-pradesh,2025,all levels,male,rural,8.2,% of students,38,Table 11
+arunachal-pradesh,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+arunachal-pradesh,2025,primary,female,rural,1.3,% of students,38,Table 11
+arunachal-pradesh,2025,middle,female,rural,9.9,% of students,38,Table 11
+arunachal-pradesh,2025,secondary,female,rural,15.1,% of students,38,Table 11
+arunachal-pradesh,2025,higher secondary,female,rural,16.4,% of students,38,Table 11
+arunachal-pradesh,2025,all levels,female,rural,8.5,% of students,38,Table 11
+arunachal-pradesh,2025,pre-primary,person,rural,2.6,% of students,38,Table 11
+arunachal-pradesh,2025,primary,person,rural,2.0,% of students,38,Table 11
+arunachal-pradesh,2025,middle,person,rural,9.3,% of students,38,Table 11
+arunachal-pradesh,2025,secondary,person,rural,15.7,% of students,38,Table 11
+arunachal-pradesh,2025,higher secondary,person,rural,15.2,% of students,38,Table 11
+arunachal-pradesh,2025,all levels,person,rural,8.3,% of students,38,Table 11
+arunachal-pradesh,2025,pre-primary,male,urban,5.3,% of students,38,Table 11
+arunachal-pradesh,2025,primary,male,urban,20.1,% of students,38,Table 11
+arunachal-pradesh,2025,middle,male,urban,18.7,% of students,38,Table 11
+arunachal-pradesh,2025,secondary,male,urban,27.6,% of students,38,Table 11
+arunachal-pradesh,2025,higher secondary,male,urban,8.9,% of students,38,Table 11
+arunachal-pradesh,2025,all levels,male,urban,18.3,% of students,38,Table 11
+arunachal-pradesh,2025,pre-primary,female,urban,5.2,% of students,38,Table 11
+arunachal-pradesh,2025,primary,female,urban,10.9,% of students,38,Table 11
+arunachal-pradesh,2025,middle,female,urban,18.8,% of students,38,Table 11
+arunachal-pradesh,2025,secondary,female,urban,11.3,% of students,38,Table 11
+arunachal-pradesh,2025,higher secondary,female,urban,15.5,% of students,38,Table 11
+arunachal-pradesh,2025,all levels,female,urban,13.5,% of students,38,Table 11
+arunachal-pradesh,2025,pre-primary,person,urban,5.3,% of students,38,Table 11
+arunachal-pradesh,2025,primary,person,urban,15.8,% of students,38,Table 11
+arunachal-pradesh,2025,middle,person,urban,18.8,% of students,38,Table 11
+arunachal-pradesh,2025,secondary,person,urban,19.9,% of students,38,Table 11
+arunachal-pradesh,2025,higher secondary,person,urban,11.4,% of students,38,Table 11
+arunachal-pradesh,2025,all levels,person,urban,16.1,% of students,38,Table 11
+arunachal-pradesh,2025,pre-primary,male,rural+urban,5.0,% of students,38,Table 11
+arunachal-pradesh,2025,primary,male,rural+urban,5.0,% of students,38,Table 11
+arunachal-pradesh,2025,middle,male,rural+urban,10.3,% of students,38,Table 11
+arunachal-pradesh,2025,secondary,male,rural+urban,18.4,% of students,38,Table 11
+arunachal-pradesh,2025,higher secondary,male,rural+urban,12.9,% of students,38,Table 11
+arunachal-pradesh,2025,all levels,male,rural+urban,9.8,% of students,38,Table 11
+arunachal-pradesh,2025,pre-primary,female,rural+urban,1.4,% of students,38,Table 11
+arunachal-pradesh,2025,primary,female,rural+urban,2.7,% of students,38,Table 11
+arunachal-pradesh,2025,middle,female,rural+urban,11.4,% of students,38,Table 11
+arunachal-pradesh,2025,secondary,female,rural+urban,14.4,% of students,38,Table 11
+arunachal-pradesh,2025,higher secondary,female,rural+urban,16.3,% of students,38,Table 11
+arunachal-pradesh,2025,all levels,female,rural+urban,9.2,% of students,38,Table 11
+arunachal-pradesh,2025,pre-primary,person,rural+urban,3.6,% of students,38,Table 11
+arunachal-pradesh,2025,primary,person,rural+urban,4.0,% of students,38,Table 11
+arunachal-pradesh,2025,middle,person,rural+urban,10.9,% of students,38,Table 11
+arunachal-pradesh,2025,secondary,person,rural+urban,16.4,% of students,38,Table 11
+arunachal-pradesh,2025,higher secondary,person,rural+urban,14.6,% of students,38,Table 11
+arunachal-pradesh,2025,all levels,person,rural+urban,9.5,% of students,38,Table 11
+assam,2025,pre-primary,male,rural,3.5,% of students,38,Table 11
+assam,2025,primary,male,rural,9.0,% of students,38,Table 11
+assam,2025,middle,male,rural,21.3,% of students,38,Table 11
+assam,2025,secondary,male,rural,40.7,% of students,38,Table 11
+assam,2025,higher secondary,male,rural,15.0,% of students,38,Table 11
+assam,2025,all levels,male,rural,16.2,% of students,38,Table 11
+assam,2025,pre-primary,female,rural,2.4,% of students,38,Table 11
+assam,2025,primary,female,rural,8.8,% of students,38,Table 11
+assam,2025,middle,female,rural,24.5,% of students,38,Table 11
+assam,2025,secondary,female,rural,52.4,% of students,38,Table 11
+assam,2025,higher secondary,female,rural,28.3,% of students,38,Table 11
+assam,2025,all levels,female,rural,21.4,% of students,38,Table 11
+assam,2025,pre-primary,person,rural,3.1,% of students,38,Table 11
+assam,2025,primary,person,rural,8.9,% of students,38,Table 11
+assam,2025,middle,person,rural,22.4,% of students,38,Table 11
+assam,2025,secondary,person,rural,46.8,% of students,38,Table 11
+assam,2025,higher secondary,person,rural,22.7,% of students,38,Table 11
+assam,2025,all levels,person,rural,18.4,% of students,38,Table 11
+assam,2025,pre-primary,male,urban,19.6,% of students,38,Table 11
+assam,2025,primary,male,urban,24.2,% of students,38,Table 11
+assam,2025,middle,male,urban,42.5,% of students,38,Table 11
+assam,2025,secondary,male,urban,63.4,% of students,38,Table 11
+assam,2025,higher secondary,male,urban,72.0,% of students,38,Table 11
+assam,2025,all levels,male,urban,40.0,% of students,38,Table 11
+assam,2025,pre-primary,female,urban,7.4,% of students,38,Table 11
+assam,2025,primary,female,urban,31.6,% of students,38,Table 11
+assam,2025,middle,female,urban,50.8,% of students,38,Table 11
+assam,2025,secondary,female,urban,70.2,% of students,38,Table 11
+assam,2025,higher secondary,female,urban,61.3,% of students,38,Table 11
+assam,2025,all levels,female,urban,42.9,% of students,38,Table 11
+assam,2025,pre-primary,person,urban,14.4,% of students,38,Table 11
+assam,2025,primary,person,urban,27.6,% of students,38,Table 11
+assam,2025,middle,person,urban,46.6,% of students,38,Table 11
+assam,2025,secondary,person,urban,66.4,% of students,38,Table 11
+assam,2025,higher secondary,person,urban,67.9,% of students,38,Table 11
+assam,2025,all levels,person,urban,41.3,% of students,38,Table 11
+assam,2025,pre-primary,male,rural+urban,4.8,% of students,38,Table 11
+assam,2025,primary,male,rural+urban,10.3,% of students,38,Table 11
+assam,2025,middle,male,rural+urban,22.8,% of students,38,Table 11
+assam,2025,secondary,male,rural+urban,43.1,% of students,38,Table 11
+assam,2025,higher secondary,male,rural+urban,27.1,% of students,38,Table 11
+assam,2025,all levels,male,rural+urban,18.4,% of students,38,Table 11
+assam,2025,pre-primary,female,rural+urban,2.9,% of students,38,Table 11
+assam,2025,primary,female,rural+urban,11.1,% of students,38,Table 11
+assam,2025,middle,female,rural+urban,27.7,% of students,38,Table 11
+assam,2025,secondary,female,rural+urban,53.9,% of students,38,Table 11
+assam,2025,higher secondary,female,rural+urban,31.9,% of students,38,Table 11
+assam,2025,all levels,female,rural+urban,23.6,% of students,38,Table 11
+assam,2025,pre-primary,person,rural+urban,4.1,% of students,38,Table 11
+assam,2025,primary,person,rural+urban,10.7,% of students,38,Table 11
+assam,2025,middle,person,rural+urban,24.6,% of students,38,Table 11
+assam,2025,secondary,person,rural+urban,48.6,% of students,38,Table 11
+assam,2025,higher secondary,person,rural+urban,29.7,% of students,38,Table 11
+assam,2025,all levels,person,rural+urban,20.6,% of students,38,Table 11
+bihar,2025,pre-primary,male,rural,16.8,% of students,38,Table 11
+bihar,2025,primary,male,rural,44.5,% of students,38,Table 11
+bihar,2025,middle,male,rural,67.4,% of students,38,Table 11
+bihar,2025,secondary,male,rural,77.5,% of students,38,Table 11
+bihar,2025,higher secondary,male,rural,68.6,% of students,38,Table 11
+bihar,2025,all levels,male,rural,53.1,% of students,38,Table 11
+bihar,2025,pre-primary,female,rural,13.2,% of students,38,Table 11
+bihar,2025,primary,female,rural,44.3,% of students,38,Table 11
+bihar,2025,middle,female,rural,66.9,% of students,38,Table 11
+bihar,2025,secondary,female,rural,75.3,% of students,38,Table 11
+bihar,2025,higher secondary,female,rural,57.8,% of students,38,Table 11
+bihar,2025,all levels,female,rural,50.9,% of students,38,Table 11
+bihar,2025,pre-primary,person,rural,15.0,% of students,38,Table 11
+bihar,2025,primary,person,rural,44.3,% of students,38,Table 11
+bihar,2025,middle,person,rural,67.2,% of students,38,Table 11
+bihar,2025,secondary,person,rural,76.5,% of students,38,Table 11
+bihar,2025,higher secondary,person,rural,63.7,% of students,38,Table 11
+bihar,2025,all levels,person,rural,52.1,% of students,38,Table 11
+bihar,2025,pre-primary,male,urban,26.9,% of students,38,Table 11
+bihar,2025,primary,male,urban,57.8,% of students,38,Table 11
+bihar,2025,middle,male,urban,65.4,% of students,38,Table 11
+bihar,2025,secondary,male,urban,63.7,% of students,38,Table 11
+bihar,2025,higher secondary,male,urban,80.1,% of students,38,Table 11
+bihar,2025,all levels,male,urban,58.8,% of students,38,Table 11
+bihar,2025,pre-primary,female,urban,16.3,% of students,38,Table 11
+bihar,2025,primary,female,urban,51.2,% of students,38,Table 11
+bihar,2025,middle,female,urban,62.8,% of students,38,Table 11
+bihar,2025,secondary,female,urban,71.8,% of students,38,Table 11
+bihar,2025,higher secondary,female,urban,77.2,% of students,38,Table 11
+bihar,2025,all levels,female,urban,55.0,% of students,38,Table 11
+bihar,2025,pre-primary,person,urban,22.8,% of students,38,Table 11
+bihar,2025,primary,person,urban,54.8,% of students,38,Table 11
+bihar,2025,middle,person,urban,64.2,% of students,38,Table 11
+bihar,2025,secondary,person,urban,66.9,% of students,38,Table 11
+bihar,2025,higher secondary,person,urban,79.0,% of students,38,Table 11
+bihar,2025,all levels,person,urban,57.1,% of students,38,Table 11
+bihar,2025,pre-primary,male,rural+urban,17.9,% of students,38,Table 11
+bihar,2025,primary,male,rural+urban,45.7,% of students,38,Table 11
+bihar,2025,middle,male,rural+urban,67.2,% of students,38,Table 11
+bihar,2025,secondary,male,rural+urban,76.1,% of students,38,Table 11
+bihar,2025,higher secondary,male,rural+urban,70.0,% of students,38,Table 11
+bihar,2025,all levels,male,rural+urban,53.7,% of students,38,Table 11
+bihar,2025,pre-primary,female,rural+urban,13.4,% of students,38,Table 11
+bihar,2025,primary,female,rural+urban,44.9,% of students,38,Table 11
+bihar,2025,middle,female,rural+urban,66.6,% of students,38,Table 11
+bihar,2025,secondary,female,rural+urban,75.0,% of students,38,Table 11
+bihar,2025,higher secondary,female,rural+urban,59.5,% of students,38,Table 11
+bihar,2025,all levels,female,rural+urban,51.3,% of students,38,Table 11
+bihar,2025,pre-primary,person,rural+urban,15.7,% of students,38,Table 11
+bihar,2025,primary,person,rural+urban,45.2,% of students,38,Table 11
+bihar,2025,middle,person,rural+urban,67.0,% of students,38,Table 11
+bihar,2025,secondary,person,rural+urban,75.6,% of students,38,Table 11
+bihar,2025,higher secondary,person,rural+urban,65.3,% of students,38,Table 11
+bihar,2025,all levels,person,rural+urban,52.5,% of students,38,Table 11
+chandigarh,2025,pre-primary,male,rural,,% of students,38,Table 11
+chandigarh,2025,primary,male,rural,,% of students,38,Table 11
+chandigarh,2025,middle,male,rural,,% of students,38,Table 11
+chandigarh,2025,secondary,male,rural,,% of students,38,Table 11
+chandigarh,2025,higher secondary,male,rural,,% of students,38,Table 11
+chandigarh,2025,all levels,male,rural,,% of students,38,Table 11
+chandigarh,2025,pre-primary,female,rural,,% of students,38,Table 11
+chandigarh,2025,primary,female,rural,,% of students,38,Table 11
+chandigarh,2025,middle,female,rural,,% of students,38,Table 11
+chandigarh,2025,secondary,female,rural,,% of students,38,Table 11
+chandigarh,2025,higher secondary,female,rural,,% of students,38,Table 11
+chandigarh,2025,all levels,female,rural,,% of students,38,Table 11
+chandigarh,2025,pre-primary,person,rural,,% of students,38,Table 11
+chandigarh,2025,primary,person,rural,,% of students,38,Table 11
+chandigarh,2025,middle,person,rural,,% of students,38,Table 11
+chandigarh,2025,secondary,person,rural,,% of students,38,Table 11
+chandigarh,2025,higher secondary,person,rural,,% of students,38,Table 11
+chandigarh,2025,all levels,person,rural,,% of students,38,Table 11
+chandigarh,2025,pre-primary,male,urban,0.0,% of students,38,Table 11
+chandigarh,2025,primary,male,urban,22.8,% of students,38,Table 11
+chandigarh,2025,middle,male,urban,12.1,% of students,38,Table 11
+chandigarh,2025,secondary,male,urban,41.7,% of students,38,Table 11
+chandigarh,2025,higher secondary,male,urban,100.0,% of students,38,Table 11
+chandigarh,2025,all levels,male,urban,30.0,% of students,38,Table 11
+chandigarh,2025,pre-primary,female,urban,0.0,% of students,38,Table 11
+chandigarh,2025,primary,female,urban,14.5,% of students,38,Table 11
+chandigarh,2025,middle,female,urban,56.0,% of students,38,Table 11
+chandigarh,2025,secondary,female,urban,55.5,% of students,38,Table 11
+chandigarh,2025,higher secondary,female,urban,48.8,% of students,38,Table 11
+chandigarh,2025,all levels,female,urban,35.7,% of students,38,Table 11
+chandigarh,2025,pre-primary,person,urban,0.0,% of students,38,Table 11
+chandigarh,2025,primary,person,urban,19.4,% of students,38,Table 11
+chandigarh,2025,middle,person,urban,33.7,% of students,38,Table 11
+chandigarh,2025,secondary,person,urban,48.3,% of students,38,Table 11
+chandigarh,2025,higher secondary,person,urban,64.6,% of students,38,Table 11
+chandigarh,2025,all levels,person,urban,32.9,% of students,38,Table 11
+chandigarh,2025,pre-primary,male,rural+urban,0.0,% of students,38,Table 11
+chandigarh,2025,primary,male,rural+urban,22.8,% of students,38,Table 11
+chandigarh,2025,middle,male,rural+urban,12.1,% of students,38,Table 11
+chandigarh,2025,secondary,male,rural+urban,41.7,% of students,38,Table 11
+chandigarh,2025,higher secondary,male,rural+urban,100.0,% of students,38,Table 11
+chandigarh,2025,all levels,male,rural+urban,30.0,% of students,38,Table 11
+chandigarh,2025,pre-primary,female,rural+urban,0.0,% of students,38,Table 11
+chandigarh,2025,primary,female,rural+urban,14.5,% of students,38,Table 11
+chandigarh,2025,middle,female,rural+urban,56.0,% of students,38,Table 11
+chandigarh,2025,secondary,female,rural+urban,55.5,% of students,38,Table 11
+chandigarh,2025,higher secondary,female,rural+urban,48.8,% of students,38,Table 11
+chandigarh,2025,all levels,female,rural+urban,35.7,% of students,38,Table 11
+chandigarh,2025,pre-primary,person,rural+urban,0.0,% of students,38,Table 11
+chandigarh,2025,primary,person,rural+urban,19.4,% of students,38,Table 11
+chandigarh,2025,middle,person,rural+urban,33.7,% of students,38,Table 11
+chandigarh,2025,secondary,person,rural+urban,48.3,% of students,38,Table 11
+chandigarh,2025,higher secondary,person,rural+urban,64.6,% of students,38,Table 11
+chandigarh,2025,all levels,person,rural+urban,32.9,% of students,38,Table 11
+chhattisgarh,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+chhattisgarh,2025,primary,male,rural,0.4,% of students,38,Table 11
+chhattisgarh,2025,middle,male,rural,0.0,% of students,38,Table 11
+chhattisgarh,2025,secondary,male,rural,5.0,% of students,38,Table 11
+chhattisgarh,2025,higher secondary,male,rural,25.3,% of students,38,Table 11
+chhattisgarh,2025,all levels,male,rural,2.7,% of students,38,Table 11
+chhattisgarh,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+chhattisgarh,2025,primary,female,rural,1.2,% of students,38,Table 11
+chhattisgarh,2025,middle,female,rural,0.0,% of students,38,Table 11
+chhattisgarh,2025,secondary,female,rural,1.7,% of students,38,Table 11
+chhattisgarh,2025,higher secondary,female,rural,6.5,% of students,38,Table 11
+chhattisgarh,2025,all levels,female,rural,1.7,% of students,38,Table 11
+chhattisgarh,2025,pre-primary,person,rural,0.0,% of students,38,Table 11
+chhattisgarh,2025,primary,person,rural,0.7,% of students,38,Table 11
+chhattisgarh,2025,middle,person,rural,0.0,% of students,38,Table 11
+chhattisgarh,2025,secondary,person,rural,3.2,% of students,38,Table 11
+chhattisgarh,2025,higher secondary,person,rural,13.0,% of students,38,Table 11
+chhattisgarh,2025,all levels,person,rural,2.2,% of students,38,Table 11
+chhattisgarh,2025,pre-primary,male,urban,4.2,% of students,38,Table 11
+chhattisgarh,2025,primary,male,urban,10.6,% of students,38,Table 11
+chhattisgarh,2025,middle,male,urban,19.4,% of students,38,Table 11
+chhattisgarh,2025,secondary,male,urban,19.6,% of students,38,Table 11
+chhattisgarh,2025,higher secondary,male,urban,35.9,% of students,38,Table 11
+chhattisgarh,2025,all levels,male,urban,15.7,% of students,38,Table 11
+chhattisgarh,2025,pre-primary,female,urban,0.0,% of students,38,Table 11
+chhattisgarh,2025,primary,female,urban,10.4,% of students,38,Table 11
+chhattisgarh,2025,middle,female,urban,27.3,% of students,38,Table 11
+chhattisgarh,2025,secondary,female,urban,10.1,% of students,38,Table 11
+chhattisgarh,2025,higher secondary,female,urban,10.4,% of students,38,Table 11
+chhattisgarh,2025,all levels,female,urban,13.3,% of students,38,Table 11
+chhattisgarh,2025,pre-primary,person,urban,2.5,% of students,38,Table 11
+chhattisgarh,2025,primary,person,urban,10.5,% of students,38,Table 11
+chhattisgarh,2025,middle,person,urban,23.2,% of students,38,Table 11
+chhattisgarh,2025,secondary,person,urban,13.8,% of students,38,Table 11
+chhattisgarh,2025,higher secondary,person,urban,20.8,% of students,38,Table 11
+chhattisgarh,2025,all levels,person,urban,14.4,% of students,38,Table 11
+chhattisgarh,2025,pre-primary,male,rural+urban,1.1,% of students,38,Table 11
+chhattisgarh,2025,primary,male,rural+urban,1.9,% of students,38,Table 11
+chhattisgarh,2025,middle,male,rural+urban,3.8,% of students,38,Table 11
+chhattisgarh,2025,secondary,male,rural+urban,7.4,% of students,38,Table 11
+chhattisgarh,2025,higher secondary,male,rural+urban,27.9,% of students,38,Table 11
+chhattisgarh,2025,all levels,male,rural+urban,5.0,% of students,38,Table 11
+chhattisgarh,2025,pre-primary,female,rural+urban,0.0,% of students,38,Table 11
+chhattisgarh,2025,primary,female,rural+urban,2.8,% of students,38,Table 11
+chhattisgarh,2025,middle,female,rural+urban,5.8,% of students,38,Table 11
+chhattisgarh,2025,secondary,female,rural+urban,3.3,% of students,38,Table 11
+chhattisgarh,2025,higher secondary,female,rural+urban,7.3,% of students,38,Table 11
+chhattisgarh,2025,all levels,female,rural+urban,3.9,% of students,38,Table 11
+chhattisgarh,2025,pre-primary,person,rural+urban,0.6,% of students,38,Table 11
+chhattisgarh,2025,primary,person,rural+urban,2.3,% of students,38,Table 11
+chhattisgarh,2025,middle,person,rural+urban,4.7,% of students,38,Table 11
+chhattisgarh,2025,secondary,person,rural+urban,5.1,% of students,38,Table 11
+chhattisgarh,2025,higher secondary,person,rural+urban,14.7,% of students,38,Table 11
+chhattisgarh,2025,all levels,person,rural+urban,4.5,% of students,38,Table 11
+delhi,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+delhi,2025,primary,male,rural,7.1,% of students,38,Table 11
+delhi,2025,middle,male,rural,43.3,% of students,38,Table 11
+delhi,2025,secondary,male,rural,58.2,% of students,38,Table 11
+delhi,2025,higher secondary,male,rural,28.6,% of students,38,Table 11
+delhi,2025,all levels,male,rural,24.0,% of students,38,Table 11
+delhi,2025,pre-primary,female,rural,30.2,% of students,38,Table 11
+delhi,2025,primary,female,rural,29.8,% of students,38,Table 11
+delhi,2025,middle,female,rural,35.9,% of students,38,Table 11
+delhi,2025,secondary,female,rural,27.5,% of students,38,Table 11
+delhi,2025,higher secondary,female,rural,36.3,% of students,38,Table 11
+delhi,2025,all levels,female,rural,31.4,% of students,38,Table 11
+delhi,2025,pre-primary,person,rural,20.9,% of students,38,Table 11
+delhi,2025,primary,person,rural,15.0,% of students,38,Table 11
+delhi,2025,middle,person,rural,40.5,% of students,38,Table 11
+delhi,2025,secondary,person,rural,45.0,% of students,38,Table 11
+delhi,2025,higher secondary,person,rural,31.4,% of students,38,Table 11
+delhi,2025,all levels,person,rural,26.8,% of students,38,Table 11
+delhi,2025,pre-primary,male,urban,9.6,% of students,38,Table 11
+delhi,2025,primary,male,urban,28.8,% of students,38,Table 11
+delhi,2025,middle,male,urban,43.2,% of students,38,Table 11
+delhi,2025,secondary,male,urban,47.4,% of students,38,Table 11
+delhi,2025,higher secondary,male,urban,60.3,% of students,38,Table 11
+delhi,2025,all levels,male,urban,37.3,% of students,38,Table 11
+delhi,2025,pre-primary,female,urban,1.2,% of students,38,Table 11
+delhi,2025,primary,female,urban,35.2,% of students,38,Table 11
+delhi,2025,middle,female,urban,39.5,% of students,38,Table 11
+delhi,2025,secondary,female,urban,55.6,% of students,38,Table 11
+delhi,2025,higher secondary,female,urban,61.8,% of students,38,Table 11
+delhi,2025,all levels,female,urban,43.3,% of students,38,Table 11
+delhi,2025,pre-primary,person,urban,6.6,% of students,38,Table 11
+delhi,2025,primary,person,urban,31.3,% of students,38,Table 11
+delhi,2025,middle,person,urban,41.8,% of students,38,Table 11
+delhi,2025,secondary,person,urban,51.9,% of students,38,Table 11
+delhi,2025,higher secondary,person,urban,61.0,% of students,38,Table 11
+delhi,2025,all levels,person,urban,39.9,% of students,38,Table 11
+delhi,2025,pre-primary,male,rural+urban,9.5,% of students,38,Table 11
+delhi,2025,primary,male,rural+urban,27.3,% of students,38,Table 11
+delhi,2025,middle,male,rural+urban,43.2,% of students,38,Table 11
+delhi,2025,secondary,male,rural+urban,48.1,% of students,38,Table 11
+delhi,2025,higher secondary,male,rural+urban,57.9,% of students,38,Table 11
+delhi,2025,all levels,male,rural+urban,36.5,% of students,38,Table 11
+delhi,2025,pre-primary,female,rural+urban,2.6,% of students,38,Table 11
+delhi,2025,primary,female,rural+urban,34.8,% of students,38,Table 11
+delhi,2025,middle,female,rural+urban,39.3,% of students,38,Table 11
+delhi,2025,secondary,female,rural+urban,54.5,% of students,38,Table 11
+delhi,2025,higher secondary,female,rural+urban,60.7,% of students,38,Table 11
+delhi,2025,all levels,female,rural+urban,42.7,% of students,38,Table 11
+delhi,2025,pre-primary,person,rural+urban,7.0,% of students,38,Table 11
+delhi,2025,primary,person,rural+urban,30.2,% of students,38,Table 11
+delhi,2025,middle,person,rural+urban,41.8,% of students,38,Table 11
+delhi,2025,secondary,person,rural+urban,51.6,% of students,38,Table 11
+delhi,2025,higher secondary,person,rural+urban,59.2,% of students,38,Table 11
+delhi,2025,all levels,person,rural+urban,39.1,% of students,38,Table 11
+dnh-dd,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+dnh-dd,2025,primary,male,rural,83.2,% of students,38,Table 11
+dnh-dd,2025,middle,male,rural,48.9,% of students,38,Table 11
+dnh-dd,2025,secondary,male,rural,9.4,% of students,38,Table 11
+dnh-dd,2025,higher secondary,male,rural,32.1,% of students,38,Table 11
+dnh-dd,2025,all levels,male,rural,37.7,% of students,38,Table 11
+dnh-dd,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+dnh-dd,2025,primary,female,rural,57.0,% of students,38,Table 11
+dnh-dd,2025,middle,female,rural,0.6,% of students,38,Table 11
+dnh-dd,2025,secondary,female,rural,0.0,% of students,38,Table 11
+dnh-dd,2025,higher secondary,female,rural,11.6,% of students,38,Table 11
+dnh-dd,2025,all levels,female,rural,39.0,% of students,38,Table 11
+dnh-dd,2025,pre-primary,person,rural,0.0,% of students,38,Table 11
+dnh-dd,2025,primary,person,rural,64.4,% of students,38,Table 11
+dnh-dd,2025,middle,person,rural,7.5,% of students,38,Table 11
+dnh-dd,2025,secondary,person,rural,8.6,% of students,38,Table 11
+dnh-dd,2025,higher secondary,person,rural,30.0,% of students,38,Table 11
+dnh-dd,2025,all levels,person,rural,38.4,% of students,38,Table 11
+dnh-dd,2025,pre-primary,male,urban,4.4,% of students,38,Table 11
+dnh-dd,2025,primary,male,urban,45.3,% of students,38,Table 11
+dnh-dd,2025,middle,male,urban,49.1,% of students,38,Table 11
+dnh-dd,2025,secondary,male,urban,59.5,% of students,38,Table 11
+dnh-dd,2025,higher secondary,male,urban,17.3,% of students,38,Table 11
+dnh-dd,2025,all levels,male,urban,40.5,% of students,38,Table 11
+dnh-dd,2025,pre-primary,female,urban,31.3,% of students,38,Table 11
+dnh-dd,2025,primary,female,urban,55.8,% of students,38,Table 11
+dnh-dd,2025,middle,female,urban,46.5,% of students,38,Table 11
+dnh-dd,2025,secondary,female,urban,41.3,% of students,38,Table 11
+dnh-dd,2025,higher secondary,female,urban,53.1,% of students,38,Table 11
+dnh-dd,2025,all levels,female,urban,48.9,% of students,38,Table 11
+dnh-dd,2025,pre-primary,person,urban,14.3,% of students,38,Table 11
+dnh-dd,2025,primary,person,urban,50.6,% of students,38,Table 11
+dnh-dd,2025,middle,person,urban,47.7,% of students,38,Table 11
+dnh-dd,2025,secondary,person,urban,49.5,% of students,38,Table 11
+dnh-dd,2025,higher secondary,person,urban,46.6,% of students,38,Table 11
+dnh-dd,2025,all levels,person,urban,44.9,% of students,38,Table 11
+dnh-dd,2025,pre-primary,male,rural+urban,2.4,% of students,38,Table 11
+dnh-dd,2025,primary,male,rural+urban,60.7,% of students,38,Table 11
+dnh-dd,2025,middle,male,rural+urban,49.0,% of students,38,Table 11
+dnh-dd,2025,secondary,male,rural+urban,27.6,% of students,38,Table 11
+dnh-dd,2025,higher secondary,male,rural+urban,30.3,% of students,38,Table 11
+dnh-dd,2025,all levels,male,rural+urban,39.2,% of students,38,Table 11
+dnh-dd,2025,pre-primary,female,rural+urban,12.0,% of students,38,Table 11
+dnh-dd,2025,primary,female,rural+urban,56.6,% of students,38,Table 11
+dnh-dd,2025,middle,female,rural+urban,34.2,% of students,38,Table 11
+dnh-dd,2025,secondary,female,rural+urban,36.6,% of students,38,Table 11
+dnh-dd,2025,higher secondary,female,rural+urban,46.6,% of students,38,Table 11
+dnh-dd,2025,all levels,female,rural+urban,44.3,% of students,38,Table 11
+dnh-dd,2025,pre-primary,person,rural+urban,6.8,% of students,38,Table 11
+dnh-dd,2025,primary,person,rural+urban,58.1,% of students,38,Table 11
+dnh-dd,2025,middle,person,rural+urban,40.4,% of students,38,Table 11
+dnh-dd,2025,secondary,person,rural+urban,30.6,% of students,38,Table 11
+dnh-dd,2025,higher secondary,person,rural+urban,36.7,% of students,38,Table 11
+dnh-dd,2025,all levels,person,rural+urban,41.9,% of students,38,Table 11
+goa,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+goa,2025,primary,male,rural,5.5,% of students,38,Table 11
+goa,2025,middle,male,rural,31.3,% of students,38,Table 11
+goa,2025,secondary,male,rural,0.0,% of students,38,Table 11
+goa,2025,higher secondary,male,rural,15.8,% of students,38,Table 11
+goa,2025,all levels,male,rural,9.1,% of students,38,Table 11
+goa,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+goa,2025,primary,female,rural,11.1,% of students,38,Table 11
+goa,2025,middle,female,rural,0.0,% of students,38,Table 11
+goa,2025,secondary,female,rural,84.7,% of students,38,Table 11
+goa,2025,higher secondary,female,rural,47.1,% of students,38,Table 11
+goa,2025,all levels,female,rural,30.0,% of students,38,Table 11
+goa,2025,pre-primary,person,rural,0.0,% of students,38,Table 11
+goa,2025,primary,person,rural,7.4,% of students,38,Table 11
+goa,2025,middle,person,rural,9.3,% of students,38,Table 11
+goa,2025,secondary,person,rural,60.4,% of students,38,Table 11
+goa,2025,higher secondary,person,rural,26.8,% of students,38,Table 11
+goa,2025,all levels,person,rural,18.2,% of students,38,Table 11
+goa,2025,pre-primary,male,urban,0.0,% of students,38,Table 11
+goa,2025,primary,male,urban,16.2,% of students,38,Table 11
+goa,2025,middle,male,urban,76.5,% of students,38,Table 11
+goa,2025,secondary,male,urban,48.8,% of students,38,Table 11
+goa,2025,higher secondary,male,urban,93.5,% of students,38,Table 11
+goa,2025,all levels,male,urban,43.9,% of students,38,Table 11
+goa,2025,pre-primary,female,urban,0.0,% of students,38,Table 11
+goa,2025,primary,female,urban,6.3,% of students,38,Table 11
+goa,2025,middle,female,urban,26.2,% of students,38,Table 11
+goa,2025,secondary,female,urban,51.3,% of students,38,Table 11
+goa,2025,higher secondary,female,urban,56.4,% of students,38,Table 11
+goa,2025,all levels,female,urban,21.5,% of students,38,Table 11
+goa,2025,pre-primary,person,urban,0.0,% of students,38,Table 11
+goa,2025,primary,person,urban,10.6,% of students,38,Table 11
+goa,2025,middle,person,urban,44.2,% of students,38,Table 11
+goa,2025,secondary,person,urban,50.0,% of students,38,Table 11
+goa,2025,higher secondary,person,urban,70.4,% of students,38,Table 11
+goa,2025,all levels,person,urban,30.1,% of students,38,Table 11
+goa,2025,pre-primary,male,rural+urban,0.0,% of students,38,Table 11
+goa,2025,primary,male,rural+urban,10.9,% of students,38,Table 11
+goa,2025,middle,male,rural+urban,61.2,% of students,38,Table 11
+goa,2025,secondary,male,rural+urban,34.4,% of students,38,Table 11
+goa,2025,higher secondary,male,rural+urban,53.6,% of students,38,Table 11
+goa,2025,all levels,male,rural+urban,27.7,% of students,38,Table 11
+goa,2025,pre-primary,female,rural+urban,0.0,% of students,38,Table 11
+goa,2025,primary,female,rural+urban,7.6,% of students,38,Table 11
+goa,2025,middle,female,rural+urban,17.5,% of students,38,Table 11
+goa,2025,secondary,female,rural+urban,69.4,% of students,38,Table 11
+goa,2025,higher secondary,female,rural+urban,54.0,% of students,38,Table 11
+goa,2025,all levels,female,rural+urban,24.2,% of students,38,Table 11
+goa,2025,pre-primary,person,rural+urban,0.0,% of students,38,Table 11
+goa,2025,primary,person,rural+urban,9.3,% of students,38,Table 11
+goa,2025,middle,person,rural+urban,30.9,% of students,38,Table 11
+goa,2025,secondary,person,rural+urban,54.5,% of students,38,Table 11
+goa,2025,higher secondary,person,rural+urban,53.8,% of students,38,Table 11
+goa,2025,all levels,person,rural+urban,25.5,% of students,38,Table 11
+gujarat,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+gujarat,2025,primary,male,rural,8.4,% of students,38,Table 11
+gujarat,2025,middle,male,rural,12.2,% of students,38,Table 11
+gujarat,2025,secondary,male,rural,34.2,% of students,38,Table 11
+gujarat,2025,higher secondary,male,rural,26.2,% of students,38,Table 11
+gujarat,2025,all levels,male,rural,14.2,% of students,38,Table 11
+gujarat,2025,pre-primary,female,rural,3.5,% of students,38,Table 11
+gujarat,2025,primary,female,rural,3.3,% of students,38,Table 11
+gujarat,2025,middle,female,rural,12.0,% of students,38,Table 11
+gujarat,2025,secondary,female,rural,17.4,% of students,38,Table 11
+gujarat,2025,higher secondary,female,rural,21.5,% of students,38,Table 11
+gujarat,2025,all levels,female,rural,8.7,% of students,38,Table 11
+gujarat,2025,pre-primary,person,rural,1.7,% of students,38,Table 11
+gujarat,2025,primary,person,rural,6.0,% of students,38,Table 11
+gujarat,2025,middle,person,rural,12.1,% of students,38,Table 11
+gujarat,2025,secondary,person,rural,27.7,% of students,38,Table 11
+gujarat,2025,higher secondary,person,rural,24.1,% of students,38,Table 11
+gujarat,2025,all levels,person,rural,11.8,% of students,38,Table 11
+gujarat,2025,pre-primary,male,urban,14.0,% of students,38,Table 11
+gujarat,2025,primary,male,urban,40.3,% of students,38,Table 11
+gujarat,2025,middle,male,urban,37.7,% of students,38,Table 11
+gujarat,2025,secondary,male,urban,46.6,% of students,38,Table 11
+gujarat,2025,higher secondary,male,urban,51.2,% of students,38,Table 11
+gujarat,2025,all levels,male,urban,38.6,% of students,38,Table 11
+gujarat,2025,pre-primary,female,urban,6.1,% of students,38,Table 11
+gujarat,2025,primary,female,urban,33.8,% of students,38,Table 11
+gujarat,2025,middle,female,urban,30.9,% of students,38,Table 11
+gujarat,2025,secondary,female,urban,28.1,% of students,38,Table 11
+gujarat,2025,higher secondary,female,urban,49.5,% of students,38,Table 11
+gujarat,2025,all levels,female,urban,31.2,% of students,38,Table 11
+gujarat,2025,pre-primary,person,urban,10.5,% of students,38,Table 11
+gujarat,2025,primary,person,urban,37.6,% of students,38,Table 11
+gujarat,2025,middle,person,urban,34.3,% of students,38,Table 11
+gujarat,2025,secondary,person,urban,37.6,% of students,38,Table 11
+gujarat,2025,higher secondary,person,urban,50.4,% of students,38,Table 11
+gujarat,2025,all levels,person,urban,35.2,% of students,38,Table 11
+gujarat,2025,pre-primary,male,rural+urban,4.6,% of students,38,Table 11
+gujarat,2025,primary,male,rural+urban,21.5,% of students,38,Table 11
+gujarat,2025,middle,male,rural+urban,22.3,% of students,38,Table 11
+gujarat,2025,secondary,male,rural+urban,38.3,% of students,38,Table 11
+gujarat,2025,higher secondary,male,rural+urban,36.1,% of students,38,Table 11
+gujarat,2025,all levels,male,rural+urban,23.5,% of students,38,Table 11
+gujarat,2025,pre-primary,female,rural+urban,4.3,% of students,38,Table 11
+gujarat,2025,primary,female,rural+urban,14.1,% of students,38,Table 11
+gujarat,2025,middle,female,rural+urban,20.7,% of students,38,Table 11
+gujarat,2025,secondary,female,rural+urban,22.0,% of students,38,Table 11
+gujarat,2025,higher secondary,female,rural+urban,34.9,% of students,38,Table 11
+gujarat,2025,all levels,female,rural+urban,17.6,% of students,38,Table 11
+gujarat,2025,pre-primary,person,rural+urban,4.4,% of students,38,Table 11
+gujarat,2025,primary,person,rural+urban,18.1,% of students,38,Table 11
+gujarat,2025,middle,person,rural+urban,21.5,% of students,38,Table 11
+gujarat,2025,secondary,person,rural+urban,31.4,% of students,38,Table 11
+gujarat,2025,higher secondary,person,rural+urban,35.5,% of students,38,Table 11
+gujarat,2025,all levels,person,rural+urban,20.8,% of students,38,Table 11
+haryana,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+haryana,2025,primary,male,rural,12.4,% of students,38,Table 11
+haryana,2025,middle,male,rural,7.3,% of students,38,Table 11
+haryana,2025,secondary,male,rural,18.3,% of students,38,Table 11
+haryana,2025,higher secondary,male,rural,22.2,% of students,38,Table 11
+haryana,2025,all levels,male,rural,12.2,% of students,38,Table 11
+haryana,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+haryana,2025,primary,female,rural,7.2,% of students,38,Table 11
+haryana,2025,middle,female,rural,8.9,% of students,38,Table 11
+haryana,2025,secondary,female,rural,9.8,% of students,38,Table 11
+haryana,2025,higher secondary,female,rural,24.0,% of students,38,Table 11
+haryana,2025,all levels,female,rural,8.6,% of students,38,Table 11
+haryana,2025,pre-primary,person,rural,0.0,% of students,38,Table 11
+haryana,2025,primary,person,rural,9.9,% of students,38,Table 11
+haryana,2025,middle,person,rural,8.0,% of students,38,Table 11
+haryana,2025,secondary,person,rural,14.1,% of students,38,Table 11
+haryana,2025,higher secondary,person,rural,22.8,% of students,38,Table 11
+haryana,2025,all levels,person,rural,10.5,% of students,38,Table 11
+haryana,2025,pre-primary,male,urban,6.6,% of students,38,Table 11
+haryana,2025,primary,male,urban,9.0,% of students,38,Table 11
+haryana,2025,middle,male,urban,8.1,% of students,38,Table 11
+haryana,2025,secondary,male,urban,22.2,% of students,38,Table 11
+haryana,2025,higher secondary,male,urban,23.3,% of students,38,Table 11
+haryana,2025,all levels,male,urban,11.8,% of students,38,Table 11
+haryana,2025,pre-primary,female,urban,2.1,% of students,38,Table 11
+haryana,2025,primary,female,urban,10.9,% of students,38,Table 11
+haryana,2025,middle,female,urban,6.8,% of students,38,Table 11
+haryana,2025,secondary,female,urban,14.8,% of students,38,Table 11
+haryana,2025,higher secondary,female,urban,33.3,% of students,38,Table 11
+haryana,2025,all levels,female,urban,11.8,% of students,38,Table 11
+haryana,2025,pre-primary,person,urban,4.1,% of students,38,Table 11
+haryana,2025,primary,person,urban,9.7,% of students,38,Table 11
+haryana,2025,middle,person,urban,7.5,% of students,38,Table 11
+haryana,2025,secondary,person,urban,18.7,% of students,38,Table 11
+haryana,2025,higher secondary,person,urban,27.9,% of students,38,Table 11
+haryana,2025,all levels,person,urban,11.8,% of students,38,Table 11
+haryana,2025,pre-primary,male,rural+urban,2.4,% of students,38,Table 11
+haryana,2025,primary,male,rural+urban,10.7,% of students,38,Table 11
+haryana,2025,middle,male,rural+urban,7.6,% of students,38,Table 11
+haryana,2025,secondary,male,rural+urban,19.8,% of students,38,Table 11
+haryana,2025,higher secondary,male,rural+urban,22.5,% of students,38,Table 11
+haryana,2025,all levels,male,rural+urban,12.0,% of students,38,Table 11
+haryana,2025,pre-primary,female,rural+urban,0.7,% of students,38,Table 11
+haryana,2025,primary,female,rural+urban,8.6,% of students,38,Table 11
+haryana,2025,middle,female,rural+urban,8.0,% of students,38,Table 11
+haryana,2025,secondary,female,rural+urban,11.6,% of students,38,Table 11
+haryana,2025,higher secondary,female,rural+urban,27.7,% of students,38,Table 11
+haryana,2025,all levels,female,rural+urban,9.9,% of students,38,Table 11
+haryana,2025,pre-primary,person,rural+urban,1.5,% of students,38,Table 11
+haryana,2025,primary,person,rural+urban,9.8,% of students,38,Table 11
+haryana,2025,middle,person,rural+urban,7.8,% of students,38,Table 11
+haryana,2025,secondary,person,rural+urban,15.9,% of students,38,Table 11
+haryana,2025,higher secondary,person,rural+urban,24.6,% of students,38,Table 11
+haryana,2025,all levels,person,rural+urban,11.0,% of students,38,Table 11
+himachal-pradesh,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+himachal-pradesh,2025,primary,male,rural,11.4,% of students,38,Table 11
+himachal-pradesh,2025,middle,male,rural,9.8,% of students,38,Table 11
+himachal-pradesh,2025,secondary,male,rural,23.7,% of students,38,Table 11
+himachal-pradesh,2025,higher secondary,male,rural,10.1,% of students,38,Table 11
+himachal-pradesh,2025,all levels,male,rural,10.2,% of students,38,Table 11
+himachal-pradesh,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+himachal-pradesh,2025,primary,female,rural,4.7,% of students,38,Table 11
+himachal-pradesh,2025,middle,female,rural,0.0,% of students,38,Table 11
+himachal-pradesh,2025,secondary,female,rural,0.0,% of students,38,Table 11
+himachal-pradesh,2025,higher secondary,female,rural,1.4,% of students,38,Table 11
+himachal-pradesh,2025,all levels,female,rural,1.6,% of students,38,Table 11
+himachal-pradesh,2025,pre-primary,person,rural,0.0,% of students,38,Table 11
+himachal-pradesh,2025,primary,person,rural,8.8,% of students,38,Table 11
+himachal-pradesh,2025,middle,person,rural,7.7,% of students,38,Table 11
+himachal-pradesh,2025,secondary,person,rural,6.9,% of students,38,Table 11
+himachal-pradesh,2025,higher secondary,person,rural,5.6,% of students,38,Table 11
+himachal-pradesh,2025,all levels,person,rural,6.4,% of students,38,Table 11
+himachal-pradesh,2025,pre-primary,male,urban,0.0,% of students,38,Table 11
+himachal-pradesh,2025,primary,male,urban,7.8,% of students,38,Table 11
+himachal-pradesh,2025,middle,male,urban,31.7,% of students,38,Table 11
+himachal-pradesh,2025,secondary,male,urban,9.4,% of students,38,Table 11
+himachal-pradesh,2025,higher secondary,male,urban,17.0,% of students,38,Table 11
+himachal-pradesh,2025,all levels,male,urban,14.7,% of students,38,Table 11
+himachal-pradesh,2025,pre-primary,female,urban,0.0,% of students,38,Table 11
+himachal-pradesh,2025,primary,female,urban,21.7,% of students,38,Table 11
+himachal-pradesh,2025,middle,female,urban,24.1,% of students,38,Table 11
+himachal-pradesh,2025,secondary,female,urban,8.3,% of students,38,Table 11
+himachal-pradesh,2025,higher secondary,female,urban,8.3,% of students,38,Table 11
+himachal-pradesh,2025,all levels,female,urban,15.0,% of students,38,Table 11
+himachal-pradesh,2025,pre-primary,person,urban,0.0,% of students,38,Table 11
+himachal-pradesh,2025,primary,person,urban,15.1,% of students,38,Table 11
+himachal-pradesh,2025,middle,person,urban,27.5,% of students,38,Table 11
+himachal-pradesh,2025,secondary,person,urban,8.7,% of students,38,Table 11
+himachal-pradesh,2025,higher secondary,person,urban,10.3,% of students,38,Table 11
+himachal-pradesh,2025,all levels,person,urban,14.9,% of students,38,Table 11
+himachal-pradesh,2025,pre-primary,male,rural+urban,0.0,% of students,38,Table 11
+himachal-pradesh,2025,primary,male,rural+urban,11.0,% of students,38,Table 11
+himachal-pradesh,2025,middle,male,rural+urban,12.3,% of students,38,Table 11
+himachal-pradesh,2025,secondary,male,rural+urban,19.0,% of students,38,Table 11
+himachal-pradesh,2025,higher secondary,male,rural+urban,10.3,% of students,38,Table 11
+himachal-pradesh,2025,all levels,male,rural+urban,10.8,% of students,38,Table 11
+himachal-pradesh,2025,pre-primary,female,rural+urban,0.0,% of students,38,Table 11
+himachal-pradesh,2025,primary,female,rural+urban,8.2,% of students,38,Table 11
+himachal-pradesh,2025,middle,female,rural+urban,8.7,% of students,38,Table 11
+himachal-pradesh,2025,secondary,female,rural+urban,2.1,% of students,38,Table 11
+himachal-pradesh,2025,higher secondary,female,rural+urban,2.1,% of students,38,Table 11
+himachal-pradesh,2025,all levels,female,rural+urban,4.2,% of students,38,Table 11
+himachal-pradesh,2025,pre-primary,person,rural+urban,0.0,% of students,38,Table 11
+himachal-pradesh,2025,primary,person,rural+urban,9.8,% of students,38,Table 11
+himachal-pradesh,2025,middle,person,rural+urban,11.3,% of students,38,Table 11
+himachal-pradesh,2025,secondary,person,rural+urban,7.4,% of students,38,Table 11
+himachal-pradesh,2025,higher secondary,person,rural+urban,5.9,% of students,38,Table 11
+himachal-pradesh,2025,all levels,person,rural+urban,7.7,% of students,38,Table 11
+jammu-kashmir,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+jammu-kashmir,2025,primary,male,rural,12.3,% of students,38,Table 11
+jammu-kashmir,2025,middle,male,rural,25.1,% of students,38,Table 11
+jammu-kashmir,2025,secondary,male,rural,22.7,% of students,38,Table 11
+jammu-kashmir,2025,higher secondary,male,rural,41.4,% of students,38,Table 11
+jammu-kashmir,2025,all levels,male,rural,20.0,% of students,38,Table 11
+jammu-kashmir,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+jammu-kashmir,2025,primary,female,rural,15.4,% of students,38,Table 11
+jammu-kashmir,2025,middle,female,rural,9.3,% of students,38,Table 11
+jammu-kashmir,2025,secondary,female,rural,24.5,% of students,38,Table 11
+jammu-kashmir,2025,higher secondary,female,rural,40.5,% of students,38,Table 11
+jammu-kashmir,2025,all levels,female,rural,18.9,% of students,38,Table 11
+jammu-kashmir,2025,pre-primary,person,rural,0.0,% of students,38,Table 11
+jammu-kashmir,2025,primary,person,rural,13.7,% of students,38,Table 11
+jammu-kashmir,2025,middle,person,rural,18.3,% of students,38,Table 11
+jammu-kashmir,2025,secondary,person,rural,23.8,% of students,38,Table 11
+jammu-kashmir,2025,higher secondary,person,rural,40.9,% of students,38,Table 11
+jammu-kashmir,2025,all levels,person,rural,19.5,% of students,38,Table 11
+jammu-kashmir,2025,pre-primary,male,urban,2.6,% of students,38,Table 11
+jammu-kashmir,2025,primary,male,urban,31.2,% of students,38,Table 11
+jammu-kashmir,2025,middle,male,urban,28.8,% of students,38,Table 11
+jammu-kashmir,2025,secondary,male,urban,61.7,% of students,38,Table 11
+jammu-kashmir,2025,higher secondary,male,urban,33.5,% of students,38,Table 11
+jammu-kashmir,2025,all levels,male,urban,32.5,% of students,38,Table 11
+jammu-kashmir,2025,pre-primary,female,urban,13.5,% of students,38,Table 11
+jammu-kashmir,2025,primary,female,urban,16.8,% of students,38,Table 11
+jammu-kashmir,2025,middle,female,urban,52.6,% of students,38,Table 11
+jammu-kashmir,2025,secondary,female,urban,64.0,% of students,38,Table 11
+jammu-kashmir,2025,higher secondary,female,urban,67.7,% of students,38,Table 11
+jammu-kashmir,2025,all levels,female,urban,40.6,% of students,38,Table 11
+jammu-kashmir,2025,pre-primary,person,urban,6.2,% of students,38,Table 11
+jammu-kashmir,2025,primary,person,urban,25.4,% of students,38,Table 11
+jammu-kashmir,2025,middle,person,urban,37.5,% of students,38,Table 11
+jammu-kashmir,2025,secondary,person,urban,62.8,% of students,38,Table 11
+jammu-kashmir,2025,higher secondary,person,urban,56.8,% of students,38,Table 11
+jammu-kashmir,2025,all levels,person,urban,36.2,% of students,38,Table 11
+jammu-kashmir,2025,pre-primary,male,rural+urban,0.9,% of students,38,Table 11
+jammu-kashmir,2025,primary,male,rural+urban,16.3,% of students,38,Table 11
+jammu-kashmir,2025,middle,male,rural+urban,25.6,% of students,38,Table 11
+jammu-kashmir,2025,secondary,male,rural+urban,31.8,% of students,38,Table 11
+jammu-kashmir,2025,higher secondary,male,rural+urban,40.3,% of students,38,Table 11
+jammu-kashmir,2025,all levels,male,rural+urban,22.5,% of students,38,Table 11
+jammu-kashmir,2025,pre-primary,female,rural+urban,3.7,% of students,38,Table 11
+jammu-kashmir,2025,primary,female,rural+urban,15.7,% of students,38,Table 11
+jammu-kashmir,2025,middle,female,rural+urban,14.1,% of students,38,Table 11
+jammu-kashmir,2025,secondary,female,rural+urban,31.4,% of students,38,Table 11
+jammu-kashmir,2025,higher secondary,female,rural+urban,46.4,% of students,38,Table 11
+jammu-kashmir,2025,all levels,female,rural+urban,22.8,% of students,38,Table 11
+jammu-kashmir,2025,pre-primary,person,rural+urban,2.0,% of students,38,Table 11
+jammu-kashmir,2025,primary,person,rural+urban,16.0,% of students,38,Table 11
+jammu-kashmir,2025,middle,person,rural+urban,20.8,% of students,38,Table 11
+jammu-kashmir,2025,secondary,person,rural+urban,31.6,% of students,38,Table 11
+jammu-kashmir,2025,higher secondary,person,rural+urban,43.9,% of students,38,Table 11
+jammu-kashmir,2025,all levels,person,rural+urban,22.6,% of students,38,Table 11
+jharkhand,2025,pre-primary,male,rural,13.5,% of students,38,Table 11
+jharkhand,2025,primary,male,rural,28.9,% of students,38,Table 11
+jharkhand,2025,middle,male,rural,49.8,% of students,38,Table 11
+jharkhand,2025,secondary,male,rural,74.6,% of students,38,Table 11
+jharkhand,2025,higher secondary,male,rural,51.3,% of students,38,Table 11
+jharkhand,2025,all levels,male,rural,39.9,% of students,38,Table 11
+jharkhand,2025,pre-primary,female,rural,8.4,% of students,38,Table 11
+jharkhand,2025,primary,female,rural,25.4,% of students,38,Table 11
+jharkhand,2025,middle,female,rural,37.4,% of students,38,Table 11
+jharkhand,2025,secondary,female,rural,57.5,% of students,38,Table 11
+jharkhand,2025,higher secondary,female,rural,61.7,% of students,38,Table 11
+jharkhand,2025,all levels,female,rural,33.3,% of students,38,Table 11
+jharkhand,2025,pre-primary,person,rural,11.2,% of students,38,Table 11
+jharkhand,2025,primary,person,rural,27.4,% of students,38,Table 11
+jharkhand,2025,middle,person,rural,44.0,% of students,38,Table 11
+jharkhand,2025,secondary,person,rural,66.2,% of students,38,Table 11
+jharkhand,2025,higher secondary,person,rural,55.6,% of students,38,Table 11
+jharkhand,2025,all levels,person,rural,36.9,% of students,38,Table 11
+jharkhand,2025,pre-primary,male,urban,25.1,% of students,38,Table 11
+jharkhand,2025,primary,male,urban,53.3,% of students,38,Table 11
+jharkhand,2025,middle,male,urban,73.0,% of students,38,Table 11
+jharkhand,2025,secondary,male,urban,61.8,% of students,38,Table 11
+jharkhand,2025,higher secondary,male,urban,59.8,% of students,38,Table 11
+jharkhand,2025,all levels,male,urban,54.8,% of students,38,Table 11
+jharkhand,2025,pre-primary,female,urban,28.2,% of students,38,Table 11
+jharkhand,2025,primary,female,urban,52.4,% of students,38,Table 11
+jharkhand,2025,middle,female,urban,50.2,% of students,38,Table 11
+jharkhand,2025,secondary,female,urban,67.2,% of students,38,Table 11
+jharkhand,2025,higher secondary,female,urban,39.7,% of students,38,Table 11
+jharkhand,2025,all levels,female,urban,48.8,% of students,38,Table 11
+jharkhand,2025,pre-primary,person,urban,26.6,% of students,38,Table 11
+jharkhand,2025,primary,person,urban,52.8,% of students,38,Table 11
+jharkhand,2025,middle,person,urban,61.5,% of students,38,Table 11
+jharkhand,2025,secondary,person,urban,64.0,% of students,38,Table 11
+jharkhand,2025,higher secondary,person,urban,50.1,% of students,38,Table 11
+jharkhand,2025,all levels,person,urban,51.8,% of students,38,Table 11
+jharkhand,2025,pre-primary,male,rural+urban,15.9,% of students,38,Table 11
+jharkhand,2025,primary,male,rural+urban,32.7,% of students,38,Table 11
+jharkhand,2025,middle,male,rural+urban,53.2,% of students,38,Table 11
+jharkhand,2025,secondary,male,rural+urban,71.9,% of students,38,Table 11
+jharkhand,2025,higher secondary,male,rural+urban,53.5,% of students,38,Table 11
+jharkhand,2025,all levels,male,rural+urban,42.6,% of students,38,Table 11
+jharkhand,2025,pre-primary,female,rural+urban,12.9,% of students,38,Table 11
+jharkhand,2025,primary,female,rural+urban,30.9,% of students,38,Table 11
+jharkhand,2025,middle,female,rural+urban,39.5,% of students,38,Table 11
+jharkhand,2025,secondary,female,rural+urban,59.1,% of students,38,Table 11
+jharkhand,2025,higher secondary,female,rural+urban,54.8,% of students,38,Table 11
+jharkhand,2025,all levels,female,rural+urban,36.3,% of students,38,Table 11
+jharkhand,2025,pre-primary,person,rural+urban,14.5,% of students,38,Table 11
+jharkhand,2025,primary,person,rural+urban,32.0,% of students,38,Table 11
+jharkhand,2025,middle,person,rural+urban,46.7,% of students,38,Table 11
+jharkhand,2025,secondary,person,rural+urban,65.8,% of students,38,Table 11
+jharkhand,2025,higher secondary,person,rural+urban,54.1,% of students,38,Table 11
+jharkhand,2025,all levels,person,rural+urban,39.7,% of students,38,Table 11
+karnataka,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+karnataka,2025,primary,male,rural,4.0,% of students,38,Table 11
+karnataka,2025,middle,male,rural,3.7,% of students,38,Table 11
+karnataka,2025,secondary,male,rural,11.8,% of students,38,Table 11
+karnataka,2025,higher secondary,male,rural,4.6,% of students,38,Table 11
+karnataka,2025,all levels,male,rural,4.8,% of students,38,Table 11
+karnataka,2025,pre-primary,female,rural,3.1,% of students,38,Table 11
+karnataka,2025,primary,female,rural,6.6,% of students,38,Table 11
+karnataka,2025,middle,female,rural,8.4,% of students,38,Table 11
+karnataka,2025,secondary,female,rural,5.2,% of students,38,Table 11
+karnataka,2025,higher secondary,female,rural,5.9,% of students,38,Table 11
+karnataka,2025,all levels,female,rural,6.4,% of students,38,Table 11
+karnataka,2025,pre-primary,person,rural,1.5,% of students,38,Table 11
+karnataka,2025,primary,person,rural,5.2,% of students,38,Table 11
+karnataka,2025,middle,person,rural,6.1,% of students,38,Table 11
+karnataka,2025,secondary,person,rural,8.6,% of students,38,Table 11
+karnataka,2025,higher secondary,person,rural,5.2,% of students,38,Table 11
+karnataka,2025,all levels,person,rural,5.5,% of students,38,Table 11
+karnataka,2025,pre-primary,male,urban,1.2,% of students,38,Table 11
+karnataka,2025,primary,male,urban,12.1,% of students,38,Table 11
+karnataka,2025,middle,male,urban,18.1,% of students,38,Table 11
+karnataka,2025,secondary,male,urban,23.6,% of students,38,Table 11
+karnataka,2025,higher secondary,male,urban,10.9,% of students,38,Table 11
+karnataka,2025,all levels,male,urban,14.2,% of students,38,Table 11
+karnataka,2025,pre-primary,female,urban,0.0,% of students,38,Table 11
+karnataka,2025,primary,female,urban,0.0,% of students,38,Table 11
+karnataka,2025,middle,female,urban,0.0,% of students,38,Table 11
+karnataka,2025,secondary,female,urban,0.0,% of students,38,Table 11
+karnataka,2025,higher secondary,female,urban,0.0,% of students,38,Table 11
+karnataka,2025,all levels,female,urban,0.0,% of students,38,Table 11
+karnataka,2025,pre-primary,person,urban,0.6,% of students,38,Table 11
+karnataka,2025,primary,person,urban,9.1,% of students,38,Table 11
+karnataka,2025,middle,person,urban,15.5,% of students,38,Table 11
+karnataka,2025,secondary,person,urban,20.7,% of students,38,Table 11
+karnataka,2025,higher secondary,person,urban,21.3,% of students,38,Table 11
+karnataka,2025,all levels,person,urban,13.0,% of students,38,Table 11
+karnataka,2025,pre-primary,male,rural+urban,0.4,% of students,38,Table 11
+karnataka,2025,primary,male,rural+urban,6.6,% of students,38,Table 11
+karnataka,2025,middle,male,rural+urban,9.3,% of students,38,Table 11
+karnataka,2025,secondary,male,rural+urban,16.2,% of students,38,Table 11
+karnataka,2025,higher secondary,male,rural+urban,6.9,% of students,38,Table 11
+karnataka,2025,all levels,male,rural+urban,8.1,% of students,38,Table 11
+karnataka,2025,pre-primary,female,rural+urban,2.0,% of students,38,Table 11
+karnataka,2025,primary,female,rural+urban,6.5,% of students,38,Table 11
+karnataka,2025,middle,female,rural+urban,10.1,% of students,38,Table 11
+karnataka,2025,secondary,female,rural+urban,9.3,% of students,38,Table 11
+karnataka,2025,higher secondary,female,rural+urban,16.3,% of students,38,Table 11
+karnataka,2025,all levels,female,rural+urban,8.4,% of students,38,Table 11
+karnataka,2025,pre-primary,person,rural+urban,1.2,% of students,38,Table 11
+karnataka,2025,primary,person,rural+urban,6.5,% of students,38,Table 11
+karnataka,2025,middle,person,rural+urban,9.7,% of students,38,Table 11
+karnataka,2025,secondary,person,rural+urban,13.0,% of students,38,Table 11
+karnataka,2025,higher secondary,person,rural+urban,11.0,% of students,38,Table 11
+karnataka,2025,all levels,person,rural+urban,8.2,% of students,38,Table 11
+kerala,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+kerala,2025,primary,male,rural,23.8,% of students,38,Table 11
+kerala,2025,middle,male,rural,26.7,% of students,38,Table 11
+kerala,2025,secondary,male,rural,43.9,% of students,38,Table 11
+kerala,2025,higher secondary,male,rural,41.0,% of students,38,Table 11
+kerala,2025,all levels,male,rural,26.3,% of students,38,Table 11
+kerala,2025,pre-primary,female,rural,7.9,% of students,38,Table 11
+kerala,2025,primary,female,rural,10.6,% of students,38,Table 11
+kerala,2025,middle,female,rural,22.2,% of students,38,Table 11
+kerala,2025,secondary,female,rural,59.8,% of students,38,Table 11
+kerala,2025,higher secondary,female,rural,50.0,% of students,38,Table 11
+kerala,2025,all levels,female,rural,24.2,% of students,38,Table 11
+kerala,2025,pre-primary,person,rural,4.0,% of students,38,Table 11
+kerala,2025,primary,person,rural,17.6,% of students,38,Table 11
+kerala,2025,middle,person,rural,24.8,% of students,38,Table 11
+kerala,2025,secondary,person,rural,50.3,% of students,38,Table 11
+kerala,2025,higher secondary,person,rural,45.5,% of students,38,Table 11
+kerala,2025,all levels,person,rural,25.3,% of students,38,Table 11
+kerala,2025,pre-primary,male,urban,2.1,% of students,38,Table 11
+kerala,2025,primary,male,urban,22.7,% of students,38,Table 11
+kerala,2025,middle,male,urban,28.0,% of students,38,Table 11
+kerala,2025,secondary,male,urban,59.2,% of students,38,Table 11
+kerala,2025,higher secondary,male,urban,45.1,% of students,38,Table 11
+kerala,2025,all levels,male,urban,31.3,% of students,38,Table 11
+kerala,2025,pre-primary,female,urban,4.5,% of students,38,Table 11
+kerala,2025,primary,female,urban,20.1,% of students,38,Table 11
+kerala,2025,middle,female,urban,31.0,% of students,38,Table 11
+kerala,2025,secondary,female,urban,55.7,% of students,38,Table 11
+kerala,2025,higher secondary,female,urban,33.0,% of students,38,Table 11
+kerala,2025,all levels,female,urban,28.5,% of students,38,Table 11
+kerala,2025,pre-primary,person,urban,3.3,% of students,38,Table 11
+kerala,2025,primary,person,urban,21.4,% of students,38,Table 11
+kerala,2025,middle,person,urban,29.9,% of students,38,Table 11
+kerala,2025,secondary,person,urban,57.6,% of students,38,Table 11
+kerala,2025,higher secondary,person,urban,38.1,% of students,38,Table 11
+kerala,2025,all levels,person,urban,29.8,% of students,38,Table 11
+kerala,2025,pre-primary,male,rural+urban,0.9,% of students,38,Table 11
+kerala,2025,primary,male,rural+urban,23.3,% of students,38,Table 11
+kerala,2025,middle,male,rural+urban,27.3,% of students,38,Table 11
+kerala,2025,secondary,male,rural+urban,51.8,% of students,38,Table 11
+kerala,2025,higher secondary,male,rural+urban,43.0,% of students,38,Table 11
+kerala,2025,all levels,male,rural+urban,28.6,% of students,38,Table 11
+kerala,2025,pre-primary,female,rural+urban,6.3,% of students,38,Table 11
+kerala,2025,primary,female,rural+urban,15.0,% of students,38,Table 11
+kerala,2025,middle,female,rural+urban,27.8,% of students,38,Table 11
+kerala,2025,secondary,female,rural+urban,57.5,% of students,38,Table 11
+kerala,2025,higher secondary,female,rural+urban,40.3,% of students,38,Table 11
+kerala,2025,all levels,female,rural+urban,26.5,% of students,38,Table 11
+kerala,2025,pre-primary,person,rural+urban,3.7,% of students,38,Table 11
+kerala,2025,primary,person,rural+urban,19.3,% of students,38,Table 11
+kerala,2025,middle,person,rural+urban,27.5,% of students,38,Table 11
+kerala,2025,secondary,person,rural+urban,54.2,% of students,38,Table 11
+kerala,2025,higher secondary,person,rural+urban,41.6,% of students,38,Table 11
+kerala,2025,all levels,person,rural+urban,27.5,% of students,38,Table 11
+ladakh,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+ladakh,2025,primary,male,rural,0.0,% of students,38,Table 11
+ladakh,2025,middle,male,rural,0.0,% of students,38,Table 11
+ladakh,2025,secondary,male,rural,20.4,% of students,38,Table 11
+ladakh,2025,higher secondary,male,rural,10.1,% of students,38,Table 11
+ladakh,2025,all levels,male,rural,5.3,% of students,38,Table 11
+ladakh,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+ladakh,2025,primary,female,rural,0.0,% of students,38,Table 11
+ladakh,2025,middle,female,rural,0.0,% of students,38,Table 11
+ladakh,2025,secondary,female,rural,0.0,% of students,38,Table 11
+ladakh,2025,higher secondary,female,rural,0.0,% of students,38,Table 11
+ladakh,2025,all levels,female,rural,0.0,% of students,38,Table 11
+ladakh,2025,pre-primary,person,rural,0.0,% of students,38,Table 11
+ladakh,2025,primary,person,rural,0.0,% of students,38,Table 11
+ladakh,2025,middle,person,rural,0.0,% of students,38,Table 11
+ladakh,2025,secondary,person,rural,9.8,% of students,38,Table 11
+ladakh,2025,higher secondary,person,rural,5.7,% of students,38,Table 11
+ladakh,2025,all levels,person,rural,2.5,% of students,38,Table 11
+ladakh,2025,pre-primary,male,urban,0.0,% of students,38,Table 11
+ladakh,2025,primary,male,urban,0.0,% of students,38,Table 11
+ladakh,2025,middle,male,urban,0.0,% of students,38,Table 11
+ladakh,2025,secondary,male,urban,0.0,% of students,38,Table 11
+ladakh,2025,higher secondary,male,urban,19.8,% of students,38,Table 11
+ladakh,2025,all levels,male,urban,2.6,% of students,38,Table 11
+ladakh,2025,pre-primary,female,urban,0.0,% of students,38,Table 11
+ladakh,2025,primary,female,urban,0.0,% of students,38,Table 11
+ladakh,2025,middle,female,urban,0.0,% of students,38,Table 11
+ladakh,2025,secondary,female,urban,94.1,% of students,38,Table 11
+ladakh,2025,higher secondary,female,urban,0.0,% of students,38,Table 11
+ladakh,2025,all levels,female,urban,6.1,% of students,38,Table 11
+ladakh,2025,pre-primary,person,urban,0.0,% of students,38,Table 11
+ladakh,2025,primary,person,urban,0.0,% of students,38,Table 11
+ladakh,2025,middle,person,urban,0.0,% of students,38,Table 11
+ladakh,2025,secondary,person,urban,31.3,% of students,38,Table 11
+ladakh,2025,higher secondary,person,urban,6.5,% of students,38,Table 11
+ladakh,2025,all levels,person,urban,4.6,% of students,38,Table 11
+ladakh,2025,pre-primary,male,rural+urban,0.0,% of students,38,Table 11
+ladakh,2025,primary,male,rural+urban,0.0,% of students,38,Table 11
+ladakh,2025,middle,male,rural+urban,0.0,% of students,38,Table 11
+ladakh,2025,secondary,male,rural+urban,16.9,% of students,38,Table 11
+ladakh,2025,higher secondary,male,rural+urban,10.9,% of students,38,Table 11
+ladakh,2025,all levels,male,rural+urban,4.9,% of students,38,Table 11
+ladakh,2025,pre-primary,female,rural+urban,0.0,% of students,38,Table 11
+ladakh,2025,primary,female,rural+urban,0.0,% of students,38,Table 11
+ladakh,2025,middle,female,rural+urban,0.0,% of students,38,Table 11
+ladakh,2025,secondary,female,rural+urban,8.1,% of students,38,Table 11
+ladakh,2025,higher secondary,female,rural+urban,0.0,% of students,38,Table 11
+ladakh,2025,all levels,female,rural+urban,1.0,% of students,38,Table 11
+ladakh,2025,pre-primary,person,rural+urban,0.0,% of students,38,Table 11
+ladakh,2025,primary,person,rural+urban,0.0,% of students,38,Table 11
+ladakh,2025,middle,person,rural+urban,0.0,% of students,38,Table 11
+ladakh,2025,secondary,person,rural+urban,12.6,% of students,38,Table 11
+ladakh,2025,higher secondary,person,rural+urban,5.8,% of students,38,Table 11
+ladakh,2025,all levels,person,rural+urban,2.8,% of students,38,Table 11
+lakshadweep,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+lakshadweep,2025,primary,male,rural,0.0,% of students,38,Table 11
+lakshadweep,2025,middle,male,rural,0.0,% of students,38,Table 11
+lakshadweep,2025,secondary,male,rural,0.0,% of students,38,Table 11
+lakshadweep,2025,higher secondary,male,rural,0.0,% of students,38,Table 11
+lakshadweep,2025,all levels,male,rural,0.0,% of students,38,Table 11
+lakshadweep,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+lakshadweep,2025,primary,female,rural,0.0,% of students,38,Table 11
+lakshadweep,2025,middle,female,rural,0.0,% of students,38,Table 11
+lakshadweep,2025,secondary,female,rural,2.3,% of students,38,Table 11
+lakshadweep,2025,higher secondary,female,rural,,% of students,38,Table 11
+lakshadweep,2025,all levels,female,rural,0.4,% of students,38,Table 11
+lakshadweep,2025,pre-primary,person,rural,0.0,% of students,38,Table 11
+lakshadweep,2025,primary,person,rural,0.0,% of students,38,Table 11
+lakshadweep,2025,middle,person,rural,0.0,% of students,38,Table 11
+lakshadweep,2025,secondary,person,rural,1.2,% of students,38,Table 11
+lakshadweep,2025,higher secondary,person,rural,0.0,% of students,38,Table 11
+lakshadweep,2025,all levels,person,rural,0.2,% of students,38,Table 11
+lakshadweep,2025,pre-primary,male,urban,0.0,% of students,38,Table 11
+lakshadweep,2025,primary,male,urban,23.4,% of students,38,Table 11
+lakshadweep,2025,middle,male,urban,54.9,% of students,38,Table 11
+lakshadweep,2025,secondary,male,urban,81.4,% of students,38,Table 11
+lakshadweep,2025,higher secondary,male,urban,33.8,% of students,38,Table 11
+lakshadweep,2025,all levels,male,urban,36.4,% of students,38,Table 11
+lakshadweep,2025,pre-primary,female,urban,0.0,% of students,38,Table 11
+lakshadweep,2025,primary,female,urban,9.0,% of students,38,Table 11
+lakshadweep,2025,middle,female,urban,25.7,% of students,38,Table 11
+lakshadweep,2025,secondary,female,urban,34.5,% of students,38,Table 11
+lakshadweep,2025,higher secondary,female,urban,37.5,% of students,38,Table 11
+lakshadweep,2025,all levels,female,urban,17.2,% of students,38,Table 11
+lakshadweep,2025,pre-primary,person,urban,0.0,% of students,38,Table 11
+lakshadweep,2025,primary,person,urban,16.3,% of students,38,Table 11
+lakshadweep,2025,middle,person,urban,36.1,% of students,38,Table 11
+lakshadweep,2025,secondary,person,urban,57.0,% of students,38,Table 11
+lakshadweep,2025,higher secondary,person,urban,35.5,% of students,38,Table 11
+lakshadweep,2025,all levels,person,urban,25.4,% of students,38,Table 11
+lakshadweep,2025,pre-primary,male,rural+urban,0.0,% of students,38,Table 11
+lakshadweep,2025,primary,male,rural+urban,19.6,% of students,38,Table 11
+lakshadweep,2025,middle,male,rural+urban,50.5,% of students,38,Table 11
+lakshadweep,2025,secondary,male,rural+urban,59.8,% of students,38,Table 11
+lakshadweep,2025,higher secondary,male,rural+urban,19.4,% of students,38,Table 11
+lakshadweep,2025,all levels,male,rural+urban,29.0,% of students,38,Table 11
+lakshadweep,2025,pre-primary,female,rural+urban,0.0,% of students,38,Table 11
+lakshadweep,2025,primary,female,rural+urban,6.8,% of students,38,Table 11
+lakshadweep,2025,middle,female,rural+urban,22.5,% of students,38,Table 11
+lakshadweep,2025,secondary,female,rural+urban,26.1,% of students,38,Table 11
+lakshadweep,2025,higher secondary,female,rural+urban,37.5,% of students,38,Table 11
+lakshadweep,2025,all levels,female,rural+urban,14.1,% of students,38,Table 11
+lakshadweep,2025,pre-primary,person,rural+urban,0.0,% of students,38,Table 11
+lakshadweep,2025,primary,person,rural+urban,12.9,% of students,38,Table 11
+lakshadweep,2025,middle,person,rural+urban,32.2,% of students,38,Table 11
+lakshadweep,2025,secondary,person,rural+urban,42.4,% of students,38,Table 11
+lakshadweep,2025,higher secondary,person,rural+urban,25.6,% of students,38,Table 11
+lakshadweep,2025,all levels,person,rural+urban,20.6,% of students,38,Table 11
+madhya-pradesh,2025,pre-primary,male,rural,3.1,% of students,38,Table 11
+madhya-pradesh,2025,primary,male,rural,9.5,% of students,38,Table 11
+madhya-pradesh,2025,middle,male,rural,19.9,% of students,38,Table 11
+madhya-pradesh,2025,secondary,male,rural,19.7,% of students,38,Table 11
+madhya-pradesh,2025,higher secondary,male,rural,35.4,% of students,38,Table 11
+madhya-pradesh,2025,all levels,male,rural,15.1,% of students,38,Table 11
+madhya-pradesh,2025,pre-primary,female,rural,5.2,% of students,38,Table 11
+madhya-pradesh,2025,primary,female,rural,6.8,% of students,38,Table 11
+madhya-pradesh,2025,middle,female,rural,9.0,% of students,38,Table 11
+madhya-pradesh,2025,secondary,female,rural,22.1,% of students,38,Table 11
+madhya-pradesh,2025,higher secondary,female,rural,28.9,% of students,38,Table 11
+madhya-pradesh,2025,all levels,female,rural,12.2,% of students,38,Table 11
+madhya-pradesh,2025,pre-primary,person,rural,4.1,% of students,38,Table 11
+madhya-pradesh,2025,primary,person,rural,8.3,% of students,38,Table 11
+madhya-pradesh,2025,middle,person,rural,14.5,% of students,38,Table 11
+madhya-pradesh,2025,secondary,person,rural,21.0,% of students,38,Table 11
+madhya-pradesh,2025,higher secondary,person,rural,32.2,% of students,38,Table 11
+madhya-pradesh,2025,all levels,person,rural,13.7,% of students,38,Table 11
+madhya-pradesh,2025,pre-primary,male,urban,9.2,% of students,38,Table 11
+madhya-pradesh,2025,primary,male,urban,15.1,% of students,38,Table 11
+madhya-pradesh,2025,middle,male,urban,30.1,% of students,38,Table 11
+madhya-pradesh,2025,secondary,male,urban,41.6,% of students,38,Table 11
+madhya-pradesh,2025,higher secondary,male,urban,51.6,% of students,38,Table 11
+madhya-pradesh,2025,all levels,male,urban,26.4,% of students,38,Table 11
+madhya-pradesh,2025,pre-primary,female,urban,10.3,% of students,38,Table 11
+madhya-pradesh,2025,primary,female,urban,19.9,% of students,38,Table 11
+madhya-pradesh,2025,middle,female,urban,34.3,% of students,38,Table 11
+madhya-pradesh,2025,secondary,female,urban,42.0,% of students,38,Table 11
+madhya-pradesh,2025,higher secondary,female,urban,42.1,% of students,38,Table 11
+madhya-pradesh,2025,all levels,female,urban,28.3,% of students,38,Table 11
+madhya-pradesh,2025,pre-primary,person,urban,9.7,% of students,38,Table 11
+madhya-pradesh,2025,primary,person,urban,17.2,% of students,38,Table 11
+madhya-pradesh,2025,middle,person,urban,32.1,% of students,38,Table 11
+madhya-pradesh,2025,secondary,person,urban,41.8,% of students,38,Table 11
+madhya-pradesh,2025,higher secondary,person,urban,47.0,% of students,38,Table 11
+madhya-pradesh,2025,all levels,person,urban,27.3,% of students,38,Table 11
+madhya-pradesh,2025,pre-primary,male,rural+urban,5.0,% of students,38,Table 11
+madhya-pradesh,2025,primary,male,rural+urban,10.9,% of students,38,Table 11
+madhya-pradesh,2025,middle,male,rural+urban,22.8,% of students,38,Table 11
+madhya-pradesh,2025,secondary,male,rural+urban,26.0,% of students,38,Table 11
+madhya-pradesh,2025,higher secondary,male,rural+urban,40.7,% of students,38,Table 11
+madhya-pradesh,2025,all levels,male,rural+urban,18.2,% of students,38,Table 11
+madhya-pradesh,2025,pre-primary,female,rural+urban,6.9,% of students,38,Table 11
+madhya-pradesh,2025,primary,female,rural+urban,9.9,% of students,38,Table 11
+madhya-pradesh,2025,middle,female,rural+urban,16.0,% of students,38,Table 11
+madhya-pradesh,2025,secondary,female,rural+urban,26.5,% of students,38,Table 11
+madhya-pradesh,2025,higher secondary,female,rural+urban,32.9,% of students,38,Table 11
+madhya-pradesh,2025,all levels,female,rural+urban,16.4,% of students,38,Table 11
+madhya-pradesh,2025,pre-primary,person,rural+urban,5.9,% of students,38,Table 11
+madhya-pradesh,2025,primary,person,rural+urban,10.5,% of students,38,Table 11
+madhya-pradesh,2025,middle,person,rural+urban,19.4,% of students,38,Table 11
+madhya-pradesh,2025,secondary,person,rural+urban,26.3,% of students,38,Table 11
+madhya-pradesh,2025,higher secondary,person,rural+urban,36.9,% of students,38,Table 11
+madhya-pradesh,2025,all levels,person,rural+urban,17.3,% of students,38,Table 11
+maharashtra,2025,pre-primary,male,rural,1.2,% of students,38,Table 11
+maharashtra,2025,primary,male,rural,15.9,% of students,38,Table 11
+maharashtra,2025,middle,male,rural,18.7,% of students,38,Table 11
+maharashtra,2025,secondary,male,rural,25.1,% of students,38,Table 11
+maharashtra,2025,higher secondary,male,rural,19.4,% of students,38,Table 11
+maharashtra,2025,all levels,male,rural,17.3,% of students,38,Table 11
+maharashtra,2025,pre-primary,female,rural,2.3,% of students,38,Table 11
+maharashtra,2025,primary,female,rural,14.0,% of students,38,Table 11
+maharashtra,2025,middle,female,rural,20.7,% of students,38,Table 11
+maharashtra,2025,secondary,female,rural,27.7,% of students,38,Table 11
+maharashtra,2025,higher secondary,female,rural,28.8,% of students,38,Table 11
+maharashtra,2025,all levels,female,rural,18.1,% of students,38,Table 11
+maharashtra,2025,pre-primary,person,rural,1.7,% of students,38,Table 11
+maharashtra,2025,primary,person,rural,15.0,% of students,38,Table 11
+maharashtra,2025,middle,person,rural,19.6,% of students,38,Table 11
+maharashtra,2025,secondary,person,rural,26.4,% of students,38,Table 11
+maharashtra,2025,higher secondary,person,rural,23.1,% of students,38,Table 11
+maharashtra,2025,all levels,person,rural,17.6,% of students,38,Table 11
+maharashtra,2025,pre-primary,male,urban,5.0,% of students,38,Table 11
+maharashtra,2025,primary,male,urban,33.1,% of students,38,Table 11
+maharashtra,2025,middle,male,urban,31.5,% of students,38,Table 11
+maharashtra,2025,secondary,male,urban,53.4,% of students,38,Table 11
+maharashtra,2025,higher secondary,male,urban,44.0,% of students,38,Table 11
+maharashtra,2025,all levels,male,urban,35.0,% of students,38,Table 11
+maharashtra,2025,pre-primary,female,urban,11.3,% of students,38,Table 11
+maharashtra,2025,primary,female,urban,22.8,% of students,38,Table 11
+maharashtra,2025,middle,female,urban,28.0,% of students,38,Table 11
+maharashtra,2025,secondary,female,urban,44.9,% of students,38,Table 11
+maharashtra,2025,higher secondary,female,urban,35.8,% of students,38,Table 11
+maharashtra,2025,all levels,female,urban,28.2,% of students,38,Table 11
+maharashtra,2025,pre-primary,person,urban,8.0,% of students,38,Table 11
+maharashtra,2025,primary,person,urban,28.1,% of students,38,Table 11
+maharashtra,2025,middle,person,urban,29.7,% of students,38,Table 11
+maharashtra,2025,secondary,person,urban,49.5,% of students,38,Table 11
+maharashtra,2025,higher secondary,person,urban,40.2,% of students,38,Table 11
+maharashtra,2025,all levels,person,urban,31.7,% of students,38,Table 11
+maharashtra,2025,pre-primary,male,rural+urban,3.1,% of students,38,Table 11
+maharashtra,2025,primary,male,rural+urban,23.2,% of students,38,Table 11
+maharashtra,2025,middle,male,rural+urban,24.5,% of students,38,Table 11
+maharashtra,2025,secondary,male,rural+urban,38.3,% of students,38,Table 11
+maharashtra,2025,higher secondary,male,rural+urban,30.6,% of students,38,Table 11
+maharashtra,2025,all levels,male,rural+urban,25.2,% of students,38,Table 11
+maharashtra,2025,pre-primary,female,rural+urban,6.6,% of students,38,Table 11
+maharashtra,2025,primary,female,rural+urban,17.8,% of students,38,Table 11
+maharashtra,2025,middle,female,rural+urban,24.2,% of students,38,Table 11
+maharashtra,2025,secondary,female,rural+urban,35.9,% of students,38,Table 11
+maharashtra,2025,higher secondary,female,rural+urban,32.5,% of students,38,Table 11
+maharashtra,2025,all levels,female,rural+urban,22.8,% of students,38,Table 11
+maharashtra,2025,pre-primary,person,rural+urban,4.8,% of students,38,Table 11
+maharashtra,2025,primary,person,rural+urban,20.7,% of students,38,Table 11
+maharashtra,2025,middle,person,rural+urban,24.4,% of students,38,Table 11
+maharashtra,2025,secondary,person,rural+urban,37.3,% of students,38,Table 11
+maharashtra,2025,higher secondary,person,rural+urban,31.4,% of students,38,Table 11
+maharashtra,2025,all levels,person,rural+urban,24.1,% of students,38,Table 11
+manipur,2025,pre-primary,male,rural,17.0,% of students,38,Table 11
+manipur,2025,primary,male,rural,28.8,% of students,38,Table 11
+manipur,2025,middle,male,rural,30.4,% of students,38,Table 11
+manipur,2025,secondary,male,rural,63.4,% of students,38,Table 11
+manipur,2025,higher secondary,male,rural,47.7,% of students,38,Table 11
+manipur,2025,all levels,male,rural,35.1,% of students,38,Table 11
+manipur,2025,pre-primary,female,rural,44.0,% of students,38,Table 11
+manipur,2025,primary,female,rural,41.8,% of students,38,Table 11
+manipur,2025,middle,female,rural,52.2,% of students,38,Table 11
+manipur,2025,secondary,female,rural,56.5,% of students,38,Table 11
+manipur,2025,higher secondary,female,rural,35.5,% of students,38,Table 11
+manipur,2025,all levels,female,rural,46.0,% of students,38,Table 11
+manipur,2025,pre-primary,person,rural,27.1,% of students,38,Table 11
+manipur,2025,primary,person,rural,34.4,% of students,38,Table 11
+manipur,2025,middle,person,rural,40.9,% of students,38,Table 11
+manipur,2025,secondary,person,rural,59.6,% of students,38,Table 11
+manipur,2025,higher secondary,person,rural,40.6,% of students,38,Table 11
+manipur,2025,all levels,person,rural,40.3,% of students,38,Table 11
+manipur,2025,pre-primary,male,urban,27.7,% of students,38,Table 11
+manipur,2025,primary,male,urban,55.5,% of students,38,Table 11
+manipur,2025,middle,male,urban,65.9,% of students,38,Table 11
+manipur,2025,secondary,male,urban,92.7,% of students,38,Table 11
+manipur,2025,higher secondary,male,urban,73.5,% of students,38,Table 11
+manipur,2025,all levels,male,urban,61.9,% of students,38,Table 11
+manipur,2025,pre-primary,female,urban,25.6,% of students,38,Table 11
+manipur,2025,primary,female,urban,52.1,% of students,38,Table 11
+manipur,2025,middle,female,urban,76.9,% of students,38,Table 11
+manipur,2025,secondary,female,urban,91.3,% of students,38,Table 11
+manipur,2025,higher secondary,female,urban,84.1,% of students,38,Table 11
+manipur,2025,all levels,female,urban,61.4,% of students,38,Table 11
+manipur,2025,pre-primary,person,urban,26.6,% of students,38,Table 11
+manipur,2025,primary,person,urban,53.7,% of students,38,Table 11
+manipur,2025,middle,person,urban,71.3,% of students,38,Table 11
+manipur,2025,secondary,person,urban,92.0,% of students,38,Table 11
+manipur,2025,higher secondary,person,urban,77.9,% of students,38,Table 11
+manipur,2025,all levels,person,urban,61.6,% of students,38,Table 11
+manipur,2025,pre-primary,male,rural+urban,21.9,% of students,38,Table 11
+manipur,2025,primary,male,rural+urban,36.8,% of students,38,Table 11
+manipur,2025,middle,male,rural+urban,42.1,% of students,38,Table 11
+manipur,2025,secondary,male,rural+urban,74.1,% of students,38,Table 11
+manipur,2025,higher secondary,male,rural+urban,57.0,% of students,38,Table 11
+manipur,2025,all levels,male,rural+urban,44.1,% of students,38,Table 11
+manipur,2025,pre-primary,female,rural+urban,33.2,% of students,38,Table 11
+manipur,2025,primary,female,rural+urban,46.0,% of students,38,Table 11
+manipur,2025,middle,female,rural+urban,60.6,% of students,38,Table 11
+manipur,2025,secondary,female,rural+urban,66.8,% of students,38,Table 11
+manipur,2025,higher secondary,female,rural+urban,46.3,% of students,38,Table 11
+manipur,2025,all levels,female,rural+urban,51.6,% of students,38,Table 11
+manipur,2025,pre-primary,person,rural+urban,26.8,% of students,38,Table 11
+manipur,2025,primary,person,rural+urban,41.1,% of students,38,Table 11
+manipur,2025,middle,person,rural+urban,51.1,% of students,38,Table 11
+manipur,2025,secondary,person,rural+urban,70.2,% of students,38,Table 11
+manipur,2025,higher secondary,person,rural+urban,51.3,% of students,38,Table 11
+manipur,2025,all levels,person,rural+urban,47.8,% of students,38,Table 11
+meghalaya,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+meghalaya,2025,primary,male,rural,2.9,% of students,38,Table 11
+meghalaya,2025,middle,male,rural,3.3,% of students,38,Table 11
+meghalaya,2025,secondary,male,rural,15.7,% of students,38,Table 11
+meghalaya,2025,higher secondary,male,rural,11.0,% of students,38,Table 11
+meghalaya,2025,all levels,male,rural,4.2,% of students,38,Table 11
+meghalaya,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+meghalaya,2025,primary,female,rural,6.1,% of students,38,Table 11
+meghalaya,2025,middle,female,rural,0.3,% of students,38,Table 11
+meghalaya,2025,secondary,female,rural,11.8,% of students,38,Table 11
+meghalaya,2025,higher secondary,female,rural,0.0,% of students,38,Table 11
+meghalaya,2025,all levels,female,rural,4.5,% of students,38,Table 11
+meghalaya,2025,pre-primary,person,rural,0.0,% of students,38,Table 11
+meghalaya,2025,primary,person,rural,4.5,% of students,38,Table 11
+meghalaya,2025,middle,person,rural,2.0,% of students,38,Table 11
+meghalaya,2025,secondary,person,rural,13.6,% of students,38,Table 11
+meghalaya,2025,higher secondary,person,rural,6.2,% of students,38,Table 11
+meghalaya,2025,all levels,person,rural,4.4,% of students,38,Table 11
+meghalaya,2025,pre-primary,male,urban,0.0,% of students,38,Table 11
+meghalaya,2025,primary,male,urban,5.9,% of students,38,Table 11
+meghalaya,2025,middle,male,urban,23.9,% of students,38,Table 11
+meghalaya,2025,secondary,male,urban,33.6,% of students,38,Table 11
+meghalaya,2025,higher secondary,male,urban,0.0,% of students,38,Table 11
+meghalaya,2025,all levels,male,urban,14.0,% of students,38,Table 11
+meghalaya,2025,pre-primary,female,urban,0.0,% of students,38,Table 11
+meghalaya,2025,primary,female,urban,24.0,% of students,38,Table 11
+meghalaya,2025,middle,female,urban,8.9,% of students,38,Table 11
+meghalaya,2025,secondary,female,urban,18.3,% of students,38,Table 11
+meghalaya,2025,higher secondary,female,urban,0.8,% of students,38,Table 11
+meghalaya,2025,all levels,female,urban,10.7,% of students,38,Table 11
+meghalaya,2025,pre-primary,person,urban,0.0,% of students,38,Table 11
+meghalaya,2025,primary,person,urban,13.0,% of students,38,Table 11
+meghalaya,2025,middle,person,urban,16.3,% of students,38,Table 11
+meghalaya,2025,secondary,person,urban,27.9,% of students,38,Table 11
+meghalaya,2025,higher secondary,person,urban,0.5,% of students,38,Table 11
+meghalaya,2025,all levels,person,urban,12.5,% of students,38,Table 11
+meghalaya,2025,pre-primary,male,rural+urban,0.0,% of students,38,Table 11
+meghalaya,2025,primary,male,rural+urban,3.2,% of students,38,Table 11
+meghalaya,2025,middle,male,rural+urban,5.6,% of students,38,Table 11
+meghalaya,2025,secondary,male,rural+urban,20.3,% of students,38,Table 11
+meghalaya,2025,higher secondary,male,rural+urban,7.8,% of students,38,Table 11
+meghalaya,2025,all levels,male,rural+urban,5.4,% of students,38,Table 11
+meghalaya,2025,pre-primary,female,rural+urban,0.0,% of students,38,Table 11
+meghalaya,2025,primary,female,rural+urban,7.0,% of students,38,Table 11
+meghalaya,2025,middle,female,rural+urban,1.4,% of students,38,Table 11
+meghalaya,2025,secondary,female,rural+urban,12.8,% of students,38,Table 11
+meghalaya,2025,higher secondary,female,rural+urban,0.3,% of students,38,Table 11
+meghalaya,2025,all levels,female,rural+urban,5.2,% of students,38,Table 11
+meghalaya,2025,pre-primary,person,rural+urban,0.0,% of students,38,Table 11
+meghalaya,2025,primary,person,rural+urban,5.1,% of students,38,Table 11
+meghalaya,2025,middle,person,rural+urban,3.7,% of students,38,Table 11
+meghalaya,2025,secondary,person,rural+urban,16.5,% of students,38,Table 11
+meghalaya,2025,higher secondary,person,rural+urban,4.1,% of students,38,Table 11
+meghalaya,2025,all levels,person,rural+urban,5.3,% of students,38,Table 11
+mizoram,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+mizoram,2025,primary,male,rural,0.5,% of students,38,Table 11
+mizoram,2025,middle,male,rural,0.0,% of students,38,Table 11
+mizoram,2025,secondary,male,rural,4.2,% of students,38,Table 11
+mizoram,2025,higher secondary,male,rural,0.0,% of students,38,Table 11
+mizoram,2025,all levels,male,rural,0.8,% of students,38,Table 11
+mizoram,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+mizoram,2025,primary,female,rural,0.0,% of students,38,Table 11
+mizoram,2025,middle,female,rural,0.0,% of students,38,Table 11
+mizoram,2025,secondary,female,rural,26.5,% of students,38,Table 11
+mizoram,2025,higher secondary,female,rural,1.7,% of students,38,Table 11
+mizoram,2025,all levels,female,rural,3.9,% of students,38,Table 11
+mizoram,2025,pre-primary,person,rural,0.0,% of students,38,Table 11
+mizoram,2025,primary,person,rural,0.3,% of students,38,Table 11
+mizoram,2025,middle,person,rural,0.0,% of students,38,Table 11
+mizoram,2025,secondary,person,rural,14.8,% of students,38,Table 11
+mizoram,2025,higher secondary,person,rural,0.7,% of students,38,Table 11
+mizoram,2025,all levels,person,rural,2.2,% of students,38,Table 11
+mizoram,2025,pre-primary,male,urban,0.0,% of students,38,Table 11
+mizoram,2025,primary,male,urban,2.3,% of students,38,Table 11
+mizoram,2025,middle,male,urban,0.6,% of students,38,Table 11
+mizoram,2025,secondary,male,urban,9.2,% of students,38,Table 11
+mizoram,2025,higher secondary,male,urban,0.8,% of students,38,Table 11
+mizoram,2025,all levels,male,urban,2.8,% of students,38,Table 11
+mizoram,2025,pre-primary,female,urban,0.0,% of students,38,Table 11
+mizoram,2025,primary,female,urban,3.4,% of students,38,Table 11
+mizoram,2025,middle,female,urban,1.7,% of students,38,Table 11
+mizoram,2025,secondary,female,urban,2.0,% of students,38,Table 11
+mizoram,2025,higher secondary,female,urban,0.8,% of students,38,Table 11
+mizoram,2025,all levels,female,urban,2.2,% of students,38,Table 11
+mizoram,2025,pre-primary,person,urban,0.0,% of students,38,Table 11
+mizoram,2025,primary,person,urban,2.9,% of students,38,Table 11
+mizoram,2025,middle,person,urban,1.1,% of students,38,Table 11
+mizoram,2025,secondary,person,urban,5.8,% of students,38,Table 11
+mizoram,2025,higher secondary,person,urban,0.8,% of students,38,Table 11
+mizoram,2025,all levels,person,urban,2.5,% of students,38,Table 11
+mizoram,2025,pre-primary,male,rural+urban,0.0,% of students,38,Table 11
+mizoram,2025,primary,male,rural+urban,1.2,% of students,38,Table 11
+mizoram,2025,middle,male,rural+urban,0.2,% of students,38,Table 11
+mizoram,2025,secondary,male,rural+urban,6.6,% of students,38,Table 11
+mizoram,2025,higher secondary,male,rural+urban,0.5,% of students,38,Table 11
+mizoram,2025,all levels,male,rural+urban,1.6,% of students,38,Table 11
+mizoram,2025,pre-primary,female,rural+urban,0.0,% of students,38,Table 11
+mizoram,2025,primary,female,rural+urban,1.6,% of students,38,Table 11
+mizoram,2025,middle,female,rural+urban,0.6,% of students,38,Table 11
+mizoram,2025,secondary,female,rural+urban,14.7,% of students,38,Table 11
+mizoram,2025,higher secondary,female,rural+urban,1.0,% of students,38,Table 11
+mizoram,2025,all levels,female,rural+urban,3.1,% of students,38,Table 11
+mizoram,2025,pre-primary,person,rural+urban,0.0,% of students,38,Table 11
+mizoram,2025,primary,person,rural+urban,1.4,% of students,38,Table 11
+mizoram,2025,middle,person,rural+urban,0.4,% of students,38,Table 11
+mizoram,2025,secondary,person,rural+urban,10.5,% of students,38,Table 11
+mizoram,2025,higher secondary,person,rural+urban,0.8,% of students,38,Table 11
+mizoram,2025,all levels,person,rural+urban,2.4,% of students,38,Table 11
+nagaland,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+nagaland,2025,primary,male,rural,15.6,% of students,38,Table 11
+nagaland,2025,middle,male,rural,9.9,% of students,38,Table 11
+nagaland,2025,secondary,male,rural,17.7,% of students,38,Table 11
+nagaland,2025,higher secondary,male,rural,0.0,% of students,38,Table 11
+nagaland,2025,all levels,male,rural,12.3,% of students,38,Table 11
+nagaland,2025,pre-primary,female,rural,2.6,% of students,38,Table 11
+nagaland,2025,primary,female,rural,6.7,% of students,38,Table 11
+nagaland,2025,middle,female,rural,3.3,% of students,38,Table 11
+nagaland,2025,secondary,female,rural,20.3,% of students,38,Table 11
+nagaland,2025,higher secondary,female,rural,0.0,% of students,38,Table 11
+nagaland,2025,all levels,female,rural,6.8,% of students,38,Table 11
+nagaland,2025,pre-primary,person,rural,1.2,% of students,38,Table 11
+nagaland,2025,primary,person,rural,10.9,% of students,38,Table 11
+nagaland,2025,middle,person,rural,6.3,% of students,38,Table 11
+nagaland,2025,secondary,person,rural,18.8,% of students,38,Table 11
+nagaland,2025,higher secondary,person,rural,0.0,% of students,38,Table 11
+nagaland,2025,all levels,person,rural,9.5,% of students,38,Table 11
+nagaland,2025,pre-primary,male,urban,12.4,% of students,38,Table 11
+nagaland,2025,primary,male,urban,11.4,% of students,38,Table 11
+nagaland,2025,middle,male,urban,24.9,% of students,38,Table 11
+nagaland,2025,secondary,male,urban,39.0,% of students,38,Table 11
+nagaland,2025,higher secondary,male,urban,39.0,% of students,38,Table 11
+nagaland,2025,all levels,male,urban,22.2,% of students,38,Table 11
+nagaland,2025,pre-primary,female,urban,22.7,% of students,38,Table 11
+nagaland,2025,primary,female,urban,10.1,% of students,38,Table 11
+nagaland,2025,middle,female,urban,18.8,% of students,38,Table 11
+nagaland,2025,secondary,female,urban,33.3,% of students,38,Table 11
+nagaland,2025,higher secondary,female,urban,12.0,% of students,38,Table 11
+nagaland,2025,all levels,female,urban,17.6,% of students,38,Table 11
+nagaland,2025,pre-primary,person,urban,18.1,% of students,38,Table 11
+nagaland,2025,primary,person,urban,10.8,% of students,38,Table 11
+nagaland,2025,middle,person,urban,22.1,% of students,38,Table 11
+nagaland,2025,secondary,person,urban,36.2,% of students,38,Table 11
+nagaland,2025,higher secondary,person,urban,26.7,% of students,38,Table 11
+nagaland,2025,all levels,person,urban,20.0,% of students,38,Table 11
+nagaland,2025,pre-primary,male,rural+urban,3.5,% of students,38,Table 11
+nagaland,2025,primary,male,rural+urban,14.3,% of students,38,Table 11
+nagaland,2025,middle,male,rural+urban,14.3,% of students,38,Table 11
+nagaland,2025,secondary,male,rural+urban,24.3,% of students,38,Table 11
+nagaland,2025,higher secondary,male,rural+urban,20.3,% of students,38,Table 11
+nagaland,2025,all levels,male,rural+urban,15.4,% of students,38,Table 11
+nagaland,2025,pre-primary,female,rural+urban,9.9,% of students,38,Table 11
+nagaland,2025,primary,female,rural+urban,7.5,% of students,38,Table 11
+nagaland,2025,middle,female,rural+urban,6.9,% of students,38,Table 11
+nagaland,2025,secondary,female,rural+urban,25.4,% of students,38,Table 11
+nagaland,2025,higher secondary,female,rural+urban,7.2,% of students,38,Table 11
+nagaland,2025,all levels,female,rural+urban,9.9,% of students,38,Table 11
+nagaland,2025,pre-primary,person,rural+urban,6.7,% of students,38,Table 11
+nagaland,2025,primary,person,rural+urban,10.9,% of students,38,Table 11
+nagaland,2025,middle,person,rural+urban,10.4,% of students,38,Table 11
+nagaland,2025,secondary,person,rural+urban,24.8,% of students,38,Table 11
+nagaland,2025,higher secondary,person,rural+urban,14.8,% of students,38,Table 11
+nagaland,2025,all levels,person,rural+urban,12.7,% of students,38,Table 11
+odisha,2025,pre-primary,male,rural,38.4,% of students,38,Table 11
+odisha,2025,primary,male,rural,62.0,% of students,38,Table 11
+odisha,2025,middle,male,rural,59.8,% of students,38,Table 11
+odisha,2025,secondary,male,rural,67.0,% of students,38,Table 11
+odisha,2025,higher secondary,male,rural,33.5,% of students,38,Table 11
+odisha,2025,all levels,male,rural,56.2,% of students,38,Table 11
+odisha,2025,pre-primary,female,rural,25.6,% of students,38,Table 11
+odisha,2025,primary,female,rural,57.8,% of students,38,Table 11
+odisha,2025,middle,female,rural,60.5,% of students,38,Table 11
+odisha,2025,secondary,female,rural,71.8,% of students,38,Table 11
+odisha,2025,higher secondary,female,rural,37.1,% of students,38,Table 11
+odisha,2025,all levels,female,rural,52.9,% of students,38,Table 11
+odisha,2025,pre-primary,person,rural,32.1,% of students,38,Table 11
+odisha,2025,primary,person,rural,59.8,% of students,38,Table 11
+odisha,2025,middle,person,rural,60.1,% of students,38,Table 11
+odisha,2025,secondary,person,rural,68.9,% of students,38,Table 11
+odisha,2025,higher secondary,person,rural,35.3,% of students,38,Table 11
+odisha,2025,all levels,person,rural,54.6,% of students,38,Table 11
+odisha,2025,pre-primary,male,urban,39.7,% of students,38,Table 11
+odisha,2025,primary,male,urban,55.1,% of students,38,Table 11
+odisha,2025,middle,male,urban,81.7,% of students,38,Table 11
+odisha,2025,secondary,male,urban,77.3,% of students,38,Table 11
+odisha,2025,higher secondary,male,urban,70.6,% of students,38,Table 11
+odisha,2025,all levels,male,urban,69.2,% of students,38,Table 11
+odisha,2025,pre-primary,female,urban,55.1,% of students,38,Table 11
+odisha,2025,primary,female,urban,63.2,% of students,38,Table 11
+odisha,2025,middle,female,urban,50.4,% of students,38,Table 11
+odisha,2025,secondary,female,urban,57.7,% of students,38,Table 11
+odisha,2025,higher secondary,female,urban,97.5,% of students,38,Table 11
+odisha,2025,all levels,female,urban,63.4,% of students,38,Table 11
+odisha,2025,pre-primary,person,urban,48.7,% of students,38,Table 11
+odisha,2025,primary,person,urban,58.9,% of students,38,Table 11
+odisha,2025,middle,person,urban,70.3,% of students,38,Table 11
+odisha,2025,secondary,person,urban,67.6,% of students,38,Table 11
+odisha,2025,higher secondary,person,urban,80.7,% of students,38,Table 11
+odisha,2025,all levels,person,urban,66.6,% of students,38,Table 11
+odisha,2025,pre-primary,male,rural+urban,38.5,% of students,38,Table 11
+odisha,2025,primary,male,rural+urban,60.8,% of students,38,Table 11
+odisha,2025,middle,male,rural+urban,66.8,% of students,38,Table 11
+odisha,2025,secondary,male,rural+urban,68.7,% of students,38,Table 11
+odisha,2025,higher secondary,male,rural+urban,46.6,% of students,38,Table 11
+odisha,2025,all levels,male,rural+urban,59.0,% of students,38,Table 11
+odisha,2025,pre-primary,female,rural+urban,30.0,% of students,38,Table 11
+odisha,2025,primary,female,rural+urban,58.6,% of students,38,Table 11
+odisha,2025,middle,female,rural+urban,57.9,% of students,38,Table 11
+odisha,2025,secondary,female,rural+urban,68.6,% of students,38,Table 11
+odisha,2025,higher secondary,female,rural+urban,52.0,% of students,38,Table 11
+odisha,2025,all levels,female,rural+urban,54.9,% of students,38,Table 11
+odisha,2025,pre-primary,person,rural+urban,34.2,% of students,38,Table 11
+odisha,2025,primary,person,rural+urban,59.7,% of students,38,Table 11
+odisha,2025,middle,person,rural+urban,63.2,% of students,38,Table 11
+odisha,2025,secondary,person,rural+urban,68.7,% of students,38,Table 11
+odisha,2025,higher secondary,person,rural+urban,49.1,% of students,38,Table 11
+odisha,2025,all levels,person,rural+urban,57.1,% of students,38,Table 11
+puducherry,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+puducherry,2025,primary,male,rural,0.0,% of students,38,Table 11
+puducherry,2025,middle,male,rural,0.0,% of students,38,Table 11
+puducherry,2025,secondary,male,rural,0.0,% of students,38,Table 11
+puducherry,2025,higher secondary,male,rural,64.2,% of students,38,Table 11
+puducherry,2025,all levels,male,rural,11.6,% of students,38,Table 11
+puducherry,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+puducherry,2025,primary,female,rural,21.7,% of students,38,Table 11
+puducherry,2025,middle,female,rural,13.8,% of students,38,Table 11
+puducherry,2025,secondary,female,rural,0.0,% of students,38,Table 11
+puducherry,2025,higher secondary,female,rural,0.0,% of students,38,Table 11
+puducherry,2025,all levels,female,rural,10.6,% of students,38,Table 11
+puducherry,2025,pre-primary,person,rural,0.0,% of students,38,Table 11
+puducherry,2025,primary,person,rural,10.0,% of students,38,Table 11
+puducherry,2025,middle,person,rural,9.8,% of students,38,Table 11
+puducherry,2025,secondary,person,rural,0.0,% of students,38,Table 11
+puducherry,2025,higher secondary,person,rural,38.4,% of students,38,Table 11
+puducherry,2025,all levels,person,rural,11.1,% of students,38,Table 11
+puducherry,2025,pre-primary,male,urban,0.0,% of students,38,Table 11
+puducherry,2025,primary,male,urban,2.1,% of students,38,Table 11
+puducherry,2025,middle,male,urban,0.0,% of students,38,Table 11
+puducherry,2025,secondary,male,urban,4.1,% of students,38,Table 11
+puducherry,2025,higher secondary,male,urban,11.2,% of students,38,Table 11
+puducherry,2025,all levels,male,urban,2.5,% of students,38,Table 11
+puducherry,2025,pre-primary,female,urban,17.8,% of students,38,Table 11
+puducherry,2025,primary,female,urban,0.0,% of students,38,Table 11
+puducherry,2025,middle,female,urban,8.5,% of students,38,Table 11
+puducherry,2025,secondary,female,urban,9.3,% of students,38,Table 11
+puducherry,2025,higher secondary,female,urban,0.0,% of students,38,Table 11
+puducherry,2025,all levels,female,urban,5.7,% of students,38,Table 11
+puducherry,2025,pre-primary,person,urban,5.2,% of students,38,Table 11
+puducherry,2025,primary,person,urban,0.6,% of students,38,Table 11
+puducherry,2025,middle,person,urban,2.3,% of students,38,Table 11
+puducherry,2025,secondary,person,urban,6.3,% of students,38,Table 11
+puducherry,2025,higher secondary,person,urban,10.1,% of students,38,Table 11
+puducherry,2025,all levels,person,urban,3.8,% of students,38,Table 11
+puducherry,2025,pre-primary,male,rural+urban,0.0,% of students,38,Table 11
+puducherry,2025,primary,male,rural+urban,0.6,% of students,38,Table 11
+puducherry,2025,middle,male,rural+urban,0.0,% of students,38,Table 11
+puducherry,2025,secondary,male,rural+urban,2.8,% of students,38,Table 11
+puducherry,2025,higher secondary,male,rural+urban,39.5,% of students,38,Table 11
+puducherry,2025,all levels,male,rural+urban,6.4,% of students,38,Table 11
+puducherry,2025,pre-primary,female,rural+urban,9.2,% of students,38,Table 11
+puducherry,2025,primary,female,rural+urban,9.6,% of students,38,Table 11
+puducherry,2025,middle,female,rural+urban,11.3,% of students,38,Table 11
+puducherry,2025,secondary,female,rural+urban,4.9,% of students,38,Table 11
+puducherry,2025,higher secondary,female,rural+urban,0.0,% of students,38,Table 11
+puducherry,2025,all levels,female,rural+urban,8.2,% of students,38,Table 11
+puducherry,2025,pre-primary,person,rural+urban,2.3,% of students,38,Table 11
+puducherry,2025,primary,person,rural+urban,5.8,% of students,38,Table 11
+puducherry,2025,middle,person,rural+urban,4.6,% of students,38,Table 11
+puducherry,2025,secondary,person,rural+urban,3.9,% of students,38,Table 11
+puducherry,2025,higher secondary,person,rural+urban,27.9,% of students,38,Table 11
+puducherry,2025,all levels,person,rural+urban,7.2,% of students,38,Table 11
+punjab,2025,pre-primary,male,rural,6.6,% of students,38,Table 11
+punjab,2025,primary,male,rural,23.6,% of students,38,Table 11
+punjab,2025,middle,male,rural,15.8,% of students,38,Table 11
+punjab,2025,secondary,male,rural,26.7,% of students,38,Table 11
+punjab,2025,higher secondary,male,rural,28.0,% of students,38,Table 11
+punjab,2025,all levels,male,rural,21.0,% of students,38,Table 11
+punjab,2025,pre-primary,female,rural,10.0,% of students,38,Table 11
+punjab,2025,primary,female,rural,19.2,% of students,38,Table 11
+punjab,2025,middle,female,rural,8.8,% of students,38,Table 11
+punjab,2025,secondary,female,rural,20.6,% of students,38,Table 11
+punjab,2025,higher secondary,female,rural,11.6,% of students,38,Table 11
+punjab,2025,all levels,female,rural,14.7,% of students,38,Table 11
+punjab,2025,pre-primary,person,rural,8.6,% of students,38,Table 11
+punjab,2025,primary,person,rural,21.7,% of students,38,Table 11
+punjab,2025,middle,person,rural,12.7,% of students,38,Table 11
+punjab,2025,secondary,person,rural,23.5,% of students,38,Table 11
+punjab,2025,higher secondary,person,rural,19.7,% of students,38,Table 11
+punjab,2025,all levels,person,rural,18.0,% of students,38,Table 11
+punjab,2025,pre-primary,male,urban,8.1,% of students,38,Table 11
+punjab,2025,primary,male,urban,22.0,% of students,38,Table 11
+punjab,2025,middle,male,urban,33.4,% of students,38,Table 11
+punjab,2025,secondary,male,urban,13.8,% of students,38,Table 11
+punjab,2025,higher secondary,male,urban,77.9,% of students,38,Table 11
+punjab,2025,all levels,male,urban,32.9,% of students,38,Table 11
+punjab,2025,pre-primary,female,urban,3.4,% of students,38,Table 11
+punjab,2025,primary,female,urban,21.1,% of students,38,Table 11
+punjab,2025,middle,female,urban,25.2,% of students,38,Table 11
+punjab,2025,secondary,female,urban,19.2,% of students,38,Table 11
+punjab,2025,higher secondary,female,urban,82.2,% of students,38,Table 11
+punjab,2025,all levels,female,urban,43.5,% of students,38,Table 11
+punjab,2025,pre-primary,person,urban,6.0,% of students,38,Table 11
+punjab,2025,primary,person,urban,21.5,% of students,38,Table 11
+punjab,2025,middle,person,urban,29.6,% of students,38,Table 11
+punjab,2025,secondary,person,urban,15.9,% of students,38,Table 11
+punjab,2025,higher secondary,person,urban,80.7,% of students,38,Table 11
+punjab,2025,all levels,person,urban,38.1,% of students,38,Table 11
+punjab,2025,pre-primary,male,rural+urban,7.2,% of students,38,Table 11
+punjab,2025,primary,male,rural+urban,23.0,% of students,38,Table 11
+punjab,2025,middle,male,rural+urban,22.0,% of students,38,Table 11
+punjab,2025,secondary,male,rural+urban,20.8,% of students,38,Table 11
+punjab,2025,higher secondary,male,rural+urban,55.4,% of students,38,Table 11
+punjab,2025,all levels,male,rural+urban,26.0,% of students,38,Table 11
+punjab,2025,pre-primary,female,rural+urban,8.1,% of students,38,Table 11
+punjab,2025,primary,female,rural+urban,20.0,% of students,38,Table 11
+punjab,2025,middle,female,rural+urban,14.8,% of students,38,Table 11
+punjab,2025,secondary,female,rural+urban,20.1,% of students,38,Table 11
+punjab,2025,higher secondary,female,rural+urban,60.1,% of students,38,Table 11
+punjab,2025,all levels,female,rural+urban,27.6,% of students,38,Table 11
+punjab,2025,pre-primary,person,rural+urban,7.7,% of students,38,Table 11
+punjab,2025,primary,person,rural+urban,21.6,% of students,38,Table 11
+punjab,2025,middle,person,rural+urban,18.8,% of students,38,Table 11
+punjab,2025,secondary,person,rural+urban,20.4,% of students,38,Table 11
+punjab,2025,higher secondary,person,rural+urban,58.2,% of students,38,Table 11
+punjab,2025,all levels,person,rural+urban,26.8,% of students,38,Table 11
+rajasthan,2025,pre-primary,male,rural,6.3,% of students,38,Table 11
+rajasthan,2025,primary,male,rural,4.9,% of students,38,Table 11
+rajasthan,2025,middle,male,rural,6.6,% of students,38,Table 11
+rajasthan,2025,secondary,male,rural,11.7,% of students,38,Table 11
+rajasthan,2025,higher secondary,male,rural,6.8,% of students,38,Table 11
+rajasthan,2025,all levels,male,rural,6.6,% of students,38,Table 11
+rajasthan,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+rajasthan,2025,primary,female,rural,3.4,% of students,38,Table 11
+rajasthan,2025,middle,female,rural,5.4,% of students,38,Table 11
+rajasthan,2025,secondary,female,rural,4.4,% of students,38,Table 11
+rajasthan,2025,higher secondary,female,rural,6.0,% of students,38,Table 11
+rajasthan,2025,all levels,female,rural,4.0,% of students,38,Table 11
+rajasthan,2025,pre-primary,person,rural,3.4,% of students,38,Table 11
+rajasthan,2025,primary,person,rural,4.1,% of students,38,Table 11
+rajasthan,2025,middle,person,rural,6.1,% of students,38,Table 11
+rajasthan,2025,secondary,person,rural,8.3,% of students,38,Table 11
+rajasthan,2025,higher secondary,person,rural,6.5,% of students,38,Table 11
+rajasthan,2025,all levels,person,rural,5.4,% of students,38,Table 11
+rajasthan,2025,pre-primary,male,urban,5.9,% of students,38,Table 11
+rajasthan,2025,primary,male,urban,11.4,% of students,38,Table 11
+rajasthan,2025,middle,male,urban,9.5,% of students,38,Table 11
+rajasthan,2025,secondary,male,urban,21.8,% of students,38,Table 11
+rajasthan,2025,higher secondary,male,urban,36.4,% of students,38,Table 11
+rajasthan,2025,all levels,male,urban,15.3,% of students,38,Table 11
+rajasthan,2025,pre-primary,female,urban,1.2,% of students,38,Table 11
+rajasthan,2025,primary,female,urban,8.5,% of students,38,Table 11
+rajasthan,2025,middle,female,urban,4.3,% of students,38,Table 11
+rajasthan,2025,secondary,female,urban,19.2,% of students,38,Table 11
+rajasthan,2025,higher secondary,female,urban,29.2,% of students,38,Table 11
+rajasthan,2025,all levels,female,urban,11.2,% of students,38,Table 11
+rajasthan,2025,pre-primary,person,urban,3.8,% of students,38,Table 11
+rajasthan,2025,primary,person,urban,10.1,% of students,38,Table 11
+rajasthan,2025,middle,person,urban,7.1,% of students,38,Table 11
+rajasthan,2025,secondary,person,urban,20.6,% of students,38,Table 11
+rajasthan,2025,higher secondary,person,urban,33.2,% of students,38,Table 11
+rajasthan,2025,all levels,person,urban,13.4,% of students,38,Table 11
+rajasthan,2025,pre-primary,male,rural+urban,6.2,% of students,38,Table 11
+rajasthan,2025,primary,male,rural+urban,6.4,% of students,38,Table 11
+rajasthan,2025,middle,male,rural+urban,7.3,% of students,38,Table 11
+rajasthan,2025,secondary,male,rural+urban,14.1,% of students,38,Table 11
+rajasthan,2025,higher secondary,male,rural+urban,14.4,% of students,38,Table 11
+rajasthan,2025,all levels,male,rural+urban,8.7,% of students,38,Table 11
+rajasthan,2025,pre-primary,female,rural+urban,0.3,% of students,38,Table 11
+rajasthan,2025,primary,female,rural+urban,4.3,% of students,38,Table 11
+rajasthan,2025,middle,female,rural+urban,5.2,% of students,38,Table 11
+rajasthan,2025,secondary,female,rural+urban,8.0,% of students,38,Table 11
+rajasthan,2025,higher secondary,female,rural+urban,12.3,% of students,38,Table 11
+rajasthan,2025,all levels,female,rural+urban,5.6,% of students,38,Table 11
+rajasthan,2025,pre-primary,person,rural+urban,3.5,% of students,38,Table 11
+rajasthan,2025,primary,person,rural+urban,5.3,% of students,38,Table 11
+rajasthan,2025,middle,person,rural+urban,6.3,% of students,38,Table 11
+rajasthan,2025,secondary,person,rural+urban,11.2,% of students,38,Table 11
+rajasthan,2025,higher secondary,person,rural+urban,13.5,% of students,38,Table 11
+rajasthan,2025,all levels,person,rural+urban,7.2,% of students,38,Table 11
+sikkim,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+sikkim,2025,primary,male,rural,6.9,% of students,38,Table 11
+sikkim,2025,middle,male,rural,4.6,% of students,38,Table 11
+sikkim,2025,secondary,male,rural,32.6,% of students,38,Table 11
+sikkim,2025,higher secondary,male,rural,26.3,% of students,38,Table 11
+sikkim,2025,all levels,male,rural,9.9,% of students,38,Table 11
+sikkim,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+sikkim,2025,primary,female,rural,4.4,% of students,38,Table 11
+sikkim,2025,middle,female,rural,13.3,% of students,38,Table 11
+sikkim,2025,secondary,female,rural,6.5,% of students,38,Table 11
+sikkim,2025,higher secondary,female,rural,9.2,% of students,38,Table 11
+sikkim,2025,all levels,female,rural,7.4,% of students,38,Table 11
+sikkim,2025,pre-primary,person,rural,0.0,% of students,38,Table 11
+sikkim,2025,primary,person,rural,6.0,% of students,38,Table 11
+sikkim,2025,middle,person,rural,8.7,% of students,38,Table 11
+sikkim,2025,secondary,person,rural,16.0,% of students,38,Table 11
+sikkim,2025,higher secondary,person,rural,13.7,% of students,38,Table 11
+sikkim,2025,all levels,person,rural,8.7,% of students,38,Table 11
+sikkim,2025,pre-primary,male,urban,0.8,% of students,38,Table 11
+sikkim,2025,primary,male,urban,19.3,% of students,38,Table 11
+sikkim,2025,middle,male,urban,24.1,% of students,38,Table 11
+sikkim,2025,secondary,male,urban,41.1,% of students,38,Table 11
+sikkim,2025,higher secondary,male,urban,10.8,% of students,38,Table 11
+sikkim,2025,all levels,male,urban,19.0,% of students,38,Table 11
+sikkim,2025,pre-primary,female,urban,0.0,% of students,38,Table 11
+sikkim,2025,primary,female,urban,41.2,% of students,38,Table 11
+sikkim,2025,middle,female,urban,0.0,% of students,38,Table 11
+sikkim,2025,secondary,female,urban,100.0,% of students,38,Table 11
+sikkim,2025,higher secondary,female,urban,3.5,% of students,38,Table 11
+sikkim,2025,all levels,female,urban,26.0,% of students,38,Table 11
+sikkim,2025,pre-primary,person,urban,0.5,% of students,38,Table 11
+sikkim,2025,primary,person,urban,30.0,% of students,38,Table 11
+sikkim,2025,middle,person,urban,15.9,% of students,38,Table 11
+sikkim,2025,secondary,person,urban,57.5,% of students,38,Table 11
+sikkim,2025,higher secondary,person,urban,5.3,% of students,38,Table 11
+sikkim,2025,all levels,person,urban,22.4,% of students,38,Table 11
+sikkim,2025,pre-primary,male,rural+urban,0.3,% of students,38,Table 11
+sikkim,2025,primary,male,rural+urban,10.3,% of students,38,Table 11
+sikkim,2025,middle,male,rural+urban,8.9,% of students,38,Table 11
+sikkim,2025,secondary,male,rural+urban,34.1,% of students,38,Table 11
+sikkim,2025,higher secondary,male,rural+urban,22.2,% of students,38,Table 11
+sikkim,2025,all levels,male,rural+urban,12.3,% of students,38,Table 11
+sikkim,2025,pre-primary,female,rural+urban,0.0,% of students,38,Table 11
+sikkim,2025,primary,female,rural+urban,17.7,% of students,38,Table 11
+sikkim,2025,middle,female,rural+urban,11.4,% of students,38,Table 11
+sikkim,2025,secondary,female,rural+urban,10.6,% of students,38,Table 11
+sikkim,2025,higher secondary,female,rural+urban,7.6,% of students,38,Table 11
+sikkim,2025,all levels,female,rural+urban,12.1,% of students,38,Table 11
+sikkim,2025,pre-primary,person,rural+urban,0.2,% of students,38,Table 11
+sikkim,2025,primary,person,rural+urban,13.4,% of students,38,Table 11
+sikkim,2025,middle,person,rural+urban,10.0,% of students,38,Table 11
+sikkim,2025,secondary,person,rural+urban,19.9,% of students,38,Table 11
+sikkim,2025,higher secondary,person,rural+urban,11.4,% of students,38,Table 11
+sikkim,2025,all levels,person,rural+urban,12.2,% of students,38,Table 11
+tamil-nadu,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+tamil-nadu,2025,primary,male,rural,4.3,% of students,38,Table 11
+tamil-nadu,2025,middle,male,rural,11.6,% of students,38,Table 11
+tamil-nadu,2025,secondary,male,rural,18.4,% of students,38,Table 11
+tamil-nadu,2025,higher secondary,male,rural,13.1,% of students,38,Table 11
+tamil-nadu,2025,all levels,male,rural,8.7,% of students,38,Table 11
+tamil-nadu,2025,pre-primary,female,rural,0.0,% of students,38,Table 11
+tamil-nadu,2025,primary,female,rural,1.5,% of students,38,Table 11
+tamil-nadu,2025,middle,female,rural,7.0,% of students,38,Table 11
+tamil-nadu,2025,secondary,female,rural,14.1,% of students,38,Table 11
+tamil-nadu,2025,higher secondary,female,rural,13.2,% of students,38,Table 11
+tamil-nadu,2025,all levels,female,rural,6.1,% of students,38,Table 11
+tamil-nadu,2025,pre-primary,person,rural,0.0,% of students,38,Table 11
+tamil-nadu,2025,primary,person,rural,3.0,% of students,38,Table 11
+tamil-nadu,2025,middle,person,rural,9.4,% of students,38,Table 11
+tamil-nadu,2025,secondary,person,rural,16.6,% of students,38,Table 11
+tamil-nadu,2025,higher secondary,person,rural,13.2,% of students,38,Table 11
+tamil-nadu,2025,all levels,person,rural,7.5,% of students,38,Table 11
+tamil-nadu,2025,pre-primary,male,urban,0.0,% of students,38,Table 11
+tamil-nadu,2025,primary,male,urban,8.0,% of students,38,Table 11
+tamil-nadu,2025,middle,male,urban,19.0,% of students,38,Table 11
+tamil-nadu,2025,secondary,male,urban,32.9,% of students,38,Table 11
+tamil-nadu,2025,higher secondary,male,urban,34.0,% of students,38,Table 11
+tamil-nadu,2025,all levels,male,urban,18.8,% of students,38,Table 11
+tamil-nadu,2025,pre-primary,female,urban,2.4,% of students,38,Table 11
+tamil-nadu,2025,primary,female,urban,7.9,% of students,38,Table 11
+tamil-nadu,2025,middle,female,urban,14.4,% of students,38,Table 11
+tamil-nadu,2025,secondary,female,urban,19.5,% of students,38,Table 11
+tamil-nadu,2025,higher secondary,female,urban,27.5,% of students,38,Table 11
+tamil-nadu,2025,all levels,female,urban,13.5,% of students,38,Table 11
+tamil-nadu,2025,pre-primary,person,urban,1.4,% of students,38,Table 11
+tamil-nadu,2025,primary,person,urban,8.0,% of students,38,Table 11
+tamil-nadu,2025,middle,person,urban,16.5,% of students,38,Table 11
+tamil-nadu,2025,secondary,person,urban,26.3,% of students,38,Table 11
+tamil-nadu,2025,higher secondary,person,urban,31.5,% of students,38,Table 11
+tamil-nadu,2025,all levels,person,urban,16.2,% of students,38,Table 11
+tamil-nadu,2025,pre-primary,male,rural+urban,0.0,% of students,38,Table 11
+tamil-nadu,2025,primary,male,rural+urban,6.0,% of students,38,Table 11
+tamil-nadu,2025,middle,male,rural+urban,15.2,% of students,38,Table 11
+tamil-nadu,2025,secondary,male,rural+urban,26.0,% of students,38,Table 11
+tamil-nadu,2025,higher secondary,male,rural+urban,26.0,% of students,38,Table 11
+tamil-nadu,2025,all levels,male,rural+urban,13.7,% of students,38,Table 11
+tamil-nadu,2025,pre-primary,female,rural+urban,1.2,% of students,38,Table 11
+tamil-nadu,2025,primary,female,rural+urban,4.5,% of students,38,Table 11
+tamil-nadu,2025,middle,female,rural+urban,11.1,% of students,38,Table 11
+tamil-nadu,2025,secondary,female,rural+urban,17.4,% of students,38,Table 11
+tamil-nadu,2025,higher secondary,female,rural+urban,19.0,% of students,38,Table 11
+tamil-nadu,2025,all levels,female,rural+urban,9.8,% of students,38,Table 11
+tamil-nadu,2025,pre-primary,person,rural+urban,0.6,% of students,38,Table 11
+tamil-nadu,2025,primary,person,rural+urban,5.3,% of students,38,Table 11
+tamil-nadu,2025,middle,person,rural+urban,13.1,% of students,38,Table 11
+tamil-nadu,2025,secondary,person,rural+urban,22.1,% of students,38,Table 11
+tamil-nadu,2025,higher secondary,person,rural+urban,22.5,% of students,38,Table 11
+tamil-nadu,2025,all levels,person,rural+urban,11.8,% of students,38,Table 11
+telangana,2025,pre-primary,male,rural,0.0,% of students,38,Table 11
+telangana,2025,primary,male,rural,3.2,% of students,38,Table 11
+telangana,2025,middle,male,rural,2.1,% of students,38,Table 11
+telangana,2025,secondary,male,rural,3.8,% of students,38,Table 11
+telangana,2025,higher secondary,male,rural,4.5,% of students,38,Table 11
+telangana,2025,all levels,male,rural,3.0,% of students,38,Table 11
+telangana,2025,pre-primary,female,rural,2.9,% of students,38,Table 11
+telangana,2025,primary,female,rural,1.3,% of students,38,Table 11
+telangana,2025,middle,female,rural,2.4,% of students,38,Table 11
+telangana,2025,secondary,female,rural,6.9,% of students,38,Table 11
+telangana,2025,higher secondary,female,rural,0.0,% of students,38,Table 11
+telangana,2025,all levels,female,rural,2.2,% of students,38,Table 11
+telangana,2025,pre-primary,person,rural,1.4,% of students,38,Table 11
+telangana,2025,primary,person,rural,2.4,% of students,38,Table 11
+telangana,2025,middle,person,rural,2.2,% of students,38,Table 11
+telangana,2025,secondary,person,rural,4.9,% of students,38,Table 11
+telangana,2025,higher secondary,person,rural,1.9,% of students,38,Table 11
+telangana,2025,all levels,person,rural,2.7,% of students,38,Table 11
+telangana,2025,pre-primary,male,urban,21.5,% of students,38,Table 11
+telangana,2025,primary,male,urban,25.0,% of students,38,Table 11
+telangana,2025,middle,male,urban,16.7,% of students,38,Table 11
+telangana,2025,secondary,male,urban,21.2,% of students,38,Table 11
+telangana,2025,higher secondary,male,urban,26.7,% of students,38,Table 11
+telangana,2025,all levels,male,urban,22.6,% of students,38,Table 11
+telangana,2025,pre-primary,female,urban,3.7,% of students,38,Table 11
+telangana,2025,primary,female,urban,20.9,% of students,38,Table 11
+telangana,2025,middle,female,urban,10.3,% of students,38,Table 11
+telangana,2025,secondary,female,urban,15.6,% of students,38,Table 11
+telangana,2025,higher secondary,female,urban,7.4,% of students,38,Table 11
+telangana,2025,all levels,female,urban,14.5,% of students,38,Table 11
+telangana,2025,pre-primary,person,urban,13.1,% of students,38,Table 11
+telangana,2025,primary,person,urban,23.1,% of students,38,Table 11
+telangana,2025,middle,person,urban,14.0,% of students,38,Table 11
+telangana,2025,secondary,person,urban,18.3,% of students,38,Table 11
+telangana,2025,higher secondary,person,urban,17.6,% of students,38,Table 11
+telangana,2025,all levels,person,urban,18.8,% of students,38,Table 11
+telangana,2025,pre-primary,male,rural+urban,10.6,% of students,38,Table 11
+telangana,2025,primary,male,rural+urban,11.9,% of students,38,Table 11
+telangana,2025,middle,male,rural+urban,7.7,% of students,38,Table 11
+telangana,2025,secondary,male,rural+urban,9.1,% of students,38,Table 11
+telangana,2025,higher secondary,male,rural+urban,14.4,% of students,38,Table 11
+telangana,2025,all levels,male,rural+urban,10.7,% of students,38,Table 11
+telangana,2025,pre-primary,female,rural+urban,3.3,% of students,38,Table 11
+telangana,2025,primary,female,rural+urban,9.9,% of students,38,Table 11
+telangana,2025,middle,female,rural+urban,4.7,% of students,38,Table 11
+telangana,2025,secondary,female,rural+urban,11.2,% of students,38,Table 11
+telangana,2025,higher secondary,female,rural+urban,2.5,% of students,38,Table 11
+telangana,2025,all levels,female,rural+urban,7.2,% of students,38,Table 11
+telangana,2025,pre-primary,person,rural+urban,7.1,% of students,38,Table 11
+telangana,2025,primary,person,rural+urban,11.1,% of students,38,Table 11
+telangana,2025,middle,person,rural+urban,6.2,% of students,38,Table 11
+telangana,2025,secondary,person,rural+urban,9.9,% of students,38,Table 11
+telangana,2025,higher secondary,person,rural+urban,8.0,% of students,38,Table 11
+telangana,2025,all levels,person,rural+urban,9.1,% of students,38,Table 11
+tripura,2025,pre-primary,male,rural,29.7,% of students,38,Table 11
+tripura,2025,primary,male,rural,75.4,% of students,38,Table 11
+tripura,2025,middle,male,rural,88.6,% of students,38,Table 11
+tripura,2025,secondary,male,rural,97.8,% of students,38,Table 11
+tripura,2025,higher secondary,male,rural,95.3,% of students,38,Table 11
+tripura,2025,all levels,male,rural,78.2,% of students,38,Table 11
+tripura,2025,pre-primary,female,rural,36.1,% of students,38,Table 11
+tripura,2025,primary,female,rural,71.9,% of students,38,Table 11
+tripura,2025,middle,female,rural,98.2,% of students,38,Table 11
+tripura,2025,secondary,female,rural,97.3,% of students,38,Table 11
+tripura,2025,higher secondary,female,rural,90.1,% of students,38,Table 11
+tripura,2025,all levels,female,rural,78.7,% of students,38,Table 11
+tripura,2025,pre-primary,person,rural,33.2,% of students,38,Table 11
+tripura,2025,primary,person,rural,74.2,% of students,38,Table 11
+tripura,2025,middle,person,rural,94.0,% of students,38,Table 11
+tripura,2025,secondary,person,rural,97.5,% of students,38,Table 11
+tripura,2025,higher secondary,person,rural,92.7,% of students,38,Table 11
+tripura,2025,all levels,person,rural,78.6,% of students,38,Table 11
+tripura,2025,pre-primary,male,urban,21.7,% of students,38,Table 11
+tripura,2025,primary,male,urban,78.1,% of students,38,Table 11
+tripura,2025,middle,male,urban,94.4,% of students,38,Table 11
+tripura,2025,secondary,male,urban,100.0,% of students,38,Table 11
+tripura,2025,higher secondary,male,urban,100.0,% of students,38,Table 11
+tripura,2025,all levels,male,urban,80.2,% of students,38,Table 11
+tripura,2025,pre-primary,female,urban,51.1,% of students,38,Table 11
+tripura,2025,primary,female,urban,82.9,% of students,38,Table 11
+tripura,2025,middle,female,urban,73.2,% of students,38,Table 11
+tripura,2025,secondary,female,urban,80.1,% of students,38,Table 11
+tripura,2025,higher secondary,female,urban,92.6,% of students,38,Table 11
+tripura,2025,all levels,female,urban,77.7,% of students,38,Table 11
+tripura,2025,pre-primary,person,urban,36.0,% of students,38,Table 11
+tripura,2025,primary,person,urban,81.1,% of students,38,Table 11
+tripura,2025,middle,person,urban,82.3,% of students,38,Table 11
+tripura,2025,secondary,person,urban,86.8,% of students,38,Table 11
+tripura,2025,higher secondary,person,urban,96.0,% of students,38,Table 11
+tripura,2025,all levels,person,urban,78.7,% of students,38,Table 11
+tripura,2025,pre-primary,male,rural+urban,27.9,% of students,38,Table 11
+tripura,2025,primary,male,rural+urban,75.9,% of students,38,Table 11
+tripura,2025,middle,male,rural+urban,90.0,% of students,38,Table 11
+tripura,2025,secondary,male,rural+urban,98.3,% of students,38,Table 11
+tripura,2025,higher secondary,male,rural+urban,96.1,% of students,38,Table 11
+tripura,2025,all levels,male,rural+urban,78.6,% of students,38,Table 11
+tripura,2025,pre-primary,female,rural+urban,38.9,% of students,38,Table 11
+tripura,2025,primary,female,rural+urban,74.6,% of students,38,Table 11
+tripura,2025,middle,female,rural+urban,92.2,% of students,38,Table 11
+tripura,2025,secondary,female,rural+urban,90.5,% of students,38,Table 11
+tripura,2025,higher secondary,female,rural+urban,90.6,% of students,38,Table 11
+tripura,2025,all levels,female,rural+urban,78.4,% of students,38,Table 11
+tripura,2025,pre-primary,person,rural+urban,33.8,% of students,38,Table 11
+tripura,2025,primary,person,rural+urban,75.5,% of students,38,Table 11
+tripura,2025,middle,person,rural+urban,91.2,% of students,38,Table 11
+tripura,2025,secondary,person,rural+urban,94.1,% of students,38,Table 11
+tripura,2025,higher secondary,person,rural+urban,93.3,% of students,38,Table 11
+tripura,2025,all levels,person,rural+urban,78.6,% of students,38,Table 11
+uttar-pradesh,2025,pre-primary,male,rural,9.4,% of students,38,Table 11
+uttar-pradesh,2025,primary,male,rural,9.2,% of students,38,Table 11
+uttar-pradesh,2025,middle,male,rural,13.2,% of students,38,Table 11
+uttar-pradesh,2025,secondary,male,rural,21.0,% of students,38,Table 11
+uttar-pradesh,2025,higher secondary,male,rural,39.1,% of students,38,Table 11
+uttar-pradesh,2025,all levels,male,rural,14.9,% of students,38,Table 11
+uttar-pradesh,2025,pre-primary,female,rural,10.7,% of students,38,Table 11
+uttar-pradesh,2025,primary,female,rural,8.5,% of students,38,Table 11
+uttar-pradesh,2025,middle,female,rural,9.4,% of students,38,Table 11
+uttar-pradesh,2025,secondary,female,rural,17.9,% of students,38,Table 11
+uttar-pradesh,2025,higher secondary,female,rural,27.8,% of students,38,Table 11
+uttar-pradesh,2025,all levels,female,rural,12.0,% of students,38,Table 11
+uttar-pradesh,2025,pre-primary,person,rural,10.0,% of students,38,Table 11
+uttar-pradesh,2025,primary,person,rural,8.9,% of students,38,Table 11
+uttar-pradesh,2025,middle,person,rural,11.4,% of students,38,Table 11
+uttar-pradesh,2025,secondary,person,rural,19.5,% of students,38,Table 11
+uttar-pradesh,2025,higher secondary,person,rural,34.1,% of students,38,Table 11
+uttar-pradesh,2025,all levels,person,rural,13.5,% of students,38,Table 11
+uttar-pradesh,2025,pre-primary,male,urban,14.4,% of students,38,Table 11
+uttar-pradesh,2025,primary,male,urban,19.0,% of students,38,Table 11
+uttar-pradesh,2025,middle,male,urban,19.0,% of students,38,Table 11
+uttar-pradesh,2025,secondary,male,urban,36.6,% of students,38,Table 11
+uttar-pradesh,2025,higher secondary,male,urban,46.0,% of students,38,Table 11
+uttar-pradesh,2025,all levels,male,urban,24.4,% of students,38,Table 11
+uttar-pradesh,2025,pre-primary,female,urban,10.0,% of students,38,Table 11
+uttar-pradesh,2025,primary,female,urban,14.1,% of students,38,Table 11
+uttar-pradesh,2025,middle,female,urban,17.9,% of students,38,Table 11
+uttar-pradesh,2025,secondary,female,urban,24.8,% of students,38,Table 11
+uttar-pradesh,2025,higher secondary,female,urban,28.0,% of students,38,Table 11
+uttar-pradesh,2025,all levels,female,urban,17.4,% of students,38,Table 11
+uttar-pradesh,2025,pre-primary,person,urban,12.4,% of students,38,Table 11
+uttar-pradesh,2025,primary,person,urban,16.7,% of students,38,Table 11
+uttar-pradesh,2025,middle,person,urban,18.4,% of students,38,Table 11
+uttar-pradesh,2025,secondary,person,urban,31.0,% of students,38,Table 11
+uttar-pradesh,2025,higher secondary,person,urban,38.3,% of students,38,Table 11
+uttar-pradesh,2025,all levels,person,urban,21.0,% of students,38,Table 11
+uttar-pradesh,2025,pre-primary,male,rural+urban,10.9,% of students,38,Table 11
+uttar-pradesh,2025,primary,male,rural+urban,10.9,% of students,38,Table 11
+uttar-pradesh,2025,middle,male,rural+urban,14.3,% of students,38,Table 11
+uttar-pradesh,2025,secondary,male,rural+urban,24.0,% of students,38,Table 11
+uttar-pradesh,2025,higher secondary,male,rural+urban,40.7,% of students,38,Table 11
+uttar-pradesh,2025,all levels,male,rural+urban,16.7,% of students,38,Table 11
+uttar-pradesh,2025,pre-primary,female,rural+urban,10.5,% of students,38,Table 11
+uttar-pradesh,2025,primary,female,rural+urban,9.6,% of students,38,Table 11
+uttar-pradesh,2025,middle,female,rural+urban,11.1,% of students,38,Table 11
+uttar-pradesh,2025,secondary,female,rural+urban,19.2,% of students,38,Table 11
+uttar-pradesh,2025,higher secondary,female,rural+urban,27.8,% of students,38,Table 11
+uttar-pradesh,2025,all levels,female,rural+urban,13.0,% of students,38,Table 11
+uttar-pradesh,2025,pre-primary,person,rural+urban,10.7,% of students,38,Table 11
+uttar-pradesh,2025,primary,person,rural+urban,10.3,% of students,38,Table 11
+uttar-pradesh,2025,middle,person,rural+urban,12.7,% of students,38,Table 11
+uttar-pradesh,2025,secondary,person,rural+urban,21.7,% of students,38,Table 11
+uttar-pradesh,2025,higher secondary,person,rural+urban,35.1,% of students,38,Table 11
+uttar-pradesh,2025,all levels,person,rural+urban,15.0,% of students,38,Table 11
+uttarakhand,2025,pre-primary,male,rural,5.7,% of students,38,Table 11
+uttarakhand,2025,primary,male,rural,2.7,% of students,38,Table 11
+uttarakhand,2025,middle,male,rural,1.3,% of students,38,Table 11
+uttarakhand,2025,secondary,male,rural,1.5,% of students,38,Table 11
+uttarakhand,2025,higher secondary,male,rural,0.0,% of students,38,Table 11
+uttarakhand,2025,all levels,male,rural,2.5,% of students,38,Table 11
+uttarakhand,2025,pre-primary,female,rural,35.4,% of students,38,Table 11
+uttarakhand,2025,primary,female,rural,1.7,% of students,38,Table 11
+uttarakhand,2025,middle,female,rural,22.7,% of students,38,Table 11
+uttarakhand,2025,secondary,female,rural,7.9,% of students,38,Table 11
+uttarakhand,2025,higher secondary,female,rural,14.1,% of students,38,Table 11
+uttarakhand,2025,all levels,female,rural,14.4,% of students,38,Table 11
+uttarakhand,2025,pre-primary,person,rural,17.3,% of students,38,Table 11
+uttarakhand,2025,primary,person,rural,2.3,% of students,38,Table 11
+uttarakhand,2025,middle,person,rural,8.6,% of students,38,Table 11
+uttarakhand,2025,secondary,person,rural,4.4,% of students,38,Table 11
+uttarakhand,2025,higher secondary,person,rural,6.1,% of students,38,Table 11
+uttarakhand,2025,all levels,person,rural,7.3,% of students,38,Table 11
+uttarakhand,2025,pre-primary,male,urban,20.6,% of students,38,Table 11
+uttarakhand,2025,primary,male,urban,33.6,% of students,38,Table 11
+uttarakhand,2025,middle,male,urban,23.1,% of students,38,Table 11
+uttarakhand,2025,secondary,male,urban,63.9,% of students,38,Table 11
+uttarakhand,2025,higher secondary,male,urban,26.1,% of students,38,Table 11
+uttarakhand,2025,all levels,male,urban,33.8,% of students,38,Table 11
+uttarakhand,2025,pre-primary,female,urban,24.6,% of students,38,Table 11
+uttarakhand,2025,primary,female,urban,46.1,% of students,38,Table 11
+uttarakhand,2025,middle,female,urban,22.2,% of students,38,Table 11
+uttarakhand,2025,secondary,female,urban,41.2,% of students,38,Table 11
+uttarakhand,2025,higher secondary,female,urban,55.6,% of students,38,Table 11
+uttarakhand,2025,all levels,female,urban,36.6,% of students,38,Table 11
+uttarakhand,2025,pre-primary,person,urban,22.4,% of students,38,Table 11
+uttarakhand,2025,primary,person,urban,38.0,% of students,38,Table 11
+uttarakhand,2025,middle,person,urban,22.6,% of students,38,Table 11
+uttarakhand,2025,secondary,person,urban,52.1,% of students,38,Table 11
+uttarakhand,2025,higher secondary,person,urban,38.4,% of students,38,Table 11
+uttarakhand,2025,all levels,person,urban,35.1,% of students,38,Table 11
+uttarakhand,2025,pre-primary,male,rural+urban,9.8,% of students,38,Table 11
+uttarakhand,2025,primary,male,rural+urban,15.6,% of students,38,Table 11
+uttarakhand,2025,middle,male,rural+urban,8.2,% of students,38,Table 11
+uttarakhand,2025,secondary,male,rural+urban,21.8,% of students,38,Table 11
+uttarakhand,2025,higher secondary,male,rural+urban,8.2,% of students,38,Table 11
+uttarakhand,2025,all levels,male,rural+urban,13.3,% of students,38,Table 11
+uttarakhand,2025,pre-primary,female,rural+urban,32.0,% of students,38,Table 11
+uttarakhand,2025,primary,female,rural+urban,18.6,% of students,38,Table 11
+uttarakhand,2025,middle,female,rural+urban,22.4,% of students,38,Table 11
+uttarakhand,2025,secondary,female,rural+urban,20.6,% of students,38,Table 11
+uttarakhand,2025,higher secondary,female,rural+urban,26.4,% of students,38,Table 11
+uttarakhand,2025,all levels,female,rural+urban,23.1,% of students,38,Table 11
+uttarakhand,2025,pre-primary,person,rural+urban,18.8,% of students,38,Table 11
+uttarakhand,2025,primary,person,rural+urban,16.7,% of students,38,Table 11
+uttarakhand,2025,middle,person,rural+urban,14.6,% of students,38,Table 11
+uttarakhand,2025,secondary,person,rural+urban,21.2,% of students,38,Table 11
+uttarakhand,2025,higher secondary,person,rural+urban,16.0,% of students,38,Table 11
+uttarakhand,2025,all levels,person,rural+urban,17.4,% of students,38,Table 11
+west-bengal,2025,pre-primary,male,rural,35.0,% of students,38,Table 11
+west-bengal,2025,primary,male,rural,69.2,% of students,38,Table 11
+west-bengal,2025,middle,male,rural,84.6,% of students,38,Table 11
+west-bengal,2025,secondary,male,rural,89.8,% of students,38,Table 11
+west-bengal,2025,higher secondary,male,rural,88.0,% of students,38,Table 11
+west-bengal,2025,all levels,male,rural,71.7,% of students,38,Table 11
+west-bengal,2025,pre-primary,female,rural,29.6,% of students,38,Table 11
+west-bengal,2025,primary,female,rural,75.1,% of students,38,Table 11
+west-bengal,2025,middle,female,rural,90.6,% of students,38,Table 11
+west-bengal,2025,secondary,female,rural,91.9,% of students,38,Table 11
+west-bengal,2025,higher secondary,female,rural,94.0,% of students,38,Table 11
+west-bengal,2025,all levels,female,rural,76.1,% of students,38,Table 11
+west-bengal,2025,pre-primary,person,rural,32.4,% of students,38,Table 11
+west-bengal,2025,primary,person,rural,72.1,% of students,38,Table 11
+west-bengal,2025,middle,person,rural,87.7,% of students,38,Table 11
+west-bengal,2025,secondary,person,rural,90.8,% of students,38,Table 11
+west-bengal,2025,higher secondary,person,rural,91.4,% of students,38,Table 11
+west-bengal,2025,all levels,person,rural,73.9,% of students,38,Table 11
+west-bengal,2025,pre-primary,male,urban,57.9,% of students,38,Table 11
+west-bengal,2025,primary,male,urban,76.3,% of students,38,Table 11
+west-bengal,2025,middle,male,urban,78.5,% of students,38,Table 11
+west-bengal,2025,secondary,male,urban,88.5,% of students,38,Table 11
+west-bengal,2025,higher secondary,male,urban,81.8,% of students,38,Table 11
+west-bengal,2025,all levels,male,urban,76.3,% of students,38,Table 11
+west-bengal,2025,pre-primary,female,urban,38.8,% of students,38,Table 11
+west-bengal,2025,primary,female,urban,78.8,% of students,38,Table 11
+west-bengal,2025,middle,female,urban,84.3,% of students,38,Table 11
+west-bengal,2025,secondary,female,urban,90.6,% of students,38,Table 11
+west-bengal,2025,higher secondary,female,urban,90.0,% of students,38,Table 11
+west-bengal,2025,all levels,female,urban,76.6,% of students,38,Table 11
+west-bengal,2025,pre-primary,person,urban,49.0,% of students,38,Table 11
+west-bengal,2025,primary,person,urban,77.4,% of students,38,Table 11
+west-bengal,2025,middle,person,urban,81.3,% of students,38,Table 11
+west-bengal,2025,secondary,person,urban,89.7,% of students,38,Table 11
+west-bengal,2025,higher secondary,person,urban,85.3,% of students,38,Table 11
+west-bengal,2025,all levels,person,urban,76.5,% of students,38,Table 11
+west-bengal,2025,pre-primary,male,rural+urban,41.7,% of students,38,Table 11
+west-bengal,2025,primary,male,rural+urban,71.0,% of students,38,Table 11
+west-bengal,2025,middle,male,rural+urban,83.0,% of students,38,Table 11
+west-bengal,2025,secondary,male,rural+urban,89.4,% of students,38,Table 11
+west-bengal,2025,higher secondary,male,rural+urban,85.7,% of students,38,Table 11
+west-bengal,2025,all levels,male,rural+urban,73.0,% of students,38,Table 11
+west-bengal,2025,pre-primary,female,rural+urban,32.1,% of students,38,Table 11
+west-bengal,2025,primary,female,rural+urban,75.9,% of students,38,Table 11
+west-bengal,2025,middle,female,rural+urban,89.1,% of students,38,Table 11
+west-bengal,2025,secondary,female,rural+urban,91.5,% of students,38,Table 11
+west-bengal,2025,higher secondary,female,rural+urban,93.0,% of students,38,Table 11
+west-bengal,2025,all levels,female,rural+urban,76.3,% of students,38,Table 11
+west-bengal,2025,pre-primary,person,rural+urban,37.1,% of students,38,Table 11
+west-bengal,2025,primary,person,rural+urban,73.4,% of students,38,Table 11
+west-bengal,2025,middle,person,rural+urban,86.0,% of students,38,Table 11
+west-bengal,2025,secondary,person,rural+urban,90.5,% of students,38,Table 11
+west-bengal,2025,higher secondary,person,rural+urban,89.5,% of students,38,Table 11
+west-bengal,2025,all levels,person,rural+urban,74.6,% of students,38,Table 11

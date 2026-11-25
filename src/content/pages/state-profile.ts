@@ -142,8 +142,11 @@ const stateProfile: StateProfile = {
         { label: 'School enrolment, classes 11-12', chart: 'ger-higher-secondary-by-state' },
         { label: 'College enrolment, age 18-23', chart: 'college-enrolment-ratio-by-state', series: 'total' },
         { label: 'Literacy, age 7+', chart: 'literacy-by-state', series: 'plfs-2025' },
+        { label: 'Years of schooling, age 25+', chart: 'mean-years-of-schooling-by-state' },
+        { label: 'Spending per school student', chart: 'school-spending-by-state' },
+        { label: 'Students in government schools', chart: 'government-school-share-by-state' },
       ],
-      footnote: 'Ranks count only states and UTs with data. A gross enrolment ratio can pass 100 when pupils outside the age group enrol.',
+      footnote: 'Ranks count only states and UTs with data. A gross enrolment ratio can pass 100 when pupils outside the age group enrol. NSS values are survey estimates, with wide errors in small states and UTs.',
     },
     {
       topic: 'elections',
