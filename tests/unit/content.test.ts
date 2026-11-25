@@ -13,6 +13,8 @@ import { rows } from '~/lib/data'
 import { formatDate } from '~/lib/period'
 import { upcoming } from '~/lib/releases'
 import { SITE } from '~/lib/site'
+import { picksOf } from '~/lib/metadata'
+import { isGated, GATED } from '~/content/gated'
 import releases from '~/content/pages/releases'
 import sourcesPage from '~/content/pages/sources'
 import { publisherOf } from '~/lib/sources'
@@ -35,6 +37,12 @@ describe('every chart', () => {
   })
   it('renders every view', () => {
     for (const { chart } of charts) for (const v of viewsOf(chart)) if (v !== 'table') expect(renderPlot(chart, v, 'wide').html, `${chart.slug} ${v}`).toMatch(/^<svg/)
+  })
+  it('lists only gated files that exist', () => {
+    for (const g of GATED) expect(rows(g.file).length, g.file).toBeGreaterThan(0)
+  })
+  it('reads no file that the site may not show yet', () => {
+    for (const { chart } of charts) for (const k of picksOf(chart)) expect(isGated(k.file), `${chart.slug} reads ${k.file}`).toBe(false)
   })
   it('has a check date that is a real day, not before the site check or its own sources', () => {
     for (const { chart } of charts) {

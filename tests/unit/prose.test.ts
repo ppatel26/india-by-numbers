@@ -9,6 +9,7 @@ import { picksOf } from '~/lib/metadata'
 import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { DATA_DIR, rows } from '~/lib/data'
+import { isGated } from '~/content/gated'
 
 /** Every number in the topic's data folders (CSVs and the README headline tables), as printed. */
 function pool(t: Topic): Set<string> {
@@ -23,8 +24,17 @@ function pool(t: Topic): Set<string> {
     for (const k of [1e7, 1e5, 1e4, 1e6, 1e3]) for (const d of [1, 2]) out.add(((x * (x < 1e5 ? 1000 : 1)) / k).toFixed(d))
   }
   const numbersIn = (text: string) => text.match(/-?\d+(\.\d+)?/g) ?? []
+  // Numbers from files the site may not show yet (src/content/gated.ts). They leave the pool unless
+  // a file the site may show also has them, so prose cannot quote them, even through a README.
+  const gated = new Set<string>()
+  const shown = new Set<string>()
+  for (const dir of dirs)
+    for (const f of readdirSync(join(DATA_DIR, dir)))
+      if (f.endsWith('.csv'))
+        for (const r of rows(`${dir}/${f}`)) for (const v of Object.values(r)) numbersIn(v.replace(/,/g, '')).forEach((n) => (isGated(`${dir}/${f}`) ? gated : shown).add(n.replace(/^-/, '')))
   for (const dir of dirs)
     for (const f of readdirSync(join(DATA_DIR, dir))) {
+      if (f.endsWith('.csv') && isGated(`${dir}/${f}`)) continue
       if (f.endsWith('.csv'))
         for (const r of rows(`${dir}/${f}`)) {
           for (const v of Object.values(r)) numbersIn(v.replace(/,/g, '')).forEach(add)
@@ -32,7 +42,10 @@ function pool(t: Topic): Set<string> {
           if (r.unit?.startsWith('lakh') && r.value) for (const d of [0, 1, 2]) out.add((Math.abs(Number(r.value)) / 100).toFixed(d))
         }
       // README tables write grouped numbers: 1,21,08,54,977 and 5,63,113.
-      else numbersIn(readFileSync(join(DATA_DIR, dir, f), 'utf8').replace(/\d{1,3}(,\d{2,3})+/g, (m) => m.replace(/,/g, ''))).forEach(add)
+      else
+        numbersIn(readFileSync(join(DATA_DIR, dir, f), 'utf8').replace(/\d{1,3}(,\d{2,3})+/g, (m) => m.replace(/,/g, '')))
+          .filter((n) => !gated.has(n.replace(/^-/, '')) || shown.has(n.replace(/^-/, '')))
+          .forEach(add)
     }
   return out
 }
