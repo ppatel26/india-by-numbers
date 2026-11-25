@@ -1,6 +1,12 @@
 import type { Chart, Series, Source, Topic } from '../types'
-import { WDI, WDI_ABOUT, comparison } from '../international'
+import { UN_MIGRANT_STOCK, WDI, WDI_ABOUT, comparison } from '../international'
 import { CRS_2024, sexRatioAtBirthIndia } from './health'
+
+// UN DESA International Migrant Stock 2024. research/data/international/README.md.
+const MIGRANTS = 'international/migrants-from-india-1990-2024.csv'
+const DESTINATIONS = 'international/migrants-from-india-by-destination.csv'
+/** The ten largest destinations in 2024, largest first. pipeline/international/build_international.py checks the ranking. */
+const TOP_DESTINATIONS = ['United Arab Emirates', 'United States of America', 'Saudi Arabia', 'Pakistan', 'Kuwait', 'United Kingdom', 'Canada', 'Australia', 'Oman', 'Qatar']
 
 // Data: research/data/population/README.md.
 
@@ -919,6 +925,77 @@ const topic: Topic = {
               'Multiply the report values by 1,000 to get persons.',
               'Read the Census counts from Table A-02. Keep the count and projection series separate.',
               'Add the Dadra and Nagar Haveli and the Daman and Diu columns for the present-day UT, marked Derived.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
+    {
+      title: 'How many people born in India live abroad?',
+      lede: '1.85 crore people born in India lived in other countries in mid-2024, up from 65.75 lakh in 1990, the UN estimates. 1.19 crore were men and 66.32 lakh women.',
+      blocks: [
+        {
+          chart: {
+            kind: 'line',
+            slug: 'indians-abroad',
+            checked: '2026-11-25',
+            title: 'People born in India living in other countries, 1990 to 2024',
+            subtitle: 'International migrants whose country of origin is India, at mid-year, women and men.',
+            punches: { office: 'UN DESA', unit: 'persons', period: '2024' },
+            note: 'UN estimates for 1 July of 1990, 1995, 2000, 2005, 2010, 2015, 2020 and 2024 only.',
+            sources: [UN_MIGRANT_STOCK],
+            format: { scale: 'crore', decimals: 2 },
+            y: { min: 0 },
+            joined: true,
+            series: [
+              { key: 'total', label: 'Total', color: 'ink', file: MIGRANTS, where: { sex: 'total' } },
+              { key: 'male', label: 'Men', color: 's2', file: MIGRANTS, where: { sex: 'male' } },
+              { key: 'female', label: 'Women', color: 's3', file: MIGRANTS, where: { sex: 'female' } },
+            ],
+            know: [
+              'UN DESA counts international migrants by country of origin. It uses data on people born abroad where a country has them, and data on foreign citizens where it has only those.',
+              'These are UN estimates, built from censuses, registers and surveys in the countries where the migrants live.',
+              'For the 2024 edition UN DESA reassessed 60 countries and areas. For the others, the 2024 figures extrapolate the 2020 edition.',
+              'The counts are for 1 July of each year shown. UN DESA gives no figures for the years between.',
+            ],
+            processing: [
+              'Read the India row (location code 356) of Table 1 in the UN DESA origin file, International Migrant Stock 2024.',
+              'Check it against the India to World row of the destination and origin file. All 24 values agree.',
+              'Show the counts in crore, to two decimal places.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        { text: 'The United Arab Emirates had the most, 32.5 lakh, then the United States, 31.7 lakh, and Saudi Arabia, 19.5 lakh.' },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'indians-abroad-by-country',
+            checked: '2026-11-25',
+            title: 'People born in India living abroad, ten largest countries, 1990 and 2024',
+            subtitle: 'International migrants whose country of origin is India, by country of residence, at mid-year.',
+            punches: { office: 'UN DESA', unit: 'persons', period: '2024' },
+            note: 'In the United Arab Emirates, Saudi Arabia, Kuwait, Oman and Qatar, UN DESA counts Indian citizens. In the other five countries it counts people born in India.',
+            sources: [UN_MIGRANT_STOCK],
+            by: 'destination',
+            rowHead: 'Country',
+            order: TOP_DESTINATIONS,
+            labels: { 'United States of America': 'United States' },
+            series: [
+              { key: '2024', label: '2024', color: 'ink', file: DESTINATIONS, where: { destination: TOP_DESTINATIONS, sex: 'total', period: '2024' } },
+              { key: '1990', label: '1990', color: 'slate', file: DESTINATIONS, where: { destination: TOP_DESTINATIONS, sex: 'total', period: '1990' } },
+            ],
+            know: [
+              'The ten countries are the ten with the most people from India in 2024. UN DESA gives 124 countries in all.',
+              'UN DESA marks what each country estimate rests on. For the five Gulf countries here it is data on foreign citizens, so the count is of Indian citizens, wherever they were born.',
+              'The 2024 figure for Pakistan, 15,97,134, is the same as the 2020 figure. UN DESA carried many 2020 estimates forward.',
+              'The figures are for 1 July 1990 and 1 July 2024.',
+            ],
+            processing: [
+              'Read the rows of Table 1 in the UN DESA destination and origin file where the origin is India (location code 356) and the destination is a country.',
+              'Check that the 124 countries add up to the India total, for every year and sex.',
+              'Pick the ten largest in 2024. Show counts of a lakh or more in lakh, and smaller counts in full.',
             ],
             nextRelease: 'not announced',
           },

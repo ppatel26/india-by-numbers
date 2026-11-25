@@ -247,9 +247,10 @@ const PUBLISHERS: readonly Publisher[] = [
     topics: ['population'],
     dataSets: [
       { name: 'World Population Prospects 2024', detail: 'Age and sex estimates for 1951 and annual national rates through 2026.', rhythm: 'Periodic revisions', match: /World Population Prospects 2024/ },
+      { name: 'International Migrant Stock 2024', detail: 'People born in India living in other countries, by sex and by country, 1990 to 2024', rhythm: 'Periodic revisions; the one before was 2020', match: /International Migrant Stock/ },
     ],
-    licence: NOT_STATED,
-    access: ['CSV files for the medium projection variant'],
+    licence: 'CC BY 3.0 IGO, stated on every sheet of the International Migrant Stock 2024 files',
+    access: ['CSV files for the medium projection variant', 'Excel workbooks for the migrant stock'],
     site: 'https://population.un.org/wpp/',
   },
   {
