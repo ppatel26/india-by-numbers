@@ -1,7 +1,9 @@
 /** The small libraries every page leans on: number formats, periods, search and the objects. */
 import { existsSync, readdirSync } from 'node:fs'
+import { scaleLinear } from 'd3-scale'
 import { describe, expect, it } from 'vitest'
 import { TOPICS } from '~/content/types'
+import { yGrid } from '~/lib/charts/axes'
 import { EMBLEM_ALT, hasEmblem } from '~/lib/emblems'
 import { fmt, formatNumber, ordinal } from '~/lib/format'
 import { formatDate, longPeriod, parsePeriod, yyMmOf } from '~/lib/period'
@@ -105,5 +107,13 @@ describe('objects', () => {
   })
   it('lets a topic have no object yet', () => {
     for (const t of TOPICS) expect(hasEmblem(t), t).toBe(named.includes(t))
+  })
+})
+
+describe('axis ticks', () => {
+  it('keep a decimal on half-lakh ticks when the lakh scale is automatic', () => {
+    const grid = String(yGrid(scaleLinear().domain([0, 200000]).range([100, 0]), [0, 50000, 100000, 150000, 200000], 0, 100, {}))
+    const labels = [...grid.matchAll(/>([^<>]+)<\/text>/g)].map((m) => m[1])
+    expect(labels).toEqual(['0', '0.5', '1.0', '1.5', '2.0 lakh'])
   })
 })
