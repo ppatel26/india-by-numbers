@@ -191,6 +191,17 @@ const stateProfile: StateProfile = {
         'Ranks count only states and UTs with data. Recorded crime rows have no rank: a higher recorded rate can mean better registration, not more crime, and NCRB says states should not be compared on crime figures alone. Prisons as on 31 Dec 2024. Pending cases are a count on 30 Jul 2026, not a rate.',
     },
     {
+      topic: 'transport',
+      heading: 'Transport',
+      measures: [
+        { label: 'Road deaths per lakh people', chart: 'road-deaths-per-lakh-by-state' },
+        { label: 'Road deaths per 100 accidents', chart: 'road-accident-severity-by-state' },
+        { label: 'Workers who go to work by two-wheeler', chart: 'two-wheeler-commute-by-state' },
+      ],
+      footnote:
+        'Ranks count only states and UTs with data. Road deaths are police records within 30 days of the accident, so a low value can mean fewer records as well as fewer deaths. The two-wheeler share is a survey estimate, with wide errors in small states and UTs.',
+    },
+    {
       topic: 'climate',
       heading: 'Climate',
       measures: [

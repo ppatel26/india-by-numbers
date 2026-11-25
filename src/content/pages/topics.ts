@@ -136,6 +136,17 @@ const topics: TopicsPage = {
       latest: { date: '15 Sep 2026', label: 'Prison Statistics India 2024, revised, NCRB' },
       next: { date: 'Not announced', label: 'NCRB publishes Crime in India once a year. No date announced.' },
     },
+    transport: {
+      questions: [
+        'How many people die on the roads per lakh people, in India and in each state?',
+        'Have road deaths risen since 1970, and faster than accidents?',
+        'Who dies on the roads, and how many wore no helmet or seat belt?',
+        'How do workers and students travel to work and school, in villages and towns?',
+        'How do households travel on overnight trips?',
+      ],
+      latest: { date: '5 Oct 2026', label: 'National Household Travel Survey 2025-26 fact sheet, MoSPI' },
+      next: { date: 'Not announced', label: 'MoRTH publishes Road Accidents in India once a year. No date announced.' },
+    },
     climate: {
       questions: [
         'How much rain did the 2026 monsoon bring, against 125 years of records?',
@@ -192,7 +203,6 @@ const topics: TopicsPage = {
       'Agriculture',
       'Migration',
       'Poverty and inequality',
-      'Transport',
     ],
   },
   allCharts: {

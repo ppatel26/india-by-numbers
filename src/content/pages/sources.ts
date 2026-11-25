@@ -69,7 +69,7 @@ const PUBLISHERS: readonly Publisher[] = [
     short: 'MoSPI',
     logos: ['mospi'],
     full: 'National Statistics Office (NSO), Ministry of Statistics and Programme Implementation',
-    topics: ['prices', 'economy', 'jobs', 'living-standards', 'education', 'elections'],
+    topics: ['prices', 'economy', 'jobs', 'living-standards', 'education', 'elections', 'transport'],
     dataSets: [
       { name: 'Consumer Price Index', detail: 'Base 2012=100 to Dec 2025; base 2024=100 from Jan 2026', rhythm: 'Monthly, on the 12th', match: /Consumer Price Index|CPI/ },
       { name: 'National Accounts', detail: 'GDP, GVA and state income', rhythm: 'Quarterly, with annual revisions', match: /National Accounts|GDP|state accounts/ },
@@ -80,6 +80,7 @@ const PUBLISHERS: readonly Publisher[] = [
       { name: 'NSS education surveys', detail: 'CMS: Education 2025 (round 80) and CAMS 2022-23 (round 79)', rhythm: 'One-off survey rounds', match: /CMS: Education|CAMS/ },
       { name: 'Household Consumption Expenditure Survey', detail: 'HCES 2022-23 and 2023-24, with India values from 1999-00', rhythm: 'Survey rounds; the round before 2022-23 was 2011-12', match: /Household Consumption Expenditure/ },
       { name: 'NSS round 76', detail: 'Drinking water, sanitation, hygiene and housing condition, 2018', rhythm: 'One-off survey round', match: /round 76/ },
+      { name: 'National Household Travel Survey', detail: 'NHTS 2025-26 fact sheet and Appendix A and B tables: mode of travel to work and school, overnight trips', rhythm: 'First round, July 2025 to June 2026', match: /Household Travel/ },
     ],
     licence: NOT_STATED,
     access: ['eSankhyiki API (api.mospi.gov.in)', 'A press note with each release'],
@@ -302,6 +303,19 @@ const PUBLISHERS: readonly Publisher[] = [
     note: 'Each answer quotes the National Judicial Data Grid (NJDG) on a stated date. NJDG is a live dashboard.',
     site: 'https://doj.gov.in',
   },
+  {
+    short: 'MoRTH',
+    logos: [],
+    full: 'Transport Research Wing, Ministry of Road Transport and Highways',
+    topics: ['transport'],
+    dataSets: [
+      { name: 'Road Accidents in India', detail: 'Accidents, deaths and injuries by state, 2023 and 2024; road users killed; deaths without a helmet or seat belt; India from 1970', rhythm: 'Yearly', match: /Road Accidents in India/ },
+    ],
+    licence: NOT_STATED,
+    access: ['Reports as PDF (morth.gov.in)'],
+    note: 'Counts are police records of accidents, not a survey. MoRTH gives no release date for Road Accidents in India 2024. Its site opens in Hindi.',
+    site: 'https://morth.gov.in',
+  },
 ]
 
 const sources: SourcesPage = {
@@ -368,6 +382,10 @@ const sources: SourcesPage = {
       {
         source: 'Department of Justice, compilation of pendency answers (doj.gov.in)',
         why: 'The server refused access (HTTP 403) on 25 Nov 2026. The compilation repeats answers that sansad.in also publishes, so we take each answer from there.',
+      },
+      {
+        source: 'Answers in Parliament with road accident figures for 2025 and 2026 (sansad.in)',
+        why: 'The figures come from the e-DAR system and are marked provisional. We wait for a dated MoRTH report.',
       },
       {
         source: 'News reports of official figures',

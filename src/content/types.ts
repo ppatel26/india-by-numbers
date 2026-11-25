@@ -16,6 +16,7 @@ export const TOPICS = [
   'education',
   'elections',
   'crime-and-justice',
+  'transport',
   'climate',
   'religion-and-culture',
 ] as const

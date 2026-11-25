@@ -140,7 +140,6 @@ const home: Home = {
       'Agriculture',
       'Migration',
       'Poverty and inequality',
-      'Transport',
     ],
   },
   stateBeside: {
