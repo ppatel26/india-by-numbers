@@ -76,11 +76,6 @@ def statement(title, ncols, last=("all india", "all sizes")):
     sys.exit(f"{title!r}: no closing row")
 
 
-def states(rows):
-    """Statement rows keyed by geography slug, without the two groups."""
-    return {slug(k): v for k, v in rows.items() if k.lower() not in GROUPS}
-
-
 # Size classes of land possessed: the report's label -> the API's label -> the CSV's label.
 SIZES = [("< 0.01", "<0.01", "less than 0.01 ha"), ("0.01 - 0.40", "0.01 - 0.40", "0.01 to 0.40 ha"),
          ("0.40 - 1.00", "0.41 - 1.00", "0.41 to 1.00 ha"), ("1.01 - 2.00", "1.01 - 2.00", "1.01 to 2.00 ha"),
