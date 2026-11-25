@@ -19,6 +19,10 @@ const tiles: Readonly<Record<TopicSlug, Tile>> = {
     questions: ['How fast is the economy growing?', 'Which states earn most per person?'],
     figure: { chart: 'income-per-person-by-state', label: 'Income per person' },
   },
+  trade: {
+    questions: ['Does India spend more abroad than it earns?', 'How large are the foreign exchange reserves?'],
+    figure: { chart: 'forex-reserves', series: 'total', label: 'Foreign exchange reserves, end of March 2026' },
+  },
   jobs: {
     questions: ['How many people are out of work?', 'How many women work or look for work?'],
     figure: { chart: 'unemployment-rate-monthly', series: 'lfpr-women', label: 'Women in the labour force, ages 15+' },

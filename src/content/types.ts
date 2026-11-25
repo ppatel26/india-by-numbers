@@ -9,6 +9,7 @@ export const TOPICS = [
   'population',
   'prices',
   'economy',
+  'trade',
   'jobs',
   'living-standards',
   'health',
