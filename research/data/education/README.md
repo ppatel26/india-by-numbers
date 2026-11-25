@@ -395,7 +395,7 @@ split, so its rows carry `person`. Indicator 31's "All" rows equal indicator 30'
 - **CAMS chart.** Report 590 also gives ICT skills by state (indicators 21 to 23, for example copy and
   paste or sending email, ages 15-24). Mean years of schooling at age 25 and over is the clearest
   single education measure, so it is the only CAMS chart here. The education page now has 13 charts.
-  The ICT and other CAMS indicators are left for the planned living standards topic.
+  The ICT and other CAMS indicators are in the Living standards topic.
 - **Two state charts for chart 3.** The government share and the coaching share are different
   measures, so each gets its own `states` chart, not one chart with two series.
 - **Ranks.** Spending, the government share and the coaching share have no `better` end, so state pages

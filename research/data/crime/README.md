@@ -2,7 +2,7 @@
 
 Data gathered on 25 Nov 2026 from the National Crime Records Bureau (NCRB, Ministry of Home Affairs) and from Ministry of Law and Justice answers in the Lok Sabha and the Rajya Sabha. The CSVs keep the publishers' digits. No rate was computed here. One value is derived: the undertrial share of prisoners for the years where NCRB prints only the counts (marked `derived` in `prisons-india-trend.csv`).
 
-The topic is not on the site yet. "Proposed charts" at the end lists the charts these files can carry.
+The Crime and justice topic (`src/content/topics/crime-and-justice.ts`) uses these files, since 25 Nov 2026. "Proposed charts" at the end lists the charts it was built from.
 
 ## Questions this topic answers
 

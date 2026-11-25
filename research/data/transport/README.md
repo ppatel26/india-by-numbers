@@ -1,8 +1,8 @@
 # Transport
 
-Data gathered on 25 Nov 2026 from the Transport Research Wing of the Ministry of Road Transport and Highways (MoRTH) and from the National Statistics Office (NSO, MoSPI). The CSVs keep the publishers' digits. No rate or share was computed here. Every rate per lakh population, every share and every severity figure is the publisher's own.
+Data gathered on 25 Nov 2026 from the Transport Research Wing of the Ministry of Road Transport and Highways (MoRTH) and from the National Statistics Office (NSO, MoSPI). The CSVs keep the publishers' digits. Every rate per lakh population and every severity figure is the publisher's own. The one exception is the share of households with an overnight trip by state, from NSS Report 597: it divides published counts and is marked `derived` (see "Decisions").
 
-The topic is not on the site yet. "Proposed charts" at the end lists the charts these files can carry.
+The Transport topic (`src/content/topics/transport.ts`) uses these files, since 25 Nov 2026. "Proposed charts" at the end lists the charts it was built from.
 
 ## Questions this topic answers
 

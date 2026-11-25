@@ -1,8 +1,8 @@
 # Trade and payments
 
-Data for future site pages on trade, the balance of payments and digital payments. No topic uses
-these CSVs yet. The parent task decides whether they become a Trade topic, a Money and payments
-topic, or new parts of the Economy topic. "Proposed charts" at the end gives a recommendation.
+Data for the Trade topic (`src/content/topics/trade.ts`) and the Digital payments part of the
+Economy topic, both on the site since 25 Nov 2026. "Proposed charts" at the end gives the
+recommendation they were built from.
 
 All values come from the Reserve Bank of India (RBI). Read on 25 Nov 2026.
 
