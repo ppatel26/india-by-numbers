@@ -150,6 +150,21 @@ const nssSources = ([
 
 const historySources = [plfsAnnual2025, plfsAnnual2023_24, plfsAnnual2020_21, ...nssSources]
 
+const tus2024: Source = {
+  publisher: 'NSO, MoSPI',
+  release: 'Time Use in India 2024 (Time Use Survey, January to December 2024)',
+  released: '2025-03-28',
+  url: 'https://www.mospi.gov.in/sites/default/files/publication_reports/TUS_Report_2024_28.03.2025F.pdf',
+}
+
+// The report has no cover date; its PDF is dated 29 Sep 2020, so the month is September 2020.
+const tus2019: Source = {
+  publisher: 'NSO, MoSPI',
+  release: 'Time Use in India 2019 (Time Use Survey, January to December 2019)',
+  released: '2020-09',
+  url: 'https://www.mospi.gov.in/sites/default/files/publication_reports/Report_TUS_2019_0.pdf',
+}
+
 const quarterlySources = [
   plfsQuarterlyJulSep2026,
   plfsQuarterlyAprJun2025,
@@ -178,6 +193,8 @@ const CAL_YEAR = 'calendar year (Jan-Dec)'
 const NSS = 'NSS employment and unemployment survey'
 const JUL_JUN = 'PLFS July to June'
 const history = (stem: string) => `jobs/jobs-${stem}-history.csv`
+const TIME_USE = 'jobs/jobs-time-use-india.csv'
+const TIME_USE_STATE = 'jobs/jobs-time-use-by-state-2024.csv'
 
 const historyPeriods = [
   { key: 'nss-early', basis: 'NSS before the 30-day rule' },
@@ -309,6 +326,33 @@ const industrySeries = (
   note: period === '2011-12' ? 'derived' : undefined,
   hidden,
 })
+
+/** Time Use Survey: one series per sex and survey year, for India, rural plus urban, ages 15-59. */
+const timeUseActivities = ['employment', 'unpaid domestic services', 'unpaid caregiving'] as const
+const timeUseLabels = {
+  employment: 'Paid work (employment and related)',
+  'unpaid domestic services': 'Unpaid domestic services',
+  'unpaid caregiving': 'Unpaid caregiving',
+} as const
+const timeUseSeries = (measure: string): Series[] =>
+  (['female', 'male'] as const).flatMap((sex) =>
+    (['2019', '2024'] as const).map((period) => ({
+      key: `${sex}-${period}`,
+      label: `${sex === 'female' ? 'Women' : 'Men'}, ${period}`,
+      color: period === '2019' ? 'other' : sex === 'female' ? 's3' : 's2',
+      file: TIME_USE,
+      where: { geography: 'india', period, sex, sector: 'rural+urban', age_group: '15-59', measure },
+      x: 'activity',
+    })),
+  )
+const timeUsePanels = [
+  { label: 'Women aged 15-59', series: ['female-2019', 'female-2024'] },
+  { label: 'Men aged 15-59', series: ['male-2019', 'male-2024'] },
+]
+const diaryNote =
+  'The Time Use Survey records what each person did over one 24-hour day, from 4 am to 4 am, in 30-minute slots. It counts every activity in a slot, up to three.'
+const notPlfs =
+  'PLFS measures work by usual status (the past year) or weekly status (the past 7 days). A day in a time-use diary is a different measure, so these figures do not compare with PLFS rates.'
 
 const topic: Topic = {
   slug: 'jobs',
@@ -491,6 +535,114 @@ const topic: Topic = {
               'Read the NSS rates for ages 15 and over in each report. Calculate unemployment as a share of the labour force in that age group.',
               'Read PLFS rates from Tables 1 to 3 of the 2023-24 press note and Highlights Tables 1 to 3 of the 2025 report.',
               'Keep separate series for each survey design and period basis.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
+    {
+      title: 'How do women and men spend their day?',
+      lede: 'In 2024, women aged 15-59 who did unpaid domestic work spent 305 minutes a day on it. Men who did such work spent 86 minutes.',
+      blocks: [
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'time-use-paid-unpaid-work',
+            title: 'Time spent on paid and unpaid work by women and men, 2019 and 2024',
+            subtitle: 'Average minutes a day for those who did each activity, ages 15-59, rural and urban India.',
+            punches: { office: 'MoSPI', unit: 'min 15-59', period: '2024' },
+            status: ['Survey estimate'],
+            note: 'Each bar is the average for people who did the activity on the survey day. People who did not are left out.',
+            sources: [tus2024, tus2019],
+            format: { decimals: 0, suffix: ' min' },
+            by: 'activity',
+            order: timeUseActivities,
+            labels: timeUseLabels,
+            rowHead: 'Activity',
+            axis: { min: 0, max: 500, step: 100 },
+            series: timeUseSeries('minutes per participant'),
+            panels: timeUsePanels,
+            know: [
+              diaryNote,
+              'MoSPI leads its report with ages 15-59 for paid work and domestic services. The data file also has ages 6 and over.',
+              'Paid work is ICATUS major division 1, employment and related activities. It includes travel to work and job search.',
+              notPlfs,
+              'Both surveys ran from January to December and used the same activity classification (ICATUS 2016).',
+            ],
+            processing: [
+              'Read minutes per participant (indicator 7) for 2019 and 2024 from the MoSPI eSankhyiki API, for ICATUS major divisions 1, 3 and 4.',
+              'Check the 2024 values against Statement 6 of Time Use in India 2024, and the 2019 values against Statement 10 of Time Use in India 2019. All agree.',
+              'Keep rural plus urban, ages 15-59, for women and men.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'In 2024, 25.0% of women aged 15-59 did paid work on the survey day, up from 21.8% in 2019. Among men, 75.0% did.',
+        },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'time-use-participation',
+            title: 'Women and men who did paid and unpaid work in a day, 2019 and 2024',
+            subtitle: 'Share of people who did each activity on the survey day, ages 15-59, rural and urban India.',
+            punches: { office: 'MoSPI', unit: '% 15-59', period: '2024' },
+            status: ['Survey estimate'],
+            sources: [tus2024, tus2019],
+            format: { unit: '%', decimals: 1 },
+            by: 'activity',
+            order: timeUseActivities,
+            labels: timeUseLabels,
+            rowHead: 'Activity',
+            axis: { min: 0, max: 100, step: 25 },
+            series: timeUseSeries('participation rate'),
+            panels: timeUsePanels,
+            know: [
+              diaryNote,
+              'The participation rate is the share of people who did the activity at any time in the 24 hours. The diary records an activity that fills at least 10 minutes of a slot.',
+              notPlfs,
+              'A person can take part in several activities on one day, so the shares do not add up to 100%.',
+            ],
+            processing: [
+              'Read participation rates (indicator 6) for 2019 and 2024 from the MoSPI eSankhyiki API, for ICATUS major divisions 1, 3 and 4.',
+              'Check the 2024 values against Statement 5 of Time Use in India 2024, and the 2019 values against Statement 9 of Time Use in India 2019. All agree.',
+              'Keep rural plus urban, ages 15-59, for women and men.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'In 2024, women in Arunachal Pradesh spent 387 minutes a day on unpaid domestic and care work, the most of any state or UT. Women in Goa spent 218 minutes. The India average was 283 minutes.',
+        },
+        {
+          chart: {
+            kind: 'states',
+            slug: 'women-unpaid-work-by-state',
+            title: 'Unpaid domestic and care work by women, by state and UT, 2024',
+            subtitle: 'Average minutes a day per woman aged 6 and over, rural and urban, including women who did none.',
+            punches: { office: 'MoSPI', unit: 'min/day', period: '2024' },
+            status: ['Survey estimate'],
+            note: 'Each value adds two published figures: unpaid domestic services and unpaid caregiving.',
+            sources: [tus2024],
+            format: { decimals: 0, suffix: ' min' },
+            data: { file: TIME_USE_STATE, where: { sex: 'female', activity: 'unpaid domestic services and caregiving' }, x: 'geography', note: 'note' },
+            open: 'map',
+            scale: 'seq',
+            short: "Women's unpaid domestic and care work",
+            know: [
+              diaryNote,
+              'The value is the average over all women aged 6 and over, including those who did no such work that day. MoSPI gives state values for ages 6 and over only.',
+              'Unpaid domestic services include cooking, cleaning, shopping and household management. Unpaid caregiving covers care of children and adults in the household.',
+              'MoSPI warns that samples for the smaller states and UTs may not give reliable estimates for some measures.',
+              'Chandigarh has urban data only.',
+              notPlfs,
+            ],
+            processing: [
+              'Read minutes per person in unpaid domestic services and unpaid caregiving, rural plus urban, for women, from Statement 7.1 of Time Use in India 2024.',
+              'Add the two values for each state and UT. The sum is ours, so the data file marks it derived. It keeps both published values.',
+              'Check the All India row of Statement 7.1 against the eSankhyiki API (indicator 8). All agree.',
+              'Match state names to the site geography table, for all 36 states and UTs.',
             ],
             nextRelease: 'not announced',
           },
@@ -757,15 +909,15 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each jobs figure is made, where it breaks, and what is missing.") has no field.
   about: {
     publisher:
-      'The National Statistics Office (NSO), MoSPI, runs the Periodic Labour Force Survey (PLFS). The National Sample Survey (NSS) measured employment before PLFS.',
+      'The National Statistics Office (NSO), MoSPI, runs the Periodic Labour Force Survey (PLFS) and the Time Use Survey (TUS). The National Sample Survey (NSS) measured employment before PLFS.',
     frequency:
-      'Monthly bulletin (weekly status): latest on 16 Nov 2026. Quarterly bulletin: latest on 10 Nov 2026. Annual report (usual status, all states and UTs): latest on 27 Mar 2026.',
+      'Monthly bulletin (weekly status): latest on 16 Nov 2026. Quarterly bulletin: latest on 10 Nov 2026. Annual report (usual status, all states and UTs): latest on 27 Mar 2026. Time Use Survey: 2019 and 2024, report on 28 Mar 2025.',
     revisions:
       'MoSPI revised the 2025 annual report on 29 May 2026 and the March 2026 press note on 15 Apr 2026. This page uses both.',
     breaks:
-      'A new sample design started in January 2025. Monthly rates and rural quarterly rates began in April 2025. Annual reports moved to calendar years. Weekly and yearly rates are different measures.',
+      'A new sample design started in January 2025. Monthly rates and rural quarterly rates began in April 2025. Annual reports moved to calendar years. Weekly and yearly rates are different measures. The Time Use Survey records one 24-hour day per person, so its measures of work do not compare with PLFS rates.',
     coverage:
-      'India, rural and urban, ages 15 and over and 15 to 29. The annual report covers all 36 states and UTs. Counts of workers use MoHFW population projections, not a census.',
+      'India, rural and urban, ages 15 and over and 15 to 29. The annual report covers all 36 states and UTs. Counts of workers use MoHFW population projections, not a census. The Time Use Survey covers people aged 6 and over; its state values are for 2024 only.',
     missing:
       'No rural rate for March 2026. No quarterly estimate for January to March 2025. No earnings or EPFO data. No stated reuse licence.',
   },
@@ -781,6 +933,8 @@ const topic: Topic = {
     plfsAnnual2023_24,
     plfsAnnual2020_21,
     ...nssSources,
+    tus2024,
+    tus2019,
   ],
   related: [
     // The Economy and Population chart slugs belong to other modules; these point at the topic pages.

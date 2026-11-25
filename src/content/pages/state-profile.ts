@@ -116,9 +116,10 @@ const stateProfile: StateProfile = {
         { label: 'Women in the labour force', chart: 'women-labour-force-by-state' },
         { label: 'Unemployment, age 15+', chart: 'unemployment-by-state', series: 'adults' },
         { label: 'Unemployment, age 15-29', chart: 'unemployment-by-state', series: 'youth' },
+        { label: "Women's unpaid domestic and care work", chart: 'women-unpaid-work-by-state' },
       ],
       footnote:
-        'Ranks count only states and UTs with data. Annual rates use usual status (ps+ss); monthly rates use current weekly status and do not compare.',
+        'Ranks count only states and UTs with data. Annual rates use usual status (ps+ss); monthly rates use current weekly status and do not compare. Unpaid work is minutes a day from the Time Use Survey 2024.',
     },
     {
       topic: 'health',

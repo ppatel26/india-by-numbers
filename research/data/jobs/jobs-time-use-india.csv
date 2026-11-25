@@ -1,0 +1,325 @@
+geography,period,sex,sector,age_group,activity,measure,value,unit,survey_period,source
+india,2019,male,rural,15-59,employment,minutes per participant,445,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural,15-59,unpaid domestic services,minutes per participant,96,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural,15-59,unpaid caregiving,minutes per participant,74,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,15-59,employment,minutes per participant,326,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,15-59,unpaid domestic services,minutes per participant,318,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,15-59,unpaid caregiving,minutes per participant,135,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,15-59,employment,minutes per participant,416,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,15-59,unpaid domestic services,minutes per participant,264,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,15-59,unpaid caregiving,minutes per participant,115,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,15-59,employment,minutes per participant,521,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,15-59,unpaid domestic services,minutes per participant,93,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,15-59,unpaid caregiving,minutes per participant,72,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,15-59,employment,minutes per participant,385,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,15-59,unpaid domestic services,minutes per participant,306,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,15-59,unpaid caregiving,minutes per participant,142,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,15-59,employment,minutes per participant,493,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,15-59,unpaid domestic services,minutes per participant,259,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,15-59,unpaid caregiving,minutes per participant,119,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,15-59,employment,minutes per participant,470,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,15-59,unpaid domestic services,minutes per participant,95,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,15-59,unpaid caregiving,minutes per participant,73,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,15-59,employment,minutes per participant,343,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,15-59,unpaid domestic services,minutes per participant,315,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,15-59,unpaid caregiving,minutes per participant,137,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,15-59,employment,minutes per participant,440,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,15-59,unpaid domestic services,minutes per participant,262,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,15-59,unpaid caregiving,minutes per participant,116,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2024,male,rural,15-59,employment,minutes per participant,460,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural,15-59,unpaid domestic services,minutes per participant,87,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural,15-59,unpaid caregiving,minutes per participant,75,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,15-59,employment,minutes per participant,325,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,15-59,unpaid domestic services,minutes per participant,308,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,15-59,unpaid caregiving,minutes per participant,138,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,15-59,employment,minutes per participant,424,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,15-59,unpaid domestic services,minutes per participant,255,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,15-59,unpaid caregiving,minutes per participant,117,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,15-59,employment,minutes per participant,521,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,15-59,unpaid domestic services,minutes per participant,85,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,15-59,unpaid caregiving,minutes per participant,72,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,urban,15-59,employment,minutes per participant,395,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,urban,15-59,unpaid domestic services,minutes per participant,,minutes per day,TUS 2024 (Jan-Dec 2024),"API value withheld: fails check, no report table"
+india,2024,female,urban,15-59,unpaid caregiving,minutes per participant,,minutes per day,TUS 2024 (Jan-Dec 2024),"API value withheld: fails check, no report table"
+india,2024,person,urban,15-59,employment,minutes per participant,494,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,urban,15-59,unpaid domestic services,minutes per participant,243,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,urban,15-59,unpaid caregiving,minutes per participant,119,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,15-59,employment,minutes per participant,480,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,15-59,unpaid domestic services,minutes per participant,86,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,15-59,unpaid caregiving,minutes per participant,74,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,15-59,employment,minutes per participant,344,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,15-59,unpaid domestic services,minutes per participant,305,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,15-59,unpaid caregiving,minutes per participant,140,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,15-59,employment,minutes per participant,446,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,15-59,unpaid domestic services,minutes per participant,251,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,15-59,unpaid caregiving,minutes per participant,118,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2019,male,rural,6+,employment,minutes per participant,434,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural,6+,unpaid domestic services,minutes per participant,98,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural,6+,unpaid caregiving,minutes per participant,77,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,6+,employment,minutes per participant,317,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,6+,unpaid domestic services,minutes per participant,301,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,6+,unpaid caregiving,minutes per participant,132,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,6+,employment,minutes per participant,404,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,6+,unpaid domestic services,minutes per participant,249,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,6+,unpaid caregiving,minutes per participant,113,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,6+,employment,minutes per participant,514,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,6+,unpaid domestic services,minutes per participant,94,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,6+,unpaid caregiving,minutes per participant,75,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,6+,employment,minutes per participant,375,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,6+,unpaid domestic services,minutes per participant,293,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,6+,unpaid caregiving,minutes per participant,138,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,6+,employment,minutes per participant,485,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,6+,unpaid domestic services,minutes per participant,247,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,6+,unpaid caregiving,minutes per participant,116,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,6+,employment,minutes per participant,459,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,6+,unpaid domestic services,minutes per participant,97,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,6+,unpaid caregiving,minutes per participant,76,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,6+,employment,minutes per participant,333,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,6+,unpaid domestic services,minutes per participant,299,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,6+,unpaid caregiving,minutes per participant,134,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,6+,employment,minutes per participant,429,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,6+,unpaid domestic services,minutes per participant,248,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,6+,unpaid caregiving,minutes per participant,114,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2024,male,rural,6+,employment,minutes per participant,451,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural,6+,unpaid domestic services,minutes per participant,88,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural,6+,unpaid caregiving,minutes per participant,76,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,6+,employment,minutes per participant,322,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,6+,unpaid domestic services,minutes per participant,291,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,6+,unpaid caregiving,minutes per participant,135,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,6+,employment,minutes per participant,417,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,6+,unpaid domestic services,minutes per participant,241,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,6+,unpaid caregiving,minutes per participant,115,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,6+,employment,minutes per participant,518,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,6+,unpaid domestic services,minutes per participant,88,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,6+,unpaid caregiving,minutes per participant,74,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,urban,6+,employment,minutes per participant,391,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,urban,6+,unpaid domestic services,minutes per participant,285,minutes per day,TUS 2024 (Jan-Dec 2024),"Time Use in India 2024, Statement 2"
+india,2024,female,urban,6+,unpaid caregiving,minutes per participant,142,minutes per day,TUS 2024 (Jan-Dec 2024),"Time Use in India 2024, Statement 2"
+india,2024,person,urban,6+,employment,minutes per participant,490,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,urban,6+,unpaid domestic services,minutes per participant,232,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,urban,6+,unpaid caregiving,minutes per participant,117,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,6+,employment,minutes per participant,473,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,6+,unpaid domestic services,minutes per participant,88,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,6+,unpaid caregiving,minutes per participant,75,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,6+,employment,minutes per participant,341,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,6+,unpaid domestic services,minutes per participant,289,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,6+,unpaid caregiving,minutes per participant,137,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,6+,employment,minutes per participant,440,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,6+,unpaid domestic services,minutes per participant,238,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,6+,unpaid caregiving,minutes per participant,116,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2019,male,rural,15-59,employment,minutes per person,311,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural,15-59,unpaid domestic services,minutes per person,30,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural,15-59,unpaid caregiving,minutes per person,12,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,15-59,employment,minutes per person,74,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,15-59,unpaid domestic services,minutes per person,298,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,15-59,unpaid caregiving,minutes per person,46,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,15-59,employment,minutes per person,191,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,15-59,unpaid domestic services,minutes per person,165,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,15-59,unpaid caregiving,minutes per person,29,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,15-59,employment,minutes per person,381,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,15-59,unpaid domestic services,minutes per person,22,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,15-59,unpaid caregiving,minutes per person,11,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,15-59,employment,minutes per person,77,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,15-59,unpaid domestic services,minutes per person,273,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,15-59,unpaid caregiving,minutes per person,44,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,15-59,employment,minutes per person,233,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,15-59,unpaid domestic services,minutes per person,145,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,15-59,unpaid caregiving,minutes per person,27,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,15-59,employment,minutes per person,333,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,15-59,unpaid domestic services,minutes per person,28,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,15-59,unpaid caregiving,minutes per person,12,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,15-59,employment,minutes per person,75,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,15-59,unpaid domestic services,minutes per person,290,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,15-59,unpaid caregiving,minutes per person,45,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,15-59,employment,minutes per person,204,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,15-59,unpaid domestic services,minutes per person,159,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,15-59,unpaid caregiving,minutes per person,28,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2024,male,rural,15-59,employment,minutes per person,344,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural,15-59,unpaid domestic services,minutes per person,26,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural,15-59,unpaid caregiving,minutes per person,17,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,15-59,employment,minutes per person,85,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,15-59,unpaid domestic services,minutes per person,288,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,15-59,unpaid caregiving,minutes per person,59,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,15-59,employment,minutes per person,212,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,15-59,unpaid domestic services,minutes per person,160,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,15-59,unpaid caregiving,minutes per person,38,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,15-59,employment,minutes per person,392,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,15-59,unpaid domestic services,minutes per person,26,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,15-59,unpaid caregiving,minutes per person,14,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,urban,15-59,employment,minutes per person,88,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,urban,15-59,unpaid domestic services,minutes per person,272,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,urban,15-59,unpaid caregiving,minutes per person,55,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,urban,15-59,employment,minutes per person,245,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,urban,15-59,unpaid domestic services,minutes per person,145,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,urban,15-59,unpaid caregiving,minutes per person,34,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,15-59,employment,minutes per person,360,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,15-59,unpaid domestic services,minutes per person,26,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,15-59,unpaid caregiving,minutes per person,16,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,15-59,employment,minutes per person,86,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,15-59,unpaid domestic services,minutes per person,283,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,15-59,unpaid caregiving,minutes per person,58,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,15-59,employment,minutes per person,223,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,15-59,unpaid domestic services,minutes per person,155,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,15-59,unpaid caregiving,minutes per person,37,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2019,male,rural,6+,employment,minutes per person,243,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural,6+,unpaid domestic services,minutes per person,27,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural,6+,unpaid caregiving,minutes per person,11,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,6+,employment,minutes per person,61,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,6+,unpaid domestic services,minutes per person,247,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,6+,unpaid caregiving,minutes per person,37,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,6+,employment,minutes per person,153,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,6+,unpaid domestic services,minutes per person,136,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,6+,unpaid caregiving,minutes per person,24,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,6+,employment,minutes per person,307,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,6+,unpaid domestic services,minutes per person,21,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,6+,unpaid caregiving,minutes per person,10,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,6+,employment,minutes per person,62,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,6+,unpaid domestic services,minutes per person,232,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,6+,unpaid caregiving,minutes per person,36,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,6+,employment,minutes per person,188,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,6+,unpaid domestic services,minutes per person,124,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,6+,unpaid caregiving,minutes per person,23,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,6+,employment,minutes per person,263,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,6+,unpaid domestic services,minutes per person,25,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,6+,unpaid caregiving,minutes per person,11,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,6+,employment,minutes per person,61,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,6+,unpaid domestic services,minutes per person,243,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,6+,unpaid caregiving,minutes per person,37,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,6+,employment,minutes per person,164,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,6+,unpaid domestic services,minutes per person,132,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,6+,unpaid caregiving,minutes per person,24,minutes per day,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2024,male,rural,6+,employment,minutes per person,273,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural,6+,unpaid domestic services,minutes per person,23,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural,6+,unpaid caregiving,minutes per person,14,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,6+,employment,minutes per person,70,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,6+,unpaid domestic services,minutes per person,238,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,6+,unpaid caregiving,minutes per person,47,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,6+,employment,minutes per person,171,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,6+,unpaid domestic services,minutes per person,131,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,6+,unpaid caregiving,minutes per person,30,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,6+,employment,minutes per person,320,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,6+,unpaid domestic services,minutes per person,25,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,6+,unpaid caregiving,minutes per person,13,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,urban,6+,employment,minutes per person,71,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,urban,6+,unpaid domestic services,minutes per person,231,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,urban,6+,unpaid caregiving,minutes per person,46,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,urban,6+,employment,minutes per person,199,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,urban,6+,unpaid domestic services,minutes per person,125,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,urban,6+,unpaid caregiving,minutes per person,29,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,6+,employment,minutes per person,287,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,24,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,13,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,6+,employment,minutes per person,71,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,236,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,47,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,6+,employment,minutes per person,180,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,129,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,30,minutes per day,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2019,male,rural,15-59,employment,participation rate,69.8,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural,15-59,unpaid domestic services,participation rate,31.2,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural,15-59,unpaid caregiving,participation rate,16.9,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,15-59,employment,participation rate,22.6,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,15-59,unpaid domestic services,participation rate,93.6,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,15-59,unpaid caregiving,participation rate,33.7,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,15-59,employment,participation rate,46.0,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,15-59,unpaid domestic services,participation rate,62.7,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,15-59,unpaid caregiving,participation rate,25.4,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,15-59,employment,participation rate,73.1,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,15-59,unpaid domestic services,participation rate,24.1,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,15-59,unpaid caregiving,participation rate,14.7,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,15-59,employment,participation rate,20.0,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,15-59,unpaid domestic services,participation rate,89.4,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,15-59,unpaid caregiving,participation rate,30.7,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,15-59,employment,participation rate,47.2,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,15-59,unpaid domestic services,participation rate,56.0,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,15-59,unpaid caregiving,participation rate,22.5,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,15-59,employment,participation rate,70.9,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,15-59,unpaid domestic services,participation rate,28.9,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,15-59,unpaid caregiving,participation rate,16.2,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,15-59,employment,participation rate,21.8,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,15-59,unpaid domestic services,participation rate,92.3,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,15-59,unpaid caregiving,participation rate,32.8,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,15-59,employment,participation rate,46.4,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,15-59,unpaid domestic services,participation rate,60.6,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,15-59,unpaid caregiving,participation rate,24.5,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2024,male,rural,15-59,employment,participation rate,74.9,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural,15-59,unpaid domestic services,participation rate,30.3,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural,15-59,unpaid caregiving,participation rate,22.2,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,15-59,employment,participation rate,26.3,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,15-59,unpaid domestic services,participation rate,93.8,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,15-59,unpaid caregiving,participation rate,42.4,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,15-59,employment,participation rate,50.1,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,15-59,unpaid domestic services,participation rate,62.6,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,15-59,unpaid caregiving,participation rate,32.5,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,15-59,employment,participation rate,75.1,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,15-59,unpaid domestic services,participation rate,30.5,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,15-59,unpaid caregiving,participation rate,20.0,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,urban,15-59,employment,participation rate,22.2,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,urban,15-59,unpaid domestic services,participation rate,,per cent of persons,TUS 2024 (Jan-Dec 2024),"API value withheld: fails check, no report table"
+india,2024,female,urban,15-59,unpaid caregiving,participation rate,,per cent of persons,TUS 2024 (Jan-Dec 2024),"API value withheld: fails check, no report table"
+india,2024,person,urban,15-59,employment,participation rate,49.6,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,urban,15-59,unpaid domestic services,participation rate,59.7,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,urban,15-59,unpaid caregiving,participation rate,28.7,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,15-59,employment,participation rate,75.0,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,15-59,unpaid domestic services,participation rate,30.4,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,15-59,unpaid caregiving,participation rate,21.4,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,15-59,employment,participation rate,25.0,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,15-59,unpaid domestic services,participation rate,92.9,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,15-59,unpaid caregiving,participation rate,41.0,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,15-59,employment,participation rate,49.9,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,15-59,unpaid domestic services,participation rate,61.7,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,15-59,unpaid caregiving,participation rate,31.3,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2019,male,rural,6+,employment,participation rate,56.1,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural,6+,unpaid domestic services,participation rate,27.7,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural,6+,unpaid caregiving,participation rate,14.4,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,6+,employment,participation rate,19.2,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,6+,unpaid domestic services,participation rate,82.1,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural,6+,unpaid caregiving,participation rate,28.2,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,6+,employment,participation rate,37.9,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,6+,unpaid domestic services,participation rate,54.6,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural,6+,unpaid caregiving,participation rate,21.2,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,6+,employment,participation rate,59.8,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,6+,unpaid domestic services,participation rate,22.6,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,urban,6+,unpaid caregiving,participation rate,13.2,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,6+,employment,participation rate,16.7,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,6+,unpaid domestic services,participation rate,79.2,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,urban,6+,unpaid caregiving,participation rate,26.3,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,6+,employment,participation rate,38.9,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,6+,unpaid domestic services,participation rate,50.1,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,urban,6+,unpaid caregiving,participation rate,19.5,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,6+,employment,participation rate,57.3,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,6+,unpaid domestic services,participation rate,26.1,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,male,rural+urban,6+,unpaid caregiving,participation rate,14.0,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,6+,employment,participation rate,18.4,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,6+,unpaid domestic services,participation rate,81.2,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,female,rural+urban,6+,unpaid caregiving,participation rate,27.6,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,6+,employment,participation rate,38.2,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,6+,unpaid domestic services,participation rate,53.2,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2019,person,rural+urban,6+,unpaid caregiving,participation rate,20.7,per cent of persons,TUS 2019 (Jan-Dec 2019),eSankhyiki API
+india,2024,male,rural,6+,employment,participation rate,60.4,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural,6+,unpaid domestic services,participation rate,26.5,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural,6+,unpaid caregiving,participation rate,18.2,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,6+,employment,participation rate,21.9,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,6+,unpaid domestic services,participation rate,81.8,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural,6+,unpaid caregiving,participation rate,34.8,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,6+,employment,participation rate,41.1,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,6+,unpaid domestic services,participation rate,54.2,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural,6+,unpaid caregiving,participation rate,26.5,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,6+,employment,participation rate,61.7,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,6+,unpaid domestic services,participation rate,28.4,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,urban,6+,unpaid caregiving,participation rate,17.5,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,urban,6+,employment,participation rate,18.2,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,urban,6+,unpaid domestic services,participation rate,80.9,per cent of persons,TUS 2024 (Jan-Dec 2024),"Time Use in India 2024, Statement 1"
+india,2024,female,urban,6+,unpaid caregiving,participation rate,32.0,per cent of persons,TUS 2024 (Jan-Dec 2024),"Time Use in India 2024, Statement 1"
+india,2024,person,urban,6+,employment,participation rate,40.5,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,urban,6+,unpaid domestic services,participation rate,53.9,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,urban,6+,unpaid caregiving,participation rate,24.5,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,6+,employment,participation rate,60.8,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,6+,unpaid domestic services,participation rate,27.1,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,male,rural+urban,6+,unpaid caregiving,participation rate,17.9,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,6+,employment,participation rate,20.7,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,6+,unpaid domestic services,participation rate,81.5,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,female,rural+urban,6+,unpaid caregiving,participation rate,34.0,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,6+,employment,participation rate,40.9,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,6+,unpaid domestic services,participation rate,54.1,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API
+india,2024,person,rural+urban,6+,unpaid caregiving,participation rate,25.9,per cent of persons,TUS 2024 (Jan-Dec 2024),eSankhyiki API

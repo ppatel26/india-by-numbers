@@ -1,6 +1,6 @@
 # Jobs
 
-Data for the India by Numbers "Jobs" topic. Values come from two MoSPI household surveys. The National Sample Survey (NSS) measured employment before the Periodic Labour Force Survey (PLFS). Every value is a survey estimate or a calculation from survey estimates.
+Data for the India by Numbers "Jobs" topic. Values come from three MoSPI household surveys. The National Sample Survey (NSS) measured employment before the Periodic Labour Force Survey (PLFS). The Time Use Survey (TUS) measures how people spend one day. Every value is a survey estimate or a calculation from survey estimates.
 
 Read on 17 Nov 2026.
 
@@ -11,6 +11,7 @@ Read on 17 Nov 2026.
 3. Which states have the highest unemployment, and how hard is it for young people to find a job?
 4. What kind of work do Indians do: own businesses, salaried jobs or casual labour?
 5. Which industries employ the most people?
+6. How do women and men split their day between paid work and unpaid work at home?
 
 ## Two measures, two survey designs
 
@@ -94,6 +95,79 @@ The raw PDFs for both charts have URLs, read dates and SHA-256 checksums under A
 - Small multiples by area and sex, ages 15 to 29, usual status (ps+ss).
 - Five NSS rounds from 1993-94 to 2011-12, seven PLFS July to June years from 2017-18 to 2023-24 and four PLFS calendar years from 2022 to 2025.
 - Files `jobs-youth-unemployment-history.csv` and `jobs-youth-unemployment-annual.csv`.
+
+### jobs-9 Time spent on paid and unpaid work (`time-use-paid-unpaid-work`)
+
+- Type: bars by activity, two panels (women, men), 2019 and 2024 in each.
+- Unit: minutes a day per participant. Geography: India, rural+urban. Ages 15-59. Period: TUS 2019 and TUS 2024 (each January to December).
+- File: `jobs-time-use-india.csv` (filter `measure=minutes per participant`, `sector=rural+urban`, `age_group=15-59`).
+- Sentence: "In 2024, women aged 15-59 who did unpaid domestic work spent 305 minutes a day on it. Men who did such work spent 86 minutes."
+
+### jobs-10 Share of people who did each activity (`time-use-participation`)
+
+- Type: bars by activity, two panels (women, men), 2019 and 2024 in each.
+- Unit: per cent of persons. Geography: India, rural+urban. Ages 15-59. Period: TUS 2019 and TUS 2024.
+- File: `jobs-time-use-india.csv` (filter `measure=participation rate`, `sector=rural+urban`, `age_group=15-59`).
+- Sentence: "In 2024, 25.0% of women aged 15-59 did paid work on the survey day, up from 21.8% in 2019. Among men, 75.0% did."
+
+### jobs-11 Women's unpaid domestic and care work by state (`women-unpaid-work-by-state`)
+
+- Type: states (ranked bars, tile map, table). State profile row: "Women's unpaid domestic and care work".
+- Unit: minutes a day per person (all women, including those who did none). Geography: 36 states and UTs plus India, rural+urban. Ages 6 and over. Period: TUS 2024.
+- File: `jobs-time-use-by-state-2024.csv` (filter `sex=female`, `activity=unpaid domestic services and caregiving`).
+- Sentence: "In 2024, women in Arunachal Pradesh spent 387 minutes a day on unpaid domestic and care work, the most of any state or UT. Women in Goa spent 218 minutes. The India average was 283 minutes."
+
+## Time Use Survey
+
+Read on 25 Nov 2026. The TUS records the activities of every household member aged 6 and over for 24 hours, from 4 am on the day before the interview to 4 am on the day of the interview, in 30-minute slots. A slot records each activity that took at least 10 minutes, up to three. TUS 2024 surveyed 1,39,487 households and 4,54,192 persons (report, Highlights). Both rounds use ICATUS 2016. TUS 2024 used computer-assisted interviews (CAPI); the 2019 report does not name its method. MoSPI compares the two rounds directly in the 2024 report (Figures 4 to 6), so the charts show no method break.
+
+**TUS and PLFS measure work in different ways.** TUS counts the minutes of one day. PLFS counts usual status (the past 365 days) or current weekly status (the past 7 days). Do not put a TUS figure and a PLFS rate in one chart. The TUS share of women who did paid work on the survey day (25.0%, ages 15-59) is not a labour force participation rate.
+
+### Sources
+
+| Raw path under `raw/jobs/` | Release | Released | URL | Read on | Licence | SHA-256 |
+| --- | --- | --- | --- | --- | --- | --- |
+| `tus-2024/report.pdf` | NSO, MoSPI, Time Use in India 2024 (305 pages) | 28 Mar 2025 (file name, PDF date; foreword "March, 2025") | https://www.mospi.gov.in/sites/default/files/publication_reports/TUS_Report_2024_28.03.2025F.pdf | 25 Nov 2026 | Not stated | `a4380137658c886985c5312c199dc71a8e95c0b39d7b969396ca2f4c859788c9` |
+| `tus-2019/report.pdf` | NSO, MoSPI, Time Use in India 2019 (2,140 pages) | Sep 2020 (no cover date; PDF dated 29 Sep 2020) | https://www.mospi.gov.in/sites/default/files/publication_reports/Report_TUS_2019_0.pdf | 25 Nov 2026 | Not stated | `ab685cbbecc2d93e21b5329ee8b550e8efd60760ca5c232a72e1d10f48ba7105` |
+| `tus-api/tus-ind6.p1.json` | eSankhyiki API, TUS indicator 6: participation rate, irrespective of major activity | Live | https://api.mospi.gov.in/api/tus/getTusRecords?indicator_code=6&year=2019,2024&sector_code=1,2,3&gender_code=1,2,4&age_group_code=3,5&icatus_activity_code=33,99,128&Format=JSON&limit=200&page=1 | 25 Nov 2026 | Not stated | `475fda00a28b4f40ffddc0954df8072726c19cef59c3b5c9459d34eec33af512` |
+| `tus-api/tus-ind7.p1.json` | eSankhyiki API, TUS indicator 7: minutes per participant | Live | Same query, `indicator_code=7` | 25 Nov 2026 | Not stated | `766ca49eae69d3830aaac1c096ca56e2407ab677533c77ee7853dfc707d0baf1` |
+| `tus-api/tus-ind8.p1.json` | eSankhyiki API, TUS indicator 8: minutes per person | Live | Same query, `indicator_code=8` | 25 Nov 2026 | Not stated | `efca8ccd2b702520724574679c12b56468161409a8d965cac19529c759fae314` |
+
+Each API query returned 108 rows on one page. ICATUS codes in the API: 33 is major division 1 (employment and related activities), 99 is major division 3 (unpaid domestic services for household members), 128 is major division 4 (unpaid caregiving services for household members). The API takes a `state_code` filter, but for these indicators it lists no states: every row is "All India".
+
+Run `pipeline/jobs/fetch_tus.sh`, then `python3 -I pipeline/jobs/build_tus.py`. The builder checks the API against the report tables and stops on any difference it does not expect.
+
+### Tables used
+
+| CSV | Values | Source |
+| --- | --- | --- |
+| `jobs-time-use-india.csv` | 324: 2 years, 3 sexes, 3 sectors, ages 15-59 and 6+, 3 activities, 3 measures | eSankhyiki API indicators 6, 7 and 8. Four cells come from the 2024 report and four are empty (see the API fault below). The `source` column names the source of each row. |
+| `jobs-time-use-by-state-2024.csv` | 333: 36 states and UTs plus India, 3 sexes, rural+urban, ages 6+ | Time Use in India 2024, Statement 7.1 (minutes per person, all activities in a slot), columns 8 to 10. The rows `unpaid domestic services and caregiving` are the sum of the two published rows, marked `derived`. |
+
+### Checks done
+
+The builder compared 212 API values with the report tables, and all agree:
+
+- 2024, ages 6+: Statements 1 (participation), 2 (minutes per participant) and 3 (minutes per person), all sectors and sexes. For example, women's unpaid domestic services: 81.5%, 289 minutes, 236 minutes.
+- 2024, ages 15-59, rural+urban: Statements 5 and 6. For example, women's paid work 25.0% and 344 minutes; men's unpaid domestic services 86 minutes.
+- 2019, ages 6+: Statements 5, 6 and 7 of the 2019 report. 2019, ages 15-59, rural+urban: Statements 9 and 10 (the rural+urban pages). For example, women's unpaid domestic services 92.3% and 315 minutes.
+- 2024 by state: the All India rows of Statement 7.1 agree with API indicator 8 for unpaid domestic services and caregiving, all sectors and sexes.
+- The 2019 values in the API also match the 2019 values the 2024 report prints in its Highlights charts (for example, women's paid work 343 and 344 minutes).
+
+### Decisions
+
+- **Age group: 15-59 for the India charts.** The Highlights of the 2024 report lead with ages 15-59 for paid work and for unpaid domestic services, next to ages 6 and over. The CSV keeps both. The state chart uses ages 6 and over, because Statements 5.1 to 17.1 give no other age group.
+- **Minutes per participant for the India chart.** This is the measure the Highlights use. It is paired with the participation chart. The CSV also keeps minutes per person.
+- **Minutes per person for the state chart, domestic plus caregiving.** The task asks for women's unpaid domestic and care work by state. No report table gives that sum. Minutes per person can be added; minutes per participant cannot. The sum is simple arithmetic on two published values (rule R3), so the CSV marks it `derived` and keeps both inputs. It can differ by 1 minute from an unrounded sum. The India sum is 283 (236 + 47). Statement 12.1 gives a published "all unpaid" per person (263 for women in Andhra Pradesh), but it also counts production of goods for own use and volunteer work, so the chart does not use it.
+- **Participation rates to one decimal.** The API drops a trailing zero (25 for 25.0). The report prints every rate to one decimal, so the builder writes one decimal. The value does not change.
+
+### Gaps and cautions
+
+- **API fault, 2024, urban women.** The API gives wrong 2024 participation rates and minutes per participant for urban women. For unpaid domestic services, ages 6+, it gives 4 (per cent) and 54 minutes. Statements 1 and 2 give 80.9% and 285 minutes. For unpaid caregiving it gives 0.4 and 63, against 32.0% and 142 minutes. The same column is also wrong for production of goods for own use (6.6 against 9.1) and learning (1.9 against 20.1). Paid work and minutes per person agree with the report. The CSV takes the four ages 6+ values from Statements 1 and 2. The four ages 15-59 values have no report table (Statements 5 and 6 are rural+urban only), so they are empty. No chart uses urban rows. Checked 25 Nov 2026.
+- **State values are for 2024 and ages 6+ only.** The 2019 report has state tables (Statements 5.1 and 6.1 give ages 15-29, 15-59 and 6+), but they are not used: the 2024 state tables give no ages 15-59, so the two rounds do not match by state.
+- **Small samples.** The 2024 report (section 1.5.2) warns that samples for the smaller states and UTs may not give reliable estimates for some indicators. Chandigarh has urban data only. A dash in the report means no sample observation; the CSV leaves it empty.
+- **Transgender persons** are in "person", with no separate estimate.
+- **Next round.** MoSPI has not announced the next TUS.
 
 ## Annual history build
 

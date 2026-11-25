@@ -75,6 +75,7 @@ const PUBLISHERS: readonly Publisher[] = [
       { name: 'National Accounts', detail: 'GDP, GVA and state income', rhythm: 'Quarterly, with annual revisions', match: /National Accounts|GDP|state accounts/ },
       { name: 'Index of Industrial Production', detail: 'Base 2011-12 and base 2022-23', rhythm: 'Monthly, on the 28th', match: /Industrial Production/ },
       { name: 'Periodic Labour Force Survey', detail: 'Monthly and quarterly bulletins, annual report', rhythm: 'Monthly, quarterly and yearly', match: /PLFS/ },
+      { name: 'Time Use Survey', detail: 'Reports for 2019 and 2024', rhythm: 'Two rounds so far, 2019 and 2024', match: /Time Use/ },
       { name: 'Women and Men in India', detail: 'Election tables, from ECI data', rhythm: 'Yearly', match: /Women and Men in India/ },
     ],
     licence: NOT_STATED,
