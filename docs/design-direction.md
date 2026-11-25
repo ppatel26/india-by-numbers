@@ -68,6 +68,7 @@ Topic pigments (hero ground, home and topics tiles, topic tag; never a data colo
 | Religion and culture | kesar (saffron) | #F48E2F | ink 7.4:1 |
 | Crime and justice | kattha (catechu brown) | #78491E | white 7.6:1 |
 | Living standards | firozi (turquoise) | #45C5B8 | ink 8.4:1 |
+| Trade | manjistha (Indian madder) | #F28DA0 | ink 7.7:1 |
 
 Kattha (added 25 Nov 2026) sits at OKLCH L 0.452, C 0.086, H 60, in the gap between lac (H 27) and mehendi (H 122). Its nearest pigment is mehendi (OKLab distance 0.092).
 
@@ -97,6 +98,7 @@ Made with Paper's image models: nano-banana-2-1 for objects, nano-banana-pro for
 | Population, Prices, Economy, Health, Education | Topic coins: procession, karshapana, wheat and gear, vaccine vial and stethoscope, palm-leaf book and slate | Silver |
 | Crime and justice | Tarazu, the Indian beam balance (not yet made) | Silver |
 | Living standards | Stacked tiffin carrier (not yet made) | Silver |
+| Trade | Uru, the Indian Ocean trading ship (not yet made) | Silver |
 
 Production rules:
 
@@ -145,6 +147,22 @@ The same council chose:
   light ground, give the silver crisp shadows, as for haldi and kesar.
 - Interim: the Crime and justice rule, 3 of 3. Publish with no object until the owner approves
   the image credits.
+
+### Trade (decided 25 Nov 2026)
+
+- Name "Trade", slug `trade`: 3 of 3. The intro says that the topic is India only and covers goods,
+  services, remittances, the current account and foreign exchange reserves. The exchange rate stays
+  in Economy, and digital payments join Economy as a part.
+- Pigment manjistha #F28DA0 with ink text: 2 of 3 chose a light madder rose (GPT #F28DA0, Gemini
+  #F28A96). Manjistha was itself an Indian export dye. #F28DA0 sits further from kesar (OKLab 0.125)
+  and gives more contrast (7.7:1). Muse proposed peori #60552C, 0.048 from mehendi.
+- Object: a silver trading ship, 2 of 3 (Gemini a Beypore uru, Muse a pattamar). GPT proposed a
+  folded length of Coromandel chintz.
+- Prompt: "Three-quarter studio view of a traditional Beypore uru Indian Ocean trading vessel in
+  brushed silver, a curved hull with one furled lateen sail, crisp shadows, one soft key light from
+  the top left, no text, flags or engravings, centred on a flat matte manjistha backdrop (#F28DA0),
+  no gradient, no vignette."
+- Interim: 3 of 3. Publish with no object until the owner approves the image credits.
 
 ## The design boards
 
