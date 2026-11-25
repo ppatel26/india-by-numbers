@@ -2,6 +2,7 @@ import { scaleBand } from 'd3-scale'
 import { svg, type Markup } from '~/lib/markup'
 import { colorVar, fillVar } from '~/lib/tokens'
 import { WIDTH, frame, hit, tickRoom, xLabels, yGrid, yRoom, yScale, yTicks, type Width } from './axes'
+import { KEY_ROW, legend, legendRows } from './dots'
 import { drawn, tipLine, type Of } from './model'
 import { timeNotes } from './notes'
 
@@ -38,13 +39,18 @@ export function renderColumns(chart: Of<'columns'>, width: Width, inPanel = fals
     }
     return lines
   }
-  // A key for columns coloured by sign, unless the panels around this chart draw one.
+  // A key for columns coloured by sign, unless the panels around this chart draw one. Stacked
+  // series get a key of their own: their colours name the parts.
   const signKey = chart.sign && !inPanel ? signLegend(chart.sign) : null
-  const keyH = signKey ? 24 : 0
+  const keyRows = !chart.sign && !inPanel && chart.stacked && series.length > 1 ? legendRows(series, W) : 0
+  const seriesKey = keyRows ? legend(series, [], 12, W) : null
+  const keyH = signKey ? 24 : keyRows ? 8 + keyRows * KEY_ROW : 0
   const H = (narrow ? 260 : 340) + keyH
   const at = (x: string) => series.map((s) => ({ s, p: s.points.find((q) => q.x === x) })).filter((v) => v.p?.y != null)
-  const totals = xs.map((p) => at(p.x).reduce((a, v) => a + (chart.stacked ? v.p!.y! : 0), 0))
-  const values = chart.stacked ? totals : series.flatMap((s) => s.points.flatMap((p) => (p.y === null ? [] : [p.y])))
+  // A stack diverges at zero: positive parts rise from it and negative parts hang below it, so
+  // parts of mixed sign (a trade deficit beside a services surplus) never overlap.
+  const sums = xs.map((p) => at(p.x).reduce(([lo, hi], v) => (v.p!.y! < 0 ? [lo + v.p!.y!, hi] : [lo, hi + v.p!.y!]) as [number, number], [0, 0] as [number, number]))
+  const values = chart.stacked ? sums.flat() : series.flatMap((s) => s.points.flatMap((p) => (p.y === null ? [] : [p.y])))
   // Break and marker labels get their own band above the plot.
   const ruled = (chart.breaks ?? []).length + (chart.markers ?? []).length > 0
   const m = { top: (ruled ? 40 : 16) + keyH, right: 12, bottom: 30, left: yRoom(values, chart.y, chart.format) }
@@ -63,14 +69,17 @@ export function renderColumns(chart: Of<'columns'>, width: Width, inPanel = fals
   const bars = xs.map((p) => {
     const here = at(p.x)
     const bx = x(p.x)!
-    let base = 0
+    let up = 0
+    let down = 0
     return here.map((v, i) => {
       const val = v.p!.y!
       const fill = isWhole(p.x) ? fillVar('ink') : chart.sign ? colorVar(val >= 0 ? chart.sign.above : chart.sign.below) : fillVar(v.s.color)
       if (chart.stacked) {
-        const y0 = y(base)
-        base += val
-        return svg`<rect x="${bx}" y="${y(base)}" width="${x.bandwidth()}" height="${Math.max(0, y0 - y(base))}" fill="${fill}"/>`
+        const from = val < 0 ? down : up
+        const to = from + val
+        if (val < 0) down = to
+        else up = to
+        return svg`<rect x="${bx}" y="${y(Math.max(from, to))}" width="${x.bandwidth()}" height="${Math.abs(y(from) - y(to))}" fill="${fill}"/>`
       }
       const w = x.bandwidth() / here.length
       return svg`<rect x="${bx + i * w}" y="${Math.min(y(0), y(val))}" width="${w}" height="${Math.abs(y(val) - y(0))}" fill="${fill}"/>`
@@ -88,8 +97,8 @@ export function renderColumns(chart: Of<'columns'>, width: Width, inPanel = fals
   // The top of each column, for callouts that must clear their neighbours.
   const caps = xs.map((p, i) => {
     const vals = at(p.x).map((v) => v.p!.y!)
-    const top = chart.stacked ? totals[i]! : Math.max(0, ...vals)
-    return { x0: x(p.x)!, x1: x(p.x)! + x.bandwidth(), y: y(top), low: y(Math.min(0, ...vals)) }
+    const [lo, hi] = chart.stacked ? sums[i]! : [Math.min(0, ...vals), Math.max(0, ...vals)]
+    return { x0: x(p.x)!, x1: x(p.x)! + x.bandwidth(), y: y(hi), low: y(lo) }
   })
   const near = (a: number, b: number) => caps.filter((c) => c.x1 >= a && c.x0 <= b)
   const capAt = (a: number, b: number) => Math.min(y(0), ...near(a, b).map((c) => c.y))
@@ -116,7 +125,7 @@ export function renderColumns(chart: Of<'columns'>, width: Width, inPanel = fals
     width,
     H + (tickLines - 1) * 13,
     chart.title,
-    svg`${signKey}${yGrid(y, yTicks(y, chart.y), m.left, W - m.right, chart.format)}${notes.under}${wholeRule}${bars}
+    svg`${signKey}${seriesKey}${yGrid(y, yTicks(y, chart.y), m.left, W - m.right, chart.format)}${notes.under}${wholeRule}${bars}
 <line x1="${m.left}" x2="${W - m.right}" y1="${y(0)}" y2="${y(0)}" stroke="var(--ink)"/>
 ${xLabels(ticks, H - m.bottom, { left: m.left, right: W - m.right })}${notes.over}<g class="hits">${hits}</g>`,
   )

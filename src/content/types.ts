@@ -68,8 +68,8 @@ export interface Series extends Pick {
 export interface Format {
   /** Digits after the point. Default: as many as the data has, up to 2. */
   decimals?: number
-  /** '%' prints 6.09%, '₹' prints ₹93.57, 'pp' prints 1.20 pp, '°C' prints 0.65°C. */
-  unit?: '%' | '₹' | 'pp' | '°C' | ''
+  /** '%' prints 6.09%, '₹' prints ₹93.57, 'US$' prints US$441.7, 'pp' prints 1.20 pp, '°C' prints 0.65°C. */
+  unit?: '%' | '₹' | 'US$' | 'pp' | '°C' | ''
   /** Print a plus sign on positive values: +0.65°C. */
   signed?: boolean
   /** Multiply the published value first, for example 1000 for "thousand persons". */
@@ -176,6 +176,7 @@ export type Chart =
       y?: Axis
       /** Small multiples, two to a row on wide screens. */
       panels?: readonly Panel[]
+      /** Stack the series in each column. Positive parts stack up from zero, negative parts down. */
       stacked?: boolean
       /** Colour each column by its sign, for example rainfall above or below normal. */
       sign?: { above: Color; below: Color; aboveLabel: string; belowLabel: string }
