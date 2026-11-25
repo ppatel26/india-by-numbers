@@ -178,7 +178,7 @@ These are the "Later" topics in `docs/site-spec.md`.
 
 | Topic | Source | Latest release | Status | DFI |
 | --- | --- | --- | --- | --- |
-| Crime and justice | NCRB Crime in India | 2024 | `use`. Confirm the file format and the table numbers | Yes (2023) |
+| Crime and justice | NCRB Crime in India | 2024 | `use`. Confirm the file format and the table numbers. The year page (`ncrb.gov.in/en/crime-in-india-year-wise.html?year=2024`) lists no files in its HTML, even when rendered in a browser (checked 25 Nov 2026). Try the table-contents pages, then the NCRB tables on data.gov.in | Yes (2023) |
 | Crime and justice | NCRB Prison Statistics India | 2024 | `use`. Confirm the file format and the table numbers | Yes (2023) |
 | Crime and justice | Court pendency by state | Ministry of Law and Justice answers in Parliament (data to 30 Jul 2026); NJDG dashboard as a `Snapshot` only (rule R4) | `use` the Parliament answers | Yes |
 | Housing and living standards | HCES 2023-24 | API: MPCE by state, class and social group, item shares, Gini | `use`. Durables and cooking fuel tables `to check` in the final report | Yes |
@@ -212,8 +212,9 @@ rules above). It does not wait for the owner.
 
 1. **Process.** Done on 25 Nov 2026: `pipeline/common/catalogue_sweep.py`, the first catalogue
    snapshots, the step 6 checks on the backlog, and the PLFS Assam check. Still to do: the rows
-   marked `to check`, the `Snapshot` and `Modelled estimate` status words in the types and tests,
-   and an archive of the raw files.
+   marked `to check`, and an archive of the raw files. The `Snapshot` and `Modelled estimate` status
+   words come with the first chart that needs each one (court pendency, an international
+   comparison), because the How we check page gives a real figure for every status word.
 2. **Fill current topics.** Next. All of these have status `use`: SRS Cause of Death 2022-24, CRS
    2024, NFHS-6 tobacco and overweight, the Time Use Survey 2024, the Education survey 2025, ASI
    2024-25 and ASUSE 2025. They add charts to pages that already exist, and the state profiles get
