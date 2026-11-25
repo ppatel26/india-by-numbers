@@ -1,4 +1,5 @@
 import type { Color, Series, Source, Topic } from '../types'
+import { WDI, WDI_ABOUT, comparison } from '../international'
 
 // Sources: research/data/jobs/README.md.
 
@@ -908,11 +909,38 @@ const topic: Topic = {
         },
       ],
     },
+    {
+      title: "How does women's work in India compare?",
+      lede: "The ILO's modelled estimate puts women's labour force participation in India at 32.4% in 2024, against 49.1% for the world. India's own survey, PLFS, gives 40.3% for the same year.",
+      blocks: [
+        {
+          chart: comparison({
+            slug: 'women-labour-force-comparison',
+            file: 'wdi-women-labour-force-participation.csv',
+            title: "Women's labour force participation, India and other countries, 1990 and 2024",
+            subtitle: 'Share of women aged 15 and over who work or look for work, seven countries and the world. ILO modelled estimates, through the World Bank.',
+            unit: '% 15+',
+            latest: '2024',
+            format: { unit: '%', decimals: 1 },
+            status: ['Modelled estimate'],
+            note: 'WDI takes the values from the ILO modelled estimates.',
+            sources: [WDI.womenLabourForce],
+            know: [
+              'The ILO adjusts each national survey to common definitions and fills gaps with a model, so that countries compare. That is why the figures are modelled estimates.',
+              "PLFS, India's own survey, gives 40.3% for 2024, well above the ILO estimate of 32.4%.",
+              'For India alone, use the PLFS charts on this page. WDI says to take care when comparing ILO estimates with national figures.',
+              'The ILO series runs to 2027 in ILOSTAT, so its latest years are projections. WDI prints 2025. The chart stops at 2024.',
+            ],
+            processing: ['Check the India values for 2020 to 2025 against ILOSTAT.', 'Show each value to one decimal place. Rank the rows by the 2024 value.'],
+          }),
+        },
+      ],
+    },
   ],
   // LATER: the About band's side line ("How each jobs figure is made, where it breaks, and what is missing.") has no field.
   about: {
     publisher:
-      'The National Statistics Office (NSO), MoSPI, runs the Periodic Labour Force Survey (PLFS) and the Time Use Survey (TUS). The National Sample Survey (NSS) measured employment before PLFS.',
+      ['The National Statistics Office (NSO), MoSPI, runs the Periodic Labour Force Survey (PLFS) and the Time Use Survey (TUS). The National Sample Survey (NSS) measured employment before PLFS.', WDI_ABOUT].join(' '),
     frequency:
       'Monthly bulletin (weekly status): latest on 16 Nov 2026. Quarterly bulletin: latest on 10 Nov 2026. Annual report (usual status, all states and UTs): latest on 27 Mar 2026. Time Use Survey: 2019 and 2024, report on 28 Mar 2025.',
     revisions:
@@ -938,6 +966,7 @@ const topic: Topic = {
     ...nssSources,
     tus2024,
     tus2019,
+    WDI.womenLabourForce,
   ],
   related: [
     // The Economy and Population chart slugs belong to other modules; these point at the topic pages.
