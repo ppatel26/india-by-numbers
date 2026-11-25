@@ -92,6 +92,8 @@ Some CSVs were made in more than one step. Run the steps in this order:
 | `jobs/fetch_plfs.py` | None. Downloads PLFS series from the eSankhyiki API | MoSPI |
 | `jobs/extract_text.sh` | None. Text of the PLFS reports and bulletins | MoSPI |
 | `jobs/build_jobs.py` | `jobs-lfpr-by-state-2025`, `jobs-unemployment-by-state-2025`, `jobs-lfpr-wpr-ur-annual`, `jobs-youth-unemployment-annual`, `jobs-employment-status`, `jobs-employment-by-industry`, `jobs-unemployment-quarterly`, `jobs-monthly-lfpr-wpr-ur` | MoSPI (PLFS) |
+| `jobs/fetch_tus.sh` | None. Downloads the TUS 2019 and 2024 reports and three eSankhyiki TUS queries, and extracts the report text | MoSPI (Time Use Survey) |
+| `jobs/build_tus.py` | `jobs-time-use-india`, `jobs-time-use-by-state-2024`. Checks the API against the report tables | MoSPI (Time Use Survey) |
 | `education/extract_text.sh` | None. Text of the UDISE+ booklets and AISHE reports | Ministry of Education |
 | `education/build_education.py` | `education-ger-school-by-state`, `education-dropout-by-state`, `education-ptr-by-state`, `education-school-facilities-by-state`, `education-school-trend-india`, `education-higher-ed-ger-by-state`, `education-higher-ed-ger-india`, `education-literacy-by-state` | Ministry of Education (UDISE+, AISHE), MoSPI (PLFS), ORGI (Census) |
 | `health/extract_text.sh` | None. Text of the SRS, MMR, life table, NFHS-6 and NHA reports | ORGI, IIPS, MoHFW |

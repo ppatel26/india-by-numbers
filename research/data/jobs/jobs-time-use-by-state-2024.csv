@@ -1,0 +1,334 @@
+geography,period,sex,sector,age_group,activity,measure,value,unit,table,note
+india,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,24,minutes per day,Statement 7.1,
+india,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,13,minutes per day,Statement 7.1,
+india,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,37,minutes per day,Statement 7.1,derived
+india,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,236,minutes per day,Statement 7.1,
+india,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,47,minutes per day,Statement 7.1,
+india,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,283,minutes per day,Statement 7.1,derived
+india,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,129,minutes per day,Statement 7.1,
+india,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,30,minutes per day,Statement 7.1,
+india,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,159,minutes per day,Statement 7.1,derived
+andaman-nicobar,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,29,minutes per day,Statement 7.1,
+andaman-nicobar,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,8,minutes per day,Statement 7.1,
+andaman-nicobar,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,37,minutes per day,Statement 7.1,derived
+andaman-nicobar,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,226,minutes per day,Statement 7.1,
+andaman-nicobar,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,24,minutes per day,Statement 7.1,
+andaman-nicobar,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,250,minutes per day,Statement 7.1,derived
+andaman-nicobar,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,121,minutes per day,Statement 7.1,
+andaman-nicobar,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,15,minutes per day,Statement 7.1,
+andaman-nicobar,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,136,minutes per day,Statement 7.1,derived
+andhra-pradesh,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,17,minutes per day,Statement 7.1,
+andhra-pradesh,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,9,minutes per day,Statement 7.1,
+andhra-pradesh,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,26,minutes per day,Statement 7.1,derived
+andhra-pradesh,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,214,minutes per day,Statement 7.1,
+andhra-pradesh,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,39,minutes per day,Statement 7.1,
+andhra-pradesh,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,253,minutes per day,Statement 7.1,derived
+andhra-pradesh,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,116,minutes per day,Statement 7.1,
+andhra-pradesh,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,24,minutes per day,Statement 7.1,
+andhra-pradesh,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,140,minutes per day,Statement 7.1,derived
+arunachal-pradesh,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,53,minutes per day,Statement 7.1,
+arunachal-pradesh,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,25,minutes per day,Statement 7.1,
+arunachal-pradesh,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,78,minutes per day,Statement 7.1,derived
+arunachal-pradesh,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,320,minutes per day,Statement 7.1,
+arunachal-pradesh,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,67,minutes per day,Statement 7.1,
+arunachal-pradesh,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,387,minutes per day,Statement 7.1,derived
+arunachal-pradesh,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,182,minutes per day,Statement 7.1,
+arunachal-pradesh,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,45,minutes per day,Statement 7.1,
+arunachal-pradesh,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,227,minutes per day,Statement 7.1,derived
+assam,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,31,minutes per day,Statement 7.1,
+assam,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,16,minutes per day,Statement 7.1,
+assam,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,47,minutes per day,Statement 7.1,derived
+assam,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,261,minutes per day,Statement 7.1,
+assam,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,49,minutes per day,Statement 7.1,
+assam,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,310,minutes per day,Statement 7.1,derived
+assam,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,145,minutes per day,Statement 7.1,
+assam,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,32,minutes per day,Statement 7.1,
+assam,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,177,minutes per day,Statement 7.1,derived
+bihar,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,24,minutes per day,Statement 7.1,
+bihar,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,17,minutes per day,Statement 7.1,
+bihar,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,41,minutes per day,Statement 7.1,derived
+bihar,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,248,minutes per day,Statement 7.1,
+bihar,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,59,minutes per day,Statement 7.1,
+bihar,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,307,minutes per day,Statement 7.1,derived
+bihar,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,135,minutes per day,Statement 7.1,
+bihar,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,38,minutes per day,Statement 7.1,
+bihar,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,173,minutes per day,Statement 7.1,derived
+chandigarh,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,32,minutes per day,Statement 7.1,
+chandigarh,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,16,minutes per day,Statement 7.1,
+chandigarh,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,48,minutes per day,Statement 7.1,derived
+chandigarh,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,189,minutes per day,Statement 7.1,
+chandigarh,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,57,minutes per day,Statement 7.1,
+chandigarh,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,246,minutes per day,Statement 7.1,derived
+chandigarh,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,107,minutes per day,Statement 7.1,
+chandigarh,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,36,minutes per day,Statement 7.1,
+chandigarh,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,143,minutes per day,Statement 7.1,derived
+chhattisgarh,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,22,minutes per day,Statement 7.1,
+chhattisgarh,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,16,minutes per day,Statement 7.1,
+chhattisgarh,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,38,minutes per day,Statement 7.1,derived
+chhattisgarh,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,202,minutes per day,Statement 7.1,
+chhattisgarh,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,38,minutes per day,Statement 7.1,
+chhattisgarh,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,240,minutes per day,Statement 7.1,derived
+chhattisgarh,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,112,minutes per day,Statement 7.1,
+chhattisgarh,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,27,minutes per day,Statement 7.1,
+chhattisgarh,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,139,minutes per day,Statement 7.1,derived
+delhi,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,34,minutes per day,Statement 7.1,
+delhi,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,15,minutes per day,Statement 7.1,
+delhi,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,49,minutes per day,Statement 7.1,derived
+delhi,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,250,minutes per day,Statement 7.1,
+delhi,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,69,minutes per day,Statement 7.1,
+delhi,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,319,minutes per day,Statement 7.1,derived
+delhi,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,128,minutes per day,Statement 7.1,
+delhi,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,39,minutes per day,Statement 7.1,
+delhi,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,167,minutes per day,Statement 7.1,derived
+dnh-dd,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,33,minutes per day,Statement 7.1,
+dnh-dd,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,8,minutes per day,Statement 7.1,
+dnh-dd,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,41,minutes per day,Statement 7.1,derived
+dnh-dd,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,194,minutes per day,Statement 7.1,
+dnh-dd,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,32,minutes per day,Statement 7.1,
+dnh-dd,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,226,minutes per day,Statement 7.1,derived
+dnh-dd,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,104,minutes per day,Statement 7.1,
+dnh-dd,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,18,minutes per day,Statement 7.1,
+dnh-dd,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,122,minutes per day,Statement 7.1,derived
+goa,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,24,minutes per day,Statement 7.1,
+goa,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,9,minutes per day,Statement 7.1,
+goa,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,33,minutes per day,Statement 7.1,derived
+goa,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,182,minutes per day,Statement 7.1,
+goa,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,36,minutes per day,Statement 7.1,
+goa,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,218,minutes per day,Statement 7.1,derived
+goa,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,103,minutes per day,Statement 7.1,
+goa,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,22,minutes per day,Statement 7.1,
+goa,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,125,minutes per day,Statement 7.1,derived
+gujarat,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,14,minutes per day,Statement 7.1,
+gujarat,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,12,minutes per day,Statement 7.1,
+gujarat,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,26,minutes per day,Statement 7.1,derived
+gujarat,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,253,minutes per day,Statement 7.1,
+gujarat,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,39,minutes per day,Statement 7.1,
+gujarat,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,292,minutes per day,Statement 7.1,derived
+gujarat,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,129,minutes per day,Statement 7.1,
+gujarat,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,25,minutes per day,Statement 7.1,
+gujarat,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,154,minutes per day,Statement 7.1,derived
+haryana,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,19,minutes per day,Statement 7.1,
+haryana,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,12,minutes per day,Statement 7.1,
+haryana,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,31,minutes per day,Statement 7.1,derived
+haryana,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,237,minutes per day,Statement 7.1,
+haryana,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,47,minutes per day,Statement 7.1,
+haryana,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,284,minutes per day,Statement 7.1,derived
+haryana,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,122,minutes per day,Statement 7.1,
+haryana,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,29,minutes per day,Statement 7.1,
+haryana,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,151,minutes per day,Statement 7.1,derived
+himachal-pradesh,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,23,minutes per day,Statement 7.1,
+himachal-pradesh,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,12,minutes per day,Statement 7.1,
+himachal-pradesh,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,35,minutes per day,Statement 7.1,derived
+himachal-pradesh,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,233,minutes per day,Statement 7.1,
+himachal-pradesh,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,46,minutes per day,Statement 7.1,
+himachal-pradesh,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,279,minutes per day,Statement 7.1,derived
+himachal-pradesh,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,131,minutes per day,Statement 7.1,
+himachal-pradesh,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,30,minutes per day,Statement 7.1,
+himachal-pradesh,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,161,minutes per day,Statement 7.1,derived
+jammu-kashmir,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,20,minutes per day,Statement 7.1,
+jammu-kashmir,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,7,minutes per day,Statement 7.1,
+jammu-kashmir,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,27,minutes per day,Statement 7.1,derived
+jammu-kashmir,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,231,minutes per day,Statement 7.1,
+jammu-kashmir,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,43,minutes per day,Statement 7.1,
+jammu-kashmir,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,274,minutes per day,Statement 7.1,derived
+jammu-kashmir,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,122,minutes per day,Statement 7.1,
+jammu-kashmir,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,25,minutes per day,Statement 7.1,
+jammu-kashmir,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,147,minutes per day,Statement 7.1,derived
+jharkhand,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,26,minutes per day,Statement 7.1,
+jharkhand,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,18,minutes per day,Statement 7.1,
+jharkhand,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,44,minutes per day,Statement 7.1,derived
+jharkhand,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,251,minutes per day,Statement 7.1,
+jharkhand,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,53,minutes per day,Statement 7.1,
+jharkhand,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,304,minutes per day,Statement 7.1,derived
+jharkhand,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,138,minutes per day,Statement 7.1,
+jharkhand,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,35,minutes per day,Statement 7.1,
+jharkhand,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,173,minutes per day,Statement 7.1,derived
+karnataka,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,22,minutes per day,Statement 7.1,
+karnataka,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,12,minutes per day,Statement 7.1,
+karnataka,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,34,minutes per day,Statement 7.1,derived
+karnataka,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,234,minutes per day,Statement 7.1,
+karnataka,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,44,minutes per day,Statement 7.1,
+karnataka,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,278,minutes per day,Statement 7.1,derived
+karnataka,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,126,minutes per day,Statement 7.1,
+karnataka,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,28,minutes per day,Statement 7.1,
+karnataka,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,154,minutes per day,Statement 7.1,derived
+kerala,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,35,minutes per day,Statement 7.1,
+kerala,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,13,minutes per day,Statement 7.1,
+kerala,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,48,minutes per day,Statement 7.1,derived
+kerala,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,220,minutes per day,Statement 7.1,
+kerala,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,45,minutes per day,Statement 7.1,
+kerala,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,265,minutes per day,Statement 7.1,derived
+kerala,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,134,minutes per day,Statement 7.1,
+kerala,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,30,minutes per day,Statement 7.1,
+kerala,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,164,minutes per day,Statement 7.1,derived
+ladakh,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,21,minutes per day,Statement 7.1,
+ladakh,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,18,minutes per day,Statement 7.1,
+ladakh,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,39,minutes per day,Statement 7.1,derived
+ladakh,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,257,minutes per day,Statement 7.1,
+ladakh,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,70,minutes per day,Statement 7.1,
+ladakh,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,327,minutes per day,Statement 7.1,derived
+ladakh,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,133,minutes per day,Statement 7.1,
+ladakh,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,43,minutes per day,Statement 7.1,
+ladakh,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,176,minutes per day,Statement 7.1,derived
+lakshadweep,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,30,minutes per day,Statement 7.1,
+lakshadweep,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,12,minutes per day,Statement 7.1,
+lakshadweep,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,42,minutes per day,Statement 7.1,derived
+lakshadweep,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,204,minutes per day,Statement 7.1,
+lakshadweep,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,76,minutes per day,Statement 7.1,
+lakshadweep,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,280,minutes per day,Statement 7.1,derived
+lakshadweep,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,125,minutes per day,Statement 7.1,
+lakshadweep,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,47,minutes per day,Statement 7.1,
+lakshadweep,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,172,minutes per day,Statement 7.1,derived
+madhya-pradesh,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,26,minutes per day,Statement 7.1,
+madhya-pradesh,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,15,minutes per day,Statement 7.1,
+madhya-pradesh,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,41,minutes per day,Statement 7.1,derived
+madhya-pradesh,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,260,minutes per day,Statement 7.1,
+madhya-pradesh,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,46,minutes per day,Statement 7.1,
+madhya-pradesh,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,306,minutes per day,Statement 7.1,derived
+madhya-pradesh,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,139,minutes per day,Statement 7.1,
+madhya-pradesh,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,30,minutes per day,Statement 7.1,
+madhya-pradesh,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,169,minutes per day,Statement 7.1,derived
+maharashtra,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,20,minutes per day,Statement 7.1,
+maharashtra,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,11,minutes per day,Statement 7.1,
+maharashtra,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,31,minutes per day,Statement 7.1,derived
+maharashtra,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,237,minutes per day,Statement 7.1,
+maharashtra,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,38,minutes per day,Statement 7.1,
+maharashtra,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,275,minutes per day,Statement 7.1,derived
+maharashtra,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,125,minutes per day,Statement 7.1,
+maharashtra,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,24,minutes per day,Statement 7.1,
+maharashtra,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,149,minutes per day,Statement 7.1,derived
+manipur,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,21,minutes per day,Statement 7.1,
+manipur,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,32,minutes per day,Statement 7.1,
+manipur,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,53,minutes per day,Statement 7.1,derived
+manipur,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,203,minutes per day,Statement 7.1,
+manipur,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,61,minutes per day,Statement 7.1,
+manipur,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,264,minutes per day,Statement 7.1,derived
+manipur,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,111,minutes per day,Statement 7.1,
+manipur,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,46,minutes per day,Statement 7.1,
+manipur,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,157,minutes per day,Statement 7.1,derived
+meghalaya,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,35,minutes per day,Statement 7.1,
+meghalaya,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,15,minutes per day,Statement 7.1,
+meghalaya,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,50,minutes per day,Statement 7.1,derived
+meghalaya,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,218,minutes per day,Statement 7.1,
+meghalaya,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,61,minutes per day,Statement 7.1,
+meghalaya,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,279,minutes per day,Statement 7.1,derived
+meghalaya,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,130,minutes per day,Statement 7.1,
+meghalaya,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,39,minutes per day,Statement 7.1,
+meghalaya,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,169,minutes per day,Statement 7.1,derived
+mizoram,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,23,minutes per day,Statement 7.1,
+mizoram,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,27,minutes per day,Statement 7.1,
+mizoram,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,50,minutes per day,Statement 7.1,derived
+mizoram,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,194,minutes per day,Statement 7.1,
+mizoram,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,111,minutes per day,Statement 7.1,
+mizoram,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,305,minutes per day,Statement 7.1,derived
+mizoram,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,107,minutes per day,Statement 7.1,
+mizoram,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,68,minutes per day,Statement 7.1,
+mizoram,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,175,minutes per day,Statement 7.1,derived
+nagaland,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,46,minutes per day,Statement 7.1,
+nagaland,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,34,minutes per day,Statement 7.1,
+nagaland,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,80,minutes per day,Statement 7.1,derived
+nagaland,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,180,minutes per day,Statement 7.1,
+nagaland,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,79,minutes per day,Statement 7.1,
+nagaland,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,259,minutes per day,Statement 7.1,derived
+nagaland,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,112,minutes per day,Statement 7.1,
+nagaland,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,56,minutes per day,Statement 7.1,
+nagaland,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,168,minutes per day,Statement 7.1,derived
+odisha,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,24,minutes per day,Statement 7.1,
+odisha,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,13,minutes per day,Statement 7.1,
+odisha,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,37,minutes per day,Statement 7.1,derived
+odisha,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,230,minutes per day,Statement 7.1,
+odisha,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,44,minutes per day,Statement 7.1,
+odisha,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,274,minutes per day,Statement 7.1,derived
+odisha,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,130,minutes per day,Statement 7.1,
+odisha,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,29,minutes per day,Statement 7.1,
+odisha,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,159,minutes per day,Statement 7.1,derived
+puducherry,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,41,minutes per day,Statement 7.1,
+puducherry,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,22,minutes per day,Statement 7.1,
+puducherry,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,63,minutes per day,Statement 7.1,derived
+puducherry,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,237,minutes per day,Statement 7.1,
+puducherry,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,50,minutes per day,Statement 7.1,
+puducherry,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,287,minutes per day,Statement 7.1,derived
+puducherry,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,146,minutes per day,Statement 7.1,
+puducherry,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,37,minutes per day,Statement 7.1,
+puducherry,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,183,minutes per day,Statement 7.1,derived
+punjab,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,26,minutes per day,Statement 7.1,
+punjab,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,12,minutes per day,Statement 7.1,
+punjab,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,38,minutes per day,Statement 7.1,derived
+punjab,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,241,minutes per day,Statement 7.1,
+punjab,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,40,minutes per day,Statement 7.1,
+punjab,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,281,minutes per day,Statement 7.1,derived
+punjab,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,128,minutes per day,Statement 7.1,
+punjab,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,25,minutes per day,Statement 7.1,
+punjab,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,153,minutes per day,Statement 7.1,derived
+rajasthan,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,20,minutes per day,Statement 7.1,
+rajasthan,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,13,minutes per day,Statement 7.1,
+rajasthan,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,33,minutes per day,Statement 7.1,derived
+rajasthan,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,210,minutes per day,Statement 7.1,
+rajasthan,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,42,minutes per day,Statement 7.1,
+rajasthan,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,252,minutes per day,Statement 7.1,derived
+rajasthan,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,116,minutes per day,Statement 7.1,
+rajasthan,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,28,minutes per day,Statement 7.1,
+rajasthan,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,144,minutes per day,Statement 7.1,derived
+sikkim,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,54,minutes per day,Statement 7.1,
+sikkim,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,20,minutes per day,Statement 7.1,
+sikkim,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,74,minutes per day,Statement 7.1,derived
+sikkim,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,249,minutes per day,Statement 7.1,
+sikkim,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,55,minutes per day,Statement 7.1,
+sikkim,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,304,minutes per day,Statement 7.1,derived
+sikkim,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,148,minutes per day,Statement 7.1,
+sikkim,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,37,minutes per day,Statement 7.1,
+sikkim,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,185,minutes per day,Statement 7.1,derived
+tamil-nadu,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,21,minutes per day,Statement 7.1,
+tamil-nadu,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,12,minutes per day,Statement 7.1,
+tamil-nadu,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,33,minutes per day,Statement 7.1,derived
+tamil-nadu,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,183,minutes per day,Statement 7.1,
+tamil-nadu,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,38,minutes per day,Statement 7.1,
+tamil-nadu,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,221,minutes per day,Statement 7.1,derived
+tamil-nadu,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,104,minutes per day,Statement 7.1,
+tamil-nadu,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,25,minutes per day,Statement 7.1,
+tamil-nadu,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,129,minutes per day,Statement 7.1,derived
+telangana,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,27,minutes per day,Statement 7.1,
+telangana,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,17,minutes per day,Statement 7.1,
+telangana,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,44,minutes per day,Statement 7.1,derived
+telangana,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,208,minutes per day,Statement 7.1,
+telangana,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,46,minutes per day,Statement 7.1,
+telangana,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,254,minutes per day,Statement 7.1,derived
+telangana,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,118,minutes per day,Statement 7.1,
+telangana,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,31,minutes per day,Statement 7.1,
+telangana,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,149,minutes per day,Statement 7.1,derived
+tripura,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,32,minutes per day,Statement 7.1,
+tripura,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,15,minutes per day,Statement 7.1,
+tripura,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,47,minutes per day,Statement 7.1,derived
+tripura,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,215,minutes per day,Statement 7.1,
+tripura,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,45,minutes per day,Statement 7.1,
+tripura,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,260,minutes per day,Statement 7.1,derived
+tripura,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,126,minutes per day,Statement 7.1,
+tripura,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,30,minutes per day,Statement 7.1,
+tripura,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,156,minutes per day,Statement 7.1,derived
+uttar-pradesh,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,25,minutes per day,Statement 7.1,
+uttar-pradesh,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,14,minutes per day,Statement 7.1,
+uttar-pradesh,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,39,minutes per day,Statement 7.1,derived
+uttar-pradesh,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,258,minutes per day,Statement 7.1,
+uttar-pradesh,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,55,minutes per day,Statement 7.1,
+uttar-pradesh,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,313,minutes per day,Statement 7.1,derived
+uttar-pradesh,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,142,minutes per day,Statement 7.1,
+uttar-pradesh,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,35,minutes per day,Statement 7.1,
+uttar-pradesh,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,177,minutes per day,Statement 7.1,derived
+uttarakhand,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,28,minutes per day,Statement 7.1,
+uttarakhand,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,13,minutes per day,Statement 7.1,
+uttarakhand,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,41,minutes per day,Statement 7.1,derived
+uttarakhand,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,206,minutes per day,Statement 7.1,
+uttarakhand,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,40,minutes per day,Statement 7.1,
+uttarakhand,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,246,minutes per day,Statement 7.1,derived
+uttarakhand,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,117,minutes per day,Statement 7.1,
+uttarakhand,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,26,minutes per day,Statement 7.1,
+uttarakhand,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,143,minutes per day,Statement 7.1,derived
+west-bengal,2024,male,rural+urban,6+,unpaid domestic services,minutes per person,30,minutes per day,Statement 7.1,
+west-bengal,2024,male,rural+urban,6+,unpaid caregiving,minutes per person,10,minutes per day,Statement 7.1,
+west-bengal,2024,male,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,40,minutes per day,Statement 7.1,derived
+west-bengal,2024,female,rural+urban,6+,unpaid domestic services,minutes per person,240,minutes per day,Statement 7.1,
+west-bengal,2024,female,rural+urban,6+,unpaid caregiving,minutes per person,48,minutes per day,Statement 7.1,
+west-bengal,2024,female,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,288,minutes per day,Statement 7.1,derived
+west-bengal,2024,person,rural+urban,6+,unpaid domestic services,minutes per person,136,minutes per day,Statement 7.1,
+west-bengal,2024,person,rural+urban,6+,unpaid caregiving,minutes per person,29,minutes per day,Statement 7.1,
+west-bengal,2024,person,rural+urban,6+,unpaid domestic services and caregiving,minutes per person,165,minutes per day,Statement 7.1,derived
