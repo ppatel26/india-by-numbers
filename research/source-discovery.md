@@ -224,8 +224,10 @@ rules above). It does not wait for the owner.
    Cause of Death 2021-23 and 2022-24, CRS 2024, NFHS-6 tobacco and overweight, the Time Use Survey
    2019 and 2024, the Education survey 2025, CAMS 2022-23, ASI 2024-25 and ASUSE 2025. Each chart
    carries its own check date.
-3. **New topic: Crime and justice.** It uses NCRB Crime in India 2024, Prison Statistics India
-   2024 and the court pendency answers in Parliament. All give state tables.
-4. **New topic: Housing and living standards.** It uses HCES 2023-24 and CAMS 2022-23.
+3. **New topic: Crime and justice.** Done on 25 Nov 2026: 10 charts from NCRB Crime in India 2024,
+   Prison Statistics India 2024 and the court pendency answers in Parliament. Recorded-crime tables
+   carry no rank. The object (a silver tarazu) waits for the owner's approval of image credits.
+4. **New topic: Living standards.** Done on 25 Nov 2026: 10 charts from HCES 2022-23 and 2023-24,
+   CAMS 2022-23 and NSS round 76. The object (a silver tiffin carrier) also waits.
 5. **Further topics.** Transport, Trade, and Money and payments, in that order. Then Agriculture,
    Tourism and Disability.
