@@ -18,6 +18,7 @@ const mark: Record<Status, string> = {
   Provisional: 'provisional',
   Projection: 'projection',
   'Survey estimate': 'survey',
+  'Modelled estimate': 'modelled',
   'Method break': 'break',
 }
 ---
@@ -85,6 +86,12 @@ const mark: Record<Status, string> = {
   }
   .survey::before {
     border-style: dotted;
+  }
+  .modelled::before {
+    width: 8px;
+    height: 8px;
+    border-style: dashed;
+    transform: rotate(45deg);
   }
   .break::before {
     width: 0;

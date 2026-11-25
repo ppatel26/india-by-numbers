@@ -22,7 +22,7 @@ export const TOPICS = [
 ] as const
 export type TopicSlug = (typeof TOPICS)[number]
 
-export type Status = 'Provisional' | 'Projection' | 'Survey estimate' | 'Method break'
+export type Status = 'Provisional' | 'Projection' | 'Survey estimate' | 'Modelled estimate' | 'Method break'
 
 /** Chart colours. `ink` is India, `s1` the selected state. See src/styles/tokens.css. */
 export type Color = 'ink' | 'slate' | 'other' | 's1' | 's2' | 's3' | 's4' | 's5' | 's6' | 's7' | 's8'
