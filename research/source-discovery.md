@@ -229,5 +229,10 @@ rules above). It does not wait for the owner.
    carry no rank. The object (a silver tarazu) waits for the owner's approval of image credits.
 4. **New topic: Living standards.** Done on 25 Nov 2026: 10 charts from HCES 2022-23 and 2023-24,
    CAMS 2022-23 and NSS round 76. The object (a silver tiffin carrier) also waits.
-5. **Further topics.** Transport, Trade, and Money and payments, in that order. Then Agriculture,
-   Tourism and Disability.
+5. **Further topics.** Done on 25 Nov 2026: Trade (8 charts, RBI Handbook 2025-26, India only),
+   Transport (10 charts, MoRTH Road Accidents in India 2024 and the NSS Household Travel Survey
+   2025-26), and a Digital payments part in Economy (3 charts, RBI Payment System Indicators).
+   Money and payments waits for state banking tables (RBI Basic Statistical Returns).
+6. **Next.** Agriculture, tourism and disability (NSS rounds 76, 77 and 80), UN migrant stock, and
+   comparisons with other countries (World Bank WDI, rule R6). A council decides where each one
+   belongs.
