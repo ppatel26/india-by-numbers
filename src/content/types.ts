@@ -208,6 +208,8 @@ export type Chart =
       total?: boolean
       /** Why a state has no value, shown in its tooltip and the table: { manipur: 'Not surveyed in NFHS-6' }. */
       missing?: Readonly<Record<string, string>>
+      /** Leave the rank column out of the table, where the publisher warns against comparing states (recorded crime). */
+      noRank?: boolean
     })
   | (ChartBase & {
       /** Several values per row, as dots on one line: two periods, or women and men. */

@@ -181,6 +181,7 @@ const topic: Topic = {
           chart: {
             kind: 'states',
             slug: 'crime-rate-by-state',
+            noRank: true,
             checked: CHECKED,
             title: 'Recorded crime rate by state, 2024',
             subtitle: 'Cognizable crimes registered by the police, IPC, BNS and special and local laws, per lakh people, by state and UT.',
@@ -257,6 +258,7 @@ const topic: Topic = {
           chart: {
             kind: 'states',
             slug: 'murder-rate-by-state',
+            noRank: true,
             checked: CHECKED,
             title: 'Recorded murder rate by state, 2024',
             subtitle: 'Murder cases registered by the police per lakh people, by state and UT.',
@@ -291,6 +293,7 @@ const topic: Topic = {
           chart: {
             kind: 'states',
             slug: 'crimes-against-women-by-state',
+            noRank: true,
             checked: CHECKED,
             title: 'Recorded crimes against women by state, 2024',
             subtitle: 'Crimes against women registered by the police, IPC, BNS and special and local laws, per lakh women, by state and UT.',

@@ -95,10 +95,11 @@ function statesTable(chart: Of<'states'>): TableModel {
     ...data.values.map((v) => ({ key: v.place.slug, head: v.place.name, pt: v.pt })),
   ]
   const gapCol = !chart.total
+  const rankCol = !chart.noRank
   const ciCol = rows.some((r) => r.pt?.interval)
   const interval = (p?: Point): Cell => (p?.interval ? { shown: { text: `${fmt(p.interval[0], chart.format)} to ${fmt(p.interval[1], chart.format)}` }, raw: p.interval.join(' to ') } : { shown: { text: '' }, raw: '' })
   return {
-    columns: ['State or UT', chart.punches.unit, ...(ciCol ? ['95% interval'] : []), ...(gapCol ? ['Gap from India'] : []), `Rank (of ${data.values.filter((v) => v.pt?.y != null).length})`],
+    columns: ['State or UT', chart.punches.unit, ...(ciCol ? ['95% interval'] : []), ...(gapCol ? ['Gap from India'] : []), ...(rankCol ? [`Rank (of ${data.values.filter((v) => v.pt?.y != null).length})`] : [])],
     rows: rows.map((r) => {
       const has = r.pt && r.pt.y !== null
       const gap = has && india?.y != null && r.key !== INDIA ? +(r.pt!.y! - india.y).toFixed(d) : null
@@ -111,7 +112,7 @@ function statesTable(chart: Of<'states'>): TableModel {
           r.pt?.y == null && chart.missing?.[r.key] ? { shown: { text: `No data: ${chart.missing[r.key]}` }, raw: '' } : cell(chart, r.pt),
           ...(ciCol ? [interval(r.pt)] : []),
           ...(!gapCol ? [] : [gap === null ? { shown: { text: r.key === INDIA ? '' : 'No data' }, raw: '' } : { shown: { text: (gap > 0 ? '+' : '') + fmt(gap, gapFormat(chart.format, d)) }, raw: gap.toFixed(d) }]),
-          rank ? { shown: { text: String(rank.rank) }, raw: String(rank.rank) } : { shown: { text: '' }, raw: '' },
+          ...(!rankCol ? [] : [rank ? { shown: { text: String(rank.rank) }, raw: String(rank.rank) } : { shown: { text: '' }, raw: '' }]),
         ],
       }
     }),
