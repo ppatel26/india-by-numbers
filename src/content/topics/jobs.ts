@@ -223,6 +223,10 @@ function seriesByPeriod(
   ]
 }
 
+/** Keep these lines in the table and download, but do not draw them: each key with its period parts. */
+const hide = (series: readonly Series[], keys: readonly string[]): Series[] =>
+  series.map((s) => (keys.some((k) => s.key === k || s.key.startsWith(`${k}-`)) ? { ...s, hidden: true } : s))
+
 const sexSeries = [
   { key: 'female', label: 'Women', color: 's3' },
   { key: 'male', label: 'Men', color: 's2' },
@@ -467,7 +471,8 @@ const topic: Topic = {
             note: historyNote,
             sources: [plfsAnnual2025, plfsAnnualPress2025, plfsAnnualPress2023_24, ...nssSources],
             format: { unit: '%', decimals: 1 },
-            series: annualSeries,
+            // All people's unemployment rate sits on the women's and men's lines, so it is not drawn.
+            series: hide(annualSeries, ['ur-person']),
             panels: [
               { label: 'Labour force participation', series: annualPanel('lfpr') },
               { label: 'Worker population ratio', series: annualPanel('wpr') },
@@ -480,6 +485,7 @@ const topic: Topic = {
               surveyChange,
               subsidiaryRule,
               'PLFS reports used July to June years through 2023-24. The 2025 report moved to calendar years.',
+              'The chart does not draw the unemployment rate for all people, because it sits on the lines for women and men. The table gives it.',
             ],
             processing: [
               'Read the NSS rates for ages 15 and over in each report. Calculate unemployment as a share of the labour force in that age group.',
@@ -635,7 +641,8 @@ const topic: Topic = {
             sources: historySources,
             format: { unit: '%', decimals: 1 },
             y: { min: 0, max: 30, step: 10 },
-            series: youthSeries,
+            // The All areas panel shows the total; towns and villages show young women against young men.
+            series: hide(youthSeries, ['all-female', 'all-male', 'urban-person', 'rural-person']),
             panels: [
               { label: 'All areas', series: youthPanel('all') },
               { label: 'Towns and cities', series: youthPanel('urban') },
@@ -645,6 +652,7 @@ const topic: Topic = {
             know: [
               'The rate is the share of the labour force aged 15 to 29 with no work, over the 365 days before the interview (usual status).',
               'The NSS reports give rates for rural and urban women and men. Estimates for larger groups use the published age-group tables.',
+              'The chart draws the total for all areas, and young women and young men in towns and in villages. The table gives every group.',
               surveyChange,
               subsidiaryRule,
             ],
