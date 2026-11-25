@@ -158,17 +158,17 @@ acknowledged reuse. ORGI and NCRB pages say only "Rights" or "All Rights Reserve
 
 | Source | Latest release | Tables | States | Status | DFI |
 | --- | --- | --- | --- | --- | --- |
-| SRS Cause of Death in India | 2022-24, 20 May 2026 (ORGI NADA 47147) | PDF: 2.1A cause groups by sex, 2.1C rural/urban, 2.3A top 10 causes, 3.4A and 3.6A by age, 4.1 specific causes | No. India, EAG and Assam, six zones | `use`. Health: deaths by cause group and sex. No state chart | Yes (2021-23) |
-| Vital Statistics of India based on CRS | 2024, 1 Jul 2026 (ORGI NADA 47155) | PDF: Statement 2 level of registration by state, 10 to 12 registered events 2015-24, 26 sex ratio at birth 2017-24 | Yes, and districts | `use`. Population, Health: registration level and sex ratio at birth by state | Yes (2019, 2022) |
+| SRS Cause of Death in India | 2022-24, 20 May 2026 (ORGI NADA 47147) | PDF: 2.1A cause groups by sex, 2.1C rural/urban, 2.3A top 10 causes, 3.4A and 3.6A by age, 4.1 specific causes | No. India, EAG and Assam, six zones | `in use`: `causes-of-death`, `top-causes-of-death` (with 2021-23) | Yes (2021-23) |
+| Vital Statistics of India based on CRS | 2024, 1 Jul 2026 (ORGI NADA 47155) | PDF: Statement 2 level of registration by state, 10 to 12 registered events 2015-24, 26 sex ratio at birth 2017-24 | Yes, and districts | `in use`: `registration-of-births-and-deaths-by-state`, `sex-ratio-of-registered-births-by-state` | Yes (2019, 2022) |
 | Report on MCCD | 2024, 16 Jul 2026 (ORGI NADA 47157) | PDF: Statement 2.11 share of deaths certified by state, 3.4 cause groups | Yes | `later`. Certified deaths are a biased subset. The certification rate by state is usable | Yes (2022) |
 | National Health Profile | 2023 (PDF created 28 Jun 2024) | PDF: 6.2.1 sub-centres, PHCs and CHCs by state | Yes | `later`. Stale, and most tables repeat SRS and Census | Yes |
-| NFHS-6 fact sheets | 2023-24, May 2026 | PDF: indicators 76 and 77 overweight, 98 and 99 tobacco | Yes, except Manipur | `use` for tobacco and overweight. No anaemia indicator in the fact sheets | Yes (NFHS-5) |
-| Time Use Survey 2024 | Report 28 Mar 2025 | API: 41 indicators, minutes per day by activity, sex, rural/urban, MPCE class | No state filter on the API | `use`. Jobs: paid and unpaid work by sex, 2019 and 2024 | Yes |
+| NFHS-6 fact sheets | 2023-24, May 2026 | PDF: indicators 76 and 77 overweight, 98 and 99 tobacco | Yes, except Manipur | `in use`: `tobacco-use-by-state`, `overweight-by-state`. No anaemia indicator in the fact sheets | Yes (NFHS-5) |
+| Time Use Survey 2024 | Report 28 Mar 2025 | API: 41 indicators, minutes per day by activity, sex, rural/urban, MPCE class | No state filter on the API | `in use`: `time-use-paid-unpaid-work`, `time-use-participation`, `women-unpaid-work-by-state` (state tables from the report) | Yes |
 | NSS Health, Jan to Dec 2025 | Press note 20 Apr 2026 | Report PDF not yet found. Not on the API | Not confirmed | `later`. Find the report and its tables | No |
-| NSS Modular Survey: Education 2025 | Results 26 Aug 2025 | API: 18 indicators, spending per student by level and school type, coaching | Yes, with sex and rural/urban | `use`. Education: household spending on school and college | No |
-| CAMS, NSS round 79 | 2022-23, report 9 Oct 2024 | API: 28 indicators, schooling, NEET, internet use, bank accounts, clean cooking fuel, drinking water | Yes, with rural/urban | `use`. Education, and the new living standards topic | Yes |
-| Annual Survey of Industries | 2024-25, 4 Nov 2026 | PDF: Statement 3A, 7A state values; Volume I tables 2, 4, 4a. API to 2023-24 only | Yes | `use`. Economy, Jobs: factory jobs and GVA by state | Yes (2022-23) |
-| ASUSE | 2025, report 6 May 2026 | API: 40+ indicators, 2021-22 to 2025, with state variants | Yes, with sex and rural/urban | `use`. Economy, Jobs: small firms and their workers | Yes (2023-24) |
+| NSS Modular Survey: Education 2025 | Results 26 Aug 2025 | API: 18 indicators, spending per student by level and school type, coaching | Yes, with sex and rural/urban | `in use`: `school-spending-by-level-and-type`, `school-spending-by-state`, `government-school-share-by-state`, `private-coaching-by-state` | No |
+| CAMS, NSS round 79 | 2022-23, report 9 Oct 2024 | API: 28 indicators, schooling, NEET, internet use, bank accounts, clean cooking fuel, drinking water | Yes, with rural/urban | `in use`: `mean-years-of-schooling-by-state`. The other indicators wait for the living standards topic | Yes |
+| Annual Survey of Industries | 2024-25, 4 Nov 2026 | PDF: Statement 3A, 7A state values; Volume I tables 2, 4, 4a. API to 2023-24 only | Yes | `in use`: `factory-jobs-and-gva` (2008-09 to 2024-25), `factory-jobs-by-state` | Yes (2022-23) |
+| ASUSE | 2025, report 6 May 2026 | API: 40+ indicators, 2021-22 to 2025, with state variants | Yes, with sex and rural/urban | `in use`: `small-firm-workers-by-state`, `small-firms-india` | Yes (2023-24) |
 | IMD gridded data | 2025 | Grids, not tables | Rule R5 | `later`. Use IMD state tables first (rule R5) | Yes |
 | UN DESA International Migrant Stock | 2024 (XLSX, files of 27 Jan and 7 Feb 2025) | Origin file Table 1: emigrants by sex, 1990-2024; destination and origin file Table 1: by destination country | No | `use`. Population: Indians living abroad, by destination. CC BY 3.0 IGO | Yes |
 
@@ -220,10 +220,10 @@ rules above). It does not wait for the owner.
    raw files. The `Snapshot` and `Modelled estimate` status
    words come with the first chart that needs each one (court pendency, an international
    comparison), because the How we check page gives a real figure for every status word.
-2. **Fill current topics.** Next. All of these have status `use`: SRS Cause of Death 2022-24, CRS
-   2024, NFHS-6 tobacco and overweight, the Time Use Survey 2024, the Education survey 2025, ASI
-   2024-25 and ASUSE 2025. They add charts to pages that already exist, and the state profiles get
-   new rows.
+2. **Fill current topics.** Done on 25 Nov 2026: 18 charts and 9 state-profile rows from SRS
+   Cause of Death 2021-23 and 2022-24, CRS 2024, NFHS-6 tobacco and overweight, the Time Use Survey
+   2019 and 2024, the Education survey 2025, CAMS 2022-23, ASI 2024-25 and ASUSE 2025. Each chart
+   carries its own check date.
 3. **New topic: Crime and justice.** It uses NCRB Crime in India 2024, Prison Statistics India
    2024 and the court pendency answers in Parliament. All give state tables.
 4. **New topic: Housing and living standards.** It uses HCES 2023-24 and CAMS 2022-23.
