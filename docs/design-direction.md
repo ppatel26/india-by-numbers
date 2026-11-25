@@ -67,8 +67,11 @@ Topic pigments (hero ground, home and topics tiles, topic tag; never a data colo
 | Economy | haldi (turmeric) | #E5B736 | ink 9.4:1 |
 | Religion and culture | kesar (saffron) | #F48E2F | ink 7.4:1 |
 | Crime and justice | kattha (catechu brown) | #78491E | white 7.6:1 |
+| Living standards | firozi (turquoise) | #45C5B8 | ink 8.4:1 |
 
 Kattha (added 25 Nov 2026) sits at OKLCH L 0.452, C 0.086, H 60, in the gap between lac (H 27) and mehendi (H 122). Its nearest pigment is mehendi (OKLab distance 0.092).
+
+Firozi (added 25 Nov 2026) is the third light pigment, at OKLCH L 0.750, C 0.112, H 186, and the first cool one. Its nearest pigment is haldi (OKLab distance 0.203). A dark teal at L 0.450 would sit within 0.04 of mor.
 
 Chart colours, fixed order: #CC2827, #00909C, #7233BB, #279662, #1C6DDA, #AA8726, #A11C6C, #C46C23. The set passes every check in light and dark mode (worst adjacent colourblind pair ΔE 15.8). Slots 1 to 3 also pass all-pairs, for maps and scatter. India is always ink. The selected state is slot 1.
 
@@ -93,6 +96,7 @@ Made with Paper's image models: nano-banana-2-1 for objects, nano-banana-pro for
 | Jobs | Charkha | Silver |
 | Population, Prices, Economy, Health, Education | Topic coins: procession, karshapana, wheat and gear, vaccine vial and stethoscope, palm-leaf book and slate | Silver |
 | Crime and justice | Tarazu, the Indian beam balance (not yet made) | Silver |
+| Living standards | Stacked tiffin carrier (not yet made) | Silver |
 
 Production rules:
 
@@ -120,6 +124,27 @@ pigment, the object and the interim:
 - Interim, 2 of 3: publish the topic with no object until the owner approves the image credits.
   The hero, the medallion and the social image leave the object slot out. Nothing stands in for it.
   Muse voted to hold the topic until the object exists.
+
+### Living standards (decided 25 Nov 2026)
+
+The same council chose:
+
+- Name "Living standards", slug `living-standards`: 3 of 3. It covers household spending, food
+  share, the consumption Gini, cooking fuel, drinking water, phones and computers, internet use,
+  digital skills and bank accounts. It has no income, poverty line or housing stock, and the intro
+  says so. "Poverty and inequality" stays on the Later list, for a poverty measure. "Housing and
+  water" becomes "Housing", because water is now covered (2 of 3).
+- Pigment firozi #45C5B8 with ink text: 2 of 3 chose a light teal (GPT zangaar #47C2A9, Gemini
+  firozi #45C5B8). Firozi sits further from every other pigment and gives more contrast. Muse
+  proposed ratanjot #6A4475, a dark plum, 0.095 from rani.
+- Object: a plain silver stacked tiffin carrier, 2 of 3. It shows household meals, school and
+  work, with no faith, class or caste mark. Gemini proposed a lota, which can read as ritual.
+- Prompt: "Three-quarter studio view of one closed three-tier Indian tiffin carrier in brushed
+  silver, with a plain side latch and loop handle, one soft key light from the top left, no text or
+  engravings, centred on a flat matte firozi backdrop (#45C5B8), no gradient, no vignette." On a
+  light ground, give the silver crisp shadows, as for haldi and kesar.
+- Interim: the Crime and justice rule, 3 of 3. Publish with no object until the owner approves
+  the image credits.
 
 ## The design boards
 
