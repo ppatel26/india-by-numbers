@@ -191,6 +191,7 @@ const topic: Topic = {
             data: { file: BY_STATE, where: { period: '2024', indicator: 'crime-rate', law: 'ipc-bns-sll' }, x: 'geography' },
             open: 'map',
             scale: 'seq',
+            bins: [100, 200, 300, 500, 1000],
             short: 'Recorded crime rate',
             know: [
               REGISTRATION_KNOW,
@@ -300,6 +301,7 @@ const topic: Topic = {
             data: { file: WOMEN, where: { period: '2024', indicator: 'crime-rate' }, x: 'geography' },
             open: 'map',
             scale: 'seq',
+            bins: [20, 40, 60, 80, 100],
             short: 'Recorded crimes against women',
             know: [
               'The rate is crimes against women per lakh women. NCRB uses the female mid-year projected population for 2024.',
@@ -379,7 +381,7 @@ const topic: Topic = {
             title: 'Prison occupancy and undertrials in India, 2014 to 2024',
             subtitle: 'Prisoners as a share of prison capacity, and undertrials as a share of all prisoners, on 31 December of each year.',
             punches: { office: 'NCRB', unit: '%', period: '2014-2024' },
-            note: 'Counts on 31 December. The undertrial share is derived from the published counts of undertrials and prisoners.',
+            note: 'Counts on 31 December. Occupancy above 100% means more prisoners than places. The undertrial share is derived from the published counts of undertrials and prisoners.',
             sources: [psi2024, ...PSI_SUMMARIES],
             format: { unit: '%', decimals: 1 },
             y: { min: 0, max: 140, step: 20 },
@@ -388,7 +390,7 @@ const topic: Topic = {
               { key: 'undertrials', label: 'Undertrial share', color: 'ink', file: PRISONS_TREND, where: { indicator: 'undertrial-share' }, note: 'note' },
             ],
             panels: [
-              { label: 'Occupancy rate', series: ['occupancy'], refs: [{ value: 100, label: 'Full' }] },
+              { label: 'Occupancy rate', series: ['occupancy'] },
               { label: 'Undertrials, share of prisoners', series: ['undertrials'] },
             ],
             know: [
@@ -515,10 +517,7 @@ const topic: Topic = {
           },
         },
         {
-          text: 'At the end of 2025, 4.77 crore cases were pending in the district courts, against 4.11 crore in 2021. On 16 July 2026, 54.37 lakh district court cases had been pending for more than 10 years.',
-        },
-        {
-          text: 'Uttar Pradesh had the most pending cases on 30 July 2026, 1.20 crore, then Maharashtra with 61.70 lakh. These are counts, not rates: states with more people have more cases.',
+          text: 'At the end of 2025, 4.77 crore cases were pending in the district courts, against 4.11 crore in 2021. On 16 July 2026, 54.37 lakh district court cases had been pending for more than 10 years. Uttar Pradesh had the most pending cases on 30 July 2026, 1.20 crore, then Maharashtra with 61.70 lakh. These are counts, not rates: states with more people have more cases.',
         },
         {
           chart: {
