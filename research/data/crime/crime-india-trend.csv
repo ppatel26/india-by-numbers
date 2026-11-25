@@ -1,0 +1,115 @@
+geography,period,crime_head,indicator,law,value,unit,edition,table,population_base
+india,2015,all-cognizable,cases,ipc-bns,2949400,cases,2017,"CII 2017, Table 1.1",
+india,2015,all-cognizable,cases,ipc-bns-sll,4710676,cases,2017,"CII 2017, Table 1.1",
+india,2015,all-cognizable,cases,sll,1761276,cases,2017,"CII 2017, Table 1.1",
+india,2015,all-cognizable,crime-rate,ipc-bns,234.2,cognizable crimes per lakh population,2017,"CII 2017, Table 1.1",not stated: the edition reprints the population of CII 2015
+india,2015,all-cognizable,crime-rate,ipc-bns-sll,374.1,cognizable crimes per lakh population,2017,"CII 2017, Table 1.1",not stated: the edition reprints the population of CII 2015
+india,2015,all-cognizable,crime-rate,sll,139.9,cognizable crimes per lakh population,2017,"CII 2017, Table 1.1",not stated: the edition reprints the population of CII 2015
+india,2015,all-cognizable,mid-year-population,,12591.1,lakh persons,2017,"CII 2017, Table 1.1",not stated: the edition reprints the population of CII 2015
+india,2016,all-cognizable,cases,ipc-bns,2975711,cases,2018,"CII 2018, Table 1.1",
+india,2016,all-cognizable,cases,ipc-bns-sll,4831515,cases,2018,"CII 2018, Table 1.1",
+india,2016,all-cognizable,cases,sll,1855804,cases,2018,"CII 2018, Table 1.1",
+india,2016,all-cognizable,crime-rate,ipc-bns,233.6,cognizable crimes per lakh population,2018,"CII 2018, Table 1.1",not stated: the edition reprints the population of CII 2016
+india,2016,all-cognizable,crime-rate,ipc-bns-sll,379.3,cognizable crimes per lakh population,2018,"CII 2018, Table 1.1",not stated: the edition reprints the population of CII 2016
+india,2016,all-cognizable,crime-rate,sll,145.7,cognizable crimes per lakh population,2018,"CII 2018, Table 1.1",not stated: the edition reprints the population of CII 2016
+india,2016,all-cognizable,mid-year-population,,12739.9,lakh persons,2018,"CII 2018, Table 1.1",not stated: the edition reprints the population of CII 2016
+india,2017,all-cognizable,cases,ipc-bns,3062579,cases,2019,"CII 2019, Table 1.1",
+india,2017,all-cognizable,cases,ipc-bns-sll,5007044,cases,2019,"CII 2019, Table 1.1",
+india,2017,all-cognizable,cases,sll,1944465,cases,2019,"CII 2019, Table 1.1",
+india,2017,all-cognizable,crime-rate,ipc-bns,237.7,cognizable crimes per lakh population,2019,"CII 2019, Table 1.1",Registrar General of India estimated population of 2017 (Table 2A.1 note: based on 2001 Census)
+india,2017,all-cognizable,crime-rate,ipc-bns-sll,388.6,cognizable crimes per lakh population,2019,"CII 2019, Table 1.1",Registrar General of India estimated population of 2017 (Table 2A.1 note: based on 2001 Census)
+india,2017,all-cognizable,crime-rate,sll,150.9,cognizable crimes per lakh population,2019,"CII 2019, Table 1.1",Registrar General of India estimated population of 2017 (Table 2A.1 note: based on 2001 Census)
+india,2017,all-cognizable,mid-year-population,,12885.3,lakh persons,2019,"CII 2019, Table 1.1",Registrar General of India estimated population of 2017 (Table 2A.1 note: based on 2001 Census)
+india,2018,all-cognizable,cases,ipc-bns,3132955,cases,2020,"CII 2020, Table 1.1",
+india,2018,all-cognizable,cases,ipc-bns-sll,5074635,cases,2020,"CII 2020, Table 1.1",
+india,2018,all-cognizable,cases,sll,1941680,cases,2020,"CII 2020, Table 1.1",
+india,2018,all-cognizable,crime-rate,ipc-bns,236.7,cognizable crimes per lakh population,2020,"CII 2020, Table 1.1","Technical Group on Population Projections, November 2019, National Commission on Population, MoHFW"
+india,2018,all-cognizable,crime-rate,ipc-bns-sll,383.5,cognizable crimes per lakh population,2020,"CII 2020, Table 1.1","Technical Group on Population Projections, November 2019, National Commission on Population, MoHFW"
+india,2018,all-cognizable,crime-rate,sll,146.7,cognizable crimes per lakh population,2020,"CII 2020, Table 1.1","Technical Group on Population Projections, November 2019, National Commission on Population, MoHFW"
+india,2018,all-cognizable,mid-year-population,,13233.8,lakh persons,2020,"CII 2020, Table 1.1","Technical Group on Population Projections, November 2019, National Commission on Population, MoHFW"
+india,2019,all-cognizable,cases,ipc-bns,3225597,cases,2021,"CII 2021, Table 1.1",
+india,2019,all-cognizable,cases,ipc-bns-sll,5156158,cases,2021,"CII 2021, Table 1.1",
+india,2019,all-cognizable,cases,sll,1930561,cases,2021,"CII 2021, Table 1.1",
+india,2019,all-cognizable,crime-rate,ipc-bns,241.1,cognizable crimes per lakh population,2021,"CII 2021, Table 1.1","Technical Group on Population Projections, November 2019, National Commission on Population, MoHFW"
+india,2019,all-cognizable,crime-rate,ipc-bns-sll,385.5,cognizable crimes per lakh population,2021,"CII 2021, Table 1.1","Technical Group on Population Projections, November 2019, National Commission on Population, MoHFW"
+india,2019,all-cognizable,crime-rate,sll,144.3,cognizable crimes per lakh population,2021,"CII 2021, Table 1.1","Technical Group on Population Projections, November 2019, National Commission on Population, MoHFW"
+india,2019,all-cognizable,mid-year-population,,13376.1,lakh persons,2021,"CII 2021, Table 1.1","Technical Group on Population Projections, November 2019, National Commission on Population, MoHFW"
+india,2020,all-cognizable,cases,ipc-bns,4254356,cases,2022,"CII 2022, Table 1.1",
+india,2020,all-cognizable,cases,ipc-bns-sll,6601285,cases,2022,"CII 2022, Table 1.1",
+india,2020,all-cognizable,cases,sll,2346929,cases,2022,"CII 2022, Table 1.1",
+india,2020,all-cognizable,crime-rate,ipc-bns,314.3,cognizable crimes per lakh population,2022,"CII 2022, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2020,all-cognizable,crime-rate,ipc-bns-sll,487.8,cognizable crimes per lakh population,2022,"CII 2022, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2020,all-cognizable,crime-rate,sll,173.4,cognizable crimes per lakh population,2022,"CII 2022, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2020,all-cognizable,mid-year-population,,13533.9,lakh persons,2022,"CII 2022, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2021,all-cognizable,cases,ipc-bns,3663360,cases,2023,"CII 2023, Table 1.1",
+india,2021,all-cognizable,cases,ipc-bns-sll,6096310,cases,2023,"CII 2023, Table 1.1",
+india,2021,all-cognizable,cases,sll,2432950,cases,2023,"CII 2023, Table 1.1",
+india,2021,all-cognizable,crime-rate,ipc-bns,268.0,cognizable crimes per lakh population,2023,"CII 2023, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2021,all-cognizable,crime-rate,ipc-bns-sll,445.9,cognizable crimes per lakh population,2023,"CII 2023, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2021,all-cognizable,crime-rate,sll,178.0,cognizable crimes per lakh population,2023,"CII 2023, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2021,all-cognizable,mid-year-population,,13671.8,lakh persons,2023,"CII 2023, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2022,all-cognizable,cases,ipc-bns,3561379,cases,2024,"CII 2024, Table 1.1",
+india,2022,all-cognizable,cases,ipc-bns-sll,5824946,cases,2024,"CII 2024, Table 1.1",
+india,2022,all-cognizable,cases,sll,2263567,cases,2024,"CII 2024, Table 1.1",
+india,2022,all-cognizable,crime-rate,ipc-bns,258.1,cognizable crimes per lakh population,2024,"CII 2024, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2022,all-cognizable,crime-rate,ipc-bns-sll,422.2,cognizable crimes per lakh population,2024,"CII 2024, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2022,all-cognizable,crime-rate,sll,164.1,cognizable crimes per lakh population,2024,"CII 2024, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2022,all-cognizable,mid-year-population,,13797.5,lakh persons,2024,"CII 2024, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2023,all-cognizable,cases,ipc-bns,3763102,cases,2024,"CII 2024, Table 1.1",
+india,2023,all-cognizable,cases,ipc-bns-sll,6241569,cases,2024,"CII 2024, Table 1.1",
+india,2023,all-cognizable,cases,sll,2478467,cases,2024,"CII 2024, Table 1.1",
+india,2023,all-cognizable,crime-rate,ipc-bns,270.3,cognizable crimes per lakh population,2024,"CII 2024, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2023,all-cognizable,crime-rate,ipc-bns-sll,448.3,cognizable crimes per lakh population,2024,"CII 2024, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2023,all-cognizable,crime-rate,sll,178.0,cognizable crimes per lakh population,2024,"CII 2024, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2023,all-cognizable,mid-year-population,,13923.3,lakh persons,2024,"CII 2024, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2024,all-cognizable,cases,ipc-bns,3544608,cases,2024,"CII 2024, Table 1.1",
+india,2024,all-cognizable,cases,ipc-bns-sll,5885867,cases,2024,"CII 2024, Table 1.1",
+india,2024,all-cognizable,cases,sll,2341259,cases,2024,"CII 2024, Table 1.1",
+india,2024,all-cognizable,crime-rate,ipc-bns,252.3,cognizable crimes per lakh population,2024,"CII 2024, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2024,all-cognizable,crime-rate,ipc-bns-sll,418.9,cognizable crimes per lakh population,2024,"CII 2024, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2024,all-cognizable,crime-rate,sll,166.6,cognizable crimes per lakh population,2024,"CII 2024, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2024,all-cognizable,mid-year-population,,14049.1,lakh persons,2024,"CII 2024, Table 1.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2015,crimes-against-women,cases,,329243,cases,2017,"CII 2017, Table 3A.1",
+india,2016,crimes-against-women,cases,,338954,cases,2018,"CII 2018, Table 3A.1",
+india,2017,crimes-against-women,cases,,359849,cases,2019,"CII 2019, Table 3A.1",
+india,2017,crimes-against-women,crime-rate,,57.9,crimes against women per lakh women,2017,"CII 2017, Table 3A.1",Registrar General of India estimated population of 2017 (Table 2A.1 note: based on 2001 Census)
+india,2017,crimes-against-women,female-population,,6211.5,lakh women,2017,"CII 2017, Table 3A.1",Registrar General of India estimated population of 2017 (Table 2A.1 note: based on 2001 Census)
+india,2018,crimes-against-women,cases,,378236,cases,2020,"CII 2020, Table 3A.1",
+india,2018,crimes-against-women,crime-rate,,58.8,crimes against women per lakh women,2018,"CII 2018, Table 3A.1","Technical Group on Population Projections, November 2019, National Commission on Population, MoHFW"
+india,2018,crimes-against-women,female-population,,6434.4,lakh women,2018,"CII 2018, Table 3A.1","Technical Group on Population Projections, November 2019, National Commission on Population, MoHFW"
+india,2019,crimes-against-women,cases,,405326,cases,2021,"CII 2021, Table 3A.1",
+india,2019,crimes-against-women,crime-rate,,62.4,crimes against women per lakh women,2019,"CII 2019, Table 3A.1","Technical Group on Population Projections, November 2019, National Commission on Population, MoHFW"
+india,2019,crimes-against-women,female-population,,6505.4,lakh women,2019,"CII 2019, Table 3A.1","Technical Group on Population Projections, November 2019, National Commission on Population, MoHFW"
+india,2020,crimes-against-women,cases,,371503,cases,2022,"CII 2022, Table 3A.1",
+india,2020,crimes-against-women,crime-rate,,56.5,crimes against women per lakh women,2020,"CII 2020, Table 3A.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2020,crimes-against-women,female-population,,6576.3,lakh women,2020,"CII 2020, Table 3A.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2021,crimes-against-women,cases,,428278,cases,2023,"CII 2023, Table 3A.1",
+india,2021,crimes-against-women,crime-rate,,64.5,crimes against women per lakh women,2021,"CII 2021, Table 3A.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2021,crimes-against-women,female-population,,6644.7,lakh women,2021,"CII 2021, Table 3A.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2022,crimes-against-women,cases,,445256,cases,2024,"CII 2024, Table 3A.1",
+india,2022,crimes-against-women,crime-rate,,66.4,crimes against women per lakh women,2022,"CII 2022, Table 3A.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2022,crimes-against-women,female-population,,6707.6,lakh women,2022,"CII 2022, Table 3A.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2023,crimes-against-women,cases,,448211,cases,2024,"CII 2024, Table 3A.1",
+india,2023,crimes-against-women,crime-rate,,66.2,crimes against women per lakh women,2023,"CII 2023, Table 3A.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2023,crimes-against-women,female-population,,6770.4,lakh women,2023,"CII 2023, Table 3A.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2024,crimes-against-women,cases,,441534,cases,2024,"CII 2024, Table 3A.1",
+india,2024,crimes-against-women,crime-rate,,64.6,crimes against women per lakh women,2024,"CII 2024, Table 3A.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2024,crimes-against-women,female-population,,6833.4,lakh women,2024,"CII 2024, Table 3A.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2015,murder,cases,,32127,cases,2017,"CII 2017, Table 2A.1",
+india,2016,murder,cases,,30450,cases,2018,"CII 2018, Table 2A.1",
+india,2017,murder,cases,,28653,cases,2019,"CII 2019, Table 2A.1",
+india,2017,murder,crime-rate,,2.2,murder cases per lakh population,2017,"CII 2017, Table 2A.1",Registrar General of India estimated population of 2017 (Table 2A.1 note: based on 2001 Census)
+india,2018,murder,cases,,29017,cases,2020,"CII 2020, Table 2A.1",
+india,2018,murder,crime-rate,,2.2,murder cases per lakh population,2018,"CII 2018, Table 2A.1","Technical Group on Population Projections, November 2019, National Commission on Population, MoHFW"
+india,2019,murder,cases,,28915,cases,2021,"CII 2021, Table 2A.1",
+india,2019,murder,crime-rate,,2.2,murder cases per lakh population,2019,"CII 2019, Table 2A.1","Technical Group on Population Projections, November 2019, National Commission on Population, MoHFW"
+india,2020,murder,cases,,29193,cases,2022,"CII 2022, Table 2A.1",
+india,2020,murder,crime-rate,,2.2,murder cases per lakh population,2020,"CII 2020, Table 2A.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2021,murder,cases,,29272,cases,2023,"CII 2023, Table 2A.1",
+india,2021,murder,crime-rate,,2.1,murder cases per lakh population,2021,"CII 2021, Table 2A.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2022,murder,cases,,28522,cases,2024,"CII 2024, Table 2A.1",
+india,2022,murder,crime-rate,,2.1,murder cases per lakh population,2022,"CII 2022, Table 2A.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2023,murder,cases,,27721,cases,2024,"CII 2024, Table 2A.1",
+india,2023,murder,crime-rate,,2.0,murder cases per lakh population,2023,"CII 2023, Table 2A.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"
+india,2024,murder,cases,,27049,cases,2024,"CII 2024, Table 2A.1",
+india,2024,murder,crime-rate,,1.9,murder cases per lakh population,2024,"CII 2024, Table 2A.1","Technical Group on Population Projections, July 2020, National Commission on Population, MoHFW"

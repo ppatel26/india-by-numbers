@@ -1,0 +1,630 @@
+geography,period,as_on,indicator,sex,value,unit,table
+india,2024,2024-12-31,capacity,male,422308,inmates,Table 1.2
+india,2024,2024-12-31,inmates,male,487747,inmates,Table 1.2
+india,2024,2024-12-31,occupancy-rate,male,115.5,percent,Table 1.2
+india,2024,2024-12-31,capacity,female,31266,inmates,Table 1.2
+india,2024,2024-12-31,inmates,female,21151,inmates,Table 1.2
+india,2024,2024-12-31,occupancy-rate,female,67.6,percent,Table 1.2
+india,2024,2024-12-31,capacity,transgender,195,inmates,Table 1.2
+india,2024,2024-12-31,inmates,transgender,114,inmates,Table 1.2
+india,2024,2024-12-31,occupancy-rate,transgender,58.5,percent,Table 1.2
+india,2024,2024-12-31,capacity,total,453769,inmates,Table 1.2
+india,2024,2024-12-31,inmates,total,509012,inmates,Table 1.2
+india,2024,2024-12-31,occupancy-rate,total,112.2,percent,Table 1.2
+india,2024,2024-12-31,convicts,total,136167,inmates,Table 2.1
+india,2024,2024-12-31,undertrials,total,368883,inmates,Table 2.1
+india,2024,2024-12-31,detenues,total,3047,inmates,Table 2.1
+india,2024,2024-12-31,undertrial-share,total,72.5,percent of all inmates,Table 2.2
+india,2024,2024-12-31,convict-share,total,26.8,percent of all inmates,Table 2.2
+andhra-pradesh,2024,2024-12-31,capacity,male,7744,inmates,Table 1.2
+andhra-pradesh,2024,2024-12-31,inmates,male,7451,inmates,Table 1.2
+andhra-pradesh,2024,2024-12-31,occupancy-rate,male,96.2,percent,Table 1.2
+andhra-pradesh,2024,2024-12-31,capacity,female,915,inmates,Table 1.2
+andhra-pradesh,2024,2024-12-31,inmates,female,404,inmates,Table 1.2
+andhra-pradesh,2024,2024-12-31,occupancy-rate,female,44.2,percent,Table 1.2
+andhra-pradesh,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+andhra-pradesh,2024,2024-12-31,inmates,transgender,6,inmates,Table 1.2
+andhra-pradesh,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+andhra-pradesh,2024,2024-12-31,capacity,total,8659,inmates,Table 1.2
+andhra-pradesh,2024,2024-12-31,inmates,total,7861,inmates,Table 1.2
+andhra-pradesh,2024,2024-12-31,occupancy-rate,total,90.8,percent,Table 1.2
+andhra-pradesh,2024,2024-12-31,convicts,total,2131,inmates,Table 2.1
+andhra-pradesh,2024,2024-12-31,undertrials,total,5705,inmates,Table 2.1
+andhra-pradesh,2024,2024-12-31,detenues,total,10,inmates,Table 2.1
+andhra-pradesh,2024,2024-12-31,undertrial-share,total,72.6,percent of all inmates,Table 2.2
+andhra-pradesh,2024,2024-12-31,convict-share,total,27.1,percent of all inmates,Table 2.2
+arunachal-pradesh,2024,2024-12-31,capacity,male,509,inmates,Table 1.2
+arunachal-pradesh,2024,2024-12-31,inmates,male,440,inmates,Table 1.2
+arunachal-pradesh,2024,2024-12-31,occupancy-rate,male,86.4,percent,Table 1.2
+arunachal-pradesh,2024,2024-12-31,capacity,female,24,inmates,Table 1.2
+arunachal-pradesh,2024,2024-12-31,inmates,female,28,inmates,Table 1.2
+arunachal-pradesh,2024,2024-12-31,occupancy-rate,female,116.7,percent,Table 1.2
+arunachal-pradesh,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+arunachal-pradesh,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+arunachal-pradesh,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+arunachal-pradesh,2024,2024-12-31,capacity,total,533,inmates,Table 1.2
+arunachal-pradesh,2024,2024-12-31,inmates,total,468,inmates,Table 1.2
+arunachal-pradesh,2024,2024-12-31,occupancy-rate,total,87.8,percent,Table 1.2
+arunachal-pradesh,2024,2024-12-31,convicts,total,226,inmates,Table 2.1
+arunachal-pradesh,2024,2024-12-31,undertrials,total,242,inmates,Table 2.1
+arunachal-pradesh,2024,2024-12-31,detenues,total,0,inmates,Table 2.1
+arunachal-pradesh,2024,2024-12-31,undertrial-share,total,51.7,percent of all inmates,Table 2.2
+arunachal-pradesh,2024,2024-12-31,convict-share,total,48.3,percent of all inmates,Table 2.2
+assam,2024,2024-12-31,capacity,male,9559,inmates,Table 1.2
+assam,2024,2024-12-31,inmates,male,11199,inmates,Table 1.2
+assam,2024,2024-12-31,occupancy-rate,male,117.2,percent,Table 1.2
+assam,2024,2024-12-31,capacity,female,761,inmates,Table 1.2
+assam,2024,2024-12-31,inmates,female,475,inmates,Table 1.2
+assam,2024,2024-12-31,occupancy-rate,female,62.4,percent,Table 1.2
+assam,2024,2024-12-31,capacity,transgender,10,inmates,Table 1.2
+assam,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+assam,2024,2024-12-31,occupancy-rate,transgender,0.0,percent,Table 1.2
+assam,2024,2024-12-31,capacity,total,10330,inmates,Table 1.2
+assam,2024,2024-12-31,inmates,total,11674,inmates,Table 1.2
+assam,2024,2024-12-31,occupancy-rate,total,113.0,percent,Table 1.2
+assam,2024,2024-12-31,convicts,total,3500,inmates,Table 2.1
+assam,2024,2024-12-31,undertrials,total,8144,inmates,Table 2.1
+assam,2024,2024-12-31,detenues,total,13,inmates,Table 2.1
+assam,2024,2024-12-31,undertrial-share,total,69.8,percent of all inmates,Table 2.2
+assam,2024,2024-12-31,convict-share,total,30.0,percent of all inmates,Table 2.2
+bihar,2024,2024-12-31,capacity,male,46963,inmates,Table 1.2
+bihar,2024,2024-12-31,inmates,male,49911,inmates,Table 1.2
+bihar,2024,2024-12-31,occupancy-rate,male,106.3,percent,Table 1.2
+bihar,2024,2024-12-31,capacity,female,2127,inmates,Table 1.2
+bihar,2024,2024-12-31,inmates,female,2064,inmates,Table 1.2
+bihar,2024,2024-12-31,occupancy-rate,female,97.0,percent,Table 1.2
+bihar,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+bihar,2024,2024-12-31,inmates,transgender,15,inmates,Table 1.2
+bihar,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+bihar,2024,2024-12-31,capacity,total,49090,inmates,Table 1.2
+bihar,2024,2024-12-31,inmates,total,51990,inmates,Table 1.2
+bihar,2024,2024-12-31,occupancy-rate,total,105.9,percent,Table 1.2
+bihar,2024,2024-12-31,convicts,total,6648,inmates,Table 2.1
+bihar,2024,2024-12-31,undertrials,total,45339,inmates,Table 2.1
+bihar,2024,2024-12-31,detenues,total,0,inmates,Table 2.1
+bihar,2024,2024-12-31,undertrial-share,total,87.2,percent of all inmates,Table 2.2
+bihar,2024,2024-12-31,convict-share,total,12.8,percent of all inmates,Table 2.2
+chhattisgarh,2024,2024-12-31,capacity,male,13878,inmates,Table 1.2
+chhattisgarh,2024,2024-12-31,inmates,male,17979,inmates,Table 1.2
+chhattisgarh,2024,2024-12-31,occupancy-rate,male,129.6,percent,Table 1.2
+chhattisgarh,2024,2024-12-31,capacity,female,855,inmates,Table 1.2
+chhattisgarh,2024,2024-12-31,inmates,female,816,inmates,Table 1.2
+chhattisgarh,2024,2024-12-31,occupancy-rate,female,95.4,percent,Table 1.2
+chhattisgarh,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+chhattisgarh,2024,2024-12-31,inmates,transgender,3,inmates,Table 1.2
+chhattisgarh,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+chhattisgarh,2024,2024-12-31,capacity,total,14733,inmates,Table 1.2
+chhattisgarh,2024,2024-12-31,inmates,total,18798,inmates,Table 1.2
+chhattisgarh,2024,2024-12-31,occupancy-rate,total,127.6,percent,Table 1.2
+chhattisgarh,2024,2024-12-31,convicts,total,6313,inmates,Table 2.1
+chhattisgarh,2024,2024-12-31,undertrials,total,12478,inmates,Table 2.1
+chhattisgarh,2024,2024-12-31,detenues,total,5,inmates,Table 2.1
+chhattisgarh,2024,2024-12-31,undertrial-share,total,66.4,percent of all inmates,Table 2.2
+chhattisgarh,2024,2024-12-31,convict-share,total,33.6,percent of all inmates,Table 2.2
+goa,2024,2024-12-31,capacity,male,574,inmates,Table 1.2
+goa,2024,2024-12-31,inmates,male,566,inmates,Table 1.2
+goa,2024,2024-12-31,occupancy-rate,male,98.6,percent,Table 1.2
+goa,2024,2024-12-31,capacity,female,50,inmates,Table 1.2
+goa,2024,2024-12-31,inmates,female,49,inmates,Table 1.2
+goa,2024,2024-12-31,occupancy-rate,female,98.0,percent,Table 1.2
+goa,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+goa,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+goa,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+goa,2024,2024-12-31,capacity,total,624,inmates,Table 1.2
+goa,2024,2024-12-31,inmates,total,615,inmates,Table 1.2
+goa,2024,2024-12-31,occupancy-rate,total,98.6,percent,Table 1.2
+goa,2024,2024-12-31,convicts,total,95,inmates,Table 2.1
+goa,2024,2024-12-31,undertrials,total,519,inmates,Table 2.1
+goa,2024,2024-12-31,detenues,total,1,inmates,Table 2.1
+goa,2024,2024-12-31,undertrial-share,total,84.4,percent of all inmates,Table 2.2
+goa,2024,2024-12-31,convict-share,total,15.4,percent of all inmates,Table 2.2
+gujarat,2024,2024-12-31,capacity,male,12918,inmates,Table 1.2
+gujarat,2024,2024-12-31,inmates,male,17125,inmates,Table 1.2
+gujarat,2024,2024-12-31,occupancy-rate,male,132.6,percent,Table 1.2
+gujarat,2024,2024-12-31,capacity,female,1190,inmates,Table 1.2
+gujarat,2024,2024-12-31,inmates,female,636,inmates,Table 1.2
+gujarat,2024,2024-12-31,occupancy-rate,female,53.4,percent,Table 1.2
+gujarat,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+gujarat,2024,2024-12-31,inmates,transgender,5,inmates,Table 1.2
+gujarat,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+gujarat,2024,2024-12-31,capacity,total,14108,inmates,Table 1.2
+gujarat,2024,2024-12-31,inmates,total,17766,inmates,Table 1.2
+gujarat,2024,2024-12-31,occupancy-rate,total,125.9,percent,Table 1.2
+gujarat,2024,2024-12-31,convicts,total,5231,inmates,Table 2.1
+gujarat,2024,2024-12-31,undertrials,total,12286,inmates,Table 2.1
+gujarat,2024,2024-12-31,detenues,total,249,inmates,Table 2.1
+gujarat,2024,2024-12-31,undertrial-share,total,69.2,percent of all inmates,Table 2.2
+gujarat,2024,2024-12-31,convict-share,total,29.4,percent of all inmates,Table 2.2
+haryana,2024,2024-12-31,capacity,male,21060,inmates,Table 1.2
+haryana,2024,2024-12-31,inmates,male,23987,inmates,Table 1.2
+haryana,2024,2024-12-31,occupancy-rate,male,113.9,percent,Table 1.2
+haryana,2024,2024-12-31,capacity,female,1766,inmates,Table 1.2
+haryana,2024,2024-12-31,inmates,female,767,inmates,Table 1.2
+haryana,2024,2024-12-31,occupancy-rate,female,43.4,percent,Table 1.2
+haryana,2024,2024-12-31,capacity,transgender,12,inmates,Table 1.2
+haryana,2024,2024-12-31,inmates,transgender,2,inmates,Table 1.2
+haryana,2024,2024-12-31,occupancy-rate,transgender,16.7,percent,Table 1.2
+haryana,2024,2024-12-31,capacity,total,22838,inmates,Table 1.2
+haryana,2024,2024-12-31,inmates,total,24756,inmates,Table 1.2
+haryana,2024,2024-12-31,occupancy-rate,total,108.4,percent,Table 1.2
+haryana,2024,2024-12-31,convicts,total,5693,inmates,Table 2.1
+haryana,2024,2024-12-31,undertrials,total,19015,inmates,Table 2.1
+haryana,2024,2024-12-31,detenues,total,48,inmates,Table 2.1
+haryana,2024,2024-12-31,undertrial-share,total,76.8,percent of all inmates,Table 2.2
+haryana,2024,2024-12-31,convict-share,total,23.0,percent of all inmates,Table 2.2
+himachal-pradesh,2024,2024-12-31,capacity,male,2385,inmates,Table 1.2
+himachal-pradesh,2024,2024-12-31,inmates,male,2881,inmates,Table 1.2
+himachal-pradesh,2024,2024-12-31,occupancy-rate,male,120.8,percent,Table 1.2
+himachal-pradesh,2024,2024-12-31,capacity,female,195,inmates,Table 1.2
+himachal-pradesh,2024,2024-12-31,inmates,female,103,inmates,Table 1.2
+himachal-pradesh,2024,2024-12-31,occupancy-rate,female,52.8,percent,Table 1.2
+himachal-pradesh,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+himachal-pradesh,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+himachal-pradesh,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+himachal-pradesh,2024,2024-12-31,capacity,total,2580,inmates,Table 1.2
+himachal-pradesh,2024,2024-12-31,inmates,total,2984,inmates,Table 1.2
+himachal-pradesh,2024,2024-12-31,occupancy-rate,total,115.7,percent,Table 1.2
+himachal-pradesh,2024,2024-12-31,convicts,total,1042,inmates,Table 2.1
+himachal-pradesh,2024,2024-12-31,undertrials,total,1942,inmates,Table 2.1
+himachal-pradesh,2024,2024-12-31,detenues,total,0,inmates,Table 2.1
+himachal-pradesh,2024,2024-12-31,undertrial-share,total,65.1,percent of all inmates,Table 2.2
+himachal-pradesh,2024,2024-12-31,convict-share,total,34.9,percent of all inmates,Table 2.2
+jharkhand,2024,2024-12-31,capacity,male,16725,inmates,Table 1.2
+jharkhand,2024,2024-12-31,inmates,male,15504,inmates,Table 1.2
+jharkhand,2024,2024-12-31,occupancy-rate,male,92.7,percent,Table 1.2
+jharkhand,2024,2024-12-31,capacity,female,946,inmates,Table 1.2
+jharkhand,2024,2024-12-31,inmates,female,697,inmates,Table 1.2
+jharkhand,2024,2024-12-31,occupancy-rate,female,73.7,percent,Table 1.2
+jharkhand,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+jharkhand,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+jharkhand,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+jharkhand,2024,2024-12-31,capacity,total,17671,inmates,Table 1.2
+jharkhand,2024,2024-12-31,inmates,total,16201,inmates,Table 1.2
+jharkhand,2024,2024-12-31,occupancy-rate,total,91.7,percent,Table 1.2
+jharkhand,2024,2024-12-31,convicts,total,4943,inmates,Table 2.1
+jharkhand,2024,2024-12-31,undertrials,total,11232,inmates,Table 2.1
+jharkhand,2024,2024-12-31,detenues,total,26,inmates,Table 2.1
+jharkhand,2024,2024-12-31,undertrial-share,total,69.3,percent of all inmates,Table 2.2
+jharkhand,2024,2024-12-31,convict-share,total,30.5,percent of all inmates,Table 2.2
+karnataka,2024,2024-12-31,capacity,male,13139,inmates,Table 1.2
+karnataka,2024,2024-12-31,inmates,male,13915,inmates,Table 1.2
+karnataka,2024,2024-12-31,occupancy-rate,male,105.9,percent,Table 1.2
+karnataka,2024,2024-12-31,capacity,female,1158,inmates,Table 1.2
+karnataka,2024,2024-12-31,inmates,female,529,inmates,Table 1.2
+karnataka,2024,2024-12-31,occupancy-rate,female,45.7,percent,Table 1.2
+karnataka,2024,2024-12-31,capacity,transgender,20,inmates,Table 1.2
+karnataka,2024,2024-12-31,inmates,transgender,6,inmates,Table 1.2
+karnataka,2024,2024-12-31,occupancy-rate,transgender,30.0,percent,Table 1.2
+karnataka,2024,2024-12-31,capacity,total,14317,inmates,Table 1.2
+karnataka,2024,2024-12-31,inmates,total,14450,inmates,Table 1.2
+karnataka,2024,2024-12-31,occupancy-rate,total,100.9,percent,Table 1.2
+karnataka,2024,2024-12-31,convicts,total,3491,inmates,Table 2.1
+karnataka,2024,2024-12-31,undertrials,total,10908,inmates,Table 2.1
+karnataka,2024,2024-12-31,detenues,total,24,inmates,Table 2.1
+karnataka,2024,2024-12-31,undertrial-share,total,75.5,percent of all inmates,Table 2.2
+karnataka,2024,2024-12-31,convict-share,total,24.2,percent of all inmates,Table 2.2
+kerala,2024,2024-12-31,capacity,male,7362,inmates,Table 1.2
+kerala,2024,2024-12-31,inmates,male,10041,inmates,Table 1.2
+kerala,2024,2024-12-31,occupancy-rate,male,136.4,percent,Table 1.2
+kerala,2024,2024-12-31,capacity,female,443,inmates,Table 1.2
+kerala,2024,2024-12-31,inmates,female,264,inmates,Table 1.2
+kerala,2024,2024-12-31,occupancy-rate,female,59.6,percent,Table 1.2
+kerala,2024,2024-12-31,capacity,transgender,18,inmates,Table 1.2
+kerala,2024,2024-12-31,inmates,transgender,2,inmates,Table 1.2
+kerala,2024,2024-12-31,occupancy-rate,transgender,11.1,percent,Table 1.2
+kerala,2024,2024-12-31,capacity,total,7823,inmates,Table 1.2
+kerala,2024,2024-12-31,inmates,total,10307,inmates,Table 1.2
+kerala,2024,2024-12-31,occupancy-rate,total,131.8,percent,Table 1.2
+kerala,2024,2024-12-31,convicts,total,3944,inmates,Table 2.1
+kerala,2024,2024-12-31,undertrials,total,6148,inmates,Table 2.1
+kerala,2024,2024-12-31,detenues,total,215,inmates,Table 2.1
+kerala,2024,2024-12-31,undertrial-share,total,59.6,percent of all inmates,Table 2.2
+kerala,2024,2024-12-31,convict-share,total,38.3,percent of all inmates,Table 2.2
+madhya-pradesh,2024,2024-12-31,capacity,male,28656,inmates,Table 1.2
+madhya-pradesh,2024,2024-12-31,inmates,male,43170,inmates,Table 1.2
+madhya-pradesh,2024,2024-12-31,occupancy-rate,male,150.6,percent,Table 1.2
+madhya-pradesh,2024,2024-12-31,capacity,female,1985,inmates,Table 1.2
+madhya-pradesh,2024,2024-12-31,inmates,female,1918,inmates,Table 1.2
+madhya-pradesh,2024,2024-12-31,occupancy-rate,female,96.6,percent,Table 1.2
+madhya-pradesh,2024,2024-12-31,capacity,transgender,3,inmates,Table 1.2
+madhya-pradesh,2024,2024-12-31,inmates,transgender,4,inmates,Table 1.2
+madhya-pradesh,2024,2024-12-31,occupancy-rate,transgender,133.3,percent,Table 1.2
+madhya-pradesh,2024,2024-12-31,capacity,total,30644,inmates,Table 1.2
+madhya-pradesh,2024,2024-12-31,inmates,total,45092,inmates,Table 1.2
+madhya-pradesh,2024,2024-12-31,occupancy-rate,total,147.1,percent,Table 1.2
+madhya-pradesh,2024,2024-12-31,convicts,total,21760,inmates,Table 2.1
+madhya-pradesh,2024,2024-12-31,undertrials,total,23132,inmates,Table 2.1
+madhya-pradesh,2024,2024-12-31,detenues,total,92,inmates,Table 2.1
+madhya-pradesh,2024,2024-12-31,undertrial-share,total,51.3,percent of all inmates,Table 2.2
+madhya-pradesh,2024,2024-12-31,convict-share,total,48.3,percent of all inmates,Table 2.2
+maharashtra,2024,2024-12-31,capacity,male,25556,inmates,Table 1.2
+maharashtra,2024,2024-12-31,inmates,male,37382,inmates,Table 1.2
+maharashtra,2024,2024-12-31,occupancy-rate,male,146.3,percent,Table 1.2
+maharashtra,2024,2024-12-31,capacity,female,1537,inmates,Table 1.2
+maharashtra,2024,2024-12-31,inmates,female,1604,inmates,Table 1.2
+maharashtra,2024,2024-12-31,occupancy-rate,female,104.4,percent,Table 1.2
+maharashtra,2024,2024-12-31,capacity,transgender,17,inmates,Table 1.2
+maharashtra,2024,2024-12-31,inmates,transgender,17,inmates,Table 1.2
+maharashtra,2024,2024-12-31,occupancy-rate,transgender,100.0,percent,Table 1.2
+maharashtra,2024,2024-12-31,capacity,total,27110,inmates,Table 1.2
+maharashtra,2024,2024-12-31,inmates,total,39003,inmates,Table 1.2
+maharashtra,2024,2024-12-31,occupancy-rate,total,143.9,percent,Table 1.2
+maharashtra,2024,2024-12-31,convicts,total,7066,inmates,Table 2.1
+maharashtra,2024,2024-12-31,undertrials,total,31523,inmates,Table 2.1
+maharashtra,2024,2024-12-31,detenues,total,414,inmates,Table 2.1
+maharashtra,2024,2024-12-31,undertrial-share,total,80.8,percent of all inmates,Table 2.2
+maharashtra,2024,2024-12-31,convict-share,total,18.1,percent of all inmates,Table 2.2
+manipur,2024,2024-12-31,capacity,male,965,inmates,Table 1.2
+manipur,2024,2024-12-31,inmates,male,438,inmates,Table 1.2
+manipur,2024,2024-12-31,occupancy-rate,male,45.4,percent,Table 1.2
+manipur,2024,2024-12-31,capacity,female,180,inmates,Table 1.2
+manipur,2024,2024-12-31,inmates,female,12,inmates,Table 1.2
+manipur,2024,2024-12-31,occupancy-rate,female,6.7,percent,Table 1.2
+manipur,2024,2024-12-31,capacity,transgender,15,inmates,Table 1.2
+manipur,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+manipur,2024,2024-12-31,occupancy-rate,transgender,0.0,percent,Table 1.2
+manipur,2024,2024-12-31,capacity,total,1160,inmates,Table 1.2
+manipur,2024,2024-12-31,inmates,total,450,inmates,Table 1.2
+manipur,2024,2024-12-31,occupancy-rate,total,38.8,percent,Table 1.2
+manipur,2024,2024-12-31,convicts,total,121,inmates,Table 2.1
+manipur,2024,2024-12-31,undertrials,total,326,inmates,Table 2.1
+manipur,2024,2024-12-31,detenues,total,3,inmates,Table 2.1
+manipur,2024,2024-12-31,undertrial-share,total,72.4,percent of all inmates,Table 2.2
+manipur,2024,2024-12-31,convict-share,total,26.9,percent of all inmates,Table 2.2
+meghalaya,2024,2024-12-31,capacity,male,805,inmates,Table 1.2
+meghalaya,2024,2024-12-31,inmates,male,1372,inmates,Table 1.2
+meghalaya,2024,2024-12-31,occupancy-rate,male,170.4,percent,Table 1.2
+meghalaya,2024,2024-12-31,capacity,female,55,inmates,Table 1.2
+meghalaya,2024,2024-12-31,inmates,female,34,inmates,Table 1.2
+meghalaya,2024,2024-12-31,occupancy-rate,female,61.8,percent,Table 1.2
+meghalaya,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+meghalaya,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+meghalaya,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+meghalaya,2024,2024-12-31,capacity,total,860,inmates,Table 1.2
+meghalaya,2024,2024-12-31,inmates,total,1406,inmates,Table 1.2
+meghalaya,2024,2024-12-31,occupancy-rate,total,163.5,percent,Table 1.2
+meghalaya,2024,2024-12-31,convicts,total,464,inmates,Table 2.1
+meghalaya,2024,2024-12-31,undertrials,total,918,inmates,Table 2.1
+meghalaya,2024,2024-12-31,detenues,total,0,inmates,Table 2.1
+meghalaya,2024,2024-12-31,undertrial-share,total,65.3,percent of all inmates,Table 2.2
+meghalaya,2024,2024-12-31,convict-share,total,33.0,percent of all inmates,Table 2.2
+mizoram,2024,2024-12-31,capacity,male,1130,inmates,Table 1.2
+mizoram,2024,2024-12-31,inmates,male,1399,inmates,Table 1.2
+mizoram,2024,2024-12-31,occupancy-rate,male,123.8,percent,Table 1.2
+mizoram,2024,2024-12-31,capacity,female,256,inmates,Table 1.2
+mizoram,2024,2024-12-31,inmates,female,157,inmates,Table 1.2
+mizoram,2024,2024-12-31,occupancy-rate,female,61.3,percent,Table 1.2
+mizoram,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+mizoram,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+mizoram,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+mizoram,2024,2024-12-31,capacity,total,1386,inmates,Table 1.2
+mizoram,2024,2024-12-31,inmates,total,1556,inmates,Table 1.2
+mizoram,2024,2024-12-31,occupancy-rate,total,112.3,percent,Table 1.2
+mizoram,2024,2024-12-31,convicts,total,639,inmates,Table 2.1
+mizoram,2024,2024-12-31,undertrials,total,917,inmates,Table 2.1
+mizoram,2024,2024-12-31,detenues,total,0,inmates,Table 2.1
+mizoram,2024,2024-12-31,undertrial-share,total,58.9,percent of all inmates,Table 2.2
+mizoram,2024,2024-12-31,convict-share,total,41.1,percent of all inmates,Table 2.2
+nagaland,2024,2024-12-31,capacity,male,1075,inmates,Table 1.2
+nagaland,2024,2024-12-31,inmates,male,482,inmates,Table 1.2
+nagaland,2024,2024-12-31,occupancy-rate,male,44.8,percent,Table 1.2
+nagaland,2024,2024-12-31,capacity,female,195,inmates,Table 1.2
+nagaland,2024,2024-12-31,inmates,female,32,inmates,Table 1.2
+nagaland,2024,2024-12-31,occupancy-rate,female,16.4,percent,Table 1.2
+nagaland,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+nagaland,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+nagaland,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+nagaland,2024,2024-12-31,capacity,total,1270,inmates,Table 1.2
+nagaland,2024,2024-12-31,inmates,total,514,inmates,Table 1.2
+nagaland,2024,2024-12-31,occupancy-rate,total,40.5,percent,Table 1.2
+nagaland,2024,2024-12-31,convicts,total,125,inmates,Table 2.1
+nagaland,2024,2024-12-31,undertrials,total,363,inmates,Table 2.1
+nagaland,2024,2024-12-31,detenues,total,26,inmates,Table 2.1
+nagaland,2024,2024-12-31,undertrial-share,total,70.6,percent of all inmates,Table 2.2
+nagaland,2024,2024-12-31,convict-share,total,24.3,percent of all inmates,Table 2.2
+odisha,2024,2024-12-31,capacity,male,23020,inmates,Table 1.2
+odisha,2024,2024-12-31,inmates,male,16024,inmates,Table 1.2
+odisha,2024,2024-12-31,occupancy-rate,male,69.6,percent,Table 1.2
+odisha,2024,2024-12-31,capacity,female,2116,inmates,Table 1.2
+odisha,2024,2024-12-31,inmates,female,587,inmates,Table 1.2
+odisha,2024,2024-12-31,occupancy-rate,female,27.7,percent,Table 1.2
+odisha,2024,2024-12-31,capacity,transgender,40,inmates,Table 1.2
+odisha,2024,2024-12-31,inmates,transgender,6,inmates,Table 1.2
+odisha,2024,2024-12-31,occupancy-rate,transgender,15.0,percent,Table 1.2
+odisha,2024,2024-12-31,capacity,total,25176,inmates,Table 1.2
+odisha,2024,2024-12-31,inmates,total,16617,inmates,Table 1.2
+odisha,2024,2024-12-31,occupancy-rate,total,66.0,percent,Table 1.2
+odisha,2024,2024-12-31,convicts,total,3736,inmates,Table 2.1
+odisha,2024,2024-12-31,undertrials,total,12879,inmates,Table 2.1
+odisha,2024,2024-12-31,detenues,total,1,inmates,Table 2.1
+odisha,2024,2024-12-31,undertrial-share,total,77.5,percent of all inmates,Table 2.2
+odisha,2024,2024-12-31,convict-share,total,22.5,percent of all inmates,Table 2.2
+punjab,2024,2024-12-31,capacity,male,24373,inmates,Table 1.2
+punjab,2024,2024-12-31,inmates,male,29215,inmates,Table 1.2
+punjab,2024,2024-12-31,occupancy-rate,male,119.9,percent,Table 1.2
+punjab,2024,2024-12-31,capacity,female,2170,inmates,Table 1.2
+punjab,2024,2024-12-31,inmates,female,1445,inmates,Table 1.2
+punjab,2024,2024-12-31,occupancy-rate,female,66.6,percent,Table 1.2
+punjab,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+punjab,2024,2024-12-31,inmates,transgender,3,inmates,Table 1.2
+punjab,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+punjab,2024,2024-12-31,capacity,total,26543,inmates,Table 1.2
+punjab,2024,2024-12-31,inmates,total,30663,inmates,Table 1.2
+punjab,2024,2024-12-31,occupancy-rate,total,115.5,percent,Table 1.2
+punjab,2024,2024-12-31,convicts,total,6695,inmates,Table 2.1
+punjab,2024,2024-12-31,undertrials,total,23922,inmates,Table 2.1
+punjab,2024,2024-12-31,detenues,total,2,inmates,Table 2.1
+punjab,2024,2024-12-31,undertrial-share,total,78.0,percent of all inmates,Table 2.2
+punjab,2024,2024-12-31,convict-share,total,21.8,percent of all inmates,Table 2.2
+rajasthan,2024,2024-12-31,capacity,male,21784,inmates,Table 1.2
+rajasthan,2024,2024-12-31,inmates,male,23608,inmates,Table 1.2
+rajasthan,2024,2024-12-31,occupancy-rate,male,108.4,percent,Table 1.2
+rajasthan,2024,2024-12-31,capacity,female,1670,inmates,Table 1.2
+rajasthan,2024,2024-12-31,inmates,female,702,inmates,Table 1.2
+rajasthan,2024,2024-12-31,occupancy-rate,female,42.0,percent,Table 1.2
+rajasthan,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+rajasthan,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+rajasthan,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+rajasthan,2024,2024-12-31,capacity,total,23454,inmates,Table 1.2
+rajasthan,2024,2024-12-31,inmates,total,24310,inmates,Table 1.2
+rajasthan,2024,2024-12-31,occupancy-rate,total,103.6,percent,Table 1.2
+rajasthan,2024,2024-12-31,convicts,total,6086,inmates,Table 2.1
+rajasthan,2024,2024-12-31,undertrials,total,18176,inmates,Table 2.1
+rajasthan,2024,2024-12-31,detenues,total,7,inmates,Table 2.1
+rajasthan,2024,2024-12-31,undertrial-share,total,74.8,percent of all inmates,Table 2.2
+rajasthan,2024,2024-12-31,convict-share,total,25.0,percent of all inmates,Table 2.2
+sikkim,2024,2024-12-31,capacity,male,332,inmates,Table 1.2
+sikkim,2024,2024-12-31,inmates,male,299,inmates,Table 1.2
+sikkim,2024,2024-12-31,occupancy-rate,male,90.1,percent,Table 1.2
+sikkim,2024,2024-12-31,capacity,female,26,inmates,Table 1.2
+sikkim,2024,2024-12-31,inmates,female,3,inmates,Table 1.2
+sikkim,2024,2024-12-31,occupancy-rate,female,11.5,percent,Table 1.2
+sikkim,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+sikkim,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+sikkim,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+sikkim,2024,2024-12-31,capacity,total,358,inmates,Table 1.2
+sikkim,2024,2024-12-31,inmates,total,302,inmates,Table 1.2
+sikkim,2024,2024-12-31,occupancy-rate,total,84.4,percent,Table 1.2
+sikkim,2024,2024-12-31,convicts,total,151,inmates,Table 2.1
+sikkim,2024,2024-12-31,undertrials,total,151,inmates,Table 2.1
+sikkim,2024,2024-12-31,detenues,total,0,inmates,Table 2.1
+sikkim,2024,2024-12-31,undertrial-share,total,50.0,percent of all inmates,Table 2.2
+sikkim,2024,2024-12-31,convict-share,total,50.0,percent of all inmates,Table 2.2
+tamil-nadu,2024,2024-12-31,capacity,male,21911,inmates,Table 1.2
+tamil-nadu,2024,2024-12-31,inmates,male,19578,inmates,Table 1.2
+tamil-nadu,2024,2024-12-31,occupancy-rate,male,89.4,percent,Table 1.2
+tamil-nadu,2024,2024-12-31,capacity,female,2602,inmates,Table 1.2
+tamil-nadu,2024,2024-12-31,inmates,female,816,inmates,Table 1.2
+tamil-nadu,2024,2024-12-31,occupancy-rate,female,31.4,percent,Table 1.2
+tamil-nadu,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+tamil-nadu,2024,2024-12-31,inmates,transgender,6,inmates,Table 1.2
+tamil-nadu,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+tamil-nadu,2024,2024-12-31,capacity,total,24513,inmates,Table 1.2
+tamil-nadu,2024,2024-12-31,inmates,total,20400,inmates,Table 1.2
+tamil-nadu,2024,2024-12-31,occupancy-rate,total,83.2,percent,Table 1.2
+tamil-nadu,2024,2024-12-31,convicts,total,6007,inmates,Table 2.1
+tamil-nadu,2024,2024-12-31,undertrials,total,13274,inmates,Table 2.1
+tamil-nadu,2024,2024-12-31,detenues,total,1117,inmates,Table 2.1
+tamil-nadu,2024,2024-12-31,undertrial-share,total,65.1,percent of all inmates,Table 2.2
+tamil-nadu,2024,2024-12-31,convict-share,total,29.4,percent of all inmates,Table 2.2
+telangana,2024,2024-12-31,capacity,male,7264,inmates,Table 1.2
+telangana,2024,2024-12-31,inmates,male,6384,inmates,Table 1.2
+telangana,2024,2024-12-31,occupancy-rate,male,87.9,percent,Table 1.2
+telangana,2024,2024-12-31,capacity,female,747,inmates,Table 1.2
+telangana,2024,2024-12-31,inmates,female,396,inmates,Table 1.2
+telangana,2024,2024-12-31,occupancy-rate,female,53.0,percent,Table 1.2
+telangana,2024,2024-12-31,capacity,transgender,2,inmates,Table 1.2
+telangana,2024,2024-12-31,inmates,transgender,2,inmates,Table 1.2
+telangana,2024,2024-12-31,occupancy-rate,transgender,100.0,percent,Table 1.2
+telangana,2024,2024-12-31,capacity,total,8013,inmates,Table 1.2
+telangana,2024,2024-12-31,inmates,total,6782,inmates,Table 1.2
+telangana,2024,2024-12-31,occupancy-rate,total,84.6,percent,Table 1.2
+telangana,2024,2024-12-31,convicts,total,1767,inmates,Table 2.1
+telangana,2024,2024-12-31,undertrials,total,5002,inmates,Table 2.1
+telangana,2024,2024-12-31,detenues,total,13,inmates,Table 2.1
+telangana,2024,2024-12-31,undertrial-share,total,73.8,percent of all inmates,Table 2.2
+telangana,2024,2024-12-31,convict-share,total,26.1,percent of all inmates,Table 2.2
+tripura,2024,2024-12-31,capacity,male,2169,inmates,Table 1.2
+tripura,2024,2024-12-31,inmates,male,1552,inmates,Table 1.2
+tripura,2024,2024-12-31,occupancy-rate,male,71.6,percent,Table 1.2
+tripura,2024,2024-12-31,capacity,female,179,inmates,Table 1.2
+tripura,2024,2024-12-31,inmates,female,206,inmates,Table 1.2
+tripura,2024,2024-12-31,occupancy-rate,female,115.1,percent,Table 1.2
+tripura,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+tripura,2024,2024-12-31,inmates,transgender,3,inmates,Table 1.2
+tripura,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+tripura,2024,2024-12-31,capacity,total,2348,inmates,Table 1.2
+tripura,2024,2024-12-31,inmates,total,1761,inmates,Table 1.2
+tripura,2024,2024-12-31,occupancy-rate,total,75.0,percent,Table 1.2
+tripura,2024,2024-12-31,convicts,total,489,inmates,Table 2.1
+tripura,2024,2024-12-31,undertrials,total,1261,inmates,Table 2.1
+tripura,2024,2024-12-31,detenues,total,8,inmates,Table 2.1
+tripura,2024,2024-12-31,undertrial-share,total,71.6,percent of all inmates,Table 2.2
+tripura,2024,2024-12-31,convict-share,total,27.8,percent of all inmates,Table 2.2
+uttar-pradesh,2024,2024-12-31,capacity,male,72168,inmates,Table 1.2
+uttar-pradesh,2024,2024-12-31,inmates,male,83317,inmates,Table 1.2
+uttar-pradesh,2024,2024-12-31,occupancy-rate,male,115.4,percent,Table 1.2
+uttar-pradesh,2024,2024-12-31,capacity,female,3936,inmates,Table 1.2
+uttar-pradesh,2024,2024-12-31,inmates,female,3439,inmates,Table 1.2
+uttar-pradesh,2024,2024-12-31,occupancy-rate,female,87.4,percent,Table 1.2
+uttar-pradesh,2024,2024-12-31,capacity,transgender,58,inmates,Table 1.2
+uttar-pradesh,2024,2024-12-31,inmates,transgender,6,inmates,Table 1.2
+uttar-pradesh,2024,2024-12-31,occupancy-rate,transgender,10.3,percent,Table 1.2
+uttar-pradesh,2024,2024-12-31,capacity,total,76162,inmates,Table 1.2
+uttar-pradesh,2024,2024-12-31,inmates,total,86762,inmates,Table 1.2
+uttar-pradesh,2024,2024-12-31,occupancy-rate,total,113.9,percent,Table 1.2
+uttar-pradesh,2024,2024-12-31,convicts,total,27474,inmates,Table 2.1
+uttar-pradesh,2024,2024-12-31,undertrials,total,59194,inmates,Table 2.1
+uttar-pradesh,2024,2024-12-31,detenues,total,94,inmates,Table 2.1
+uttar-pradesh,2024,2024-12-31,undertrial-share,total,68.2,percent of all inmates,Table 2.2
+uttar-pradesh,2024,2024-12-31,convict-share,total,31.7,percent of all inmates,Table 2.2
+uttarakhand,2024,2024-12-31,capacity,male,3723,inmates,Table 1.2
+uttarakhand,2024,2024-12-31,inmates,male,5323,inmates,Table 1.2
+uttarakhand,2024,2024-12-31,occupancy-rate,male,143.0,percent,Table 1.2
+uttarakhand,2024,2024-12-31,capacity,female,198,inmates,Table 1.2
+uttarakhand,2024,2024-12-31,inmates,female,225,inmates,Table 1.2
+uttarakhand,2024,2024-12-31,occupancy-rate,female,113.6,percent,Table 1.2
+uttarakhand,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+uttarakhand,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+uttarakhand,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+uttarakhand,2024,2024-12-31,capacity,total,3921,inmates,Table 1.2
+uttarakhand,2024,2024-12-31,inmates,total,5548,inmates,Table 1.2
+uttarakhand,2024,2024-12-31,occupancy-rate,total,141.5,percent,Table 1.2
+uttarakhand,2024,2024-12-31,convicts,total,2292,inmates,Table 2.1
+uttarakhand,2024,2024-12-31,undertrials,total,3256,inmates,Table 2.1
+uttarakhand,2024,2024-12-31,detenues,total,0,inmates,Table 2.1
+uttarakhand,2024,2024-12-31,undertrial-share,total,58.7,percent of all inmates,Table 2.2
+uttarakhand,2024,2024-12-31,convict-share,total,41.3,percent of all inmates,Table 2.2
+west-bengal,2024,2024-12-31,capacity,male,19556,inmates,Table 1.2
+west-bengal,2024,2024-12-31,inmates,male,21468,inmates,Table 1.2
+west-bengal,2024,2024-12-31,occupancy-rate,male,109.8,percent,Table 1.2
+west-bengal,2024,2024-12-31,capacity,female,1920,inmates,Table 1.2
+west-bengal,2024,2024-12-31,inmates,female,1759,inmates,Table 1.2
+west-bengal,2024,2024-12-31,occupancy-rate,female,91.6,percent,Table 1.2
+west-bengal,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+west-bengal,2024,2024-12-31,inmates,transgender,17,inmates,Table 1.2
+west-bengal,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+west-bengal,2024,2024-12-31,capacity,total,21476,inmates,Table 1.2
+west-bengal,2024,2024-12-31,inmates,total,23244,inmates,Table 1.2
+west-bengal,2024,2024-12-31,occupancy-rate,total,108.2,percent,Table 1.2
+west-bengal,2024,2024-12-31,convicts,total,4970,inmates,Table 2.1
+west-bengal,2024,2024-12-31,undertrials,total,17737,inmates,Table 2.1
+west-bengal,2024,2024-12-31,detenues,total,0,inmates,Table 2.1
+west-bengal,2024,2024-12-31,undertrial-share,total,76.3,percent of all inmates,Table 2.2
+west-bengal,2024,2024-12-31,convict-share,total,21.4,percent of all inmates,Table 2.2
+andaman-nicobar,2024,2024-12-31,capacity,male,449,inmates,Table 1.2
+andaman-nicobar,2024,2024-12-31,inmates,male,389,inmates,Table 1.2
+andaman-nicobar,2024,2024-12-31,occupancy-rate,male,86.6,percent,Table 1.2
+andaman-nicobar,2024,2024-12-31,capacity,female,30,inmates,Table 1.2
+andaman-nicobar,2024,2024-12-31,inmates,female,6,inmates,Table 1.2
+andaman-nicobar,2024,2024-12-31,occupancy-rate,female,20.0,percent,Table 1.2
+andaman-nicobar,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+andaman-nicobar,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+andaman-nicobar,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+andaman-nicobar,2024,2024-12-31,capacity,total,479,inmates,Table 1.2
+andaman-nicobar,2024,2024-12-31,inmates,total,395,inmates,Table 1.2
+andaman-nicobar,2024,2024-12-31,occupancy-rate,total,82.5,percent,Table 1.2
+andaman-nicobar,2024,2024-12-31,convicts,total,227,inmates,Table 2.1
+andaman-nicobar,2024,2024-12-31,undertrials,total,168,inmates,Table 2.1
+andaman-nicobar,2024,2024-12-31,detenues,total,0,inmates,Table 2.1
+andaman-nicobar,2024,2024-12-31,undertrial-share,total,42.5,percent of all inmates,Table 2.2
+andaman-nicobar,2024,2024-12-31,convict-share,total,57.5,percent of all inmates,Table 2.2
+chandigarh,2024,2024-12-31,capacity,male,1000,inmates,Table 1.2
+chandigarh,2024,2024-12-31,inmates,male,893,inmates,Table 1.2
+chandigarh,2024,2024-12-31,occupancy-rate,male,89.3,percent,Table 1.2
+chandigarh,2024,2024-12-31,capacity,female,120,inmates,Table 1.2
+chandigarh,2024,2024-12-31,inmates,female,46,inmates,Table 1.2
+chandigarh,2024,2024-12-31,occupancy-rate,female,38.3,percent,Table 1.2
+chandigarh,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+chandigarh,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+chandigarh,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+chandigarh,2024,2024-12-31,capacity,total,1120,inmates,Table 1.2
+chandigarh,2024,2024-12-31,inmates,total,939,inmates,Table 1.2
+chandigarh,2024,2024-12-31,occupancy-rate,total,83.8,percent,Table 1.2
+chandigarh,2024,2024-12-31,convicts,total,329,inmates,Table 2.1
+chandigarh,2024,2024-12-31,undertrials,total,610,inmates,Table 2.1
+chandigarh,2024,2024-12-31,detenues,total,0,inmates,Table 2.1
+chandigarh,2024,2024-12-31,undertrial-share,total,65.0,percent of all inmates,Table 2.2
+chandigarh,2024,2024-12-31,convict-share,total,35.0,percent of all inmates,Table 2.2
+dnh-dd,2024,2024-12-31,capacity,male,170,inmates,Table 1.2
+dnh-dd,2024,2024-12-31,inmates,male,113,inmates,Table 1.2
+dnh-dd,2024,2024-12-31,occupancy-rate,male,66.5,percent,Table 1.2
+dnh-dd,2024,2024-12-31,capacity,female,10,inmates,Table 1.2
+dnh-dd,2024,2024-12-31,inmates,female,1,inmates,Table 1.2
+dnh-dd,2024,2024-12-31,occupancy-rate,female,10.0,percent,Table 1.2
+dnh-dd,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+dnh-dd,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+dnh-dd,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+dnh-dd,2024,2024-12-31,capacity,total,180,inmates,Table 1.2
+dnh-dd,2024,2024-12-31,inmates,total,114,inmates,Table 1.2
+dnh-dd,2024,2024-12-31,occupancy-rate,total,63.3,percent,Table 1.2
+dnh-dd,2024,2024-12-31,convicts,total,3,inmates,Table 2.1
+dnh-dd,2024,2024-12-31,undertrials,total,111,inmates,Table 2.1
+dnh-dd,2024,2024-12-31,detenues,total,0,inmates,Table 2.1
+dnh-dd,2024,2024-12-31,undertrial-share,total,97.4,percent of all inmates,Table 2.2
+dnh-dd,2024,2024-12-31,convict-share,total,2.6,percent of all inmates,Table 2.2
+delhi,2024,2024-12-31,capacity,male,9346,inmates,Table 1.2
+delhi,2024,2024-12-31,inmates,male,18758,inmates,Table 1.2
+delhi,2024,2024-12-31,occupancy-rate,male,200.7,percent,Table 1.2
+delhi,2024,2024-12-31,capacity,female,680,inmates,Table 1.2
+delhi,2024,2024-12-31,inmates,female,743,inmates,Table 1.2
+delhi,2024,2024-12-31,occupancy-rate,female,109.3,percent,Table 1.2
+delhi,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+delhi,2024,2024-12-31,inmates,transgender,11,inmates,Table 1.2
+delhi,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+delhi,2024,2024-12-31,capacity,total,10026,inmates,Table 1.2
+delhi,2024,2024-12-31,inmates,total,19512,inmates,Table 1.2
+delhi,2024,2024-12-31,occupancy-rate,total,194.6,percent,Table 1.2
+delhi,2024,2024-12-31,convicts,total,2232,inmates,Table 2.1
+delhi,2024,2024-12-31,undertrials,total,17178,inmates,Table 2.1
+delhi,2024,2024-12-31,detenues,total,12,inmates,Table 2.1
+delhi,2024,2024-12-31,undertrial-share,total,88.0,percent of all inmates,Table 2.2
+delhi,2024,2024-12-31,convict-share,total,11.4,percent of all inmates,Table 2.2
+jammu-kashmir,2024,2024-12-31,capacity,male,3457,inmates,Table 1.2
+jammu-kashmir,2024,2024-12-31,inmates,male,5208,inmates,Table 1.2
+jammu-kashmir,2024,2024-12-31,occupancy-rate,male,150.7,percent,Table 1.2
+jammu-kashmir,2024,2024-12-31,capacity,female,172,inmates,Table 1.2
+jammu-kashmir,2024,2024-12-31,inmates,female,175,inmates,Table 1.2
+jammu-kashmir,2024,2024-12-31,occupancy-rate,female,101.7,percent,Table 1.2
+jammu-kashmir,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+jammu-kashmir,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+jammu-kashmir,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+jammu-kashmir,2024,2024-12-31,capacity,total,3629,inmates,Table 1.2
+jammu-kashmir,2024,2024-12-31,inmates,total,5383,inmates,Table 1.2
+jammu-kashmir,2024,2024-12-31,occupancy-rate,total,148.3,percent,Table 1.2
+jammu-kashmir,2024,2024-12-31,convicts,total,170,inmates,Table 2.1
+jammu-kashmir,2024,2024-12-31,undertrials,total,4552,inmates,Table 2.1
+jammu-kashmir,2024,2024-12-31,detenues,total,660,inmates,Table 2.1
+jammu-kashmir,2024,2024-12-31,undertrial-share,total,84.6,percent of all inmates,Table 2.2
+jammu-kashmir,2024,2024-12-31,convict-share,total,3.2,percent of all inmates,Table 2.2
+ladakh,2024,2024-12-31,capacity,male,150,inmates,Table 1.2
+ladakh,2024,2024-12-31,inmates,male,50,inmates,Table 1.2
+ladakh,2024,2024-12-31,occupancy-rate,male,33.3,percent,Table 1.2
+ladakh,2024,2024-12-31,capacity,female,5,inmates,Table 1.2
+ladakh,2024,2024-12-31,inmates,female,1,inmates,Table 1.2
+ladakh,2024,2024-12-31,occupancy-rate,female,20.0,percent,Table 1.2
+ladakh,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+ladakh,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+ladakh,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+ladakh,2024,2024-12-31,capacity,total,155,inmates,Table 1.2
+ladakh,2024,2024-12-31,inmates,total,51,inmates,Table 1.2
+ladakh,2024,2024-12-31,occupancy-rate,total,32.9,percent,Table 1.2
+ladakh,2024,2024-12-31,convicts,total,3,inmates,Table 2.1
+ladakh,2024,2024-12-31,undertrials,total,41,inmates,Table 2.1
+ladakh,2024,2024-12-31,detenues,total,7,inmates,Table 2.1
+ladakh,2024,2024-12-31,undertrial-share,total,80.4,percent of all inmates,Table 2.2
+ladakh,2024,2024-12-31,convict-share,total,5.9,percent of all inmates,Table 2.2
+lakshadweep,2024,2024-12-31,capacity,male,62,inmates,Table 1.2
+lakshadweep,2024,2024-12-31,inmates,male,5,inmates,Table 1.2
+lakshadweep,2024,2024-12-31,occupancy-rate,male,8.1,percent,Table 1.2
+lakshadweep,2024,2024-12-31,capacity,female,2,inmates,Table 1.2
+lakshadweep,2024,2024-12-31,inmates,female,0,inmates,Table 1.2
+lakshadweep,2024,2024-12-31,occupancy-rate,female,0.0,percent,Table 1.2
+lakshadweep,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+lakshadweep,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+lakshadweep,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+lakshadweep,2024,2024-12-31,capacity,total,64,inmates,Table 1.2
+lakshadweep,2024,2024-12-31,inmates,total,5,inmates,Table 1.2
+lakshadweep,2024,2024-12-31,occupancy-rate,total,7.8,percent,Table 1.2
+lakshadweep,2024,2024-12-31,convicts,total,0,inmates,Table 2.1
+lakshadweep,2024,2024-12-31,undertrials,total,5,inmates,Table 2.1
+lakshadweep,2024,2024-12-31,detenues,total,0,inmates,Table 2.1
+lakshadweep,2024,2024-12-31,undertrial-share,total,100.0,percent of all inmates,Table 2.2
+lakshadweep,2024,2024-12-31,convict-share,total,0.0,percent of all inmates,Table 2.2
+puducherry,2024,2024-12-31,capacity,male,371,inmates,Table 1.2
+puducherry,2024,2024-12-31,inmates,male,321,inmates,Table 1.2
+puducherry,2024,2024-12-31,occupancy-rate,male,86.5,percent,Table 1.2
+puducherry,2024,2024-12-31,capacity,female,45,inmates,Table 1.2
+puducherry,2024,2024-12-31,inmates,female,12,inmates,Table 1.2
+puducherry,2024,2024-12-31,occupancy-rate,female,26.7,percent,Table 1.2
+puducherry,2024,2024-12-31,capacity,transgender,0,inmates,Table 1.2
+puducherry,2024,2024-12-31,inmates,transgender,0,inmates,Table 1.2
+puducherry,2024,2024-12-31,occupancy-rate,transgender,,percent,Table 1.2
+puducherry,2024,2024-12-31,capacity,total,416,inmates,Table 1.2
+puducherry,2024,2024-12-31,inmates,total,333,inmates,Table 1.2
+puducherry,2024,2024-12-31,occupancy-rate,total,80.0,percent,Table 1.2
+puducherry,2024,2024-12-31,convicts,total,104,inmates,Table 2.1
+puducherry,2024,2024-12-31,undertrials,total,229,inmates,Table 2.1
+puducherry,2024,2024-12-31,detenues,total,0,inmates,Table 2.1
+puducherry,2024,2024-12-31,undertrial-share,total,68.8,percent of all inmates,Table 2.2
+puducherry,2024,2024-12-31,convict-share,total,31.2,percent of all inmates,Table 2.2
