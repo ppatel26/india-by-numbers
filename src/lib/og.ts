@@ -146,7 +146,8 @@ function locator(current: string, x0: number, y0: number, size: number): Markup 
 }
 
 export function stateImage(pl: Place): Buffer {
-  const measures = [profile.sections[0]!.measures[0]!, profile.sections[1]!.measures[0]!, profile.sections[4]!.measures[0]!]
+  const first = (topic: string) => profile.sections.find((s) => s.topic === topic)!.measures[0]!
+  const measures = [first('prices'), first('economy'), first('health')]
   const rows = measures.map((m) => row(m, pl.slug))
   const native = pl.native && pl.native.name !== pl.hindi ? pl.native : undefined
   const size = 46

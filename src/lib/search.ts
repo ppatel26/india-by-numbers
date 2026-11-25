@@ -15,6 +15,7 @@ export const SYNONYMS: Record<string, string> = {
   economy: 'gdp growth income iip industry rupee dollar exchange arthvyavastha अर्थव्यवस्था',
   population: 'census people births deaths fertility tfr janasankhya जनसंख्या abadi आबादी',
   jobs: 'unemployment employment work labour plfs naukri नौकरी rozgar रोज़गार',
+  'living-standards': 'living standards spending consumption mpce hces food internet bank account water drinking cooking fuel lpg gini kharch खर्च jeevan star जीवन स्तर',
   health: 'infant mortality imr life expectancy nfhs stunting maternal swasthya स्वास्थ्य',
   education: 'school literacy college enrolment udise aishe shiksha शिक्षा padhai',
   elections: 'vote voting turnout lok sabha mp eci chunav चुनाव matdan मतदान',

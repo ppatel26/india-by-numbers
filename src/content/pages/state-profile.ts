@@ -124,6 +124,20 @@ const stateProfile: StateProfile = {
         'Ranks count only states and UTs with data. Annual rates use usual status (ps+ss); monthly rates use current weekly status and do not compare. Unpaid work is minutes a day from the Time Use Survey 2024.',
     },
     {
+      topic: 'living-standards',
+      heading: 'Living standards',
+      measures: [
+        { label: 'Rural spending per person, a month', chart: 'household-spending-by-state', series: 'rural' },
+        { label: 'Urban spending per person, a month', chart: 'household-spending-by-state', series: 'urban' },
+        { label: 'Food share of rural spending', chart: 'food-share-by-state' },
+        { label: 'Households with clean cooking fuel', chart: 'clean-cooking-fuel-by-state' },
+        { label: 'Women who used the internet, age 15+', chart: 'internet-use-women-and-men', series: 'female' },
+        { label: 'Women with a bank account, age 18+', chart: 'bank-accounts-women-and-men', series: 'female' },
+      ],
+      footnote:
+        'Ranks count only states and UTs with data. All values are survey estimates. Spending is in rupees at current prices, without imputation for free items (HCES 2023-24). Small states and UTs have small samples and wide errors.',
+    },
+    {
       topic: 'health',
       heading: 'Health',
       measures: [

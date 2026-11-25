@@ -23,6 +23,10 @@ const tiles: Readonly<Record<TopicSlug, Tile>> = {
     questions: ['How many people are out of work?', 'How many women work or look for work?'],
     figure: { chart: 'unemployment-rate-monthly', series: 'lfpr-women', label: 'Women in the labour force, ages 15+' },
   },
+  'living-standards': {
+    questions: ['How much do households spend on each person?', 'How many homes cook with clean fuel?'],
+    figure: { chart: 'household-spending-by-state', series: 'rural', x: 'india', label: 'Rural spending per person, a month' },
+  },
   health: {
     questions: ['How many babies die before their first birthday?', 'How long do people in India live?'],
     figure: { chart: 'infant-mortality', series: 'total', label: 'Infant deaths per 1,000 live births' },
