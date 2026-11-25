@@ -146,7 +146,9 @@ const assembly = (geography: string, label: string) => ({
   file: ASSEMBLY_SEATS,
   where: { geography },
   x: 'party_abbr',
-  y: 'seats_won',
+  // Seats as a share of the assembly, so assemblies of 30 and 294 seats share one scale.
+  y: 'seat_share_pct',
+  note: 'seats_label',
 })
 
 const topic: Topic = {
@@ -473,8 +475,8 @@ const topic: Topic = {
             kind: 'bars',
             slug: 'assembly-elections-2025-2026',
             title: 'State assembly elections, 2025 and 2026',
-            subtitle: 'Seats won by party, seven states and UTs. Each panel has its own scale.',
-            punches: { office: 'ECI', unit: 'seats · %', period: '2025-2026' },
+            subtitle: 'Share of assembly seats won by party, seven states and UTs.',
+            punches: { office: 'ECI', unit: '% of seats', period: '2025-2026' },
             status: ['Provisional'],
             // Board note said "West Bengal: results for 293 of 294 seats; ECI ordered a re-poll in
             // 144-Falta for 21 May 2026." The data now includes the Falta result (README check,
@@ -490,17 +492,18 @@ const topic: Topic = {
               PIB_TN_WB1_2026,
               PIB_WB2_2026,
             ],
-            format: { decimals: 0 },
+            format: { unit: '%', decimals: 1 },
             by: 'party_abbr',
-            // Each assembly on its own scale, with the seats needed for a majority.
+            axis: { min: 0, max: 100 },
+            // One scale for every assembly, with the seats needed for a majority as a share of its seats.
             panels: [
-              { label: 'Delhi 2025, 70 seats', series: ['delhi'], own: true, refs: [{ value: 36, label: 'Majority 36' }] },
-              { label: 'Bihar 2025, 243 seats', series: ['bihar'], own: true, refs: [{ value: 122, label: 'Majority 122' }] },
-              { label: 'Assam 2026, 126 seats', series: ['assam'], own: true, refs: [{ value: 64, label: 'Majority 64' }] },
-              { label: 'Kerala 2026, 140 seats', series: ['kerala'], own: true, refs: [{ value: 71, label: 'Majority 71' }] },
-              { label: 'Puducherry 2026, 30 seats', series: ['puducherry'], own: true, refs: [{ value: 16, label: 'Majority 16' }] },
-              { label: 'Tamil Nadu 2026, 234 seats', series: ['tamil-nadu'], own: true, refs: [{ value: 118, label: 'Majority 118' }] },
-              { label: 'West Bengal 2026, 294 seats', series: ['west-bengal'], own: true, refs: [{ value: 148, label: 'Majority 148' }] },
+              { label: 'Delhi 2025, 70 seats', series: ['delhi'], refs: [{ value: 51.43, label: 'Majority 36' }] },
+              { label: 'Bihar 2025, 243 seats', series: ['bihar'], refs: [{ value: 50.21, label: 'Majority 122' }] },
+              { label: 'Assam 2026, 126 seats', series: ['assam'], refs: [{ value: 50.79, label: 'Majority 64' }] },
+              { label: 'Kerala 2026, 140 seats', series: ['kerala'], refs: [{ value: 50.71, label: 'Majority 71' }] },
+              { label: 'Puducherry 2026, 30 seats', series: ['puducherry'], refs: [{ value: 53.33, label: 'Majority 16' }] },
+              { label: 'Tamil Nadu 2026, 234 seats', series: ['tamil-nadu'], refs: [{ value: 50.43, label: 'Majority 118' }] },
+              { label: 'West Bengal 2026, 294 seats', series: ['west-bengal'], refs: [{ value: 50.34, label: 'Majority 148' }] },
             ],
             series: [
               assembly('delhi', 'Delhi'),
@@ -522,6 +525,7 @@ const topic: Topic = {
               'We take seats for every party that won one from the ECI results pages for each election.',
               'We take turnout from the ECI releases on PIB for each poll.',
               'We check that the parties in each state sum to the assembly size.',
+              'We divide the seats each party won by the size of the assembly, so that the panels share one scale. The table keeps the seat counts.',
               'We keep party names and short names as ECI prints them.',
             ],
             nextRelease: 'not announced',

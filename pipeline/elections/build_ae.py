@@ -2,6 +2,7 @@
 First run pipeline/elections/get2026.sh (archived 2026 pages) and pipeline/elections/extract_text.sh.
 Run: python3 -I pipeline/elections/build_ae.py --raw raw/elections --work work/elections --out research/data/elections"""
 import argparse, re, csv, sys, os
+from decimal import Decimal, ROUND_HALF_UP
 ap = argparse.ArgumentParser()
 ap.add_argument('--raw', default='raw/elections')
 ap.add_argument('--work', default='work/elections', help='folder with the decompressed results pages')
@@ -23,11 +24,14 @@ for slug, (f, yr, total) in pages.items():
     tot = int(re.match(r' Total (\d+) 0 (\d+)', t[j:]).group(2))
     s = 0
     for m in re.finditer(r'(.+?) - (\S+) (\d+) 0 (\d+) ', seg):
-        rows.append([slug, names[slug], yr, m.group(2), m.group(1).strip(), int(m.group(4)), total,
+        won = int(m.group(4))
+        # Derived: seats won as a share of the assembly, to two decimal places, and a label for tables.
+        share = (Decimal(100) * won / total).quantize(Decimal('0.01'), ROUND_HALF_UP)
+        rows.append([slug, names[slug], yr, m.group(2), m.group(1).strip(), won, total, str(share), f'{won} of {total} seats',
                      'Results declared for 293 of 294 seats on the archived page; re-poll in 144-Falta on 21 May 2026' if slug == 'west-bengal' else ''])
         s += int(m.group(4))
     assert s == tot, (slug, s, tot)
     print(slug, tot, '/', total)
 with open(os.path.join(OUT, 'assembly-2025-2026-seats-by-party.csv'), 'w', newline='') as f:
-    c = csv.writer(f); c.writerow(['geography','name','period','party_abbr','party_name','seats_won','assembly_seats','notes']); c.writerows(rows)
+    c = csv.writer(f); c.writerow(['geography','name','period','party_abbr','party_name','seats_won','assembly_seats','seat_share_pct','seats_label','notes']); c.writerows(rows)
 print(len(rows))

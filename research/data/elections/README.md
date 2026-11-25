@@ -86,6 +86,7 @@ The ECI website (eci.gov.in) blocked every request from this machine with "406 N
 - Unit: seats; percent of electors.
 - Geography: Delhi and Bihar (2025); Assam, Kerala, Puducherry, Tamil Nadu and West Bengal (2026).
 - Files: `assembly-2025-2026-seats-by-party.csv` (every party with a seat, as published) and `assembly-2025-2026-turnout.csv`.
+- Derived columns: `seat_share_pct` is 100 times `seats_won` divided by `assembly_seats`, rounded half up to two decimal places. `seats_label` repeats the two counts as text ("208 of 294 seats"). ECI publishes only the seat counts.
 - Sentence: "West Bengal recorded a provisional turnout of 92.47% in April 2026. Its previous highest was 84.72% in 2011."
 - Sources: seats from S5 and S6 (ECI results pages). Turnout from S7, S10, S11 and S12 (ECI releases on PIB). Tamil Nadu electors from S13.
 - No other state held a general assembly election in 2025 or 2026 up to 17 Nov 2026. The live results site shows only bye-elections (October 2026) after the May 2026 round.
