@@ -66,6 +66,9 @@ Topic pigments (hero ground, home and topics tiles, topic tag; never a data colo
 | Jobs | mehendi | #4D5D1A | white 7.3:1 |
 | Economy | haldi (turmeric) | #E5B736 | ink 9.4:1 |
 | Religion and culture | kesar (saffron) | #F48E2F | ink 7.4:1 |
+| Crime and justice | kattha (catechu brown) | #78491E | white 7.6:1 |
+
+Kattha (added 25 Nov 2026) sits at OKLCH L 0.452, C 0.086, H 60, in the gap between lac (H 27) and mehendi (H 122). Its nearest pigment is mehendi (OKLab distance 0.092).
 
 Chart colours, fixed order: #CC2827, #00909C, #7233BB, #279662, #1C6DDA, #AA8726, #A11C6C, #C46C23. The set passes every check in light and dark mode (worst adjacent colourblind pair ΔE 15.8). Slots 1 to 3 also pass all-pairs, for maps and scatter. India is always ink. The selected state is slot 1.
 
@@ -89,6 +92,7 @@ Made with Paper's image models: nano-banana-2-1 for objects, nano-banana-pro for
 | Climate | Samrat Yantra, Jantar Mantar | Sandstone |
 | Jobs | Charkha | Silver |
 | Population, Prices, Economy, Health, Education | Topic coins: procession, karshapana, wheat and gear, vaccine vial and stethoscope, palm-leaf book and slate | Silver |
+| Crime and justice | Tarazu, the Indian beam balance (not yet made) | Silver |
 
 Production rules:
 
@@ -96,6 +100,26 @@ Production rules:
 - For white, generate it on pure white, raise brightness to 1.14 and use the Multiply blend.
 - For lac, generate it on a flat sealing-wax red backdrop (hex 89221C, no gradient, no vignette). Use the normal blend and a radial mask to melt the edges. Screen on lac turns silver pink.
 - Use one key light from the top left and a three-quarter view. Put no text on the object.
+
+### Crime and justice (decided 25 Nov 2026)
+
+A council of three models (GPT 6.2 Sol, Gemini 4 Neon, Muse Wonder 1.0) chose the name, the
+pigment, the object and the interim:
+
+- Name "Crime and justice", slug `crime-and-justice`: 3 of 3. It covers recorded crime, prisons
+  and courts, and keeps the search word "crime".
+- Pigment kattha #78491E: 2 of 3 chose kattha. This value matches the lightness of the other dark
+  pigments. It avoids red, which reads as blood or alarm.
+- Object: a silver tarazu beam balance, 3 of 3. It is from India's material record of weighing.
+  It shows no police gear, no faith symbol and no State Emblem. A gavel is out: Indian judges do
+  not use one.
+- Prompt: "Three-quarter studio view of a traditional Indian tarazu beam balance in brushed silver,
+  a curved beam and two level shallow pans on short silver links, one soft key light from the top
+  left, no text or engravings, centred on a flat matte kattha backdrop (#78491E), no gradient, no
+  vignette." Generate it with nano-banana-2-1, then cut it out with `pipeline/emblems/cutout.py`.
+- Interim, 2 of 3: publish the topic with no object until the owner approves the image credits.
+  The hero, the medallion and the social image leave the object slot out. Nothing stands in for it.
+  Muse voted to hold the topic until the object exists.
 
 ## The design boards
 
