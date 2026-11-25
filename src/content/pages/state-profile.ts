@@ -175,6 +175,22 @@ const stateProfile: StateProfile = {
       footnote: 'Ranks count only states and UTs with data.',
     },
     {
+      topic: 'crime-and-justice',
+      heading: 'Crime and justice',
+      measures: [
+        { label: 'Recorded crimes per lakh people', chart: 'crime-rate-by-state', noRank: true },
+        { label: 'Recorded murders per lakh people', chart: 'murder-rate-by-state', noRank: true },
+        { label: 'Recorded crimes against women, per lakh women', chart: 'crimes-against-women-by-state', noRank: true },
+        { label: 'Charge-sheeting rate', chart: 'chargesheeting-and-conviction-by-state', series: 'chargesheeting' },
+        { label: 'Conviction rate', chart: 'chargesheeting-and-conviction-by-state', series: 'conviction' },
+        { label: 'Prison occupancy', chart: 'prison-occupancy-by-state' },
+        { label: 'Undertrials, share of prisoners', chart: 'undertrials-by-state' },
+        { label: 'Cases pending in district courts', chart: 'district-court-pendency-by-state' },
+      ],
+      footnote:
+        'Ranks count only states and UTs with data. Recorded crime rows have no rank: a higher recorded rate can mean better registration, not more crime, and NCRB says states should not be compared on crime figures alone. Prisons as on 31 Dec 2024. Pending cases are a count on 30 Jul 2026, not a rate.',
+    },
+    {
       topic: 'climate',
       heading: 'Climate',
       measures: [

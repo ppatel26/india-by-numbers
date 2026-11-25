@@ -125,6 +125,17 @@ const topics: TopicsPage = {
       latest: { date: '8 May 2026', label: 'ECI statistical reports, 2026 assembly elections' },
       next: { date: 'Not announced', label: 'ECI publishes reports after each election.' },
     },
+    'crime-and-justice': {
+      questions: [
+        'How many crimes do the police record per lakh people, in India and in each state?',
+        'How many murders and crimes against women do the police record?',
+        'What share of cases end in a charge-sheet, and what share of trials in a conviction?',
+        'How full are the prisons, and how many prisoners are undertrials?',
+        'How many cases wait in the district courts and the High Courts?',
+      ],
+      latest: { date: '15 Sep 2026', label: 'Prison Statistics India 2024, revised, NCRB' },
+      next: { date: 'Not announced', label: 'NCRB publishes Crime in India once a year. No date announced.' },
+    },
     climate: {
       questions: [
         'How much rain did the 2026 monsoon bring, against 125 years of records?',
@@ -166,7 +177,6 @@ const topics: TopicsPage = {
       'Public finance',
       'Energy',
       'Air quality',
-      'Crime',
       'Housing',
       'Agriculture',
       'Migration',

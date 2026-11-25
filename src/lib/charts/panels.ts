@@ -40,10 +40,13 @@ export function renderPanels<C extends Paneled>(chart: C, width: Width, one: (c:
     const ownYs = drawn(chart).filter((s) => p.series.includes(s.key)).flatMap((s) => s.points.flatMap((q) => (q.y === null ? [] : [q.y])))
     const own = nice(Math.min(0, ...ownYs), Math.max(...ownYs, ...(p.refs ?? []).map((r) => r.value * 1.08)))
     const axis = p.own ? own : shared
+    const series = chart.series.filter((s) => p.series.includes(s.key))
     const sub = {
       ...chart,
+      // A panel on its own scale also takes its first series' units (High Courts in lakh beside district courts in crore).
+      format: p.own ? (series[0]?.format ?? chart.format) : chart.format,
       panels: undefined,
-      series: chart.series.filter((s) => p.series.includes(s.key)),
+      series,
       refs: p.refs ?? ('refs' in chart ? chart.refs : undefined),
       // The chart's own axis settings win over the computed range.
       ...(chart.kind === 'bars' ? { axis: { ...axis, ...chart.axis } } : { y: { ...axis, ...chart.y } }),

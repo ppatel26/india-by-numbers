@@ -157,6 +157,17 @@ import { SITE } from '~/lib/site'
     padding: 0;
     list-style: none;
   }
+  /*
+   * The grid ends with a full row, whatever the topic count: the last tile spans the columns
+   * left over, as an odd panel does in the column charts. Three columns: 1 or 2 left over.
+   * Count by type: Astro puts the tile script inside the list, so nth-child would count it.
+   */
+  .tiles > :global(li:last-of-type:nth-of-type(3n + 1)) {
+    grid-column: 1 / -1;
+  }
+  .tiles > :global(li:last-of-type:nth-of-type(3n + 2)) {
+    grid-column: span 2;
+  }
   .later {
     margin-top: 24px;
     padding-top: 20px;
@@ -173,6 +184,13 @@ import { SITE } from '~/lib/site'
     .tiles {
       grid-template-columns: 1fr 1fr;
     }
+    /* Two columns: only an odd last tile has a column left over. */
+    .tiles > :global(li:last-of-type:nth-of-type(n)) {
+      grid-column: auto;
+    }
+    .tiles > :global(li:last-of-type:nth-of-type(odd)) {
+      grid-column: 1 / -1;
+    }
     .inner > :global(.emblem) {
       display: none;
     }
@@ -180,6 +198,9 @@ import { SITE } from '~/lib/site'
   @media (max-width: 640px) {
     .tiles {
       grid-template-columns: 1fr;
+    }
+    .tiles > :global(li:last-of-type:nth-of-type(n)) {
+      grid-column: auto;
     }
     .search input {
       font-size: 16px;

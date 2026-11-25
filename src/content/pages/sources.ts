@@ -274,6 +274,33 @@ const PUBLISHERS: readonly Publisher[] = [
     access: ['Excel and Global Health Observatory API'],
     site: 'https://apps.who.int/nha/database/',
   },
+  {
+    short: 'NCRB',
+    logos: [],
+    full: 'National Crime Records Bureau, Ministry of Home Affairs',
+    topics: ['crime-and-justice'],
+    dataSets: [
+      { name: 'Crime in India', detail: 'Crimes, murder, crimes against women, police and court disposal, 2024; national rates from 2015', rhythm: 'Yearly', match: /Crime in India/ },
+      { name: 'Prison Statistics India', detail: 'Prison capacity, prisoners and undertrials, 31 Dec 2024; India from 2014', rhythm: 'Yearly', match: /Prison Statistics India/ },
+    ],
+    licence: 'Not stated. NCRB pages say "All Rights Reserved".',
+    access: ['Volumes and tables as PDF (ncrb.gov.in)'],
+    note: 'NCRB gives no release date for Crime in India 2024. Its site opens in Hindi; the English pages list the volumes.',
+    site: 'https://www.ncrb.gov.in',
+  },
+  {
+    short: 'MoLJ',
+    logos: [],
+    full: 'Department of Justice, Ministry of Law and Justice',
+    topics: ['crime-and-justice'],
+    dataSets: [
+      { name: 'Answers in Parliament on court pendency', detail: 'Cases pending in the district courts, High Courts and the Supreme Court, from NJDG', rhythm: 'When a question is asked', match: /unstarred question/ },
+    ],
+    licence: NOT_STATED,
+    access: ['Answers to Lok Sabha and Rajya Sabha questions as PDF (sansad.in)'],
+    note: 'Each answer quotes the National Judicial Data Grid (NJDG) on a stated date. NJDG is a live dashboard.',
+    site: 'https://doj.gov.in',
+  },
 ]
 
 const sources: SourcesPage = {
@@ -336,6 +363,10 @@ const sources: SourcesPage = {
       {
         source: 'MoSPI, EnviStats India 2025',
         why: 'A scanned PDF with a chart and no table of values.',
+      },
+      {
+        source: 'Department of Justice, compilation of pendency answers (doj.gov.in)',
+        why: 'The server refused access (HTTP 403) on 25 Nov 2026. The compilation repeats answers that sansad.in also publishes, so we take each answer from there.',
       },
       {
         source: 'News reports of official figures',
