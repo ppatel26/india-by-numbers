@@ -19,6 +19,7 @@ export const SYNONYMS: Record<string, string> = {
   health: 'infant mortality imr life expectancy nfhs stunting maternal swasthya स्वास्थ्य',
   education: 'school literacy college enrolment udise aishe shiksha शिक्षा padhai',
   elections: 'vote voting turnout lok sabha mp eci chunav चुनाव matdan मतदान',
+  'crime-and-justice': 'crime justice murder police prison prisons jail undertrial undertrials court courts pendency ncrb fir ipc bns conviction chargesheet apradh अपराध nyay न्याय jail जेल',
   climate: 'monsoon rain rainfall temperature renewable solar coal power mausam मौसम jalvayu जलवायु',
   'religion-and-culture': 'religion language mother tongue hindu muslim census dharm धर्म bhasha भाषा',
 }

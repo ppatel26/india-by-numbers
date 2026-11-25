@@ -39,6 +39,10 @@ const tiles: Readonly<Record<TopicSlug, Tile>> = {
     questions: ['What share of electors vote?', 'How many women stand, and how many win?'],
     figure: { chart: 'lok-sabha-turnout-by-sex', series: 'total', x: '2024', label: 'Turnout, Lok Sabha 2024' },
   },
+  'crime-and-justice': {
+    questions: ['How much crime do the police record?', 'How full are the prisons?'],
+    figure: { chart: 'undertrials-by-state', label: 'Prisoners who are undertrials' },
+  },
   climate: {
     questions: ['How much rain did the 2026 monsoon bring?', 'How fast is power moving away from coal?'],
     figure: { chart: 'non-fossil-capacity-share', series: 'non-fossil', label: 'Power capacity not from fossil fuels' },
