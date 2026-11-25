@@ -10,6 +10,7 @@ Data gathered on 17 and 18 Nov 2026 from ORGI, IIPS, PIB, MoHFW, NHSRC and WHO. 
 4. How have child nutrition and care changed across the NFHS rounds?
 5. How much of the health bill do households pay from their own pockets?
 6. How has India's sex ratio at birth changed?
+7. How complete is the registration of births and deaths in each state?
 
 ## Charts
 
@@ -167,6 +168,39 @@ The releases agree in every overlap checked, for total, rural and urban. The com
 
 ORGI replaced its sample in 2004 and 2014. The chart marks both years. Some three-year periods straddle a sample change. The line follows ORGI's continuous series for the same national ratio.
 
+### H11. Registration of births and deaths by state, 2024
+
+- Type: dot plot by state (deaths and births), with a tile map of deaths. India pinned first.
+- Unit: registered events as a percent of estimated events (ORGI's "level of registration").
+- Geography: India and 36 states and UTs. Period: 2024.
+- CSV: `crs-registration-level-by-state-2024.csv`. One row per geography and event. `value` is the published level from Statement 2. `estimated_events` and `mid_year_population_thousand` are from Statement 2. `registered_events` is the 2024 column of Statements 10 (births) and 11 (deaths). `registered_to_estimated_derived` is our division of the two counts, to one decimal place. It is for checks only. The chart does not show it.
+- Sentence: "Nagaland registered 26.8% of the deaths that ORGI estimates for 2024, and Arunachal Pradesh 43.7%. Across India the share was 99.4%."
+- Source: ORGI, Report on Vital Statistics of India based on the Civil Registration System 2024 (1 Jul 2026), Statement 2 (page 2), Statements 10 and 11 (pages 42 and 43).
+- State profile: a "Deaths registered" row reads the deaths series.
+- Checks: the states in Statements 10 and 11 add up to the India row. Each of the 74 estimates equals the state's SRS 2024 birth or death rate (`population/birth-death-rates-by-state-2024.csv`) times its mid-year population, to within 0.06 per 1,000. Where our ratio is below 100, it matches the published level to 0.1. Where it is 100 or more, the published level is 100.0.
+- Decision: one dot chart with two series, not two `states` charts. The two levels read best side by side: for many states one is 100.0 and the other is far below it (Bihar: births 100.0, deaths 62.1). The map colours deaths, the weaker of the two.
+
+### H14. Sex ratio of registered births by state, 2024 (population page)
+
+- Type: ranked bars and tile map by state, as a third tab beside the SRS sex ratio at birth by state. The SRS and CRS figures stay in separate charts and files.
+- Unit: girls per 1,000 boys among registered births.
+- Geography: India and 35 states and UTs. ORGI gives no figure for Sikkim (paragraph 3.18.2: the information "is not available"). Period: 2024 on the chart; 2017 to 2024 in the CSV.
+- CSV: `crs-sex-ratio-at-birth-by-state.csv`. Statement 26 has no India row. The India value (933, excluding Sikkim) is from paragraph 3.18.1. Dadra and Nagar Haveli and Daman and Diu have separate values for 2017 to 2019 and a combined value from 2020; the CSV keeps the combined value only. Ladakh starts in 2020.
+- Source: ORGI, CRS report 2024, Statement 26 (page 65) and paragraph 3.18.1.
+- Decision: a chart, not only a note, because CRS covers 35 states and UTs where SRS covers 22. The chart says it is a count of registered births and not a survey estimate. ORGI removes births registered more than a year late before it computes the ratio.
+
+### Raw files for H11 to H14
+
+Read 25 Nov 2026. Paths are relative to `raw/health/`. Run `pipeline/health/extract_text.sh`, then the scripts below from the repository root.
+
+| Raw file | Publisher and release | Release date | URL | SHA-256 |
+| --- | --- | --- | --- | --- |
+| `crs-2024.pdf` | ORGI, Report on Vital Statistics of India based on the Civil Registration System 2024 (NADA catalog/47155) | 1 Jul 2026 (catalogue "Date published 2026-07-01") | https://censusindia.gov.in/nada/index.php/catalog/47155/download/51401/CRS_Report_2024.pdf | `f0a11ee443e120f4b8062360deb42ca29563c7fb67967db7c75f4bb968ef45b0` |
+
+```sh
+python3 -I pipeline/health/build_crs.py
+```
+
 ### History source files
 
 Read 18 Nov 2026. Paths are relative to `raw/health/`. The PDF reports come from IIPS and its partners, and ORGI. The DHS Program hosts the IIPS reports. The [IIPS NFHS project site](https://rchiips.org/NFHS/) and its [NFHS-4 India fact sheet](https://rchiips.org/NFHS/pdf/NFHS4/India.pdf) failed certificate validation. The alternate IIPS NFHS project site also failed certificate validation for the NFHS-6 fact sheets. The MoHFW PDF and PIB release 2266600 returned HTTP 403. The historical build uses the previously verified NFHS-6 values already in `nfhs-key-indicators-by-state.csv`. The source register below gives the URLs and hashes for those fact sheets and the PIB anaemia release.
@@ -262,6 +296,11 @@ Parsing: `pdftotext -layout` (`pipeline/health/extract_text.sh`), then `pipeline
 - The ORGI catalogue lists MMR bulletins for 2007-09, 2010-12, 2011-13 and then 2014-16 onward. A search for "Maternal Mortality" found none for 2012-14 or 2013-15, so the series jumps from 2011-13 to 2014-16. The periods before 2010-12 are not consecutive either. The 2014-16 to 2022-24 values are the labels on the trend chart in the 2022-24 bulletin. The earlier bulletins (2014-16 to 2021-23) were not opened to check them one by one.
 - OOPE: up to 2016-17 the NHA used figures extrapolated from NSS 71st round (2014, six-month recall). From 2017-18 it used NSS 75th round (2017-18, one-year recall, bigger sample). NHSRC says the change in OOPE "may be attributed to several factors" including this. Show a method break between 2016-17 and 2017-18. NHA 2022-23 also added new data sources (HCES 2022-23, ASUSE and others). The OOPE share rose from 39.4% (2021-22) to 43.4% (2022-23). Do not read the 2021-22 low point as a clean trend.
 - NHA state OOPE still rests on the 2017-18 NSS round. Kerala (65.2%) and Uttar Pradesh (67.1%) have the highest shares. Kerala's high share sits beside high total spending (Rs 13,605 per person), so the share alone does not show hardship.
+
+**CRS against SRS**
+
+- Registered deaths fall far short of the SRS-based estimate in some states and pass it in others (CRS 2024, our ratio of Statement 11 to Statement 2). Nagaland registered 26.8% of its estimated deaths, Arunachal Pradesh 43.7% and Jharkhand 50.7%. Chandigarh registered 4.6 times its estimate (457.2%) and Delhi 141.6%. ORGI gives two reasons for levels above 100 (paragraph 3.17.1): events are registered where they happen while SRS counts people where they usually live, and SRS estimates for some smaller states and UTs are low. Do not read CRS registered deaths as a state's death count, and do not compare them with SRS death rates without this caution.
+- The published level of registration stops at 100.0 for every state, so the chart cannot show by how much a state passes its estimate. The data file keeps the uncapped ratio, marked derived.
 
 **NFHS**
 

@@ -34,6 +34,14 @@ const SRS_COMPENDIUM: Source = {
   url: 'https://censusindia.gov.in/nada/index.php/catalog/33218/download/37035',
 }
 
+// The ORGI catalogue gives "Date published 2026-07-01" (catalog/47155).
+export const CRS_2024: Source = {
+  publisher: 'ORGI',
+  release: 'Vital Statistics of India based on the Civil Registration System 2024',
+  released: '2026-07-01',
+  url: 'https://censusindia.gov.in/nada/index.php/catalog/47155/download/51401/CRS_Report_2024.pdf',
+}
+
 const SRS_BIRTH_RATIO_REPORTS: readonly Source[] = [
   {
     publisher: 'ORGI',
@@ -735,26 +743,62 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
+        { text: 'Nagaland registered 26.8% of the deaths that ORGI estimates for 2024, and Arunachal Pradesh 43.7%. Across India the share was 99.4%.' },
+        {
+          chart: {
+            kind: 'dots',
+            slug: 'registration-of-births-and-deaths-by-state',
+            title: 'Registration of births and deaths by state and UT, 2024',
+            subtitle: 'Registered births and deaths as a share of the births and deaths ORGI estimates, 36 states and UTs.',
+            punches: { office: 'ORGI · CRS', unit: '% of estimated', period: '2024' },
+            note: 'ORGI prints 100.0% for each state that registers more events than it estimates.',
+            sources: [withTable(CRS_2024, 'Statement 2')],
+            format: { decimals: 1, unit: '%' },
+            by: 'geography',
+            pin: ['india'],
+            sortBy: 'deaths',
+            axis: { min: 0, max: 100 },
+            map: { series: 'deaths', scale: 'seq', better: 'high' },
+            series: [
+              { key: 'deaths', label: 'Deaths', color: 's8', file: 'health/crs-registration-level-by-state-2024.csv', x: 'geography', where: { event: 'deaths' }, note: 'note' },
+              { key: 'births', label: 'Births', color: 's5', file: 'health/crs-registration-level-by-state-2024.csv', x: 'geography', where: { event: 'births' }, note: 'note' },
+            ],
+            know: [
+              'The Civil Registration System (CRS) counts the births and deaths that people register. Registered counts are not true totals: an event that nobody registers is not counted.',
+              'ORGI computes the level of registration against estimated events. It multiplies the SRS birth or death rate by the projected mid-year population, and divides the registered events by that estimate.',
+              'ORGI prints 100.0% where registered events exceed the estimate. It says events are registered where they happen, while SRS counts people where they live, and that SRS estimates for small states can be low.',
+              'India\'s level divides all registered events by all estimated events, so it is not capped at 100.',
+              'The mid-year populations come from the 2011-based projections of the National Commission on Population.',
+            ],
+            processing: [
+              'We take the estimated births and deaths and the level of registration for India and each state and UT from Statement 2 of the CRS report 2024.',
+              'We add the registered births and deaths for 2024 from Statements 10 and 11, and check that the states add up to India.',
+              'We check that each estimate equals the state\'s SRS 2024 rate times its mid-year population.',
+              'The data file also keeps our own ratio of registered to estimated events, marked derived. It is not capped at 100.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
       ],
     },
   ],
   // LATER: the About band's side line ("How each health measure is made, which are surveys, where the series break, and what is missing.") has no field.
   about: {
     publisher:
-      'The Registrar General of India (ORGI) runs the Sample Registration System (SRS), a survey of births and deaths. IIPS runs the National Family Health Survey (NFHS) for MoHFW. NHSRC compiles the National Health Accounts.',
+      'The Registrar General of India (ORGI) runs the Sample Registration System (SRS), a survey of births and deaths, and compiles the Civil Registration System (CRS) of registered births and deaths. IIPS runs the National Family Health Survey (NFHS) for MoHFW. NHSRC compiles the National Health Accounts.',
     frequency:
-      'SRS Bulletin: yearly, latest 20 May 2026. Maternal mortality and life tables: pooled periods, with the bulletin. NFHS: every few years, NFHS-6 on 29 May 2026. Health accounts: yearly, latest November 2026.',
+      'SRS Bulletin: yearly, latest 20 May 2026. Maternal mortality and life tables: pooled periods, with the bulletin. CRS: yearly, 2024 report on 1 Jul 2026. NFHS: every few years, NFHS-6 on 29 May 2026. Health accounts: yearly, latest November 2026.',
     revisions:
       'NFHS-6 results are provisional, as the fact sheets say. The NFHS-5 values shown are as printed in the NFHS-6 fact sheets. The National Health Accounts added new data sources in 2022-23.',
     breaks:
       'Infant mortality excludes J&K in 1991 to 1997, life expectancy in 1987-91 to 1997-01. Life expectancy periods overlap from 1987-91. Maternal mortality skips 2012-14 and 2013-15. Health accounts break in 2017-18 and 2022-23.',
     coverage:
-      'Infant mortality: all 36 states and UTs. Life tables: India and 22 states. Maternal mortality: 19 states and one group for the rest. NFHS-6: 35 states and UTs, not Manipur. Health accounts: 21 states.',
+      'Infant mortality: all 36 states and UTs. Life tables: India and 22 states. Maternal mortality: 19 states and one group for the rest. CRS: all 36 states and UTs. NFHS-6: 35 states and UTs, not Manipur. Health accounts: 21 states.',
     missing:
       'NFHS-6 reports no anaemia and no infant or child mortality. SRS gives no life expectancy, under-5 or neonatal mortality for smaller states and UTs. No publisher states a reuse licence.',
   },
   sources: [
-    SRS_BULLETIN_2024, SRS_MMR_2022_24, SRS_LIFE_TABLES, SRS_COMPENDIUM, ...SRS_BIRTH_RATIO_REPORTS,
+    SRS_BULLETIN_2024, SRS_MMR_2022_24, SRS_LIFE_TABLES, CRS_2024, SRS_COMPENDIUM, ...SRS_BIRTH_RATIO_REPORTS,
     NFHS_1, NFHS_2, NFHS_3, NFHS_4, NFHS_5, NFHS_6, PIB_ANAEMIA, NHA_2023_24, NHA_2013_14, NHA_2004_05, NCMH, WHO_GHED,
   ],
   related: [

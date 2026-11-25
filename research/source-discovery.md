@@ -202,8 +202,10 @@ These are the "Later" topics in `docs/site-spec.md`.
 
 - **PLFS 2022-23, Assam.** Done. NSO confirms the fault. We show no Assam value from that round,
   and the all-India rates show no break. The jobs README has the caution.
-- **SRS and CRS deaths.** Open. Compare CRS 2024 registered deaths by state with the SRS
-  estimates. Add a caution to the health and population pages if the two sources differ.
+- **SRS and CRS deaths.** Done. ORGI's CRS level of registration is this comparison: each 2024
+  estimate is the state's SRS rate times its mid-year population. Registered deaths are far below
+  the estimate in Nagaland (26.8%), Arunachal Pradesh and Jharkhand, and far above it in
+  Chandigarh and Delhi. The health README has the caution, and the registration chart says it.
 
 ## Plan
 

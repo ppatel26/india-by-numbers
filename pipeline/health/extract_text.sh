@@ -12,3 +12,4 @@ t srs-statreport-2024.pdf srs-statreport-2024.txt
 t mmr-bulletin-2022-24.pdf mmr-bulletin-2022-24.txt
 t alt-2020-24.pdf alt-2020-24.txt
 t nfhs6-factsheets.pdf nfhs6.txt
+t crs-2024.pdf crs-2024.txt

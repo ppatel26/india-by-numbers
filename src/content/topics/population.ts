@@ -1,5 +1,5 @@
 import type { Chart, Series, Source, Topic } from '../types'
-import { sexRatioAtBirthIndia } from './health'
+import { CRS_2024, sexRatioAtBirthIndia } from './health'
 
 // Data: research/data/population/README.md.
 
@@ -386,6 +386,36 @@ const projectedGrowthStates: Chart = {
   processing: ['Divide the change in population by the 2011 base in Table 8. Multiply by 100. Use the same boundaries for both years.'],
 }
 
+// Civil Registration System: a count of registered births, kept apart from the SRS estimate.
+const registeredBirthRatioStates: Chart = {
+  slug: 'sex-ratio-of-registered-births-by-state',
+  kind: 'states',
+  title: 'Sex ratio of registered births by state and UT, 2024',
+  subtitle: 'Girls per 1,000 boys among births registered in 2024, 35 states and UTs.',
+  punches: { office: 'ORGI · CRS', unit: 'per 1,000 boys', period: '2024' },
+  note: 'A count of registered births, not a survey estimate. ORGI gives no figure for Sikkim.',
+  sources: [{ ...CRS_2024, release: `${CRS_2024.release}, Statement 26 and paragraph 3.18.1` }],
+  format: { decimals: 0 },
+  data: { file: 'health/crs-sex-ratio-at-birth-by-state.csv', where: { period: '2024' }, note: 'note' },
+  open: 'chart',
+  scale: 'div',
+  short: 'Sex ratio, registered births',
+  missing: { sikkim: 'ORGI gives no figure for Sikkim' },
+  know: [
+    'The Civil Registration System (CRS) counts the births that people register. The ratio compares the girls and boys among them. It is not a sample estimate.',
+    'ORGI leaves out births registered more than a year late before it computes the ratio.',
+    'Where registration is incomplete, the ratio of registered births can differ from the ratio of all births. Compare it with the SRS estimate only with care, and never as one series.',
+    'Some ratios swing from year to year. Nagaland was 1,068 in 2022, 1,007 in 2023 and 806 in 2024.',
+    'The India figure, 933, leaves out Sikkim.',
+  ],
+  processing: [
+    'Read Statement 26 of the CRS report 2024: the sex ratio of registered births by state and UT, 2017 to 2024.',
+    'Take the India value for 2024 from paragraph 3.18.1. The statement has no India row.',
+    'Show 2024. The data file keeps every year from 2017. Dadra and Nagar Haveli and Daman and Diu has no combined value before 2020.',
+  ],
+  nextRelease: 'not announced',
+}
+
 const projectedUrbanStates: Chart = {
   slug: 'urban-share-by-state-2026',
   kind: 'states',
@@ -738,6 +768,7 @@ const topic: Topic = {
                 nextRelease: 'not announced',
               },
             },
+            { label: 'States, registered births 2024', short: 'CRS', chart: registeredBirthRatioStates },
           ],
         },
       ],
