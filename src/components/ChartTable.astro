@@ -11,17 +11,19 @@ interface Props {
 const { chart } = Astro.props
 const t = tableOf(chart)
 const bins = chart.kind === 'table' ? chart.bins : undefined
-const legend = bins?.map((e, i, all) => ({ fill: heat(bins, e), label: i === all.length - 1 ? `${fmt(e)} and over` : `${fmt(e)} to under ${fmt(all[i + 1]!)}` }))
+// Bin edges print in the chart's unit (40%), as round numbers.
+const edge = (n: number) => fmt(n, { ...chart.format, decimals: undefined })
+const legend = bins?.map((e, i, all) => ({ fill: heat(bins, e), label: i === all.length - 1 ? `${edge(e)} and over` : `${edge(e)} to under ${edge(all[i + 1]!)}` }))
 ---
 
 {bins && (
   <p class="heat-key">
-    <span><i style={`background:${colorVar(heat(bins, -Infinity))}`}></i>Under {fmt(bins[0]!)}</span>
+    <span><i style={`background:${colorVar(heat(bins, -Infinity))}`}></i>Under {edge(bins[0]!)}</span>
     {legend!.map((l) => <span><i style={`background:${colorVar(l.fill)}`}></i>{l.label}</span>)}
   </p>
 )}
 
-<div class="scroll" tabindex="0" role="region" aria-label={`${chart.title}: table`}>
+<div class:list={['scroll', { full: chart.kind === 'table' }]} tabindex="0" role="region" aria-label={`${chart.title}: table`}>
   <table class="ruled">
     <caption class="visually-hidden">{chart.title}</caption>
     <thead>
@@ -58,9 +60,19 @@ const legend = bins?.map((e, i, all) => ({ fill: heat(bins, e), label: i === all
     height: 14px;
     border-radius: 2px;
   }
+  /* A table behind a chart tab scrolls in a box. A shadow at the bottom edge shows there is more;
+     the paper gradient moves with the content and covers the shadow at the end. */
   .scroll {
     max-height: 560px;
     overflow: auto;
+    background:
+      linear-gradient(transparent, var(--paper) 70%) bottom / 100% 32px no-repeat local,
+      radial-gradient(farthest-side at 50% 100%, rgb(22 24 29 / 0.14), transparent) bottom / 100% 12px no-repeat scroll;
+  }
+  /* A table that is the whole chart shows every row. */
+  .scroll.full {
+    max-height: none;
+    background: none;
   }
   thead th {
     position: sticky;

@@ -120,17 +120,18 @@ function plainTable(chart: Of<'table'>): TableModel {
   const picked = select(chart.data)
   const keys = [...new Set(picked.map((r) => r[chart.by]!))]
   return {
-    columns: [chart.by === 'geography' ? 'State or UT' : chart.by, ...chart.columns.map((c) => c.label)],
+    columns: [chart.rowHead ?? (chart.by === 'geography' ? 'State or UT' : chart.by), ...chart.columns.map((c) => c.label)],
     rows: keys.map((k) => ({
       key: k,
-      head: rowName(k, false),
+      // The one very long UT name uses its short form, so the row does not wrap to four lines.
+      head: rowName(k),
       cells: chart.columns.map((c) => {
         const r = picked.find((row) => row[chart.by] === k && Object.entries(c.where ?? {}).every(([col, v]) => (typeof v === 'string' ? row[col] === v : v.includes(row[col]!))))
         const raw = r?.[c.y ?? c.key]?.trim() ?? ''
         if (!raw) return none
         // Table columns may hold text, such as a party name.
         const n = /^-?[\d,]*\.?\d+$/.test(raw) ? toNumber(raw)! : null
-        const shown = n === null ? { text: raw } : formatNumber(n, c.format ?? chart.format, raw)
+        const shown = n === null ? { text: c.text?.[raw] ?? raw } : formatNumber(n, c.format ?? chart.format, raw)
         return { shown, raw, fill: n === null || !chart.bins ? undefined : heat(chart.bins, n) }
       }),
     })),

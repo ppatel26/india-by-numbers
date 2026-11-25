@@ -261,7 +261,10 @@ export type Chart =
       data: Pick
       /** Column that names the rows. */
       by: string
-      columns: readonly { key: string; label: string; where?: Pick['where']; y?: string; format?: Format }[]
+      /** Heading of the row-name column. Default: "State or UT" for geography, else the column name. */
+      rowHead?: string
+      /** `text` shows a text cell in short form: { 'Vote share published in ECI Report 20': 'ECI' }. */
+      columns: readonly { key: string; label: string; where?: Pick['where']; y?: string; format?: Format; text?: Readonly<Record<string, string>> }[]
       /** Colour numeric cells in bins, low to high edges (a heat table), with a legend. */
       bins?: readonly number[]
     })
