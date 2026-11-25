@@ -96,8 +96,11 @@ Some CSVs were made in more than one step. Run the steps in this order:
 | `jobs/build_tus.py` | `jobs-time-use-india`, `jobs-time-use-by-state-2024`. Checks the API against the report tables | MoSPI (Time Use Survey) |
 | `education/extract_text.sh` | None. Text of the UDISE+ booklets and AISHE reports | Ministry of Education |
 | `education/build_education.py` | `education-ger-school-by-state`, `education-dropout-by-state`, `education-ptr-by-state`, `education-school-facilities-by-state`, `education-school-trend-india`, `education-higher-ed-ger-by-state`, `education-higher-ed-ger-india`, `education-literacy-by-state` | Ministry of Education (UDISE+, AISHE), MoSPI (PLFS), ORGI (Census) |
-| `health/extract_text.sh` | None. Text of the SRS, MMR, life table, NFHS-6 and NHA reports | ORGI, IIPS, MoHFW |
+| `health/extract_text.sh` | None. Text of the SRS, MMR, life table, cause of death, CRS, NFHS-5, NFHS-6 and NHA reports | ORGI, IIPS, MoHFW |
 | `health/build_health.py` | `imr-india-1971-2024`, `imr-by-state-2024`, `mmr-india-1997-2024`, `mmr-by-state-2022-24`, `life-expectancy-india-1970-2024`, `life-expectancy-by-state-2020-24`, `nfhs-key-indicators-by-state`, `out-of-pocket-health-spending`, `child-mortality-by-state-2024` | ORGI (SRS), IIPS and MoHFW (NFHS), PIB, MoHFW and NHSRC (NHA) |
+| `health/build_crs.py` | `crs-registration-level-by-state-2024`, `crs-sex-ratio-at-birth-by-state` | ORGI (CRS) |
+| `health/build_srs_cod.py` | `srs-causes-of-death-india` | ORGI (SRS) |
+| `health/build_nfhs_adult.py` | `nfhs-adult-indicators-by-state` | IIPS and MoHFW (NFHS-6), IIPS and ICF (NFHS-5 report) |
 | `climate/extract_text.sh`, `climate/parse_cea.py` | None. Text and word boxes of the CEA and MNRE PDFs, and the CEA totals | CEA, MNRE |
 | `climate/build_rain.py` | `monsoon-rainfall-all-india-1901-2026` | IMD Pune |
 | `climate/build_subdiv.py` | `monsoon-2026-by-subdivision` (values transcribed from an IMD table image) | IMD |

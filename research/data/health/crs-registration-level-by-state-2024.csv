@@ -1,0 +1,75 @@
+geography,period,event,value,unit,estimated_events,registered_events,mid_year_population_thousand,registered_to_estimated_derived,note
+india,2024,births,99.1,percent of estimated events,25709853,25473389,1404910,99.1,India: all registered events over all estimated events
+india,2024,deaths,99.4,percent of estimated events,8991424,8938301,1404910,99.4,India: all registered events over all estimated events
+andhra-pradesh,2024,births,89.0,percent of estimated events,763649,680002,53402,89.0,
+andhra-pradesh,2024,deaths,100.0,percent of estimated events,352453,419306,53402,119.0,published level is 100.0; registered events exceed the estimate
+arunachal-pradesh,2024,births,100.0,percent of estimated events,25754,36417,1580,141.4,published level is 100.0; registered events exceed the estimate
+arunachal-pradesh,2024,deaths,43.7,percent of estimated events,8532,3730,1580,43.7,
+assam,2024,births,88.0,percent of estimated events,708716,623789,36159,88.0,
+assam,2024,deaths,83.0,percent of estimated events,220570,183125,36159,83.0,
+bihar,2024,births,100.0,percent of estimated events,3462694,3690411,129205,106.6,published level is 100.0; registered events exceed the estimate
+bihar,2024,deaths,62.1,percent of estimated events,762310,473064,129205,62.1,
+chhattisgarh,2024,births,87.2,percent of estimated events,680164,593197,30638,87.2,
+chhattisgarh,2024,deaths,96.0,percent of estimated events,257359,246995,30638,96.0,
+goa,2024,births,97.3,percent of estimated events,16960,16498,1585,97.3,
+goa,2024,deaths,100.0,percent of estimated events,10303,15090,1585,146.5,published level is 100.0; registered events exceed the estimate
+gujarat,2024,births,91.7,percent of estimated events,1220570,1119753,72653,91.7,
+gujarat,2024,deaths,100.0,percent of estimated events,450449,536604,72653,119.1,published level is 100.0; registered events exceed the estimate
+haryana,2024,births,94.5,percent of estimated events,567839,536693,30694,94.5,
+haryana,2024,deaths,100.0,percent of estimated events,205650,231020,30694,112.3,published level is 100.0; registered events exceed the estimate
+himachal-pradesh,2024,births,83.8,percent of estimated events,105252,88201,7518,83.8,
+himachal-pradesh,2024,deaths,92.2,percent of estimated events,50371,46453,7518,92.2,
+jharkhand,2024,births,100.0,percent of estimated events,862774,893474,40129,103.6,published level is 100.0; registered events exceed the estimate
+jharkhand,2024,deaths,50.7,percent of estimated events,248800,126034,40129,50.7,
+karnataka,2024,births,97.5,percent of estimated events,1017014,991879,68256,97.5,
+karnataka,2024,deaths,100.0,percent of estimated events,477792,552532,68256,115.6,published level is 100.0; registered events exceed the estimate
+kerala,2024,births,86.4,percent of estimated events,399234,344766,35967,86.4,
+kerala,2024,deaths,100.0,percent of estimated events,262559,313553,35967,119.4,published level is 100.0; registered events exceed the estimate
+madhya-pradesh,2024,births,100.0,percent of estimated events,1978965,1996172,87954,100.9,published level is 100.0; registered events exceed the estimate
+madhya-pradesh,2024,deaths,97.3,percent of estimated events,589292,573608,87954,97.3,
+maharashtra,2024,births,98.2,percent of estimated events,1762039,1730773,127684,98.2,
+maharashtra,2024,deaths,96.5,percent of estimated events,766104,739124,127684,96.5,
+manipur,2024,births,100.0,percent of estimated events,41402,133030,3260,321.3,published level is 100.0; registered events exceed the estimate
+manipur,2024,deaths,87.8,percent of estimated events,14344,12598,3260,87.8,
+meghalaya,2024,births,100.0,percent of estimated events,74853,117165,3387,156.5,published level is 100.0; registered events exceed the estimate
+meghalaya,2024,deaths,100.0,percent of estimated events,18290,19520,3387,106.7,published level is 100.0; registered events exceed the estimate
+mizoram,2024,births,100.0,percent of estimated events,17528,29615,1252,169.0,published level is 100.0; registered events exceed the estimate
+mizoram,2024,deaths,100.0,percent of estimated events,7136,8777,1252,123.0,published level is 100.0; registered events exceed the estimate
+nagaland,2024,births,100.0,percent of estimated events,30031,61219,2258,203.9,published level is 100.0; registered events exceed the estimate
+nagaland,2024,deaths,26.8,percent of estimated events,11967,3207,2258,26.8,
+odisha,2024,births,89.3,percent of estimated events,737275,658722,46663,89.3,
+odisha,2024,deaths,100.0,percent of estimated events,368638,415531,46663,112.7,published level is 100.0; registered events exceed the estimate
+punjab,2024,births,93.2,percent of estimated events,421491,392956,30992,93.2,
+punjab,2024,deaths,100.0,percent of estimated events,220043,259623,30992,118.0,published level is 100.0; registered events exceed the estimate
+rajasthan,2024,births,100.0,percent of estimated events,1873886,1971615,82188,105.2,published level is 100.0; registered events exceed the estimate
+rajasthan,2024,deaths,99.5,percent of estimated events,476690,474072,82188,99.5,
+sikkim,2024,births,57.5,percent of estimated events,10176,5847,697,57.5,
+sikkim,2024,deaths,100.0,percent of estimated events,3276,3527,697,107.7,published level is 100.0; registered events exceed the estimate
+tamil-nadu,2024,births,94.8,percent of estimated events,895114,848294,77165,94.8,
+tamil-nadu,2024,deaths,100.0,percent of estimated events,524722,695875,77165,132.6,published level is 100.0; registered events exceed the estimate
+telangana,2024,births,100.0,percent of estimated events,601577,770616,38317,128.1,published level is 100.0; registered events exceed the estimate
+telangana,2024,deaths,100.0,percent of estimated events,249061,257586,38317,103.4,published level is 100.0; registered events exceed the estimate
+tripura,2024,births,100.0,percent of estimated events,62910,63536,4194,101.0,published level is 100.0; registered events exceed the estimate
+tripura,2024,deaths,100.0,percent of estimated events,24745,31273,4194,126.4,published level is 100.0; registered events exceed the estimate
+uttarakhand,2024,births,100.0,percent of estimated events,196977,277697,11795,141.0,published level is 100.0; registered events exceed the estimate
+uttarakhand,2024,deaths,100.0,percent of estimated events,70770,83047,11795,117.3,published level is 100.0; registered events exceed the estimate
+uttar-pradesh,2024,births,81.8,percent of estimated events,5613563,4592067,238875,81.8,
+uttar-pradesh,2024,deaths,85.4,percent of estimated events,1504913,1285616,238875,85.4,
+west-bengal,2024,births,100.0,percent of estimated events,1386150,1415351,99723,102.1,published level is 100.0; registered events exceed the estimate
+west-bengal,2024,deaths,100.0,percent of estimated events,578393,687348,99723,118.8,published level is 100.0; registered events exceed the estimate
+andaman-nicobar,2024,births,89.6,percent of estimated events,4000,3584,404,89.6,
+andaman-nicobar,2024,deaths,100.0,percent of estimated events,2343,2767,404,118.1,published level is 100.0; registered events exceed the estimate
+chandigarh,2024,births,100.0,percent of estimated events,13592,27417,1247,201.7,published level is 100.0; registered events exceed the estimate
+chandigarh,2024,deaths,100.0,percent of estimated events,4863,22233,1247,457.2,published level is 100.0; registered events exceed the estimate
+dnh-dd,2024,births,48.6,percent of estimated events,21499,10443,1387,48.6,
+dnh-dd,2024,deaths,64.7,percent of estimated events,6658,4305,1387,64.7,
+delhi,2024,births,100.0,percent of estimated events,280115,306459,21884,109.4,published level is 100.0; registered events exceed the estimate
+delhi,2024,deaths,100.0,percent of estimated events,98478,139480,21884,141.6,published level is 100.0; registered events exceed the estimate
+jammu-kashmir,2024,births,100.0,percent of estimated events,200502,395739,13733,197.4,published level is 100.0; registered events exceed the estimate
+jammu-kashmir,2024,deaths,74.7,percent of estimated events,75532,56399,13733,74.7,
+ladakh,2024,births,100.0,percent of estimated events,4349,18061,302,415.3,published level is 100.0; registered events exceed the estimate
+ladakh,2024,deaths,64.2,percent of estimated events,1631,1047,302,64.2,
+lakshadweep,2024,births,75.4,percent of estimated events,890,671,69,75.4,
+lakshadweep,2024,deaths,100.0,percent of estimated events,373,395,69,105.9,published level is 100.0; registered events exceed the estimate
+puducherry,2024,births,100.0,percent of estimated events,20340,31260,1695,153.7,published level is 100.0; registered events exceed the estimate
+puducherry,2024,deaths,100.0,percent of estimated events,10509,13837,1695,131.7,published level is 100.0; registered events exceed the estimate

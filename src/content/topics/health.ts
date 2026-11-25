@@ -34,6 +34,30 @@ const SRS_COMPENDIUM: Source = {
   url: 'https://censusindia.gov.in/nada/index.php/catalog/33218/download/37035',
 }
 
+// The ORGI catalogue gives "Date published 2026-05-20" (catalog/47147).
+const SRS_COD_2022_24: Source = {
+  publisher: 'ORGI',
+  release: 'SRS Cause of Death in India 2022-2024',
+  released: '2026-05-20',
+  url: 'https://censusindia.gov.in/nada/index.php/catalog/47147/download/51392/SRS_COD-STATISTICS_2022-2024.pdf',
+}
+
+// The ORGI catalogue gives "Date published 2025-09-03" (catalog/46176).
+const SRS_COD_2021_23: Source = {
+  publisher: 'ORGI',
+  release: 'SRS Cause of Death in India 2021-2023',
+  released: '2025-09-03',
+  url: 'https://censusindia.gov.in/nada/index.php/catalog/46176/download/50424',
+}
+
+// The ORGI catalogue gives "Date published 2026-07-01" (catalog/47155).
+export const CRS_2024: Source = {
+  publisher: 'ORGI',
+  release: 'Vital Statistics of India based on the Civil Registration System 2024',
+  released: '2026-07-01',
+  url: 'https://censusindia.gov.in/nada/index.php/catalog/47155/download/51401/CRS_Report_2024.pdf',
+}
+
 const SRS_BIRTH_RATIO_REPORTS: readonly Source[] = [
   {
     publisher: 'ORGI',
@@ -191,6 +215,41 @@ const nfhsTrend = (key: string, label: string, color: Series['color'], indicator
   where: { geography: 'india', indicator, basis },
   note: 'note',
 })
+
+const COD = 'health/srs-causes-of-death-india.csv'
+const COD_SEX = { women: 'female', men: 'male', all: 'person' } as const
+const COD_GROUPS = ['non-communicable', 'communicable-maternal-perinatal-nutritional', 'injuries', 'ill-defined'] as const
+
+const codGroup = (sex: keyof typeof COD_SEX, period: string, color: Series['color'], hidden = false): Series => ({
+  key: `${sex}-${period}`,
+  label: sex === 'all' ? `Women and men, ${period}` : period,
+  color,
+  hidden,
+  file: COD,
+  where: { table: 'cause-group', period, sex: COD_SEX[sex], cause: COD_GROUPS },
+})
+
+// ORGI's top 10 for 2022-24, in its rank order. It ranks ill-defined deaths last.
+const TOP_CAUSES = [
+  'cardiovascular', 'neoplasms', 'respiratory-diseases', 'digestive', 'respiratory-infections',
+  'fever-unknown-origin', 'unintentional-injuries-other', 'diabetes', 'genito-urinary', 'ill-defined',
+] as const
+
+const NFHS_ADULT = 'health/nfhs-adult-indicators-by-state.csv'
+
+// Women and men, NFHS-5 (hollow) and NFHS-6 (filled), for one adult indicator.
+const nfhsAdult = (measure: 'overweight' | 'tobacco', ages: string): Series[] =>
+  (['women', 'men'] as const).flatMap((sex) =>
+    (['NFHS-5', 'NFHS-6'] as const).map((round): Series => ({
+      key: `${sex}-${round.toLowerCase().replace('-', '')}`,
+      label: `${sex === 'women' ? 'Women' : 'Men'}, ${round === 'NFHS-5' ? '2019-21' : '2023-24'}`,
+      color: sex === 'women' ? 's3' : 's2',
+      file: NFHS_ADULT,
+      x: 'geography',
+      where: { round, indicator: `${measure}-${sex}-${ages}` },
+      note: 'note',
+    })),
+  )
 
 export const sexRatioAtBirthIndia: Chart = {
   kind: 'line',
@@ -395,6 +454,105 @@ const topic: Topic = {
       ],
     },
     {
+      title: 'What do people die of?',
+      lede: 'Non-communicable diseases, such as heart disease and cancer, caused 60.1% of deaths in India in 2022-24.',
+      blocks: [
+        { text: 'Communicable, maternal, perinatal and nutritional conditions caused 22.6% of deaths among women and 17.7% among men. Injuries caused 12.6% of deaths among men, against 7.5% among women.' },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'causes-of-death',
+            title: 'Deaths by cause group in India, 2021-23 and 2022-24',
+            subtitle: 'Share of deaths in each major cause group, women and men, India.',
+            punches: { office: 'ORGI · SRS', unit: '% of deaths', period: '2022-24' },
+            status: ['Survey estimate'],
+            note: 'The two periods share the years 2022 and 2023.',
+            sources: [withTable(SRS_COD_2021_23, 'Table 2.1A'), withTable(SRS_COD_2022_24, 'Table 2.1A')],
+            format: { unit: '%', decimals: 1 },
+            by: 'cause',
+            rowHead: 'Cause group',
+            order: COD_GROUPS,
+            labels: {
+              'non-communicable': 'Non-communicable diseases',
+              'communicable-maternal-perinatal-nutritional': 'Communicable, maternal, perinatal and nutritional',
+              injuries: 'Injuries',
+              'ill-defined': 'Ill-defined causes',
+            },
+            axis: { min: 0, max: 70 },
+            panels: [
+              { label: 'Women', series: ['women-2021-23', 'women-2022-24'] },
+              { label: 'Men', series: ['men-2021-23', 'men-2022-24'] },
+            ],
+            series: [
+              codGroup('women', '2021-23', 'slate'),
+              codGroup('women', '2022-24', 's3'),
+              codGroup('men', '2021-23', 'slate'),
+              codGroup('men', '2022-24', 's2'),
+              codGroup('all', '2021-23', 'ink', true),
+              codGroup('all', '2022-24', 'ink', true),
+            ],
+            know: [
+              'SRS staff ask the family about each death in the sample households (a verbal autopsy). Two physicians each assign a cause from the report, and a third settles any disagreement.',
+              'Each value pools three years of sample deaths: 1,51,472 coded deaths for 2022-24 and 1,59,296 for 2021-23.',
+              'The report gives four cause groups. Communicable, maternal, perinatal and nutritional conditions are one group.',
+              'Ill-defined causes are deaths that could not be diagnosed from the interview. They are 12.9% of deaths among women and 7.4% among men.',
+              'The report gives figures for India, regions and zones only. It has no state figures.',
+            ],
+            processing: [
+              'We take the share of deaths in each cause group, for men, women and persons, from Table 2.1A of each report.',
+              'We keep the shares as ORGI prints them, to one decimal place.',
+              'We show the two latest reports. Their periods overlap, so we do not plot them as a trend.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        { text: 'Heart and blood vessel diseases caused 32.1% of all deaths in 2022-24. Doctors could not assign a cause to 9.7% of deaths.' },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'top-causes-of-death',
+            title: 'Top 10 causes of death in India, 2022-24',
+            subtitle: 'Share of all deaths, all ages, women and men, India.',
+            punches: { office: 'ORGI · SRS', unit: '% of deaths', period: '2022-24' },
+            status: ['Survey estimate'],
+            note: 'ORGI ranks ill-defined deaths tenth because no cause could be found for them.',
+            sources: [withTable(SRS_COD_2022_24, 'Table 2.3A')],
+            format: { unit: '%', decimals: 1 },
+            by: 'cause',
+            rowHead: 'Cause',
+            order: TOP_CAUSES,
+            labels: {
+              cardiovascular: 'Heart and blood vessel diseases',
+              neoplasms: 'Cancer and other neoplasms',
+              'respiratory-diseases': 'Respiratory diseases',
+              digestive: 'Digestive diseases',
+              'respiratory-infections': 'Respiratory infections',
+              'fever-unknown-origin': 'Fever of unknown origin',
+              'unintentional-injuries-other': 'Accidental injuries, not motor vehicle',
+              diabetes: 'Diabetes',
+              'genito-urinary': 'Genito-urinary diseases',
+              'ill-defined': 'Ill-defined causes',
+            },
+            series: [
+              { key: 'all', label: 'Women and men', color: 'ink', file: COD, where: { table: 'top-10', period: '2022-24', sex: 'person', cause: TOP_CAUSES } },
+              { key: 'women', label: 'Women', color: 's3', file: COD, where: { table: 'top-10', period: '2022-24', sex: 'female', cause: TOP_CAUSES } },
+              { key: 'men', label: 'Men', color: 's2', file: COD, where: { table: 'top-10', period: '2022-24', sex: 'male', cause: TOP_CAUSES } },
+            ],
+            know: [
+              'ORGI ranks the causes by their share of all deaths. It puts ill-defined deaths tenth, though their share is the second largest, because they have no diagnosis.',
+              'The other causes together account for 18.3% of deaths. The data file keeps that row.',
+              'In 2021-23 respiratory infections ranked second, at 9.3% of deaths. The data file keeps that list.',
+            ],
+            processing: [
+              'We take the top 10 causes and their shares for men, women and persons from Table 2.3A of the 2022-24 report.',
+              'We keep ORGI\'s rank order and its shares, to one decimal place.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
+    {
       title: 'Are children better nourished?',
       lede: '29.3% of children under 5 in India were stunted in 2023-24, down from 35.5% in 2019-21. These NFHS-6 results are provisional.',
       blocks: [
@@ -576,6 +734,82 @@ const topic: Topic = {
       ],
     },
     {
+      title: 'How many adults use tobacco or are overweight?',
+      lede: '36.3% of men aged 15 and over used tobacco in 2023-24, down from 38.0% in 2019-21. 30.7% of women aged 15 to 49 were overweight or obese, up from 24.0%.',
+      blocks: [
+        { text: 'Men\'s tobacco use fell in 24 of the 35 states and UTs surveyed. Mizoram had the highest shares: 73.6% of men and 61.0% of women used tobacco.' },
+        {
+          chart: {
+            kind: 'dots',
+            slug: 'tobacco-use-by-state',
+            title: 'Tobacco use by state and UT, women and men, 2019-21 and 2023-24',
+            subtitle: 'Share of people aged 15 and over who use any kind of tobacco.',
+            punches: { office: 'IIPS', unit: '%', period: '2023-24' },
+            status: ['Survey estimate', 'Provisional'],
+            note: 'Rings are 2019-21, dots 2023-24. NFHS-6 did not survey Manipur.',
+            sources: [withTable(NFHS_6, 'indicators 98 and 99'), withTable(NFHS_5, 'Table 2.36, Manipur')],
+            format: { decimals: 1, unit: '%' },
+            by: 'geography',
+            hollow: ['women-nfhs5', 'men-nfhs5'],
+            pin: ['india'],
+            sortBy: 'men-nfhs6',
+            axis: { min: 0, max: 80 },
+            map: { series: 'men-nfhs6', scale: 'seq', better: 'low' },
+            missing: { manipur: 'NFHS-6 did not survey Manipur' },
+            series: nfhsAdult('tobacco', '15-plus'),
+            know: [
+              'The measure counts people aged 15 and over who use any kind of tobacco. In NFHS-5 the household respondent answered for each member.',
+              'NFHS-5 and NFHS-6 use the same indicator and age band. The NFHS-6 fact sheets print the NFHS-5 value beside each NFHS-6 value.',
+              'NFHS-6 results are provisional, as the fact sheets say.',
+              'Some states and UTs have small samples, so small changes may not be real.',
+            ],
+            processing: [
+              'We take indicators 98 and 99 for each state and UT from the NFHS-6 fact sheets, for both rounds.',
+              'We check every NFHS-5 value against Table 2.36 of the NFHS-5 India report. All match.',
+              'We take Manipur\'s NFHS-5 values from the same table. NFHS-6 has no Manipur value.',
+              'We sort the rows by men\'s use in 2023-24 and place India first.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        { text: 'The share of women who were overweight or obese rose in 33 of the 35 states and UTs surveyed. Puducherry had the highest share, 51.3%.' },
+        {
+          chart: {
+            kind: 'dots',
+            slug: 'overweight-by-state',
+            title: 'Overweight or obese adults by state and UT, women and men, 2019-21 and 2023-24',
+            subtitle: 'Share of people aged 15 to 49 with a body mass index of 25 or more.',
+            punches: { office: 'IIPS', unit: '%', period: '2023-24' },
+            status: ['Survey estimate', 'Provisional'],
+            note: 'Rings are 2019-21, dots 2023-24. NFHS-6 did not survey Manipur.',
+            sources: [withTable(NFHS_6, 'indicators 76 and 77'), withTable(NFHS_5, 'Tables 10.20.1 and 10.20.2, Manipur')],
+            format: { decimals: 1, unit: '%' },
+            by: 'geography',
+            hollow: ['women-nfhs5', 'men-nfhs5'],
+            pin: ['india'],
+            sortBy: 'women-nfhs6',
+            axis: { min: 0, max: 60 },
+            map: { series: 'women-nfhs6', scale: 'seq', better: 'low' },
+            missing: { manipur: 'NFHS-6 did not survey Manipur' },
+            series: nfhsAdult('overweight', '15-49'),
+            know: [
+              'The survey measures the height and weight of each adult. A body mass index (BMI) of 25.0 kg/m² or more counts as overweight or obese.',
+              'The figures cover women and men aged 15 to 49. They leave out pregnant women and women who gave birth in the two months before the survey.',
+              'NFHS-5 and NFHS-6 use the same cut-off and age band.',
+              'NFHS-6 results are provisional, as the fact sheets say.',
+            ],
+            processing: [
+              'We take indicators 76 and 77 for each state and UT from the NFHS-6 fact sheets, for both rounds.',
+              'We check every NFHS-5 value against Tables 10.20.1 and 10.20.2 of the NFHS-5 India report. All match.',
+              'We take Manipur\'s NFHS-5 values from the same tables. NFHS-6 has no Manipur value.',
+              'We sort the rows by women\'s share in 2023-24 and place India first.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
+    {
       title: 'Who pays for health care?',
       lede: "Households paid 42.7% of India's health bill from their own pockets in 2023-24, down from 64.2% in 2013-14. The government paid 43.5%.",
       blocks: [
@@ -735,26 +969,62 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
+        { text: 'Nagaland registered 26.8% of the deaths that ORGI estimates for 2024, and Arunachal Pradesh 43.7%. Across India the share was 99.4%.' },
+        {
+          chart: {
+            kind: 'dots',
+            slug: 'registration-of-births-and-deaths-by-state',
+            title: 'Registration of births and deaths by state and UT, 2024',
+            subtitle: 'Registered births and deaths as a share of the births and deaths ORGI estimates, 36 states and UTs.',
+            punches: { office: 'ORGI · CRS', unit: '% of estimated', period: '2024' },
+            note: 'ORGI prints 100.0% for each state that registers more events than it estimates.',
+            sources: [withTable(CRS_2024, 'Statement 2')],
+            format: { decimals: 1, unit: '%' },
+            by: 'geography',
+            pin: ['india'],
+            sortBy: 'deaths',
+            axis: { min: 0, max: 100 },
+            map: { series: 'deaths', scale: 'seq', better: 'high' },
+            series: [
+              { key: 'deaths', label: 'Deaths', color: 's8', file: 'health/crs-registration-level-by-state-2024.csv', x: 'geography', where: { event: 'deaths' }, note: 'note' },
+              { key: 'births', label: 'Births', color: 's5', file: 'health/crs-registration-level-by-state-2024.csv', x: 'geography', where: { event: 'births' }, note: 'note' },
+            ],
+            know: [
+              'The Civil Registration System (CRS) counts the births and deaths that people register. Registered counts are not true totals: an event that nobody registers is not counted.',
+              'ORGI computes the level of registration against estimated events. It multiplies the SRS birth or death rate by the projected mid-year population, and divides the registered events by that estimate.',
+              'ORGI prints 100.0% where registered events exceed the estimate. It says events are registered where they happen, while SRS counts people where they live, and that SRS estimates for small states can be low.',
+              'India\'s level divides all registered events by all estimated events, so it is not capped at 100.',
+              'The mid-year populations come from the 2011-based projections of the National Commission on Population.',
+            ],
+            processing: [
+              'We take the estimated births and deaths and the level of registration for India and each state and UT from Statement 2 of the CRS report 2024.',
+              'We add the registered births and deaths for 2024 from Statements 10 and 11, and check that the states add up to India.',
+              'We check that each estimate equals the state\'s SRS 2024 rate times its mid-year population.',
+              'The data file also keeps our own ratio of registered to estimated events, marked derived. It is not capped at 100.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
       ],
     },
   ],
   // LATER: the About band's side line ("How each health measure is made, which are surveys, where the series break, and what is missing.") has no field.
   about: {
     publisher:
-      'The Registrar General of India (ORGI) runs the Sample Registration System (SRS), a survey of births and deaths. IIPS runs the National Family Health Survey (NFHS) for MoHFW. NHSRC compiles the National Health Accounts.',
+      'The Registrar General of India (ORGI) runs the Sample Registration System (SRS), a survey of births and deaths, and compiles the Civil Registration System (CRS) of registered births and deaths. IIPS runs the National Family Health Survey (NFHS) for MoHFW. NHSRC compiles the National Health Accounts.',
     frequency:
-      'SRS Bulletin: yearly, latest 20 May 2026. Maternal mortality and life tables: pooled periods, with the bulletin. NFHS: every few years, NFHS-6 on 29 May 2026. Health accounts: yearly, latest November 2026.',
+      'SRS Bulletin: yearly, latest 20 May 2026. Maternal mortality, life tables and causes of death: pooled periods, with the bulletin. CRS: yearly, 2024 report on 1 Jul 2026. NFHS: every few years, NFHS-6 on 29 May 2026. Health accounts: yearly, latest November 2026.',
     revisions:
       'NFHS-6 results are provisional, as the fact sheets say. The NFHS-5 values shown are as printed in the NFHS-6 fact sheets. The National Health Accounts added new data sources in 2022-23.',
     breaks:
       'Infant mortality excludes J&K in 1991 to 1997, life expectancy in 1987-91 to 1997-01. Life expectancy periods overlap from 1987-91. Maternal mortality skips 2012-14 and 2013-15. Health accounts break in 2017-18 and 2022-23.',
     coverage:
-      'Infant mortality: all 36 states and UTs. Life tables: India and 22 states. Maternal mortality: 19 states and one group for the rest. NFHS-6: 35 states and UTs, not Manipur. Health accounts: 21 states.',
+      'Infant mortality: all 36 states and UTs. Life tables: India and 22 states. Maternal mortality: 19 states and one group for the rest. Causes of death: India only. CRS: all 36 states and UTs. NFHS-6: 35 states and UTs, not Manipur. Health accounts: 21 states.',
     missing:
-      'NFHS-6 reports no anaemia and no infant or child mortality. SRS gives no life expectancy, under-5 or neonatal mortality for smaller states and UTs. No publisher states a reuse licence.',
+      'NFHS-6 reports no anaemia and no infant or child mortality. SRS gives no life expectancy, under-5 or neonatal mortality for smaller states and UTs, and causes of death for no state. No publisher states a reuse licence.',
   },
   sources: [
-    SRS_BULLETIN_2024, SRS_MMR_2022_24, SRS_LIFE_TABLES, SRS_COMPENDIUM, ...SRS_BIRTH_RATIO_REPORTS,
+    SRS_BULLETIN_2024, SRS_MMR_2022_24, SRS_LIFE_TABLES, SRS_COD_2022_24, SRS_COD_2021_23, CRS_2024, SRS_COMPENDIUM, ...SRS_BIRTH_RATIO_REPORTS,
     NFHS_1, NFHS_2, NFHS_3, NFHS_4, NFHS_5, NFHS_6, PIB_ANAEMIA, NHA_2023_24, NHA_2013_14, NHA_2004_05, NCMH, WHO_GHED,
   ],
   related: [

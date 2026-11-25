@@ -10,6 +10,9 @@ Data gathered on 17 and 18 Nov 2026 from ORGI, IIPS, PIB, MoHFW, NHSRC and WHO. 
 4. How have child nutrition and care changed across the NFHS rounds?
 5. How much of the health bill do households pay from their own pockets?
 6. How has India's sex ratio at birth changed?
+7. What do people in India die of?
+8. How many adults use tobacco, and how many are overweight, in each state?
+9. How complete is the registration of births and deaths in each state?
 
 ## Charts
 
@@ -167,6 +170,75 @@ The releases agree in every overlap checked, for total, rural and urban. The com
 
 ORGI replaced its sample in 2004 and 2014. The chart marks both years. Some three-year periods straddle a sample change. The line follows ORGI's continuous series for the same national ratio.
 
+### H11. Registration of births and deaths by state, 2024
+
+- Type: dot plot by state (deaths and births), with a tile map of deaths. India pinned first.
+- Unit: registered events as a percent of estimated events (ORGI's "level of registration").
+- Geography: India and 36 states and UTs. Period: 2024.
+- CSV: `crs-registration-level-by-state-2024.csv`. One row per geography and event. `value` is the published level from Statement 2. `estimated_events` and `mid_year_population_thousand` are from Statement 2. `registered_events` is the 2024 column of Statements 10 (births) and 11 (deaths). `registered_to_estimated_derived` is our division of the two counts, to one decimal place. It is for checks only. The chart does not show it.
+- Sentence: "Nagaland registered 26.8% of the deaths that ORGI estimates for 2024, and Arunachal Pradesh 43.7%. Across India the share was 99.4%."
+- Source: ORGI, Report on Vital Statistics of India based on the Civil Registration System 2024 (1 Jul 2026), Statement 2 (page 2), Statements 10 and 11 (pages 42 and 43).
+- State profile: a "Deaths registered" row reads the deaths series.
+- Checks: the states in Statements 10 and 11 add up to the India row. Each of the 74 estimates equals the state's SRS 2024 birth or death rate (`population/birth-death-rates-by-state-2024.csv`) times its mid-year population, to within 0.06 per 1,000. Where our ratio is below 100, it matches the published level to 0.1. Where it is 100 or more, the published level is 100.0.
+- Decision: one dot chart with two series, not two `states` charts. The two levels read best side by side: for many states one is 100.0 and the other is far below it (Bihar: births 100.0, deaths 62.1). The map colours deaths, the weaker of the two.
+
+### H12. Causes of death, 2021-23 and 2022-24
+
+- Type: grouped bars in two panels (women, men), with both periods in each panel. A second bar chart gives the top 10 causes for 2022-24.
+- Unit: percent of deaths.
+- Geography: India. The reports give India, rural and urban, EAG states and Assam, other states, and six zones. They give no state figures, so there is no state chart.
+- Period: 2021-23 and 2022-24 (three-year pools; the two share 2022 and 2023).
+- CSV: `srs-causes-of-death-india.csv`. `table` is `cause-group` (Table 2.1A) or `top-10` (Table 2.3A). `sample_deaths` gives ORGI's count of coded sample deaths for each cause group, and the `total` rows give all coded deaths (1,51,472 in 2022-24, 1,59,296 in 2021-23). The top-10 rows also keep "All other remaining causes" (rank empty).
+- Sentence: "Non-communicable diseases, such as heart disease and cancer, caused 60.1% of deaths in India in 2022-24."
+- Source: ORGI, SRS Cause of Death in India 2022-2024 (20 May 2026) and 2021-2023 (3 Sep 2025), Table 2.1A (page 12) and Table 2.3A (page 24) of each.
+- Decision: the brief asked for six cause groups. Table 2.1A gives four: non-communicable diseases; communicable, maternal, perinatal and nutritional conditions (one group); injuries; and symptoms, signs and ill-defined conditions. The chart uses ORGI's four groups. Tables 1.3A to 1.3C list maternal conditions, perinatal conditions and nutritional deficiencies as single causes inside that group. We keep ORGI's four groups and do not regroup causes ourselves.
+- Decision: the 2021-23 edition uses the same four groups and the same top-10 table, so it is the earlier period. Its top 10 holds the same ten causes in a different order (respiratory infections second, at 9.3%).
+- Note: Table 2.1A gives 12.9% for ill-defined deaths among women. Table 1.3C of the same report gives 13.0%. The chart uses Table 2.1A. Table 2.3A gives cardiovascular deaths among women as 30.4%; Table 1.3C gives 30.5%.
+
+### H13. Tobacco use and overweight by state: NFHS-6 against NFHS-5
+
+- Type: two dot plots by state, each with four series: women and men, NFHS-5 (ring) and NFHS-6 (dot). India pinned first.
+- Indicators: 98 and 99, women and men age 15 and over who use any kind of tobacco; 76 and 77, women and men age 15-49 who are overweight or obese (BMI 25.0 kg/m2 or more).
+- Unit: percent.
+- Geography: India and 35 states and UTs in NFHS-6. Manipur has NFHS-5 values only, from the NFHS-5 India report.
+- Period: NFHS-5 (2019-21) and NFHS-6 (2023-24).
+- CSV: `nfhs-adult-indicators-by-state.csv`, in the same columns as `nfhs-key-indicators-by-state.csv`.
+- Sentences: "36.3% of men aged 15 and over used tobacco in 2023-24, down from 38.0% in 2019-21." "Puducherry had the highest share, 51.3%."
+- Source: IIPS for MoHFW, NFHS-6 (2023-24) India and State/UT Fact Sheets (29 May 2026, provisional). Manipur: NFHS-5 India report, Tables 2.36, 10.20.1 and 10.20.2.
+- State profile: "Men who use tobacco" and "Women overweight or obese" rows.
+- Definitions checked: the NFHS-6 fact sheets give BMI for "Adults (age 15-49 years)" with the cut-off 25.0 kg/m2, and exclude pregnant women and women with a birth in the preceding 2 months (footnote 15). NFHS-5 Tables 10.20.1 and 10.20.2 use the same age band and cut-off. Tobacco is "age 15 years and above" in both rounds. NFHS-5 Table 2.36 says the household respondent reported it. The NFHS-6 fact sheets do not say who answered. The definitions match, so both rounds sit on one row.
+- Check: all 144 NFHS-5 values printed in the NFHS-6 fact sheets (36 geographies, 4 indicators) match the NFHS-5 report tables. No value in brackets or shown as "*".
+- Decision: a new CSV and script, not an extension of `nfhs-key-indicators-by-state.csv` and `build_health.py`. That script rebuilds nine CSVs from 20 raw files, and the CSV has a fixed set of child indicators. A new script reads only the two files it needs, and leaves the existing CSV as it is.
+
+### H14. Sex ratio of registered births by state, 2024 (population page)
+
+- Type: ranked bars and tile map by state, as a third tab beside the SRS sex ratio at birth by state. The SRS and CRS figures stay in separate charts and files.
+- Unit: girls per 1,000 boys among registered births.
+- Geography: India and 35 states and UTs. ORGI gives no figure for Sikkim (paragraph 3.18.2: the information "is not available"). Period: 2024 on the chart; 2017 to 2024 in the CSV.
+- CSV: `crs-sex-ratio-at-birth-by-state.csv`. Statement 26 has no India row. The India value (933, excluding Sikkim) is from paragraph 3.18.1. Dadra and Nagar Haveli and Daman and Diu have separate values for 2017 to 2019 and a combined value from 2020; the CSV keeps the combined value only. Ladakh starts in 2020.
+- Source: ORGI, CRS report 2024, Statement 26 (page 65) and paragraph 3.18.1.
+- Decision: a chart, not only a note, because CRS covers 35 states and UTs where SRS covers 22. The chart says it is a count of registered births and not a survey estimate. ORGI removes births registered more than a year late before it computes the ratio.
+
+### Raw files for H11 to H14
+
+Read 25 Nov 2026. Paths are relative to `raw/health/`. Run `pipeline/health/extract_text.sh`, then the scripts below from the repository root.
+
+| Raw file | Publisher and release | Release date | URL | SHA-256 |
+| --- | --- | --- | --- | --- |
+| `crs-2024.pdf` | ORGI, Report on Vital Statistics of India based on the Civil Registration System 2024 (NADA catalog/47155) | 1 Jul 2026 (catalogue "Date published 2026-07-01") | https://censusindia.gov.in/nada/index.php/catalog/47155/download/51401/CRS_Report_2024.pdf | `f0a11ee443e120f4b8062360deb42ca29563c7fb67967db7c75f4bb968ef45b0` |
+| `srs-cod-2022-24.pdf` | ORGI, SRS Cause of Death in India 2022-2024 (catalog/47147) | 20 May 2026 (catalogue "Date published 2026-05-20") | https://censusindia.gov.in/nada/index.php/catalog/47147/download/51392/SRS_COD-STATISTICS_2022-2024.pdf | `a8ece1a1efce8c953fde2cbe1d54ba2c78697ac267937088b7fd2d1bfd15d170` |
+| `srs-cod-2021-23.pdf` | ORGI, SRS Cause of Death in India 2021-2023 (catalog/46176) | 3 Sep 2025 (catalogue "Date published 2025-09-03") | https://censusindia.gov.in/nada/index.php/catalog/46176/download/50424 | `1622b1b105ddf5ba4b237c7658a372c2466b340af25316cd1cc593685b42f268` |
+| `nfhs6-factsheets.pdf` | IIPS for MoHFW, NFHS-6 (2023-24) India and State/UT Fact Sheets | 29 May 2026 | https://www.nfhsiips.in/nfhsuser/assets/National%20Family%20Health%20Survey%20(NFHS-6)%202023-2024%20Fact%20Sheets.pdf | `59dec561e837bea060b6684a75caca84e0c982ed9e2670848521755f2ab267f9` |
+| `nfhs-5/report.pdf` | IIPS and ICF, NFHS-5 India report, Vol. I, DHS Program archive | Mar 2022 cover date | https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf | `ce1fa5e3c93e5f0019583688e0431c9ec1c2c028b624a4dd76f07c5f5e81128a` |
+
+The nfhsiips.in download passed certificate checks on 25 Nov 2026, and its sha256 matches the 17 Nov read. The NFHS-5 report matches the sha256 in the history source files above.
+
+```sh
+python3 -I pipeline/health/build_crs.py
+python3 -I pipeline/health/build_srs_cod.py
+python3 -I pipeline/health/build_nfhs_adult.py
+```
+
 ### History source files
 
 Read 18 Nov 2026. Paths are relative to `raw/health/`. The PDF reports come from IIPS and its partners, and ORGI. The DHS Program hosts the IIPS reports. The [IIPS NFHS project site](https://rchiips.org/NFHS/) and its [NFHS-4 India fact sheet](https://rchiips.org/NFHS/pdf/NFHS4/India.pdf) failed certificate validation. The alternate IIPS NFHS project site also failed certificate validation for the NFHS-6 fact sheets. The MoHFW PDF and PIB release 2266600 returned HTTP 403. The historical build uses the previously verified NFHS-6 values already in `nfhs-key-indicators-by-state.csv`. The source register below gives the URLs and hashes for those fact sheets and the PIB anaemia release.
@@ -262,6 +334,16 @@ Parsing: `pdftotext -layout` (`pipeline/health/extract_text.sh`), then `pipeline
 - The ORGI catalogue lists MMR bulletins for 2007-09, 2010-12, 2011-13 and then 2014-16 onward. A search for "Maternal Mortality" found none for 2012-14 or 2013-15, so the series jumps from 2011-13 to 2014-16. The periods before 2010-12 are not consecutive either. The 2014-16 to 2022-24 values are the labels on the trend chart in the 2022-24 bulletin. The earlier bulletins (2014-16 to 2021-23) were not opened to check them one by one.
 - OOPE: up to 2016-17 the NHA used figures extrapolated from NSS 71st round (2014, six-month recall). From 2017-18 it used NSS 75th round (2017-18, one-year recall, bigger sample). NHSRC says the change in OOPE "may be attributed to several factors" including this. Show a method break between 2016-17 and 2017-18. NHA 2022-23 also added new data sources (HCES 2022-23, ASUSE and others). The OOPE share rose from 39.4% (2021-22) to 43.4% (2022-23). Do not read the 2021-22 low point as a clean trend.
 - NHA state OOPE still rests on the 2017-18 NSS round. Kerala (65.2%) and Uttar Pradesh (67.1%) have the highest shares. Kerala's high share sits beside high total spending (Rs 13,605 per person), so the share alone does not show hardship.
+
+**CRS against SRS**
+
+- Registered deaths fall far short of the SRS-based estimate in some states and pass it in others (CRS 2024, our ratio of Statement 11 to Statement 2). Nagaland registered 26.8% of its estimated deaths, Arunachal Pradesh 43.7% and Jharkhand 50.7%. Chandigarh registered 4.6 times its estimate (457.2%) and Delhi 141.6%. ORGI gives two reasons for levels above 100 (paragraph 3.17.1): events are registered where they happen while SRS counts people where they usually live, and SRS estimates for some smaller states and UTs are low. Do not read CRS registered deaths as a state's death count, and do not compare them with SRS death rates without this caution.
+- The published level of registration stops at 100.0 for every state, so the chart cannot show by how much a state passes its estimate. The data file keeps the uncapped ratio, marked derived.
+
+**SRS cause of death**
+
+- The causes come from a verbal autopsy: an interview with the family, coded to ICD-10 by two physicians. They are not medically certified causes. ORGI's separate MCCD report covers certified deaths only and is not used.
+- The two reports pool overlapping three-year periods. A change between them is not a change between two separate periods.
 
 **NFHS**
 
