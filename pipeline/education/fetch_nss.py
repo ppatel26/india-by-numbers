@@ -9,6 +9,10 @@ codes, or --scan N to try codes 1 to N.
 The runs used by the education topic:
   fetch_nss.py --raw raw/education/nss80 --round 80 --survey 2          (CMS: Education 2025)
   fetch_nss.py --raw raw/education/nss79 --round 79 --survey 1 --scan 40 (CAMS 2022-23)
+
+Other topics use the same script:
+  fetch_nss.py --raw raw/living-standards/nss76 --round 76 --survey 2 16  (NSS Report 584, drinking water)
+  fetch_nss.py --raw raw/health/nss76-disability --round 76 --survey 1     (NSS Report 583, disability)
 """
 import argparse
 import json

@@ -1,5 +1,5 @@
 #!/bin/sh
-# Make the text inputs of build_health.py from the raw PDFs.
+# Make the text inputs of build_health.py and the other health builders from the raw PDFs.
 # Usage: pipeline/health/extract_text.sh [--raw raw/health] [--work work/health]
 set -e
 raw=raw/health; work=work/health
@@ -16,3 +16,4 @@ t crs-2024.pdf crs-2024.txt
 t srs-cod-2021-23.pdf srs-cod-2021-23.txt
 t srs-cod-2022-24.pdf srs-cod-2022-24.txt
 t nfhs-5/report.pdf nfhs-5-report.txt
+t nss76-583/report.pdf nss76-583.txt
