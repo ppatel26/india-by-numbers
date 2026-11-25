@@ -14,13 +14,10 @@ function select(frame: Element, view: string, focus = false): void {
 }
 
 document.addEventListener('click', (e) => {
-  const target = e.target as Element
-  const tab = target.closest<HTMLButtonElement>('[role="tab"][data-view]')
-  const link = target.closest<HTMLAnchorElement>('[data-view-link]')
-  const frame = (tab ?? link)?.closest('[data-chart]')
-  if (!frame) return
-  if (link) e.preventDefault()
-  select(frame, (tab?.dataset.view ?? link?.dataset.viewLink)!)
+  const tab = (e.target as Element).closest<HTMLButtonElement>('[role="tab"][data-view]')
+  const frame = tab?.closest('[data-chart]')
+  if (!tab || !frame) return
+  select(frame, tab.dataset.view!)
 })
 
 document.addEventListener('keydown', (e) => {

@@ -1,7 +1,7 @@
 ---
 /**
  * The chart frame, in a fixed order: number, title, subtitle, tabs, views,
- * note, then the footer (hallmark, source line, files). Every view is
+ * note, then the footer (hallmark, downloads, short source line). Every view is
  * rendered at build time; src/scripts/chart.ts switches tabs.
  */
 import ChartTable from './ChartTable.astro'
@@ -10,8 +10,7 @@ import type { Chart } from '~/content/types'
 import type { PeriodLink } from '~/content'
 import { openView, renderPlot, viewsOf, type View } from '~/lib/charts'
 import { timelineOf } from '~/lib/charts/model'
-import { sourceBrief, sourceLine } from '~/lib/sources'
-import { picksOf } from '~/lib/metadata'
+import { sourceBrief } from '~/lib/sources'
 
 interface Props {
   chart: Chart
@@ -33,8 +32,6 @@ const Heading = page ? 'h1' : 'h3'
 const href = `/charts/${chart.slug}/`
 // The month-by-month map shows on the chart's own page only, to keep topic pages light.
 const steps = page && chart.kind === 'states' ? timelineOf(chart) : []
-// The chart page also links the whole source files and the metadata.
-const full = page ? [...new Set(picksOf(chart).map((p) => p.file))] : []
 ---
 
 <figure class="chart" id={chart.slug} data-chart={chart.slug} aria-labelledby={`${id}-title`} hidden={hidden}>
@@ -93,30 +90,17 @@ const full = page ? [...new Set(picksOf(chart).map((p) => p.file))] : []
   {chart.note && <p class="note">Note: {chart.note}</p>}
   <figcaption class="foot">
     <Hallmark {...chart.punches} status={chart.status} />
-    {page ? (
-      <p class="source">{sourceLine(chart.sources)}</p>
-    ) : (
-      <p class="source">{sourceBrief(chart.sources)}. <a href={`${href}#about`}>Details</a></p>
-    )}
     <p class="files">
-      <a href={`${href}?tab=table`} data-view-link="table">Table</a> · <a href={`/charts/${chart.slug}.csv`} download title="The values in this chart, with unit and source on every row">CSV</a>
-      {page &&
-        full.map((f) => (
-          <>
-            {' · '}<a href={`/data/${f}`} download title={`The whole file this chart reads: ${f}`}>{full.length > 1 ? f.split('/').at(-1) : 'Full CSV'}</a>
-          </>
-        ))}
+      <span class="label muted">Download</span>
+      <a href={`/charts/${chart.slug}.csv`} download title="The values in this chart, with unit and source on every row">CSV</a>
       {chart.kind !== 'table' && (
         <>
-          {' · '}<a href={`/charts/${chart.slug}.png`} download title="Title, hallmark, status and source line on the image">PNG</a> · <a href={`/charts/${chart.slug}.svg`} download title="For print and editing">SVG</a>
-        </>
-      )}
-      {page && (
-        <>
-          {' · '}<a href={`/charts/${chart.slug}.json`} download title="Source, release date, unit, status, notes and processing steps">JSON</a>
+          <a href={`/charts/${chart.slug}.png`} download title="Image with title, hallmark and source line">PNG</a>
+          <a href={`/charts/${chart.slug}.svg`} download title="Vector image, for print and editing">SVG</a>
         </>
       )}
     </p>
+    <p class="source">{sourceBrief(chart.sources)}. <a href={page ? '#sources' : `${href}#sources`}>{page ? 'Full sources' : 'Details'}</a></p>
   </figcaption>
 </figure>
 
@@ -131,6 +115,8 @@ const full = page ? [...new Set(picksOf(chart).map((p) => p.file))] : []
   }
   .chart-title {
     font: 600 20px/28px var(--font-ui);
+    /* No one-word last line ("October / 2026"). */
+    text-wrap: balance;
   }
   h1.chart-title {
     font-size: clamp(26px, 3vw, 34px);
@@ -232,36 +218,55 @@ const full = page ? [...new Set(picksOf(chart).map((p) => p.file))] : []
     color: var(--slate);
     max-width: 760px;
   }
+  /* Row 1: hallmark, then the downloads at the right. Row 2: the source line, full width. */
   .foot {
     display: grid;
-    grid-template-columns: auto 1fr auto;
-    gap: 16px 24px;
-    /* Hallmark, source and files share one text line, whatever their heights. */
-    align-items: baseline;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: center;
+    gap: 12px 24px;
     margin-top: 20px;
     padding-top: 16px;
     border-top: 1px solid var(--rule);
   }
   .source {
+    grid-column: 1 / -1;
     font-size: 13px;
     line-height: 20px;
     color: var(--slate);
-    max-width: 420px;
+    max-width: 760px;
+  }
+  .source a {
+    color: inherit;
+    text-underline-offset: 3px;
+  }
+  .source a:hover {
+    color: var(--ink);
   }
   .files {
+    display: flex;
+    align-items: baseline;
+    gap: 14px;
     font-size: 13px;
-    font-weight: 600;
-    white-space: nowrap;
+    line-height: 20px;
+  }
+  .files .label {
+    margin-right: 2px;
   }
   .files a {
+    color: var(--slate);
     text-decoration: none;
   }
   .files a:hover {
+    color: var(--ink);
     text-decoration: underline;
+    text-underline-offset: 3px;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 720px) {
     .foot {
-      grid-template-columns: 1fr;
+      grid-template-columns: minmax(0, 1fr);
+    }
+    .files {
+      order: 1;
     }
   }
   /* Selected state (src/scripts/state.ts). */

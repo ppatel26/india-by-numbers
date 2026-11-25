@@ -5,7 +5,7 @@ import ChartFrame from '~/components/ChartFrame.astro'
 import StateSelect from '~/components/StateSelect.astro'
 import TopicTag from '~/components/TopicTag.astro'
 import { charts, partId, type Placed } from '~/content'
-import { citation, dateRange, geographyOf, latestSource, nextReleaseText } from '~/lib/metadata'
+import { citation, dateRange, geographyOf, latestSource, nextReleaseText, picksOf } from '~/lib/metadata'
 import { formatDate } from '~/lib/period'
 import { SITE } from '~/lib/site'
 import { releasedText } from '~/lib/sources'
@@ -30,6 +30,8 @@ const facts = [
   ['Next expected update', nextReleaseText(chart)],
   ['Geography', geographyOf(placed)],
 ] as const
+// The whole source files this chart reads, for the Files row.
+const files = [...new Set(picksOf(chart).map((p) => p.file))]
 const related = [
   ...charts.filter((c) => c.topic === topic && c.part === placed.part && c !== placed),
   ...charts.filter((c) => c.topic === topic && c.part !== placed.part),
@@ -74,6 +76,17 @@ const related = [
           ))}
           <tr><th scope="row">Retrieved and checked</th><td>{formatDate(SITE.checked)}</td></tr>
           <tr><th scope="row">Licence</th><td>{SITE.licence.replace(/^Licence: /, '')}</td></tr>
+          <tr>
+            <th scope="row">Files</th>
+            <td>
+              <ul class="files">
+                {files.map((f) => (
+                  <li><a href={`/data/${f}`} download>{f.split('/').at(-1)}</a> <span class="muted">The whole source file this chart reads</span></li>
+                ))}
+                <li><a href={`/charts/${chart.slug}.json`} download>{chart.slug}.json</a> <span class="muted">Source, release date, unit, status, notes and processing steps</span></li>
+              </ul>
+            </td>
+          </tr>
         </tbody>
       </table>
       {chart.processing && chart.processing.length > 0 && (
@@ -180,6 +193,19 @@ const related = [
   }
   .sub {
     margin: 32px 0 12px;
+  }
+  .files {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: grid;
+    gap: 4px;
+  }
+  .files a {
+    font-weight: 600;
+  }
+  .files .muted {
+    font-size: 13px;
   }
   .cite div {
     display: grid;
