@@ -1,0 +1,73 @@
+geography,period,land_possessed,measure,value,unit,report_table
+india,2019,less than 0.01 ha,indebted agricultural households,38.5,% of agricultural households,Statement 5.7
+india,2019,less than 0.01 ha,average outstanding loan,26883,rupees per agricultural household,Statement 5.7
+india,2019,0.01 to 0.40 ha,indebted agricultural households,40.8,% of agricultural households,Statement 5.7
+india,2019,0.01 to 0.40 ha,average outstanding loan,33220,rupees per agricultural household,Statement 5.7
+india,2019,0.41 to 1.00 ha,indebted agricultural households,48.4,% of agricultural households,Statement 5.7
+india,2019,0.41 to 1.00 ha,average outstanding loan,51933,rupees per agricultural household,Statement 5.7
+india,2019,1.01 to 2.00 ha,indebted agricultural households,57.4,% of agricultural households,Statement 5.7
+india,2019,1.01 to 2.00 ha,average outstanding loan,94498,rupees per agricultural household,Statement 5.7
+india,2019,2.01 to 4.00 ha,indebted agricultural households,69.7,% of agricultural households,Statement 5.7
+india,2019,2.01 to 4.00 ha,average outstanding loan,175009,rupees per agricultural household,Statement 5.7
+india,2019,4.01 to 10.00 ha,indebted agricultural households,79.3,% of agricultural households,Statement 5.7
+india,2019,4.01 to 10.00 ha,average outstanding loan,326766,rupees per agricultural household,Statement 5.7
+india,2019,more than 10.00 ha,indebted agricultural households,81.4,% of agricultural households,Statement 5.7
+india,2019,more than 10.00 ha,average outstanding loan,791132,rupees per agricultural household,Statement 5.7
+india,2019,all sizes,indebted agricultural households,50.2,% of agricultural households,Statement 5.7
+india,2019,all sizes,average outstanding loan,74121,rupees per agricultural household,Statement 5.7
+andhra-pradesh,2019,all sizes,indebted agricultural households,93.2,% of agricultural households,Statement 5.7.1
+andhra-pradesh,2019,all sizes,average outstanding loan,245554,rupees per agricultural household,Statement 5.7.1
+arunachal-pradesh,2019,all sizes,indebted agricultural households,12.5,% of agricultural households,Statement 5.7.1
+arunachal-pradesh,2019,all sizes,average outstanding loan,3581,rupees per agricultural household,Statement 5.7.1
+assam,2019,all sizes,indebted agricultural households,31.0,% of agricultural households,Statement 5.7.1
+assam,2019,all sizes,average outstanding loan,16407,rupees per agricultural household,Statement 5.7.1
+bihar,2019,all sizes,indebted agricultural households,39.7,% of agricultural households,Statement 5.7.1
+bihar,2019,all sizes,average outstanding loan,23534,rupees per agricultural household,Statement 5.7.1
+chhattisgarh,2019,all sizes,indebted agricultural households,31.2,% of agricultural households,Statement 5.7.1
+chhattisgarh,2019,all sizes,average outstanding loan,21443,rupees per agricultural household,Statement 5.7.1
+gujarat,2019,all sizes,indebted agricultural households,42.5,% of agricultural households,Statement 5.7.1
+gujarat,2019,all sizes,average outstanding loan,56568,rupees per agricultural household,Statement 5.7.1
+haryana,2019,all sizes,indebted agricultural households,47.5,% of agricultural households,Statement 5.7.1
+haryana,2019,all sizes,average outstanding loan,182922,rupees per agricultural household,Statement 5.7.1
+himachal-pradesh,2019,all sizes,indebted agricultural households,29.2,% of agricultural households,Statement 5.7.1
+himachal-pradesh,2019,all sizes,average outstanding loan,85825,rupees per agricultural household,Statement 5.7.1
+jammu-kashmir,2019,all sizes,indebted agricultural households,31.9,% of agricultural households,Statement 5.7.1
+jammu-kashmir,2019,all sizes,average outstanding loan,30435,rupees per agricultural household,Statement 5.7.1
+jharkhand,2019,all sizes,indebted agricultural households,25.3,% of agricultural households,Statement 5.7.1
+jharkhand,2019,all sizes,average outstanding loan,8415,rupees per agricultural household,Statement 5.7.1
+karnataka,2019,all sizes,indebted agricultural households,67.6,% of agricultural households,Statement 5.7.1
+karnataka,2019,all sizes,average outstanding loan,126240,rupees per agricultural household,Statement 5.7.1
+kerala,2019,all sizes,indebted agricultural households,69.9,% of agricultural households,Statement 5.7.1
+kerala,2019,all sizes,average outstanding loan,242482,rupees per agricultural household,Statement 5.7.1
+madhya-pradesh,2019,all sizes,indebted agricultural households,48.4,% of agricultural households,Statement 5.7.1
+madhya-pradesh,2019,all sizes,average outstanding loan,74420,rupees per agricultural household,Statement 5.7.1
+maharashtra,2019,all sizes,indebted agricultural households,54.0,% of agricultural households,Statement 5.7.1
+maharashtra,2019,all sizes,average outstanding loan,82085,rupees per agricultural household,Statement 5.7.1
+manipur,2019,all sizes,indebted agricultural households,20.6,% of agricultural households,Statement 5.7.1
+manipur,2019,all sizes,average outstanding loan,5551,rupees per agricultural household,Statement 5.7.1
+meghalaya,2019,all sizes,indebted agricultural households,9.1,% of agricultural households,Statement 5.7.1
+meghalaya,2019,all sizes,average outstanding loan,2237,rupees per agricultural household,Statement 5.7.1
+mizoram,2019,all sizes,indebted agricultural households,8.0,% of agricultural households,Statement 5.7.1
+mizoram,2019,all sizes,average outstanding loan,23485,rupees per agricultural household,Statement 5.7.1
+nagaland,2019,all sizes,indebted agricultural households,6.0,% of agricultural households,Statement 5.7.1
+nagaland,2019,all sizes,average outstanding loan,1750,rupees per agricultural household,Statement 5.7.1
+odisha,2019,all sizes,indebted agricultural households,61.2,% of agricultural households,Statement 5.7.1
+odisha,2019,all sizes,average outstanding loan,32721,rupees per agricultural household,Statement 5.7.1
+punjab,2019,all sizes,indebted agricultural households,54.4,% of agricultural households,Statement 5.7.1
+punjab,2019,all sizes,average outstanding loan,203249,rupees per agricultural household,Statement 5.7.1
+rajasthan,2019,all sizes,indebted agricultural households,60.3,% of agricultural households,Statement 5.7.1
+rajasthan,2019,all sizes,average outstanding loan,113865,rupees per agricultural household,Statement 5.7.1
+sikkim,2019,all sizes,indebted agricultural households,10.6,% of agricultural households,Statement 5.7.1
+sikkim,2019,all sizes,average outstanding loan,32185,rupees per agricultural household,Statement 5.7.1
+tamil-nadu,2019,all sizes,indebted agricultural households,65.1,% of agricultural households,Statement 5.7.1
+tamil-nadu,2019,all sizes,average outstanding loan,106553,rupees per agricultural household,Statement 5.7.1
+telangana,2019,all sizes,indebted agricultural households,91.7,% of agricultural households,Statement 5.7.1
+telangana,2019,all sizes,average outstanding loan,152113,rupees per agricultural household,Statement 5.7.1
+tripura,2019,all sizes,indebted agricultural households,47.7,% of agricultural households,Statement 5.7.1
+tripura,2019,all sizes,average outstanding loan,23944,rupees per agricultural household,Statement 5.7.1
+uttarakhand,2019,all sizes,indebted agricultural households,46.6,% of agricultural households,Statement 5.7.1
+uttarakhand,2019,all sizes,average outstanding loan,48338,rupees per agricultural household,Statement 5.7.1
+uttar-pradesh,2019,all sizes,indebted agricultural households,41.9,% of agricultural households,Statement 5.7.1
+uttar-pradesh,2019,all sizes,average outstanding loan,51107,rupees per agricultural household,Statement 5.7.1
+west-bengal,2019,all sizes,indebted agricultural households,50.8,% of agricultural households,Statement 5.7.1
+west-bengal,2019,all sizes,average outstanding loan,26452,rupees per agricultural household,Statement 5.7.1

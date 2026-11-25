@@ -1,0 +1,433 @@
+geography,period,land_possessed,source,expenses,value,unit,api_indicator,report_table
+india,2018-19,less than 0.01 ha,wages,paid out expenses,6435,rupees per household per month,24,Statement 5.1A
+india,2018-19,less than 0.01 ha,leasing out of land,paid out expenses,254,rupees per household per month,24,Statement 5.1A
+india,2018-19,less than 0.01 ha,crop production,paid out expenses,1660,rupees per household per month,24,Statement 5.1A
+india,2018-19,less than 0.01 ha,farming of animals,paid out expenses,2084,rupees per household per month,24,Statement 5.1A
+india,2018-19,less than 0.01 ha,non-farm business,paid out expenses,772,rupees per household per month,24,Statement 5.1A
+india,2018-19,less than 0.01 ha,total,paid out expenses,11204,rupees per household per month,24,Statement 5.1A
+india,2018-19,0.01 to 0.40 ha,wages,paid out expenses,4491,rupees per household per month,24,Statement 5.1A
+india,2018-19,0.01 to 0.40 ha,leasing out of land,paid out expenses,189,rupees per household per month,24,Statement 5.1A
+india,2018-19,0.01 to 0.40 ha,crop production,paid out expenses,977,rupees per household per month,24,Statement 5.1A
+india,2018-19,0.01 to 0.40 ha,farming of animals,paid out expenses,1162,rupees per household per month,24,Statement 5.1A
+india,2018-19,0.01 to 0.40 ha,non-farm business,paid out expenses,703,rupees per household per month,24,Statement 5.1A
+india,2018-19,0.01 to 0.40 ha,total,paid out expenses,7522,rupees per household per month,24,Statement 5.1A
+india,2018-19,0.41 to 1.00 ha,wages,paid out expenses,3906,rupees per household per month,24,Statement 5.1A
+india,2018-19,0.41 to 1.00 ha,leasing out of land,paid out expenses,76,rupees per household per month,24,Statement 5.1A
+india,2018-19,0.41 to 1.00 ha,crop production,paid out expenses,2683,rupees per household per month,24,Statement 5.1A
+india,2018-19,0.41 to 1.00 ha,farming of animals,paid out expenses,1335,rupees per household per month,24,Statement 5.1A
+india,2018-19,0.41 to 1.00 ha,non-farm business,paid out expenses,570,rupees per household per month,24,Statement 5.1A
+india,2018-19,0.41 to 1.00 ha,total,paid out expenses,8571,rupees per household per month,24,Statement 5.1A
+india,2018-19,1.01 to 2.00 ha,wages,paid out expenses,3647,rupees per household per month,24,Statement 5.1A
+india,2018-19,1.01 to 2.00 ha,leasing out of land,paid out expenses,74,rupees per household per month,24,Statement 5.1A
+india,2018-19,1.01 to 2.00 ha,crop production,paid out expenses,5269,rupees per household per month,24,Statement 5.1A
+india,2018-19,1.01 to 2.00 ha,farming of animals,paid out expenses,1845,rupees per household per month,24,Statement 5.1A
+india,2018-19,1.01 to 2.00 ha,non-farm business,paid out expenses,613,rupees per household per month,24,Statement 5.1A
+india,2018-19,1.01 to 2.00 ha,total,paid out expenses,11449,rupees per household per month,24,Statement 5.1A
+india,2018-19,2.01 to 4.00 ha,wages,paid out expenses,3548,rupees per household per month,24,Statement 5.1A
+india,2018-19,2.01 to 4.00 ha,leasing out of land,paid out expenses,146,rupees per household per month,24,Statement 5.1A
+india,2018-19,2.01 to 4.00 ha,crop production,paid out expenses,9432,rupees per household per month,24,Statement 5.1A
+india,2018-19,2.01 to 4.00 ha,farming of animals,paid out expenses,2551,rupees per household per month,24,Statement 5.1A
+india,2018-19,2.01 to 4.00 ha,non-farm business,paid out expenses,758,rupees per household per month,24,Statement 5.1A
+india,2018-19,2.01 to 4.00 ha,total,paid out expenses,16435,rupees per household per month,24,Statement 5.1A
+india,2018-19,4.01 to 10.00 ha,wages,paid out expenses,4273,rupees per household per month,24,Statement 5.1A
+india,2018-19,4.01 to 10.00 ha,leasing out of land,paid out expenses,451,rupees per household per month,24,Statement 5.1A
+india,2018-19,4.01 to 10.00 ha,crop production,paid out expenses,19645,rupees per household per month,24,Statement 5.1A
+india,2018-19,4.01 to 10.00 ha,farming of animals,paid out expenses,3451,rupees per household per month,24,Statement 5.1A
+india,2018-19,4.01 to 10.00 ha,non-farm business,paid out expenses,472,rupees per household per month,24,Statement 5.1A
+india,2018-19,4.01 to 10.00 ha,total,paid out expenses,28292,rupees per household per month,24,Statement 5.1A
+india,2018-19,more than 10.00 ha,wages,paid out expenses,3943,rupees per household per month,24,Statement 5.1A
+india,2018-19,more than 10.00 ha,leasing out of land,paid out expenses,581,rupees per household per month,24,Statement 5.1A
+india,2018-19,more than 10.00 ha,crop production,paid out expenses,43599,rupees per household per month,24,Statement 5.1A
+india,2018-19,more than 10.00 ha,farming of animals,paid out expenses,11473,rupees per household per month,24,Statement 5.1A
+india,2018-19,more than 10.00 ha,non-farm business,paid out expenses,1162,rupees per household per month,24,Statement 5.1A
+india,2018-19,more than 10.00 ha,total,paid out expenses,60758,rupees per household per month,24,Statement 5.1A
+india,2018-19,all sizes,wages,paid out expenses,4063,rupees per household per month,24,Statement 5.1A
+india,2018-19,all sizes,leasing out of land,paid out expenses,134,rupees per household per month,24,Statement 5.1A
+india,2018-19,all sizes,crop production,paid out expenses,3798,rupees per household per month,24,Statement 5.1A
+india,2018-19,all sizes,farming of animals,paid out expenses,1582,rupees per household per month,24,Statement 5.1A
+india,2018-19,all sizes,non-farm business,paid out expenses,641,rupees per household per month,24,Statement 5.1A
+india,2018-19,all sizes,total,paid out expenses,10218,rupees per household per month,24,Statement 5.1A
+andhra-pradesh,2018-19,all sizes,wages,paid out expenses,4849,rupees per household per month,24,Statement 5.1A.1
+andhra-pradesh,2018-19,all sizes,leasing out of land,paid out expenses,189,rupees per household per month,24,Statement 5.1A.1
+andhra-pradesh,2018-19,all sizes,crop production,paid out expenses,2734,rupees per household per month,24,Statement 5.1A.1
+andhra-pradesh,2018-19,all sizes,farming of animals,paid out expenses,2046,rupees per household per month,24,Statement 5.1A.1
+andhra-pradesh,2018-19,all sizes,non-farm business,paid out expenses,662,rupees per household per month,24,Statement 5.1A.1
+andhra-pradesh,2018-19,all sizes,total,paid out expenses,10480,rupees per household per month,24,Statement 5.1A.1
+arunachal-pradesh,2018-19,all sizes,wages,paid out expenses,2976,rupees per household per month,24,Statement 5.1A.1
+arunachal-pradesh,2018-19,all sizes,leasing out of land,paid out expenses,0,rupees per household per month,24,Statement 5.1A.1
+arunachal-pradesh,2018-19,all sizes,crop production,paid out expenses,5818,rupees per household per month,24,Statement 5.1A.1
+arunachal-pradesh,2018-19,all sizes,farming of animals,paid out expenses,4690,rupees per household per month,24,Statement 5.1A.1
+arunachal-pradesh,2018-19,all sizes,non-farm business,paid out expenses,5741,rupees per household per month,24,Statement 5.1A.1
+arunachal-pradesh,2018-19,all sizes,total,paid out expenses,19225,rupees per household per month,24,Statement 5.1A.1
+assam,2018-19,all sizes,wages,paid out expenses,5581,rupees per household per month,24,Statement 5.1A.1
+assam,2018-19,all sizes,leasing out of land,paid out expenses,36,rupees per household per month,24,Statement 5.1A.1
+assam,2018-19,all sizes,crop production,paid out expenses,3262,rupees per household per month,24,Statement 5.1A.1
+assam,2018-19,all sizes,farming of animals,paid out expenses,1120,rupees per household per month,24,Statement 5.1A.1
+assam,2018-19,all sizes,non-farm business,paid out expenses,676,rupees per household per month,24,Statement 5.1A.1
+assam,2018-19,all sizes,total,paid out expenses,10675,rupees per household per month,24,Statement 5.1A.1
+bihar,2018-19,all sizes,wages,paid out expenses,2503,rupees per household per month,24,Statement 5.1A.1
+bihar,2018-19,all sizes,leasing out of land,paid out expenses,82,rupees per household per month,24,Statement 5.1A.1
+bihar,2018-19,all sizes,crop production,paid out expenses,2739,rupees per household per month,24,Statement 5.1A.1
+bihar,2018-19,all sizes,farming of animals,paid out expenses,1739,rupees per household per month,24,Statement 5.1A.1
+bihar,2018-19,all sizes,non-farm business,paid out expenses,479,rupees per household per month,24,Statement 5.1A.1
+bihar,2018-19,all sizes,total,paid out expenses,7542,rupees per household per month,24,Statement 5.1A.1
+chhattisgarh,2018-19,all sizes,wages,paid out expenses,4444,rupees per household per month,24,Statement 5.1A.1
+chhattisgarh,2018-19,all sizes,leasing out of land,paid out expenses,51,rupees per household per month,24,Statement 5.1A.1
+chhattisgarh,2018-19,all sizes,crop production,paid out expenses,4336,rupees per household per month,24,Statement 5.1A.1
+chhattisgarh,2018-19,all sizes,farming of animals,paid out expenses,524,rupees per household per month,24,Statement 5.1A.1
+chhattisgarh,2018-19,all sizes,non-farm business,paid out expenses,321,rupees per household per month,24,Statement 5.1A.1
+chhattisgarh,2018-19,all sizes,total,paid out expenses,9677,rupees per household per month,24,Statement 5.1A.1
+gujarat,2018-19,all sizes,wages,paid out expenses,4415,rupees per household per month,24,Statement 5.1A.1
+gujarat,2018-19,all sizes,leasing out of land,paid out expenses,53,rupees per household per month,24,Statement 5.1A.1
+gujarat,2018-19,all sizes,crop production,paid out expenses,4318,rupees per household per month,24,Statement 5.1A.1
+gujarat,2018-19,all sizes,farming of animals,paid out expenses,3477,rupees per household per month,24,Statement 5.1A.1
+gujarat,2018-19,all sizes,non-farm business,paid out expenses,369,rupees per household per month,24,Statement 5.1A.1
+gujarat,2018-19,all sizes,total,paid out expenses,12631,rupees per household per month,24,Statement 5.1A.1
+haryana,2018-19,all sizes,wages,paid out expenses,7861,rupees per household per month,24,Statement 5.1A.1
+haryana,2018-19,all sizes,leasing out of land,paid out expenses,621,rupees per household per month,24,Statement 5.1A.1
+haryana,2018-19,all sizes,crop production,paid out expenses,9092,rupees per household per month,24,Statement 5.1A.1
+haryana,2018-19,all sizes,farming of animals,paid out expenses,4020,rupees per household per month,24,Statement 5.1A.1
+haryana,2018-19,all sizes,non-farm business,paid out expenses,1249,rupees per household per month,24,Statement 5.1A.1
+haryana,2018-19,all sizes,total,paid out expenses,22841,rupees per household per month,24,Statement 5.1A.1
+himachal-pradesh,2018-19,all sizes,wages,paid out expenses,6393,rupees per household per month,24,Statement 5.1A.1
+himachal-pradesh,2018-19,all sizes,leasing out of land,paid out expenses,71,rupees per household per month,24,Statement 5.1A.1
+himachal-pradesh,2018-19,all sizes,crop production,paid out expenses,2552,rupees per household per month,24,Statement 5.1A.1
+himachal-pradesh,2018-19,all sizes,farming of animals,paid out expenses,1811,rupees per household per month,24,Statement 5.1A.1
+himachal-pradesh,2018-19,all sizes,non-farm business,paid out expenses,1326,rupees per household per month,24,Statement 5.1A.1
+himachal-pradesh,2018-19,all sizes,total,paid out expenses,12153,rupees per household per month,24,Statement 5.1A.1
+jammu-kashmir,2018-19,all sizes,wages,paid out expenses,12171,rupees per household per month,24,Statement 5.1A.1
+jammu-kashmir,2018-19,all sizes,leasing out of land,paid out expenses,292,rupees per household per month,24,Statement 5.1A.1
+jammu-kashmir,2018-19,all sizes,crop production,paid out expenses,1980,rupees per household per month,24,Statement 5.1A.1
+jammu-kashmir,2018-19,all sizes,farming of animals,paid out expenses,2276,rupees per household per month,24,Statement 5.1A.1
+jammu-kashmir,2018-19,all sizes,non-farm business,paid out expenses,2200,rupees per household per month,24,Statement 5.1A.1
+jammu-kashmir,2018-19,all sizes,total,paid out expenses,18918,rupees per household per month,24,Statement 5.1A.1
+jharkhand,2018-19,all sizes,wages,paid out expenses,2783,rupees per household per month,24,Statement 5.1A.1
+jharkhand,2018-19,all sizes,leasing out of land,paid out expenses,24,rupees per household per month,24,Statement 5.1A.1
+jharkhand,2018-19,all sizes,crop production,paid out expenses,1102,rupees per household per month,24,Statement 5.1A.1
+jharkhand,2018-19,all sizes,farming of animals,paid out expenses,827,rupees per household per month,24,Statement 5.1A.1
+jharkhand,2018-19,all sizes,non-farm business,paid out expenses,158,rupees per household per month,24,Statement 5.1A.1
+jharkhand,2018-19,all sizes,total,paid out expenses,4895,rupees per household per month,24,Statement 5.1A.1
+karnataka,2018-19,all sizes,wages,paid out expenses,4576,rupees per household per month,24,Statement 5.1A.1
+karnataka,2018-19,all sizes,leasing out of land,paid out expenses,104,rupees per household per month,24,Statement 5.1A.1
+karnataka,2018-19,all sizes,crop production,paid out expenses,6835,rupees per household per month,24,Statement 5.1A.1
+karnataka,2018-19,all sizes,farming of animals,paid out expenses,1663,rupees per household per month,24,Statement 5.1A.1
+karnataka,2018-19,all sizes,non-farm business,paid out expenses,264,rupees per household per month,24,Statement 5.1A.1
+karnataka,2018-19,all sizes,total,paid out expenses,13441,rupees per household per month,24,Statement 5.1A.1
+kerala,2018-19,all sizes,wages,paid out expenses,10201,rupees per household per month,24,Statement 5.1A.1
+kerala,2018-19,all sizes,leasing out of land,paid out expenses,150,rupees per household per month,24,Statement 5.1A.1
+kerala,2018-19,all sizes,crop production,paid out expenses,3638,rupees per household per month,24,Statement 5.1A.1
+kerala,2018-19,all sizes,farming of animals,paid out expenses,1050,rupees per household per month,24,Statement 5.1A.1
+kerala,2018-19,all sizes,non-farm business,paid out expenses,2876,rupees per household per month,24,Statement 5.1A.1
+kerala,2018-19,all sizes,total,paid out expenses,17915,rupees per household per month,24,Statement 5.1A.1
+madhya-pradesh,2018-19,all sizes,wages,paid out expenses,2488,rupees per household per month,24,Statement 5.1A.1
+madhya-pradesh,2018-19,all sizes,leasing out of land,paid out expenses,54,rupees per household per month,24,Statement 5.1A.1
+madhya-pradesh,2018-19,all sizes,crop production,paid out expenses,4309,rupees per household per month,24,Statement 5.1A.1
+madhya-pradesh,2018-19,all sizes,farming of animals,paid out expenses,1295,rupees per household per month,24,Statement 5.1A.1
+madhya-pradesh,2018-19,all sizes,non-farm business,paid out expenses,193,rupees per household per month,24,Statement 5.1A.1
+madhya-pradesh,2018-19,all sizes,total,paid out expenses,8339,rupees per household per month,24,Statement 5.1A.1
+maharashtra,2018-19,all sizes,wages,paid out expenses,4324,rupees per household per month,24,Statement 5.1A.1
+maharashtra,2018-19,all sizes,leasing out of land,paid out expenses,34,rupees per household per month,24,Statement 5.1A.1
+maharashtra,2018-19,all sizes,crop production,paid out expenses,4747,rupees per household per month,24,Statement 5.1A.1
+maharashtra,2018-19,all sizes,farming of animals,paid out expenses,1540,rupees per household per month,24,Statement 5.1A.1
+maharashtra,2018-19,all sizes,non-farm business,paid out expenses,847,rupees per household per month,24,Statement 5.1A.1
+maharashtra,2018-19,all sizes,total,paid out expenses,11492,rupees per household per month,24,Statement 5.1A.1
+manipur,2018-19,all sizes,wages,paid out expenses,4147,rupees per household per month,24,Statement 5.1A.1
+manipur,2018-19,all sizes,leasing out of land,paid out expenses,25,rupees per household per month,24,Statement 5.1A.1
+manipur,2018-19,all sizes,crop production,paid out expenses,3221,rupees per household per month,24,Statement 5.1A.1
+manipur,2018-19,all sizes,farming of animals,paid out expenses,2625,rupees per household per month,24,Statement 5.1A.1
+manipur,2018-19,all sizes,non-farm business,paid out expenses,1209,rupees per household per month,24,Statement 5.1A.1
+manipur,2018-19,all sizes,total,paid out expenses,11227,rupees per household per month,24,Statement 5.1A.1
+meghalaya,2018-19,all sizes,wages,paid out expenses,6936,rupees per household per month,24,Statement 5.1A.1
+meghalaya,2018-19,all sizes,leasing out of land,paid out expenses,106,rupees per household per month,24,Statement 5.1A.1
+meghalaya,2018-19,all sizes,crop production,paid out expenses,21060,rupees per household per month,24,Statement 5.1A.1
+meghalaya,2018-19,all sizes,farming of animals,paid out expenses,842,rupees per household per month,24,Statement 5.1A.1
+meghalaya,2018-19,all sizes,non-farm business,paid out expenses,404,rupees per household per month,24,Statement 5.1A.1
+meghalaya,2018-19,all sizes,total,paid out expenses,29348,rupees per household per month,24,Statement 5.1A.1
+mizoram,2018-19,all sizes,wages,paid out expenses,6545,rupees per household per month,24,Statement 5.1A.1
+mizoram,2018-19,all sizes,leasing out of land,paid out expenses,52,rupees per household per month,24,Statement 5.1A.1
+mizoram,2018-19,all sizes,crop production,paid out expenses,8694,rupees per household per month,24,Statement 5.1A.1
+mizoram,2018-19,all sizes,farming of animals,paid out expenses,1750,rupees per household per month,24,Statement 5.1A.1
+mizoram,2018-19,all sizes,non-farm business,paid out expenses,923,rupees per household per month,24,Statement 5.1A.1
+mizoram,2018-19,all sizes,total,paid out expenses,17964,rupees per household per month,24,Statement 5.1A.1
+nagaland,2018-19,all sizes,wages,paid out expenses,3970,rupees per household per month,24,Statement 5.1A.1
+nagaland,2018-19,all sizes,leasing out of land,paid out expenses,2,rupees per household per month,24,Statement 5.1A.1
+nagaland,2018-19,all sizes,crop production,paid out expenses,2010,rupees per household per month,24,Statement 5.1A.1
+nagaland,2018-19,all sizes,farming of animals,paid out expenses,3801,rupees per household per month,24,Statement 5.1A.1
+nagaland,2018-19,all sizes,non-farm business,paid out expenses,93,rupees per household per month,24,Statement 5.1A.1
+nagaland,2018-19,all sizes,total,paid out expenses,9877,rupees per household per month,24,Statement 5.1A.1
+odisha,2018-19,all sizes,wages,paid out expenses,2649,rupees per household per month,24,Statement 5.1A.1
+odisha,2018-19,all sizes,leasing out of land,paid out expenses,29,rupees per household per month,24,Statement 5.1A.1
+odisha,2018-19,all sizes,crop production,paid out expenses,1569,rupees per household per month,24,Statement 5.1A.1
+odisha,2018-19,all sizes,farming of animals,paid out expenses,416,rupees per household per month,24,Statement 5.1A.1
+odisha,2018-19,all sizes,non-farm business,paid out expenses,449,rupees per household per month,24,Statement 5.1A.1
+odisha,2018-19,all sizes,total,paid out expenses,5112,rupees per household per month,24,Statement 5.1A.1
+punjab,2018-19,all sizes,wages,paid out expenses,5981,rupees per household per month,24,Statement 5.1A.1
+punjab,2018-19,all sizes,leasing out of land,paid out expenses,2652,rupees per household per month,24,Statement 5.1A.1
+punjab,2018-19,all sizes,crop production,paid out expenses,12597,rupees per household per month,24,Statement 5.1A.1
+punjab,2018-19,all sizes,farming of animals,paid out expenses,4457,rupees per household per month,24,Statement 5.1A.1
+punjab,2018-19,all sizes,non-farm business,paid out expenses,1014,rupees per household per month,24,Statement 5.1A.1
+punjab,2018-19,all sizes,total,paid out expenses,26701,rupees per household per month,24,Statement 5.1A.1
+rajasthan,2018-19,all sizes,wages,paid out expenses,5356,rupees per household per month,24,Statement 5.1A.1
+rajasthan,2018-19,all sizes,leasing out of land,paid out expenses,77,rupees per household per month,24,Statement 5.1A.1
+rajasthan,2018-19,all sizes,crop production,paid out expenses,3731,rupees per household per month,24,Statement 5.1A.1
+rajasthan,2018-19,all sizes,farming of animals,paid out expenses,2356,rupees per household per month,24,Statement 5.1A.1
+rajasthan,2018-19,all sizes,non-farm business,paid out expenses,1000,rupees per household per month,24,Statement 5.1A.1
+rajasthan,2018-19,all sizes,total,paid out expenses,12520,rupees per household per month,24,Statement 5.1A.1
+sikkim,2018-19,all sizes,wages,paid out expenses,6469,rupees per household per month,24,Statement 5.1A.1
+sikkim,2018-19,all sizes,leasing out of land,paid out expenses,3,rupees per household per month,24,Statement 5.1A.1
+sikkim,2018-19,all sizes,crop production,paid out expenses,4065,rupees per household per month,24,Statement 5.1A.1
+sikkim,2018-19,all sizes,farming of animals,paid out expenses,1376,rupees per household per month,24,Statement 5.1A.1
+sikkim,2018-19,all sizes,non-farm business,paid out expenses,534,rupees per household per month,24,Statement 5.1A.1
+sikkim,2018-19,all sizes,total,paid out expenses,12447,rupees per household per month,24,Statement 5.1A.1
+tamil-nadu,2018-19,all sizes,wages,paid out expenses,6497,rupees per household per month,24,Statement 5.1A.1
+tamil-nadu,2018-19,all sizes,leasing out of land,paid out expenses,72,rupees per household per month,24,Statement 5.1A.1
+tamil-nadu,2018-19,all sizes,crop production,paid out expenses,2641,rupees per household per month,24,Statement 5.1A.1
+tamil-nadu,2018-19,all sizes,farming of animals,paid out expenses,2000,rupees per household per month,24,Statement 5.1A.1
+tamil-nadu,2018-19,all sizes,non-farm business,paid out expenses,715,rupees per household per month,24,Statement 5.1A.1
+tamil-nadu,2018-19,all sizes,total,paid out expenses,11924,rupees per household per month,24,Statement 5.1A.1
+telangana,2018-19,all sizes,wages,paid out expenses,2961,rupees per household per month,24,Statement 5.1A.1
+telangana,2018-19,all sizes,leasing out of land,paid out expenses,67,rupees per household per month,24,Statement 5.1A.1
+telangana,2018-19,all sizes,crop production,paid out expenses,4937,rupees per household per month,24,Statement 5.1A.1
+telangana,2018-19,all sizes,farming of animals,paid out expenses,689,rupees per household per month,24,Statement 5.1A.1
+telangana,2018-19,all sizes,non-farm business,paid out expenses,748,rupees per household per month,24,Statement 5.1A.1
+telangana,2018-19,all sizes,total,paid out expenses,9403,rupees per household per month,24,Statement 5.1A.1
+tripura,2018-19,all sizes,wages,paid out expenses,4974,rupees per household per month,24,Statement 5.1A.1
+tripura,2018-19,all sizes,leasing out of land,paid out expenses,24,rupees per household per month,24,Statement 5.1A.1
+tripura,2018-19,all sizes,crop production,paid out expenses,2912,rupees per household per month,24,Statement 5.1A.1
+tripura,2018-19,all sizes,farming of animals,paid out expenses,960,rupees per household per month,24,Statement 5.1A.1
+tripura,2018-19,all sizes,non-farm business,paid out expenses,1048,rupees per household per month,24,Statement 5.1A.1
+tripura,2018-19,all sizes,total,paid out expenses,9918,rupees per household per month,24,Statement 5.1A.1
+uttarakhand,2018-19,all sizes,wages,paid out expenses,3728,rupees per household per month,24,Statement 5.1A.1
+uttarakhand,2018-19,all sizes,leasing out of land,paid out expenses,191,rupees per household per month,24,Statement 5.1A.1
+uttarakhand,2018-19,all sizes,crop production,paid out expenses,5277,rupees per household per month,24,Statement 5.1A.1
+uttarakhand,2018-19,all sizes,farming of animals,paid out expenses,3292,rupees per household per month,24,Statement 5.1A.1
+uttarakhand,2018-19,all sizes,non-farm business,paid out expenses,1064,rupees per household per month,24,Statement 5.1A.1
+uttarakhand,2018-19,all sizes,total,paid out expenses,13552,rupees per household per month,24,Statement 5.1A.1
+uttar-pradesh,2018-19,all sizes,wages,paid out expenses,2900,rupees per household per month,24,Statement 5.1A.1
+uttar-pradesh,2018-19,all sizes,leasing out of land,paid out expenses,119,rupees per household per month,24,Statement 5.1A.1
+uttar-pradesh,2018-19,all sizes,crop production,paid out expenses,3290,rupees per household per month,24,Statement 5.1A.1
+uttar-pradesh,2018-19,all sizes,farming of animals,paid out expenses,1365,rupees per household per month,24,Statement 5.1A.1
+uttar-pradesh,2018-19,all sizes,non-farm business,paid out expenses,387,rupees per household per month,24,Statement 5.1A.1
+uttar-pradesh,2018-19,all sizes,total,paid out expenses,8061,rupees per household per month,24,Statement 5.1A.1
+west-bengal,2018-19,all sizes,wages,paid out expenses,3721,rupees per household per month,24,Statement 5.1A.1
+west-bengal,2018-19,all sizes,leasing out of land,paid out expenses,94,rupees per household per month,24,Statement 5.1A.1
+west-bengal,2018-19,all sizes,crop production,paid out expenses,1547,rupees per household per month,24,Statement 5.1A.1
+west-bengal,2018-19,all sizes,farming of animals,paid out expenses,465,rupees per household per month,24,Statement 5.1A.1
+west-bengal,2018-19,all sizes,non-farm business,paid out expenses,935,rupees per household per month,24,Statement 5.1A.1
+west-bengal,2018-19,all sizes,total,paid out expenses,6762,rupees per household per month,24,Statement 5.1A.1
+india,2018-19,less than 0.01 ha,wages,paid out and imputed expenses,6435,rupees per household per month,25,Statement 5.1B
+india,2018-19,less than 0.01 ha,leasing out of land,paid out and imputed expenses,254,rupees per household per month,25,Statement 5.1B
+india,2018-19,less than 0.01 ha,crop production,paid out and imputed expenses,1435,rupees per household per month,25,Statement 5.1B
+india,2018-19,less than 0.01 ha,farming of animals,paid out and imputed expenses,1087,rupees per household per month,25,Statement 5.1B
+india,2018-19,less than 0.01 ha,non-farm business,paid out and imputed expenses,772,rupees per household per month,25,Statement 5.1B
+india,2018-19,less than 0.01 ha,total,paid out and imputed expenses,9982,rupees per household per month,25,Statement 5.1B
+india,2018-19,0.01 to 0.40 ha,wages,paid out and imputed expenses,4491,rupees per household per month,25,Statement 5.1B
+india,2018-19,0.01 to 0.40 ha,leasing out of land,paid out and imputed expenses,189,rupees per household per month,25,Statement 5.1B
+india,2018-19,0.01 to 0.40 ha,crop production,paid out and imputed expenses,657,rupees per household per month,25,Statement 5.1B
+india,2018-19,0.01 to 0.40 ha,farming of animals,paid out and imputed expenses,349,rupees per household per month,25,Statement 5.1B
+india,2018-19,0.01 to 0.40 ha,non-farm business,paid out and imputed expenses,703,rupees per household per month,25,Statement 5.1B
+india,2018-19,0.01 to 0.40 ha,total,paid out and imputed expenses,6388,rupees per household per month,25,Statement 5.1B
+india,2018-19,0.41 to 1.00 ha,wages,paid out and imputed expenses,3906,rupees per household per month,25,Statement 5.1B
+india,2018-19,0.41 to 1.00 ha,leasing out of land,paid out and imputed expenses,76,rupees per household per month,25,Statement 5.1B
+india,2018-19,0.41 to 1.00 ha,crop production,paid out and imputed expenses,2042,rupees per household per month,25,Statement 5.1B
+india,2018-19,0.41 to 1.00 ha,farming of animals,paid out and imputed expenses,356,rupees per household per month,25,Statement 5.1B
+india,2018-19,0.41 to 1.00 ha,non-farm business,paid out and imputed expenses,570,rupees per household per month,25,Statement 5.1B
+india,2018-19,0.41 to 1.00 ha,total,paid out and imputed expenses,6951,rupees per household per month,25,Statement 5.1B
+india,2018-19,1.01 to 2.00 ha,wages,paid out and imputed expenses,3647,rupees per household per month,25,Statement 5.1B
+india,2018-19,1.01 to 2.00 ha,leasing out of land,paid out and imputed expenses,74,rupees per household per month,25,Statement 5.1B
+india,2018-19,1.01 to 2.00 ha,crop production,paid out and imputed expenses,4313,rupees per household per month,25,Statement 5.1B
+india,2018-19,1.01 to 2.00 ha,farming of animals,paid out and imputed expenses,541,rupees per household per month,25,Statement 5.1B
+india,2018-19,1.01 to 2.00 ha,non-farm business,paid out and imputed expenses,613,rupees per household per month,25,Statement 5.1B
+india,2018-19,1.01 to 2.00 ha,total,paid out and imputed expenses,9189,rupees per household per month,25,Statement 5.1B
+india,2018-19,2.01 to 4.00 ha,wages,paid out and imputed expenses,3548,rupees per household per month,25,Statement 5.1B
+india,2018-19,2.01 to 4.00 ha,leasing out of land,paid out and imputed expenses,146,rupees per household per month,25,Statement 5.1B
+india,2018-19,2.01 to 4.00 ha,crop production,paid out and imputed expenses,7945,rupees per household per month,25,Statement 5.1B
+india,2018-19,2.01 to 4.00 ha,farming of animals,paid out and imputed expenses,600,rupees per household per month,25,Statement 5.1B
+india,2018-19,2.01 to 4.00 ha,non-farm business,paid out and imputed expenses,758,rupees per household per month,25,Statement 5.1B
+india,2018-19,2.01 to 4.00 ha,total,paid out and imputed expenses,12997,rupees per household per month,25,Statement 5.1B
+india,2018-19,4.01 to 10.00 ha,wages,paid out and imputed expenses,4273,rupees per household per month,25,Statement 5.1B
+india,2018-19,4.01 to 10.00 ha,leasing out of land,paid out and imputed expenses,451,rupees per household per month,25,Statement 5.1B
+india,2018-19,4.01 to 10.00 ha,crop production,paid out and imputed expenses,16914,rupees per household per month,25,Statement 5.1B
+india,2018-19,4.01 to 10.00 ha,farming of animals,paid out and imputed expenses,342,rupees per household per month,25,Statement 5.1B
+india,2018-19,4.01 to 10.00 ha,non-farm business,paid out and imputed expenses,472,rupees per household per month,25,Statement 5.1B
+india,2018-19,4.01 to 10.00 ha,total,paid out and imputed expenses,22453,rupees per household per month,25,Statement 5.1B
+india,2018-19,more than 10.00 ha,wages,paid out and imputed expenses,3943,rupees per household per month,25,Statement 5.1B
+india,2018-19,more than 10.00 ha,leasing out of land,paid out and imputed expenses,581,rupees per household per month,25,Statement 5.1B
+india,2018-19,more than 10.00 ha,crop production,paid out and imputed expenses,37639,rupees per household per month,25,Statement 5.1B
+india,2018-19,more than 10.00 ha,farming of animals,paid out and imputed expenses,7087,rupees per household per month,25,Statement 5.1B
+india,2018-19,more than 10.00 ha,non-farm business,paid out and imputed expenses,1162,rupees per household per month,25,Statement 5.1B
+india,2018-19,more than 10.00 ha,total,paid out and imputed expenses,50412,rupees per household per month,25,Statement 5.1B
+india,2018-19,all sizes,wages,paid out and imputed expenses,4063,rupees per household per month,25,Statement 5.1B
+india,2018-19,all sizes,leasing out of land,paid out and imputed expenses,134,rupees per household per month,25,Statement 5.1B
+india,2018-19,all sizes,crop production,paid out and imputed expenses,3058,rupees per household per month,25,Statement 5.1B
+india,2018-19,all sizes,farming of animals,paid out and imputed expenses,441,rupees per household per month,25,Statement 5.1B
+india,2018-19,all sizes,non-farm business,paid out and imputed expenses,641,rupees per household per month,25,Statement 5.1B
+india,2018-19,all sizes,total,paid out and imputed expenses,8337,rupees per household per month,25,Statement 5.1B
+andhra-pradesh,2018-19,all sizes,wages,paid out and imputed expenses,4849,rupees per household per month,25,Statement 5.1B.1
+andhra-pradesh,2018-19,all sizes,leasing out of land,paid out and imputed expenses,189,rupees per household per month,25,Statement 5.1B.1
+andhra-pradesh,2018-19,all sizes,crop production,paid out and imputed expenses,1939,rupees per household per month,25,Statement 5.1B.1
+andhra-pradesh,2018-19,all sizes,farming of animals,paid out and imputed expenses,1129,rupees per household per month,25,Statement 5.1B.1
+andhra-pradesh,2018-19,all sizes,non-farm business,paid out and imputed expenses,662,rupees per household per month,25,Statement 5.1B.1
+andhra-pradesh,2018-19,all sizes,total,paid out and imputed expenses,8768,rupees per household per month,25,Statement 5.1B.1
+arunachal-pradesh,2018-19,all sizes,wages,paid out and imputed expenses,2976,rupees per household per month,25,Statement 5.1B.1
+arunachal-pradesh,2018-19,all sizes,leasing out of land,paid out and imputed expenses,0,rupees per household per month,25,Statement 5.1B.1
+arunachal-pradesh,2018-19,all sizes,crop production,paid out and imputed expenses,5130,rupees per household per month,25,Statement 5.1B.1
+arunachal-pradesh,2018-19,all sizes,farming of animals,paid out and imputed expenses,3676,rupees per household per month,25,Statement 5.1B.1
+arunachal-pradesh,2018-19,all sizes,non-farm business,paid out and imputed expenses,5741,rupees per household per month,25,Statement 5.1B.1
+arunachal-pradesh,2018-19,all sizes,total,paid out and imputed expenses,17524,rupees per household per month,25,Statement 5.1B.1
+assam,2018-19,all sizes,wages,paid out and imputed expenses,5581,rupees per household per month,25,Statement 5.1B.1
+assam,2018-19,all sizes,leasing out of land,paid out and imputed expenses,36,rupees per household per month,25,Statement 5.1B.1
+assam,2018-19,all sizes,crop production,paid out and imputed expenses,2523,rupees per household per month,25,Statement 5.1B.1
+assam,2018-19,all sizes,farming of animals,paid out and imputed expenses,741,rupees per household per month,25,Statement 5.1B.1
+assam,2018-19,all sizes,non-farm business,paid out and imputed expenses,676,rupees per household per month,25,Statement 5.1B.1
+assam,2018-19,all sizes,total,paid out and imputed expenses,9557,rupees per household per month,25,Statement 5.1B.1
+bihar,2018-19,all sizes,wages,paid out and imputed expenses,2503,rupees per household per month,25,Statement 5.1B.1
+bihar,2018-19,all sizes,leasing out of land,paid out and imputed expenses,82,rupees per household per month,25,Statement 5.1B.1
+bihar,2018-19,all sizes,crop production,paid out and imputed expenses,2300,rupees per household per month,25,Statement 5.1B.1
+bihar,2018-19,all sizes,farming of animals,paid out and imputed expenses,914,rupees per household per month,25,Statement 5.1B.1
+bihar,2018-19,all sizes,non-farm business,paid out and imputed expenses,479,rupees per household per month,25,Statement 5.1B.1
+bihar,2018-19,all sizes,total,paid out and imputed expenses,6278,rupees per household per month,25,Statement 5.1B.1
+chhattisgarh,2018-19,all sizes,wages,paid out and imputed expenses,4444,rupees per household per month,25,Statement 5.1B.1
+chhattisgarh,2018-19,all sizes,leasing out of land,paid out and imputed expenses,51,rupees per household per month,25,Statement 5.1B.1
+chhattisgarh,2018-19,all sizes,crop production,paid out and imputed expenses,3533,rupees per household per month,25,Statement 5.1B.1
+chhattisgarh,2018-19,all sizes,farming of animals,paid out and imputed expenses,238,rupees per household per month,25,Statement 5.1B.1
+chhattisgarh,2018-19,all sizes,non-farm business,paid out and imputed expenses,321,rupees per household per month,25,Statement 5.1B.1
+chhattisgarh,2018-19,all sizes,total,paid out and imputed expenses,8588,rupees per household per month,25,Statement 5.1B.1
+gujarat,2018-19,all sizes,wages,paid out and imputed expenses,4415,rupees per household per month,25,Statement 5.1B.1
+gujarat,2018-19,all sizes,leasing out of land,paid out and imputed expenses,53,rupees per household per month,25,Statement 5.1B.1
+gujarat,2018-19,all sizes,crop production,paid out and imputed expenses,3762,rupees per household per month,25,Statement 5.1B.1
+gujarat,2018-19,all sizes,farming of animals,paid out and imputed expenses,1788,rupees per household per month,25,Statement 5.1B.1
+gujarat,2018-19,all sizes,non-farm business,paid out and imputed expenses,369,rupees per household per month,25,Statement 5.1B.1
+gujarat,2018-19,all sizes,total,paid out and imputed expenses,10386,rupees per household per month,25,Statement 5.1B.1
+haryana,2018-19,all sizes,wages,paid out and imputed expenses,7861,rupees per household per month,25,Statement 5.1B.1
+haryana,2018-19,all sizes,leasing out of land,paid out and imputed expenses,621,rupees per household per month,25,Statement 5.1B.1
+haryana,2018-19,all sizes,crop production,paid out and imputed expenses,7211,rupees per household per month,25,Statement 5.1B.1
+haryana,2018-19,all sizes,farming of animals,paid out and imputed expenses,-411,rupees per household per month,25,Statement 5.1B.1
+haryana,2018-19,all sizes,non-farm business,paid out and imputed expenses,1249,rupees per household per month,25,Statement 5.1B.1
+haryana,2018-19,all sizes,total,paid out and imputed expenses,16530,rupees per household per month,25,Statement 5.1B.1
+himachal-pradesh,2018-19,all sizes,wages,paid out and imputed expenses,6393,rupees per household per month,25,Statement 5.1B.1
+himachal-pradesh,2018-19,all sizes,leasing out of land,paid out and imputed expenses,71,rupees per household per month,25,Statement 5.1B.1
+himachal-pradesh,2018-19,all sizes,crop production,paid out and imputed expenses,1917,rupees per household per month,25,Statement 5.1B.1
+himachal-pradesh,2018-19,all sizes,farming of animals,paid out and imputed expenses,249,rupees per household per month,25,Statement 5.1B.1
+himachal-pradesh,2018-19,all sizes,non-farm business,paid out and imputed expenses,1326,rupees per household per month,25,Statement 5.1B.1
+himachal-pradesh,2018-19,all sizes,total,paid out and imputed expenses,9955,rupees per household per month,25,Statement 5.1B.1
+jammu-kashmir,2018-19,all sizes,wages,paid out and imputed expenses,12171,rupees per household per month,25,Statement 5.1B.1
+jammu-kashmir,2018-19,all sizes,leasing out of land,paid out and imputed expenses,292,rupees per household per month,25,Statement 5.1B.1
+jammu-kashmir,2018-19,all sizes,crop production,paid out and imputed expenses,1452,rupees per household per month,25,Statement 5.1B.1
+jammu-kashmir,2018-19,all sizes,farming of animals,paid out and imputed expenses,877,rupees per household per month,25,Statement 5.1B.1
+jammu-kashmir,2018-19,all sizes,non-farm business,paid out and imputed expenses,2200,rupees per household per month,25,Statement 5.1B.1
+jammu-kashmir,2018-19,all sizes,total,paid out and imputed expenses,16990,rupees per household per month,25,Statement 5.1B.1
+jharkhand,2018-19,all sizes,wages,paid out and imputed expenses,2783,rupees per household per month,25,Statement 5.1B.1
+jharkhand,2018-19,all sizes,leasing out of land,paid out and imputed expenses,24,rupees per household per month,25,Statement 5.1B.1
+jharkhand,2018-19,all sizes,crop production,paid out and imputed expenses,676,rupees per household per month,25,Statement 5.1B.1
+jharkhand,2018-19,all sizes,farming of animals,paid out and imputed expenses,351,rupees per household per month,25,Statement 5.1B.1
+jharkhand,2018-19,all sizes,non-farm business,paid out and imputed expenses,158,rupees per household per month,25,Statement 5.1B.1
+jharkhand,2018-19,all sizes,total,paid out and imputed expenses,3993,rupees per household per month,25,Statement 5.1B.1
+karnataka,2018-19,all sizes,wages,paid out and imputed expenses,4576,rupees per household per month,25,Statement 5.1B.1
+karnataka,2018-19,all sizes,leasing out of land,paid out and imputed expenses,104,rupees per household per month,25,Statement 5.1B.1
+karnataka,2018-19,all sizes,crop production,paid out and imputed expenses,5602,rupees per household per month,25,Statement 5.1B.1
+karnataka,2018-19,all sizes,farming of animals,paid out and imputed expenses,649,rupees per household per month,25,Statement 5.1B.1
+karnataka,2018-19,all sizes,non-farm business,paid out and imputed expenses,264,rupees per household per month,25,Statement 5.1B.1
+karnataka,2018-19,all sizes,total,paid out and imputed expenses,11195,rupees per household per month,25,Statement 5.1B.1
+kerala,2018-19,all sizes,wages,paid out and imputed expenses,10201,rupees per household per month,25,Statement 5.1B.1
+kerala,2018-19,all sizes,leasing out of land,paid out and imputed expenses,150,rupees per household per month,25,Statement 5.1B.1
+kerala,2018-19,all sizes,crop production,paid out and imputed expenses,2475,rupees per household per month,25,Statement 5.1B.1
+kerala,2018-19,all sizes,farming of animals,paid out and imputed expenses,320,rupees per household per month,25,Statement 5.1B.1
+kerala,2018-19,all sizes,non-farm business,paid out and imputed expenses,2876,rupees per household per month,25,Statement 5.1B.1
+kerala,2018-19,all sizes,total,paid out and imputed expenses,16022,rupees per household per month,25,Statement 5.1B.1
+madhya-pradesh,2018-19,all sizes,wages,paid out and imputed expenses,2488,rupees per household per month,25,Statement 5.1B.1
+madhya-pradesh,2018-19,all sizes,leasing out of land,paid out and imputed expenses,54,rupees per household per month,25,Statement 5.1B.1
+madhya-pradesh,2018-19,all sizes,crop production,paid out and imputed expenses,3555,rupees per household per month,25,Statement 5.1B.1
+madhya-pradesh,2018-19,all sizes,farming of animals,paid out and imputed expenses,466,rupees per household per month,25,Statement 5.1B.1
+madhya-pradesh,2018-19,all sizes,non-farm business,paid out and imputed expenses,193,rupees per household per month,25,Statement 5.1B.1
+madhya-pradesh,2018-19,all sizes,total,paid out and imputed expenses,6756,rupees per household per month,25,Statement 5.1B.1
+maharashtra,2018-19,all sizes,wages,paid out and imputed expenses,4324,rupees per household per month,25,Statement 5.1B.1
+maharashtra,2018-19,all sizes,leasing out of land,paid out and imputed expenses,34,rupees per household per month,25,Statement 5.1B.1
+maharashtra,2018-19,all sizes,crop production,paid out and imputed expenses,3790,rupees per household per month,25,Statement 5.1B.1
+maharashtra,2018-19,all sizes,farming of animals,paid out and imputed expenses,597,rupees per household per month,25,Statement 5.1B.1
+maharashtra,2018-19,all sizes,non-farm business,paid out and imputed expenses,847,rupees per household per month,25,Statement 5.1B.1
+maharashtra,2018-19,all sizes,total,paid out and imputed expenses,9592,rupees per household per month,25,Statement 5.1B.1
+manipur,2018-19,all sizes,wages,paid out and imputed expenses,4147,rupees per household per month,25,Statement 5.1B.1
+manipur,2018-19,all sizes,leasing out of land,paid out and imputed expenses,25,rupees per household per month,25,Statement 5.1B.1
+manipur,2018-19,all sizes,crop production,paid out and imputed expenses,2850,rupees per household per month,25,Statement 5.1B.1
+manipur,2018-19,all sizes,farming of animals,paid out and imputed expenses,2095,rupees per household per month,25,Statement 5.1B.1
+manipur,2018-19,all sizes,non-farm business,paid out and imputed expenses,1209,rupees per household per month,25,Statement 5.1B.1
+manipur,2018-19,all sizes,total,paid out and imputed expenses,10327,rupees per household per month,25,Statement 5.1B.1
+meghalaya,2018-19,all sizes,wages,paid out and imputed expenses,6936,rupees per household per month,25,Statement 5.1B.1
+meghalaya,2018-19,all sizes,leasing out of land,paid out and imputed expenses,106,rupees per household per month,25,Statement 5.1B.1
+meghalaya,2018-19,all sizes,crop production,paid out and imputed expenses,18964,rupees per household per month,25,Statement 5.1B.1
+meghalaya,2018-19,all sizes,farming of animals,paid out and imputed expenses,563,rupees per household per month,25,Statement 5.1B.1
+meghalaya,2018-19,all sizes,non-farm business,paid out and imputed expenses,404,rupees per household per month,25,Statement 5.1B.1
+meghalaya,2018-19,all sizes,total,paid out and imputed expenses,26973,rupees per household per month,25,Statement 5.1B.1
+mizoram,2018-19,all sizes,wages,paid out and imputed expenses,6545,rupees per household per month,25,Statement 5.1B.1
+mizoram,2018-19,all sizes,leasing out of land,paid out and imputed expenses,52,rupees per household per month,25,Statement 5.1B.1
+mizoram,2018-19,all sizes,crop production,paid out and imputed expenses,5404,rupees per household per month,25,Statement 5.1B.1
+mizoram,2018-19,all sizes,farming of animals,paid out and imputed expenses,662,rupees per household per month,25,Statement 5.1B.1
+mizoram,2018-19,all sizes,non-farm business,paid out and imputed expenses,923,rupees per household per month,25,Statement 5.1B.1
+mizoram,2018-19,all sizes,total,paid out and imputed expenses,13586,rupees per household per month,25,Statement 5.1B.1
+nagaland,2018-19,all sizes,wages,paid out and imputed expenses,3970,rupees per household per month,25,Statement 5.1B.1
+nagaland,2018-19,all sizes,leasing out of land,paid out and imputed expenses,2,rupees per household per month,25,Statement 5.1B.1
+nagaland,2018-19,all sizes,crop production,paid out and imputed expenses,1565,rupees per household per month,25,Statement 5.1B.1
+nagaland,2018-19,all sizes,farming of animals,paid out and imputed expenses,3276,rupees per household per month,25,Statement 5.1B.1
+nagaland,2018-19,all sizes,non-farm business,paid out and imputed expenses,93,rupees per household per month,25,Statement 5.1B.1
+nagaland,2018-19,all sizes,total,paid out and imputed expenses,8907,rupees per household per month,25,Statement 5.1B.1
+odisha,2018-19,all sizes,wages,paid out and imputed expenses,2649,rupees per household per month,25,Statement 5.1B.1
+odisha,2018-19,all sizes,leasing out of land,paid out and imputed expenses,29,rupees per household per month,25,Statement 5.1B.1
+odisha,2018-19,all sizes,crop production,paid out and imputed expenses,934,rupees per household per month,25,Statement 5.1B.1
+odisha,2018-19,all sizes,farming of animals,paid out and imputed expenses,-49,rupees per household per month,25,Statement 5.1B.1
+odisha,2018-19,all sizes,non-farm business,paid out and imputed expenses,449,rupees per household per month,25,Statement 5.1B.1
+odisha,2018-19,all sizes,total,paid out and imputed expenses,4013,rupees per household per month,25,Statement 5.1B.1
+punjab,2018-19,all sizes,wages,paid out and imputed expenses,5981,rupees per household per month,25,Statement 5.1B.1
+punjab,2018-19,all sizes,leasing out of land,paid out and imputed expenses,2652,rupees per household per month,25,Statement 5.1B.1
+punjab,2018-19,all sizes,crop production,paid out and imputed expenses,11109,rupees per household per month,25,Statement 5.1B.1
+punjab,2018-19,all sizes,farming of animals,paid out and imputed expenses,949,rupees per household per month,25,Statement 5.1B.1
+punjab,2018-19,all sizes,non-farm business,paid out and imputed expenses,1014,rupees per household per month,25,Statement 5.1B.1
+punjab,2018-19,all sizes,total,paid out and imputed expenses,21705,rupees per household per month,25,Statement 5.1B.1
+rajasthan,2018-19,all sizes,wages,paid out and imputed expenses,5356,rupees per household per month,25,Statement 5.1B.1
+rajasthan,2018-19,all sizes,leasing out of land,paid out and imputed expenses,77,rupees per household per month,25,Statement 5.1B.1
+rajasthan,2018-19,all sizes,crop production,paid out and imputed expenses,2887,rupees per household per month,25,Statement 5.1B.1
+rajasthan,2018-19,all sizes,farming of animals,paid out and imputed expenses,-164,rupees per household per month,25,Statement 5.1B.1
+rajasthan,2018-19,all sizes,non-farm business,paid out and imputed expenses,1000,rupees per household per month,25,Statement 5.1B.1
+rajasthan,2018-19,all sizes,total,paid out and imputed expenses,9156,rupees per household per month,25,Statement 5.1B.1
+sikkim,2018-19,all sizes,wages,paid out and imputed expenses,6469,rupees per household per month,25,Statement 5.1B.1
+sikkim,2018-19,all sizes,leasing out of land,paid out and imputed expenses,3,rupees per household per month,25,Statement 5.1B.1
+sikkim,2018-19,all sizes,crop production,paid out and imputed expenses,3742,rupees per household per month,25,Statement 5.1B.1
+sikkim,2018-19,all sizes,farming of animals,paid out and imputed expenses,1100,rupees per household per month,25,Statement 5.1B.1
+sikkim,2018-19,all sizes,non-farm business,paid out and imputed expenses,534,rupees per household per month,25,Statement 5.1B.1
+sikkim,2018-19,all sizes,total,paid out and imputed expenses,11848,rupees per household per month,25,Statement 5.1B.1
+tamil-nadu,2018-19,all sizes,wages,paid out and imputed expenses,6497,rupees per household per month,25,Statement 5.1B.1
+tamil-nadu,2018-19,all sizes,leasing out of land,paid out and imputed expenses,72,rupees per household per month,25,Statement 5.1B.1
+tamil-nadu,2018-19,all sizes,crop production,paid out and imputed expenses,2129,rupees per household per month,25,Statement 5.1B.1
+tamil-nadu,2018-19,all sizes,farming of animals,paid out and imputed expenses,1035,rupees per household per month,25,Statement 5.1B.1
+tamil-nadu,2018-19,all sizes,non-farm business,paid out and imputed expenses,715,rupees per household per month,25,Statement 5.1B.1
+tamil-nadu,2018-19,all sizes,total,paid out and imputed expenses,10448,rupees per household per month,25,Statement 5.1B.1
+telangana,2018-19,all sizes,wages,paid out and imputed expenses,2961,rupees per household per month,25,Statement 5.1B.1
+telangana,2018-19,all sizes,leasing out of land,paid out and imputed expenses,67,rupees per household per month,25,Statement 5.1B.1
+telangana,2018-19,all sizes,crop production,paid out and imputed expenses,4229,rupees per household per month,25,Statement 5.1B.1
+telangana,2018-19,all sizes,farming of animals,paid out and imputed expenses,287,rupees per household per month,25,Statement 5.1B.1
+telangana,2018-19,all sizes,non-farm business,paid out and imputed expenses,748,rupees per household per month,25,Statement 5.1B.1
+telangana,2018-19,all sizes,total,paid out and imputed expenses,8292,rupees per household per month,25,Statement 5.1B.1
+tripura,2018-19,all sizes,wages,paid out and imputed expenses,4974,rupees per household per month,25,Statement 5.1B.1
+tripura,2018-19,all sizes,leasing out of land,paid out and imputed expenses,24,rupees per household per month,25,Statement 5.1B.1
+tripura,2018-19,all sizes,crop production,paid out and imputed expenses,2300,rupees per household per month,25,Statement 5.1B.1
+tripura,2018-19,all sizes,farming of animals,paid out and imputed expenses,636,rupees per household per month,25,Statement 5.1B.1
+tripura,2018-19,all sizes,non-farm business,paid out and imputed expenses,1048,rupees per household per month,25,Statement 5.1B.1
+tripura,2018-19,all sizes,total,paid out and imputed expenses,8982,rupees per household per month,25,Statement 5.1B.1
+uttarakhand,2018-19,all sizes,wages,paid out and imputed expenses,3728,rupees per household per month,25,Statement 5.1B.1
+uttarakhand,2018-19,all sizes,leasing out of land,paid out and imputed expenses,191,rupees per household per month,25,Statement 5.1B.1
+uttarakhand,2018-19,all sizes,crop production,paid out and imputed expenses,3879,rupees per household per month,25,Statement 5.1B.1
+uttarakhand,2018-19,all sizes,farming of animals,paid out and imputed expenses,916,rupees per household per month,25,Statement 5.1B.1
+uttarakhand,2018-19,all sizes,non-farm business,paid out and imputed expenses,1064,rupees per household per month,25,Statement 5.1B.1
+uttarakhand,2018-19,all sizes,total,paid out and imputed expenses,9778,rupees per household per month,25,Statement 5.1B.1
+uttar-pradesh,2018-19,all sizes,wages,paid out and imputed expenses,2900,rupees per household per month,25,Statement 5.1B.1
+uttar-pradesh,2018-19,all sizes,leasing out of land,paid out and imputed expenses,119,rupees per household per month,25,Statement 5.1B.1
+uttar-pradesh,2018-19,all sizes,crop production,paid out and imputed expenses,2696,rupees per household per month,25,Statement 5.1B.1
+uttar-pradesh,2018-19,all sizes,farming of animals,paid out and imputed expenses,28,rupees per household per month,25,Statement 5.1B.1
+uttar-pradesh,2018-19,all sizes,non-farm business,paid out and imputed expenses,387,rupees per household per month,25,Statement 5.1B.1
+uttar-pradesh,2018-19,all sizes,total,paid out and imputed expenses,6130,rupees per household per month,25,Statement 5.1B.1
+west-bengal,2018-19,all sizes,wages,paid out and imputed expenses,3721,rupees per household per month,25,Statement 5.1B.1
+west-bengal,2018-19,all sizes,leasing out of land,paid out and imputed expenses,94,rupees per household per month,25,Statement 5.1B.1
+west-bengal,2018-19,all sizes,crop production,paid out and imputed expenses,1126,rupees per household per month,25,Statement 5.1B.1
+west-bengal,2018-19,all sizes,farming of animals,paid out and imputed expenses,208,rupees per household per month,25,Statement 5.1B.1
+west-bengal,2018-19,all sizes,non-farm business,paid out and imputed expenses,935,rupees per household per month,25,Statement 5.1B.1
+west-bengal,2018-19,all sizes,total,paid out and imputed expenses,6084,rupees per household per month,25,Statement 5.1B.1
