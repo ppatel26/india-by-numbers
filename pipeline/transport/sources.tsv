@@ -1,0 +1,16 @@
+# raw path under raw/transport	URL. Read by pipeline/transport/fetch.sh. The topic README gives the sha256 of each file.
+morth/rai-2024.pdf	https://morth.gov.in/backend/documents/uploaded/Road%20Accidents%20in%20India%20-%202024.pdf
+morth/rai-2023.pdf	https://morth.gov.in/backend/documents/uploaded/Road-Accident-in-India-2023-Publications.pdf
+morth/rai-metadata.pdf	https://morth.gov.in/backend/documents/uploaded/Road%20Accidents%20in%20India.pdf
+morth/rai-documents-api.json	https://morth.gov.in/backend/api/documents/Road%20Accidents%20in%20India
+nhts/factsheet.pdf	https://www.mospi.gov.in/uploads/publications_reports/publications_reports1791198151034_8d52ad0c-75ba-4040-a445-32c2ca98958e_Factsheet_-_NHTS.pdf
+nhts/appendix-a/table-1.xlsx	https://www.mospi.gov.in/uploads/documents/documents/1791197116459-Table_1.xlsx
+nhts/appendix-a/table-2.xlsx	https://www.mospi.gov.in/uploads/documents/documents/1791197103761-Table_2.xlsx
+nhts/appendix-a/table-3.xlsx	https://www.mospi.gov.in/uploads/documents/documents/1791197092617-Table_3.xlsx
+nhts/appendix-a/table-4.xlsx	https://www.mospi.gov.in/uploads/documents/documents/1791197078795-Table_4.xlsx
+nhts/appendix-a/table-5.xlsx	https://www.mospi.gov.in/uploads/documents/documents/1791197068068-Table_5.xlsx
+nhts/appendix-b/rse-table-1.xlsx	https://www.mospi.gov.in/uploads/documents/documents/1791196798629-RSE_Table_1.xlsx
+nhts/appendix-b/rse-table-2.xlsx	https://www.mospi.gov.in/uploads/documents/documents/1791196810096-RSE_Table_2.xlsx
+nhts/appendix-b/rse-table-3.xlsx	https://www.mospi.gov.in/uploads/documents/documents/1791196820650-RSE_Table_3.xlsx
+nhts/appendix-b/rse-table-4.xlsx	https://www.mospi.gov.in/uploads/documents/documents/1791196831860-RSE_Table_4.xlsx
+nhts/press-note.pdf	https://www.mospi.gov.in/uploads/latestReleases/latest_release_1791197961812_aef550fd-c694-4955-9e26-296148e3714d_Press_Note_-_NHTS.pdf
