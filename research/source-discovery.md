@@ -197,7 +197,7 @@ These are the "Later" topics in `docs/site-spec.md`.
 | International | World Bank WDI API | Updated 11 Nov 2026 | `use`. CC BY 4.0, except third-party series inside WDI | Yes |
 | International | ILOSTAT API | Works with no key | `use` for comparisons only (rule R6). CC BY 4.0 for datasets since 3 May 2023. Its India rows are ILO's own processing of PLFS unit-level data, so for India alone use MoSPI | Yes |
 | Agriculture | NSS round 77, Report 587, Situation Assessment of Agricultural Households and Land and Livestock Holdings, 2019 | API (NSS77, 33 indicators, including income and loans); PDF detailed tables 1 to 49 | `use` through the API | No |
-| Tourism | NSS Report 597, Domestic Tourism in India (Jul 2025 to Jun 2026) | September 2026: Statements 3.1, 3.13, 3.15, 3.16, 3.19, by state and rural/urban. Not on the API | `use` | No |
+| Tourism | NSS Report 597, Domestic Tourism in India (Jul 2025 to Jun 2026) | 23 Sep 2026 (press note and MoSPI release list): Statements 3.1, 3.2, 3.13, 3.15, 3.16, 3.19; Appendix A Tables 1, 15, 19 (XLSX). Not on the API | `in use` in Transport: `overnight-trip-households-by-state` (derived from Table 1, checked against Statement 3.1), `overnight-trips-by-purpose`, `overnight-trip-spending-by-purpose`, `overnight-trip-spending-by-item`. Same-day trips by state (Statement 3.16) are in `research/data/transport/`, not charted | No |
 | Disability | NSS round 76, Report 583, Persons with Disabilities (Jul to Dec 2018) | API (NSS76, 12 indicators, state, sex, rural/urban); PDF tables 2, 6 to 12 | `use` through the API | No |
 
 ### Checks on data we already show
@@ -234,7 +234,7 @@ rules above). It does not wait for the owner.
    2025-26), and a Digital payments part in Economy (3 charts, RBI Payment System Indicators).
    Money and payments waits for state banking tables (RBI Basic Statistical Returns).
 6. **Next.** The council placed each source (25 Nov 2026):
-   - Domestic tourism (NSS Report 597): a part in Transport, 3 of 3.
+   - Domestic tourism (NSS Report 597): a part in Transport, 3 of 3. Done on 25 Nov 2026: 4 charts and 1 state-profile row.
    - Disability (NSS Report 583): a part in Health, 3 of 3.
    - UN migrant stock: a part in Population, 3 of 3, linked from the remittances chart in Trade.
    - World Bank WDI: comparison charts inside existing topics, 3 of 3. First five, by votes: GDP

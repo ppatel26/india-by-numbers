@@ -97,7 +97,7 @@ Each topic gets a slug, a Taksal object (`docs/design-direction.md`) and parts i
 | Education | `education` | How many children are in school? Literacy. Schools and teachers. Education across the states. About the data. | UDISE+ (to check), Census of India, MoSPI surveys (to check) |
 | Elections | `elections` | How many people vote? Women voters and candidates. Seats and votes by state. About the data. | Election Commission of India (to check) |
 | Crime and justice | `crime-and-justice` | How much crime do the police record? Murders and crimes against women. Charge-sheets and convictions. Prisons and undertrials. Cases pending in the courts. About the data. | NCRB (Crime in India 2024, Prison Statistics India 2024); Ministry of Law and Justice answers in Parliament (court pendency, from NJDG) |
-| Transport | `transport` | How many people die on the roads in each state? Have road deaths risen over time? Who dies on the roads? How do people travel to work and to school? How do households travel on overnight trips? About the data. Road safety and household travel only: no railways, aviation, freight or vehicle registrations yet. | MoRTH (Road Accidents in India 2024, police records); MoSPI (National Household Travel Survey 2025-26) |
+| Transport | `transport` | How many people die on the roads in each state? Have road deaths risen over time? Who dies on the roads? How do people travel to work and to school? How do households travel on overnight trips? How do Indians travel for leisure, family and pilgrimage? About the data. Road safety, household travel and domestic tourism only: no railways, aviation, freight or vehicle registrations yet. | MoRTH (Road Accidents in India 2024, police records); MoSPI (National Household Travel Survey 2025-26; NSS Report 597, Domestic Tourism in India 2025-26) |
 | Climate | `climate` | How has India's temperature changed? The monsoon. Greenhouse gas emissions. Climate across the states. About the data. | IMD (to check), India's reports to the UNFCCC (to check) |
 | Living standards | `living-standards` | How much do households spend? What share goes on food? Is spending becoming more equal? Clean cooking fuel and drinking water. Internet use and bank accounts. About the data. | MoSPI (HCES 2022-23 and 2023-24; CAMS 2022-23, NSS round 79; NSS round 76) |
 | Religion and culture | `religion-and-culture` | Religion in India. Languages. Religion and language across the states. About the data. | Census of India (latest full count is 2011; Census 2027 counting runs to 4 Jan 2027) |
@@ -372,6 +372,7 @@ A figure that cannot carry all of these does not publish. A figure from a portal
 | Crime in India, Prison Statistics India | NCRB | Annual; no release date announced |
 | Road Accidents in India | MoRTH | Annual; no release date stated |
 | National Household Travel Survey | MoSPI | First round 2025-26; fact sheet 5 Oct 2026 |
+| Domestic Tourism Expenditure Survey | MoSPI | NSS rounds 65, 72 and 80; Report 597 for 2025-26, 23 Sep 2026 |
 
 Rhythms to confirm per source before launch. Nothing publishes on its own. A person merges each update (`docs/build-exploration.md`).
 
