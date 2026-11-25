@@ -10,7 +10,8 @@ Data gathered on 17 and 18 Nov 2026 from ORGI, IIPS, PIB, MoHFW, NHSRC and WHO. 
 4. How have child nutrition and care changed across the NFHS rounds?
 5. How much of the health bill do households pay from their own pockets?
 6. How has India's sex ratio at birth changed?
-7. How complete is the registration of births and deaths in each state?
+7. What do people in India die of?
+8. How complete is the registration of births and deaths in each state?
 
 ## Charts
 
@@ -180,6 +181,19 @@ ORGI replaced its sample in 2004 and 2014. The chart marks both years. Some thre
 - Checks: the states in Statements 10 and 11 add up to the India row. Each of the 74 estimates equals the state's SRS 2024 birth or death rate (`population/birth-death-rates-by-state-2024.csv`) times its mid-year population, to within 0.06 per 1,000. Where our ratio is below 100, it matches the published level to 0.1. Where it is 100 or more, the published level is 100.0.
 - Decision: one dot chart with two series, not two `states` charts. The two levels read best side by side: for many states one is 100.0 and the other is far below it (Bihar: births 100.0, deaths 62.1). The map colours deaths, the weaker of the two.
 
+### H12. Causes of death, 2021-23 and 2022-24
+
+- Type: grouped bars in two panels (women, men), with both periods in each panel. A second bar chart gives the top 10 causes for 2022-24.
+- Unit: percent of deaths.
+- Geography: India. The reports give India, rural and urban, EAG states and Assam, other states, and six zones. They give no state figures, so there is no state chart.
+- Period: 2021-23 and 2022-24 (three-year pools; the two share 2022 and 2023).
+- CSV: `srs-causes-of-death-india.csv`. `table` is `cause-group` (Table 2.1A) or `top-10` (Table 2.3A). `sample_deaths` gives ORGI's count of coded sample deaths for each cause group, and the `total` rows give all coded deaths (1,51,472 in 2022-24, 1,59,296 in 2021-23). The top-10 rows also keep "All other remaining causes" (rank empty).
+- Sentence: "Non-communicable diseases, such as heart disease and cancer, caused 60.1% of deaths in India in 2022-24."
+- Source: ORGI, SRS Cause of Death in India 2022-2024 (20 May 2026) and 2021-2023 (3 Sep 2025), Table 2.1A (page 12) and Table 2.3A (page 24) of each.
+- Decision: the brief asked for six cause groups. Table 2.1A gives four: non-communicable diseases; communicable, maternal, perinatal and nutritional conditions (one group); injuries; and symptoms, signs and ill-defined conditions. The chart uses ORGI's four groups. Tables 1.3A to 1.3C list maternal conditions, perinatal conditions and nutritional deficiencies as single causes inside that group. We keep ORGI's four groups and do not regroup causes ourselves.
+- Decision: the 2021-23 edition uses the same four groups and the same top-10 table, so it is the earlier period. Its top 10 holds the same ten causes in a different order (respiratory infections second, at 9.3%).
+- Note: Table 2.1A gives 12.9% for ill-defined deaths among women. Table 1.3C of the same report gives 13.0%. The chart uses Table 2.1A. Table 2.3A gives cardiovascular deaths among women as 30.4%; Table 1.3C gives 30.5%.
+
 ### H14. Sex ratio of registered births by state, 2024 (population page)
 
 - Type: ranked bars and tile map by state, as a third tab beside the SRS sex ratio at birth by state. The SRS and CRS figures stay in separate charts and files.
@@ -196,9 +210,12 @@ Read 25 Nov 2026. Paths are relative to `raw/health/`. Run `pipeline/health/extr
 | Raw file | Publisher and release | Release date | URL | SHA-256 |
 | --- | --- | --- | --- | --- |
 | `crs-2024.pdf` | ORGI, Report on Vital Statistics of India based on the Civil Registration System 2024 (NADA catalog/47155) | 1 Jul 2026 (catalogue "Date published 2026-07-01") | https://censusindia.gov.in/nada/index.php/catalog/47155/download/51401/CRS_Report_2024.pdf | `f0a11ee443e120f4b8062360deb42ca29563c7fb67967db7c75f4bb968ef45b0` |
+| `srs-cod-2022-24.pdf` | ORGI, SRS Cause of Death in India 2022-2024 (catalog/47147) | 20 May 2026 (catalogue "Date published 2026-05-20") | https://censusindia.gov.in/nada/index.php/catalog/47147/download/51392/SRS_COD-STATISTICS_2022-2024.pdf | `a8ece1a1efce8c953fde2cbe1d54ba2c78697ac267937088b7fd2d1bfd15d170` |
+| `srs-cod-2021-23.pdf` | ORGI, SRS Cause of Death in India 2021-2023 (catalog/46176) | 3 Sep 2025 (catalogue "Date published 2025-09-03") | https://censusindia.gov.in/nada/index.php/catalog/46176/download/50424 | `1622b1b105ddf5ba4b237c7658a372c2466b340af25316cd1cc593685b42f268` |
 
 ```sh
 python3 -I pipeline/health/build_crs.py
+python3 -I pipeline/health/build_srs_cod.py
 ```
 
 ### History source files
@@ -301,6 +318,11 @@ Parsing: `pdftotext -layout` (`pipeline/health/extract_text.sh`), then `pipeline
 
 - Registered deaths fall far short of the SRS-based estimate in some states and pass it in others (CRS 2024, our ratio of Statement 11 to Statement 2). Nagaland registered 26.8% of its estimated deaths, Arunachal Pradesh 43.7% and Jharkhand 50.7%. Chandigarh registered 4.6 times its estimate (457.2%) and Delhi 141.6%. ORGI gives two reasons for levels above 100 (paragraph 3.17.1): events are registered where they happen while SRS counts people where they usually live, and SRS estimates for some smaller states and UTs are low. Do not read CRS registered deaths as a state's death count, and do not compare them with SRS death rates without this caution.
 - The published level of registration stops at 100.0 for every state, so the chart cannot show by how much a state passes its estimate. The data file keeps the uncapped ratio, marked derived.
+
+**SRS cause of death**
+
+- The causes come from a verbal autopsy: an interview with the family, coded to ICD-10 by two physicians. They are not medically certified causes. ORGI's separate MCCD report covers certified deaths only and is not used.
+- The two reports pool overlapping three-year periods. A change between them is not a change between two separate periods.
 
 **NFHS**
 

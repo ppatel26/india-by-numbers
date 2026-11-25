@@ -34,6 +34,22 @@ const SRS_COMPENDIUM: Source = {
   url: 'https://censusindia.gov.in/nada/index.php/catalog/33218/download/37035',
 }
 
+// The ORGI catalogue gives "Date published 2026-05-20" (catalog/47147).
+const SRS_COD_2022_24: Source = {
+  publisher: 'ORGI',
+  release: 'SRS Cause of Death in India 2022-2024',
+  released: '2026-05-20',
+  url: 'https://censusindia.gov.in/nada/index.php/catalog/47147/download/51392/SRS_COD-STATISTICS_2022-2024.pdf',
+}
+
+// The ORGI catalogue gives "Date published 2025-09-03" (catalog/46176).
+const SRS_COD_2021_23: Source = {
+  publisher: 'ORGI',
+  release: 'SRS Cause of Death in India 2021-2023',
+  released: '2025-09-03',
+  url: 'https://censusindia.gov.in/nada/index.php/catalog/46176/download/50424',
+}
+
 // The ORGI catalogue gives "Date published 2026-07-01" (catalog/47155).
 export const CRS_2024: Source = {
   publisher: 'ORGI',
@@ -199,6 +215,25 @@ const nfhsTrend = (key: string, label: string, color: Series['color'], indicator
   where: { geography: 'india', indicator, basis },
   note: 'note',
 })
+
+const COD = 'health/srs-causes-of-death-india.csv'
+const COD_SEX = { women: 'female', men: 'male', all: 'person' } as const
+const COD_GROUPS = ['non-communicable', 'communicable-maternal-perinatal-nutritional', 'injuries', 'ill-defined'] as const
+
+const codGroup = (sex: keyof typeof COD_SEX, period: string, color: Series['color'], hidden = false): Series => ({
+  key: `${sex}-${period}`,
+  label: sex === 'all' ? `Women and men, ${period}` : period,
+  color,
+  hidden,
+  file: COD,
+  where: { table: 'cause-group', period, sex: COD_SEX[sex], cause: COD_GROUPS },
+})
+
+// ORGI's top 10 for 2022-24, in its rank order. It ranks ill-defined deaths last.
+const TOP_CAUSES = [
+  'cardiovascular', 'neoplasms', 'respiratory-diseases', 'digestive', 'respiratory-infections',
+  'fever-unknown-origin', 'unintentional-injuries-other', 'diabetes', 'genito-urinary', 'ill-defined',
+] as const
 
 export const sexRatioAtBirthIndia: Chart = {
   kind: 'line',
@@ -396,6 +431,105 @@ const topic: Topic = {
               'We sort the states by the published total.',
               'We compute the gap between women and men by subtraction, to one decimal place.',
               'We show states with no published table as "No data".',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
+    {
+      title: 'What do people die of?',
+      lede: 'Non-communicable diseases, such as heart disease and cancer, caused 60.1% of deaths in India in 2022-24.',
+      blocks: [
+        { text: 'Communicable, maternal, perinatal and nutritional conditions caused 22.6% of deaths among women and 17.7% among men. Injuries caused 12.6% of deaths among men, against 7.5% among women.' },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'causes-of-death',
+            title: 'Deaths by cause group in India, 2021-23 and 2022-24',
+            subtitle: 'Share of deaths in each major cause group, women and men, India.',
+            punches: { office: 'ORGI · SRS', unit: '% of deaths', period: '2022-24' },
+            status: ['Survey estimate'],
+            note: 'The two periods share the years 2022 and 2023.',
+            sources: [withTable(SRS_COD_2021_23, 'Table 2.1A'), withTable(SRS_COD_2022_24, 'Table 2.1A')],
+            format: { unit: '%', decimals: 1 },
+            by: 'cause',
+            rowHead: 'Cause group',
+            order: COD_GROUPS,
+            labels: {
+              'non-communicable': 'Non-communicable diseases',
+              'communicable-maternal-perinatal-nutritional': 'Communicable, maternal, perinatal and nutritional',
+              injuries: 'Injuries',
+              'ill-defined': 'Ill-defined causes',
+            },
+            axis: { min: 0, max: 70 },
+            panels: [
+              { label: 'Women', series: ['women-2021-23', 'women-2022-24'] },
+              { label: 'Men', series: ['men-2021-23', 'men-2022-24'] },
+            ],
+            series: [
+              codGroup('women', '2021-23', 'slate'),
+              codGroup('women', '2022-24', 's3'),
+              codGroup('men', '2021-23', 'slate'),
+              codGroup('men', '2022-24', 's2'),
+              codGroup('all', '2021-23', 'ink', true),
+              codGroup('all', '2022-24', 'ink', true),
+            ],
+            know: [
+              'SRS staff ask the family about each death in the sample households (a verbal autopsy). Two physicians each assign a cause from the report, and a third settles any disagreement.',
+              'Each value pools three years of sample deaths: 1,51,472 coded deaths for 2022-24 and 1,59,296 for 2021-23.',
+              'The report gives four cause groups. Communicable, maternal, perinatal and nutritional conditions are one group.',
+              'Ill-defined causes are deaths that could not be diagnosed from the interview. They are 12.9% of deaths among women and 7.4% among men.',
+              'The report gives figures for India, regions and zones only. It has no state figures.',
+            ],
+            processing: [
+              'We take the share of deaths in each cause group, for men, women and persons, from Table 2.1A of each report.',
+              'We keep the shares as ORGI prints them, to one decimal place.',
+              'We show the two latest reports. Their periods overlap, so we do not plot them as a trend.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        { text: 'Heart and blood vessel diseases caused 32.1% of all deaths in 2022-24. Doctors could not assign a cause to 9.7% of deaths.' },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'top-causes-of-death',
+            title: 'Top 10 causes of death in India, 2022-24',
+            subtitle: 'Share of all deaths, all ages, women and men, India.',
+            punches: { office: 'ORGI · SRS', unit: '% of deaths', period: '2022-24' },
+            status: ['Survey estimate'],
+            note: 'ORGI ranks ill-defined deaths tenth because no cause could be found for them.',
+            sources: [withTable(SRS_COD_2022_24, 'Table 2.3A')],
+            format: { unit: '%', decimals: 1 },
+            by: 'cause',
+            rowHead: 'Cause',
+            order: TOP_CAUSES,
+            labels: {
+              cardiovascular: 'Heart and blood vessel diseases',
+              neoplasms: 'Cancer and other neoplasms',
+              'respiratory-diseases': 'Respiratory diseases',
+              digestive: 'Digestive diseases',
+              'respiratory-infections': 'Respiratory infections',
+              'fever-unknown-origin': 'Fever of unknown origin',
+              'unintentional-injuries-other': 'Accidental injuries, not motor vehicle',
+              diabetes: 'Diabetes',
+              'genito-urinary': 'Genito-urinary diseases',
+              'ill-defined': 'Ill-defined causes',
+            },
+            series: [
+              { key: 'all', label: 'Women and men', color: 'ink', file: COD, where: { table: 'top-10', period: '2022-24', sex: 'person', cause: TOP_CAUSES } },
+              { key: 'women', label: 'Women', color: 's3', file: COD, where: { table: 'top-10', period: '2022-24', sex: 'female', cause: TOP_CAUSES } },
+              { key: 'men', label: 'Men', color: 's2', file: COD, where: { table: 'top-10', period: '2022-24', sex: 'male', cause: TOP_CAUSES } },
+            ],
+            know: [
+              'ORGI ranks the causes by their share of all deaths. It puts ill-defined deaths tenth, though their share is the second largest, because they have no diagnosis.',
+              'The other causes together account for 18.3% of deaths. The data file keeps that row.',
+              'In 2021-23 respiratory infections ranked second, at 9.3% of deaths. The data file keeps that list.',
+            ],
+            processing: [
+              'We take the top 10 causes and their shares for men, women and persons from Table 2.3A of the 2022-24 report.',
+              'We keep ORGI\'s rank order and its shares, to one decimal place.',
             ],
             nextRelease: 'not announced',
           },
@@ -787,18 +921,18 @@ const topic: Topic = {
     publisher:
       'The Registrar General of India (ORGI) runs the Sample Registration System (SRS), a survey of births and deaths, and compiles the Civil Registration System (CRS) of registered births and deaths. IIPS runs the National Family Health Survey (NFHS) for MoHFW. NHSRC compiles the National Health Accounts.',
     frequency:
-      'SRS Bulletin: yearly, latest 20 May 2026. Maternal mortality and life tables: pooled periods, with the bulletin. CRS: yearly, 2024 report on 1 Jul 2026. NFHS: every few years, NFHS-6 on 29 May 2026. Health accounts: yearly, latest November 2026.',
+      'SRS Bulletin: yearly, latest 20 May 2026. Maternal mortality, life tables and causes of death: pooled periods, with the bulletin. CRS: yearly, 2024 report on 1 Jul 2026. NFHS: every few years, NFHS-6 on 29 May 2026. Health accounts: yearly, latest November 2026.',
     revisions:
       'NFHS-6 results are provisional, as the fact sheets say. The NFHS-5 values shown are as printed in the NFHS-6 fact sheets. The National Health Accounts added new data sources in 2022-23.',
     breaks:
       'Infant mortality excludes J&K in 1991 to 1997, life expectancy in 1987-91 to 1997-01. Life expectancy periods overlap from 1987-91. Maternal mortality skips 2012-14 and 2013-15. Health accounts break in 2017-18 and 2022-23.',
     coverage:
-      'Infant mortality: all 36 states and UTs. Life tables: India and 22 states. Maternal mortality: 19 states and one group for the rest. CRS: all 36 states and UTs. NFHS-6: 35 states and UTs, not Manipur. Health accounts: 21 states.',
+      'Infant mortality: all 36 states and UTs. Life tables: India and 22 states. Maternal mortality: 19 states and one group for the rest. Causes of death: India only. CRS: all 36 states and UTs. NFHS-6: 35 states and UTs, not Manipur. Health accounts: 21 states.',
     missing:
-      'NFHS-6 reports no anaemia and no infant or child mortality. SRS gives no life expectancy, under-5 or neonatal mortality for smaller states and UTs. No publisher states a reuse licence.',
+      'NFHS-6 reports no anaemia and no infant or child mortality. SRS gives no life expectancy, under-5 or neonatal mortality for smaller states and UTs, and causes of death for no state. No publisher states a reuse licence.',
   },
   sources: [
-    SRS_BULLETIN_2024, SRS_MMR_2022_24, SRS_LIFE_TABLES, CRS_2024, SRS_COMPENDIUM, ...SRS_BIRTH_RATIO_REPORTS,
+    SRS_BULLETIN_2024, SRS_MMR_2022_24, SRS_LIFE_TABLES, SRS_COD_2022_24, SRS_COD_2021_23, CRS_2024, SRS_COMPENDIUM, ...SRS_BIRTH_RATIO_REPORTS,
     NFHS_1, NFHS_2, NFHS_3, NFHS_4, NFHS_5, NFHS_6, PIB_ANAEMIA, NHA_2023_24, NHA_2013_14, NHA_2004_05, NCMH, WHO_GHED,
   ],
   related: [

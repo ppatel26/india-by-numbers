@@ -13,3 +13,5 @@ t mmr-bulletin-2022-24.pdf mmr-bulletin-2022-24.txt
 t alt-2020-24.pdf alt-2020-24.txt
 t nfhs6-factsheets.pdf nfhs6.txt
 t crs-2024.pdf crs-2024.txt
+t srs-cod-2021-23.pdf srs-cod-2021-23.txt
+t srs-cod-2022-24.pdf srs-cod-2022-24.txt

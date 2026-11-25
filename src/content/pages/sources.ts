@@ -89,7 +89,7 @@ const PUBLISHERS: readonly Publisher[] = [
     topics: ['population', 'health', 'education', 'religion-and-culture'],
     dataSets: [
       { name: 'Census of India', detail: '2011 tables A-01, A-02, C-01, C-14, C-16 and the Primary Census Abstract; 2001 table C-01', rhythm: 'Each census. The 2027 count runs to 28 Feb 2027 in most states.', match: /Census/ },
-      { name: 'Sample Registration System', detail: 'Bulletin and Statistical Report 2024; maternal mortality 2022-24; life tables 2020-24', rhythm: 'Yearly', match: /SRS/ },
+      { name: 'Sample Registration System', detail: 'Bulletin and Statistical Report 2024; maternal mortality 2022-24; life tables 2020-24; causes of death 2021-23 and 2022-24', rhythm: 'Yearly', match: /SRS/ },
       { name: 'Civil Registration System', detail: 'Vital Statistics of India based on CRS 2024: registration level and sex ratio of registered births', rhythm: 'Yearly', match: /Civil Registration/ },
     ],
     licence: '"Rights Reserved" on its catalogue pages',
