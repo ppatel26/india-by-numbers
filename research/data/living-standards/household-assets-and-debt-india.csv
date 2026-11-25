@@ -1,0 +1,25 @@
+geography,period,sector,household_type,household,measure,value,unit,report_table
+india,2018-06-30,rural,all,rural all,average value of assets,1592379,rupees per household,Press note of 10 Sep 2021; rounds to Summary Statement 2
+india,2018-06-30,rural,all,rural all,average debt,59748,rupees per household,"NSS Report 588, Statement 3.8; press note"
+india,2018-06-30,rural,all,rural all,average debt per indebted household,170533,rupees per indebted household,"NSS Report 588, Statement 3.8; press note"
+india,2018-06-30,rural,all,rural all,incidence of indebtedness,35.0,% of households,"NSS Report 588, Statement 3.8 and Summary Statement 2"
+india,2018-06-30,rural,cultivator,rural cultivator,average value of assets,2207257,rupees per household,Press note of 10 Sep 2021; rounds to Summary Statement 2
+india,2018-06-30,rural,cultivator,rural cultivator,average debt,74460,rupees per household,"NSS Report 588, Statement 3.8; press note"
+india,2018-06-30,rural,cultivator,rural cultivator,average debt per indebted household,184903,rupees per indebted household,"NSS Report 588, Statement 3.8; press note"
+india,2018-06-30,rural,cultivator,rural cultivator,incidence of indebtedness,40.3,% of households,"NSS Report 588, Statement 3.8 and Summary Statement 2"
+india,2018-06-30,rural,non-cultivator,rural non-cultivator,average value of assets,785063,rupees per household,Press note of 10 Sep 2021; rounds to Summary Statement 2
+india,2018-06-30,rural,non-cultivator,rural non-cultivator,average debt,40432,rupees per household,"NSS Report 588, Statement 3.8; press note"
+india,2018-06-30,rural,non-cultivator,rural non-cultivator,average debt per indebted household,143557,rupees per indebted household,"NSS Report 588, Statement 3.8; press note"
+india,2018-06-30,rural,non-cultivator,rural non-cultivator,incidence of indebtedness,28.2,% of households,"NSS Report 588, Statement 3.8 and Summary Statement 2"
+india,2018-06-30,urban,all,urban all,average value of assets,2717081,rupees per household,Press note of 10 Sep 2021; rounds to Summary Statement 2
+india,2018-06-30,urban,all,urban all,average debt,120336,rupees per household,"NSS Report 588, Statement 3.8; press note"
+india,2018-06-30,urban,all,urban all,average debt per indebted household,536861,rupees per indebted household,"NSS Report 588, Statement 3.8; press note"
+india,2018-06-30,urban,all,urban all,incidence of indebtedness,22.4,% of households,"NSS Report 588, Statement 3.8 and Summary Statement 2"
+india,2018-06-30,urban,self-employed,urban self-employed,average value of assets,4151226,rupees per household,Press note of 10 Sep 2021; rounds to Summary Statement 2
+india,2018-06-30,urban,self-employed,urban self-employed,average debt,179765,rupees per household,"NSS Report 588, Statement 3.8; press note"
+india,2018-06-30,urban,self-employed,urban self-employed,average debt per indebted household,652768,rupees per indebted household,"NSS Report 588, Statement 3.8; press note"
+india,2018-06-30,urban,self-employed,urban self-employed,incidence of indebtedness,27.5,% of households,"NSS Report 588, Statement 3.8 and Summary Statement 2"
+india,2018-06-30,urban,others,urban others,average value of assets,2210707,rupees per household,Press note of 10 Sep 2021; rounds to Summary Statement 2
+india,2018-06-30,urban,others,urban others,average debt,99353,rupees per household,"NSS Report 588, Statement 3.8; press note"
+india,2018-06-30,urban,others,urban others,average debt per indebted household,482162,rupees per indebted household,"NSS Report 588, Statement 3.8; press note"
+india,2018-06-30,urban,others,urban others,incidence of indebtedness,20.6,% of households,"NSS Report 588, Statement 3.8 and Summary Statement 2"

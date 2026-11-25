@@ -4,7 +4,8 @@ Data for a planned India by Numbers topic, "Housing and living standards". The t
 site yet. Household spending comes from the Household Consumption Expenditure Survey (HCES) 2022-23
 and 2023-24. Internet use, digital skills, bank accounts, cooking fuel, drinking water and household
 assets come from the Comprehensive Annual Modular Survey (CAMS) 2022-23, NSS round 79. The 2018
-drinking water values come from NSS round 76. MoSPI's National Statistics Office (NSO) publishes all
+drinking water values come from NSS round 76. Household assets and debt as on 30 June 2018 come from the
+All India Debt & Investment Survey (AIDIS) 2019, NSS round 77. MoSPI's National Statistics Office (NSO) publishes all
 three surveys.
 
 Read on 25 Nov 2026.
@@ -20,6 +21,8 @@ Read on 25 Nov 2026.
 7. How many adults have a bank or mobile money account?
 8. How many households cook with clean fuel and drink water from an improved source? Did water access change between 2018 and 2022-23?
 9. How many households have a phone or a computer?
+10. What share of households is in debt, in each state, in villages and in towns?
+11. What does a household own and owe, on average? Whom does it owe, and at what rate of interest?
 
 ## About the sources
 
@@ -74,6 +77,8 @@ Read on 25 Nov 2026.
 | MoSPI NSO | eSankhyiki API, HCES, indicators 1, 4 and 9 | Not stated by the API | 2022-23 and 2023-24 | https://api.mospi.gov.in/api/hces/getHcesRecords?indicator_code=<n>&Format=JSON&limit=200&page=<p> | 25 Nov 2026 | Not stated | See below |
 | MoSPI NSO | eSankhyiki API, NSS round 79, survey code 1 (CAMS), indicators 14, 18, 19, 21 to 24, 27, 28 | Not stated by the API | July 2022 to June 2023 | https://api.mospi.gov.in/api/nss-79/getNss79Records?indicator_code=<n>&survey_code=1&Format=JSON&limit=200&page=<p> | 25 Nov 2026 | Not stated | See below |
 | MoSPI NSO | eSankhyiki API, NSS round 76, survey code 2, indicator 16 | Not stated by the API | July to December 2018 | https://api.mospi.gov.in/api/nss-76/getNss76Records?indicator_code=16&survey_code=2&Format=JSON&limit=200&page=<p> | 25 Nov 2026 | Not stated | See below |
+| MoSPI NSO | NSS Report No. 588, All India Debt & Investment Survey - 2019 (NSS round 77; 1,919 pages) | 10 Sep 2021 (press note of the same day; PDF created 9 Sep 2021, last changed 10 Mar 2023) | Survey January to December 2019; assets and debt as on 30 June 2018 | https://www.mospi.gov.in/sites/default/files/publication_reports/Report_no588-AIDIS-77R-SeptFinal_0.pdf | 25 Nov 2026 | Not stated | 50622d4aed0a9f8ec6bbaa3cbd169c32ee2fe9b10a2838cc2ea520e6d94af69b |
+| MoSPI NSO | Press note, All India Debt & Investment Survey, NSS 77th round (January - December, 2019) (5 pages) | 10 Sep 2021 | As above | https://www.mospi.gov.in/sites/default/files/press_release/press_note-AIDIS-240821.pdf | 25 Nov 2026 | Not stated | 5771a809388ee1d23ce1da43b08e65db5fc252e2a86ea72cd82386d4f5d034be |
 
 ### Raw files
 
@@ -110,6 +115,8 @@ its route and its nine indicators are in the documentation file
 | `nss79/i28.json` | Households with improved drinking water and improved latrine | 222 | 2 | `43583e5ca4905d6e6aba15a4a8bc6bfcd6117a523a8445c2812e3d55a933eab6` |
 | `nss76/indicators.json` | NSS round 76, survey code 2, indicator list (12 indicators) | 12 | 1 | `58601b46108c302b356beaca81ebddc6404e7926c9c7bcc5e02437177c72d9e7` |
 | `nss76/i16.json` | Households having improved source of drinking water | 4212 | 22 | `ab352b578f0add3e1c9a993e9c97a1a5aca0553a96abcf42e6d456d78a1d94c0` |
+| `aidis-588/report.pdf` | NSS Report 588 (fetched 22:59 UTC) | | 1,919 | `50622d4aed0a9f8ec6bbaa3cbd169c32ee2fe9b10a2838cc2ea520e6d94af69b` |
+| `aidis-588/press-note.pdf` | Press note, 10 Sep 2021 (fetched 23:02 UTC) | | 5 | `5771a809388ee1d23ce1da43b08e65db5fc252e2a86ea72cd82386d4f5d034be` |
 
 The scan of round 79 (`--scan 30`) also saved indicators 1 to 13, 15 to 17, 20, 25 and 26. They are
 not used here. Education uses indicator 3 from its own copy.
@@ -128,6 +135,10 @@ pipeline/common/fetch.sh --raw raw/living-standards/cams-2022-23 <Report 590 URL
 pipeline/common/fetch.sh --raw raw/living-standards/nss76-584 <Report 584 URL above> report.pdf
 pipeline/living-standards/extract_text.sh
 python3 -I pipeline/living-standards/build_living_standards.py
+pipeline/common/fetch.sh --raw raw/living-standards/aidis-588 <Report 588 URL above> report.pdf
+pipeline/common/fetch.sh --raw raw/living-standards/aidis-588 <press note URL above> press-note.pdf
+pipeline/living-standards/extract_text.sh
+python3 -I pipeline/living-standards/build_aidis.py
 ```
 
 `extract_text.sh` writes `work/living-standards/<folder>/report.txt` with `pdftotext -layout`.
@@ -308,6 +319,140 @@ were also read by eye against the report page.
 - **Census 2011 houselisting** (amenities and assets for every household) is not used. It is a full
   count, not a survey, and it is 15 years old.
 
+## Household assets and debt: AIDIS 2019
+
+### About the source
+
+- **AIDIS** is the eighth All India Debt & Investment Survey, run as part of NSS round 77 from
+  January to December 2019. Visit 1 (January to August 2019) recorded assets and liabilities as on
+  30 June 2018 (Report 588, para 1.9.1.1). The CSVs give every value the period
+  `2018-06-30`. Visit 1 covered 5,940 villages and 3,995 urban blocks: 69,455 rural and 47,006 urban
+  households (para 1.9.3.2).
+- **Coverage.** All households, rural and urban, in the whole Indian Union except the villages of the
+  Andaman and Nicobar Islands that are difficult to access (para 1.8.1).
+- **Household types.** Rural households are cultivator households (operating at least 0.002 ha of
+  land in the last 365 days) or non-cultivator households. Urban households are self-employed or
+  others (para 2.1.4).
+- **Assets** are physical assets (land, buildings, livestock, machinery, transport equipment) and
+  financial assets (deposits, shares, loans given). Standing crops and stocks are not assets (para
+  2.1.5).
+- **Debt** is outstanding cash loans only (para 2.1.6), with interest (para 1.9.1.4). Incidence of
+  indebtedness (IOI) is the share of households with any cash debt. Average debt (AOD) is per
+  household; AODL is per indebted household.
+- **Credit agencies.** Institutional: banks, co-operative societies and banks, insurance companies,
+  provident funds, employers, financial institutions, NBFCs including MFIs, self-help groups and
+  joint liability groups, and other institutional agencies. Non-institutional: landlords,
+  agricultural and professional moneylenders, input suppliers, relatives and friends, chit funds,
+  market commission agents and traders, and others (note to Statement 3.10).
+- **Interest rate** is the actual annual rate of interest (para 3.2.6.1). Statement 10 prints the
+  bands as `nil`, `<6`, `6-10`, `10-15`, `15-20`, `20-25`, `25-30`, `30-50`, `50-100` and `≥100`. The
+  CSV writes them as `nil`, `less than 6`, `6 to 10` and so on, and `100 or more`.
+- **Not comparable with NSS Report 587** (the farm household survey in `research/data/agriculture/`).
+  Report 588 para 1.10.3: the coverage of agricultural households in Report 587 and of cultivator
+  households in AIDIS "are not same and as such these estimates are not comparable". Report 587
+  covers only rural agricultural households; AIDIS covers all households.
+
+### CSVs
+
+Every value is from NSS Report 588 unless the `report_table` column says otherwise. `-` in the
+report (no sample) is an empty value.
+
+#### `household-assets-and-debt-by-state.csv`
+
+- 1,050 rows: 34 states and UTs plus India, rural (cultivator, non-cultivator, all) and urban
+  (self-employed, others, all), five measures: `average value of assets`, `average debt`, `average
+  debt per indebted household` (thousand rupees), `incidence of indebtedness` (% of households) and
+  `debt-asset ratio` (debt as % of assets). Column `rse_percent`: the relative standard error of AVA,
+  IOI and AOD for all households, for the 18 major states and India (Appendix B, Statement R1).
+- Source: Summary Statement 2 (pages S2 and S3).
+- Checked values: Telangana rural IOI 67.2%; Kerala urban average debt ₹233 thousand; Nagaland rural
+  IOI 6.6% (Statement 2).
+
+#### `household-assets-and-debt-india.csv`
+
+- 24 rows: India, the six household types, four measures, in rupees. Column `household` joins sector
+  and household type (`rural cultivator`, `urban all`), so that a chart can show all six. Average debt and debt per
+  indebted household are from Statement 3.8, and the press note gives the same values. Average value
+  of assets is from the press note: the report gives it only in thousand rupees.
+- The script checks that every rupee value rounds to the thousand-rupee value of Statement 2, and
+  that IOI equals Statement 2.
+- Checked values: rural average value of assets ₹15,92,379 (press note, page 2); rural average debt
+  ₹59,748 and urban debt per indebted household ₹5,36,861 (Statement 3.8).
+
+#### `indebtedness-by-credit-agency-by-state.csv`
+
+- 840 rows: 34 states and UTs plus India, six household types, `institutional only`,
+  `non-institutional only`, `both` and `all`. Unit: % of households.
+- Source: Summary Statement 7 (pages S21 and S22). The script checks that the three parts add up to
+  `all` within rounding, and that `all` equals the IOI of Statement 2.
+- Checked values: India rural non-institutional only 10.2%; Andhra Pradesh rural cultivator both
+  31.9%; Delhi rural cultivator non-institutional only `-` (empty).
+
+#### `debt-by-credit-agency-by-state.csv`
+
+- 630 rows: 34 states and UTs plus India, six household types, `institutional`, `non-institutional`
+  and `all`. Unit: % of outstanding cash debt.
+- Source: Summary Statement 8 (page S23). The India row equals the totals of Statement 3.12. The two
+  parts can add up to less than 100 (Bihar rural: 47.4 + 51.5); the report does not say why. Rural
+  Chandigarh cultivators print 0.0 in every column: no cultivator household had debt (IOI 0.0).
+- Checked values: India rural institutional 66.1%; Telangana rural non-institutional 59.2%; Assam
+  urban institutional 98.7%.
+
+#### `debt-by-credit-agency-india.csv`
+
+- 138 rows: India, six household types, 20 credit agencies and three totals. Column `agency_type`:
+  `institutional`, `non-institutional` or `total`. Column `household` as in the India CSV above.
+  Unit: % of outstanding cash debt.
+- Source: Statement 3.12 (pages 30 and 31). The script checks that the agencies add up to each total
+  within rounding.
+- Checked values: rural professional moneylender 16.5%; urban scheduled commercial bank 68.4%; rural
+  relatives and friends 6.8%.
+
+#### `debt-by-interest-rate-by-state.csv`
+
+- 2,310 rows: 34 states and UTs plus India, rural and urban, `institutional`, `non-institutional` and
+  `all` credit agencies, ten interest bands and `all`. Unit: % of outstanding cash debt.
+- Source: Summary Statement 10 (pages S25 to S27). The India rows equal Statement 3.15. The script
+  checks that each row adds up to 100 within rounding.
+- Checked values: India rural non-institutional `20 to 25` 44.0%; India urban institutional `6 to
+  10` 50.7%; Rajasthan rural non-institutional `20 to 25` 85.1%.
+
+### How the tables are read
+
+`build_aidis.py` reads the `pdftotext -layout` text. The summary statements print one state per
+line, with every cell filled (a `-` for no sample), so the script does not need word boxes. It
+stops if a state row has more or fewer cells than the table, if a table has other than 36 states and
+UTs and All-India, or if any check above fails. It writes the CSVs only after every check passes.
+Before committing to the full set, we sampled Statements 2, 7, 8 and 10 by eye against the PDF
+pages; the layout text kept every column in place. A test run with one changed value in Statement 2
+and one in Statement 10 stopped the build.
+
+### Decisions
+
+- **Release date.** The press note is dated 10 Sep 2021, and it announces the report. The PDF at
+  the URL was created on 9 Sep 2021 and last changed on 10 Mar 2023. The pages we read give no
+  notice of a revision.
+- **2018 geography.** In 2018, Dadra and Nagar Haveli and Daman and Diu were two UTs; the CSVs leave
+  them out, as for NSS round 76. Jammu and Kashmir included Ladakh: `jammu-kashmir` is the 2018 state.
+  Ladakh and Dadra and Nagar Haveli and Daman and Diu have no value.
+- **Rupees or thousand rupees.** The summary statements print thousand rupees. The India CSV keeps
+  the full rupee values that the report (Statement 3.8) and the press note print, so the India chart
+  shows ₹59,748, not ₹60 thousand.
+- **Not used.** Summary Statements 3 (social groups), 4 (assets held), 5, 6, 9 and 11 to 15
+  (capital expenditure, deposit accounts, Gini of assets) and the 1,753 pages of detailed tables.
+  Statement 1.1 (sample households) prints the visit 2 columns out of line with the states, so we do
+  not quote state sample sizes from it.
+
+### Gaps and cautions
+
+- **Small samples.** Visit 1 surveyed 48 rural households in Chandigarh, 59 in Lakshadweep and 96 in
+  Delhi (Statement 1.1, column 4). Statement R1 gives relative standard errors for 18 major states
+  only. Rural IOI has an RSE of 24.02% in Chhattisgarh and 19.27% in Haryana; urban AOD 55.43% in
+  Chhattisgarh.
+- **Old values.** The values are as on 30 June 2018, before COVID-19. The next AIDIS round has no
+  announced date.
+- **Cash debt only.** Kind loans and unpaid bills are not in the debt figures.
+
 ## Proposed charts
 
 Kinds are from `src/content/types.ts`.
@@ -324,6 +469,10 @@ Kinds are from `src/content/types.ts`.
 | `internet-use-women-and-men` | `dots` (female, male; Map tab on person) | `internet-and-ict-skills-by-state.csv` (used internet in last 3 months, 15+, rural+urban) | 2022-23 | The gender gap in internet use by state |
 | `digital-skills` | `bars` (grouped female and male) | `internet-and-ict-skills-by-state.csv` (India, 15-24, four skill measures) | 2022-23 | What young people can do online, beyond access |
 | `bank-accounts-women-and-men` | `dots` (female, male) | `bank-account-by-state.csv` (18+, rural+urban) | 2022-23 | Financial inclusion by state and sex |
+| `household-debt-by-state` | `dots` (rural and urban per state; Map tab on rural) | `household-assets-and-debt-by-state.csv` (IOI, all households) | 30 Jun 2018 | The share of households in debt, from 3.1% in rural Delhi to 67.2% in rural Telangana |
+| `household-assets-and-debt` | `bars` (panels: assets; debt per household and per indebted household) | `household-assets-and-debt-india.csv` | 30 Jun 2018 | What an average household owns and owes, in rupees, by household type |
+| `household-debt-by-lender` | `bars` (stacked: institutional and non-institutional) | `debt-by-credit-agency-india.csv` (totals) | 30 Jun 2018 | How much household debt comes from moneylenders, relatives and other informal lenders |
+| `household-debt-by-interest-rate` | `bars` (panels by lender, rural and urban) | `debt-by-interest-rate-by-state.csv` (India) | 30 Jun 2018 | The interest that informal loans carry: 44.0% of rural non-institutional debt at 20% to 25% a year |
 
 A possible eleventh chart: `households-with-a-computer` (`states`, `household-assets-by-state.csv`,
 2022-23). It is the only household asset that MoSPI publishes by state, apart from the phone.
