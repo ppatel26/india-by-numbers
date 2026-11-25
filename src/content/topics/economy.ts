@@ -194,6 +194,30 @@ const ASUSE_API: Source = {
   url: 'https://api.mospi.gov.in/api/asuse/getAsuseRecords?Format=JSON&indicator_code=27&sector_code=3&gender_code=4&broad_activity_category_code=4&establishment_type_code=3',
 }
 
+// The 65 monthly releases, June 2021 (Id 1) to October 2026 (Id 65), are PSIUserView.aspx?Id=N.
+// Each month comes from the latest release that prints it; the board row names the latest.
+// RBI gives no release date on these pages.
+const RBI_PSI: Source = {
+  publisher: 'RBI',
+  release: 'Payment System Indicators, October 2026 (latest of 65 monthly releases from June 2021)',
+  released: 'not stated',
+  url: 'https://www.rbi.org.in/Scripts/PSIUserView.aspx?Id=65',
+}
+
+const PSI_MONTHLY = 'trade-payments/payments-monthly.csv'
+const PSI_ANNUAL = 'trade-payments/payments-annual.csv'
+/** The systems the by-system chart compares, in its row order. */
+const SYSTEMS = ['upi', 'neft', 'imps', 'rtgs', 'credit-cards', 'debit-cards']
+/** Payment counts: RBI publishes lakh transactions; the site reads them in crore. */
+const LAKH_COUNT = { multiply: 1e5, scale: 'crore', decimals: 2 } as const
+/** Payment values: RBI publishes ₹ crore; the site reads them in ₹ lakh crore. */
+const CRORE_VALUE = { unit: '₹', multiply: 1e-5, suffix: ' lakh crore', decimals: 2 } as const
+const PSI_PROCESSING = [
+  'Read Parts I and II of each monthly RBI Payment System Indicators release, June 2021 to October 2026, from the HTML tables on rbi.org.in.',
+  'Each release prints the last financial year, the same month a year earlier, the month before and the release month. Take each month and year from the latest release that prints it.',
+  'Compare the first and the latest print of each month. RBI revised some rows: card values by up to 3.01%, and internet-payment values most of all. UPI, NEFT, RTGS and IMPS do not change.',
+] as const
+
 const ASI_INDIA = 'economy/asi-factory-sector-india.csv'
 const ASUSE_ROUNDS = 'economy/asuse-india-rounds.csv'
 /** The three ASUSE rounds that ran October to September. */
@@ -831,23 +855,145 @@ const topic: Topic = {
         },
       ],
     },
+    {
+      title: 'How fast is digital payment growing?',
+      lede: 'UPI carried 2,546.67 crore payments in October 2026, worth ₹31.53 lakh crore. In June 2020 it carried 133.69 crore payments, worth ₹2.62 lakh crore.',
+      blocks: [
+        {
+          chart: {
+            kind: 'line',
+            slug: 'upi-transactions',
+            checked: '2026-11-25',
+            title: 'UPI payments in India, June 2020 to October 2026',
+            subtitle: 'Number and value of Unified Payments Interface (UPI) transactions each month, all India. Value at current prices.',
+            punches: { office: 'RBI', unit: 'crore · ₹ lakh crore', period: 'OCT 2026' },
+            status: ['Provisional'],
+            note: 'Value is not adjusted for inflation.',
+            sources: [RBI_PSI],
+            series: [
+              { key: 'volume', label: 'UPI', color: 'ink', file: PSI_MONTHLY, where: { item: 'upi', measure: 'volume' }, format: LAKH_COUNT },
+              { key: 'value', label: 'UPI', color: 'ink', file: PSI_MONTHLY, where: { item: 'upi', measure: 'value' }, format: CRORE_VALUE },
+            ],
+            panels: [
+              { label: 'Number of payments, crore', series: ['volume'], own: true },
+              { label: 'Value of payments, ₹ lakh crore', series: ['value'], own: true },
+            ],
+            know: [
+              'UPI lets a person pay from a bank account by phone, to a mobile number, a UPI ID or a QR code.',
+              'The number is the count of transactions in the month. The value is their rupee amount, at current prices.',
+              'RBI counts only domestic financial transactions. It marks every Payment System Indicators release as provisional.',
+              'The RBI archive of these releases starts with June 2021. Each release also prints the same month a year earlier, so the series starts in June 2020.',
+            ],
+            processing: [
+              ...PSI_PROCESSING,
+              'Check UPI volume for October 2026 and UPI value for October 2025 against the October 2026 release.',
+              'Show the number in crore and the value in ₹ lakh crore. RBI publishes lakh transactions and ₹ crore.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        { text: 'In 2025-26 UPI carried 24,162 crore payments, far more than any other system. RTGS, the system for large transfers, moved the most money: ₹2,273.7 lakh crore.' },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'digital-payments-by-system',
+            checked: '2026-11-25',
+            title: 'Digital payments by system, India, 2020-21 and 2025-26',
+            subtitle: 'Number and value of payments in each financial year, all India. Value at current prices.',
+            punches: { office: 'RBI', unit: 'crore · ₹ lakh crore', period: '2025-26' },
+            status: ['Provisional'],
+            note: 'Each panel has its own scale. Value is not adjusted for inflation.',
+            sources: [RBI_PSI],
+            by: 'item',
+            rowHead: 'Payment system',
+            order: SYSTEMS,
+            labels: {
+              upi: 'UPI',
+              neft: 'NEFT',
+              imps: 'IMPS',
+              rtgs: 'RTGS',
+              'credit-cards': 'Credit cards',
+              'debit-cards': 'Debit cards',
+            },
+            series: [
+              { key: 'volume-2020-21', label: '2020-21', color: 'slate', file: PSI_ANNUAL, where: { item: SYSTEMS, measure: 'volume', period: '2020-21' }, format: { ...LAKH_COUNT, decimals: 0 } },
+              { key: 'volume-2025-26', label: '2025-26', color: 'ink', file: PSI_ANNUAL, where: { item: SYSTEMS, measure: 'volume', period: '2025-26' }, format: { ...LAKH_COUNT, decimals: 0 } },
+              { key: 'value-2020-21', label: '2020-21', color: 'slate', file: PSI_ANNUAL, where: { item: SYSTEMS, measure: 'value', period: '2020-21' }, format: { ...CRORE_VALUE, decimals: 1 } },
+              { key: 'value-2025-26', label: '2025-26', color: 'ink', file: PSI_ANNUAL, where: { item: SYSTEMS, measure: 'value', period: '2025-26' }, format: { ...CRORE_VALUE, decimals: 1 } },
+            ],
+            panels: [
+              { label: 'Number of payments, crore', series: ['volume-2020-21', 'volume-2025-26'], own: true },
+              { label: 'Value of payments, ₹ lakh crore', series: ['value-2020-21', 'value-2025-26'], own: true },
+            ],
+            know: [
+              'UPI and IMPS are instant transfers between bank accounts. NEFT settles transfers in batches through the day. RTGS settles each transfer at once, one by one, and carries large sums.',
+              'Card payments cover cards issued by scheduled commercial banks (without regional rural banks) and payments banks.',
+              'The financial year runs April to March. RBI marks every Payment System Indicators release as provisional.',
+              'RBI counts only domestic financial transactions.',
+            ],
+            processing: [
+              ...PSI_PROCESSING,
+              'Check UPI volume and RTGS value for 2025-26 against the October 2026 release.',
+              'Show the number in crore and the value in ₹ lakh crore. RBI publishes lakh transactions and ₹ crore.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        { text: 'Credit cards carried 68.33 crore payments in October 2026, up from 12.49 crore in June 2020. Debit card payments fell from 30.02 crore to 10.50 crore in the same months.' },
+        {
+          chart: {
+            kind: 'line',
+            slug: 'card-payments',
+            checked: '2026-11-25',
+            title: 'Credit and debit card payments in India, June 2020 to October 2026',
+            subtitle: 'Number and value of credit and debit card payments each month, all India. Value at current prices.',
+            punches: { office: 'RBI', unit: 'crore · ₹ lakh crore', period: 'OCT 2026' },
+            status: ['Provisional'],
+            note: 'Cash withdrawals at ATMs are not payments and are not included.',
+            sources: [RBI_PSI],
+            series: [
+              { key: 'credit-volume', label: 'Credit cards', color: 's1', file: PSI_MONTHLY, where: { item: 'credit-cards', measure: 'volume' }, format: LAKH_COUNT },
+              { key: 'debit-volume', label: 'Debit cards', color: 's2', file: PSI_MONTHLY, where: { item: 'debit-cards', measure: 'volume' }, format: LAKH_COUNT },
+              { key: 'credit-value', label: 'Credit cards', color: 's1', file: PSI_MONTHLY, where: { item: 'credit-cards', measure: 'value' }, format: CRORE_VALUE },
+              { key: 'debit-value', label: 'Debit cards', color: 's2', file: PSI_MONTHLY, where: { item: 'debit-cards', measure: 'value' }, format: CRORE_VALUE },
+            ],
+            panels: [
+              { label: 'Number of payments, crore', series: ['credit-volume', 'debit-volume'], own: true },
+              { label: 'Value of payments, ₹ lakh crore', series: ['credit-value', 'debit-value'], own: true },
+            ],
+            know: [
+              'Each line adds payments at a point of sale (PoS) terminal and other card payments. RBI prints the two parts separately for each card type.',
+              'The data cover cards issued by scheduled commercial banks (without regional rural banks) and payments banks.',
+              'RBI says card data from November 2019 may not compare with earlier months. This series starts in June 2020, after that change.',
+              'RBI revised some card values in later releases, by up to 3.01%. The chart uses the latest print.',
+            ],
+            processing: [
+              ...PSI_PROCESSING,
+              'Check credit card and debit card volume for October 2026 against the October 2026 release.',
+              'Show the number in crore and the value in ₹ lakh crore. RBI publishes lakh transactions and ₹ crore.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
   ],
   // LATER: the About band's side line ("How each economy figure is made, where it breaks, and what is missing.") has no field.
   about: {
     publisher:
-      "MoSPI's National Statistics Office (NSO) publishes the national and state accounts, the Index of Industrial Production (IIP), the Annual Survey of Industries (ASI) and the Annual Survey of Unincorporated Sector Enterprises (ASUSE). The RBI publishes exchange rate tables. Financial Benchmarks India (FBIL) sets the daily reference rate.",
+      "MoSPI's National Statistics Office (NSO) publishes the national and state accounts, the Index of Industrial Production (IIP), the Annual Survey of Industries (ASI) and the Annual Survey of Unincorporated Sector Enterprises (ASUSE). The RBI publishes exchange rate tables and the monthly Payment System Indicators. Financial Benchmarks India (FBIL) sets the daily reference rate.",
     frequency:
-      'GDP: quarterly (latest 31 August 2026). IIP: monthly; October 2026 is due on 30 November 2026. State accounts: as states report. ASI and ASUSE: yearly. RBI Handbook: yearly. FBIL rate: each working day.',
+      'GDP: quarterly (latest 31 August 2026). IIP: monthly; October 2026 is due on 30 November 2026. State accounts: as states report. ASI and ASUSE: yearly. RBI Handbook: yearly. RBI Payment System Indicators: monthly, with no release date stated. FBIL rate: each working day.',
     revisions:
-      'MoSPI revised 2022-23 to 2025-26 on 31 August 2026. This page uses the new rates, not the older RBI Handbook rates. 2025-26 is a Provisional Estimate. MoSPI revises each IIP quick estimate the next month.',
+      'MoSPI revised 2022-23 to 2025-26 on 31 August 2026. This page uses the new rates, not the older RBI Handbook rates. 2025-26 is a Provisional Estimate. MoSPI revises each IIP quick estimate the next month. RBI marks all payment data as provisional and revises some earlier months; we use the latest print.',
     breaks:
       'GDP moved to base 2022-23 on 27 February 2026. State accounts stay on base 2011-12. IIP growth on base 2022-23 starts in April 2024. We derive annual growth before 2023-24, and sector shares. ASUSE moved from October to September rounds to the calendar year in 2025.',
     coverage:
-      'All India for GDP, GVA, IIP and the exchange rate. For 2024-25, income per person covers 32 of 36 states and UTs, and GSDP growth covers 30. Jammu and Kashmir excludes Ladakh from 2019-20. ASI covers registered factories; ASUSE covers small unincorporated firms outside farming and construction.',
+      'All India for GDP, GVA, IIP and the exchange rate. For 2024-25, income per person covers 32 of 36 states and UTs, and GSDP growth covers 30. Jammu and Kashmir excludes Ladakh from 2019-20. ASI covers registered factories; ASUSE covers small unincorporated firms outside farming and construction. Payment data are all India only, and count domestic transactions.',
     missing:
-      'MoSPI has no 2024-25 income per person for four states and UTs, and no GSDP growth for six. It has no IIP rate for April 2021, and no ASI estimate for Lakshadweep. No publisher states a reuse licence.',
+      'MoSPI has no 2024-25 income per person for four states and UTs, and no GSDP growth for six. It has no IIP rate for April 2021, and no ASI estimate for Lakshadweep. Monthly payment data start in June 2020: the RBI archive starts with the June 2021 release, which also prints June 2020. No publisher states a reuse licence.',
   },
-  sources: [GDP_PRESS_NOTE, ESANKHYIKI, IIP_RELEASE, ASI_SUMMARY, ASUSE_REPORT, RBI_HANDBOOK, RBI_TABLE_133_2002, IMF_IFS, FBIL_ARCHIVE, RBI_HOME],
+  sources: [GDP_PRESS_NOTE, ESANKHYIKI, IIP_RELEASE, ASI_SUMMARY, ASUSE_REPORT, RBI_HANDBOOK, RBI_TABLE_133_2002, IMF_IFS, FBIL_ARCHIVE, RBI_HOME, RBI_PSI],
   related: [
     { label: 'Prices: Consumer price inflation since 2012', href: '/charts/cpi-inflation/' },
     { label: 'Prices: RBI repo rate since 2001', href: '/charts/repo-rate/' },

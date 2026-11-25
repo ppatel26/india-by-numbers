@@ -24,7 +24,12 @@ function pool(t: Topic): Set<string> {
   const numbersIn = (text: string) => text.match(/-?\d+(\.\d+)?/g) ?? []
   for (const dir of dirs)
     for (const f of readdirSync(join(DATA_DIR, dir))) {
-      if (f.endsWith('.csv')) for (const r of rows(`${dir}/${f}`)) for (const v of Object.values(r)) numbersIn(v.replace(/,/g, '')).forEach(add)
+      if (f.endsWith('.csv'))
+        for (const r of rows(`${dir}/${f}`)) {
+          for (const v of Object.values(r)) numbersIn(v.replace(/,/g, '')).forEach(add)
+          // A count published in lakh reads in crore: 2,54,666.92 lakh is 2,546.67 crore.
+          if (r.unit?.startsWith('lakh') && r.value) for (const d of [0, 1, 2]) out.add((Math.abs(Number(r.value)) / 100).toFixed(d))
+        }
       // README tables write grouped numbers: 1,21,08,54,977 and 5,63,113.
       else numbersIn(readFileSync(join(DATA_DIR, dir, f), 'utf8').replace(/\d{1,3}(,\d{2,3})+/g, (m) => m.replace(/,/g, ''))).forEach(add)
     }

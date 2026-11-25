@@ -47,7 +47,8 @@ const withUnit = (s: string, unit: Format['unit'], suffix = ''): string =>
  * digits; computed values pass a number and `decimals`.
  */
 export function formatNumber(value: number, fmt: Format = {}, raw?: string): Shown {
-  if (fmt.multiply) return formatNumber(value * fmt.multiply, { ...fmt, multiply: undefined })
+  // Round the product to 12 significant digits: 30,00,000 × 1e-5 is 30.000000000000004 in floating point.
+  if (fmt.multiply) return formatNumber(Number((value * fmt.multiply).toPrecision(12)), { ...fmt, multiply: undefined })
   // A lakh or more, with no scale set, reads in lakh or crore: nobody should count digits.
   // Tables and CSVs keep every digit (they pass scale 'none').
   if (fmt.scale === undefined && Math.abs(value) >= 1e5) {
