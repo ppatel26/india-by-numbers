@@ -370,7 +370,8 @@ report (no sample) is an empty value.
 
 #### `household-assets-and-debt-india.csv`
 
-- 24 rows: India, the six household types, four measures, in rupees. Average debt and debt per
+- 24 rows: India, the six household types, four measures, in rupees. Column `household` joins sector
+  and household type (`rural cultivator`, `urban all`), so that a chart can show all six. Average debt and debt per
   indebted household are from Statement 3.8, and the press note gives the same values. Average value
   of assets is from the press note: the report gives it only in thousand rupees.
 - The script checks that every rupee value rounds to the thousand-rupee value of Statement 2, and
@@ -400,7 +401,8 @@ report (no sample) is an empty value.
 #### `debt-by-credit-agency-india.csv`
 
 - 138 rows: India, six household types, 20 credit agencies and three totals. Column `agency_type`:
-  `institutional`, `non-institutional` or `total`. Unit: % of outstanding cash debt.
+  `institutional`, `non-institutional` or `total`. Column `household` as in the India CSV above.
+  Unit: % of outstanding cash debt.
 - Source: Statement 3.12 (pages 30 and 31). The script checks that the agencies add up to each total
   within rounding.
 - Checked values: rural professional moneylender 16.5%; urban scheduled commercial bank 68.4%; rural

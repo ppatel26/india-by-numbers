@@ -262,10 +262,10 @@ for c, (sector, htype) in enumerate(COLS312):
         if s312[agency][c] != v:
             errors.append(f"Statement 3.12 {sector} {htype} {agency}: {s312[agency][c]} but Statement 8 {v}")
     for _, name, kind in AGENCIES:
-        rows.append(["india", PERIOD, sector, htype, name, kind, s312[name][c], "% of outstanding cash debt", f"{R588}, Statement 3.12"])
+        rows.append(["india", PERIOD, sector, htype, f"{sector} {htype}", name, kind, s312[name][c], "% of outstanding cash debt", f"{R588}, Statement 3.12"])
 DEBT_AGENCY_INDIA = rows
 write("debt-by-credit-agency-india.csv",
-      ["geography", "period", "sector", "household_type", "credit_agency", "agency_type", "value", "unit", "report_table"], rows)
+      ["geography", "period", "sector", "household_type", "household", "credit_agency", "agency_type", "value", "unit", "report_table"], rows)
 
 # ---------------------------------------------------------------- Statement 10
 
@@ -367,10 +367,10 @@ for n, (sector, htype) in enumerate(ORDER):
         ("average debt per indebted household", aodl, "rupees per indebted household", f"{R588}, Statement 3.8; press note"),
         ("incidence of indebtedness", ioi, "% of households", f"{R588}, Statement 3.8 and Summary Statement 2"),
     ):
-        rows.append(["india", PERIOD, sector, htype, measure, value, unit, table])
+        rows.append(["india", PERIOD, sector, htype, f"{sector} {htype}", measure, value, unit, table])
 ASSETS_INDIA = rows
 write("household-assets-and-debt-india.csv",
-      ["geography", "period", "sector", "household_type", "measure", "value", "unit", "report_table"], rows)
+      ["geography", "period", "sector", "household_type", "household", "measure", "value", "unit", "report_table"], rows)
 
 # ---------------------------------------------------------------- values read by eye from the report
 
@@ -401,11 +401,15 @@ CHECKS = [
     (ASSETS_INDIA, ("india", "urban", "all", "average debt per indebted household"), "536861"),
 ]
 for rows, key, want in CHECKS:
-    got = [r for r in rows if (r[0], r[2], r[3], r[4]) == key]
+    # The India CSVs carry a `household` column after `household_type`, and DEBT_AGENCY_INDIA an
+    # `agency_type` column after `credit_agency`.
+    india = rows is DEBT_AGENCY_INDIA or rows is ASSETS_INDIA
+    m = 5 if india else 4
+    got = [r for r in rows if (r[0], r[2], r[3], r[m]) == key]
     if len(got) != 1:
         errors.append(f"check {key}: {len(got)} rows")
         continue
-    value = got[0][6] if rows is DEBT_AGENCY_INDIA else got[0][5]
+    value = got[0][7 if rows is DEBT_AGENCY_INDIA else 6 if india else 5]
     if value != want:
         errors.append(f"check {key}: {value!r}, the report prints {want!r}")
 
