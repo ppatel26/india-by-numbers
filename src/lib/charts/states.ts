@@ -37,7 +37,9 @@ export function renderRanked(chart: Of<'states'>, width: Width): Markup {
   const missing = ranked(data).filter((r) => r.pt?.y == null).map((r) => rowName(r.place.slug))
   const shortName = (p: Place) => (narrow && p.name.length > 16 ? p.short.replace('-', '') : rowName(p.slug))
   const rowH = 20
-  const m = { top: 30, right: 56, bottom: 8, left: nameColumn(rows.map((r) => shortName(r.place)), narrow) }
+  // Room at the right for the longest value label ("₹6.46 lakh"), past the longest bar.
+  const longest = Math.max(...rows.map((r) => show(chart, r.pt!).text.length))
+  const m = { top: 30, right: Math.max(56, longest * 6.8 + 10), bottom: 8, left: nameColumn(rows.map((r) => shortName(r.place)), narrow) }
   // The no-data line wraps at the plot width.
   const perLine = Math.floor((W - 8) / 6.4)
   const missLines: string[] = []
@@ -56,6 +58,8 @@ export function renderRanked(chart: Of<'states'>, width: Width): Markup {
     .range([m.left, W - m.right])
   const ix = india === null ? null : x(india)
 
+  // Each value label's box, so the India line can stop short of it.
+  const boxes: [number, number, number, number][] = []
   const body = rows.map((r, i) => {
     const y = m.top + i * rowH
     const label = svg`<a href="${href(r.place)}"><text class="name" x="${m.left - 8}" y="${y + 14}" text-anchor="end" font-size="12.5" fill="var(--ink)">${shortName(r.place)}</text></a>`
@@ -64,25 +68,34 @@ export function renderRanked(chart: Of<'states'>, width: Width): Markup {
     const x0 = x(Math.min(0, pt.y!))
     const x1 = x(Math.max(0, pt.y!))
     const ci = pt.interval
-    // The value belongs to the bar end. With a confidence interval it sits inside the bar end when
-    // it fits, so the whisker never runs through it; otherwise just past the bar. The India line
-    // runs behind it.
+    // The value belongs to the bar end, or past the whisker when the bar has a confidence
+    // interval, so the whisker never runs through it.
     const barEnd = pt.y! >= 0 ? x1 : x0
-    const textW = v.text.length * 7 + 8
-    const inside = !!ci && x1 - x0 > textW + 4
-    const lx = inside ? barEnd - 4 : ci ? Math.max(barEnd, x(ci[1])) + 5 : barEnd + 5
+    const lx = ci ? Math.max(barEnd, x(ci[1])) + 5 : barEnd + 5
+    boxes.push([lx - 3, lx + v.text.length * 7 + 3, y + 2, y + rowH - 2])
     const whisker = ci
       ? svg`<path d="M${x(ci[0])} ${y + rowH / 2}H${x(ci[1])}M${x(ci[0])} ${y + 7}V${y + rowH - 7}M${x(ci[1])} ${y + 7}V${y + rowH - 7}" stroke="var(--slate)" fill="none"/>`
       : null
     return svg`<g class="row" data-geo="${r.place.slug}" data-tip="${stateTip(chart, data, r.place)}">${label}
 <rect class="bar" x="${x0}" y="${y + 3}" width="${Math.max(1, x1 - x0)}" height="${rowH - 6}" fill="var(--other)"/>${whisker}
-<text class="value" x="${lx}" y="${y + 14}"${svg` text-anchor="${inside ? 'end' : 'start'}" paint-order="stroke" stroke="${inside ? 'var(--other)' : 'var(--paper)'}" stroke-width="4"`} font-size="12" fill="var(--ink)"${attr('data-alt', v.alt)}>${v.text}</text></g>`
+<text class="value" x="${lx}" y="${y + 14}" paint-order="stroke" stroke="var(--paper)" stroke-width="4" font-size="12" fill="var(--ink)"${attr('data-alt', v.alt)}>${v.text}</text></g>`
   })
 
+  // The India line runs the full height but breaks around any value label it would cross.
+  let indiaPath = ''
+  if (ix !== null) {
+    let y0 = m.top - 6
+    for (const [l, r, t, b] of boxes) {
+      if (ix < l || ix > r) continue
+      if (t > y0) indiaPath += `M${ix} ${y0}V${t}`
+      y0 = b
+    }
+    if (rowsH > y0) indiaPath += `M${ix} ${y0}V${rowsH}`
+  }
   const indiaLine =
     ix === null || !data.india
       ? null
-      : svg`<line x1="${ix}" x2="${ix}" y1="${m.top - 6}" y2="${rowsH}" stroke="var(--ink)" stroke-width="1.5"/>
+      : svg`<path d="${indiaPath}" stroke="var(--ink)" stroke-width="1.5" fill="none"/>
 <text x="${ix}" y="${m.top - 12}" text-anchor="middle" font-size="12.5" font-weight="600" fill="var(--ink)">India ${show(chart, data.india).text}</text>`
 
   const missNote = missLines.map((l, i) => svg`<text x="0" y="${rowsH + 22 + i * 17}" font-size="12" fill="var(--slate)">${l}</text>`)

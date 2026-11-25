@@ -29,7 +29,20 @@ export interface NoteBox {
   floorAt?: (x0: number, x1: number) => number
   /** Step lines hold each value until the next point. */
   step?: boolean
+  /** Boxes already taken (end labels): callouts keep clear of them. */
+  avoid?: readonly Box[]
+  /** The frame's right edge: no label runs past it. Default: `right`. */
+  edge?: number
 }
+
+interface Box {
+  l: number
+  t: number
+  r: number
+  b: number
+}
+
+const overlaps = (a: Box, b: Box): boolean => a.l < b.r && a.r > b.l && a.t < b.b && a.b > b.t
 
 type Seg = readonly [number, number, number, number]
 
@@ -71,23 +84,32 @@ function crosses([x0, y0, x1, y1]: Seg, r: { l: number; t: number; r: number; b:
 const ruleText = (s: string): number => s.length * 6.4
 
 /**
- * A break or marker line with its labels. `prev` and `next` are the neighbouring rules' x;
- * a label that would run into one is left out (in narrow small multiples), the line stays.
+ * A break or marker line with its labels. A label that would run into another rule, another
+ * rule's label or past the frame is left out; the line stays.
  */
-function rule(b: Breakpoint, box: NoteBox, dotted: boolean, prev = -Infinity, next = Infinity): Markup | null {
+function rule(b: Breakpoint, box: NoteBox, dotted: boolean, taken: Box[], prev = -Infinity, next = Infinity): Markup | null {
   const bx = box.xOf(b.x)
   if (bx === undefined) return null
   const stroke = dotted ? 'var(--ink)' : 'var(--slate)'
-  const fitsLeft = (s: string) => bx - 6 - ruleText(s) >= prev + 4
-  const fitsRight = (s: string) => bx + 6 + ruleText(s) <= next - 4
-  const before = b.before && fitsLeft(b.before) ? mono(bx - 6, box.top - 12, b.before, 'end', stroke) : null
-  const label = !b.label ? null : b.before ? (fitsRight(b.label) ? mono(bx + 6, box.top - 12, b.label, 'start', stroke) : null) : fitsLeft(b.label) ? mono(bx - 6, box.top - 12, b.label, 'end', stroke) : null
+  const edge = box.edge ?? box.right ?? Infinity
+  const ty = box.top - 12
+  const place = (s: string, side: 'left' | 'right'): Markup | null => {
+    const w = ruleText(s)
+    const l = side === 'left' ? bx - 6 - w : bx + 6
+    const r: Box = { l: l - 3, t: ty - 9, r: l + w + 3, b: ty + 2 }
+    const clear = l >= 0 && l + w <= edge && (side === 'left' ? l >= prev + 4 : l + w <= next - 4) && !taken.some((o) => overlaps(o, r))
+    if (!clear) return null
+    taken.push(r)
+    return mono(side === 'left' ? bx - 6 : bx + 6, ty, s, side === 'left' ? 'end' : 'start', stroke)
+  }
+  const before = b.before ? place(b.before, 'left') : null
+  const label = !b.label ? null : place(b.label, b.before ? 'right' : 'left') ?? (b.before ? null : place(b.label, 'right'))
   // Labels sit in the band above the plot (callers leave 24 px for them), clear of the lines.
   return svg`<line x1="${bx}" x2="${bx}" y1="${box.top - 22}" y2="${box.bottom}" stroke="${stroke}"${dotted ? svg` stroke-dasharray="2 3"` : null}/>
 ${before}${label}`
 }
 
-function callout(c: Callout, chart: WithNotes, box: NoteBox): Markup | null {
+function callout(c: Callout, chart: WithNotes, box: NoteBox, taken: Box[]): Markup | null {
   const s = box.series.find((se) => se.key === c.series)
   const p = s?.points.find((pt) => pt.x === c.x)
   const px = p && box.xOf(p.x)
@@ -100,23 +122,55 @@ function callout(c: Callout, chart: WithNotes, box: NoteBox): Markup | null {
     return rx === undefined ? [] : [rx]
   })
   if (box.capAt) return capLabel(text, px, box, p.y < 0, rules)
-  // Try spots around the point, nearest first, and take the first whose text crosses no line.
-  const w = text.length * 6.5
   const segs: Seg[] = [...lineSegments(box), ...rules.map((rx): Seg => [rx, box.top - 22, rx, box.bottom])]
+  const left = box.left ?? -Infinity
+  const right = box.edge ?? box.right ?? Infinity
   // Farther spots last, sideways before up and down: between two close lines the near ones can all be crossed.
   const offsets: readonly (readonly [number, number])[] = [[7, -7], [7, 15], [-7, -7], [-7, 15], [7, -21], [7, 29], [-7, -21], [-7, 29], [21, -21], [21, 29], [-21, -21], [-21, 29], [7, -37], [-7, -37], [7, 45], [-7, 45], [7, -53], [-7, -53]]
-  const spots = offsets.map(([dx, dy]) => {
-    const start = dx > 0 ? px + dx : px + dx - w
-    return { x: start, y: py + dy, r: { l: start - 2, t: py + dy - 11, r: start + w + 2, b: py + dy + 3 } }
-  }).filter((o) => o.r.l >= (box.left ?? -Infinity) && o.r.r <= (box.right ?? Infinity) && o.r.t >= box.top - 4 && o.r.b <= box.bottom)
-  const at = spots.findIndex((o) => !segs.some((sg) => crosses(sg, o.r)))
-  const best = spots[at] ?? spots[0] ?? { x: px + 7, y: py - 7, r: { l: px, t: py, r: px, b: py } }
-  // A label that had to move away from its point keeps a leader line back to it.
-  const far = at >= 4
+  // Try the text on one line, then on two: a long label near the edge fits as two short lines.
+  const split = (t: string): string[] => {
+    const words = t.split(' ')
+    if (words.length < 2) return [t]
+    let best = [t]
+    let worst = Infinity
+    for (let i = 1; i < words.length; i++) {
+      const a = words.slice(0, i).join(' ')
+      const b = words.slice(i).join(' ')
+      if (Math.max(a.length, b.length) < worst) [best, worst] = [[a, b], Math.max(a.length, b.length)]
+    }
+    return best
+  }
+  type Spot = { x: number; y: number; r: Box; lines: string[]; crossed: number }
+  const spotsFor = (lines: string[]): Spot[] => {
+    const w = Math.max(...lines.map((l) => l.length)) * 6.5
+    const h = (lines.length - 1) * 14
+    return offsets
+      .map(([dx, dy]) => {
+        const start = dx > 0 ? px + dx : px + dx - w
+        // A two-line label above its point grows upwards.
+        const ty = dy < 0 ? py + dy - h : py + dy
+        const r = { l: start - 2, t: ty - 11, r: start + w + 2, b: ty + h + 3 }
+        return { x: start, y: ty, r, lines, crossed: segs.filter((sg) => crosses(sg, r)).length }
+      })
+      .filter((o) => o.r.l >= left && o.r.r <= right && o.r.t >= box.top - 4 && o.r.b <= box.bottom && ![...(box.avoid ?? []), ...taken].some((a) => overlaps(a, o.r)))
+  }
+  const one = spotsFor([text])
+  const two = text.includes(' ') ? spotsFor(split(text)) : []
+  // Best: one line crossing nothing; then two lines crossing nothing; then whatever crosses least.
+  const best =
+    one.find((o) => o.crossed === 0) ??
+    two.find((o) => o.crossed === 0) ??
+    [...one, ...two].sort((a, b) => a.crossed - b.crossed)[0]
+  if (!best) return null
+  taken.push(best.r)
+  // A label that had to move away from its point keeps a grey leader line back to it.
+  const gapX = px < best.r.l ? best.r.l - px : px > best.r.r ? px - best.r.r : 0
+  const gapY = py < best.r.t ? best.r.t - py : py > best.r.b ? py - best.r.b : 0
+  const far = gapX > 12 || gapY > 16
   const lx = best.x < px ? best.r.r - 2 : best.r.l + 2
   const ly = best.y < py ? best.r.b : best.r.t
-  return svg`${far ? svg`<path d="M${px} ${py}L${lx} ${ly}" stroke="${colorVar(s.color)}" fill="none"/>` : null}<circle cx="${px}" cy="${py}" r="3.5" fill="${colorVar(s.color)}" stroke="var(--paper)" stroke-width="1.5"/>
-<text x="${best.x}" y="${best.y}" font-size="12" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3">${text}</text>`
+  return svg`${far ? svg`<path d="M${px} ${py}L${lx} ${ly}" stroke="var(--slate)" fill="none"/>` : null}<circle cx="${px}" cy="${py}" r="3.5" fill="${colorVar(s.color)}" stroke="var(--paper)" stroke-width="1.5"/>
+<text x="${best.x}" y="${best.y}" font-size="12" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3">${best.lines.map((l, i) => svg`<tspan x="${best.x}" dy="${i === 0 ? 0 : 14}">${l}</tspan>`)}</text>`
 }
 
 /**
@@ -147,14 +201,21 @@ export function timeNotes(chart: WithNotes, box: NoteBox): { under: Markup; over
     .map((r) => ({ ...r, x: box.xOf(r.b.x) }))
     .filter((r): r is typeof r & { x: number } => r.x !== undefined)
     .sort((a, c) => a.x - c.x)
+  const ruleBoxes: Box[] = []
+  const callBoxes: Box[] = []
   const spans = (chart.spans ?? []).map((s) => {
     const a = box.xOf(s.from)
     const b = box.xOf(s.to)
     if (a === undefined || b === undefined) return null
-    return svg`<rect x="${a}" y="${box.top}" width="${Math.max(2, b - a)}" height="${box.bottom - box.top}" fill="var(--band)"/>${mono(a + 4, box.top + 12, s.label)}`
+    // A span label that would touch another span's label, or run past the frame, is left out.
+    const r: Box = { l: a + 2, t: box.top + 1, r: a + 6 + ruleText(s.label), b: box.top + 15 }
+    const fits = r.r <= (box.edge ?? box.right ?? Infinity) && !callBoxes.some((o) => overlaps(o, r))
+    // Callouts keep clear of the span's label.
+    if (fits) callBoxes.push(r)
+    return svg`<rect x="${a}" y="${box.top}" width="${Math.max(2, b - a)}" height="${box.bottom - box.top}" fill="var(--band)"/>${fits ? mono(a + 4, box.top + 12, s.label) : null}`
   })
   return {
-    under: svg`${spans}${rules.map(({ b, dotted }, i) => rule(b, box, dotted, rules[i - 1]?.x, rules[i + 1]?.x))}`,
-    over: svg`${(chart.callouts ?? []).map((c) => callout(c, chart, box))}`,
+    under: svg`${spans}${rules.map(({ b, dotted }, i) => rule(b, box, dotted, ruleBoxes, rules[i - 1]?.x, rules[i + 1]?.x))}`,
+    over: svg`${(chart.callouts ?? []).map((c) => callout(c, chart, box, callBoxes))}`,
   }
 }

@@ -160,6 +160,8 @@ export type Chart =
         panels?: readonly Panel[]
         /** Draw steps: a value holds until the next one (policy rates). */
         step?: boolean
+        /** Join every value, however far apart: survey rounds come at uneven intervals, with no round missing. */
+        joined?: boolean
         /** Hold the last value flat to this date (YYYY-MM-DD), for step lines. */
         extendTo?: string
       })

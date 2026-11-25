@@ -4,7 +4,7 @@ import type { Point } from '~/lib/data'
 import { svg, attr, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
 import { parsePeriod } from '~/lib/period'
-import { WIDTH, frame, note, yRoom, hit, spread, tickRoom, timeTicks, xLabels, yGrid, yScale, yTicks, type Width } from './axes'
+import { WIDTH, frame, note, noteWidth, yRoom, hit, spread, tickRoom, timeTicks, xLabels, yGrid, yScale, yTicks, type Width } from './axes'
 import { legend, legendItemWidth } from './dots'
 import { drawn, show, tipLine, when, type Of, type SeriesData } from './model'
 import { timeNotes } from './notes'
@@ -26,6 +26,20 @@ export function segments(pts: readonly Point[], regular = true): Point[][] {
     if (p.y !== null) out.at(-1)!.push(p)
   })
   return out.filter((s) => s.length > 0)
+}
+
+/** Words in lines of at most `chars` characters; the last of `max` lines ends in "…" when cut. */
+export function wrapLines(text: string, chars: number, max: number): string[] {
+  const lines: string[] = []
+  for (const word of text.split(' ')) {
+    const last = lines.at(-1)
+    if (last !== undefined && last.length + word.length + 1 <= chars) lines[lines.length - 1] = `${last} ${word}`
+    else lines.push(word)
+  }
+  if (lines.length <= max) return lines
+  const kept = lines.slice(0, max)
+  kept[max - 1] = `${kept[max - 1]!.slice(0, chars - 1).trimEnd()}…`
+  return kept
 }
 
 /** Ranges with no data inside a series: [last value before, first value after]. */
@@ -117,6 +131,33 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
   const endLabeled = new Set(
     endLabels ? panel.series.filter((s) => tLast - (s.points.findLast((p) => p.y !== null)?.t ?? -Infinity) < 0.5).map((s) => s.key) : [],
   )
+  // End labels name the series that reach the right edge. A series that stops earlier (an old
+  // base, an old survey design) is named in the tooltip and the table instead. A long name wraps
+  // to the room at the right, so it never runs off the frame.
+  const room = m.right - 8
+  const perLine = Math.max(8, Math.floor(room / 7))
+  const endItems = endLabels
+    ? panel.series.flatMap((s) => {
+        const last = s.points.findLast((p) => p.y !== null)
+        if (!last || tLast - last.t >= 0.5) return []
+        const v = show(chart, last, s)
+        const full = `${v.text} ${when(last.label)}`
+        const value = narrow || full.length > perLine ? v.text : full
+        return [{ s, p: last, v, value, names: wrapLines(s.label, perLine, 2), y: y(last.y!) }]
+      })
+    : []
+  const nameRows = Math.max(1, ...endItems.map((e) => e.names.length))
+  // The first name line sits 12 px above its anchor, so the top anchor stays 12 px inside the plot.
+  const placedEnds = spread(endItems, 16 + nameRows * 14, m.top + 12, H - m.bottom)
+  const endBoxes = placedEnds.map(({ p, names, ly }) => ({ l: x(p.t) + 4, t: ly - 14, r: W, b: ly + names.length * 14 + 2 }))
+  const ends = placedEnds.map(({ s, p, v, value, names, ly }) => {
+    // A label pushed away from its dot gets a short grey connector, so it never reads as data.
+    const moved = Math.abs(ly + 3 - y(p.y!)) > 9
+    return svg`${moved ? svg`<path d="M${x(p.t) + 3} ${y(p.y!)}L${x(p.t) + 6} ${ly + 3}" stroke="var(--slate)" fill="none"/>` : null}<circle cx="${x(p.t)}" cy="${y(p.y!)}" r="3" fill="${colorVar(s.color)}"/>
+${names.map((n, i) => svg`<text x="${x(p.t) + 8}" y="${ly - 2 + i * 14}" font-size="12.5" font-weight="600" fill="var(--ink)">${n}</text>`)}
+<text x="${x(p.t) + 8}" y="${ly - 2 + names.length * 14}" font-size="12.5" fill="var(--ink)"${attr('data-alt', v.alt)}>${value}</text>`
+  })
+
   const notes = timeNotes(chart, {
     xOf: (v) => {
       const t = tOf.get(v) ?? parsePeriod(v).t
@@ -129,6 +170,8 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
     right: W - m.right,
     series: panel.series,
     endLabeled,
+    avoid: endBoxes,
+    edge: W,
     step: chart.step,
   })
 
@@ -154,7 +197,7 @@ ${note(right - 4, y(r.y) - 5, r.label, 'end')}`
       })() : null}`
     : null
 
-  const segs = panel.series.map((s) => segments(s.points, !chart.step))
+  const segs = panel.series.map((s) => segments(s.points, !chart.step && !chart.joined))
   const lines = panel.series.map((s, i) =>
     segs[i]!.map((seg) =>
       seg.length === 1
@@ -173,34 +216,16 @@ ${note(right - 4, y(r.y) - 5, r.label, 'end')}`
       const x0 = x(a.t)
       const x1 = x(b.t)
       const missing = s.points.some((p) => p.y === null && p.t > a.t && p.t < b.t)
-      if (!missing || x1 - x0 < 50 || taken.some(([p, q]) => x0 < q && x1 > p)) return []
-      taken.push([x0, x1])
+      // The label claims its own width too: two holes side by side must not print on each other.
+      const half = noteWidth('No data') / 2 + 4
+      const a0 = Math.min(x0, (x0 + x1) / 2 - half)
+      const a1 = Math.max(x1, (x0 + x1) / 2 + half)
+      if (!missing || x1 - x0 < 50 || taken.some(([p, q]) => a0 < q && a1 > p)) return []
+      taken.push([a0, a1])
       const ly = Math.max(m.top + 12, (y(a.y!) + y(b.y!)) / 2 - 8)
       return [note((x0 + x1) / 2, ly, 'No data', 'middle', colorVar(s.color))]
     })
   })
-
-  // End labels name the series that reach the right edge. A series that stops earlier (an old
-  // base, an old survey design) is named in the tooltip and the table instead.
-  const tEnd = Math.max(...panel.series.flatMap((s) => s.points.filter((p) => p.y !== null).map((p) => p.t)))
-  const ends = endLabels
-    ? spread(
-        panel.series.flatMap((s) => {
-          const last = s.points.findLast((p) => p.y !== null)
-          return last && tEnd - last.t < 0.5 ? [{ s, p: last, y: y(last.y!) }] : []
-        }),
-        30,
-        m.top,
-        H - m.bottom,
-      ).map(({ s, p, ly }) => {
-        const v = show(chart, p, s)
-        // A label pushed away from its dot gets a short connector, so it never reads as another line's.
-        const moved = Math.abs(ly + 3 - y(p.y!)) > 9
-        return svg`${moved ? svg`<path d="M${x(p.t) + 3} ${y(p.y!)}L${x(p.t) + 6} ${ly + 3}" stroke="${colorVar(s.color)}" fill="none"/>` : null}<circle cx="${x(p.t)}" cy="${y(p.y!)}" r="3" fill="${colorVar(s.color)}"/>
-<text x="${x(p.t) + 8}" y="${ly - 2}" font-size="12.5" font-weight="600" fill="var(--ink)">${s.label}</text>
-<text x="${x(p.t) + 8}" y="${ly + 12}" font-size="12.5" fill="var(--ink)"${attr('data-alt', v.alt)}>${v.text}${narrow ? '' : ` ${when(p.label)}`}</text>`
-      })
-    : []
 
   const byLabel = Map.groupBy(panel.series, (s) => `${s.label}|${s.color}`)
   const hits = sorted.map((p, i) => {

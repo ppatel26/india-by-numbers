@@ -62,7 +62,7 @@ const TILES: readonly (readonly [string, string, string, number, number])[] = [
   ['lakshadweep', 'Laksha-dweep', 'LD', 1, 7],
   ['kerala', 'Kerala', 'KL', 3, 7],
   ['tamil-nadu', 'Tamil Nadu', 'TN', 4, 7],
-  ['puducherry', 'Puduch-erry', 'PY', 5, 7],
+  ['puducherry', 'Pudu-cherry', 'PY', 5, 7],
   ['andaman-nicobar', 'A&N', 'AN', 7, 7],
 ]
 

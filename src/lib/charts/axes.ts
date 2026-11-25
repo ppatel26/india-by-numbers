@@ -52,8 +52,14 @@ function tickLabels(ticks: readonly number[], f: Format | undefined): (t: number
   const per = (f?.scale === 'crore' ? 1e7 : f?.scale === 'lakh' ? 1e5 : 0) / (f?.multiply ?? 1)
   const exact = (d: number) => ticks.every((t) => Math.abs(Math.round((t / per) * 10 ** d) - (t / per) * 10 ** d) < 1e-6)
   const d = per ? ([0, 1, 2].find(exact) ?? 2) : 0
-  // The baseline reads plain 0; the unit sits on the top tick.
-  return (t, withUnit) => (t === 0 && !withUnit ? { text: '0' } : formatTick(t, { ...base, unit: withUnit ? base.unit : '' }, d))
+  // The baseline reads plain 0; the unit, the scale word (crore, lakh) and any suffix sit on the
+  // top tick only, as "%" does: 160 crore, 120, 80.
+  const bare = (x: string) => x.replace(/ (crore|lakh|thousand|million|billion)$/, '')
+  return (t, withUnit) => {
+    if (t === 0 && !withUnit) return { text: '0' }
+    const shown = formatTick(t, { ...base, unit: withUnit ? base.unit : '', suffix: withUnit ? base.suffix : '' }, d)
+    return withUnit ? shown : { text: bare(shown.text), alt: shown.alt && bare(shown.alt) }
+  }
 }
 
 /** Left margin wide enough for the longest y tick label (Geist Mono 11 px runs about 7 px a character). */
@@ -77,11 +83,11 @@ export function yGrid(s: ScaleLinear<number, number>, ticks: number[], x0: numbe
   })}</g>`
 }
 
-/** Labels under a time axis. A label that would run past the plot edge is aligned to it. */
+/** Labels under a time axis. A label that would run past the plot edge is aligned to it. "\n" breaks a label in two lines. */
 export function xLabels(ticks: readonly { x: number; label: string }[], y: number, edges?: { left: number; right: number }): Markup {
   // Place each label (edge labels align to the edge), then drop any that would touch its neighbour.
   const placed = ticks.map((t) => {
-    const w = t.label.length * 6.6
+    const w = Math.max(...t.label.split('\n').map((l) => l.length)) * 6.6
     const anchor = edges && t.x + w / 2 > edges.right ? 'end' : edges && t.x - w / 2 < edges.left - 6 ? 'start' : 'middle'
     const tx = anchor === 'end' ? Math.min(t.x + 4, edges!.right + 4) : anchor === 'start' ? t.x - 4 : t.x
     const l = anchor === 'end' ? tx - w : anchor === 'start' ? tx : tx - w / 2
@@ -92,7 +98,7 @@ export function xLabels(ticks: readonly { x: number; label: string }[], y: numbe
   return svg`<g class="x-ticks">${kept.map((t) => {
     const { anchor, tx } = t
     return svg`<line x1="${t.x}" x2="${t.x}" y1="${y - 4}" y2="${y}" stroke="var(--ink)"/>
-<text x="${tx}" y="${y + 14}" text-anchor="${anchor}" font-family="${FONT.mono}" font-size="11" fill="var(--slate)">${t.label}</text>`
+<text x="${tx}" y="${y + 14}" text-anchor="${anchor}" font-family="${FONT.mono}" font-size="11" fill="var(--slate)">${t.label.split('\n').map((l, i) => svg`<tspan x="${tx}" dy="${i === 0 ? 0 : 13}">${l}</tspan>`)}</text>`
   })}</g>`
 }
 
@@ -105,9 +111,18 @@ export const tickRoom = (width: number, label: string): number => Math.max(2, Ma
  */
 export function timeTicks(pts: readonly Point[], x: (t: number) => number, max: number): { x: number; label: string }[] {
   const spans = pts.some((p) => /^\d{4}-\d{2}$|Q\d/.test(p.label))
+  if (pts.some((p) => /Q\d/.test(p.label))) {
+    // Quarters: tick the first quarter of a year, every n-th year, so ticks never cycle Q1, Q4, Q3.
+    const firsts = pts.filter((p) => /Q1\b/.test(p.label))
+    const step = Math.max(1, Math.ceil(firsts.length / max))
+    const last = firsts.length - 1
+    return firsts.filter((_, i) => (last - i) % step === 0).map((p) => ({ x: x(p.t), label: p.label }))
+  }
   if (spans) {
+    // Count back from the last period, so the axis always names where the data ends.
     const step = Math.max(1, Math.ceil(pts.length / max))
-    return pts.filter((_, i) => i % step === 0).map((p) => ({ x: x(p.t), label: p.label }))
+    const last = pts.length - 1
+    return pts.filter((_, i) => (last - i) % step === 0).map((p) => ({ x: x(p.t), label: p.label }))
   }
   const t0 = pts[0]!.t
   const t1 = pts.at(-1)!.t
@@ -177,16 +192,62 @@ export function spread<T extends { y: number }>(items: T[], gap: number, lo: num
 export const note = (x: number, y: number, text: string, anchor: 'start' | 'middle' | 'end' = 'start', fill = 'var(--slate)'): Markup =>
   svg`<text x="${x}" y="${y}" text-anchor="${anchor}" font-family="${FONT.mono}" font-size="10.5" fill="${fill}" paint-order="stroke" stroke="var(--paper)" stroke-width="3" stroke-linejoin="round">${text.toUpperCase()}</text>`
 
-/** Vertical reference lines across a horizontal value axis, with labels at the top. */
-export function valueRefs(refs: readonly { value: number; label: string }[] | undefined, x: ScaleLinear<number, number>, top: number, bottom: number): Markup {
+/** Width of a `note` label: 10.5 px mono capitals. */
+export const noteWidth = (text: string): number => text.length * 6.4
+
+/** Height of one extra row of reference labels. */
+export const REF_ROW = 14
+
+/**
+ * Where each reference label goes: right of its line, else left of it, else one row up.
+ * No label runs past the plot's right edge or the frame's left edge, and none touches another.
+ */
+export function refPlaces(refs: readonly { value: number; label: string }[] | undefined, x: ScaleLinear<number, number>): { at: number; tx: number; anchor: 'start' | 'end'; row: number; label: string }[] {
   const edge = x.range()[1]!
-  return svg`${(refs ?? []).map((r) => {
-    const at = x(r.value)
-    // Near the right edge the label reads leftwards from the line.
-    const left = edge - at < r.label.length * 7
+  const placed: { l: number; r: number; row: number }[] = []
+  return [...(refs ?? [])]
+    .sort((a, b) => a.value - b.value)
+    .map((ref) => {
+      const at = x(ref.value)
+      const w = noteWidth(ref.label)
+      const free = (l: number, row: number) => l >= 0 && l + w <= edge + 4 && !placed.some((p) => p.row === row && l < p.r + 8 && l + w > p.l - 8)
+      const tries = [0, 1, 2].flatMap((row) => [
+        { l: at + 4, anchor: 'start' as const, row },
+        { l: at - 4 - w, anchor: 'end' as const, row },
+      ])
+      const pick = tries.find((t) => free(t.l, t.row)) ?? { l: Math.max(0, Math.min(at + 4, edge - w)), anchor: 'start' as const, row: 0 }
+      const l = pick.l
+      placed.push({ l, r: l + w, row: pick.row })
+      return { at, tx: pick.anchor === 'start' ? l : l + w, anchor: pick.anchor, row: pick.row, label: ref.label }
+    })
+}
+
+/** Rows of reference labels a chart needs above its plot. */
+export const refRows = (refs: readonly { value: number; label: string }[] | undefined, x: ScaleLinear<number, number>): number =>
+  Math.max(0, ...refPlaces(refs, x).map((p) => p.row + 1))
+
+/**
+ * Vertical reference lines across a horizontal value axis, with labels at the top. The line
+ * stops at each `gap` (a y range with text in it), so it never strikes through a label.
+ */
+/** A stretch of y where reference lines break: [top, bottom], or [top, bottom, left, right] for a box (a value label). */
+export type Gap = readonly [number, number] | readonly [number, number, number, number]
+
+export function valueRefs(refs: readonly { value: number; label: string }[] | undefined, x: ScaleLinear<number, number>, top: number, bottom: number, gaps: readonly Gap[] = []): Markup {
+  return svg`${refPlaces(refs, x).map((p) => {
     // The label sits above the line's top, clear of the first row of marks.
-    return svg`<line x1="${at}" x2="${at}" y1="${top}" y2="${bottom}" stroke="var(--slate)" stroke-dasharray="3 3"/>
-${note(left ? at - 4 : at + 4, top - 6, r.label, left ? 'end' : 'start')}`
+    const cuts = gaps
+      .filter(([a, b, l, r]) => b > top && a < bottom && (l === undefined || (p.at >= l - 2 && p.at <= r! + 2)))
+      .sort((a, b) => a[0] - b[0])
+    let d = ''
+    let y0 = top
+    for (const [a, b] of cuts) {
+      if (a > y0) d += `M${p.at} ${y0}V${a}`
+      y0 = Math.max(y0, b)
+    }
+    if (bottom > y0) d += `M${p.at} ${y0}V${bottom}`
+    return svg`<path d="${d}" stroke="var(--slate)" stroke-dasharray="3 3" fill="none"/>
+${note(p.tx, top - 6 - p.row * REF_ROW, p.label, p.anchor)}`
   })}`
 }
 
