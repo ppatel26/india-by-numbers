@@ -1,0 +1,385 @@
+geography,period,flow,commodity_no,commodity,value,unit,table,status
+india,2020-21,exports,1,Tea,756.3,US$ million,Table 113,
+india,2021-22,exports,1,Tea,751.1,US$ million,Table 113,
+india,2022-23,exports,1,Tea,817.6,US$ million,Table 113,
+india,2023-24,exports,1,Tea,826.1,US$ million,Table 113,
+india,2024-25,exports,1,Tea,923.9,US$ million,Table 113,revised
+india,2025-26,exports,1,Tea,988.1,US$ million,Table 113,provisional
+india,2020-21,exports,2,Coffee,719.7,US$ million,Table 113,
+india,2021-22,exports,2,Coffee,1020.7,US$ million,Table 113,
+india,2022-23,exports,2,Coffee,1146.2,US$ million,Table 113,
+india,2023-24,exports,2,Coffee,1286.3,US$ million,Table 113,
+india,2024-25,exports,2,Coffee,1805.6,US$ million,Table 113,revised
+india,2025-26,exports,2,Coffee,2082.7,US$ million,Table 113,provisional
+india,2020-21,exports,3,Rice,8829.2,US$ million,Table 113,
+india,2021-22,exports,3,Rice,9671.1,US$ million,Table 113,
+india,2022-23,exports,3,Rice,11144.4,US$ million,Table 113,
+india,2023-24,exports,3,Rice,10416.7,US$ million,Table 113,
+india,2024-25,exports,3,Rice,12472.5,US$ million,Table 113,revised
+india,2025-26,exports,3,Rice,11537.4,US$ million,Table 113,provisional
+india,2020-21,exports,4,Other cereals,705.4,US$ million,Table 113,
+india,2021-22,exports,4,Other cereals,1087.4,US$ million,Table 113,
+india,2022-23,exports,4,Other cereals,1194.1,US$ million,Table 113,
+india,2023-24,exports,4,Other cereals,517.8,US$ million,Table 113,
+india,2024-25,exports,4,Other cereals,271.8,US$ million,Table 113,revised
+india,2025-26,exports,4,Other cereals,445.7,US$ million,Table 113,provisional
+india,2020-21,exports,5,Tobacco,876.7,US$ million,Table 113,
+india,2021-22,exports,5,Tobacco,923.6,US$ million,Table 113,
+india,2022-23,exports,5,Tobacco,1213.4,US$ million,Table 113,
+india,2023-24,exports,5,Tobacco,1449.5,US$ million,Table 113,
+india,2024-25,exports,5,Tobacco,1979.0,US$ million,Table 113,revised
+india,2025-26,exports,5,Tobacco,1949.0,US$ million,Table 113,provisional
+india,2020-21,exports,6,Spices,3984.0,US$ million,Table 113,
+india,2021-22,exports,6,Spices,3896.0,US$ million,Table 113,
+india,2022-23,exports,6,Spices,3785.4,US$ million,Table 113,
+india,2023-24,exports,6,Spices,4248.6,US$ million,Table 113,
+india,2024-25,exports,6,Spices,4452.0,US$ million,Table 113,revised
+india,2025-26,exports,6,Spices,4261.6,US$ million,Table 113,provisional
+india,2020-21,exports,7,Cashew,420.4,US$ million,Table 113,
+india,2021-22,exports,7,Cashew,453.1,US$ million,Table 113,
+india,2022-23,exports,7,Cashew,356.3,US$ million,Table 113,
+india,2023-24,exports,7,Cashew,339.2,US$ million,Table 113,
+india,2024-25,exports,7,Cashew,338.2,US$ million,Table 113,revised
+india,2025-26,exports,7,Cashew,379.2,US$ million,Table 113,provisional
+india,2020-21,exports,8,Oil Meals,1585.0,US$ million,Table 113,
+india,2021-22,exports,8,Oil Meals,1031.9,US$ million,Table 113,
+india,2022-23,exports,8,Oil Meals,1601.7,US$ million,Table 113,
+india,2023-24,exports,8,Oil Meals,1714.0,US$ million,Table 113,
+india,2024-25,exports,8,Oil Meals,1346.8,US$ million,Table 113,revised
+india,2025-26,exports,8,Oil Meals,1041.2,US$ million,Table 113,provisional
+india,2020-21,exports,9,Oil seeds,1235.7,US$ million,Table 113,
+india,2021-22,exports,9,Oil seeds,1113.6,US$ million,Table 113,
+india,2022-23,exports,9,Oil seeds,1337.7,US$ million,Table 113,
+india,2023-24,exports,9,Oil seeds,1437.0,US$ million,Table 113,
+india,2024-25,exports,9,Oil seeds,1344.0,US$ million,Table 113,revised
+india,2025-26,exports,9,Oil seeds,1217.7,US$ million,Table 113,provisional
+india,2020-21,exports,10,Fruits & Vegetables,2612.8,US$ million,Table 113,
+india,2021-22,exports,10,Fruits & Vegetables,2883.1,US$ million,Table 113,
+india,2022-23,exports,10,Fruits & Vegetables,3208.6,US$ million,Table 113,
+india,2023-24,exports,10,Fruits & Vegetables,3661.8,US$ million,Table 113,
+india,2024-25,exports,10,Fruits & Vegetables,3874.8,US$ million,Table 113,revised
+india,2025-26,exports,10,Fruits & Vegetables,3931.4,US$ million,Table 113,provisional
+india,2020-21,exports,11,Cereal preparations & miscellaneous processed items,1859.9,US$ million,Table 113,
+india,2021-22,exports,11,Cereal preparations & miscellaneous processed items,2280.7,US$ million,Table 113,
+india,2022-23,exports,11,Cereal preparations & miscellaneous processed items,2617.9,US$ million,Table 113,
+india,2023-24,exports,11,Cereal preparations & miscellaneous processed items,2852.8,US$ million,Table 113,
+india,2024-25,exports,11,Cereal preparations & miscellaneous processed items,3102.0,US$ million,Table 113,revised
+india,2025-26,exports,11,Cereal preparations & miscellaneous processed items,3209.7,US$ million,Table 113,provisional
+india,2020-21,exports,12,Marine Products,5962.4,US$ million,Table 113,
+india,2021-22,exports,12,Marine Products,7772.4,US$ million,Table 113,
+india,2022-23,exports,12,Marine Products,8078.0,US$ million,Table 113,
+india,2023-24,exports,12,Marine Products,7372.0,US$ million,Table 113,
+india,2024-25,exports,12,Marine Products,7405.0,US$ million,Table 113,revised
+india,2025-26,exports,12,Marine Products,8431.3,US$ million,Table 113,provisional
+india,2020-21,exports,13,"Meat, dairy & poultry products",3658.0,US$ million,Table 113,
+india,2021-22,exports,13,"Meat, dairy & poultry products",4141.0,US$ million,Table 113,
+india,2022-23,exports,13,"Meat, dairy & poultry products",4029.9,US$ million,Table 113,
+india,2023-24,exports,13,"Meat, dairy & poultry products",4527.3,US$ million,Table 113,
+india,2024-25,exports,13,"Meat, dairy & poultry products",5096.5,US$ million,Table 113,revised
+india,2025-26,exports,13,"Meat, dairy & poultry products",6214.8,US$ million,Table 113,provisional
+india,2020-21,exports,14,Iron Ore,4896.5,US$ million,Table 113,
+india,2021-22,exports,14,Iron Ore,3248.2,US$ million,Table 113,
+india,2022-23,exports,14,Iron Ore,1797.5,US$ million,Table 113,
+india,2023-24,exports,14,Iron Ore,3913.9,US$ million,Table 113,
+india,2024-25,exports,14,Iron Ore,2082.7,US$ million,Table 113,revised
+india,2025-26,exports,14,Iron Ore,1708.3,US$ million,Table 113,provisional
+india,2020-21,exports,15,"Mica, Coal & Other Ores, Minerals including processed minerals",4331.8,US$ million,Table 113,
+india,2021-22,exports,15,"Mica, Coal & Other Ores, Minerals including processed minerals",5217.2,US$ million,Table 113,
+india,2022-23,exports,15,"Mica, Coal & Other Ores, Minerals including processed minerals",5157.4,US$ million,Table 113,
+india,2023-24,exports,15,"Mica, Coal & Other Ores, Minerals including processed minerals",4682.2,US$ million,Table 113,
+india,2024-25,exports,15,"Mica, Coal & Other Ores, Minerals including processed minerals",5073.2,US$ million,Table 113,revised
+india,2025-26,exports,15,"Mica, Coal & Other Ores, Minerals including processed minerals",5732.2,US$ million,Table 113,provisional
+india,2020-21,exports,16,Leather & leather products,3301.4,US$ million,Table 113,
+india,2021-22,exports,16,Leather & leather products,4381.5,US$ million,Table 113,
+india,2022-23,exports,16,Leather & leather products,4752.4,US$ million,Table 113,
+india,2023-24,exports,16,Leather & leather products,4282.5,US$ million,Table 113,
+india,2024-25,exports,16,Leather & leather products,4370.7,US$ million,Table 113,revised
+india,2025-26,exports,16,Leather & leather products,4267.7,US$ million,Table 113,provisional
+india,2020-21,exports,17,Ceramic products & glassware,3050.6,US$ million,Table 113,
+india,2021-22,exports,17,Ceramic products & glassware,3464.8,US$ million,Table 113,
+india,2022-23,exports,17,Ceramic products & glassware,3737.8,US$ million,Table 113,
+india,2023-24,exports,17,Ceramic products & glassware,4277.4,US$ million,Table 113,
+india,2024-25,exports,17,Ceramic products & glassware,3988.5,US$ million,Table 113,revised
+india,2025-26,exports,17,Ceramic products & glassware,4032.4,US$ million,Table 113,provisional
+india,2020-21,exports,18,Gems & Jewellery,26022.8,US$ million,Table 113,
+india,2021-22,exports,18,Gems & Jewellery,39099.1,US$ million,Table 113,
+india,2022-23,exports,18,Gems & Jewellery,37957.0,US$ million,Table 113,
+india,2023-24,exports,18,Gems & Jewellery,32706.9,US$ million,Table 113,
+india,2024-25,exports,18,Gems & Jewellery,29818.2,US$ million,Table 113,revised
+india,2025-26,exports,18,Gems & Jewellery,28208.3,US$ million,Table 113,provisional
+india,2020-21,exports,19,Drugs & Pharmaceuticals,24444.0,US$ million,Table 113,
+india,2021-22,exports,19,Drugs & Pharmaceuticals,24594.3,US$ million,Table 113,
+india,2022-23,exports,19,Drugs & Pharmaceuticals,25393.0,US$ million,Table 113,
+india,2023-24,exports,19,Drugs & Pharmaceuticals,27851.7,US$ million,Table 113,
+india,2024-25,exports,19,Drugs & Pharmaceuticals,30468.2,US$ million,Table 113,revised
+india,2025-26,exports,19,Drugs & Pharmaceuticals,31116.3,US$ million,Table 113,provisional
+india,2020-21,exports,20,Organic & Inorganic Chemicals,22088.5,US$ million,Table 113,
+india,2021-22,exports,20,Organic & Inorganic Chemicals,29364.8,US$ million,Table 113,
+india,2022-23,exports,20,Organic & Inorganic Chemicals,30342.5,US$ million,Table 113,
+india,2023-24,exports,20,Organic & Inorganic Chemicals,29381.5,US$ million,Table 113,
+india,2024-25,exports,20,Organic & Inorganic Chemicals,28705.5,US$ million,Table 113,revised
+india,2025-26,exports,20,Organic & Inorganic Chemicals,28673.4,US$ million,Table 113,provisional
+india,2020-21,exports,21,Engineering Goods,76719.6,US$ million,Table 113,
+india,2021-22,exports,21,Engineering Goods,112163.4,US$ million,Table 113,
+india,2022-23,exports,21,Engineering Goods,107041.0,US$ million,Table 113,
+india,2023-24,exports,21,Engineering Goods,109301.0,US$ million,Table 113,
+india,2024-25,exports,21,Engineering Goods,116754.2,US$ million,Table 113,revised
+india,2025-26,exports,21,Engineering Goods,122433.8,US$ million,Table 113,provisional
+india,2020-21,exports,22,Electronic Goods,11093.3,US$ million,Table 113,
+india,2021-22,exports,22,Electronic Goods,15660.4,US$ million,Table 113,
+india,2022-23,exports,22,Electronic Goods,23553.3,US$ million,Table 113,
+india,2023-24,exports,22,Electronic Goods,29122.9,US$ million,Table 113,
+india,2024-25,exports,22,Electronic Goods,38556.5,US$ million,Table 113,revised
+india,2025-26,exports,22,Electronic Goods,47962.3,US$ million,Table 113,provisional
+india,2020-21,exports,23,"Cotton Yarn/Fabs./made-ups, Handloom Products etc.",9827.9,US$ million,Table 113,
+india,2021-22,exports,23,"Cotton Yarn/Fabs./made-ups, Handloom Products etc.",15298.0,US$ million,Table 113,
+india,2022-23,exports,23,"Cotton Yarn/Fabs./made-ups, Handloom Products etc.",10948.5,US$ million,Table 113,
+india,2023-24,exports,23,"Cotton Yarn/Fabs./made-ups, Handloom Products etc.",11683.5,US$ million,Table 113,
+india,2024-25,exports,23,"Cotton Yarn/Fabs./made-ups, Handloom Products etc.",12056.3,US$ million,Table 113,revised
+india,2025-26,exports,23,"Cotton Yarn/Fabs./made-ups, Handloom Products etc.",11587.2,US$ million,Table 113,provisional
+india,2020-21,exports,24,Man-made Yarn/Fabs./made-ups etc.,3806.3,US$ million,Table 113,
+india,2021-22,exports,24,Man-made Yarn/Fabs./made-ups etc.,5614.6,US$ million,Table 113,
+india,2022-23,exports,24,Man-made Yarn/Fabs./made-ups etc.,4949.4,US$ million,Table 113,
+india,2023-24,exports,24,Man-made Yarn/Fabs./made-ups etc.,4679.1,US$ million,Table 113,
+india,2024-25,exports,24,Man-made Yarn/Fabs./made-ups etc.,4869.5,US$ million,Table 113,revised
+india,2025-26,exports,24,Man-made Yarn/Fabs./made-ups etc.,4830.8,US$ million,Table 113,provisional
+india,2020-21,exports,25,RMG of all Textiles,12272.2,US$ million,Table 113,
+india,2021-22,exports,25,RMG of all Textiles,16014.8,US$ million,Table 113,
+india,2022-23,exports,25,RMG of all Textiles,16191.0,US$ million,Table 113,
+india,2023-24,exports,25,RMG of all Textiles,14532.2,US$ million,Table 113,
+india,2024-25,exports,25,RMG of all Textiles,15989.3,US$ million,Table 113,revised
+india,2025-26,exports,25,RMG of all Textiles,15772.1,US$ million,Table 113,provisional
+india,2020-21,exports,26,Jute Mfg. including Floor Covering,371.3,US$ million,Table 113,
+india,2021-22,exports,26,Jute Mfg. including Floor Covering,507.6,US$ million,Table 113,
+india,2022-23,exports,26,Jute Mfg. including Floor Covering,438.4,US$ million,Table 113,
+india,2023-24,exports,26,Jute Mfg. including Floor Covering,338.9,US$ million,Table 113,
+india,2024-25,exports,26,Jute Mfg. including Floor Covering,384.1,US$ million,Table 113,revised
+india,2025-26,exports,26,Jute Mfg. including Floor Covering,357.6,US$ million,Table 113,provisional
+india,2020-21,exports,27,Carpet,1491.4,US$ million,Table 113,
+india,2021-22,exports,27,Carpet,1789.9,US$ million,Table 113,
+india,2022-23,exports,27,Carpet,1366.1,US$ million,Table 113,
+india,2023-24,exports,27,Carpet,1395.1,US$ million,Table 113,
+india,2024-25,exports,27,Carpet,1541.1,US$ million,Table 113,revised
+india,2025-26,exports,27,Carpet,1459.2,US$ million,Table 113,provisional
+india,2020-21,exports,28,Handicrafts excl. hand made carpet,1707.5,US$ million,Table 113,
+india,2021-22,exports,28,Handicrafts excl. hand made carpet,2088.2,US$ million,Table 113,
+india,2022-23,exports,28,Handicrafts excl. hand made carpet,1688.6,US$ million,Table 113,
+india,2023-24,exports,28,Handicrafts excl. hand made carpet,1802.3,US$ million,Table 113,
+india,2024-25,exports,28,Handicrafts excl. hand made carpet,1766.8,US$ million,Table 113,revised
+india,2025-26,exports,28,Handicrafts excl. hand made carpet,1792.4,US$ million,Table 113,provisional
+india,2020-21,exports,29,Petroleum Products,25804.4,US$ million,Table 113,
+india,2021-22,exports,29,Petroleum Products,67471.7,US$ million,Table 113,
+india,2022-23,exports,29,Petroleum Products,97468.4,US$ million,Table 113,
+india,2023-24,exports,29,Petroleum Products,84156.7,US$ million,Table 113,
+india,2024-25,exports,29,Petroleum Products,63383.4,US$ million,Table 113,revised
+india,2025-26,exports,29,Petroleum Products,53828.1,US$ million,Table 113,provisional
+india,2020-21,exports,30,Plastic & Linoleum,7462.9,US$ million,Table 113,
+india,2021-22,exports,30,Plastic & Linoleum,9824.6,US$ million,Table 113,
+india,2022-23,exports,30,Plastic & Linoleum,8366.6,US$ million,Table 113,
+india,2023-24,exports,30,Plastic & Linoleum,8092.0,US$ million,Table 113,
+india,2024-25,exports,30,Plastic & Linoleum,8919.7,US$ million,Table 113,revised
+india,2025-26,exports,30,Plastic & Linoleum,8284.0,US$ million,Table 113,provisional
+india,2020-21,exports,31,Other Commodities,19910.8,US$ million,Table 113,
+india,2021-22,exports,31,Other Commodities,29175.6,US$ million,Table 113,
+india,2022-23,exports,31,Other Commodities,29390.0,US$ million,Table 113,
+india,2023-24,exports,31,Other Commodities,24223.2,US$ million,Table 113,
+india,2024-25,exports,31,Other Commodities,24564.7,US$ million,Table 113,revised
+india,2025-26,exports,31,Other Commodities,23994.0,US$ million,Table 113,provisional
+india,2020-21,exports,,Total,291808.5,US$ million,Table 113,
+india,2021-22,exports,,Total,422004.4,US$ million,Table 113,
+india,2022-23,exports,,Total,451070.0,US$ million,Table 113,
+india,2023-24,exports,,Total,437072.0,US$ million,Table 113,
+india,2024-25,exports,,Total,437704.6,US$ million,Table 113,revised
+india,2025-26,exports,,Total,441730.1,US$ million,Table 113,provisional
+india,2020-21,imports,1,Cotton Raw & Waste,385.9,US$ million,Table 115,
+india,2021-22,imports,1,Cotton Raw & Waste,559.6,US$ million,Table 115,
+india,2022-23,imports,1,Cotton Raw & Waste,1438.7,US$ million,Table 115,
+india,2023-24,imports,1,Cotton Raw & Waste,598.7,US$ million,Table 115,revised
+india,2024-25,imports,1,Cotton Raw & Waste,1219.3,US$ million,Table 115,revised
+india,2025-26,imports,1,Cotton Raw & Waste,1888.8,US$ million,Table 115,provisional
+india,2020-21,imports,2,Vegetable Oil,11089.1,US$ million,Table 115,
+india,2021-22,imports,2,Vegetable Oil,18991.6,US$ million,Table 115,
+india,2022-23,imports,2,Vegetable Oil,20837.7,US$ million,Table 115,
+india,2023-24,imports,2,Vegetable Oil,14905.2,US$ million,Table 115,revised
+india,2024-25,imports,2,Vegetable Oil,17366.3,US$ million,Table 115,revised
+india,2025-26,imports,2,Vegetable Oil,19488.4,US$ million,Table 115,provisional
+india,2020-21,imports,3,Pulses,1611.7,US$ million,Table 115,
+india,2021-22,imports,3,Pulses,2229.0,US$ million,Table 115,
+india,2022-23,imports,3,Pulses,1943.9,US$ million,Table 115,
+india,2023-24,imports,3,Pulses,3746.8,US$ million,Table 115,revised
+india,2024-25,imports,3,Pulses,5477.3,US$ million,Table 115,revised
+india,2025-26,imports,3,Pulses,3572.9,US$ million,Table 115,provisional
+india,2020-21,imports,4,Fruits & vegetables,2273.4,US$ million,Table 115,
+india,2021-22,imports,4,Fruits & vegetables,2640.7,US$ million,Table 115,
+india,2022-23,imports,4,Fruits & vegetables,2675.5,US$ million,Table 115,
+india,2023-24,imports,4,Fruits & vegetables,2920.6,US$ million,Table 115,revised
+india,2024-25,imports,4,Fruits & vegetables,3268.2,US$ million,Table 115,revised
+india,2025-26,imports,4,Fruits & vegetables,3823.6,US$ million,Table 115,provisional
+india,2020-21,imports,5,Pulp and Waste paper,851.1,US$ million,Table 115,
+india,2021-22,imports,5,Pulp and Waste paper,1600.5,US$ million,Table 115,
+india,2022-23,imports,5,Pulp and Waste paper,2117.9,US$ million,Table 115,
+india,2023-24,imports,5,Pulp and Waste paper,1856.7,US$ million,Table 115,revised
+india,2024-25,imports,5,Pulp and Waste paper,2014.1,US$ million,Table 115,revised
+india,2025-26,imports,5,Pulp and Waste paper,1958.8,US$ million,Table 115,provisional
+india,2020-21,imports,6,"Textile yarn Fabric, made-up articles",1501.5,US$ million,Table 115,
+india,2021-22,imports,6,"Textile yarn Fabric, made-up articles",2065.5,US$ million,Table 115,
+india,2022-23,imports,6,"Textile yarn Fabric, made-up articles",2617.7,US$ million,Table 115,
+india,2023-24,imports,6,"Textile yarn Fabric, made-up articles",2276.9,US$ million,Table 115,revised
+india,2024-25,imports,6,"Textile yarn Fabric, made-up articles",2475.2,US$ million,Table 115,revised
+india,2025-26,imports,6,"Textile yarn Fabric, made-up articles",2602.0,US$ million,Table 115,provisional
+india,2020-21,imports,7,"Fertilisers, Crude & manufactured",7597.3,US$ million,Table 115,
+india,2021-22,imports,7,"Fertilisers, Crude & manufactured",14169.9,US$ million,Table 115,
+india,2022-23,imports,7,"Fertilisers, Crude & manufactured",17206.8,US$ million,Table 115,
+india,2023-24,imports,7,"Fertilisers, Crude & manufactured",10456.9,US$ million,Table 115,revised
+india,2024-25,imports,7,"Fertilisers, Crude & manufactured",10225.6,US$ million,Table 115,revised
+india,2025-26,imports,7,"Fertilisers, Crude & manufactured",16437.2,US$ million,Table 115,provisional
+india,2020-21,imports,8,Sulphur & Unroasted Iron Pyrites,149.7,US$ million,Table 115,
+india,2021-22,imports,8,Sulphur & Unroasted Iron Pyrites,475.0,US$ million,Table 115,
+india,2022-23,imports,8,Sulphur & Unroasted Iron Pyrites,337.9,US$ million,Table 115,
+india,2023-24,imports,8,Sulphur & Unroasted Iron Pyrites,211.2,US$ million,Table 115,revised
+india,2024-25,imports,8,Sulphur & Unroasted Iron Pyrites,325.5,US$ million,Table 115,revised
+india,2025-26,imports,8,Sulphur & Unroasted Iron Pyrites,778.5,US$ million,Table 115,provisional
+india,2020-21,imports,9,Metaliferrous ores & other minerals,4626.1,US$ million,Table 115,
+india,2021-22,imports,9,Metaliferrous ores & other minerals,8950.5,US$ million,Table 115,
+india,2022-23,imports,9,Metaliferrous ores & other minerals,9404.7,US$ million,Table 115,
+india,2023-24,imports,9,Metaliferrous ores & other minerals,9480.2,US$ million,Table 115,revised
+india,2024-25,imports,9,Metaliferrous ores & other minerals,11098.8,US$ million,Table 115,revised
+india,2025-26,imports,9,Metaliferrous ores & other minerals,14127.3,US$ million,Table 115,provisional
+india,2020-21,imports,10,"Coal, Coke & Briquettes, etc.",16274.5,US$ million,Table 115,
+india,2021-22,imports,10,"Coal, Coke & Briquettes, etc.",31718.3,US$ million,Table 115,
+india,2022-23,imports,10,"Coal, Coke & Briquettes, etc.",49735.3,US$ million,Table 115,
+india,2023-24,imports,10,"Coal, Coke & Briquettes, etc.",38879.5,US$ million,Table 115,revised
+india,2024-25,imports,10,"Coal, Coke & Briquettes, etc.",31093.1,US$ million,Table 115,revised
+india,2025-26,imports,10,"Coal, Coke & Briquettes, etc.",27895.9,US$ million,Table 115,provisional
+india,2020-21,imports,11,"Petroleum, Crude & products",82683.9,US$ million,Table 115,
+india,2021-22,imports,11,"Petroleum, Crude & products",161810.5,US$ million,Table 115,
+india,2022-23,imports,11,"Petroleum, Crude & products",209418.2,US$ million,Table 115,
+india,2023-24,imports,11,"Petroleum, Crude & products",178732.7,US$ million,Table 115,revised
+india,2024-25,imports,11,"Petroleum, Crude & products",185779.3,US$ million,Table 115,revised
+india,2025-26,imports,11,"Petroleum, Crude & products",173941.9,US$ million,Table 115,provisional
+india,2020-21,imports,12,Wood & Wood products,4449.7,US$ million,Table 115,
+india,2021-22,imports,12,Wood & Wood products,6136.4,US$ million,Table 115,
+india,2022-23,imports,12,Wood & Wood products,7241.2,US$ million,Table 115,
+india,2023-24,imports,12,Wood & Wood products,6421.8,US$ million,Table 115,revised
+india,2024-25,imports,12,Wood & Wood products,6971.2,US$ million,Table 115,revised
+india,2025-26,imports,12,Wood & Wood products,6778.5,US$ million,Table 115,provisional
+india,2020-21,imports,13,Leather & leather products,579.8,US$ million,Table 115,
+india,2021-22,imports,13,Leather & leather products,818.8,US$ million,Table 115,
+india,2022-23,imports,13,Leather & leather products,1028.6,US$ million,Table 115,
+india,2023-24,imports,13,Leather & leather products,912.7,US$ million,Table 115,revised
+india,2024-25,imports,13,Leather & leather products,982.0,US$ million,Table 115,revised
+india,2025-26,imports,13,Leather & leather products,938.0,US$ million,Table 115,provisional
+india,2020-21,imports,14,Organic & Inorganic Chemicals,19825.3,US$ million,Table 115,
+india,2021-22,imports,14,Organic & Inorganic Chemicals,30291.9,US$ million,Table 115,
+india,2022-23,imports,14,Organic & Inorganic Chemicals,33441.9,US$ million,Table 115,
+india,2023-24,imports,14,Organic & Inorganic Chemicals,26701.1,US$ million,Table 115,revised
+india,2024-25,imports,14,Organic & Inorganic Chemicals,28418.6,US$ million,Table 115,revised
+india,2025-26,imports,14,Organic & Inorganic Chemicals,27913.5,US$ million,Table 115,provisional
+india,2020-21,imports,15,Dyeing/tanning/colouring mtrls.,2734.0,US$ million,Table 115,
+india,2021-22,imports,15,Dyeing/tanning/colouring mtrls.,3960.2,US$ million,Table 115,
+india,2022-23,imports,15,Dyeing/tanning/colouring mtrls.,3865.9,US$ million,Table 115,
+india,2023-24,imports,15,Dyeing/tanning/colouring mtrls.,4928.4,US$ million,Table 115,revised
+india,2024-25,imports,15,Dyeing/tanning/colouring mtrls.,4266.7,US$ million,Table 115,revised
+india,2025-26,imports,15,Dyeing/tanning/colouring mtrls.,4286.7,US$ million,Table 115,provisional
+india,2020-21,imports,16,"Artificial resins, plastic materials, etc.",13510.0,US$ million,Table 115,
+india,2021-22,imports,16,"Artificial resins, plastic materials, etc.",20230.6,US$ million,Table 115,
+india,2022-23,imports,16,"Artificial resins, plastic materials, etc.",23510.6,US$ million,Table 115,
+india,2023-24,imports,16,"Artificial resins, plastic materials, etc.",22211.7,US$ million,Table 115,revised
+india,2024-25,imports,16,"Artificial resins, plastic materials, etc.",22506.8,US$ million,Table 115,revised
+india,2025-26,imports,16,"Artificial resins, plastic materials, etc.",22755.7,US$ million,Table 115,provisional
+india,2020-21,imports,17,Chemical material & products,8441.2,US$ million,Table 115,
+india,2021-22,imports,17,Chemical material & products,11148.0,US$ million,Table 115,
+india,2022-23,imports,17,Chemical material & products,12199.9,US$ million,Table 115,
+india,2023-24,imports,17,Chemical material & products,12743.1,US$ million,Table 115,revised
+india,2024-25,imports,17,Chemical material & products,12817.4,US$ million,Table 115,revised
+india,2025-26,imports,17,Chemical material & products,16057.6,US$ million,Table 115,provisional
+india,2020-21,imports,18,Newsprint,294.1,US$ million,Table 115,
+india,2021-22,imports,18,Newsprint,344.7,US$ million,Table 115,
+india,2022-23,imports,18,Newsprint,521.4,US$ million,Table 115,
+india,2023-24,imports,18,Newsprint,425.5,US$ million,Table 115,revised
+india,2024-25,imports,18,Newsprint,414.0,US$ million,Table 115,revised
+india,2025-26,imports,18,Newsprint,305.7,US$ million,Table 115,provisional
+india,2020-21,imports,19,"Pearls, precious & Semi-precious stones",18888.0,US$ million,Table 115,
+india,2021-22,imports,19,"Pearls, precious & Semi-precious stones",31007.9,US$ million,Table 115,
+india,2022-23,imports,19,"Pearls, precious & Semi-precious stones",30700.3,US$ million,Table 115,
+india,2023-24,imports,19,"Pearls, precious & Semi-precious stones",23822.5,US$ million,Table 115,revised
+india,2024-25,imports,19,"Pearls, precious & Semi-precious stones",17999.3,US$ million,Table 115,revised
+india,2025-26,imports,19,"Pearls, precious & Semi-precious stones",18445.0,US$ million,Table 115,provisional
+india,2020-21,imports,20,Iron & Steel,12035.9,US$ million,Table 115,
+india,2021-22,imports,20,Iron & Steel,17303.0,US$ million,Table 115,
+india,2022-23,imports,20,Iron & Steel,22483.2,US$ million,Table 115,
+india,2023-24,imports,20,Iron & Steel,23733.1,US$ million,Table 115,revised
+india,2024-25,imports,20,Iron & Steel,22636.9,US$ million,Table 115,revised
+india,2025-26,imports,20,Iron & Steel,21480.6,US$ million,Table 115,provisional
+india,2020-21,imports,21,Non-ferrous metals,11716.6,US$ million,Table 115,
+india,2021-22,imports,21,Non-ferrous metals,17601.7,US$ million,Table 115,
+india,2022-23,imports,21,Non-ferrous metals,19840.2,US$ million,Table 115,
+india,2023-24,imports,21,Non-ferrous metals,21424.2,US$ million,Table 115,revised
+india,2024-25,imports,21,Non-ferrous metals,24788.3,US$ million,Table 115,revised
+india,2025-26,imports,21,Non-ferrous metals,28864.9,US$ million,Table 115,provisional
+india,2020-21,imports,22,Machine tools,3169.6,US$ million,Table 115,
+india,2021-22,imports,22,Machine tools,4239.5,US$ million,Table 115,
+india,2022-23,imports,22,Machine tools,4406.7,US$ million,Table 115,
+india,2023-24,imports,22,Machine tools,4831.2,US$ million,Table 115,revised
+india,2024-25,imports,22,Machine tools,5649.3,US$ million,Table 115,revised
+india,2025-26,imports,22,Machine tools,6484.4,US$ million,Table 115,provisional
+india,2020-21,imports,23,"Machinery, electrical & non-electrical",30084.5,US$ million,Table 115,
+india,2021-22,imports,23,"Machinery, electrical & non-electrical",39942.5,US$ million,Table 115,
+india,2022-23,imports,23,"Machinery, electrical & non-electrical",45414.9,US$ million,Table 115,
+india,2023-24,imports,23,"Machinery, electrical & non-electrical",48822.9,US$ million,Table 115,revised
+india,2024-25,imports,23,"Machinery, electrical & non-electrical",53391.3,US$ million,Table 115,revised
+india,2025-26,imports,23,"Machinery, electrical & non-electrical",61730.4,US$ million,Table 115,provisional
+india,2020-21,imports,24,Transport equipment,18649.2,US$ million,Table 115,
+india,2021-22,imports,24,Transport equipment,20852.4,US$ million,Table 115,
+india,2022-23,imports,24,Transport equipment,31329.5,US$ million,Table 115,
+india,2023-24,imports,24,Transport equipment,30718.0,US$ million,Table 115,revised
+india,2024-25,imports,24,Transport equipment,34238.0,US$ million,Table 115,revised
+india,2025-26,imports,24,Transport equipment,34756.0,US$ million,Table 115,provisional
+india,2020-21,imports,25,Project goods,1498.9,US$ million,Table 115,
+india,2021-22,imports,25,Project goods,1356.0,US$ million,Table 115,
+india,2022-23,imports,25,Project goods,1602.9,US$ million,Table 115,
+india,2023-24,imports,25,Project goods,1321.4,US$ million,Table 115,revised
+india,2024-25,imports,25,Project goods,1077.6,US$ million,Table 115,revised
+india,2025-26,imports,25,Project goods,1060.2,US$ million,Table 115,provisional
+india,2020-21,imports,26,"Professional instrument, Optical goods, etc.",4528.2,US$ million,Table 115,
+india,2021-22,imports,26,"Professional instrument, Optical goods, etc.",6372.8,US$ million,Table 115,
+india,2022-23,imports,26,"Professional instrument, Optical goods, etc.",6938.0,US$ million,Table 115,
+india,2023-24,imports,26,"Professional instrument, Optical goods, etc.",7755.0,US$ million,Table 115,revised
+india,2024-25,imports,26,"Professional instrument, Optical goods, etc.",8396.9,US$ million,Table 115,revised
+india,2025-26,imports,26,"Professional instrument, Optical goods, etc.",9466.0,US$ million,Table 115,provisional
+india,2020-21,imports,27,Electronic goods,54287.9,US$ million,Table 115,
+india,2021-22,imports,27,Electronic goods,73674.2,US$ million,Table 115,
+india,2022-23,imports,27,Electronic goods,77263.5,US$ million,Table 115,
+india,2023-24,imports,27,Electronic goods,87847.2,US$ million,Table 115,revised
+india,2024-25,imports,27,Electronic goods,98650.6,US$ million,Table 115,revised
+india,2025-26,imports,27,Electronic goods,116176.2,US$ million,Table 115,provisional
+india,2020-21,imports,28,Medicinal & Pharmaceutical products,6974.6,US$ million,Table 115,
+india,2021-22,imports,28,Medicinal & Pharmaceutical products,9072.0,US$ million,Table 115,
+india,2022-23,imports,28,Medicinal & Pharmaceutical products,8104.8,US$ million,Table 115,
+india,2023-24,imports,28,Medicinal & Pharmaceutical products,8243.3,US$ million,Table 115,revised
+india,2024-25,imports,28,Medicinal & Pharmaceutical products,8916.1,US$ million,Table 115,revised
+india,2025-26,imports,28,Medicinal & Pharmaceutical products,9620.7,US$ million,Table 115,provisional
+india,2020-21,imports,29,Gold,34603.9,US$ million,Table 115,
+india,2021-22,imports,29,Gold,46165.6,US$ million,Table 115,
+india,2022-23,imports,29,Gold,35016.3,US$ million,Table 115,
+india,2023-24,imports,29,Gold,42561.7,US$ million,Table 115,revised
+india,2024-25,imports,29,Gold,58006.4,US$ million,Table 115,revised
+india,2025-26,imports,29,Gold,71977.3,US$ million,Table 115,provisional
+india,2020-21,imports,30,Silver,790.4,US$ million,Table 115,
+india,2021-22,imports,30,Silver,3276.2,US$ million,Table 115,
+india,2022-23,imports,30,Silver,5294.6,US$ million,Table 115,
+india,2023-24,imports,30,Silver,4458.0,US$ million,Table 115,revised
+india,2024-25,imports,30,Silver,4827.3,US$ million,Table 115,revised
+india,2025-26,imports,30,Silver,12050.8,US$ million,Table 115,provisional
+india,2020-21,imports,31,Other Commodities,18329.6,US$ million,Table 115,
+india,2021-22,imports,31,Other Commodities,24046.7,US$ million,Table 115,
+india,2022-23,imports,31,Other Commodities,28030.2,US$ million,Table 115,
+india,2023-24,imports,31,Other Commodities,30043.8,US$ million,Table 115,revised
+india,2024-25,imports,31,Other Commodities,35903.0,US$ million,Table 115,revised
+india,2025-26,imports,31,Other Commodities,37314.9,US$ million,Table 115,provisional
+india,2020-21,imports,,Total,394435.9,US$ million,Table 115,
+india,2021-22,imports,,Total,613052.1,US$ million,Table 115,
+india,2022-23,imports,,Total,715968.9,US$ million,Table 115,
+india,2023-24,imports,,Total,673992.0,US$ million,Table 115,revised
+india,2024-25,imports,,Total,721200.2,US$ million,Table 115,revised
+india,2025-26,imports,,Total,774978.2,US$ million,Table 115,provisional

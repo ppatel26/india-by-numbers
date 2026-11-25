@@ -1,0 +1,531 @@
+geography,period,partner,level,group,region,flow,value,unit,status
+india,2021-22,O E C D Countries,group,O E C D Countries,,exports,198821.9,US$ million,revised
+india,2021-22,O E C D Countries,group,O E C D Countries,,imports,192493.2,US$ million,revised
+india,2022-23,O E C D Countries,group,O E C D Countries,,exports,214809.3,US$ million,revised
+india,2022-23,O E C D Countries,group,O E C D Countries,,imports,212245.6,US$ million,revised
+india,2023-24,O E C D Countries,group,O E C D Countries,,exports,208466.8,US$ million,revised
+india,2023-24,O E C D Countries,group,O E C D Countries,,imports,204185.3,US$ million,revised
+india,2024-25,O E C D Countries,group,O E C D Countries,,exports,218885.3,US$ million,revised
+india,2024-25,O E C D Countries,group,O E C D Countries,,imports,210321.0,US$ million,revised
+india,2025-26,O E C D Countries,group,O E C D Countries,,exports,213371.6,US$ million,provisional
+india,2025-26,O E C D Countries,group,O E C D Countries,,imports,230526.6,US$ million,provisional
+india,2021-22,European Union,region,O E C D Countries,,exports,63013.5,US$ million,revised
+india,2021-22,European Union,region,O E C D Countries,,imports,50812.9,US$ million,revised
+india,2022-23,European Union,region,O E C D Countries,,exports,73146.3,US$ million,revised
+india,2022-23,European Union,region,O E C D Countries,,imports,59774.4,US$ million,revised
+india,2023-24,European Union,region,O E C D Countries,,exports,73099.3,US$ million,revised
+india,2023-24,European Union,region,O E C D Countries,,imports,59898.8,US$ million,revised
+india,2024-25,European Union,region,O E C D Countries,,exports,73811.0,US$ million,revised
+india,2024-25,European Union,region,O E C D Countries,,imports,59824.7,US$ million,revised
+india,2025-26,European Union,region,O E C D Countries,,exports,70500.3,US$ million,provisional
+india,2025-26,European Union,region,O E C D Countries,,imports,65747.9,US$ million,provisional
+india,2021-22,Belgium,country,O E C D Countries,European Union,exports,10084.4,US$ million,revised
+india,2021-22,Belgium,country,O E C D Countries,European Union,imports,9951.7,US$ million,revised
+india,2022-23,Belgium,country,O E C D Countries,European Union,exports,8864.1,US$ million,revised
+india,2022-23,Belgium,country,O E C D Countries,European Union,imports,9177.7,US$ million,revised
+india,2023-24,Belgium,country,O E C D Countries,European Union,exports,7837.2,US$ million,revised
+india,2023-24,Belgium,country,O E C D Countries,European Union,imports,7236.5,US$ million,revised
+india,2024-25,Belgium,country,O E C D Countries,European Union,exports,6320.1,US$ million,revised
+india,2024-25,Belgium,country,O E C D Countries,European Union,imports,6590.0,US$ million,revised
+india,2025-26,Belgium,country,O E C D Countries,European Union,exports,6598.6,US$ million,provisional
+india,2025-26,Belgium,country,O E C D Countries,European Union,imports,6410.8,US$ million,provisional
+india,2021-22,France,country,O E C D Countries,European Union,exports,6640.9,US$ million,revised
+india,2021-22,France,country,O E C D Countries,European Union,imports,5782.1,US$ million,revised
+india,2022-23,France,country,O E C D Countries,European Union,exports,7610.1,US$ million,revised
+india,2022-23,France,country,O E C D Countries,European Union,imports,6201.0,US$ million,revised
+india,2023-24,France,country,O E C D Countries,European Union,exports,7141.1,US$ million,revised
+india,2023-24,France,country,O E C D Countries,European Union,imports,7927.6,US$ million,revised
+india,2024-25,France,country,O E C D Countries,European Union,exports,7960.1,US$ million,revised
+india,2024-25,France,country,O E C D Countries,European Union,imports,7231.4,US$ million,revised
+india,2025-26,France,country,O E C D Countries,European Union,exports,7102.5,US$ million,provisional
+india,2025-26,France,country,O E C D Countries,European Union,imports,8713.9,US$ million,provisional
+india,2021-22,Germany,country,O E C D Countries,European Union,exports,9883.3,US$ million,revised
+india,2021-22,Germany,country,O E C D Countries,European Union,imports,14968.1,US$ million,revised
+india,2022-23,Germany,country,O E C D Countries,European Union,exports,10134.5,US$ million,revised
+india,2022-23,Germany,country,O E C D Countries,European Union,imports,16601.5,US$ million,revised
+india,2023-24,Germany,country,O E C D Countries,European Union,exports,9839.6,US$ million,revised
+india,2023-24,Germany,country,O E C D Countries,European Union,imports,16635.4,US$ million,revised
+india,2024-25,Germany,country,O E C D Countries,European Union,exports,10628.6,US$ million,revised
+india,2024-25,Germany,country,O E C D Countries,European Union,imports,18947.6,US$ million,revised
+india,2025-26,Germany,country,O E C D Countries,European Union,exports,11526.0,US$ million,provisional
+india,2025-26,Germany,country,O E C D Countries,European Union,imports,19507.6,US$ million,provisional
+india,2021-22,Italy,country,O E C D Countries,European Union,exports,8180.8,US$ million,revised
+india,2021-22,Italy,country,O E C D Countries,European Union,imports,5048.5,US$ million,revised
+india,2022-23,Italy,country,O E C D Countries,European Union,exports,8691.4,US$ million,revised
+india,2022-23,Italy,country,O E C D Countries,European Union,imports,5591.9,US$ million,revised
+india,2023-24,Italy,country,O E C D Countries,European Union,exports,8765.8,US$ million,revised
+india,2023-24,Italy,country,O E C D Countries,European Union,imports,5792.2,US$ million,revised
+india,2024-25,Italy,country,O E C D Countries,European Union,exports,7727.3,US$ million,revised
+india,2024-25,Italy,country,O E C D Countries,European Union,imports,6014.4,US$ million,revised
+india,2025-26,Italy,country,O E C D Countries,European Union,exports,7790.2,US$ million,provisional
+india,2025-26,Italy,country,O E C D Countries,European Union,imports,6674.1,US$ million,provisional
+india,2021-22,Netherlands,country,O E C D Countries,European Union,exports,12543.7,US$ million,revised
+india,2021-22,Netherlands,country,O E C D Countries,European Union,imports,4478.1,US$ million,revised
+india,2022-23,Netherlands,country,O E C D Countries,European Union,exports,21618.4,US$ million,revised
+india,2022-23,Netherlands,country,O E C D Countries,European Union,imports,5961.4,US$ million,revised
+india,2023-24,Netherlands,country,O E C D Countries,European Union,exports,22366.9,US$ million,revised
+india,2023-24,Netherlands,country,O E C D Countries,European Union,imports,4965.7,US$ million,revised
+india,2024-25,Netherlands,country,O E C D Countries,European Union,exports,22763.4,US$ million,revised
+india,2024-25,Netherlands,country,O E C D Countries,European Union,imports,4994.8,US$ million,revised
+india,2025-26,Netherlands,country,O E C D Countries,European Union,exports,17500.7,US$ million,provisional
+india,2025-26,Netherlands,country,O E C D Countries,European Union,imports,5786.3,US$ million,provisional
+india,2021-22,North America,region,O E C D Countries,,exports,84356.2,US$ million,revised
+india,2021-22,North America,region,O E C D Countries,,imports,50694.9,US$ million,revised
+india,2022-23,North America,region,O E C D Countries,,exports,87848.7,US$ million,revised
+india,2022-23,North America,region,O E C D Countries,,imports,58899.0,US$ million,revised
+india,2023-24,North America,region,O E C D Countries,,exports,86684.6,US$ million,revised
+india,2023-24,North America,region,O E C D Countries,,imports,49804.6,US$ million,revised
+india,2024-25,North America,region,O E C D Countries,,exports,96485.6,US$ million,revised
+india,2024-25,North America,region,O E C D Countries,,imports,52941.3,US$ million,revised
+india,2025-26,North America,region,O E C D Countries,,exports,97714.2,US$ million,provisional
+india,2025-26,North America,region,O E C D Countries,,imports,58880.2,US$ million,provisional
+india,2021-22,Canada,country,O E C D Countries,North America,exports,3764.0,US$ million,revised
+india,2021-22,Canada,country,O E C D Countries,North America,imports,3132.8,US$ million,revised
+india,2022-23,Canada,country,O E C D Countries,North America,exports,4109.7,US$ million,revised
+india,2022-23,Canada,country,O E C D Countries,North America,imports,4167.6,US$ million,revised
+india,2023-24,Canada,country,O E C D Countries,North America,exports,3845.3,US$ million,revised
+india,2023-24,Canada,country,O E C D Countries,North America,imports,4553.1,US$ million,revised
+india,2024-25,Canada,country,O E C D Countries,North America,exports,4222.3,US$ million,revised
+india,2024-25,Canada,country,O E C D Countries,North America,imports,4447.1,US$ million,revised
+india,2025-26,Canada,country,O E C D Countries,North America,exports,4671.1,US$ million,provisional
+india,2025-26,Canada,country,O E C D Countries,North America,imports,3285.3,US$ million,provisional
+india,2021-22,U S A,country,O E C D Countries,North America,exports,76167.0,US$ million,revised
+india,2021-22,U S A,country,O E C D Countries,North America,imports,43314.1,US$ million,revised
+india,2022-23,U S A,country,O E C D Countries,North America,exports,78542.6,US$ million,revised
+india,2022-23,U S A,country,O E C D Countries,North America,imports,50863.9,US$ million,revised
+india,2023-24,U S A,country,O E C D Countries,North America,exports,77515.0,US$ million,revised
+india,2023-24,U S A,country,O E C D Countries,North America,imports,42147.3,US$ million,revised
+india,2024-25,U S A,country,O E C D Countries,North America,exports,86514.3,US$ million,revised
+india,2024-25,U S A,country,O E C D Countries,North America,imports,45625.2,US$ million,revised
+india,2025-26,U S A,country,O E C D Countries,North America,exports,87316.0,US$ million,provisional
+india,2025-26,U S A,country,O E C D Countries,North America,imports,53488.7,US$ million,provisional
+india,2021-22,Asia and Oceania,region,O E C D Countries,,exports,14947.5,US$ million,revised
+india,2021-22,Asia and Oceania,region,O E C D Countries,,imports,31530.8,US$ million,revised
+india,2022-23,Asia and Oceania,region,O E C D Countries,,exports,12960.5,US$ million,revised
+india,2022-23,Asia and Oceania,region,O E C D Countries,,imports,35984.4,US$ million,revised
+india,2023-24,Asia and Oceania,region,O E C D Countries,,exports,13635.4,US$ million,revised
+india,2023-24,Asia and Oceania,region,O E C D Countries,,imports,34126.2,US$ million,revised
+india,2024-25,Asia and Oceania,region,O E C D Countries,,exports,15541.8,US$ million,revised
+india,2024-25,Asia and Oceania,region,O E C D Countries,,imports,35028.9,US$ million,revised
+india,2025-26,Asia and Oceania,region,O E C D Countries,,exports,13890.2,US$ million,provisional
+india,2025-26,Asia and Oceania,region,O E C D Countries,,imports,35837.3,US$ million,provisional
+india,2021-22,Australia,country,O E C D Countries,Asia and Oceania,exports,8283.1,US$ million,revised
+india,2021-22,Australia,country,O E C D Countries,Asia and Oceania,imports,16756.2,US$ million,revised
+india,2022-23,Australia,country,O E C D Countries,Asia and Oceania,exports,6951.3,US$ million,revised
+india,2022-23,Australia,country,O E C D Countries,Asia and Oceania,imports,19011.3,US$ million,revised
+india,2023-24,Australia,country,O E C D Countries,Asia and Oceania,exports,7940.7,US$ million,revised
+india,2023-24,Australia,country,O E C D Countries,Asia and Oceania,imports,16096.5,US$ million,revised
+india,2024-25,Australia,country,O E C D Countries,Asia and Oceania,exports,8581.4,US$ million,revised
+india,2024-25,Australia,country,O E C D Countries,Asia and Oceania,imports,15526.5,US$ million,revised
+india,2025-26,Australia,country,O E C D Countries,Asia and Oceania,exports,7284.2,US$ million,provisional
+india,2025-26,Australia,country,O E C D Countries,Asia and Oceania,imports,13811.4,US$ million,provisional
+india,2021-22,Japan,country,O E C D Countries,Asia and Oceania,exports,6176.8,US$ million,revised
+india,2021-22,Japan,country,O E C D Countries,Asia and Oceania,imports,14399.8,US$ million,revised
+india,2022-23,Japan,country,O E C D Countries,Asia and Oceania,exports,5461.3,US$ million,revised
+india,2022-23,Japan,country,O E C D Countries,Asia and Oceania,imports,16495.3,US$ million,revised
+india,2023-24,Japan,country,O E C D Countries,Asia and Oceania,exports,5156.3,US$ million,revised
+india,2023-24,Japan,country,O E C D Countries,Asia and Oceania,imports,17694.6,US$ million,revised
+india,2024-25,Japan,country,O E C D Countries,Asia and Oceania,exports,6249.3,US$ million,revised
+india,2024-25,Japan,country,O E C D Countries,Asia and Oceania,imports,18915.3,US$ million,revised
+india,2025-26,Japan,country,O E C D Countries,Asia and Oceania,exports,6039.5,US$ million,provisional
+india,2025-26,Japan,country,O E C D Countries,Asia and Oceania,imports,21436.9,US$ million,provisional
+india,2021-22,Other O E C D Countries,region,O E C D Countries,,exports,36504.7,US$ million,revised
+india,2021-22,Other O E C D Countries,region,O E C D Countries,,imports,59454.6,US$ million,revised
+india,2022-23,Other O E C D Countries,region,O E C D Countries,,exports,40853.7,US$ million,revised
+india,2022-23,Other O E C D Countries,region,O E C D Countries,,imports,57587.8,US$ million,revised
+india,2023-24,Other O E C D Countries,region,O E C D Countries,,exports,35047.6,US$ million,revised
+india,2023-24,Other O E C D Countries,region,O E C D Countries,,imports,60355.7,US$ million,revised
+india,2024-25,Other O E C D Countries,region,O E C D Countries,,exports,33046.9,US$ million,revised
+india,2024-25,Other O E C D Countries,region,O E C D Countries,,imports,62526.0,US$ million,revised
+india,2025-26,Other O E C D Countries,region,O E C D Countries,,exports,31266.9,US$ million,provisional
+india,2025-26,Other O E C D Countries,region,O E C D Countries,,imports,70061.2,US$ million,provisional
+india,2021-22,Switzerland,country,O E C D Countries,Other O E C D Countries,exports,1348.6,US$ million,revised
+india,2021-22,Switzerland,country,O E C D Countries,Other O E C D Countries,imports,23392.3,US$ million,revised
+india,2022-23,Switzerland,country,O E C D Countries,Other O E C D Countries,exports,1346.5,US$ million,revised
+india,2022-23,Switzerland,country,O E C D Countries,Other O E C D Countries,imports,15794.0,US$ million,revised
+india,2023-24,Switzerland,country,O E C D Countries,Other O E C D Countries,exports,1526.9,US$ million,revised
+india,2023-24,Switzerland,country,O E C D Countries,Other O E C D Countries,imports,19842.0,US$ million,revised
+india,2024-25,Switzerland,country,O E C D Countries,Other O E C D Countries,exports,1475.4,US$ million,revised
+india,2024-25,Switzerland,country,O E C D Countries,Other O E C D Countries,imports,21795.8,US$ million,revised
+india,2025-26,Switzerland,country,O E C D Countries,Other O E C D Countries,exports,1213.4,US$ million,provisional
+india,2025-26,Switzerland,country,O E C D Countries,Other O E C D Countries,imports,24275.1,US$ million,provisional
+india,2021-22,U.K.,country,O E C D Countries,Other O E C D Countries,exports,10461.3,US$ million,revised
+india,2021-22,U.K.,country,O E C D Countries,Other O E C D Countries,imports,7017.8,US$ million,revised
+india,2022-23,U.K.,country,O E C D Countries,Other O E C D Countries,exports,11405.6,US$ million,revised
+india,2022-23,U.K.,country,O E C D Countries,Other O E C D Countries,imports,8960.7,US$ million,revised
+india,2023-24,U.K.,country,O E C D Countries,Other O E C D Countries,exports,12922.6,US$ million,revised
+india,2023-24,U.K.,country,O E C D Countries,Other O E C D Countries,imports,8147.0,US$ million,revised
+india,2024-25,U.K.,country,O E C D Countries,Other O E C D Countries,exports,14550.0,US$ million,revised
+india,2024-25,U.K.,country,O E C D Countries,Other O E C D Countries,imports,8582.8,US$ million,revised
+india,2025-26,U.K.,country,O E C D Countries,Other O E C D Countries,exports,13444.2,US$ million,provisional
+india,2025-26,U.K.,country,O E C D Countries,Other O E C D Countries,imports,11682.4,US$ million,provisional
+india,2021-22,O P E C,group,O P E C,,exports,48519.4,US$ million,revised
+india,2021-22,O P E C,group,O P E C,,imports,140060.6,US$ million,revised
+india,2022-23,O P E C,group,O P E C,,exports,55445.7,US$ million,revised
+india,2022-23,O P E C,group,O P E C,,imports,158487.1,US$ million,revised
+india,2023-24,O P E C,group,O P E C,,exports,60052.0,US$ million,revised
+india,2023-24,O P E C,group,O P E C,,imports,127770.0,US$ million,revised
+india,2024-25,O P E C,group,O P E C,,exports,59894.7,US$ million,revised
+india,2024-25,O P E C,group,O P E C,,imports,139095.8,US$ million,revised
+india,2025-26,O P E C,group,O P E C,,exports,58819.2,US$ million,provisional
+india,2025-26,O P E C,group,O P E C,,imports,136476.7,US$ million,provisional
+india,2021-22,Iran,country,O P E C,,exports,1451.1,US$ million,revised
+india,2021-22,Iran,country,O P E C,,imports,463.4,US$ million,revised
+india,2022-23,Iran,country,O P E C,,exports,1659.1,US$ million,revised
+india,2022-23,Iran,country,O P E C,,imports,672.1,US$ million,revised
+india,2023-24,Iran,country,O P E C,,exports,1222.3,US$ million,revised
+india,2023-24,Iran,country,O P E C,,imports,625.1,US$ million,revised
+india,2024-25,Iran,country,O P E C,,exports,1241.2,US$ million,revised
+india,2024-25,Iran,country,O P E C,,imports,441.8,US$ million,revised
+india,2025-26,Iran,country,O P E C,,exports,1258.7,US$ million,provisional
+india,2025-26,Iran,country,O P E C,,imports,375.5,US$ million,provisional
+india,2021-22,Iraq,country,O P E C,,exports,2403.3,US$ million,revised
+india,2021-22,Iraq,country,O P E C,,imports,31927.1,US$ million,revised
+india,2022-23,Iraq,country,O P E C,,exports,2696.7,US$ million,revised
+india,2022-23,Iraq,country,O P E C,,imports,34385.5,US$ million,revised
+india,2023-24,Iraq,country,O P E C,,exports,3354.7,US$ million,revised
+india,2023-24,Iraq,country,O P E C,,imports,29961.4,US$ million,revised
+india,2024-25,Iraq,country,O P E C,,exports,3272.5,US$ million,revised
+india,2024-25,Iraq,country,O P E C,,imports,28891.2,US$ million,revised
+india,2025-26,Iraq,country,O P E C,,exports,2958.2,US$ million,provisional
+india,2025-26,Iraq,country,O P E C,,imports,24558.5,US$ million,provisional
+india,2021-22,Kuwait,country,O P E C,,exports,1241.9,US$ million,revised
+india,2021-22,Kuwait,country,O P E C,,imports,11001.8,US$ million,revised
+india,2022-23,Kuwait,country,O P E C,,exports,1560.4,US$ million,revised
+india,2022-23,Kuwait,country,O P E C,,imports,12247.4,US$ million,revised
+india,2023-24,Kuwait,country,O P E C,,exports,2103.2,US$ million,revised
+india,2023-24,Kuwait,country,O P E C,,imports,8362.8,US$ million,revised
+india,2024-25,Kuwait,country,O P E C,,exports,1934.8,US$ million,revised
+india,2024-25,Kuwait,country,O P E C,,imports,8285.7,US$ million,revised
+india,2025-26,Kuwait,country,O P E C,,exports,1651.7,US$ million,provisional
+india,2025-26,Kuwait,country,O P E C,,imports,7917.4,US$ million,provisional
+india,2021-22,Saudi Arabia,country,O P E C,,exports,8758.9,US$ million,revised
+india,2021-22,Saudi Arabia,country,O P E C,,imports,34100.6,US$ million,revised
+india,2022-23,Saudi Arabia,country,O P E C,,exports,10727.7,US$ million,revised
+india,2022-23,Saudi Arabia,country,O P E C,,imports,42035.3,US$ million,revised
+india,2023-24,Saudi Arabia,country,O P E C,,exports,11558.6,US$ million,revised
+india,2023-24,Saudi Arabia,country,O P E C,,imports,31414.9,US$ million,revised
+india,2024-25,Saudi Arabia,country,O P E C,,exports,11756.7,US$ million,revised
+india,2024-25,Saudi Arabia,country,O P E C,,imports,30121.1,US$ million,revised
+india,2025-26,Saudi Arabia,country,O P E C,,exports,10281.1,US$ million,provisional
+india,2025-26,Saudi Arabia,country,O P E C,,imports,30790.3,US$ million,provisional
+india,2021-22,U A E,country,O P E C,,exports,28044.9,US$ million,revised
+india,2021-22,U A E,country,O P E C,,imports,44833.5,US$ million,revised
+india,2022-23,U A E,country,O P E C,,exports,31608.8,US$ million,revised
+india,2022-23,U A E,country,O P E C,,imports,53231.5,US$ million,revised
+india,2023-24,U A E,country,O P E C,,exports,35625.0,US$ million,revised
+india,2023-24,U A E,country,O P E C,,imports,46796.7,US$ million,revised
+india,2024-25,U A E,country,O P E C,,exports,36638.0,US$ million,revised
+india,2024-25,U A E,country,O P E C,,imports,63403.0,US$ million,revised
+india,2025-26,U A E,country,O P E C,,exports,37359.1,US$ million,provisional
+india,2025-26,U A E,country,O P E C,,imports,63894.5,US$ million,provisional
+india,2021-22,Eastern Europe,group,Eastern Europe,,exports,5071.7,US$ million,revised
+india,2021-22,Eastern Europe,group,Eastern Europe,,imports,14236.3,US$ million,revised
+india,2022-23,Eastern Europe,group,Eastern Europe,,exports,5444.7,US$ million,revised
+india,2022-23,Eastern Europe,group,Eastern Europe,,imports,48467.9,US$ million,revised
+india,2023-24,Eastern Europe,group,Eastern Europe,,exports,8249.0,US$ million,revised
+india,2023-24,Eastern Europe,group,Eastern Europe,,imports,63186.2,US$ million,revised
+india,2024-25,Eastern Europe,group,Eastern Europe,,exports,7448.0,US$ million,revised
+india,2024-25,Eastern Europe,group,Eastern Europe,,imports,65552.7,US$ million,revised
+india,2025-26,Eastern Europe,group,Eastern Europe,,exports,7037.8,US$ million,provisional
+india,2025-26,Eastern Europe,group,Eastern Europe,,imports,56857.2,US$ million,provisional
+india,2021-22,Russia,country,Eastern Europe,,exports,3254.7,US$ million,revised
+india,2021-22,Russia,country,Eastern Europe,,imports,9870.0,US$ million,revised
+india,2022-23,Russia,country,Eastern Europe,,exports,3147.0,US$ million,revised
+india,2022-23,Russia,country,Eastern Europe,,imports,46212.7,US$ million,revised
+india,2023-24,Russia,country,Eastern Europe,,exports,4261.3,US$ million,revised
+india,2023-24,Russia,country,Eastern Europe,,imports,61159.2,US$ million,revised
+india,2024-25,Russia,country,Eastern Europe,,exports,4881.3,US$ million,revised
+india,2024-25,Russia,country,Eastern Europe,,imports,63811.4,US$ million,revised
+india,2025-26,Russia,country,Eastern Europe,,exports,4493.5,US$ million,provisional
+india,2025-26,Russia,country,Eastern Europe,,imports,55369.6,US$ million,provisional
+india,2021-22,Asia,group,Asia,,exports,119800.2,US$ million,revised
+india,2021-22,Asia,group,Asia,,imports,216793.8,US$ million,revised
+india,2022-23,Asia,group,Asia,,exports,111175.4,US$ million,revised
+india,2022-23,Asia,group,Asia,,imports,247064.5,US$ million,revised
+india,2023-24,Asia,group,Asia,,exports,103602.2,US$ million,revised
+india,2023-24,Asia,group,Asia,,imports,235085.2,US$ million,revised
+india,2024-25,Asia,group,Asia,,exports,95981.7,US$ million,revised
+india,2024-25,Asia,group,Asia,,imports,255827.5,US$ million,revised
+india,2025-26,Asia,group,Asia,,exports,102783.6,US$ million,provisional
+india,2025-26,Asia,group,Asia,,imports,285056.8,US$ million,provisional
+india,2021-22,S A A R C,region,Asia,,exports,34228.8,US$ million,revised
+india,2021-22,S A A R C,region,Asia,,imports,5486.4,US$ million,revised
+india,2022-23,S A A R C,region,Asia,,exports,28026.7,US$ million,revised
+india,2022-23,S A A R C,region,Asia,,imports,5446.0,US$ million,revised
+india,2023-24,S A A R C,region,Asia,,exports,25623.7,US$ million,revised
+india,2023-24,S A A R C,region,Asia,,imports,5170.1,US$ million,revised
+india,2024-25,S A A R C,region,Asia,,exports,26123.4,US$ million,revised
+india,2024-25,S A A R C,region,Asia,,imports,6047.6,US$ million,revised
+india,2025-26,S A A R C,region,Asia,,exports,25774.7,US$ million,provisional
+india,2025-26,S A A R C,region,Asia,,imports,7168.6,US$ million,provisional
+india,2021-22,Afghanistan,country,Asia,S A A R C,exports,554.5,US$ million,revised
+india,2021-22,Afghanistan,country,Asia,S A A R C,imports,510.9,US$ million,revised
+india,2022-23,Afghanistan,country,Asia,S A A R C,exports,437.0,US$ million,revised
+india,2022-23,Afghanistan,country,Asia,S A A R C,imports,452.8,US$ million,revised
+india,2023-24,Afghanistan,country,Asia,S A A R C,exports,355.4,US$ million,revised
+india,2023-24,Afghanistan,country,Asia,S A A R C,imports,642.3,US$ million,revised
+india,2024-25,Afghanistan,country,Asia,S A A R C,exports,318.9,US$ million,revised
+india,2024-25,Afghanistan,country,Asia,S A A R C,imports,689.8,US$ million,revised
+india,2025-26,Afghanistan,country,Asia,S A A R C,exports,253.6,US$ million,provisional
+india,2025-26,Afghanistan,country,Asia,S A A R C,imports,654.2,US$ million,provisional
+india,2021-22,Bangladesh,country,Asia,S A A R C,exports,16156.4,US$ million,revised
+india,2021-22,Bangladesh,country,Asia,S A A R C,imports,1977.9,US$ million,revised
+india,2022-23,Bangladesh,country,Asia,S A A R C,exports,12215.9,US$ million,revised
+india,2022-23,Bangladesh,country,Asia,S A A R C,imports,2021.2,US$ million,revised
+india,2023-24,Bangladesh,country,Asia,S A A R C,exports,11065.9,US$ million,revised
+india,2023-24,Bangladesh,country,Asia,S A A R C,imports,1844.4,US$ million,revised
+india,2024-25,Bangladesh,country,Asia,S A A R C,exports,11485.3,US$ million,revised
+india,2024-25,Bangladesh,country,Asia,S A A R C,imports,2005.0,US$ million,revised
+india,2025-26,Bangladesh,country,Asia,S A A R C,exports,10587.4,US$ million,provisional
+india,2025-26,Bangladesh,country,Asia,S A A R C,imports,1780.3,US$ million,provisional
+india,2021-22,Bhutan,country,Asia,S A A R C,exports,885.8,US$ million,revised
+india,2021-22,Bhutan,country,Asia,S A A R C,imports,545.0,US$ million,revised
+india,2022-23,Bhutan,country,Asia,S A A R C,exports,1079.1,US$ million,revised
+india,2022-23,Bhutan,country,Asia,S A A R C,imports,535.6,US$ million,revised
+india,2023-24,Bhutan,country,Asia,S A A R C,exports,963.7,US$ million,revised
+india,2023-24,Bhutan,country,Asia,S A A R C,imports,339.0,US$ million,revised
+india,2024-25,Bhutan,country,Asia,S A A R C,exports,1263.8,US$ million,revised
+india,2024-25,Bhutan,country,Asia,S A A R C,imports,641.7,US$ million,revised
+india,2025-26,Bhutan,country,Asia,S A A R C,exports,1252.9,US$ million,provisional
+india,2025-26,Bhutan,country,Asia,S A A R C,imports,820.5,US$ million,provisional
+india,2021-22,Maldives,country,Asia,S A A R C,exports,670.4,US$ million,revised
+india,2021-22,Maldives,country,Asia,S A A R C,imports,68.9,US$ million,revised
+india,2022-23,Maldives,country,Asia,S A A R C,exports,476.8,US$ million,revised
+india,2022-23,Maldives,country,Asia,S A A R C,imports,496.6,US$ million,revised
+india,2023-24,Maldives,country,Asia,S A A R C,exports,891.9,US$ million,revised
+india,2023-24,Maldives,country,Asia,S A A R C,imports,86.6,US$ million,revised
+india,2024-25,Maldives,country,Asia,S A A R C,exports,560.9,US$ million,revised
+india,2024-25,Maldives,country,Asia,S A A R C,imports,118.8,US$ million,revised
+india,2025-26,Maldives,country,Asia,S A A R C,exports,458.7,US$ million,provisional
+india,2025-26,Maldives,country,Asia,S A A R C,imports,313.0,US$ million,provisional
+india,2021-22,Nepal,country,Asia,S A A R C,exports,9645.7,US$ million,revised
+india,2021-22,Nepal,country,Asia,S A A R C,imports,1371.0,US$ million,revised
+india,2022-23,Nepal,country,Asia,S A A R C,exports,8079.3,US$ million,revised
+india,2022-23,Nepal,country,Asia,S A A R C,imports,841.5,US$ million,revised
+india,2023-24,Nepal,country,Asia,S A A R C,exports,7041.0,US$ million,revised
+india,2023-24,Nepal,country,Asia,S A A R C,imports,830.8,US$ million,revised
+india,2024-25,Nepal,country,Asia,S A A R C,exports,7386.0,US$ million,revised
+india,2024-25,Nepal,country,Asia,S A A R C,imports,1288.8,US$ million,revised
+india,2025-26,Nepal,country,Asia,S A A R C,exports,7447.1,US$ million,provisional
+india,2025-26,Nepal,country,Asia,S A A R C,imports,1941.9,US$ million,provisional
+india,2021-22,Pakistan,country,Asia,S A A R C,exports,513.8,US$ million,revised
+india,2021-22,Pakistan,country,Asia,S A A R C,imports,2.5,US$ million,revised
+india,2022-23,Pakistan,country,Asia,S A A R C,exports,627.1,US$ million,revised
+india,2022-23,Pakistan,country,Asia,S A A R C,imports,20.1,US$ million,revised
+india,2023-24,Pakistan,country,Asia,S A A R C,exports,1188.9,US$ million,revised
+india,2023-24,Pakistan,country,Asia,S A A R C,imports,2.9,US$ million,revised
+india,2024-25,Pakistan,country,Asia,S A A R C,exports,557.8,US$ million,revised
+india,2024-25,Pakistan,country,Asia,S A A R C,imports,0.5,US$ million,revised
+india,2025-26,Pakistan,country,Asia,S A A R C,exports,258.1,US$ million,provisional
+india,2025-26,Pakistan,country,Asia,S A A R C,imports,0.1,US$ million,provisional
+india,2021-22,Sri Lanka,country,Asia,S A A R C,exports,5802.2,US$ million,revised
+india,2021-22,Sri Lanka,country,Asia,S A A R C,imports,1010.0,US$ million,revised
+india,2022-23,Sri Lanka,country,Asia,S A A R C,exports,5111.6,US$ million,revised
+india,2022-23,Sri Lanka,country,Asia,S A A R C,imports,1078.1,US$ million,revised
+india,2023-24,Sri Lanka,country,Asia,S A A R C,exports,4116.9,US$ million,revised
+india,2023-24,Sri Lanka,country,Asia,S A A R C,imports,1424.2,US$ million,revised
+india,2024-25,Sri Lanka,country,Asia,S A A R C,exports,4550.8,US$ million,revised
+india,2024-25,Sri Lanka,country,Asia,S A A R C,imports,1303.0,US$ million,revised
+india,2025-26,Sri Lanka,country,Asia,S A A R C,exports,5516.8,US$ million,provisional
+india,2025-26,Sri Lanka,country,Asia,S A A R C,imports,1658.6,US$ million,provisional
+india,2021-22,Other Asian Countries,region,Asia,,exports,85571.4,US$ million,revised
+india,2021-22,Other Asian Countries,region,Asia,,imports,211307.4,US$ million,revised
+india,2022-23,Other Asian Countries,region,Asia,,exports,83148.7,US$ million,revised
+india,2022-23,Other Asian Countries,region,Asia,,imports,241618.4,US$ million,revised
+india,2023-24,Other Asian Countries,region,Asia,,exports,77978.5,US$ million,revised
+india,2023-24,Other Asian Countries,region,Asia,,imports,229915.1,US$ million,revised
+india,2024-25,Other Asian Countries,region,Asia,,exports,69858.3,US$ million,revised
+india,2024-25,Other Asian Countries,region,Asia,,imports,249779.8,US$ million,revised
+india,2025-26,Other Asian Countries,region,Asia,,exports,77008.9,US$ million,provisional
+india,2025-26,Other Asian Countries,region,Asia,,imports,277888.3,US$ million,provisional
+india,2021-22,People’s Republic of China,country,Asia,Other Asian Countries,exports,21259.8,US$ million,revised
+india,2021-22,People’s Republic of China,country,Asia,Other Asian Countries,imports,94570.6,US$ million,revised
+india,2022-23,People’s Republic of China,country,Asia,Other Asian Countries,exports,15306.1,US$ million,revised
+india,2022-23,People’s Republic of China,country,Asia,Other Asian Countries,imports,98505.8,US$ million,revised
+india,2023-24,People’s Republic of China,country,Asia,Other Asian Countries,exports,16658.9,US$ million,revised
+india,2023-24,People’s Republic of China,country,Asia,Other Asian Countries,imports,101728.4,US$ million,revised
+india,2024-25,People’s Republic of China,country,Asia,Other Asian Countries,exports,14252.2,US$ million,revised
+india,2024-25,People’s Republic of China,country,Asia,Other Asian Countries,imports,113447.3,US$ million,revised
+india,2025-26,People’s Republic of China,country,Asia,Other Asian Countries,exports,19471.1,US$ million,provisional
+india,2025-26,People’s Republic of China,country,Asia,Other Asian Countries,imports,131633.4,US$ million,provisional
+india,2021-22,Hong Kong,country,Asia,Other Asian Countries,exports,10984.8,US$ million,revised
+india,2021-22,Hong Kong,country,Asia,Other Asian Countries,imports,19096.6,US$ million,revised
+india,2022-23,Hong Kong,country,Asia,Other Asian Countries,exports,9892.6,US$ million,revised
+india,2022-23,Hong Kong,country,Asia,Other Asian Countries,imports,18275.0,US$ million,revised
+india,2023-24,Hong Kong,country,Asia,Other Asian Countries,exports,8243.9,US$ million,revised
+india,2023-24,Hong Kong,country,Asia,Other Asian Countries,imports,20370.3,US$ million,revised
+india,2024-25,Hong Kong,country,Asia,Other Asian Countries,exports,6066.7,US$ million,revised
+india,2024-25,Hong Kong,country,Asia,Other Asian Countries,imports,19729.2,US$ million,revised
+india,2025-26,Hong Kong,country,Asia,Other Asian Countries,exports,8081.8,US$ million,provisional
+india,2025-26,Hong Kong,country,Asia,Other Asian Countries,imports,24331.0,US$ million,provisional
+india,2021-22,South Korea,country,Asia,Other Asian Countries,exports,8085.0,US$ million,revised
+india,2021-22,South Korea,country,Asia,Other Asian Countries,imports,17477.2,US$ million,revised
+india,2022-23,South Korea,country,Asia,Other Asian Countries,exports,6654.1,US$ million,revised
+india,2022-23,South Korea,country,Asia,Other Asian Countries,imports,21227.3,US$ million,revised
+india,2023-24,South Korea,country,Asia,Other Asian Countries,exports,6416.7,US$ million,revised
+india,2023-24,South Korea,country,Asia,Other Asian Countries,imports,21120.5,US$ million,revised
+india,2024-25,South Korea,country,Asia,Other Asian Countries,exports,5819.6,US$ million,revised
+india,2024-25,South Korea,country,Asia,Other Asian Countries,imports,21064.2,US$ million,revised
+india,2025-26,South Korea,country,Asia,Other Asian Countries,exports,6012.0,US$ million,provisional
+india,2025-26,South Korea,country,Asia,Other Asian Countries,imports,21354.7,US$ million,provisional
+india,2021-22,Malaysia,country,Asia,Other Asian Countries,exports,6995.0,US$ million,revised
+india,2021-22,Malaysia,country,Asia,Other Asian Countries,imports,12424.2,US$ million,revised
+india,2022-23,Malaysia,country,Asia,Other Asian Countries,exports,7156.2,US$ million,revised
+india,2022-23,Malaysia,country,Asia,Other Asian Countries,imports,12734.9,US$ million,revised
+india,2023-24,Malaysia,country,Asia,Other Asian Countries,exports,7262.2,US$ million,revised
+india,2023-24,Malaysia,country,Asia,Other Asian Countries,imports,12753.7,US$ million,revised
+india,2024-25,Malaysia,country,Asia,Other Asian Countries,exports,7316.9,US$ million,revised
+india,2024-25,Malaysia,country,Asia,Other Asian Countries,imports,12538.7,US$ million,revised
+india,2025-26,Malaysia,country,Asia,Other Asian Countries,exports,6825.6,US$ million,provisional
+india,2025-26,Malaysia,country,Asia,Other Asian Countries,imports,14177.0,US$ million,provisional
+india,2021-22,Singapore,country,Asia,Other Asian Countries,exports,11150.6,US$ million,revised
+india,2021-22,Singapore,country,Asia,Other Asian Countries,imports,18962.2,US$ million,revised
+india,2022-23,Singapore,country,Asia,Other Asian Countries,exports,11992.9,US$ million,revised
+india,2022-23,Singapore,country,Asia,Other Asian Countries,imports,23595.4,US$ million,revised
+india,2023-24,Singapore,country,Asia,Other Asian Countries,exports,14414.3,US$ million,revised
+india,2023-24,Singapore,country,Asia,Other Asian Countries,imports,21140.3,US$ million,revised
+india,2024-25,Singapore,country,Asia,Other Asian Countries,exports,12976.1,US$ million,revised
+india,2024-25,Singapore,country,Asia,Other Asian Countries,imports,21282.1,US$ million,revised
+india,2025-26,Singapore,country,Asia,Other Asian Countries,exports,11863.7,US$ million,provisional
+india,2025-26,Singapore,country,Asia,Other Asian Countries,imports,24240.6,US$ million,provisional
+india,2021-22,Thailand,country,Asia,Other Asian Countries,exports,5751.3,US$ million,revised
+india,2021-22,Thailand,country,Asia,Other Asian Countries,imports,9332.6,US$ million,revised
+india,2022-23,Thailand,country,Asia,Other Asian Countries,exports,5709.8,US$ million,revised
+india,2022-23,Thailand,country,Asia,Other Asian Countries,imports,11193.4,US$ million,revised
+india,2023-24,Thailand,country,Asia,Other Asian Countries,exports,5039.0,US$ million,revised
+india,2023-24,Thailand,country,Asia,Other Asian Countries,imports,9908.6,US$ million,revised
+india,2024-25,Thailand,country,Asia,Other Asian Countries,exports,4812.6,US$ million,revised
+india,2024-25,Thailand,country,Asia,Other Asian Countries,imports,14267.1,US$ million,revised
+india,2025-26,Thailand,country,Asia,Other Asian Countries,exports,5058.6,US$ million,provisional
+india,2025-26,Thailand,country,Asia,Other Asian Countries,imports,16427.0,US$ million,provisional
+india,2021-22,Indonesia,country,Asia,Other Asian Countries,exports,8471.5,US$ million,revised
+india,2021-22,Indonesia,country,Asia,Other Asian Countries,imports,17702.8,US$ million,revised
+india,2022-23,Indonesia,country,Asia,Other Asian Countries,exports,10024.3,US$ million,revised
+india,2022-23,Indonesia,country,Asia,Other Asian Countries,imports,28820.4,US$ million,revised
+india,2023-24,Indonesia,country,Asia,Other Asian Countries,exports,5988.9,US$ million,revised
+india,2023-24,Indonesia,country,Asia,Other Asian Countries,imports,23410.4,US$ million,revised
+india,2024-25,Indonesia,country,Asia,Other Asian Countries,exports,5380.2,US$ million,revised
+india,2024-25,Indonesia,country,Asia,Other Asian Countries,imports,22778.0,US$ million,revised
+india,2025-26,Indonesia,country,Asia,Other Asian Countries,exports,4491.4,US$ million,provisional
+india,2025-26,Indonesia,country,Asia,Other Asian Countries,imports,20292.3,US$ million,provisional
+india,2021-22,Africa,group,Africa,,exports,33919.1,US$ million,revised
+india,2021-22,Africa,group,Africa,,imports,31648.5,US$ million,revised
+india,2022-23,Africa,group,Africa,,exports,44187.3,US$ million,revised
+india,2022-23,Africa,group,Africa,,imports,30960.2,US$ million,revised
+india,2023-24,Africa,group,Africa,,exports,39331.6,US$ million,revised
+india,2023-24,Africa,group,Africa,,imports,27359.5,US$ million,revised
+india,2024-25,Africa,group,Africa,,exports,37856.0,US$ million,revised
+india,2024-25,Africa,group,Africa,,imports,32866.9,US$ million,revised
+india,2025-26,Africa,group,Africa,,exports,40309.4,US$ million,provisional
+india,2025-26,Africa,group,Africa,,imports,39808.6,US$ million,provisional
+india,2021-22,Benin,country,Africa,,exports,716.4,US$ million,revised
+india,2021-22,Benin,country,Africa,,imports,402.1,US$ million,revised
+india,2022-23,Benin,country,Africa,,exports,892.8,US$ million,revised
+india,2022-23,Benin,country,Africa,,imports,452.6,US$ million,revised
+india,2023-24,Benin,country,Africa,,exports,752.5,US$ million,revised
+india,2023-24,Benin,country,Africa,,imports,214.6,US$ million,revised
+india,2024-25,Benin,country,Africa,,exports,1195.0,US$ million,revised
+india,2024-25,Benin,country,Africa,,imports,130.5,US$ million,revised
+india,2025-26,Benin,country,Africa,,exports,954.8,US$ million,provisional
+india,2025-26,Benin,country,Africa,,imports,113.0,US$ million,provisional
+india,2021-22,Egypt Arab Republic,country,Africa,,exports,3743.9,US$ million,revised
+india,2021-22,Egypt Arab Republic,country,Africa,,imports,3520.8,US$ million,revised
+india,2022-23,Egypt Arab Republic,country,Africa,,exports,4109.4,US$ million,revised
+india,2022-23,Egypt Arab Republic,country,Africa,,imports,1951.5,US$ million,revised
+india,2023-24,Egypt Arab Republic,country,Africa,,exports,3520.6,US$ million,revised
+india,2023-24,Egypt Arab Republic,country,Africa,,imports,1157.4,US$ million,revised
+india,2024-25,Egypt Arab Republic,country,Africa,,exports,3411.4,US$ million,revised
+india,2024-25,Egypt Arab Republic,country,Africa,,imports,1328.5,US$ million,revised
+india,2025-26,Egypt Arab Republic,country,Africa,,exports,3932.1,US$ million,provisional
+india,2025-26,Egypt Arab Republic,country,Africa,,imports,2603.2,US$ million,provisional
+india,2021-22,Kenya,country,Africa,,exports,2631.9,US$ million,revised
+india,2021-22,Kenya,country,Africa,,imports,145.4,US$ million,revised
+india,2022-23,Kenya,country,Africa,,exports,3273.7,US$ million,revised
+india,2022-23,Kenya,country,Africa,,imports,116.7,US$ million,revised
+india,2023-24,Kenya,country,Africa,,exports,3174.8,US$ million,revised
+india,2023-24,Kenya,country,Africa,,imports,176.2,US$ million,revised
+india,2024-25,Kenya,country,Africa,,exports,3134.1,US$ million,revised
+india,2024-25,Kenya,country,Africa,,imports,318.7,US$ million,revised
+india,2025-26,Kenya,country,Africa,,exports,4016.6,US$ million,provisional
+india,2025-26,Kenya,country,Africa,,imports,296.2,US$ million,provisional
+india,2021-22,South Africa,country,Africa,,exports,6085.3,US$ million,revised
+india,2021-22,South Africa,country,Africa,,imports,10965.8,US$ million,revised
+india,2022-23,South Africa,country,Africa,,exports,8474.4,US$ million,revised
+india,2022-23,South Africa,country,Africa,,imports,10397.8,US$ million,revised
+india,2023-24,South Africa,country,Africa,,exports,8707.5,US$ million,revised
+india,2023-24,South Africa,country,Africa,,imports,9599.2,US$ million,revised
+india,2024-25,South Africa,country,Africa,,exports,7462.3,US$ million,revised
+india,2024-25,South Africa,country,Africa,,imports,10547.5,US$ million,revised
+india,2025-26,South Africa,country,Africa,,exports,7008.4,US$ million,provisional
+india,2025-26,South Africa,country,Africa,,imports,8560.7,US$ million,provisional
+india,2021-22,Sudan,country,Africa,,exports,1077.2,US$ million,revised
+india,2021-22,Sudan,country,Africa,,imports,129.2,US$ million,revised
+india,2022-23,Sudan,country,Africa,,exports,1815.8,US$ million,revised
+india,2022-23,Sudan,country,Africa,,imports,218.2,US$ million,revised
+india,2023-24,Sudan,country,Africa,,exports,805.0,US$ million,revised
+india,2023-24,Sudan,country,Africa,,imports,330.6,US$ million,revised
+india,2024-25,Sudan,country,Africa,,exports,589.0,US$ million,revised
+india,2024-25,Sudan,country,Africa,,imports,427.5,US$ million,revised
+india,2025-26,Sudan,country,Africa,,exports,949.2,US$ million,provisional
+india,2025-26,Sudan,country,Africa,,imports,178.9,US$ million,provisional
+india,2021-22,Tanzania,country,Africa,,exports,2300.9,US$ million,revised
+india,2021-22,Tanzania,country,Africa,,imports,2279.2,US$ million,revised
+india,2022-23,Tanzania,country,Africa,,exports,3935.5,US$ million,revised
+india,2022-23,Tanzania,country,Africa,,imports,2541.3,US$ million,revised
+india,2023-24,Tanzania,country,Africa,,exports,4616.6,US$ million,revised
+india,2023-24,Tanzania,country,Africa,,imports,3291.8,US$ million,revised
+india,2024-25,Tanzania,country,Africa,,exports,4789.6,US$ million,revised
+india,2024-25,Tanzania,country,Africa,,imports,3850.6,US$ million,revised
+india,2025-26,Tanzania,country,Africa,,exports,5420.1,US$ million,provisional
+india,2025-26,Tanzania,country,Africa,,imports,3602.6,US$ million,provisional
+india,2021-22,Zambia,country,Africa,,exports,341.0,US$ million,revised
+india,2021-22,Zambia,country,Africa,,imports,118.2,US$ million,revised
+india,2022-23,Zambia,country,Africa,,exports,280.7,US$ million,revised
+india,2022-23,Zambia,country,Africa,,imports,184.9,US$ million,revised
+india,2023-24,Zambia,country,Africa,,exports,244.3,US$ million,revised
+india,2023-24,Zambia,country,Africa,,imports,204.1,US$ million,revised
+india,2024-25,Zambia,country,Africa,,exports,212.6,US$ million,revised
+india,2024-25,Zambia,country,Africa,,imports,167.0,US$ million,revised
+india,2025-26,Zambia,country,Africa,,exports,229.9,US$ million,provisional
+india,2025-26,Zambia,country,Africa,,imports,236.4,US$ million,provisional
+india,2021-22,Latin American Countries,group,Latin American Countries,,exports,11893.6,US$ million,revised
+india,2021-22,Latin American Countries,group,Latin American Countries,,imports,17249.9,US$ million,revised
+india,2022-23,Latin American Countries,group,Latin American Countries,,exports,14720.2,US$ million,revised
+india,2022-23,Latin American Countries,group,Latin American Countries,,imports,17539.5,US$ million,revised
+india,2023-24,Latin American Countries,group,Latin American Countries,,exports,11742.1,US$ million,revised
+india,2023-24,Latin American Countries,group,Latin American Countries,,imports,15530.3,US$ million,revised
+india,2024-25,Latin American Countries,group,Latin American Countries,,exports,12105.2,US$ million,revised
+india,2024-25,Latin American Countries,group,Latin American Countries,,imports,16428.2,US$ million,revised
+india,2025-26,Latin American Countries,group,Latin American Countries,,exports,12870.7,US$ million,provisional
+india,2025-26,Latin American Countries,group,Latin American Countries,,imports,26075.9,US$ million,provisional
+india,2021-22,Others,group,Others,,exports,2678.8,US$ million,revised
+india,2021-22,Others,group,Others,,imports,524.0,US$ million,revised
+india,2022-23,Others,group,Others,,exports,2241.3,US$ million,revised
+india,2022-23,Others,group,Others,,imports,1108.9,US$ million,revised
+india,2023-24,Others,group,Others,,exports,2641.4,US$ million,revised
+india,2023-24,Others,group,Others,,imports,731.6,US$ million,revised
+india,2024-25,Others,group,Others,,exports,1954.4,US$ million,revised
+india,2024-25,Others,group,Others,,imports,948.6,US$ million,revised
+india,2025-26,Others,group,Others,,exports,2227.9,US$ million,provisional
+india,2025-26,Others,group,Others,,imports,818.8,US$ million,provisional
+india,2021-22,Unspecified,group,Unspecified,,exports,1299.6,US$ million,revised
+india,2021-22,Unspecified,group,Unspecified,,imports,45.9,US$ million,revised
+india,2022-23,Unspecified,group,Unspecified,,exports,3046.2,US$ million,revised
+india,2022-23,Unspecified,group,Unspecified,,imports,95.3,US$ million,revised
+india,2023-24,Unspecified,group,Unspecified,,exports,2987.0,US$ million,revised
+india,2023-24,Unspecified,group,Unspecified,,imports,143.8,US$ million,revised
+india,2024-25,Unspecified,group,Unspecified,,exports,3579.3,US$ million,revised
+india,2024-25,Unspecified,group,Unspecified,,imports,159.6,US$ million,revised
+india,2025-26,Unspecified,group,Unspecified,,exports,4325.7,US$ million,provisional
+india,2025-26,Unspecified,group,Unspecified,,imports,393.0,US$ million,provisional
+india,2021-22,Total,total,,,exports,422004.4,US$ million,revised
+india,2021-22,Total,total,,,imports,613052.0,US$ million,revised
+india,2022-23,Total,total,,,exports,451070.0,US$ million,revised
+india,2022-23,Total,total,,,imports,715968.9,US$ million,revised
+india,2023-24,Total,total,,,exports,437072.0,US$ million,revised
+india,2023-24,Total,total,,,imports,673992.0,US$ million,revised
+india,2024-25,Total,total,,,exports,437704.6,US$ million,revised
+india,2024-25,Total,total,,,imports,721200.2,US$ million,revised
+india,2025-26,Total,total,,,exports,441745.9,US$ million,provisional
+india,2025-26,Total,total,,,imports,776013.6,US$ million,provisional
