@@ -53,6 +53,7 @@ Exceptions:
   `--out-prices` and `--out-economy`.
 - `education/build_education.py` also reads the PLFS report text from `--jobs-work work/jobs`. Run
   `pipeline/jobs/extract_text.sh` first.
+- `crime/fetch.sh` reads its URLs from `crime/sources.tsv`. Give a path prefix to fetch part of the list, for example `pipeline/crime/fetch.sh pendency/`.
 - `parse_d33.py`, `check_d33.py` and `parse_proj.py` take file paths. The `extract_text.sh` script of
   their topic runs them.
 
@@ -105,6 +106,12 @@ Some CSVs were made in more than one step. Run the steps in this order:
 | `health/build_crs.py` | `crs-registration-level-by-state-2024`, `crs-sex-ratio-at-birth-by-state` | ORGI (CRS) |
 | `health/build_srs_cod.py` | `srs-causes-of-death-india` | ORGI (SRS) |
 | `health/build_nfhs_adult.py` | `nfhs-adult-indicators-by-state` | IIPS and MoHFW (NFHS-6), IIPS and ICF (NFHS-5 report) |
+| `crime/fetch.sh`, `crime/sources.tsv` | None. Downloads every NCRB report and Parliament answer the crime topic reads, with `common/fetch.sh` | NCRB, Lok Sabha, Rajya Sabha |
+| `crime/ncrb_files.mjs` | None. Lists the files of an NCRB year page in English (the site serves Hindi by default) | NCRB |
+| `crime/find_answers.py` | None. Lists Ministry of Law and Justice answers and their files, from the Lok Sabha eLibrary or the Rajya Sabha question list | Lok Sabha, Rajya Sabha |
+| `crime/extract_text.sh` | None. Text of the Crime in India, Prison Statistics India and Parliament answer PDFs | NCRB, Ministry of Law and Justice |
+| `crime/build_ncrb.py` | `crime-by-state-2024`, `crime-india-trend`, `ipc-crimes-india-1981-2024`, `murder-by-state-2024`, `crimes-against-women-by-state-2024`, `police-and-court-disposal-by-state-2024`, `prisons-by-state-2024`, `prisons-india-trend` | NCRB (Crime in India, Prison Statistics India) |
+| `crime/build_pendency.py` | `court-pendency-district-by-state`, `court-pendency-high-courts` | Ministry of Law and Justice (answers in the Lok Sabha and Rajya Sabha, citing NJDG) |
 | `climate/extract_text.sh`, `climate/parse_cea.py` | None. Text and word boxes of the CEA and MNRE PDFs, and the CEA totals | CEA, MNRE |
 | `climate/build_rain.py` | `monsoon-rainfall-all-india-1901-2026` | IMD Pune |
 | `climate/build_subdiv.py` | `monsoon-2026-by-subdivision` (values transcribed from an IMD table image) | IMD |
