@@ -1,0 +1,349 @@
+geography,period,source,source_type,value,unit,derived,report_table
+andhra-pradesh,2019,scheduled commercial bank,institutional,34.1,% of outstanding loan amount,,Statement 5.8.1
+andhra-pradesh,2019,regional rural bank,institutional,6.9,% of outstanding loan amount,,Statement 5.8.1
+andhra-pradesh,2019,co-operative society,institutional,2.1,% of outstanding loan amount,,Statement 5.8.1
+andhra-pradesh,2019,co-operative bank,institutional,0.8,% of outstanding loan amount,,Statement 5.8.1
+andhra-pradesh,2019,self-help group (bank linked or not),institutional,5.1,% of outstanding loan amount,,Statement 5.8.1
+andhra-pradesh,2019,other institutional agencies,institutional,0.6,% of outstanding loan amount,,Statement 5.8.1
+andhra-pradesh,2019,agricultural moneylender,non-institutional,31.1,% of outstanding loan amount,,Statement 5.8.1
+andhra-pradesh,2019,professional moneylender,non-institutional,15.4,% of outstanding loan amount,,Statement 5.8.1
+andhra-pradesh,2019,relatives and friends,non-institutional,1.1,% of outstanding loan amount,,Statement 5.8.1
+andhra-pradesh,2019,other non-institutional agencies,non-institutional,2.5,% of outstanding loan amount,,Statement 5.8.1
+andhra-pradesh,2019,all institutional sources,institutional,49.6,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+andhra-pradesh,2019,all non-institutional sources,non-institutional,50.1,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+arunachal-pradesh,2019,scheduled commercial bank,institutional,52.6,% of outstanding loan amount,,Statement 5.8.1
+arunachal-pradesh,2019,regional rural bank,institutional,7.1,% of outstanding loan amount,,Statement 5.8.1
+arunachal-pradesh,2019,co-operative society,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+arunachal-pradesh,2019,co-operative bank,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+arunachal-pradesh,2019,self-help group (bank linked or not),institutional,2.8,% of outstanding loan amount,,Statement 5.8.1
+arunachal-pradesh,2019,other institutional agencies,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+arunachal-pradesh,2019,agricultural moneylender,non-institutional,0.3,% of outstanding loan amount,,Statement 5.8.1
+arunachal-pradesh,2019,professional moneylender,non-institutional,1.8,% of outstanding loan amount,,Statement 5.8.1
+arunachal-pradesh,2019,relatives and friends,non-institutional,23.5,% of outstanding loan amount,,Statement 5.8.1
+arunachal-pradesh,2019,other non-institutional agencies,non-institutional,12.0,% of outstanding loan amount,,Statement 5.8.1
+arunachal-pradesh,2019,all institutional sources,institutional,62.5,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+arunachal-pradesh,2019,all non-institutional sources,non-institutional,37.6,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+assam,2019,scheduled commercial bank,institutional,52.1,% of outstanding loan amount,,Statement 5.8.1
+assam,2019,regional rural bank,institutional,8.4,% of outstanding loan amount,,Statement 5.8.1
+assam,2019,co-operative society,institutional,0.3,% of outstanding loan amount,,Statement 5.8.1
+assam,2019,co-operative bank,institutional,0.4,% of outstanding loan amount,,Statement 5.8.1
+assam,2019,self-help group (bank linked or not),institutional,20.8,% of outstanding loan amount,,Statement 5.8.1
+assam,2019,other institutional agencies,institutional,6.1,% of outstanding loan amount,,Statement 5.8.1
+assam,2019,agricultural moneylender,non-institutional,0.8,% of outstanding loan amount,,Statement 5.8.1
+assam,2019,professional moneylender,non-institutional,1.9,% of outstanding loan amount,,Statement 5.8.1
+assam,2019,relatives and friends,non-institutional,3.6,% of outstanding loan amount,,Statement 5.8.1
+assam,2019,other non-institutional agencies,non-institutional,5.4,% of outstanding loan amount,,Statement 5.8.1
+assam,2019,all institutional sources,institutional,88.1,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+assam,2019,all non-institutional sources,non-institutional,11.7,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+bihar,2019,scheduled commercial bank,institutional,30.9,% of outstanding loan amount,,Statement 5.8.1
+bihar,2019,regional rural bank,institutional,9.0,% of outstanding loan amount,,Statement 5.8.1
+bihar,2019,co-operative society,institutional,1.2,% of outstanding loan amount,,Statement 5.8.1
+bihar,2019,co-operative bank,institutional,0.3,% of outstanding loan amount,,Statement 5.8.1
+bihar,2019,self-help group (bank linked or not),institutional,13.0,% of outstanding loan amount,,Statement 5.8.1
+bihar,2019,other institutional agencies,institutional,4.7,% of outstanding loan amount,,Statement 5.8.1
+bihar,2019,agricultural moneylender,non-institutional,3.4,% of outstanding loan amount,,Statement 5.8.1
+bihar,2019,professional moneylender,non-institutional,13.2,% of outstanding loan amount,,Statement 5.8.1
+bihar,2019,relatives and friends,non-institutional,14.3,% of outstanding loan amount,,Statement 5.8.1
+bihar,2019,other non-institutional agencies,non-institutional,9.9,% of outstanding loan amount,,Statement 5.8.1
+bihar,2019,all institutional sources,institutional,59.1,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+bihar,2019,all non-institutional sources,non-institutional,40.8,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+chhattisgarh,2019,scheduled commercial bank,institutional,25.5,% of outstanding loan amount,,Statement 5.8.1
+chhattisgarh,2019,regional rural bank,institutional,8.0,% of outstanding loan amount,,Statement 5.8.1
+chhattisgarh,2019,co-operative society,institutional,14.9,% of outstanding loan amount,,Statement 5.8.1
+chhattisgarh,2019,co-operative bank,institutional,19.3,% of outstanding loan amount,,Statement 5.8.1
+chhattisgarh,2019,self-help group (bank linked or not),institutional,1.6,% of outstanding loan amount,,Statement 5.8.1
+chhattisgarh,2019,other institutional agencies,institutional,5.3,% of outstanding loan amount,,Statement 5.8.1
+chhattisgarh,2019,agricultural moneylender,non-institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+chhattisgarh,2019,professional moneylender,non-institutional,13.4,% of outstanding loan amount,,Statement 5.8.1
+chhattisgarh,2019,relatives and friends,non-institutional,5.8,% of outstanding loan amount,,Statement 5.8.1
+chhattisgarh,2019,other non-institutional agencies,non-institutional,6.2,% of outstanding loan amount,,Statement 5.8.1
+chhattisgarh,2019,all institutional sources,institutional,74.6,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+chhattisgarh,2019,all non-institutional sources,non-institutional,25.4,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+gujarat,2019,scheduled commercial bank,institutional,53.9,% of outstanding loan amount,,Statement 5.8.1
+gujarat,2019,regional rural bank,institutional,9.0,% of outstanding loan amount,,Statement 5.8.1
+gujarat,2019,co-operative society,institutional,15.6,% of outstanding loan amount,,Statement 5.8.1
+gujarat,2019,co-operative bank,institutional,4.6,% of outstanding loan amount,,Statement 5.8.1
+gujarat,2019,self-help group (bank linked or not),institutional,0.3,% of outstanding loan amount,,Statement 5.8.1
+gujarat,2019,other institutional agencies,institutional,1.6,% of outstanding loan amount,,Statement 5.8.1
+gujarat,2019,agricultural moneylender,non-institutional,0.2,% of outstanding loan amount,,Statement 5.8.1
+gujarat,2019,professional moneylender,non-institutional,5.8,% of outstanding loan amount,,Statement 5.8.1
+gujarat,2019,relatives and friends,non-institutional,6.0,% of outstanding loan amount,,Statement 5.8.1
+gujarat,2019,other non-institutional agencies,non-institutional,3.0,% of outstanding loan amount,,Statement 5.8.1
+gujarat,2019,all institutional sources,institutional,85.0,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+gujarat,2019,all non-institutional sources,non-institutional,15.0,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+haryana,2019,scheduled commercial bank,institutional,49.8,% of outstanding loan amount,,Statement 5.8.1
+haryana,2019,regional rural bank,institutional,12.4,% of outstanding loan amount,,Statement 5.8.1
+haryana,2019,co-operative society,institutional,2.7,% of outstanding loan amount,,Statement 5.8.1
+haryana,2019,co-operative bank,institutional,0.5,% of outstanding loan amount,,Statement 5.8.1
+haryana,2019,self-help group (bank linked or not),institutional,0.2,% of outstanding loan amount,,Statement 5.8.1
+haryana,2019,other institutional agencies,institutional,2.3,% of outstanding loan amount,,Statement 5.8.1
+haryana,2019,agricultural moneylender,non-institutional,6.4,% of outstanding loan amount,,Statement 5.8.1
+haryana,2019,professional moneylender,non-institutional,13.9,% of outstanding loan amount,,Statement 5.8.1
+haryana,2019,relatives and friends,non-institutional,5.7,% of outstanding loan amount,,Statement 5.8.1
+haryana,2019,other non-institutional agencies,non-institutional,6.0,% of outstanding loan amount,,Statement 5.8.1
+haryana,2019,all institutional sources,institutional,67.9,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+haryana,2019,all non-institutional sources,non-institutional,32.0,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+himachal-pradesh,2019,scheduled commercial bank,institutional,80.1,% of outstanding loan amount,,Statement 5.8.1
+himachal-pradesh,2019,regional rural bank,institutional,0.4,% of outstanding loan amount,,Statement 5.8.1
+himachal-pradesh,2019,co-operative society,institutional,6.7,% of outstanding loan amount,,Statement 5.8.1
+himachal-pradesh,2019,co-operative bank,institutional,7.7,% of outstanding loan amount,,Statement 5.8.1
+himachal-pradesh,2019,self-help group (bank linked or not),institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+himachal-pradesh,2019,other institutional agencies,institutional,0.9,% of outstanding loan amount,,Statement 5.8.1
+himachal-pradesh,2019,agricultural moneylender,non-institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+himachal-pradesh,2019,professional moneylender,non-institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+himachal-pradesh,2019,relatives and friends,non-institutional,3.9,% of outstanding loan amount,,Statement 5.8.1
+himachal-pradesh,2019,other non-institutional agencies,non-institutional,0.3,% of outstanding loan amount,,Statement 5.8.1
+himachal-pradesh,2019,all institutional sources,institutional,95.8,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+himachal-pradesh,2019,all non-institutional sources,non-institutional,4.2,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+jammu-kashmir,2019,scheduled commercial bank,institutional,62.0,% of outstanding loan amount,,Statement 5.8.1
+jammu-kashmir,2019,regional rural bank,institutional,0.4,% of outstanding loan amount,,Statement 5.8.1
+jammu-kashmir,2019,co-operative society,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+jammu-kashmir,2019,co-operative bank,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+jammu-kashmir,2019,self-help group (bank linked or not),institutional,0.2,% of outstanding loan amount,,Statement 5.8.1
+jammu-kashmir,2019,other institutional agencies,institutional,0.7,% of outstanding loan amount,,Statement 5.8.1
+jammu-kashmir,2019,agricultural moneylender,non-institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+jammu-kashmir,2019,professional moneylender,non-institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+jammu-kashmir,2019,relatives and friends,non-institutional,32.8,% of outstanding loan amount,,Statement 5.8.1
+jammu-kashmir,2019,other non-institutional agencies,non-institutional,3.8,% of outstanding loan amount,,Statement 5.8.1
+jammu-kashmir,2019,all institutional sources,institutional,63.3,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+jammu-kashmir,2019,all non-institutional sources,non-institutional,36.6,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+jharkhand,2019,scheduled commercial bank,institutional,28.9,% of outstanding loan amount,,Statement 5.8.1
+jharkhand,2019,regional rural bank,institutional,8.8,% of outstanding loan amount,,Statement 5.8.1
+jharkhand,2019,co-operative society,institutional,1.1,% of outstanding loan amount,,Statement 5.8.1
+jharkhand,2019,co-operative bank,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+jharkhand,2019,self-help group (bank linked or not),institutional,4.8,% of outstanding loan amount,,Statement 5.8.1
+jharkhand,2019,other institutional agencies,institutional,0.6,% of outstanding loan amount,,Statement 5.8.1
+jharkhand,2019,agricultural moneylender,non-institutional,1.8,% of outstanding loan amount,,Statement 5.8.1
+jharkhand,2019,professional moneylender,non-institutional,23.1,% of outstanding loan amount,,Statement 5.8.1
+jharkhand,2019,relatives and friends,non-institutional,24.0,% of outstanding loan amount,,Statement 5.8.1
+jharkhand,2019,other non-institutional agencies,non-institutional,6.8,% of outstanding loan amount,,Statement 5.8.1
+jharkhand,2019,all institutional sources,institutional,44.2,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+jharkhand,2019,all non-institutional sources,non-institutional,55.7,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+karnataka,2019,scheduled commercial bank,institutional,37.3,% of outstanding loan amount,,Statement 5.8.1
+karnataka,2019,regional rural bank,institutional,11.0,% of outstanding loan amount,,Statement 5.8.1
+karnataka,2019,co-operative society,institutional,13.6,% of outstanding loan amount,,Statement 5.8.1
+karnataka,2019,co-operative bank,institutional,3.7,% of outstanding loan amount,,Statement 5.8.1
+karnataka,2019,self-help group (bank linked or not),institutional,5.1,% of outstanding loan amount,,Statement 5.8.1
+karnataka,2019,other institutional agencies,institutional,2.7,% of outstanding loan amount,,Statement 5.8.1
+karnataka,2019,agricultural moneylender,non-institutional,6.3,% of outstanding loan amount,,Statement 5.8.1
+karnataka,2019,professional moneylender,non-institutional,7.2,% of outstanding loan amount,,Statement 5.8.1
+karnataka,2019,relatives and friends,non-institutional,8.1,% of outstanding loan amount,,Statement 5.8.1
+karnataka,2019,other non-institutional agencies,non-institutional,4.9,% of outstanding loan amount,,Statement 5.8.1
+karnataka,2019,all institutional sources,institutional,73.4,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+karnataka,2019,all non-institutional sources,non-institutional,26.5,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+kerala,2019,scheduled commercial bank,institutional,48.7,% of outstanding loan amount,,Statement 5.8.1
+kerala,2019,regional rural bank,institutional,4.2,% of outstanding loan amount,,Statement 5.8.1
+kerala,2019,co-operative society,institutional,6.6,% of outstanding loan amount,,Statement 5.8.1
+kerala,2019,co-operative bank,institutional,24.1,% of outstanding loan amount,,Statement 5.8.1
+kerala,2019,self-help group (bank linked or not),institutional,2.8,% of outstanding loan amount,,Statement 5.8.1
+kerala,2019,other institutional agencies,institutional,4.5,% of outstanding loan amount,,Statement 5.8.1
+kerala,2019,agricultural moneylender,non-institutional,0.1,% of outstanding loan amount,,Statement 5.8.1
+kerala,2019,professional moneylender,non-institutional,1.3,% of outstanding loan amount,,Statement 5.8.1
+kerala,2019,relatives and friends,non-institutional,6.3,% of outstanding loan amount,,Statement 5.8.1
+kerala,2019,other non-institutional agencies,non-institutional,1.4,% of outstanding loan amount,,Statement 5.8.1
+kerala,2019,all institutional sources,institutional,90.9,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+kerala,2019,all non-institutional sources,non-institutional,9.1,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+madhya-pradesh,2019,scheduled commercial bank,institutional,51.9,% of outstanding loan amount,,Statement 5.8.1
+madhya-pradesh,2019,regional rural bank,institutional,5.9,% of outstanding loan amount,,Statement 5.8.1
+madhya-pradesh,2019,co-operative society,institutional,6.2,% of outstanding loan amount,,Statement 5.8.1
+madhya-pradesh,2019,co-operative bank,institutional,2.0,% of outstanding loan amount,,Statement 5.8.1
+madhya-pradesh,2019,self-help group (bank linked or not),institutional,1.7,% of outstanding loan amount,,Statement 5.8.1
+madhya-pradesh,2019,other institutional agencies,institutional,2.8,% of outstanding loan amount,,Statement 5.8.1
+madhya-pradesh,2019,agricultural moneylender,non-institutional,6.3,% of outstanding loan amount,,Statement 5.8.1
+madhya-pradesh,2019,professional moneylender,non-institutional,15.7,% of outstanding loan amount,,Statement 5.8.1
+madhya-pradesh,2019,relatives and friends,non-institutional,2.2,% of outstanding loan amount,,Statement 5.8.1
+madhya-pradesh,2019,other non-institutional agencies,non-institutional,5.4,% of outstanding loan amount,,Statement 5.8.1
+madhya-pradesh,2019,all institutional sources,institutional,70.5,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+madhya-pradesh,2019,all non-institutional sources,non-institutional,29.6,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+maharashtra,2019,scheduled commercial bank,institutional,41.8,% of outstanding loan amount,,Statement 5.8.1
+maharashtra,2019,regional rural bank,institutional,6.9,% of outstanding loan amount,,Statement 5.8.1
+maharashtra,2019,co-operative society,institutional,18.6,% of outstanding loan amount,,Statement 5.8.1
+maharashtra,2019,co-operative bank,institutional,9.1,% of outstanding loan amount,,Statement 5.8.1
+maharashtra,2019,self-help group (bank linked or not),institutional,1.8,% of outstanding loan amount,,Statement 5.8.1
+maharashtra,2019,other institutional agencies,institutional,6.8,% of outstanding loan amount,,Statement 5.8.1
+maharashtra,2019,agricultural moneylender,non-institutional,1.4,% of outstanding loan amount,,Statement 5.8.1
+maharashtra,2019,professional moneylender,non-institutional,5.3,% of outstanding loan amount,,Statement 5.8.1
+maharashtra,2019,relatives and friends,non-institutional,6.6,% of outstanding loan amount,,Statement 5.8.1
+maharashtra,2019,other non-institutional agencies,non-institutional,1.7,% of outstanding loan amount,,Statement 5.8.1
+maharashtra,2019,all institutional sources,institutional,85.0,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+maharashtra,2019,all non-institutional sources,non-institutional,15.0,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+manipur,2019,scheduled commercial bank,institutional,13.9,% of outstanding loan amount,,Statement 5.8.1
+manipur,2019,regional rural bank,institutional,0.3,% of outstanding loan amount,,Statement 5.8.1
+manipur,2019,co-operative society,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+manipur,2019,co-operative bank,institutional,0.1,% of outstanding loan amount,,Statement 5.8.1
+manipur,2019,self-help group (bank linked or not),institutional,4.0,% of outstanding loan amount,,Statement 5.8.1
+manipur,2019,other institutional agencies,institutional,2.2,% of outstanding loan amount,,Statement 5.8.1
+manipur,2019,agricultural moneylender,non-institutional,0.1,% of outstanding loan amount,,Statement 5.8.1
+manipur,2019,professional moneylender,non-institutional,25.3,% of outstanding loan amount,,Statement 5.8.1
+manipur,2019,relatives and friends,non-institutional,33.6,% of outstanding loan amount,,Statement 5.8.1
+manipur,2019,other non-institutional agencies,non-institutional,20.7,% of outstanding loan amount,,Statement 5.8.1
+manipur,2019,all institutional sources,institutional,20.5,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+manipur,2019,all non-institutional sources,non-institutional,79.7,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+meghalaya,2019,scheduled commercial bank,institutional,38.7,% of outstanding loan amount,,Statement 5.8.1
+meghalaya,2019,regional rural bank,institutional,44.9,% of outstanding loan amount,,Statement 5.8.1
+meghalaya,2019,co-operative society,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+meghalaya,2019,co-operative bank,institutional,0.1,% of outstanding loan amount,,Statement 5.8.1
+meghalaya,2019,self-help group (bank linked or not),institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+meghalaya,2019,other institutional agencies,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+meghalaya,2019,agricultural moneylender,non-institutional,0.5,% of outstanding loan amount,,Statement 5.8.1
+meghalaya,2019,professional moneylender,non-institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+meghalaya,2019,relatives and friends,non-institutional,7.3,% of outstanding loan amount,,Statement 5.8.1
+meghalaya,2019,other non-institutional agencies,non-institutional,8.5,% of outstanding loan amount,,Statement 5.8.1
+meghalaya,2019,all institutional sources,institutional,83.7,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+meghalaya,2019,all non-institutional sources,non-institutional,16.3,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+mizoram,2019,scheduled commercial bank,institutional,59.1,% of outstanding loan amount,,Statement 5.8.1
+mizoram,2019,regional rural bank,institutional,38.5,% of outstanding loan amount,,Statement 5.8.1
+mizoram,2019,co-operative society,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+mizoram,2019,co-operative bank,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+mizoram,2019,self-help group (bank linked or not),institutional,0.4,% of outstanding loan amount,,Statement 5.8.1
+mizoram,2019,other institutional agencies,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+mizoram,2019,agricultural moneylender,non-institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+mizoram,2019,professional moneylender,non-institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+mizoram,2019,relatives and friends,non-institutional,0.8,% of outstanding loan amount,,Statement 5.8.1
+mizoram,2019,other non-institutional agencies,non-institutional,1.2,% of outstanding loan amount,,Statement 5.8.1
+mizoram,2019,all institutional sources,institutional,98.0,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+mizoram,2019,all non-institutional sources,non-institutional,2.0,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+nagaland,2019,scheduled commercial bank,institutional,30.1,% of outstanding loan amount,,Statement 5.8.1
+nagaland,2019,regional rural bank,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+nagaland,2019,co-operative society,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+nagaland,2019,co-operative bank,institutional,10.3,% of outstanding loan amount,,Statement 5.8.1
+nagaland,2019,self-help group (bank linked or not),institutional,12.2,% of outstanding loan amount,,Statement 5.8.1
+nagaland,2019,other institutional agencies,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+nagaland,2019,agricultural moneylender,non-institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+nagaland,2019,professional moneylender,non-institutional,20.4,% of outstanding loan amount,,Statement 5.8.1
+nagaland,2019,relatives and friends,non-institutional,24.9,% of outstanding loan amount,,Statement 5.8.1
+nagaland,2019,other non-institutional agencies,non-institutional,2.1,% of outstanding loan amount,,Statement 5.8.1
+nagaland,2019,all institutional sources,institutional,52.6,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+nagaland,2019,all non-institutional sources,non-institutional,47.4,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+odisha,2019,scheduled commercial bank,institutional,18.8,% of outstanding loan amount,,Statement 5.8.1
+odisha,2019,regional rural bank,institutional,3.8,% of outstanding loan amount,,Statement 5.8.1
+odisha,2019,co-operative society,institutional,21.2,% of outstanding loan amount,,Statement 5.8.1
+odisha,2019,co-operative bank,institutional,1.8,% of outstanding loan amount,,Statement 5.8.1
+odisha,2019,self-help group (bank linked or not),institutional,11.5,% of outstanding loan amount,,Statement 5.8.1
+odisha,2019,other institutional agencies,institutional,5.4,% of outstanding loan amount,,Statement 5.8.1
+odisha,2019,agricultural moneylender,non-institutional,0.6,% of outstanding loan amount,,Statement 5.8.1
+odisha,2019,professional moneylender,non-institutional,21.3,% of outstanding loan amount,,Statement 5.8.1
+odisha,2019,relatives and friends,non-institutional,9.8,% of outstanding loan amount,,Statement 5.8.1
+odisha,2019,other non-institutional agencies,non-institutional,5.8,% of outstanding loan amount,,Statement 5.8.1
+odisha,2019,all institutional sources,institutional,62.5,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+odisha,2019,all non-institutional sources,non-institutional,37.5,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+punjab,2019,scheduled commercial bank,institutional,65.1,% of outstanding loan amount,,Statement 5.8.1
+punjab,2019,regional rural bank,institutional,1.6,% of outstanding loan amount,,Statement 5.8.1
+punjab,2019,co-operative society,institutional,6.9,% of outstanding loan amount,,Statement 5.8.1
+punjab,2019,co-operative bank,institutional,3.3,% of outstanding loan amount,,Statement 5.8.1
+punjab,2019,self-help group (bank linked or not),institutional,0.1,% of outstanding loan amount,,Statement 5.8.1
+punjab,2019,other institutional agencies,institutional,1.7,% of outstanding loan amount,,Statement 5.8.1
+punjab,2019,agricultural moneylender,non-institutional,6.7,% of outstanding loan amount,,Statement 5.8.1
+punjab,2019,professional moneylender,non-institutional,2.1,% of outstanding loan amount,,Statement 5.8.1
+punjab,2019,relatives and friends,non-institutional,3.0,% of outstanding loan amount,,Statement 5.8.1
+punjab,2019,other non-institutional agencies,non-institutional,9.4,% of outstanding loan amount,,Statement 5.8.1
+punjab,2019,all institutional sources,institutional,78.7,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+punjab,2019,all non-institutional sources,non-institutional,21.2,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+rajasthan,2019,scheduled commercial bank,institutional,50.7,% of outstanding loan amount,,Statement 5.8.1
+rajasthan,2019,regional rural bank,institutional,7.6,% of outstanding loan amount,,Statement 5.8.1
+rajasthan,2019,co-operative society,institutional,1.6,% of outstanding loan amount,,Statement 5.8.1
+rajasthan,2019,co-operative bank,institutional,1.5,% of outstanding loan amount,,Statement 5.8.1
+rajasthan,2019,self-help group (bank linked or not),institutional,0.9,% of outstanding loan amount,,Statement 5.8.1
+rajasthan,2019,other institutional agencies,institutional,2.9,% of outstanding loan amount,,Statement 5.8.1
+rajasthan,2019,agricultural moneylender,non-institutional,1.9,% of outstanding loan amount,,Statement 5.8.1
+rajasthan,2019,professional moneylender,non-institutional,24.5,% of outstanding loan amount,,Statement 5.8.1
+rajasthan,2019,relatives and friends,non-institutional,2.3,% of outstanding loan amount,,Statement 5.8.1
+rajasthan,2019,other non-institutional agencies,non-institutional,6.2,% of outstanding loan amount,,Statement 5.8.1
+rajasthan,2019,all institutional sources,institutional,65.2,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+rajasthan,2019,all non-institutional sources,non-institutional,34.9,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+sikkim,2019,scheduled commercial bank,institutional,32.3,% of outstanding loan amount,,Statement 5.8.1
+sikkim,2019,regional rural bank,institutional,65.2,% of outstanding loan amount,,Statement 5.8.1
+sikkim,2019,co-operative society,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+sikkim,2019,co-operative bank,institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+sikkim,2019,self-help group (bank linked or not),institutional,0.7,% of outstanding loan amount,,Statement 5.8.1
+sikkim,2019,other institutional agencies,institutional,1.0,% of outstanding loan amount,,Statement 5.8.1
+sikkim,2019,agricultural moneylender,non-institutional,0.1,% of outstanding loan amount,,Statement 5.8.1
+sikkim,2019,professional moneylender,non-institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+sikkim,2019,relatives and friends,non-institutional,0.6,% of outstanding loan amount,,Statement 5.8.1
+sikkim,2019,other non-institutional agencies,non-institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+sikkim,2019,all institutional sources,institutional,99.2,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+sikkim,2019,all non-institutional sources,non-institutional,0.7,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+tamil-nadu,2019,scheduled commercial bank,institutional,48.6,% of outstanding loan amount,,Statement 5.8.1
+tamil-nadu,2019,regional rural bank,institutional,1.0,% of outstanding loan amount,,Statement 5.8.1
+tamil-nadu,2019,co-operative society,institutional,10.4,% of outstanding loan amount,,Statement 5.8.1
+tamil-nadu,2019,co-operative bank,institutional,1.8,% of outstanding loan amount,,Statement 5.8.1
+tamil-nadu,2019,self-help group (bank linked or not),institutional,2.3,% of outstanding loan amount,,Statement 5.8.1
+tamil-nadu,2019,other institutional agencies,institutional,5.2,% of outstanding loan amount,,Statement 5.8.1
+tamil-nadu,2019,agricultural moneylender,non-institutional,0.9,% of outstanding loan amount,,Statement 5.8.1
+tamil-nadu,2019,professional moneylender,non-institutional,24.7,% of outstanding loan amount,,Statement 5.8.1
+tamil-nadu,2019,relatives and friends,non-institutional,2.8,% of outstanding loan amount,,Statement 5.8.1
+tamil-nadu,2019,other non-institutional agencies,non-institutional,2.3,% of outstanding loan amount,,Statement 5.8.1
+tamil-nadu,2019,all institutional sources,institutional,69.3,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+tamil-nadu,2019,all non-institutional sources,non-institutional,30.7,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+telangana,2019,scheduled commercial bank,institutional,24.8,% of outstanding loan amount,,Statement 5.8.1
+telangana,2019,regional rural bank,institutional,8.2,% of outstanding loan amount,,Statement 5.8.1
+telangana,2019,co-operative society,institutional,0.5,% of outstanding loan amount,,Statement 5.8.1
+telangana,2019,co-operative bank,institutional,3.2,% of outstanding loan amount,,Statement 5.8.1
+telangana,2019,self-help group (bank linked or not),institutional,4.6,% of outstanding loan amount,,Statement 5.8.1
+telangana,2019,other institutional agencies,institutional,1.2,% of outstanding loan amount,,Statement 5.8.1
+telangana,2019,agricultural moneylender,non-institutional,9.1,% of outstanding loan amount,,Statement 5.8.1
+telangana,2019,professional moneylender,non-institutional,41.3,% of outstanding loan amount,,Statement 5.8.1
+telangana,2019,relatives and friends,non-institutional,1.4,% of outstanding loan amount,,Statement 5.8.1
+telangana,2019,other non-institutional agencies,non-institutional,5.8,% of outstanding loan amount,,Statement 5.8.1
+telangana,2019,all institutional sources,institutional,42.5,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+telangana,2019,all non-institutional sources,non-institutional,57.6,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+tripura,2019,scheduled commercial bank,institutional,41.5,% of outstanding loan amount,,Statement 5.8.1
+tripura,2019,regional rural bank,institutional,9.5,% of outstanding loan amount,,Statement 5.8.1
+tripura,2019,co-operative society,institutional,1.3,% of outstanding loan amount,,Statement 5.8.1
+tripura,2019,co-operative bank,institutional,4.8,% of outstanding loan amount,,Statement 5.8.1
+tripura,2019,self-help group (bank linked or not),institutional,1.7,% of outstanding loan amount,,Statement 5.8.1
+tripura,2019,other institutional agencies,institutional,34.2,% of outstanding loan amount,,Statement 5.8.1
+tripura,2019,agricultural moneylender,non-institutional,2.7,% of outstanding loan amount,,Statement 5.8.1
+tripura,2019,professional moneylender,non-institutional,0.1,% of outstanding loan amount,,Statement 5.8.1
+tripura,2019,relatives and friends,non-institutional,2.8,% of outstanding loan amount,,Statement 5.8.1
+tripura,2019,other non-institutional agencies,non-institutional,1.5,% of outstanding loan amount,,Statement 5.8.1
+tripura,2019,all institutional sources,institutional,93.0,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+tripura,2019,all non-institutional sources,non-institutional,7.1,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+uttarakhand,2019,scheduled commercial bank,institutional,71.5,% of outstanding loan amount,,Statement 5.8.1
+uttarakhand,2019,regional rural bank,institutional,4.5,% of outstanding loan amount,,Statement 5.8.1
+uttarakhand,2019,co-operative society,institutional,7.8,% of outstanding loan amount,,Statement 5.8.1
+uttarakhand,2019,co-operative bank,institutional,6.1,% of outstanding loan amount,,Statement 5.8.1
+uttarakhand,2019,self-help group (bank linked or not),institutional,0.6,% of outstanding loan amount,,Statement 5.8.1
+uttarakhand,2019,other institutional agencies,institutional,0.6,% of outstanding loan amount,,Statement 5.8.1
+uttarakhand,2019,agricultural moneylender,non-institutional,0.0,% of outstanding loan amount,,Statement 5.8.1
+uttarakhand,2019,professional moneylender,non-institutional,1.4,% of outstanding loan amount,,Statement 5.8.1
+uttarakhand,2019,relatives and friends,non-institutional,6.3,% of outstanding loan amount,,Statement 5.8.1
+uttarakhand,2019,other non-institutional agencies,non-institutional,1.1,% of outstanding loan amount,,Statement 5.8.1
+uttarakhand,2019,all institutional sources,institutional,91.1,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+uttarakhand,2019,all non-institutional sources,non-institutional,8.8,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+uttar-pradesh,2019,scheduled commercial bank,institutional,47.3,% of outstanding loan amount,,Statement 5.8.1
+uttar-pradesh,2019,regional rural bank,institutional,16.4,% of outstanding loan amount,,Statement 5.8.1
+uttar-pradesh,2019,co-operative society,institutional,2.4,% of outstanding loan amount,,Statement 5.8.1
+uttar-pradesh,2019,co-operative bank,institutional,0.1,% of outstanding loan amount,,Statement 5.8.1
+uttar-pradesh,2019,self-help group (bank linked or not),institutional,1.0,% of outstanding loan amount,,Statement 5.8.1
+uttar-pradesh,2019,other institutional agencies,institutional,2.7,% of outstanding loan amount,,Statement 5.8.1
+uttar-pradesh,2019,agricultural moneylender,non-institutional,2.8,% of outstanding loan amount,,Statement 5.8.1
+uttar-pradesh,2019,professional moneylender,non-institutional,11.6,% of outstanding loan amount,,Statement 5.8.1
+uttar-pradesh,2019,relatives and friends,non-institutional,12.1,% of outstanding loan amount,,Statement 5.8.1
+uttar-pradesh,2019,other non-institutional agencies,non-institutional,3.6,% of outstanding loan amount,,Statement 5.8.1
+uttar-pradesh,2019,all institutional sources,institutional,69.9,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+uttar-pradesh,2019,all non-institutional sources,non-institutional,30.1,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+west-bengal,2019,scheduled commercial bank,institutional,42.7,% of outstanding loan amount,,Statement 5.8.1
+west-bengal,2019,regional rural bank,institutional,2.8,% of outstanding loan amount,,Statement 5.8.1
+west-bengal,2019,co-operative society,institutional,9.4,% of outstanding loan amount,,Statement 5.8.1
+west-bengal,2019,co-operative bank,institutional,5.7,% of outstanding loan amount,,Statement 5.8.1
+west-bengal,2019,self-help group (bank linked or not),institutional,12.4,% of outstanding loan amount,,Statement 5.8.1
+west-bengal,2019,other institutional agencies,institutional,5.6,% of outstanding loan amount,,Statement 5.8.1
+west-bengal,2019,agricultural moneylender,non-institutional,0.8,% of outstanding loan amount,,Statement 5.8.1
+west-bengal,2019,professional moneylender,non-institutional,7.5,% of outstanding loan amount,,Statement 5.8.1
+west-bengal,2019,relatives and friends,non-institutional,7.7,% of outstanding loan amount,,Statement 5.8.1
+west-bengal,2019,other non-institutional agencies,non-institutional,5.6,% of outstanding loan amount,,Statement 5.8.1
+west-bengal,2019,all institutional sources,institutional,78.6,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+west-bengal,2019,all non-institutional sources,non-institutional,21.6,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1
+india,2019,scheduled commercial bank,institutional,44.5,% of outstanding loan amount,,Statement 5.8.1
+india,2019,regional rural bank,institutional,8.1,% of outstanding loan amount,,Statement 5.8.1
+india,2019,co-operative society,institutional,6.7,% of outstanding loan amount,,Statement 5.8.1
+india,2019,co-operative bank,institutional,3.9,% of outstanding loan amount,,Statement 5.8.1
+india,2019,self-help group (bank linked or not),institutional,3.2,% of outstanding loan amount,,Statement 5.8.1
+india,2019,other institutional agencies,institutional,3.2,% of outstanding loan amount,,Statement 5.8.1
+india,2019,agricultural moneylender,non-institutional,6.5,% of outstanding loan amount,,Statement 5.8.1
+india,2019,professional moneylender,non-institutional,14.0,% of outstanding loan amount,,Statement 5.8.1
+india,2019,relatives and friends,non-institutional,5.7,% of outstanding loan amount,,Statement 5.8.1
+india,2019,other non-institutional agencies,non-institutional,4.5,% of outstanding loan amount,,Statement 5.8.1
+india,2019,all institutional sources,institutional,69.6,% of outstanding loan amount,sum of the institutional columns of Statement 5.8.1,Statement 5.8.1
+india,2019,all non-institutional sources,non-institutional,30.7,% of outstanding loan amount,sum of the non-institutional columns of Statement 5.8.1,Statement 5.8.1

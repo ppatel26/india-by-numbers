@@ -1,0 +1,57 @@
+geography,period,season,size_category,size_class,measure,value,unit,report_table
+india,2018-19,,landless,up to 0.002 ha,share of holdings,0.0,%,Statement 2.9
+india,2012-13,,landless,up to 0.002 ha,share of holdings,0.0,%,Statement 2.9
+india,2002-03,kharif,landless,up to 0.002 ha,share of holdings,,%,Statement 2.9
+india,2002-03,rabi,landless,up to 0.002 ha,share of holdings,,%,Statement 2.9
+india,2018-19,,landless,up to 0.002 ha,share of area operated,0.0,%,Statement 2.9
+india,2012-13,,landless,up to 0.002 ha,share of area operated,0.0,%,Statement 2.9
+india,2002-03,kharif,landless,up to 0.002 ha,share of area operated,,%,Statement 2.9
+india,2002-03,rabi,landless,up to 0.002 ha,share of area operated,,%,Statement 2.9
+india,2018-19,,marginal,0.002 to 1.000 ha,share of holdings,72.6,%,Statement 2.9
+india,2012-13,,marginal,0.002 to 1.000 ha,share of holdings,73.2,%,Statement 2.9
+india,2002-03,kharif,marginal,0.002 to 1.000 ha,share of holdings,69.8,%,Statement 2.9
+india,2002-03,rabi,marginal,0.002 to 1.000 ha,share of holdings,70.0,%,Statement 2.9
+india,2018-19,,marginal,0.002 to 1.000 ha,share of area operated,31.7,%,Statement 2.9
+india,2012-13,,marginal,0.002 to 1.000 ha,share of area operated,27.7,%,Statement 2.9
+india,2002-03,kharif,marginal,0.002 to 1.000 ha,share of area operated,22.6,%,Statement 2.9
+india,2002-03,rabi,marginal,0.002 to 1.000 ha,share of area operated,21.7,%,Statement 2.9
+india,2018-19,,small,1.000 to 2.000 ha,share of holdings,16.4,%,Statement 2.9
+india,2012-13,,small,1.000 to 2.000 ha,share of holdings,15.3,%,Statement 2.9
+india,2002-03,kharif,small,1.000 to 2.000 ha,share of holdings,16.2,%,Statement 2.9
+india,2002-03,rabi,small,1.000 to 2.000 ha,share of holdings,15.9,%,Statement 2.9
+india,2018-19,,small,1.000 to 2.000 ha,share of area operated,24.7,%,Statement 2.9
+india,2012-13,,small,1.000 to 2.000 ha,share of area operated,23.4,%,Statement 2.9
+india,2002-03,kharif,small,1.000 to 2.000 ha,share of area operated,20.9,%,Statement 2.9
+india,2002-03,rabi,small,1.000 to 2.000 ha,share of area operated,20.3,%,Statement 2.9
+india,2018-19,,semi-medium,2.000 to 4.000 ha,share of holdings,8.0,%,Statement 2.9
+india,2012-13,,semi-medium,2.000 to 4.000 ha,share of holdings,8.1,%,Statement 2.9
+india,2002-03,kharif,semi-medium,2.000 to 4.000 ha,share of holdings,9.0,%,Statement 2.9
+india,2002-03,rabi,semi-medium,2.000 to 4.000 ha,share of holdings,8.9,%,Statement 2.9
+india,2018-19,,semi-medium,2.000 to 4.000 ha,share of area operated,22.0,%,Statement 2.9
+india,2012-13,,semi-medium,2.000 to 4.000 ha,share of area operated,23.5,%,Statement 2.9
+india,2002-03,kharif,semi-medium,2.000 to 4.000 ha,share of area operated,22.5,%,Statement 2.9
+india,2002-03,rabi,semi-medium,2.000 to 4.000 ha,share of area operated,22.3,%,Statement 2.9
+india,2018-19,,medium,4.000 to 10.000 ha,share of holdings,2.7,%,Statement 2.9
+india,2012-13,,medium,4.000 to 10.000 ha,share of holdings,3.0,%,Statement 2.9
+india,2002-03,kharif,medium,4.000 to 10.000 ha,share of holdings,4.2,%,Statement 2.9
+india,2002-03,rabi,medium,4.000 to 10.000 ha,share of holdings,4.4,%,Statement 2.9
+india,2018-19,,medium,4.000 to 10.000 ha,share of area operated,16.2,%,Statement 2.9
+india,2012-13,,medium,4.000 to 10.000 ha,share of area operated,19.3,%,Statement 2.9
+india,2002-03,kharif,medium,4.000 to 10.000 ha,share of area operated,22.2,%,Statement 2.9
+india,2002-03,rabi,medium,4.000 to 10.000 ha,share of area operated,23.1,%,Statement 2.9
+india,2018-19,,large,more than 10.000 ha,share of holdings,0.3,%,Statement 2.9
+india,2012-13,,large,more than 10.000 ha,share of holdings,0.4,%,Statement 2.9
+india,2002-03,kharif,large,more than 10.000 ha,share of holdings,0.8,%,Statement 2.9
+india,2002-03,rabi,large,more than 10.000 ha,share of holdings,0.8,%,Statement 2.9
+india,2018-19,,large,more than 10.000 ha,share of area operated,5.4,%,Statement 2.9
+india,2012-13,,large,more than 10.000 ha,share of area operated,6.0,%,Statement 2.9
+india,2002-03,kharif,large,more than 10.000 ha,share of area operated,11.8,%,Statement 2.9
+india,2002-03,rabi,large,more than 10.000 ha,share of area operated,12.5,%,Statement 2.9
+india,2018-19,,all sizes,all sizes,share of holdings,100.0,%,Statement 2.9
+india,2012-13,,all sizes,all sizes,share of holdings,100.0,%,Statement 2.9
+india,2002-03,kharif,all sizes,all sizes,share of holdings,100.0,%,Statement 2.9
+india,2002-03,rabi,all sizes,all sizes,share of holdings,100.0,%,Statement 2.9
+india,2018-19,,all sizes,all sizes,share of area operated,100.0,%,Statement 2.9
+india,2012-13,,all sizes,all sizes,share of area operated,100.0,%,Statement 2.9
+india,2002-03,kharif,all sizes,all sizes,share of area operated,100.0,%,Statement 2.9
+india,2002-03,rabi,all sizes,all sizes,share of area operated,100.0,%,Statement 2.9

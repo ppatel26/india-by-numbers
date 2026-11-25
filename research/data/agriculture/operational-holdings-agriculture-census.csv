@@ -1,0 +1,91 @@
+geography,period,size_group,size_class,measure,value,unit,note,report_table
+india,2005-06,marginal,less than 1 ha,number of holdings,83694,thousand holdings,excludes Jharkhand,Table 5.1
+india,2005-06,marginal,less than 1 ha,share of holdings,64.8,% of holdings,excludes Jharkhand,Table 5.1
+india,2005-06,marginal,less than 1 ha,area operated,32026,thousand hectares,excludes Jharkhand,Table 5.1
+india,2005-06,marginal,less than 1 ha,share of area operated,20.2,% of area operated,excludes Jharkhand,Table 5.1
+india,2005-06,marginal,less than 1 ha,average size,0.38,hectares,excludes Jharkhand,Table 5.1
+india,2010-11,marginal,less than 1 ha,number of holdings,92826,thousand holdings,,Table 5.1
+india,2010-11,marginal,less than 1 ha,share of holdings,67.1,% of holdings,,Table 5.1
+india,2010-11,marginal,less than 1 ha,area operated,35908,thousand hectares,,Table 5.1
+india,2010-11,marginal,less than 1 ha,share of area operated,22.5,% of area operated,,Table 5.1
+india,2010-11,marginal,less than 1 ha,average size,0.39,hectares,,Table 5.1
+india,2015-16,marginal,less than 1 ha,number of holdings,100251,thousand holdings,,Table 5.1
+india,2015-16,marginal,less than 1 ha,share of holdings,68.45,% of holdings,,Table 5.1
+india,2015-16,marginal,less than 1 ha,area operated,37923,thousand hectares,,Table 5.1
+india,2015-16,marginal,less than 1 ha,share of area operated,24.03,% of area operated,,Table 5.1
+india,2015-16,marginal,less than 1 ha,average size,0.38,hectares,provisional average size,Table 5.1
+india,2005-06,small,1 to 2 ha,number of holdings,23930,thousand holdings,excludes Jharkhand,Table 5.1
+india,2005-06,small,1 to 2 ha,share of holdings,18.5,% of holdings,excludes Jharkhand,Table 5.1
+india,2005-06,small,1 to 2 ha,area operated,33101,thousand hectares,excludes Jharkhand,Table 5.1
+india,2005-06,small,1 to 2 ha,share of area operated,20.9,% of area operated,excludes Jharkhand,Table 5.1
+india,2005-06,small,1 to 2 ha,average size,1.38,hectares,excludes Jharkhand,Table 5.1
+india,2010-11,small,1 to 2 ha,number of holdings,24779,thousand holdings,,Table 5.1
+india,2010-11,small,1 to 2 ha,share of holdings,17.9,% of holdings,,Table 5.1
+india,2010-11,small,1 to 2 ha,area operated,35244,thousand hectares,,Table 5.1
+india,2010-11,small,1 to 2 ha,share of area operated,22.1,% of area operated,,Table 5.1
+india,2010-11,small,1 to 2 ha,average size,1.42,hectares,,Table 5.1
+india,2015-16,small,1 to 2 ha,number of holdings,25809,thousand holdings,,Table 5.1
+india,2015-16,small,1 to 2 ha,share of holdings,17.62,% of holdings,,Table 5.1
+india,2015-16,small,1 to 2 ha,area operated,36151,thousand hectares,,Table 5.1
+india,2015-16,small,1 to 2 ha,share of area operated,22.91,% of area operated,,Table 5.1
+india,2015-16,small,1 to 2 ha,average size,1.40,hectares,provisional average size,Table 5.1
+india,2005-06,semi-medium,2 to 4 ha,number of holdings,14127,thousand holdings,excludes Jharkhand,Table 5.1
+india,2005-06,semi-medium,2 to 4 ha,share of holdings,10.9,% of holdings,excludes Jharkhand,Table 5.1
+india,2005-06,semi-medium,2 to 4 ha,area operated,37898,thousand hectares,excludes Jharkhand,Table 5.1
+india,2005-06,semi-medium,2 to 4 ha,share of area operated,23.9,% of area operated,excludes Jharkhand,Table 5.1
+india,2005-06,semi-medium,2 to 4 ha,average size,2.68,hectares,excludes Jharkhand,Table 5.1
+india,2010-11,semi-medium,2 to 4 ha,number of holdings,13896,thousand holdings,,Table 5.1
+india,2010-11,semi-medium,2 to 4 ha,share of holdings,10.0,% of holdings,,Table 5.1
+india,2010-11,semi-medium,2 to 4 ha,area operated,37705,thousand hectares,,Table 5.1
+india,2010-11,semi-medium,2 to 4 ha,share of area operated,23.6,% of area operated,,Table 5.1
+india,2010-11,semi-medium,2 to 4 ha,average size,2.71,hectares,,Table 5.1
+india,2015-16,semi-medium,2 to 4 ha,number of holdings,13993,thousand holdings,,Table 5.1
+india,2015-16,semi-medium,2 to 4 ha,share of holdings,9.55,% of holdings,,Table 5.1
+india,2015-16,semi-medium,2 to 4 ha,area operated,37619,thousand hectares,,Table 5.1
+india,2015-16,semi-medium,2 to 4 ha,share of area operated,23.84,% of area operated,,Table 5.1
+india,2015-16,semi-medium,2 to 4 ha,average size,2.69,hectares,provisional average size,Table 5.1
+india,2005-06,medium,4 to 10 ha,number of holdings,6375,thousand holdings,excludes Jharkhand,Table 5.1
+india,2005-06,medium,4 to 10 ha,share of holdings,4.9,% of holdings,excludes Jharkhand,Table 5.1
+india,2005-06,medium,4 to 10 ha,area operated,36583,thousand hectares,excludes Jharkhand,Table 5.1
+india,2005-06,medium,4 to 10 ha,share of area operated,23.1,% of area operated,excludes Jharkhand,Table 5.1
+india,2005-06,medium,4 to 10 ha,average size,5.74,hectares,excludes Jharkhand,Table 5.1
+india,2010-11,medium,4 to 10 ha,number of holdings,5875,thousand holdings,,Table 5.1
+india,2010-11,medium,4 to 10 ha,share of holdings,4.2,% of holdings,,Table 5.1
+india,2010-11,medium,4 to 10 ha,area operated,33828,thousand hectares,,Table 5.1
+india,2010-11,medium,4 to 10 ha,share of area operated,21.2,% of area operated,,Table 5.1
+india,2010-11,medium,4 to 10 ha,average size,5.76,hectares,,Table 5.1
+india,2015-16,medium,4 to 10 ha,number of holdings,5561,thousand holdings,,Table 5.1
+india,2015-16,medium,4 to 10 ha,share of holdings,3.80,% of holdings,,Table 5.1
+india,2015-16,medium,4 to 10 ha,area operated,31810,thousand hectares,,Table 5.1
+india,2015-16,medium,4 to 10 ha,share of area operated,20.16,% of area operated,,Table 5.1
+india,2015-16,medium,4 to 10 ha,average size,5.72,hectares,provisional average size,Table 5.1
+india,2005-06,large,10 ha and above,number of holdings,1096,thousand holdings,excludes Jharkhand,Table 5.1
+india,2005-06,large,10 ha and above,share of holdings,0.8,% of holdings,excludes Jharkhand,Table 5.1
+india,2005-06,large,10 ha and above,area operated,18715,thousand hectares,excludes Jharkhand,Table 5.1
+india,2005-06,large,10 ha and above,share of area operated,11.8,% of area operated,excludes Jharkhand,Table 5.1
+india,2005-06,large,10 ha and above,average size,17.08,hectares,excludes Jharkhand,Table 5.1
+india,2010-11,large,10 ha and above,number of holdings,973,thousand holdings,,Table 5.1
+india,2010-11,large,10 ha and above,share of holdings,0.7,% of holdings,,Table 5.1
+india,2010-11,large,10 ha and above,area operated,16907,thousand hectares,,Table 5.1
+india,2010-11,large,10 ha and above,share of area operated,10.6,% of area operated,,Table 5.1
+india,2010-11,large,10 ha and above,average size,17.38,hectares,,Table 5.1
+india,2015-16,large,10 ha and above,number of holdings,838,thousand holdings,,Table 5.1
+india,2015-16,large,10 ha and above,share of holdings,0.57,% of holdings,,Table 5.1
+india,2015-16,large,10 ha and above,area operated,14314,thousand hectares,,Table 5.1
+india,2015-16,large,10 ha and above,share of area operated,9.07,% of area operated,,Table 5.1
+india,2015-16,large,10 ha and above,average size,17.07,hectares,provisional average size,Table 5.1
+india,2005-06,all holdings,all sizes,number of holdings,129222,thousand holdings,excludes Jharkhand,Table 5.1
+india,2005-06,all holdings,all sizes,share of holdings,100.0,% of holdings,excludes Jharkhand,Table 5.1
+india,2005-06,all holdings,all sizes,area operated,158323,thousand hectares,excludes Jharkhand,Table 5.1
+india,2005-06,all holdings,all sizes,share of area operated,100.0,% of area operated,excludes Jharkhand,Table 5.1
+india,2005-06,all holdings,all sizes,average size,1.23,hectares,excludes Jharkhand,Table 5.1
+india,2010-11,all holdings,all sizes,number of holdings,138348,thousand holdings,,Table 5.1
+india,2010-11,all holdings,all sizes,share of holdings,100.0,% of holdings,,Table 5.1
+india,2010-11,all holdings,all sizes,area operated,159592,thousand hectares,,Table 5.1
+india,2010-11,all holdings,all sizes,share of area operated,100.0,% of area operated,,Table 5.1
+india,2010-11,all holdings,all sizes,average size,1.15,hectares,,Table 5.1
+india,2015-16,all holdings,all sizes,number of holdings,146454,thousand holdings,,Table 5.1
+india,2015-16,all holdings,all sizes,share of holdings,100.0,% of holdings,,Table 5.1
+india,2015-16,all holdings,all sizes,area operated,157817,thousand hectares,,Table 5.1
+india,2015-16,all holdings,all sizes,share of area operated,100.0,% of area operated,,Table 5.1
+india,2015-16,all holdings,all sizes,average size,1.08,hectares,provisional average size,Table 5.1
