@@ -198,9 +198,10 @@ const stateProfile: StateProfile = {
         { label: 'Road deaths per lakh people', chart: 'road-deaths-per-lakh-by-state' },
         { label: 'Road deaths per 100 accidents', chart: 'road-accident-severity-by-state' },
         { label: 'Workers who go to work by two-wheeler', chart: 'two-wheeler-commute-by-state' },
+        { label: 'Households that made an overnight trip', chart: 'overnight-trip-households-by-state' },
       ],
       footnote:
-        'Ranks count only states and UTs with data. Road deaths are police records within 30 days of the accident, so a low value can mean fewer records as well as fewer deaths. The two-wheeler share is a survey estimate, with wide errors in small states and UTs.',
+        'Ranks count only states and UTs with data. Road deaths are police records within 30 days of the accident, so a low value can mean fewer records as well as fewer deaths. The two-wheeler share is a survey estimate, with wide errors in small states and UTs. The overnight trip share is a survey estimate from the tourism survey, which does not compare with the travel survey.',
     },
     {
       topic: 'climate',

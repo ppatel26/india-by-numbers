@@ -12,6 +12,7 @@ The topic is not on the site yet. "Proposed charts" at the end lists the charts 
 4. How many people who died or were hurt did not wear a helmet or a seat belt?
 5. How do students and workers travel to school or work (walk, bicycle, two-wheeler, bus), in rural and urban areas and in each State/UT?
 6. What share of students and workers travel 1 km or more, and how do households travel on overnight trips?
+7. What share of households make an overnight trip for leisure, family, pilgrimage, health or business, in each State/UT, and what does a trip cost?
 
 ## Sources
 
@@ -24,12 +25,16 @@ All read on 25 Nov 2026. MoRTH and MoSPI state no reuse licence on these pages. 
 | MoRTH, Transport Research Wing | Metadata for "Road Accidents in India" (3 pages) | "Last Posted Date 13-05-2026" | Series | Same page |
 | NSO, MoSPI | Fact Sheet, Household Travel in India 2025-26, from the first National Household Travel Survey (NHTS), with Appendix A (17 State/UT tables, XLSX) and Appendix B (6 RSE tables, XLSX) | 5 Oct 2026: the press note is "Dated: 05th October, 2026", and the MoSPI release list gives `published_year` 2026-10-05 | July 2025 to June 2026 (`2025-26` in the CSVs) | [Fact sheet PDF](https://www.mospi.gov.in/uploads/publications_reports/publications_reports1791198151034_8d52ad0c-75ba-4040-a445-32c2ca98958e_Factsheet_-_NHTS.pdf); the XLSX links are inside it, on pages 19 and 20 |
 | NSO, MoSPI | Press note, National Household Travel Survey July 2025 to June 2026 | 5 Oct 2026 | Same | [Press note PDF](https://www.mospi.gov.in/uploads/latestReleases/latest_release_1791197961812_aef550fd-c694-4955-9e26-296148e3714d_Press_Note_-_NHTS.pdf) |
+| NSO, MoSPI | NSS Report 597, Domestic Tourism in India (Domestic Tourism Expenditure Survey, DTES), NSS round 80, with Appendix A (22 tables, XLSX) and Appendix C (RSE tables R1 to R4) | 23 Sep 2026: the press note is dated "23rd September, 2026", and the MoSPI release list gives `published_year` 2026-09-23. The report cover says "September, 2026" | July 2025 to June 2026 (`2025-26` in the CSVs). Overnight trips: last 365 days or last 30 days, by leading purpose. Same-day trips: last 30 days | [Report PDF](https://www.mospi.gov.in/uploads/publications_reports/publications_reports1790160086463_10b96a4e-35b0-416b-83b7-9cb3b364ca8c_DomesticTourism_report_597_(1).pdf); the XLSX links are inside it, on pages A1 to A3 (PDF pages 64 to 66) |
+| NSO, MoSPI | Press note, Domestic Tourism Expenditure Survey NSS 80th round (July 2025 to June 2026) | 23 Sep 2026 | Same | [Press note PDF](https://www.mospi.gov.in/uploads/latestReleases/latest_release_1790159417509_e87601c9-a7f3-4290-9600-46c078186d81_Press_Note_DTES_220926.pdf) |
 
 ### How the files were found
 
 - **MoRTH editions.** `morth.gov.in` is a JavaScript app that serves Hindi by default, and its page `#/documents/reports` lists document groups only. `pipeline/transport/morth_reports.mjs` opens the page in headless Chromium, clicks "View all" on the group "भारत में सड़क दुर्घटनाएँ" (Road Accidents in India) and saves each JSON response. The group comes from `https://morth.gov.in/backend/api/documents/Road%20Accidents%20in%20India`: 19 documents, the editions for 2008 to 2024, a 2018 corrigendum and the metadata file. The same URL fetched with curl gives the same sha256, so `fetch.sh` fetches it directly.
 - **A 2024 edition exists** on the MoRTH site ("Road Accident in India - 2024", 36,711 KB). The backlog row said "not confirmed". It is now confirmed, and this topic uses it.
 - **NHTS workbooks.** The fact sheet's Appendix A and B are lists of hyperlinks. The URLs were read from the PDF link annotations (pypdf). Tables A1 to A5 and B1 to B4 were fetched. Tables A6 to A17 (time of travel, time taken, cost, other purposes, overnight trips by State/UT) and B5, B6 were not used.
+- **DTES workbooks.** The Appendix A list in Report 597 is a list of hyperlinks to `https://www.mospi.gov.in/uploads/documents/DTES_tables/`. The URLs were read from the PDF link annotations (pypdf). Tables 1, 15 and 19 were fetched. The other 19 tables (religion, social group, visitor purpose, mode, stay, nights, destination, month, reimbursement, tourism services, same-day trips by purpose and spending) were not used. The DTES is not on the eSankhyiki API.
+- **Release date of the DTES.** The MoSPI release list API (POST `{"lang":"en","page_no":3}`) gives the press note with `published_year` 2026-09-23. The saved response is `raw/transport/tourism/pages/latest-release-p3.json`. The report is not on the release list; its cover says "September, 2026", and its PDF was last changed on 23 Sep 2026 (PDF metadata). Charts use 2026-09-23.
 - **Release date of NHTS.** The MoSPI release list API (`https://www.mospi.gov.in/api/latest-release/get-web-latest-release-list`, POST `{"lang":"en","page_no":2}`) gives the press note with `published_year` 2026-10-05. The press note itself is dated 5 Oct 2026. The saved response is `raw/transport/nhts/pages/latest-release-p2.json`.
 
 ### Decisions
@@ -48,6 +53,10 @@ All read on 25 Nov 2026. MoRTH and MoSPI state no reuse licence on these pages. 
 | NHTS is used through its published tables (rule R3) | No figure needs our own weights. |
 | No distance table | The fact sheet and Appendix A give no trip distance, although the press note lists "distances travelled" as a survey aspect. The fact sheet gives time taken (Fig. 4, 10; Tables A10, A11) instead. Not used. |
 | SRS context is text only | The brief asks for no chart. See "Gaps and cautions". |
+| DTES: share of households with an overnight trip by State/UT is `derived` | Table 1 prints counts only (households, and households that reported an overnight trip, in hundreds). Statement 3.1 prints the share for India alone. The CSV computes column 3 / column 2 x 100, to one decimal (rule R3), and the script checks that India rural, urban and rural+urban equal Statement 3.1 (35.2, 37.7, 36.1). MoSPI's own State/UT share of same-day trips (Statement 3.16) is the same calculation on Table 19; the script checks all 110 published values of Statement 3.16 against Table 19. |
+| DTES: India trips and spending from Statement 3.2 and Table 15 | Statement 3.2 prints trips per 100 households; Table 15 prints spending per trip by item for rural, urban and rural+urban. Statements 3.13 and 3.15 repeat parts of Table 15; the script checks them. Statement 3.2 is checked against the trip counts in Table 15 and the households in Table 1. |
+| DTES: keep the two reference periods apart | MoSPI counts trips for holidaying, pilgrimage, health and shopping over the last 365 days, and trips for business, social, education and other purposes over the last 30 days. Every row has `reference_period`. Do not add the two groups or rank one against the other. |
+| DTES: no RSE beside the State/UT shares | Appendix C gives RSEs for trip counts and spending per trip by State/UT and sector, not for the share of households. The highest RSE of the trip counts is 61.41% (Mizoram urban, 30-day trips). |
 
 ## Method notes
 
@@ -57,6 +66,10 @@ All read on 25 Nov 2026. MoRTH and MoSPI state no reuse licence on these pages. 
 - **West Bengal 2024 was recast.** RAI 2024, section 10: "The data for 2024 for West Bengal and Durgapur-Asansol city was not furnished in the prescribed reporting formats ... only aggregate data generated through the Electronic Detailed Accident Report (e-DAR) system was available. Hence, for the year 2024, the road accident data pertaining to West Bengal and Durgapur–Asansol city has been recast". The breakdowns for West Bengal 2024 (road user, helmet, seat belt) follow "the reporting structure and classification pattern followed by the State Police Department for the year 2023". Treat West Bengal's 2024 breakdowns as a method break.
 - **Late report.** Section 10.4: the 2024 report "has witnessed a delay on account of the ongoing transition towards the implementation of the Electronic Detailed Accident Report (e-DAR) system". e-DAR data was not used, except for West Bengal.
 - **NHTS travel** is any movement of 1 km or more. A trip's primary mode is the mode that covered the longest distance. "Two wheeler" includes ride-hail and rental two-wheelers; "Car" includes taxis and ride-hail cars; "Auto-rickshaw" includes e-rickshaws; "Bus" includes school, company and inter-city buses; "Train/Monorail/Tram" (`train-metro-monorail-tram`) includes metro and suburban rail; "Rail" (`rail`) is the other rail (the fact sheet calls it "Inter-city rail" on page 17). Students are aged 6 and above (current weekly status), workers 15 and above. Reference periods: 90 travel days for students, 30 travel days for fixed workplaces, one travel day for non-fixed workplaces and other purposes, 28 travel days for overnight trips.
+
+- **DTES trips.** An overnight trip is a round trip by household members outside their usual environment, of at least 12 hours that include midnight to 5 am, and of not more than 180 days (Report 597, paragraph 2.5). Regular movements (to work or school, or weekly shopping and visits) are not trips. The leading purpose of a trip is the purpose without which no member would have made it. A same-day trip is a trip outside the usual environment that is not an overnight trip.
+- **DTES and NHTS.** Report 597, paragraph 1.8.1: "the major concepts and definitions used in them are dissimilar. Hence the survey results of DTES and NHTS are not strictly comparable." The NHTS counts overnight trips over 28 travel days; the DTES over 365 or 30 days by purpose.
+- **DTES and earlier rounds.** Paragraph 1.7.3: pilgrimage trips moved from the 30-day to the 365-day reference period in round 80, so the results "are not strictly comparable with those of NSS 72nd round" (2014-15). No earlier round is in the CSVs.
 
 ## Notes on each CSV
 
@@ -111,6 +124,19 @@ All rows use `geography` slugs from `research/data/geography.csv`, or `india`. M
 - Table 7 prints "14" for rural inter-city rail; kept as `14`.
 - 11.3% of households made an overnight trip in 28 travel days (fact sheet text, not in a table; not in the CSV). Among them, 55.8% used a bus and 17.7% inter-city rail.
 
+### `tourism-households-by-state-2025-26.csv` (777 rows)
+
+- India and 36 States/UTs, DTES 2025-26. `sector`: `rural`, `urban`, `rural+urban`. `trip_type`: `all`, `overnight`, `same-day`.
+- From Table 1: `households`, overnight `households-with-trip`, `trips-365-days` and `trips-30-days` (all in hundreds, as printed), and `share-of-households-with-trip` (`derived`, see "Decisions"). From Table 19: same-day `households-with-trip`. From Statement 3.16: same-day `share-of-households-with-trip`, as published.
+- Chandigarh has no rural sample: its rural rows are empty, with a note.
+- 36.1% of households across India reported an overnight trip (35.2% rural, 37.7% urban). Among States/UTs, the share was lowest in Meghalaya (18.7%) and highest in Lakshadweep (62.9%).
+
+### `tourism-india-2025-26.csv` (348 rows)
+
+- India, DTES 2025-26. `measure`: `overnight-trips-per-100-households` (Statement 3.2), `average-spending-per-overnight-trip` (Table 15, rupees, by `item` and `sector`), `share-of-same-day-trip-spending` (Statement 3.19, rural and urban). `reference_period`: `365-days` or `30-days`. `purpose`: the eight leading purposes and `all`. `purpose_period` joins the two (`all-365-days`, `social-30-days`), so each bar in a chart has its own key.
+- Table 15 items: `package`, `non-package` (the sum of the next seven), `accommodation`, `food-and-drink`, `transport`, `shopping`, `recreation-religious-cultural-sporting`, `medical`, `others`, `total`. Each value is rounded, so items can differ from the total by a few rupees.
+- Pilgrimage was the leading purpose of 16.1 overnight trips per 100 households in 365 days; social visits of 16.1 per 100 households in 30 days. A health trip cost ₹32,167 on average, the most of any purpose.
+
 ## Gaps and cautions
 
 **Police records undercount road deaths**
@@ -136,6 +162,13 @@ All rows use `geography` slugs from `research/data/geography.csv`, or `india`. M
 - The workbooks name Kerala "Keralam"; mapped to `kerala`.
 - This is the first round. There is no earlier NHTS to compare with.
 
+**DTES**
+
+- The DTES is a sample survey of 2,46,113 households. Appendix C gives RSEs of State/UT trip counts and spending; many small States/UTs are above 15%. Lakshadweep (240 sample households) and Ladakh (360) have the smallest samples.
+- Overnight trips for holidaying, pilgrimage, health and shopping (365 days) and for business, social, education and other purposes (30 days) are two separate counts. A household "with an overnight trip" made one of the first kind in 365 days or one of the second kind in 30 days.
+- The trip and spending figures are per trip, not per person. Spending is all spending related to the trip, before, during or after it, whoever paid: the household, or an institution such as a government office (Report 597, paragraph 2.16).
+- MoSPI's caution against comparing the DTES with the NHTS applies here (see "Method notes").
+
 **Not covered**
 
 - Road length and registered vehicles after 2022 (MoRTH prints none for 2023 and 2024). The Road Transport Year Book is stale (2019-20).
@@ -155,9 +188,13 @@ All rows use `geography` slugs from `research/data/geography.csv`, or `india`. M
 | `road-deaths-helmet-seatbelt-by-state.csv` | India drivers killed, no helmet: 39,470; India passengers killed, no seat belt: 6,977 (Table 3.3 and the Total rows); Andhra Pradesh drivers killed, no helmet: 2,353 (Annexure 37, p. 175) | RAI 2024 |
 | `travel-mode-by-state-2025-26.csv` | India, workers, rural+urban, two-wheeler: 42.6 (Table 4); India, students, rural, walk: 40.5 (Table 2); Andhra Pradesh, workers, rural, male, two-wheeler: 56.9 (Table A5) | NHTS fact sheet and Appendix A |
 | `travel-trip-share-by-state-2025-26.csv` | India, students 6+, rural+urban: 66.4 (Table 1); Andhra Pradesh, rural male students 6-14: 60.3 (Table A2); Delhi, rural male workers 15-29: 67.6 (Table A4) | NHTS |
+| `tourism-households-by-state-2025-26.csv` | India share of households with an overnight trip, rural: 35.2, and rural+urban: 36.1 (derived, equal to Statement 3.1); Tamil Nadu households with an overnight trip, rural+urban: 1,06,804 hundred (Table 1); Tripura households with a same-day trip, rural+urban: 89.7 (Statement 3.16) | Report 597, pp. 13, 31, 32; Appendix A Table 1 |
+| `tourism-india-2025-26.csv` | Overnight trips per 100 households, pilgrimage, rural: 15.5 (Statement 3.2); spending per health trip, rural+urban: ₹32,167, urban: ₹41,649; per business trip, rural: ₹5,179; transport on a holiday trip: ₹3,685 (Table 15, Statements 3.13, 3.15); same-day spending on shopping, rural: 51.2% (Statement 3.19) | Report 597, pp. 14, 28, 30, 35; Appendix A Table 15 |
 | `travel-india-fact-sheet-2025-26.csv` | Overnight trips by bus, rural+urban: 55.8 (Table 7); overnight trips for socialising and religious practice: 70.2 (Table 6); students aged 6-14 who walk: 47.3 (Table 3) | NHTS fact sheet, pp. 6, 16, 17 |
 
-Other checks in the script: States/UTs add up to India in Annexures 2 to 5, 37 and 38; Annexure 1 equals the Total rows of Annexures 2 to 4 for 2021 to 2024; Annexure 29 adds up to Annexure 3 for every State/UT; Table 4.4 equals Annexure 29; Table 3.3 equals the Total rows of Annexures 37 and 38; fact sheet Tables 1, 2 and 4 equal the all-India rows of Appendix A Tables 2, 3 and 5; every geography is in `geography.csv`.
+`build_tourism.py` also stops with an error if Statement 3.1 differs from the derived India shares, if any of the 110 values of Statement 3.16 differs from the same share on Table 19, if any value of Statements 3.13 and 3.15 differs from Table 15, if Statement 3.2 differs by more than 0.05 from the Table 15 trip counts over the Table 1 households, if package plus non-package differs from the total in Table 15, or if Tables 1 and 19 give different household counts.
+
+Other checks in `build_transport.py`: States/UTs add up to India in Annexures 2 to 5, 37 and 38; Annexure 1 equals the Total rows of Annexures 2 to 4 for 2021 to 2024; Annexure 29 adds up to Annexure 3 for every State/UT; Table 4.4 equals Annexure 29; Table 3.3 equals the Total rows of Annexures 37 and 38; fact sheet Tables 1, 2 and 4 equal the all-India rows of Appendix A Tables 2, 3 and 5; every geography is in `geography.csv`.
 
 ## Raw files
 
@@ -167,6 +204,7 @@ Read 25 Nov 2026. Paths are relative to `raw/transport/`. `pipeline/transport/so
 pipeline/transport/fetch.sh                        # downloads every file in sources.tsv; logs sha256 to raw/transport/<dir>/_log.tsv
 pipeline/transport/extract_text.sh                 # pdftotext -layout and -bbox, one .txt and one .bbox.html per PDF in work/transport/
 python3 -I pipeline/transport/build_transport.py
+python3 -I pipeline/transport/build_tourism.py    # DTES only; needs fetch.sh tourism/ and extract_text.sh tourism/
 ```
 
 `node pipeline/transport/morth_reports.mjs raw/transport/morth/pages` lists the MoRTH editions again (optional). MoRTH file URLs start with `https://morth.gov.in/backend/documents/uploaded/`. NHTS workbook URLs start with `https://www.mospi.gov.in/uploads/documents/documents/`.
@@ -188,6 +226,12 @@ python3 -I pipeline/transport/build_transport.py
 | `nhts/appendix-b/rse-table-2.xlsx` | Appendix B Table 2, RSE of Table A3 | `1791196810096-RSE_Table_2.xlsx` | `a0f62cffd5e76d73fedd4caaf761de3e6fe22a1f2225fc7ff78ce6a29f366a29` |
 | `nhts/appendix-b/rse-table-3.xlsx` | Appendix B Table 3, RSE of Table A4 | `1791196820650-RSE_Table_3.xlsx` | `681776f43e7cbabffe051910baa17e511284c6eb46e995434111f7f22792d818` |
 | `nhts/appendix-b/rse-table-4.xlsx` | Appendix B Table 4, RSE of Table A5 | `1791196831860-RSE_Table_4.xlsx` | `4190753f496417f16244aff7cf3eced17ab78b74606aa852cb80e7054224b994` |
+| `tourism/report-597.pdf` | NSS Report 597, Domestic Tourism in India | `https://www.mospi.gov.in/uploads/publications_reports/publications_reports1790160086463_10b96a4e-35b0-416b-83b7-9cb3b364ca8c_DomesticTourism_report_597_(1).pdf` | `3d201d09a142b0cc5f270202dba1ae8bf990339f80214fc4624532f42dbab8d2` |
+| `tourism/press-note.pdf` | DTES press note, 23 Sep 2026 | `https://www.mospi.gov.in/uploads/latestReleases/latest_release_1790159417509_e87601c9-a7f3-4290-9600-46c078186d81_Press_Note_DTES_220926.pdf` | `2307b6e00ef8892e8e2491bbebf795464066e586c33cc5d0f4a026489f6a601a` |
+| `tourism/appendix-a/table-1.xlsx` | Report 597, Appendix A Table 1, households and overnight trips by State/UT | `https://www.mospi.gov.in/uploads/documents/DTES_tables/Table1.xlsx` | `87114d121ef7845677ec8cea1faf35cb2ebbfed0d5df1aaea657cfc6d2ed63d0` |
+| `tourism/appendix-a/table-15.xlsx` | Report 597, Appendix A Table 15, spending per overnight trip by item | `https://www.mospi.gov.in/uploads/documents/DTES_tables/Table15.xlsx` | `c46e95d506b538f418e05382a53440da58b39df4e684b9c692291654f7380ed8` |
+| `tourism/appendix-a/table-19.xlsx` | Report 597, Appendix A Table 19, households and same-day trips by State/UT | `https://www.mospi.gov.in/uploads/documents/DTES_tables/Table19.xlsx` | `dd5b5cd6482d6c9d341b74c51788aa294f5a375814c9450f17a82819cafcc1b8` |
+| `tourism/pages/latest-release-p3.json` | MoSPI release list, page 3 (DTES release date), POST `{"lang":"en","page_no":3}` | `https://www.mospi.gov.in/api/latest-release/get-web-latest-release-list` | `170525f9d3d9bcdd4bb9cc1769b28c2c165c7fecd91887f0643b26c7bc264233` |
 | `nhts/pages/latest-release-p2.json` | MoSPI release list, page 2 (NHTS release date), POST `{"lang":"en","page_no":2}` | `https://www.mospi.gov.in/api/latest-release/get-web-latest-release-list` | `8e85a4331f50c10a71e593758f9c1396e8942caaa7b59c32c92e44fc7fe5056b` |
 
 ## Proposed charts
@@ -206,5 +250,12 @@ Kinds are from `src/content/types.ts`. Every MoRTH chart needs the note "police-
 | `commute-mode-to-school` | `bars` (rural and urban grouped) | `travel-mode-by-state-2025-26.csv`, `geography=india`, `purpose=education`, `sex=person`, `sector` in (`rural`, `urban`) | 2025-26 | Walking (37.0%), bus (29.5%) and bicycle (15.8%) carry most students. |
 | `two-wheeler-commute-by-state` | `states` | `travel-mode-by-state-2025-26.csv`, `purpose=work`, `sector=rural+urban`, `sex=person`, `mode=two-wheeler` | 2025-26 | From 5.7% (Nagaland) to 92.7% (Puducherry). Pairs with the two-wheeler death share on the same page. Needs the RSE caution. |
 | `overnight-trip-mode` | `bars` | `travel-india-fact-sheet-2025-26.csv`, `table=NHTS 2025-26 fact sheet, Table 7`, `sector=rural+urban` | 2025-26 | Buses (55.8%) and inter-city rail (17.7%) carry most overnight household trips. |
+
+| `overnight-trip-households-by-state` | `states` | `tourism-households-by-state-2025-26.csv`, `sector=rural+urban`, `trip_type=overnight`, `indicator=share-of-households-with-trip` | 2025-26 | 36.1% of households across India, from 18.7% in Meghalaya to 62.9% in Lakshadweep. `derived` share. |
+| `overnight-trips-by-purpose` | `bars` (rural and urban grouped) | `tourism-india-2025-26.csv`, `measure=overnight-trips-per-100-households` | 2025-26 | Pilgrimage, health and social visits lead. Label the two reference periods. |
+| `overnight-trip-spending-by-purpose` | `bars` (rural and urban grouped) | `tourism-india-2025-26.csv`, `measure=average-spending-per-overnight-trip`, `item=total` | 2025-26 | Health trips cost the most. |
+| `overnight-trip-spending-by-item` | `bars` (stacked by item) | `tourism-india-2025-26.csv`, `measure=average-spending-per-overnight-trip`, `sector=rural+urban` | 2025-26 | Medical care is most of a health trip; transport is the largest part of a holiday or pilgrimage. |
+
+Not proposed yet: same-day trips by State/UT (Statement 3.16, in the CSV) and same-day spending by item (Statement 3.19, in the CSV), for a later part.
 
 Not proposed: a State/UT chart of road-user deaths as a share (it needs a derived share; Annexure 29 gives counts only), and a chart that sets NHTS beside the tourism survey (MoSPI advises against it).
