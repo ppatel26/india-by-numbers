@@ -54,6 +54,7 @@ Exceptions:
 - `education/build_education.py` also reads the PLFS report text from `--jobs-work work/jobs`. Run
   `pipeline/jobs/extract_text.sh` first.
 - `transport/fetch.sh` reads its URLs from `transport/sources.tsv`, in the same way as `crime/fetch.sh`.
+  `transport/build_tourism.py` needs only `fetch.sh tourism/` and `extract_text.sh tourism/`.
 - `crime/fetch.sh` reads its URLs from `crime/sources.tsv`. Give a path prefix to fetch part of the list, for example `pipeline/crime/fetch.sh pendency/`.
 - `parse_d33.py`, `check_d33.py` and `parse_proj.py` take file paths. The `extract_text.sh` script of
   their topic runs them.
@@ -116,10 +117,11 @@ Some CSVs were made in more than one step. Run the steps in this order:
 | `crime/extract_text.sh` | None. Text of the Crime in India, Prison Statistics India and Parliament answer PDFs | NCRB, Ministry of Law and Justice |
 | `crime/build_ncrb.py` | `crime-by-state-2024`, `crime-india-trend`, `ipc-crimes-india-1981-2024`, `murder-by-state-2024`, `crimes-against-women-by-state-2024`, `police-and-court-disposal-by-state-2024`, `prisons-by-state-2024`, `prisons-india-trend` | NCRB (Crime in India, Prison Statistics India) |
 | `crime/build_pendency.py` | `court-pendency-district-by-state`, `court-pendency-high-courts` | Ministry of Law and Justice (answers in the Lok Sabha and Rajya Sabha, citing NJDG) |
-| `transport/fetch.sh`, `transport/sources.tsv` | None. Downloads the MoRTH reports and the NHTS fact sheet, press note and workbooks the transport topic reads, with `common/fetch.sh` | MoRTH, MoSPI |
+| `transport/fetch.sh`, `transport/sources.tsv` | None. Downloads the MoRTH reports, the NHTS fact sheet, press note and workbooks, and NSS Report 597 with its press note and Appendix A Tables 1, 15 and 19, with `common/fetch.sh`. Give a path prefix to fetch part of the list, for example `tourism/` | MoRTH, MoSPI |
 | `transport/morth_reports.mjs` | None. Lists the documents in one group of the MoRTH reports page and saves the app's JSON responses (the site is a JavaScript app in Hindi) | MoRTH |
-| `transport/extract_text.sh` | None. Layout text and word boxes of the MoRTH and NHTS PDFs | MoRTH, MoSPI |
+| `transport/extract_text.sh` | None. Layout text and word boxes of the MoRTH, NHTS and DTES PDFs. Takes a path prefix, as `fetch.sh` does | MoRTH, MoSPI |
 | `transport/build_transport.py` | `road-accidents-by-state`, `road-accidents-india-1970-2024`, `road-deaths-by-road-user`, `road-deaths-helmet-seatbelt-by-state`, `travel-mode-by-state-2025-26`, `travel-trip-share-by-state-2025-26`, `travel-india-fact-sheet-2025-26`. Reads the MoRTH tables from word boxes; checks the RAI 2024 values for 2023 against RAI 2023 | MoRTH (Road Accidents in India 2024 and 2023), MoSPI (NHTS 2025-26) |
+| `transport/build_tourism.py` | `tourism-households-by-state-2025-26`, `tourism-india-2025-26`. Reads Appendix A Tables 1, 15 and 19 (XLSX) and Statements 3.1, 3.2, 3.13, 3.15, 3.16 and 3.19 from the report text by position. Derives the State/UT share of households with an overnight trip, and stops if a checked value or a cross-table check differs | MoSPI (NSS Report 597, Domestic Tourism Expenditure Survey 2025-26) |
 | `trade-payments/fetch_handbook.sh` | None. Saves the RBI Handbook 2025-26 HTML tables (58, 111 to 131, 143, 144, 241), its Notes on Tables and the RBI website policy page, with `common/fetch.sh` | RBI |
 | `trade-payments/fetch_psi.py` | None. Posts the Payment System Indicators archive form and saves all 65 monthly releases as HTML | RBI |
 | `trade-payments/build_trade_payments.py` | `current-account-annual`, `bop-indicators-annual`, `bop-bpm6-annual`, `merchandise-trade-annual`, `merchandise-trade-by-commodity`, `merchandise-trade-by-partner`, `forex-reserves-end-march`, `payments-monthly`, `payments-annual`, `payment-infrastructure-monthly`. Stops if a checked value or a cross-table check differs | RBI (Handbook, Payment System Indicators), DGCI&S (trade tables in the Handbook) |
