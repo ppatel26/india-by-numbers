@@ -1,7 +1,8 @@
 # Agriculture
 
-Data for a planned India by Numbers topic, "Agriculture". The topic is not on the site yet, and no
-page or chart reads these CSVs. Two publishers give the data:
+Data for the India by Numbers topic "Agriculture" (`/agriculture/`). Its eight charts read the five NSS
+round 77 CSVs only. No page reads the four ASG CSVs until the ministry gives permission (see
+"Licence" under "Gaps and cautions"). Two publishers give the data:
 
 - **MoSPI, NSS round 77** (NSS Report No. 587). A survey of agricultural households in rural India
   in 2019: income by source, debt, sources of loans, land possessed and operational holdings. It

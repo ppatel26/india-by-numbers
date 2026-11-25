@@ -2,8 +2,8 @@
 
 **[indiabynumbers.org](https://indiabynumbers.org)**: India's official statistics, checked and charted.
 
-The site covers thirteen topics: prices, the economy, trade, jobs, living standards, population, health,
-education, elections, crime and justice, transport, climate, and religion and culture. It has 164 charts. It also has a profile for each of India's 28
+The site covers fourteen topics: prices, the economy, trade, jobs, living standards, agriculture, population,
+health, education, elections, crime and justice, transport, climate, and religion and culture. It has 172 charts. It also has a profile for each of India's 28
 states and 8 union territories, beside the national figure. The site follows the example of
 [UK by Numbers](https://ukbynumbers.org/) and [Our World in Data](https://ourworldindata.org/).
 
