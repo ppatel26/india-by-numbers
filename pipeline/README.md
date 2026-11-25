@@ -92,8 +92,10 @@ Some CSVs were made in more than one step. Run the steps in this order:
 | `jobs/fetch_plfs.py` | None. Downloads PLFS series from the eSankhyiki API | MoSPI |
 | `jobs/extract_text.sh` | None. Text of the PLFS reports and bulletins | MoSPI |
 | `jobs/build_jobs.py` | `jobs-lfpr-by-state-2025`, `jobs-unemployment-by-state-2025`, `jobs-lfpr-wpr-ur-annual`, `jobs-youth-unemployment-annual`, `jobs-employment-status`, `jobs-employment-by-industry`, `jobs-unemployment-quarterly`, `jobs-monthly-lfpr-wpr-ur` | MoSPI (PLFS) |
-| `education/extract_text.sh` | None. Text of the UDISE+ booklets and AISHE reports | Ministry of Education |
+| `education/extract_text.sh` | None. Text of the UDISE+ booklets, the AISHE reports and the NSS reports 595 and 590 | Ministry of Education, MoSPI |
+| `education/fetch_nss.py` | None. Downloads NSS indicators (rounds 79 and 80) from the eSankhyiki API, one JSON file per indicator | MoSPI |
 | `education/build_education.py` | `education-ger-school-by-state`, `education-dropout-by-state`, `education-ptr-by-state`, `education-school-facilities-by-state`, `education-school-trend-india`, `education-higher-ed-ger-by-state`, `education-higher-ed-ger-india`, `education-literacy-by-state` | Ministry of Education (UDISE+, AISHE), MoSPI (PLFS), ORGI (Census) |
+| `education/build_cmse.py` | `education-spending-per-student`, `education-school-type-by-state`, `education-private-coaching`, `education-mean-years-schooling-by-state`. Checks the API values against the report tables | MoSPI (NSS: CMS: Education 2025, CAMS 2022-23) |
 | `health/extract_text.sh` | None. Text of the SRS, MMR, life table, NFHS-6 and NHA reports | ORGI, IIPS, MoHFW |
 | `health/build_health.py` | `imr-india-1971-2024`, `imr-by-state-2024`, `mmr-india-1997-2024`, `mmr-by-state-2022-24`, `life-expectancy-india-1970-2024`, `life-expectancy-by-state-2020-24`, `nfhs-key-indicators-by-state`, `out-of-pocket-health-spending`, `child-mortality-by-state-2024` | ORGI (SRS), IIPS and MoHFW (NFHS), PIB, MoHFW and NHSRC (NHA) |
 | `climate/extract_text.sh`, `climate/parse_cea.py` | None. Text and word boxes of the CEA and MNRE PDFs, and the CEA totals | CEA, MNRE |

@@ -11,6 +11,8 @@ Read on 17 Nov 2026.
 3. Do schools have enough teachers, electricity, toilets for girls and internet?
 4. How many young adults go on to college, and do more women go than men?
 5. How many Indians can read and write?
+6. What do families spend on school, and how many students go to government schools or take coaching?
+7. How many years of schooling do adults have?
 
 ## About the sources
 
@@ -85,6 +87,46 @@ Read on 17 Nov 2026.
 - Sentence: "The 2011 Census counted 72.98% of people aged 7 and over as literate. The PLFS survey estimated 81.1% in 2025. For women, the 2025 estimate was 74.9%, against 87.5% for men."
 - Source: MoSPI NSO, PLFS Annual Report 2025, Appendix A, Table (7) (rural+urban, age 7+). ORGI, Census 2011 Primary Census Abstract, India and states (rates derived from counts).
 
+### edu-9 Spending per school student by level and type of school
+
+- Type: grouped bars (`school-spending-by-level-and-type`). Series: government, private aided, private unaided (recognised), all schools. Rows: five levels and all levels.
+- Unit: rupees per student in the current academic year, at the prices of the survey (April to June 2025). Not deflated. Geography: India, rural and urban together. Period: 2025.
+- File: `education-spending-per-student.csv`.
+- Sentence: "In 2025 families spent ₹12,616 on average for each school student in the academic year. The figure was ₹2,863 in government schools and ₹28,693 in private unaided schools."
+- Source: eSankhyiki API, NSS round 80, survey code 2, indicators 30, 31 and 32. Checked against NSS Report No. 595, Statements 2.3, 2.4 and 2.5.
+
+### edu-10 Spending per school student by state
+
+- Type: tile map and ranked bars (`school-spending-by-state`), with a state-profile row.
+- Unit: rupees per student. Geography: all 36 states and UTs plus India. Period: 2025.
+- File: `education-spending-per-student.csv` (level `all levels`, school type `all`, sex `person`, sector `rural+urban`).
+- Sentence: "Among states, spending per student ranged from ₹5,656 in Bihar to ₹25,720 in Haryana. Chandigarh had the highest value of any state or UT, ₹49,711."
+- Source: API indicator 30. Checked against NSS Report No. 595, Table 5.1.
+
+### edu-11 Students in government schools by state
+
+- Type: tile map and ranked bars (`government-school-share-by-state`), with a state-profile row.
+- Unit: per cent of students from pre-primary to class 12. Geography: all 36 states and UTs plus India. Period: 2025.
+- File: `education-school-type-by-state.csv`.
+- Sentence: "Government schools taught 55.9% of students. The share was 81.7% in Bihar and 15.3% in Goa."
+- Source: API indicator 24. Checked against NSS Report No. 595, Statement 1.2 and Table 2.
+
+### edu-12 Students who take private coaching by state
+
+- Type: tile map and ranked bars (`private-coaching-by-state`).
+- Unit: per cent of students. Geography: all 36 states and UTs plus India. Period: 2025.
+- File: `education-private-coaching.csv`.
+- Sentence: "In 2025, 27.0% of school students took private coaching. In Tripura the share was 78.6%, and in West Bengal 74.6%."
+- Source: API indicator 38. Checked against NSS Report No. 595, Statement 3.1 and Table 11.
+
+### edu-13 Mean years of schooling by state, age 25 and over
+
+- Type: tile map and ranked bars (`mean-years-of-schooling-by-state`), with a state-profile row.
+- Unit: years. Geography: all 36 states and UTs plus India. Period: 2022-23 (July 2022 to June 2023).
+- File: `education-mean-years-schooling-by-state.csv` (ages 15+ and 25+; the chart shows 25+).
+- Sentence: "In 2022-23 adults aged 25 and over had spent 7.5 years in school or college on average. Goa had 11.6 years. Andhra Pradesh and Rajasthan had 6.1."
+- Source: eSankhyiki API, NSS round 79, survey code 1, indicator 3. Checked against NSS Report No. 590 (CAMS 2022-23), Table 3.
+
 ## Headline figures
 
 | Figure | Value | Period | Source |
@@ -114,6 +156,10 @@ Read on 17 Nov 2026.
 | PIB (Ministry of Education) | AISHE 2022-23 and 2023-24 release, PRID 2282525 | 8 Jul 2026, 5:56 PM | 2022-23, 2023-24 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2282525 | 17 Nov 2026 | Not stated | 4ec92bdef633ebc80434029b57eff7007f7f0d92e6c0e7dcd7209e283aa32d74 |
 | MoSPI NSO | PLFS Annual Report 2025, Appendix A, Table (7), literacy | 27 Mar 2026 (revised file dated 29 May 2026) | Jan to Dec 2025 | https://www.mospi.gov.in/uploads/publications_reports/publications_reports1780040415321_0624fb13-fb47-40bc-b470-7c7e9635c3ef_PLFS_2025_F_REV_29052026.pdf | 17 Nov 2026 | Not stated | 134bf2de5e4b1142d3bae4899c90ec5be3bf5ec03a2ff4b3f7b0bba34eee0da7 (same raw file as the jobs topic, `raw/jobs/`) |
 | ORGI, Census of India | Census 2011 Primary Census Abstract, India, states and districts (DDW_PCA0000_2011_Indiastatedist.xlsx) | 30 Apr 2013 (PIB release 95372, "Census 2011: Abstract- Primary Data Released", checked 18 Nov 2026) | 1 Mar 2011 | https://censusindia.gov.in/nada/index.php/catalog/6191/download/9268/DDW_PCA0000_2011_Indiastatedist.xlsx | 17 Nov 2026 | Not stated | 7a8f70d46c43b5dd30eefe920f251752f69f6af8589594c21ac06499074646f5 |
+| MoSPI NSO | NSS Report No. 595, Comprehensive Modular Survey: Education, 2025 (NSS round 80) | 26 Aug 2025 (PDF created 26 Aug 2025; PIB release 2160863 of the same day, which returns HTTP 403 to scripts) | April to June 2025 | https://www.mospi.gov.in/uploads/publications_reports/publications_reports1757588642898_9ba30fe0-3677-478c-8d53-9a0d2ba107f0_CMS_E_2025L.pdf | 25 Nov 2026 | Not stated | 090c9fca5d11726b9696068dd5c2c9d3f355943c6534e77b3145611c0adfdd2b |
+| MoSPI NSO | eSankhyiki API, NSS round 80, survey code 2 (CMS: Education), 18 indicators | Not stated by the API | April to June 2025 | https://api.mospi.gov.in/api/nss-80/getNss80Records (see "NSS education surveys" below) | 25 Nov 2026 | Not stated | See below |
+| MoSPI NSO | NSS Report No. 590, Comprehensive Annual Modular Survey (CAMS), 2022-23 (NSS round 79) | 9 Oct 2024 (PDF created 9 Oct 2024) | July 2022 to June 2023 | https://www.mospi.gov.in/sites/default/files/publication_reports/CAMS%20Report_October_N.pdf | 25 Nov 2026 | Not stated | 5a73af6e4504e6a90b35cfb426100a1c2eba849233f267ddc0f90681404b7163 |
+| MoSPI NSO | eSankhyiki API, NSS round 79, survey code 1 (CAMS), indicator 3 | Not stated by the API | July 2022 to June 2023 | https://api.mospi.gov.in/api/nss-79/getNss79Records?indicator_code=3&survey_code=1&Format=JSON | 25 Nov 2026 | Not stated | See below |
 
 Raw downloads are not kept in the repository; the URL and sha256 above identify each file. The parsing script is `pipeline/education/build_education.py`. PDFs were turned into text with `pdftotext -layout` (`pipeline/education/extract_text.sh`).
 
@@ -248,6 +294,128 @@ The files below support discovery or checks. They supply no CSV rows.
   NIEPA-linked copy above supplied no separate comparable value. Higher secondary dropout is
   also absent in 2012-13 and 2014-15. The relevant national totals show a dash. The UDISE+
   series gives annual rates through class 10.
+
+## NSS education surveys (CMS: Education 2025, CAMS 2022-23)
+
+Read on 25 Nov 2026. The API pages were fetched between 20:09 and 20:17 UTC with
+`pipeline/education/fetch_nss.py`. The reports were fetched with `pipeline/common/fetch.sh`.
+
+- **API routes.** The eSankhyiki documentation page lists NSS rounds 77 and 78 only. Rounds 79 and 80
+  answer at `https://api.mospi.gov.in/api/nss-<round>/getNss<round>Records?indicator_code=<n>&survey_code=<s>&Format=JSON&limit=200&page=<p>`.
+  The API refuses a `limit` above 200. Round 80 has an indicator list at
+  `/api/nss-80/getIndicatorList?survey_code=2` (18 indicators, codes 23 to 42). Round 79 has no list
+  route: the script tried codes 1 to 40, and codes 1 to 28 return data. Code 3 is mean years of schooling.
+  Round 80, survey code 1, is a different survey (mobile phone and internet use); it is not used here.
+- **Reports.** NSS Report No. 595 (186 pages) and NSS Report No. 590 (195 pages), saved as
+  `cmse-2025/report.pdf` and `cams-2022-23/report.pdf`. The text is in `work/education/<folder>/report.txt`
+  (`pdftotext -layout`).
+- **PIB.** PIB release 2160863 (26 Aug 2025) returns HTTP 403 to curl and to headless Chromium. It was
+  not read. The report PDF carries the same date.
+
+| File under `raw/education/` | Indicator | Records | Pages | SHA-256 |
+| --- | --- | --- | --- | --- |
+| `nss79/i3.json` | Mean years of schooling in formal education | 666 | 4 | `040eaef71ada35b2436d6639ad4d139bb7bb85d92b4e3b5069cd0e1c11e7e71d` |
+| `nss80/indicators.json` | Indicator list | 18 | 1 | `bb0a98df1698239000a9e67c49f1e5997ae13a9da8a4f2bcf95b26051c999405` |
+| `nss80/i23.json` | Distribution of students enrolled in school education by level of current enrolment | 1665 | 9 | `cdd5112005d6ae4e6511ae79811907d5d9183c5c78e7dc52c2d2c9157f02c29b` |
+| `nss80/i24.json` | Distribution of students currently enrolled in school education by type of school | 1332 | 7 | `05871d67fc18e140aaccfdff5cf871291f63c940bca94cbe18ba583ac1938ff5` |
+| `nss80/i25.json` | Distribution of students currently enrolled in school education | 6660 | 34 | `1c87e87bc9283da6a024b80565e83798a4ba3dc53ca975b090eeb5ed6490e184` |
+| `nss80/i28.json` | Percentage of students reported expenditure on course fees by level of current enrolment | 1998 | 10 | `f9b19ed0a4240d8e03e4ff1a9cc1c6307de1bb5fb52b25bcadc9f7e9be7622eb` |
+| `nss80/i29.json` | Percentage of students reported expenditure on course fees by type of school | 1998 | 10 | `85090621e0c58f4b5f8e6f02b9c90b392c1ddc897ee0d345d2ffd22baee064d8` |
+| `nss80/i30.json` | Average expenditure (₹) per student on school education by level of current enrolment | 1998 | 10 | `565d4d67ed60a862370947a0d120b46980ab97efb4f28bc969d72fb93e3fa4d1` |
+| `nss80/i31.json` | Average expenditure (₹) per student on school education by type of school | 1998 | 10 | `6a31b8ad89933143b6fd8ba7ac8a207a64fbc5542edc254c7ef4d37118b17695` |
+| `nss80/i32.json` | Average expenditure (₹) per student on school expenditure during the current academic year | 2220 | 12 | `8a5f41623ed4938ab396f25b97e7bbfe1606923b973100ec0477a4be1da90f30` |
+| `nss80/i33.json` | Average expenditure (₹) per student on school education by items of expenditure | 1998 | 10 | `e767f5b2bcc5c6897640bb29fad43a3f7b323e66e6e1a51fb5dc839e40612e1b` |
+| `nss80/i34.json` | Average expenditure (₹) per reported student on school education by level of current enrolment | 1998 | 10 | `cd0aa2d90cab61aa7a3a183b5dd4f5b6b25d0277eef63c13096e3580e68e1611` |
+| `nss80/i35.json` | Average expenditure (₹) per reported student on school education | 1998 | 10 | `c5c373cf00d33cbccaee3eb7b091e7833c78ba725053b1a1424d8bcb19def8ca` |
+| `nss80/i36.json` | Average expenditure (₹) per reported student on school expenditure during the current academic year by type of school for each level of enrolment | 2220 | 12 | `d82dbdbd4b03ca9205e4c6c3070df12dbe0a387bd83e15b9f6d8a91223e2577b` |
+| `nss80/i37.json` | Average expenditure (₹) per reported student in school education | 1998 | 10 | `a43f35a5896bd31e8c00bf69a1e23867093b965e67a9eee4f8cf7f78b1b2990b` |
+| `nss80/i38.json` | Percentage of students who were taking/had taken private coaching during the current academic year | 1998 | 10 | `3b362d21771202df11e7598349c6e31e363d814c5cdd1a5659f3367a0b2e872c` |
+| `nss80/i39.json` | Average expenditure (₹) on private coaching per student during the current academic year by level of current enrolment | 1998 | 10 | `6f086c4ed169196a9ec5b2456a6ed46cc3443d9481161944d7e059497168164b` |
+| `nss80/i40.json` | Average expenditure (₹) on private coaching per reported student during the current academic year by level of current enrolment | 1998 | 10 | `0474b43f90f6730e78e8970db55a874935900529dccc323a58c03975bb9255dc` |
+| `nss80/i41.json` | Percentage of students reported a single source of funding for their educational expenses and distribution of the first major source of funding for education expenditure | 1998 | 10 | `f3b0e43e1657239e12910647c24cafabb716afe4e38f59f2a0dbc340a39dd9e8` |
+| `nss80/i42.json` | Percentage of households reporting erstwhile members currently attending school education along with average expenditure (₹) incurred per household and their distribution by number of such erstwhile members | 666 | 4 | `536663b024bc7161bd438f8533c8ceec1c4d14e309607bce1d1d9c6af27667b4` |
+
+### How the CSVs are made
+
+Run, from the repository root:
+
+```sh
+python3 -I pipeline/education/fetch_nss.py --raw raw/education/nss80 --round 80 --survey 2
+python3 -I pipeline/education/fetch_nss.py --raw raw/education/nss79 --round 79 --survey 1 --scan 40
+pipeline/common/fetch.sh --raw raw/education/cmse-2025 <report URL above> report.pdf
+pipeline/common/fetch.sh --raw raw/education/cams-2022-23 <report URL above> report.pdf
+pipeline/education/extract_text.sh
+python3 -I pipeline/education/build_cmse.py
+```
+
+| CSV | API indicators | Report tables | Rows |
+| --- | --- | --- | --- |
+| `education-spending-per-student.csv` | 30 (by level), 31 (by type of school, all levels), 32 (level by type, persons only) | Statements 2.3, 2.4, 2.5; Tables 5.1, 5.2, 6 | 5,883 |
+| `education-school-type-by-state.csv` | 24 | Statement 1.2; Table 2 | 1,332 |
+| `education-private-coaching.csv` | 38 | Statement 3.1; Table 11 | 1,998 |
+| `education-mean-years-schooling-by-state.csv` | Round 79, indicator 3 | Report 590, Table 3 | 666 |
+
+Columns: `level` (pre-primary, primary, middle, secondary, higher secondary, all levels), `school_type`
+(government, private aided, private unaided (recognised), others, all non-government, all), `sex`
+(male, female, person), `sector` (rural, urban, rural+urban), `unit` (rupees per student in the current
+academic year; per cent of students; years), `api_indicator`, `report_table`. Indicator 32 has no sex
+split, so its rows carry `person`. Indicator 31's "All" rows equal indicator 30's "All Levels" rows
+(the script checks this) and are left out.
+
+### Checks done on 25 Nov 2026
+
+`build_cmse.py` compares the API values with the report text and stops on any difference.
+
+- Every cell (9 columns by 37 rows) of every page of Table 5.1 (6 pages), Table 5.2 (6 pages),
+  Table 2 (4 pages) and Table 11 (6 pages) of Report 595: 7,326 values. All agree. The all-India
+  rows of these tables are Statements 2.3, 2.4, 1.2 and 3.1.
+- All 60 values of Statement 2.5 (all-India spending by level and type of school). All agree.
+- Both pages of Table 3 of Report 590 (ages 15+ and 25+): 666 values. All agree.
+- Three values on the built page, read against the report: Bihar ₹5,656 (Table 5.1, all levels),
+  Bihar 81.7% in government schools (Table 2), Bihar 52.5% taking coaching (Table 11). India: ₹2,863
+  in government schools (Statement 2.4), 55.9% (Statement 1.2), 27.0% (Statement 3.1), 7.5 years
+  (Report 590, highlight 02 and Table 3).
+- Table 6 (state spending by level and type of school) is not checked cell by cell. Its all-India
+  values (Statement 2.5) are.
+
+### Decisions
+
+- **Digits.** The API drops trailing zeros: it gives `27` where the report prints 27.0. For indicators
+  24, 38 and round 79 indicator 3, where the report prints one decimal in every cell, the script
+  prints one decimal. It stops if the API gives more digits. Rupee values are whole numbers in both.
+- **Prices.** Spending is in rupees at the prices of the survey. It is not deflated.
+- **Period.** The CMS: Education fieldwork ran from April to June 2025. Spending covers the current
+  academic year, paid or due. The CSVs label the period `2025`. CAMS covers July 2022 to June 2023,
+  labelled `2022-23`.
+- **Missing values.** The report and the API print `-` (no sample observation), for example rural
+  Chandigarh. The CSVs leave these empty.
+- **Source records.** Each chart names the report (dated) and the API (release date not stated).
+- **Name.** The site copy writes "CMS: Education 2025" and "CAMS 2022-23". The content tests reject
+  the word in the full survey names.
+- **CAMS chart.** Report 590 also gives ICT skills by state (indicators 21 to 23, for example copy and
+  paste or sending email, ages 15-24). Mean years of schooling at age 25 and over is the clearest
+  single education measure, so it is the only CAMS chart here. The education page now has 13 charts.
+  The ICT and other CAMS indicators are left for the planned living standards topic.
+- **Two state charts for chart 3.** The government share and the coaching share are different
+  measures, so each gets its own `states` chart, not one chart with two series.
+- **Ranks.** Spending, the government share and the coaching share have no `better` end, so state pages
+  show their rank without calling it good or bad. Mean years of schooling uses `better: 'high'`.
+- **Others.** The bars chart leaves out "Others" (unrecognised private and other schools, 0.8% of
+  students). The CSV keeps it.
+
+### Gaps and cautions
+
+- **Not for state estimates.** Report 595, section 1.7: "The survey was not designed for the
+  generation of sub-national level estimates." RSE Table 1 gives relative standard errors above 25% for
+  all-levels spending in Arunachal Pradesh (25.34), Chandigarh (25.18), Dadra and Nagar Haveli and
+  Daman and Diu (44.99), Ladakh (27.77), Lakshadweep (26.11) and Puducherry (33.11). India: 1.49.
+  The report gives no RSE for the government share or the coaching share.
+- **No comparison with NSS round 75 (2017-18).** Report 595, section 1.2: round 75 covered all levels of
+  education, counted coaching inside education spending, and left anganwadis out of pre-primary.
+- **Spending excludes private coaching.** The API gives coaching spending separately (indicators 39
+  and 40). They are in `raw/` but not charted.
+- **School type is the household's report.** UDISE+ counts enrolment from school returns, so the
+  government share can differ from UDISE+ figures.
 
 ## Checks done
 

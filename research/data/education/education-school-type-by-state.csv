@@ -1,0 +1,1333 @@
+geography,period,school_type,sex,sector,value,unit,api_indicator,report_table
+india,2025,government,male,rural,64.0,% of students,24,Table 2
+india,2025,private aided,male,rural,9.1,% of students,24,Table 2
+india,2025,private unaided (recognised),male,rural,26.1,% of students,24,Table 2
+india,2025,others,male,rural,0.7,% of students,24,Table 2
+india,2025,government,female,rural,68.3,% of students,24,Table 2
+india,2025,private aided,female,rural,8.6,% of students,24,Table 2
+india,2025,private unaided (recognised),female,rural,22.3,% of students,24,Table 2
+india,2025,others,female,rural,0.8,% of students,24,Table 2
+india,2025,government,person,rural,66.0,% of students,24,Table 2
+india,2025,private aided,person,rural,8.9,% of students,24,Table 2
+india,2025,private unaided (recognised),person,rural,24.3,% of students,24,Table 2
+india,2025,others,person,rural,0.7,% of students,24,Table 2
+india,2025,government,male,urban,27.7,% of students,24,Table 2
+india,2025,private aided,male,urban,17.2,% of students,24,Table 2
+india,2025,private unaided (recognised),male,urban,54.2,% of students,24,Table 2
+india,2025,others,male,urban,0.9,% of students,24,Table 2
+india,2025,government,female,urban,32.7,% of students,24,Table 2
+india,2025,private aided,female,urban,18.0,% of students,24,Table 2
+india,2025,private unaided (recognised),female,urban,48.3,% of students,24,Table 2
+india,2025,others,female,urban,1.0,% of students,24,Table 2
+india,2025,government,person,urban,30.1,% of students,24,Table 2
+india,2025,private aided,person,urban,17.6,% of students,24,Table 2
+india,2025,private unaided (recognised),person,urban,51.4,% of students,24,Table 2
+india,2025,others,person,urban,1.0,% of students,24,Table 2
+india,2025,government,male,rural+urban,53.8,% of students,24,Table 2
+india,2025,private aided,male,rural+urban,11.4,% of students,24,Table 2
+india,2025,private unaided (recognised),male,rural+urban,34.0,% of students,24,Table 2
+india,2025,others,male,rural+urban,0.8,% of students,24,Table 2
+india,2025,government,female,rural+urban,58.4,% of students,24,Table 2
+india,2025,private aided,female,rural+urban,11.2,% of students,24,Table 2
+india,2025,private unaided (recognised),female,rural+urban,29.5,% of students,24,Table 2
+india,2025,others,female,rural+urban,0.9,% of students,24,Table 2
+india,2025,government,person,rural+urban,55.9,% of students,24,Table 2
+india,2025,private aided,person,rural+urban,11.3,% of students,24,Table 2
+india,2025,private unaided (recognised),person,rural+urban,31.9,% of students,24,Table 2
+india,2025,others,person,rural+urban,0.8,% of students,24,Table 2
+andaman-nicobar,2025,government,male,rural,64.1,% of students,24,Table 2
+andaman-nicobar,2025,private aided,male,rural,,% of students,24,Table 2
+andaman-nicobar,2025,private unaided (recognised),male,rural,35.9,% of students,24,Table 2
+andaman-nicobar,2025,others,male,rural,,% of students,24,Table 2
+andaman-nicobar,2025,government,female,rural,96.1,% of students,24,Table 2
+andaman-nicobar,2025,private aided,female,rural,,% of students,24,Table 2
+andaman-nicobar,2025,private unaided (recognised),female,rural,3.9,% of students,24,Table 2
+andaman-nicobar,2025,others,female,rural,,% of students,24,Table 2
+andaman-nicobar,2025,government,person,rural,78.3,% of students,24,Table 2
+andaman-nicobar,2025,private aided,person,rural,,% of students,24,Table 2
+andaman-nicobar,2025,private unaided (recognised),person,rural,21.7,% of students,24,Table 2
+andaman-nicobar,2025,others,person,rural,,% of students,24,Table 2
+andaman-nicobar,2025,government,male,urban,51.8,% of students,24,Table 2
+andaman-nicobar,2025,private aided,male,urban,6.7,% of students,24,Table 2
+andaman-nicobar,2025,private unaided (recognised),male,urban,41.5,% of students,24,Table 2
+andaman-nicobar,2025,others,male,urban,,% of students,24,Table 2
+andaman-nicobar,2025,government,female,urban,69.1,% of students,24,Table 2
+andaman-nicobar,2025,private aided,female,urban,3.4,% of students,24,Table 2
+andaman-nicobar,2025,private unaided (recognised),female,urban,27.5,% of students,24,Table 2
+andaman-nicobar,2025,others,female,urban,,% of students,24,Table 2
+andaman-nicobar,2025,government,person,urban,60.4,% of students,24,Table 2
+andaman-nicobar,2025,private aided,person,urban,5.1,% of students,24,Table 2
+andaman-nicobar,2025,private unaided (recognised),person,urban,34.5,% of students,24,Table 2
+andaman-nicobar,2025,others,person,urban,,% of students,24,Table 2
+andaman-nicobar,2025,government,male,rural+urban,60.0,% of students,24,Table 2
+andaman-nicobar,2025,private aided,male,rural+urban,2.2,% of students,24,Table 2
+andaman-nicobar,2025,private unaided (recognised),male,rural+urban,37.7,% of students,24,Table 2
+andaman-nicobar,2025,others,male,rural+urban,,% of students,24,Table 2
+andaman-nicobar,2025,government,female,rural+urban,85.7,% of students,24,Table 2
+andaman-nicobar,2025,private aided,female,rural+urban,1.3,% of students,24,Table 2
+andaman-nicobar,2025,private unaided (recognised),female,rural+urban,13.0,% of students,24,Table 2
+andaman-nicobar,2025,others,female,rural+urban,,% of students,24,Table 2
+andaman-nicobar,2025,government,person,rural+urban,72.0,% of students,24,Table 2
+andaman-nicobar,2025,private aided,person,rural+urban,1.8,% of students,24,Table 2
+andaman-nicobar,2025,private unaided (recognised),person,rural+urban,26.3,% of students,24,Table 2
+andaman-nicobar,2025,others,person,rural+urban,,% of students,24,Table 2
+andhra-pradesh,2025,government,male,rural,56.4,% of students,24,Table 2
+andhra-pradesh,2025,private aided,male,rural,4.0,% of students,24,Table 2
+andhra-pradesh,2025,private unaided (recognised),male,rural,39.6,% of students,24,Table 2
+andhra-pradesh,2025,others,male,rural,,% of students,24,Table 2
+andhra-pradesh,2025,government,female,rural,59.6,% of students,24,Table 2
+andhra-pradesh,2025,private aided,female,rural,2.4,% of students,24,Table 2
+andhra-pradesh,2025,private unaided (recognised),female,rural,37.9,% of students,24,Table 2
+andhra-pradesh,2025,others,female,rural,0.1,% of students,24,Table 2
+andhra-pradesh,2025,government,person,rural,58.0,% of students,24,Table 2
+andhra-pradesh,2025,private aided,person,rural,3.2,% of students,24,Table 2
+andhra-pradesh,2025,private unaided (recognised),person,rural,38.8,% of students,24,Table 2
+andhra-pradesh,2025,others,person,rural,0.0,% of students,24,Table 2
+andhra-pradesh,2025,government,male,urban,21.4,% of students,24,Table 2
+andhra-pradesh,2025,private aided,male,urban,2.5,% of students,24,Table 2
+andhra-pradesh,2025,private unaided (recognised),male,urban,76.1,% of students,24,Table 2
+andhra-pradesh,2025,others,male,urban,,% of students,24,Table 2
+andhra-pradesh,2025,government,female,urban,31.8,% of students,24,Table 2
+andhra-pradesh,2025,private aided,female,urban,2.6,% of students,24,Table 2
+andhra-pradesh,2025,private unaided (recognised),female,urban,65.7,% of students,24,Table 2
+andhra-pradesh,2025,others,female,urban,,% of students,24,Table 2
+andhra-pradesh,2025,government,person,urban,25.9,% of students,24,Table 2
+andhra-pradesh,2025,private aided,person,urban,2.5,% of students,24,Table 2
+andhra-pradesh,2025,private unaided (recognised),person,urban,71.6,% of students,24,Table 2
+andhra-pradesh,2025,others,person,urban,,% of students,24,Table 2
+andhra-pradesh,2025,government,male,rural+urban,42.9,% of students,24,Table 2
+andhra-pradesh,2025,private aided,male,rural+urban,3.4,% of students,24,Table 2
+andhra-pradesh,2025,private unaided (recognised),male,rural+urban,53.7,% of students,24,Table 2
+andhra-pradesh,2025,others,male,rural+urban,,% of students,24,Table 2
+andhra-pradesh,2025,government,female,rural+urban,50.2,% of students,24,Table 2
+andhra-pradesh,2025,private aided,female,rural+urban,2.4,% of students,24,Table 2
+andhra-pradesh,2025,private unaided (recognised),female,rural+urban,47.3,% of students,24,Table 2
+andhra-pradesh,2025,others,female,rural+urban,0.1,% of students,24,Table 2
+andhra-pradesh,2025,government,person,rural+urban,46.3,% of students,24,Table 2
+andhra-pradesh,2025,private aided,person,rural+urban,3.0,% of students,24,Table 2
+andhra-pradesh,2025,private unaided (recognised),person,rural+urban,50.7,% of students,24,Table 2
+andhra-pradesh,2025,others,person,rural+urban,0.0,% of students,24,Table 2
+arunachal-pradesh,2025,government,male,rural,85.5,% of students,24,Table 2
+arunachal-pradesh,2025,private aided,male,rural,3.2,% of students,24,Table 2
+arunachal-pradesh,2025,private unaided (recognised),male,rural,10.9,% of students,24,Table 2
+arunachal-pradesh,2025,others,male,rural,0.4,% of students,24,Table 2
+arunachal-pradesh,2025,government,female,rural,78.0,% of students,24,Table 2
+arunachal-pradesh,2025,private aided,female,rural,4.3,% of students,24,Table 2
+arunachal-pradesh,2025,private unaided (recognised),female,rural,14.2,% of students,24,Table 2
+arunachal-pradesh,2025,others,female,rural,3.5,% of students,24,Table 2
+arunachal-pradesh,2025,government,person,rural,82.0,% of students,24,Table 2
+arunachal-pradesh,2025,private aided,person,rural,3.7,% of students,24,Table 2
+arunachal-pradesh,2025,private unaided (recognised),person,rural,12.4,% of students,24,Table 2
+arunachal-pradesh,2025,others,person,rural,1.9,% of students,24,Table 2
+arunachal-pradesh,2025,government,male,urban,60.6,% of students,24,Table 2
+arunachal-pradesh,2025,private aided,male,urban,8.1,% of students,24,Table 2
+arunachal-pradesh,2025,private unaided (recognised),male,urban,27.9,% of students,24,Table 2
+arunachal-pradesh,2025,others,male,urban,3.4,% of students,24,Table 2
+arunachal-pradesh,2025,government,female,urban,67.4,% of students,24,Table 2
+arunachal-pradesh,2025,private aided,female,urban,4.9,% of students,24,Table 2
+arunachal-pradesh,2025,private unaided (recognised),female,urban,26.9,% of students,24,Table 2
+arunachal-pradesh,2025,others,female,urban,0.9,% of students,24,Table 2
+arunachal-pradesh,2025,government,person,urban,63.7,% of students,24,Table 2
+arunachal-pradesh,2025,private aided,person,urban,6.6,% of students,24,Table 2
+arunachal-pradesh,2025,private unaided (recognised),person,urban,27.4,% of students,24,Table 2
+arunachal-pradesh,2025,others,person,urban,2.2,% of students,24,Table 2
+arunachal-pradesh,2025,government,male,rural+urban,81.5,% of students,24,Table 2
+arunachal-pradesh,2025,private aided,male,rural+urban,4.0,% of students,24,Table 2
+arunachal-pradesh,2025,private unaided (recognised),male,rural+urban,13.6,% of students,24,Table 2
+arunachal-pradesh,2025,others,male,rural+urban,0.9,% of students,24,Table 2
+arunachal-pradesh,2025,government,female,rural+urban,76.4,% of students,24,Table 2
+arunachal-pradesh,2025,private aided,female,rural+urban,4.4,% of students,24,Table 2
+arunachal-pradesh,2025,private unaided (recognised),female,rural+urban,16.1,% of students,24,Table 2
+arunachal-pradesh,2025,others,female,rural+urban,3.1,% of students,24,Table 2
+arunachal-pradesh,2025,government,person,rural+urban,79.2,% of students,24,Table 2
+arunachal-pradesh,2025,private aided,person,rural+urban,4.2,% of students,24,Table 2
+arunachal-pradesh,2025,private unaided (recognised),person,rural+urban,14.7,% of students,24,Table 2
+arunachal-pradesh,2025,others,person,rural+urban,1.9,% of students,24,Table 2
+assam,2025,government,male,rural,78.8,% of students,24,Table 2
+assam,2025,private aided,male,rural,4.9,% of students,24,Table 2
+assam,2025,private unaided (recognised),male,rural,16.1,% of students,24,Table 2
+assam,2025,others,male,rural,0.2,% of students,24,Table 2
+assam,2025,government,female,rural,80.8,% of students,24,Table 2
+assam,2025,private aided,female,rural,5.4,% of students,24,Table 2
+assam,2025,private unaided (recognised),female,rural,13.5,% of students,24,Table 2
+assam,2025,others,female,rural,0.3,% of students,24,Table 2
+assam,2025,government,person,rural,79.6,% of students,24,Table 2
+assam,2025,private aided,person,rural,5.1,% of students,24,Table 2
+assam,2025,private unaided (recognised),person,rural,15.0,% of students,24,Table 2
+assam,2025,others,person,rural,0.3,% of students,24,Table 2
+assam,2025,government,male,urban,45.0,% of students,24,Table 2
+assam,2025,private aided,male,urban,10.0,% of students,24,Table 2
+assam,2025,private unaided (recognised),male,urban,44.9,% of students,24,Table 2
+assam,2025,others,male,urban,0.0,% of students,24,Table 2
+assam,2025,government,female,urban,48.4,% of students,24,Table 2
+assam,2025,private aided,female,urban,6.4,% of students,24,Table 2
+assam,2025,private unaided (recognised),female,urban,44.9,% of students,24,Table 2
+assam,2025,others,female,urban,0.3,% of students,24,Table 2
+assam,2025,government,person,urban,46.6,% of students,24,Table 2
+assam,2025,private aided,person,urban,8.3,% of students,24,Table 2
+assam,2025,private unaided (recognised),person,urban,44.9,% of students,24,Table 2
+assam,2025,others,person,urban,0.2,% of students,24,Table 2
+assam,2025,government,male,rural+urban,75.6,% of students,24,Table 2
+assam,2025,private aided,male,rural+urban,5.3,% of students,24,Table 2
+assam,2025,private unaided (recognised),male,rural+urban,18.8,% of students,24,Table 2
+assam,2025,others,male,rural+urban,0.2,% of students,24,Table 2
+assam,2025,government,female,rural+urban,77.5,% of students,24,Table 2
+assam,2025,private aided,female,rural+urban,5.5,% of students,24,Table 2
+assam,2025,private unaided (recognised),female,rural+urban,16.7,% of students,24,Table 2
+assam,2025,others,female,rural+urban,0.3,% of students,24,Table 2
+assam,2025,government,person,rural+urban,76.4,% of students,24,Table 2
+assam,2025,private aided,person,rural+urban,5.4,% of students,24,Table 2
+assam,2025,private unaided (recognised),person,rural+urban,17.9,% of students,24,Table 2
+assam,2025,others,person,rural+urban,0.3,% of students,24,Table 2
+bihar,2025,government,male,rural,82.3,% of students,24,Table 2
+bihar,2025,private aided,male,rural,0.8,% of students,24,Table 2
+bihar,2025,private unaided (recognised),male,rural,15.2,% of students,24,Table 2
+bihar,2025,others,male,rural,1.7,% of students,24,Table 2
+bihar,2025,government,female,rural,87.1,% of students,24,Table 2
+bihar,2025,private aided,female,rural,1.0,% of students,24,Table 2
+bihar,2025,private unaided (recognised),female,rural,11.0,% of students,24,Table 2
+bihar,2025,others,female,rural,0.9,% of students,24,Table 2
+bihar,2025,government,person,rural,84.6,% of students,24,Table 2
+bihar,2025,private aided,person,rural,0.9,% of students,24,Table 2
+bihar,2025,private unaided (recognised),person,rural,13.2,% of students,24,Table 2
+bihar,2025,others,person,rural,1.3,% of students,24,Table 2
+bihar,2025,government,male,urban,48.8,% of students,24,Table 2
+bihar,2025,private aided,male,urban,3.9,% of students,24,Table 2
+bihar,2025,private unaided (recognised),male,urban,44.3,% of students,24,Table 2
+bihar,2025,others,male,urban,3.0,% of students,24,Table 2
+bihar,2025,government,female,urban,56.6,% of students,24,Table 2
+bihar,2025,private aided,female,urban,0.7,% of students,24,Table 2
+bihar,2025,private unaided (recognised),female,urban,37.2,% of students,24,Table 2
+bihar,2025,others,female,urban,5.6,% of students,24,Table 2
+bihar,2025,government,person,urban,52.1,% of students,24,Table 2
+bihar,2025,private aided,person,urban,2.5,% of students,24,Table 2
+bihar,2025,private unaided (recognised),person,urban,41.2,% of students,24,Table 2
+bihar,2025,others,person,urban,4.1,% of students,24,Table 2
+bihar,2025,government,male,rural+urban,79.1,% of students,24,Table 2
+bihar,2025,private aided,male,rural+urban,1.1,% of students,24,Table 2
+bihar,2025,private unaided (recognised),male,rural+urban,18.0,% of students,24,Table 2
+bihar,2025,others,male,rural+urban,1.8,% of students,24,Table 2
+bihar,2025,government,female,rural+urban,84.6,% of students,24,Table 2
+bihar,2025,private aided,female,rural+urban,1.0,% of students,24,Table 2
+bihar,2025,private unaided (recognised),female,rural+urban,13.1,% of students,24,Table 2
+bihar,2025,others,female,rural+urban,1.2,% of students,24,Table 2
+bihar,2025,government,person,rural+urban,81.7,% of students,24,Table 2
+bihar,2025,private aided,person,rural+urban,1.1,% of students,24,Table 2
+bihar,2025,private unaided (recognised),person,rural+urban,15.7,% of students,24,Table 2
+bihar,2025,others,person,rural+urban,1.5,% of students,24,Table 2
+chandigarh,2025,government,male,rural,,% of students,24,Table 2
+chandigarh,2025,private aided,male,rural,,% of students,24,Table 2
+chandigarh,2025,private unaided (recognised),male,rural,,% of students,24,Table 2
+chandigarh,2025,others,male,rural,,% of students,24,Table 2
+chandigarh,2025,government,female,rural,,% of students,24,Table 2
+chandigarh,2025,private aided,female,rural,,% of students,24,Table 2
+chandigarh,2025,private unaided (recognised),female,rural,,% of students,24,Table 2
+chandigarh,2025,others,female,rural,,% of students,24,Table 2
+chandigarh,2025,government,person,rural,,% of students,24,Table 2
+chandigarh,2025,private aided,person,rural,,% of students,24,Table 2
+chandigarh,2025,private unaided (recognised),person,rural,,% of students,24,Table 2
+chandigarh,2025,others,person,rural,,% of students,24,Table 2
+chandigarh,2025,government,male,urban,27.0,% of students,24,Table 2
+chandigarh,2025,private aided,male,urban,16.0,% of students,24,Table 2
+chandigarh,2025,private unaided (recognised),male,urban,57.0,% of students,24,Table 2
+chandigarh,2025,others,male,urban,,% of students,24,Table 2
+chandigarh,2025,government,female,urban,63.5,% of students,24,Table 2
+chandigarh,2025,private aided,female,urban,7.7,% of students,24,Table 2
+chandigarh,2025,private unaided (recognised),female,urban,28.9,% of students,24,Table 2
+chandigarh,2025,others,female,urban,,% of students,24,Table 2
+chandigarh,2025,government,person,urban,45.4,% of students,24,Table 2
+chandigarh,2025,private aided,person,urban,11.8,% of students,24,Table 2
+chandigarh,2025,private unaided (recognised),person,urban,42.8,% of students,24,Table 2
+chandigarh,2025,others,person,urban,,% of students,24,Table 2
+chandigarh,2025,government,male,rural+urban,27.0,% of students,24,Table 2
+chandigarh,2025,private aided,male,rural+urban,16.0,% of students,24,Table 2
+chandigarh,2025,private unaided (recognised),male,rural+urban,57.0,% of students,24,Table 2
+chandigarh,2025,others,male,rural+urban,,% of students,24,Table 2
+chandigarh,2025,government,female,rural+urban,63.5,% of students,24,Table 2
+chandigarh,2025,private aided,female,rural+urban,7.7,% of students,24,Table 2
+chandigarh,2025,private unaided (recognised),female,rural+urban,28.9,% of students,24,Table 2
+chandigarh,2025,others,female,rural+urban,,% of students,24,Table 2
+chandigarh,2025,government,person,rural+urban,45.4,% of students,24,Table 2
+chandigarh,2025,private aided,person,rural+urban,11.8,% of students,24,Table 2
+chandigarh,2025,private unaided (recognised),person,rural+urban,42.8,% of students,24,Table 2
+chandigarh,2025,others,person,rural+urban,,% of students,24,Table 2
+chhattisgarh,2025,government,male,rural,88.8,% of students,24,Table 2
+chhattisgarh,2025,private aided,male,rural,3.5,% of students,24,Table 2
+chhattisgarh,2025,private unaided (recognised),male,rural,7.7,% of students,24,Table 2
+chhattisgarh,2025,others,male,rural,0.1,% of students,24,Table 2
+chhattisgarh,2025,government,female,rural,88.0,% of students,24,Table 2
+chhattisgarh,2025,private aided,female,rural,3.9,% of students,24,Table 2
+chhattisgarh,2025,private unaided (recognised),female,rural,7.8,% of students,24,Table 2
+chhattisgarh,2025,others,female,rural,0.3,% of students,24,Table 2
+chhattisgarh,2025,government,person,rural,88.4,% of students,24,Table 2
+chhattisgarh,2025,private aided,person,rural,3.7,% of students,24,Table 2
+chhattisgarh,2025,private unaided (recognised),person,rural,7.7,% of students,24,Table 2
+chhattisgarh,2025,others,person,rural,0.2,% of students,24,Table 2
+chhattisgarh,2025,government,male,urban,53.8,% of students,24,Table 2
+chhattisgarh,2025,private aided,male,urban,10.6,% of students,24,Table 2
+chhattisgarh,2025,private unaided (recognised),male,urban,35.3,% of students,24,Table 2
+chhattisgarh,2025,others,male,urban,0.3,% of students,24,Table 2
+chhattisgarh,2025,government,female,urban,52.5,% of students,24,Table 2
+chhattisgarh,2025,private aided,female,urban,12.6,% of students,24,Table 2
+chhattisgarh,2025,private unaided (recognised),female,urban,34.5,% of students,24,Table 2
+chhattisgarh,2025,others,female,urban,0.3,% of students,24,Table 2
+chhattisgarh,2025,government,person,urban,53.2,% of students,24,Table 2
+chhattisgarh,2025,private aided,person,urban,11.6,% of students,24,Table 2
+chhattisgarh,2025,private unaided (recognised),person,urban,34.9,% of students,24,Table 2
+chhattisgarh,2025,others,person,urban,0.3,% of students,24,Table 2
+chhattisgarh,2025,government,male,rural+urban,82.4,% of students,24,Table 2
+chhattisgarh,2025,private aided,male,rural+urban,4.8,% of students,24,Table 2
+chhattisgarh,2025,private unaided (recognised),male,rural+urban,12.7,% of students,24,Table 2
+chhattisgarh,2025,others,male,rural+urban,0.1,% of students,24,Table 2
+chhattisgarh,2025,government,female,rural+urban,81.1,% of students,24,Table 2
+chhattisgarh,2025,private aided,female,rural+urban,5.6,% of students,24,Table 2
+chhattisgarh,2025,private unaided (recognised),female,rural+urban,13.0,% of students,24,Table 2
+chhattisgarh,2025,others,female,rural+urban,0.3,% of students,24,Table 2
+chhattisgarh,2025,government,person,rural+urban,81.8,% of students,24,Table 2
+chhattisgarh,2025,private aided,person,rural+urban,5.2,% of students,24,Table 2
+chhattisgarh,2025,private unaided (recognised),person,rural+urban,12.8,% of students,24,Table 2
+chhattisgarh,2025,others,person,rural+urban,0.2,% of students,24,Table 2
+delhi,2025,government,male,rural,69.3,% of students,24,Table 2
+delhi,2025,private aided,male,rural,2.8,% of students,24,Table 2
+delhi,2025,private unaided (recognised),male,rural,25.5,% of students,24,Table 2
+delhi,2025,others,male,rural,2.5,% of students,24,Table 2
+delhi,2025,government,female,rural,61.7,% of students,24,Table 2
+delhi,2025,private aided,female,rural,1.3,% of students,24,Table 2
+delhi,2025,private unaided (recognised),female,rural,37.0,% of students,24,Table 2
+delhi,2025,others,female,rural,0.1,% of students,24,Table 2
+delhi,2025,government,person,rural,66.4,% of students,24,Table 2
+delhi,2025,private aided,person,rural,2.2,% of students,24,Table 2
+delhi,2025,private unaided (recognised),person,rural,29.8,% of students,24,Table 2
+delhi,2025,others,person,rural,1.6,% of students,24,Table 2
+delhi,2025,government,male,urban,52.8,% of students,24,Table 2
+delhi,2025,private aided,male,urban,5.3,% of students,24,Table 2
+delhi,2025,private unaided (recognised),male,urban,39.7,% of students,24,Table 2
+delhi,2025,others,male,urban,2.2,% of students,24,Table 2
+delhi,2025,government,female,urban,65.4,% of students,24,Table 2
+delhi,2025,private aided,female,urban,7.1,% of students,24,Table 2
+delhi,2025,private unaided (recognised),female,urban,26.0,% of students,24,Table 2
+delhi,2025,others,female,urban,1.4,% of students,24,Table 2
+delhi,2025,government,person,urban,58.2,% of students,24,Table 2
+delhi,2025,private aided,person,urban,6.1,% of students,24,Table 2
+delhi,2025,private unaided (recognised),person,urban,33.8,% of students,24,Table 2
+delhi,2025,others,person,urban,1.9,% of students,24,Table 2
+delhi,2025,government,male,rural+urban,53.9,% of students,24,Table 2
+delhi,2025,private aided,male,rural+urban,5.1,% of students,24,Table 2
+delhi,2025,private unaided (recognised),male,rural+urban,38.8,% of students,24,Table 2
+delhi,2025,others,male,rural+urban,2.3,% of students,24,Table 2
+delhi,2025,government,female,rural+urban,65.2,% of students,24,Table 2
+delhi,2025,private aided,female,rural+urban,6.8,% of students,24,Table 2
+delhi,2025,private unaided (recognised),female,rural+urban,26.6,% of students,24,Table 2
+delhi,2025,others,female,rural+urban,1.4,% of students,24,Table 2
+delhi,2025,government,person,rural+urban,58.7,% of students,24,Table 2
+delhi,2025,private aided,person,rural+urban,5.8,% of students,24,Table 2
+delhi,2025,private unaided (recognised),person,rural+urban,33.6,% of students,24,Table 2
+delhi,2025,others,person,rural+urban,1.9,% of students,24,Table 2
+dnh-dd,2025,government,male,rural,78.6,% of students,24,Table 2
+dnh-dd,2025,private aided,male,rural,14.0,% of students,24,Table 2
+dnh-dd,2025,private unaided (recognised),male,rural,7.4,% of students,24,Table 2
+dnh-dd,2025,others,male,rural,,% of students,24,Table 2
+dnh-dd,2025,government,female,rural,86.5,% of students,24,Table 2
+dnh-dd,2025,private aided,female,rural,0.8,% of students,24,Table 2
+dnh-dd,2025,private unaided (recognised),female,rural,12.7,% of students,24,Table 2
+dnh-dd,2025,others,female,rural,,% of students,24,Table 2
+dnh-dd,2025,government,person,rural,82.7,% of students,24,Table 2
+dnh-dd,2025,private aided,person,rural,7.1,% of students,24,Table 2
+dnh-dd,2025,private unaided (recognised),person,rural,10.2,% of students,24,Table 2
+dnh-dd,2025,others,person,rural,,% of students,24,Table 2
+dnh-dd,2025,government,male,urban,44.9,% of students,24,Table 2
+dnh-dd,2025,private aided,male,urban,0.1,% of students,24,Table 2
+dnh-dd,2025,private unaided (recognised),male,urban,55.0,% of students,24,Table 2
+dnh-dd,2025,others,male,urban,,% of students,24,Table 2
+dnh-dd,2025,government,female,urban,56.2,% of students,24,Table 2
+dnh-dd,2025,private aided,female,urban,,% of students,24,Table 2
+dnh-dd,2025,private unaided (recognised),female,urban,43.8,% of students,24,Table 2
+dnh-dd,2025,others,female,urban,,% of students,24,Table 2
+dnh-dd,2025,government,person,urban,50.9,% of students,24,Table 2
+dnh-dd,2025,private aided,person,urban,0.0,% of students,24,Table 2
+dnh-dd,2025,private unaided (recognised),person,urban,49.1,% of students,24,Table 2
+dnh-dd,2025,others,person,urban,,% of students,24,Table 2
+dnh-dd,2025,government,male,rural+urban,60.9,% of students,24,Table 2
+dnh-dd,2025,private aided,male,rural+urban,6.7,% of students,24,Table 2
+dnh-dd,2025,private unaided (recognised),male,rural+urban,32.4,% of students,24,Table 2
+dnh-dd,2025,others,male,rural+urban,,% of students,24,Table 2
+dnh-dd,2025,government,female,rural+urban,70.3,% of students,24,Table 2
+dnh-dd,2025,private aided,female,rural+urban,0.4,% of students,24,Table 2
+dnh-dd,2025,private unaided (recognised),female,rural+urban,29.3,% of students,24,Table 2
+dnh-dd,2025,others,female,rural+urban,,% of students,24,Table 2
+dnh-dd,2025,government,person,rural+urban,65.9,% of students,24,Table 2
+dnh-dd,2025,private aided,person,rural+urban,3.3,% of students,24,Table 2
+dnh-dd,2025,private unaided (recognised),person,rural+urban,30.8,% of students,24,Table 2
+dnh-dd,2025,others,person,rural+urban,,% of students,24,Table 2
+goa,2025,government,male,rural,16.4,% of students,24,Table 2
+goa,2025,private aided,male,rural,75.2,% of students,24,Table 2
+goa,2025,private unaided (recognised),male,rural,8.5,% of students,24,Table 2
+goa,2025,others,male,rural,,% of students,24,Table 2
+goa,2025,government,female,rural,32.5,% of students,24,Table 2
+goa,2025,private aided,female,rural,67.5,% of students,24,Table 2
+goa,2025,private unaided (recognised),female,rural,,% of students,24,Table 2
+goa,2025,others,female,rural,,% of students,24,Table 2
+goa,2025,government,person,rural,23.1,% of students,24,Table 2
+goa,2025,private aided,person,rural,72.5,% of students,24,Table 2
+goa,2025,private unaided (recognised),person,rural,4.4,% of students,24,Table 2
+goa,2025,others,person,rural,,% of students,24,Table 2
+goa,2025,government,male,urban,19.5,% of students,24,Table 2
+goa,2025,private aided,male,urban,61.0,% of students,24,Table 2
+goa,2025,private unaided (recognised),male,urban,19.5,% of students,24,Table 2
+goa,2025,others,male,urban,,% of students,24,Table 2
+goa,2025,government,female,urban,4.6,% of students,24,Table 2
+goa,2025,private aided,female,urban,80.7,% of students,24,Table 2
+goa,2025,private unaided (recognised),female,urban,14.7,% of students,24,Table 2
+goa,2025,others,female,urban,,% of students,24,Table 2
+goa,2025,government,person,urban,10.3,% of students,24,Table 2
+goa,2025,private aided,person,urban,73.2,% of students,24,Table 2
+goa,2025,private unaided (recognised),person,urban,16.5,% of students,24,Table 2
+goa,2025,others,person,urban,,% of students,24,Table 2
+goa,2025,government,male,rural+urban,18.0,% of students,24,Table 2
+goa,2025,private aided,male,rural+urban,67.6,% of students,24,Table 2
+goa,2025,private unaided (recognised),male,rural+urban,14.4,% of students,24,Table 2
+goa,2025,others,male,rural+urban,,% of students,24,Table 2
+goa,2025,government,female,rural+urban,13.5,% of students,24,Table 2
+goa,2025,private aided,female,rural+urban,76.5,% of students,24,Table 2
+goa,2025,private unaided (recognised),female,rural+urban,10.0,% of students,24,Table 2
+goa,2025,others,female,rural+urban,,% of students,24,Table 2
+goa,2025,government,person,rural+urban,15.3,% of students,24,Table 2
+goa,2025,private aided,person,rural+urban,72.9,% of students,24,Table 2
+goa,2025,private unaided (recognised),person,rural+urban,11.8,% of students,24,Table 2
+goa,2025,others,person,rural+urban,,% of students,24,Table 2
+gujarat,2025,government,male,rural,75.2,% of students,24,Table 2
+gujarat,2025,private aided,male,rural,11.7,% of students,24,Table 2
+gujarat,2025,private unaided (recognised),male,rural,12.8,% of students,24,Table 2
+gujarat,2025,others,male,rural,0.3,% of students,24,Table 2
+gujarat,2025,government,female,rural,80.5,% of students,24,Table 2
+gujarat,2025,private aided,female,rural,8.9,% of students,24,Table 2
+gujarat,2025,private unaided (recognised),female,rural,10.1,% of students,24,Table 2
+gujarat,2025,others,female,rural,0.5,% of students,24,Table 2
+gujarat,2025,government,person,rural,77.6,% of students,24,Table 2
+gujarat,2025,private aided,person,rural,10.4,% of students,24,Table 2
+gujarat,2025,private unaided (recognised),person,rural,11.6,% of students,24,Table 2
+gujarat,2025,others,person,rural,0.4,% of students,24,Table 2
+gujarat,2025,government,male,urban,28.7,% of students,24,Table 2
+gujarat,2025,private aided,male,urban,21.3,% of students,24,Table 2
+gujarat,2025,private unaided (recognised),male,urban,49.4,% of students,24,Table 2
+gujarat,2025,others,male,urban,0.6,% of students,24,Table 2
+gujarat,2025,government,female,urban,39.2,% of students,24,Table 2
+gujarat,2025,private aided,female,urban,26.2,% of students,24,Table 2
+gujarat,2025,private unaided (recognised),female,urban,34.3,% of students,24,Table 2
+gujarat,2025,others,female,urban,0.3,% of students,24,Table 2
+gujarat,2025,government,person,urban,33.5,% of students,24,Table 2
+gujarat,2025,private aided,person,urban,23.6,% of students,24,Table 2
+gujarat,2025,private unaided (recognised),person,urban,42.4,% of students,24,Table 2
+gujarat,2025,others,person,urban,0.5,% of students,24,Table 2
+gujarat,2025,government,male,rural+urban,57.5,% of students,24,Table 2
+gujarat,2025,private aided,male,rural+urban,15.3,% of students,24,Table 2
+gujarat,2025,private unaided (recognised),male,rural+urban,26.8,% of students,24,Table 2
+gujarat,2025,others,male,rural+urban,0.4,% of students,24,Table 2
+gujarat,2025,government,female,rural+urban,64.2,% of students,24,Table 2
+gujarat,2025,private aided,female,rural+urban,15.7,% of students,24,Table 2
+gujarat,2025,private unaided (recognised),female,rural+urban,19.6,% of students,24,Table 2
+gujarat,2025,others,female,rural+urban,0.4,% of students,24,Table 2
+gujarat,2025,government,person,rural+urban,60.6,% of students,24,Table 2
+gujarat,2025,private aided,person,rural+urban,15.5,% of students,24,Table 2
+gujarat,2025,private unaided (recognised),person,rural+urban,23.5,% of students,24,Table 2
+gujarat,2025,others,person,rural+urban,0.4,% of students,24,Table 2
+haryana,2025,government,male,rural,54.2,% of students,24,Table 2
+haryana,2025,private aided,male,rural,3.9,% of students,24,Table 2
+haryana,2025,private unaided (recognised),male,rural,41.3,% of students,24,Table 2
+haryana,2025,others,male,rural,0.5,% of students,24,Table 2
+haryana,2025,government,female,rural,59.7,% of students,24,Table 2
+haryana,2025,private aided,female,rural,2.0,% of students,24,Table 2
+haryana,2025,private unaided (recognised),female,rural,37.5,% of students,24,Table 2
+haryana,2025,others,female,rural,0.8,% of students,24,Table 2
+haryana,2025,government,person,rural,56.9,% of students,24,Table 2
+haryana,2025,private aided,person,rural,3.0,% of students,24,Table 2
+haryana,2025,private unaided (recognised),person,rural,39.4,% of students,24,Table 2
+haryana,2025,others,person,rural,0.7,% of students,24,Table 2
+haryana,2025,government,male,urban,15.8,% of students,24,Table 2
+haryana,2025,private aided,male,urban,24.9,% of students,24,Table 2
+haryana,2025,private unaided (recognised),male,urban,57.9,% of students,24,Table 2
+haryana,2025,others,male,urban,1.4,% of students,24,Table 2
+haryana,2025,government,female,urban,21.4,% of students,24,Table 2
+haryana,2025,private aided,female,urban,25.1,% of students,24,Table 2
+haryana,2025,private unaided (recognised),female,urban,50.9,% of students,24,Table 2
+haryana,2025,others,female,urban,2.5,% of students,24,Table 2
+haryana,2025,government,person,urban,18.2,% of students,24,Table 2
+haryana,2025,private aided,person,urban,25.0,% of students,24,Table 2
+haryana,2025,private unaided (recognised),person,urban,54.9,% of students,24,Table 2
+haryana,2025,others,person,urban,1.9,% of students,24,Table 2
+haryana,2025,government,male,rural+urban,38.1,% of students,24,Table 2
+haryana,2025,private aided,male,rural+urban,12.7,% of students,24,Table 2
+haryana,2025,private unaided (recognised),male,rural+urban,48.2,% of students,24,Table 2
+haryana,2025,others,male,rural+urban,0.9,% of students,24,Table 2
+haryana,2025,government,female,rural+urban,44.7,% of students,24,Table 2
+haryana,2025,private aided,female,rural+urban,11.1,% of students,24,Table 2
+haryana,2025,private unaided (recognised),female,rural+urban,42.8,% of students,24,Table 2
+haryana,2025,others,female,rural+urban,1.5,% of students,24,Table 2
+haryana,2025,government,person,rural+urban,41.2,% of students,24,Table 2
+haryana,2025,private aided,person,rural+urban,11.9,% of students,24,Table 2
+haryana,2025,private unaided (recognised),person,rural+urban,45.7,% of students,24,Table 2
+haryana,2025,others,person,rural+urban,1.2,% of students,24,Table 2
+himachal-pradesh,2025,government,male,rural,66.7,% of students,24,Table 2
+himachal-pradesh,2025,private aided,male,rural,,% of students,24,Table 2
+himachal-pradesh,2025,private unaided (recognised),male,rural,33.3,% of students,24,Table 2
+himachal-pradesh,2025,others,male,rural,,% of students,24,Table 2
+himachal-pradesh,2025,government,female,rural,72.4,% of students,24,Table 2
+himachal-pradesh,2025,private aided,female,rural,0.4,% of students,24,Table 2
+himachal-pradesh,2025,private unaided (recognised),female,rural,27.3,% of students,24,Table 2
+himachal-pradesh,2025,others,female,rural,,% of students,24,Table 2
+himachal-pradesh,2025,government,person,rural,69.2,% of students,24,Table 2
+himachal-pradesh,2025,private aided,person,rural,0.2,% of students,24,Table 2
+himachal-pradesh,2025,private unaided (recognised),person,rural,30.6,% of students,24,Table 2
+himachal-pradesh,2025,others,person,rural,,% of students,24,Table 2
+himachal-pradesh,2025,government,male,urban,21.0,% of students,24,Table 2
+himachal-pradesh,2025,private aided,male,urban,0.5,% of students,24,Table 2
+himachal-pradesh,2025,private unaided (recognised),male,urban,67.1,% of students,24,Table 2
+himachal-pradesh,2025,others,male,urban,11.4,% of students,24,Table 2
+himachal-pradesh,2025,government,female,urban,24.9,% of students,24,Table 2
+himachal-pradesh,2025,private aided,female,urban,,% of students,24,Table 2
+himachal-pradesh,2025,private unaided (recognised),female,urban,41.8,% of students,24,Table 2
+himachal-pradesh,2025,others,female,urban,33.3,% of students,24,Table 2
+himachal-pradesh,2025,government,person,urban,23.3,% of students,24,Table 2
+himachal-pradesh,2025,private aided,person,urban,0.2,% of students,24,Table 2
+himachal-pradesh,2025,private unaided (recognised),person,urban,52.2,% of students,24,Table 2
+himachal-pradesh,2025,others,person,urban,24.3,% of students,24,Table 2
+himachal-pradesh,2025,government,male,rural+urban,61.5,% of students,24,Table 2
+himachal-pradesh,2025,private aided,male,rural+urban,0.1,% of students,24,Table 2
+himachal-pradesh,2025,private unaided (recognised),male,rural+urban,37.1,% of students,24,Table 2
+himachal-pradesh,2025,others,male,rural+urban,1.3,% of students,24,Table 2
+himachal-pradesh,2025,government,female,rural+urban,63.4,% of students,24,Table 2
+himachal-pradesh,2025,private aided,female,rural+urban,0.3,% of students,24,Table 2
+himachal-pradesh,2025,private unaided (recognised),female,rural+urban,30.0,% of students,24,Table 2
+himachal-pradesh,2025,others,female,rural+urban,6.3,% of students,24,Table 2
+himachal-pradesh,2025,government,person,rural+urban,62.4,% of students,24,Table 2
+himachal-pradesh,2025,private aided,person,rural+urban,0.2,% of students,24,Table 2
+himachal-pradesh,2025,private unaided (recognised),person,rural+urban,33.8,% of students,24,Table 2
+himachal-pradesh,2025,others,person,rural+urban,3.6,% of students,24,Table 2
+jammu-kashmir,2025,government,male,rural,59.2,% of students,24,Table 2
+jammu-kashmir,2025,private aided,male,rural,11.0,% of students,24,Table 2
+jammu-kashmir,2025,private unaided (recognised),male,rural,29.4,% of students,24,Table 2
+jammu-kashmir,2025,others,male,rural,0.5,% of students,24,Table 2
+jammu-kashmir,2025,government,female,rural,67.4,% of students,24,Table 2
+jammu-kashmir,2025,private aided,female,rural,6.7,% of students,24,Table 2
+jammu-kashmir,2025,private unaided (recognised),female,rural,25.0,% of students,24,Table 2
+jammu-kashmir,2025,others,female,rural,0.9,% of students,24,Table 2
+jammu-kashmir,2025,government,person,rural,63.0,% of students,24,Table 2
+jammu-kashmir,2025,private aided,person,rural,9.0,% of students,24,Table 2
+jammu-kashmir,2025,private unaided (recognised),person,rural,27.4,% of students,24,Table 2
+jammu-kashmir,2025,others,person,rural,0.7,% of students,24,Table 2
+jammu-kashmir,2025,government,male,urban,18.4,% of students,24,Table 2
+jammu-kashmir,2025,private aided,male,urban,32.3,% of students,24,Table 2
+jammu-kashmir,2025,private unaided (recognised),male,urban,46.4,% of students,24,Table 2
+jammu-kashmir,2025,others,male,urban,3.0,% of students,24,Table 2
+jammu-kashmir,2025,government,female,urban,27.6,% of students,24,Table 2
+jammu-kashmir,2025,private aided,female,urban,33.4,% of students,24,Table 2
+jammu-kashmir,2025,private unaided (recognised),female,urban,38.9,% of students,24,Table 2
+jammu-kashmir,2025,others,female,urban,,% of students,24,Table 2
+jammu-kashmir,2025,government,person,urban,22.6,% of students,24,Table 2
+jammu-kashmir,2025,private aided,person,urban,32.7,% of students,24,Table 2
+jammu-kashmir,2025,private unaided (recognised),person,urban,43.0,% of students,24,Table 2
+jammu-kashmir,2025,others,person,urban,1.7,% of students,24,Table 2
+jammu-kashmir,2025,government,male,rural+urban,51.2,% of students,24,Table 2
+jammu-kashmir,2025,private aided,male,rural+urban,15.1,% of students,24,Table 2
+jammu-kashmir,2025,private unaided (recognised),male,rural+urban,32.7,% of students,24,Table 2
+jammu-kashmir,2025,others,male,rural+urban,1.0,% of students,24,Table 2
+jammu-kashmir,2025,government,female,rural+urban,60.3,% of students,24,Table 2
+jammu-kashmir,2025,private aided,female,rural+urban,11.4,% of students,24,Table 2
+jammu-kashmir,2025,private unaided (recognised),female,rural+urban,27.5,% of students,24,Table 2
+jammu-kashmir,2025,others,female,rural+urban,0.8,% of students,24,Table 2
+jammu-kashmir,2025,government,person,rural+urban,55.4,% of students,24,Table 2
+jammu-kashmir,2025,private aided,person,rural+urban,13.4,% of students,24,Table 2
+jammu-kashmir,2025,private unaided (recognised),person,rural+urban,30.3,% of students,24,Table 2
+jammu-kashmir,2025,others,person,rural+urban,0.9,% of students,24,Table 2
+jharkhand,2025,government,male,rural,80.5,% of students,24,Table 2
+jharkhand,2025,private aided,male,rural,2.4,% of students,24,Table 2
+jharkhand,2025,private unaided (recognised),male,rural,15.2,% of students,24,Table 2
+jharkhand,2025,others,male,rural,1.8,% of students,24,Table 2
+jharkhand,2025,government,female,rural,82.8,% of students,24,Table 2
+jharkhand,2025,private aided,female,rural,1.4,% of students,24,Table 2
+jharkhand,2025,private unaided (recognised),female,rural,13.8,% of students,24,Table 2
+jharkhand,2025,others,female,rural,2.0,% of students,24,Table 2
+jharkhand,2025,government,person,rural,81.6,% of students,24,Table 2
+jharkhand,2025,private aided,person,rural,1.9,% of students,24,Table 2
+jharkhand,2025,private unaided (recognised),person,rural,14.6,% of students,24,Table 2
+jharkhand,2025,others,person,rural,1.9,% of students,24,Table 2
+jharkhand,2025,government,male,urban,30.0,% of students,24,Table 2
+jharkhand,2025,private aided,male,urban,6.0,% of students,24,Table 2
+jharkhand,2025,private unaided (recognised),male,urban,60.7,% of students,24,Table 2
+jharkhand,2025,others,male,urban,3.3,% of students,24,Table 2
+jharkhand,2025,government,female,urban,44.5,% of students,24,Table 2
+jharkhand,2025,private aided,female,urban,4.2,% of students,24,Table 2
+jharkhand,2025,private unaided (recognised),female,urban,48.2,% of students,24,Table 2
+jharkhand,2025,others,female,urban,3.2,% of students,24,Table 2
+jharkhand,2025,government,person,urban,37.2,% of students,24,Table 2
+jharkhand,2025,private aided,person,urban,5.1,% of students,24,Table 2
+jharkhand,2025,private unaided (recognised),person,urban,54.5,% of students,24,Table 2
+jharkhand,2025,others,person,urban,3.2,% of students,24,Table 2
+jharkhand,2025,government,male,rural+urban,71.5,% of students,24,Table 2
+jharkhand,2025,private aided,male,rural+urban,3.1,% of students,24,Table 2
+jharkhand,2025,private unaided (recognised),male,rural+urban,23.4,% of students,24,Table 2
+jharkhand,2025,others,male,rural+urban,2.1,% of students,24,Table 2
+jharkhand,2025,government,female,rural+urban,75.2,% of students,24,Table 2
+jharkhand,2025,private aided,female,rural+urban,1.9,% of students,24,Table 2
+jharkhand,2025,private unaided (recognised),female,rural+urban,20.7,% of students,24,Table 2
+jharkhand,2025,others,female,rural+urban,2.2,% of students,24,Table 2
+jharkhand,2025,government,person,rural+urban,73.2,% of students,24,Table 2
+jharkhand,2025,private aided,person,rural+urban,2.5,% of students,24,Table 2
+jharkhand,2025,private unaided (recognised),person,rural+urban,22.1,% of students,24,Table 2
+jharkhand,2025,others,person,rural+urban,2.2,% of students,24,Table 2
+karnataka,2025,government,male,rural,68.6,% of students,24,Table 2
+karnataka,2025,private aided,male,rural,6.7,% of students,24,Table 2
+karnataka,2025,private unaided (recognised),male,rural,24.7,% of students,24,Table 2
+karnataka,2025,others,male,rural,,% of students,24,Table 2
+karnataka,2025,government,female,rural,74.5,% of students,24,Table 2
+karnataka,2025,private aided,female,rural,6.4,% of students,24,Table 2
+karnataka,2025,private unaided (recognised),female,rural,19.1,% of students,24,Table 2
+karnataka,2025,others,female,rural,,% of students,24,Table 2
+karnataka,2025,government,person,rural,71.4,% of students,24,Table 2
+karnataka,2025,private aided,person,rural,6.6,% of students,24,Table 2
+karnataka,2025,private unaided (recognised),person,rural,22.0,% of students,24,Table 2
+karnataka,2025,others,person,rural,,% of students,24,Table 2
+karnataka,2025,government,male,urban,19.4,% of students,24,Table 2
+karnataka,2025,private aided,male,urban,12.7,% of students,24,Table 2
+karnataka,2025,private unaided (recognised),male,urban,67.8,% of students,24,Table 2
+karnataka,2025,others,male,urban,0.1,% of students,24,Table 2
+karnataka,2025,government,female,urban,22.7,% of students,24,Table 2
+karnataka,2025,private aided,female,urban,14.8,% of students,24,Table 2
+karnataka,2025,private unaided (recognised),female,urban,62.5,% of students,24,Table 2
+karnataka,2025,others,female,urban,0.0,% of students,24,Table 2
+karnataka,2025,government,person,urban,21.0,% of students,24,Table 2
+karnataka,2025,private aided,person,urban,13.7,% of students,24,Table 2
+karnataka,2025,private unaided (recognised),person,urban,65.2,% of students,24,Table 2
+karnataka,2025,others,person,urban,0.1,% of students,24,Table 2
+karnataka,2025,government,male,rural+urban,51.2,% of students,24,Table 2
+karnataka,2025,private aided,male,rural+urban,8.8,% of students,24,Table 2
+karnataka,2025,private unaided (recognised),male,rural+urban,39.9,% of students,24,Table 2
+karnataka,2025,others,male,rural+urban,0.0,% of students,24,Table 2
+karnataka,2025,government,female,rural+urban,55.6,% of students,24,Table 2
+karnataka,2025,private aided,female,rural+urban,9.5,% of students,24,Table 2
+karnataka,2025,private unaided (recognised),female,rural+urban,34.9,% of students,24,Table 2
+karnataka,2025,others,female,rural+urban,0.0,% of students,24,Table 2
+karnataka,2025,government,person,rural+urban,53.3,% of students,24,Table 2
+karnataka,2025,private aided,person,rural+urban,9.1,% of students,24,Table 2
+karnataka,2025,private unaided (recognised),person,rural+urban,37.5,% of students,24,Table 2
+karnataka,2025,others,person,rural+urban,0.0,% of students,24,Table 2
+kerala,2025,government,male,rural,47.0,% of students,24,Table 2
+kerala,2025,private aided,male,rural,27.7,% of students,24,Table 2
+kerala,2025,private unaided (recognised),male,rural,25.3,% of students,24,Table 2
+kerala,2025,others,male,rural,,% of students,24,Table 2
+kerala,2025,government,female,rural,46.1,% of students,24,Table 2
+kerala,2025,private aided,female,rural,24.6,% of students,24,Table 2
+kerala,2025,private unaided (recognised),female,rural,27.9,% of students,24,Table 2
+kerala,2025,others,female,rural,1.3,% of students,24,Table 2
+kerala,2025,government,person,rural,46.6,% of students,24,Table 2
+kerala,2025,private aided,person,rural,26.3,% of students,24,Table 2
+kerala,2025,private unaided (recognised),person,rural,26.5,% of students,24,Table 2
+kerala,2025,others,person,rural,0.6,% of students,24,Table 2
+kerala,2025,government,male,urban,33.2,% of students,24,Table 2
+kerala,2025,private aided,male,urban,29.2,% of students,24,Table 2
+kerala,2025,private unaided (recognised),male,urban,36.2,% of students,24,Table 2
+kerala,2025,others,male,urban,1.4,% of students,24,Table 2
+kerala,2025,government,female,urban,32.0,% of students,24,Table 2
+kerala,2025,private aided,female,urban,32.7,% of students,24,Table 2
+kerala,2025,private unaided (recognised),female,urban,32.8,% of students,24,Table 2
+kerala,2025,others,female,urban,2.4,% of students,24,Table 2
+kerala,2025,government,person,urban,32.5,% of students,24,Table 2
+kerala,2025,private aided,person,urban,31.2,% of students,24,Table 2
+kerala,2025,private unaided (recognised),person,urban,34.4,% of students,24,Table 2
+kerala,2025,others,person,urban,2.0,% of students,24,Table 2
+kerala,2025,government,male,rural+urban,40.6,% of students,24,Table 2
+kerala,2025,private aided,male,rural+urban,28.4,% of students,24,Table 2
+kerala,2025,private unaided (recognised),male,rural+urban,30.3,% of students,24,Table 2
+kerala,2025,others,male,rural+urban,0.7,% of students,24,Table 2
+kerala,2025,government,female,rural+urban,38.7,% of students,24,Table 2
+kerala,2025,private aided,female,rural+urban,28.9,% of students,24,Table 2
+kerala,2025,private unaided (recognised),female,rural+urban,30.5,% of students,24,Table 2
+kerala,2025,others,female,rural+urban,1.9,% of students,24,Table 2
+kerala,2025,government,person,rural+urban,39.6,% of students,24,Table 2
+kerala,2025,private aided,person,rural+urban,28.7,% of students,24,Table 2
+kerala,2025,private unaided (recognised),person,rural+urban,30.4,% of students,24,Table 2
+kerala,2025,others,person,rural+urban,1.3,% of students,24,Table 2
+ladakh,2025,government,male,rural,45.8,% of students,24,Table 2
+ladakh,2025,private aided,male,rural,2.0,% of students,24,Table 2
+ladakh,2025,private unaided (recognised),male,rural,49.5,% of students,24,Table 2
+ladakh,2025,others,male,rural,2.7,% of students,24,Table 2
+ladakh,2025,government,female,rural,59.3,% of students,24,Table 2
+ladakh,2025,private aided,female,rural,,% of students,24,Table 2
+ladakh,2025,private unaided (recognised),female,rural,40.7,% of students,24,Table 2
+ladakh,2025,others,female,rural,,% of students,24,Table 2
+ladakh,2025,government,person,rural,52.8,% of students,24,Table 2
+ladakh,2025,private aided,person,rural,1.0,% of students,24,Table 2
+ladakh,2025,private unaided (recognised),person,rural,44.9,% of students,24,Table 2
+ladakh,2025,others,person,rural,1.3,% of students,24,Table 2
+ladakh,2025,government,male,urban,62.8,% of students,24,Table 2
+ladakh,2025,private aided,male,urban,13.6,% of students,24,Table 2
+ladakh,2025,private unaided (recognised),male,urban,19.9,% of students,24,Table 2
+ladakh,2025,others,male,urban,3.6,% of students,24,Table 2
+ladakh,2025,government,female,urban,56.9,% of students,24,Table 2
+ladakh,2025,private aided,female,urban,8.2,% of students,24,Table 2
+ladakh,2025,private unaided (recognised),female,urban,34.9,% of students,24,Table 2
+ladakh,2025,others,female,urban,,% of students,24,Table 2
+ladakh,2025,government,person,urban,59.5,% of students,24,Table 2
+ladakh,2025,private aided,person,urban,10.6,% of students,24,Table 2
+ladakh,2025,private unaided (recognised),person,urban,28.3,% of students,24,Table 2
+ladakh,2025,others,person,urban,1.6,% of students,24,Table 2
+ladakh,2025,government,male,rural+urban,48.2,% of students,24,Table 2
+ladakh,2025,private aided,male,rural+urban,3.6,% of students,24,Table 2
+ladakh,2025,private unaided (recognised),male,rural+urban,45.4,% of students,24,Table 2
+ladakh,2025,others,male,rural+urban,2.9,% of students,24,Table 2
+ladakh,2025,government,female,rural+urban,58.9,% of students,24,Table 2
+ladakh,2025,private aided,female,rural+urban,1.3,% of students,24,Table 2
+ladakh,2025,private unaided (recognised),female,rural+urban,39.8,% of students,24,Table 2
+ladakh,2025,others,female,rural+urban,,% of students,24,Table 2
+ladakh,2025,government,person,rural+urban,53.8,% of students,24,Table 2
+ladakh,2025,private aided,person,rural+urban,2.4,% of students,24,Table 2
+ladakh,2025,private unaided (recognised),person,rural+urban,42.4,% of students,24,Table 2
+ladakh,2025,others,person,rural+urban,1.4,% of students,24,Table 2
+lakshadweep,2025,government,male,rural,84.1,% of students,24,Table 2
+lakshadweep,2025,private aided,male,rural,,% of students,24,Table 2
+lakshadweep,2025,private unaided (recognised),male,rural,15.9,% of students,24,Table 2
+lakshadweep,2025,others,male,rural,,% of students,24,Table 2
+lakshadweep,2025,government,female,rural,89.7,% of students,24,Table 2
+lakshadweep,2025,private aided,female,rural,,% of students,24,Table 2
+lakshadweep,2025,private unaided (recognised),female,rural,10.3,% of students,24,Table 2
+lakshadweep,2025,others,female,rural,,% of students,24,Table 2
+lakshadweep,2025,government,person,rural,87.1,% of students,24,Table 2
+lakshadweep,2025,private aided,person,rural,,% of students,24,Table 2
+lakshadweep,2025,private unaided (recognised),person,rural,12.9,% of students,24,Table 2
+lakshadweep,2025,others,person,rural,,% of students,24,Table 2
+lakshadweep,2025,government,male,urban,85.3,% of students,24,Table 2
+lakshadweep,2025,private aided,male,urban,,% of students,24,Table 2
+lakshadweep,2025,private unaided (recognised),male,urban,12.1,% of students,24,Table 2
+lakshadweep,2025,others,male,urban,2.6,% of students,24,Table 2
+lakshadweep,2025,government,female,urban,96.1,% of students,24,Table 2
+lakshadweep,2025,private aided,female,urban,,% of students,24,Table 2
+lakshadweep,2025,private unaided (recognised),female,urban,3.9,% of students,24,Table 2
+lakshadweep,2025,others,female,urban,,% of students,24,Table 2
+lakshadweep,2025,government,person,urban,91.5,% of students,24,Table 2
+lakshadweep,2025,private aided,person,urban,,% of students,24,Table 2
+lakshadweep,2025,private unaided (recognised),person,urban,7.4,% of students,24,Table 2
+lakshadweep,2025,others,person,urban,1.1,% of students,24,Table 2
+lakshadweep,2025,government,male,rural+urban,85.1,% of students,24,Table 2
+lakshadweep,2025,private aided,male,rural+urban,,% of students,24,Table 2
+lakshadweep,2025,private unaided (recognised),male,rural+urban,12.9,% of students,24,Table 2
+lakshadweep,2025,others,male,rural+urban,2.1,% of students,24,Table 2
+lakshadweep,2025,government,female,rural+urban,95.0,% of students,24,Table 2
+lakshadweep,2025,private aided,female,rural+urban,,% of students,24,Table 2
+lakshadweep,2025,private unaided (recognised),female,rural+urban,5.0,% of students,24,Table 2
+lakshadweep,2025,others,female,rural+urban,,% of students,24,Table 2
+lakshadweep,2025,government,person,rural+urban,90.6,% of students,24,Table 2
+lakshadweep,2025,private aided,person,rural+urban,,% of students,24,Table 2
+lakshadweep,2025,private unaided (recognised),person,rural+urban,8.5,% of students,24,Table 2
+lakshadweep,2025,others,person,rural+urban,0.9,% of students,24,Table 2
+madhya-pradesh,2025,government,male,rural,68.7,% of students,24,Table 2
+madhya-pradesh,2025,private aided,male,rural,2.9,% of students,24,Table 2
+madhya-pradesh,2025,private unaided (recognised),male,rural,28.4,% of students,24,Table 2
+madhya-pradesh,2025,others,male,rural,0.0,% of students,24,Table 2
+madhya-pradesh,2025,government,female,rural,79.1,% of students,24,Table 2
+madhya-pradesh,2025,private aided,female,rural,1.9,% of students,24,Table 2
+madhya-pradesh,2025,private unaided (recognised),female,rural,19.0,% of students,24,Table 2
+madhya-pradesh,2025,others,female,rural,,% of students,24,Table 2
+madhya-pradesh,2025,government,person,rural,73.8,% of students,24,Table 2
+madhya-pradesh,2025,private aided,person,rural,2.4,% of students,24,Table 2
+madhya-pradesh,2025,private unaided (recognised),person,rural,23.8,% of students,24,Table 2
+madhya-pradesh,2025,others,person,rural,0.0,% of students,24,Table 2
+madhya-pradesh,2025,government,male,urban,21.2,% of students,24,Table 2
+madhya-pradesh,2025,private aided,male,urban,11.8,% of students,24,Table 2
+madhya-pradesh,2025,private unaided (recognised),male,urban,66.9,% of students,24,Table 2
+madhya-pradesh,2025,others,male,urban,0.1,% of students,24,Table 2
+madhya-pradesh,2025,government,female,urban,29.6,% of students,24,Table 2
+madhya-pradesh,2025,private aided,female,urban,11.4,% of students,24,Table 2
+madhya-pradesh,2025,private unaided (recognised),female,urban,58.9,% of students,24,Table 2
+madhya-pradesh,2025,others,female,urban,0.1,% of students,24,Table 2
+madhya-pradesh,2025,government,person,urban,25.1,% of students,24,Table 2
+madhya-pradesh,2025,private aided,person,urban,11.7,% of students,24,Table 2
+madhya-pradesh,2025,private unaided (recognised),person,urban,63.2,% of students,24,Table 2
+madhya-pradesh,2025,others,person,urban,0.1,% of students,24,Table 2
+madhya-pradesh,2025,government,male,rural+urban,55.6,% of students,24,Table 2
+madhya-pradesh,2025,private aided,male,rural+urban,5.4,% of students,24,Table 2
+madhya-pradesh,2025,private unaided (recognised),male,rural+urban,39.0,% of students,24,Table 2
+madhya-pradesh,2025,others,male,rural+urban,0.0,% of students,24,Table 2
+madhya-pradesh,2025,government,female,rural+urban,66.3,% of students,24,Table 2
+madhya-pradesh,2025,private aided,female,rural+urban,4.4,% of students,24,Table 2
+madhya-pradesh,2025,private unaided (recognised),female,rural+urban,29.3,% of students,24,Table 2
+madhya-pradesh,2025,others,female,rural+urban,0.0,% of students,24,Table 2
+madhya-pradesh,2025,government,person,rural+urban,60.7,% of students,24,Table 2
+madhya-pradesh,2025,private aided,person,rural+urban,4.9,% of students,24,Table 2
+madhya-pradesh,2025,private unaided (recognised),person,rural+urban,34.3,% of students,24,Table 2
+madhya-pradesh,2025,others,person,rural+urban,0.0,% of students,24,Table 2
+maharashtra,2025,government,male,rural,53.8,% of students,24,Table 2
+maharashtra,2025,private aided,male,rural,29.7,% of students,24,Table 2
+maharashtra,2025,private unaided (recognised),male,rural,16.4,% of students,24,Table 2
+maharashtra,2025,others,male,rural,0.1,% of students,24,Table 2
+maharashtra,2025,government,female,rural,59.8,% of students,24,Table 2
+maharashtra,2025,private aided,female,rural,27.8,% of students,24,Table 2
+maharashtra,2025,private unaided (recognised),female,rural,12.0,% of students,24,Table 2
+maharashtra,2025,others,female,rural,0.4,% of students,24,Table 2
+maharashtra,2025,government,person,rural,56.6,% of students,24,Table 2
+maharashtra,2025,private aided,person,rural,28.8,% of students,24,Table 2
+maharashtra,2025,private unaided (recognised),person,rural,14.4,% of students,24,Table 2
+maharashtra,2025,others,person,rural,0.2,% of students,24,Table 2
+maharashtra,2025,government,male,urban,18.2,% of students,24,Table 2
+maharashtra,2025,private aided,male,urban,34.8,% of students,24,Table 2
+maharashtra,2025,private unaided (recognised),male,urban,46.4,% of students,24,Table 2
+maharashtra,2025,others,male,urban,0.7,% of students,24,Table 2
+maharashtra,2025,government,female,urban,25.0,% of students,24,Table 2
+maharashtra,2025,private aided,female,urban,39.0,% of students,24,Table 2
+maharashtra,2025,private unaided (recognised),female,urban,35.6,% of students,24,Table 2
+maharashtra,2025,others,female,urban,0.4,% of students,24,Table 2
+maharashtra,2025,government,person,urban,21.4,% of students,24,Table 2
+maharashtra,2025,private aided,person,urban,36.8,% of students,24,Table 2
+maharashtra,2025,private unaided (recognised),person,urban,41.2,% of students,24,Table 2
+maharashtra,2025,others,person,urban,0.6,% of students,24,Table 2
+maharashtra,2025,government,male,rural+urban,37.8,% of students,24,Table 2
+maharashtra,2025,private aided,male,rural+urban,32.0,% of students,24,Table 2
+maharashtra,2025,private unaided (recognised),male,rural+urban,29.9,% of students,24,Table 2
+maharashtra,2025,others,male,rural+urban,0.4,% of students,24,Table 2
+maharashtra,2025,government,female,rural+urban,43.5,% of students,24,Table 2
+maharashtra,2025,private aided,female,rural+urban,33.1,% of students,24,Table 2
+maharashtra,2025,private unaided (recognised),female,rural+urban,23.1,% of students,24,Table 2
+maharashtra,2025,others,female,rural+urban,0.4,% of students,24,Table 2
+maharashtra,2025,government,person,rural+urban,40.5,% of students,24,Table 2
+maharashtra,2025,private aided,person,rural+urban,32.5,% of students,24,Table 2
+maharashtra,2025,private unaided (recognised),person,rural+urban,26.7,% of students,24,Table 2
+maharashtra,2025,others,person,rural+urban,0.4,% of students,24,Table 2
+manipur,2025,government,male,rural,37.4,% of students,24,Table 2
+manipur,2025,private aided,male,rural,2.7,% of students,24,Table 2
+manipur,2025,private unaided (recognised),male,rural,59.8,% of students,24,Table 2
+manipur,2025,others,male,rural,,% of students,24,Table 2
+manipur,2025,government,female,rural,31.5,% of students,24,Table 2
+manipur,2025,private aided,female,rural,3.9,% of students,24,Table 2
+manipur,2025,private unaided (recognised),female,rural,64.5,% of students,24,Table 2
+manipur,2025,others,female,rural,,% of students,24,Table 2
+manipur,2025,government,person,rural,34.6,% of students,24,Table 2
+manipur,2025,private aided,person,rural,3.3,% of students,24,Table 2
+manipur,2025,private unaided (recognised),person,rural,62.1,% of students,24,Table 2
+manipur,2025,others,person,rural,,% of students,24,Table 2
+manipur,2025,government,male,urban,11.9,% of students,24,Table 2
+manipur,2025,private aided,male,urban,,% of students,24,Table 2
+manipur,2025,private unaided (recognised),male,urban,88.1,% of students,24,Table 2
+manipur,2025,others,male,urban,,% of students,24,Table 2
+manipur,2025,government,female,urban,20.1,% of students,24,Table 2
+manipur,2025,private aided,female,urban,0.1,% of students,24,Table 2
+manipur,2025,private unaided (recognised),female,urban,79.8,% of students,24,Table 2
+manipur,2025,others,female,urban,,% of students,24,Table 2
+manipur,2025,government,person,urban,16.1,% of students,24,Table 2
+manipur,2025,private aided,person,urban,0.0,% of students,24,Table 2
+manipur,2025,private unaided (recognised),person,urban,83.9,% of students,24,Table 2
+manipur,2025,others,person,urban,,% of students,24,Table 2
+manipur,2025,government,male,rural+urban,28.8,% of students,24,Table 2
+manipur,2025,private aided,male,rural+urban,1.8,% of students,24,Table 2
+manipur,2025,private unaided (recognised),male,rural+urban,69.4,% of students,24,Table 2
+manipur,2025,others,male,rural+urban,,% of students,24,Table 2
+manipur,2025,government,female,rural+urban,27.4,% of students,24,Table 2
+manipur,2025,private aided,female,rural+urban,2.5,% of students,24,Table 2
+manipur,2025,private unaided (recognised),female,rural+urban,70.1,% of students,24,Table 2
+manipur,2025,others,female,rural+urban,,% of students,24,Table 2
+manipur,2025,government,person,rural+urban,28.1,% of students,24,Table 2
+manipur,2025,private aided,person,rural+urban,2.2,% of students,24,Table 2
+manipur,2025,private unaided (recognised),person,rural+urban,69.7,% of students,24,Table 2
+manipur,2025,others,person,rural+urban,,% of students,24,Table 2
+meghalaya,2025,government,male,rural,55.4,% of students,24,Table 2
+meghalaya,2025,private aided,male,rural,33.7,% of students,24,Table 2
+meghalaya,2025,private unaided (recognised),male,rural,10.9,% of students,24,Table 2
+meghalaya,2025,others,male,rural,,% of students,24,Table 2
+meghalaya,2025,government,female,rural,53.1,% of students,24,Table 2
+meghalaya,2025,private aided,female,rural,34.8,% of students,24,Table 2
+meghalaya,2025,private unaided (recognised),female,rural,12.1,% of students,24,Table 2
+meghalaya,2025,others,female,rural,,% of students,24,Table 2
+meghalaya,2025,government,person,rural,54.3,% of students,24,Table 2
+meghalaya,2025,private aided,person,rural,34.2,% of students,24,Table 2
+meghalaya,2025,private unaided (recognised),person,rural,11.5,% of students,24,Table 2
+meghalaya,2025,others,person,rural,,% of students,24,Table 2
+meghalaya,2025,government,male,urban,17.6,% of students,24,Table 2
+meghalaya,2025,private aided,male,urban,51.5,% of students,24,Table 2
+meghalaya,2025,private unaided (recognised),male,urban,30.3,% of students,24,Table 2
+meghalaya,2025,others,male,urban,0.5,% of students,24,Table 2
+meghalaya,2025,government,female,urban,13.7,% of students,24,Table 2
+meghalaya,2025,private aided,female,urban,59.9,% of students,24,Table 2
+meghalaya,2025,private unaided (recognised),female,urban,26.4,% of students,24,Table 2
+meghalaya,2025,others,female,urban,,% of students,24,Table 2
+meghalaya,2025,government,person,urban,15.8,% of students,24,Table 2
+meghalaya,2025,private aided,person,urban,55.4,% of students,24,Table 2
+meghalaya,2025,private unaided (recognised),person,urban,28.5,% of students,24,Table 2
+meghalaya,2025,others,person,urban,0.3,% of students,24,Table 2
+meghalaya,2025,government,male,rural+urban,50.9,% of students,24,Table 2
+meghalaya,2025,private aided,male,rural+urban,35.8,% of students,24,Table 2
+meghalaya,2025,private unaided (recognised),male,rural+urban,13.2,% of students,24,Table 2
+meghalaya,2025,others,male,rural+urban,0.1,% of students,24,Table 2
+meghalaya,2025,government,female,rural+urban,49.0,% of students,24,Table 2
+meghalaya,2025,private aided,female,rural+urban,37.4,% of students,24,Table 2
+meghalaya,2025,private unaided (recognised),female,rural+urban,13.6,% of students,24,Table 2
+meghalaya,2025,others,female,rural+urban,,% of students,24,Table 2
+meghalaya,2025,government,person,rural+urban,50.0,% of students,24,Table 2
+meghalaya,2025,private aided,person,rural+urban,36.6,% of students,24,Table 2
+meghalaya,2025,private unaided (recognised),person,rural+urban,13.4,% of students,24,Table 2
+meghalaya,2025,others,person,rural+urban,0.0,% of students,24,Table 2
+mizoram,2025,government,male,rural,62.6,% of students,24,Table 2
+mizoram,2025,private aided,male,rural,8.8,% of students,24,Table 2
+mizoram,2025,private unaided (recognised),male,rural,28.6,% of students,24,Table 2
+mizoram,2025,others,male,rural,,% of students,24,Table 2
+mizoram,2025,government,female,rural,62.2,% of students,24,Table 2
+mizoram,2025,private aided,female,rural,13.7,% of students,24,Table 2
+mizoram,2025,private unaided (recognised),female,rural,24.1,% of students,24,Table 2
+mizoram,2025,others,female,rural,,% of students,24,Table 2
+mizoram,2025,government,person,rural,62.4,% of students,24,Table 2
+mizoram,2025,private aided,person,rural,11.1,% of students,24,Table 2
+mizoram,2025,private unaided (recognised),person,rural,26.5,% of students,24,Table 2
+mizoram,2025,others,person,rural,,% of students,24,Table 2
+mizoram,2025,government,male,urban,46.7,% of students,24,Table 2
+mizoram,2025,private aided,male,urban,10.6,% of students,24,Table 2
+mizoram,2025,private unaided (recognised),male,urban,42.8,% of students,24,Table 2
+mizoram,2025,others,male,urban,,% of students,24,Table 2
+mizoram,2025,government,female,urban,40.7,% of students,24,Table 2
+mizoram,2025,private aided,female,urban,18.1,% of students,24,Table 2
+mizoram,2025,private unaided (recognised),female,urban,41.2,% of students,24,Table 2
+mizoram,2025,others,female,urban,,% of students,24,Table 2
+mizoram,2025,government,person,urban,43.6,% of students,24,Table 2
+mizoram,2025,private aided,person,urban,14.4,% of students,24,Table 2
+mizoram,2025,private unaided (recognised),person,urban,42.0,% of students,24,Table 2
+mizoram,2025,others,person,urban,,% of students,24,Table 2
+mizoram,2025,government,male,rural+urban,55.8,% of students,24,Table 2
+mizoram,2025,private aided,male,rural+urban,9.6,% of students,24,Table 2
+mizoram,2025,private unaided (recognised),male,rural+urban,34.7,% of students,24,Table 2
+mizoram,2025,others,male,rural+urban,,% of students,24,Table 2
+mizoram,2025,government,female,rural+urban,51.9,% of students,24,Table 2
+mizoram,2025,private aided,female,rural+urban,15.8,% of students,24,Table 2
+mizoram,2025,private unaided (recognised),female,rural+urban,32.3,% of students,24,Table 2
+mizoram,2025,others,female,rural+urban,,% of students,24,Table 2
+mizoram,2025,government,person,rural+urban,53.9,% of students,24,Table 2
+mizoram,2025,private aided,person,rural+urban,12.6,% of students,24,Table 2
+mizoram,2025,private unaided (recognised),person,rural+urban,33.5,% of students,24,Table 2
+mizoram,2025,others,person,rural+urban,,% of students,24,Table 2
+nagaland,2025,government,male,rural,54.1,% of students,24,Table 2
+nagaland,2025,private aided,male,rural,0.3,% of students,24,Table 2
+nagaland,2025,private unaided (recognised),male,rural,45.3,% of students,24,Table 2
+nagaland,2025,others,male,rural,0.3,% of students,24,Table 2
+nagaland,2025,government,female,rural,57.2,% of students,24,Table 2
+nagaland,2025,private aided,female,rural,1.3,% of students,24,Table 2
+nagaland,2025,private unaided (recognised),female,rural,41.5,% of students,24,Table 2
+nagaland,2025,others,female,rural,,% of students,24,Table 2
+nagaland,2025,government,person,rural,55.6,% of students,24,Table 2
+nagaland,2025,private aided,person,rural,0.8,% of students,24,Table 2
+nagaland,2025,private unaided (recognised),person,rural,43.4,% of students,24,Table 2
+nagaland,2025,others,person,rural,0.2,% of students,24,Table 2
+nagaland,2025,government,male,urban,27.7,% of students,24,Table 2
+nagaland,2025,private aided,male,urban,2.3,% of students,24,Table 2
+nagaland,2025,private unaided (recognised),male,urban,70.0,% of students,24,Table 2
+nagaland,2025,others,male,urban,,% of students,24,Table 2
+nagaland,2025,government,female,urban,27.3,% of students,24,Table 2
+nagaland,2025,private aided,female,urban,0.1,% of students,24,Table 2
+nagaland,2025,private unaided (recognised),female,urban,72.7,% of students,24,Table 2
+nagaland,2025,others,female,urban,,% of students,24,Table 2
+nagaland,2025,government,person,urban,27.5,% of students,24,Table 2
+nagaland,2025,private aided,person,urban,1.3,% of students,24,Table 2
+nagaland,2025,private unaided (recognised),person,urban,71.2,% of students,24,Table 2
+nagaland,2025,others,person,urban,,% of students,24,Table 2
+nagaland,2025,government,male,rural+urban,45.9,% of students,24,Table 2
+nagaland,2025,private aided,male,rural+urban,0.9,% of students,24,Table 2
+nagaland,2025,private unaided (recognised),male,rural+urban,53.0,% of students,24,Table 2
+nagaland,2025,others,male,rural+urban,0.2,% of students,24,Table 2
+nagaland,2025,government,female,rural+urban,48.6,% of students,24,Table 2
+nagaland,2025,private aided,female,rural+urban,1.0,% of students,24,Table 2
+nagaland,2025,private unaided (recognised),female,rural+urban,50.4,% of students,24,Table 2
+nagaland,2025,others,female,rural+urban,,% of students,24,Table 2
+nagaland,2025,government,person,rural+urban,47.2,% of students,24,Table 2
+nagaland,2025,private aided,person,rural+urban,0.9,% of students,24,Table 2
+nagaland,2025,private unaided (recognised),person,rural+urban,51.7,% of students,24,Table 2
+nagaland,2025,others,person,rural+urban,0.1,% of students,24,Table 2
+odisha,2025,government,male,rural,87.7,% of students,24,Table 2
+odisha,2025,private aided,male,rural,4.2,% of students,24,Table 2
+odisha,2025,private unaided (recognised),male,rural,7.9,% of students,24,Table 2
+odisha,2025,others,male,rural,0.3,% of students,24,Table 2
+odisha,2025,government,female,rural,91.2,% of students,24,Table 2
+odisha,2025,private aided,female,rural,4.0,% of students,24,Table 2
+odisha,2025,private unaided (recognised),female,rural,4.3,% of students,24,Table 2
+odisha,2025,others,female,rural,0.5,% of students,24,Table 2
+odisha,2025,government,person,rural,89.4,% of students,24,Table 2
+odisha,2025,private aided,person,rural,4.1,% of students,24,Table 2
+odisha,2025,private unaided (recognised),person,rural,6.2,% of students,24,Table 2
+odisha,2025,others,person,rural,0.4,% of students,24,Table 2
+odisha,2025,government,male,urban,43.5,% of students,24,Table 2
+odisha,2025,private aided,male,urban,26.1,% of students,24,Table 2
+odisha,2025,private unaided (recognised),male,urban,30.4,% of students,24,Table 2
+odisha,2025,others,male,urban,,% of students,24,Table 2
+odisha,2025,government,female,urban,53.7,% of students,24,Table 2
+odisha,2025,private aided,female,urban,20.7,% of students,24,Table 2
+odisha,2025,private unaided (recognised),female,urban,25.6,% of students,24,Table 2
+odisha,2025,others,female,urban,0.0,% of students,24,Table 2
+odisha,2025,government,person,urban,47.9,% of students,24,Table 2
+odisha,2025,private aided,person,urban,23.7,% of students,24,Table 2
+odisha,2025,private unaided (recognised),person,urban,28.3,% of students,24,Table 2
+odisha,2025,others,person,urban,0.0,% of students,24,Table 2
+odisha,2025,government,male,rural+urban,77.9,% of students,24,Table 2
+odisha,2025,private aided,male,rural+urban,9.0,% of students,24,Table 2
+odisha,2025,private unaided (recognised),male,rural+urban,12.9,% of students,24,Table 2
+odisha,2025,others,male,rural+urban,0.2,% of students,24,Table 2
+odisha,2025,government,female,rural+urban,84.0,% of students,24,Table 2
+odisha,2025,private aided,female,rural+urban,7.2,% of students,24,Table 2
+odisha,2025,private unaided (recognised),female,rural+urban,8.4,% of students,24,Table 2
+odisha,2025,others,female,rural+urban,0.4,% of students,24,Table 2
+odisha,2025,government,person,rural+urban,80.8,% of students,24,Table 2
+odisha,2025,private aided,person,rural+urban,8.2,% of students,24,Table 2
+odisha,2025,private unaided (recognised),person,rural+urban,10.8,% of students,24,Table 2
+odisha,2025,others,person,rural+urban,0.3,% of students,24,Table 2
+puducherry,2025,government,male,rural,90.9,% of students,24,Table 2
+puducherry,2025,private aided,male,rural,,% of students,24,Table 2
+puducherry,2025,private unaided (recognised),male,rural,9.1,% of students,24,Table 2
+puducherry,2025,others,male,rural,,% of students,24,Table 2
+puducherry,2025,government,female,rural,69.1,% of students,24,Table 2
+puducherry,2025,private aided,female,rural,18.3,% of students,24,Table 2
+puducherry,2025,private unaided (recognised),female,rural,12.7,% of students,24,Table 2
+puducherry,2025,others,female,rural,,% of students,24,Table 2
+puducherry,2025,government,person,rural,80.5,% of students,24,Table 2
+puducherry,2025,private aided,person,rural,8.7,% of students,24,Table 2
+puducherry,2025,private unaided (recognised),person,rural,10.8,% of students,24,Table 2
+puducherry,2025,others,person,rural,,% of students,24,Table 2
+puducherry,2025,government,male,urban,40.0,% of students,24,Table 2
+puducherry,2025,private aided,male,urban,4.1,% of students,24,Table 2
+puducherry,2025,private unaided (recognised),male,urban,55.9,% of students,24,Table 2
+puducherry,2025,others,male,urban,,% of students,24,Table 2
+puducherry,2025,government,female,urban,46.4,% of students,24,Table 2
+puducherry,2025,private aided,female,urban,9.5,% of students,24,Table 2
+puducherry,2025,private unaided (recognised),female,urban,44.1,% of students,24,Table 2
+puducherry,2025,others,female,urban,,% of students,24,Table 2
+puducherry,2025,government,person,urban,42.6,% of students,24,Table 2
+puducherry,2025,private aided,person,urban,6.3,% of students,24,Table 2
+puducherry,2025,private unaided (recognised),person,urban,51.1,% of students,24,Table 2
+puducherry,2025,others,person,urban,,% of students,24,Table 2
+puducherry,2025,government,male,rural+urban,61.8,% of students,24,Table 2
+puducherry,2025,private aided,male,rural+urban,2.4,% of students,24,Table 2
+puducherry,2025,private unaided (recognised),male,rural+urban,35.8,% of students,24,Table 2
+puducherry,2025,others,male,rural+urban,,% of students,24,Table 2
+puducherry,2025,government,female,rural+urban,57.9,% of students,24,Table 2
+puducherry,2025,private aided,female,rural+urban,13.9,% of students,24,Table 2
+puducherry,2025,private unaided (recognised),female,rural+urban,28.2,% of students,24,Table 2
+puducherry,2025,others,female,rural+urban,,% of students,24,Table 2
+puducherry,2025,government,person,rural+urban,60.1,% of students,24,Table 2
+puducherry,2025,private aided,person,rural+urban,7.4,% of students,24,Table 2
+puducherry,2025,private unaided (recognised),person,rural+urban,32.5,% of students,24,Table 2
+puducherry,2025,others,person,rural+urban,,% of students,24,Table 2
+punjab,2025,government,male,rural,50.9,% of students,24,Table 2
+punjab,2025,private aided,male,rural,5.4,% of students,24,Table 2
+punjab,2025,private unaided (recognised),male,rural,43.7,% of students,24,Table 2
+punjab,2025,others,male,rural,,% of students,24,Table 2
+punjab,2025,government,female,rural,66.3,% of students,24,Table 2
+punjab,2025,private aided,female,rural,6.1,% of students,24,Table 2
+punjab,2025,private unaided (recognised),female,rural,27.5,% of students,24,Table 2
+punjab,2025,others,female,rural,,% of students,24,Table 2
+punjab,2025,government,person,rural,58.3,% of students,24,Table 2
+punjab,2025,private aided,person,rural,5.7,% of students,24,Table 2
+punjab,2025,private unaided (recognised),person,rural,36.0,% of students,24,Table 2
+punjab,2025,others,person,rural,,% of students,24,Table 2
+punjab,2025,government,male,urban,35.1,% of students,24,Table 2
+punjab,2025,private aided,male,urban,6.9,% of students,24,Table 2
+punjab,2025,private unaided (recognised),male,urban,57.8,% of students,24,Table 2
+punjab,2025,others,male,urban,0.1,% of students,24,Table 2
+punjab,2025,government,female,urban,48.8,% of students,24,Table 2
+punjab,2025,private aided,female,urban,4.3,% of students,24,Table 2
+punjab,2025,private unaided (recognised),female,urban,46.6,% of students,24,Table 2
+punjab,2025,others,female,urban,0.3,% of students,24,Table 2
+punjab,2025,government,person,urban,41.9,% of students,24,Table 2
+punjab,2025,private aided,person,urban,5.6,% of students,24,Table 2
+punjab,2025,private unaided (recognised),person,urban,52.3,% of students,24,Table 2
+punjab,2025,others,person,urban,0.2,% of students,24,Table 2
+punjab,2025,government,male,rural+urban,44.2,% of students,24,Table 2
+punjab,2025,private aided,male,rural+urban,6.0,% of students,24,Table 2
+punjab,2025,private unaided (recognised),male,rural+urban,49.7,% of students,24,Table 2
+punjab,2025,others,male,rural+urban,0.1,% of students,24,Table 2
+punjab,2025,government,female,rural+urban,58.4,% of students,24,Table 2
+punjab,2025,private aided,female,rural+urban,5.3,% of students,24,Table 2
+punjab,2025,private unaided (recognised),female,rural+urban,36.1,% of students,24,Table 2
+punjab,2025,others,female,rural+urban,0.1,% of students,24,Table 2
+punjab,2025,government,person,rural+urban,51.1,% of students,24,Table 2
+punjab,2025,private aided,person,rural+urban,5.7,% of students,24,Table 2
+punjab,2025,private unaided (recognised),person,rural+urban,43.1,% of students,24,Table 2
+punjab,2025,others,person,rural+urban,0.1,% of students,24,Table 2
+rajasthan,2025,government,male,rural,50.1,% of students,24,Table 2
+rajasthan,2025,private aided,male,rural,2.4,% of students,24,Table 2
+rajasthan,2025,private unaided (recognised),male,rural,46.9,% of students,24,Table 2
+rajasthan,2025,others,male,rural,0.6,% of students,24,Table 2
+rajasthan,2025,government,female,rural,60.6,% of students,24,Table 2
+rajasthan,2025,private aided,female,rural,1.7,% of students,24,Table 2
+rajasthan,2025,private unaided (recognised),female,rural,37.7,% of students,24,Table 2
+rajasthan,2025,others,female,rural,,% of students,24,Table 2
+rajasthan,2025,government,person,rural,55.2,% of students,24,Table 2
+rajasthan,2025,private aided,person,rural,2.0,% of students,24,Table 2
+rajasthan,2025,private unaided (recognised),person,rural,42.5,% of students,24,Table 2
+rajasthan,2025,others,person,rural,0.3,% of students,24,Table 2
+rajasthan,2025,government,male,urban,18.6,% of students,24,Table 2
+rajasthan,2025,private aided,male,urban,5.5,% of students,24,Table 2
+rajasthan,2025,private unaided (recognised),male,urban,75.9,% of students,24,Table 2
+rajasthan,2025,others,male,urban,,% of students,24,Table 2
+rajasthan,2025,government,female,urban,21.0,% of students,24,Table 2
+rajasthan,2025,private aided,female,urban,4.8,% of students,24,Table 2
+rajasthan,2025,private unaided (recognised),female,urban,74.2,% of students,24,Table 2
+rajasthan,2025,others,female,urban,,% of students,24,Table 2
+rajasthan,2025,government,person,urban,19.6,% of students,24,Table 2
+rajasthan,2025,private aided,person,urban,5.2,% of students,24,Table 2
+rajasthan,2025,private unaided (recognised),person,urban,75.2,% of students,24,Table 2
+rajasthan,2025,others,person,urban,,% of students,24,Table 2
+rajasthan,2025,government,male,rural+urban,42.7,% of students,24,Table 2
+rajasthan,2025,private aided,male,rural+urban,3.1,% of students,24,Table 2
+rajasthan,2025,private unaided (recognised),male,rural+urban,53.8,% of students,24,Table 2
+rajasthan,2025,others,male,rural+urban,0.4,% of students,24,Table 2
+rajasthan,2025,government,female,rural+urban,52.1,% of students,24,Table 2
+rajasthan,2025,private aided,female,rural+urban,2.4,% of students,24,Table 2
+rajasthan,2025,private unaided (recognised),female,rural+urban,45.6,% of students,24,Table 2
+rajasthan,2025,others,female,rural+urban,,% of students,24,Table 2
+rajasthan,2025,government,person,rural+urban,47.1,% of students,24,Table 2
+rajasthan,2025,private aided,person,rural+urban,2.8,% of students,24,Table 2
+rajasthan,2025,private unaided (recognised),person,rural+urban,49.9,% of students,24,Table 2
+rajasthan,2025,others,person,rural+urban,0.2,% of students,24,Table 2
+sikkim,2025,government,male,rural,69.7,% of students,24,Table 2
+sikkim,2025,private aided,male,rural,5.9,% of students,24,Table 2
+sikkim,2025,private unaided (recognised),male,rural,24.4,% of students,24,Table 2
+sikkim,2025,others,male,rural,,% of students,24,Table 2
+sikkim,2025,government,female,rural,78.5,% of students,24,Table 2
+sikkim,2025,private aided,female,rural,,% of students,24,Table 2
+sikkim,2025,private unaided (recognised),female,rural,21.5,% of students,24,Table 2
+sikkim,2025,others,female,rural,,% of students,24,Table 2
+sikkim,2025,government,person,rural,74.1,% of students,24,Table 2
+sikkim,2025,private aided,person,rural,3.0,% of students,24,Table 2
+sikkim,2025,private unaided (recognised),person,rural,22.9,% of students,24,Table 2
+sikkim,2025,others,person,rural,,% of students,24,Table 2
+sikkim,2025,government,male,urban,40.4,% of students,24,Table 2
+sikkim,2025,private aided,male,urban,8.0,% of students,24,Table 2
+sikkim,2025,private unaided (recognised),male,urban,51.6,% of students,24,Table 2
+sikkim,2025,others,male,urban,,% of students,24,Table 2
+sikkim,2025,government,female,urban,57.6,% of students,24,Table 2
+sikkim,2025,private aided,female,urban,5.6,% of students,24,Table 2
+sikkim,2025,private unaided (recognised),female,urban,36.8,% of students,24,Table 2
+sikkim,2025,others,female,urban,,% of students,24,Table 2
+sikkim,2025,government,person,urban,48.8,% of students,24,Table 2
+sikkim,2025,private aided,person,urban,6.9,% of students,24,Table 2
+sikkim,2025,private unaided (recognised),person,urban,44.4,% of students,24,Table 2
+sikkim,2025,others,person,urban,,% of students,24,Table 2
+sikkim,2025,government,male,rural+urban,62.1,% of students,24,Table 2
+sikkim,2025,private aided,male,rural+urban,6.5,% of students,24,Table 2
+sikkim,2025,private unaided (recognised),male,rural+urban,31.4,% of students,24,Table 2
+sikkim,2025,others,male,rural+urban,,% of students,24,Table 2
+sikkim,2025,government,female,rural+urban,73.3,% of students,24,Table 2
+sikkim,2025,private aided,female,rural+urban,1.4,% of students,24,Table 2
+sikkim,2025,private unaided (recognised),female,rural+urban,25.3,% of students,24,Table 2
+sikkim,2025,others,female,rural+urban,,% of students,24,Table 2
+sikkim,2025,government,person,rural+urban,67.7,% of students,24,Table 2
+sikkim,2025,private aided,person,rural+urban,4.0,% of students,24,Table 2
+sikkim,2025,private unaided (recognised),person,rural+urban,28.4,% of students,24,Table 2
+sikkim,2025,others,person,rural+urban,,% of students,24,Table 2
+tamil-nadu,2025,government,male,rural,61.7,% of students,24,Table 2
+tamil-nadu,2025,private aided,male,rural,8.8,% of students,24,Table 2
+tamil-nadu,2025,private unaided (recognised),male,rural,29.2,% of students,24,Table 2
+tamil-nadu,2025,others,male,rural,0.3,% of students,24,Table 2
+tamil-nadu,2025,government,female,rural,66.8,% of students,24,Table 2
+tamil-nadu,2025,private aided,female,rural,8.5,% of students,24,Table 2
+tamil-nadu,2025,private unaided (recognised),female,rural,24.6,% of students,24,Table 2
+tamil-nadu,2025,others,female,rural,0.1,% of students,24,Table 2
+tamil-nadu,2025,government,person,rural,64.1,% of students,24,Table 2
+tamil-nadu,2025,private aided,person,rural,8.7,% of students,24,Table 2
+tamil-nadu,2025,private unaided (recognised),person,rural,27.0,% of students,24,Table 2
+tamil-nadu,2025,others,person,rural,0.2,% of students,24,Table 2
+tamil-nadu,2025,government,male,urban,31.3,% of students,24,Table 2
+tamil-nadu,2025,private aided,male,urban,18.7,% of students,24,Table 2
+tamil-nadu,2025,private unaided (recognised),male,urban,49.7,% of students,24,Table 2
+tamil-nadu,2025,others,male,urban,0.2,% of students,24,Table 2
+tamil-nadu,2025,government,female,urban,27.0,% of students,24,Table 2
+tamil-nadu,2025,private aided,female,urban,20.1,% of students,24,Table 2
+tamil-nadu,2025,private unaided (recognised),female,urban,52.2,% of students,24,Table 2
+tamil-nadu,2025,others,female,urban,0.7,% of students,24,Table 2
+tamil-nadu,2025,government,person,urban,29.2,% of students,24,Table 2
+tamil-nadu,2025,private aided,person,urban,19.5,% of students,24,Table 2
+tamil-nadu,2025,private unaided (recognised),person,urban,50.8,% of students,24,Table 2
+tamil-nadu,2025,others,person,urban,0.5,% of students,24,Table 2
+tamil-nadu,2025,government,male,rural+urban,46.7,% of students,24,Table 2
+tamil-nadu,2025,private aided,male,rural+urban,13.7,% of students,24,Table 2
+tamil-nadu,2025,private unaided (recognised),male,rural+urban,39.3,% of students,24,Table 2
+tamil-nadu,2025,others,male,rural+urban,0.3,% of students,24,Table 2
+tamil-nadu,2025,government,female,rural+urban,46.7,% of students,24,Table 2
+tamil-nadu,2025,private aided,female,rural+urban,14.4,% of students,24,Table 2
+tamil-nadu,2025,private unaided (recognised),female,rural+urban,38.5,% of students,24,Table 2
+tamil-nadu,2025,others,female,rural+urban,0.4,% of students,24,Table 2
+tamil-nadu,2025,government,person,rural+urban,46.6,% of students,24,Table 2
+tamil-nadu,2025,private aided,person,rural+urban,14.1,% of students,24,Table 2
+tamil-nadu,2025,private unaided (recognised),person,rural+urban,38.9,% of students,24,Table 2
+tamil-nadu,2025,others,person,rural+urban,0.4,% of students,24,Table 2
+telangana,2025,government,male,rural,60.7,% of students,24,Table 2
+telangana,2025,private aided,male,rural,5.8,% of students,24,Table 2
+telangana,2025,private unaided (recognised),male,rural,33.1,% of students,24,Table 2
+telangana,2025,others,male,rural,0.4,% of students,24,Table 2
+telangana,2025,government,female,rural,67.0,% of students,24,Table 2
+telangana,2025,private aided,female,rural,3.0,% of students,24,Table 2
+telangana,2025,private unaided (recognised),female,rural,29.8,% of students,24,Table 2
+telangana,2025,others,female,rural,0.2,% of students,24,Table 2
+telangana,2025,government,person,rural,63.6,% of students,24,Table 2
+telangana,2025,private aided,person,rural,4.5,% of students,24,Table 2
+telangana,2025,private unaided (recognised),person,rural,31.6,% of students,24,Table 2
+telangana,2025,others,person,rural,0.3,% of students,24,Table 2
+telangana,2025,government,male,urban,21.8,% of students,24,Table 2
+telangana,2025,private aided,male,urban,24.9,% of students,24,Table 2
+telangana,2025,private unaided (recognised),male,urban,53.3,% of students,24,Table 2
+telangana,2025,others,male,urban,0.1,% of students,24,Table 2
+telangana,2025,government,female,urban,24.5,% of students,24,Table 2
+telangana,2025,private aided,female,urban,20.4,% of students,24,Table 2
+telangana,2025,private unaided (recognised),female,urban,54.9,% of students,24,Table 2
+telangana,2025,others,female,urban,0.2,% of students,24,Table 2
+telangana,2025,government,person,urban,23.0,% of students,24,Table 2
+telangana,2025,private aided,person,urban,22.8,% of students,24,Table 2
+telangana,2025,private unaided (recognised),person,urban,54.0,% of students,24,Table 2
+telangana,2025,others,person,urban,0.1,% of students,24,Table 2
+telangana,2025,government,male,rural+urban,45.5,% of students,24,Table 2
+telangana,2025,private aided,male,rural+urban,13.3,% of students,24,Table 2
+telangana,2025,private unaided (recognised),male,rural+urban,41.0,% of students,24,Table 2
+telangana,2025,others,male,rural+urban,0.3,% of students,24,Table 2
+telangana,2025,government,female,rural+urban,49.9,% of students,24,Table 2
+telangana,2025,private aided,female,rural+urban,10.1,% of students,24,Table 2
+telangana,2025,private unaided (recognised),female,rural+urban,39.9,% of students,24,Table 2
+telangana,2025,others,female,rural+urban,0.2,% of students,24,Table 2
+telangana,2025,government,person,rural+urban,47.5,% of students,24,Table 2
+telangana,2025,private aided,person,rural+urban,11.8,% of students,24,Table 2
+telangana,2025,private unaided (recognised),person,rural+urban,40.5,% of students,24,Table 2
+telangana,2025,others,person,rural+urban,0.2,% of students,24,Table 2
+tripura,2025,government,male,rural,80.5,% of students,24,Table 2
+tripura,2025,private aided,male,rural,6.7,% of students,24,Table 2
+tripura,2025,private unaided (recognised),male,rural,12.8,% of students,24,Table 2
+tripura,2025,others,male,rural,,% of students,24,Table 2
+tripura,2025,government,female,rural,85.4,% of students,24,Table 2
+tripura,2025,private aided,female,rural,7.3,% of students,24,Table 2
+tripura,2025,private unaided (recognised),female,rural,7.3,% of students,24,Table 2
+tripura,2025,others,female,rural,,% of students,24,Table 2
+tripura,2025,government,person,rural,83.1,% of students,24,Table 2
+tripura,2025,private aided,person,rural,7.0,% of students,24,Table 2
+tripura,2025,private unaided (recognised),person,rural,9.9,% of students,24,Table 2
+tripura,2025,others,person,rural,,% of students,24,Table 2
+tripura,2025,government,male,urban,60.6,% of students,24,Table 2
+tripura,2025,private aided,male,urban,12.4,% of students,24,Table 2
+tripura,2025,private unaided (recognised),male,urban,27.1,% of students,24,Table 2
+tripura,2025,others,male,urban,,% of students,24,Table 2
+tripura,2025,government,female,urban,69.7,% of students,24,Table 2
+tripura,2025,private aided,female,urban,6.8,% of students,24,Table 2
+tripura,2025,private unaided (recognised),female,urban,23.5,% of students,24,Table 2
+tripura,2025,others,female,urban,,% of students,24,Table 2
+tripura,2025,government,person,urban,66.0,% of students,24,Table 2
+tripura,2025,private aided,person,urban,9.0,% of students,24,Table 2
+tripura,2025,private unaided (recognised),person,urban,24.9,% of students,24,Table 2
+tripura,2025,others,person,urban,,% of students,24,Table 2
+tripura,2025,government,male,rural+urban,76.5,% of students,24,Table 2
+tripura,2025,private aided,male,rural+urban,7.8,% of students,24,Table 2
+tripura,2025,private unaided (recognised),male,rural+urban,15.7,% of students,24,Table 2
+tripura,2025,others,male,rural+urban,,% of students,24,Table 2
+tripura,2025,government,female,rural+urban,81.3,% of students,24,Table 2
+tripura,2025,private aided,female,rural+urban,7.2,% of students,24,Table 2
+tripura,2025,private unaided (recognised),female,rural+urban,11.6,% of students,24,Table 2
+tripura,2025,others,female,rural+urban,,% of students,24,Table 2
+tripura,2025,government,person,rural+urban,79.2,% of students,24,Table 2
+tripura,2025,private aided,person,rural+urban,7.4,% of students,24,Table 2
+tripura,2025,private unaided (recognised),person,rural+urban,13.4,% of students,24,Table 2
+tripura,2025,others,person,rural+urban,,% of students,24,Table 2
+uttar-pradesh,2025,government,male,rural,47.2,% of students,24,Table 2
+uttar-pradesh,2025,private aided,male,rural,9.4,% of students,24,Table 2
+uttar-pradesh,2025,private unaided (recognised),male,rural,42.8,% of students,24,Table 2
+uttar-pradesh,2025,others,male,rural,0.6,% of students,24,Table 2
+uttar-pradesh,2025,government,female,rural,48.8,% of students,24,Table 2
+uttar-pradesh,2025,private aided,female,rural,9.2,% of students,24,Table 2
+uttar-pradesh,2025,private unaided (recognised),female,rural,40.8,% of students,24,Table 2
+uttar-pradesh,2025,others,female,rural,1.2,% of students,24,Table 2
+uttar-pradesh,2025,government,person,rural,47.9,% of students,24,Table 2
+uttar-pradesh,2025,private aided,person,rural,9.3,% of students,24,Table 2
+uttar-pradesh,2025,private unaided (recognised),person,rural,41.9,% of students,24,Table 2
+uttar-pradesh,2025,others,person,rural,0.9,% of students,24,Table 2
+uttar-pradesh,2025,government,male,urban,22.5,% of students,24,Table 2
+uttar-pradesh,2025,private aided,male,urban,12.0,% of students,24,Table 2
+uttar-pradesh,2025,private unaided (recognised),male,urban,64.2,% of students,24,Table 2
+uttar-pradesh,2025,others,male,urban,1.3,% of students,24,Table 2
+uttar-pradesh,2025,government,female,urban,24.2,% of students,24,Table 2
+uttar-pradesh,2025,private aided,female,urban,6.7,% of students,24,Table 2
+uttar-pradesh,2025,private unaided (recognised),female,urban,67.8,% of students,24,Table 2
+uttar-pradesh,2025,others,female,urban,1.3,% of students,24,Table 2
+uttar-pradesh,2025,government,person,urban,23.3,% of students,24,Table 2
+uttar-pradesh,2025,private aided,person,urban,9.5,% of students,24,Table 2
+uttar-pradesh,2025,private unaided (recognised),person,urban,65.9,% of students,24,Table 2
+uttar-pradesh,2025,others,person,urban,1.3,% of students,24,Table 2
+uttar-pradesh,2025,government,male,rural+urban,42.4,% of students,24,Table 2
+uttar-pradesh,2025,private aided,male,rural+urban,9.9,% of students,24,Table 2
+uttar-pradesh,2025,private unaided (recognised),male,rural+urban,46.9,% of students,24,Table 2
+uttar-pradesh,2025,others,male,rural+urban,0.7,% of students,24,Table 2
+uttar-pradesh,2025,government,female,rural+urban,44.0,% of students,24,Table 2
+uttar-pradesh,2025,private aided,female,rural+urban,8.7,% of students,24,Table 2
+uttar-pradesh,2025,private unaided (recognised),female,rural+urban,46.1,% of students,24,Table 2
+uttar-pradesh,2025,others,female,rural+urban,1.2,% of students,24,Table 2
+uttar-pradesh,2025,government,person,rural+urban,43.1,% of students,24,Table 2
+uttar-pradesh,2025,private aided,person,rural+urban,9.3,% of students,24,Table 2
+uttar-pradesh,2025,private unaided (recognised),person,rural+urban,46.6,% of students,24,Table 2
+uttar-pradesh,2025,others,person,rural+urban,1.0,% of students,24,Table 2
+uttarakhand,2025,government,male,rural,65.3,% of students,24,Table 2
+uttarakhand,2025,private aided,male,rural,4.3,% of students,24,Table 2
+uttarakhand,2025,private unaided (recognised),male,rural,30.5,% of students,24,Table 2
+uttarakhand,2025,others,male,rural,,% of students,24,Table 2
+uttarakhand,2025,government,female,rural,66.9,% of students,24,Table 2
+uttarakhand,2025,private aided,female,rural,11.3,% of students,24,Table 2
+uttarakhand,2025,private unaided (recognised),female,rural,21.1,% of students,24,Table 2
+uttarakhand,2025,others,female,rural,0.7,% of students,24,Table 2
+uttarakhand,2025,government,person,rural,65.9,% of students,24,Table 2
+uttarakhand,2025,private aided,person,rural,7.1,% of students,24,Table 2
+uttarakhand,2025,private unaided (recognised),person,rural,26.7,% of students,24,Table 2
+uttarakhand,2025,others,person,rural,0.3,% of students,24,Table 2
+uttarakhand,2025,government,male,urban,20.8,% of students,24,Table 2
+uttarakhand,2025,private aided,male,urban,0.8,% of students,24,Table 2
+uttarakhand,2025,private unaided (recognised),male,urban,73.3,% of students,24,Table 2
+uttarakhand,2025,others,male,urban,5.1,% of students,24,Table 2
+uttarakhand,2025,government,female,urban,18.9,% of students,24,Table 2
+uttarakhand,2025,private aided,female,urban,2.1,% of students,24,Table 2
+uttarakhand,2025,private unaided (recognised),female,urban,79.0,% of students,24,Table 2
+uttarakhand,2025,others,female,urban,,% of students,24,Table 2
+uttarakhand,2025,government,person,urban,20.0,% of students,24,Table 2
+uttarakhand,2025,private aided,person,urban,1.4,% of students,24,Table 2
+uttarakhand,2025,private unaided (recognised),person,urban,75.9,% of students,24,Table 2
+uttarakhand,2025,others,person,urban,2.8,% of students,24,Table 2
+uttarakhand,2025,government,male,rural+urban,49.9,% of students,24,Table 2
+uttarakhand,2025,private aided,male,rural+urban,3.1,% of students,24,Table 2
+uttarakhand,2025,private unaided (recognised),male,rural+urban,45.3,% of students,24,Table 2
+uttarakhand,2025,others,male,rural+urban,1.8,% of students,24,Table 2
+uttarakhand,2025,government,female,rural+urban,48.0,% of students,24,Table 2
+uttarakhand,2025,private aided,female,rural+urban,7.7,% of students,24,Table 2
+uttarakhand,2025,private unaided (recognised),female,rural+urban,43.8,% of students,24,Table 2
+uttarakhand,2025,others,female,rural+urban,0.4,% of students,24,Table 2
+uttarakhand,2025,government,person,rural+urban,49.1,% of students,24,Table 2
+uttarakhand,2025,private aided,person,rural+urban,5.0,% of students,24,Table 2
+uttarakhand,2025,private unaided (recognised),person,rural+urban,44.7,% of students,24,Table 2
+uttarakhand,2025,others,person,rural+urban,1.2,% of students,24,Table 2
+west-bengal,2025,government,male,rural,58.2,% of students,24,Table 2
+west-bengal,2025,private aided,male,rural,31.0,% of students,24,Table 2
+west-bengal,2025,private unaided (recognised),male,rural,9.0,% of students,24,Table 2
+west-bengal,2025,others,male,rural,1.9,% of students,24,Table 2
+west-bengal,2025,government,female,rural,55.6,% of students,24,Table 2
+west-bengal,2025,private aided,female,rural,31.5,% of students,24,Table 2
+west-bengal,2025,private unaided (recognised),female,rural,10.1,% of students,24,Table 2
+west-bengal,2025,others,female,rural,2.8,% of students,24,Table 2
+west-bengal,2025,government,person,rural,56.8,% of students,24,Table 2
+west-bengal,2025,private aided,person,rural,31.3,% of students,24,Table 2
+west-bengal,2025,private unaided (recognised),person,rural,9.5,% of students,24,Table 2
+west-bengal,2025,others,person,rural,2.3,% of students,24,Table 2
+west-bengal,2025,government,male,urban,39.7,% of students,24,Table 2
+west-bengal,2025,private aided,male,urban,20.1,% of students,24,Table 2
+west-bengal,2025,private unaided (recognised),male,urban,38.8,% of students,24,Table 2
+west-bengal,2025,others,male,urban,1.4,% of students,24,Table 2
+west-bengal,2025,government,female,urban,46.9,% of students,24,Table 2
+west-bengal,2025,private aided,female,urban,25.4,% of students,24,Table 2
+west-bengal,2025,private unaided (recognised),female,urban,26.7,% of students,24,Table 2
+west-bengal,2025,others,female,urban,1.0,% of students,24,Table 2
+west-bengal,2025,government,person,urban,43.0,% of students,24,Table 2
+west-bengal,2025,private aided,person,urban,22.6,% of students,24,Table 2
+west-bengal,2025,private unaided (recognised),person,urban,33.2,% of students,24,Table 2
+west-bengal,2025,others,person,urban,1.2,% of students,24,Table 2
+west-bengal,2025,government,male,rural+urban,53.0,% of students,24,Table 2
+west-bengal,2025,private aided,male,rural+urban,27.9,% of students,24,Table 2
+west-bengal,2025,private unaided (recognised),male,rural+urban,17.4,% of students,24,Table 2
+west-bengal,2025,others,male,rural+urban,1.7,% of students,24,Table 2
+west-bengal,2025,government,female,rural+urban,53.4,% of students,24,Table 2
+west-bengal,2025,private aided,female,rural+urban,30.0,% of students,24,Table 2
+west-bengal,2025,private unaided (recognised),female,rural+urban,14.2,% of students,24,Table 2
+west-bengal,2025,others,female,rural+urban,2.4,% of students,24,Table 2
+west-bengal,2025,government,person,rural+urban,53.1,% of students,24,Table 2
+west-bengal,2025,private aided,person,rural+urban,29.0,% of students,24,Table 2
+west-bengal,2025,private unaided (recognised),person,rural+urban,15.8,% of students,24,Table 2
+west-bengal,2025,others,person,rural+urban,2.0,% of students,24,Table 2
