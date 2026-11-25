@@ -237,6 +237,41 @@ const TOP_CAUSES = [
 
 const NFHS_ADULT = 'health/nfhs-adult-indicators-by-state.csv'
 
+// NSS round 76, July to December 2018. The PDF is dated 22 Nov 2019.
+const NSS_583: Source = {
+  publisher: 'NSO, MoSPI',
+  release: 'NSS Report No. 583, Persons with Disabilities in India (NSS round 76)',
+  released: '2019-11-22',
+  url: 'https://www.mospi.gov.in/sites/default/files/publication_reports/Report_583_Final_0.pdf',
+}
+
+const nss583Api = (code: number): Source => ({
+  publisher: 'NSO, MoSPI',
+  release: `eSankhyiki API, NSS round 76 (survey code 1), indicator ${code}`,
+  released: 'not stated',
+  url: `https://api.mospi.gov.in/api/nss-76/getNss76Records?indicator_code=${code}&survey_code=1&Format=JSON`,
+})
+
+const DISABILITY_STATE = 'health/disability-by-state-2018.csv'
+const DISABILITY_TYPE = 'health/disability-by-type-2018.csv'
+const DISABILITY_AID = 'health/disability-aid-received-2018.csv'
+const DISABILITY_TYPES = ['locomotor', 'hearing', 'visual', 'speech-and-language', 'intellectual', 'mental-illness', 'other'] as const
+
+// In 2018 Ladakh was part of Jammu and Kashmir, and Dadra and Nagar Haveli and Daman and Diu were two UTs.
+const NSS76_MISSING = {
+  ladakh: 'Part of Jammu and Kashmir in 2018',
+  'dnh-dd': 'Two separate UTs in 2018: no value for the merged UT',
+} as const
+
+const NSS76_DEFINITION =
+  'NSS round 76 uses the definition of the Rights of Persons with Disabilities Act, 2016: a long-term physical, mental, intellectual or sensory impairment that, with barriers, hinders full and equal participation in society. Long term means 12 months or more.'
+const NSS76_NOT_CENSUS =
+  'Census 2011 counted disability with its own question and categories, set before the 2016 Act. NSS round 76 asks about each type of disability separately. The two counts do not compare. NSO also says its 2002 survey used a different definition, reference period, classification and method.'
+const NSS76_SMALL_STATES =
+  'NSO warns that samples in the smaller states and UTs may be too small for reliable estimates. The data file gives the relative standard error (RSE) of each state share.'
+const NSS76_GEOGRAPHY =
+  'In 2018, Jammu and Kashmir was one state with Ladakh. Dadra and Nagar Haveli and Daman and Diu were two UTs; the chart leaves them out.'
+
 // Women and men, NFHS-5 (hollow) and NFHS-6 (filled), for one adult indicator.
 const nfhsAdult = (measure: 'overweight' | 'tobacco', ages: string): Series[] =>
   (['women', 'men'] as const).flatMap((sex) =>
@@ -814,6 +849,159 @@ const topic: Topic = {
       ],
     },
     {
+      title: 'How many people live with a disability?',
+      lede: '2.2% of people in India had a disability in 2018: 2.4% of men and 1.9% of women.',
+      blocks: [
+        { text: 'Odisha and Kerala had the highest shares, 3.2% each. Manipur had the lowest, 0.8%.' },
+        {
+          chart: {
+            kind: 'states',
+            slug: 'disability-by-state',
+            checked: '2026-11-25',
+            title: 'People with a disability by state and UT, 2018',
+            subtitle: 'Share of people with any disability, rural and urban together, 34 states and UTs.',
+            punches: { office: 'MoSPI · NSS', unit: '% of persons', period: 'Jul to Dec 2018' },
+            status: ['Survey estimate'],
+            note: 'Samples in small states and UTs are small: the share for Andaman and Nicobar Islands has an RSE of 16.61%.',
+            sources: [withTable(NSS_583, 'Table 1.2 and Table RSE1'), nss583Api(1)],
+            format: { unit: '%', decimals: 1 },
+            data: { file: DISABILITY_STATE, where: { sex: 'person', sector: 'rural+urban' }, note: 'note' },
+            open: 'map',
+            scale: 'seq',
+            short: 'People with a disability',
+            missing: NSS76_MISSING,
+            know: [
+              NSS76_DEFINITION,
+              NSS76_NOT_CENSUS,
+              NSS76_SMALL_STATES,
+              'The RSE is above 10% in Andaman and Nicobar Islands, Chandigarh, Arunachal Pradesh, Goa and Lakshadweep. Read their shares with care.',
+              NSS76_GEOGRAPHY,
+              'Persons include transgender persons. The data file also gives men and women, and rural and urban areas.',
+            ],
+            processing: [
+              'We take indicator 1 from the eSankhyiki API for each state and UT, by sex and by rural and urban areas.',
+              'We check every value against Table 1.2 of NSS Report 583, and the India values against Statement 1. The build stops on any difference.',
+              'We add the RSE of each share from Table RSE1 of the report.',
+              'We keep the shares as NSO prints them, to one decimal place.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        { text: 'Locomotor disability, which limits movement, was the most common type: 1.4% of people had one. Each other type affected 0.3% of people or fewer.' },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'disability-by-type',
+            checked: '2026-11-25',
+            title: 'People with a disability by type in India, 2018',
+            subtitle: 'Share of people with each broad type of disability, women and men, India.',
+            punches: { office: 'MoSPI · NSS', unit: '% of persons', period: 'Jul to Dec 2018' },
+            status: ['Survey estimate'],
+            note: 'A person with more than one type counts under each. The types add up to more than the 2.2% with any disability.',
+            sources: [withTable(NSS_583, 'Table 4.1 and Statement 4'), nss583Api(2)],
+            format: { unit: '%', decimals: 1 },
+            by: 'disability_type',
+            rowHead: 'Type of disability',
+            order: DISABILITY_TYPES,
+            labels: {
+              locomotor: 'Locomotor (movement)',
+              hearing: 'Hearing',
+              visual: 'Visual',
+              'speech-and-language': 'Speech and language',
+              intellectual: 'Intellectual disability',
+              'mental-illness': 'Mental illness',
+              other: 'Other',
+            },
+            series: [
+              { key: 'all', label: 'Women and men', color: 'ink', file: DISABILITY_TYPE, x: 'disability_type', where: { geography: 'india', sex: 'person', sector: 'rural+urban', disability_type: DISABILITY_TYPES } },
+              { key: 'women', label: 'Women', color: 's3', file: DISABILITY_TYPE, x: 'disability_type', where: { geography: 'india', sex: 'female', sector: 'rural+urban', disability_type: DISABILITY_TYPES } },
+              { key: 'men', label: 'Men', color: 's2', file: DISABILITY_TYPE, x: 'disability_type', where: { geography: 'india', sex: 'male', sector: 'rural+urban', disability_type: DISABILITY_TYPES } },
+            ],
+            know: [
+              NSS76_DEFINITION,
+              'NSO groups the conditions in the Act into broad types. Locomotor disability includes polio, cerebral palsy, dwarfism, leprosy cured persons and acid attack victims. Intellectual disability includes specific learning disabilities and autism. Other includes chronic neurological conditions and blood disorders such as thalassemia.',
+              'NSO prints 0.0% where the sample has some persons but the share rounds to zero: other types among women.',
+              NSS76_NOT_CENSUS,
+              'The data file gives each type for every state and UT, and for rural and urban areas. State values for the rarer types rest on small samples.',
+            ],
+            processing: [
+              'We take indicator 2 from the eSankhyiki API, for India and each state and UT, by sex and by rural and urban areas.',
+              'We check every value against Table 4.1 of NSS Report 583, and the India values against Statement 4. The build stops on any difference.',
+              'We check that the "any disability" column equals the share in Table 1.2.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        { text: '76.4% of people with a disability got no aid or help in 2018. 21.8% got aid or help from the government, and 1.8% from another organisation.' },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'disability-aid-received',
+            checked: '2026-11-25',
+            title: 'Aid or help received by people with a disability in India, 2018',
+            subtitle: 'People with a disability by the main source of aid or help, women and men, India.',
+            punches: { office: 'MoSPI · NSS', unit: '% of persons with disability', period: 'Jul to Dec 2018' },
+            status: ['Survey estimate'],
+            note: 'Each person counts once, under the source they named as most important. Shares may not add to 100 because of rounding.',
+            sources: [withTable(NSS_583, 'Table 32.1 and Statement 32'), nss583Api(13)],
+            format: { unit: '%', decimals: 1 },
+            by: 'sex',
+            rowHead: 'People with a disability',
+            stacked: true,
+            order: ['person', 'female', 'male'],
+            labels: { person: 'Women and men', female: 'Women', male: 'Men' },
+            series: [
+              { key: 'government', label: 'From the government', color: 's5', file: DISABILITY_AID, x: 'sex', where: { geography: 'india', sector: 'rural+urban', aid: 'government' } },
+              { key: 'other-organisation', label: 'From another organisation', color: 's6', file: DISABILITY_AID, x: 'sex', where: { geography: 'india', sector: 'rural+urban', aid: 'other-organisation' } },
+              { key: 'none', label: 'No aid or help', color: 'other', file: DISABILITY_AID, x: 'sex', where: { geography: 'india', sector: 'rural+urban', aid: 'none' } },
+            ],
+            know: [
+              'NSO asked each person with a disability whether they received aid or help, and from whom. A person with aid from more than one source counts under the one they named as most important.',
+              'Aid or help from the government includes help with education or training, aids and appliances, surgery or other treatment, a job, a disability pension, a loan and other social security (Report 583, paragraph 2.28).',
+              NSS76_DEFINITION,
+              'The data file also gives rural and urban areas, and each state and UT.',
+            ],
+            processing: [
+              'We take indicator 13 from the eSankhyiki API, for India and each state and UT, by sex and by rural and urban areas.',
+              'We check every value against Table 32.1 of NSS Report 583, and the India values against Statement 32. The build stops on any difference.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        { text: 'In Telangana, 57.1% of people with a disability got aid or help from the government. In Uttar Pradesh, 9.2% did.' },
+        {
+          chart: {
+            kind: 'states',
+            slug: 'disability-government-aid-by-state',
+            checked: '2026-11-25',
+            title: 'People with a disability who got aid or help from the government, by state and UT, 2018',
+            subtitle: 'Share of people with a disability whose main aid or help came from the government, 34 states and UTs.',
+            punches: { office: 'MoSPI · NSS', unit: '% of persons with disability', period: 'Jul to Dec 2018' },
+            status: ['Survey estimate'],
+            note: 'Small states and UTs rest on small samples: Goa on 137 people with a disability.',
+            sources: [withTable(NSS_583, 'Table 32.1'), nss583Api(13)],
+            format: { unit: '%', decimals: 1 },
+            data: { file: DISABILITY_AID, where: { aid: 'government', sex: 'person', sector: 'rural+urban' }, note: 'note' },
+            open: 'chart',
+            scale: 'seq',
+            short: 'Disability aid from the government',
+            missing: NSS76_MISSING,
+            know: [
+              'Each person counts once, under the source of aid or help they named as most important. A person with government aid who named another source counts under that source.',
+              NSS76_SMALL_STATES,
+              'NSO publishes no RSE for this share. The survey counted fewer than 200 people with a disability in Andaman and Nicobar Islands, Chandigarh, Goa and Lakshadweep (Appendix B, Table 1).',
+              NSS76_GEOGRAPHY,
+            ],
+            processing: [
+              'We take indicator 13 from the eSankhyiki API: the share whose main aid or help came from the government, all persons, rural and urban areas together.',
+              'We check every value against Table 32.1 of NSS Report 583. The build stops on any difference.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
+    {
       title: 'Who pays for health care?',
       lede: "Households paid 42.7% of India's health bill from their own pockets in 2023-24, down from 64.2% in 2013-14. The government paid 43.5%.",
       blocks: [
@@ -1016,21 +1204,21 @@ const topic: Topic = {
   // LATER: the About band's side line ("How each health measure is made, which are surveys, where the series break, and what is missing.") has no field.
   about: {
     publisher:
-      'The Registrar General of India (ORGI) runs the Sample Registration System (SRS), a survey of births and deaths, and compiles the Civil Registration System (CRS) of registered births and deaths. IIPS runs the National Family Health Survey (NFHS) for MoHFW. NHSRC compiles the National Health Accounts.',
+      'The Registrar General of India (ORGI) runs the Sample Registration System (SRS), a survey of births and deaths, and compiles the Civil Registration System (CRS) of registered births and deaths. IIPS runs the National Family Health Survey (NFHS) for MoHFW. NHSRC compiles the National Health Accounts. The National Statistics Office (NSO) of MoSPI ran the survey of persons with disabilities in NSS round 76.',
     frequency:
-      'SRS Bulletin: yearly, latest 20 May 2026. Maternal mortality, life tables and causes of death: pooled periods, with the bulletin. CRS: yearly, 2024 report on 1 Jul 2026. NFHS: every few years, NFHS-6 on 29 May 2026. Health accounts: yearly, latest November 2026.',
+      'SRS Bulletin: yearly, latest 20 May 2026. Maternal mortality, life tables and causes of death: pooled periods, with the bulletin. CRS: yearly, 2024 report on 1 Jul 2026. NFHS: every few years, NFHS-6 on 29 May 2026. Health accounts: yearly, latest November 2026. Disability: one NSS round, July to December 2018, report of November 2019.',
     revisions:
       'NFHS-6 results are provisional, as the fact sheets say. The NFHS-5 values shown are as printed in the NFHS-6 fact sheets. The National Health Accounts added new data sources in 2022-23.',
     breaks:
       'Infant mortality excludes J&K in 1991 to 1997, life expectancy in 1987-91 to 1997-01. Life expectancy periods overlap from 1987-91. Maternal mortality skips 2012-14 and 2013-15. Health accounts break in 2017-18 and 2022-23.',
     coverage:
-      'Infant mortality: all 36 states and UTs. Life tables: India and 22 states. Maternal mortality: 19 states and one group for the rest. Causes of death: India only. CRS: all 36 states and UTs. NFHS-6: 35 states and UTs, not Manipur. Health accounts: 21 states.',
+      'Infant mortality: all 36 states and UTs. Life tables: India and 22 states. Maternal mortality: 19 states and one group for the rest. Causes of death: India only. CRS: all 36 states and UTs. NFHS-6: 35 states and UTs, not Manipur. Health accounts: 21 states. Disability: 34 states and UTs as they were in 2018.',
     missing:
       'NFHS-6 reports no anaemia and no infant or child mortality. SRS gives no life expectancy, under-5 or neonatal mortality for smaller states and UTs, and causes of death for no state. No publisher states a reuse licence.',
   },
   sources: [
     SRS_BULLETIN_2024, SRS_MMR_2022_24, SRS_LIFE_TABLES, SRS_COD_2022_24, SRS_COD_2021_23, CRS_2024, SRS_COMPENDIUM, ...SRS_BIRTH_RATIO_REPORTS,
-    NFHS_1, NFHS_2, NFHS_3, NFHS_4, NFHS_5, NFHS_6, PIB_ANAEMIA, NHA_2023_24, NHA_2013_14, NHA_2004_05, NCMH, WHO_GHED,
+    NFHS_1, NFHS_2, NFHS_3, NFHS_4, NFHS_5, NFHS_6, PIB_ANAEMIA, NHA_2023_24, NHA_2013_14, NHA_2004_05, NCMH, WHO_GHED, NSS_583,
   ],
   related: [
     { label: 'Population: Fertility rate by state', href: '/charts/fertility-rate-by-state/' },
