@@ -28,6 +28,11 @@ describe('formatNumber', () => {
     expect(formatNumber(1426000, { scale: 'crore', multiply: 1000 }).text).toBe('142.6 crore')
     expect(formatNumber(247219766, { scale: 'crore', decimals: 2 })).toEqual({ text: '24.72 crore', alt: '247.22 million' })
   })
+  it('multiplies without floating-point noise', () => {
+    // 30,00,000 crore is ₹30 lakh crore, not ₹30.00 lakh crore from 30.000000000000004.
+    expect(formatNumber(3000000, { unit: '₹', multiply: 1e-5, suffix: ' lakh crore' }).text).toBe('₹30 lakh crore')
+    expect(formatNumber(150000, { unit: '₹', multiply: 1e-5, suffix: ' lakh crore' }).text).toBe('₹1.5 lakh crore')
+  })
   it('signs and units', () => {
     expect(fmt(0.65, { unit: '°C', signed: true }, '0.65')).toBe('+0.65°C')
     expect(fmt(-12.6, { unit: '%' }, '-12.6')).toBe('-12.6%')
