@@ -19,7 +19,7 @@ All read on 25 Nov 2026. NCRB pages say "All Rights Reserved" and state no reuse
 
 | Publisher | Release | Release date | Period | Link |
 | --- | --- | --- | --- | --- |
-| NCRB | Crime in India 2024, Volumes I to III (CII 2024) | 6 May 2026 (news reports; the NCRB page gives no date). The Volume I file was last modified on 13 May 2026 (PDF metadata) | Calendar year 2024 | [Year page](https://www.ncrb.gov.in/crime-in-india-year-wise.html?year=2024&keyword=), English view |
+| NCRB | Crime in India 2024, Volumes I to III (CII 2024) | Not stated. NCRB gives no date on the year page or in the volumes. News reports give 6 May 2026. The volume PDFs were created on 7 Apr 2026 and last changed between 10 Apr and 13 May 2026 (PDF metadata). Charts use "not stated" | Calendar year 2024 | [Year page](https://www.ncrb.gov.in/crime-in-india-year-wise.html?year=2024&keyword=), English view |
 | NCRB | Crime in India 2017 to 2023, Volume I of each | Earlier releases, one a year | 2015 to 2023, three years in each edition | Year pages, `year=2017` to `year=2023` |
 | NCRB | Prison Statistics India 2024, revised report "with West Bengal data" (PSI 2024) | File dated 15 Sep 2026 ("PSI-2024Ason15092026"). The first release was on 6 May 2026 | As on 31 Dec 2024 | [Year page](https://www.ncrb.gov.in/prison-statistics-india-year-wise.html?year=2024) |
 | NCRB | Prison Statistics India 2016 to 2023, Executive Summary of each | Earlier releases | As on 31 Dec 2014 to 2023 | Year pages, `year=2016` to `year=2023` |
