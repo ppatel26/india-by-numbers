@@ -13,6 +13,9 @@ import numpy as np
 from PIL import Image
 
 SRC, WEB, OG = (Path(a) for a in sys.argv[1:4])
+# One entry per object that exists. A topic whose object is not made yet has no entry here and no
+# alt text in src/lib/emblems.ts; the site then leaves its object out. Add both when the owner
+# approves the image.
 FILES = {
     'population': 'pop', 'prices': 'prices', 'economy': 'econ', 'jobs': 'jobs2', 'health': 'health',
     'education': 'edu', 'elections': 'elec', 'climate': 'climate2', 'religion-and-culture': 'rel', 'home': 'seal',
