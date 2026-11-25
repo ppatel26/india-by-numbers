@@ -1,0 +1,208 @@
+geography,period,table,category_type,category,sector,sex,age_group,value,unit
+india,2025-26,"NHTS 2025-26 fact sheet, Table 1",purpose,education,rural,male,6+,66.8,per cent of students of age 6 years and above who made trips of 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 1",purpose,education,rural,female,6+,64.2,per cent of students of age 6 years and above who made trips of 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 1",purpose,education,rural,person,6+,65.6,per cent of students of age 6 years and above who made trips of 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 1",purpose,education,urban,male,6+,68.6,per cent of students of age 6 years and above who made trips of 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 1",purpose,education,urban,female,6+,67.5,per cent of students of age 6 years and above who made trips of 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 1",purpose,education,urban,person,6+,68.1,per cent of students of age 6 years and above who made trips of 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 1",purpose,education,rural+urban,male,6+,67.3,per cent of students of age 6 years and above who made trips of 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 1",purpose,education,rural+urban,female,6+,65.2,per cent of students of age 6 years and above who made trips of 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 1",purpose,education,rural+urban,person,6+,66.4,per cent of students of age 6 years and above who made trips of 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,walk,rural,person,6+,40.5,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,walk,urban,person,6+,29.6,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,walk,rural+urban,person,6+,37.0,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,walk,rural+urban,person,6-14,47.3,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,walk,rural+urban,person,15-29,22.2,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,walk,rural+urban,person,6+,37.0,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,bicycle,rural,person,6+,18.9,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,bicycle,urban,person,6+,9.1,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,bicycle,rural+urban,person,6+,15.8,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,bicycle,rural+urban,person,6-14,11.9,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,bicycle,rural+urban,person,15-29,21.4,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,bicycle,rural+urban,person,6+,15.8,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,cycle-rickshaw,rural,person,6+,0.2,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,cycle-rickshaw,urban,person,6+,0.3,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,cycle-rickshaw,rural+urban,person,6+,0.2,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,cycle-rickshaw,rural+urban,person,6-14,0.2,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,cycle-rickshaw,rural+urban,person,15-29,0.2,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,cycle-rickshaw,rural+urban,person,6+,0.2,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,two-wheeler,rural,person,6+,4.4,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,two-wheeler,urban,person,6+,11.5,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,two-wheeler,rural+urban,person,6+,6.7,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,two-wheeler,rural+urban,person,6-14,5.1,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,two-wheeler,rural+urban,person,15-29,9.0,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,two-wheeler,rural+urban,person,6+,6.7,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,car,rural,person,6+,0.6,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,car,urban,person,6+,1.0,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,car,rural+urban,person,6+,0.7,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,car,rural+urban,person,6-14,0.5,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,car,rural+urban,person,15-29,0.9,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,car,rural+urban,person,6+,0.7,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,auto-rickshaw,rural,person,6+,8.7,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,auto-rickshaw,urban,person,6+,14.4,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,auto-rickshaw,rural+urban,person,6+,10.5,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,auto-rickshaw,rural+urban,person,6-14,7.7,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,auto-rickshaw,rural+urban,person,15-29,14.6,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,auto-rickshaw,rural+urban,person,6+,10.5,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,bus,rural,person,6+,27.5,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,bus,urban,person,6+,33.7,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,bus,rural+urban,person,6+,29.5,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,bus,rural+urban,person,6-14,28.4,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,bus,rural+urban,person,15-29,31.0,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,bus,rural+urban,person,6+,29.5,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,train-metro-monorail-tram,rural,person,6+,0.2,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,train-metro-monorail-tram,urban,person,6+,1.9,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,train-metro-monorail-tram,rural+urban,person,6+,0.8,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,train-metro-monorail-tram,rural+urban,person,6-14,0.1,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,train-metro-monorail-tram,rural+urban,person,15-29,1.7,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,train-metro-monorail-tram,rural+urban,person,6+,0.8,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,rail,rural,person,6+,0.1,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,rail,urban,person,6+,0.2,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,rail,rural+urban,person,6+,0.1,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,rail,rural+urban,person,6-14,0.0,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,rail,rural+urban,person,15-29,0.3,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,rail,rural+urban,person,6+,0.1,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,water,rural,person,6+,0.0,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,water,urban,person,6+,0.0,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,water,rural+urban,person,6+,0.0,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,water,rural+urban,person,6-14,0.0,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,water,rural+urban,person,15-29,0.0,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,water,rural+urban,person,6+,0.0,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,others,rural,person,6+,0.1,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,others,urban,person,6+,0.0,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 2",mode,others,rural+urban,person,6+,0.1,per cent of students of age 6 years and above travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,others,rural+urban,person,6-14,0.1,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,others,rural+urban,person,15-29,0.0,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 3",mode,others,rural+urban,person,6+,0.1,per cent of students in the age group travelling 1 km or more to an educational institution
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,walk,rural,person,15+,36.6,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,walk,urban,person,15+,13.5,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,walk,rural+urban,person,15+,28.3,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,bicycle,rural,person,15+,13.4,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,bicycle,urban,person,15+,5.8,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,bicycle,rural+urban,person,15+,10.7,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,cycle-rickshaw,rural,person,15+,0.2,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,cycle-rickshaw,urban,person,15+,0.2,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,cycle-rickshaw,rural+urban,person,15+,0.2,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,two-wheeler,rural,person,15+,37.1,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,two-wheeler,urban,person,15+,52.3,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,two-wheeler,rural+urban,person,15+,42.6,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,car,rural,person,15+,1.5,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,car,urban,person,15+,5.7,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,car,rural+urban,person,15+,3.0,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,auto-rickshaw,rural,person,15+,5.0,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,auto-rickshaw,urban,person,15+,8.8,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,auto-rickshaw,rural+urban,person,15+,6.4,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,bus,rural,person,15+,5.3,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,bus,urban,person,15+,9.2,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,bus,rural+urban,person,15+,6.7,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,train-metro-monorail-tram,rural,person,15+,0.4,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,train-metro-monorail-tram,urban,person,15+,5.0,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,train-metro-monorail-tram,rural+urban,person,15+,2.1,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,rail,rural,person,15+,0.2,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,rail,urban,person,15+,0.3,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,rail,rural+urban,person,15+,0.2,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,water,rural,person,15+,0.0,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,water,urban,person,15+,0.0,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,water,rural+urban,person,15+,0.0,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,others,rural,person,15+,1.4,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,others,urban,person,15+,0.3,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 4",mode,others,rural+urban,person,15+,1.0,per cent of workers of age 15 years and above travelling 1 km or more to a workplace
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,seeking-employment-or-setting-up-business,rural+urban,male,6+,0.5,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,seeking-employment-or-setting-up-business,rural+urban,female,6+,0.4,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,seeking-employment-or-setting-up-business,rural+urban,person,6+,0.5,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,own-use-production-of-goods,rural+urban,male,6+,2.0,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,own-use-production-of-goods,rural+urban,female,6+,1.5,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,own-use-production-of-goods,rural+urban,person,6+,1.8,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,unpaid-domestic-services,rural+urban,male,6+,51.5,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,unpaid-domestic-services,rural+urban,female,6+,60.1,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,unpaid-domestic-services,rural+urban,person,6+,54.1,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,unpaid-caregiving-services,rural+urban,male,6+,2.2,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,unpaid-caregiving-services,rural+urban,female,6+,2.2,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,unpaid-caregiving-services,rural+urban,person,6+,2.2,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,unpaid-volunteering-training-work,rural+urban,male,6+,0.2,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,unpaid-volunteering-training-work,rural+urban,female,6+,0.2,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,unpaid-volunteering-training-work,rural+urban,person,6+,0.2,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,learning,rural+urban,male,6+,1.0,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,learning,rural+urban,female,6+,1.3,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,learning,rural+urban,person,6+,1.1,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,socialising-communication-religious,rural+urban,male,6+,6.4,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,socialising-communication-religious,rural+urban,female,6+,7.5,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,socialising-communication-religious,rural+urban,person,6+,6.8,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,culture-leisure-sports-tourism,rural+urban,male,6+,0.7,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,culture-leisure-sports-tourism,rural+urban,female,6+,1.4,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,culture-leisure-sports-tourism,rural+urban,person,6+,0.9,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,self-care-and-maintenance,rural+urban,male,6+,4.4,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,self-care-and-maintenance,rural+urban,female,6+,5.0,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,self-care-and-maintenance,rural+urban,person,6+,4.6,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,return-home,rural+urban,male,6+,99.3,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,return-home,rural+urban,female,6+,99.6,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 5",purpose,return-home,rural+urban,person,6+,99.4,"per cent of persons of age 6 years and above who made trips for other purposes, by purpose (a person can report more than one)"
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,employment,rural,all,all,3.5,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,employment,urban,all,all,3.5,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,employment,rural+urban,all,all,3.5,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,seeking-employment-or-setting-up-business,rural,all,all,2.8,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,seeking-employment-or-setting-up-business,urban,all,all,2.2,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,seeking-employment-or-setting-up-business,rural+urban,all,all,2.5,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,own-use-production-of-goods,rural,all,all,0.3,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,own-use-production-of-goods,urban,all,all,0.3,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,own-use-production-of-goods,rural+urban,all,all,0.3,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,unpaid-domestic-services,rural,all,all,1.1,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,unpaid-domestic-services,urban,all,all,1.3,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,unpaid-domestic-services,rural+urban,all,all,1.2,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,unpaid-caregiving-services,rural,all,all,2.2,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,unpaid-caregiving-services,urban,all,all,1.3,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,unpaid-caregiving-services,rural+urban,all,all,1.8,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,unpaid-volunteer-trainee-work,rural,all,all,0.4,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,unpaid-volunteer-trainee-work,urban,all,all,0.5,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,unpaid-volunteer-trainee-work,rural+urban,all,all,0.4,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,learning,rural,all,all,1.1,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,learning,urban,all,all,1.0,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,learning,rural+urban,all,all,1.1,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,socialising-communication-religious,rural,all,all,69.7,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,socialising-communication-religious,urban,all,all,70.9,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,socialising-communication-religious,rural+urban,all,all,70.2,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,culture-leisure-sports-tourism,rural,all,all,5.9,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,culture-leisure-sports-tourism,urban,all,all,9.3,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,culture-leisure-sports-tourism,rural+urban,all,all,7.4,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,self-care-and-maintenance,rural,all,all,7.6,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,self-care-and-maintenance,urban,all,all,4.9,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,self-care-and-maintenance,rural+urban,all,all,6.5,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,return-home,rural,all,all,96.9,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,return-home,urban,all,all,96.5,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 6",overnight-purpose,return-home,rural+urban,all,all,96.7,per cent of households that made an overnight trip in the last 28 travel days (a household can report more than one purpose)
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,walk,rural,all,all,0.4,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,walk,urban,all,all,0.2,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,walk,rural+urban,all,all,0.3,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,bicycle,rural,all,all,0.1,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,bicycle,urban,all,all,0.0,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,bicycle,rural+urban,all,all,0.1,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,cycle-rickshaw,rural,all,all,0.0,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,cycle-rickshaw,urban,all,all,0.0,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,cycle-rickshaw,rural+urban,all,all,0.0,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,two-wheeler,rural,all,all,11.1,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,two-wheeler,urban,all,all,5.8,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,two-wheeler,rural+urban,all,all,8.8,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,car,rural,all,all,13.0,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,car,urban,all,all,18.0,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,car,rural+urban,all,all,15.1,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,auto-rickshaw,rural,all,all,3.3,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,auto-rickshaw,urban,all,all,1.2,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,auto-rickshaw,rural+urban,all,all,2.4,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,bus,rural,all,all,59.3,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,bus,urban,all,all,51.1,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,bus,rural+urban,all,all,55.8,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,train-metro-monorail-tram,rural,all,all,2.6,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,train-metro-monorail-tram,urban,all,all,4.3,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,train-metro-monorail-tram,rural+urban,all,all,3.3,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,rail,rural,all,all,14,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,rail,urban,all,all,22.7,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,rail,rural+urban,all,all,17.7,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,water,rural,all,all,0.1,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,water,urban,all,all,0.1,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,water,rural+urban,all,all,0.1,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,air,rural,all,all,0.2,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,air,urban,all,all,1.3,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,air,rural+urban,all,all,0.6,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,others,rural,all,all,0.6,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,others,urban,all,all,0.2,per cent of households that made an overnight trip in the last 28 travel days
+india,2025-26,"NHTS 2025-26 fact sheet, Table 7",overnight-mode,others,rural+urban,all,all,0.5,per cent of households that made an overnight trip in the last 28 travel days
