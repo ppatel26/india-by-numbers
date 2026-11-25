@@ -148,8 +148,9 @@ const stateProfile: StateProfile = {
         { label: 'Men who use tobacco', chart: 'tobacco-use-by-state', series: 'men-nfhs6' },
         { label: 'Women overweight or obese', chart: 'overweight-by-state', series: 'women-nfhs6' },
         { label: 'Deaths registered', chart: 'registration-of-births-and-deaths-by-state', series: 'deaths' },
+        { label: 'People with a disability', chart: 'disability-by-state' },
       ],
-      footnote: 'Ranks count only states and UTs with data. SRS and NFHS figures are survey estimates. Infant mortality is a 2022-24 average for smaller states and UTs and a 2024 value for the others, so ranks mix the two. Deaths registered is a share of the deaths ORGI estimates, and ORGI caps it at 100%.',
+      footnote: 'Ranks count only states and UTs with data. SRS, NFHS and NSS figures are survey estimates. Infant mortality is a 2022-24 average for smaller states and UTs and a 2024 value for the others, so ranks mix the two. Deaths registered is a share of the deaths ORGI estimates, and ORGI caps it at 100%.',
     },
     {
       topic: 'education',

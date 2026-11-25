@@ -13,6 +13,7 @@ Data gathered on 17 and 18 Nov 2026 from ORGI, IIPS, PIB, MoHFW, NHSRC and WHO. 
 7. What do people in India die of?
 8. How many adults use tobacco, and how many are overweight, in each state?
 9. How complete is the registration of births and deaths in each state?
+10. How many people live with a disability, of which type, and how many get aid or help?
 
 ## Charts
 
@@ -219,6 +220,69 @@ ORGI replaced its sample in 2004 and 2014. The chart marks both years. Some thre
 - Source: ORGI, CRS report 2024, Statement 26 (page 65) and paragraph 3.18.1.
 - Decision: a chart, not only a note, because CRS covers 35 states and UTs where SRS covers 22. The chart says it is a count of registered births and not a survey estimate. ORGI removes births registered more than a year late before it computes the ratio.
 
+### H15. Disability, 2018
+
+Four charts in the part "How many people live with a disability?".
+
+- Source: MoSPI NSO, NSS Report No. 583, Persons with Disabilities in India (NSS round 76, July to December 2018), and the eSankhyiki API, NSS round 76, survey code 1. The API list has 13 indicators, not 12 as the source backlog said. The charts use indicators 1, 2 and 13.
+- Charts:
+  - `disability-by-state` (`states`, map first): share of people with any disability, persons, rural+urban, India and 34 states and UTs. Indicator 1; Table 1.2. State profile row "People with a disability".
+  - `disability-by-type` (`bars`): share of people with each broad type, India, rural+urban, women, men and both. Indicator 2; Table 4.1 and Statement 4.
+  - `disability-aid-received` (`bars`, stacked): people with a disability by main source of aid or help, India, rural+urban, women, men and both. Indicator 13; Table 32.1 and Statement 32.
+  - `disability-government-aid-by-state` (`states`, chart first): share of people with a disability whose main aid or help came from the government, persons, rural+urban. Indicator 13; Table 32.1.
+- CSVs (all with `geography`, `period` 2018, `sex` male, female or person, `sector` rural, urban or rural+urban, `value`, `unit`, `api_indicator`, `report_table`, `note`):
+  - `disability-by-state-2018.csv`: 315 rows. Adds `rse_percent` from Table RSE1 (Appendix D). The API has no RSE.
+  - `disability-by-type-2018.csv`: 2,520 rows. `disability_type` is `locomotor`, `visual`, `hearing`, `speech-and-language`, `intellectual` (NSO's "mental retardation/intellectual disability"), `mental-illness`, `other` or `any`.
+  - `disability-aid-received-2018.csv`: 1,260 rows. `aid` is `government`, `other-organisation`, `none` or `all` (100.0).
+- Sentences: "2.2% of people in India had a disability in 2018: 2.4% of men and 1.9% of women." "Odisha and Kerala had the highest shares, 3.2% each. Manipur had the lowest, 0.8%." "76.4% of people with a disability got no aid or help in 2018." "In Telangana, 57.1% of people with a disability got aid or help from the government. In Uttar Pradesh, 9.2% did."
+- Status: `Survey estimate`. Every chart `checked: '2026-11-25'`.
+- Definition: NSS round 76 uses the definition in the Rights of Persons with Disabilities Act, 2016 (Report 583, paragraph 2.3): a long-term physical, mental, intellectual or sensory impairment that, with barriers, hinders full and equal participation in society. Long term means 12 months or more (paragraph 2.4). Each broad type has its own screening questions (paragraph 1.4.0 (iv)). The NSS 58th round (2002) used a different definition, reference period, classification and procedure (paragraph 1.4.0). Census 2011 used its own question and categories, set before the 2016 Act. The site does not compare NSS round 76 with Census 2011 or with earlier NSS rounds.
+- Persons include transgender persons (Statement 1, note 1).
+- Decision: the third chart uses indicator 13 (aid or help), the only one of the brief's options that the API has. The certificate of disability (Statement 32.2) and work (Statement 35, LFPR, WPR and UR of persons aged 15 and over) are in the report only, with no API indicator. The API has no age indicator. These are left out. A later chart could take them from the report tables.
+- Decision: a fourth chart, government aid by state, because the state spread is wide (5.9% in Arunachal Pradesh to 61.2% in Puducherry) and the API gives it with the same checks. It has no state profile row: NSO publishes no RSE for it, and four UTs rest on fewer than 200 people with a disability.
+- Decision: the state share map uses the sequential scale, not the gap from India, because a higher share is neither better nor worse.
+- Decision: `intellectual` is NSO's "mental retardation/intellectual disability". The chart labels it "Intellectual disability". The API spells it "Mental Retardness/Intellectual Disability" and calls locomotor disability "Locomotive disability".
+
+#### Sample sizes and RSE
+
+NSO warns that "for the smaller States/UTs, the sample sizes may not be adequate enough for getting sufficiently reliable estimates" (paragraph 1.7.2). Appendix B, Table 1 gives the persons with disabilities surveyed. The smallest, rural and urban together: Andaman and Nicobar Islands 103, Chandigarh 101, Goa 137, Lakshadweep 154. The RSE of the state share (persons, rural+urban, Table RSE1) is above 10% in Andaman and Nicobar Islands (16.61), Chandigarh (14.00), Arunachal Pradesh (13.63), Goa (13.22) and Lakshadweep (10.34). India's RSE is 0.72. The survey surveyed 1,06,894 persons with disabilities in all (74,946 rural, 31,948 urban; Table 1).
+
+#### 2018 geography
+
+The API and the report give Dadra and Nagar Haveli and Daman and Diu as two UTs. Neither is a current UT, so the CSVs leave both out, as the living standards topic does with NSS round 76. Jammu and Kashmir in 2018 includes Ladakh; the `note` column says so. Ladakh has no value.
+
+#### Raw files for H15
+
+Read 25 Nov 2026. Paths are relative to `raw/health/`.
+
+| Raw file | What it holds | Records | Pages | SHA-256 |
+| --- | --- | --- | --- | --- |
+| `nss76-583/report.pdf` | NSS Report No. 583, 209 pages. PDF created 22 Nov 2019 | | | `905b6e63e92cf4b223d2f37ba458526a358543eb913e4075085bbcd117355d3a` |
+| `nss76-disability/indicators.json` | NSS round 76, survey code 1, indicator list (13 indicators) | 13 | 1 | `b91c65bf5cc864b811cb6310f127cc9eccd84bbf5f68f4fbc2cb7ecda24b761a` |
+| `nss76-disability/i1.json` | Percentage of persons with disability | 333 | 2 | `ad484a74501b59994de16d6da49cb60aa85616af049fc27f400d028ff949931b` |
+| `nss76-disability/i2.json` | Percentage of persons with broad type of disability | 2664 | 14 | `0e497b93c285bd8d8b4ed35aa879e461c44e57906f0278230d336854bbf58006` |
+| `nss76-disability/i13.json` | Percentage distribution of persons with disability by receipt of aid/help | 1332 | 7 | `c1c1e3ab6997486824d62d59ec33400cf7cbca469236a5a2303bcdbf9dfaf865` |
+
+The fetch also saved indicators 3 to 12 (literacy, education, onset, treatment, aids and appliances, caregiver, public transport). They are not used. The SHA-256 of each JSON file changes with the fetch time it records.
+
+```sh
+python3 -I pipeline/education/fetch_nss.py --raw raw/health/nss76-disability --round 76 --survey 1
+pipeline/common/fetch.sh --raw raw/health/nss76-583 https://www.mospi.gov.in/sites/default/files/publication_reports/Report_583_Final_0.pdf report.pdf
+pipeline/health/extract_text.sh
+python3 -I pipeline/health/build_disability.py
+```
+
+#### Checks for H15
+
+`build_disability.py` compares every API value with the report and stops on any difference, or on a row that one side has and the other lacks. On 25 Nov 2026, 4,527 report cells agreed: Table 1.2 (315), Statement 1 (9), Table 4.1 (2,520), Statement 4 (72), Table 4.1 "any disability" against Table 1.2 (315), Table 32.1 (1,260) and Statement 32 (36). A test with one API value changed by 0.1 stopped the build. Values read by eye against the report page, and in the built chart files:
+
+| Chart | Value | Report |
+| --- | --- | --- |
+| `disability-by-state` | India 2.2, Andhra Pradesh 3.0, Manipur 0.8 | Table 1.2, column 10 |
+| `disability-by-type` | Locomotor, persons 1.4; women 1.2; hearing, persons 0.3 | Statement 4, rural+urban |
+| `disability-aid-received` | Men, government 22.7; women, none 77.8; persons, none 76.4 | Statement 32, rural+urban |
+| `disability-government-aid-by-state` | Andhra Pradesh 39.3, Arunachal Pradesh 5.9, Goa 49.7 | Table 32.1, rural+urban, column 10 |
+
 ### Raw files for H11 to H14
 
 Read 25 Nov 2026. Paths are relative to `raw/health/`. Run `pipeline/health/extract_text.sh`, then the scripts below from the repository root.
@@ -311,6 +375,8 @@ All read on 17 Nov 2026. Raw downloads are not kept in the repository; the URL a
 | PIB (MoHFW) | "Union Health Ministry Releases National Family Health Survey - 6", Release ID 2266600 | 29 May 2026 | 2023-24 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2266600 | caeb939052f8106e8fb4f7477defc2c1d85ec350d4361e349517aa8c222c08f0 |
 | PIB (MoHFW) | "Update on NFHS-6", Release ID 2294277 (Rajya Sabha reply) | 4 Aug 2026 | n/a | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2294277 | 0f533189750ee1ddfb2e6e9afc8bf8d37e9983b013636d587f69ae499bf6bcd0 |
 | PIB (Ministry of Women and Child Development) | "Study on impact of PMMVY", Release 1782638, Annexure-I (Lok Sabha reply) | 17 Dec 2021 | NFHS-5, 2019-21 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=1782638 | 70eeb06710894aec3ded97d2d9c649faeb82f125206a935af1a394e4aa59d612 |
+| MoSPI NSO | NSS Report No. 583, Persons with Disabilities in India (NSS round 76), read 25 Nov 2026 | 22 Nov 2019 (PDF created 22 Nov 2019) | July to December 2018 | https://www.mospi.gov.in/sites/default/files/publication_reports/Report_583_Final_0.pdf | 905b6e63e92cf4b223d2f37ba458526a358543eb913e4075085bbcd117355d3a |
+| MoSPI NSO | eSankhyiki API, NSS round 76, survey code 1, indicators 1, 2 and 13, read 25 Nov 2026 | Not stated by the API | July to December 2018 | https://api.mospi.gov.in/api/nss-76/getNss76Records?indicator_code=<code>&survey_code=1&Format=JSON&limit=200&page=<p> | See H15 |
 | MoHFW, NHSRC (NHA Technical Secretariat) | National Health Accounts Estimates for India 2023-24 | Public release confirmed by 15 Nov 2026 (PIB PRID 2336478). Foreword dated 7 Sep 2026. PDF dated 6 Nov 2026 | 2013-14 to 2023-24 | https://nhsrcindia.org/sites/default/files/2026-11/NHA%20Report%202023-24.pdf | cf60c3fd530a585f9426595505c1301a2877e317adca4f8d17097c84e190e119 |
 
 Parsing: `pdftotext -layout` (`pipeline/health/extract_text.sh`), then `pipeline/health/build_health.py` run with `python3 -I`. The script checks row counts and some known values (for example IMR 129 in 1971 and 24 in 2024, NFHS-5 anaemia 57.0 for India).

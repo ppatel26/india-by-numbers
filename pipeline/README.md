@@ -99,17 +99,18 @@ Some CSVs were made in more than one step. Run the steps in this order:
 | `jobs/fetch_tus.sh` | None. Downloads the TUS 2019 and 2024 reports and three eSankhyiki TUS queries, and extracts the report text | MoSPI (Time Use Survey) |
 | `jobs/build_tus.py` | `jobs-time-use-india`, `jobs-time-use-by-state-2024`. Checks the API against the report tables | MoSPI (Time Use Survey) |
 | `education/extract_text.sh` | None. Text of the UDISE+ booklets, the AISHE reports and the NSS reports 595 and 590 | Ministry of Education, MoSPI |
-| `education/fetch_nss.py` | None. Downloads NSS indicators (rounds 79 and 80) from the eSankhyiki API, one JSON file per indicator | MoSPI |
+| `education/fetch_nss.py` | None. Downloads NSS indicators (rounds 76, 79 and 80) from the eSankhyiki API, one JSON file per indicator | MoSPI |
 | `education/build_education.py` | `education-ger-school-by-state`, `education-dropout-by-state`, `education-ptr-by-state`, `education-school-facilities-by-state`, `education-school-trend-india`, `education-higher-ed-ger-by-state`, `education-higher-ed-ger-india`, `education-literacy-by-state` | Ministry of Education (UDISE+, AISHE), MoSPI (PLFS), ORGI (Census) |
 | `education/build_cmse.py` | `education-spending-per-student`, `education-school-type-by-state`, `education-private-coaching`, `education-mean-years-schooling-by-state`. Checks the API values against the report tables | MoSPI (NSS: CMS: Education 2025, CAMS 2022-23) |
 | `living-standards/fetch_hces.py` | None. Downloads the nine HCES indicators from the eSankhyiki API, one JSON file per indicator. NSS rounds 79 and 76 use `education/fetch_nss.py` | MoSPI (HCES) |
 | `living-standards/extract_text.sh` | None. Text of NSS Reports 592, 591 (HCES), 590 (CAMS) and 584 (NSS round 76) | MoSPI |
 | `living-standards/build_living_standards.py` | `mpce-by-state`, `mpce-india-rounds`, `mpce-item-shares-india-rounds`, `food-share-by-state`, `gini-mpce`, `internet-and-ict-skills-by-state`, `bank-account-by-state`, `household-amenities-by-state`, `household-assets-by-state`. Checks every API value against the report tables | MoSPI (HCES 2022-23 and 2023-24, CAMS 2022-23, NSS round 76) |
-| `health/extract_text.sh` | None. Text of the SRS, MMR, life table, cause of death, CRS, NFHS-5, NFHS-6 and NHA reports | ORGI, IIPS, MoHFW |
+| `health/extract_text.sh` | None. Text of the SRS, MMR, life table, cause of death, CRS, NFHS-5, NFHS-6 and NHA reports, and NSS Report 583 | ORGI, IIPS, MoHFW, MoSPI |
 | `health/build_health.py` | `imr-india-1971-2024`, `imr-by-state-2024`, `mmr-india-1997-2024`, `mmr-by-state-2022-24`, `life-expectancy-india-1970-2024`, `life-expectancy-by-state-2020-24`, `nfhs-key-indicators-by-state`, `out-of-pocket-health-spending`, `child-mortality-by-state-2024` | ORGI (SRS), IIPS and MoHFW (NFHS), PIB, MoHFW and NHSRC (NHA) |
 | `health/build_crs.py` | `crs-registration-level-by-state-2024`, `crs-sex-ratio-at-birth-by-state` | ORGI (CRS) |
 | `health/build_srs_cod.py` | `srs-causes-of-death-india` | ORGI (SRS) |
 | `health/build_nfhs_adult.py` | `nfhs-adult-indicators-by-state` | IIPS and MoHFW (NFHS-6), IIPS and ICF (NFHS-5 report) |
+| `health/build_disability.py` | `disability-by-state-2018`, `disability-by-type-2018`, `disability-aid-received-2018`. Reads the eSankhyiki NSS round 76 pages (survey code 1, fetched with `education/fetch_nss.py`) and checks every value against the tables of NSS Report 583 | MoSPI (NSS round 76) |
 | `crime/fetch.sh`, `crime/sources.tsv` | None. Downloads every NCRB report and Parliament answer the crime topic reads, with `common/fetch.sh` | NCRB, Lok Sabha, Rajya Sabha |
 | `crime/ncrb_files.mjs` | None. Lists the files of an NCRB year page in English (the site serves Hindi by default) | NCRB |
 | `crime/find_answers.py` | None. Lists Ministry of Law and Justice answers and their files, from the Lok Sabha eLibrary or the Rajya Sabha question list | Lok Sabha, Rajya Sabha |
