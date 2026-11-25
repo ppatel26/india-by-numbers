@@ -115,6 +115,9 @@ Some CSVs were made in more than one step. Run the steps in this order:
 | `crime/extract_text.sh` | None. Text of the Crime in India, Prison Statistics India and Parliament answer PDFs | NCRB, Ministry of Law and Justice |
 | `crime/build_ncrb.py` | `crime-by-state-2024`, `crime-india-trend`, `ipc-crimes-india-1981-2024`, `murder-by-state-2024`, `crimes-against-women-by-state-2024`, `police-and-court-disposal-by-state-2024`, `prisons-by-state-2024`, `prisons-india-trend` | NCRB (Crime in India, Prison Statistics India) |
 | `crime/build_pendency.py` | `court-pendency-district-by-state`, `court-pendency-high-courts` | Ministry of Law and Justice (answers in the Lok Sabha and Rajya Sabha, citing NJDG) |
+| `trade-payments/fetch_handbook.sh` | None. Saves the RBI Handbook 2025-26 HTML tables (58, 111 to 131, 143, 144, 241), its Notes on Tables and the RBI website policy page, with `common/fetch.sh` | RBI |
+| `trade-payments/fetch_psi.py` | None. Posts the Payment System Indicators archive form and saves all 65 monthly releases as HTML | RBI |
+| `trade-payments/build_trade_payments.py` | `current-account-annual`, `bop-indicators-annual`, `bop-bpm6-annual`, `merchandise-trade-annual`, `merchandise-trade-by-commodity`, `merchandise-trade-by-partner`, `forex-reserves-end-march`, `payments-monthly`, `payments-annual`, `payment-infrastructure-monthly`. Stops if a checked value or a cross-table check differs | RBI (Handbook, Payment System Indicators), DGCI&S (trade tables in the Handbook) |
 | `climate/extract_text.sh`, `climate/parse_cea.py` | None. Text and word boxes of the CEA and MNRE PDFs, and the CEA totals | CEA, MNRE |
 | `climate/build_rain.py` | `monsoon-rainfall-all-india-1901-2026` | IMD Pune |
 | `climate/build_subdiv.py` | `monsoon-2026-by-subdivision` (values transcribed from an IMD table image) | IMD |

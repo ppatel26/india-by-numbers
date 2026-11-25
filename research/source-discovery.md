@@ -190,9 +190,9 @@ These are the "Later" topics in `docs/site-spec.md`.
 | Transport | MoRTH Road Accidents in India | 2023 PDF found. A 2024 edition is not confirmed on the MoRTH site | `use`. Confirm the edition | Yes |
 | Transport | MoRTH Road Transport Year Book | 2019-20 | `later`. Stale | Yes |
 | Transport | NSS Household Travel Survey 2025-26 | Fact sheet, MoSPI list date 5 Oct 2026, Tables 1 to 7 and Appendix A state tables. No full report yet | `use` the fact sheet tables | No |
-| Trade | RBI Handbook, balance of payments | 2025-26, 31 Jul 2026, tables 124 to 131, with XLSX | `use` | Yes |
+| Trade | RBI Handbook, balance of payments, foreign trade and reserves | 2025-26, 31 Jul 2026: Tables 111 to 131, 144 and 241. The XLSX links (rbidocs) serve a bot check to scripts; the HTML tables on www.rbi.org.in load | `data ready` in `research/data/trade-payments/`: current account and parts 1996-97 to 2025-26, current account to GDP from 1987-88, BPM6 detail 2022-23 to 2025-26, trade from 1987-88, commodities and partners, reserves from 1968-69. National only | Yes |
 | Trade | DGCI&S tradestat | 2025-26 | `later`. No reuse terms, no download | Yes |
-| Money and payments | RBI Payment System Indicators | October 2026, monthly XLSX | `use`. National only | Yes |
+| Money and payments | RBI Payment System Indicators | October 2026 (release date not stated). 65 monthly releases from June 2021, read as HTML (`PSIUserView.aspx?Id=1` to `65`) | `data ready` in `research/data/trade-payments/`: UPI, NEFT, RTGS, IMPS, cards and other systems, June 2020 to October 2026, and cards, ATMs and PoS terminals. National only | Yes |
 | Money and payments | RBI Basic Statistical Returns | June 2026, quarterly | `later`. State tables are only on DBIE, which did not load | Yes |
 | International | World Bank WDI API | Updated 11 Nov 2026 | `use`. CC BY 4.0, except third-party series inside WDI | Yes |
 | International | ILOSTAT API | Works with no key | `use` for comparisons only (rule R6). CC BY 4.0 for datasets since 3 May 2023. Its India rows are ILO's own processing of PLFS unit-level data, so for India alone use MoSPI | Yes |
