@@ -238,10 +238,11 @@ rules above). It does not wait for the owner.
 6. **Next.** The council placed each source (25 Nov 2026):
    - Domestic tourism (NSS Report 597): a part in Transport, 3 of 3. Done on 25 Nov 2026: 4 charts and 1 state-profile row.
    - Disability (NSS Report 583): a part in Health, 3 of 3. Done on 25 Nov 2026: 4 charts and 1 state-profile row.
-   - UN migrant stock: a part in Population, 3 of 3, linked from the remittances chart in Trade.
+   - UN migrant stock: a part in Population, 3 of 3, linked from the remittances chart in Trade. Done on 25 Nov 2026: 2 charts.
    - World Bank WDI: comparison charts inside existing topics, 3 of 3. First five, by votes: GDP
      per person at PPP (Economy), life expectancy (Health), fertility rate (Population), CO2 per
-     person (Climate), women's labour force participation, ILO modelled (Jobs).
+     person (Climate), women's labour force participation, ILO modelled (Jobs). Done on 25 Nov 2026:
+     5 charts, one WDI release (11 Nov 2026), one country panel, and the `Modelled estimate` status word.
    - Farm households (NSS Report 587): a new Agriculture topic, 2 of 3 (Muse voted to wait for a
      second agriculture source). It comes after the parts, with its own design council. Data ready on
      25 Nov 2026 in `research/data/agriculture/`, with Agricultural Statistics at a Glance 2024-25 as
