@@ -56,6 +56,35 @@ const nhtsA5 = nhtsTable('Appendix A Table 5, mode of travel to a workplace', '1
 const nhtsB2 = nhtsTable('Appendix B Table 2, relative standard errors of Table A3', '1791196810096-RSE_Table_2.xlsx')
 const nhtsB4 = nhtsTable('Appendix B Table 4, relative standard errors of Table A5', '1791196831860-RSE_Table_4.xlsx')
 
+// The press note is dated "23rd September, 2026"; the MoSPI release list gives the same day.
+// The report itself is not on the release list; its cover says "September, 2026".
+const DTES_DATE = '2026-09-23'
+const DTES_FILES = 'https://www.mospi.gov.in/uploads/documents/DTES_tables/'
+
+const dtesReport: Source = {
+  publisher: 'NSO, MoSPI',
+  release: 'NSS Report 597, Domestic Tourism in India (NSS round 80, July 2025 to June 2026)',
+  released: DTES_DATE,
+  url: 'https://www.mospi.gov.in/uploads/publications_reports/publications_reports1790160086463_10b96a4e-35b0-416b-83b7-9cb3b364ca8c_DomesticTourism_report_597_(1).pdf',
+}
+
+const dtesPressNote: Source = {
+  publisher: 'NSO, MoSPI',
+  release: 'Press note, Domestic Tourism Expenditure Survey, NSS round 80 (July 2025 to June 2026)',
+  released: DTES_DATE,
+  url: 'https://www.mospi.gov.in/uploads/latestReleases/latest_release_1790159417509_e87601c9-a7f3-4290-9600-46c078186d81_Press_Note_DTES_220926.pdf',
+}
+
+const dtesTable = (name: string, file: string): Source => ({
+  publisher: 'NSO, MoSPI',
+  release: `NSS Report 597, ${name}`,
+  released: DTES_DATE,
+  url: `${DTES_FILES}${file}`,
+})
+
+const dtesT1 = dtesTable('Appendix A Table 1, households reporting overnight trips by State/UT', 'Table1.xlsx')
+const dtesT15 = dtesTable('Appendix A Table 15, average spending per overnight trip by item', 'Table15.xlsx')
+
 // ---------------------------------------------------------------- Data
 
 const BY_STATE = 'transport/road-accidents-by-state.csv'
@@ -64,6 +93,8 @@ const ROAD_USER = 'transport/road-deaths-by-road-user.csv'
 const DEVICE = 'transport/road-deaths-helmet-seatbelt-by-state.csv'
 const MODE = 'transport/travel-mode-by-state-2025-26.csv'
 const FACT_SHEET = 'transport/travel-india-fact-sheet-2025-26.csv'
+const TOURISM_STATES = 'transport/tourism-households-by-state-2025-26.csv'
+const TOURISM = 'transport/tourism-india-2025-26.csv'
 
 const CHECKED = '2026-11-25'
 
@@ -106,6 +137,35 @@ const OVERNIGHT_MODES = [
   ['others', 'Other'],
 ] as const
 
+/** Leading purposes of overnight trips, in MoSPI's order, each with its reference period. */
+const PURPOSES = [
+  ['holidaying-leisure-recreation-365-days', 'Holiday, leisure and recreation (365 days)'],
+  ['pilgrimage-religious-365-days', 'Pilgrimage and religious (365 days)'],
+  ['health-medical-365-days', 'Health and medical (365 days)'],
+  ['shopping-365-days', 'Shopping (365 days)'],
+  ['all-365-days', 'All four purposes (365 days)'],
+  ['business-30-days', 'Business (30 days)'],
+  ['social-30-days', 'Social (30 days)'],
+  ['education-training-30-days', 'Education and training (30 days)'],
+  ['others-30-days', 'Other (30 days)'],
+  ['all-30-days', 'All four purposes (30 days)'],
+] as const
+
+/** The eight leading purposes, without the two "all" rows: the rows of the spending-by-item chart. */
+const ITEM_ROWS = PURPOSES.filter(([k]) => !k.startsWith('all-')).map(([k]) => k)
+
+/** Items of spending on an overnight trip, Table 15. The package is a tour bought as one price. */
+const SPENDING_ITEMS = [
+  ['medical', 'Medical', 's1'],
+  ['transport', 'Transport', 's2'],
+  ['shopping', 'Shopping', 's3'],
+  ['accommodation', 'Accommodation', 's4'],
+  ['food-and-drink', 'Food and drink', 's5'],
+  ['package', 'Package tour', 's6'],
+  ['recreation-religious-cultural-sporting', 'Recreation, religious, cultural and sport', 's7'],
+  ['others', 'Other', 's8'],
+] as const
+
 const modeKeys = (list: readonly (readonly [string, string])[]): string[] => list.map(([k]) => k)
 
 /** Rural and urban bars, and the two together for figures and the table. */
@@ -124,6 +184,24 @@ const sectorSeries = (purpose: 'work' | 'education') =>
     file: MODE,
     x: 'mode',
     where: { geography: 'india', purpose, sex: 'person', sector, mode: modeKeys(MODES) },
+  }))
+
+/** Rural and urban bars from the tourism file, and the two together for figures and the table. */
+const tourismSeries = (measure: string, where: Record<string, string | readonly string[]>) =>
+  (
+    [
+      ['rural', 'Rural', 's4', false],
+      ['urban', 'Urban', 's5', false],
+      ['rural+urban', 'Rural and urban', 'ink', true],
+    ] as const
+  ).map(([sector, label, color, hidden]) => ({
+    key: sector,
+    label,
+    color,
+    hidden,
+    file: TOURISM,
+    x: 'purpose_period',
+    where: { measure, sector, ...where },
   }))
 
 // Know lines that several charts share.
@@ -151,13 +229,25 @@ const KM_KNOW =
 const DTES_KNOW =
   'MoSPI advises users not to compare the NHTS with the Domestic Tourism Expenditure Survey: the two surveys define a trip differently.'
 
+const DTES_NHTS_KNOW =
+  'This survey (the Domestic Tourism Expenditure Survey, DTES) and the National Household Travel Survey (NHTS) both ran from July 2025 to June 2026. They define a trip differently and use different reference periods: 365 or 30 days here, 28 travel days in the NHTS. MoSPI says their results are not strictly comparable. Do not set these figures beside the overnight trips chart above.'
+
+const DTES_PERIODS_KNOW =
+  'MoSPI counts overnight trips for holidays, pilgrimage, health and shopping over the last 365 days, and trips for business, social visits, education and other purposes over the last 30 days. The two groups do not add up, and a 30-day count does not compare with a 365-day count.'
+
+const DTES_TRIP_KNOW =
+  'An overnight trip is a round trip outside the usual environment of at least 12 hours that include midnight to 5 am, and of no more than 180 days. Travel to work or school, and other regular, frequent movements, are not trips. The leading purpose is the purpose without which no member of the household would have made the trip.'
+
+const DTES_ROUND_KNOW =
+  'The previous survey, NSS round 72, counted pilgrimage trips over 30 days, not 365. MoSPI says the two rounds are not strictly comparable.'
+
 const topic: Topic = {
   slug: 'transport',
   name: 'Transport',
   hindi: 'परिवहन',
   question: 'How many people die on the roads, and how do people travel?',
   standfirst:
-    'In 2024, the police recorded 1,77,175 road deaths, or 12.6 for every lakh people. People on two-wheelers were 46.2% of them. In 2025-26, 42.6% of workers who travelled 1 km or more to work went by two-wheeler. This topic covers road safety and household travel. Railways, aviation, freight and vehicle registrations are not covered yet.',
+    'In 2024, the police recorded 1,77,175 road deaths, or 12.6 for every lakh people. People on two-wheelers were 46.2% of them. In 2025-26, 42.6% of workers who travelled 1 km or more to work went by two-wheeler. This topic covers road safety, household travel and domestic tourism. Railways, aviation, freight and vehicle registrations are not covered yet.',
   figures: [
     { chart: 'road-deaths-india', series: 'deaths', label: 'Road deaths recorded by the police', period: '2024', format: { scale: 'none', decimals: 0 } },
     { chart: 'road-deaths-per-lakh-by-state', label: 'Road deaths per lakh people' },
@@ -551,24 +641,189 @@ const topic: Topic = {
         },
       ],
     },
+    {
+      title: 'How do Indians travel for leisure, family and pilgrimage?',
+      lede: 'In 2025-26, 36.1% of households made at least one overnight trip for a holiday, a pilgrimage, health care, shopping, a social visit, business or study. In villages the share was 35.2%, and in towns 37.7%.',
+      blocks: [
+        {
+          chart: {
+            kind: 'states',
+            slug: 'overnight-trip-households-by-state',
+            checked: CHECKED,
+            title: 'Households that made an overnight trip, by state, 2025-26',
+            subtitle: 'Share of households that made at least one overnight trip: a holiday, pilgrimage, health or shopping trip in the last 365 days, or a business, social, education or other trip in the last 30 days, by state and UT.',
+            punches: { office: 'MoSPI', unit: '% of households', period: '2025-26' },
+            status: ['Survey estimate'],
+            note: 'Denominator: all households. Derived from MoSPI\'s counts of households in Appendix A Table 1. Rural and urban together.',
+            sources: [dtesReport, dtesT1],
+            format: { unit: '%', decimals: 1 },
+            data: { file: TOURISM_STATES, where: { sector: 'rural+urban', trip_type: 'overnight', indicator: 'share-of-households-with-trip' }, x: 'geography' },
+            open: 'map',
+            scale: 'seq',
+            bins: [25, 30, 35, 40, 50],
+            short: 'Overnight trips',
+            know: [
+              'MoSPI prints this share for India only (Statement 3.1). For each state and UT we divide the households that reported an overnight trip by all households, both from Appendix A Table 1. India\'s value equals Statement 3.1. MoSPI\'s own state shares of same-day trips (Statement 3.16) use the same division.',
+              DTES_PERIODS_KNOW,
+              DTES_TRIP_KNOW,
+              'MoSPI gives no standard error for this share. The relative standard errors of the trip counts are highest in small states and UTs, up to 61.41% for urban 30-day trips in Mizoram. Lakshadweep (240 sample households) and Ladakh (360) have the smallest samples.',
+              DTES_NHTS_KNOW,
+            ],
+            processing: [
+              'Read Appendix A Table 1 of NSS Report 597: estimated households, and households that reported an overnight trip, rural, urban and rural and urban, by state and UT (in hundreds).',
+              'Divide column 3 by column 2 and multiply by 100, to one decimal. Mark the result derived.',
+              'Check India (35.2% rural, 37.7% urban, 36.1% rural and urban) against Statement 3.1.',
+              'Check all 110 values of Statement 3.16 against the same division on Table 19, to confirm the method.',
+              'Match state names to the site geography table. MoSPI names Kerala "Keralam".',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'The share ranged from 18.7% in Meghalaya to 62.9% in Lakshadweep. It was 47.6% in Tamil Nadu and in Rajasthan, and 36.9% in Uttar Pradesh.',
+        },
+        {
+          text: 'Pilgrimage was the leading purpose of 16.1 overnight trips for every 100 households in a year, and health care of 10.0. Urban households made 13.5 holiday trips for every 100 households in a year, against 4.0 in villages. Social visits gave 16.1 trips for every 100 households in a month.',
+        },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'overnight-trips-by-purpose',
+            checked: CHECKED,
+            title: 'Overnight trips by leading purpose in India, rural and urban, 2025-26',
+            subtitle: 'Overnight trips for every 100 households, by the leading purpose of the trip, India. Holiday, pilgrimage, health and shopping trips are over the last 365 days; the others over the last 30 days.',
+            punches: { office: 'MoSPI', unit: 'trips per 100 households', period: '2025-26' },
+            status: ['Survey estimate'],
+            note: 'Denominator: all households, with or without a trip. Do not compare a 365-day count with a 30-day count.',
+            sources: [dtesReport, dtesT1, dtesT15],
+            format: { decimals: 1 },
+            by: 'purpose_period',
+            rowHead: 'Leading purpose (reference period)',
+            order: PURPOSES.map(([k]) => k),
+            labels: Object.fromEntries(PURPOSES),
+            series: tourismSeries('overnight-trips-per-100-households', {}),
+            know: [
+              DTES_PERIODS_KNOW,
+              DTES_TRIP_KNOW,
+              'A trip counts once, however many household members travel together on it. "Social" covers visits to friends and relatives, weddings and other family events, and visits to one\'s hometown.',
+              DTES_ROUND_KNOW,
+              DTES_NHTS_KNOW,
+            ],
+            processing: [
+              'Read Statement 3.2 of NSS Report 597: average number of overnight trips per 100 households, by leading purpose, rural, urban and rural and urban.',
+              'Check pilgrimage, rural (15.5), and social, rural and urban (16.1), against the statement.',
+              'Check each value against the trip counts of Appendix A Table 15 divided by the households of Table 1.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'A trip for health care cost the most: ₹32,167 on average. Urban households spent ₹41,649 on such a trip, and rural households ₹29,454. A social trip cost ₹2,543.',
+        },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'overnight-trip-spending-by-purpose',
+            checked: CHECKED,
+            title: 'Spending per overnight trip by leading purpose in India, rural and urban, 2025-26',
+            subtitle: 'Average spending on one overnight trip, in rupees, by the leading purpose of the trip, India.',
+            punches: { office: 'MoSPI', unit: '₹ per trip', period: '2025-26' },
+            status: ['Survey estimate'],
+            note: 'Denominator: overnight trips. Spending for the whole trip, not per person. Holiday, pilgrimage, health and shopping trips are over the last 365 days; the others over the last 30 days.',
+            sources: [dtesReport, dtesT15],
+            format: { unit: '₹', decimals: 0 },
+            by: 'purpose_period',
+            rowHead: 'Leading purpose (reference period)',
+            order: PURPOSES.map(([k]) => k),
+            labels: Object.fromEntries(PURPOSES),
+            series: tourismSeries('average-spending-per-overnight-trip', { item: 'total' }),
+            know: [
+              'Spending covers everything related to the trip, before, during or after it, whoever paid: the household, or an institution such as a government office. It includes package tours.',
+                            'Relative standard errors of spending per trip for India are 1.35% (rural) and 2.18% (urban) for 365-day trips, and 1.86% and 2.98% for 30-day trips.',
+              DTES_PERIODS_KNOW,
+              DTES_NHTS_KNOW,
+            ],
+            processing: [
+              'Read Appendix A Table 15 of NSS Report 597: total spending per overnight trip, by leading purpose, rural, urban and rural and urban.',
+              'Check health, rural and urban (₹32,167), and business, rural (₹5,179), against Statements 3.13 and 3.15.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'Medical care was ₹23,361 of the cost of a health trip. On a holiday trip, transport was the largest item, at ₹3,685. On a shopping trip, shopping was ₹13,408.',
+        },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'overnight-trip-spending-by-item',
+            checked: CHECKED,
+            title: 'What an overnight trip costs, by item, India, 2025-26',
+            subtitle: 'Average spending on one overnight trip, in rupees, by item and by the leading purpose of the trip, rural and urban India.',
+            punches: { office: 'MoSPI', unit: '₹ per trip', period: '2025-26' },
+            status: ['Survey estimate'],
+            note: 'Denominator: overnight trips. Each item is rounded, so the items can differ from the total by a few rupees.',
+            sources: [dtesReport, dtesT15],
+            format: { unit: '₹', decimals: 0 },
+            by: 'purpose_period',
+            rowHead: 'Leading purpose (reference period)',
+            stacked: true,
+            order: ITEM_ROWS,
+            labels: Object.fromEntries(PURPOSES),
+            series: [
+              ...SPENDING_ITEMS.map(([item, label, color]) => ({
+                key: item,
+                label,
+                color,
+                file: TOURISM,
+                x: 'purpose_period',
+                where: { measure: 'average-spending-per-overnight-trip', sector: 'rural+urban', item, purpose_period: ITEM_ROWS },
+              })),
+              {
+                key: 'total',
+                label: 'Total',
+                color: 'ink',
+                hidden: true,
+                file: TOURISM,
+                x: 'purpose_period',
+                where: { measure: 'average-spending-per-overnight-trip', sector: 'rural+urban', item: 'total', purpose_period: ITEM_ROWS },
+              },
+            ],
+            know: [
+              'A package tour is a trip that a tour operator sells as one product, with more than one service: transport, a place to stay, food or sightseeing. Its cost is one item; MoSPI does not split it.',
+              '"Recreation" covers recreation, religious, cultural and sporting activities. "Medical" covers medical and health-related spending.',
+              'MoSPI gives the items for rural and urban areas separately in Statements 3.14a and 3.14b, as shares of spending outside the package. This chart shows rural and urban together.',
+              DTES_PERIODS_KNOW,
+              DTES_NHTS_KNOW,
+            ],
+            processing: [
+              'Read Appendix A Table 15 of NSS Report 597: average spending per overnight trip by item, rural and urban together.',
+              'Check every value against Statement 3.13, for example transport on a holiday trip (₹3,685).',
+              'Check that the package and the items outside it add up to the total, within a few rupees.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
   ],
   about: {
     intro:
-      'Road safety figures are police records, not survey estimates. MoRTH counts the road accidents that the police record, and police counts are lower than survey-based estimates of road deaths. Deaths per lakh people use MoRTH\'s own population figures, and a state comparison also compares how well each state records accidents. Travel figures come from the first National Household Travel Survey, a sample survey. Railways, aviation, freight and vehicle registrations are not covered yet: rail appears only as a mode of travel in the survey.',
+      'Road safety figures are police records, not survey estimates. MoRTH counts the road accidents that the police record, and police counts are lower than survey-based estimates of road deaths. Deaths per lakh people use MoRTH\'s own population figures, and a state comparison also compares how well each state records accidents. Travel figures come from the first National Household Travel Survey, a sample survey. Tourism figures come from the Domestic Tourism Expenditure Survey, another sample survey of the same year, with its own definition of a trip: MoSPI says the two do not compare. Railways, aviation, freight and vehicle registrations are not covered yet: rail appears only as a mode of travel in the survey.',
     publisher:
-      'The Transport Research Wing of the Ministry of Road Transport and Highways (MoRTH) publishes Road Accidents in India, from the records of the police of each state and UT. The National Statistics Office (NSO), MoSPI, publishes the National Household Travel Survey (NHTS) 2025-26.',
+      'The Transport Research Wing of the Ministry of Road Transport and Highways (MoRTH) publishes Road Accidents in India, from the records of the police of each state and UT. The National Statistics Office (NSO), MoSPI, publishes the National Household Travel Survey (NHTS) 2025-26, and the Domestic Tourism Expenditure Survey (DTES) in NSS Report 597.',
     frequency:
-      'Road Accidents in India: once a year. MoRTH gives no release date for the 2024 edition; it says the report was late because of the move to the e-DAR system. NHTS: first round, July 2025 to June 2026, fact sheet released on 5 Oct 2026. No date published for the next releases.',
+      'Road Accidents in India: once a year. MoRTH gives no release date for the 2024 edition; it says the report was late because of the move to the e-DAR system. NHTS: first round, July 2025 to June 2026, fact sheet released on 5 Oct 2026. DTES: NSS round 80, July 2025 to June 2026, released on 23 Sep 2026; earlier rounds were in 2008-09 and 2014-15. No date published for the next releases.',
     revisions:
       'Every 2023 count and rate in the 2024 edition equals the 2023 edition, except Lakshadweep deaths: "-" in 2023, 0 in 2024. MoRTH notes that it reconciled West Bengal data for 2015 to 2017, 2019 and 2020, and Tamil Nadu data for 2017 to 2020.',
     breaks:
       "West Bengal did not send its 2024 data in MoRTH's formats. MoRTH recast it from e-DAR totals: the totals are valid, but the 2024 breakdowns by road user, helmet and seat belt follow West Bengal's 2023 pattern. From 2021, MoRTH computes rates with the Registrar General's population projections of July 2020.",
     coverage:
-      'Road safety: India and all 36 states and UTs, calendar years 2023 and 2024, with India from 1970. MoRTH gives 1970, 1980 and 1990, then every year from 1995. Travel: India and all 36 states and UTs, July 2025 to June 2026, trips of 1 km or more. Chandigarh has no rural sample.',
+      'Road safety: India and all 36 states and UTs, calendar years 2023 and 2024, with India from 1970. MoRTH gives 1970, 1980 and 1990, then every year from 1995. Travel: India and all 36 states and UTs, July 2025 to June 2026, trips of 1 km or more. Tourism: India and all 36 states and UTs, July 2025 to June 2026; trips and spending for India only. Chandigarh has no rural sample in either survey.',
     missing:
-      'No railways, aviation, freight or vehicle registrations yet. No accidents by road type, cause or time of day, and no city figures: MoRTH prints them, but they are not built yet. No road length or vehicle count after 2022. No trip distance: the NHTS does not publish one. No road accident data for 2025: a dated MoRTH report comes first. Neither publisher states a reuse licence.',
+      'No railways, aviation, freight or vehicle registrations yet. No accidents by road type, cause or time of day, and no city figures: MoRTH prints them, but they are not built yet. No road length or vehicle count after 2022. No trip distance: the NHTS does not publish one. No road accident data for 2025: a dated MoRTH report comes first. No tourism comparison with the 2014-15 round, which counted pilgrimage trips over 30 days. Neither publisher states a reuse licence.',
   },
-  sources: [rai2024, raiMetadata, nhtsFactSheet, nhtsPressNote, nhtsA3, nhtsA5, nhtsB2, nhtsB4],
+  sources: [rai2024, raiMetadata, nhtsFactSheet, nhtsPressNote, nhtsA3, nhtsA5, nhtsB2, nhtsB4, dtesReport, dtesPressNote, dtesT1, dtesT15],
   related: [
     { label: 'Health: Deaths by cause group', href: '/charts/causes-of-death/' },
     { label: 'Crime and justice: Recorded crime rate by state', href: '/charts/crime-rate-by-state/' },
