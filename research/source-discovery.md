@@ -166,7 +166,7 @@ acknowledged reuse. ORGI and NCRB pages say only "Rights" or "All Rights Reserve
 | Time Use Survey 2024 | Report 28 Mar 2025 | API: 41 indicators, minutes per day by activity, sex, rural/urban, MPCE class | No state filter on the API | `in use`: `time-use-paid-unpaid-work`, `time-use-participation`, `women-unpaid-work-by-state` (state tables from the report) | Yes |
 | NSS Health, Jan to Dec 2025 | Press note 20 Apr 2026 | Report PDF not yet found. Not on the API | Not confirmed | `later`. Find the report and its tables | No |
 | NSS Modular Survey: Education 2025 | Results 26 Aug 2025 | API: 18 indicators, spending per student by level and school type, coaching | Yes, with sex and rural/urban | `in use`: `school-spending-by-level-and-type`, `school-spending-by-state`, `government-school-share-by-state`, `private-coaching-by-state` | No |
-| CAMS, NSS round 79 | 2022-23, report 9 Oct 2024 | API: 28 indicators, schooling, NEET, internet use, bank accounts, clean cooking fuel, drinking water | Yes, with rural/urban | `in use`: `mean-years-of-schooling-by-state`. The other indicators wait for the living standards topic | Yes |
+| CAMS, NSS round 79 | 2022-23, report 9 Oct 2024 | API: 28 indicators, schooling, NEET, internet use, bank accounts, clean cooking fuel, drinking water | Yes, with rural/urban | `in use`: `mean-years-of-schooling-by-state`. Internet use, ICT skills, bank accounts, assets, clean fuel, drinking water and latrines are in `research/data/living-standards/` (not on the site yet) | Yes |
 | Annual Survey of Industries | 2024-25, 4 Nov 2026 | PDF: Statement 3A, 7A state values; Volume I tables 2, 4, 4a. API to 2023-24 only | Yes | `in use`: `factory-jobs-and-gva` (2008-09 to 2024-25), `factory-jobs-by-state` | Yes (2022-23) |
 | ASUSE | 2025, report 6 May 2026 | API: 40+ indicators, 2021-22 to 2025, with state variants | Yes, with sex and rural/urban | `in use`: `small-firm-workers-by-state`, `small-firms-india` | Yes (2023-24) |
 | IMD gridded data | 2025 | Grids, not tables | Rule R5 | `later`. Use IMD state tables first (rule R5) | Yes |
@@ -181,9 +181,9 @@ These are the "Later" topics in `docs/site-spec.md`.
 | Crime and justice | NCRB Crime in India | 2024 | `use`. Confirm the file format and the table numbers. The year page (`ncrb.gov.in/en/crime-in-india-year-wise.html?year=2024`) lists no files in its HTML, even when rendered in a browser (checked 25 Nov 2026). Try the table-contents pages, then the NCRB tables on data.gov.in | Yes (2023) |
 | Crime and justice | NCRB Prison Statistics India | 2024 | `use`. Confirm the file format and the table numbers | Yes (2023) |
 | Crime and justice | Court pendency by state | Ministry of Law and Justice answers in Parliament (data to 30 Jul 2026); NJDG dashboard as a `Snapshot` only (rule R4) | `use` the Parliament answers | Yes |
-| Housing and living standards | HCES 2023-24 | API: MPCE by state, class and social group, item shares, Gini | `use`. Durables and cooking fuel tables `to check` in the final report | Yes |
+| Housing and living standards | HCES 2023-24 | API: MPCE by state, class and social group, item shares, Gini. Final report (NSS Report 592, 30 Jan 2025) checked 25 Nov 2026: no table on possession of durable goods and no table on cooking fuel, only the share of spending on durable goods. CAMS Table 22 (phone, computer) and Table 25 (clean fuel) fill part of the gap | `use`: data in `research/data/living-standards/` (not on the site yet) | Yes |
 | Housing and living standards | CAMS 2022-23 | See above | `use` | Yes |
-| Housing and living standards | NSS round 76, Report 584, water, sanitation, hygiene and housing (Jul to Dec 2018) | API (NSS76C, 12 indicators, state and rural/urban); PDF Statements 2.1, 3.1, 6.1, 12.1, 25.2 | `use` through the API | No |
+| Housing and living standards | NSS round 76, Report 584, water, sanitation, hygiene and housing (Jul to Dec 2018) | API (NSS76C, 12 indicators, state and rural/urban); PDF Statements 2.1, 3.1, 6.1, 12.1, 25.2 | `use`: improved drinking water (same definition as CAMS) in `research/data/living-standards/`. The API swaps Tripura and Uttarakhand in indicator 16; the CSV uses Statement 6.1. Cooking fuel, latrine and house type do not match CAMS or HCES | No |
 | Housing and living standards | Census 2011 houselisting tables (HL-14 amenities and assets, HL-06 water, HL-07 lighting) | XLSX per district on the ORGI catalogue. No all-population state file found yet | `use`. Find the state-level table IDs first | Partly |
 | Poverty and inequality | HCES 2023-24 | See above | `use` | Yes |
 | Poverty and inequality | NSS round 77, Report 588, Debt and Investment Survey 2019 | PDF only, 1,919 pages: Summary Statements 2, 3, 4, 7, 8, 10 by state | `use`. Manual extraction, not on the API | Partly |
@@ -216,7 +216,7 @@ rules above). It does not wait for the owner.
 
 1. **Process.** Done on 25 Nov 2026: `pipeline/common/catalogue_sweep.py`, the first catalogue
    snapshots, the step 6 checks on the backlog, and the PLFS Assam check. Still to do: the rows
-   marked `to check` (done the same day, except the HCES durables tables), and an archive of the
+   marked `to check` (done the same day; the HCES durables tables on 25 Nov 2026: none), and an archive of the
    raw files. The `Snapshot` and `Modelled estimate` status
    words come with the first chart that needs each one (court pendency, an international
    comparison), because the How we check page gives a real figure for every status word.
