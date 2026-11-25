@@ -58,7 +58,7 @@ All URLs are lower case with a trailing slash. Slugs come from `research/data/ge
 | --- | --- | --- | --- |
 | Home | `/` | Yes | UK home |
 | Topics index | `/topics/` | Yes | UK "Browse by topic" and "Coming soon", as its own page |
-| Topic page | `/<topic>/`, for example `/prices/` | Yes, 12 pages | UK topic page |
+| Topic page | `/<topic>/`, for example `/prices/` | Yes, 13 pages | UK topic page |
 | Chart and data page | `/charts/<chart-slug>/` | Yes | OWID grapher and data page, UK chart page |
 | Chart view state | `/charts/<chart-slug>/?tab=table&state=kerala&time=2011..2024&units=million` | Yes | OWID URL parameters |
 | All charts | `/charts/` | Yes | UK "All charts" |
@@ -97,17 +97,18 @@ Each topic gets a slug, a Taksal object (`docs/design-direction.md`) and parts i
 | Education | `education` | How many children are in school? Literacy. Schools and teachers. Education across the states. About the data. | UDISE+ (to check), Census of India, MoSPI surveys (to check) |
 | Elections | `elections` | How many people vote? Women voters and candidates. Seats and votes by state. About the data. | Election Commission of India (to check) |
 | Crime and justice | `crime-and-justice` | How much crime do the police record? Murders and crimes against women. Charge-sheets and convictions. Prisons and undertrials. Cases pending in the courts. About the data. | NCRB (Crime in India 2024, Prison Statistics India 2024); Ministry of Law and Justice answers in Parliament (court pendency, from NJDG) |
+| Transport | `transport` | How many people die on the roads in each state? Have road deaths risen over time? Who dies on the roads? How do people travel to work and to school? How do households travel on overnight trips? About the data. Road safety and household travel only: no railways, aviation, freight or vehicle registrations yet. | MoRTH (Road Accidents in India 2024, police records); MoSPI (National Household Travel Survey 2025-26) |
 | Climate | `climate` | How has India's temperature changed? The monsoon. Greenhouse gas emissions. Climate across the states. About the data. | IMD (to check), India's reports to the UNFCCC (to check) |
 | Living standards | `living-standards` | How much do households spend? What share goes on food? Is spending becoming more equal? Clean cooking fuel and drinking water. Internet use and bank accounts. About the data. | MoSPI (HCES 2022-23 and 2023-24; CAMS 2022-23, NSS round 79; NSS round 76) |
 | Religion and culture | `religion-and-culture` | Religion in India. Languages. Religion and language across the states. About the data. | Census of India (latest full count is 2011; Census 2027 counting runs to 4 Jan 2027) |
 
-Note: `docs/build-exploration.md` scoped the MVP at 6 topics. Release 1 adds Elections, Climate, and Religion and culture, for 9 topics. Living standards (decided 25 Nov 2026, `docs/design-direction.md`) is the tenth, Crime and justice (decided the same day) the eleventh, and Trade (decided the same day) the twelfth.
+Note: `docs/build-exploration.md` scoped the MVP at 6 topics. Release 1 adds Elections, Climate, and Religion and culture, for 9 topics. Living standards (decided 25 Nov 2026, `docs/design-direction.md`) is the tenth, Crime and justice (decided the same day) the eleventh, Trade (decided the same day) the twelfth, and Transport (decided the same day) the thirteenth.
 
 ### Later
 
 Show these on the topics index under "Coming later", as text with no links (the UK "Coming soon" pattern, `home-desktop.png`):
 
-Public finance, Energy, Air quality, Housing, Agriculture, Migration, Poverty and inequality, Transport.
+Public finance, Energy, Air quality, Housing, Agriculture, Migration, Poverty and inequality.
 
 ## Page anatomy
 
@@ -118,7 +119,7 @@ Each list gives the blocks from top to bottom. "UK" and "OWID" name the pattern 
 1. Header. Wordmark, navigation, search, number switch. UK header (`home-desktop.png`).
 2. Hero on lac. The Indus seal object, the site name, one line ("India's official statistics, checked and charted"), and search: "Search N charts, topics and states". Under it, "Try" with four terms, for example "inflation", "unemployment", "Kerala", "turnout". UK hero (`home-desktop.png`, `home-mobile.png`).
 3. Latest figures. A ledger of five to seven hero numbers, one per row. Each row has the figure, a plain label, the change from the last period, and the hallmark. Example rows (checked 17 Nov 2026, `docs/design-direction.md`): CPI inflation 6.09%, Oct 2026, Provisional, MoSPI; real GDP growth 7.8%, Q1 FY 2026-27, MoSPI; unemployment 5.0%, Sep 2026, persons 15+, CWS, MoSPI PLFS. Each row links to its chart page. New (UK has no figures on the home page).
-4. Browse by topic. Twelve topics in a ruled list. Each item has the topic coin (none for a topic whose object is not made yet), the name, one question, and the number of charts. UK "Browse by topic".
+4. Browse by topic. Thirteen topics in a ruled list. Each item has the topic coin (none for a topic whose object is not made yet), the name, one question, and the number of charts. UK "Browse by topic".
 5. Coming later. One text line with the later topics. UK "Coming soon".
 6. States. A small tile map of the 36 states and UTs. Each tile links to its state profile. Under it: "Choose a state or union territory". New.
 7. Latest releases. The five most recent entries from `/releases/`: date, publisher, release, what we changed. Link "All releases". New (OWID "Latest" is articles, not releases).
@@ -369,6 +370,8 @@ A figure that cannot carry all of these does not publish. A figure from a portal
 | Census | ORGI | Each census; Census 2027 counting runs to 4 Jan 2027 |
 | Elections | ECI | After each election |
 | Crime in India, Prison Statistics India | NCRB | Annual; no release date announced |
+| Road Accidents in India | MoRTH | Annual; no release date stated |
+| National Household Travel Survey | MoSPI | First round 2025-26; fact sheet 5 Oct 2026 |
 
 Rhythms to confirm per source before launch. Nothing publishes on its own. A person merges each update (`docs/build-exploration.md`).
 
@@ -468,7 +471,7 @@ Do not copy these UK habits:
 - Index base: "2024=100", with no spaces. GDP base: "base 2022-23".
 - Dates: "17 Nov 2026" in labels, "17 November 2026" in text.
 - Change in a rate: "percentage points", not "%". Write "rose by 0.4 percentage points", not "rose by 0.4%".
-- Hindi: the interface, topic names, chart titles, axis labels, status words and hallmark labels are in Hindi from launch. Use the digits 0 to 9 on Hindi pages too. All Hindi text needs native-speaker review before launch. Draft labels: जनसंख्या (Population), कीमतें (Prices), अर्थव्यवस्था (Economy), व्यापार (Trade), रोज़गार (Jobs), स्वास्थ्य (Health), शिक्षा (Education), चुनाव (Elections), अपराध और न्याय (Crime and justice), जलवायु (Climate), धर्म और संस्कृति (Religion and culture); अनंतिम (Provisional), प्रक्षेपण (Projection), सर्वेक्षण अनुमान (Survey estimate), पद्धति में बदलाव (Method break).
+- Hindi: the interface, topic names, chart titles, axis labels, status words and hallmark labels are in Hindi from launch. Use the digits 0 to 9 on Hindi pages too. All Hindi text needs native-speaker review before launch. Draft labels: जनसंख्या (Population), कीमतें (Prices), अर्थव्यवस्था (Economy), व्यापार (Trade), रोज़गार (Jobs), स्वास्थ्य (Health), शिक्षा (Education), चुनाव (Elections), अपराध और न्याय (Crime and justice), परिवहन (Transport), जलवायु (Climate), धर्म और संस्कृति (Religion and culture); अनंतिम (Provisional), प्रक्षेपण (Projection), सर्वेक्षण अनुमान (Survey estimate), पद्धति में बदलाव (Method break).
 - Name states and UTs as in `research/data/geography.csv`. Say "states and union territories" in full the first time on a page, then "states and UTs".
 - Name the publisher in full the first time, with the short name after it: "the National Statistics Office (NSO), MoSPI".
 
