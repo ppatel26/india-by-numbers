@@ -53,6 +53,7 @@ Exceptions:
   `--out-prices` and `--out-economy`.
 - `education/build_education.py` also reads the PLFS report text from `--jobs-work work/jobs`. Run
   `pipeline/jobs/extract_text.sh` first.
+- `transport/fetch.sh` reads its URLs from `transport/sources.tsv`, in the same way as `crime/fetch.sh`.
 - `crime/fetch.sh` reads its URLs from `crime/sources.tsv`. Give a path prefix to fetch part of the list, for example `pipeline/crime/fetch.sh pendency/`.
 - `parse_d33.py`, `check_d33.py` and `parse_proj.py` take file paths. The `extract_text.sh` script of
   their topic runs them.
@@ -115,6 +116,10 @@ Some CSVs were made in more than one step. Run the steps in this order:
 | `crime/extract_text.sh` | None. Text of the Crime in India, Prison Statistics India and Parliament answer PDFs | NCRB, Ministry of Law and Justice |
 | `crime/build_ncrb.py` | `crime-by-state-2024`, `crime-india-trend`, `ipc-crimes-india-1981-2024`, `murder-by-state-2024`, `crimes-against-women-by-state-2024`, `police-and-court-disposal-by-state-2024`, `prisons-by-state-2024`, `prisons-india-trend` | NCRB (Crime in India, Prison Statistics India) |
 | `crime/build_pendency.py` | `court-pendency-district-by-state`, `court-pendency-high-courts` | Ministry of Law and Justice (answers in the Lok Sabha and Rajya Sabha, citing NJDG) |
+| `transport/fetch.sh`, `transport/sources.tsv` | None. Downloads the MoRTH reports and the NHTS fact sheet, press note and workbooks the transport topic reads, with `common/fetch.sh` | MoRTH, MoSPI |
+| `transport/morth_reports.mjs` | None. Lists the documents in one group of the MoRTH reports page and saves the app's JSON responses (the site is a JavaScript app in Hindi) | MoRTH |
+| `transport/extract_text.sh` | None. Layout text and word boxes of the MoRTH and NHTS PDFs | MoRTH, MoSPI |
+| `transport/build_transport.py` | `road-accidents-by-state`, `road-accidents-india-1970-2024`, `road-deaths-by-road-user`, `road-deaths-helmet-seatbelt-by-state`, `travel-mode-by-state-2025-26`, `travel-trip-share-by-state-2025-26`, `travel-india-fact-sheet-2025-26`. Reads the MoRTH tables from word boxes; checks the RAI 2024 values for 2023 against RAI 2023 | MoRTH (Road Accidents in India 2024 and 2023), MoSPI (NHTS 2025-26) |
 | `climate/extract_text.sh`, `climate/parse_cea.py` | None. Text and word boxes of the CEA and MNRE PDFs, and the CEA totals | CEA, MNRE |
 | `climate/build_rain.py` | `monsoon-rainfall-all-india-1901-2026` | IMD Pune |
 | `climate/build_subdiv.py` | `monsoon-2026-by-subdivision` (values transcribed from an IMD table image) | IMD |
