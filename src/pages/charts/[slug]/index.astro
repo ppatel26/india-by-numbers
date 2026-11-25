@@ -7,7 +7,7 @@ import TopicTag from '~/components/TopicTag.astro'
 import { charts, partId, type Placed } from '~/content'
 import { citation, dateRange, geographyOf, latestSource, nextReleaseText, picksOf } from '~/lib/metadata'
 import { formatDate } from '~/lib/period'
-import { SITE } from '~/lib/site'
+import { SITE, checkedOf } from '~/lib/site'
 import { releasedText } from '~/lib/sources'
 
 export function getStaticPaths() {
@@ -26,7 +26,7 @@ const facts = [
   ['Unit', chart.punches.unit],
   ['Date range', dateRange(placed)],
   ['Latest release', latestSource(chart) ? releasedText(latestSource(chart)!) : ''],
-  ['Last updated', formatDate(SITE.checked)],
+  ['Last updated', formatDate(checkedOf(chart))],
   ['Next expected update', nextReleaseText(chart)],
   ['Geography', geographyOf(placed)],
 ] as const
@@ -74,7 +74,7 @@ const related = [
               <tr><th scope="row">Release date</th><td>{releasedText(s)}</td></tr>
             </>
           ))}
-          <tr><th scope="row">Retrieved and checked</th><td>{formatDate(SITE.checked)}</td></tr>
+          <tr><th scope="row">Retrieved and checked</th><td>{formatDate(checkedOf(chart))}</td></tr>
           <tr><th scope="row">Licence</th><td>{SITE.licence.replace(/^Licence: /, '')}</td></tr>
           <tr>
             <th scope="row">Files</th>

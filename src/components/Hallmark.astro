@@ -10,8 +10,10 @@ interface Props {
   unit: string
   period: string
   status?: readonly Status[]
+  /** YYYY-MM-DD of our last check. Default: SITE.checked. */
+  checked?: string
 }
-const { office, unit, period, status = [] } = Astro.props
+const { office, unit, period, status = [], checked = SITE.checked } = Astro.props
 const mark: Record<Status, string> = {
   Provisional: 'provisional',
   Projection: 'projection',
@@ -23,9 +25,9 @@ const mark: Record<Status, string> = {
 <div class="hallmark">
   <span class="punch office">{office}</span>
   <span class="punch">{unit}</span>
-  <a class="assay" href="/how-we-check/#hallmark" title={`Checked ${formatDate(SITE.checked)}`}>
+  <a class="assay" href="/how-we-check/#hallmark" title={`Checked ${formatDate(checked)}`}>
     <Seal size={16} />
-    <span class="visually-hidden">Checked {formatDate(SITE.checked)}</span>
+    <span class="visually-hidden">Checked {formatDate(checked)}</span>
   </a>
   <span class="punch">{period}</span>
   {status.map((s) => <span class:list={['status', mark[s]]}>{s}</span>)}

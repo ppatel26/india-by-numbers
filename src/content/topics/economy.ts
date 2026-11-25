@@ -535,6 +535,7 @@ const topic: Topic = {
           chart: {
             kind: 'line',
             slug: 'factory-jobs-and-gva',
+            checked: '2026-11-25',
             title: 'Factory jobs and value added in India, 2008-09 to 2024-25',
             subtitle: 'Persons engaged and gross value added (GVA) in registered factories, Annual Survey of Industries. GVA at current prices.',
             punches: { office: 'MoSPI', unit: 'crore · ₹ lakh crore', period: '2024-25' },
@@ -595,6 +596,7 @@ const topic: Topic = {
           chart: {
             kind: 'states',
             slug: 'factory-jobs-by-state',
+            checked: '2026-11-25',
             title: 'Factory jobs by state and UT, 2024-25',
             subtitle: 'Persons engaged in registered factories, Annual Survey of Industries. Darker means more.',
             punches: { office: 'MoSPI', unit: 'persons', period: '2024-25' },
@@ -628,6 +630,7 @@ const topic: Topic = {
           chart: {
             kind: 'states',
             slug: 'small-firm-workers-by-state',
+            checked: '2026-11-25',
             title: 'Workers in small firms by state and UT, 2025',
             subtitle: 'Workers in unincorporated non-farm establishments, January to December 2025. Darker means more.',
             punches: { office: 'MoSPI', unit: 'workers', period: '2025' },
@@ -659,6 +662,7 @@ const topic: Topic = {
           chart: {
             kind: 'line',
             slug: 'small-firms-india',
+            checked: '2026-11-25',
             title: 'Small firms and their workers in India, 2021-22 to 2025',
             subtitle: 'Unincorporated non-farm establishments and their workers, by ASUSE round.',
             punches: { office: 'MoSPI', unit: 'crore', period: '2025' },

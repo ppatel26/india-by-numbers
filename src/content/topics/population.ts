@@ -389,6 +389,7 @@ const projectedGrowthStates: Chart = {
 // Civil Registration System: a count of registered births, kept apart from the SRS estimate.
 const registeredBirthRatioStates: Chart = {
   slug: 'sex-ratio-of-registered-births-by-state',
+  checked: '2026-11-25',
   kind: 'states',
   title: 'Sex ratio of registered births by state and UT, 2024',
   subtitle: 'Girls per 1,000 boys among births registered in 2024, 35 states and UTs.',

@@ -3,14 +3,14 @@ import Wordmark from './Wordmark.astro'
 import { charts, topics } from '~/content'
 import { formatDate } from '~/lib/period'
 import { places } from '~/lib/geography'
-import { SITE } from '~/lib/site'
+import { SITE, latestChecked } from '~/lib/site'
 import { flapDate, upcoming } from '~/lib/releases'
 
 // The timetable: when we last checked, and the next release date with everything due on it.
 const due = upcoming(8)
 const next = due.filter((d) => d.date === due[0]?.date)
 const timetable = [
-  { what: 'Checked', date: SITE.checked, detail: `All ${charts.length} charts`, href: '/how-we-check/' },
+  { what: 'Checked', date: latestChecked(charts.map((c) => c.chart)), detail: `Latest check of ${charts.length} charts`, href: '/how-we-check/' },
   ...(next.length
     ? [{ what: 'Next', date: next[0]!.date, detail: `${next.map((d) => d.name).join(' and ')} · ${[...new Set(next.map((d) => d.publisher))].join(', ')}`, href: '/releases/' }]
     : []),

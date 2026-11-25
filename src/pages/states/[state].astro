@@ -13,7 +13,7 @@ import { show } from '~/lib/charts/model'
 import { places, type Place } from '~/lib/geography'
 import { formatDate } from '~/lib/period'
 import { rankText, row, standfirst } from '~/lib/profile'
-import { SITE } from '~/lib/site'
+import { latestChecked } from '~/lib/site'
 
 export function getStaticPaths() {
   return places.map((p, i) => ({
@@ -111,7 +111,7 @@ const sub = (r: (typeof sections)[number]['rows'][number]) =>
             ))}
           </tbody>
         </table>
-        <p class="foot muted">{sec.footnote} {profile.checked(formatDate(SITE.checked))}</p>
+        <p class="foot muted">{sec.footnote} {profile.checked(formatDate(latestChecked(rows.map((r) => r.chart))))}</p>
       </div>
     </section>
   ))}

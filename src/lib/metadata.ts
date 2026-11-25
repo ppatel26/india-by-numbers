@@ -4,7 +4,7 @@ import type { Chart, Pick, Source } from '~/content/types'
 import { select } from './data'
 import { INDIA, places } from './geography'
 import { formatDate, parsePeriod, yyMmOf } from './period'
-import { SITE } from './site'
+import { SITE, checkedOf } from './site'
 import { releasedText } from './sources'
 
 /** Every pick a chart reads. */
@@ -56,7 +56,7 @@ export function citation(p: Placed, origin: string): { inline: string; full: str
   const url = `${origin}/charts/${p.chart.slug}/`
   return {
     inline: `${src?.publisher ?? ''}, ${src?.release ?? ''}; ${SITE.name}.`,
-    full: `${src?.publisher ?? ''}. “${src?.release ?? ''}” (${src ? releasedText(src) : ''}). Processed by ${SITE.name}. “${p.chart.title}”, ${url}, checked ${formatDate(SITE.checked)}.`,
+    full: `${src?.publisher ?? ''}. “${src?.release ?? ''}” (${src ? releasedText(src) : ''}). Processed by ${SITE.name}. “${p.chart.title}”, ${url}, checked ${formatDate(checkedOf(p.chart))}.`,
   }
 }
 
@@ -76,7 +76,7 @@ export function metadataOf(p: Placed) {
     whatYouShouldKnow: chart.know ?? [],
     processing: chart.processing ?? [],
     sources: chart.sources,
-    checked: SITE.checked,
+    checked: checkedOf(chart),
     nextRelease: nextReleaseText(chart),
     licence: 'CC BY 4.0 for our charts and text. Publisher data stays under each publisher’s terms.',
     files: {

@@ -2,15 +2,16 @@
 import type { Topic } from '~/content/types'
 import { charts } from '~/content'
 import { formatDate } from '~/lib/period'
-import { SITE } from '~/lib/site'
+import { latestChecked } from '~/lib/site'
 
 interface Props {
   topic: Topic
 }
 const { topic } = Astro.props
-const count = charts.filter((c) => c.topic.slug === topic.slug).length
+const mine = charts.filter((c) => c.topic.slug === topic.slug)
+const count = mine.length
 // One short line: when we last checked, and how many charts. Sources are on each chart and in About the data.
-const items = [`Updated ${formatDate(SITE.checked)}`, `${count} charts`]
+const items = [`Updated ${formatDate(latestChecked(mine.map((c) => c.chart)))}`, `${count} charts`]
 ---
 
 <div class="strip">

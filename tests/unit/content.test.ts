@@ -36,6 +36,15 @@ describe('every chart', () => {
   it('renders every view', () => {
     for (const { chart } of charts) for (const v of viewsOf(chart)) if (v !== 'table') expect(renderPlot(chart, v, 'wide').html, `${chart.slug} ${v}`).toMatch(/^<svg/)
   })
+  it('has a check date that is a real day, not before the site check or its own sources', () => {
+    for (const { chart } of charts) {
+      if (chart.checked === undefined) continue
+      expect(chart.checked, chart.slug).toMatch(/^\d{4}-\d{2}-\d{2}$/)
+      expect(Number.isNaN(Date.parse(chart.checked)), chart.slug).toBe(false)
+      expect(chart.checked >= SITE.checked, `${chart.slug}: ${chart.checked} is before ${SITE.checked}`).toBe(true)
+      for (const s of chart.sources) if (/^\d{4}-\d{2}-\d{2}$/.test(s.released)) expect(chart.checked >= s.released, `${chart.slug}: checked before ${s.release}`).toBe(true)
+    }
+  })
   it('names its sources with a release date and link, and uses four-digit years', () => {
     for (const { chart } of charts) {
       expect(chart.sources.length, chart.slug).toBeGreaterThan(0)

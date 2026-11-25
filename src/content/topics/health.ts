@@ -462,6 +462,7 @@ const topic: Topic = {
           chart: {
             kind: 'bars',
             slug: 'causes-of-death',
+            checked: '2026-11-25',
             title: 'Deaths by cause group in India, 2021-23 and 2022-24',
             subtitle: 'Share of deaths in each major cause group, women and men, India.',
             punches: { office: 'ORGI · SRS', unit: '% of deaths', period: '2022-24' },
@@ -511,6 +512,7 @@ const topic: Topic = {
           chart: {
             kind: 'bars',
             slug: 'top-causes-of-death',
+            checked: '2026-11-25',
             title: 'Top 10 causes of death in India, 2022-24',
             subtitle: 'Share of all deaths, all ages, women and men, India.',
             punches: { office: 'ORGI · SRS', unit: '% of deaths', period: '2022-24' },
@@ -742,6 +744,7 @@ const topic: Topic = {
           chart: {
             kind: 'dots',
             slug: 'tobacco-use-by-state',
+            checked: '2026-11-25',
             title: 'Tobacco use by state and UT, women and men, 2019-21 and 2023-24',
             subtitle: 'Share of people aged 15 and over who use any kind of tobacco.',
             punches: { office: 'IIPS', unit: '%', period: '2023-24' },
@@ -777,6 +780,7 @@ const topic: Topic = {
           chart: {
             kind: 'dots',
             slug: 'overweight-by-state',
+            checked: '2026-11-25',
             title: 'Overweight or obese adults by state and UT, women and men, 2019-21 and 2023-24',
             subtitle: 'Share of people aged 15 to 49 with a body mass index of 25 or more.',
             punches: { office: 'IIPS', unit: '%', period: '2023-24' },
@@ -974,6 +978,7 @@ const topic: Topic = {
           chart: {
             kind: 'dots',
             slug: 'registration-of-births-and-deaths-by-state',
+            checked: '2026-11-25',
             title: 'Registration of births and deaths by state and UT, 2024',
             subtitle: 'Registered births and deaths as a share of the births and deaths ORGI estimates, 36 states and UTs.',
             punches: { office: 'ORGI · CRS', unit: '% of estimated', period: '2024' },

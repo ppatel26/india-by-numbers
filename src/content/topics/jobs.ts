@@ -549,6 +549,7 @@ const topic: Topic = {
           chart: {
             kind: 'bars',
             slug: 'time-use-paid-unpaid-work',
+            checked: '2026-11-25',
             title: 'Time spent on paid and unpaid work by women and men, 2019 and 2024',
             subtitle: 'Average minutes a day for those who did each activity, ages 15-59, rural and urban India.',
             punches: { office: 'MoSPI', unit: 'min 15-59', period: '2024' },
@@ -585,6 +586,7 @@ const topic: Topic = {
           chart: {
             kind: 'bars',
             slug: 'time-use-participation',
+            checked: '2026-11-25',
             title: 'Women and men who did paid and unpaid work in a day, 2019 and 2024',
             subtitle: 'Share of people who did each activity on the survey day, ages 15-59, rural and urban India.',
             punches: { office: 'MoSPI', unit: '% 15-59', period: '2024' },
@@ -619,6 +621,7 @@ const topic: Topic = {
           chart: {
             kind: 'states',
             slug: 'women-unpaid-work-by-state',
+            checked: '2026-11-25',
             title: 'Unpaid domestic and care work by women, by state and UT, 2024',
             subtitle: 'Average minutes a day per woman aged 6 and over, rural and urban, including women who did none.',
             punches: { office: 'MoSPI', unit: 'min/day', period: '2024' },

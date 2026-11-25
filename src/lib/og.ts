@@ -18,7 +18,7 @@ import { embed, Markup, svg } from './markup'
 import { row } from './profile'
 import { textBlock, toPng, wrap } from './render'
 import { shaped } from './shape'
-import { SITE } from './site'
+import { SITE, checkedOf } from './site'
 import { colors, pigments, resolveVars } from './tokens'
 
 const W = 1200
@@ -107,7 +107,7 @@ export function chartImage(p: Placed): Buffer {
 ${head.el}${sub.el}${plot}
 <line x1="64" x2="1136" y1="${H - 56}" y2="${H - 56}" stroke="var(--rule)"/>
 <text x="64" y="${H - 28}" font-family="${FONT.mono}" font-size="14" letter-spacing="0.6" fill="var(--ink)">${upper(punches)}</text>
-<text x="1136" y="${H - 28}" text-anchor="end" font-size="15" fill="var(--slate)">${chart.sources[0]?.publisher ?? ''} · checked ${SITE.checked.split('-').reverse().join('.')}</text>`,
+<text x="1136" y="${H - 28}" text-anchor="end" font-size="15" fill="var(--slate)">${chart.sources[0]?.publisher ?? ''} · checked ${checkedOf(chart).split('-').reverse().join('.')}</text>`,
     colors.paper,
   )
 }

@@ -11,7 +11,7 @@ import { openView, renderPlot } from './charts'
 import { FONT, WIDTH } from './charts/axes'
 import { embed, svg, type Markup } from './markup'
 import { formatDate } from './period'
-import { SITE } from './site'
+import { SITE, checkedOf } from './site'
 import { sourceLine } from './sources'
 import { resolveVars } from './tokens'
 
@@ -54,9 +54,9 @@ export function chartSvg(chart: Chart): string {
   const plot = embed(renderPlot(chart, view, 'wide').html, pad, top, WIDTH.wide)
   const footY = top + plot.height + 28
   const status = (chart.status ?? []).join(' · ')
-  const punches = [chart.punches.office, chart.punches.unit, `Checked ${formatDate(SITE.checked)}`, chart.punches.period].join('  ·  ')
+  const punches = [chart.punches.office, chart.punches.unit, `Checked ${formatDate(checkedOf(chart))}`, chart.punches.period].join('  ·  ')
   // A long list of sources shortens to the first and a count; the chart page lists them all.
-  const src = textBlock(sourceLine(chart.sources, false), pad, footY + 18, WIDTH.wide, 13, svg` fill="var(--slate)"`, 19, 6)
+  const src = textBlock(sourceLine(chart.sources, false, checkedOf(chart)), pad, footY + 18, WIDTH.wide, 13, svg` fill="var(--slate)"`, 19, 6)
   const credit = footY + 18 + src.height + 22
   const H = credit + pad - 10
   return resolveVars(

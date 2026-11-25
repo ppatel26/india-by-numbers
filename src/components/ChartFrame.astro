@@ -89,7 +89,7 @@ const steps = page && chart.kind === 'states' ? timelineOf(chart) : []
   ))}
   {chart.note && <p class="note">Note: {chart.note}</p>}
   <figcaption class="foot">
-    <Hallmark {...chart.punches} status={chart.status} />
+    <Hallmark {...chart.punches} status={chart.status} checked={chart.checked} />
     <p class="files">
       <span class="label muted">Download</span>
       <a href={`/charts/${chart.slug}.csv`} download title="The values in this chart, with unit and source on every row">CSV</a>

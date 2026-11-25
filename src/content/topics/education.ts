@@ -454,6 +454,7 @@ const topic: Topic = {
           chart: {
             kind: 'bars',
             slug: 'school-spending-by-level-and-type',
+            checked: '2026-11-25',
             title: 'Spending per school student by level and type of school, 2025',
             subtitle: 'Average household spending per student in the current academic year, India.',
             punches: { office: 'MoSPI', unit: '₹ a year', period: '2025' },
@@ -501,6 +502,7 @@ const topic: Topic = {
           chart: {
             kind: 'states',
             slug: 'school-spending-by-state',
+            checked: '2026-11-25',
             title: 'Spending per school student by state, 2025',
             subtitle: 'Average household spending per student in the current academic year, all levels and types of school.',
             punches: { office: 'MoSPI', unit: '₹ a year', period: '2025' },
@@ -534,6 +536,7 @@ const topic: Topic = {
           chart: {
             kind: 'states',
             slug: 'government-school-share-by-state',
+            checked: '2026-11-25',
             title: 'Students in government schools by state, 2025',
             subtitle: 'Share of students from pre-primary to class 12 who attend a government school, by state.',
             punches: { office: 'MoSPI', unit: '% students', period: '2025' },
@@ -565,6 +568,7 @@ const topic: Topic = {
           chart: {
             kind: 'states',
             slug: 'private-coaching-by-state',
+            checked: '2026-11-25',
             title: 'Students who take private coaching by state, 2025',
             subtitle: 'Share of school students who took private coaching or tuition in the current academic year.',
             punches: { office: 'MoSPI', unit: '% students', period: '2025' },
@@ -768,6 +772,7 @@ const topic: Topic = {
           chart: {
             kind: 'states',
             slug: 'mean-years-of-schooling-by-state',
+            checked: '2026-11-25',
             title: 'Mean years of schooling by state, age 25 and over, 2022-23',
             subtitle: 'Average years spent in formal education by people aged 25 and over, by state.',
             punches: { office: 'MoSPI', unit: 'years, 25+', period: '2022-23' },

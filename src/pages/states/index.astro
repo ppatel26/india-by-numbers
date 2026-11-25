@@ -8,6 +8,7 @@ import { renderTiles } from '~/lib/charts/states'
 import { byState, statesOf } from '~/lib/charts/model'
 import { places } from '~/lib/geography'
 import { sourceLine } from '~/lib/sources'
+import { checkedOf } from '~/lib/site'
 
 const maps = states.map.measures.map((m, i) => {
   const chart = byState(placed(m.chart).chart)
@@ -41,7 +42,7 @@ const groups = [
         <div class="w-wide" set:html={renderTiles(x.chart, 'wide').html} />
         <div class="w-narrow" set:html={renderTiles(x.chart, 'narrow').html} />
         {x.chart.note && <p class="note">Note: {x.chart.note}</p>}
-        <figcaption class="note">{sourceLine(x.chart.sources)}</figcaption>
+        <figcaption class="note">{sourceLine(x.chart.sources, true, checkedOf(x.chart))}</figcaption>
       </figure>
     ))}
   </section>

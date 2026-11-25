@@ -142,6 +142,8 @@ interface ChartBase {
   know?: readonly string[]
   /** Chart page: "How we process this figure", in order. */
   processing?: readonly string[]
+  /** YYYY-MM-DD: the day we last checked this chart against its publisher. Default: SITE.checked. */
+  checked?: string
   /** YYYY-MM-DD from the publisher's calendar, 'YYYY-MM-DD (estimated)' when we infer it from past releases, or 'not announced'. */
   nextRelease?: string
 }
