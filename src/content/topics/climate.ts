@@ -1,4 +1,5 @@
 import type { Source, Topic } from '../types'
+import { WDI, WDI_ABOUT, comparison } from '../international'
 
 
 const IMD_SEASON_2026: Source = {
@@ -447,11 +448,37 @@ const topic: Topic = {
         },
       ],
     },
+    {
+      title: "How do India's CO2 emissions compare?",
+      lede: 'India emitted 2.17 tonnes of carbon dioxide (CO2) per person in 2024, by EDGAR estimates. That was less than half the world average of 4.69 tonnes, and less than a quarter of the figure for China, 9.32 tonnes.',
+      blocks: [
+        {
+          chart: comparison({
+            slug: 'co2-per-person-comparison',
+            file: 'wdi-co2-per-person.csv',
+            title: 'CO2 emissions per person, India and other countries, 1990 and 2024',
+            subtitle: 'Tonnes of carbon dioxide per person, excluding land use and forestry, seven countries and the world.',
+            unit: 't CO2 per person',
+            latest: '2024',
+            format: { decimals: 2, suffix: ' t' },
+            note: 'WDI takes the values from the EDGAR database of the European Commission Joint Research Centre.',
+            sources: [WDI.co2],
+            know: [
+              'The figures count CO2 from energy, industry, farming and waste. They leave out land use, land-use change and forestry (LULUCF), because those flows are less certain.',
+              'WDI changed its CO2 source. The series it used before, from Climate Watch (World Resources Institute), is now in the WDI archives. This chart uses the current series, from EDGAR.',
+              'WDI says EDGAR estimates of fossil fuel and industry emissions are accurate to within 4% to 35% at the country level.',
+              "The site has no Indian government figure for CO2 per person. India's own inventory is in its reports to the UN climate convention.",
+            ],
+            processing: ['Show each value to two decimal places. Rank the rows by the 2024 value.'],
+          }),
+        },
+      ],
+    },
   ],
   // LATER: the About band's side line ("How each climate figure is made, where it breaks, and what is missing.") has no field.
   about: {
     publisher:
-      'The India Meteorological Department (IMD) measures rainfall and temperature. The Central Electricity Authority (CEA) counts utility power capacity. The Ministry of New and Renewable Energy (MNRE) publishes renewable capacity by state.',
+      ['The India Meteorological Department (IMD) measures rainfall and temperature. The Central Electricity Authority (CEA) counts utility power capacity. The Ministry of New and Renewable Energy (MNRE) publishes renewable capacity by state.', WDI_ABOUT].join(' '),
     frequency:
       'Monsoon: daily in the season, with a season report after 30 September. Temperature: one statement each January. CEA and MNRE capacity: monthly, latest as on 31 Oct 2026.',
     revisions:
@@ -474,6 +501,7 @@ const topic: Topic = {
     CEA_EXECUTIVE,
     CEA_CAPACITY,
     MNRE_STATES_2026_10,
+    WDI.co2,
   ],
   related: [
     { label: 'States: Tamil Nadu profile', href: '/states/tamil-nadu/' },

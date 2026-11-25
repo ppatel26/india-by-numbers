@@ -57,6 +57,7 @@ const PUBLISHER_RULES: readonly (readonly [RegExp, string])[] = [
   [/\bRBI\b/, 'RBI'],
   [/Labour Bureau/, 'Labour Bureau'],
   [/\bIMF\b/, 'IMF'],
+  [/World Bank/, 'World Bank'],
   [/\bIMD\b/, 'IMD'],
   [/\bECI\b/, 'ECI'],
   [/\bCEA\b/, 'CEA'],

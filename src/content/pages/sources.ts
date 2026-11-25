@@ -247,10 +247,29 @@ const PUBLISHERS: readonly Publisher[] = [
     topics: ['population'],
     dataSets: [
       { name: 'World Population Prospects 2024', detail: 'Age and sex estimates for 1951 and annual national rates through 2026.', rhythm: 'Periodic revisions', match: /World Population Prospects 2024/ },
+      { name: 'International Migrant Stock 2024', detail: 'People born in India living in other countries, by sex and by country, 1990 to 2024', rhythm: 'Periodic revisions; the one before was 2020', match: /International Migrant Stock/ },
     ],
-    licence: NOT_STATED,
-    access: ['CSV files for the medium projection variant'],
+    licence: 'CC BY 3.0 IGO, stated on every sheet of the International Migrant Stock 2024 files',
+    access: ['CSV files for the medium projection variant', 'Excel workbooks for the migrant stock'],
     site: 'https://population.un.org/wpp/',
+  },
+  {
+    short: 'World Bank',
+    logos: [],
+    full: 'World Bank, Development Data Group',
+    topics: ['economy', 'jobs', 'population', 'health', 'climate'],
+    dataSets: [
+      {
+        name: 'World Development Indicators',
+        detail: 'Comparison charts only: GDP per person at PPP, life expectancy and fertility (from UN WPP 2024), CO2 per person (from EDGAR) and women\'s labour force participation (ILO modelled estimates), for India, six other countries and the world',
+        rhythm: 'Several updates a year; this site uses the update of 11 Nov 2026',
+        match: /World Development Indicators/,
+      },
+    ],
+    licence: 'CC BY 4.0 for the five series we use, as each series\' metadata states. Some WDI series from other bodies carry other terms.',
+    access: ['WDI API (api.worldbank.org/v2), no key'],
+    note: 'We use WDI only to compare countries. For India alone we use the Indian publisher.',
+    site: 'https://data.worldbank.org',
   },
   {
     short: 'IMF',

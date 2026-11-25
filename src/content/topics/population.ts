@@ -1,5 +1,12 @@
 import type { Chart, Series, Source, Topic } from '../types'
+import { UN_MIGRANT_STOCK, WDI, WDI_ABOUT, comparison } from '../international'
 import { CRS_2024, sexRatioAtBirthIndia } from './health'
+
+// UN DESA International Migrant Stock 2024. research/data/international/README.md.
+const MIGRANTS = 'international/migrants-from-india-1990-2024.csv'
+const DESTINATIONS = 'international/migrants-from-india-by-destination.csv'
+/** The ten largest destinations in 2024, largest first. pipeline/international/build_international.py checks the ranking. */
+const TOP_DESTINATIONS = ['United Arab Emirates', 'United States of America', 'Saudi Arabia', 'Pakistan', 'Kuwait', 'United Kingdom', 'Canada', 'Australia', 'Oman', 'Qatar']
 
 // Data: research/data/population/README.md.
 
@@ -924,13 +931,112 @@ const topic: Topic = {
         },
       ],
     },
+    {
+      title: 'How many people born in India live abroad?',
+      lede: '1.85 crore people born in India lived in other countries in mid-2024, up from 65.75 lakh in 1990, the UN estimates. 1.19 crore were men and 66.32 lakh women.',
+      blocks: [
+        {
+          chart: {
+            kind: 'line',
+            slug: 'indians-abroad',
+            checked: '2026-11-25',
+            title: 'People born in India living in other countries, 1990 to 2024',
+            subtitle: 'International migrants whose country of origin is India, at mid-year, women and men.',
+            punches: { office: 'UN DESA', unit: 'persons', period: '2024' },
+            note: 'UN estimates for 1 July of 1990, 1995, 2000, 2005, 2010, 2015, 2020 and 2024 only.',
+            sources: [UN_MIGRANT_STOCK],
+            format: { scale: 'crore', decimals: 2 },
+            y: { min: 0 },
+            joined: true,
+            series: [
+              { key: 'total', label: 'Total', color: 'ink', file: MIGRANTS, where: { sex: 'total' } },
+              { key: 'male', label: 'Men', color: 's2', file: MIGRANTS, where: { sex: 'male' } },
+              { key: 'female', label: 'Women', color: 's3', file: MIGRANTS, where: { sex: 'female' } },
+            ],
+            know: [
+              'UN DESA counts international migrants by country of origin. It uses data on people born abroad where a country has them, and data on foreign citizens where it has only those.',
+              'These are UN estimates, built from censuses, registers and surveys in the countries where the migrants live.',
+              'For the 2024 edition UN DESA reassessed 60 countries and areas. For the others, the 2024 figures extrapolate the 2020 edition.',
+              'The counts are for 1 July of each year shown. UN DESA gives no figures for the years between.',
+            ],
+            processing: [
+              'Read the India row (location code 356) of Table 1 in the UN DESA origin file, International Migrant Stock 2024.',
+              'Check it against the India to World row of the destination and origin file. All 24 values agree.',
+              'Show the counts in crore, to two decimal places.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        { text: 'The United Arab Emirates had the most, 32.5 lakh, then the United States, 31.7 lakh, and Saudi Arabia, 19.5 lakh.' },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'indians-abroad-by-country',
+            checked: '2026-11-25',
+            title: 'People born in India living abroad, ten largest countries, 1990 and 2024',
+            subtitle: 'International migrants whose country of origin is India, by country of residence, at mid-year.',
+            punches: { office: 'UN DESA', unit: 'persons', period: '2024' },
+            note: 'In the United Arab Emirates, Saudi Arabia, Kuwait, Oman and Qatar, UN DESA counts Indian citizens. In the other five countries it counts people born in India.',
+            sources: [UN_MIGRANT_STOCK],
+            by: 'destination',
+            rowHead: 'Country',
+            order: TOP_DESTINATIONS,
+            labels: { 'United States of America': 'United States' },
+            series: [
+              { key: '2024', label: '2024', color: 'ink', file: DESTINATIONS, where: { destination: TOP_DESTINATIONS, sex: 'total', period: '2024' } },
+              { key: '1990', label: '1990', color: 'slate', file: DESTINATIONS, where: { destination: TOP_DESTINATIONS, sex: 'total', period: '1990' } },
+            ],
+            know: [
+              'The ten countries are the ten with the most people from India in 2024. UN DESA gives 124 countries in all.',
+              'UN DESA marks what each country estimate rests on. For the five Gulf countries here it is data on foreign citizens, so the count is of Indian citizens, wherever they were born.',
+              'The 2024 figure for Pakistan, 15,97,134, is the same as the 2020 figure. UN DESA carried many 2020 estimates forward.',
+              'The figures are for 1 July 1990 and 1 July 2024.',
+            ],
+            processing: [
+              'Read the rows of Table 1 in the UN DESA destination and origin file where the origin is India (location code 356) and the destination is a country.',
+              'Check that the 124 countries add up to the India total, for every year and sex.',
+              'Pick the ten largest in 2024. Show counts of a lakh or more in lakh, and smaller counts in full.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
+    {
+      title: "How does India's fertility rate compare?",
+      lede: 'The UN estimates that a woman in India would have 2.0 children at the birth rates of 2023, down from 4.0 in 1990. The rate was 3.6 in Pakistan and 1.0 in China.',
+      blocks: [
+        {
+          chart: comparison({
+            slug: 'fertility-rate-comparison',
+            file: 'wdi-fertility-rate.csv',
+            title: 'Fertility rate, India and other countries, 1990 and 2023',
+            subtitle: 'Children a woman would have at the birth rates of that year, seven countries and the world. UN estimates, through the World Bank.',
+            unit: 'births per woman',
+            latest: '2023',
+            format: { decimals: 1 },
+            note: 'WDI takes the country values from UN World Population Prospects 2024.',
+            sources: [WDI.fertility],
+            refs: [{ value: 2.1, label: 'Replacement 2.1' }],
+            know: [
+              'The total fertility rate is the number of children a woman would have if she lived through the birth rates of one year, at each age.',
+              'WDI takes these values from the UN Population Division, World Population Prospects 2024, medium variant. We checked all seven countries against the UN file. They agree to three decimals.',
+              'WPP 2024 gives estimates up to 2023 and projections from 2024. WDI also prints 2024, a projection, so the chart stops at 2023.',
+              "SRS, India's own source, gives 1.9 for 2023, close to the UN estimate of 1.975.",
+              'The world value is the World Bank average of the countries in WDI. It differs from the UN world figure.',
+            ],
+            processing: ['Check every country value against the WPP 2024 Demographic Indicators file, medium variant.', 'Show each value to one decimal place. Rank the rows by the 2023 value.'],
+          }),
+        },
+      ],
+    },
   ],
   // LATER: the About band's side line ("How each population figure is made: counts, survey estimates and projections.") has no field.
   about: {
     intro:
       'Census 2011 is a count of every person. The SRS is a sample survey. The 2026 and 2036 values are projections.',
     publisher:
-      'The Office of the Registrar General and Census Commissioner, India (ORGI), Ministry of Home Affairs, runs the Census and the Sample Registration System (SRS). The National Commission on Population (MoHFW) publishes the projections.',
+      ['The Office of the Registrar General and Census Commissioner, India (ORGI), Ministry of Home Affairs, runs the Census and the Sample Registration System (SRS). The National Commission on Population (MoHFW) publishes the projections.', WDI_ABOUT].join(' '),
     frequency:
       'Census: latest full count 2011. Census 2027 is under way, reference date 1 March 2027 in most states. SRS: yearly. The 2024 report came out on 20 May 2026. Projections: one report, July 2020.',
     revisions:
@@ -946,7 +1052,7 @@ const topic: Topic = {
       'No count exists after 2011. The SRS gives no fertility rate or sex ratio at birth for 14 smaller states and UTs. Small-UT projections can look odd. Neither publisher states an open licence.',
   },
   // The board lists the SRS report and bulletin on one line; they are two releases with two URLs.
-  sources: [censusA02, censusA01, censusC14, census1961, censusUrbanHistory, census1991Urban, census2001Pca, srsCompendium, srsReport2018, srsReport, srsBulletin, projections, wpp, wppAge, ...gazettes],
+  sources: [censusA02, censusA01, censusC14, census1961, censusUrbanHistory, census1991Urban, census2001Pca, srsCompendium, srsReport2018, srsReport, srsBulletin, projections, wpp, wppAge, ...gazettes, WDI.fertility],
   rail: [
     {
       title: 'Census 2027',

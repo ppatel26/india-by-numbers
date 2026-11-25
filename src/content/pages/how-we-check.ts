@@ -173,6 +173,12 @@ const howWeCheck: HowWeCheck = {
         changes: 'Never dropped. Small states and UTs get a note on sample size.',
       },
       {
+        status: 'Modelled estimate',
+        hallmark: { office: 'World Bank', unit: '% 15+', period: '2024' },
+        means: "An international body's estimate from a statistical model, made to compare countries on one definition. Example: the ILO puts women's labour force participation in India at 32.4% in 2024, against 40.3% in India's own survey (PLFS).",
+        changes: 'Never dropped. Changes when the body runs its model again.',
+      },
+      {
         status: 'Method break',
         hallmark: { office: 'MoSPI', unit: '% y/y', period: 'JAN 2026' },
         means: 'The base, method or coverage changed, so the two sides do not compare. Example: CPI moved to base 2024=100 in January 2026.',
@@ -190,6 +196,7 @@ const howWeCheck: HowWeCheck = {
         { word: 'Provisional', series: "CPI's latest month, the IIP quick estimate, monsoon 2026, assembly turnout 2026, NFHS-6" },
         { word: 'Survey estimate', series: 'PLFS, SRS, NFHS-5, NFHS-6' },
         { word: 'Projection', series: 'Population projections' },
+        { word: 'Modelled estimate', series: 'ILO modelled estimates, from the World Bank WDI' },
         { word: 'No status word', series: 'GDP, the repo rate, the FBIL rate, Census 2011, UDISE+, AISHE, ECI 2024, CEA, MNRE' },
         { word: 'Derived', series: 'A value we compute, such as a gap from India. Shown in the chart note.' },
       ],

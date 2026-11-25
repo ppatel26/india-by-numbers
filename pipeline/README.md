@@ -53,6 +53,7 @@ Exceptions:
   `--out-prices` and `--out-economy`.
 - `education/build_education.py` also reads the PLFS report text from `--jobs-work work/jobs`. Run
   `pipeline/jobs/extract_text.sh` first.
+- `international/fetch.sh` takes `--raw` only. `international/build_international.py` reads the UN DESA workbooks with `openpyxl`.
 - `transport/fetch.sh` reads its URLs from `transport/sources.tsv`, in the same way as `crime/fetch.sh`.
   `transport/build_tourism.py` needs only `fetch.sh tourism/` and `extract_text.sh tourism/`.
 - `crime/fetch.sh` reads its URLs from `crime/sources.tsv`. Give a path prefix to fetch part of the list, for example `pipeline/crime/fetch.sh pendency/`.
@@ -129,6 +130,8 @@ Some CSVs were made in more than one step. Run the steps in this order:
 | `trade-payments/fetch_handbook.sh` | None. Saves the RBI Handbook 2025-26 HTML tables (58, 111 to 131, 143, 144, 241), its Notes on Tables and the RBI website policy page, with `common/fetch.sh` | RBI |
 | `trade-payments/fetch_psi.py` | None. Posts the Payment System Indicators archive form and saves all 65 monthly releases as HTML | RBI |
 | `trade-payments/build_trade_payments.py` | `current-account-annual`, `bop-indicators-annual`, `bop-bpm6-annual`, `merchandise-trade-annual`, `merchandise-trade-by-commodity`, `merchandise-trade-by-partner`, `forex-reserves-end-march`, `payments-monthly`, `payments-annual`, `payment-infrastructure-monthly`. Stops if a checked value or a cross-table check differs | RBI (Handbook, Payment System Indicators), DGCI&S (trade tables in the Handbook) |
+| `international/fetch.sh` | None. Downloads five World Bank WDI series for one panel of countries, with their metadata, the WPP 2024 and ILOSTAT files used as checks, and the two UN DESA migrant stock workbooks, with `common/fetch.sh` | World Bank (WDI), UN DESA, ILO |
+| `international/build_international.py` | `wdi-gdp-per-person-ppp`, `wdi-life-expectancy`, `wdi-fertility-rate`, `wdi-co2-per-person`, `wdi-women-labour-force-participation`, `migrants-from-india-1990-2024`, `migrants-from-india-by-destination`. Stops if a checked value, a licence, the WDI update date, the WPP 2024 or ILOSTAT comparison, or the UN DESA totals differ | World Bank (WDI), UN DESA (International Migrant Stock 2024) |
 | `climate/extract_text.sh`, `climate/parse_cea.py` | None. Text and word boxes of the CEA and MNRE PDFs, and the CEA totals | CEA, MNRE |
 | `climate/build_rain.py` | `monsoon-rainfall-all-india-1901-2026` | IMD Pune |
 | `climate/build_subdiv.py` | `monsoon-2026-by-subdivision` (values transcribed from an IMD table image) | IMD |

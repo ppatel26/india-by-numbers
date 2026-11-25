@@ -1,0 +1,2977 @@
+destination,location_code,data_type,period,sex,value,unit
+Eritrea,232,I R,1990,total,39,persons
+Eritrea,232,I R,1995,total,54,persons
+Eritrea,232,I R,2000,total,70,persons
+Eritrea,232,I R,2005,total,83,persons
+Eritrea,232,I R,2010,total,99,persons
+Eritrea,232,I R,2015,total,119,persons
+Eritrea,232,I R,2020,total,103,persons
+Eritrea,232,I R,2024,total,92,persons
+Eritrea,232,I R,1990,male,22,persons
+Eritrea,232,I R,1995,male,23,persons
+Eritrea,232,I R,2000,male,24,persons
+Eritrea,232,I R,2005,male,31,persons
+Eritrea,232,I R,2010,male,38,persons
+Eritrea,232,I R,2015,male,46,persons
+Eritrea,232,I R,2020,male,41,persons
+Eritrea,232,I R,2024,male,37,persons
+Eritrea,232,I R,1990,female,17,persons
+Eritrea,232,I R,1995,female,31,persons
+Eritrea,232,I R,2000,female,46,persons
+Eritrea,232,I R,2005,female,52,persons
+Eritrea,232,I R,2010,female,61,persons
+Eritrea,232,I R,2015,female,73,persons
+Eritrea,232,I R,2020,female,62,persons
+Eritrea,232,I R,2024,female,55,persons
+Madagascar,450,C R,1990,total,1171,persons
+Madagascar,450,C R,1995,total,1037,persons
+Madagascar,450,C R,2000,total,1152,persons
+Madagascar,450,C R,2005,total,1282,persons
+Madagascar,450,C R,2010,total,1425,persons
+Madagascar,450,C R,2015,total,1581,persons
+Madagascar,450,C R,2020,total,1751,persons
+Madagascar,450,C R,2024,total,1902,persons
+Madagascar,450,C R,1990,male,648,persons
+Madagascar,450,C R,1995,male,580,persons
+Madagascar,450,C R,2000,male,647,persons
+Madagascar,450,C R,2005,male,723,persons
+Madagascar,450,C R,2010,male,808,persons
+Madagascar,450,C R,2015,male,900,persons
+Madagascar,450,C R,2020,male,998,persons
+Madagascar,450,C R,2024,male,1084,persons
+Madagascar,450,C R,1990,female,523,persons
+Madagascar,450,C R,1995,female,457,persons
+Madagascar,450,C R,2000,female,505,persons
+Madagascar,450,C R,2005,female,559,persons
+Madagascar,450,C R,2010,female,617,persons
+Madagascar,450,C R,2015,female,681,persons
+Madagascar,450,C R,2020,female,753,persons
+Madagascar,450,C R,2024,female,818,persons
+Malawi,454,B R,1990,total,1362,persons
+Malawi,454,B R,1995,total,2683,persons
+Malawi,454,B R,2000,total,2583,persons
+Malawi,454,B R,2005,total,2462,persons
+Malawi,454,B R,2010,total,2419,persons
+Malawi,454,B R,2015,total,2083,persons
+Malawi,454,B R,2020,total,1770,persons
+Malawi,454,B R,2024,total,1727,persons
+Malawi,454,B R,1990,male,588,persons
+Malawi,454,B R,1995,male,1455,persons
+Malawi,454,B R,2000,male,1397,persons
+Malawi,454,B R,2005,male,1328,persons
+Malawi,454,B R,2010,male,1303,persons
+Malawi,454,B R,2015,male,1112,persons
+Malawi,454,B R,2020,male,954,persons
+Malawi,454,B R,2024,male,931,persons
+Malawi,454,B R,1990,female,774,persons
+Malawi,454,B R,1995,female,1228,persons
+Malawi,454,B R,2000,female,1186,persons
+Malawi,454,B R,2005,female,1134,persons
+Malawi,454,B R,2010,female,1116,persons
+Malawi,454,B R,2015,female,971,persons
+Malawi,454,B R,2020,female,816,persons
+Malawi,454,B R,2024,female,796,persons
+Mauritius,480,C,1990,total,515,persons
+Mauritius,480,C,1995,total,1483,persons
+Mauritius,480,C,2000,total,3278,persons
+Mauritius,480,C,2005,total,5252,persons
+Mauritius,480,C,2010,total,7517,persons
+Mauritius,480,C,2015,total,8651,persons
+Mauritius,480,C,2020,total,8778,persons
+Mauritius,480,C,2024,total,8855,persons
+Mauritius,480,C,1990,male,252,persons
+Mauritius,480,C,1995,male,1171,persons
+Mauritius,480,C,2000,male,2685,persons
+Mauritius,480,C,2005,male,4312,persons
+Mauritius,480,C,2010,male,6223,persons
+Mauritius,480,C,2015,male,7235,persons
+Mauritius,480,C,2020,male,7334,persons
+Mauritius,480,C,2024,male,7399,persons
+Mauritius,480,C,1990,female,263,persons
+Mauritius,480,C,1995,female,312,persons
+Mauritius,480,C,2000,female,593,persons
+Mauritius,480,C,2005,female,940,persons
+Mauritius,480,C,2010,female,1294,persons
+Mauritius,480,C,2015,female,1416,persons
+Mauritius,480,C,2020,female,1444,persons
+Mauritius,480,C,2024,female,1456,persons
+Mozambique,508,B R,1990,total,900,persons
+Mozambique,508,B R,1995,total,1238,persons
+Mozambique,508,B R,2000,total,1441,persons
+Mozambique,508,B R,2005,total,1980,persons
+Mozambique,508,B R,2010,total,2256,persons
+Mozambique,508,B R,2015,total,2338,persons
+Mozambique,508,B R,2020,total,2455,persons
+Mozambique,508,B R,2024,total,2559,persons
+Mozambique,508,B R,1990,male,596,persons
+Mozambique,508,B R,1995,male,821,persons
+Mozambique,508,B R,2000,male,940,persons
+Mozambique,508,B R,2005,male,1229,persons
+Mozambique,508,B R,2010,male,1396,persons
+Mozambique,508,B R,2015,male,1448,persons
+Mozambique,508,B R,2020,male,1529,persons
+Mozambique,508,B R,2024,male,1594,persons
+Mozambique,508,B R,1990,female,304,persons
+Mozambique,508,B R,1995,female,417,persons
+Mozambique,508,B R,2000,female,501,persons
+Mozambique,508,B R,2005,female,751,persons
+Mozambique,508,B R,2010,female,860,persons
+Mozambique,508,B R,2015,female,890,persons
+Mozambique,508,B R,2020,female,926,persons
+Mozambique,508,B R,2024,female,965,persons
+Seychelles,690,B,1990,total,1276,persons
+Seychelles,690,B,1995,total,1651,persons
+Seychelles,690,B,2000,total,2026,persons
+Seychelles,690,B,2005,total,3907,persons
+Seychelles,690,B,2010,total,5788,persons
+Seychelles,690,B,2015,total,6482,persons
+Seychelles,690,B,2020,total,6628,persons
+Seychelles,690,B,2024,total,6735,persons
+Seychelles,690,B,1990,male,1012,persons
+Seychelles,690,B,1995,male,1313,persons
+Seychelles,690,B,2000,male,1614,persons
+Seychelles,690,B,2005,male,2874,persons
+Seychelles,690,B,2010,male,4133,persons
+Seychelles,690,B,2015,male,4726,persons
+Seychelles,690,B,2020,male,4821,persons
+Seychelles,690,B,2024,male,4899,persons
+Seychelles,690,B,1990,female,264,persons
+Seychelles,690,B,1995,female,338,persons
+Seychelles,690,B,2000,female,412,persons
+Seychelles,690,B,2005,female,1033,persons
+Seychelles,690,B,2010,female,1655,persons
+Seychelles,690,B,2015,female,1756,persons
+Seychelles,690,B,2020,female,1807,persons
+Seychelles,690,B,2024,female,1836,persons
+South Sudan,728,B R,1990,total,0,persons
+South Sudan,728,B R,1995,total,0,persons
+South Sudan,728,B R,2000,total,0,persons
+South Sudan,728,B R,2005,total,0,persons
+South Sudan,728,B R,2010,total,1364,persons
+South Sudan,728,B R,2015,total,1414,persons
+South Sudan,728,B R,2020,total,1449,persons
+South Sudan,728,B R,2024,total,1501,persons
+South Sudan,728,B R,1990,male,0,persons
+South Sudan,728,B R,1995,male,0,persons
+South Sudan,728,B R,2000,male,0,persons
+South Sudan,728,B R,2005,male,0,persons
+South Sudan,728,B R,2010,male,747,persons
+South Sudan,728,B R,2015,male,852,persons
+South Sudan,728,B R,2020,male,873,persons
+South Sudan,728,B R,2024,male,904,persons
+South Sudan,728,B R,1990,female,0,persons
+South Sudan,728,B R,1995,female,0,persons
+South Sudan,728,B R,2000,female,0,persons
+South Sudan,728,B R,2005,female,0,persons
+South Sudan,728,B R,2010,female,617,persons
+South Sudan,728,B R,2015,female,562,persons
+South Sudan,728,B R,2020,female,576,persons
+South Sudan,728,B R,2024,female,597,persons
+United Republic of Tanzania,834,B R,1990,total,4968,persons
+United Republic of Tanzania,834,B R,1995,total,6308,persons
+United Republic of Tanzania,834,B R,2000,total,6642,persons
+United Republic of Tanzania,834,B R,2005,total,7198,persons
+United Republic of Tanzania,834,B R,2010,total,7629,persons
+United Republic of Tanzania,834,B R,2015,total,8010,persons
+United Republic of Tanzania,834,B R,2020,total,7135,persons
+United Republic of Tanzania,834,B R,2024,total,7744,persons
+United Republic of Tanzania,834,B R,1990,male,2831,persons
+United Republic of Tanzania,834,B R,1995,male,3591,persons
+United Republic of Tanzania,834,B R,2000,male,3785,persons
+United Republic of Tanzania,834,B R,2005,male,4111,persons
+United Republic of Tanzania,834,B R,2010,male,4366,persons
+United Republic of Tanzania,834,B R,2015,male,4583,persons
+United Republic of Tanzania,834,B R,2020,male,4065,persons
+United Republic of Tanzania,834,B R,2024,male,4412,persons
+United Republic of Tanzania,834,B R,1990,female,2137,persons
+United Republic of Tanzania,834,B R,1995,female,2717,persons
+United Republic of Tanzania,834,B R,2000,female,2857,persons
+United Republic of Tanzania,834,B R,2005,female,3087,persons
+United Republic of Tanzania,834,B R,2010,female,3263,persons
+United Republic of Tanzania,834,B R,2015,female,3427,persons
+United Republic of Tanzania,834,B R,2020,female,3070,persons
+United Republic of Tanzania,834,B R,2024,female,3332,persons
+Zambia,894,B R,1990,total,4284,persons
+Zambia,894,B R,1995,total,3854,persons
+Zambia,894,B R,2000,total,3468,persons
+Zambia,894,B R,2005,total,4007,persons
+Zambia,894,B R,2010,total,4630,persons
+Zambia,894,B R,2015,total,4078,persons
+Zambia,894,B R,2020,total,5709,persons
+Zambia,894,B R,2024,total,7569,persons
+Zambia,894,B R,1990,male,2155,persons
+Zambia,894,B R,1995,male,1939,persons
+Zambia,894,B R,2000,male,1765,persons
+Zambia,894,B R,2005,male,2040,persons
+Zambia,894,B R,2010,male,2518,persons
+Zambia,894,B R,2015,male,2211,persons
+Zambia,894,B R,2020,male,3171,persons
+Zambia,894,B R,2024,male,4204,persons
+Zambia,894,B R,1990,female,2129,persons
+Zambia,894,B R,1995,female,1915,persons
+Zambia,894,B R,2000,female,1703,persons
+Zambia,894,B R,2005,female,1967,persons
+Zambia,894,B R,2010,female,2112,persons
+Zambia,894,B R,2015,female,1867,persons
+Zambia,894,B R,2020,female,2538,persons
+Zambia,894,B R,2024,female,3365,persons
+Egypt,818,B R,1990,total,713,persons
+Egypt,818,B R,1995,total,861,persons
+Egypt,818,B R,2000,total,1040,persons
+Egypt,818,B R,2005,total,1211,persons
+Egypt,818,B R,2010,total,1534,persons
+Egypt,818,B R,2015,total,0,persons
+Egypt,818,B R,2020,total,1207,persons
+Egypt,818,B R,2024,total,1141,persons
+Egypt,818,B R,1990,male,526,persons
+Egypt,818,B R,1995,male,631,persons
+Egypt,818,B R,2000,male,756,persons
+Egypt,818,B R,2005,male,874,persons
+Egypt,818,B R,2010,male,1098,persons
+Egypt,818,B R,2015,male,0,persons
+Egypt,818,B R,2020,male,851,persons
+Egypt,818,B R,2024,male,751,persons
+Egypt,818,B R,1990,female,187,persons
+Egypt,818,B R,1995,female,230,persons
+Egypt,818,B R,2000,female,284,persons
+Egypt,818,B R,2005,female,337,persons
+Egypt,818,B R,2010,female,436,persons
+Egypt,818,B R,2015,female,0,persons
+Egypt,818,B R,2020,female,356,persons
+Egypt,818,B R,2024,female,390,persons
+Libya,434,C R,1990,total,2288,persons
+Libya,434,C R,1995,total,2902,persons
+Libya,434,C R,2000,total,3564,persons
+Libya,434,C R,2005,total,3928,persons
+Libya,434,C R,2010,total,4310,persons
+Libya,434,C R,2015,total,4826,persons
+Libya,434,C R,2020,total,5167,persons
+Libya,434,C R,2024,total,5462,persons
+Libya,434,C R,1990,male,1397,persons
+Libya,434,C R,1995,male,1966,persons
+Libya,434,C R,2000,male,2588,persons
+Libya,434,C R,2005,male,3044,persons
+Libya,434,C R,2010,male,3347,persons
+Libya,434,C R,2015,male,3738,persons
+Libya,434,C R,2020,male,4029,persons
+Libya,434,C R,2024,male,4259,persons
+Libya,434,C R,1990,female,891,persons
+Libya,434,C R,1995,female,936,persons
+Libya,434,C R,2000,female,976,persons
+Libya,434,C R,2005,female,884,persons
+Libya,434,C R,2010,female,963,persons
+Libya,434,C R,2015,female,1088,persons
+Libya,434,C R,2020,female,1138,persons
+Libya,434,C R,2024,female,1203,persons
+Sudan,729,B R,1990,total,2259,persons
+Sudan,729,B R,1995,total,2304,persons
+Sudan,729,B R,2000,total,2351,persons
+Sudan,729,B R,2005,total,2397,persons
+Sudan,729,B R,2010,total,1396,persons
+Sudan,729,B R,2015,total,1277,persons
+Sudan,729,B R,2020,total,1764,persons
+Sudan,729,B R,2024,total,3066,persons
+Sudan,729,B R,1990,male,1162,persons
+Sudan,729,B R,1995,male,1188,persons
+Sudan,729,B R,2000,male,1214,persons
+Sudan,729,B R,2005,male,1234,persons
+Sudan,729,B R,2010,male,721,persons
+Sudan,729,B R,2015,male,660,persons
+Sudan,729,B R,2020,male,899,persons
+Sudan,729,B R,2024,male,1563,persons
+Sudan,729,B R,1990,female,1097,persons
+Sudan,729,B R,1995,female,1116,persons
+Sudan,729,B R,2000,female,1137,persons
+Sudan,729,B R,2005,female,1163,persons
+Sudan,729,B R,2010,female,675,persons
+Sudan,729,B R,2015,female,617,persons
+Sudan,729,B R,2020,female,865,persons
+Sudan,729,B R,2024,female,1503,persons
+Botswana,72,B R,1990,total,1967,persons
+Botswana,72,B R,1995,total,2375,persons
+Botswana,72,B R,2000,total,3032,persons
+Botswana,72,B R,2005,total,3936,persons
+Botswana,72,B R,2010,total,4863,persons
+Botswana,72,B R,2015,total,5282,persons
+Botswana,72,B R,2020,total,5650,persons
+Botswana,72,B R,2024,total,5964,persons
+Botswana,72,B R,1990,male,1081,persons
+Botswana,72,B R,1995,male,1298,persons
+Botswana,72,B R,2000,male,1650,persons
+Botswana,72,B R,2005,male,2238,persons
+Botswana,72,B R,2010,male,2837,persons
+Botswana,72,B R,2015,male,3080,persons
+Botswana,72,B R,2020,male,3299,persons
+Botswana,72,B R,2024,male,3482,persons
+Botswana,72,B R,1990,female,886,persons
+Botswana,72,B R,1995,female,1077,persons
+Botswana,72,B R,2000,female,1382,persons
+Botswana,72,B R,2005,female,1698,persons
+Botswana,72,B R,2010,female,2026,persons
+Botswana,72,B R,2015,female,2202,persons
+Botswana,72,B R,2020,female,2351,persons
+Botswana,72,B R,2024,female,2482,persons
+Lesotho,426,C R,1990,total,308,persons
+Lesotho,426,C R,1995,total,266,persons
+Lesotho,426,C R,2000,total,215,persons
+Lesotho,426,C R,2005,total,219,persons
+Lesotho,426,C R,2010,total,223,persons
+Lesotho,426,C R,2015,total,318,persons
+Lesotho,426,C R,2020,total,419,persons
+Lesotho,426,C R,2024,total,522,persons
+Lesotho,426,C R,1990,male,172,persons
+Lesotho,426,C R,1995,male,148,persons
+Lesotho,426,C R,2000,male,120,persons
+Lesotho,426,C R,2005,male,122,persons
+Lesotho,426,C R,2010,male,124,persons
+Lesotho,426,C R,2015,male,180,persons
+Lesotho,426,C R,2020,male,234,persons
+Lesotho,426,C R,2024,male,291,persons
+Lesotho,426,C R,1990,female,136,persons
+Lesotho,426,C R,1995,female,118,persons
+Lesotho,426,C R,2000,female,95,persons
+Lesotho,426,C R,2005,female,97,persons
+Lesotho,426,C R,2010,female,99,persons
+Lesotho,426,C R,2015,female,138,persons
+Lesotho,426,C R,2020,female,185,persons
+Lesotho,426,C R,2024,female,231,persons
+Namibia,516,B R,1990,total,997,persons
+Namibia,516,B R,1995,total,953,persons
+Namibia,516,B R,2000,total,886,persons
+Namibia,516,B R,2005,total,700,persons
+Namibia,516,B R,2010,total,674,persons
+Namibia,516,B R,2015,total,659,persons
+Namibia,516,B R,2020,total,704,persons
+Namibia,516,B R,2024,total,747,persons
+Namibia,516,B R,1990,male,649,persons
+Namibia,516,B R,1995,male,623,persons
+Namibia,516,B R,2000,male,580,persons
+Namibia,516,B R,2005,male,457,persons
+Namibia,516,B R,2010,male,441,persons
+Namibia,516,B R,2015,male,432,persons
+Namibia,516,B R,2020,male,463,persons
+Namibia,516,B R,2024,male,491,persons
+Namibia,516,B R,1990,female,348,persons
+Namibia,516,B R,1995,female,330,persons
+Namibia,516,B R,2000,female,306,persons
+Namibia,516,B R,2005,female,243,persons
+Namibia,516,B R,2010,female,233,persons
+Namibia,516,B R,2015,female,227,persons
+Namibia,516,B R,2020,female,241,persons
+Namibia,516,B R,2024,female,256,persons
+South Africa,710,B R,1990,total,12245,persons
+South Africa,710,B R,1995,total,11709,persons
+South Africa,710,B R,2000,total,16743,persons
+South Africa,710,B R,2005,total,27229,persons
+South Africa,710,B R,2010,total,28784,persons
+South Africa,710,B R,2015,total,34185,persons
+South Africa,710,B R,2020,total,32302,persons
+South Africa,710,B R,2024,total,27674,persons
+South Africa,710,B R,1990,male,6131,persons
+South Africa,710,B R,1995,male,6038,persons
+South Africa,710,B R,2000,male,9340,persons
+South Africa,710,B R,2005,male,16661,persons
+South Africa,710,B R,2010,male,17183,persons
+South Africa,710,B R,2015,male,21151,persons
+South Africa,710,B R,2020,male,19758,persons
+South Africa,710,B R,2024,male,16341,persons
+South Africa,710,B R,1990,female,6114,persons
+South Africa,710,B R,1995,female,5671,persons
+South Africa,710,B R,2000,female,7403,persons
+South Africa,710,B R,2005,female,10568,persons
+South Africa,710,B R,2010,female,11601,persons
+South Africa,710,B R,2015,female,13034,persons
+South Africa,710,B R,2020,female,12544,persons
+South Africa,710,B R,2024,female,11333,persons
+Ghana,288,B R,1990,total,454,persons
+Ghana,288,B R,1995,total,452,persons
+Ghana,288,B R,2000,total,506,persons
+Ghana,288,B R,2005,total,712,persons
+Ghana,288,B R,2010,total,708,persons
+Ghana,288,B R,2015,total,871,persons
+Ghana,288,B R,2020,total,999,persons
+Ghana,288,B R,2024,total,1116,persons
+Ghana,288,B R,1990,male,258,persons
+Ghana,288,B R,1995,male,275,persons
+Ghana,288,B R,2000,male,290,persons
+Ghana,288,B R,2005,male,426,persons
+Ghana,288,B R,2010,male,433,persons
+Ghana,288,B R,2015,male,533,persons
+Ghana,288,B R,2020,male,613,persons
+Ghana,288,B R,2024,male,685,persons
+Ghana,288,B R,1990,female,196,persons
+Ghana,288,B R,1995,female,177,persons
+Ghana,288,B R,2000,female,216,persons
+Ghana,288,B R,2005,female,286,persons
+Ghana,288,B R,2010,female,275,persons
+Ghana,288,B R,2015,female,338,persons
+Ghana,288,B R,2020,female,386,persons
+Ghana,288,B R,2024,female,431,persons
+Guinea,324,C B R,1990,total,0,persons
+Guinea,324,C B R,1995,total,0,persons
+Guinea,324,C B R,2000,total,0,persons
+Guinea,324,C B R,2005,total,0,persons
+Guinea,324,C B R,2010,total,0,persons
+Guinea,324,C B R,2015,total,49,persons
+Guinea,324,C B R,2020,total,45,persons
+Guinea,324,C B R,2024,total,44,persons
+Guinea,324,C B R,1990,male,0,persons
+Guinea,324,C B R,1995,male,0,persons
+Guinea,324,C B R,2000,male,0,persons
+Guinea,324,C B R,2005,male,0,persons
+Guinea,324,C B R,2010,male,0,persons
+Guinea,324,C B R,2015,male,46,persons
+Guinea,324,C B R,2020,male,44,persons
+Guinea,324,C B R,2024,male,43,persons
+Guinea,324,C B R,1990,female,0,persons
+Guinea,324,C B R,1995,female,0,persons
+Guinea,324,C B R,2000,female,0,persons
+Guinea,324,C B R,2005,female,0,persons
+Guinea,324,C B R,2010,female,0,persons
+Guinea,324,C B R,2015,female,3,persons
+Guinea,324,C B R,2020,female,1,persons
+Guinea,324,C B R,2024,female,1,persons
+Liberia,430,B R,1990,total,774,persons
+Liberia,430,B R,1995,total,756,persons
+Liberia,430,B R,2000,total,742,persons
+Liberia,430,B R,2005,total,546,persons
+Liberia,430,B R,2010,total,712,persons
+Liberia,430,B R,2015,total,817,persons
+Liberia,430,B R,2020,total,631,persons
+Liberia,430,B R,2024,total,520,persons
+Liberia,430,B R,1990,male,493,persons
+Liberia,430,B R,1995,male,476,persons
+Liberia,430,B R,2000,male,459,persons
+Liberia,430,B R,2005,male,443,persons
+Liberia,430,B R,2010,male,603,persons
+Liberia,430,B R,2015,male,691,persons
+Liberia,430,B R,2020,male,537,persons
+Liberia,430,B R,2024,male,443,persons
+Liberia,430,B R,1990,female,281,persons
+Liberia,430,B R,1995,female,280,persons
+Liberia,430,B R,2000,female,283,persons
+Liberia,430,B R,2005,female,103,persons
+Liberia,430,B R,2010,female,109,persons
+Liberia,430,B R,2015,female,126,persons
+Liberia,430,B R,2020,female,94,persons
+Liberia,430,B R,2024,female,77,persons
+Sierra Leone,694,B R,1990,total,405,persons
+Sierra Leone,694,B R,1995,total,395,persons
+Sierra Leone,694,B R,2000,total,385,persons
+Sierra Leone,694,B R,2005,total,341,persons
+Sierra Leone,694,B R,2010,total,539,persons
+Sierra Leone,694,B R,2015,total,855,persons
+Sierra Leone,694,B R,2020,total,959,persons
+Sierra Leone,694,B R,2024,total,892,persons
+Sierra Leone,694,B R,1990,male,244,persons
+Sierra Leone,694,B R,1995,male,234,persons
+Sierra Leone,694,B R,2000,male,224,persons
+Sierra Leone,694,B R,2005,male,304,persons
+Sierra Leone,694,B R,2010,male,429,persons
+Sierra Leone,694,B R,2015,male,523,persons
+Sierra Leone,694,B R,2020,male,470,persons
+Sierra Leone,694,B R,2024,male,437,persons
+Sierra Leone,694,B R,1990,female,161,persons
+Sierra Leone,694,B R,1995,female,161,persons
+Sierra Leone,694,B R,2000,female,161,persons
+Sierra Leone,694,B R,2005,female,37,persons
+Sierra Leone,694,B R,2010,female,110,persons
+Sierra Leone,694,B R,2015,female,332,persons
+Sierra Leone,694,B R,2020,female,489,persons
+Sierra Leone,694,B R,2024,female,455,persons
+Kazakhstan,398,B R,1990,total,1882,persons
+Kazakhstan,398,B R,1995,total,1315,persons
+Kazakhstan,398,B R,2000,total,1014,persons
+Kazakhstan,398,B R,2005,total,1033,persons
+Kazakhstan,398,B R,2010,total,1071,persons
+Kazakhstan,398,B R,2015,total,1110,persons
+Kazakhstan,398,B R,2020,total,1150,persons
+Kazakhstan,398,B R,2024,total,1190,persons
+Kazakhstan,398,B R,1990,male,811,persons
+Kazakhstan,398,B R,1995,male,575,persons
+Kazakhstan,398,B R,2000,male,466,persons
+Kazakhstan,398,B R,2005,male,510,persons
+Kazakhstan,398,B R,2010,male,539,persons
+Kazakhstan,398,B R,2015,male,551,persons
+Kazakhstan,398,B R,2020,male,646,persons
+Kazakhstan,398,B R,2024,male,661,persons
+Kazakhstan,398,B R,1990,female,1071,persons
+Kazakhstan,398,B R,1995,female,740,persons
+Kazakhstan,398,B R,2000,female,548,persons
+Kazakhstan,398,B R,2005,female,523,persons
+Kazakhstan,398,B R,2010,female,532,persons
+Kazakhstan,398,B R,2015,female,559,persons
+Kazakhstan,398,B R,2020,female,504,persons
+Kazakhstan,398,B R,2024,female,529,persons
+Tajikistan,762,B R,1990,total,935,persons
+Tajikistan,762,B R,1995,total,760,persons
+Tajikistan,762,B R,2000,total,654,persons
+Tajikistan,762,B R,2005,total,630,persons
+Tajikistan,762,B R,2010,total,628,persons
+Tajikistan,762,B R,2015,total,617,persons
+Tajikistan,762,B R,2020,total,618,persons
+Tajikistan,762,B R,2024,total,620,persons
+Tajikistan,762,B R,1990,male,411,persons
+Tajikistan,762,B R,1995,male,449,persons
+Tajikistan,762,B R,2000,male,400,persons
+Tajikistan,762,B R,2005,male,394,persons
+Tajikistan,762,B R,2010,male,394,persons
+Tajikistan,762,B R,2015,male,386,persons
+Tajikistan,762,B R,2020,male,388,persons
+Tajikistan,762,B R,2024,male,389,persons
+Tajikistan,762,B R,1990,female,524,persons
+Tajikistan,762,B R,1995,female,311,persons
+Tajikistan,762,B R,2000,female,254,persons
+Tajikistan,762,B R,2005,female,236,persons
+Tajikistan,762,B R,2010,female,234,persons
+Tajikistan,762,B R,2015,female,231,persons
+Tajikistan,762,B R,2020,female,230,persons
+Tajikistan,762,B R,2024,female,231,persons
+China,156,C R,1990,total,7571,persons
+China,156,C R,1995,total,8879,persons
+China,156,C R,2000,total,10567,persons
+China,156,C R,2005,total,12578,persons
+China,156,C R,2010,total,14726,persons
+China,156,C R,2015,total,10522,persons
+China,156,C R,2020,total,7235,persons
+China,156,C R,2024,total,7765,persons
+China,156,C R,1990,male,4331,persons
+China,156,C R,1995,male,5091,persons
+China,156,C R,2000,male,6092,persons
+China,156,C R,2005,male,7290,persons
+China,156,C R,2010,male,8621,persons
+China,156,C R,2015,male,5860,persons
+China,156,C R,2020,male,3667,persons
+China,156,C R,2024,male,3640,persons
+China,156,C R,1990,female,3240,persons
+China,156,C R,1995,female,3788,persons
+China,156,C R,2000,female,4475,persons
+China,156,C R,2005,female,5288,persons
+China,156,C R,2010,female,6105,persons
+China,156,C R,2015,female,4662,persons
+China,156,C R,2020,female,3568,persons
+China,156,C R,2024,female,4125,persons
+"China, Hong Kong SAR",344,B R,1990,total,12064,persons
+"China, Hong Kong SAR",344,B R,1995,total,13464,persons
+"China, Hong Kong SAR",344,B R,2000,total,14864,persons
+"China, Hong Kong SAR",344,B R,2005,total,16228,persons
+"China, Hong Kong SAR",344,B R,2010,total,17632,persons
+"China, Hong Kong SAR",344,B R,2015,total,18019,persons
+"China, Hong Kong SAR",344,B R,2020,total,18788,persons
+"China, Hong Kong SAR",344,B R,2024,total,19427,persons
+"China, Hong Kong SAR",344,B R,1990,male,6286,persons
+"China, Hong Kong SAR",344,B R,1995,male,6972,persons
+"China, Hong Kong SAR",344,B R,2000,male,7659,persons
+"China, Hong Kong SAR",344,B R,2005,male,7967,persons
+"China, Hong Kong SAR",344,B R,2010,male,8295,persons
+"China, Hong Kong SAR",344,B R,2015,male,8181,persons
+"China, Hong Kong SAR",344,B R,2020,male,8182,persons
+"China, Hong Kong SAR",344,B R,2024,male,8460,persons
+"China, Hong Kong SAR",344,B R,1990,female,5778,persons
+"China, Hong Kong SAR",344,B R,1995,female,6492,persons
+"China, Hong Kong SAR",344,B R,2000,female,7205,persons
+"China, Hong Kong SAR",344,B R,2005,female,8261,persons
+"China, Hong Kong SAR",344,B R,2010,female,9337,persons
+"China, Hong Kong SAR",344,B R,2015,female,9838,persons
+"China, Hong Kong SAR",344,B R,2020,female,10606,persons
+"China, Hong Kong SAR",344,B R,2024,female,10967,persons
+"China, Taiwan Province of China",158,C R,1990,total,427,persons
+"China, Taiwan Province of China",158,C R,1995,total,690,persons
+"China, Taiwan Province of China",158,C R,2000,total,954,persons
+"China, Taiwan Province of China",158,C R,2005,total,1237,persons
+"China, Taiwan Province of China",158,C R,2010,total,1535,persons
+"China, Taiwan Province of China",158,C R,2015,total,2454,persons
+"China, Taiwan Province of China",158,C R,2020,total,4322,persons
+"China, Taiwan Province of China",158,C R,2024,total,5550,persons
+"China, Taiwan Province of China",158,C R,1990,male,150,persons
+"China, Taiwan Province of China",158,C R,1995,male,437,persons
+"China, Taiwan Province of China",158,C R,2000,male,622,persons
+"China, Taiwan Province of China",158,C R,2005,male,831,persons
+"China, Taiwan Province of China",158,C R,2010,male,1069,persons
+"China, Taiwan Province of China",158,C R,2015,male,1765,persons
+"China, Taiwan Province of China",158,C R,2020,male,3015,persons
+"China, Taiwan Province of China",158,C R,2024,male,3742,persons
+"China, Taiwan Province of China",158,C R,1990,female,277,persons
+"China, Taiwan Province of China",158,C R,1995,female,253,persons
+"China, Taiwan Province of China",158,C R,2000,female,332,persons
+"China, Taiwan Province of China",158,C R,2005,female,406,persons
+"China, Taiwan Province of China",158,C R,2010,female,466,persons
+"China, Taiwan Province of China",158,C R,2015,female,689,persons
+"China, Taiwan Province of China",158,C R,2020,female,1307,persons
+"China, Taiwan Province of China",158,C R,2024,female,1808,persons
+Dem. People's Republic of Korea,408,B R,1990,total,178,persons
+Dem. People's Republic of Korea,408,B R,1995,total,198,persons
+Dem. People's Republic of Korea,408,B R,2000,total,217,persons
+Dem. People's Republic of Korea,408,B R,2005,total,274,persons
+Dem. People's Republic of Korea,408,B R,2010,total,330,persons
+Dem. People's Republic of Korea,408,B R,2015,total,363,persons
+Dem. People's Republic of Korea,408,B R,2020,total,370,persons
+Dem. People's Republic of Korea,408,B R,2024,total,377,persons
+Dem. People's Republic of Korea,408,B R,1990,male,93,persons
+Dem. People's Republic of Korea,408,B R,1995,male,103,persons
+Dem. People's Republic of Korea,408,B R,2000,male,112,persons
+Dem. People's Republic of Korea,408,B R,2005,male,142,persons
+Dem. People's Republic of Korea,408,B R,2010,male,171,persons
+Dem. People's Republic of Korea,408,B R,2015,male,189,persons
+Dem. People's Republic of Korea,408,B R,2020,male,194,persons
+Dem. People's Republic of Korea,408,B R,2024,male,198,persons
+Dem. People's Republic of Korea,408,B R,1990,female,85,persons
+Dem. People's Republic of Korea,408,B R,1995,female,95,persons
+Dem. People's Republic of Korea,408,B R,2000,female,105,persons
+Dem. People's Republic of Korea,408,B R,2005,female,132,persons
+Dem. People's Republic of Korea,408,B R,2010,female,159,persons
+Dem. People's Republic of Korea,408,B R,2015,female,174,persons
+Dem. People's Republic of Korea,408,B R,2020,female,176,persons
+Dem. People's Republic of Korea,408,B R,2024,female,179,persons
+Japan,392,C,1990,total,3002,persons
+Japan,392,C,1995,total,5201,persons
+Japan,392,C,2000,total,9477,persons
+Japan,392,C,2005,total,15980,persons
+Japan,392,C,2010,total,22525,persons
+Japan,392,C,2015,total,27029,persons
+Japan,392,C,2020,total,41744,persons
+Japan,392,C,2024,total,49313,persons
+Japan,392,C,1990,male,2094,persons
+Japan,392,C,1995,male,3601,persons
+Japan,392,C,2000,male,6570,persons
+Japan,392,C,2005,male,11040,persons
+Japan,392,C,2010,male,15749,persons
+Japan,392,C,2015,male,18635,persons
+Japan,392,C,2020,male,28416,persons
+Japan,392,C,2024,male,32730,persons
+Japan,392,C,1990,female,908,persons
+Japan,392,C,1995,female,1600,persons
+Japan,392,C,2000,female,2907,persons
+Japan,392,C,2005,female,4940,persons
+Japan,392,C,2010,female,6776,persons
+Japan,392,C,2015,female,8394,persons
+Japan,392,C,2020,female,13328,persons
+Japan,392,C,2024,female,16583,persons
+Mongolia,496,C R,1990,total,24,persons
+Mongolia,496,C R,1995,total,26,persons
+Mongolia,496,C R,2000,total,29,persons
+Mongolia,496,C R,2005,total,56,persons
+Mongolia,496,C R,2010,total,90,persons
+Mongolia,496,C R,2015,total,111,persons
+Mongolia,496,C R,2020,total,117,persons
+Mongolia,496,C R,2024,total,124,persons
+Mongolia,496,C R,1990,male,16,persons
+Mongolia,496,C R,1995,male,18,persons
+Mongolia,496,C R,2000,male,20,persons
+Mongolia,496,C R,2005,male,38,persons
+Mongolia,496,C R,2010,male,62,persons
+Mongolia,496,C R,2015,male,67,persons
+Mongolia,496,C R,2020,male,72,persons
+Mongolia,496,C R,2024,male,76,persons
+Mongolia,496,C R,1990,female,8,persons
+Mongolia,496,C R,1995,female,8,persons
+Mongolia,496,C R,2000,female,9,persons
+Mongolia,496,C R,2005,female,18,persons
+Mongolia,496,C R,2010,female,28,persons
+Mongolia,496,C R,2015,female,44,persons
+Mongolia,496,C R,2020,female,45,persons
+Mongolia,496,C R,2024,female,48,persons
+Bangladesh,50,B R,1990,total,13339,persons
+Bangladesh,50,B R,1995,total,18075,persons
+Bangladesh,50,B R,2000,total,22811,persons
+Bangladesh,50,B R,2005,total,27687,persons
+Bangladesh,50,B R,2010,total,32301,persons
+Bangladesh,50,B R,2015,total,34431,persons
+Bangladesh,50,B R,2020,total,33762,persons
+Bangladesh,50,B R,2024,total,46385,persons
+Bangladesh,50,B R,1990,male,7204,persons
+Bangladesh,50,B R,1995,male,9761,persons
+Bangladesh,50,B R,2000,male,12318,persons
+Bangladesh,50,B R,2005,male,14951,persons
+Bangladesh,50,B R,2010,male,17443,persons
+Bangladesh,50,B R,2015,male,18593,persons
+Bangladesh,50,B R,2020,male,10428,persons
+Bangladesh,50,B R,2024,male,14327,persons
+Bangladesh,50,B R,1990,female,6135,persons
+Bangladesh,50,B R,1995,female,8314,persons
+Bangladesh,50,B R,2000,female,10493,persons
+Bangladesh,50,B R,2005,female,12736,persons
+Bangladesh,50,B R,2010,female,14858,persons
+Bangladesh,50,B R,2015,female,15838,persons
+Bangladesh,50,B R,2020,female,23334,persons
+Bangladesh,50,B R,2024,female,32058,persons
+Bhutan,64,B,1990,total,20841,persons
+Bhutan,64,B,1995,total,24485,persons
+Bhutan,64,B,2000,total,28128,persons
+Bhutan,64,B,2005,total,35256,persons
+Bhutan,64,B,2010,total,42383,persons
+Bhutan,64,B,2015,total,44732,persons
+Bhutan,64,B,2020,total,46974,persons
+Bhutan,64,B,2024,total,48810,persons
+Bhutan,64,B,1990,male,17317,persons
+Bhutan,64,B,1995,male,20343,persons
+Bhutan,64,B,2000,male,23368,persons
+Bhutan,64,B,2005,male,29215,persons
+Bhutan,64,B,2010,male,35061,persons
+Bhutan,64,B,2015,male,38509,persons
+Bhutan,64,B,2020,male,40408,persons
+Bhutan,64,B,2024,male,41985,persons
+Bhutan,64,B,1990,female,3524,persons
+Bhutan,64,B,1995,female,4142,persons
+Bhutan,64,B,2000,female,4760,persons
+Bhutan,64,B,2005,female,6041,persons
+Bhutan,64,B,2010,female,7322,persons
+Bhutan,64,B,2015,female,6223,persons
+Bhutan,64,B,2020,female,6566,persons
+Bhutan,64,B,2024,female,6825,persons
+Maldives,462,C,1990,total,951,persons
+Maldives,462,C,1995,total,6418,persons
+Maldives,462,C,2000,total,11427,persons
+Maldives,462,C,2005,total,13773,persons
+Maldives,462,C,2010,total,13568,persons
+Maldives,462,C,2015,total,13364,persons
+Maldives,462,C,2020,total,14596,persons
+Maldives,462,C,2024,total,15642,persons
+Maldives,462,C,1990,male,523,persons
+Maldives,462,C,1995,male,3202,persons
+Maldives,462,C,2000,male,6287,persons
+Maldives,462,C,2005,male,8124,persons
+Maldives,462,C,2010,male,8972,persons
+Maldives,462,C,2015,male,9821,persons
+Maldives,462,C,2020,male,10698,persons
+Maldives,462,C,2024,male,11465,persons
+Maldives,462,C,1990,female,428,persons
+Maldives,462,C,1995,female,3216,persons
+Maldives,462,C,2000,female,5140,persons
+Maldives,462,C,2005,female,5649,persons
+Maldives,462,C,2010,female,4596,persons
+Maldives,462,C,2015,female,3543,persons
+Maldives,462,C,2020,female,3898,persons
+Maldives,462,C,2024,female,4177,persons
+Nepal,524,B R,1990,total,369370,persons
+Nepal,524,B R,1995,total,515578,persons
+Nepal,524,B R,2000,total,543594,persons
+Nepal,524,B R,2005,total,514650,persons
+Nepal,524,B R,2010,total,461186,persons
+Nepal,524,B R,2015,total,446113,persons
+Nepal,524,B R,2020,total,426941,persons
+Nepal,524,B R,2024,total,412190,persons
+Nepal,524,B R,1990,male,101830,persons
+Nepal,524,B R,1995,male,132220,persons
+Nepal,524,B R,2000,male,152241,persons
+Nepal,524,B R,2005,male,152152,persons
+Nepal,524,B R,2010,male,133094,persons
+Nepal,524,B R,2015,male,127498,persons
+Nepal,524,B R,2020,male,119572,persons
+Nepal,524,B R,2024,male,115442,persons
+Nepal,524,B R,1990,female,267540,persons
+Nepal,524,B R,1995,female,383358,persons
+Nepal,524,B R,2000,female,391353,persons
+Nepal,524,B R,2005,female,362498,persons
+Nepal,524,B R,2010,female,328092,persons
+Nepal,524,B R,2015,female,318615,persons
+Nepal,524,B R,2020,female,307369,persons
+Nepal,524,B R,2024,female,296748,persons
+Pakistan,586,B R,1990,total,2818248,persons
+Pakistan,586,B R,1995,total,2365884,persons
+Pakistan,586,B R,2000,total,2101039,persons
+Pakistan,586,B R,2005,total,1998814,persons
+Pakistan,586,B R,2010,total,1943345,persons
+Pakistan,586,B R,2015,total,1709217,persons
+Pakistan,586,B R,2020,total,1597134,persons
+Pakistan,586,B R,2024,total,1597134,persons
+Pakistan,586,B R,1990,male,1532902,persons
+Pakistan,586,B R,1995,male,1284253,persons
+Pakistan,586,B R,2000,male,1137266,persons
+Pakistan,586,B R,2005,male,1081490,persons
+Pakistan,586,B R,2010,male,1053199,persons
+Pakistan,586,B R,2015,male,988946,persons
+Pakistan,586,B R,2020,male,962407,persons
+Pakistan,586,B R,2024,male,962407,persons
+Pakistan,586,B R,1990,female,1285346,persons
+Pakistan,586,B R,1995,female,1081631,persons
+Pakistan,586,B R,2000,female,963773,persons
+Pakistan,586,B R,2005,female,917324,persons
+Pakistan,586,B R,2010,female,890146,persons
+Pakistan,586,B R,2015,female,720271,persons
+Pakistan,586,B R,2020,female,634727,persons
+Pakistan,586,B R,2024,female,634727,persons
+Sri Lanka,144,B R,1990,total,39329,persons
+Sri Lanka,144,B R,1995,total,35506,persons
+Sri Lanka,144,B R,2000,total,31618,persons
+Sri Lanka,144,B R,2005,total,24499,persons
+Sri Lanka,144,B R,2010,total,10529,persons
+Sri Lanka,144,B R,2015,total,10658,persons
+Sri Lanka,144,B R,2020,total,10837,persons
+Sri Lanka,144,B R,2024,total,10957,persons
+Sri Lanka,144,B R,1990,male,22147,persons
+Sri Lanka,144,B R,1995,male,18861,persons
+Sri Lanka,144,B R,2000,male,16266,persons
+Sri Lanka,144,B R,2005,male,13375,persons
+Sri Lanka,144,B R,2010,male,5503,persons
+Sri Lanka,144,B R,2015,male,5475,persons
+Sri Lanka,144,B R,2020,male,5603,persons
+Sri Lanka,144,B R,2024,male,5665,persons
+Sri Lanka,144,B R,1990,female,17182,persons
+Sri Lanka,144,B R,1995,female,16645,persons
+Sri Lanka,144,B R,2000,female,15352,persons
+Sri Lanka,144,B R,2005,female,11124,persons
+Sri Lanka,144,B R,2010,female,5026,persons
+Sri Lanka,144,B R,2015,female,5183,persons
+Sri Lanka,144,B R,2020,female,5234,persons
+Sri Lanka,144,B R,2024,female,5292,persons
+Brunei Darussalam,96,B,1990,total,2595,persons
+Brunei Darussalam,96,B,1995,total,2742,persons
+Brunei Darussalam,96,B,2000,total,2889,persons
+Brunei Darussalam,96,B,2005,total,2953,persons
+Brunei Darussalam,96,B,2010,total,3017,persons
+Brunei Darussalam,96,B,2015,total,3081,persons
+Brunei Darussalam,96,B,2020,total,3357,persons
+Brunei Darussalam,96,B,2024,total,3596,persons
+Brunei Darussalam,96,B,1990,male,2181,persons
+Brunei Darussalam,96,B,1995,male,2309,persons
+Brunei Darussalam,96,B,2000,male,2437,persons
+Brunei Darussalam,96,B,2005,male,2494,persons
+Brunei Darussalam,96,B,2010,male,2551,persons
+Brunei Darussalam,96,B,2015,male,2608,persons
+Brunei Darussalam,96,B,2020,male,2843,persons
+Brunei Darussalam,96,B,2024,male,3045,persons
+Brunei Darussalam,96,B,1990,female,414,persons
+Brunei Darussalam,96,B,1995,female,433,persons
+Brunei Darussalam,96,B,2000,female,452,persons
+Brunei Darussalam,96,B,2005,female,459,persons
+Brunei Darussalam,96,B,2010,female,466,persons
+Brunei Darussalam,96,B,2015,female,473,persons
+Brunei Darussalam,96,B,2020,female,514,persons
+Brunei Darussalam,96,B,2024,female,551,persons
+Cambodia,116,B R,1990,total,44,persons
+Cambodia,116,B R,1995,total,116,persons
+Cambodia,116,B R,2000,total,187,persons
+Cambodia,116,B R,2005,total,146,persons
+Cambodia,116,B R,2010,total,105,persons
+Cambodia,116,B R,2015,total,95,persons
+Cambodia,116,B R,2020,total,101,persons
+Cambodia,116,B R,2024,total,107,persons
+Cambodia,116,B R,1990,male,33,persons
+Cambodia,116,B R,1995,male,87,persons
+Cambodia,116,B R,2000,male,140,persons
+Cambodia,116,B R,2005,male,110,persons
+Cambodia,116,B R,2010,male,80,persons
+Cambodia,116,B R,2015,male,73,persons
+Cambodia,116,B R,2020,male,79,persons
+Cambodia,116,B R,2024,male,84,persons
+Cambodia,116,B R,1990,female,11,persons
+Cambodia,116,B R,1995,female,29,persons
+Cambodia,116,B R,2000,female,47,persons
+Cambodia,116,B R,2005,female,36,persons
+Cambodia,116,B R,2010,female,25,persons
+Cambodia,116,B R,2015,female,22,persons
+Cambodia,116,B R,2020,female,22,persons
+Cambodia,116,B R,2024,female,23,persons
+Indonesia,360,C R,1990,total,2054,persons
+Indonesia,360,C R,1995,total,179,persons
+Indonesia,360,C R,2000,total,13,persons
+Indonesia,360,C R,2005,total,10,persons
+Indonesia,360,C R,2010,total,15,persons
+Indonesia,360,C R,2015,total,3649,persons
+Indonesia,360,C R,2020,total,13142,persons
+Indonesia,360,C R,2024,total,22758,persons
+Indonesia,360,C R,1990,male,1077,persons
+Indonesia,360,C R,1995,male,94,persons
+Indonesia,360,C R,2000,male,7,persons
+Indonesia,360,C R,2005,male,5,persons
+Indonesia,360,C R,2010,male,8,persons
+Indonesia,360,C R,2015,male,1950,persons
+Indonesia,360,C R,2020,male,6988,persons
+Indonesia,360,C R,2024,male,12142,persons
+Indonesia,360,C R,1990,female,977,persons
+Indonesia,360,C R,1995,female,85,persons
+Indonesia,360,C R,2000,female,6,persons
+Indonesia,360,C R,2005,female,5,persons
+Indonesia,360,C R,2010,female,7,persons
+Indonesia,360,C R,2015,female,1699,persons
+Indonesia,360,C R,2020,female,6154,persons
+Indonesia,360,C R,2024,female,10616,persons
+Malaysia,458,B R,1990,total,0,persons
+Malaysia,458,B R,1995,total,8278,persons
+Malaysia,458,B R,2000,total,18934,persons
+Malaysia,458,B R,2005,total,134947,persons
+Malaysia,458,B R,2010,total,95112,persons
+Malaysia,458,B R,2015,total,139751,persons
+Malaysia,458,B R,2020,total,139751,persons
+Malaysia,458,B R,2024,total,139751,persons
+Malaysia,458,B R,1990,male,0,persons
+Malaysia,458,B R,1995,male,5165,persons
+Malaysia,458,B R,2000,male,11815,persons
+Malaysia,458,B R,2005,male,84207,persons
+Malaysia,458,B R,2010,male,59350,persons
+Malaysia,458,B R,2015,male,87205,persons
+Malaysia,458,B R,2020,male,87205,persons
+Malaysia,458,B R,2024,male,87205,persons
+Malaysia,458,B R,1990,female,0,persons
+Malaysia,458,B R,1995,female,3113,persons
+Malaysia,458,B R,2000,female,7119,persons
+Malaysia,458,B R,2005,female,50740,persons
+Malaysia,458,B R,2010,female,35762,persons
+Malaysia,458,B R,2015,female,52546,persons
+Malaysia,458,B R,2020,female,52546,persons
+Malaysia,458,B R,2024,female,52546,persons
+Myanmar,104,C,1990,total,41093,persons
+Myanmar,104,C,1995,total,37969,persons
+Myanmar,104,C,2000,total,35038,persons
+Myanmar,104,C,2005,total,29680,persons
+Myanmar,104,C,2010,total,27316,persons
+Myanmar,104,C,2015,total,26205,persons
+Myanmar,104,C,2020,total,27325,persons
+Myanmar,104,C,2024,total,28256,persons
+Myanmar,104,C,1990,male,22056,persons
+Myanmar,104,C,1995,male,20168,persons
+Myanmar,104,C,2000,male,18140,persons
+Myanmar,104,C,2005,male,15488,persons
+Myanmar,104,C,2010,male,14480,persons
+Myanmar,104,C,2015,male,13999,persons
+Myanmar,104,C,2020,male,14599,persons
+Myanmar,104,C,2024,male,15096,persons
+Myanmar,104,C,1990,female,19037,persons
+Myanmar,104,C,1995,female,17801,persons
+Myanmar,104,C,2000,female,16898,persons
+Myanmar,104,C,2005,female,14192,persons
+Myanmar,104,C,2010,female,12836,persons
+Myanmar,104,C,2015,female,12206,persons
+Myanmar,104,C,2020,female,12726,persons
+Myanmar,104,C,2024,female,13160,persons
+Philippines,608,C R,1990,total,2928,persons
+Philippines,608,C R,1995,total,4498,persons
+Philippines,608,C R,2000,total,6068,persons
+Philippines,608,C R,2005,total,7638,persons
+Philippines,608,C R,2010,total,9336,persons
+Philippines,608,C R,2015,total,14659,persons
+Philippines,608,C R,2020,total,19801,persons
+Philippines,608,C R,2024,total,19801,persons
+Philippines,608,C R,1990,male,1723,persons
+Philippines,608,C R,1995,male,2778,persons
+Philippines,608,C R,2000,male,3833,persons
+Philippines,608,C R,2005,male,4887,persons
+Philippines,608,C R,2010,male,6023,persons
+Philippines,608,C R,2015,male,9443,persons
+Philippines,608,C R,2020,male,12747,persons
+Philippines,608,C R,2024,male,12747,persons
+Philippines,608,C R,1990,female,1205,persons
+Philippines,608,C R,1995,female,1720,persons
+Philippines,608,C R,2000,female,2235,persons
+Philippines,608,C R,2005,female,2751,persons
+Philippines,608,C R,2010,female,3313,persons
+Philippines,608,C R,2015,female,5216,persons
+Philippines,608,C R,2020,female,7054,persons
+Philippines,608,C R,2024,female,7054,persons
+Singapore,702,B,1990,total,48762,persons
+Singapore,702,B,1995,total,73539,persons
+Singapore,702,B,2000,total,108733,persons
+Singapore,702,B,2005,total,149282,persons
+Singapore,702,B,2010,total,263621,persons
+Singapore,702,B,2015,total,321966,persons
+Singapore,702,B,2020,total,336901,persons
+Singapore,702,B,2024,total,377038,persons
+Singapore,702,B,1990,male,32115,persons
+Singapore,702,B,1995,male,44335,persons
+Singapore,702,B,2000,male,59323,persons
+Singapore,702,B,2005,male,80813,persons
+Singapore,702,B,2010,male,142066,persons
+Singapore,702,B,2015,male,171432,persons
+Singapore,702,B,2020,male,177156,persons
+Singapore,702,B,2024,male,196265,persons
+Singapore,702,B,1990,female,16647,persons
+Singapore,702,B,1995,female,29204,persons
+Singapore,702,B,2000,female,49410,persons
+Singapore,702,B,2005,female,68469,persons
+Singapore,702,B,2010,female,121555,persons
+Singapore,702,B,2015,female,150534,persons
+Singapore,702,B,2020,female,159745,persons
+Singapore,702,B,2024,female,180773,persons
+Thailand,764,C R,1990,total,6107,persons
+Thailand,764,C R,1995,total,6105,persons
+Thailand,764,C R,2000,total,9991,persons
+Thailand,764,C R,2005,total,27475,persons
+Thailand,764,C R,2010,total,44959,persons
+Thailand,764,C R,2015,total,49584,persons
+Thailand,764,C R,2020,total,53300,persons
+Thailand,764,C R,2024,total,56847,persons
+Thailand,764,C R,1990,male,4608,persons
+Thailand,764,C R,1995,male,4565,persons
+Thailand,764,C R,2000,male,5439,persons
+Thailand,764,C R,2005,male,16787,persons
+Thailand,764,C R,2010,male,28135,persons
+Thailand,764,C R,2015,male,31284,persons
+Thailand,764,C R,2020,male,33853,persons
+Thailand,764,C R,2024,male,36263,persons
+Thailand,764,C R,1990,female,1499,persons
+Thailand,764,C R,1995,female,1540,persons
+Thailand,764,C R,2000,female,4552,persons
+Thailand,764,C R,2005,female,10688,persons
+Thailand,764,C R,2010,female,16824,persons
+Thailand,764,C R,2015,female,18300,persons
+Thailand,764,C R,2020,female,19447,persons
+Thailand,764,C R,2024,female,20584,persons
+Bahrain,48,C,1990,total,61818,persons
+Bahrain,48,C,1995,total,77438,persons
+Bahrain,48,C,2000,total,88742,persons
+Bahrain,48,C,2005,total,150694,persons
+Bahrain,48,C,2010,total,250789,persons
+Bahrain,48,C,2015,total,281418,persons
+Bahrain,48,C,2020,total,306551,persons
+Bahrain,48,C,2024,total,327698,persons
+Bahrain,48,C,1990,male,46759,persons
+Bahrain,48,C,1995,male,58114,persons
+Bahrain,48,C,2000,male,64427,persons
+Bahrain,48,C,2005,male,112943,persons
+Bahrain,48,C,2010,male,190654,persons
+Bahrain,48,C,2015,male,210743,persons
+Bahrain,48,C,2020,male,234119,persons
+Bahrain,48,C,2024,male,251126,persons
+Bahrain,48,C,1990,female,15059,persons
+Bahrain,48,C,1995,female,19324,persons
+Bahrain,48,C,2000,female,24315,persons
+Bahrain,48,C,2005,female,37751,persons
+Bahrain,48,C,2010,female,60135,persons
+Bahrain,48,C,2015,female,70675,persons
+Bahrain,48,C,2020,female,72432,persons
+Bahrain,48,C,2024,female,76572,persons
+Cyprus,196,B,1990,total,684,persons
+Cyprus,196,B,1995,total,967,persons
+Cyprus,196,B,2000,total,1250,persons
+Cyprus,196,B,2005,total,1880,persons
+Cyprus,196,B,2010,total,2885,persons
+Cyprus,196,B,2015,total,2648,persons
+Cyprus,196,B,2020,total,2732,persons
+Cyprus,196,B,2024,total,2900,persons
+Cyprus,196,B,1990,male,414,persons
+Cyprus,196,B,1995,male,570,persons
+Cyprus,196,B,2000,male,726,persons
+Cyprus,196,B,2005,male,1081,persons
+Cyprus,196,B,2010,male,1677,persons
+Cyprus,196,B,2015,male,1552,persons
+Cyprus,196,B,2020,male,1608,persons
+Cyprus,196,B,2024,male,1707,persons
+Cyprus,196,B,1990,female,270,persons
+Cyprus,196,B,1995,female,397,persons
+Cyprus,196,B,2000,female,524,persons
+Cyprus,196,B,2005,female,799,persons
+Cyprus,196,B,2010,female,1208,persons
+Cyprus,196,B,2015,female,1096,persons
+Cyprus,196,B,2020,female,1124,persons
+Cyprus,196,B,2024,female,1193,persons
+Georgia,268,B R,1990,total,0,persons
+Georgia,268,B R,1995,total,0,persons
+Georgia,268,B R,2000,total,32,persons
+Georgia,268,B R,2005,total,30,persons
+Georgia,268,B R,2010,total,30,persons
+Georgia,268,B R,2015,total,31,persons
+Georgia,268,B R,2020,total,30,persons
+Georgia,268,B R,2024,total,31,persons
+Georgia,268,B R,1990,male,0,persons
+Georgia,268,B R,1995,male,0,persons
+Georgia,268,B R,2000,male,19,persons
+Georgia,268,B R,2005,male,18,persons
+Georgia,268,B R,2010,male,18,persons
+Georgia,268,B R,2015,male,19,persons
+Georgia,268,B R,2020,male,19,persons
+Georgia,268,B R,2024,male,20,persons
+Georgia,268,B R,1990,female,0,persons
+Georgia,268,B R,1995,female,0,persons
+Georgia,268,B R,2000,female,13,persons
+Georgia,268,B R,2005,female,12,persons
+Georgia,268,B R,2010,female,12,persons
+Georgia,268,B R,2015,female,12,persons
+Georgia,268,B R,2020,female,11,persons
+Georgia,268,B R,2024,female,11,persons
+Iraq,368,C R,1990,total,179,persons
+Iraq,368,C R,1995,total,211,persons
+Iraq,368,C R,2000,total,200,persons
+Iraq,368,C R,2005,total,233,persons
+Iraq,368,C R,2010,total,238,persons
+Iraq,368,C R,2015,total,232,persons
+Iraq,368,C R,2020,total,234,persons
+Iraq,368,C R,2024,total,237,persons
+Iraq,368,C R,1990,male,107,persons
+Iraq,368,C R,1995,male,105,persons
+Iraq,368,C R,2000,male,75,persons
+Iraq,368,C R,2005,male,128,persons
+Iraq,368,C R,2010,male,136,persons
+Iraq,368,C R,2015,male,149,persons
+Iraq,368,C R,2020,male,144,persons
+Iraq,368,C R,2024,male,146,persons
+Iraq,368,C R,1990,female,72,persons
+Iraq,368,C R,1995,female,106,persons
+Iraq,368,C R,2000,female,125,persons
+Iraq,368,C R,2005,female,105,persons
+Iraq,368,C R,2010,female,102,persons
+Iraq,368,C R,2015,female,83,persons
+Iraq,368,C R,2020,female,90,persons
+Iraq,368,C R,2024,female,91,persons
+Israel,376,B R,1990,total,16824,persons
+Israel,376,B R,1995,total,18621,persons
+Israel,376,B R,2000,total,18763,persons
+Israel,376,B R,2005,total,18465,persons
+Israel,376,B R,2010,total,18245,persons
+Israel,376,B R,2015,total,19585,persons
+Israel,376,B R,2020,total,22343,persons
+Israel,376,B R,2024,total,23441,persons
+Israel,376,B R,1990,male,8094,persons
+Israel,376,B R,1995,male,8864,persons
+Israel,376,B R,2000,male,8945,persons
+Israel,376,B R,2005,male,8836,persons
+Israel,376,B R,2010,male,8764,persons
+Israel,376,B R,2015,male,9432,persons
+Israel,376,B R,2020,male,11163,persons
+Israel,376,B R,2024,male,11666,persons
+Israel,376,B R,1990,female,8730,persons
+Israel,376,B R,1995,female,9757,persons
+Israel,376,B R,2000,female,9818,persons
+Israel,376,B R,2005,female,9629,persons
+Israel,376,B R,2010,female,9481,persons
+Israel,376,B R,2015,female,10153,persons
+Israel,376,B R,2020,female,11180,persons
+Israel,376,B R,2024,female,11775,persons
+Kuwait,414,C,1990,total,368811,persons
+Kuwait,414,C,1995,total,337135,persons
+Kuwait,414,C,2000,total,414688,persons
+Kuwait,414,C,2005,total,493361,persons
+Kuwait,414,C,2010,total,674272,persons
+Kuwait,414,C,2015,total,967163,persons
+Kuwait,414,C,2020,total,1122750,persons
+Kuwait,414,C,2024,total,1231094,persons
+Kuwait,414,C,1990,male,255089,persons
+Kuwait,414,C,1995,male,234189,persons
+Kuwait,414,C,2000,male,284571,persons
+Kuwait,414,C,2005,male,342069,persons
+Kuwait,414,C,2010,male,434157,persons
+Kuwait,414,C,2015,male,646421,persons
+Kuwait,414,C,2020,male,787163,persons
+Kuwait,414,C,2024,male,863711,persons
+Kuwait,414,C,1990,female,113722,persons
+Kuwait,414,C,1995,female,102946,persons
+Kuwait,414,C,2000,female,130117,persons
+Kuwait,414,C,2005,female,151292,persons
+Kuwait,414,C,2010,female,240115,persons
+Kuwait,414,C,2015,female,320742,persons
+Kuwait,414,C,2020,female,335587,persons
+Kuwait,414,C,2024,female,367383,persons
+Oman,512,C,1990,total,185280,persons
+Oman,512,C,1995,total,189450,persons
+Oman,512,C,2000,total,193713,persons
+Oman,512,C,2005,total,213992,persons
+Oman,512,C,2010,total,282567,persons
+Oman,512,C,2015,total,642934,persons
+Oman,512,C,2020,total,621187,persons
+Oman,512,C,2024,total,803105,persons
+Oman,512,C,1990,male,157185,persons
+Oman,512,C,1995,male,150786,persons
+Oman,512,C,2000,male,148113,persons
+Oman,512,C,2005,male,163072,persons
+Oman,512,C,2010,male,221501,persons
+Oman,512,C,2015,male,547345,persons
+Oman,512,C,2020,male,507632,persons
+Oman,512,C,2024,male,661648,persons
+Oman,512,C,1990,female,28095,persons
+Oman,512,C,1995,female,38664,persons
+Oman,512,C,2000,female,45600,persons
+Oman,512,C,2005,female,50920,persons
+Oman,512,C,2010,female,61066,persons
+Oman,512,C,2015,female,95589,persons
+Oman,512,C,2020,female,113555,persons
+Oman,512,C,2024,female,141457,persons
+Qatar,634,C,1990,total,1905,persons
+Qatar,634,C,1995,total,2531,persons
+Qatar,634,C,2000,total,3381,persons
+Qatar,634,C,2005,total,192498,persons
+Qatar,634,C,2010,total,523305,persons
+Qatar,634,C,2015,total,799493,persons
+Qatar,634,C,2020,total,688077,persons
+Qatar,634,C,2024,total,736955,persons
+Qatar,634,C,1990,male,1328,persons
+Qatar,634,C,1995,male,1762,persons
+Qatar,634,C,2000,male,2376,persons
+Qatar,634,C,2005,male,163175,persons
+Qatar,634,C,2010,male,435928,persons
+Qatar,634,C,2015,male,664739,persons
+Qatar,634,C,2020,male,555412,persons
+Qatar,634,C,2024,male,592461,persons
+Qatar,634,C,1990,female,577,persons
+Qatar,634,C,1995,female,769,persons
+Qatar,634,C,2000,female,1005,persons
+Qatar,634,C,2005,female,29323,persons
+Qatar,634,C,2010,female,87377,persons
+Qatar,634,C,2015,female,134754,persons
+Qatar,634,C,2020,female,132665,persons
+Qatar,634,C,2024,female,144494,persons
+Saudi Arabia,682,C R,1990,total,834742,persons
+Saudi Arabia,682,C R,1995,total,922696,persons
+Saudi Arabia,682,C R,2000,total,969679,persons
+Saudi Arabia,682,C R,2005,total,1202498,persons
+Saudi Arabia,682,C R,2010,total,1515540,persons
+Saudi Arabia,682,C R,2015,total,1920159,persons
+Saudi Arabia,682,C R,2020,total,1888090,persons
+Saudi Arabia,682,C R,2024,total,1953496,persons
+Saudi Arabia,682,C R,1990,male,764747,persons
+Saudi Arabia,682,C R,1995,male,841818,persons
+Saudi Arabia,682,C R,2000,male,876564,persons
+Saudi Arabia,682,C R,2005,male,1093492,persons
+Saudi Arabia,682,C R,2010,male,1379250,persons
+Saudi Arabia,682,C R,2015,male,1748963,persons
+Saudi Arabia,682,C R,2020,male,1715182,persons
+Saudi Arabia,682,C R,2024,male,1774426,persons
+Saudi Arabia,682,C R,1990,female,69995,persons
+Saudi Arabia,682,C R,1995,female,80878,persons
+Saudi Arabia,682,C R,2000,female,93115,persons
+Saudi Arabia,682,C R,2005,female,109006,persons
+Saudi Arabia,682,C R,2010,female,136290,persons
+Saudi Arabia,682,C R,2015,female,171196,persons
+Saudi Arabia,682,C R,2020,female,172908,persons
+Saudi Arabia,682,C R,2024,female,179070,persons
+United Arab Emirates,784,C,1990,total,456794,persons
+United Arab Emirates,784,C,1995,total,657380,persons
+United Arab Emirates,784,C,2000,total,888393,persons
+United Arab Emirates,784,C,2005,total,1262523,persons
+United Arab Emirates,784,C,2010,total,2168857,persons
+United Arab Emirates,784,C,2015,total,2731583,persons
+United Arab Emirates,784,C,2020,total,2861045,persons
+United Arab Emirates,784,C,2024,total,3248545,persons
+United Arab Emirates,784,C,1990,male,349390,persons
+United Arab Emirates,784,C,1995,male,497579,persons
+United Arab Emirates,784,C,2000,male,668351,persons
+United Arab Emirates,784,C,2005,male,958656,persons
+United Arab Emirates,784,C,2010,male,1552329,persons
+United Arab Emirates,784,C,2015,male,1927646,persons
+United Arab Emirates,784,C,2020,male,2018274,persons
+United Arab Emirates,784,C,2024,male,2280318,persons
+United Arab Emirates,784,C,1990,female,107404,persons
+United Arab Emirates,784,C,1995,female,159801,persons
+United Arab Emirates,784,C,2000,female,220042,persons
+United Arab Emirates,784,C,2005,female,303867,persons
+United Arab Emirates,784,C,2010,female,616528,persons
+United Arab Emirates,784,C,2015,female,803937,persons
+United Arab Emirates,784,C,2020,female,842771,persons
+United Arab Emirates,784,C,2024,female,968227,persons
+Belarus,112,B,1990,total,24,persons
+Belarus,112,B,1995,total,37,persons
+Belarus,112,B,2000,total,50,persons
+Belarus,112,B,2005,total,48,persons
+Belarus,112,B,2010,total,46,persons
+Belarus,112,B,2015,total,48,persons
+Belarus,112,B,2020,total,46,persons
+Belarus,112,B,2024,total,45,persons
+Belarus,112,B,1990,male,21,persons
+Belarus,112,B,1995,male,31,persons
+Belarus,112,B,2000,male,41,persons
+Belarus,112,B,2005,male,39,persons
+Belarus,112,B,2010,male,37,persons
+Belarus,112,B,2015,male,39,persons
+Belarus,112,B,2020,male,39,persons
+Belarus,112,B,2024,male,38,persons
+Belarus,112,B,1990,female,3,persons
+Belarus,112,B,1995,female,6,persons
+Belarus,112,B,2000,female,9,persons
+Belarus,112,B,2005,female,9,persons
+Belarus,112,B,2010,female,9,persons
+Belarus,112,B,2015,female,9,persons
+Belarus,112,B,2020,female,7,persons
+Belarus,112,B,2024,female,7,persons
+Bulgaria,100,B,1990,total,163,persons
+Bulgaria,100,B,1995,total,149,persons
+Bulgaria,100,B,2000,total,135,persons
+Bulgaria,100,B,2005,total,137,persons
+Bulgaria,100,B,2010,total,138,persons
+Bulgaria,100,B,2015,total,251,persons
+Bulgaria,100,B,2020,total,553,persons
+Bulgaria,100,B,2024,total,760,persons
+Bulgaria,100,B,1990,male,133,persons
+Bulgaria,100,B,1995,male,119,persons
+Bulgaria,100,B,2000,male,105,persons
+Bulgaria,100,B,2005,male,103,persons
+Bulgaria,100,B,2010,male,101,persons
+Bulgaria,100,B,2015,male,166,persons
+Bulgaria,100,B,2020,male,363,persons
+Bulgaria,100,B,2024,male,499,persons
+Bulgaria,100,B,1990,female,30,persons
+Bulgaria,100,B,1995,female,30,persons
+Bulgaria,100,B,2000,female,30,persons
+Bulgaria,100,B,2005,female,34,persons
+Bulgaria,100,B,2010,female,37,persons
+Bulgaria,100,B,2015,female,85,persons
+Bulgaria,100,B,2020,female,190,persons
+Bulgaria,100,B,2024,female,261,persons
+Czechia,203,B R,1990,total,0,persons
+Czechia,203,B R,1995,total,0,persons
+Czechia,203,B R,2000,total,170,persons
+Czechia,203,B R,2005,total,506,persons
+Czechia,203,B R,2010,total,1260,persons
+Czechia,203,B R,2015,total,2376,persons
+Czechia,203,B R,2020,total,4312,persons
+Czechia,203,B R,2024,total,5675,persons
+Czechia,203,B R,1990,male,0,persons
+Czechia,203,B R,1995,male,0,persons
+Czechia,203,B R,2000,male,110,persons
+Czechia,203,B R,2005,male,345,persons
+Czechia,203,B R,2010,male,905,persons
+Czechia,203,B R,2015,male,1695,persons
+Czechia,203,B R,2020,male,3028,persons
+Czechia,203,B R,2024,male,3933,persons
+Czechia,203,B R,1990,female,0,persons
+Czechia,203,B R,1995,female,0,persons
+Czechia,203,B R,2000,female,60,persons
+Czechia,203,B R,2005,female,161,persons
+Czechia,203,B R,2010,female,355,persons
+Czechia,203,B R,2015,female,681,persons
+Czechia,203,B R,2020,female,1284,persons
+Czechia,203,B R,2024,female,1742,persons
+Hungary,348,B,1990,total,978,persons
+Hungary,348,B,1995,total,867,persons
+Hungary,348,B,2000,total,755,persons
+Hungary,348,B,2005,total,928,persons
+Hungary,348,B,2010,total,1108,persons
+Hungary,348,B,2015,total,1110,persons
+Hungary,348,B,2020,total,3217,persons
+Hungary,348,B,2024,total,3795,persons
+Hungary,348,B,1990,male,641,persons
+Hungary,348,B,1995,male,563,persons
+Hungary,348,B,2000,male,485,persons
+Hungary,348,B,2005,male,601,persons
+Hungary,348,B,2010,male,722,persons
+Hungary,348,B,2015,male,707,persons
+Hungary,348,B,2020,male,2170,persons
+Hungary,348,B,2024,male,2560,persons
+Hungary,348,B,1990,female,337,persons
+Hungary,348,B,1995,female,304,persons
+Hungary,348,B,2000,female,270,persons
+Hungary,348,B,2005,female,327,persons
+Hungary,348,B,2010,female,386,persons
+Hungary,348,B,2015,female,403,persons
+Hungary,348,B,2020,female,1047,persons
+Hungary,348,B,2024,female,1235,persons
+Poland,616,B R,1990,total,100,persons
+Poland,616,B R,1995,total,152,persons
+Poland,616,B R,2000,total,231,persons
+Poland,616,B R,2005,total,488,persons
+Poland,616,B R,2010,total,1202,persons
+Poland,616,B R,2015,total,1334,persons
+Poland,616,B R,2020,total,1313,persons
+Poland,616,B R,2024,total,1624,persons
+Poland,616,B R,1990,male,69,persons
+Poland,616,B R,1995,male,104,persons
+Poland,616,B R,2000,male,159,persons
+Poland,616,B R,2005,male,337,persons
+Poland,616,B R,2010,male,833,persons
+Poland,616,B R,2015,male,962,persons
+Poland,616,B R,2020,male,987,persons
+Poland,616,B R,2024,male,1265,persons
+Poland,616,B R,1990,female,31,persons
+Poland,616,B R,1995,female,48,persons
+Poland,616,B R,2000,female,72,persons
+Poland,616,B R,2005,female,151,persons
+Poland,616,B R,2010,female,369,persons
+Poland,616,B R,2015,female,372,persons
+Poland,616,B R,2020,female,326,persons
+Poland,616,B R,2024,female,359,persons
+Russian Federation,643,B R,1990,total,9801,persons
+Russian Federation,643,B R,1995,total,8083,persons
+Russian Federation,643,B R,2000,total,6072,persons
+Russian Federation,643,B R,2005,total,5893,persons
+Russian Federation,643,B R,2010,total,5486,persons
+Russian Federation,643,B R,2015,total,6144,persons
+Russian Federation,643,B R,2020,total,6870,persons
+Russian Federation,643,B R,2024,total,7456,persons
+Russian Federation,643,B R,1990,male,4809,persons
+Russian Federation,643,B R,1995,male,5035,persons
+Russian Federation,643,B R,2000,male,5078,persons
+Russian Federation,643,B R,2005,male,4677,persons
+Russian Federation,643,B R,2010,male,4100,persons
+Russian Federation,643,B R,2015,male,4592,persons
+Russian Federation,643,B R,2020,male,5135,persons
+Russian Federation,643,B R,2024,male,5573,persons
+Russian Federation,643,B R,1990,female,4992,persons
+Russian Federation,643,B R,1995,female,3048,persons
+Russian Federation,643,B R,2000,female,994,persons
+Russian Federation,643,B R,2005,female,1216,persons
+Russian Federation,643,B R,2010,female,1386,persons
+Russian Federation,643,B R,2015,female,1552,persons
+Russian Federation,643,B R,2020,female,1735,persons
+Russian Federation,643,B R,2024,female,1883,persons
+Slovakia,703,B,1990,total,7,persons
+Slovakia,703,B,1995,total,45,persons
+Slovakia,703,B,2000,total,97,persons
+Slovakia,703,B,2005,total,401,persons
+Slovakia,703,B,2010,total,122,persons
+Slovakia,703,B,2015,total,155,persons
+Slovakia,703,B,2020,total,194,persons
+Slovakia,703,B,2024,total,211,persons
+Slovakia,703,B,1990,male,4,persons
+Slovakia,703,B,1995,male,31,persons
+Slovakia,703,B,2000,male,68,persons
+Slovakia,703,B,2005,male,345,persons
+Slovakia,703,B,2010,male,87,persons
+Slovakia,703,B,2015,male,113,persons
+Slovakia,703,B,2020,male,147,persons
+Slovakia,703,B,2024,male,160,persons
+Slovakia,703,B,1990,female,3,persons
+Slovakia,703,B,1995,female,14,persons
+Slovakia,703,B,2000,female,29,persons
+Slovakia,703,B,2005,female,56,persons
+Slovakia,703,B,2010,female,35,persons
+Slovakia,703,B,2015,female,42,persons
+Slovakia,703,B,2020,female,47,persons
+Slovakia,703,B,2024,female,51,persons
+Ukraine,804,B,1990,total,4609,persons
+Ukraine,804,B,1995,total,4459,persons
+Ukraine,804,B,2000,total,4364,persons
+Ukraine,804,B,2005,total,3987,persons
+Ukraine,804,B,2010,total,3804,persons
+Ukraine,804,B,2015,total,3816,persons
+Ukraine,804,B,2020,total,3879,persons
+Ukraine,804,B,2024,total,3931,persons
+Ukraine,804,B,1990,male,3648,persons
+Ukraine,804,B,1995,male,3556,persons
+Ukraine,804,B,2000,male,3507,persons
+Ukraine,804,B,2005,male,3206,persons
+Ukraine,804,B,2010,male,3060,persons
+Ukraine,804,B,2015,male,3071,persons
+Ukraine,804,B,2020,male,3123,persons
+Ukraine,804,B,2024,male,3165,persons
+Ukraine,804,B,1990,female,961,persons
+Ukraine,804,B,1995,female,903,persons
+Ukraine,804,B,2000,female,857,persons
+Ukraine,804,B,2005,female,781,persons
+Ukraine,804,B,2010,female,744,persons
+Ukraine,804,B,2015,female,745,persons
+Ukraine,804,B,2020,female,756,persons
+Ukraine,804,B,2024,female,766,persons
+Denmark,208,B R,1990,total,2835,persons
+Denmark,208,B R,1995,total,3475,persons
+Denmark,208,B R,2000,total,4353,persons
+Denmark,208,B R,2005,total,5670,persons
+Denmark,208,B R,2010,total,8124,persons
+Denmark,208,B R,2015,total,10620,persons
+Denmark,208,B R,2020,total,15403,persons
+Denmark,208,B R,2024,total,20963,persons
+Denmark,208,B R,1990,male,1275,persons
+Denmark,208,B R,1995,male,1494,persons
+Denmark,208,B R,2000,male,1822,persons
+Denmark,208,B R,2005,male,2566,persons
+Denmark,208,B R,2010,male,4028,persons
+Denmark,208,B R,2015,male,5436,persons
+Denmark,208,B R,2020,male,7850,persons
+Denmark,208,B R,2024,male,10863,persons
+Denmark,208,B R,1990,female,1560,persons
+Denmark,208,B R,1995,female,1981,persons
+Denmark,208,B R,2000,female,2531,persons
+Denmark,208,B R,2005,female,3104,persons
+Denmark,208,B R,2010,female,4096,persons
+Denmark,208,B R,2015,female,5184,persons
+Denmark,208,B R,2020,female,7553,persons
+Denmark,208,B R,2024,female,10100,persons
+Estonia,233,B,1990,total,25,persons
+Estonia,233,B,1995,total,39,persons
+Estonia,233,B,2000,total,53,persons
+Estonia,233,B,2005,total,82,persons
+Estonia,233,B,2010,total,111,persons
+Estonia,233,B,2015,total,318,persons
+Estonia,233,B,2020,total,712,persons
+Estonia,233,B,2024,total,725,persons
+Estonia,233,B,1990,male,16,persons
+Estonia,233,B,1995,male,25,persons
+Estonia,233,B,2000,male,35,persons
+Estonia,233,B,2005,male,61,persons
+Estonia,233,B,2010,male,88,persons
+Estonia,233,B,2015,male,252,persons
+Estonia,233,B,2020,male,550,persons
+Estonia,233,B,2024,male,560,persons
+Estonia,233,B,1990,female,9,persons
+Estonia,233,B,1995,female,14,persons
+Estonia,233,B,2000,female,18,persons
+Estonia,233,B,2005,female,21,persons
+Estonia,233,B,2010,female,23,persons
+Estonia,233,B,2015,female,66,persons
+Estonia,233,B,2020,female,162,persons
+Estonia,233,B,2024,female,165,persons
+Faroe Islands,234,B,1990,total,14,persons
+Faroe Islands,234,B,1995,total,24,persons
+Faroe Islands,234,B,2000,total,38,persons
+Faroe Islands,234,B,2005,total,56,persons
+Faroe Islands,234,B,2010,total,58,persons
+Faroe Islands,234,B,2015,total,63,persons
+Faroe Islands,234,B,2020,total,72,persons
+Faroe Islands,234,B,2024,total,86,persons
+Faroe Islands,234,B,1990,male,6,persons
+Faroe Islands,234,B,1995,male,9,persons
+Faroe Islands,234,B,2000,male,15,persons
+Faroe Islands,234,B,2005,male,20,persons
+Faroe Islands,234,B,2010,male,20,persons
+Faroe Islands,234,B,2015,male,24,persons
+Faroe Islands,234,B,2020,male,32,persons
+Faroe Islands,234,B,2024,male,38,persons
+Faroe Islands,234,B,1990,female,8,persons
+Faroe Islands,234,B,1995,female,15,persons
+Faroe Islands,234,B,2000,female,23,persons
+Faroe Islands,234,B,2005,female,36,persons
+Faroe Islands,234,B,2010,female,38,persons
+Faroe Islands,234,B,2015,female,39,persons
+Faroe Islands,234,B,2020,female,40,persons
+Faroe Islands,234,B,2024,female,48,persons
+Finland,246,B,1990,total,549,persons
+Finland,246,B,1995,total,768,persons
+Finland,246,B,2000,total,986,persons
+Finland,246,B,2005,total,2545,persons
+Finland,246,B,2010,total,3624,persons
+Finland,246,B,2015,total,5159,persons
+Finland,246,B,2020,total,6954,persons
+Finland,246,B,2024,total,8186,persons
+Finland,246,B,1990,male,369,persons
+Finland,246,B,1995,male,503,persons
+Finland,246,B,2000,male,637,persons
+Finland,246,B,2005,male,1603,persons
+Finland,246,B,2010,male,2274,persons
+Finland,246,B,2015,male,3104,persons
+Finland,246,B,2020,male,4095,persons
+Finland,246,B,2024,male,4821,persons
+Finland,246,B,1990,female,180,persons
+Finland,246,B,1995,female,265,persons
+Finland,246,B,2000,female,349,persons
+Finland,246,B,2005,female,942,persons
+Finland,246,B,2010,female,1350,persons
+Finland,246,B,2015,female,2055,persons
+Finland,246,B,2020,female,2859,persons
+Finland,246,B,2024,female,3365,persons
+Iceland,352,B,1990,total,62,persons
+Iceland,352,B,1995,total,105,persons
+Iceland,352,B,2000,total,148,persons
+Iceland,352,B,2005,total,213,persons
+Iceland,352,B,2010,total,272,persons
+Iceland,352,B,2015,total,305,persons
+Iceland,352,B,2020,total,389,persons
+Iceland,352,B,2024,total,588,persons
+Iceland,352,B,1990,male,26,persons
+Iceland,352,B,1995,male,45,persons
+Iceland,352,B,2000,male,65,persons
+Iceland,352,B,2005,male,96,persons
+Iceland,352,B,2010,male,125,persons
+Iceland,352,B,2015,male,145,persons
+Iceland,352,B,2020,male,182,persons
+Iceland,352,B,2024,male,275,persons
+Iceland,352,B,1990,female,36,persons
+Iceland,352,B,1995,female,60,persons
+Iceland,352,B,2000,female,83,persons
+Iceland,352,B,2005,female,117,persons
+Iceland,352,B,2010,female,147,persons
+Iceland,352,B,2015,female,160,persons
+Iceland,352,B,2020,female,207,persons
+Iceland,352,B,2024,female,313,persons
+Ireland,372,B R,1990,total,738,persons
+Ireland,372,B R,1995,total,1104,persons
+Ireland,372,B R,2000,total,3069,persons
+Ireland,372,B R,2005,total,8174,persons
+Ireland,372,B R,2010,total,16348,persons
+Ireland,372,B R,2015,total,20363,persons
+Ireland,372,B R,2020,total,42645,persons
+Ireland,372,B R,2024,total,70228,persons
+Ireland,372,B R,1990,male,468,persons
+Ireland,372,B R,1995,male,700,persons
+Ireland,372,B R,2000,male,1946,persons
+Ireland,372,B R,2005,male,4435,persons
+Ireland,372,B R,2010,male,8829,persons
+Ireland,372,B R,2015,male,11195,persons
+Ireland,372,B R,2020,male,22968,persons
+Ireland,372,B R,2024,male,36967,persons
+Ireland,372,B R,1990,female,270,persons
+Ireland,372,B R,1995,female,404,persons
+Ireland,372,B R,2000,female,1123,persons
+Ireland,372,B R,2005,female,3739,persons
+Ireland,372,B R,2010,female,7519,persons
+Ireland,372,B R,2015,female,9168,persons
+Ireland,372,B R,2020,female,19677,persons
+Ireland,372,B R,2024,female,33261,persons
+Latvia,428,B,1990,total,35,persons
+Latvia,428,B,1995,total,54,persons
+Latvia,428,B,2000,total,74,persons
+Latvia,428,B,2005,total,89,persons
+Latvia,428,B,2010,total,102,persons
+Latvia,428,B,2015,total,131,persons
+Latvia,428,B,2020,total,1290,persons
+Latvia,428,B,2024,total,1188,persons
+Latvia,428,B,1990,male,26,persons
+Latvia,428,B,1995,male,41,persons
+Latvia,428,B,2000,male,56,persons
+Latvia,428,B,2005,male,73,persons
+Latvia,428,B,2010,male,87,persons
+Latvia,428,B,2015,male,118,persons
+Latvia,428,B,2020,male,1125,persons
+Latvia,428,B,2024,male,1036,persons
+Latvia,428,B,1990,female,9,persons
+Latvia,428,B,1995,female,13,persons
+Latvia,428,B,2000,female,18,persons
+Latvia,428,B,2005,female,16,persons
+Latvia,428,B,2010,female,15,persons
+Latvia,428,B,2015,female,13,persons
+Latvia,428,B,2020,female,165,persons
+Latvia,428,B,2024,female,152,persons
+Lithuania,440,B,1990,total,216,persons
+Lithuania,440,B,1995,total,169,persons
+Lithuania,440,B,2000,total,132,persons
+Lithuania,440,B,2005,total,124,persons
+Lithuania,440,B,2010,total,95,persons
+Lithuania,440,B,2015,total,11,persons
+Lithuania,440,B,2020,total,567,persons
+Lithuania,440,B,2024,total,597,persons
+Lithuania,440,B,1990,male,168,persons
+Lithuania,440,B,1995,male,131,persons
+Lithuania,440,B,2000,male,102,persons
+Lithuania,440,B,2005,male,96,persons
+Lithuania,440,B,2010,male,71,persons
+Lithuania,440,B,2015,male,11,persons
+Lithuania,440,B,2020,male,434,persons
+Lithuania,440,B,2024,male,457,persons
+Lithuania,440,B,1990,female,48,persons
+Lithuania,440,B,1995,female,38,persons
+Lithuania,440,B,2000,female,30,persons
+Lithuania,440,B,2005,female,28,persons
+Lithuania,440,B,2010,female,24,persons
+Lithuania,440,B,2015,female,0,persons
+Lithuania,440,B,2020,female,133,persons
+Lithuania,440,B,2024,female,140,persons
+Norway,578,B,1990,total,4422,persons
+Norway,578,B,1995,total,4621,persons
+Norway,578,B,2000,total,5130,persons
+Norway,578,B,2005,total,5806,persons
+Norway,578,B,2010,total,8132,persons
+Norway,578,B,2015,total,11845,persons
+Norway,578,B,2020,total,14726,persons
+Norway,578,B,2024,total,16374,persons
+Norway,578,B,1990,male,2485,persons
+Norway,578,B,1995,male,2336,persons
+Norway,578,B,2000,male,2444,persons
+Norway,578,B,2005,male,2722,persons
+Norway,578,B,2010,male,4078,persons
+Norway,578,B,2015,male,6220,persons
+Norway,578,B,2020,male,7710,persons
+Norway,578,B,2024,male,8573,persons
+Norway,578,B,1990,female,1937,persons
+Norway,578,B,1995,female,2285,persons
+Norway,578,B,2000,female,2686,persons
+Norway,578,B,2005,female,3084,persons
+Norway,578,B,2010,female,4054,persons
+Norway,578,B,2015,female,5625,persons
+Norway,578,B,2020,female,7016,persons
+Norway,578,B,2024,female,7801,persons
+Sweden,752,B R,1990,total,8063,persons
+Sweden,752,B R,1995,total,9921,persons
+Sweden,752,B R,2000,total,10978,persons
+Sweden,752,B R,2005,total,13294,persons
+Sweden,752,B R,2010,total,17201,persons
+Sweden,752,B R,2015,total,22539,persons
+Sweden,752,B R,2020,total,41743,persons
+Sweden,752,B R,2024,total,62598,persons
+Sweden,752,B R,1990,male,2964,persons
+Sweden,752,B R,1995,male,3915,persons
+Sweden,752,B R,2000,male,4383,persons
+Sweden,752,B R,2005,male,6010,persons
+Sweden,752,B R,2010,male,8615,persons
+Sweden,752,B R,2015,male,11512,persons
+Sweden,752,B R,2020,male,22403,persons
+Sweden,752,B R,2024,male,34965,persons
+Sweden,752,B R,1990,female,5099,persons
+Sweden,752,B R,1995,female,6006,persons
+Sweden,752,B R,2000,female,6595,persons
+Sweden,752,B R,2005,female,7284,persons
+Sweden,752,B R,2010,female,8586,persons
+Sweden,752,B R,2015,female,11027,persons
+Sweden,752,B R,2020,female,19340,persons
+Sweden,752,B R,2024,female,27633,persons
+United Kingdom,826,B R,1990,total,405445,persons
+United Kingdom,826,B R,1995,total,433162,persons
+United Kingdom,826,B R,2000,total,462269,persons
+United Kingdom,826,B R,2005,total,561720,persons
+United Kingdom,826,B R,2010,total,700150,persons
+United Kingdom,826,B R,2015,total,817881,persons
+United Kingdom,826,B R,2020,total,946151,persons
+United Kingdom,826,B R,2024,total,1044779,persons
+United Kingdom,826,B R,1990,male,197360,persons
+United Kingdom,826,B R,1995,male,209765,persons
+United Kingdom,826,B R,2000,male,222594,persons
+United Kingdom,826,B R,2005,male,277089,persons
+United Kingdom,826,B R,2010,male,355679,persons
+United Kingdom,826,B R,2015,male,419729,persons
+United Kingdom,826,B R,2020,male,489082,persons
+United Kingdom,826,B R,2024,male,543179,persons
+United Kingdom,826,B R,1990,female,208085,persons
+United Kingdom,826,B R,1995,female,223397,persons
+United Kingdom,826,B R,2000,female,239675,persons
+United Kingdom,826,B R,2005,female,284631,persons
+United Kingdom,826,B R,2010,female,344471,persons
+United Kingdom,826,B R,2015,female,398152,persons
+United Kingdom,826,B R,2020,female,457069,persons
+United Kingdom,826,B R,2024,female,501600,persons
+Croatia,191,B,1990,total,0,persons
+Croatia,191,B,1995,total,0,persons
+Croatia,191,B,2000,total,0,persons
+Croatia,191,B,2005,total,34,persons
+Croatia,191,B,2010,total,67,persons
+Croatia,191,B,2015,total,67,persons
+Croatia,191,B,2020,total,61,persons
+Croatia,191,B,2024,total,58,persons
+Croatia,191,B,1990,male,0,persons
+Croatia,191,B,1995,male,0,persons
+Croatia,191,B,2000,male,0,persons
+Croatia,191,B,2005,male,21,persons
+Croatia,191,B,2010,male,41,persons
+Croatia,191,B,2015,male,41,persons
+Croatia,191,B,2020,male,37,persons
+Croatia,191,B,2024,male,35,persons
+Croatia,191,B,1990,female,0,persons
+Croatia,191,B,1995,female,0,persons
+Croatia,191,B,2000,female,0,persons
+Croatia,191,B,2005,female,13,persons
+Croatia,191,B,2010,female,26,persons
+Croatia,191,B,2015,female,26,persons
+Croatia,191,B,2020,female,24,persons
+Croatia,191,B,2024,female,23,persons
+Greece,300,B,1990,total,5351,persons
+Greece,300,B,1995,total,6117,persons
+Greece,300,B,2000,total,6983,persons
+Greece,300,B,2005,total,8679,persons
+Greece,300,B,2010,total,10751,persons
+Greece,300,B,2015,total,10130,persons
+Greece,300,B,2020,total,10353,persons
+Greece,300,B,2024,total,10998,persons
+Greece,300,B,1990,male,4132,persons
+Greece,300,B,1995,male,5249,persons
+Greece,300,B,2000,male,6437,persons
+Greece,300,B,2005,male,7406,persons
+Greece,300,B,2010,male,8674,persons
+Greece,300,B,2015,male,8096,persons
+Greece,300,B,2020,male,8411,persons
+Greece,300,B,2024,male,8935,persons
+Greece,300,B,1990,female,1219,persons
+Greece,300,B,1995,female,868,persons
+Greece,300,B,2000,female,546,persons
+Greece,300,B,2005,female,1273,persons
+Greece,300,B,2010,female,2077,persons
+Greece,300,B,2015,female,2034,persons
+Greece,300,B,2020,female,1942,persons
+Greece,300,B,2024,female,2063,persons
+Italy,380,B R,1990,total,9590,persons
+Italy,380,B R,1995,total,16142,persons
+Italy,380,B R,2000,total,26127,persons
+Italy,380,B R,2005,total,58163,persons
+Italy,380,B R,2010,total,98675,persons
+Italy,380,B R,2015,total,130430,persons
+Italy,380,B R,2020,total,167256,persons
+Italy,380,B R,2024,total,186967,persons
+Italy,380,B R,1990,male,5309,persons
+Italy,380,B R,1995,male,9063,persons
+Italy,380,B R,2000,male,14681,persons
+Italy,380,B R,2005,male,34854,persons
+Italy,380,B R,2010,male,59119,persons
+Italy,380,B R,2015,male,78888,persons
+Italy,380,B R,2020,male,99011,persons
+Italy,380,B R,2024,male,108991,persons
+Italy,380,B R,1990,female,4281,persons
+Italy,380,B R,1995,female,7079,persons
+Italy,380,B R,2000,female,11446,persons
+Italy,380,B R,2005,female,23309,persons
+Italy,380,B R,2010,female,39556,persons
+Italy,380,B R,2015,female,51542,persons
+Italy,380,B R,2020,female,68245,persons
+Italy,380,B R,2024,female,77976,persons
+Malta,470,B,1990,total,130,persons
+Malta,470,B,1995,total,152,persons
+Malta,470,B,2000,total,194,persons
+Malta,470,B,2005,total,228,persons
+Malta,470,B,2010,total,215,persons
+Malta,470,B,2015,total,364,persons
+Malta,470,B,2020,total,791,persons
+Malta,470,B,2024,total,1375,persons
+Malta,470,B,1990,male,95,persons
+Malta,470,B,1995,male,111,persons
+Malta,470,B,2000,male,143,persons
+Malta,470,B,2005,male,168,persons
+Malta,470,B,2010,male,144,persons
+Malta,470,B,2015,male,251,persons
+Malta,470,B,2020,male,565,persons
+Malta,470,B,2024,male,982,persons
+Malta,470,B,1990,female,35,persons
+Malta,470,B,1995,female,41,persons
+Malta,470,B,2000,female,51,persons
+Malta,470,B,2005,female,60,persons
+Malta,470,B,2010,female,71,persons
+Malta,470,B,2015,female,113,persons
+Malta,470,B,2020,female,226,persons
+Malta,470,B,2024,female,393,persons
+Portugal,620,B,1990,total,1939,persons
+Portugal,620,B,1995,total,4184,persons
+Portugal,620,B,2000,total,6600,persons
+Portugal,620,B,2005,total,7355,persons
+Portugal,620,B,2010,total,6889,persons
+Portugal,620,B,2015,total,7809,persons
+Portugal,620,B,2020,total,8957,persons
+Portugal,620,B,2024,total,10076,persons
+Portugal,620,B,1990,male,1041,persons
+Portugal,620,B,1995,male,2243,persons
+Portugal,620,B,2000,male,3543,persons
+Portugal,620,B,2005,male,4110,persons
+Portugal,620,B,2010,male,4002,persons
+Portugal,620,B,2015,male,4367,persons
+Portugal,620,B,2020,male,5131,persons
+Portugal,620,B,2024,male,5772,persons
+Portugal,620,B,1990,female,898,persons
+Portugal,620,B,1995,female,1941,persons
+Portugal,620,B,2000,female,3057,persons
+Portugal,620,B,2005,female,3245,persons
+Portugal,620,B,2010,female,2887,persons
+Portugal,620,B,2015,female,3442,persons
+Portugal,620,B,2020,female,3826,persons
+Portugal,620,B,2024,female,4304,persons
+Serbia,688,B R,1990,total,1073,persons
+Serbia,688,B R,1995,total,1030,persons
+Serbia,688,B R,2000,total,981,persons
+Serbia,688,B R,2005,total,939,persons
+Serbia,688,B R,2010,total,877,persons
+Serbia,688,B R,2015,total,819,persons
+Serbia,688,B R,2020,total,765,persons
+Serbia,688,B R,2024,total,714,persons
+Serbia,688,B R,1990,male,519,persons
+Serbia,688,B R,1995,male,470,persons
+Serbia,688,B R,2000,male,436,persons
+Serbia,688,B R,2005,male,415,persons
+Serbia,688,B R,2010,male,387,persons
+Serbia,688,B R,2015,male,360,persons
+Serbia,688,B R,2020,male,336,persons
+Serbia,688,B R,2024,male,316,persons
+Serbia,688,B R,1990,female,554,persons
+Serbia,688,B R,1995,female,560,persons
+Serbia,688,B R,2000,female,545,persons
+Serbia,688,B R,2005,female,524,persons
+Serbia,688,B R,2010,female,490,persons
+Serbia,688,B R,2015,female,459,persons
+Serbia,688,B R,2020,female,429,persons
+Serbia,688,B R,2024,female,398,persons
+Slovenia,705,B,1990,total,11,persons
+Slovenia,705,B,1995,total,22,persons
+Slovenia,705,B,2000,total,19,persons
+Slovenia,705,B,2005,total,49,persons
+Slovenia,705,B,2010,total,83,persons
+Slovenia,705,B,2015,total,143,persons
+Slovenia,705,B,2020,total,234,persons
+Slovenia,705,B,2024,total,265,persons
+Slovenia,705,B,1990,male,6,persons
+Slovenia,705,B,1995,male,14,persons
+Slovenia,705,B,2000,male,11,persons
+Slovenia,705,B,2005,male,33,persons
+Slovenia,705,B,2010,male,57,persons
+Slovenia,705,B,2015,male,102,persons
+Slovenia,705,B,2020,male,173,persons
+Slovenia,705,B,2024,male,196,persons
+Slovenia,705,B,1990,female,5,persons
+Slovenia,705,B,1995,female,8,persons
+Slovenia,705,B,2000,female,8,persons
+Slovenia,705,B,2005,female,16,persons
+Slovenia,705,B,2010,female,26,persons
+Slovenia,705,B,2015,female,41,persons
+Slovenia,705,B,2020,female,61,persons
+Slovenia,705,B,2024,female,69,persons
+Spain,724,B R,1990,total,3709,persons
+Spain,724,B R,1995,total,5560,persons
+Spain,724,B R,2000,total,8189,persons
+Spain,724,B R,2005,total,20632,persons
+Spain,724,B R,2010,total,35709,persons
+Spain,724,B R,2015,total,36397,persons
+Spain,724,B R,2020,total,55786,persons
+Spain,724,B R,2024,total,66624,persons
+Spain,724,B R,1990,male,1978,persons
+Spain,724,B R,1995,male,3045,persons
+Spain,724,B R,2000,male,4613,persons
+Spain,724,B R,2005,male,14109,persons
+Spain,724,B R,2010,male,24339,persons
+Spain,724,B R,2015,male,22468,persons
+Spain,724,B R,2020,male,35297,persons
+Spain,724,B R,2024,male,40328,persons
+Spain,724,B R,1990,female,1731,persons
+Spain,724,B R,1995,female,2515,persons
+Spain,724,B R,2000,female,3576,persons
+Spain,724,B R,2005,female,6523,persons
+Spain,724,B R,2010,female,11370,persons
+Spain,724,B R,2015,female,13929,persons
+Spain,724,B R,2020,female,20489,persons
+Spain,724,B R,2024,female,26296,persons
+Austria,40,B R,1990,total,4665,persons
+Austria,40,B R,1995,total,5970,persons
+Austria,40,B R,2000,total,7529,persons
+Austria,40,B R,2005,total,10980,persons
+Austria,40,B R,2010,total,11544,persons
+Austria,40,B R,2015,total,13380,persons
+Austria,40,B R,2020,total,15688,persons
+Austria,40,B R,2024,total,19411,persons
+Austria,40,B R,1990,male,2819,persons
+Austria,40,B R,1995,male,3584,persons
+Austria,40,B R,2000,male,4476,persons
+Austria,40,B R,2005,male,6628,persons
+Austria,40,B R,2010,male,6600,persons
+Austria,40,B R,2015,male,7822,persons
+Austria,40,B R,2020,male,8974,persons
+Austria,40,B R,2024,male,11049,persons
+Austria,40,B R,1990,female,1846,persons
+Austria,40,B R,1995,female,2386,persons
+Austria,40,B R,2000,female,3053,persons
+Austria,40,B R,2005,female,4352,persons
+Austria,40,B R,2010,female,4944,persons
+Austria,40,B R,2015,female,5558,persons
+Austria,40,B R,2020,female,6714,persons
+Austria,40,B R,2024,female,8362,persons
+Belgium,56,B R,1990,total,4945,persons
+Belgium,56,B R,1995,total,6650,persons
+Belgium,56,B R,2000,total,8946,persons
+Belgium,56,B R,2005,total,12106,persons
+Belgium,56,B R,2010,total,15994,persons
+Belgium,56,B R,2015,total,20286,persons
+Belgium,56,B R,2020,total,27351,persons
+Belgium,56,B R,2024,total,33480,persons
+Belgium,56,B R,1990,male,2219,persons
+Belgium,56,B R,1995,male,3069,persons
+Belgium,56,B R,2000,male,4244,persons
+Belgium,56,B R,2005,male,5995,persons
+Belgium,56,B R,2010,male,8366,persons
+Belgium,56,B R,2015,male,10555,persons
+Belgium,56,B R,2020,male,14126,persons
+Belgium,56,B R,2024,male,16983,persons
+Belgium,56,B R,1990,female,2726,persons
+Belgium,56,B R,1995,female,3581,persons
+Belgium,56,B R,2000,female,4702,persons
+Belgium,56,B R,2005,female,6111,persons
+Belgium,56,B R,2010,female,7628,persons
+Belgium,56,B R,2015,female,9731,persons
+Belgium,56,B R,2020,female,13225,persons
+Belgium,56,B R,2024,female,16497,persons
+France,250,B R,1990,total,21247,persons
+France,250,B R,1995,total,26265,persons
+France,250,B R,2000,total,32732,persons
+France,250,B R,2005,total,41999,persons
+France,250,B R,2010,total,47392,persons
+France,250,B R,2015,total,53809,persons
+France,250,B R,2020,total,61647,persons
+France,250,B R,2024,total,66688,persons
+France,250,B R,1990,male,11378,persons
+France,250,B R,1995,male,13564,persons
+France,250,B R,2000,male,16493,persons
+France,250,B R,2005,male,21391,persons
+France,250,B R,2010,male,24414,persons
+France,250,B R,2015,male,27647,persons
+France,250,B R,2020,male,32033,persons
+France,250,B R,2024,male,34600,persons
+France,250,B R,1990,female,9869,persons
+France,250,B R,1995,female,12701,persons
+France,250,B R,2000,female,16239,persons
+France,250,B R,2005,female,20608,persons
+France,250,B R,2010,female,22978,persons
+France,250,B R,2015,female,26162,persons
+France,250,B R,2020,female,29614,persons
+France,250,B R,2024,female,32088,persons
+Germany,276,B R,1990,total,32522,persons
+Germany,276,B R,1995,total,40100,persons
+Germany,276,B R,2000,total,40419,persons
+Germany,276,B R,2005,total,45157,persons
+Germany,276,B R,2010,total,52489,persons
+Germany,276,B R,2015,total,86572,persons
+Germany,276,B R,2020,total,152372,persons
+Germany,276,B R,2024,total,267343,persons
+Germany,276,B R,1990,male,24191,persons
+Germany,276,B R,1995,male,29635,persons
+Germany,276,B R,2000,male,28616,persons
+Germany,276,B R,2005,male,30214,persons
+Germany,276,B R,2010,male,32438,persons
+Germany,276,B R,2015,male,54773,persons
+Germany,276,B R,2020,male,94396,persons
+Germany,276,B R,2024,male,158598,persons
+Germany,276,B R,1990,female,8331,persons
+Germany,276,B R,1995,female,10465,persons
+Germany,276,B R,2000,female,11803,persons
+Germany,276,B R,2005,female,14943,persons
+Germany,276,B R,2010,female,20051,persons
+Germany,276,B R,2015,female,31799,persons
+Germany,276,B R,2020,female,57976,persons
+Germany,276,B R,2024,female,108745,persons
+Liechtenstein,438,B,1990,total,0,persons
+Liechtenstein,438,B,1995,total,0,persons
+Liechtenstein,438,B,2000,total,0,persons
+Liechtenstein,438,B,2005,total,11,persons
+Liechtenstein,438,B,2010,total,23,persons
+Liechtenstein,438,B,2015,total,27,persons
+Liechtenstein,438,B,2020,total,27,persons
+Liechtenstein,438,B,2024,total,29,persons
+Liechtenstein,438,B,1990,male,0,persons
+Liechtenstein,438,B,1995,male,0,persons
+Liechtenstein,438,B,2000,male,0,persons
+Liechtenstein,438,B,2005,male,7,persons
+Liechtenstein,438,B,2010,male,13,persons
+Liechtenstein,438,B,2015,male,17,persons
+Liechtenstein,438,B,2020,male,17,persons
+Liechtenstein,438,B,2024,male,18,persons
+Liechtenstein,438,B,1990,female,0,persons
+Liechtenstein,438,B,1995,female,0,persons
+Liechtenstein,438,B,2000,female,0,persons
+Liechtenstein,438,B,2005,female,4,persons
+Liechtenstein,438,B,2010,female,10,persons
+Liechtenstein,438,B,2015,female,10,persons
+Liechtenstein,438,B,2020,female,10,persons
+Liechtenstein,438,B,2024,female,11,persons
+Luxembourg,442,B,1990,total,187,persons
+Luxembourg,442,B,1995,total,177,persons
+Luxembourg,442,B,2000,total,170,persons
+Luxembourg,442,B,2005,total,147,persons
+Luxembourg,442,B,2010,total,127,persons
+Luxembourg,442,B,2015,total,193,persons
+Luxembourg,442,B,2020,total,2791,persons
+Luxembourg,442,B,2024,total,3224,persons
+Luxembourg,442,B,1990,male,90,persons
+Luxembourg,442,B,1995,male,85,persons
+Luxembourg,442,B,2000,male,81,persons
+Luxembourg,442,B,2005,male,75,persons
+Luxembourg,442,B,2010,male,71,persons
+Luxembourg,442,B,2015,male,109,persons
+Luxembourg,442,B,2020,male,1516,persons
+Luxembourg,442,B,2024,male,1751,persons
+Luxembourg,442,B,1990,female,97,persons
+Luxembourg,442,B,1995,female,92,persons
+Luxembourg,442,B,2000,female,89,persons
+Luxembourg,442,B,2005,female,72,persons
+Luxembourg,442,B,2010,female,56,persons
+Luxembourg,442,B,2015,female,84,persons
+Luxembourg,442,B,2020,female,1275,persons
+Luxembourg,442,B,2024,female,1473,persons
+Netherlands,528,B R,1990,total,7592,persons
+Netherlands,528,B R,1995,total,9249,persons
+Netherlands,528,B R,2000,total,10904,persons
+Netherlands,528,B R,2005,total,12310,persons
+Netherlands,528,B R,2010,total,17742,persons
+Netherlands,528,B R,2015,total,25575,persons
+Netherlands,528,B R,2020,total,48706,persons
+Netherlands,528,B R,2024,total,76806,persons
+Netherlands,528,B R,1990,male,4030,persons
+Netherlands,528,B R,1995,male,4909,persons
+Netherlands,528,B R,2000,male,5730,persons
+Netherlands,528,B R,2005,male,6366,persons
+Netherlands,528,B R,2010,male,9719,persons
+Netherlands,528,B R,2015,male,14177,persons
+Netherlands,528,B R,2020,male,26992,persons
+Netherlands,528,B R,2024,male,41521,persons
+Netherlands,528,B R,1990,female,3562,persons
+Netherlands,528,B R,1995,female,4340,persons
+Netherlands,528,B R,2000,female,5174,persons
+Netherlands,528,B R,2005,female,5944,persons
+Netherlands,528,B R,2010,female,8023,persons
+Netherlands,528,B R,2015,female,11398,persons
+Netherlands,528,B R,2020,female,21714,persons
+Netherlands,528,B R,2024,female,35285,persons
+Switzerland,756,B R,1990,total,7388,persons
+Switzerland,756,B R,1995,total,8887,persons
+Switzerland,756,B R,2000,total,10746,persons
+Switzerland,756,B R,2005,total,13532,persons
+Switzerland,756,B R,2010,total,16397,persons
+Switzerland,756,B R,2015,total,20080,persons
+Switzerland,756,B R,2020,total,23761,persons
+Switzerland,756,B R,2024,total,27635,persons
+Switzerland,756,B R,1990,male,3941,persons
+Switzerland,756,B R,1995,male,4775,persons
+Switzerland,756,B R,2000,male,5786,persons
+Switzerland,756,B R,2005,male,7011,persons
+Switzerland,756,B R,2010,male,8496,persons
+Switzerland,756,B R,2015,male,10331,persons
+Switzerland,756,B R,2020,male,12128,persons
+Switzerland,756,B R,2024,male,13952,persons
+Switzerland,756,B R,1990,female,3447,persons
+Switzerland,756,B R,1995,female,4112,persons
+Switzerland,756,B R,2000,female,4960,persons
+Switzerland,756,B R,2005,female,6521,persons
+Switzerland,756,B R,2010,female,7901,persons
+Switzerland,756,B R,2015,female,9749,persons
+Switzerland,756,B R,2020,female,11633,persons
+Switzerland,756,B R,2024,female,13683,persons
+Antigua and Barbuda,28,B R,1990,total,32,persons
+Antigua and Barbuda,28,B R,1995,total,49,persons
+Antigua and Barbuda,28,B R,2000,total,65,persons
+Antigua and Barbuda,28,B R,2005,total,70,persons
+Antigua and Barbuda,28,B R,2010,total,74,persons
+Antigua and Barbuda,28,B R,2015,total,79,persons
+Antigua and Barbuda,28,B R,2020,total,81,persons
+Antigua and Barbuda,28,B R,2024,total,84,persons
+Antigua and Barbuda,28,B R,1990,male,15,persons
+Antigua and Barbuda,28,B R,1995,male,24,persons
+Antigua and Barbuda,28,B R,2000,male,32,persons
+Antigua and Barbuda,28,B R,2005,male,34,persons
+Antigua and Barbuda,28,B R,2010,male,36,persons
+Antigua and Barbuda,28,B R,2015,male,39,persons
+Antigua and Barbuda,28,B R,2020,male,41,persons
+Antigua and Barbuda,28,B R,2024,male,43,persons
+Antigua and Barbuda,28,B R,1990,female,17,persons
+Antigua and Barbuda,28,B R,1995,female,25,persons
+Antigua and Barbuda,28,B R,2000,female,33,persons
+Antigua and Barbuda,28,B R,2005,female,36,persons
+Antigua and Barbuda,28,B R,2010,female,38,persons
+Antigua and Barbuda,28,B R,2015,female,40,persons
+Antigua and Barbuda,28,B R,2020,female,40,persons
+Antigua and Barbuda,28,B R,2024,female,41,persons
+Aruba,533,B R,1990,total,39,persons
+Aruba,533,B R,1995,total,98,persons
+Aruba,533,B R,2000,total,157,persons
+Aruba,533,B R,2005,total,238,persons
+Aruba,533,B R,2010,total,315,persons
+Aruba,533,B R,2015,total,330,persons
+Aruba,533,B R,2020,total,368,persons
+Aruba,533,B R,2024,total,505,persons
+Aruba,533,B R,1990,male,25,persons
+Aruba,533,B R,1995,male,64,persons
+Aruba,533,B R,2000,male,103,persons
+Aruba,533,B R,2005,male,157,persons
+Aruba,533,B R,2010,male,208,persons
+Aruba,533,B R,2015,male,217,persons
+Aruba,533,B R,2020,male,240,persons
+Aruba,533,B R,2024,male,329,persons
+Aruba,533,B R,1990,female,14,persons
+Aruba,533,B R,1995,female,34,persons
+Aruba,533,B R,2000,female,54,persons
+Aruba,533,B R,2005,female,81,persons
+Aruba,533,B R,2010,female,107,persons
+Aruba,533,B R,2015,female,113,persons
+Aruba,533,B R,2020,female,128,persons
+Aruba,533,B R,2024,female,176,persons
+Bahamas,44,B R,1990,total,160,persons
+Bahamas,44,B R,1995,total,194,persons
+Bahamas,44,B R,2000,total,229,persons
+Bahamas,44,B R,2005,total,391,persons
+Bahamas,44,B R,2010,total,552,persons
+Bahamas,44,B R,2015,total,598,persons
+Bahamas,44,B R,2020,total,640,persons
+Bahamas,44,B R,2024,total,677,persons
+Bahamas,44,B R,1990,male,90,persons
+Bahamas,44,B R,1995,male,110,persons
+Bahamas,44,B R,2000,male,131,persons
+Bahamas,44,B R,2005,male,222,persons
+Bahamas,44,B R,2010,male,312,persons
+Bahamas,44,B R,2015,male,336,persons
+Bahamas,44,B R,2020,male,360,persons
+Bahamas,44,B R,2024,male,381,persons
+Bahamas,44,B R,1990,female,70,persons
+Bahamas,44,B R,1995,female,84,persons
+Bahamas,44,B R,2000,female,98,persons
+Bahamas,44,B R,2005,female,169,persons
+Bahamas,44,B R,2010,female,240,persons
+Bahamas,44,B R,2015,female,262,persons
+Bahamas,44,B R,2020,female,280,persons
+Bahamas,44,B R,2024,female,296,persons
+Barbados,52,B R,1990,total,441,persons
+Barbados,52,B R,1995,total,481,persons
+Barbados,52,B R,2000,total,522,persons
+Barbados,52,B R,2005,total,480,persons
+Barbados,52,B R,2010,total,441,persons
+Barbados,52,B R,2015,total,463,persons
+Barbados,52,B R,2020,total,467,persons
+Barbados,52,B R,2024,total,471,persons
+Barbados,52,B R,1990,male,222,persons
+Barbados,52,B R,1995,male,246,persons
+Barbados,52,B R,2000,male,271,persons
+Barbados,52,B R,2005,male,242,persons
+Barbados,52,B R,2010,male,215,persons
+Barbados,52,B R,2015,male,226,persons
+Barbados,52,B R,2020,male,229,persons
+Barbados,52,B R,2024,male,231,persons
+Barbados,52,B R,1990,female,219,persons
+Barbados,52,B R,1995,female,235,persons
+Barbados,52,B R,2000,female,251,persons
+Barbados,52,B R,2005,female,238,persons
+Barbados,52,B R,2010,female,226,persons
+Barbados,52,B R,2015,female,237,persons
+Barbados,52,B R,2020,female,238,persons
+Barbados,52,B R,2024,female,240,persons
+British Virgin Islands,92,B R,1990,total,20,persons
+British Virgin Islands,92,B R,1995,total,24,persons
+British Virgin Islands,92,B R,2000,total,27,persons
+British Virgin Islands,92,B R,2005,total,31,persons
+British Virgin Islands,92,B R,2010,total,35,persons
+British Virgin Islands,92,B R,2015,total,40,persons
+British Virgin Islands,92,B R,2020,total,45,persons
+British Virgin Islands,92,B R,2024,total,50,persons
+British Virgin Islands,92,B R,1990,male,11,persons
+British Virgin Islands,92,B R,1995,male,13,persons
+British Virgin Islands,92,B R,2000,male,14,persons
+British Virgin Islands,92,B R,2005,male,16,persons
+British Virgin Islands,92,B R,2010,male,18,persons
+British Virgin Islands,92,B R,2015,male,21,persons
+British Virgin Islands,92,B R,2020,male,24,persons
+British Virgin Islands,92,B R,2024,male,27,persons
+British Virgin Islands,92,B R,1990,female,9,persons
+British Virgin Islands,92,B R,1995,female,11,persons
+British Virgin Islands,92,B R,2000,female,13,persons
+British Virgin Islands,92,B R,2005,female,15,persons
+British Virgin Islands,92,B R,2010,female,17,persons
+British Virgin Islands,92,B R,2015,female,19,persons
+British Virgin Islands,92,B R,2020,female,21,persons
+British Virgin Islands,92,B R,2024,female,23,persons
+Cayman Islands,136,C R,1990,total,44,persons
+Cayman Islands,136,C R,1995,total,84,persons
+Cayman Islands,136,C R,2000,total,144,persons
+Cayman Islands,136,C R,2005,total,324,persons
+Cayman Islands,136,C R,2010,total,535,persons
+Cayman Islands,136,C R,2015,total,582,persons
+Cayman Islands,136,C R,2020,total,648,persons
+Cayman Islands,136,C R,2024,total,708,persons
+Cayman Islands,136,C R,1990,male,24,persons
+Cayman Islands,136,C R,1995,male,45,persons
+Cayman Islands,136,C R,2000,male,76,persons
+Cayman Islands,136,C R,2005,male,233,persons
+Cayman Islands,136,C R,2010,male,412,persons
+Cayman Islands,136,C R,2015,male,449,persons
+Cayman Islands,136,C R,2020,male,501,persons
+Cayman Islands,136,C R,2024,male,547,persons
+Cayman Islands,136,C R,1990,female,20,persons
+Cayman Islands,136,C R,1995,female,39,persons
+Cayman Islands,136,C R,2000,female,68,persons
+Cayman Islands,136,C R,2005,female,91,persons
+Cayman Islands,136,C R,2010,female,123,persons
+Cayman Islands,136,C R,2015,female,133,persons
+Cayman Islands,136,C R,2020,female,147,persons
+Cayman Islands,136,C R,2024,female,161,persons
+Curaçao,531,B R,1990,total,656,persons
+Curaçao,531,B R,1995,total,656,persons
+Curaçao,531,B R,2000,total,656,persons
+Curaçao,531,B R,2005,total,656,persons
+Curaçao,531,B R,2010,total,588,persons
+Curaçao,531,B R,2015,total,637,persons
+Curaçao,531,B R,2020,total,742,persons
+Curaçao,531,B R,2024,total,1038,persons
+Curaçao,531,B R,1990,male,407,persons
+Curaçao,531,B R,1995,male,407,persons
+Curaçao,531,B R,2000,male,407,persons
+Curaçao,531,B R,2005,male,407,persons
+Curaçao,531,B R,2010,male,362,persons
+Curaçao,531,B R,2015,male,393,persons
+Curaçao,531,B R,2020,male,465,persons
+Curaçao,531,B R,2024,male,651,persons
+Curaçao,531,B R,1990,female,249,persons
+Curaçao,531,B R,1995,female,249,persons
+Curaçao,531,B R,2000,female,249,persons
+Curaçao,531,B R,2005,female,249,persons
+Curaçao,531,B R,2010,female,226,persons
+Curaçao,531,B R,2015,female,244,persons
+Curaçao,531,B R,2020,female,277,persons
+Curaçao,531,B R,2024,female,387,persons
+Dominica,212,B,1990,total,10,persons
+Dominica,212,B,1995,total,13,persons
+Dominica,212,B,2000,total,15,persons
+Dominica,212,B,2005,total,19,persons
+Dominica,212,B,2010,total,24,persons
+Dominica,212,B,2015,total,28,persons
+Dominica,212,B,2020,total,27,persons
+Dominica,212,B,2024,total,28,persons
+Dominica,212,B,1990,male,6,persons
+Dominica,212,B,1995,male,8,persons
+Dominica,212,B,2000,male,9,persons
+Dominica,212,B,2005,male,12,persons
+Dominica,212,B,2010,male,14,persons
+Dominica,212,B,2015,male,16,persons
+Dominica,212,B,2020,male,16,persons
+Dominica,212,B,2024,male,17,persons
+Dominica,212,B,1990,female,4,persons
+Dominica,212,B,1995,female,5,persons
+Dominica,212,B,2000,female,6,persons
+Dominica,212,B,2005,female,7,persons
+Dominica,212,B,2010,female,10,persons
+Dominica,212,B,2015,female,12,persons
+Dominica,212,B,2020,female,11,persons
+Dominica,212,B,2024,female,11,persons
+Dominican Republic,214,B R,1990,total,287,persons
+Dominican Republic,214,B R,1995,total,319,persons
+Dominican Republic,214,B R,2000,total,351,persons
+Dominican Republic,214,B R,2005,total,221,persons
+Dominican Republic,214,B R,2010,total,91,persons
+Dominican Republic,214,B R,2015,total,94,persons
+Dominican Republic,214,B R,2020,total,97,persons
+Dominican Republic,214,B R,2024,total,105,persons
+Dominican Republic,214,B R,1990,male,161,persons
+Dominican Republic,214,B R,1995,male,175,persons
+Dominican Republic,214,B R,2000,male,190,persons
+Dominican Republic,214,B R,2005,male,129,persons
+Dominican Republic,214,B R,2010,male,67,persons
+Dominican Republic,214,B R,2015,male,70,persons
+Dominican Republic,214,B R,2020,male,72,persons
+Dominican Republic,214,B R,2024,male,78,persons
+Dominican Republic,214,B R,1990,female,126,persons
+Dominican Republic,214,B R,1995,female,144,persons
+Dominican Republic,214,B R,2000,female,161,persons
+Dominican Republic,214,B R,2005,female,92,persons
+Dominican Republic,214,B R,2010,female,24,persons
+Dominican Republic,214,B R,2015,female,24,persons
+Dominican Republic,214,B R,2020,female,25,persons
+Dominican Republic,214,B R,2024,female,27,persons
+Guadeloupe,312,B,1990,total,80,persons
+Guadeloupe,312,B,1995,total,107,persons
+Guadeloupe,312,B,2000,total,133,persons
+Guadeloupe,312,B,2005,total,163,persons
+Guadeloupe,312,B,2010,total,193,persons
+Guadeloupe,312,B,2015,total,184,persons
+Guadeloupe,312,B,2020,total,181,persons
+Guadeloupe,312,B,2024,total,180,persons
+Guadeloupe,312,B,1990,male,39,persons
+Guadeloupe,312,B,1995,male,51,persons
+Guadeloupe,312,B,2000,male,62,persons
+Guadeloupe,312,B,2005,male,75,persons
+Guadeloupe,312,B,2010,male,88,persons
+Guadeloupe,312,B,2015,male,79,persons
+Guadeloupe,312,B,2020,male,77,persons
+Guadeloupe,312,B,2024,male,76,persons
+Guadeloupe,312,B,1990,female,41,persons
+Guadeloupe,312,B,1995,female,56,persons
+Guadeloupe,312,B,2000,female,71,persons
+Guadeloupe,312,B,2005,female,88,persons
+Guadeloupe,312,B,2010,female,105,persons
+Guadeloupe,312,B,2015,female,105,persons
+Guadeloupe,312,B,2020,female,104,persons
+Guadeloupe,312,B,2024,female,104,persons
+Jamaica,388,B R,1990,total,711,persons
+Jamaica,388,B R,1995,total,962,persons
+Jamaica,388,B R,2000,total,1213,persons
+Jamaica,388,B R,2005,total,1183,persons
+Jamaica,388,B R,2010,total,1152,persons
+Jamaica,388,B R,2015,total,1127,persons
+Jamaica,388,B R,2020,total,1148,persons
+Jamaica,388,B R,2024,total,1166,persons
+Jamaica,388,B R,1990,male,398,persons
+Jamaica,388,B R,1995,male,576,persons
+Jamaica,388,B R,2000,male,754,persons
+Jamaica,388,B R,2005,male,738,persons
+Jamaica,388,B R,2010,male,722,persons
+Jamaica,388,B R,2015,male,706,persons
+Jamaica,388,B R,2020,male,720,persons
+Jamaica,388,B R,2024,male,731,persons
+Jamaica,388,B R,1990,female,313,persons
+Jamaica,388,B R,1995,female,386,persons
+Jamaica,388,B R,2000,female,459,persons
+Jamaica,388,B R,2005,female,445,persons
+Jamaica,388,B R,2010,female,430,persons
+Jamaica,388,B R,2015,female,421,persons
+Jamaica,388,B R,2020,female,428,persons
+Jamaica,388,B R,2024,female,435,persons
+Puerto Rico,630,B,1990,total,96,persons
+Puerto Rico,630,B,1995,total,101,persons
+Puerto Rico,630,B,2000,total,108,persons
+Puerto Rico,630,B,2005,total,84,persons
+Puerto Rico,630,B,2010,total,51,persons
+Puerto Rico,630,B,2015,total,49,persons
+Puerto Rico,630,B,2020,total,21,persons
+Puerto Rico,630,B,2024,total,19,persons
+Puerto Rico,630,B,1990,male,45,persons
+Puerto Rico,630,B,1995,male,48,persons
+Puerto Rico,630,B,2000,male,51,persons
+Puerto Rico,630,B,2005,male,40,persons
+Puerto Rico,630,B,2010,male,24,persons
+Puerto Rico,630,B,2015,male,23,persons
+Puerto Rico,630,B,2020,male,10,persons
+Puerto Rico,630,B,2024,male,9,persons
+Puerto Rico,630,B,1990,female,51,persons
+Puerto Rico,630,B,1995,female,53,persons
+Puerto Rico,630,B,2000,female,57,persons
+Puerto Rico,630,B,2005,female,44,persons
+Puerto Rico,630,B,2010,female,27,persons
+Puerto Rico,630,B,2015,female,26,persons
+Puerto Rico,630,B,2020,female,11,persons
+Puerto Rico,630,B,2024,female,10,persons
+Saint Lucia,662,B R,1990,total,49,persons
+Saint Lucia,662,B R,1995,total,65,persons
+Saint Lucia,662,B R,2000,total,90,persons
+Saint Lucia,662,B R,2005,total,165,persons
+Saint Lucia,662,B R,2010,total,228,persons
+Saint Lucia,662,B R,2015,total,218,persons
+Saint Lucia,662,B R,2020,total,214,persons
+Saint Lucia,662,B R,2024,total,207,persons
+Saint Lucia,662,B R,1990,male,30,persons
+Saint Lucia,662,B R,1995,male,40,persons
+Saint Lucia,662,B R,2000,male,55,persons
+Saint Lucia,662,B R,2005,male,99,persons
+Saint Lucia,662,B R,2010,male,136,persons
+Saint Lucia,662,B R,2015,male,130,persons
+Saint Lucia,662,B R,2020,male,125,persons
+Saint Lucia,662,B R,2024,male,121,persons
+Saint Lucia,662,B R,1990,female,19,persons
+Saint Lucia,662,B R,1995,female,25,persons
+Saint Lucia,662,B R,2000,female,35,persons
+Saint Lucia,662,B R,2005,female,66,persons
+Saint Lucia,662,B R,2010,female,92,persons
+Saint Lucia,662,B R,2015,female,88,persons
+Saint Lucia,662,B R,2020,female,89,persons
+Saint Lucia,662,B R,2024,female,86,persons
+Sint Maarten (Dutch part),534,B R,1990,total,732,persons
+Sint Maarten (Dutch part),534,B R,1995,total,732,persons
+Sint Maarten (Dutch part),534,B R,2000,total,732,persons
+Sint Maarten (Dutch part),534,B R,2005,total,411,persons
+Sint Maarten (Dutch part),534,B R,2010,total,801,persons
+Sint Maarten (Dutch part),534,B R,2015,total,834,persons
+Sint Maarten (Dutch part),534,B R,2020,total,880,persons
+Sint Maarten (Dutch part),534,B R,2024,total,920,persons
+Sint Maarten (Dutch part),534,B R,1990,male,703,persons
+Sint Maarten (Dutch part),534,B R,1995,male,703,persons
+Sint Maarten (Dutch part),534,B R,2000,male,703,persons
+Sint Maarten (Dutch part),534,B R,2005,male,400,persons
+Sint Maarten (Dutch part),534,B R,2010,male,776,persons
+Sint Maarten (Dutch part),534,B R,2015,male,794,persons
+Sint Maarten (Dutch part),534,B R,2020,male,839,persons
+Sint Maarten (Dutch part),534,B R,2024,male,877,persons
+Sint Maarten (Dutch part),534,B R,1990,female,29,persons
+Sint Maarten (Dutch part),534,B R,1995,female,29,persons
+Sint Maarten (Dutch part),534,B R,2000,female,29,persons
+Sint Maarten (Dutch part),534,B R,2005,female,11,persons
+Sint Maarten (Dutch part),534,B R,2010,female,25,persons
+Sint Maarten (Dutch part),534,B R,2015,female,40,persons
+Sint Maarten (Dutch part),534,B R,2020,female,41,persons
+Sint Maarten (Dutch part),534,B R,2024,female,43,persons
+Trinidad and Tobago,780,B R,1990,total,768,persons
+Trinidad and Tobago,780,B R,1995,total,697,persons
+Trinidad and Tobago,780,B R,2000,total,620,persons
+Trinidad and Tobago,780,B R,2005,total,665,persons
+Trinidad and Tobago,780,B R,2010,total,926,persons
+Trinidad and Tobago,780,B R,2015,total,959,persons
+Trinidad and Tobago,780,B R,2020,total,1064,persons
+Trinidad and Tobago,780,B R,2024,total,1531,persons
+Trinidad and Tobago,780,B R,1990,male,389,persons
+Trinidad and Tobago,780,B R,1995,male,353,persons
+Trinidad and Tobago,780,B R,2000,male,345,persons
+Trinidad and Tobago,780,B R,2005,male,370,persons
+Trinidad and Tobago,780,B R,2010,male,536,persons
+Trinidad and Tobago,780,B R,2015,male,562,persons
+Trinidad and Tobago,780,B R,2020,male,689,persons
+Trinidad and Tobago,780,B R,2024,male,991,persons
+Trinidad and Tobago,780,B R,1990,female,379,persons
+Trinidad and Tobago,780,B R,1995,female,344,persons
+Trinidad and Tobago,780,B R,2000,female,275,persons
+Trinidad and Tobago,780,B R,2005,female,295,persons
+Trinidad and Tobago,780,B R,2010,female,390,persons
+Trinidad and Tobago,780,B R,2015,female,397,persons
+Trinidad and Tobago,780,B R,2020,female,375,persons
+Trinidad and Tobago,780,B R,2024,female,540,persons
+Belize,84,B R,1990,total,247,persons
+Belize,84,B R,1995,total,256,persons
+Belize,84,B R,2000,total,265,persons
+Belize,84,B R,2005,total,292,persons
+Belize,84,B R,2010,total,502,persons
+Belize,84,B R,2015,total,592,persons
+Belize,84,B R,2020,total,670,persons
+Belize,84,B R,2024,total,742,persons
+Belize,84,B R,1990,male,138,persons
+Belize,84,B R,1995,male,142,persons
+Belize,84,B R,2000,male,147,persons
+Belize,84,B R,2005,male,161,persons
+Belize,84,B R,2010,male,277,persons
+Belize,84,B R,2015,male,326,persons
+Belize,84,B R,2020,male,370,persons
+Belize,84,B R,2024,male,410,persons
+Belize,84,B R,1990,female,109,persons
+Belize,84,B R,1995,female,114,persons
+Belize,84,B R,2000,female,118,persons
+Belize,84,B R,2005,female,131,persons
+Belize,84,B R,2010,female,225,persons
+Belize,84,B R,2015,female,266,persons
+Belize,84,B R,2020,female,300,persons
+Belize,84,B R,2024,female,332,persons
+Costa Rica,188,B R,1990,total,35,persons
+Costa Rica,188,B R,1995,total,31,persons
+Costa Rica,188,B R,2000,total,42,persons
+Costa Rica,188,B R,2005,total,28,persons
+Costa Rica,188,B R,2010,total,55,persons
+Costa Rica,188,B R,2015,total,54,persons
+Costa Rica,188,B R,2020,total,64,persons
+Costa Rica,188,B R,2024,total,77,persons
+Costa Rica,188,B R,1990,male,21,persons
+Costa Rica,188,B R,1995,male,19,persons
+Costa Rica,188,B R,2000,male,26,persons
+Costa Rica,188,B R,2005,male,16,persons
+Costa Rica,188,B R,2010,male,33,persons
+Costa Rica,188,B R,2015,male,33,persons
+Costa Rica,188,B R,2020,male,41,persons
+Costa Rica,188,B R,2024,male,49,persons
+Costa Rica,188,B R,1990,female,14,persons
+Costa Rica,188,B R,1995,female,12,persons
+Costa Rica,188,B R,2000,female,16,persons
+Costa Rica,188,B R,2005,female,12,persons
+Costa Rica,188,B R,2010,female,22,persons
+Costa Rica,188,B R,2015,female,21,persons
+Costa Rica,188,B R,2020,female,23,persons
+Costa Rica,188,B R,2024,female,28,persons
+El Salvador,222,B R,1990,total,18,persons
+El Salvador,222,B R,1995,total,14,persons
+El Salvador,222,B R,2000,total,10,persons
+El Salvador,222,B R,2005,total,11,persons
+El Salvador,222,B R,2010,total,11,persons
+El Salvador,222,B R,2015,total,11,persons
+El Salvador,222,B R,2020,total,11,persons
+El Salvador,222,B R,2024,total,11,persons
+El Salvador,222,B R,1990,male,11,persons
+El Salvador,222,B R,1995,male,8,persons
+El Salvador,222,B R,2000,male,6,persons
+El Salvador,222,B R,2005,male,7,persons
+El Salvador,222,B R,2010,male,7,persons
+El Salvador,222,B R,2015,male,7,persons
+El Salvador,222,B R,2020,male,7,persons
+El Salvador,222,B R,2024,male,7,persons
+El Salvador,222,B R,1990,female,7,persons
+El Salvador,222,B R,1995,female,6,persons
+El Salvador,222,B R,2000,female,4,persons
+El Salvador,222,B R,2005,female,4,persons
+El Salvador,222,B R,2010,female,4,persons
+El Salvador,222,B R,2015,female,4,persons
+El Salvador,222,B R,2020,female,4,persons
+El Salvador,222,B R,2024,female,4,persons
+Mexico,484,B R,1990,total,292,persons
+Mexico,484,B R,1995,total,364,persons
+Mexico,484,B R,2000,total,449,persons
+Mexico,484,B R,2005,total,628,persons
+Mexico,484,B R,2010,total,911,persons
+Mexico,484,B R,2015,total,1683,persons
+Mexico,484,B R,2020,total,2763,persons
+Mexico,484,B R,2024,total,3620,persons
+Mexico,484,B R,1990,male,137,persons
+Mexico,484,B R,1995,male,183,persons
+Mexico,484,B R,2000,male,242,persons
+Mexico,484,B R,2005,male,365,persons
+Mexico,484,B R,2010,male,554,persons
+Mexico,484,B R,2015,male,1042,persons
+Mexico,484,B R,2020,male,1726,persons
+Mexico,484,B R,2024,male,2285,persons
+Mexico,484,B R,1990,female,155,persons
+Mexico,484,B R,1995,female,181,persons
+Mexico,484,B R,2000,female,207,persons
+Mexico,484,B R,2005,female,263,persons
+Mexico,484,B R,2010,female,357,persons
+Mexico,484,B R,2015,female,641,persons
+Mexico,484,B R,2020,female,1037,persons
+Mexico,484,B R,2024,female,1335,persons
+Nicaragua,558,B R,1990,total,12,persons
+Nicaragua,558,B R,1995,total,10,persons
+Nicaragua,558,B R,2000,total,15,persons
+Nicaragua,558,B R,2005,total,22,persons
+Nicaragua,558,B R,2010,total,23,persons
+Nicaragua,558,B R,2015,total,24,persons
+Nicaragua,558,B R,2020,total,24,persons
+Nicaragua,558,B R,2024,total,25,persons
+Nicaragua,558,B R,1990,male,9,persons
+Nicaragua,558,B R,1995,male,7,persons
+Nicaragua,558,B R,2000,male,9,persons
+Nicaragua,558,B R,2005,male,11,persons
+Nicaragua,558,B R,2010,male,12,persons
+Nicaragua,558,B R,2015,male,13,persons
+Nicaragua,558,B R,2020,male,14,persons
+Nicaragua,558,B R,2024,male,15,persons
+Nicaragua,558,B R,1990,female,3,persons
+Nicaragua,558,B R,1995,female,3,persons
+Nicaragua,558,B R,2000,female,6,persons
+Nicaragua,558,B R,2005,female,11,persons
+Nicaragua,558,B R,2010,female,11,persons
+Nicaragua,558,B R,2015,female,11,persons
+Nicaragua,558,B R,2020,female,10,persons
+Nicaragua,558,B R,2024,female,10,persons
+Panama,591,B R,1990,total,1474,persons
+Panama,591,B R,1995,total,1738,persons
+Panama,591,B R,2000,total,2112,persons
+Panama,591,B R,2005,total,2696,persons
+Panama,591,B R,2010,total,3828,persons
+Panama,591,B R,2015,total,4481,persons
+Panama,591,B R,2020,total,5383,persons
+Panama,591,B R,2024,total,8212,persons
+Panama,591,B R,1990,male,887,persons
+Panama,591,B R,1995,male,1036,persons
+Panama,591,B R,2000,male,1246,persons
+Panama,591,B R,2005,male,1643,persons
+Panama,591,B R,2010,male,2394,persons
+Panama,591,B R,2015,male,2798,persons
+Panama,591,B R,2020,male,3435,persons
+Panama,591,B R,2024,male,5240,persons
+Panama,591,B R,1990,female,587,persons
+Panama,591,B R,1995,female,702,persons
+Panama,591,B R,2000,female,866,persons
+Panama,591,B R,2005,female,1053,persons
+Panama,591,B R,2010,female,1434,persons
+Panama,591,B R,2015,female,1683,persons
+Panama,591,B R,2020,female,1948,persons
+Panama,591,B R,2024,female,2972,persons
+Bolivia (Plurinational State of),68,B R,1990,total,125,persons
+Bolivia (Plurinational State of),68,B R,1995,total,123,persons
+Bolivia (Plurinational State of),68,B R,2000,total,119,persons
+Bolivia (Plurinational State of),68,B R,2005,total,106,persons
+Bolivia (Plurinational State of),68,B R,2010,total,92,persons
+Bolivia (Plurinational State of),68,B R,2015,total,108,persons
+Bolivia (Plurinational State of),68,B R,2020,total,118,persons
+Bolivia (Plurinational State of),68,B R,2024,total,132,persons
+Bolivia (Plurinational State of),68,B R,1990,male,86,persons
+Bolivia (Plurinational State of),68,B R,1995,male,77,persons
+Bolivia (Plurinational State of),68,B R,2000,male,66,persons
+Bolivia (Plurinational State of),68,B R,2005,male,65,persons
+Bolivia (Plurinational State of),68,B R,2010,male,63,persons
+Bolivia (Plurinational State of),68,B R,2015,male,73,persons
+Bolivia (Plurinational State of),68,B R,2020,male,81,persons
+Bolivia (Plurinational State of),68,B R,2024,male,91,persons
+Bolivia (Plurinational State of),68,B R,1990,female,39,persons
+Bolivia (Plurinational State of),68,B R,1995,female,46,persons
+Bolivia (Plurinational State of),68,B R,2000,female,53,persons
+Bolivia (Plurinational State of),68,B R,2005,female,41,persons
+Bolivia (Plurinational State of),68,B R,2010,female,29,persons
+Bolivia (Plurinational State of),68,B R,2015,female,35,persons
+Bolivia (Plurinational State of),68,B R,2020,female,37,persons
+Bolivia (Plurinational State of),68,B R,2024,female,41,persons
+Brazil,76,B R,1990,total,854,persons
+Brazil,76,B R,1995,total,793,persons
+Brazil,76,B R,2000,total,751,persons
+Brazil,76,B R,2005,total,824,persons
+Brazil,76,B R,2010,total,860,persons
+Brazil,76,B R,2015,total,1020,persons
+Brazil,76,B R,2020,total,2046,persons
+Brazil,76,B R,2024,total,2433,persons
+Brazil,76,B R,1990,male,501,persons
+Brazil,76,B R,1995,male,464,persons
+Brazil,76,B R,2000,male,440,persons
+Brazil,76,B R,2005,male,503,persons
+Brazil,76,B R,2010,male,557,persons
+Brazil,76,B R,2015,male,705,persons
+Brazil,76,B R,2020,male,1583,persons
+Brazil,76,B R,2024,male,1924,persons
+Brazil,76,B R,1990,female,353,persons
+Brazil,76,B R,1995,female,329,persons
+Brazil,76,B R,2000,female,311,persons
+Brazil,76,B R,2005,female,321,persons
+Brazil,76,B R,2010,female,303,persons
+Brazil,76,B R,2015,female,315,persons
+Brazil,76,B R,2020,female,463,persons
+Brazil,76,B R,2024,female,509,persons
+Chile,152,B R,1990,total,243,persons
+Chile,152,B R,1995,total,332,persons
+Chile,152,B R,2000,total,467,persons
+Chile,152,B R,2005,total,657,persons
+Chile,152,B R,2010,total,877,persons
+Chile,152,B R,2015,total,1297,persons
+Chile,152,B R,2020,total,1625,persons
+Chile,152,B R,2024,total,1865,persons
+Chile,152,B R,1990,male,144,persons
+Chile,152,B R,1995,male,196,persons
+Chile,152,B R,2000,male,284,persons
+Chile,152,B R,2005,male,416,persons
+Chile,152,B R,2010,male,570,persons
+Chile,152,B R,2015,male,865,persons
+Chile,152,B R,2020,male,1111,persons
+Chile,152,B R,2024,male,448,persons
+Chile,152,B R,1990,female,99,persons
+Chile,152,B R,1995,female,136,persons
+Chile,152,B R,2000,female,183,persons
+Chile,152,B R,2005,female,241,persons
+Chile,152,B R,2010,female,307,persons
+Chile,152,B R,2015,female,432,persons
+Chile,152,B R,2020,female,514,persons
+Chile,152,B R,2024,female,1417,persons
+Colombia,170,B R,1990,total,67,persons
+Colombia,170,B R,1995,total,77,persons
+Colombia,170,B R,2000,total,94,persons
+Colombia,170,B R,2005,total,116,persons
+Colombia,170,B R,2010,total,181,persons
+Colombia,170,B R,2015,total,288,persons
+Colombia,170,B R,2020,total,414,persons
+Colombia,170,B R,2024,total,503,persons
+Colombia,170,B R,1990,male,43,persons
+Colombia,170,B R,1995,male,43,persons
+Colombia,170,B R,2000,male,45,persons
+Colombia,170,B R,2005,male,53,persons
+Colombia,170,B R,2010,male,90,persons
+Colombia,170,B R,2015,male,176,persons
+Colombia,170,B R,2020,male,305,persons
+Colombia,170,B R,2024,male,408,persons
+Colombia,170,B R,1990,female,24,persons
+Colombia,170,B R,1995,female,34,persons
+Colombia,170,B R,2000,female,49,persons
+Colombia,170,B R,2005,female,63,persons
+Colombia,170,B R,2010,female,91,persons
+Colombia,170,B R,2015,female,112,persons
+Colombia,170,B R,2020,female,109,persons
+Colombia,170,B R,2024,female,95,persons
+Ecuador,218,B R,1990,total,12,persons
+Ecuador,218,B R,1995,total,12,persons
+Ecuador,218,B R,2000,total,77,persons
+Ecuador,218,B R,2005,total,130,persons
+Ecuador,218,B R,2010,total,232,persons
+Ecuador,218,B R,2015,total,245,persons
+Ecuador,218,B R,2020,total,301,persons
+Ecuador,218,B R,2024,total,317,persons
+Ecuador,218,B R,1990,male,8,persons
+Ecuador,218,B R,1995,male,8,persons
+Ecuador,218,B R,2000,male,51,persons
+Ecuador,218,B R,2005,male,87,persons
+Ecuador,218,B R,2010,male,152,persons
+Ecuador,218,B R,2015,male,162,persons
+Ecuador,218,B R,2020,male,197,persons
+Ecuador,218,B R,2024,male,207,persons
+Ecuador,218,B R,1990,female,4,persons
+Ecuador,218,B R,1995,female,4,persons
+Ecuador,218,B R,2000,female,26,persons
+Ecuador,218,B R,2005,female,43,persons
+Ecuador,218,B R,2010,female,80,persons
+Ecuador,218,B R,2015,female,83,persons
+Ecuador,218,B R,2020,female,104,persons
+Ecuador,218,B R,2024,female,110,persons
+Peru,604,B R,1990,total,11,persons
+Peru,604,B R,1995,total,10,persons
+Peru,604,B R,2000,total,78,persons
+Peru,604,B R,2005,total,153,persons
+Peru,604,B R,2010,total,219,persons
+Peru,604,B R,2015,total,292,persons
+Peru,604,B R,2020,total,384,persons
+Peru,604,B R,2024,total,599,persons
+Peru,604,B R,1990,male,7,persons
+Peru,604,B R,1995,male,6,persons
+Peru,604,B R,2000,male,47,persons
+Peru,604,B R,2005,male,93,persons
+Peru,604,B R,2010,male,133,persons
+Peru,604,B R,2015,male,177,persons
+Peru,604,B R,2020,male,232,persons
+Peru,604,B R,2024,male,361,persons
+Peru,604,B R,1990,female,4,persons
+Peru,604,B R,1995,female,4,persons
+Peru,604,B R,2000,female,31,persons
+Peru,604,B R,2005,female,60,persons
+Peru,604,B R,2010,female,86,persons
+Peru,604,B R,2015,female,115,persons
+Peru,604,B R,2020,female,152,persons
+Peru,604,B R,2024,female,238,persons
+Venezuela (Bolivarian Republic of),862,B R,1990,total,229,persons
+Venezuela (Bolivarian Republic of),862,B R,1995,total,226,persons
+Venezuela (Bolivarian Republic of),862,B R,2000,total,221,persons
+Venezuela (Bolivarian Republic of),862,B R,2005,total,232,persons
+Venezuela (Bolivarian Republic of),862,B R,2010,total,246,persons
+Venezuela (Bolivarian Republic of),862,B R,2015,total,258,persons
+Venezuela (Bolivarian Republic of),862,B R,2020,total,242,persons
+Venezuela (Bolivarian Republic of),862,B R,2024,total,231,persons
+Venezuela (Bolivarian Republic of),862,B R,1990,male,122,persons
+Venezuela (Bolivarian Republic of),862,B R,1995,male,121,persons
+Venezuela (Bolivarian Republic of),862,B R,2000,male,118,persons
+Venezuela (Bolivarian Republic of),862,B R,2005,male,124,persons
+Venezuela (Bolivarian Republic of),862,B R,2010,male,131,persons
+Venezuela (Bolivarian Republic of),862,B R,2015,male,136,persons
+Venezuela (Bolivarian Republic of),862,B R,2020,male,126,persons
+Venezuela (Bolivarian Republic of),862,B R,2024,male,120,persons
+Venezuela (Bolivarian Republic of),862,B R,1990,female,107,persons
+Venezuela (Bolivarian Republic of),862,B R,1995,female,105,persons
+Venezuela (Bolivarian Republic of),862,B R,2000,female,103,persons
+Venezuela (Bolivarian Republic of),862,B R,2005,female,108,persons
+Venezuela (Bolivarian Republic of),862,B R,2010,female,115,persons
+Venezuela (Bolivarian Republic of),862,B R,2015,female,122,persons
+Venezuela (Bolivarian Republic of),862,B R,2020,female,116,persons
+Venezuela (Bolivarian Republic of),862,B R,2024,female,111,persons
+Bermuda,60,B,1990,total,156,persons
+Bermuda,60,B,1995,total,220,persons
+Bermuda,60,B,2000,total,242,persons
+Bermuda,60,B,2005,total,336,persons
+Bermuda,60,B,2010,total,445,persons
+Bermuda,60,B,2015,total,493,persons
+Bermuda,60,B,2020,total,572,persons
+Bermuda,60,B,2024,total,585,persons
+Bermuda,60,B,1990,male,91,persons
+Bermuda,60,B,1995,male,127,persons
+Bermuda,60,B,2000,male,136,persons
+Bermuda,60,B,2005,male,225,persons
+Bermuda,60,B,2010,male,340,persons
+Bermuda,60,B,2015,male,395,persons
+Bermuda,60,B,2020,male,411,persons
+Bermuda,60,B,2024,male,420,persons
+Bermuda,60,B,1990,female,65,persons
+Bermuda,60,B,1995,female,93,persons
+Bermuda,60,B,2000,female,106,persons
+Bermuda,60,B,2005,female,111,persons
+Bermuda,60,B,2010,female,105,persons
+Bermuda,60,B,2015,female,98,persons
+Bermuda,60,B,2020,female,161,persons
+Bermuda,60,B,2024,female,165,persons
+Canada,124,B,1990,total,162668,persons
+Canada,124,B,1995,total,228383,persons
+Canada,124,B,2000,total,300208,persons
+Canada,124,B,2005,total,418282,persons
+Canada,124,B,2010,total,548591,persons
+Canada,124,B,2015,total,699110,persons
+Canada,124,B,2020,total,866951,persons
+Canada,124,B,2024,total,1015630,persons
+Canada,124,B,1990,male,82991,persons
+Canada,124,B,1995,male,115202,persons
+Canada,124,B,2000,male,150875,persons
+Canada,124,B,2005,male,208648,persons
+Canada,124,B,2010,male,274622,persons
+Canada,124,B,2015,male,356653,persons
+Canada,124,B,2020,male,436024,persons
+Canada,124,B,2024,male,511846,persons
+Canada,124,B,1990,female,79677,persons
+Canada,124,B,1995,female,113181,persons
+Canada,124,B,2000,female,149333,persons
+Canada,124,B,2005,female,209634,persons
+Canada,124,B,2010,female,273969,persons
+Canada,124,B,2015,female,342457,persons
+Canada,124,B,2020,female,430927,persons
+Canada,124,B,2024,female,503784,persons
+United States of America,840,B,1990,total,444698,persons
+United States of America,840,B,1995,total,597182,persons
+United States of America,840,B,2000,total,1109195,persons
+United States of America,840,B,2005,total,1419053,persons
+United States of America,840,B,2010,total,1799127,persons
+United States of America,840,B,2015,total,2381638,persons
+United States of America,840,B,2020,total,2741155,persons
+United States of America,840,B,2024,total,3165238,persons
+United States of America,840,B,1990,male,240855,persons
+United States of America,840,B,1995,male,299449,persons
+United States of America,840,B,2000,male,603000,persons
+United States of America,840,B,2005,male,772109,persons
+United States of America,840,B,2010,male,939005,persons
+United States of America,840,B,2015,male,1250024,persons
+United States of America,840,B,2020,male,1436014,persons
+United States of America,840,B,2024,male,1650518,persons
+United States of America,840,B,1990,female,203843,persons
+United States of America,840,B,1995,female,297733,persons
+United States of America,840,B,2000,female,506195,persons
+United States of America,840,B,2005,female,646944,persons
+United States of America,840,B,2010,female,860122,persons
+United States of America,840,B,2015,female,1131614,persons
+United States of America,840,B,2020,female,1305141,persons
+United States of America,840,B,2024,female,1514720,persons
+Australia,36,B R,1990,total,54882,persons
+Australia,36,B R,1995,total,76321,persons
+Australia,36,B R,2000,total,91042,persons
+Australia,36,B R,2005,total,149237,persons
+Australia,36,B R,2010,total,326913,persons
+Australia,36,B R,2015,total,448940,persons
+Australia,36,B R,2020,total,707980,persons
+Australia,36,B R,2024,total,876074,persons
+Australia,36,B R,1990,male,30706,persons
+Australia,36,B R,1995,male,40228,persons
+Australia,36,B R,2000,male,47511,persons
+Australia,36,B R,2005,male,82461,persons
+Australia,36,B R,2010,male,190947,persons
+Australia,36,B R,2015,male,244346,persons
+Australia,36,B R,2020,male,383621,persons
+Australia,36,B R,2024,male,475878,persons
+Australia,36,B R,1990,female,24176,persons
+Australia,36,B R,1995,female,36093,persons
+Australia,36,B R,2000,female,43531,persons
+Australia,36,B R,2005,female,66776,persons
+Australia,36,B R,2010,female,135966,persons
+Australia,36,B R,2015,female,204594,persons
+Australia,36,B R,2020,female,324359,persons
+Australia,36,B R,2024,female,400196,persons
+New Zealand,554,B R,1990,total,9270,persons
+New Zealand,554,B R,1995,total,12386,persons
+New Zealand,554,B R,2000,total,19797,persons
+New Zealand,554,B R,2005,total,40298,persons
+New Zealand,554,B R,2010,total,58441,persons
+New Zealand,554,B R,2015,total,91412,persons
+New Zealand,554,B R,2020,total,129231,persons
+New Zealand,554,B R,2024,total,149677,persons
+New Zealand,554,B R,1990,male,4857,persons
+New Zealand,554,B R,1995,male,6543,persons
+New Zealand,554,B R,2000,male,10194,persons
+New Zealand,554,B R,2005,male,21026,persons
+New Zealand,554,B R,2010,male,32087,persons
+New Zealand,554,B R,2015,male,52538,persons
+New Zealand,554,B R,2020,male,75521,persons
+New Zealand,554,B R,2024,male,87470,persons
+New Zealand,554,B R,1990,female,4413,persons
+New Zealand,554,B R,1995,female,5843,persons
+New Zealand,554,B R,2000,female,9603,persons
+New Zealand,554,B R,2005,female,19272,persons
+New Zealand,554,B R,2010,female,26354,persons
+New Zealand,554,B R,2015,female,38874,persons
+New Zealand,554,B R,2020,female,53710,persons
+New Zealand,554,B R,2024,female,62207,persons
+Fiji,242,B R,1990,total,1443,persons
+Fiji,242,B R,1995,total,1374,persons
+Fiji,242,B R,2000,total,1292,persons
+Fiji,242,B R,2005,total,1169,persons
+Fiji,242,B R,2010,total,1255,persons
+Fiji,242,B R,2015,total,1292,persons
+Fiji,242,B R,2020,total,1321,persons
+Fiji,242,B R,2024,total,1347,persons
+Fiji,242,B R,1990,male,655,persons
+Fiji,242,B R,1995,male,647,persons
+Fiji,242,B R,2000,male,626,persons
+Fiji,242,B R,2005,male,617,persons
+Fiji,242,B R,2010,male,671,persons
+Fiji,242,B R,2015,male,697,persons
+Fiji,242,B R,2020,male,712,persons
+Fiji,242,B R,2024,male,726,persons
+Fiji,242,B R,1990,female,788,persons
+Fiji,242,B R,1995,female,727,persons
+Fiji,242,B R,2000,female,666,persons
+Fiji,242,B R,2005,female,552,persons
+Fiji,242,B R,2010,female,584,persons
+Fiji,242,B R,2015,female,595,persons
+Fiji,242,B R,2020,female,609,persons
+Fiji,242,B R,2024,female,621,persons
+Papua New Guinea,598,C R,1990,total,239,persons
+Papua New Guinea,598,C R,1995,total,244,persons
+Papua New Guinea,598,C R,2000,total,182,persons
+Papua New Guinea,598,C R,2005,total,182,persons
+Papua New Guinea,598,C R,2010,total,154,persons
+Papua New Guinea,598,C R,2015,total,156,persons
+Papua New Guinea,598,C R,2020,total,156,persons
+Papua New Guinea,598,C R,2024,total,157,persons
+Papua New Guinea,598,C R,1990,male,148,persons
+Papua New Guinea,598,C R,1995,male,164,persons
+Papua New Guinea,598,C R,2000,male,138,persons
+Papua New Guinea,598,C R,2005,male,140,persons
+Papua New Guinea,598,C R,2010,male,120,persons
+Papua New Guinea,598,C R,2015,male,123,persons
+Papua New Guinea,598,C R,2020,male,125,persons
+Papua New Guinea,598,C R,2024,male,126,persons
+Papua New Guinea,598,C R,1990,female,91,persons
+Papua New Guinea,598,C R,1995,female,80,persons
+Papua New Guinea,598,C R,2000,female,44,persons
+Papua New Guinea,598,C R,2005,female,42,persons
+Papua New Guinea,598,C R,2010,female,34,persons
+Papua New Guinea,598,C R,2015,female,33,persons
+Papua New Guinea,598,C R,2020,female,31,persons
+Papua New Guinea,598,C R,2024,female,31,persons
+French Polynesia,258,B R,1990,total,35,persons
+French Polynesia,258,B R,1995,total,38,persons
+French Polynesia,258,B R,2000,total,41,persons
+French Polynesia,258,B R,2005,total,42,persons
+French Polynesia,258,B R,2010,total,41,persons
+French Polynesia,258,B R,2015,total,38,persons
+French Polynesia,258,B R,2020,total,38,persons
+French Polynesia,258,B R,2024,total,38,persons
+French Polynesia,258,B R,1990,male,26,persons
+French Polynesia,258,B R,1995,male,28,persons
+French Polynesia,258,B R,2000,male,30,persons
+French Polynesia,258,B R,2005,male,31,persons
+French Polynesia,258,B R,2010,male,31,persons
+French Polynesia,258,B R,2015,male,29,persons
+French Polynesia,258,B R,2020,male,29,persons
+French Polynesia,258,B R,2024,male,29,persons
+French Polynesia,258,B R,1990,female,9,persons
+French Polynesia,258,B R,1995,female,10,persons
+French Polynesia,258,B R,2000,female,11,persons
+French Polynesia,258,B R,2005,female,11,persons
+French Polynesia,258,B R,2010,female,10,persons
+French Polynesia,258,B R,2015,female,9,persons
+French Polynesia,258,B R,2020,female,9,persons
+French Polynesia,258,B R,2024,female,9,persons
+Tonga,776,B R,1990,total,140,persons
+Tonga,776,B R,1995,total,158,persons
+Tonga,776,B R,2000,total,177,persons
+Tonga,776,B R,2005,total,206,persons
+Tonga,776,B R,2010,total,220,persons
+Tonga,776,B R,2015,total,188,persons
+Tonga,776,B R,2020,total,177,persons
+Tonga,776,B R,2024,total,169,persons
+Tonga,776,B R,1990,male,67,persons
+Tonga,776,B R,1995,male,78,persons
+Tonga,776,B R,2000,male,90,persons
+Tonga,776,B R,2005,male,106,persons
+Tonga,776,B R,2010,male,114,persons
+Tonga,776,B R,2015,male,98,persons
+Tonga,776,B R,2020,male,93,persons
+Tonga,776,B R,2024,male,89,persons
+Tonga,776,B R,1990,female,73,persons
+Tonga,776,B R,1995,female,80,persons
+Tonga,776,B R,2000,female,87,persons
+Tonga,776,B R,2005,female,100,persons
+Tonga,776,B R,2010,female,106,persons
+Tonga,776,B R,2015,female,90,persons
+Tonga,776,B R,2020,female,84,persons
+Tonga,776,B R,2024,female,80,persons

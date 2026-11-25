@@ -1,4 +1,5 @@
 import type { Chart, Series, Source, Topic } from '../types'
+import { WDI, WDI_ABOUT, comparison } from '../international'
 
 
 // The ORGI catalogue gives "Date published 2026-05-20".
@@ -1200,11 +1201,38 @@ const topic: Topic = {
         },
       ],
     },
+    {
+      title: "How does India's life expectancy compare?",
+      lede: 'The UN estimates life expectancy at birth in India at 72.0 years in 2023, up from 58.6 in 1990. It was 78.0 years in China and 77.5 in Sri Lanka.',
+      blocks: [
+        {
+          chart: comparison({
+            slug: 'life-expectancy-comparison',
+            file: 'wdi-life-expectancy.csv',
+            title: 'Life expectancy at birth, India and other countries, 1990 and 2023',
+            subtitle: 'Years a newborn could expect to live, seven countries and the world. UN estimates, through the World Bank.',
+            unit: 'years',
+            latest: '2023',
+            format: { decimals: 1 },
+            note: 'WDI takes the country values from UN World Population Prospects 2024.',
+            sources: [WDI.lifeExpectancy],
+            know: [
+              'WDI takes these values from the UN Population Division, World Population Prospects 2024, medium variant. We checked all seven countries against the UN file. They agree to three decimals.',
+              'WPP 2024 gives estimates up to 2023 and projections from 2024. WDI also prints 2024, a projection, so the chart stops at 2023.',
+              "SRS, India's own source, gives 70.6 years for 2020-24, below the UN estimate of 72.0 years for 2023.",
+              'The world value is the World Bank average of the countries in WDI. It differs slightly from the UN world figure.',
+              'WDI notes that the UN annual values are interpolated from five-year data, so they may not reflect real events.',
+            ],
+            processing: ['Check every country value against the WPP 2024 Demographic Indicators file, medium variant.', 'Show each value to one decimal place. Rank the rows by the 2023 value.'],
+          }),
+        },
+      ],
+    },
   ],
   // LATER: the About band's side line ("How each health measure is made, which are surveys, where the series break, and what is missing.") has no field.
   about: {
     publisher:
-      'The Registrar General of India (ORGI) runs the Sample Registration System (SRS), a survey of births and deaths, and compiles the Civil Registration System (CRS) of registered births and deaths. IIPS runs the National Family Health Survey (NFHS) for MoHFW. NHSRC compiles the National Health Accounts. The National Statistics Office (NSO) of MoSPI ran the survey of persons with disabilities in NSS round 76.',
+      ['The Registrar General of India (ORGI) runs the Sample Registration System (SRS), a survey of births and deaths, and compiles the Civil Registration System (CRS) of registered births and deaths. IIPS runs the National Family Health Survey (NFHS) for MoHFW. NHSRC compiles the National Health Accounts. The National Statistics Office (NSO) of MoSPI ran the survey of persons with disabilities in NSS round 76.', WDI_ABOUT].join(' '),
     frequency:
       'SRS Bulletin: yearly, latest 20 May 2026. Maternal mortality, life tables and causes of death: pooled periods, with the bulletin. CRS: yearly, 2024 report on 1 Jul 2026. NFHS: every few years, NFHS-6 on 29 May 2026. Health accounts: yearly, latest November 2026. Disability: one NSS round, July to December 2018, report of November 2019.',
     revisions:
@@ -1219,6 +1247,7 @@ const topic: Topic = {
   sources: [
     SRS_BULLETIN_2024, SRS_MMR_2022_24, SRS_LIFE_TABLES, SRS_COD_2022_24, SRS_COD_2021_23, CRS_2024, SRS_COMPENDIUM, ...SRS_BIRTH_RATIO_REPORTS,
     NFHS_1, NFHS_2, NFHS_3, NFHS_4, NFHS_5, NFHS_6, PIB_ANAEMIA, NHA_2023_24, NHA_2013_14, NHA_2004_05, NCMH, WHO_GHED, NSS_583,
+    WDI.lifeExpectancy,
   ],
   related: [
     { label: 'Population: Fertility rate by state', href: '/charts/fertility-rate-by-state/' },
