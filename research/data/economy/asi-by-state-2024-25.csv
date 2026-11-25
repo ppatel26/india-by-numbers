@@ -1,0 +1,112 @@
+geography,period,indicator,value,unit,share_of_india
+maharashtra,2024-25,factories-in-operation,21931,number,10.04
+gujarat,2024-25,factories-in-operation,25943,number,11.87
+tamil-nadu,2024-25,factories-in-operation,32482,number,14.86
+karnataka,2024-25,factories-in-operation,12666,number,5.80
+uttar-pradesh,2024-25,factories-in-operation,21559,number,9.86
+haryana,2024-25,factories-in-operation,8112,number,3.71
+rajasthan,2024-25,factories-in-operation,10072,number,4.61
+odisha,2024-25,factories-in-operation,3099,number,1.42
+andhra-pradesh,2024-25,factories-in-operation,12068,number,5.52
+telangana,2024-25,factories-in-operation,11398,number,5.22
+west-bengal,2024-25,factories-in-operation,8068,number,3.69
+madhya-pradesh,2024-25,factories-in-operation,4753,number,2.17
+punjab,2024-25,factories-in-operation,11761,number,5.38
+uttarakhand,2024-25,factories-in-operation,2551,number,1.17
+jharkhand,2024-25,factories-in-operation,2277,number,1.04
+chhattisgarh,2024-25,factories-in-operation,5270,number,2.41
+himachal-pradesh,2024-25,factories-in-operation,1938,number,0.89
+dnh-dd,2024-25,factories-in-operation,1852,number,0.85
+kerala,2024-25,factories-in-operation,6898,number,3.16
+assam,2024-25,factories-in-operation,4956,number,2.27
+sikkim,2024-25,factories-in-operation,85,number,0.04
+goa,2024-25,factories-in-operation,654,number,0.30
+bihar,2024-25,factories-in-operation,2773,number,1.27
+jammu-kashmir,2024-25,factories-in-operation,863,number,0.39
+delhi,2024-25,factories-in-operation,2019,number,0.92
+puducherry,2024-25,factories-in-operation,604,number,0.28
+meghalaya,2024-25,factories-in-operation,190,number,0.09
+chandigarh,2024-25,factories-in-operation,187,number,0.09
+tripura,2024-25,factories-in-operation,679,number,0.31
+arunachal-pradesh,2024-25,factories-in-operation,162,number,0.07
+manipur,2024-25,factories-in-operation,240,number,0.11
+nagaland,2024-25,factories-in-operation,188,number,0.09
+mizoram,2024-25,factories-in-operation,204,number,0.09
+ladakh,2024-25,factories-in-operation,26,number,0.01
+andaman-nicobar,2024-25,factories-in-operation,12,number,0.01
+india,2024-25,factories-in-operation,218543,number,100.00
+lakshadweep,2024-25,factories-in-operation,,number,
+maharashtra,2024-25,persons-engaged,2747179,persons,13.08
+gujarat,2024-25,persons-engaged,2726813,persons,12.99
+tamil-nadu,2024-25,persons-engaged,3147520,persons,14.99
+karnataka,2024-25,persons-engaged,1314946,persons,6.26
+uttar-pradesh,2024-25,persons-engaged,1831165,persons,8.72
+haryana,2024-25,persons-engaged,1353042,persons,6.44
+rajasthan,2024-25,persons-engaged,841919,persons,4.01
+odisha,2024-25,persons-engaged,381862,persons,1.82
+andhra-pradesh,2024-25,persons-engaged,824154,persons,3.93
+telangana,2024-25,persons-engaged,987217,persons,4.70
+west-bengal,2024-25,persons-engaged,784286,persons,3.74
+madhya-pradesh,2024-25,persons-engaged,524594,persons,2.50
+punjab,2024-25,persons-engaged,847503,persons,4.04
+uttarakhand,2024-25,persons-engaged,469726,persons,2.24
+jharkhand,2024-25,persons-engaged,249198,persons,1.19
+chhattisgarh,2024-25,persons-engaged,311996,persons,1.49
+himachal-pradesh,2024-25,persons-engaged,247430,persons,1.18
+dnh-dd,2024-25,persons-engaged,272006,persons,1.30
+kerala,2024-25,persons-engaged,334279,persons,1.59
+assam,2024-25,persons-engaged,238655,persons,1.14
+sikkim,2024-25,persons-engaged,27086,persons,0.13
+goa,2024-25,persons-engaged,96377,persons,0.46
+bihar,2024-25,persons-engaged,137880,persons,0.66
+jammu-kashmir,2024-25,persons-engaged,70076,persons,0.33
+delhi,2024-25,persons-engaged,104549,persons,0.50
+puducherry,2024-25,persons-engaged,62154,persons,0.30
+meghalaya,2024-25,persons-engaged,12604,persons,0.06
+chandigarh,2024-25,persons-engaged,9193,persons,0.04
+tripura,2024-25,persons-engaged,24179,persons,0.12
+arunachal-pradesh,2024-25,persons-engaged,4407,persons,0.02
+manipur,2024-25,persons-engaged,5123,persons,0.02
+nagaland,2024-25,persons-engaged,5934,persons,0.03
+mizoram,2024-25,persons-engaged,1313,persons,0.01
+ladakh,2024-25,persons-engaged,391,persons,0.00
+andaman-nicobar,2024-25,persons-engaged,146,persons,0.00
+india,2024-25,persons-engaged,20996913,persons,100.00
+lakshadweep,2024-25,persons-engaged,,persons,
+maharashtra,2024-25,gva,42904011,rupees lakh,15.92
+gujarat,2024-25,gva,37980196,rupees lakh,14.10
+tamil-nadu,2024-25,gva,29366453,rupees lakh,10.90
+karnataka,2024-25,gva,19682013,rupees lakh,7.31
+uttar-pradesh,2024-25,gva,17878241,rupees lakh,6.64
+haryana,2024-25,gva,16145836,rupees lakh,5.99
+rajasthan,2024-25,gva,11265792,rupees lakh,4.18
+odisha,2024-25,gva,10881310,rupees lakh,4.04
+andhra-pradesh,2024-25,gva,10662718,rupees lakh,3.96
+telangana,2024-25,gva,9529174,rupees lakh,3.54
+west-bengal,2024-25,gva,8869362,rupees lakh,3.29
+madhya-pradesh,2024-25,gva,8854337,rupees lakh,3.29
+punjab,2024-25,gva,7047192,rupees lakh,2.62
+uttarakhand,2024-25,gva,7010231,rupees lakh,2.60
+jharkhand,2024-25,gva,5099206,rupees lakh,1.89
+chhattisgarh,2024-25,gva,4550623,rupees lakh,1.69
+himachal-pradesh,2024-25,gva,4044194,rupees lakh,1.50
+dnh-dd,2024-25,gva,3630814,rupees lakh,1.35
+kerala,2024-25,gva,3320622,rupees lakh,1.23
+assam,2024-25,gva,2283098,rupees lakh,0.85
+sikkim,2024-25,gva,2027783,rupees lakh,0.75
+goa,2024-25,gva,2011288,rupees lakh,0.75
+bihar,2024-25,gva,1383407,rupees lakh,0.51
+jammu-kashmir,2024-25,gva,960981,rupees lakh,0.36
+delhi,2024-25,gva,832640,rupees lakh,0.31
+puducherry,2024-25,gva,794596,rupees lakh,0.29
+meghalaya,2024-25,gva,185292,rupees lakh,0.07
+chandigarh,2024-25,gva,88161,rupees lakh,0.03
+tripura,2024-25,gva,67124,rupees lakh,0.02
+arunachal-pradesh,2024-25,gva,36975,rupees lakh,0.01
+manipur,2024-25,gva,11253,rupees lakh,0.00
+nagaland,2024-25,gva,10802,rupees lakh,0.00
+mizoram,2024-25,gva,2507,rupees lakh,0.00
+ladakh,2024-25,gva,813,rupees lakh,0.00
+andaman-nicobar,2024-25,gva,750,rupees lakh,0.00
+india,2024-25,gva,269419806,rupees lakh,100.00
+lakshadweep,2024-25,gva,,rupees lakh,

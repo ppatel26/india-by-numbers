@@ -11,6 +11,7 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in` (`getNASData` 
 3. Which states are richest and poorest per person, and which are growing fastest?
 4. How is industry doing month by month?
 5. How many rupees does a US dollar cost, and how has that changed?
+6. How many people work in registered factories, and how many in small unincorporated firms?
 
 ## Charts
 
@@ -110,6 +111,51 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in` (`getNASData` 
 - Gap: FBIL gives no rate for 1 to 15 Feb 2021 or 19 Feb 2021, and the RBI archive has no rows for those days. February 2021 is the average of 8 days.
 - Rebuild: `python3 -I pipeline/economy/build_usd_inr_monthly.py`, after any change to `usd-inr-daily-2026.csv`.
 
+### E10. Factory jobs and value added, 2008-09 to 2024-25
+
+- Type: line, two panels (persons engaged; GVA). Factories in operation are a hidden series, shown in the table.
+- Unit: persons; GVA in ₹ lakh at current prices, shown in ₹ lakh crore.
+- Geography: India. Period: 2008-09 to 2024-25 (ASI years, NIC 2008).
+- CSV: `asi-factory-sector-india.csv`. The `source` column names the release for each row.
+- Sentence: "Factories engaged 2.10 crore people in 2024-25, up from 1.13 crore in 2008-09. Their gross value added was ₹26.94 lakh crore at current prices."
+- Source: 2020-21 to 2024-25 from Statement 3A of the ASI 2024-25 Summary Results. 2008-09 to 2019-20 from the eSankhyiki API (`getASIData`, NIC 2008, all industries `nic_code=99999`, All India `state_code=99`, Combined).
+- Checks (run `build_asi.py`): the API and Statement 3A agree for 2020-21 to 2023-24 on all three measures, except 2023-24 GVA (API 245833606, Statement 245833605 ₹ lakh). The 2023-24 Summary Results give the same 2019-20 values as the API. We use the Statement where one exists.
+- Status: `Survey estimate`. MoSPI calls no year provisional, so the chart has no `Provisional` mark.
+- Decision: the series starts in 2008-09, the first year on NIC 2008 in the API. The API also has NIC 2004 and NIC 1998 years. We did not join them, because the industry classification changes.
+
+### E11. Factory jobs by state, 2024-25
+
+- Type: tile map and ranked bar (`states`, `total`). State-profile row "Factory jobs".
+- Unit: persons engaged.
+- Geography: 35 states and UTs, plus India. Lakshadweep has no value. Period: 2024-25.
+- CSV: `asi-by-state-2024-25.csv`: persons engaged, factories in operation and GVA from Statement 7A, with each state's share of India from Statement 7B (`share_of_india`).
+- Sentence: "Tamil Nadu had the most factory jobs in 2024-25, at 31.48 lakh, or 14.99% of the national total. Maharashtra had 27.47 lakh and Gujarat 27.27 lakh."
+- Decision: the chart shows the count, not the share of India. The count is the published value in Statement 7A. It reads in the same unit as E12, and the state pages compare each state with India, where a share would always be 100. The share stays in the CSV for the text.
+- Lakshadweep: MoSPI surveyed fewer than 3 units, so it gives no separate estimate. Lakshadweep is in the All India row only, so the states add to 11 persons less than India (20996902 against 20996913).
+- Coverage: 16 states count factories from 20 workers with power (40 without), the rest from 10 (20 without). See "Gaps and cautions".
+
+### E12. Workers in small firms by state, 2025
+
+- Type: tile map and ranked bar (`states`, `total`). State-profile row "Workers in small firms".
+- Unit: workers. Geography: 36 states and UTs, plus India. Period: January to December 2025.
+- CSV: `asuse-by-state-2025.csv` (workers and estimated establishments).
+- Sentence: "Uttar Pradesh had the most workers in small unincorporated firms in 2025, at 1.86 crore. West Bengal had 1.33 crore and Maharashtra 1.17 crore."
+- Source: eSankhyiki API, ASUSE indicator 27 (workers by nature of employment and gender, each state) with `sector_code=3` (combined), `gender_code=4` (all), `broad_activity_category_code=4` (all), `establishment_type_code=3` (all), `working_time` All; indicator 2 for establishments.
+- Check: all 37 rows (36 states and UTs and all-India) agree with columns 10 and 11 of Table 26, block "BAC: All, Est.: All, Sec: Combined", in the ASUSE 2025 report.
+
+### E13. Small firms and their workers, 2021-22 to 2025
+
+- Type: line, India. Two series per measure: the three October to September rounds as a line, and 2025 as a dot after a method break.
+- Unit: number. Period: ASUSE 2021-22, 2022-23, 2023-24 (each October to September) and 2025 (January to December).
+- CSV: `asuse-india-rounds.csv`. `reference_period` holds the survey months, which place each round on the time axis.
+- Sentence: "Small firms had 7.92 crore establishments and 12.81 crore workers in 2025. In 2021-22 they had 5.97 crore establishments and 9.79 crore workers."
+- Check: 2022-23, 2023-24 and 2025 agree with Table 1 of the press note of 24 Mar 2026 (in hundreds) for both measures.
+- Method break: ASUSE 2025 moved to the calendar year and to a new sample design (districts as strata, about 1.5 times the sample). MoSPI compares 2025 with 2023-24 in its press note. We keep the 2025 point apart and mark a break.
+
+### Two frames: do not add ASI and ASUSE
+
+ASI covers registered factories: sections 2m(i) and 2m(ii) of the Factories Act, 1948 (10 or more workers with power, 20 or more without), registered bidi and cigar units, electricity units not registered with CEA, and since 2014-15 units with 100 or more employees on state business registers. ASUSE covers unincorporated non-farm establishments in manufacturing, trade and other services, without construction. It leaves out companies, LLPs and the units in the ASI frame. The two surveys have different reference periods (accounting year against survey months) and methods. The site never adds them.
+
 ## Headline figures
 
 | Figure | Value | Period | Source |
@@ -141,6 +187,12 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in` (`getNASData` 
 | RBI | Home page, "Current Rates" box | Live | 17 Nov 2026 | https://www.rbi.org.in/ | 17 Nov 2026 | Not stated | `economy/rbi/rbi_home.html` |
 | RBI | Reference Rate Archive, USD (RBI reference rate) | Daily | 25 Aug 1998 to 24 Jul 2018 | https://www.rbi.org.in/Scripts/ReferenceRateArchive.aspx | 18 Nov 2026 | Not stated | `economy/rbi/refrate_usd_hist_*.html` |
 | FBIL | Reference rates, USD/INR, public date-range feed | Daily | 10 Jul 2018 to 11 Nov 2026 | https://www.fbil.org.in/wasdm/refrates/fetchfiltered | 18 Nov 2026 | Not stated | `economy/fbil/refrates_*.json` |
+| MoSPI, NSO | Annual Survey of Industries 2024-25, Summary Results for Factory Sector, Statements 3A, 7A, 7B | 4 Nov 2026 (PIB PRID 2332475; PDF created 29 Oct 2026; NADA entry 309 changed 4 Nov 2026) | 2020-21 to 2024-25 | https://microdata.gov.in/NADA/index.php/catalog/309/download/6675 | 25 Nov 2026 | Not stated | `economy/asi/asi-2024-25-summary-results.pdf` |
+| MoSPI, NSO | Annual Survey of Industries 2023-24, Summary Results, Statement 3A (check of 2019-20 only) | Not stated (NADA entry 256) | 2019-20 to 2023-24 | https://microdata.gov.in/NADA/index.php/catalog/256/download/3924 | 25 Nov 2026 | Not stated | `economy/asi/asi-2023-24-summary-results.pdf` |
+| MoSPI, NSO | eSankhyiki API, ASI (`getASIData`), NIC 2008, all industries, All India | Not stated | 2008-09 to 2023-24 | https://api.mospi.gov.in/api/asi/getASIData?Format=JSON&classification_year=2008&sector_code=Combined&nic_type=2-digit&state_code=99&nic_code=99999 | 25 Nov 2026 | Not stated | `economy/asi/api/asi-nic2008-allindia-total.*` |
+| MoSPI, NSO | ASUSE 2025 (January to December 2025), full report, Table 26 | 6 May 2026 (PIB PRID 2258362; PDF created 3 May 2026) | 2025 | https://www.mospi.gov.in/uploads/publications_reports/publications_reports1778063953577_942565ce-f832-4fc4-aa99-90b0b2a5a6e1_ASUSE_2025_Full_Report.pdf | 25 Nov 2026 | Not stated | `economy/asuse/asuse-2025-full-report.pdf` |
+| MoSPI, NSO | Press Note on ASUSE 2025 (factsheet), Table 1 | 24 Mar 2026 | 2022-23, 2023-24, 2025 | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1774347321466_c16ddf22-bfff-4097-88a7-b3134e464d51_Press_Note_ASUSE_2025_English.pdf | 25 Nov 2026 | Not stated | `economy/asuse/asuse-2025-press-note.pdf` |
+| MoSPI, NSO | eSankhyiki API, ASUSE (`getAsuseRecords`), indicators 2 and 27 | Not stated | 2021-22 to 2025 | https://api.mospi.gov.in/api/asuse/getAsuseRecords?Format=JSON&indicator_code=27&sector_code=3&gender_code=4&broad_activity_category_code=4&establishment_type_code=3 (workers); same with `indicator_code=2` and no `gender_code` (establishments) | 25 Nov 2026 | Not stated | `economy/asuse/api/asuse-*` |
 
 Other Handbook tables (1, 2, 3, 5, 6, 157, 158, 159, 205, 223, 228) were downloaded as cross-checks. They are not used in a chart.
 
@@ -155,6 +207,12 @@ Other Handbook tables (1, 2, 3, 5, 6, 157, 158, 159, 205, 223, 228) were downloa
 - **2025-26 state data.** Only 15 states have 2025-26 figures. We used 2024-25 so that the ranked bar covers more states.
 - **IIP base changes.** Base 2004-05 and base 2011-12 have 48 overlapping year-on-year rates from April 2013 to March 2017. All 48 differ. The greatest difference is 7.3 percentage points in April 2016 (-1.3% on base 2004-05 and 6.0% on base 2011-12). The 2011-12 and 2022-23 bases differ in all 24 months from April 2024 to March 2026. The greatest difference is 2.8 percentage points. Use the latest base with a year-on-year rate at each switch.
 - **Exchange rate archive.** The RBI Reference Rate Archive starts on 25 Aug 1998 and returned no rows between 24 Jul 2018 and 12 Apr 2022. E9 takes those days from FBIL. The Handbook monthly table (205) covers 2022 to June 2026 only. On 18 Nov 2026 the RBI document server served a bot check page for Table 205, not the workbook. The 93.77 rupees per dollar on the 12 Nov RBI ticker (in `research/india-sources.md`) is still not traced to a dated source; the archive gives 93.7650 for 12 Nov 2026.
+- **ASI coverage changes.** Since ASI 2014-15, units with 100 or more employees on state business registers are in scope. Sixteen states raised the Factories Act threshold to 20 workers with power and 40 without: Maharashtra and Rajasthan from 2015-16, Goa from 2022-23, Andhra Pradesh, Arunachal Pradesh, Assam, Gujarat, Haryana, Jammu and Kashmir, Odisha, Punjab, Tripura and Uttar Pradesh from 2023-24, and Bihar, Himachal Pradesh and Jharkhand from 2024-25 (Summary Results, para 1.1.3). Ladakh units are in from 2022-23, Lakshadweep from 2023-24. MoSPI does not mark these as breaks, so the E10 chart has none. The `know` notes give them.
+- **ASI Lakshadweep.** No separate estimate in 2024-25 (fewer than 3 units surveyed). It is in All India only.
+- **ASUSE period change.** 2021-22 to 2023-24 ran October to September; 2025 ran January to December, with a new sample design. E13 marks a method break.
+- **ASUSE 2021-22 states.** The API gives Dadra and Nagar Haveli and Daman and Diu as two rows for 2021-22 and one merged row later. The by-state chart uses 2025 only, so this does not affect it.
+- **PIB pages.** PIB served "Access Denied" to both `curl` and headless Chromium on 25 Nov 2026 for PRID 2332475 and 2258362. The release dates come from the source discovery backlog and the brief, and agree with the PDF creation dates and the NADA catalogue dates. The figures come from the MoSPI PDFs, not from PIB.
+- **eSankhyiki rate limit.** The API answers "Too many requests" after about 40 quick calls. `build_asi.py` and `build_asuse.py` stop if a merged file has fewer rows than the API reported.
 - **Licence.** None of the pages read states a reuse licence for these data.
 
 ## Rebuild
@@ -362,6 +420,34 @@ The eSankhyiki national accounts, state accounts and industrial production recor
 | MoSPI press release list, POST response | Live list | https://www.mospi.gov.in/api/latest-release/get-web-latest-release-list | 18 Nov 2026 | `7f3da46fedf29f0cb39396c7b2cc2896dab455ec01b10b6edccfc19649a80358` |
 | MoSPI Advance Release Calendar, 2026-27 | 6 Nov 2026 upload | https://www.mospi.gov.in/uploads/documents/releaseCalender/1793948871564-ARC%202026-27%20updated%20till%20October%202026.pdf | 18 Nov 2026 | `5640fc8661b3ac5a16e72f2621151503fd5bc59a6281b21187b7e18ff4cbd149` |
 | RBI Handbook list | 31 Jul 2026 edition | https://www.rbi.org.in/Scripts/AnnualPublications.aspx?head=Handbook%20of%20Statistics%20on%20Indian%20Economy | 18 Nov 2026 | `a6b0d174566dd5e0b3f5af0bcb60c60a0732364f6831cc6254a63e550db6e485` |
+
+## Factories and small firms (ASI and ASUSE) raw files
+
+Read on 25 Nov 2026. Paths start at `raw/`. Rebuild with `python3 -I pipeline/economy/build_asi.py` and `python3 -I pipeline/economy/build_asuse.py`. The docstring of each script lists the download commands. Text for the PDFs comes from `pdftotext -layout` into `work/economy/asi/` and `work/economy/asuse/`.
+
+| File | URL read | SHA-256 |
+| --- | --- | --- |
+| `economy/asi/catalog309-related.html` | https://microdata.gov.in/NADA/index.php/catalog/309/related-materials | `8beda96dba97bb11074d2ea3e5b8c244cdbf5ae8081e8f1bb50c3d81fe3a96a3` |
+| `economy/asi/asi-2024-25-summary-results.pdf` | https://microdata.gov.in/NADA/index.php/catalog/309/download/6675 | `aa8ce708e0f79dcd0f90c298efa71cae0ab810766607bb96f67b9549ac8e750b` |
+| `economy/asi/catalog256-related.html` | https://microdata.gov.in/NADA/index.php/catalog/256/related-materials | `0e1e17c9f6dcaec70fdb74caac840f3835bfd7b4a7f6b7dc412704f4e55f9d56` |
+| `economy/asi/asi-2023-24-summary-results.pdf` | https://microdata.gov.in/NADA/index.php/catalog/256/download/3924 | `3a737168229d96e67b24a5b8cc911a538828ed897326c04e51d78575a595ca65` |
+| `economy/asi/api/asi-nic2008-allindia-total.all.json` | getASIData query above (merged pages) | `4abe851864c001d2b732b4d48fd42a3db049a5bd7f954662477921e1d66f4ce3` |
+| `economy/asi/api/asi-nic2008-allindia-total.p1.json` | same, `&limit=200&page=1` | `6c03024b0c43e07a3cc6f84f52bc2b6d4b08c29d6bb15b73c2922175abcbe5b6` |
+| `economy/asi/api/asi-nic2008-allindia-total.p2.json` | same, `&limit=200&page=2` | `a270725084b89b65a56b204c28d08a96cefcd48e0853078ad4b8232be2dec848` |
+| `economy/asi/api/asi-nic2008-allindia-total.p3.json` | same, `&limit=200&page=3` | `710f4286fc69ca380a6f78e83eb32b9590c920cc476b424184f96c1e072d4935` |
+| `economy/asi/api/asi-nic2008-allindia-total.p4.json` | same, `&limit=200&page=4` | `5b6747427534328fd274f92b6138af453b761b27468288a62c451f34561bf552` |
+| `economy/asi/api/asi-nic2008-allindia-total.p5.json` | same, `&limit=200&page=5` | `5a627b317020f519e9856042e9f59e94c502d8eba889b64ab332b15b46d4e5a0` |
+| `economy/asuse/catalog293-related.html` | https://microdata.gov.in/NADA/index.php/catalog/293/related-materials | `fe883730da6aef30618c1059726862123967339fa90e847f628547a8ccd55cdc` |
+| `economy/asuse/asuse-2025-full-report.pdf` | ASUSE 2025 full report URL above | `334df2d5af4714c4dc451805b33cc278c991ac5cc2bdf704618c6ffa75fc847e` |
+| `economy/asuse/asuse-2025-press-note.pdf` | ASUSE 2025 press note URL above | `11fb042b8b0f9d92af7c83a2763e23b10b67be01aec369b27e196a9f6a4b6a64` |
+| `economy/asuse/api/asuse-workers-by-state.all.json` | getAsuseRecords indicator 27 query above (merged pages) | `9a53a009adb195264253ace6f6638addf3b15d5ba70ef6c001906d75293023af` |
+| `economy/asuse/api/asuse-workers-by-state.p1.json` | same, `&limit=200&page=1` | `50fa6881f3a01c29a774cf69b0719a2c6fdbf5bac01a9c9c84f919c5e3f02855` |
+| `economy/asuse/api/asuse-workers-by-state.p2.json` | same, `&limit=200&page=2` | `8f11cd186d3fa0de164b1d549b13ccec32a5eeee9e21bd1c407ea02a3bbf85d8` |
+| `economy/asuse/api/asuse-workers-by-state.p3.json` | same, `&limit=200&page=3` | `7844c9cb6b1e053388554390b070718c9cc193c15d759d9c6fc93bcef15a524c` |
+| `economy/asuse/api/asuse-establishments-by-state.all.json` | getAsuseRecords indicator 2 query above (merged pages) | `58f94a21b7adb0d2e311d402042ea43b1333c3dbd8a9a62539e7214ae332ac31` |
+| `economy/asuse/api/asuse-establishments-by-state.p1.json` | same, `&limit=200&page=1` | `5fd63e3afddfc473de18601e955fc63b1d9b28753109fee6a30ac0211bcf7391` |
+
+The ASI 2024-25 Volume I (catalogue 309, download 6674) and the ASUSE 2025 field instructions (catalogue 293, download 4984) were read for definitions only. The eSankhyiki API documentation is the OpenAPI file at `https://api.mospi.gov.in/layout/swagger_user_asi.yaml` and `.../swagger_user_asuse.yaml`. The metadata workbooks it links to returned HTML on 25 Nov 2026.
 
 ## IIP historical source files
 
