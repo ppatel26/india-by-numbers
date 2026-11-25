@@ -1,12 +1,12 @@
-# Housing and living standards
+# Living standards
 
-Data for a planned India by Numbers topic, "Housing and living standards". The topic is not on the
-site yet. Household spending comes from the Household Consumption Expenditure Survey (HCES) 2022-23
+Data for the Living standards topic (`src/content/topics/living-standards.ts`), on the site since
+25 Nov 2026. Household spending comes from the Household Consumption Expenditure Survey (HCES) 2022-23
 and 2023-24. Internet use, digital skills, bank accounts, cooking fuel, drinking water and household
 assets come from the Comprehensive Annual Modular Survey (CAMS) 2022-23, NSS round 79. The 2018
 drinking water values come from NSS round 76. Household assets and debt as on 30 June 2018 come from the
 All India Debt & Investment Survey (AIDIS) 2019, NSS round 77. MoSPI's National Statistics Office (NSO) publishes all
-three surveys.
+four surveys.
 
 Read on 25 Nov 2026.
 
