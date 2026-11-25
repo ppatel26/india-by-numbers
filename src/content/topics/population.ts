@@ -284,7 +284,9 @@ const projectedFertilityStates: Chart = {
   pin: ['india'],
   axis: { min: 1, max: 3.5 },
   refs: [{ value: 2.1, label: 'Replacement level 2.1' }],
-  series: [projectedRate('fertility_rate', 'MoHFW assumption', 's1')],
+  // An assumption, not a measurement: an ink ring, as projections are dashed on line charts.
+  hollow: ['fertility_rate'],
+  series: [projectedRate('fertility_rate', 'MoHFW assumption', 'ink')],
 }
 
 const projectedVitalRatesStates: Chart = {
@@ -315,7 +317,9 @@ const projectedBirthRatioStates: Chart = {
   pin: ['india'],
   axis: { min: 840, max: 1000 },
   refs: [{ value: 1000, label: '' }],
-  series: [projectedRate('sex_ratio_at_birth', 'MoHFW assumption', 's1')],
+  // An assumption, not a measurement: an ink ring, as projections are dashed on line charts.
+  hollow: ['sex_ratio_at_birth'],
+  series: [projectedRate('sex_ratio_at_birth', 'MoHFW assumption', 'ink')],
 }
 
 const birthRatioIndia: Chart = {
