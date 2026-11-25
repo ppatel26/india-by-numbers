@@ -1,0 +1,961 @@
+geography,period,code,item,flow,value,unit,status
+india,2022-23,1,Current Account (1.A+1.B+1.C),credit,921865,US$ million,
+india,2022-23,1,Current Account (1.A+1.B+1.C),debit,988848,US$ million,
+india,2022-23,1,Current Account (1.A+1.B+1.C),net,-66984,US$ million,
+india,2023-24,1,Current Account (1.A+1.B+1.C),credit,942848,US$ million,
+india,2023-24,1,Current Account (1.A+1.B+1.C),debit,968882,US$ million,
+india,2023-24,1,Current Account (1.A+1.B+1.C),net,-26033,US$ million,
+india,2024-25,1,Current Account (1.A+1.B+1.C),credit,1018622,US$ million,
+india,2024-25,1,Current Account (1.A+1.B+1.C),debit,1041569,US$ million,
+india,2024-25,1,Current Account (1.A+1.B+1.C),net,-22947,US$ million,
+india,2025-26,1,Current Account (1.A+1.B+1.C),credit,1077768,US$ million,preliminary estimate
+india,2025-26,1,Current Account (1.A+1.B+1.C),debit,1103008,US$ million,preliminary estimate
+india,2025-26,1,Current Account (1.A+1.B+1.C),net,-25240,US$ million,preliminary estimate
+india,2022-23,1.A,Goods and Services (1.A.a+1.A.b),credit,781402,US$ million,
+india,2022-23,1.A,Goods and Services (1.A.a+1.A.b),debit,903410,US$ million,
+india,2022-23,1.A,Goods and Services (1.A.a+1.A.b),net,-122008,US$ million,
+india,2023-24,1.A,Goods and Services (1.A.a+1.A.b),credit,782505,US$ million,
+india,2023-24,1.A,Goods and Services (1.A.a+1.A.b),debit,864665,US$ million,
+india,2023-24,1.A,Goods and Services (1.A.a+1.A.b),net,-82159,US$ million,
+india,2024-25,1.A,Goods and Services (1.A.a+1.A.b),credit,829634,US$ million,
+india,2024-25,1.A,Goods and Services (1.A.a+1.A.b),debit,927745,US$ million,
+india,2024-25,1.A,Goods and Services (1.A.a+1.A.b),net,-98111,US$ million,
+india,2025-26,1.A,Goods and Services (1.A.a+1.A.b),credit,867440,US$ million,preliminary estimate
+india,2025-26,1.A,Goods and Services (1.A.a+1.A.b),debit,988113,US$ million,preliminary estimate
+india,2025-26,1.A,Goods and Services (1.A.a+1.A.b),net,-120673,US$ million,preliminary estimate
+india,2022-23,1.A.a,Goods (1.A.a.1 to 1.A.a.3),credit,456073,US$ million,
+india,2022-23,1.A.a,Goods (1.A.a.1 to 1.A.a.3),debit,721364,US$ million,
+india,2022-23,1.A.a,Goods (1.A.a.1 to 1.A.a.3),net,-265291,US$ million,
+india,2023-24,1.A.a,Goods (1.A.a.1 to 1.A.a.3),credit,441443,US$ million,
+india,2023-24,1.A.a,Goods (1.A.a.1 to 1.A.a.3),debit,686354,US$ million,
+india,2023-24,1.A.a,Goods (1.A.a.1 to 1.A.a.3),net,-244911,US$ million,
+india,2024-25,1.A.a,Goods (1.A.a.1 to 1.A.a.3),credit,442082,US$ million,
+india,2024-25,1.A.a,Goods (1.A.a.1 to 1.A.a.3),debit,729028,US$ million,
+india,2024-25,1.A.a,Goods (1.A.a.1 to 1.A.a.3),net,-286947,US$ million,
+india,2025-26,1.A.a,Goods (1.A.a.1 to 1.A.a.3),credit,446147,US$ million,preliminary estimate
+india,2025-26,1.A.a,Goods (1.A.a.1 to 1.A.a.3),debit,783435,US$ million,preliminary estimate
+india,2025-26,1.A.a,Goods (1.A.a.1 to 1.A.a.3),net,-337288,US$ million,preliminary estimate
+india,2022-23,1.A.a.1,General merchandise on a BOP basis,credit,454399,US$ million,
+india,2022-23,1.A.a.1,General merchandise on a BOP basis,debit,686348,US$ million,
+india,2022-23,1.A.a.1,General merchandise on a BOP basis,net,-231949,US$ million,
+india,2023-24,1.A.a.1,General merchandise on a BOP basis,credit,439285,US$ million,
+india,2023-24,1.A.a.1,General merchandise on a BOP basis,debit,640812,US$ million,
+india,2023-24,1.A.a.1,General merchandise on a BOP basis,net,-201527,US$ million,
+india,2024-25,1.A.a.1,General merchandise on a BOP basis,credit,441416,US$ million,
+india,2024-25,1.A.a.1,General merchandise on a BOP basis,debit,671022,US$ million,
+india,2024-25,1.A.a.1,General merchandise on a BOP basis,net,-229606,US$ million,
+india,2025-26,1.A.a.1,General merchandise on a BOP basis,credit,444591,US$ million,preliminary estimate
+india,2025-26,1.A.a.1,General merchandise on a BOP basis,debit,711458,US$ million,preliminary estimate
+india,2025-26,1.A.a.1,General merchandise on a BOP basis,net,-266867,US$ million,preliminary estimate
+india,2022-23,1.A.a.2,Net exports of goods under merchanting,credit,1674,US$ million,
+india,2022-23,1.A.a.2,Net exports of goods under merchanting,debit,,US$ million,
+india,2022-23,1.A.a.2,Net exports of goods under merchanting,net,1674,US$ million,
+india,2023-24,1.A.a.2,Net exports of goods under merchanting,credit,2158,US$ million,
+india,2023-24,1.A.a.2,Net exports of goods under merchanting,debit,,US$ million,
+india,2023-24,1.A.a.2,Net exports of goods under merchanting,net,2158,US$ million,
+india,2024-25,1.A.a.2,Net exports of goods under merchanting,credit,666,US$ million,
+india,2024-25,1.A.a.2,Net exports of goods under merchanting,debit,,US$ million,
+india,2024-25,1.A.a.2,Net exports of goods under merchanting,net,666,US$ million,
+india,2025-26,1.A.a.2,Net exports of goods under merchanting,credit,1557,US$ million,preliminary estimate
+india,2025-26,1.A.a.2,Net exports of goods under merchanting,debit,,US$ million,preliminary estimate
+india,2025-26,1.A.a.2,Net exports of goods under merchanting,net,1557,US$ million,preliminary estimate
+india,2022-23,1.A.a.3,Nonmonetary gold,credit,,US$ million,
+india,2022-23,1.A.a.3,Nonmonetary gold,debit,35016,US$ million,
+india,2022-23,1.A.a.3,Nonmonetary gold,net,-35016,US$ million,
+india,2023-24,1.A.a.3,Nonmonetary gold,credit,,US$ million,
+india,2023-24,1.A.a.3,Nonmonetary gold,debit,45542,US$ million,
+india,2023-24,1.A.a.3,Nonmonetary gold,net,-45542,US$ million,
+india,2024-25,1.A.a.3,Nonmonetary gold,credit,,US$ million,
+india,2024-25,1.A.a.3,Nonmonetary gold,debit,58006,US$ million,
+india,2024-25,1.A.a.3,Nonmonetary gold,net,-58006,US$ million,
+india,2025-26,1.A.a.3,Nonmonetary gold,credit,,US$ million,preliminary estimate
+india,2025-26,1.A.a.3,Nonmonetary gold,debit,71977,US$ million,preliminary estimate
+india,2025-26,1.A.a.3,Nonmonetary gold,net,-71977,US$ million,preliminary estimate
+india,2022-23,1.A.b,Services (1.A.b.1 to 1.A.b.13),credit,325329,US$ million,
+india,2022-23,1.A.b,Services (1.A.b.1 to 1.A.b.13),debit,182046,US$ million,
+india,2022-23,1.A.b,Services (1.A.b.1 to 1.A.b.13),net,143283,US$ million,
+india,2023-24,1.A.b,Services (1.A.b.1 to 1.A.b.13),credit,341062,US$ million,
+india,2023-24,1.A.b,Services (1.A.b.1 to 1.A.b.13),debit,178311,US$ million,
+india,2023-24,1.A.b,Services (1.A.b.1 to 1.A.b.13),net,162752,US$ million,
+india,2024-25,1.A.b,Services (1.A.b.1 to 1.A.b.13),credit,387553,US$ million,
+india,2024-25,1.A.b,Services (1.A.b.1 to 1.A.b.13),debit,198717,US$ million,
+india,2024-25,1.A.b,Services (1.A.b.1 to 1.A.b.13),net,188836,US$ million,
+india,2025-26,1.A.b,Services (1.A.b.1 to 1.A.b.13),credit,421292,US$ million,preliminary estimate
+india,2025-26,1.A.b,Services (1.A.b.1 to 1.A.b.13),debit,204678,US$ million,preliminary estimate
+india,2025-26,1.A.b,Services (1.A.b.1 to 1.A.b.13),net,216615,US$ million,preliminary estimate
+india,2022-23,1.A.b.1,Manufacturing services on physical inputs owned by others,credit,1511,US$ million,
+india,2022-23,1.A.b.1,Manufacturing services on physical inputs owned by others,debit,215,US$ million,
+india,2022-23,1.A.b.1,Manufacturing services on physical inputs owned by others,net,1296,US$ million,
+india,2023-24,1.A.b.1,Manufacturing services on physical inputs owned by others,credit,1446,US$ million,
+india,2023-24,1.A.b.1,Manufacturing services on physical inputs owned by others,debit,118,US$ million,
+india,2023-24,1.A.b.1,Manufacturing services on physical inputs owned by others,net,1328,US$ million,
+india,2024-25,1.A.b.1,Manufacturing services on physical inputs owned by others,credit,1069,US$ million,
+india,2024-25,1.A.b.1,Manufacturing services on physical inputs owned by others,debit,119,US$ million,
+india,2024-25,1.A.b.1,Manufacturing services on physical inputs owned by others,net,950,US$ million,
+india,2025-26,1.A.b.1,Manufacturing services on physical inputs owned by others,credit,1028,US$ million,preliminary estimate
+india,2025-26,1.A.b.1,Manufacturing services on physical inputs owned by others,debit,202,US$ million,preliminary estimate
+india,2025-26,1.A.b.1,Manufacturing services on physical inputs owned by others,net,825,US$ million,preliminary estimate
+india,2022-23,1.A.b.2,Maintenance and repair services n.i.e.,credit,209,US$ million,
+india,2022-23,1.A.b.2,Maintenance and repair services n.i.e.,debit,1872,US$ million,
+india,2022-23,1.A.b.2,Maintenance and repair services n.i.e.,net,-1664,US$ million,
+india,2023-24,1.A.b.2,Maintenance and repair services n.i.e.,credit,206,US$ million,
+india,2023-24,1.A.b.2,Maintenance and repair services n.i.e.,debit,1492,US$ million,
+india,2023-24,1.A.b.2,Maintenance and repair services n.i.e.,net,-1286,US$ million,
+india,2024-25,1.A.b.2,Maintenance and repair services n.i.e.,credit,351,US$ million,
+india,2024-25,1.A.b.2,Maintenance and repair services n.i.e.,debit,1097,US$ million,
+india,2024-25,1.A.b.2,Maintenance and repair services n.i.e.,net,-746,US$ million,
+india,2025-26,1.A.b.2,Maintenance and repair services n.i.e.,credit,409,US$ million,preliminary estimate
+india,2025-26,1.A.b.2,Maintenance and repair services n.i.e.,debit,1465,US$ million,preliminary estimate
+india,2025-26,1.A.b.2,Maintenance and repair services n.i.e.,net,-1055,US$ million,preliminary estimate
+india,2022-23,1.A.b.3,Transport,credit,36091,US$ million,
+india,2022-23,1.A.b.3,Transport,debit,40617,US$ million,
+india,2022-23,1.A.b.3,Transport,net,-4526,US$ million,
+india,2023-24,1.A.b.3,Transport,credit,29183,US$ million,
+india,2023-24,1.A.b.3,Transport,debit,29256,US$ million,
+india,2023-24,1.A.b.3,Transport,net,-72,US$ million,
+india,2024-25,1.A.b.3,Transport,credit,33759,US$ million,
+india,2024-25,1.A.b.3,Transport,debit,35029,US$ million,
+india,2024-25,1.A.b.3,Transport,net,-1270,US$ million,
+india,2025-26,1.A.b.3,Transport,credit,31887,US$ million,preliminary estimate
+india,2025-26,1.A.b.3,Transport,debit,33605,US$ million,preliminary estimate
+india,2025-26,1.A.b.3,Transport,net,-1718,US$ million,preliminary estimate
+india,2022-23,1.A.b.4,Travel,credit,27049,US$ million,
+india,2022-23,1.A.b.4,Travel,debit,28447,US$ million,
+india,2022-23,1.A.b.4,Travel,net,-1398,US$ million,
+india,2023-24,1.A.b.4,Travel,credit,33704,US$ million,
+india,2023-24,1.A.b.4,Travel,debit,33701,US$ million,
+india,2023-24,1.A.b.4,Travel,net,4,US$ million,
+india,2024-25,1.A.b.4,Travel,credit,34152,US$ million,
+india,2024-25,1.A.b.4,Travel,debit,34843,US$ million,
+india,2024-25,1.A.b.4,Travel,net,-691,US$ million,
+india,2025-26,1.A.b.4,Travel,credit,31880,US$ million,preliminary estimate
+india,2025-26,1.A.b.4,Travel,debit,35768,US$ million,preliminary estimate
+india,2025-26,1.A.b.4,Travel,net,-3888,US$ million,preliminary estimate
+india,2022-23,1.A.b.5,Construction,credit,3826,US$ million,
+india,2022-23,1.A.b.5,Construction,debit,2840,US$ million,
+india,2022-23,1.A.b.5,Construction,net,985,US$ million,
+india,2023-24,1.A.b.5,Construction,credit,4579,US$ million,
+india,2023-24,1.A.b.5,Construction,debit,2789,US$ million,
+india,2023-24,1.A.b.5,Construction,net,1791,US$ million,
+india,2024-25,1.A.b.5,Construction,credit,5341,US$ million,
+india,2024-25,1.A.b.5,Construction,debit,3167,US$ million,
+india,2024-25,1.A.b.5,Construction,net,2174,US$ million,
+india,2025-26,1.A.b.5,Construction,credit,5128,US$ million,preliminary estimate
+india,2025-26,1.A.b.5,Construction,debit,3572,US$ million,preliminary estimate
+india,2025-26,1.A.b.5,Construction,net,1556,US$ million,preliminary estimate
+india,2022-23,1.A.b.6,Insurance and pension services,credit,3277,US$ million,
+india,2022-23,1.A.b.6,Insurance and pension services,debit,2347,US$ million,
+india,2022-23,1.A.b.6,Insurance and pension services,net,930,US$ million,
+india,2023-24,1.A.b.6,Insurance and pension services,credit,3326,US$ million,
+india,2023-24,1.A.b.6,Insurance and pension services,debit,2917,US$ million,
+india,2023-24,1.A.b.6,Insurance and pension services,net,408,US$ million,
+india,2024-25,1.A.b.6,Insurance and pension services,credit,3565,US$ million,
+india,2024-25,1.A.b.6,Insurance and pension services,debit,3035,US$ million,
+india,2024-25,1.A.b.6,Insurance and pension services,net,529,US$ million,
+india,2025-26,1.A.b.6,Insurance and pension services,credit,3710,US$ million,preliminary estimate
+india,2025-26,1.A.b.6,Insurance and pension services,debit,2685,US$ million,preliminary estimate
+india,2025-26,1.A.b.6,Insurance and pension services,net,1025,US$ million,preliminary estimate
+india,2022-23,1.A.b.7,Financial services,credit,7815,US$ million,
+india,2022-23,1.A.b.7,Financial services,debit,5708,US$ million,
+india,2022-23,1.A.b.7,Financial services,net,2106,US$ million,
+india,2023-24,1.A.b.7,Financial services,credit,8051,US$ million,
+india,2023-24,1.A.b.7,Financial services,debit,4560,US$ million,
+india,2023-24,1.A.b.7,Financial services,net,3491,US$ million,
+india,2024-25,1.A.b.7,Financial services,credit,8480,US$ million,
+india,2024-25,1.A.b.7,Financial services,debit,4068,US$ million,
+india,2024-25,1.A.b.7,Financial services,net,4412,US$ million,
+india,2025-26,1.A.b.7,Financial services,credit,7551,US$ million,preliminary estimate
+india,2025-26,1.A.b.7,Financial services,debit,3015,US$ million,preliminary estimate
+india,2025-26,1.A.b.7,Financial services,net,4536,US$ million,preliminary estimate
+india,2022-23,1.A.b.8,Charges for the use of intellectual property n.i.e.,credit,1265,US$ million,
+india,2022-23,1.A.b.8,Charges for the use of intellectual property n.i.e.,debit,10639,US$ million,
+india,2022-23,1.A.b.8,Charges for the use of intellectual property n.i.e.,net,-9374,US$ million,
+india,2023-24,1.A.b.8,Charges for the use of intellectual property n.i.e.,credit,1555,US$ million,
+india,2023-24,1.A.b.8,Charges for the use of intellectual property n.i.e.,debit,14986,US$ million,
+india,2023-24,1.A.b.8,Charges for the use of intellectual property n.i.e.,net,-13431,US$ million,
+india,2024-25,1.A.b.8,Charges for the use of intellectual property n.i.e.,credit,1786,US$ million,
+india,2024-25,1.A.b.8,Charges for the use of intellectual property n.i.e.,debit,17255,US$ million,
+india,2024-25,1.A.b.8,Charges for the use of intellectual property n.i.e.,net,-15469,US$ million,
+india,2025-26,1.A.b.8,Charges for the use of intellectual property n.i.e.,credit,1834,US$ million,preliminary estimate
+india,2025-26,1.A.b.8,Charges for the use of intellectual property n.i.e.,debit,18657,US$ million,preliminary estimate
+india,2025-26,1.A.b.8,Charges for the use of intellectual property n.i.e.,net,-16822,US$ million,preliminary estimate
+india,2022-23,1.A.b.9,"Telecommunications, computer, and information services",credit,152285,US$ million,
+india,2022-23,1.A.b.9,"Telecommunications, computer, and information services",debit,19773,US$ million,
+india,2022-23,1.A.b.9,"Telecommunications, computer, and information services",net,132512,US$ million,
+india,2023-24,1.A.b.9,"Telecommunications, computer, and information services",credit,163610,US$ million,
+india,2023-24,1.A.b.9,"Telecommunications, computer, and information services",debit,20934,US$ million,
+india,2023-24,1.A.b.9,"Telecommunications, computer, and information services",net,142676,US$ million,
+india,2024-25,1.A.b.9,"Telecommunications, computer, and information services",credit,183347,US$ million,
+india,2024-25,1.A.b.9,"Telecommunications, computer, and information services",debit,24273,US$ million,
+india,2024-25,1.A.b.9,"Telecommunications, computer, and information services",net,159074,US$ million,
+india,2025-26,1.A.b.9,"Telecommunications, computer, and information services",credit,206559,US$ million,preliminary estimate
+india,2025-26,1.A.b.9,"Telecommunications, computer, and information services",debit,27256,US$ million,preliminary estimate
+india,2025-26,1.A.b.9,"Telecommunications, computer, and information services",net,179302,US$ million,preliminary estimate
+india,2022-23,1.A.b.10,Other business services,credit,80350,US$ million,
+india,2022-23,1.A.b.10,Other business services,debit,59706,US$ million,
+india,2022-23,1.A.b.10,Other business services,net,20644,US$ million,
+india,2023-24,1.A.b.10,Other business services,credit,88570,US$ million,
+india,2023-24,1.A.b.10,Other business services,debit,59331,US$ million,
+india,2023-24,1.A.b.10,Other business services,net,29239,US$ million,
+india,2024-25,1.A.b.10,Other business services,credit,107212,US$ million,
+india,2024-25,1.A.b.10,Other business services,debit,66646,US$ million,
+india,2024-25,1.A.b.10,Other business services,net,40566,US$ million,
+india,2025-26,1.A.b.10,Other business services,credit,124179,US$ million,preliminary estimate
+india,2025-26,1.A.b.10,Other business services,debit,69585,US$ million,preliminary estimate
+india,2025-26,1.A.b.10,Other business services,net,54594,US$ million,preliminary estimate
+india,2022-23,1.A.b.11,"Personal, cultural, and recreational services",credit,3906,US$ million,
+india,2022-23,1.A.b.11,"Personal, cultural, and recreational services",debit,5452,US$ million,
+india,2022-23,1.A.b.11,"Personal, cultural, and recreational services",net,-1546,US$ million,
+india,2023-24,1.A.b.11,"Personal, cultural, and recreational services",credit,4437,US$ million,
+india,2023-24,1.A.b.11,"Personal, cultural, and recreational services",debit,6319,US$ million,
+india,2023-24,1.A.b.11,"Personal, cultural, and recreational services",net,-1882,US$ million,
+india,2024-25,1.A.b.11,"Personal, cultural, and recreational services",credit,4699,US$ million,
+india,2024-25,1.A.b.11,"Personal, cultural, and recreational services",debit,5755,US$ million,
+india,2024-25,1.A.b.11,"Personal, cultural, and recreational services",net,-1056,US$ million,
+india,2025-26,1.A.b.11,"Personal, cultural, and recreational services",credit,5125,US$ million,preliminary estimate
+india,2025-26,1.A.b.11,"Personal, cultural, and recreational services",debit,5285,US$ million,preliminary estimate
+india,2025-26,1.A.b.11,"Personal, cultural, and recreational services",net,-160,US$ million,preliminary estimate
+india,2022-23,1.A.b.12,Government goods and services n.i.e.,credit,683,US$ million,
+india,2022-23,1.A.b.12,Government goods and services n.i.e.,debit,1015,US$ million,
+india,2022-23,1.A.b.12,Government goods and services n.i.e.,net,-332,US$ million,
+india,2023-24,1.A.b.12,Government goods and services n.i.e.,credit,609,US$ million,
+india,2023-24,1.A.b.12,Government goods and services n.i.e.,debit,1088,US$ million,
+india,2023-24,1.A.b.12,Government goods and services n.i.e.,net,-479,US$ million,
+india,2024-25,1.A.b.12,Government goods and services n.i.e.,credit,641,US$ million,
+india,2024-25,1.A.b.12,Government goods and services n.i.e.,debit,1261,US$ million,
+india,2024-25,1.A.b.12,Government goods and services n.i.e.,net,-620,US$ million,
+india,2025-26,1.A.b.12,Government goods and services n.i.e.,credit,626,US$ million,preliminary estimate
+india,2025-26,1.A.b.12,Government goods and services n.i.e.,debit,1281,US$ million,preliminary estimate
+india,2025-26,1.A.b.12,Government goods and services n.i.e.,net,-655,US$ million,preliminary estimate
+india,2022-23,1.A.b.13,Others n.i.e.,credit,7063,US$ million,
+india,2022-23,1.A.b.13,Others n.i.e.,debit,3414,US$ million,
+india,2022-23,1.A.b.13,Others n.i.e.,net,3649,US$ million,
+india,2023-24,1.A.b.13,Others n.i.e.,credit,1785,US$ million,
+india,2023-24,1.A.b.13,Others n.i.e.,debit,820,US$ million,
+india,2023-24,1.A.b.13,Others n.i.e.,net,965,US$ million,
+india,2024-25,1.A.b.13,Others n.i.e.,credit,3151,US$ million,
+india,2024-25,1.A.b.13,Others n.i.e.,debit,2168,US$ million,
+india,2024-25,1.A.b.13,Others n.i.e.,net,983,US$ million,
+india,2025-26,1.A.b.13,Others n.i.e.,credit,1376,US$ million,preliminary estimate
+india,2025-26,1.A.b.13,Others n.i.e.,debit,2302,US$ million,preliminary estimate
+india,2025-26,1.A.b.13,Others n.i.e.,net,-926,US$ million,preliminary estimate
+india,2022-23,1.B,Primary Income (1.B.1 to 1.B.3),credit,27845,US$ million,
+india,2022-23,1.B,Primary Income (1.B.1 to 1.B.3),debit,73769,US$ million,
+india,2022-23,1.B,Primary Income (1.B.1 to 1.B.3),net,-45923,US$ million,
+india,2023-24,1.B,Primary Income (1.B.1 to 1.B.3),credit,41455,US$ million,
+india,2023-24,1.B,Primary Income (1.B.1 to 1.B.3),debit,91191,US$ million,
+india,2023-24,1.B,Primary Income (1.B.1 to 1.B.3),net,-49736,US$ million,
+india,2024-25,1.B,Primary Income (1.B.1 to 1.B.3),credit,53402,US$ million,
+india,2024-25,1.B,Primary Income (1.B.1 to 1.B.3),debit,101742,US$ million,
+india,2024-25,1.B,Primary Income (1.B.1 to 1.B.3),net,-48340,US$ million,
+india,2025-26,1.B,Primary Income (1.B.1 to 1.B.3),credit,55027,US$ million,preliminary estimate
+india,2025-26,1.B,Primary Income (1.B.1 to 1.B.3),debit,103235,US$ million,preliminary estimate
+india,2025-26,1.B,Primary Income (1.B.1 to 1.B.3),net,-48208,US$ million,preliminary estimate
+india,2022-23,1.B.1,Compensation of employees,credit,6732,US$ million,
+india,2022-23,1.B.1,Compensation of employees,debit,3421,US$ million,
+india,2022-23,1.B.1,Compensation of employees,net,3311,US$ million,
+india,2023-24,1.B.1,Compensation of employees,credit,7529,US$ million,
+india,2023-24,1.B.1,Compensation of employees,debit,3700,US$ million,
+india,2023-24,1.B.1,Compensation of employees,net,3829,US$ million,
+india,2024-25,1.B.1,Compensation of employees,credit,8339,US$ million,
+india,2024-25,1.B.1,Compensation of employees,debit,4079,US$ million,
+india,2024-25,1.B.1,Compensation of employees,net,4261,US$ million,
+india,2025-26,1.B.1,Compensation of employees,credit,8608,US$ million,preliminary estimate
+india,2025-26,1.B.1,Compensation of employees,debit,4444,US$ million,preliminary estimate
+india,2025-26,1.B.1,Compensation of employees,net,4163,US$ million,preliminary estimate
+india,2022-23,1.B.2,Investment income,credit,15799,US$ million,
+india,2022-23,1.B.2,Investment income,debit,68815,US$ million,
+india,2022-23,1.B.2,Investment income,net,-53016,US$ million,
+india,2023-24,1.B.2,Investment income,credit,28031,US$ million,
+india,2023-24,1.B.2,Investment income,debit,85644,US$ million,
+india,2023-24,1.B.2,Investment income,net,-57613,US$ million,
+india,2024-25,1.B.2,Investment income,credit,37600,US$ million,
+india,2024-25,1.B.2,Investment income,debit,95354,US$ million,
+india,2024-25,1.B.2,Investment income,net,-57754,US$ million,
+india,2025-26,1.B.2,Investment income,credit,36899,US$ million,preliminary estimate
+india,2025-26,1.B.2,Investment income,debit,95001,US$ million,preliminary estimate
+india,2025-26,1.B.2,Investment income,net,-58102,US$ million,preliminary estimate
+india,2022-23,1.B.2.1,Direct investment,credit,8384,US$ million,
+india,2022-23,1.B.2.1,Direct investment,debit,41211,US$ million,
+india,2022-23,1.B.2.1,Direct investment,net,-32827,US$ million,
+india,2023-24,1.B.2.1,Direct investment,credit,9299,US$ million,
+india,2023-24,1.B.2.1,Direct investment,debit,49895,US$ million,
+india,2023-24,1.B.2.1,Direct investment,net,-40596,US$ million,
+india,2024-25,1.B.2.1,Direct investment,credit,11681,US$ million,
+india,2024-25,1.B.2.1,Direct investment,debit,55822,US$ million,
+india,2024-25,1.B.2.1,Direct investment,net,-44141,US$ million,
+india,2025-26,1.B.2.1,Direct investment,credit,12574,US$ million,preliminary estimate
+india,2025-26,1.B.2.1,Direct investment,debit,57346,US$ million,preliminary estimate
+india,2025-26,1.B.2.1,Direct investment,net,-44773,US$ million,preliminary estimate
+india,2022-23,1.B.2.2,Portfolio investment,credit,265,US$ million,
+india,2022-23,1.B.2.2,Portfolio investment,debit,10128,US$ million,
+india,2022-23,1.B.2.2,Portfolio investment,net,-9864,US$ million,
+india,2023-24,1.B.2.2,Portfolio investment,credit,437,US$ million,
+india,2023-24,1.B.2.2,Portfolio investment,debit,10201,US$ million,
+india,2023-24,1.B.2.2,Portfolio investment,net,-9764,US$ million,
+india,2024-25,1.B.2.2,Portfolio investment,credit,352,US$ million,
+india,2024-25,1.B.2.2,Portfolio investment,debit,11096,US$ million,
+india,2024-25,1.B.2.2,Portfolio investment,net,-10744,US$ million,
+india,2025-26,1.B.2.2,Portfolio investment,credit,367,US$ million,preliminary estimate
+india,2025-26,1.B.2.2,Portfolio investment,debit,9725,US$ million,preliminary estimate
+india,2025-26,1.B.2.2,Portfolio investment,net,-9358,US$ million,preliminary estimate
+india,2022-23,1.B.2.3,Other investment,credit,605,US$ million,
+india,2022-23,1.B.2.3,Other investment,debit,17151,US$ million,
+india,2022-23,1.B.2.3,Other investment,net,-16547,US$ million,
+india,2023-24,1.B.2.3,Other investment,credit,2468,US$ million,
+india,2023-24,1.B.2.3,Other investment,debit,24689,US$ million,
+india,2023-24,1.B.2.3,Other investment,net,-22221,US$ million,
+india,2024-25,1.B.2.3,Other investment,credit,3814,US$ million,
+india,2024-25,1.B.2.3,Other investment,debit,27611,US$ million,
+india,2024-25,1.B.2.3,Other investment,net,-23797,US$ million,
+india,2025-26,1.B.2.3,Other investment,credit,4106,US$ million,preliminary estimate
+india,2025-26,1.B.2.3,Other investment,debit,27275,US$ million,preliminary estimate
+india,2025-26,1.B.2.3,Other investment,net,-23169,US$ million,preliminary estimate
+india,2022-23,1.B.2.4,Reserve assets,credit,6545,US$ million,
+india,2022-23,1.B.2.4,Reserve assets,debit,324,US$ million,
+india,2022-23,1.B.2.4,Reserve assets,net,6222,US$ million,
+india,2023-24,1.B.2.4,Reserve assets,credit,15827,US$ million,
+india,2023-24,1.B.2.4,Reserve assets,debit,859,US$ million,
+india,2023-24,1.B.2.4,Reserve assets,net,14968,US$ million,
+india,2024-25,1.B.2.4,Reserve assets,credit,21753,US$ million,
+india,2024-25,1.B.2.4,Reserve assets,debit,826,US$ million,
+india,2024-25,1.B.2.4,Reserve assets,net,20928,US$ million,
+india,2025-26,1.B.2.4,Reserve assets,credit,19852,US$ million,preliminary estimate
+india,2025-26,1.B.2.4,Reserve assets,debit,655,US$ million,preliminary estimate
+india,2025-26,1.B.2.4,Reserve assets,net,19197,US$ million,preliminary estimate
+india,2022-23,1.B.3,Other primary income,credit,5315,US$ million,
+india,2022-23,1.B.3,Other primary income,debit,1533,US$ million,
+india,2022-23,1.B.3,Other primary income,net,3782,US$ million,
+india,2023-24,1.B.3,Other primary income,credit,5895,US$ million,
+india,2023-24,1.B.3,Other primary income,debit,1847,US$ million,
+india,2023-24,1.B.3,Other primary income,net,4048,US$ million,
+india,2024-25,1.B.3,Other primary income,credit,7463,US$ million,
+india,2024-25,1.B.3,Other primary income,debit,2309,US$ million,
+india,2024-25,1.B.3,Other primary income,net,5154,US$ million,
+india,2025-26,1.B.3,Other primary income,credit,9521,US$ million,preliminary estimate
+india,2025-26,1.B.3,Other primary income,debit,3790,US$ million,preliminary estimate
+india,2025-26,1.B.3,Other primary income,net,5731,US$ million,preliminary estimate
+india,2022-23,1.C,Secondary Income (1.C.1+1.C.2),credit,112618,US$ million,
+india,2022-23,1.C,Secondary Income (1.C.1+1.C.2),debit,11669,US$ million,
+india,2022-23,1.C,Secondary Income (1.C.1+1.C.2),net,100948,US$ million,
+india,2023-24,1.C,Secondary Income (1.C.1+1.C.2),credit,118888,US$ million,
+india,2023-24,1.C,Secondary Income (1.C.1+1.C.2),debit,13026,US$ million,
+india,2023-24,1.C,Secondary Income (1.C.1+1.C.2),net,105863,US$ million,
+india,2024-25,1.C,Secondary Income (1.C.1+1.C.2),credit,135585,US$ million,
+india,2024-25,1.C,Secondary Income (1.C.1+1.C.2),debit,12082,US$ million,
+india,2024-25,1.C,Secondary Income (1.C.1+1.C.2),net,123503,US$ million,
+india,2025-26,1.C,Secondary Income (1.C.1+1.C.2),credit,155301,US$ million,preliminary estimate
+india,2025-26,1.C,Secondary Income (1.C.1+1.C.2),debit,11660,US$ million,preliminary estimate
+india,2025-26,1.C,Secondary Income (1.C.1+1.C.2),net,143641,US$ million,preliminary estimate
+india,2022-23,1.C.1,"Financial corporations, nonfinancial corporations, households, and NPISHs",credit,112465,US$ million,
+india,2022-23,1.C.1,"Financial corporations, nonfinancial corporations, households, and NPISHs",debit,10689,US$ million,
+india,2022-23,1.C.1,"Financial corporations, nonfinancial corporations, households, and NPISHs",net,101776,US$ million,
+india,2023-24,1.C.1,"Financial corporations, nonfinancial corporations, households, and NPISHs",credit,118712,US$ million,
+india,2023-24,1.C.1,"Financial corporations, nonfinancial corporations, households, and NPISHs",debit,12081,US$ million,
+india,2023-24,1.C.1,"Financial corporations, nonfinancial corporations, households, and NPISHs",net,106631,US$ million,
+india,2024-25,1.C.1,"Financial corporations, nonfinancial corporations, households, and NPISHs",credit,135426,US$ million,
+india,2024-25,1.C.1,"Financial corporations, nonfinancial corporations, households, and NPISHs",debit,10870,US$ million,
+india,2024-25,1.C.1,"Financial corporations, nonfinancial corporations, households, and NPISHs",net,124556,US$ million,
+india,2025-26,1.C.1,"Financial corporations, nonfinancial corporations, households, and NPISHs",credit,155120,US$ million,preliminary estimate
+india,2025-26,1.C.1,"Financial corporations, nonfinancial corporations, households, and NPISHs",debit,10326,US$ million,preliminary estimate
+india,2025-26,1.C.1,"Financial corporations, nonfinancial corporations, households, and NPISHs",net,144794,US$ million,preliminary estimate
+india,2022-23,1.C.1.1,Personal transfers (Current transfers between resident and/non-resident households),credit,109611,US$ million,
+india,2022-23,1.C.1.1,Personal transfers (Current transfers between resident and/non-resident households),debit,7736,US$ million,
+india,2022-23,1.C.1.1,Personal transfers (Current transfers between resident and/non-resident households),net,101876,US$ million,
+india,2023-24,1.C.1.1,Personal transfers (Current transfers between resident and/non-resident households),credit,115551,US$ million,
+india,2023-24,1.C.1.1,Personal transfers (Current transfers between resident and/non-resident households),debit,8474,US$ million,
+india,2023-24,1.C.1.1,Personal transfers (Current transfers between resident and/non-resident households),net,107077,US$ million,
+india,2024-25,1.C.1.1,Personal transfers (Current transfers between resident and/non-resident households),credit,132065,US$ million,
+india,2024-25,1.C.1.1,Personal transfers (Current transfers between resident and/non-resident households),debit,7759,US$ million,
+india,2024-25,1.C.1.1,Personal transfers (Current transfers between resident and/non-resident households),net,124305,US$ million,
+india,2025-26,1.C.1.1,Personal transfers (Current transfers between resident and/non-resident households),credit,151710,US$ million,preliminary estimate
+india,2025-26,1.C.1.1,Personal transfers (Current transfers between resident and/non-resident households),debit,7637,US$ million,preliminary estimate
+india,2025-26,1.C.1.1,Personal transfers (Current transfers between resident and/non-resident households),net,144072,US$ million,preliminary estimate
+india,2022-23,1.C.1.2,Other current transfers,credit,2854,US$ million,
+india,2022-23,1.C.1.2,Other current transfers,debit,2953,US$ million,
+india,2022-23,1.C.1.2,Other current transfers,net,-99,US$ million,
+india,2023-24,1.C.1.2,Other current transfers,credit,3161,US$ million,
+india,2023-24,1.C.1.2,Other current transfers,debit,3607,US$ million,
+india,2023-24,1.C.1.2,Other current transfers,net,-446,US$ million,
+india,2024-25,1.C.1.2,Other current transfers,credit,3361,US$ million,
+india,2024-25,1.C.1.2,Other current transfers,debit,3111,US$ million,
+india,2024-25,1.C.1.2,Other current transfers,net,250,US$ million,
+india,2025-26,1.C.1.2,Other current transfers,credit,3411,US$ million,preliminary estimate
+india,2025-26,1.C.1.2,Other current transfers,debit,2689,US$ million,preliminary estimate
+india,2025-26,1.C.1.2,Other current transfers,net,722,US$ million,preliminary estimate
+india,2022-23,1.C.2,General government,credit,153,US$ million,
+india,2022-23,1.C.2,General government,debit,981,US$ million,
+india,2022-23,1.C.2,General government,net,-828,US$ million,
+india,2023-24,1.C.2,General government,credit,176,US$ million,
+india,2023-24,1.C.2,General government,debit,945,US$ million,
+india,2023-24,1.C.2,General government,net,-768,US$ million,
+india,2024-25,1.C.2,General government,credit,159,US$ million,
+india,2024-25,1.C.2,General government,debit,1212,US$ million,
+india,2024-25,1.C.2,General government,net,-1052,US$ million,
+india,2025-26,1.C.2,General government,credit,180,US$ million,preliminary estimate
+india,2025-26,1.C.2,General government,debit,1334,US$ million,preliminary estimate
+india,2025-26,1.C.2,General government,net,-1154,US$ million,preliminary estimate
+india,2022-23,2,Capital Account (2.1+2.2),credit,677,US$ million,
+india,2022-23,2,Capital Account (2.1+2.2),debit,795,US$ million,
+india,2022-23,2,Capital Account (2.1+2.2),net,-118,US$ million,
+india,2023-24,2,Capital Account (2.1+2.2),credit,673,US$ million,
+india,2023-24,2,Capital Account (2.1+2.2),debit,764,US$ million,
+india,2023-24,2,Capital Account (2.1+2.2),net,-91,US$ million,
+india,2024-25,2,Capital Account (2.1+2.2),credit,755,US$ million,
+india,2024-25,2,Capital Account (2.1+2.2),debit,948,US$ million,
+india,2024-25,2,Capital Account (2.1+2.2),net,-193,US$ million,
+india,2025-26,2,Capital Account (2.1+2.2),credit,857,US$ million,preliminary estimate
+india,2025-26,2,Capital Account (2.1+2.2),debit,1357,US$ million,preliminary estimate
+india,2025-26,2,Capital Account (2.1+2.2),net,-500,US$ million,preliminary estimate
+india,2022-23,2.1,Gross acquisitions (DR.)/disposals (CR.) of non-produced nonfinancial assets,credit,168,US$ million,
+india,2022-23,2.1,Gross acquisitions (DR.)/disposals (CR.) of non-produced nonfinancial assets,debit,240,US$ million,
+india,2022-23,2.1,Gross acquisitions (DR.)/disposals (CR.) of non-produced nonfinancial assets,net,-72,US$ million,
+india,2023-24,2.1,Gross acquisitions (DR.)/disposals (CR.) of non-produced nonfinancial assets,credit,77,US$ million,
+india,2023-24,2.1,Gross acquisitions (DR.)/disposals (CR.) of non-produced nonfinancial assets,debit,279,US$ million,
+india,2023-24,2.1,Gross acquisitions (DR.)/disposals (CR.) of non-produced nonfinancial assets,net,-201,US$ million,
+india,2024-25,2.1,Gross acquisitions (DR.)/disposals (CR.) of non-produced nonfinancial assets,credit,43,US$ million,
+india,2024-25,2.1,Gross acquisitions (DR.)/disposals (CR.) of non-produced nonfinancial assets,debit,376,US$ million,
+india,2024-25,2.1,Gross acquisitions (DR.)/disposals (CR.) of non-produced nonfinancial assets,net,-334,US$ million,
+india,2025-26,2.1,Gross acquisitions (DR.)/disposals (CR.) of non-produced nonfinancial assets,credit,100,US$ million,preliminary estimate
+india,2025-26,2.1,Gross acquisitions (DR.)/disposals (CR.) of non-produced nonfinancial assets,debit,796,US$ million,preliminary estimate
+india,2025-26,2.1,Gross acquisitions (DR.)/disposals (CR.) of non-produced nonfinancial assets,net,-696,US$ million,preliminary estimate
+india,2022-23,2.2,Capital transfers,credit,509,US$ million,
+india,2022-23,2.2,Capital transfers,debit,555,US$ million,
+india,2022-23,2.2,Capital transfers,net,-46,US$ million,
+india,2023-24,2.2,Capital transfers,credit,596,US$ million,
+india,2023-24,2.2,Capital transfers,debit,485,US$ million,
+india,2023-24,2.2,Capital transfers,net,111,US$ million,
+india,2024-25,2.2,Capital transfers,credit,712,US$ million,
+india,2024-25,2.2,Capital transfers,debit,572,US$ million,
+india,2024-25,2.2,Capital transfers,net,140,US$ million,
+india,2025-26,2.2,Capital transfers,credit,757,US$ million,preliminary estimate
+india,2025-26,2.2,Capital transfers,debit,561,US$ million,preliminary estimate
+india,2025-26,2.2,Capital transfers,net,196,US$ million,preliminary estimate
+india,2022-23,3,Financial Account (3.1 to 3.5),credit,702268,US$ million,
+india,2022-23,3,Financial Account (3.1 to 3.5),debit,634143,US$ million,
+india,2022-23,3,Financial Account (3.1 to 3.5),net,68126,US$ million,
+india,2023-24,3,Financial Account (3.1 to 3.5),credit,851246,US$ million,
+india,2023-24,3,Financial Account (3.1 to 3.5),debit,825525,US$ million,
+india,2023-24,3,Financial Account (3.1 to 3.5),net,25722,US$ million,
+india,2024-25,3,Financial Account (3.1 to 3.5),credit,1155466,US$ million,
+india,2024-25,3,Financial Account (3.1 to 3.5),debit,1133728,US$ million,
+india,2024-25,3,Financial Account (3.1 to 3.5),net,21738,US$ million,
+india,2025-26,3,Financial Account (3.1 to 3.5),credit,1639113,US$ million,preliminary estimate
+india,2025-26,3,Financial Account (3.1 to 3.5),debit,1613231,US$ million,preliminary estimate
+india,2025-26,3,Financial Account (3.1 to 3.5),net,25882,US$ million,preliminary estimate
+india,2022-23,3.1,Direct Investment (3.1A+3.1B),credit,75232,US$ million,
+india,2022-23,3.1,Direct Investment (3.1A+3.1B),debit,47246,US$ million,
+india,2022-23,3.1,Direct Investment (3.1A+3.1B),net,27986,US$ million,
+india,2023-24,3.1,Direct Investment (3.1A+3.1B),credit,74926,US$ million,
+india,2023-24,3.1,Direct Investment (3.1A+3.1B),debit,64774,US$ million,
+india,2023-24,3.1,Direct Investment (3.1A+3.1B),net,10152,US$ million,
+india,2024-25,3.1,Direct Investment (3.1A+3.1B),credit,84190,US$ million,
+india,2024-25,3.1,Direct Investment (3.1A+3.1B),debit,83232,US$ million,
+india,2024-25,3.1,Direct Investment (3.1A+3.1B),net,959,US$ million,
+india,2025-26,3.1,Direct Investment (3.1A+3.1B),credit,98325,US$ million,preliminary estimate
+india,2025-26,3.1,Direct Investment (3.1A+3.1B),debit,91377,US$ million,preliminary estimate
+india,2025-26,3.1,Direct Investment (3.1A+3.1B),net,6947,US$ million,preliminary estimate
+india,2022-23,3.1.A,Direct Investment in India,credit,71355,US$ million,
+india,2022-23,3.1.A,Direct Investment in India,debit,29349,US$ million,
+india,2022-23,3.1.A,Direct Investment in India,net,42006,US$ million,
+india,2023-24,3.1.A,Direct Investment in India,credit,71302,US$ million,
+india,2023-24,3.1.A,Direct Investment in India,debit,44472,US$ million,
+india,2023-24,3.1.A,Direct Investment in India,net,26830,US$ million,
+india,2024-25,3.1.A,Direct Investment in India,credit,80615,US$ million,
+india,2024-25,3.1.A,Direct Investment in India,debit,51486,US$ million,
+india,2024-25,3.1.A,Direct Investment in India,net,29130,US$ million,
+india,2025-26,3.1.A,Direct Investment in India,credit,94836,US$ million,preliminary estimate
+india,2025-26,3.1.A,Direct Investment in India,debit,54044,US$ million,preliminary estimate
+india,2025-26,3.1.A,Direct Investment in India,net,40791,US$ million,preliminary estimate
+india,2022-23,3.1.A.1,Equity and investment fund shares,credit,66705,US$ million,
+india,2022-23,3.1.A.1,Equity and investment fund shares,debit,27094,US$ million,
+india,2022-23,3.1.A.1,Equity and investment fund shares,net,39611,US$ million,
+india,2023-24,3.1.A.1,Equity and investment fund shares,credit,65585,US$ million,
+india,2023-24,3.1.A.1,Equity and investment fund shares,debit,41334,US$ million,
+india,2023-24,3.1.A.1,Equity and investment fund shares,net,24251,US$ million,
+india,2024-25,3.1.A.1,Equity and investment fund shares,credit,73752,US$ million,
+india,2024-25,3.1.A.1,Equity and investment fund shares,debit,49525,US$ million,
+india,2024-25,3.1.A.1,Equity and investment fund shares,net,24226,US$ million,
+india,2025-26,3.1.A.1,Equity and investment fund shares,credit,87934,US$ million,preliminary estimate
+india,2025-26,3.1.A.1,Equity and investment fund shares,debit,51186,US$ million,preliminary estimate
+india,2025-26,3.1.A.1,Equity and investment fund shares,net,36747,US$ million,preliminary estimate
+india,2022-23,3.1.A.1.1,Equity other than reinvestment of earnings,credit,47600,US$ million,
+india,2022-23,3.1.A.1.1,Equity other than reinvestment of earnings,debit,27094,US$ million,
+india,2022-23,3.1.A.1.1,Equity other than reinvestment of earnings,net,20506,US$ million,
+india,2023-24,3.1.A.1.1,Equity other than reinvestment of earnings,credit,45817,US$ million,
+india,2023-24,3.1.A.1.1,Equity other than reinvestment of earnings,debit,41334,US$ million,
+india,2023-24,3.1.A.1.1,Equity other than reinvestment of earnings,net,4483,US$ million,
+india,2024-25,3.1.A.1.1,Equity other than reinvestment of earnings,credit,50993,US$ million,
+india,2024-25,3.1.A.1.1,Equity other than reinvestment of earnings,debit,49525,US$ million,
+india,2024-25,3.1.A.1.1,Equity other than reinvestment of earnings,net,1468,US$ million,
+india,2025-26,3.1.A.1.1,Equity other than reinvestment of earnings,credit,62282,US$ million,preliminary estimate
+india,2025-26,3.1.A.1.1,Equity other than reinvestment of earnings,debit,51186,US$ million,preliminary estimate
+india,2025-26,3.1.A.1.1,Equity other than reinvestment of earnings,net,11096,US$ million,preliminary estimate
+india,2022-23,3.1.A.1.2,Reinvestment of earnings,credit,19105,US$ million,
+india,2022-23,3.1.A.1.2,Reinvestment of earnings,debit,,US$ million,
+india,2022-23,3.1.A.1.2,Reinvestment of earnings,net,19105,US$ million,
+india,2023-24,3.1.A.1.2,Reinvestment of earnings,credit,19768,US$ million,
+india,2023-24,3.1.A.1.2,Reinvestment of earnings,debit,,US$ million,
+india,2023-24,3.1.A.1.2,Reinvestment of earnings,net,19768,US$ million,
+india,2024-25,3.1.A.1.2,Reinvestment of earnings,credit,22759,US$ million,
+india,2024-25,3.1.A.1.2,Reinvestment of earnings,debit,,US$ million,
+india,2024-25,3.1.A.1.2,Reinvestment of earnings,net,22759,US$ million,
+india,2025-26,3.1.A.1.2,Reinvestment of earnings,credit,25651,US$ million,preliminary estimate
+india,2025-26,3.1.A.1.2,Reinvestment of earnings,debit,,US$ million,preliminary estimate
+india,2025-26,3.1.A.1.2,Reinvestment of earnings,net,25651,US$ million,preliminary estimate
+india,2022-23,3.1.A.2,Debt instruments,credit,4650,US$ million,
+india,2022-23,3.1.A.2,Debt instruments,debit,2255,US$ million,
+india,2022-23,3.1.A.2,Debt instruments,net,2395,US$ million,
+india,2023-24,3.1.A.2,Debt instruments,credit,5716,US$ million,
+india,2023-24,3.1.A.2,Debt instruments,debit,3137,US$ million,
+india,2023-24,3.1.A.2,Debt instruments,net,2579,US$ million,
+india,2024-25,3.1.A.2,Debt instruments,credit,6863,US$ million,
+india,2024-25,3.1.A.2,Debt instruments,debit,1960,US$ million,
+india,2024-25,3.1.A.2,Debt instruments,net,4903,US$ million,
+india,2025-26,3.1.A.2,Debt instruments,credit,6902,US$ million,preliminary estimate
+india,2025-26,3.1.A.2,Debt instruments,debit,2858,US$ million,preliminary estimate
+india,2025-26,3.1.A.2,Debt instruments,net,4044,US$ million,preliminary estimate
+india,2022-23,3.1.A.2.1,Direct investor in direct investment enterprises,credit,4650,US$ million,
+india,2022-23,3.1.A.2.1,Direct investor in direct investment enterprises,debit,2255,US$ million,
+india,2022-23,3.1.A.2.1,Direct investor in direct investment enterprises,net,2395,US$ million,
+india,2023-24,3.1.A.2.1,Direct investor in direct investment enterprises,credit,5716,US$ million,
+india,2023-24,3.1.A.2.1,Direct investor in direct investment enterprises,debit,3137,US$ million,
+india,2023-24,3.1.A.2.1,Direct investor in direct investment enterprises,net,2579,US$ million,
+india,2024-25,3.1.A.2.1,Direct investor in direct investment enterprises,credit,6863,US$ million,
+india,2024-25,3.1.A.2.1,Direct investor in direct investment enterprises,debit,1960,US$ million,
+india,2024-25,3.1.A.2.1,Direct investor in direct investment enterprises,net,4903,US$ million,
+india,2025-26,3.1.A.2.1,Direct investor in direct investment enterprises,credit,6902,US$ million,preliminary estimate
+india,2025-26,3.1.A.2.1,Direct investor in direct investment enterprises,debit,2858,US$ million,preliminary estimate
+india,2025-26,3.1.A.2.1,Direct investor in direct investment enterprises,net,4044,US$ million,preliminary estimate
+india,2022-23,3.1.B,Direct Investment by India,credit,3877,US$ million,
+india,2022-23,3.1.B,Direct Investment by India,debit,17897,US$ million,
+india,2022-23,3.1.B,Direct Investment by India,net,-14020,US$ million,
+india,2023-24,3.1.B,Direct Investment by India,credit,3624,US$ million,
+india,2023-24,3.1.B,Direct Investment by India,debit,20302,US$ million,
+india,2023-24,3.1.B,Direct Investment by India,net,-16678,US$ million,
+india,2024-25,3.1.B,Direct Investment by India,credit,3575,US$ million,
+india,2024-25,3.1.B,Direct Investment by India,debit,31746,US$ million,
+india,2024-25,3.1.B,Direct Investment by India,net,-28171,US$ million,
+india,2025-26,3.1.B,Direct Investment by India,credit,3489,US$ million,preliminary estimate
+india,2025-26,3.1.B,Direct Investment by India,debit,37333,US$ million,preliminary estimate
+india,2025-26,3.1.B,Direct Investment by India,net,-33844,US$ million,preliminary estimate
+india,2022-23,3.1.B.1,Equity and investment fund shares,credit,3877,US$ million,
+india,2022-23,3.1.B.1,Equity and investment fund shares,debit,13183,US$ million,
+india,2022-23,3.1.B.1,Equity and investment fund shares,net,-9305,US$ million,
+india,2023-24,3.1.B.1,Equity and investment fund shares,credit,3624,US$ million,
+india,2023-24,3.1.B.1,Equity and investment fund shares,debit,14896,US$ million,
+india,2023-24,3.1.B.1,Equity and investment fund shares,net,-11272,US$ million,
+india,2024-25,3.1.B.1,Equity and investment fund shares,credit,3575,US$ million,
+india,2024-25,3.1.B.1,Equity and investment fund shares,debit,23791,US$ million,
+india,2024-25,3.1.B.1,Equity and investment fund shares,net,-20216,US$ million,
+india,2025-26,3.1.B.1,Equity and investment fund shares,credit,3489,US$ million,preliminary estimate
+india,2025-26,3.1.B.1,Equity and investment fund shares,debit,28987,US$ million,preliminary estimate
+india,2025-26,3.1.B.1,Equity and investment fund shares,net,-25498,US$ million,preliminary estimate
+india,2022-23,3.1.B.1.1,Equity other than reinvestment of earnings,credit,3877,US$ million,
+india,2022-23,3.1.B.1.1,Equity other than reinvestment of earnings,debit,8771,US$ million,
+india,2022-23,3.1.B.1.1,Equity other than reinvestment of earnings,net,-4894,US$ million,
+india,2023-24,3.1.B.1.1,Equity other than reinvestment of earnings,credit,3624,US$ million,
+india,2023-24,3.1.B.1.1,Equity other than reinvestment of earnings,debit,9111,US$ million,
+india,2023-24,3.1.B.1.1,Equity other than reinvestment of earnings,net,-5487,US$ million,
+india,2024-25,3.1.B.1.1,Equity other than reinvestment of earnings,credit,3575,US$ million,
+india,2024-25,3.1.B.1.1,Equity other than reinvestment of earnings,debit,16945,US$ million,
+india,2024-25,3.1.B.1.1,Equity other than reinvestment of earnings,net,-13370,US$ million,
+india,2025-26,3.1.B.1.1,Equity other than reinvestment of earnings,credit,3489,US$ million,preliminary estimate
+india,2025-26,3.1.B.1.1,Equity other than reinvestment of earnings,debit,21182,US$ million,preliminary estimate
+india,2025-26,3.1.B.1.1,Equity other than reinvestment of earnings,net,-17693,US$ million,preliminary estimate
+india,2022-23,3.1.B.1.2,Reinvestment of earnings,credit,,US$ million,
+india,2022-23,3.1.B.1.2,Reinvestment of earnings,debit,4412,US$ million,
+india,2022-23,3.1.B.1.2,Reinvestment of earnings,net,-4412,US$ million,
+india,2023-24,3.1.B.1.2,Reinvestment of earnings,credit,,US$ million,
+india,2023-24,3.1.B.1.2,Reinvestment of earnings,debit,5786,US$ million,
+india,2023-24,3.1.B.1.2,Reinvestment of earnings,net,-5786,US$ million,
+india,2024-25,3.1.B.1.2,Reinvestment of earnings,credit,,US$ million,
+india,2024-25,3.1.B.1.2,Reinvestment of earnings,debit,6846,US$ million,
+india,2024-25,3.1.B.1.2,Reinvestment of earnings,net,-6846,US$ million,
+india,2025-26,3.1.B.1.2,Reinvestment of earnings,credit,,US$ million,preliminary estimate
+india,2025-26,3.1.B.1.2,Reinvestment of earnings,debit,7805,US$ million,preliminary estimate
+india,2025-26,3.1.B.1.2,Reinvestment of earnings,net,-7805,US$ million,preliminary estimate
+india,2022-23,3.1.B.2,Debt instruments,credit,,US$ million,
+india,2022-23,3.1.B.2,Debt instruments,debit,4714,US$ million,
+india,2022-23,3.1.B.2,Debt instruments,net,-4714,US$ million,
+india,2023-24,3.1.B.2,Debt instruments,credit,,US$ million,
+india,2023-24,3.1.B.2,Debt instruments,debit,5406,US$ million,
+india,2023-24,3.1.B.2,Debt instruments,net,-5406,US$ million,
+india,2024-25,3.1.B.2,Debt instruments,credit,,US$ million,
+india,2024-25,3.1.B.2,Debt instruments,debit,7955,US$ million,
+india,2024-25,3.1.B.2,Debt instruments,net,-7955,US$ million,
+india,2025-26,3.1.B.2,Debt instruments,credit,,US$ million,preliminary estimate
+india,2025-26,3.1.B.2,Debt instruments,debit,8345,US$ million,preliminary estimate
+india,2025-26,3.1.B.2,Debt instruments,net,-8345,US$ million,preliminary estimate
+india,2022-23,3.1.B.2.1,Direct investor in direct investment enterprises,credit,,US$ million,
+india,2022-23,3.1.B.2.1,Direct investor in direct investment enterprises,debit,4714,US$ million,
+india,2022-23,3.1.B.2.1,Direct investor in direct investment enterprises,net,-4714,US$ million,
+india,2023-24,3.1.B.2.1,Direct investor in direct investment enterprises,credit,,US$ million,
+india,2023-24,3.1.B.2.1,Direct investor in direct investment enterprises,debit,5406,US$ million,
+india,2023-24,3.1.B.2.1,Direct investor in direct investment enterprises,net,-5406,US$ million,
+india,2024-25,3.1.B.2.1,Direct investor in direct investment enterprises,credit,,US$ million,
+india,2024-25,3.1.B.2.1,Direct investor in direct investment enterprises,debit,7955,US$ million,
+india,2024-25,3.1.B.2.1,Direct investor in direct investment enterprises,net,-7955,US$ million,
+india,2025-26,3.1.B.2.1,Direct investor in direct investment enterprises,credit,,US$ million,preliminary estimate
+india,2025-26,3.1.B.2.1,Direct investor in direct investment enterprises,debit,8345,US$ million,preliminary estimate
+india,2025-26,3.1.B.2.1,Direct investor in direct investment enterprises,net,-8345,US$ million,preliminary estimate
+india,2022-23,3.2,Portfolio Investment,credit,309857,US$ million,
+india,2022-23,3.2,Portfolio Investment,debit,315009,US$ million,
+india,2022-23,3.2,Portfolio Investment,net,-5152,US$ million,
+india,2023-24,3.2,Portfolio Investment,credit,466115,US$ million,
+india,2023-24,3.2,Portfolio Investment,debit,422034,US$ million,
+india,2023-24,3.2,Portfolio Investment,net,44081,US$ million,
+india,2024-25,3.2,Portfolio Investment,credit,639334,US$ million,
+india,2024-25,3.2,Portfolio Investment,debit,635770,US$ million,
+india,2024-25,3.2,Portfolio Investment,net,3564,US$ million,
+india,2025-26,3.2,Portfolio Investment,credit,593688,US$ million,preliminary estimate
+india,2025-26,3.2,Portfolio Investment,debit,610051,US$ million,preliminary estimate
+india,2025-26,3.2,Portfolio Investment,net,-16363,US$ million,preliminary estimate
+india,2022-23,3.2.A,Portfolio Investment in India,credit,307473,US$ million,
+india,2022-23,3.2.A,Portfolio Investment in India,debit,312301,US$ million,
+india,2022-23,3.2.A,Portfolio Investment in India,net,-4828,US$ million,
+india,2023-24,3.2.A,Portfolio Investment in India,credit,462573,US$ million,
+india,2023-24,3.2.A,Portfolio Investment in India,debit,417947,US$ million,
+india,2023-24,3.2.A,Portfolio Investment in India,net,44626,US$ million,
+india,2024-25,3.2.A,Portfolio Investment in India,credit,636263,US$ million,
+india,2024-25,3.2.A,Portfolio Investment in India,debit,632980,US$ million,
+india,2024-25,3.2.A,Portfolio Investment in India,net,3283,US$ million,
+india,2025-26,3.2.A,Portfolio Investment in India,credit,588752,US$ million,preliminary estimate
+india,2025-26,3.2.A,Portfolio Investment in India,debit,603946,US$ million,preliminary estimate
+india,2025-26,3.2.A,Portfolio Investment in India,net,-15194,US$ million,preliminary estimate
+india,2022-23,3.2.1,Equity and investment fund shares,credit,273934,US$ million,
+india,2022-23,3.2.1,Equity and investment fund shares,debit,279906,US$ million,
+india,2022-23,3.2.1,Equity and investment fund shares,net,-5972,US$ million,
+india,2023-24,3.2.1,Equity and investment fund shares,credit,408272,US$ million,
+india,2023-24,3.2.1,Equity and investment fund shares,debit,383004,US$ million,
+india,2023-24,3.2.1,Equity and investment fund shares,net,25268,US$ million,
+india,2024-25,3.2.1,Equity and investment fund shares,credit,546592,US$ million,
+india,2024-25,3.2.1,Equity and investment fund shares,debit,562319,US$ million,
+india,2024-25,3.2.1,Equity and investment fund shares,net,-15727,US$ million,
+india,2025-26,3.2.1,Equity and investment fund shares,credit,503600,US$ million,preliminary estimate
+india,2025-26,3.2.1,Equity and investment fund shares,debit,522239,US$ million,preliminary estimate
+india,2025-26,3.2.1,Equity and investment fund shares,net,-18639,US$ million,preliminary estimate
+india,2022-23,3.2.2,Debt securities,credit,33539,US$ million,
+india,2022-23,3.2.2,Debt securities,debit,32395,US$ million,
+india,2022-23,3.2.2,Debt securities,net,1144,US$ million,
+india,2023-24,3.2.2,Debt securities,credit,54300,US$ million,
+india,2023-24,3.2.2,Debt securities,debit,34942,US$ million,
+india,2023-24,3.2.2,Debt securities,net,19358,US$ million,
+india,2024-25,3.2.2,Debt securities,credit,89671,US$ million,
+india,2024-25,3.2.2,Debt securities,debit,70660,US$ million,
+india,2024-25,3.2.2,Debt securities,net,19010,US$ million,
+india,2025-26,3.2.2,Debt securities,credit,85152,US$ million,preliminary estimate
+india,2025-26,3.2.2,Debt securities,debit,81707,US$ million,preliminary estimate
+india,2025-26,3.2.2,Debt securities,net,3445,US$ million,preliminary estimate
+india,2022-23,3.2.B,Portfolio Investment by India,credit,2384,US$ million,
+india,2022-23,3.2.B,Portfolio Investment by India,debit,2708,US$ million,
+india,2022-23,3.2.B,Portfolio Investment by India,net,-324,US$ million,
+india,2023-24,3.2.B,Portfolio Investment by India,credit,3543,US$ million,
+india,2023-24,3.2.B,Portfolio Investment by India,debit,4087,US$ million,
+india,2023-24,3.2.B,Portfolio Investment by India,net,-544,US$ million,
+india,2024-25,3.2.B,Portfolio Investment by India,credit,3072,US$ million,
+india,2024-25,3.2.B,Portfolio Investment by India,debit,2790,US$ million,
+india,2024-25,3.2.B,Portfolio Investment by India,net,281,US$ million,
+india,2025-26,3.2.B,Portfolio Investment by India,credit,4935,US$ million,preliminary estimate
+india,2025-26,3.2.B,Portfolio Investment by India,debit,6105,US$ million,preliminary estimate
+india,2025-26,3.2.B,Portfolio Investment by India,net,-1170,US$ million,preliminary estimate
+india,2022-23,3.3,Financial derivatives (other than reserves) and employee stock options,credit,21891,US$ million,
+india,2022-23,3.3,Financial derivatives (other than reserves) and employee stock options,debit,27253,US$ million,
+india,2022-23,3.3,Financial derivatives (other than reserves) and employee stock options,net,-5363,US$ million,
+india,2023-24,3.3,Financial derivatives (other than reserves) and employee stock options,credit,22391,US$ million,
+india,2023-24,3.3,Financial derivatives (other than reserves) and employee stock options,debit,30282,US$ million,
+india,2023-24,3.3,Financial derivatives (other than reserves) and employee stock options,net,-7891,US$ million,
+india,2024-25,3.3,Financial derivatives (other than reserves) and employee stock options,credit,23909,US$ million,
+india,2024-25,3.3,Financial derivatives (other than reserves) and employee stock options,debit,46052,US$ million,
+india,2024-25,3.3,Financial derivatives (other than reserves) and employee stock options,net,-22143,US$ million,
+india,2025-26,3.3,Financial derivatives (other than reserves) and employee stock options,credit,26464,US$ million,preliminary estimate
+india,2025-26,3.3,Financial derivatives (other than reserves) and employee stock options,debit,50432,US$ million,preliminary estimate
+india,2025-26,3.3,Financial derivatives (other than reserves) and employee stock options,net,-23968,US$ million,preliminary estimate
+india,2022-23,3.4,Other investment,credit,264909,US$ million,
+india,2022-23,3.4,Other investment,debit,223391,US$ million,
+india,2022-23,3.4,Other investment,net,41519,US$ million,
+india,2023-24,3.4,Other investment,credit,287815,US$ million,
+india,2023-24,3.4,Other investment,debit,244733,US$ million,
+india,2023-24,3.4,Other investment,net,43082,US$ million,
+india,2024-25,3.4,Other investment,credit,370371,US$ million,
+india,2024-25,3.4,Other investment,debit,336046,US$ million,
+india,2024-25,3.4,Other investment,net,34325,US$ million,
+india,2025-26,3.4,Other investment,credit,885311,US$ million,preliminary estimate
+india,2025-26,3.4,Other investment,debit,849644,US$ million,preliminary estimate
+india,2025-26,3.4,Other investment,net,35667,US$ million,preliminary estimate
+india,2022-23,3.4.1,Other equity (ADRs/GDRs),credit,,US$ million,
+india,2022-23,3.4.1,Other equity (ADRs/GDRs),debit,,US$ million,
+india,2022-23,3.4.1,Other equity (ADRs/GDRs),net,,US$ million,
+india,2023-24,3.4.1,Other equity (ADRs/GDRs),credit,,US$ million,
+india,2023-24,3.4.1,Other equity (ADRs/GDRs),debit,,US$ million,
+india,2023-24,3.4.1,Other equity (ADRs/GDRs),net,,US$ million,
+india,2024-25,3.4.1,Other equity (ADRs/GDRs),credit,,US$ million,
+india,2024-25,3.4.1,Other equity (ADRs/GDRs),debit,,US$ million,
+india,2024-25,3.4.1,Other equity (ADRs/GDRs),net,,US$ million,
+india,2025-26,3.4.1,Other equity (ADRs/GDRs),credit,,US$ million,preliminary estimate
+india,2025-26,3.4.1,Other equity (ADRs/GDRs),debit,,US$ million,preliminary estimate
+india,2025-26,3.4.1,Other equity (ADRs/GDRs),net,,US$ million,preliminary estimate
+india,2022-23,3.4.2,Currency and deposits,credit,64350,US$ million,
+india,2022-23,3.4.2,Currency and deposits,debit,55947,US$ million,
+india,2022-23,3.4.2,Currency and deposits,net,8403,US$ million,
+india,2023-24,3.4.2,Currency and deposits,credit,89898,US$ million,
+india,2023-24,3.4.2,Currency and deposits,debit,73946,US$ million,
+india,2023-24,3.4.2,Currency and deposits,net,15952,US$ million,
+india,2024-25,3.4.2,Currency and deposits,credit,104994,US$ million,
+india,2024-25,3.4.2,Currency and deposits,debit,88608,US$ million,
+india,2024-25,3.4.2,Currency and deposits,net,16387,US$ million,
+india,2025-26,3.4.2,Currency and deposits,credit,102402,US$ million,preliminary estimate
+india,2025-26,3.4.2,Currency and deposits,debit,87588,US$ million,preliminary estimate
+india,2025-26,3.4.2,Currency and deposits,net,14814,US$ million,preliminary estimate
+india,2022-23,3.4.2.1,Central bank (Rupee Debt Movements; NRG),credit,75,US$ million,
+india,2022-23,3.4.2.1,Central bank (Rupee Debt Movements; NRG),debit,661,US$ million,
+india,2022-23,3.4.2.1,Central bank (Rupee Debt Movements; NRG),net,-586,US$ million,
+india,2023-24,3.4.2.1,Central bank (Rupee Debt Movements; NRG),credit,1322,US$ million,
+india,2023-24,3.4.2.1,Central bank (Rupee Debt Movements; NRG),debit,72,US$ million,
+india,2023-24,3.4.2.1,Central bank (Rupee Debt Movements; NRG),net,1250,US$ million,
+india,2024-25,3.4.2.1,Central bank (Rupee Debt Movements; NRG),credit,448,US$ million,
+india,2024-25,3.4.2.1,Central bank (Rupee Debt Movements; NRG),debit,224,US$ million,
+india,2024-25,3.4.2.1,Central bank (Rupee Debt Movements; NRG),net,224,US$ million,
+india,2025-26,3.4.2.1,Central bank (Rupee Debt Movements; NRG),credit,571,US$ million,preliminary estimate
+india,2025-26,3.4.2.1,Central bank (Rupee Debt Movements; NRG),debit,170,US$ million,preliminary estimate
+india,2025-26,3.4.2.1,Central bank (Rupee Debt Movements; NRG),net,401,US$ million,preliminary estimate
+india,2022-23,3.4.2.2,"Deposit-taking corporations, except the central bank (NRI Deposits)",credit,64274,US$ million,
+india,2022-23,3.4.2.2,"Deposit-taking corporations, except the central bank (NRI Deposits)",debit,55285,US$ million,
+india,2022-23,3.4.2.2,"Deposit-taking corporations, except the central bank (NRI Deposits)",net,8989,US$ million,
+india,2023-24,3.4.2.2,"Deposit-taking corporations, except the central bank (NRI Deposits)",credit,88576,US$ million,
+india,2023-24,3.4.2.2,"Deposit-taking corporations, except the central bank (NRI Deposits)",debit,73875,US$ million,
+india,2023-24,3.4.2.2,"Deposit-taking corporations, except the central bank (NRI Deposits)",net,14702,US$ million,
+india,2024-25,3.4.2.2,"Deposit-taking corporations, except the central bank (NRI Deposits)",credit,104546,US$ million,
+india,2024-25,3.4.2.2,"Deposit-taking corporations, except the central bank (NRI Deposits)",debit,88383,US$ million,
+india,2024-25,3.4.2.2,"Deposit-taking corporations, except the central bank (NRI Deposits)",net,16163,US$ million,
+india,2025-26,3.4.2.2,"Deposit-taking corporations, except the central bank (NRI Deposits)",credit,101830,US$ million,preliminary estimate
+india,2025-26,3.4.2.2,"Deposit-taking corporations, except the central bank (NRI Deposits)",debit,87418,US$ million,preliminary estimate
+india,2025-26,3.4.2.2,"Deposit-taking corporations, except the central bank (NRI Deposits)",net,14413,US$ million,preliminary estimate
+india,2022-23,3.4.2.3,General government,credit,,US$ million,
+india,2022-23,3.4.2.3,General government,debit,,US$ million,
+india,2022-23,3.4.2.3,General government,net,,US$ million,
+india,2023-24,3.4.2.3,General government,credit,,US$ million,
+india,2023-24,3.4.2.3,General government,debit,,US$ million,
+india,2023-24,3.4.2.3,General government,net,,US$ million,
+india,2024-25,3.4.2.3,General government,credit,,US$ million,
+india,2024-25,3.4.2.3,General government,debit,,US$ million,
+india,2024-25,3.4.2.3,General government,net,,US$ million,
+india,2025-26,3.4.2.3,General government,credit,,US$ million,preliminary estimate
+india,2025-26,3.4.2.3,General government,debit,,US$ million,preliminary estimate
+india,2025-26,3.4.2.3,General government,net,,US$ million,preliminary estimate
+india,2022-23,3.4.2.4,Other sectors,credit,,US$ million,
+india,2022-23,3.4.2.4,Other sectors,debit,,US$ million,
+india,2022-23,3.4.2.4,Other sectors,net,,US$ million,
+india,2023-24,3.4.2.4,Other sectors,credit,,US$ million,
+india,2023-24,3.4.2.4,Other sectors,debit,,US$ million,
+india,2023-24,3.4.2.4,Other sectors,net,,US$ million,
+india,2024-25,3.4.2.4,Other sectors,credit,,US$ million,
+india,2024-25,3.4.2.4,Other sectors,debit,,US$ million,
+india,2024-25,3.4.2.4,Other sectors,net,,US$ million,
+india,2025-26,3.4.2.4,Other sectors,credit,,US$ million,preliminary estimate
+india,2025-26,3.4.2.4,Other sectors,debit,,US$ million,preliminary estimate
+india,2025-26,3.4.2.4,Other sectors,net,,US$ million,preliminary estimate
+india,2022-23,3.4.3,"Loans (External Assistance, ECBs and Banking Capital)",credit,97286,US$ million,
+india,2022-23,3.4.3,"Loans (External Assistance, ECBs and Banking Capital)",debit,82979,US$ million,
+india,2022-23,3.4.3,"Loans (External Assistance, ECBs and Banking Capital)",net,14308,US$ million,
+india,2023-24,3.4.3,"Loans (External Assistance, ECBs and Banking Capital)",credit,117450,US$ million,
+india,2023-24,3.4.3,"Loans (External Assistance, ECBs and Banking Capital)",debit,85485,US$ million,
+india,2023-24,3.4.3,"Loans (External Assistance, ECBs and Banking Capital)",net,31965,US$ million,
+india,2024-25,3.4.3,"Loans (External Assistance, ECBs and Banking Capital)",credit,160929,US$ million,
+india,2024-25,3.4.3,"Loans (External Assistance, ECBs and Banking Capital)",debit,164940,US$ million,
+india,2024-25,3.4.3,"Loans (External Assistance, ECBs and Banking Capital)",net,-4011,US$ million,
+india,2025-26,3.4.3,"Loans (External Assistance, ECBs and Banking Capital)",credit,680894,US$ million,preliminary estimate
+india,2025-26,3.4.3,"Loans (External Assistance, ECBs and Banking Capital)",debit,675605,US$ million,preliminary estimate
+india,2025-26,3.4.3,"Loans (External Assistance, ECBs and Banking Capital)",net,5289,US$ million,preliminary estimate
+india,2022-23,3.4.3.A,Loans to India,credit,95970,US$ million,
+india,2022-23,3.4.3.A,Loans to India,debit,81953,US$ million,
+india,2022-23,3.4.3.A,Loans to India,net,14017,US$ million,
+india,2023-24,3.4.3.A,Loans to India,credit,106238,US$ million,
+india,2023-24,3.4.3.A,Loans to India,debit,70500,US$ million,
+india,2023-24,3.4.3.A,Loans to India,net,35738,US$ million,
+india,2024-25,3.4.3.A,Loans to India,credit,118946,US$ million,
+india,2024-25,3.4.3.A,Loans to India,debit,120293,US$ million,
+india,2024-25,3.4.3.A,Loans to India,net,-1346,US$ million,
+india,2025-26,3.4.3.A,Loans to India,credit,96404,US$ million,preliminary estimate
+india,2025-26,3.4.3.A,Loans to India,debit,88050,US$ million,preliminary estimate
+india,2025-26,3.4.3.A,Loans to India,net,8354,US$ million,preliminary estimate
+india,2022-23,3.4.3.B,Loans by India,credit,1316,US$ million,
+india,2022-23,3.4.3.B,Loans by India,debit,1026,US$ million,
+india,2022-23,3.4.3.B,Loans by India,net,291,US$ million,
+india,2023-24,3.4.3.B,Loans by India,credit,11212,US$ million,
+india,2023-24,3.4.3.B,Loans by India,debit,14985,US$ million,
+india,2023-24,3.4.3.B,Loans by India,net,-3773,US$ million,
+india,2024-25,3.4.3.B,Loans by India,credit,41983,US$ million,
+india,2024-25,3.4.3.B,Loans by India,debit,44647,US$ million,
+india,2024-25,3.4.3.B,Loans by India,net,-2664,US$ million,
+india,2025-26,3.4.3.B,Loans by India,credit,584490,US$ million,preliminary estimate
+india,2025-26,3.4.3.B,Loans by India,debit,587556,US$ million,preliminary estimate
+india,2025-26,3.4.3.B,Loans by India,net,-3066,US$ million,preliminary estimate
+india,2022-23,3.4.4,"Insurance, pension, and standardized guarantee schemes",credit,204,US$ million,
+india,2022-23,3.4.4,"Insurance, pension, and standardized guarantee schemes",debit,252,US$ million,
+india,2022-23,3.4.4,"Insurance, pension, and standardized guarantee schemes",net,-48,US$ million,
+india,2023-24,3.4.4,"Insurance, pension, and standardized guarantee schemes",credit,273,US$ million,
+india,2023-24,3.4.4,"Insurance, pension, and standardized guarantee schemes",debit,421,US$ million,
+india,2023-24,3.4.4,"Insurance, pension, and standardized guarantee schemes",net,-148,US$ million,
+india,2024-25,3.4.4,"Insurance, pension, and standardized guarantee schemes",credit,202,US$ million,
+india,2024-25,3.4.4,"Insurance, pension, and standardized guarantee schemes",debit,824,US$ million,
+india,2024-25,3.4.4,"Insurance, pension, and standardized guarantee schemes",net,-622,US$ million,
+india,2025-26,3.4.4,"Insurance, pension, and standardized guarantee schemes",credit,191,US$ million,preliminary estimate
+india,2025-26,3.4.4,"Insurance, pension, and standardized guarantee schemes",debit,234,US$ million,preliminary estimate
+india,2025-26,3.4.4,"Insurance, pension, and standardized guarantee schemes",net,-43,US$ million,preliminary estimate
+india,2022-23,3.4.5,Trade credit and advances,credit,68330,US$ million,
+india,2022-23,3.4.5,Trade credit and advances,debit,61791,US$ million,
+india,2022-23,3.4.5,Trade credit and advances,net,6539,US$ million,
+india,2023-24,3.4.5,Trade credit and advances,credit,58851,US$ million,
+india,2023-24,3.4.5,Trade credit and advances,debit,59684,US$ million,
+india,2023-24,3.4.5,Trade credit and advances,net,-833,US$ million,
+india,2024-25,3.4.5,Trade credit and advances,credit,68009,US$ million,
+india,2024-25,3.4.5,Trade credit and advances,debit,60855,US$ million,
+india,2024-25,3.4.5,Trade credit and advances,net,7154,US$ million,
+india,2025-26,3.4.5,Trade credit and advances,credit,75454,US$ million,preliminary estimate
+india,2025-26,3.4.5,Trade credit and advances,debit,61711,US$ million,preliminary estimate
+india,2025-26,3.4.5,Trade credit and advances,net,13744,US$ million,preliminary estimate
+india,2022-23,3.4.6,Other accounts receivable/payable - other,credit,34739,US$ million,
+india,2022-23,3.4.6,Other accounts receivable/payable - other,debit,22422,US$ million,
+india,2022-23,3.4.6,Other accounts receivable/payable - other,net,12317,US$ million,
+india,2023-24,3.4.6,Other accounts receivable/payable - other,credit,21343,US$ million,
+india,2023-24,3.4.6,Other accounts receivable/payable - other,debit,25196,US$ million,
+india,2023-24,3.4.6,Other accounts receivable/payable - other,net,-3853,US$ million,
+india,2024-25,3.4.6,Other accounts receivable/payable - other,credit,36236,US$ million,
+india,2024-25,3.4.6,Other accounts receivable/payable - other,debit,20819,US$ million,
+india,2024-25,3.4.6,Other accounts receivable/payable - other,net,15417,US$ million,
+india,2025-26,3.4.6,Other accounts receivable/payable - other,credit,26370,US$ million,preliminary estimate
+india,2025-26,3.4.6,Other accounts receivable/payable - other,debit,24507,US$ million,preliminary estimate
+india,2025-26,3.4.6,Other accounts receivable/payable - other,net,1863,US$ million,preliminary estimate
+india,2022-23,3.4.7,Special drawing rights,credit,,US$ million,
+india,2022-23,3.4.7,Special drawing rights,debit,,US$ million,
+india,2022-23,3.4.7,Special drawing rights,net,,US$ million,
+india,2023-24,3.4.7,Special drawing rights,credit,,US$ million,
+india,2023-24,3.4.7,Special drawing rights,debit,,US$ million,
+india,2023-24,3.4.7,Special drawing rights,net,,US$ million,
+india,2024-25,3.4.7,Special drawing rights,credit,,US$ million,
+india,2024-25,3.4.7,Special drawing rights,debit,,US$ million,
+india,2024-25,3.4.7,Special drawing rights,net,,US$ million,
+india,2025-26,3.4.7,Special drawing rights,credit,,US$ million,preliminary estimate
+india,2025-26,3.4.7,Special drawing rights,debit,,US$ million,preliminary estimate
+india,2025-26,3.4.7,Special drawing rights,net,,US$ million,preliminary estimate
+india,2022-23,3.5,Reserve assets,credit,30379,US$ million,
+india,2022-23,3.5,Reserve assets,debit,21244,US$ million,
+india,2022-23,3.5,Reserve assets,net,9135,US$ million,
+india,2023-24,3.5,Reserve assets,credit,,US$ million,
+india,2023-24,3.5,Reserve assets,debit,63702,US$ million,
+india,2023-24,3.5,Reserve assets,net,-63702,US$ million,
+india,2024-25,3.5,Reserve assets,credit,37660,US$ million,
+india,2024-25,3.5,Reserve assets,debit,32628,US$ million,
+india,2024-25,3.5,Reserve assets,net,5032,US$ million,
+india,2025-26,3.5,Reserve assets,credit,35326,US$ million,preliminary estimate
+india,2025-26,3.5,Reserve assets,debit,11727,US$ million,preliminary estimate
+india,2025-26,3.5,Reserve assets,net,23599,US$ million,preliminary estimate
+india,2022-23,3.5.1,Monetary gold,credit,,US$ million,
+india,2022-23,3.5.1,Monetary gold,debit,,US$ million,
+india,2022-23,3.5.1,Monetary gold,net,,US$ million,
+india,2023-24,3.5.1,Monetary gold,credit,,US$ million,
+india,2023-24,3.5.1,Monetary gold,debit,,US$ million,
+india,2023-24,3.5.1,Monetary gold,net,,US$ million,
+india,2024-25,3.5.1,Monetary gold,credit,,US$ million,
+india,2024-25,3.5.1,Monetary gold,debit,,US$ million,
+india,2024-25,3.5.1,Monetary gold,net,,US$ million,
+india,2025-26,3.5.1,Monetary gold,credit,,US$ million,preliminary estimate
+india,2025-26,3.5.1,Monetary gold,debit,,US$ million,preliminary estimate
+india,2025-26,3.5.1,Monetary gold,net,,US$ million,preliminary estimate
+india,2022-23,3.5.2,Special drawing rights n.a.,credit,,US$ million,
+india,2022-23,3.5.2,Special drawing rights n.a.,debit,,US$ million,
+india,2022-23,3.5.2,Special drawing rights n.a.,net,,US$ million,
+india,2023-24,3.5.2,Special drawing rights n.a.,credit,,US$ million,
+india,2023-24,3.5.2,Special drawing rights n.a.,debit,,US$ million,
+india,2023-24,3.5.2,Special drawing rights n.a.,net,,US$ million,
+india,2024-25,3.5.2,Special drawing rights n.a.,credit,,US$ million,
+india,2024-25,3.5.2,Special drawing rights n.a.,debit,,US$ million,
+india,2024-25,3.5.2,Special drawing rights n.a.,net,,US$ million,
+india,2025-26,3.5.2,Special drawing rights n.a.,credit,,US$ million,preliminary estimate
+india,2025-26,3.5.2,Special drawing rights n.a.,debit,,US$ million,preliminary estimate
+india,2025-26,3.5.2,Special drawing rights n.a.,net,,US$ million,preliminary estimate
+india,2022-23,3.5.3,Reserve position in the IMF n.a.,credit,,US$ million,
+india,2022-23,3.5.3,Reserve position in the IMF n.a.,debit,,US$ million,
+india,2022-23,3.5.3,Reserve position in the IMF n.a.,net,,US$ million,
+india,2023-24,3.5.3,Reserve position in the IMF n.a.,credit,,US$ million,
+india,2023-24,3.5.3,Reserve position in the IMF n.a.,debit,,US$ million,
+india,2023-24,3.5.3,Reserve position in the IMF n.a.,net,,US$ million,
+india,2024-25,3.5.3,Reserve position in the IMF n.a.,credit,,US$ million,
+india,2024-25,3.5.3,Reserve position in the IMF n.a.,debit,,US$ million,
+india,2024-25,3.5.3,Reserve position in the IMF n.a.,net,,US$ million,
+india,2025-26,3.5.3,Reserve position in the IMF n.a.,credit,,US$ million,preliminary estimate
+india,2025-26,3.5.3,Reserve position in the IMF n.a.,debit,,US$ million,preliminary estimate
+india,2025-26,3.5.3,Reserve position in the IMF n.a.,net,,US$ million,preliminary estimate
+india,2022-23,3.5.4,Other reserve assets (Foreign Currency Assets),credit,30379,US$ million,
+india,2022-23,3.5.4,Other reserve assets (Foreign Currency Assets),debit,21244,US$ million,
+india,2022-23,3.5.4,Other reserve assets (Foreign Currency Assets),net,9135,US$ million,
+india,2023-24,3.5.4,Other reserve assets (Foreign Currency Assets),credit,,US$ million,
+india,2023-24,3.5.4,Other reserve assets (Foreign Currency Assets),debit,63702,US$ million,
+india,2023-24,3.5.4,Other reserve assets (Foreign Currency Assets),net,-63702,US$ million,
+india,2024-25,3.5.4,Other reserve assets (Foreign Currency Assets),credit,37660,US$ million,
+india,2024-25,3.5.4,Other reserve assets (Foreign Currency Assets),debit,32628,US$ million,
+india,2024-25,3.5.4,Other reserve assets (Foreign Currency Assets),net,5032,US$ million,
+india,2025-26,3.5.4,Other reserve assets (Foreign Currency Assets),credit,35326,US$ million,preliminary estimate
+india,2025-26,3.5.4,Other reserve assets (Foreign Currency Assets),debit,11727,US$ million,preliminary estimate
+india,2025-26,3.5.4,Other reserve assets (Foreign Currency Assets),net,23599,US$ million,preliminary estimate
+india,2022-23,4,Total assets/liabilities,credit,702268,US$ million,
+india,2022-23,4,Total assets/liabilities,debit,634143,US$ million,
+india,2022-23,4,Total assets/liabilities,net,68126,US$ million,
+india,2023-24,4,Total assets/liabilities,credit,851246,US$ million,
+india,2023-24,4,Total assets/liabilities,debit,825525,US$ million,
+india,2023-24,4,Total assets/liabilities,net,25722,US$ million,
+india,2024-25,4,Total assets/liabilities,credit,1155466,US$ million,
+india,2024-25,4,Total assets/liabilities,debit,1133728,US$ million,
+india,2024-25,4,Total assets/liabilities,net,21738,US$ million,
+india,2025-26,4,Total assets/liabilities,credit,1639113,US$ million,preliminary estimate
+india,2025-26,4,Total assets/liabilities,debit,1613231,US$ million,preliminary estimate
+india,2025-26,4,Total assets/liabilities,net,25882,US$ million,preliminary estimate
+india,2022-23,4.1,Equity and investment fund shares,credit,368995,US$ million,
+india,2022-23,4.1,Equity and investment fund shares,debit,350396,US$ million,
+india,2022-23,4.1,Equity and investment fund shares,net,18599,US$ million,
+india,2023-24,4.1,Equity and investment fund shares,credit,503687,US$ million,
+india,2023-24,4.1,Equity and investment fund shares,debit,474025,US$ million,
+india,2023-24,4.1,Equity and investment fund shares,net,29662,US$ million,
+india,2024-25,4.1,Equity and investment fund shares,credit,651102,US$ million,
+india,2024-25,4.1,Equity and investment fund shares,debit,685303,US$ million,
+india,2024-25,4.1,Equity and investment fund shares,net,-34201,US$ million,
+india,2025-26,4.1,Equity and investment fund shares,credit,626613,US$ million,preliminary estimate
+india,2025-26,4.1,Equity and investment fund shares,debit,659183,US$ million,preliminary estimate
+india,2025-26,4.1,Equity and investment fund shares,net,-32570,US$ million,preliminary estimate
+india,2022-23,4.2,Debt instruments,credit,268155,US$ million,
+india,2022-23,4.2,Debt instruments,debit,240081,US$ million,
+india,2022-23,4.2,Debt instruments,net,28074,US$ million,
+india,2023-24,4.2,Debt instruments,credit,326216,US$ million,
+india,2023-24,4.2,Debt instruments,debit,262601,US$ million,
+india,2023-24,4.2,Debt instruments,net,63614,US$ million,
+india,2024-25,4.2,Debt instruments,credit,430467,US$ million,
+india,2024-25,4.2,Debt instruments,debit,394978,US$ million,
+india,2024-25,4.2,Debt instruments,net,35489,US$ million,
+india,2025-26,4.2,Debt instruments,credit,950805,US$ million,preliminary estimate
+india,2025-26,4.2,Debt instruments,debit,917814,US$ million,preliminary estimate
+india,2025-26,4.2,Debt instruments,net,32990,US$ million,preliminary estimate
+india,2022-23,4.3,Other financial assets and liabilities,credit,65118,US$ million,
+india,2022-23,4.3,Other financial assets and liabilities,debit,43666,US$ million,
+india,2022-23,4.3,Other financial assets and liabilities,net,21452,US$ million,
+india,2023-24,4.3,Other financial assets and liabilities,credit,21343,US$ million,
+india,2023-24,4.3,Other financial assets and liabilities,debit,88898,US$ million,
+india,2023-24,4.3,Other financial assets and liabilities,net,-67555,US$ million,
+india,2024-25,4.3,Other financial assets and liabilities,credit,73897,US$ million,
+india,2024-25,4.3,Other financial assets and liabilities,debit,53447,US$ million,
+india,2024-25,4.3,Other financial assets and liabilities,net,20450,US$ million,
+india,2025-26,4.3,Other financial assets and liabilities,credit,61696,US$ million,preliminary estimate
+india,2025-26,4.3,Other financial assets and liabilities,debit,36234,US$ million,preliminary estimate
+india,2025-26,4.3,Other financial assets and liabilities,net,25462,US$ million,preliminary estimate
+india,2022-23,5,Net errors and omissions,credit,900,US$ million,
+india,2022-23,5,Net errors and omissions,debit,1924,US$ million,
+india,2022-23,5,Net errors and omissions,net,-1024,US$ million,
+india,2023-24,5,Net errors and omissions,credit,1590,US$ million,
+india,2023-24,5,Net errors and omissions,debit,1188,US$ million,
+india,2023-24,5,Net errors and omissions,net,402,US$ million,
+india,2024-25,5,Net errors and omissions,credit,1851,US$ million,
+india,2024-25,5,Net errors and omissions,debit,448,US$ million,
+india,2024-25,5,Net errors and omissions,net,1402,US$ million,
+india,2025-26,5,Net errors and omissions,credit,2279,US$ million,preliminary estimate
+india,2025-26,5,Net errors and omissions,debit,2421,US$ million,preliminary estimate
+india,2025-26,5,Net errors and omissions,net,-142,US$ million,preliminary estimate

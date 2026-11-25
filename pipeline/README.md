@@ -120,6 +120,9 @@ Some CSVs were made in more than one step. Run the steps in this order:
 | `transport/morth_reports.mjs` | None. Lists the documents in one group of the MoRTH reports page and saves the app's JSON responses (the site is a JavaScript app in Hindi) | MoRTH |
 | `transport/extract_text.sh` | None. Layout text and word boxes of the MoRTH and NHTS PDFs | MoRTH, MoSPI |
 | `transport/build_transport.py` | `road-accidents-by-state`, `road-accidents-india-1970-2024`, `road-deaths-by-road-user`, `road-deaths-helmet-seatbelt-by-state`, `travel-mode-by-state-2025-26`, `travel-trip-share-by-state-2025-26`, `travel-india-fact-sheet-2025-26`. Reads the MoRTH tables from word boxes; checks the RAI 2024 values for 2023 against RAI 2023 | MoRTH (Road Accidents in India 2024 and 2023), MoSPI (NHTS 2025-26) |
+| `trade-payments/fetch_handbook.sh` | None. Saves the RBI Handbook 2025-26 HTML tables (58, 111 to 131, 143, 144, 241), its Notes on Tables and the RBI website policy page, with `common/fetch.sh` | RBI |
+| `trade-payments/fetch_psi.py` | None. Posts the Payment System Indicators archive form and saves all 65 monthly releases as HTML | RBI |
+| `trade-payments/build_trade_payments.py` | `current-account-annual`, `bop-indicators-annual`, `bop-bpm6-annual`, `merchandise-trade-annual`, `merchandise-trade-by-commodity`, `merchandise-trade-by-partner`, `forex-reserves-end-march`, `payments-monthly`, `payments-annual`, `payment-infrastructure-monthly`. Stops if a checked value or a cross-table check differs | RBI (Handbook, Payment System Indicators), DGCI&S (trade tables in the Handbook) |
 | `climate/extract_text.sh`, `climate/parse_cea.py` | None. Text and word boxes of the CEA and MNRE PDFs, and the CEA totals | CEA, MNRE |
 | `climate/build_rain.py` | `monsoon-rainfall-all-india-1901-2026` | IMD Pune |
 | `climate/build_subdiv.py` | `monsoon-2026-by-subdivision` (values transcribed from an IMD table image) | IMD |
