@@ -33,8 +33,19 @@ export function renderBars(chart: Of<'bars'>, width: Width): Markup {
     0,
     ...series.flatMap((s) => s.points.filter((p) => p.y !== null && p.y < 0).map((p) => show(chart, p, s).text.length * 6.6 + 8)),
   )
+  // A positive bar's value label sits right of the bar: leave room for the longest one, in either
+  // number mode ("₹7.91 lakh" beside "₹791,132").
+  const posRoom = Math.max(
+    0,
+    ...series.flatMap((s) =>
+      s.points.filter((p) => p.y !== null && p.y >= 0).map((p) => {
+        const v = show(chart, p, s)
+        return Math.max(v.text.length, v.alt?.length ?? 0) * 6.6 + 8
+      }),
+    ),
+  )
   // A stack fills to 100 and carries its values inside, so it needs no room at the right.
-  const m = { top: 0, right: chart.stacked ? 4 : narrow ? 52 : 64, bottom: 8, left: labelW + negRoom }
+  const m = { top: 0, right: chart.stacked ? 4 : Math.max(narrow ? 52 : 64, posRoom), bottom: 8, left: labelW + negRoom }
   const x = scaleLinear().domain([min, max]).nice().range([m.left, W - m.right])
   // The key wraps to the width; reference labels sit in a band above the bars, never over them.
   const keyRows = series.length > 1 ? legendRows(series, W) : 0

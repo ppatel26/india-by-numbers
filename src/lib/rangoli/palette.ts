@@ -18,6 +18,7 @@ export const INKS: Readonly<Record<string, string>> = {
   firozi: pigments['living-standards'].hex,
   manjistha: pigments.trade.hex,
   neel: pigments.transport.hex,
+  dhani: pigments.agriculture.hex,
   'rani-chalk': mix(pigments.population.hex, 0.62),
   'jamuni-chalk': mix(pigments.elections.hex, 0.55),
   'mor-chalk': mix(pigments.climate.hex, 0.45),

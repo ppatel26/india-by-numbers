@@ -139,6 +139,17 @@ const stateProfile: StateProfile = {
         'Ranks count only states and UTs with data. All values are survey estimates. Spending is in rupees at current prices, without imputation for free items (HCES 2023-24). Households in debt are as on 30 June 2018 (AIDIS 2019), when Jammu and Kashmir included Ladakh. Small states and UTs have small samples and wide errors.',
     },
     {
+      topic: 'agriculture',
+      heading: 'Agriculture',
+      measures: [
+        { label: 'Income of an agricultural household, a month', chart: 'farm-income-by-state' },
+        { label: 'Agricultural households in debt', chart: 'farm-households-in-debt-by-state' },
+        { label: 'Loans from moneylenders and other non-institutional sources', chart: 'farm-loans-banks-and-moneylenders', series: 'non-institutional' },
+      ],
+      footnote:
+        'Ranks count only states with data. Rural agricultural households only, from NSS round 77: survey estimates. Income is for July 2018 to June 2019 at current prices. Debt is for 2019. Jammu and Kashmir includes Ladakh. Goa, Delhi and the other UTs have no value.',
+    },
+    {
       topic: 'health',
       heading: 'Health',
       measures: [

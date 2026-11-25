@@ -31,6 +31,10 @@ const tiles: Readonly<Record<TopicSlug, Tile>> = {
     questions: ['How much do households spend on each person?', 'How many homes cook with clean fuel?'],
     figure: { chart: 'household-spending-by-state', series: 'rural', x: 'india', label: 'Rural spending per person, a month' },
   },
+  agriculture: {
+    questions: ['How much does a farm household earn?', 'How many farm households are in debt?'],
+    figure: { chart: 'farm-income-by-state', label: 'Income of an agricultural household, a month' },
+  },
   health: {
     questions: ['How many babies die before their first birthday?', 'How long do people in India live?'],
     figure: { chart: 'infant-mortality', series: 'total', label: 'Infant deaths per 1,000 live births' },
