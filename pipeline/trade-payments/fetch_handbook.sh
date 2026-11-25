@@ -18,4 +18,6 @@ for t in 58 $(seq 111 131) 143 144 241; do
   "$fetch" --raw "$raw" "https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=$((23825 + t))" "handbook/table-$t.html"
   sleep 1
 done
+# Notes on Tables: method notes for every Handbook table.
+"$fetch" --raw "$raw" "https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=24071" handbook/notes-on-tables.html
 "$fetch" --raw "$raw" "https://www.rbi.org.in/Scripts/Disclaimer.aspx" pages/disclaimer.html
