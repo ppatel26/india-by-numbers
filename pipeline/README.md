@@ -75,6 +75,7 @@ Some CSVs were made in more than one step. Run the steps in this order:
 | `common/fetch_batch.py` | None. Downloads a list of URLs, one folder each | Any |
 | `common/text.mjs` | None. Saves the rendered HTML of a page with Playwright | PIB, RBI |
 | `common/gunzip.py` | None. Decompresses pages that were saved gzipped | Any |
+| `common/catalogue_sweep.py` | `research/catalogues/mospi-microdata.csv`, `research/catalogues/orgi-census.csv`. Lists every survey and report in each catalogue, marks the ones a topic README cites, and prints what is new since the last sweep (`research/source-discovery.md`) | MoSPI, ORGI (NADA catalogues) |
 | `common/state_languages.py` | `state-languages.csv` (values entered by hand, with a source per row) | State and UT governments, Commissioner for Linguistic Minorities |
 | `prices/fetch_cpi12.py` | None. Downloads CPI base 2012, one month per request | MoSPI |
 | `prices/build_prices_economy.py` | `prices/`: `cpi-inflation-monthly`, `cpi-inflation-rural-urban`, `inflation-target`, `cpi-inflation-by-state` (October 2026), `cpi-inflation-by-division-2026`, `cpi-inflation-by-division-latest`, `cpi-inflation-by-group-2012-base`, `repo-rate`, `cpi-annual-inflation-long-run`. `economy/`: `gdp-growth-quarterly`, `gdp-growth-annual`, `gva-sector-shares`, `per-capita-nsdp-by-state`, `gsdp-growth-by-state`, `iip-growth-monthly`, `usd-inr-annual`, `usd-inr-daily-2026` | MoSPI, RBI |
