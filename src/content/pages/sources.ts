@@ -76,6 +76,7 @@ const PUBLISHERS: readonly Publisher[] = [
       { name: 'Index of Industrial Production', detail: 'Base 2011-12 and base 2022-23', rhythm: 'Monthly, on the 28th', match: /Industrial Production/ },
       { name: 'Periodic Labour Force Survey', detail: 'Monthly and quarterly bulletins, annual report', rhythm: 'Monthly, quarterly and yearly', match: /PLFS/ },
       { name: 'Women and Men in India', detail: 'Election tables, from ECI data', rhythm: 'Yearly', match: /Women and Men in India/ },
+      { name: 'NSS education surveys', detail: 'CMS: Education 2025 (round 80) and CAMS 2022-23 (round 79)', rhythm: 'One-off survey rounds', match: /CMS: Education|CAMS/ },
     ],
     licence: NOT_STATED,
     access: ['eSankhyiki API (api.mospi.gov.in)', 'A press note with each release'],

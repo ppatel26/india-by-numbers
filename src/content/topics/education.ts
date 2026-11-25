@@ -93,6 +93,37 @@ const census2011Pca: Source = {
   url: 'https://censusindia.gov.in/nada/index.php/catalog/6191/download/9268/DDW_PCA0000_2011_Indiastatedist.xlsx',
 }
 
+// NSS round 80. The PDF is dated 26 Aug 2025, the day of PIB release 2160863.
+const cmse2025: Source = {
+  publisher: 'NSO, MoSPI',
+  release: 'NSS Report No. 595, CMS: Education 2025 (NSS round 80, April to June 2025)',
+  released: '2025-08-26',
+  url: 'https://www.mospi.gov.in/uploads/publications_reports/publications_reports1757588642898_9ba30fe0-3677-478c-8d53-9a0d2ba107f0_CMS_E_2025L.pdf',
+}
+
+// The API gives no release date. Its values match the report (README).
+const cmse2025Api: Source = {
+  publisher: 'NSO, MoSPI',
+  release: 'eSankhyiki API, NSS round 80, CMS: Education 2025 (survey code 2)',
+  released: 'not stated',
+  url: 'https://api.mospi.gov.in/api/nss-80/getIndicatorList?survey_code=2',
+}
+
+// NSS round 79, July 2022 to June 2023. The PDF is dated 9 Oct 2024.
+const cams2022_23: Source = {
+  publisher: 'NSO, MoSPI',
+  release: 'NSS Report No. 590, CAMS 2022-23 (NSS round 79)',
+  released: '2024-10-09',
+  url: 'https://www.mospi.gov.in/sites/default/files/publication_reports/CAMS%20Report_October_N.pdf',
+}
+
+const cams2022_23Api: Source = {
+  publisher: 'NSO, MoSPI',
+  release: 'eSankhyiki API, NSS round 79, CAMS 2022-23 (survey code 1), indicator 3',
+  released: 'not stated',
+  url: 'https://api.mospi.gov.in/api/nss-79/getNss79Records?indicator_code=3&survey_code=1&Format=JSON',
+}
+
 const TREND = 'education/education-school-trend-india.csv'
 const DROPOUT = 'education/education-dropout-by-state.csv'
 const GER_SCHOOL = 'education/education-ger-school-by-state.csv'
@@ -101,6 +132,24 @@ const FACILITIES = 'education/education-school-facilities-by-state.csv'
 const GER_HE_STATE = 'education/education-higher-ed-ger-by-state.csv'
 const GER_HE_INDIA = 'education/education-higher-ed-ger-india.csv'
 const LITERACY = 'education/education-literacy-by-state.csv'
+const SPEND = 'education/education-spending-per-student.csv'
+const SCHOOL_TYPE = 'education/education-school-type-by-state.csv'
+const COACHING = 'education/education-private-coaching.csv'
+const MYS = 'education/education-mean-years-schooling-by-state.csv'
+
+/** NSS rows for everyone: both sexes, rural and urban together. */
+const ALL_PERSONS = { sex: 'person', sector: 'rural+urban' } as const
+
+const NSS_STATE_KNOW =
+  'MoSPI says the survey was not designed for state estimates. Sample sizes in small states and UTs may be too small for reliable values.'
+
+const spendSeries = (key: string, label: string, color: Series['color'], schoolType: string): Series => ({
+  key,
+  label,
+  color,
+  file: SPEND,
+  where: { geography: 'india', school_type: schoolType, ...ALL_PERSONS },
+})
 
 const SCHOOL_TREND_SOURCES = [
   udise2025_26, udise2024_25, udise2023_24, udise2022_23, udise2021_22, udise2020_21, udise2019_20, udise2018_19,
@@ -398,6 +447,151 @@ const topic: Topic = {
       ],
     },
     {
+      title: 'What do families spend on school?',
+      lede: 'In 2025 families spent ₹12,616 on average for each school student in the academic year. The figure was ₹2,863 in government schools and ₹28,693 in private unaided schools.',
+      blocks: [
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'school-spending-by-level-and-type',
+            title: 'Spending per school student by level and type of school, 2025',
+            subtitle: 'Average household spending per student in the current academic year, India.',
+            punches: { office: 'MoSPI', unit: '₹ a year', period: '2025' },
+            status: ['Survey estimate'],
+            note: 'Spending leaves out private coaching. Rupees at the prices of the 2025 survey.',
+            sources: [cmse2025, cmse2025Api],
+            format: { unit: '₹', decimals: 0 },
+            by: 'level',
+            rowHead: 'Level',
+            order: ['pre-primary', 'primary', 'middle', 'secondary', 'higher secondary', 'all levels'],
+            labels: {
+              'pre-primary': 'Pre-primary',
+              primary: 'Primary, 1-5',
+              middle: 'Middle, 6-8',
+              secondary: 'Secondary, 9-10',
+              'higher secondary': 'Higher secondary, 11-12',
+              'all levels': 'All levels',
+            },
+            series: [
+              spendSeries('government', 'Government', 's2', 'government'),
+              spendSeries('private-aided', 'Private aided', 's5', 'private aided'),
+              spendSeries('private-unaided', 'Private unaided, recognised', 's3', 'private unaided (recognised)'),
+              spendSeries('all', 'All schools', 'ink', 'all'),
+            ],
+            know: [
+              'Spending covers course fees, transport, uniforms, textbooks and stationery, and other items, paid or due in the current academic year. It leaves out private coaching.',
+              'Values are rupees at the prices of April to June 2025, as the survey recorded them.',
+              'Private aided schools are privately run with government aid. The report also gives "Others", which includes unrecognised private schools and taught 0.8% of students.',
+              'Pre-primary includes anganwadis. Primary is classes 1 to 5, middle 6 to 8, secondary 9 and 10, and higher secondary 11 and 12.',
+              'The survey does not compare with NSS round 75 (2017-18), which counted coaching as school spending and left anganwadis out of pre-primary.',
+              'The survey asked 52,085 households about 57,742 students, from April to June 2025.',
+            ],
+            processing: [
+              'Read indicators 30, 31 and 32 of NSS round 80, survey code 2, from the eSankhyiki API.',
+              'Check them against NSS Report No. 595: Statement 2.5 (all 60 values) and every page of Tables 5.1 and 5.2, whose all-India rows are Statements 2.3 and 2.4. All agree.',
+              'Show all students, rural and urban together.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'Among states, spending per student ranged from ₹5,656 in Bihar to ₹25,720 in Haryana. Chandigarh had the highest value of any state or UT, ₹49,711.',
+        },
+        {
+          chart: {
+            kind: 'states',
+            slug: 'school-spending-by-state',
+            title: 'Spending per school student by state, 2025',
+            subtitle: 'Average household spending per student in the current academic year, all levels and types of school.',
+            punches: { office: 'MoSPI', unit: '₹ a year', period: '2025' },
+            status: ['Survey estimate'],
+            note: 'Small states and UTs have wide margins of error. Chandigarh has no rural sample.',
+            sources: [cmse2025, cmse2025Api],
+            format: { unit: '₹', decimals: 0 },
+            data: { file: SPEND, where: { level: 'all levels', school_type: 'all', ...ALL_PERSONS }, x: 'geography' },
+            open: 'map',
+            scale: 'seq',
+            short: 'Spending per school student',
+            know: [
+              'The average covers all students from pre-primary to class 12, in government and private schools. It leaves out private coaching.',
+              "Private schools cost more, so a state's average depends on how many of its students attend them.",
+              NSS_STATE_KNOW,
+              'For this measure the relative standard error passes 25% in Arunachal Pradesh, Chandigarh, Dadra and Nagar Haveli and Daman and Diu, Ladakh, Lakshadweep and Puducherry (RSE Table 1).',
+              'Values are rupees at the prices of April to June 2025.',
+            ],
+            processing: [
+              'Read indicator 30 of NSS round 80, survey code 2, from the eSankhyiki API: all levels, all students, rural and urban.',
+              'Check every value on the six pages of Table 5.1 in NSS Report No. 595. All 1,998 agree.',
+              'Match state names to the site geography table.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'Government schools taught 55.9% of students. The share was 81.7% in Bihar and 15.3% in Goa.',
+        },
+        {
+          chart: {
+            kind: 'states',
+            slug: 'government-school-share-by-state',
+            title: 'Students in government schools by state, 2025',
+            subtitle: 'Share of students from pre-primary to class 12 who attend a government school, by state.',
+            punches: { office: 'MoSPI', unit: '% students', period: '2025' },
+            status: ['Survey estimate'],
+            sources: [cmse2025, cmse2025Api],
+            format: { unit: '%', decimals: 1 },
+            data: { file: SCHOOL_TYPE, where: { school_type: 'government', ...ALL_PERSONS }, x: 'geography' },
+            open: 'map',
+            scale: 'seq',
+            short: 'In government schools',
+            know: [
+              'The survey asks households which school each student attends. UDISE+ counts enrolment from school returns, so the two shares can differ.',
+              'Private aided schools taught 11.3% of students and private unaided recognised schools 31.9%. Neither counts as government here.',
+              'Government schools taught 66.0% of rural students and 30.1% of urban students.',
+              NSS_STATE_KNOW,
+            ],
+            processing: [
+              'Read indicator 24 of NSS round 80, survey code 2, from the eSankhyiki API.',
+              'Check every value on the four pages of Table 2 in NSS Report No. 595, whose all-India rows are Statement 1.2. All 1,332 agree.',
+              'Match state names to the site geography table.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'In 2025, 27.0% of school students took private coaching. In Tripura the share was 78.6%, and in West Bengal 74.6%.',
+        },
+        {
+          chart: {
+            kind: 'states',
+            slug: 'private-coaching-by-state',
+            title: 'Students who take private coaching by state, 2025',
+            subtitle: 'Share of school students who took private coaching or tuition in the current academic year.',
+            punches: { office: 'MoSPI', unit: '% students', period: '2025' },
+            status: ['Survey estimate'],
+            sources: [cmse2025, cmse2025Api],
+            format: { unit: '%', decimals: 1 },
+            data: { file: COACHING, where: { level: 'all levels', ...ALL_PERSONS }, x: 'geography' },
+            open: 'map',
+            scale: 'seq',
+            short: 'Private coaching',
+            know: [
+              'Coaching covers private coaching and tuition classes taken in the current academic year, for students from pre-primary to class 12.',
+              'Across India the share rose from 11.6% in pre-primary to 37.8% in classes 9 and 10.',
+              'Urban students took coaching more often than rural students: 30.7% against 25.5%.',
+              NSS_STATE_KNOW,
+            ],
+            processing: [
+              'Read indicator 38 of NSS round 80, survey code 2, from the eSankhyiki API.',
+              'Check every value on the six pages of Table 11 in NSS Report No. 595, whose all-India rows are Statement 3.1. All 1,998 agree.',
+              'Match state names to the site geography table.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
+    {
       title: 'How many young adults go to college?',
       lede: 'In 2023-24 the college enrolment ratio was 30.0. Women have been ahead of men since 2017-18.',
       blocks: [
@@ -567,25 +761,56 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
+        {
+          text: 'In 2022-23 adults aged 25 and over had spent 7.5 years in school or college on average. Goa had 11.6 years. Andhra Pradesh and Rajasthan had 6.1.',
+        },
+        {
+          chart: {
+            kind: 'states',
+            slug: 'mean-years-of-schooling-by-state',
+            title: 'Mean years of schooling by state, age 25 and over, 2022-23',
+            subtitle: 'Average years spent in formal education by people aged 25 and over, by state.',
+            punches: { office: 'MoSPI', unit: 'years, 25+', period: '2022-23' },
+            status: ['Survey estimate'],
+            sources: [cams2022_23, cams2022_23Api],
+            format: { decimals: 1, suffix: ' years' },
+            data: { file: MYS, where: { age_group: '25+', ...ALL_PERSONS }, x: 'geography' },
+            open: 'map',
+            scale: 'seq',
+            better: 'high',
+            short: 'Years of schooling, 25+',
+            know: [
+              'The mean counts the years each person spent in formal education, pre-primary included, whether or not the course was completed. Repeated years do not count. People who never enrolled count as 0.',
+              'Women aged 25 and over had 6.3 years on average and men 8.6 years. For everyone aged 15 and over the India value was 8.4 years.',
+              'The survey, CAMS, ran from July 2022 to June 2023 as NSS round 79. It is a household survey, so each value is a survey estimate.',
+            ],
+            processing: [
+              'Read indicator 3 of NSS round 79, survey code 1, from the eSankhyiki API.',
+              'Check every value in Table 3 of NSS Report No. 590 (ages 15+ and 25+). All 666 agree.',
+              'Match state names to the site geography table.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
       ],
     },
   ],
   // LATER: the About band's side line ("How each education figure is made, where it breaks, and what is missing.") has no field.
   about: {
     intro:
-      'Schools report their own counts. Colleges answer a survey of institutions. Literacy comes from a household survey and the Census.',
+      'Schools report their own counts. Colleges answer a survey of institutions. Literacy, schooling and household spending on school come from household surveys and the Census.',
     publisher:
-      'The Ministry of Education publishes school data (UDISE+) and college data (AISHE). NSO, MoSPI, publishes the PLFS literacy estimate. The Registrar General of India (ORGI) runs the Census.',
+      'The Ministry of Education publishes school data (UDISE+) and college data (AISHE). NSO, MoSPI, publishes the PLFS literacy estimate and the NSS surveys of school spending (CMS: Education 2025) and schooling (CAMS 2022-23). The Registrar General of India (ORGI) runs the Census.',
     frequency:
-      'UDISE+: yearly, latest on 7 Jul 2026. AISHE: yearly, about two years behind; latest on 8 Jul 2026. PLFS: yearly. Census: last full count in 2011.',
+      'UDISE+: yearly, latest on 7 Jul 2026. AISHE: yearly, about two years behind; latest on 8 Jul 2026. PLFS: yearly. NSS education surveys: one-off rounds, latest on 26 Aug 2025. Census: last full count in 2011.',
     revisions:
       'AISHE and Census figures are final as published. MoSPI revised the PLFS 2025 report on 29 May 2026.',
     breaks:
-      'UDISE+ replaced UDISE in 2018-19. From 2022-23 it counts each student and uses new population projections; do not compare ratios across this break. Literacy: 2011 is a full count, 2025 a survey.',
+      'UDISE+ replaced UDISE in 2018-19. From 2022-23 it counts each student and uses new population projections; do not compare ratios across this break. Literacy: 2011 is a full count, 2025 a survey. School spending in 2025 does not compare with NSS round 75 (2017-18).',
     coverage:
-      'India and all 36 states and UTs. School levels use the existing structure, not NEP 2020. College ratios cover ages 18 to 23. Literacy covers ages 7 and over.',
+      'India and all 36 states and UTs. School levels use the existing structure, not NEP 2020. College ratios cover ages 18 to 23. Literacy covers ages 7 and over. School spending covers students from pre-primary to class 12.',
     missing:
-      'UDISE dropout rates for 2017-18 could not be checked by cohort year. AISHE gives no SC or ST ratio for several UTs. No publisher states a reuse licence.',
+      'UDISE dropout rates for 2017-18 could not be checked by cohort year. AISHE gives no SC or ST ratio for several UTs. NSS state values for small states and UTs have wide errors. No publisher states a reuse licence.',
   },
   sources: [
     ...SCHOOL_TREND_SOURCES,
@@ -593,6 +818,10 @@ const topic: Topic = {
     aisheTimeSeries,
     plfsAnnual2025,
     census2011Pca,
+    cmse2025,
+    cmse2025Api,
+    cams2022_23,
+    cams2022_23Api,
   ],
   related: [
     { label: 'Jobs: Unemployment among people aged 15 to 29', href: '/charts/youth-unemployment/' },
