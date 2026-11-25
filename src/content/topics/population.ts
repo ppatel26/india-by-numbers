@@ -1,4 +1,5 @@
 import type { Chart, Series, Source, Topic } from '../types'
+import { WDI, WDI_ABOUT, comparison } from '../international'
 import { CRS_2024, sexRatioAtBirthIndia } from './health'
 
 // Data: research/data/population/README.md.
@@ -924,13 +925,41 @@ const topic: Topic = {
         },
       ],
     },
+    {
+      title: "How does India's fertility rate compare?",
+      lede: 'The UN estimates that a woman in India would have 2.0 children at the birth rates of 2023, down from 4.0 in 1990. The rate was 3.6 in Pakistan and 1.0 in China.',
+      blocks: [
+        {
+          chart: comparison({
+            slug: 'fertility-rate-comparison',
+            file: 'wdi-fertility-rate.csv',
+            title: 'Fertility rate, India and other countries, 1990 and 2023',
+            subtitle: 'Children a woman would have at the birth rates of that year, seven countries and the world. UN estimates, through the World Bank.',
+            unit: 'births per woman',
+            latest: '2023',
+            format: { decimals: 1 },
+            note: 'WDI takes the country values from UN World Population Prospects 2024.',
+            sources: [WDI.fertility],
+            refs: [{ value: 2.1, label: 'Replacement 2.1' }],
+            know: [
+              'The total fertility rate is the number of children a woman would have if she lived through the birth rates of one year, at each age.',
+              'WDI takes these values from the UN Population Division, World Population Prospects 2024, medium variant. We checked all seven countries against the UN file. They agree to three decimals.',
+              'WPP 2024 gives estimates up to 2023 and projections from 2024. WDI also prints 2024, a projection, so the chart stops at 2023.',
+              "SRS, India's own source, gives 1.9 for 2023, close to the UN estimate of 1.975.",
+              'The world value is the World Bank average of the countries in WDI. It differs from the UN world figure.',
+            ],
+            processing: ['Check every country value against the WPP 2024 Demographic Indicators file, medium variant.', 'Show each value to one decimal place. Rank the rows by the 2023 value.'],
+          }),
+        },
+      ],
+    },
   ],
   // LATER: the About band's side line ("How each population figure is made: counts, survey estimates and projections.") has no field.
   about: {
     intro:
       'Census 2011 is a count of every person. The SRS is a sample survey. The 2026 and 2036 values are projections.',
     publisher:
-      'The Office of the Registrar General and Census Commissioner, India (ORGI), Ministry of Home Affairs, runs the Census and the Sample Registration System (SRS). The National Commission on Population (MoHFW) publishes the projections.',
+      ['The Office of the Registrar General and Census Commissioner, India (ORGI), Ministry of Home Affairs, runs the Census and the Sample Registration System (SRS). The National Commission on Population (MoHFW) publishes the projections.', WDI_ABOUT].join(' '),
     frequency:
       'Census: latest full count 2011. Census 2027 is under way, reference date 1 March 2027 in most states. SRS: yearly. The 2024 report came out on 20 May 2026. Projections: one report, July 2020.',
     revisions:
@@ -946,7 +975,7 @@ const topic: Topic = {
       'No count exists after 2011. The SRS gives no fertility rate or sex ratio at birth for 14 smaller states and UTs. Small-UT projections can look odd. Neither publisher states an open licence.',
   },
   // The board lists the SRS report and bulletin on one line; they are two releases with two URLs.
-  sources: [censusA02, censusA01, censusC14, census1961, censusUrbanHistory, census1991Urban, census2001Pca, srsCompendium, srsReport2018, srsReport, srsBulletin, projections, wpp, wppAge, ...gazettes],
+  sources: [censusA02, censusA01, censusC14, census1961, censusUrbanHistory, census1991Urban, census2001Pca, srsCompendium, srsReport2018, srsReport, srsBulletin, projections, wpp, wppAge, ...gazettes, WDI.fertility],
   rail: [
     {
       title: 'Census 2027',
