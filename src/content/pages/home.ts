@@ -137,7 +137,6 @@ const home: Home = {
       'Energy',
       'Air quality',
       'Housing',
-      'Agriculture',
       'Migration',
       'Poverty and inequality',
     ],

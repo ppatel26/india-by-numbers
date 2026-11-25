@@ -180,6 +180,17 @@ const topics: TopicsPage = {
       latest: { date: '30 Jan 2025', label: 'HCES 2023-24 report, MoSPI' },
       next: { date: 'Not announced', label: 'No release date published.' },
     },
+    agriculture: {
+      questions: [
+        'How much does an agricultural household earn in a month, and from what?',
+        'Which states have the highest and the lowest farm household incomes?',
+        'What share of agricultural households is in debt, and how large is the average loan?',
+        'Do they borrow from banks or from moneylenders, and where do moneylenders matter most?',
+        'How much land do agricultural households have, and are holdings getting smaller?',
+      ],
+      latest: { date: 'Sep 2021', label: 'NSS Report No. 587 (NSS round 77), MoSPI' },
+      next: { date: 'Not announced', label: 'No date published for the next round. Crop production and yields will follow.' },
+    },
     'religion-and-culture': {
       questions: [
         'What religions do people in India report, and in what numbers?',
@@ -200,7 +211,6 @@ const topics: TopicsPage = {
       'Energy',
       'Air quality',
       'Housing',
-      'Agriculture',
       'Migration',
       'Poverty and inequality',
     ],

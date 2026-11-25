@@ -69,7 +69,7 @@ const PUBLISHERS: readonly Publisher[] = [
     short: 'MoSPI',
     logos: ['mospi'],
     full: 'National Statistics Office (NSO), Ministry of Statistics and Programme Implementation',
-    topics: ['prices', 'economy', 'jobs', 'living-standards', 'health', 'education', 'elections', 'transport'],
+    topics: ['prices', 'economy', 'jobs', 'living-standards', 'agriculture', 'health', 'education', 'elections', 'transport'],
     dataSets: [
       { name: 'Consumer Price Index', detail: 'Base 2012=100 to Dec 2025; base 2024=100 from Jan 2026', rhythm: 'Monthly, on the 12th', match: /Consumer Price Index|CPI/ },
       { name: 'National Accounts', detail: 'GDP, GVA and state income', rhythm: 'Quarterly, with annual revisions', match: /National Accounts|GDP|state accounts/ },
@@ -81,6 +81,7 @@ const PUBLISHERS: readonly Publisher[] = [
       { name: 'Household Consumption Expenditure Survey', detail: 'HCES 2022-23 and 2023-24, with India values from 1999-00', rhythm: 'Survey rounds; the round before 2022-23 was 2011-12', match: /Household Consumption Expenditure/ },
       { name: 'NSS round 76', detail: 'Persons with disabilities (Report 583); drinking water, sanitation, hygiene and housing condition (Report 584), 2018', rhythm: 'One-off survey round', match: /round 76/ },
       { name: 'National Household Travel Survey', detail: 'NHTS 2025-26 fact sheet and Appendix A and B tables: mode of travel to work and school, overnight trips', rhythm: 'First round, July 2025 to June 2026', match: /Household Travel/ },
+      { name: 'NSS round 77', detail: 'Situation Assessment of Agricultural Households and Land and Livestock Holdings, 2019 (Report 587): income, debt, loans and land', rhythm: 'One-off survey round; earlier rounds in 2013 and 2003', match: /round 77/ },
     ],
     licence: NOT_STATED,
     access: ['eSankhyiki API (api.mospi.gov.in)', 'A press note with each release'],
@@ -405,6 +406,10 @@ const sources: SourcesPage = {
       {
         source: 'Answers in Parliament with road accident figures for 2025 and 2026 (sansad.in)',
         why: 'The figures come from the e-DAR system and are marked provisional. We wait for a dated MoRTH report.',
+      },
+      {
+        source: 'Agricultural Statistics at a Glance 2024-25, Ministry of Agriculture and Farmers Welfare (desagri.gov.in)',
+        why: 'Its website allows reuse only after permission by mail. We have not asked yet, so crop area, production and yields, and the Agriculture Census holdings it reprints, wait for a reply.',
       },
       {
         source: 'News reports of official figures',
