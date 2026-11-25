@@ -1,0 +1,186 @@
+geography,period,indicator,value,unit,table
+india,2022,cases,28522,cases,Table 2A.1
+india,2023,cases,27721,cases,Table 2A.1
+india,2024,cases,27049,cases,Table 2A.1
+india,2024,murder-rate,1.9,murder cases per lakh population,Table 2A.1
+india,2024,chargesheeting-rate,84.7,percent,Table 2A.1
+andhra-pradesh,2022,cases,925,cases,Table 2A.1
+andhra-pradesh,2023,cases,922,cases,Table 2A.1
+andhra-pradesh,2024,cases,898,cases,Table 2A.1
+andhra-pradesh,2024,murder-rate,1.7,murder cases per lakh population,Table 2A.1
+andhra-pradesh,2024,chargesheeting-rate,92.9,percent,Table 2A.1
+arunachal-pradesh,2022,cases,56,cases,Table 2A.1
+arunachal-pradesh,2023,cases,57,cases,Table 2A.1
+arunachal-pradesh,2024,cases,50,cases,Table 2A.1
+arunachal-pradesh,2024,murder-rate,3.2,murder cases per lakh population,Table 2A.1
+arunachal-pradesh,2024,chargesheeting-rate,81.5,percent,Table 2A.1
+assam,2022,cases,1072,cases,Table 2A.1
+assam,2023,cases,1025,cases,Table 2A.1
+assam,2024,cases,933,cases,Table 2A.1
+assam,2024,murder-rate,2.6,murder cases per lakh population,Table 2A.1
+assam,2024,chargesheeting-rate,66.6,percent,Table 2A.1
+bihar,2022,cases,2930,cases,Table 2A.1
+bihar,2023,cases,2862,cases,Table 2A.1
+bihar,2024,cases,2787,cases,Table 2A.1
+bihar,2024,murder-rate,2.2,murder cases per lakh population,Table 2A.1
+bihar,2024,chargesheeting-rate,89.7,percent,Table 2A.1
+chhattisgarh,2022,cases,1013,cases,Table 2A.1
+chhattisgarh,2023,cases,958,cases,Table 2A.1
+chhattisgarh,2024,cases,1024,cases,Table 2A.1
+chhattisgarh,2024,murder-rate,3.3,murder cases per lakh population,Table 2A.1
+chhattisgarh,2024,chargesheeting-rate,93.6,percent,Table 2A.1
+goa,2022,cases,44,cases,Table 2A.1
+goa,2023,cases,26,cases,Table 2A.1
+goa,2024,cases,30,cases,Table 2A.1
+goa,2024,murder-rate,1.9,murder cases per lakh population,Table 2A.1
+goa,2024,chargesheeting-rate,82.4,percent,Table 2A.1
+gujarat,2022,cases,959,cases,Table 2A.1
+gujarat,2023,cases,968,cases,Table 2A.1
+gujarat,2024,cases,964,cases,Table 2A.1
+gujarat,2024,murder-rate,1.3,murder cases per lakh population,Table 2A.1
+gujarat,2024,chargesheeting-rate,92.8,percent,Table 2A.1
+haryana,2022,cases,1020,cases,Table 2A.1
+haryana,2023,cases,1042,cases,Table 2A.1
+haryana,2024,cases,956,cases,Table 2A.1
+haryana,2024,murder-rate,3.1,murder cases per lakh population,Table 2A.1
+haryana,2024,chargesheeting-rate,75.3,percent,Table 2A.1
+himachal-pradesh,2022,cases,85,cases,Table 2A.1
+himachal-pradesh,2023,cases,93,cases,Table 2A.1
+himachal-pradesh,2024,cases,84,cases,Table 2A.1
+himachal-pradesh,2024,murder-rate,1.1,murder cases per lakh population,Table 2A.1
+himachal-pradesh,2024,chargesheeting-rate,82.6,percent,Table 2A.1
+jharkhand,2022,cases,1550,cases,Table 2A.1
+jharkhand,2023,cases,1463,cases,Table 2A.1
+jharkhand,2024,cases,1472,cases,Table 2A.1
+jharkhand,2024,murder-rate,3.7,murder cases per lakh population,Table 2A.1
+jharkhand,2024,chargesheeting-rate,75.8,percent,Table 2A.1
+karnataka,2022,cases,1404,cases,Table 2A.1
+karnataka,2023,cases,1322,cases,Table 2A.1
+karnataka,2024,cases,1228,cases,Table 2A.1
+karnataka,2024,murder-rate,1.8,murder cases per lakh population,Table 2A.1
+karnataka,2024,chargesheeting-rate,89.7,percent,Table 2A.1
+kerala,2022,cases,334,cases,Table 2A.1
+kerala,2023,cases,352,cases,Table 2A.1
+kerala,2024,cases,338,cases,Table 2A.1
+kerala,2024,murder-rate,0.9,murder cases per lakh population,Table 2A.1
+kerala,2024,chargesheeting-rate,97.6,percent,Table 2A.1
+madhya-pradesh,2022,cases,1978,cases,Table 2A.1
+madhya-pradesh,2023,cases,1832,cases,Table 2A.1
+madhya-pradesh,2024,cases,1813,cases,Table 2A.1
+madhya-pradesh,2024,murder-rate,2.1,murder cases per lakh population,Table 2A.1
+madhya-pradesh,2024,chargesheeting-rate,94.9,percent,Table 2A.1
+maharashtra,2022,cases,2295,cases,Table 2A.1
+maharashtra,2023,cases,2208,cases,Table 2A.1
+maharashtra,2024,cases,2168,cases,Table 2A.1
+maharashtra,2024,murder-rate,1.7,murder cases per lakh population,Table 2A.1
+maharashtra,2024,chargesheeting-rate,93.4,percent,Table 2A.1
+manipur,2022,cases,47,cases,Table 2A.1
+manipur,2023,cases,151,cases,Table 2A.1
+manipur,2024,cases,83,cases,Table 2A.1
+manipur,2024,murder-rate,2.5,murder cases per lakh population,Table 2A.1
+manipur,2024,chargesheeting-rate,46.8,percent,Table 2A.1
+meghalaya,2022,cases,72,cases,Table 2A.1
+meghalaya,2023,cases,62,cases,Table 2A.1
+meghalaya,2024,cases,84,cases,Table 2A.1
+meghalaya,2024,murder-rate,2.5,murder cases per lakh population,Table 2A.1
+meghalaya,2024,chargesheeting-rate,50.0,percent,Table 2A.1
+mizoram,2022,cases,31,cases,Table 2A.1
+mizoram,2023,cases,24,cases,Table 2A.1
+mizoram,2024,cases,37,cases,Table 2A.1
+mizoram,2024,murder-rate,3.0,murder cases per lakh population,Table 2A.1
+mizoram,2024,chargesheeting-rate,94.7,percent,Table 2A.1
+nagaland,2022,cases,21,cases,Table 2A.1
+nagaland,2023,cases,19,cases,Table 2A.1
+nagaland,2024,cases,17,cases,Table 2A.1
+nagaland,2024,murder-rate,0.8,murder cases per lakh population,Table 2A.1
+nagaland,2024,chargesheeting-rate,40.9,percent,Table 2A.1
+odisha,2022,cases,1379,cases,Table 2A.1
+odisha,2023,cases,1362,cases,Table 2A.1
+odisha,2024,cases,1258,cases,Table 2A.1
+odisha,2024,murder-rate,2.7,murder cases per lakh population,Table 2A.1
+odisha,2024,chargesheeting-rate,71.6,percent,Table 2A.1
+punjab,2022,cases,670,cases,Table 2A.1
+punjab,2023,cases,681,cases,Table 2A.1
+punjab,2024,cases,762,cases,Table 2A.1
+punjab,2024,murder-rate,2.5,murder cases per lakh population,Table 2A.1
+punjab,2024,chargesheeting-rate,88.7,percent,Table 2A.1
+rajasthan,2022,cases,1834,cases,Table 2A.1
+rajasthan,2023,cases,1804,cases,Table 2A.1
+rajasthan,2024,cases,1607,cases,Table 2A.1
+rajasthan,2024,murder-rate,2.0,murder cases per lakh population,Table 2A.1
+rajasthan,2024,chargesheeting-rate,60.4,percent,Table 2A.1
+sikkim,2022,cases,9,cases,Table 2A.1
+sikkim,2023,cases,12,cases,Table 2A.1
+sikkim,2024,cases,14,cases,Table 2A.1
+sikkim,2024,murder-rate,2.0,murder cases per lakh population,Table 2A.1
+sikkim,2024,chargesheeting-rate,84.2,percent,Table 2A.1
+tamil-nadu,2022,cases,1690,cases,Table 2A.1
+tamil-nadu,2023,cases,1681,cases,Table 2A.1
+tamil-nadu,2024,cases,1565,cases,Table 2A.1
+tamil-nadu,2024,murder-rate,2.0,murder cases per lakh population,Table 2A.1
+tamil-nadu,2024,chargesheeting-rate,96.9,percent,Table 2A.1
+telangana,2022,cases,937,cases,Table 2A.1
+telangana,2023,cases,954,cases,Table 2A.1
+telangana,2024,cases,1040,cases,Table 2A.1
+telangana,2024,murder-rate,2.7,murder cases per lakh population,Table 2A.1
+telangana,2024,chargesheeting-rate,92.2,percent,Table 2A.1
+tripura,2022,cases,109,cases,Table 2A.1
+tripura,2023,cases,101,cases,Table 2A.1
+tripura,2024,cases,116,cases,Table 2A.1
+tripura,2024,murder-rate,2.8,murder cases per lakh population,Table 2A.1
+tripura,2024,chargesheeting-rate,86.8,percent,Table 2A.1
+uttar-pradesh,2022,cases,3491,cases,Table 2A.1
+uttar-pradesh,2023,cases,3206,cases,Table 2A.1
+uttar-pradesh,2024,cases,3218,cases,Table 2A.1
+uttar-pradesh,2024,murder-rate,1.3,murder cases per lakh population,Table 2A.1
+uttar-pradesh,2024,chargesheeting-rate,81.0,percent,Table 2A.1
+uttarakhand,2022,cases,187,cases,Table 2A.1
+uttarakhand,2023,cases,183,cases,Table 2A.1
+uttarakhand,2024,cases,213,cases,Table 2A.1
+uttarakhand,2024,murder-rate,1.8,murder cases per lakh population,Table 2A.1
+uttarakhand,2024,chargesheeting-rate,76.4,percent,Table 2A.1
+west-bengal,2022,cases,1696,cases,Table 2A.1
+west-bengal,2023,cases,1686,cases,Table 2A.1
+west-bengal,2024,cases,1624,cases,Table 2A.1
+west-bengal,2024,murder-rate,1.6,murder cases per lakh population,Table 2A.1
+west-bengal,2024,chargesheeting-rate,85.8,percent,Table 2A.1
+andaman-nicobar,2022,cases,7,cases,Table 2A.1
+andaman-nicobar,2023,cases,8,cases,Table 2A.1
+andaman-nicobar,2024,cases,11,cases,Table 2A.1
+andaman-nicobar,2024,murder-rate,2.7,murder cases per lakh population,Table 2A.1
+andaman-nicobar,2024,chargesheeting-rate,90.0,percent,Table 2A.1
+chandigarh,2022,cases,18,cases,Table 2A.1
+chandigarh,2023,cases,17,cases,Table 2A.1
+chandigarh,2024,cases,22,cases,Table 2A.1
+chandigarh,2024,murder-rate,1.8,murder cases per lakh population,Table 2A.1
+chandigarh,2024,chargesheeting-rate,85.2,percent,Table 2A.1
+dnh-dd,2022,cases,16,cases,Table 2A.1
+dnh-dd,2023,cases,20,cases,Table 2A.1
+dnh-dd,2024,cases,11,cases,Table 2A.1
+dnh-dd,2024,murder-rate,0.8,murder cases per lakh population,Table 2A.1
+dnh-dd,2024,chargesheeting-rate,93.8,percent,Table 2A.1
+delhi,2022,cases,509,cases,Table 2A.1
+delhi,2023,cases,506,cases,Table 2A.1
+delhi,2024,cases,504,cases,Table 2A.1
+delhi,2024,murder-rate,2.3,murder cases per lakh population,Table 2A.1
+delhi,2024,chargesheeting-rate,90.8,percent,Table 2A.1
+jammu-kashmir,2022,cases,99,cases,Table 2A.1
+jammu-kashmir,2023,cases,84,cases,Table 2A.1
+jammu-kashmir,2024,cases,90,cases,Table 2A.1
+jammu-kashmir,2024,murder-rate,0.7,murder cases per lakh population,Table 2A.1
+jammu-kashmir,2024,chargesheeting-rate,65.3,percent,Table 2A.1
+ladakh,2022,cases,5,cases,Table 2A.1
+ladakh,2023,cases,2,cases,Table 2A.1
+ladakh,2024,cases,1,cases,Table 2A.1
+ladakh,2024,murder-rate,0.3,murder cases per lakh population,Table 2A.1
+ladakh,2024,chargesheeting-rate,,percent,Table 2A.1
+lakshadweep,2022,cases,0,cases,Table 2A.1
+lakshadweep,2023,cases,0,cases,Table 2A.1
+lakshadweep,2024,cases,0,cases,Table 2A.1
+lakshadweep,2024,murder-rate,0.0,murder cases per lakh population,Table 2A.1
+lakshadweep,2024,chargesheeting-rate,100.0,percent,Table 2A.1
+puducherry,2022,cases,30,cases,Table 2A.1
+puducherry,2023,cases,28,cases,Table 2A.1
+puducherry,2024,cases,27,cases,Table 2A.1
+puducherry,2024,murder-rate,1.6,murder cases per lakh population,Table 2A.1
+puducherry,2024,chargesheeting-rate,100.0,percent,Table 2A.1

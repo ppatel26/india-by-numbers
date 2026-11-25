@@ -1,0 +1,223 @@
+geography,period,indicator,value,unit,table
+india,2022,cases,445256,cases,Table 3A.1
+india,2023,cases,448211,cases,Table 3A.1
+india,2024,cases,441534,cases,Table 3A.1
+india,2024,crime-rate,64.6,crimes against women per lakh women,Table 3A.1
+india,2024,female-population,6833.4,lakh women,Table 3A.1
+india,2024,chargesheeting-rate,77.2,percent,Table 3A.1
+andhra-pradesh,2022,cases,25503,cases,Table 3A.1
+andhra-pradesh,2023,cases,22418,cases,Table 3A.1
+andhra-pradesh,2024,cases,19952,cases,Table 3A.1
+andhra-pradesh,2024,crime-rate,74.7,crimes against women per lakh women,Table 3A.1
+andhra-pradesh,2024,female-population,267.1,lakh women,Table 3A.1
+andhra-pradesh,2024,chargesheeting-rate,94.4,percent,Table 3A.1
+arunachal-pradesh,2022,cases,335,cases,Table 3A.1
+arunachal-pradesh,2023,cases,326,cases,Table 3A.1
+arunachal-pradesh,2024,cases,321,cases,Table 3A.1
+arunachal-pradesh,2024,crime-rate,41.8,crimes against women per lakh women,Table 3A.1
+arunachal-pradesh,2024,female-population,7.7,lakh women,Table 3A.1
+arunachal-pradesh,2024,chargesheeting-rate,77.5,percent,Table 3A.1
+assam,2022,cases,14148,cases,Table 3A.1
+assam,2023,cases,12070,cases,Table 3A.1
+assam,2024,cases,10546,cases,Table 3A.1
+assam,2024,crime-rate,59.3,crimes against women per lakh women,Table 3A.1
+assam,2024,female-population,177.7,lakh women,Table 3A.1
+assam,2024,chargesheeting-rate,76.5,percent,Table 3A.1
+bihar,2022,cases,20222,cases,Table 3A.1
+bihar,2023,cases,22952,cases,Table 3A.1
+bihar,2024,cases,27359,cases,Table 3A.1
+bihar,2024,crime-rate,44.1,crimes against women per lakh women,Table 3A.1
+bihar,2024,female-population,621.0,lakh women,Table 3A.1
+bihar,2024,chargesheeting-rate,67.1,percent,Table 3A.1
+chhattisgarh,2022,cases,8693,cases,Table 3A.1
+chhattisgarh,2023,cases,8035,cases,Table 3A.1
+chhattisgarh,2024,cases,8601,cases,Table 3A.1
+chhattisgarh,2024,crime-rate,56.3,crimes against women per lakh women,Table 3A.1
+chhattisgarh,2024,female-population,152.7,lakh women,Table 3A.1
+chhattisgarh,2024,chargesheeting-rate,71.3,percent,Table 3A.1
+goa,2022,cases,273,cases,Table 3A.1
+goa,2023,cases,286,cases,Table 3A.1
+goa,2024,cases,356,cases,Table 3A.1
+goa,2024,crime-rate,45.2,crimes against women per lakh women,Table 3A.1
+goa,2024,female-population,7.9,lakh women,Table 3A.1
+goa,2024,chargesheeting-rate,73.4,percent,Table 3A.1
+gujarat,2022,cases,7731,cases,Table 3A.1
+gujarat,2023,cases,7805,cases,Table 3A.1
+gujarat,2024,cases,7606,cases,Table 3A.1
+gujarat,2024,crime-rate,22.0,crimes against women per lakh women,Table 3A.1
+gujarat,2024,female-population,345.0,lakh women,Table 3A.1
+gujarat,2024,chargesheeting-rate,89.2,percent,Table 3A.1
+haryana,2022,cases,16743,cases,Table 3A.1
+haryana,2023,cases,15758,cases,Table 3A.1
+haryana,2024,cases,13945,cases,Table 3A.1
+haryana,2024,crime-rate,96.4,crimes against women per lakh women,Table 3A.1
+haryana,2024,female-population,144.7,lakh women,Table 3A.1
+haryana,2024,chargesheeting-rate,58.8,percent,Table 3A.1
+himachal-pradesh,2022,cases,1551,cases,Table 3A.1
+himachal-pradesh,2023,cases,1604,cases,Table 3A.1
+himachal-pradesh,2024,cases,1605,cases,Table 3A.1
+himachal-pradesh,2024,crime-rate,43.3,crimes against women per lakh women,Table 3A.1
+himachal-pradesh,2024,female-population,37.1,lakh women,Table 3A.1
+himachal-pradesh,2024,chargesheeting-rate,69.7,percent,Table 3A.1
+jharkhand,2022,cases,7678,cases,Table 3A.1
+jharkhand,2023,cases,6989,cases,Table 3A.1
+jharkhand,2024,cases,6367,cases,Table 3A.1
+jharkhand,2024,crime-rate,32.5,crimes against women per lakh women,Table 3A.1
+jharkhand,2024,female-population,196.1,lakh women,Table 3A.1
+jharkhand,2024,chargesheeting-rate,81.9,percent,Table 3A.1
+karnataka,2022,cases,17813,cases,Table 3A.1
+karnataka,2023,cases,20336,cases,Table 3A.1
+karnataka,2024,cases,19945,cases,Table 3A.1
+karnataka,2024,crime-rate,59.3,crimes against women per lakh women,Table 3A.1
+karnataka,2024,female-population,336.3,lakh women,Table 3A.1
+karnataka,2024,chargesheeting-rate,78.6,percent,Table 3A.1
+kerala,2022,cases,15213,cases,Table 3A.1
+kerala,2023,cases,16025,cases,Table 3A.1
+kerala,2024,cases,15037,cases,Table 3A.1
+kerala,2024,crime-rate,80.5,crimes against women per lakh women,Table 3A.1
+kerala,2024,female-population,186.9,lakh women,Table 3A.1
+kerala,2024,chargesheeting-rate,94.1,percent,Table 3A.1
+madhya-pradesh,2022,cases,32765,cases,Table 3A.1
+madhya-pradesh,2023,cases,32342,cases,Table 3A.1
+madhya-pradesh,2024,cases,32832,cases,Table 3A.1
+madhya-pradesh,2024,crime-rate,77.0,crimes against women per lakh women,Table 3A.1
+madhya-pradesh,2024,female-population,426.5,lakh women,Table 3A.1
+madhya-pradesh,2024,chargesheeting-rate,77.3,percent,Table 3A.1
+maharashtra,2022,cases,45331,cases,Table 3A.1
+maharashtra,2023,cases,47101,cases,Table 3A.1
+maharashtra,2024,cases,47954,cases,Table 3A.1
+maharashtra,2024,crime-rate,78.3,crimes against women per lakh women,Table 3A.1
+maharashtra,2024,female-population,612.6,lakh women,Table 3A.1
+maharashtra,2024,chargesheeting-rate,79.5,percent,Table 3A.1
+manipur,2022,cases,248,cases,Table 3A.1
+manipur,2023,cases,201,cases,Table 3A.1
+manipur,2024,cases,195,cases,Table 3A.1
+manipur,2024,crime-rate,12.0,crimes against women per lakh women,Table 3A.1
+manipur,2024,female-population,16.3,lakh women,Table 3A.1
+manipur,2024,chargesheeting-rate,55.4,percent,Table 3A.1
+meghalaya,2022,cases,690,cases,Table 3A.1
+meghalaya,2023,cases,628,cases,Table 3A.1
+meghalaya,2024,cases,658,cases,Table 3A.1
+meghalaya,2024,crime-rate,38.9,crimes against women per lakh women,Table 3A.1
+meghalaya,2024,female-population,16.9,lakh women,Table 3A.1
+meghalaya,2024,chargesheeting-rate,72.1,percent,Table 3A.1
+mizoram,2022,cases,147,cases,Table 3A.1
+mizoram,2023,cases,184,cases,Table 3A.1
+mizoram,2024,cases,259,cases,Table 3A.1
+mizoram,2024,crime-rate,41.7,crimes against women per lakh women,Table 3A.1
+mizoram,2024,female-population,6.2,lakh women,Table 3A.1
+mizoram,2024,chargesheeting-rate,95.9,percent,Table 3A.1
+nagaland,2022,cases,49,cases,Table 3A.1
+nagaland,2023,cases,56,cases,Table 3A.1
+nagaland,2024,cases,56,cases,Table 3A.1
+nagaland,2024,crime-rate,5.1,crimes against women per lakh women,Table 3A.1
+nagaland,2024,female-population,10.9,lakh women,Table 3A.1
+nagaland,2024,chargesheeting-rate,83.6,percent,Table 3A.1
+odisha,2022,cases,23648,cases,Table 3A.1
+odisha,2023,cases,25914,cases,Table 3A.1
+odisha,2024,cases,27449,cases,Table 3A.1
+odisha,2024,crime-rate,118.3,crimes against women per lakh women,Table 3A.1
+odisha,2024,female-population,232.0,lakh women,Table 3A.1
+odisha,2024,chargesheeting-rate,71.3,percent,Table 3A.1
+punjab,2022,cases,5572,cases,Table 3A.1
+punjab,2023,cases,5258,cases,Table 3A.1
+punjab,2024,cases,5348,cases,Table 3A.1
+punjab,2024,crime-rate,36.3,crimes against women per lakh women,Table 3A.1
+punjab,2024,female-population,147.3,lakh women,Table 3A.1
+punjab,2024,chargesheeting-rate,75.0,percent,Table 3A.1
+rajasthan,2022,cases,45058,cases,Table 3A.1
+rajasthan,2023,cases,45450,cases,Table 3A.1
+rajasthan,2024,cases,36563,cases,Table 3A.1
+rajasthan,2024,crime-rate,91.3,crimes against women per lakh women,Table 3A.1
+rajasthan,2024,female-population,400.6,lakh women,Table 3A.1
+rajasthan,2024,chargesheeting-rate,54.1,percent,Table 3A.1
+sikkim,2022,cases,179,cases,Table 3A.1
+sikkim,2023,cases,134,cases,Table 3A.1
+sikkim,2024,cases,131,cases,Table 3A.1
+sikkim,2024,crime-rate,39.7,crimes against women per lakh women,Table 3A.1
+sikkim,2024,female-population,3.3,lakh women,Table 3A.1
+sikkim,2024,chargesheeting-rate,72.0,percent,Table 3A.1
+tamil-nadu,2022,cases,9207,cases,Table 3A.1
+tamil-nadu,2023,cases,8943,cases,Table 3A.1
+tamil-nadu,2024,cases,11363,cases,Table 3A.1
+tamil-nadu,2024,crime-rate,29.4,crimes against women per lakh women,Table 3A.1
+tamil-nadu,2024,female-population,386.7,lakh women,Table 3A.1
+tamil-nadu,2024,chargesheeting-rate,93.0,percent,Table 3A.1
+telangana,2022,cases,22066,cases,Table 3A.1
+telangana,2023,cases,23678,cases,Table 3A.1
+telangana,2024,cases,24495,cases,Table 3A.1
+telangana,2024,crime-rate,128.6,crimes against women per lakh women,Table 3A.1
+telangana,2024,female-population,190.5,lakh women,Table 3A.1
+telangana,2024,chargesheeting-rate,86.9,percent,Table 3A.1
+tripura,2022,cases,752,cases,Table 3A.1
+tripura,2023,cases,791,cases,Table 3A.1
+tripura,2024,cases,716,cases,Table 3A.1
+tripura,2024,crime-rate,34.7,crimes against women per lakh women,Table 3A.1
+tripura,2024,female-population,20.6,lakh women,Table 3A.1
+tripura,2024,chargesheeting-rate,82.3,percent,Table 3A.1
+uttar-pradesh,2022,cases,65743,cases,Table 3A.1
+uttar-pradesh,2023,cases,66381,cases,Table 3A.1
+uttar-pradesh,2024,cases,66398,cases,Table 3A.1
+uttar-pradesh,2024,crime-rate,58.0,crimes against women per lakh women,Table 3A.1
+uttar-pradesh,2024,female-population,1145.4,lakh women,Table 3A.1
+uttar-pradesh,2024,chargesheeting-rate,77.3,percent,Table 3A.1
+uttarakhand,2022,cases,4337,cases,Table 3A.1
+uttarakhand,2023,cases,3808,cases,Table 3A.1
+uttarakhand,2024,cases,3342,cases,Table 3A.1
+uttarakhand,2024,crime-rate,58.2,crimes against women per lakh women,Table 3A.1
+uttarakhand,2024,female-population,57.5,lakh women,Table 3A.1
+uttarakhand,2024,chargesheeting-rate,68.5,percent,Table 3A.1
+west-bengal,2022,cases,34738,cases,Table 3A.1
+west-bengal,2023,cases,34691,cases,Table 3A.1
+west-bengal,2024,cases,34360,cases,Table 3A.1
+west-bengal,2024,crime-rate,70.3,crimes against women per lakh women,Table 3A.1
+west-bengal,2024,female-population,489.0,lakh women,Table 3A.1
+west-bengal,2024,chargesheeting-rate,92.4,percent,Table 3A.1
+andaman-nicobar,2022,cases,178,cases,Table 3A.1
+andaman-nicobar,2023,cases,205,cases,Table 3A.1
+andaman-nicobar,2024,cases,156,cases,Table 3A.1
+andaman-nicobar,2024,crime-rate,81.7,crimes against women per lakh women,Table 3A.1
+andaman-nicobar,2024,female-population,1.9,lakh women,Table 3A.1
+andaman-nicobar,2024,chargesheeting-rate,94.2,percent,Table 3A.1
+chandigarh,2022,cases,325,cases,Table 3A.1
+chandigarh,2023,cases,371,cases,Table 3A.1
+chandigarh,2024,cases,452,cases,Table 3A.1
+chandigarh,2024,crime-rate,78.6,crimes against women per lakh women,Table 3A.1
+chandigarh,2024,female-population,5.8,lakh women,Table 3A.1
+chandigarh,2024,chargesheeting-rate,63.5,percent,Table 3A.1
+dnh-dd,2022,cases,126,cases,Table 3A.1
+dnh-dd,2023,cases,124,cases,Table 3A.1
+dnh-dd,2024,cases,86,cases,Table 3A.1
+dnh-dd,2024,crime-rate,18.7,crimes against women per lakh women,Table 3A.1
+dnh-dd,2024,female-population,4.6,lakh women,Table 3A.1
+dnh-dd,2024,chargesheeting-rate,68.7,percent,Table 3A.1
+delhi,2022,cases,14247,cases,Table 3A.1
+delhi,2023,cases,13439,cases,Table 3A.1
+delhi,2024,cases,13396,cases,Table 3A.1
+delhi,2024,crime-rate,130.7,crimes against women per lakh women,Table 3A.1
+delhi,2024,female-population,102.5,lakh women,Table 3A.1
+delhi,2024,chargesheeting-rate,73.6,percent,Table 3A.1
+jammu-kashmir,2022,cases,3716,cases,Table 3A.1
+jammu-kashmir,2023,cases,3653,cases,Table 3A.1
+jammu-kashmir,2024,cases,3366,cases,Table 3A.1
+jammu-kashmir,2024,crime-rate,51.4,crimes against women per lakh women,Table 3A.1
+jammu-kashmir,2024,female-population,65.5,lakh women,Table 3A.1
+jammu-kashmir,2024,chargesheeting-rate,70.6,percent,Table 3A.1
+ladakh,2022,cases,15,cases,Table 3A.1
+ladakh,2023,cases,20,cases,Table 3A.1
+ladakh,2024,cases,34,cases,Table 3A.1
+ladakh,2024,crime-rate,25.6,crimes against women per lakh women,Table 3A.1
+ladakh,2024,female-population,1.3,lakh women,Table 3A.1
+ladakh,2024,chargesheeting-rate,78.1,percent,Table 3A.1
+lakshadweep,2022,cases,16,cases,Table 3A.1
+lakshadweep,2023,cases,23,cases,Table 3A.1
+lakshadweep,2024,cases,13,cases,Table 3A.1
+lakshadweep,2024,crime-rate,38.2,crimes against women per lakh women,Table 3A.1
+lakshadweep,2024,female-population,0.3,lakh women,Table 3A.1
+lakshadweep,2024,chargesheeting-rate,100.0,percent,Table 3A.1
+puducherry,2022,cases,200,cases,Table 3A.1
+puducherry,2023,cases,212,cases,Table 3A.1
+puducherry,2024,cases,272,cases,Table 3A.1
+puducherry,2024,crime-rate,30.5,crimes against women per lakh women,Table 3A.1
+puducherry,2024,female-population,8.9,lakh women,Table 3A.1
+puducherry,2024,chargesheeting-rate,93.8,percent,Table 3A.1

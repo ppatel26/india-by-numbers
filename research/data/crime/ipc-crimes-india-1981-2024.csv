@@ -1,0 +1,133 @@
+geography,period,indicator,law,value,unit
+india,1981,cases,ipc,1385757,cases
+india,1981,chargesheeting-rate,ipc,61.3,percent
+india,1981,crime-rate,ipc,200.8,IPC/BNS crimes per lakh population
+india,1982,cases,ipc,1353904,cases
+india,1982,chargesheeting-rate,ipc,65.3,percent
+india,1982,crime-rate,ipc,192.0,IPC/BNS crimes per lakh population
+india,1983,cases,ipc,1349866,cases
+india,1983,chargesheeting-rate,ipc,67.3,percent
+india,1983,crime-rate,ipc,187.4,IPC/BNS crimes per lakh population
+india,1984,cases,ipc,1358660,cases
+india,1984,chargesheeting-rate,ipc,67.9,percent
+india,1984,crime-rate,ipc,184.7,IPC/BNS crimes per lakh population
+india,1985,cases,ipc,1384731,cases
+india,1985,chargesheeting-rate,ipc,70.2,percent
+india,1985,crime-rate,ipc,184.4,IPC/BNS crimes per lakh population
+india,1986,cases,ipc,1405835,cases
+india,1986,chargesheeting-rate,ipc,71.1,percent
+india,1986,crime-rate,ipc,183.5,IPC/BNS crimes per lakh population
+india,1987,cases,ipc,1406992,cases
+india,1987,chargesheeting-rate,ipc,72.4,percent
+india,1987,crime-rate,ipc,180.1,IPC/BNS crimes per lakh population
+india,1988,cases,ipc,1440356,cases
+india,1988,chargesheeting-rate,ipc,70.7,percent
+india,1988,crime-rate,ipc,180.8,IPC/BNS crimes per lakh population
+india,1989,cases,ipc,1529844,cases
+india,1989,chargesheeting-rate,ipc,72.3,percent
+india,1989,crime-rate,ipc,188.5,IPC/BNS crimes per lakh population
+india,1990,cases,ipc,1604449,cases
+india,1990,chargesheeting-rate,ipc,70.2,percent
+india,1990,crime-rate,ipc,194.0,IPC/BNS crimes per lakh population
+india,1991,cases,ipc,1678375,cases
+india,1991,chargesheeting-rate,ipc,71.3,percent
+india,1991,crime-rate,ipc,197.5,IPC/BNS crimes per lakh population
+india,1992,cases,ipc,1689341,cases
+india,1992,chargesheeting-rate,ipc,72.2,percent
+india,1992,crime-rate,ipc,194.7,IPC/BNS crimes per lakh population
+india,1993,cases,ipc,1629936,cases
+india,1993,chargesheeting-rate,ipc,72.5,percent
+india,1993,crime-rate,ipc,184.4,IPC/BNS crimes per lakh population
+india,1994,cases,ipc,1635251,cases
+india,1994,chargesheeting-rate,ipc,74.1,percent
+india,1994,crime-rate,ipc,181.7,IPC/BNS crimes per lakh population
+india,1995,cases,ipc,1695696,cases
+india,1995,chargesheeting-rate,ipc,74.3,percent
+india,1995,crime-rate,ipc,185.1,IPC/BNS crimes per lakh population
+india,1996,cases,ipc,1709576,cases
+india,1996,chargesheeting-rate,ipc,76.9,percent
+india,1996,crime-rate,ipc,183.4,IPC/BNS crimes per lakh population
+india,1997,cases,ipc,1719820,cases
+india,1997,chargesheeting-rate,ipc,77.5,percent
+india,1997,crime-rate,ipc,180.0,IPC/BNS crimes per lakh population
+india,1998,cases,ipc,1778815,cases
+india,1998,chargesheeting-rate,ipc,77.8,percent
+india,1998,crime-rate,ipc,183.2,IPC/BNS crimes per lakh population
+india,1999,cases,ipc,1764629,cases
+india,1999,chargesheeting-rate,ipc,78.0,percent
+india,1999,crime-rate,ipc,178.9,IPC/BNS crimes per lakh population
+india,2000,cases,ipc,1771084,cases
+india,2000,chargesheeting-rate,ipc,78.4,percent
+india,2000,crime-rate,ipc,176.7,IPC/BNS crimes per lakh population
+india,2001,cases,ipc,1769308,cases
+india,2001,chargesheeting-rate,ipc,78.6,percent
+india,2001,crime-rate,ipc,172.3,IPC/BNS crimes per lakh population
+india,2002,cases,ipc,1780330,cases
+india,2002,chargesheeting-rate,ipc,80.0,percent
+india,2002,crime-rate,ipc,169.5,IPC/BNS crimes per lakh population
+india,2003,cases,ipc,1716120,cases
+india,2003,chargesheeting-rate,ipc,80.1,percent
+india,2003,crime-rate,ipc,160.7,IPC/BNS crimes per lakh population
+india,2004,cases,ipc,1832015,cases
+india,2004,chargesheeting-rate,ipc,79.8,percent
+india,2004,crime-rate,ipc,168.8,IPC/BNS crimes per lakh population
+india,2005,cases,ipc,1822602,cases
+india,2005,chargesheeting-rate,ipc,80.7,percent
+india,2005,crime-rate,ipc,165.3,IPC/BNS crimes per lakh population
+india,2006,cases,ipc,1878293,cases
+india,2006,chargesheeting-rate,ipc,80.6,percent
+india,2006,crime-rate,ipc,167.7,IPC/BNS crimes per lakh population
+india,2007,cases,ipc,1989673,cases
+india,2007,chargesheeting-rate,ipc,80.1,percent
+india,2007,crime-rate,ipc,175.1,IPC/BNS crimes per lakh population
+india,2008,cases,ipc,2093379,cases
+india,2008,chargesheeting-rate,ipc,79.8,percent
+india,2008,crime-rate,ipc,181.5,IPC/BNS crimes per lakh population
+india,2009,cases,ipc,2121345,cases
+india,2009,chargesheeting-rate,ipc,78.4,percent
+india,2009,crime-rate,ipc,181.4,IPC/BNS crimes per lakh population
+india,2010,cases,ipc,2224831,cases
+india,2010,chargesheeting-rate,ipc,79.1,percent
+india,2010,crime-rate,ipc,187.6,IPC/BNS crimes per lakh population
+india,2011,cases,ipc,2325575,cases
+india,2011,chargesheeting-rate,ipc,78.8,percent
+india,2011,crime-rate,ipc,192.2,IPC/BNS crimes per lakh population
+india,2012,cases,ipc,2387188,cases
+india,2012,chargesheeting-rate,ipc,78.8,percent
+india,2012,crime-rate,ipc,196.7,IPC/BNS crimes per lakh population
+india,2013,cases,ipc,2647722,cases
+india,2013,chargesheeting-rate,ipc,79.5,percent
+india,2013,crime-rate,ipc,215.5,IPC/BNS crimes per lakh population
+india,2014,cases,ipc,2851563,cases
+india,2014,chargesheeting-rate,ipc,79.6,percent
+india,2014,crime-rate,ipc,229.2,IPC/BNS crimes per lakh population
+india,2015,cases,ipc,2949400,cases
+india,2015,chargesheeting-rate,ipc,77.7,percent
+india,2015,crime-rate,ipc,234.2,IPC/BNS crimes per lakh population
+india,2016,cases,ipc,2975711,cases
+india,2016,chargesheeting-rate,ipc,72.9,percent
+india,2016,crime-rate,ipc,233.6,IPC/BNS crimes per lakh population
+india,2017,cases,ipc,3062579,cases
+india,2017,chargesheeting-rate,ipc,70.7,percent
+india,2017,crime-rate,ipc,237.7,IPC/BNS crimes per lakh population
+india,2018,cases,ipc,3132955,cases
+india,2018,chargesheeting-rate,ipc,68.1,percent
+india,2018,crime-rate,ipc,236.7,IPC/BNS crimes per lakh population
+india,2019,cases,ipc,3225597,cases
+india,2019,chargesheeting-rate,ipc,67.2,percent
+india,2019,crime-rate,ipc,241.2,IPC/BNS crimes per lakh population
+india,2020,cases,ipc,4254356,cases
+india,2020,chargesheeting-rate,ipc,75.8,percent
+india,2020,crime-rate,ipc,314.3,IPC/BNS crimes per lakh population
+india,2021,cases,ipc,3663360,cases
+india,2021,chargesheeting-rate,ipc,72.3,percent
+india,2021,crime-rate,ipc,268.0,IPC/BNS crimes per lakh population
+india,2022,cases,ipc,3561379,cases
+india,2022,chargesheeting-rate,ipc,71.3,percent
+india,2022,crime-rate,ipc,258.1,IPC/BNS crimes per lakh population
+india,2023,cases,ipc,3763102,cases
+india,2023,chargesheeting-rate,ipc,72.7,percent
+india,2023,crime-rate,ipc,270.3,IPC/BNS crimes per lakh population
+india,2024,cases,ipc-bns,3544608,cases
+india,2024,chargesheeting-rate,ipc-bns,72.1,percent
+india,2024,crime-rate,ipc-bns,252.3,IPC/BNS crimes per lakh population

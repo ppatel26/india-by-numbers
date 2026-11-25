@@ -1,0 +1,408 @@
+geography,period,indicator,law,value,unit,table
+india,2022,cases,ipc-bns-sll,5824946,cases,Table 1A.3
+india,2023,cases,ipc-bns-sll,6241569,cases,Table 1A.3
+india,2024,cases,ipc-bns-sll,5885867,cases,Table 1A.3
+india,2022,cases,ipc-bns,3561379,cases,Table 1A.1
+india,2023,cases,ipc-bns,3763102,cases,Table 1A.1
+india,2024,cases,ipc,1903047,cases,Table 1A.1
+india,2024,cases,bns,1641561,cases,Table 1A.1
+india,2024,cases,ipc-bns,3544608,cases,Table 1A.1
+india,2024,crime-rate,ipc-bns-sll,418.9,cognizable crimes per lakh population,Table 1A.3
+india,2024,crime-rate,ipc-bns,252.3,cognizable crimes per lakh population,Table 1A.1
+india,2024,mid-year-population,,14049.1,lakh persons,Table 1A.3
+andhra-pradesh,2022,cases,ipc-bns-sll,195284,cases,Table 1A.3
+andhra-pradesh,2023,cases,ipc-bns-sll,184293,cases,Table 1A.3
+andhra-pradesh,2024,cases,ipc-bns-sll,168788,cases,Table 1A.3
+andhra-pradesh,2022,cases,ipc-bns,158547,cases,Table 1A.1
+andhra-pradesh,2023,cases,ipc-bns,153867,cases,Table 1A.1
+andhra-pradesh,2024,cases,ipc,59112,cases,Table 1A.1
+andhra-pradesh,2024,cases,bns,56964,cases,Table 1A.1
+andhra-pradesh,2024,cases,ipc-bns,116076,cases,Table 1A.1
+andhra-pradesh,2024,crime-rate,ipc-bns-sll,316.1,cognizable crimes per lakh population,Table 1A.3
+andhra-pradesh,2024,crime-rate,ipc-bns,217.4,cognizable crimes per lakh population,Table 1A.1
+andhra-pradesh,2024,mid-year-population,,534.0,lakh persons,Table 1A.3
+arunachal-pradesh,2022,cases,ipc-bns-sll,2761,cases,Table 1A.3
+arunachal-pradesh,2023,cases,ipc-bns-sll,2941,cases,Table 1A.3
+arunachal-pradesh,2024,cases,ipc-bns-sll,2910,cases,Table 1A.3
+arunachal-pradesh,2022,cases,ipc-bns,2308,cases,Table 1A.1
+arunachal-pradesh,2023,cases,ipc-bns,2505,cases,Table 1A.1
+arunachal-pradesh,2024,cases,ipc,1316,cases,Table 1A.1
+arunachal-pradesh,2024,cases,bns,1163,cases,Table 1A.1
+arunachal-pradesh,2024,cases,ipc-bns,2479,cases,Table 1A.1
+arunachal-pradesh,2024,crime-rate,ipc-bns-sll,184.2,cognizable crimes per lakh population,Table 1A.3
+arunachal-pradesh,2024,crime-rate,ipc-bns,156.9,cognizable crimes per lakh population,Table 1A.1
+arunachal-pradesh,2024,mid-year-population,,15.8,lakh persons,Table 1A.3
+assam,2022,cases,ipc-bns-sll,68937,cases,Table 1A.3
+assam,2023,cases,ipc-bns-sll,64959,cases,Table 1A.3
+assam,2024,cases,ipc-bns-sll,49552,cases,Table 1A.3
+assam,2022,cases,ipc-bns,59315,cases,Table 1A.1
+assam,2023,cases,ipc-bns,49884,cases,Table 1A.1
+assam,2024,cases,ipc,21379,cases,Table 1A.1
+assam,2024,cases,bns,18437,cases,Table 1A.1
+assam,2024,cases,ipc-bns,39816,cases,Table 1A.1
+assam,2024,crime-rate,ipc-bns-sll,137.0,cognizable crimes per lakh population,Table 1A.3
+assam,2024,crime-rate,ipc-bns,110.1,cognizable crimes per lakh population,Table 1A.1
+assam,2024,mid-year-population,,361.6,lakh persons,Table 1A.3
+bihar,2022,cases,ipc-bns-sll,347835,cases,Table 1A.3
+bihar,2023,cases,ipc-bns-sll,353502,cases,Table 1A.3
+bihar,2024,cases,ipc-bns-sll,352155,cases,Table 1A.3
+bihar,2022,cases,ipc-bns,211079,cases,Table 1A.1
+bihar,2023,cases,ipc-bns,231627,cases,Table 1A.1
+bihar,2024,cases,ipc,127983,cases,Table 1A.1
+bihar,2024,cases,bns,110770,cases,Table 1A.1
+bihar,2024,cases,ipc-bns,238753,cases,Table 1A.1
+bihar,2024,crime-rate,ipc-bns-sll,272.6,cognizable crimes per lakh population,Table 1A.3
+bihar,2024,crime-rate,ipc-bns,184.8,cognizable crimes per lakh population,Table 1A.1
+bihar,2024,mid-year-population,,1292.1,lakh persons,Table 1A.3
+chhattisgarh,2022,cases,ipc-bns-sll,121065,cases,Table 1A.3
+chhattisgarh,2023,cases,ipc-bns-sll,115493,cases,Table 1A.3
+chhattisgarh,2024,cases,ipc-bns-sll,114658,cases,Table 1A.3
+chhattisgarh,2022,cases,ipc-bns,73822,cases,Table 1A.1
+chhattisgarh,2023,cases,ipc-bns,67961,cases,Table 1A.1
+chhattisgarh,2024,cases,ipc,38019,cases,Table 1A.1
+chhattisgarh,2024,cases,bns,34391,cases,Table 1A.1
+chhattisgarh,2024,cases,ipc-bns,72410,cases,Table 1A.1
+chhattisgarh,2024,crime-rate,ipc-bns-sll,374.2,cognizable crimes per lakh population,Table 1A.3
+chhattisgarh,2024,crime-rate,ipc-bns,236.3,cognizable crimes per lakh population,Table 1A.1
+chhattisgarh,2024,mid-year-population,,306.4,lakh persons,Table 1A.3
+goa,2022,cases,ipc-bns-sll,3679,cases,Table 1A.3
+goa,2023,cases,ipc-bns-sll,3082,cases,Table 1A.3
+goa,2024,cases,ipc-bns-sll,3297,cases,Table 1A.3
+goa,2022,cases,ipc-bns,2711,cases,Table 1A.1
+goa,2023,cases,ipc-bns,2094,cases,Table 1A.1
+goa,2024,cases,ipc,1154,cases,Table 1A.1
+goa,2024,cases,bns,967,cases,Table 1A.1
+goa,2024,cases,ipc-bns,2121,cases,Table 1A.1
+goa,2024,crime-rate,ipc-bns-sll,208.0,cognizable crimes per lakh population,Table 1A.3
+goa,2024,crime-rate,ipc-bns,133.8,cognizable crimes per lakh population,Table 1A.1
+goa,2024,mid-year-population,,15.9,lakh persons,Table 1A.3
+gujarat,2022,cases,ipc-bns-sll,524103,cases,Table 1A.3
+gujarat,2023,cases,ipc-bns-sll,578879,cases,Table 1A.3
+gujarat,2024,cases,ipc-bns-sll,615407,cases,Table 1A.3
+gujarat,2022,cases,ipc-bns,134600,cases,Table 1A.1
+gujarat,2023,cases,ipc-bns,170657,cases,Table 1A.1
+gujarat,2024,cases,ipc,83049,cases,Table 1A.1
+gujarat,2024,cases,bns,82370,cases,Table 1A.1
+gujarat,2024,cases,ipc-bns,165419,cases,Table 1A.1
+gujarat,2024,crime-rate,ipc-bns-sll,847.0,cognizable crimes per lakh population,Table 1A.3
+gujarat,2024,crime-rate,ipc-bns,227.7,cognizable crimes per lakh population,Table 1A.1
+gujarat,2024,mid-year-population,,726.5,lakh persons,Table 1A.3
+haryana,2022,cases,ipc-bns-sll,242849,cases,Table 1A.3
+haryana,2023,cases,ipc-bns-sll,224216,cases,Table 1A.3
+haryana,2024,cases,ipc-bns-sll,177595,cases,Table 1A.3
+haryana,2022,cases,ipc-bns,125435,cases,Table 1A.1
+haryana,2023,cases,ipc-bns,129294,cases,Table 1A.1
+haryana,2024,cases,ipc,61421,cases,Table 1A.1
+haryana,2024,cases,bns,51680,cases,Table 1A.1
+haryana,2024,cases,ipc-bns,113101,cases,Table 1A.1
+haryana,2024,crime-rate,ipc-bns-sll,578.6,cognizable crimes per lakh population,Table 1A.3
+haryana,2024,crime-rate,ipc-bns,368.5,cognizable crimes per lakh population,Table 1A.1
+haryana,2024,mid-year-population,,306.9,lakh persons,Table 1A.3
+himachal-pradesh,2022,cases,ipc-bns-sll,19053,cases,Table 1A.3
+himachal-pradesh,2023,cases,ipc-bns-sll,19987,cases,Table 1A.3
+himachal-pradesh,2024,cases,ipc-bns-sll,17915,cases,Table 1A.3
+himachal-pradesh,2022,cases,ipc-bns,13231,cases,Table 1A.1
+himachal-pradesh,2023,cases,ipc-bns,13505,cases,Table 1A.1
+himachal-pradesh,2024,cases,ipc,6479,cases,Table 1A.1
+himachal-pradesh,2024,cases,bns,5592,cases,Table 1A.1
+himachal-pradesh,2024,cases,ipc-bns,12071,cases,Table 1A.1
+himachal-pradesh,2024,crime-rate,ipc-bns-sll,238.3,cognizable crimes per lakh population,Table 1A.3
+himachal-pradesh,2024,crime-rate,ipc-bns,160.6,cognizable crimes per lakh population,Table 1A.1
+himachal-pradesh,2024,mid-year-population,,75.2,lakh persons,Table 1A.3
+jharkhand,2022,cases,ipc-bns-sll,64359,cases,Table 1A.3
+jharkhand,2023,cases,ipc-bns-sll,63838,cases,Table 1A.3
+jharkhand,2024,cases,ipc-bns-sll,60999,cases,Table 1A.3
+jharkhand,2022,cases,ipc-bns,48726,cases,Table 1A.1
+jharkhand,2023,cases,ipc-bns,50187,cases,Table 1A.1
+jharkhand,2024,cases,ipc,26725,cases,Table 1A.1
+jharkhand,2024,cases,bns,20525,cases,Table 1A.1
+jharkhand,2024,cases,ipc-bns,47250,cases,Table 1A.1
+jharkhand,2024,crime-rate,ipc-bns-sll,152.0,cognizable crimes per lakh population,Table 1A.3
+jharkhand,2024,crime-rate,ipc-bns,117.7,cognizable crimes per lakh population,Table 1A.1
+jharkhand,2024,mid-year-population,,401.3,lakh persons,Table 1A.3
+karnataka,2022,cases,ipc-bns-sll,180742,cases,Table 1A.3
+karnataka,2023,cases,ipc-bns-sll,214234,cases,Table 1A.3
+karnataka,2024,cases,ipc-bns-sll,198331,cases,Table 1A.3
+karnataka,2022,cases,ipc-bns,129461,cases,Table 1A.1
+karnataka,2023,cases,ipc-bns,148648,cases,Table 1A.1
+karnataka,2024,cases,ipc,77713,cases,Table 1A.1
+karnataka,2024,cases,bns,61071,cases,Table 1A.1
+karnataka,2024,cases,ipc-bns,138784,cases,Table 1A.1
+karnataka,2024,crime-rate,ipc-bns-sll,290.6,cognizable crimes per lakh population,Table 1A.3
+karnataka,2024,crime-rate,ipc-bns,203.3,cognizable crimes per lakh population,Table 1A.1
+karnataka,2024,mid-year-population,,682.6,lakh persons,Table 1A.3
+kerala,2022,cases,ipc-bns-sll,454836,cases,Table 1A.3
+kerala,2023,cases,ipc-bns-sll,584373,cases,Table 1A.3
+kerala,2024,cases,ipc-bns-sll,499567,cases,Table 1A.3
+kerala,2022,cases,ipc-bns,235858,cases,Table 1A.1
+kerala,2023,cases,ipc-bns,258538,cases,Table 1A.1
+kerala,2024,cases,ipc,99978,cases,Table 1A.1
+kerala,2024,cases,bns,84550,cases,Table 1A.1
+kerala,2024,cases,ipc-bns,184528,cases,Table 1A.1
+kerala,2024,crime-rate,ipc-bns-sll,1389.0,cognizable crimes per lakh population,Table 1A.3
+kerala,2024,crime-rate,ipc-bns,513.0,cognizable crimes per lakh population,Table 1A.1
+kerala,2024,mid-year-population,,359.7,lakh persons,Table 1A.3
+madhya-pradesh,2022,cases,ipc-bns-sll,488966,cases,Table 1A.3
+madhya-pradesh,2023,cases,ipc-bns-sll,495708,cases,Table 1A.3
+madhya-pradesh,2024,cases,ipc-bns-sll,434879,cases,Table 1A.3
+madhya-pradesh,2022,cases,ipc-bns,298578,cases,Table 1A.1
+madhya-pradesh,2023,cases,ipc-bns,297689,cases,Table 1A.1
+madhya-pradesh,2024,cases,ipc,151757,cases,Table 1A.1
+madhya-pradesh,2024,cases,bns,131117,cases,Table 1A.1
+madhya-pradesh,2024,cases,ipc-bns,282874,cases,Table 1A.1
+madhya-pradesh,2024,crime-rate,ipc-bns-sll,494.4,cognizable crimes per lakh population,Table 1A.3
+madhya-pradesh,2024,crime-rate,ipc-bns,321.6,cognizable crimes per lakh population,Table 1A.1
+madhya-pradesh,2024,mid-year-population,,879.5,lakh persons,Table 1A.3
+maharashtra,2022,cases,ipc-bns-sll,557012,cases,Table 1A.3
+maharashtra,2023,cases,ipc-bns-sll,596103,cases,Table 1A.3
+maharashtra,2024,cases,ipc-bns-sll,609823,cases,Table 1A.3
+maharashtra,2022,cases,ipc-bns,374038,cases,Table 1A.1
+maharashtra,2023,cases,ipc-bns,385623,cases,Table 1A.1
+maharashtra,2024,cases,ipc,218418,cases,Table 1A.1
+maharashtra,2024,cases,bns,164626,cases,Table 1A.1
+maharashtra,2024,cases,ipc-bns,383044,cases,Table 1A.1
+maharashtra,2024,crime-rate,ipc-bns-sll,477.6,cognizable crimes per lakh population,Table 1A.3
+maharashtra,2024,crime-rate,ipc-bns,300.0,cognizable crimes per lakh population,Table 1A.1
+maharashtra,2024,mid-year-population,,1276.8,lakh persons,Table 1A.3
+manipur,2022,cases,ipc-bns-sll,3914,cases,Table 1A.3
+manipur,2023,cases,ipc-bns-sll,20283,cases,Table 1A.3
+manipur,2024,cases,ipc-bns-sll,5284,cases,Table 1A.3
+manipur,2022,cases,ipc-bns,3029,cases,Table 1A.1
+manipur,2023,cases,ipc-bns,19192,cases,Table 1A.1
+manipur,2024,cases,ipc,3081,cases,Table 1A.1
+manipur,2024,cases,bns,1491,cases,Table 1A.1
+manipur,2024,cases,ipc-bns,4572,cases,Table 1A.1
+manipur,2024,crime-rate,ipc-bns-sll,162.1,cognizable crimes per lakh population,Table 1A.3
+manipur,2024,crime-rate,ipc-bns,140.2,cognizable crimes per lakh population,Table 1A.1
+manipur,2024,mid-year-population,,32.6,lakh persons,Table 1A.3
+meghalaya,2022,cases,ipc-bns-sll,3625,cases,Table 1A.3
+meghalaya,2023,cases,ipc-bns-sll,3532,cases,Table 1A.3
+meghalaya,2024,cases,ipc-bns-sll,3986,cases,Table 1A.3
+meghalaya,2022,cases,ipc-bns,2914,cases,Table 1A.1
+meghalaya,2023,cases,ipc-bns,2730,cases,Table 1A.1
+meghalaya,2024,cases,ipc,1582,cases,Table 1A.1
+meghalaya,2024,cases,bns,1651,cases,Table 1A.1
+meghalaya,2024,cases,ipc-bns,3233,cases,Table 1A.1
+meghalaya,2024,crime-rate,ipc-bns-sll,117.7,cognizable crimes per lakh population,Table 1A.3
+meghalaya,2024,crime-rate,ipc-bns,95.5,cognizable crimes per lakh population,Table 1A.1
+meghalaya,2024,mid-year-population,,33.9,lakh persons,Table 1A.3
+mizoram,2022,cases,ipc-bns-sll,4133,cases,Table 1A.3
+mizoram,2023,cases,ipc-bns-sll,4050,cases,Table 1A.3
+mizoram,2024,cases,ipc-bns-sll,3552,cases,Table 1A.3
+mizoram,2022,cases,ipc-bns,3587,cases,Table 1A.1
+mizoram,2023,cases,ipc-bns,3281,cases,Table 1A.1
+mizoram,2024,cases,ipc,1347,cases,Table 1A.1
+mizoram,2024,cases,bns,1354,cases,Table 1A.1
+mizoram,2024,cases,ipc-bns,2701,cases,Table 1A.1
+mizoram,2024,crime-rate,ipc-bns-sll,283.7,cognizable crimes per lakh population,Table 1A.3
+mizoram,2024,crime-rate,ipc-bns,215.7,cognizable crimes per lakh population,Table 1A.1
+mizoram,2024,mid-year-population,,12.5,lakh persons,Table 1A.3
+nagaland,2022,cases,ipc-bns-sll,1592,cases,Table 1A.3
+nagaland,2023,cases,ipc-bns-sll,1899,cases,Table 1A.3
+nagaland,2024,cases,ipc-bns-sll,1392,cases,Table 1A.3
+nagaland,2022,cases,ipc-bns,1008,cases,Table 1A.1
+nagaland,2023,cases,ipc-bns,1050,cases,Table 1A.1
+nagaland,2024,cases,ipc,429,cases,Table 1A.1
+nagaland,2024,cases,bns,373,cases,Table 1A.1
+nagaland,2024,cases,ipc-bns,802,cases,Table 1A.1
+nagaland,2024,crime-rate,ipc-bns-sll,61.6,cognizable crimes per lakh population,Table 1A.3
+nagaland,2024,crime-rate,ipc-bns,35.5,cognizable crimes per lakh population,Table 1A.1
+nagaland,2024,mid-year-population,,22.6,lakh persons,Table 1A.3
+odisha,2022,cases,ipc-bns-sll,178190,cases,Table 1A.3
+odisha,2023,cases,ipc-bns-sll,199954,cases,Table 1A.3
+odisha,2024,cases,ipc-bns-sll,214113,cases,Table 1A.3
+odisha,2022,cases,ipc-bns,143414,cases,Table 1A.1
+odisha,2023,cases,ipc-bns,170022,cases,Table 1A.1
+odisha,2024,cases,ipc,88671,cases,Table 1A.1
+odisha,2024,cases,bns,82522,cases,Table 1A.1
+odisha,2024,cases,ipc-bns,171193,cases,Table 1A.1
+odisha,2024,crime-rate,ipc-bns-sll,458.8,cognizable crimes per lakh population,Table 1A.3
+odisha,2024,crime-rate,ipc-bns,366.9,cognizable crimes per lakh population,Table 1A.1
+odisha,2024,mid-year-population,,466.6,lakh persons,Table 1A.3
+punjab,2022,cases,ipc-bns-sll,73625,cases,Table 1A.3
+punjab,2023,cases,ipc-bns-sll,69944,cases,Table 1A.3
+punjab,2024,cases,ipc-bns-sll,68955,cases,Table 1A.3
+punjab,2022,cases,ipc-bns,43738,cases,Table 1A.1
+punjab,2023,cases,ipc-bns,44872,cases,Table 1A.1
+punjab,2024,cases,ipc,23697,cases,Table 1A.1
+punjab,2024,cases,bns,23980,cases,Table 1A.1
+punjab,2024,cases,ipc-bns,47677,cases,Table 1A.1
+punjab,2024,crime-rate,ipc-bns-sll,222.5,cognizable crimes per lakh population,Table 1A.3
+punjab,2024,crime-rate,ipc-bns,153.8,cognizable crimes per lakh population,Table 1A.1
+punjab,2024,mid-year-population,,309.9,lakh persons,Table 1A.3
+rajasthan,2022,cases,ipc-bns-sll,312804,cases,Table 1A.3
+rajasthan,2023,cases,ipc-bns-sll,317480,cases,Table 1A.3
+rajasthan,2024,cases,ipc-bns-sll,297552,cases,Table 1A.3
+rajasthan,2022,cases,ipc-bns,236090,cases,Table 1A.1
+rajasthan,2023,cases,ipc-bns,234985,cases,Table 1A.1
+rajasthan,2024,cases,ipc,131979,cases,Table 1A.1
+rajasthan,2024,cases,bns,81373,cases,Table 1A.1
+rajasthan,2024,cases,ipc-bns,213352,cases,Table 1A.1
+rajasthan,2024,crime-rate,ipc-bns-sll,362.0,cognizable crimes per lakh population,Table 1A.3
+rajasthan,2024,crime-rate,ipc-bns,259.6,cognizable crimes per lakh population,Table 1A.1
+rajasthan,2024,mid-year-population,,821.9,lakh persons,Table 1A.3
+sikkim,2022,cases,ipc-bns-sll,819,cases,Table 1A.3
+sikkim,2023,cases,ipc-bns-sll,718,cases,Table 1A.3
+sikkim,2024,cases,ipc-bns-sll,691,cases,Table 1A.3
+sikkim,2022,cases,ipc-bns,549,cases,Table 1A.1
+sikkim,2023,cases,ipc-bns,511,cases,Table 1A.1
+sikkim,2024,cases,ipc,308,cases,Table 1A.1
+sikkim,2024,cases,bns,199,cases,Table 1A.1
+sikkim,2024,cases,ipc-bns,507,cases,Table 1A.1
+sikkim,2024,crime-rate,ipc-bns-sll,99.1,cognizable crimes per lakh population,Table 1A.3
+sikkim,2024,crime-rate,ipc-bns,72.7,cognizable crimes per lakh population,Table 1A.1
+sikkim,2024,mid-year-population,,7.0,lakh persons,Table 1A.3
+tamil-nadu,2022,cases,ipc-bns-sll,473456,cases,Table 1A.3
+tamil-nadu,2023,cases,ipc-bns-sll,539651,cases,Table 1A.3
+tamil-nadu,2024,cases,ipc-bns-sll,505754,cases,Table 1A.3
+tamil-nadu,2022,cases,ipc-bns,193913,cases,Table 1A.1
+tamil-nadu,2023,cases,ipc-bns,203804,cases,Table 1A.1
+tamil-nadu,2024,cases,ipc,103608,cases,Table 1A.1
+tamil-nadu,2024,cases,bns,93541,cases,Table 1A.1
+tamil-nadu,2024,cases,ipc-bns,197149,cases,Table 1A.1
+tamil-nadu,2024,crime-rate,ipc-bns-sll,655.4,cognizable crimes per lakh population,Table 1A.3
+tamil-nadu,2024,crime-rate,ipc-bns,255.5,cognizable crimes per lakh population,Table 1A.1
+tamil-nadu,2024,mid-year-population,,771.7,lakh persons,Table 1A.3
+telangana,2022,cases,ipc-bns-sll,165830,cases,Table 1A.3
+telangana,2023,cases,ipc-bns-sll,183644,cases,Table 1A.3
+telangana,2024,cases,ipc-bns-sll,217976,cases,Table 1A.3
+telangana,2022,cases,ipc-bns,151849,cases,Table 1A.1
+telangana,2023,cases,ipc-bns,156737,cases,Table 1A.1
+telangana,2024,cases,ipc,105022,cases,Table 1A.1
+telangana,2024,cases,bns,85682,cases,Table 1A.1
+telangana,2024,cases,ipc-bns,190704,cases,Table 1A.1
+telangana,2024,crime-rate,ipc-bns-sll,568.9,cognizable crimes per lakh population,Table 1A.3
+telangana,2024,crime-rate,ipc-bns,497.7,cognizable crimes per lakh population,Table 1A.1
+telangana,2024,mid-year-population,,383.2,lakh persons,Table 1A.3
+tripura,2022,cases,ipc-bns-sll,4532,cases,Table 1A.3
+tripura,2023,cases,ipc-bns-sll,5002,cases,Table 1A.3
+tripura,2024,cases,ipc-bns-sll,4033,cases,Table 1A.3
+tripura,2022,cases,ipc-bns,3653,cases,Table 1A.1
+tripura,2023,cases,ipc-bns,3814,cases,Table 1A.1
+tripura,2024,cases,ipc,1801,cases,Table 1A.1
+tripura,2024,cases,bns,1193,cases,Table 1A.1
+tripura,2024,cases,ipc-bns,2994,cases,Table 1A.1
+tripura,2024,crime-rate,ipc-bns-sll,96.2,cognizable crimes per lakh population,Table 1A.3
+tripura,2024,crime-rate,ipc-bns,71.4,cognizable crimes per lakh population,Table 1A.1
+tripura,2024,mid-year-population,,41.9,lakh persons,Table 1A.3
+uttar-pradesh,2022,cases,ipc-bns-sll,753675,cases,Table 1A.3
+uttar-pradesh,2023,cases,ipc-bns-sll,793020,cases,Table 1A.3
+uttar-pradesh,2024,cases,ipc-bns-sll,708399,cases,Table 1A.3
+uttar-pradesh,2022,cases,ipc-bns,401787,cases,Table 1A.1
+uttar-pradesh,2023,cases,ipc-bns,428794,cases,Table 1A.1
+uttar-pradesh,2024,cases,ipc,221615,cases,Table 1A.1
+uttar-pradesh,2024,cases,bns,208937,cases,Table 1A.1
+uttar-pradesh,2024,cases,ipc-bns,430552,cases,Table 1A.1
+uttar-pradesh,2024,crime-rate,ipc-bns-sll,296.6,cognizable crimes per lakh population,Table 1A.3
+uttar-pradesh,2024,crime-rate,ipc-bns,180.2,cognizable crimes per lakh population,Table 1A.1
+uttar-pradesh,2024,mid-year-population,,2388.8,lakh persons,Table 1A.3
+uttarakhand,2022,cases,ipc-bns-sll,34607,cases,Table 1A.3
+uttarakhand,2023,cases,ipc-bns-sll,34017,cases,Table 1A.3
+uttarakhand,2024,cases,ipc-bns-sll,31024,cases,Table 1A.3
+uttarakhand,2022,cases,ipc-bns,16967,cases,Table 1A.1
+uttarakhand,2023,cases,ipc-bns,17094,cases,Table 1A.1
+uttarakhand,2024,cases,ipc,9422,cases,Table 1A.1
+uttarakhand,2024,cases,bns,6431,cases,Table 1A.1
+uttarakhand,2024,cases,ipc-bns,15853,cases,Table 1A.1
+uttarakhand,2024,crime-rate,ipc-bns-sll,263.0,cognizable crimes per lakh population,Table 1A.3
+uttarakhand,2024,crime-rate,ipc-bns,134.4,cognizable crimes per lakh population,Table 1A.1
+uttarakhand,2024,mid-year-population,,118.0,lakh persons,Table 1A.3
+west-bengal,2022,cases,ipc-bns-sll,180539,cases,Table 1A.3
+west-bengal,2023,cases,ipc-bns-sll,180272,cases,Table 1A.3
+west-bengal,2024,cases,ipc-bns-sll,180771,cases,Table 1A.3
+west-bengal,2022,cases,ipc-bns,156503,cases,Table 1A.1
+west-bengal,2023,cases,ipc-bns,156237,cases,Table 1A.1
+west-bengal,2024,cases,ipc,81509,cases,Table 1A.1
+west-bengal,2024,cases,bns,76400,cases,Table 1A.1
+west-bengal,2024,cases,ipc-bns,157909,cases,Table 1A.1
+west-bengal,2024,crime-rate,ipc-bns-sll,181.3,cognizable crimes per lakh population,Table 1A.3
+west-bengal,2024,crime-rate,ipc-bns,158.3,cognizable crimes per lakh population,Table 1A.1
+west-bengal,2024,mid-year-population,,997.2,lakh persons,Table 1A.3
+andaman-nicobar,2022,cases,ipc-bns-sll,1589,cases,Table 1A.3
+andaman-nicobar,2023,cases,ipc-bns-sll,1873,cases,Table 1A.3
+andaman-nicobar,2024,cases,ipc-bns-sll,1697,cases,Table 1A.3
+andaman-nicobar,2022,cases,ipc-bns,460,cases,Table 1A.1
+andaman-nicobar,2023,cases,ipc-bns,587,cases,Table 1A.1
+andaman-nicobar,2024,cases,ipc,304,cases,Table 1A.1
+andaman-nicobar,2024,cases,bns,218,cases,Table 1A.1
+andaman-nicobar,2024,cases,ipc-bns,522,cases,Table 1A.1
+andaman-nicobar,2024,crime-rate,ipc-bns-sll,420.0,cognizable crimes per lakh population,Table 1A.3
+andaman-nicobar,2024,crime-rate,ipc-bns,129.2,cognizable crimes per lakh population,Table 1A.1
+andaman-nicobar,2024,mid-year-population,,4.0,lakh persons,Table 1A.3
+chandigarh,2022,cases,ipc-bns-sll,3658,cases,Table 1A.3
+chandigarh,2023,cases,ipc-bns-sll,4185,cases,Table 1A.3
+chandigarh,2024,cases,ipc-bns-sll,4069,cases,Table 1A.3
+chandigarh,2022,cases,ipc-bns,2941,cases,Table 1A.1
+chandigarh,2023,cases,ipc-bns,3285,cases,Table 1A.1
+chandigarh,2024,cases,ipc,2391,cases,Table 1A.1
+chandigarh,2024,cases,bns,1230,cases,Table 1A.1
+chandigarh,2024,cases,ipc-bns,3621,cases,Table 1A.1
+chandigarh,2024,crime-rate,ipc-bns-sll,326.3,cognizable crimes per lakh population,Table 1A.3
+chandigarh,2024,crime-rate,ipc-bns,290.4,cognizable crimes per lakh population,Table 1A.1
+chandigarh,2024,mid-year-population,,12.5,lakh persons,Table 1A.3
+dnh-dd,2022,cases,ipc-bns-sll,1273,cases,Table 1A.3
+dnh-dd,2023,cases,ipc-bns-sll,865,cases,Table 1A.3
+dnh-dd,2024,cases,ipc-bns-sll,592,cases,Table 1A.3
+dnh-dd,2022,cases,ipc-bns,1184,cases,Table 1A.1
+dnh-dd,2023,cases,ipc-bns,761,cases,Table 1A.1
+dnh-dd,2024,cases,ipc,321,cases,Table 1A.1
+dnh-dd,2024,cases,bns,219,cases,Table 1A.1
+dnh-dd,2024,cases,ipc-bns,540,cases,Table 1A.1
+dnh-dd,2024,crime-rate,ipc-bns-sll,42.7,cognizable crimes per lakh population,Table 1A.3
+dnh-dd,2024,crime-rate,ipc-bns,38.9,cognizable crimes per lakh population,Table 1A.1
+dnh-dd,2024,mid-year-population,,13.9,lakh persons,Table 1A.3
+delhi,2022,cases,ipc-bns-sll,320274,cases,Table 1A.3
+delhi,2023,cases,ipc-bns-sll,344263,cases,Table 1A.3
+delhi,2024,cases,ipc-bns-sll,297666,cases,Table 1A.3
+delhi,2022,cases,ipc-bns,300429,cases,Table 1A.1
+delhi,2023,cases,ipc-bns,324257,cases,Table 1A.1
+delhi,2024,cases,ipc,136669,cases,Table 1A.1
+delhi,2024,cases,bns,138733,cases,Table 1A.1
+delhi,2024,cases,ipc-bns,275402,cases,Table 1A.1
+delhi,2024,crime-rate,ipc-bns-sll,1360.2,cognizable crimes per lakh population,Table 1A.3
+delhi,2024,crime-rate,ipc-bns,1258.5,cognizable crimes per lakh population,Table 1A.1
+delhi,2024,mid-year-population,,218.8,lakh persons,Table 1A.3
+jammu-kashmir,2022,cases,ipc-bns-sll,30197,cases,Table 1A.3
+jammu-kashmir,2023,cases,ipc-bns-sll,29595,cases,Table 1A.3
+jammu-kashmir,2024,cases,ipc-bns-sll,26362,cases,Table 1A.3
+jammu-kashmir,2022,cases,ipc-bns,25915,cases,Table 1A.1
+jammu-kashmir,2023,cases,ipc-bns,25127,cases,Table 1A.1
+jammu-kashmir,2024,cases,ipc,12728,cases,Table 1A.1
+jammu-kashmir,2024,cases,bns,9849,cases,Table 1A.1
+jammu-kashmir,2024,cases,ipc-bns,22577,cases,Table 1A.1
+jammu-kashmir,2024,crime-rate,ipc-bns-sll,192.0,cognizable crimes per lakh population,Table 1A.3
+jammu-kashmir,2024,crime-rate,ipc-bns,164.4,cognizable crimes per lakh population,Table 1A.1
+jammu-kashmir,2024,mid-year-population,,137.3,lakh persons,Table 1A.3
+ladakh,2022,cases,ipc-bns-sll,478,cases,Table 1A.3
+ladakh,2023,cases,ipc-bns-sll,522,cases,Table 1A.3
+ladakh,2024,cases,ipc-bns-sll,541,cases,Table 1A.3
+ladakh,2022,cases,ipc-bns,439,cases,Table 1A.1
+ladakh,2023,cases,ipc-bns,459,cases,Table 1A.1
+ladakh,2024,cases,ipc,191,cases,Table 1A.1
+ladakh,2024,cases,bns,269,cases,Table 1A.1
+ladakh,2024,cases,ipc-bns,460,cases,Table 1A.1
+ladakh,2024,crime-rate,ipc-bns-sll,179.1,cognizable crimes per lakh population,Table 1A.3
+ladakh,2024,crime-rate,ipc-bns,152.3,cognizable crimes per lakh population,Table 1A.1
+ladakh,2024,mid-year-population,,3.0,lakh persons,Table 1A.3
+lakshadweep,2022,cases,ipc-bns-sll,97,cases,Table 1A.3
+lakshadweep,2023,cases,ipc-bns-sll,127,cases,Table 1A.3
+lakshadweep,2024,cases,ipc-bns-sll,84,cases,Table 1A.3
+lakshadweep,2022,cases,ipc-bns,64,cases,Table 1A.1
+lakshadweep,2023,cases,ipc-bns,76,cases,Table 1A.1
+lakshadweep,2024,cases,ipc,38,cases,Table 1A.1
+lakshadweep,2024,cases,bns,9,cases,Table 1A.1
+lakshadweep,2024,cases,ipc-bns,47,cases,Table 1A.1
+lakshadweep,2024,crime-rate,ipc-bns-sll,121.7,cognizable crimes per lakh population,Table 1A.3
+lakshadweep,2024,crime-rate,ipc-bns,68.1,cognizable crimes per lakh population,Table 1A.1
+lakshadweep,2024,mid-year-population,,0.7,lakh persons,Table 1A.3
+puducherry,2022,cases,ipc-bns-sll,4558,cases,Table 1A.3
+puducherry,2023,cases,ipc-bns-sll,5065,cases,Table 1A.3
+puducherry,2024,cases,ipc-bns-sll,5498,cases,Table 1A.3
+puducherry,2022,cases,ipc-bns,3237,cases,Table 1A.1
+puducherry,2023,cases,ipc-bns,3348,cases,Table 1A.1
+puducherry,2024,cases,ipc,1831,cases,Table 1A.1
+puducherry,2024,cases,bns,1684,cases,Table 1A.1
+puducherry,2024,cases,ipc-bns,3515,cases,Table 1A.1
+puducherry,2024,crime-rate,ipc-bns-sll,324.4,cognizable crimes per lakh population,Table 1A.3
+puducherry,2024,crime-rate,ipc-bns,207.4,cognizable crimes per lakh population,Table 1A.1
+puducherry,2024,mid-year-population,,17.0,lakh persons,Table 1A.3
