@@ -991,7 +991,7 @@ const topic: Topic = {
     coverage:
       'All India for GDP, GVA, IIP and the exchange rate. For 2024-25, income per person covers 32 of 36 states and UTs, and GSDP growth covers 30. Jammu and Kashmir excludes Ladakh from 2019-20. ASI covers registered factories; ASUSE covers small unincorporated firms outside farming and construction. Payment data are all India only, and count domestic transactions.',
     missing:
-      'MoSPI has no 2024-25 income per person for four states and UTs, and no GSDP growth for six. It has no IIP rate for April 2021, and no ASI estimate for Lakshadweep. Monthly payment data start in June 2020: the RBI archive starts with the June 2021 release, which also prints June 2020. No publisher states a reuse licence.',
+      'MoSPI has no 2024-25 income per person for four states and UTs, and no GSDP growth for six. It has no IIP rate for April 2021, and no ASI estimate for Lakshadweep. Monthly payment data start in June 2020: the RBI archive starts with the June 2021 release, which also prints June 2020. The RBI allows accurate reproduction without modification, with acknowledgement. MoSPI states no reuse licence.',
   },
   sources: [GDP_PRESS_NOTE, ESANKHYIKI, IIP_RELEASE, ASI_SUMMARY, ASUSE_REPORT, RBI_HANDBOOK, RBI_TABLE_133_2002, IMF_IFS, FBIL_ARCHIVE, RBI_HOME, RBI_PSI],
   related: [

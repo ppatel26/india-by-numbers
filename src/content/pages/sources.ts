@@ -126,7 +126,7 @@ const PUBLISHERS: readonly Publisher[] = [
       { name: 'Rupee reference rate', detail: 'US dollar, since 25 Aug 1998; set by FBIL since 10 Jul 2018', rhythm: 'Each working day', match: /Reference Rate|Current Rates/ },
       { name: 'Payment System Indicators', detail: 'UPI, NEFT, RTGS, IMPS and card payments, monthly from June 2020', rhythm: 'Monthly', match: /Payment System Indicators/ },
     ],
-    licence: NOT_STATED,
+    licence: 'Copyright Policy: material "may be reproduced accurately and without modification", with acknowledgement of the RBI',
     access: ['Handbook tables in Excel (rbidocs.rbi.org.in)', 'Statements, rates and payment tables (rbi.org.in)', 'FBIL reference rates (fbil.org.in)'],
     note: 'Handbook table 236 carries CPI series from the Labour Bureau and NSO.',
     site: 'https://www.rbi.org.in',
