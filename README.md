@@ -3,7 +3,7 @@
 **[indiabynumbers.org](https://indiabynumbers.org)**: India's official statistics, checked and charted.
 
 The site covers thirteen topics: prices, the economy, trade, jobs, living standards, population, health,
-education, elections, crime and justice, transport, climate, and religion and culture. It has 149 charts. It also has a profile for each of India's 28
+education, elections, crime and justice, transport, climate, and religion and culture. It has 156 charts. It also has a profile for each of India's 28
 states and 8 union territories, beside the national figure. The site follows the example of
 [UK by Numbers](https://ukbynumbers.org/) and [Our World in Data](https://ourworldindata.org/).
 
@@ -15,8 +15,12 @@ Built by Parv ([@patel_parv](https://x.com/patel_parv)).
   and SRS), IIPS for the NFHS, the Ministry of Education, the Election Commission, IMD, CEA, MNRE and
   others. Each topic folder in [`research/data/`](research/data/) has a README with the release, its
   date, the link and the checksum of the file we read.
+- Charts that compare India with other countries take every country, India included, from one
+  international series: the World Bank's World Development Indicators, or UN DESA for migrants.
+  For India alone, the site uses the Indian publisher.
 - The site prints the publisher's own digits. Each figure carries its period. Where it applies,
-  the figure also carries a status word: Provisional, Projection, Survey estimate or Method break.
+  the figure also carries a status word: Provisional, Projection, Survey estimate, Modelled
+  estimate or Method break.
 - The site shows base-year changes as a break. The CPI on base 2012=100 and on 2024=100 are two
   lines with a break. The site does not splice them into one line.
 - A test fails the build if the text quotes a number that is not in the data.
