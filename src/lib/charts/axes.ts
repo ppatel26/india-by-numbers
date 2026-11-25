@@ -49,7 +49,8 @@ function tickLabels(ticks: readonly number[], f: Format | undefined): (t: number
   const peak = Math.max(...ticks.map((t) => Math.abs(t * (f?.multiply ?? 1))))
   const auto: Format['scale'] = f?.scale === undefined && peak >= 1e5 ? (peak >= 1e7 ? 'crore' : 'lakh') : f?.scale
   const base: Format = { ...f, scale: auto, decimals: undefined, unit: f?.unit === 'pp' ? '' : f?.unit }
-  const per = (f?.scale === 'crore' ? 1e7 : f?.scale === 'lakh' ? 1e5 : 0) / (f?.multiply ?? 1)
+  // The automatic scale counts too: 0.5 lakh ticks need a decimal, or they print as 1 lakh.
+  const per = (auto === 'crore' ? 1e7 : auto === 'lakh' ? 1e5 : 0) / (f?.multiply ?? 1)
   const exact = (d: number) => ticks.every((t) => Math.abs(Math.round((t / per) * 10 ** d) - (t / per) * 10 ** d) < 1e-6)
   const d = per ? ([0, 1, 2].find(exact) ?? 2) : 0
   // The baseline reads plain 0; the unit, the scale word (crore, lakh) and any suffix sit on the

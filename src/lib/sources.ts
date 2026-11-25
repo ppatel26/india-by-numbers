@@ -63,6 +63,7 @@ const PUBLISHER_RULES: readonly (readonly [RegExp, string])[] = [
   [/\bMNRE\b/, 'MNRE'],
   [/\bNCRB\b/, 'NCRB'],
   [/Ministry of Law and Justice/, 'MoLJ'],
+  [/\bMoRTH\b/, 'MoRTH'],
 ]
 
 /** The short name of the publisher on a source line, as the Sources page lists it. */

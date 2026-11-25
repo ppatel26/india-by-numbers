@@ -47,6 +47,10 @@ const tiles: Readonly<Record<TopicSlug, Tile>> = {
     questions: ['How much crime do the police record?', 'How full are the prisons?'],
     figure: { chart: 'undertrials-by-state', label: 'Prisoners who are undertrials' },
   },
+  transport: {
+    questions: ['How many people die on the roads?', 'How do people get to work and school?'],
+    figure: { chart: 'road-deaths-india', series: 'deaths', label: 'Road deaths recorded by the police, 2024', format: { scale: 'none', decimals: 0 } },
+  },
   climate: {
     questions: ['How much rain did the 2026 monsoon bring?', 'How fast is power moving away from coal?'],
     figure: { chart: 'non-fossil-capacity-share', series: 'non-fossil', label: 'Power capacity not from fossil fuels' },
