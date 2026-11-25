@@ -235,6 +235,22 @@ const TOP_CAUSES = [
   'fever-unknown-origin', 'unintentional-injuries-other', 'diabetes', 'genito-urinary', 'ill-defined',
 ] as const
 
+const NFHS_ADULT = 'health/nfhs-adult-indicators-by-state.csv'
+
+// Women and men, NFHS-5 (hollow) and NFHS-6 (filled), for one adult indicator.
+const nfhsAdult = (measure: 'overweight' | 'tobacco', ages: string): Series[] =>
+  (['women', 'men'] as const).flatMap((sex) =>
+    (['NFHS-5', 'NFHS-6'] as const).map((round): Series => ({
+      key: `${sex}-${round.toLowerCase().replace('-', '')}`,
+      label: `${sex === 'women' ? 'Women' : 'Men'}, ${round === 'NFHS-5' ? '2019-21' : '2023-24'}`,
+      color: sex === 'women' ? 's3' : 's2',
+      file: NFHS_ADULT,
+      x: 'geography',
+      where: { round, indicator: `${measure}-${sex}-${ages}` },
+      note: 'note',
+    })),
+  )
+
 export const sexRatioAtBirthIndia: Chart = {
   kind: 'line',
   slug: 'sex-ratio-at-birth-india',
@@ -711,6 +727,82 @@ const topic: Topic = {
               'Take the NFHS-4 estimates from Table 10.2 of the national report where boundaries match.',
               'Take both recent estimates from the NFHS-6 state and UT fact sheets. Use the NFHS-5 national report for Manipur.',
               'Sort the states and UTs by the NFHS-6 value. Place India first.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
+    {
+      title: 'How many adults use tobacco or are overweight?',
+      lede: '36.3% of men aged 15 and over used tobacco in 2023-24, down from 38.0% in 2019-21. 30.7% of women aged 15 to 49 were overweight or obese, up from 24.0%.',
+      blocks: [
+        { text: 'Men\'s tobacco use fell in 24 of the 35 states and UTs surveyed. Mizoram had the highest shares: 73.6% of men and 61.0% of women used tobacco.' },
+        {
+          chart: {
+            kind: 'dots',
+            slug: 'tobacco-use-by-state',
+            title: 'Tobacco use by state and UT, women and men, 2019-21 and 2023-24',
+            subtitle: 'Share of people aged 15 and over who use any kind of tobacco.',
+            punches: { office: 'IIPS', unit: '%', period: '2023-24' },
+            status: ['Survey estimate', 'Provisional'],
+            note: 'Rings are 2019-21, dots 2023-24. NFHS-6 did not survey Manipur.',
+            sources: [withTable(NFHS_6, 'indicators 98 and 99'), withTable(NFHS_5, 'Table 2.36, Manipur')],
+            format: { decimals: 1, unit: '%' },
+            by: 'geography',
+            hollow: ['women-nfhs5', 'men-nfhs5'],
+            pin: ['india'],
+            sortBy: 'men-nfhs6',
+            axis: { min: 0, max: 80 },
+            map: { series: 'men-nfhs6', scale: 'seq', better: 'low' },
+            missing: { manipur: 'NFHS-6 did not survey Manipur' },
+            series: nfhsAdult('tobacco', '15-plus'),
+            know: [
+              'The measure counts people aged 15 and over who use any kind of tobacco. In NFHS-5 the household respondent answered for each member.',
+              'NFHS-5 and NFHS-6 use the same indicator and age band. The NFHS-6 fact sheets print the NFHS-5 value beside each NFHS-6 value.',
+              'NFHS-6 results are provisional, as the fact sheets say.',
+              'Some states and UTs have small samples, so small changes may not be real.',
+            ],
+            processing: [
+              'We take indicators 98 and 99 for each state and UT from the NFHS-6 fact sheets, for both rounds.',
+              'We check every NFHS-5 value against Table 2.36 of the NFHS-5 India report. All match.',
+              'We take Manipur\'s NFHS-5 values from the same table. NFHS-6 has no Manipur value.',
+              'We sort the rows by men\'s use in 2023-24 and place India first.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        { text: 'The share of women who were overweight or obese rose in 33 of the 35 states and UTs surveyed. Puducherry had the highest share, 51.3%.' },
+        {
+          chart: {
+            kind: 'dots',
+            slug: 'overweight-by-state',
+            title: 'Overweight or obese adults by state and UT, women and men, 2019-21 and 2023-24',
+            subtitle: 'Share of people aged 15 to 49 with a body mass index of 25 or more.',
+            punches: { office: 'IIPS', unit: '%', period: '2023-24' },
+            status: ['Survey estimate', 'Provisional'],
+            note: 'Rings are 2019-21, dots 2023-24. NFHS-6 did not survey Manipur.',
+            sources: [withTable(NFHS_6, 'indicators 76 and 77'), withTable(NFHS_5, 'Tables 10.20.1 and 10.20.2, Manipur')],
+            format: { decimals: 1, unit: '%' },
+            by: 'geography',
+            hollow: ['women-nfhs5', 'men-nfhs5'],
+            pin: ['india'],
+            sortBy: 'women-nfhs6',
+            axis: { min: 0, max: 60 },
+            map: { series: 'women-nfhs6', scale: 'seq', better: 'low' },
+            missing: { manipur: 'NFHS-6 did not survey Manipur' },
+            series: nfhsAdult('overweight', '15-49'),
+            know: [
+              'The survey measures the height and weight of each adult. A body mass index (BMI) of 25.0 kg/m² or more counts as overweight or obese.',
+              'The figures cover women and men aged 15 to 49. They leave out pregnant women and women who gave birth in the two months before the survey.',
+              'NFHS-5 and NFHS-6 use the same cut-off and age band.',
+              'NFHS-6 results are provisional, as the fact sheets say.',
+            ],
+            processing: [
+              'We take indicators 76 and 77 for each state and UT from the NFHS-6 fact sheets, for both rounds.',
+              'We check every NFHS-5 value against Tables 10.20.1 and 10.20.2 of the NFHS-5 India report. All match.',
+              'We take Manipur\'s NFHS-5 values from the same tables. NFHS-6 has no Manipur value.',
+              'We sort the rows by women\'s share in 2023-24 and place India first.',
             ],
             nextRelease: 'not announced',
           },

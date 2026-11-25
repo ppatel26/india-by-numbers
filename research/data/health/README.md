@@ -11,7 +11,8 @@ Data gathered on 17 and 18 Nov 2026 from ORGI, IIPS, PIB, MoHFW, NHSRC and WHO. 
 5. How much of the health bill do households pay from their own pockets?
 6. How has India's sex ratio at birth changed?
 7. What do people in India die of?
-8. How complete is the registration of births and deaths in each state?
+8. How many adults use tobacco, and how many are overweight, in each state?
+9. How complete is the registration of births and deaths in each state?
 
 ## Charts
 
@@ -194,6 +195,21 @@ ORGI replaced its sample in 2004 and 2014. The chart marks both years. Some thre
 - Decision: the 2021-23 edition uses the same four groups and the same top-10 table, so it is the earlier period. Its top 10 holds the same ten causes in a different order (respiratory infections second, at 9.3%).
 - Note: Table 2.1A gives 12.9% for ill-defined deaths among women. Table 1.3C of the same report gives 13.0%. The chart uses Table 2.1A. Table 2.3A gives cardiovascular deaths among women as 30.4%; Table 1.3C gives 30.5%.
 
+### H13. Tobacco use and overweight by state: NFHS-6 against NFHS-5
+
+- Type: two dot plots by state, each with four series: women and men, NFHS-5 (ring) and NFHS-6 (dot). India pinned first.
+- Indicators: 98 and 99, women and men age 15 and over who use any kind of tobacco; 76 and 77, women and men age 15-49 who are overweight or obese (BMI 25.0 kg/m2 or more).
+- Unit: percent.
+- Geography: India and 35 states and UTs in NFHS-6. Manipur has NFHS-5 values only, from the NFHS-5 India report.
+- Period: NFHS-5 (2019-21) and NFHS-6 (2023-24).
+- CSV: `nfhs-adult-indicators-by-state.csv`, in the same columns as `nfhs-key-indicators-by-state.csv`.
+- Sentences: "36.3% of men aged 15 and over used tobacco in 2023-24, down from 38.0% in 2019-21." "Puducherry had the highest share, 51.3%."
+- Source: IIPS for MoHFW, NFHS-6 (2023-24) India and State/UT Fact Sheets (29 May 2026, provisional). Manipur: NFHS-5 India report, Tables 2.36, 10.20.1 and 10.20.2.
+- State profile: "Men who use tobacco" and "Women overweight or obese" rows.
+- Definitions checked: the NFHS-6 fact sheets give BMI for "Adults (age 15-49 years)" with the cut-off 25.0 kg/m2, and exclude pregnant women and women with a birth in the preceding 2 months (footnote 15). NFHS-5 Tables 10.20.1 and 10.20.2 use the same age band and cut-off. Tobacco is "age 15 years and above" in both rounds. NFHS-5 Table 2.36 says the household respondent reported it. The NFHS-6 fact sheets do not say who answered. The definitions match, so both rounds sit on one row.
+- Check: all 144 NFHS-5 values printed in the NFHS-6 fact sheets (36 geographies, 4 indicators) match the NFHS-5 report tables. No value in brackets or shown as "*".
+- Decision: a new CSV and script, not an extension of `nfhs-key-indicators-by-state.csv` and `build_health.py`. That script rebuilds nine CSVs from 20 raw files, and the CSV has a fixed set of child indicators. A new script reads only the two files it needs, and leaves the existing CSV as it is.
+
 ### H14. Sex ratio of registered births by state, 2024 (population page)
 
 - Type: ranked bars and tile map by state, as a third tab beside the SRS sex ratio at birth by state. The SRS and CRS figures stay in separate charts and files.
@@ -212,10 +228,15 @@ Read 25 Nov 2026. Paths are relative to `raw/health/`. Run `pipeline/health/extr
 | `crs-2024.pdf` | ORGI, Report on Vital Statistics of India based on the Civil Registration System 2024 (NADA catalog/47155) | 1 Jul 2026 (catalogue "Date published 2026-07-01") | https://censusindia.gov.in/nada/index.php/catalog/47155/download/51401/CRS_Report_2024.pdf | `f0a11ee443e120f4b8062360deb42ca29563c7fb67967db7c75f4bb968ef45b0` |
 | `srs-cod-2022-24.pdf` | ORGI, SRS Cause of Death in India 2022-2024 (catalog/47147) | 20 May 2026 (catalogue "Date published 2026-05-20") | https://censusindia.gov.in/nada/index.php/catalog/47147/download/51392/SRS_COD-STATISTICS_2022-2024.pdf | `a8ece1a1efce8c953fde2cbe1d54ba2c78697ac267937088b7fd2d1bfd15d170` |
 | `srs-cod-2021-23.pdf` | ORGI, SRS Cause of Death in India 2021-2023 (catalog/46176) | 3 Sep 2025 (catalogue "Date published 2025-09-03") | https://censusindia.gov.in/nada/index.php/catalog/46176/download/50424 | `1622b1b105ddf5ba4b237c7658a372c2466b340af25316cd1cc593685b42f268` |
+| `nfhs6-factsheets.pdf` | IIPS for MoHFW, NFHS-6 (2023-24) India and State/UT Fact Sheets | 29 May 2026 | https://www.nfhsiips.in/nfhsuser/assets/National%20Family%20Health%20Survey%20(NFHS-6)%202023-2024%20Fact%20Sheets.pdf | `59dec561e837bea060b6684a75caca84e0c982ed9e2670848521755f2ab267f9` |
+| `nfhs-5/report.pdf` | IIPS and ICF, NFHS-5 India report, Vol. I, DHS Program archive | Mar 2022 cover date | https://dhsprogram.com/pubs/pdf/FR375/FR375.pdf | `ce1fa5e3c93e5f0019583688e0431c9ec1c2c028b624a4dd76f07c5f5e81128a` |
+
+The nfhsiips.in download passed certificate checks on 25 Nov 2026, and its sha256 matches the 17 Nov read. The NFHS-5 report matches the sha256 in the history source files above.
 
 ```sh
 python3 -I pipeline/health/build_crs.py
 python3 -I pipeline/health/build_srs_cod.py
+python3 -I pipeline/health/build_nfhs_adult.py
 ```
 
 ### History source files
