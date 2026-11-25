@@ -170,7 +170,7 @@ acknowledged reuse. ORGI and NCRB pages say only "Rights" or "All Rights Reserve
 | Annual Survey of Industries | 2024-25, 4 Nov 2026 | PDF: Statement 3A, 7A state values; Volume I tables 2, 4, 4a. API to 2023-24 only | Yes | `use`. Economy, Jobs: factory jobs and GVA by state | Yes (2022-23) |
 | ASUSE | 2025, report 6 May 2026 | API: 40+ indicators, 2021-22 to 2025, with state variants | Yes, with sex and rural/urban | `use`. Economy, Jobs: small firms and their workers | Yes (2023-24) |
 | IMD gridded data | 2025 | Grids, not tables | Rule R5 | `later`. Use IMD state tables first (rule R5) | Yes |
-| UN international migrant stock | 2024 | Not checked | No | `to check` | Yes |
+| UN DESA International Migrant Stock | 2024 (XLSX, files of 27 Jan and 7 Feb 2025) | Origin file Table 1: emigrants by sex, 1990-2024; destination and origin file Table 1: by destination country | No | `use`. Population: Indians living abroad, by destination. CC BY 3.0 IGO | Yes |
 
 ### New topics
 
@@ -183,20 +183,22 @@ These are the "Later" topics in `docs/site-spec.md`.
 | Crime and justice | Court pendency by state | Ministry of Law and Justice answers in Parliament (data to 30 Jul 2026); NJDG dashboard as a `Snapshot` only (rule R4) | `use` the Parliament answers | Yes |
 | Housing and living standards | HCES 2023-24 | API: MPCE by state, class and social group, item shares, Gini | `use`. Durables and cooking fuel tables `to check` in the final report | Yes |
 | Housing and living standards | CAMS 2022-23 | See above | `use` | Yes |
-| Housing and living standards | NSS round 76 water, sanitation and housing (2018); Census 2011 housing tables | Not checked | `to check` | No |
-| Poverty and inequality | HCES 2023-24; NSS Debt and Investment (2019) | Not checked | `to check` | Partly |
+| Housing and living standards | NSS round 76, Report 584, water, sanitation, hygiene and housing (Jul to Dec 2018) | API (NSS76C, 12 indicators, state and rural/urban); PDF Statements 2.1, 3.1, 6.1, 12.1, 25.2 | `use` through the API | No |
+| Housing and living standards | Census 2011 houselisting tables (HL-14 amenities and assets, HL-06 water, HL-07 lighting) | XLSX per district on the ORGI catalogue. No all-population state file found yet | `use`. Find the state-level table IDs first | Partly |
+| Poverty and inequality | HCES 2023-24 | See above | `use` | Yes |
+| Poverty and inequality | NSS round 77, Report 588, Debt and Investment Survey 2019 | PDF only, 1,919 pages: Summary Statements 2, 3, 4, 7, 8, 10 by state | `use`. Manual extraction, not on the API | Partly |
 | Transport | MoRTH Road Accidents in India | 2023 PDF found. A 2024 edition is not confirmed on the MoRTH site | `use`. Confirm the edition | Yes |
 | Transport | MoRTH Road Transport Year Book | 2019-20 | `later`. Stale | Yes |
-| Transport | NSS Household Travel Survey 2025-26 | Catalogued 5 Nov 2026 | `to check` | No |
+| Transport | NSS Household Travel Survey 2025-26 | Fact sheet, MoSPI list date 5 Oct 2026, Tables 1 to 7 and Appendix A state tables. No full report yet | `use` the fact sheet tables | No |
 | Trade | RBI Handbook, balance of payments | 2025-26, 31 Jul 2026, tables 124 to 131, with XLSX | `use` | Yes |
 | Trade | DGCI&S tradestat | 2025-26 | `later`. No reuse terms, no download | Yes |
 | Money and payments | RBI Payment System Indicators | October 2026, monthly XLSX | `use`. National only | Yes |
 | Money and payments | RBI Basic Statistical Returns | June 2026, quarterly | `later`. State tables are only on DBIE, which did not load | Yes |
 | International | World Bank WDI API | Updated 11 Nov 2026 | `use`. CC BY 4.0, except third-party series inside WDI | Yes |
-| International | ILOSTAT API | Works with no key | `later`. Read the licence in a browser first | Yes |
-| Agriculture | NSS Situation Assessment of Agricultural Households; Land and Livestock Holdings (2019) | Not checked | `to check` | No |
-| Tourism | NSS Domestic Tourism Expenditure Survey 2025-26 | Catalogued 23 Sep 2026 | `to check` | No |
-| Disability | NSS Persons with Disabilities, round 76 (2018) | Not checked | `to check` | No |
+| International | ILOSTAT API | Works with no key | `use` for comparisons only (rule R6). CC BY 4.0 for datasets since 3 May 2023. Its India rows are ILO's own processing of PLFS unit-level data, so for India alone use MoSPI | Yes |
+| Agriculture | NSS round 77, Report 587, Situation Assessment of Agricultural Households and Land and Livestock Holdings, 2019 | API (NSS77, 33 indicators, including income and loans); PDF detailed tables 1 to 49 | `use` through the API | No |
+| Tourism | NSS Report 597, Domestic Tourism in India (Jul 2025 to Jun 2026) | September 2026: Statements 3.1, 3.13, 3.15, 3.16, 3.19, by state and rural/urban. Not on the API | `use` | No |
+| Disability | NSS round 76, Report 583, Persons with Disabilities (Jul to Dec 2018) | API (NSS76, 12 indicators, state, sex, rural/urban); PDF tables 2, 6 to 12 | `use` through the API | No |
 
 ### Checks on data we already show
 
@@ -212,7 +214,8 @@ rules above). It does not wait for the owner.
 
 1. **Process.** Done on 25 Nov 2026: `pipeline/common/catalogue_sweep.py`, the first catalogue
    snapshots, the step 6 checks on the backlog, and the PLFS Assam check. Still to do: the rows
-   marked `to check`, and an archive of the raw files. The `Snapshot` and `Modelled estimate` status
+   marked `to check` (done the same day, except the HCES durables tables), and an archive of the
+   raw files. The `Snapshot` and `Modelled estimate` status
    words come with the first chart that needs each one (court pendency, an international
    comparison), because the How we check page gives a real figure for every status word.
 2. **Fill current topics.** Next. All of these have status `use`: SRS Cause of Death 2022-24, CRS
