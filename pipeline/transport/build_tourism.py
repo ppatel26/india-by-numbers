@@ -164,7 +164,7 @@ for g in sorted(t1['rural+urban'], key=lambda g: gi[g]):
         add('overnight', 'trips-365-days', r and r[2], 'hundred overnight trips completed in the last 365 days (holidaying, pilgrimage, health, shopping)', T1)
         add('overnight', 'trips-30-days', r and r[3], 'hundred overnight trips completed in the last 30 days (business, social, education, others)', T1)
         add('overnight', 'share-of-households-with-trip', r and pct(r[1], r[0]),
-            'per cent of households that made at least one overnight trip (see note)', T1,
+            'per cent of households that made at least one overnight trip', T1,
             note or 'derived: column 3 / column 2 x 100, one decimal. Households with a holidaying, pilgrimage, health or shopping trip in the last 365 days and/or a business, social, education or other trip in the last 30 days')
         add('same-day', 'households-with-trip', rs and rs[1], 'hundred households', T19)
         v316 = dict(zip(SECTORS, s316[next(n for n in s316 if slug(n) == g)]))[sector]
@@ -202,7 +202,7 @@ check(households, 'households', '', geography='chandigarh', sector='rural', trip
 india = []
 def add_india(table, measure, ref, purpose, item, sector, v, unit, note=''):
     india.append({'geography': 'india', 'period': PERIOD, 'table': table, 'measure': measure, 'reference_period': ref, 'purpose': purpose,
-                  'item': item, 'sector': sector, 'value': v, 'unit': unit, 'note': note})
+                  'purpose_period': f'{purpose}-{ref}', 'item': item, 'sector': sector, 'value': v, 'unit': unit, 'note': note})
 
 PURPOSES = [('holidaying', 'holidaying-leisure-recreation', '365-days'), ('pilgrimage', 'pilgrimage-religious', '365-days'),
             ('health', 'health-medical', '365-days'), ('shopping', 'shopping', '365-days'), ('all', 'all', '365-days'),
@@ -293,7 +293,7 @@ for lab, item in ITEM319:
         add_india(f'{R597}, Statement 3.19', 'share-of-same-day-trip-spending', '30-days', 'all', item, sector, v,
                   'per cent of spending on same-day trips completed in the last 30 days')
 
-write('tourism-india-2025-26.csv', ['geography', 'period', 'table', 'measure', 'reference_period', 'purpose', 'item', 'sector', 'value', 'unit', 'note'], india)
+write('tourism-india-2025-26.csv', ['geography', 'period', 'table', 'measure', 'reference_period', 'purpose', 'purpose_period', 'item', 'sector', 'value', 'unit', 'note'], india)
 check(india, 'trips', '15.5', measure='overnight-trips-per-100-households', purpose='pilgrimage-religious', sector='rural')
 check(india, 'trips', '16.1', measure='overnight-trips-per-100-households', purpose='social', sector='rural+urban')
 check(india, 'spending', 32167, measure='average-spending-per-overnight-trip', purpose='health-medical', item='total', sector='rural+urban')

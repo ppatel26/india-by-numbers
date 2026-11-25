@@ -133,7 +133,7 @@ All rows use `geography` slugs from `research/data/geography.csv`, or `india`. M
 
 ### `tourism-india-2025-26.csv` (348 rows)
 
-- India, DTES 2025-26. `measure`: `overnight-trips-per-100-households` (Statement 3.2), `average-spending-per-overnight-trip` (Table 15, rupees, by `item` and `sector`), `share-of-same-day-trip-spending` (Statement 3.19, rural and urban). `reference_period`: `365-days` or `30-days`. `purpose`: the eight leading purposes and `all`.
+- India, DTES 2025-26. `measure`: `overnight-trips-per-100-households` (Statement 3.2), `average-spending-per-overnight-trip` (Table 15, rupees, by `item` and `sector`), `share-of-same-day-trip-spending` (Statement 3.19, rural and urban). `reference_period`: `365-days` or `30-days`. `purpose`: the eight leading purposes and `all`. `purpose_period` joins the two (`all-365-days`, `social-30-days`), so each bar in a chart has its own key.
 - Table 15 items: `package`, `non-package` (the sum of the next seven), `accommodation`, `food-and-drink`, `transport`, `shopping`, `recreation-religious-cultural-sporting`, `medical`, `others`, `total`. Each value is rounded, so items can differ from the total by a few rupees.
 - Pilgrimage was the leading purpose of 16.1 overnight trips per 100 households in 365 days; social visits of 16.1 per 100 households in 30 days. A health trip cost ₹32,167 on average, the most of any purpose.
 
