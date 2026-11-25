@@ -175,6 +175,8 @@ export type Chart =
       stacked?: boolean
       /** Colour each column by its sign, for example rainfall above or below normal. */
       sign?: { above: Color; below: Color; aboveLabel: string; belowLabel: string }
+      /** Columns for the whole period (the year, the season), by x: drawn in ink and set apart by a dashed rule. */
+      whole?: readonly string[]
     })
   | (ChartBase &
       TimeNotes & {

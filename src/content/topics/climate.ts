@@ -176,6 +176,7 @@ const topic: Topic = {
             format: { decimals: 1, unit: '%' },
             y: { min: -60, max: 40, step: 20 },
             sign: { above: 's5', below: 's1', aboveLabel: 'Wetter than normal', belowLabel: 'Drier than normal' },
+            whole: ['Season'],
             panels: [
               { label: 'All India', series: ['india'] },
               { label: 'Northwest', series: ['northwest'] },
@@ -301,7 +302,7 @@ const topic: Topic = {
             y: { min: -0.5, max: 1.5, step: 0.5 },
             sign: { above: 's1', below: 's5', aboveLabel: 'Warmer than average', belowLabel: 'Cooler than average' },
             // x is the `season_name` label column; the CSV lists the four seasons, then the year.
-            // LATER: the board sets the year apart with a dashed rule.
+            whole: ['Year 2025'],
             series: [
               { key: 'anomaly', label: 'India', color: 'ink', file: 'climate/temperature-anomaly-2025-by-season.csv', x: 'season_name', where: { geography: 'india', period: '2025' } },
             ],
