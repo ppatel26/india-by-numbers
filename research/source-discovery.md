@@ -233,6 +233,14 @@ rules above). It does not wait for the owner.
    Transport (10 charts, MoRTH Road Accidents in India 2024 and the NSS Household Travel Survey
    2025-26), and a Digital payments part in Economy (3 charts, RBI Payment System Indicators).
    Money and payments waits for state banking tables (RBI Basic Statistical Returns).
-6. **Next.** Agriculture, tourism and disability (NSS rounds 76, 77 and 80), UN migrant stock, and
-   comparisons with other countries (World Bank WDI, rule R6). A council decides where each one
-   belongs.
+6. **Next.** The council placed each source (25 Nov 2026):
+   - Domestic tourism (NSS Report 597): a part in Transport, 3 of 3.
+   - Disability (NSS Report 583): a part in Health, 3 of 3.
+   - UN migrant stock: a part in Population, 3 of 3, linked from the remittances chart in Trade.
+   - World Bank WDI: comparison charts inside existing topics, 3 of 3. First five, by votes: GDP
+     per person at PPP (Economy), life expectancy (Health), fertility rate (Population), CO2 per
+     person (Climate), women's labour force participation, ILO modelled (Jobs).
+   - Farm households (NSS Report 587): a new Agriculture topic, 2 of 3 (Muse voted to wait for a
+     second agriculture source). It comes after the parts, with its own design council.
+   - Debt and investment (NSS Report 588): a part in Living standards, last, because the tables are
+     only in a 1,919-page PDF.
