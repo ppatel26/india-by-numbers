@@ -211,6 +211,15 @@ Raw downloads are not kept in the repository; the URL and sha256 above identify 
 - **The API's historical quarterly series has errors.** For April to June 2019, the API gives 21.6% for urban persons aged 15+, which is the 15-29 value. The bulletin gives 8.8%. The API also gives 8.1% for July to September 2019, against 8.3% in two bulletins. For this reason the quarterly chart uses bulletin tables, not the API.
 - **No quarterly estimate for January to March 2025.** The old urban series ends with October to December 2024. The new series starts with April to June 2025.
 - **Youth (15-29) quarterly urban rows for October 2020 to December 2021** come from the Apr-Jun 2021 and Jan-Mar 2022 bulletins (added 18 Nov 2026). The Oct-Dec 2021 press note gives age 15+ only. Where these bulletins overlap the others, all 33 values agree.
+- **PLFS 2022-23 (July to June) has one Assam village with a very high sampling weight.** NSO's
+  "Technical clarification regarding high multiplier value in PLFS 2022-23" (microdata catalogue
+  210, download 5399, created 12 Jun 2025) says that the weight "disproportionately influenced the
+  state-level estimates for Assam", and asks users to take care. NSO did not revise the report or
+  the data. The redesigned PLFS from January 2025 fixes the sample design. In the 2022-23 report
+  (Table 1a), the Assam sample sex ratio is 669, against 939 in 2021-22 and 978 in 2023-24, and the
+  all-India ratio is 943, against 968 and 981. We show no Assam value from PLFS 2022-23. The
+  all-India LFPR, WPR and UR for 2022-23 (jobs-3, jobs-6, jobs-7, jobs-8) show no break against the
+  years before and after. Checked 25 Nov 2026. Do not use Assam values from PLFS 2022-23.
 - **Method breaks.** Do not join the old and new quarterly series without a break marker. Do not join agricultural-year (July to June) and calendar-year annual series. MoSPI also published calendar-year estimates for 2022 to 2024 in the 2025 report; these overlap 2022-23 and 2023-24 but are not the same numbers (for example LFPR 59.6% for 2024 against 60.1% for 2023-24).
 - **CWS against usual status.** Monthly and quarterly rates use CWS. Annual rates use usual status (ps+ss). The 2025 usual-status UR (3.1%) is lower than any month's CWS UR in 2025 (4.7% to 5.6%).
 - **Small states and UTs.** The report warns that sample sizes for smaller states and UTs may not support reliable estimates. Treat Lakshadweep, Andaman and Nicobar Islands, Ladakh, Chandigarh and Dadra and Nagar Haveli and Daman and Diu with care. Chandigarh has urban rows only.
