@@ -186,7 +186,7 @@ These are the "Later" topics in `docs/site-spec.md`.
 | Housing and living standards | NSS round 76, Report 584, water, sanitation, hygiene and housing (Jul to Dec 2018) | API (NSS76C, 12 indicators, state and rural/urban); PDF Statements 2.1, 3.1, 6.1, 12.1, 25.2 | `use`: improved drinking water (same definition as CAMS) in `research/data/living-standards/`. The API swaps Tripura and Uttarakhand in indicator 16; the CSV uses Statement 6.1. Cooking fuel, latrine and house type do not match CAMS or HCES | No |
 | Housing and living standards | Census 2011 houselisting tables (HL-14 amenities and assets, HL-06 water, HL-07 lighting) | XLSX per district on the ORGI catalogue. No all-population state file found yet | `use`. Find the state-level table IDs first | Partly |
 | Poverty and inequality | HCES 2023-24 | See above | `use` | Yes |
-| Poverty and inequality | NSS round 77, Report 588, Debt and Investment Survey 2019 | PDF only, 1,919 pages: Summary Statements 2, 3, 4, 7, 8, 10 by state | `use`. Manual extraction, not on the API | Partly |
+| Poverty and inequality | NSS round 77, Report 588, Debt and Investment Survey 2019 | 10 Sep 2021 (press note). PDF only, 1,919 pages: Summary Statements 2, 7, 8 and 10 by state, read from the layout text and checked against Statements 3.8, 3.12, 3.15 and the press note (`pipeline/living-standards/build_aidis.py`). Values as on 30 June 2018 | `in use` (Living standards): `household-debt-by-state`, `household-assets-and-debt`, `household-debt-by-lender`, `household-debt-by-interest-rate`, and 1 state-profile row. Statements 3 (social group), 4 (assets held) and 11 to 15 not read | Partly |
 | Transport | MoRTH Road Accidents in India | 2024 edition on the MoRTH site (release date not stated by MoRTH; PDF last changed 15 Jun 2026), found through the MoRTH documents API (`pipeline/transport/morth_reports.mjs`). Read from PDF word boxes | `data ready` in `research/data/transport/`: accidents, deaths, injuries, rates per lakh and severity by state (2023, 2024); India 1970-2024; deaths by road user (India 2023-24, states 2024); helmet and seat-belt non-use by state (2024). West Bengal 2024 recast from e-DAR totals | Yes |
 | Transport | MoRTH Road Transport Year Book | 2019-20 | `later`. Stale | Yes |
 | Transport | NSS Household Travel Survey 2025-26 | Fact sheet and press note, 5 Oct 2026. Tables 1 to 7, Appendix A Tables 1 to 5 and Appendix B RSE Tables 1 to 4 (XLSX). No full report yet, and no trip distance table | `data ready`: mode to work and to education by state, sector and sex, with RSE; share travelling 1 km or more; overnight trips (India) | No |
@@ -248,4 +248,5 @@ rules above). It does not wait for the owner.
      25 Nov 2026 in `research/data/agriculture/`, with Agricultural Statistics at a Glance 2024-25 as
      the second source.
    - Debt and investment (NSS Report 588): a part in Living standards, last, because the tables are
-     only in a 1,919-page PDF.
+     only in a 1,919-page PDF. Done on 25 Nov 2026: 4 charts and 1 state-profile row. A sample of
+     Statements 2, 7, 8 and 10 read cleanly, so the build reads all 36 states and UTs of each.
