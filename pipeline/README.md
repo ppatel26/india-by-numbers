@@ -86,6 +86,8 @@ Some CSVs were made in more than one step. Run the steps in this order:
 | `economy/refrate.py` | None. Posts the RBI reference rate archive form | RBI (FBIL rates) |
 | `economy/refresh_fetch_rates.py` | None. Fetches the 17 and 18 Nov 2026 rates | RBI (FBIL rates) |
 | `economy/refresh_append_rates.py` | `usd-inr-daily-2026` (adds 18 Nov 2026) | RBI (FBIL rates) |
+| `economy/build_asi.py` | `asi-factory-sector-india`, `asi-by-state-2024-25`. Reads the ASI Summary Results text and the eSankhyiki ASI API pages (fetched with `common/fetch_api.py`) | MoSPI (ASI) |
+| `economy/build_asuse.py` | `asuse-by-state-2025`, `asuse-india-rounds`. Reads the eSankhyiki ASUSE API pages (fetched with `common/fetch_api.py`), and checks them against the report and press note text | MoSPI (ASUSE) |
 | `population/extract_text.sh`, `population/parse_proj.py` | None. SRS text, and Table 8 of the projections report | ORGI, MoHFW |
 | `population/build_population.py` | `population-census-1901-2011`, `population-by-state-2011`, `urban-share-by-state-2011`, `population-pyramid-2011`, `population-projections-2011-2036`, `tfr-by-state-2019-2024`, `sex-ratio-at-birth-by-state`, `birth-death-rates-by-state-2024` | ORGI (Census, SRS), MoHFW |
 | `religion-culture/build_religion.py` | `religion-india-2011`, `religion-by-state-2011`, `religion-india-2001-2011`, `languages-india-2011`, `languages-top3-by-state-2011` | ORGI (Census) |

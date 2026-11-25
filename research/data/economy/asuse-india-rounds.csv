@@ -1,0 +1,9 @@
+geography,period,reference_period,indicator,value,unit,source
+india,2021-22,2021-10/2022-09,workers,97887906,number,"eSankhyiki API, ASUSE"
+india,2022-23,2022-10/2023-09,workers,109625967,number,"eSankhyiki API, ASUSE"
+india,2023-24,2023-10/2024-09,workers,120599815,number,"eSankhyiki API, ASUSE"
+india,2025,2025-01/2025-12,workers,128051841,number,"eSankhyiki API, ASUSE"
+india,2021-22,2021-10/2022-09,establishments,59702678,number,"eSankhyiki API, ASUSE"
+india,2022-23,2022-10/2023-09,establishments,65048390,number,"eSankhyiki API, ASUSE"
+india,2023-24,2023-10/2024-09,establishments,73399476,number,"eSankhyiki API, ASUSE"
+india,2025,2025-01/2025-12,establishments,79246545,number,"eSankhyiki API, ASUSE"
