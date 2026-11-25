@@ -143,7 +143,9 @@ export function bins(chart: Of<'states'>, data: StateData): Bin[] {
     return e.length + 1 > seq.length && n > 2 ? auto(n - 1) : e
   }
   const edges = chart.bins ? [...chart.bins] : auto(6)
-  const ramp = seq.slice(Math.max(0, seq.length - edges.length - 1))
+  // Spread the bins over the whole ramp (lightest to darkest), so neighbouring bins read apart.
+  const n = edges.length + 1
+  const ramp = Array.from({ length: Math.min(n, seq.length) }, (_, i) => seq[n === 1 ? seq.length - 1 : Math.round((i * (seq.length - 1)) / (Math.min(n, seq.length) - 1))]!)
   // Bin edges are round numbers: print them as such (30,000, not 30,000.00).
   const v = (n: number) => fmt(n, { ...f, decimals: decimalsOf(String(n)) })
   return [...edges, Infinity]

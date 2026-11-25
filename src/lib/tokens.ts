@@ -31,11 +31,12 @@ export const colors = {
   s6: '#AA8726',
   s7: '#A11C6C',
   s8: '#C46C23',
-  // A wide light-to-dark ramp, so neighbouring bins read apart; text on each picks ink or white by contrast.
+  // A wide light-to-dark ramp in equal OKLCH lightness steps (0.93 to 0.32), so neighbouring bins read apart;
+  // text on each picks ink or white by contrast.
   'seq-1': '#D2EFEF',
-  'seq-2': '#9BD8DA',
-  'seq-3': '#5BBBC0',
-  'seq-4': '#1F7D83',
+  'seq-2': '#91CDCF',
+  'seq-3': '#4AABB0',
+  'seq-4': '#237F85',
   'seq-5': '#125E63',
   'seq-6': '#0A3A3D',
   'div-1': '#104A97',
