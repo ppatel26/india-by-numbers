@@ -244,10 +244,24 @@ rules above). It does not wait for the owner.
      person (Climate), women's labour force participation, ILO modelled (Jobs). Done on 25 Nov 2026:
      5 charts, one WDI release (11 Nov 2026), one country panel, and the `Modelled estimate` status word.
    - Farm households (NSS Report 587): a new Agriculture topic, 2 of 3 (Muse voted to wait for a
-     second agriculture source). It comes after the parts, with its own design council. Data ready on
+     second agriculture source). It comes after the parts, with its own design council.
+     Done on 25 Nov 2026: 8 charts from NSS round 77 only. The crop charts from Agricultural
+     Statistics at a Glance wait for the publisher's permission, which the owner must request by
+     mail. `src/content/gated.ts` keeps those files off the site, and two tests enforce it. Data ready on
      25 Nov 2026 in `research/data/agriculture/`, with Agricultural Statistics at a Glance 2024-25 as
      the second source. Done on 25 Nov 2026 with the NSS charts only: 8 charts and 3 state-profile
      rows. The crop charts wait for the ministry's permission.
    - Debt and investment (NSS Report 588): a part in Living standards, last, because the tables are
-     only in a 1,919-page PDF. Done on 25 Nov 2026: 4 charts and 1 state-profile row. A sample of
+     only in a 1,919-page PDF. Done on 25 Nov 2026: 4 charts. Done on 25 Nov 2026: 4 charts and 1 state-profile row. A sample of
      Statements 2, 7, 8 and 10 read cleanly, so the build reads all 36 states and UTs of each.
+
+## Waiting on the owner
+
+- **Topic objects.** Five topics have no object yet: Crime and justice (tarazu), Living standards
+  (tiffin carrier), Trade (uru), Transport (Harappan cart), Agriculture (hal). Each prompt is in
+  `docs/design-direction.md`. Paper's image models cost about 1 credit each, and Paper asks that
+  images be generated only when the owner asks.
+- **Crop data permission.** Mail the Directorate of Economics and Statistics, Ministry of
+  Agriculture and Farmers Welfare, for permission to reuse Agricultural Statistics at a Glance
+  (desagri.gov.in Website Policies). Then remove its four files from `src/content/gated.ts` and
+  chart them.
