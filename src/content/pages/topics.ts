@@ -147,6 +147,17 @@ const topics: TopicsPage = {
       latest: { date: '12 Nov 2026', label: 'MNRE state renewable capacity, 31 Oct 2026' },
       next: { date: 'Not announced', label: 'CEA and MNRE publish capacity every month.' },
     },
+    trade: {
+      questions: [
+        'Does India spend more abroad than it earns, and how large is the gap against GDP?',
+        'Which parts fill the gap: goods, services, money sent home or income on investments?',
+        'How much do Indians abroad send home?',
+        'How much does India export and import, which goods, and with which countries?',
+        'How large are the foreign exchange reserves, and how many months of imports do they cover?',
+      ],
+      latest: { date: '31 Jul 2026', label: 'Handbook of Statistics on Indian Economy 2025-26, RBI' },
+      next: { date: 'Not announced', label: 'RBI publishes the Handbook once a year.' },
+    },
     'living-standards': {
       questions: [
         'How much does a household spend on each person in a month, in villages and in towns?',
@@ -180,7 +191,6 @@ const topics: TopicsPage = {
       'Housing',
       'Agriculture',
       'Migration',
-      'Trade',
       'Poverty and inequality',
       'Transport',
     ],

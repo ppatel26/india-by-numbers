@@ -17,9 +17,10 @@ function pool(t: Topic): Set<string> {
   const add = (n: string) => {
     const x = Math.abs(Number(n))
     out.add(n.replace(/^-/, ''))
-    // Prose rounds to the chart's digits, and quotes large counts in crore and lakh.
+    // Prose rounds to the chart's digits, and quotes large counts in crore and lakh, and US$
+    // million in billion (k = 1e3).
     for (const d of [0, 1, 2]) out.add(x.toFixed(d))
-    for (const k of [1e7, 1e5, 1e4, 1e6]) for (const d of [1, 2]) out.add(((x * (x < 1e5 ? 1000 : 1)) / k).toFixed(d))
+    for (const k of [1e7, 1e5, 1e4, 1e6, 1e3]) for (const d of [1, 2]) out.add(((x * (x < 1e5 ? 1000 : 1)) / k).toFixed(d))
   }
   const numbersIn = (text: string) => text.match(/-?\d+(\.\d+)?/g) ?? []
   for (const dir of dirs)

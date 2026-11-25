@@ -37,6 +37,8 @@ describe('formatNumber', () => {
     expect(fmt(0.65, { unit: '°C', signed: true }, '0.65')).toBe('+0.65°C')
     expect(fmt(-12.6, { unit: '%' }, '-12.6')).toBe('-12.6%')
     expect(fmt(1.2, { unit: 'pp', decimals: 2 })).toBe('1.20 pp')
+    expect(fmt(441730.1, { unit: 'US$', multiply: 1e-3, decimals: 1, suffix: ' billion' })).toBe('US$441.7 billion')
+    expect(fmt(-25365, { unit: 'US$', multiply: 1e-3, decimals: 1, suffix: ' billion' })).toBe('-US$25.4 billion')
   })
   it('writes ordinals', () => {
     expect([1, 2, 3, 4, 11, 12, 13, 21, 22, 36].map(ordinal)).toEqual(['1st', '2nd', '3rd', '4th', '11th', '12th', '13th', '21st', '22nd', '36th'])

@@ -18,7 +18,7 @@ import sourcesPage from '~/content/pages/sources'
 import { publisherOf } from '~/lib/sources'
 
 describe('topics', () => {
-  it('has all eleven, in order', () => {
+  it('has all twelve, in order', () => {
     expect(topics.map((t) => t.slug)).toEqual([...TOPICS])
   })
 })

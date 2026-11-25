@@ -39,8 +39,9 @@ function scaled(n: number, scale: Format['scale'], d = 1): Shown {
   throw new Error(`Unknown scale ${scale}`)
 }
 
+/** A currency sign goes after the minus: -US$25.4, not US$-25.4. */
 const withUnit = (s: string, unit: Format['unit'], suffix = ''): string =>
-  (unit === '₹' ? `₹${s}` : unit === 'pp' ? `${s} pp` : `${s}${unit ?? ''}`) + suffix
+  (unit === '₹' || unit === 'US$' ? s.replace(/^([-+]?)/, `$1${unit}`) : unit === 'pp' ? `${s} pp` : `${s}${unit ?? ''}`) + suffix
 
 /**
  * Format a value. Pass the published string as `raw` to keep the publisher's

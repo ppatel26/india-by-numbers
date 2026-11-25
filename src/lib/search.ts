@@ -13,6 +13,7 @@ export interface Entry {
 export const SYNONYMS: Record<string, string> = {
   prices: 'inflation cpi mehngai mehangai महंगाई महँगाई कीमतें daam prices repo rbi',
   economy: 'gdp growth income iip industry rupee dollar exchange arthvyavastha अर्थव्यवस्था',
+  trade: 'trade exports imports current account deficit remittances forex reserves foreign exchange gold balance of payments bop vyapar व्यापार niryat निर्यात aayat आयात',
   population: 'census people births deaths fertility tfr janasankhya जनसंख्या abadi आबादी',
   jobs: 'unemployment employment work labour plfs naukri नौकरी rozgar रोज़गार',
   'living-standards': 'living standards spending consumption mpce hces food internet bank account water drinking cooking fuel lpg gini kharch खर्च jeevan star जीवन स्तर',
