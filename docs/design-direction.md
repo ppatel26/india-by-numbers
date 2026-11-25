@@ -69,6 +69,7 @@ Topic pigments (hero ground, home and topics tiles, topic tag; never a data colo
 | Crime and justice | kattha (catechu brown) | #78491E | white 7.6:1 |
 | Living standards | firozi (turquoise) | #45C5B8 | ink 8.4:1 |
 | Trade | manjistha (Indian madder) | #F28DA0 | ink 7.7:1 |
+| Transport | neel (washed indigo) | #8CA8E7 | ink 7.5:1 |
 
 Kattha (added 25 Nov 2026) sits at OKLCH L 0.452, C 0.086, H 60, in the gap between lac (H 27) and mehendi (H 122). Its nearest pigment is mehendi (OKLab distance 0.092).
 
@@ -99,6 +100,7 @@ Made with Paper's image models: nano-banana-2-1 for objects, nano-banana-pro for
 | Crime and justice | Tarazu, the Indian beam balance (not yet made) | Silver |
 | Living standards | Stacked tiffin carrier (not yet made) | Silver |
 | Trade | Uru, the Indian Ocean trading ship (not yet made) | Silver |
+| Transport | Harappan two-wheeled cart with solid wheels (not yet made) | Silver |
 
 Production rules:
 
@@ -161,6 +163,27 @@ The same council chose:
 - Prompt: "Three-quarter studio view of a traditional Beypore uru Indian Ocean trading vessel in
   brushed silver, a curved hull with one furled lateen sail, crisp shadows, one soft key light from
   the top left, no text, flags or engravings, centred on a flat matte manjistha backdrop (#F28DA0),
+  no gradient, no vignette."
+- Interim: 3 of 3. Publish with no object until the owner approves the image credits.
+
+### Transport (decided 25 Nov 2026)
+
+The first round split three ways. A second round, with every member's reasons in front of it,
+settled each point.
+
+- Name "Transport", slug `transport`: 3 of 3 by the end (Gemini in round 1, GPT and Muse in round
+  2). It matches the Later list and keeps a stable address when rail, aviation, freight or vehicle
+  data arrive. The intro says what is not covered yet. The parts are road safety and household
+  travel.
+- Pigment neel (washed indigo) #8CA8E7 with ink text: 2 of 3 (GPT, Muse). Neel is an Indian dye.
+  It has the widest gap from the other pigments (OKLab 0.136 to firozi) at L 0.735. Gemini proposed
+  aasmani #74B3F3, a colour word, 0.120 from firozi.
+- Object: a silver Harappan two-wheeled cart with solid disc wheels, 3 of 3 by the end. It comes
+  from the material record, like the Indus seal. Solid wheels keep a clear shape at tile size and
+  avoid any echo of the Ashoka Chakra or the Dharmachakra.
+- Prompt: "Three-quarter studio view of an ancient Harappan two-wheeled cart in brushed silver,
+  with solid disc wheels, a simple slatted frame and twin front shafts, crisp shadows, one soft key
+  light from the top left, no text or engravings, centred on a flat matte neel backdrop (#8CA8E7),
   no gradient, no vignette."
 - Interim: 3 of 3. Publish with no object until the owner approves the image credits.
 
