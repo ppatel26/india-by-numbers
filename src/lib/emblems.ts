@@ -22,6 +22,11 @@ export const EMBLEM_ALT: Partial<Record<EmblemName, string>> & Record<'home' | '
   elections: 'A silver hand with the inked index finger of a voter',
   climate: 'A silver model of the Samrat Yantra sundial at Jantar Mantar',
   'religion-and-culture': 'A silver Nataraja in the Chola style',
+  'crime-and-justice': 'A silver tarazu, the Indian beam balance, with two pans on chains',
+  'living-standards': 'A silver three-tier tiffin carrier with a latch and a handle',
+  trade: 'A silver model of an uru, the Indian Ocean trading ship, with a furled lateen sail',
+  transport: 'A silver model of a Harappan two-wheeled cart with solid wheels',
+  agriculture: 'A silver hal, the Indian ard plough, after the Banawali model',
 }
 
 /** The object's alt text, or undefined when the object is not made yet. */

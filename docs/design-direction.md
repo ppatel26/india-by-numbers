@@ -98,11 +98,22 @@ Made with Paper's image models: nano-banana-2-1 for objects, nano-banana-pro for
 | Climate | Samrat Yantra, Jantar Mantar | Sandstone |
 | Jobs | Charkha | Silver |
 | Population, Prices, Economy, Health, Education | Topic coins: procession, karshapana, wheat and gear, vaccine vial and stethoscope, palm-leaf book and slate | Silver |
-| Crime and justice | Tarazu, the Indian beam balance (not yet made) | Silver |
-| Living standards | Stacked tiffin carrier (not yet made) | Silver |
-| Trade | Uru, the Indian Ocean trading ship (not yet made) | Silver |
-| Transport | Harappan two-wheeled cart with solid wheels (not yet made) | Silver |
-| Agriculture | Hal, the Indian ard plough, after the Banawali model (not yet made) | Silver |
+| Crime and justice | Tarazu, the Indian beam balance | Silver |
+| Living standards | Stacked tiffin carrier | Silver |
+| Trade | Uru, the Indian Ocean trading ship | Silver |
+| Transport | Harappan two-wheeled cart with solid wheels | Silver |
+| Agriculture | Hal, the Indian ard plough, after the Banawali model | Silver |
+
+The five objects added on 25 Nov 2026 (tarazu, tiffin carrier, uru, Harappan cart, hal) are on the
+Paper page "05 - Topic objects, new topics". Each was made with nano-banana-2-1 on its pigment, from
+the prompt in its decision section below.
+
+Light pigments: silver reflects a light ground, so keying by colour cuts holes in the metal and keeps
+the cast shadow. For the tiffin carrier, uru, cart and hal, the generated image went through
+openai-gpt-image-edit-2-6 ("remove the backdrop and the cast shadow, keep the object unchanged,
+transparent background"). `pipeline/emblems/cutout.py` uses a source's own transparency when it has
+some, and keys by colour only when it does not. It cuts named topics only, so the older objects,
+whose sources are not kept, stay as they are.
 
 Production rules:
 
