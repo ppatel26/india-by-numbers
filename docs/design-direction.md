@@ -218,6 +218,13 @@ settled each point.
   matte dhani backdrop (#88CD65), no gradient, no vignette."
 - Interim: 3 of 3. Publish with no object until the owner approves the image credits.
 
+### Topic tiles: the jaali (decided 25 Nov 2026)
+
+- At rest, a faint jaali (13% of the text colour) spreads out from the medallion and fades before the topic name. A flat tile with no lattice read as dull.
+- On hover or keyboard focus, the jaali opens out across the whole tile in 700 ms. The pointer light still brightens the lattice under the pointer, and the medallion still tilts toward it.
+- With reduced motion, the jaali changes at once, and there is no pointer light and no tilt.
+- The jaali stays on the tiles. It never goes behind a chart, a figure row or the hero (rules 8 and 9).
+
 ## The design boards
 
 - Three posters, one object each: "Every number has a source" on lac, "How often India counts" on white, and "You should not have to take our word for it" on kajal.

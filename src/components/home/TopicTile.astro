@@ -45,30 +45,61 @@ const count = charts.filter((c) => c.topic.slug === topic.slug).length
     color: var(--ink);
   }
   /*
-   * A jaali, like a carved stone screen, that the pointer lights up as it moves over the tile.
-   * The lattice is masked by a soft circle at the pointer (--mx, --my, set by the script below).
+   * A jaali, like a carved stone screen, set around the object.
+   * At rest (::before) the lattice spreads out a little from the medallion and fades before the
+   * text. On hover or focus it opens out across the whole tile (--reach grows).
+   * The pointer light (::after) brightens the lattice under the pointer (--mx, --my, set by the
+   * script below). Both layers use the same tile-relative lattice, so their lines meet exactly.
    */
-  .tile::before {
+  @property --reach {
+    syntax: '<length>';
+    inherits: false;
+    initial-value: 180px;
+  }
+  .tile::before,
+  .tile::after {
     content: '';
     position: absolute;
     inset: 0;
     z-index: -1;
     border-radius: inherit;
     background: currentColor;
+    pointer-events: none;
+  }
+  .tile::before {
+    --reach: 180px;
+    opacity: 0.13;
+    mask:
+      url('/patterns/jaali.svg') 0 0 / 56px 56px repeat,
+      radial-gradient(circle var(--reach) at calc(100% - 98px) 98px, #000 30%, transparent);
+    /* After the shorthand, which resets it. */
+    mask-composite: intersect;
+  }
+  .tile::after {
     opacity: 0;
     mask:
       url('/patterns/jaali.svg') 0 0 / 56px 56px repeat,
       radial-gradient(circle 200px at var(--mx, 70%) var(--my, 30%), #000, transparent 72%);
     mask-composite: intersect;
-    transition: opacity 320ms cubic-bezier(0.19, 1, 0.22, 1);
-    pointer-events: none;
   }
   .tile > :global(.medallion) {
     transition: transform 420ms cubic-bezier(0.19, 1, 0.22, 1);
   }
+  @media (prefers-reduced-motion: no-preference) {
+    .tile::before {
+      transition: --reach 700ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+    .tile::after {
+      transition: opacity 320ms cubic-bezier(0.19, 1, 0.22, 1);
+    }
+  }
+  .tile:hover::before,
+  .tile:focus-within::before {
+    --reach: 900px;
+  }
   @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
-    .tile:hover::before {
-      opacity: 0.22;
+    .tile:hover::after {
+      opacity: 0.14;
     }
   }
   .tile > :global(.medallion) {
