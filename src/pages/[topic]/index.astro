@@ -7,6 +7,7 @@ import Rail from '~/components/topic/Rail.astro'
 import AboutData from '~/components/topic/AboutData.astro'
 import { charts, partId, placed, topics } from '~/content'
 import type { Topic } from '~/content/types'
+import { proseHtml, prosePlain } from '~/lib/prose'
 
 export function getStaticPaths() {
   return topics.map((topic) => ({ params: { topic: topic.slug }, props: { topic } }))
@@ -19,7 +20,7 @@ const { topic } = Astro.props
 const numbered = new Map(charts.filter((c) => c.topic.slug === topic.slug).map((c) => [c.chart.slug, c.number]))
 ---
 
-<Base title={`${topic.name}: charts and data`} description={topic.standfirst} imageAlt={`${topic.name} in India: headline figures`}>
+<Base title={`${topic.name}: charts and data`} description={prosePlain(topic.standfirst)} imageAlt={`${topic.name} in India: headline figures`}>
   <TopicHero topic={topic} />
   <MetaStrip topic={topic} />
   <div class="wrap layout">
@@ -29,7 +30,7 @@ const numbered = new Map(charts.filter((c) => c.topic.slug === topic.slug).map((
         <section class="part" id={partId(i + 1)} aria-labelledby={`${partId(i + 1)}-title`}>
           <p class="label muted">Part {i + 1}</p>
           <h2 class="display" id={`${partId(i + 1)}-title`}>{part.title}</h2>
-          <p class="lede">{part.lede}</p>
+          <p class="lede" set:html={proseHtml(part.lede)} />
           {part.blocks.map((b) =>
             'chart' in b ? (
               <ChartFrame chart={b.chart} number={numbered.get(b.chart.slug)} />
@@ -38,7 +39,7 @@ const numbered = new Map(charts.filter((c) => c.topic.slug === topic.slug).map((
                 <ChartFrame chart={p.chart} number={numbered.get(p.chart.slug)} periods={placed(p.chart.slug).periods} hidden={k > 0} />
               ))
             ) : (
-              <p class="finding">{b.text}</p>
+              <p class="finding" set:html={proseHtml(b.text)} />
             ),
           )}
         </section>

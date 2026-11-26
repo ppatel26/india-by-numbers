@@ -6,6 +6,7 @@ import type { Topic } from '~/content/types'
 import { emblemAlt } from '~/lib/emblems'
 import { pigments } from '~/lib/tokens'
 import { SITE } from '~/lib/site'
+import { proseHtml } from '~/lib/prose'
 
 interface Props {
   topic: Topic
@@ -43,7 +44,7 @@ const parts = Array.from({ length: turns }, () => legend).flat()
       <h1 class="display title">
         {topic.name} <span class="deva" lang="hi">{topic.hindi}</span>
       </h1>
-      <p class="standfirst">{topic.standfirst}</p>
+      <p class="standfirst" set:html={proseHtml(topic.standfirst)} />
       <div class="figures">
         {topic.figures.map((f) => <FigureValue figure={f} />)}
       </div>

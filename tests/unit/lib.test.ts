@@ -138,3 +138,15 @@ describe('axis ticks', () => {
     expect(ticksOf(grid)).toEqual({ text: ['0', '0.4', '0.8', '1.2', '1.6 billion'], alt: ['40', '80', '120', '160 crore'] })
   })
 })
+
+describe('prose counts', () => {
+  it('render a marker in both forms, and plain text in the default form', async () => {
+    const { proseHtml, prosePlain, proseIndian, strayMarker } = await import('~/lib/prose')
+    const s = "India's {{1210854977 crore 2}} people & {{₹2618350000000 lakh-crore 2}}, {{177175 plain 0}} deaths, {{498900000 crore 2 1}} electors"
+    expect(prosePlain(s)).toBe("India's 1.211 billion people & ₹2.62 trillion, 177,175 deaths, 498.9 million electors")
+    expect(proseIndian(s)).toBe("India's 121.09 crore people & ₹2.62 lakh crore, 1,77,175 deaths, 49.89 crore electors")
+    expect(proseHtml(s)).toContain('India&#39;s <span data-alt="121.09 crore">1.211 billion</span> people &amp; ')
+    expect(strayMarker('{{1.2 crores 1}}')).toBe(true)
+    expect(strayMarker(s)).toBe(false)
+  })
+})

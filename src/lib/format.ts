@@ -48,17 +48,28 @@ function grouped(n: number, d: number, nf: Intl.NumberFormat): string {
   return nf.format(Number(int)) + (frac ? `.${frac}` : '')
 }
 
-/** `d`: digits after the point in crore or lakh (default 1); the million/billion form follows it. */
-function scaled(n: number, scale: Format['scale'], d = 1): Shown {
+/**
+ * `d`: digits after the point in crore or lakh (default 1). The million, billion or trillion form
+ * follows it, unless `di` sets its own digits: a count published as 498.9 million reads 49.89
+ * crore, and back as 498.9 million, not 498.90.
+ */
+function scaled(n: number, scale: Format['scale'], d = 1, di?: number): Shown {
+  const a = Math.abs(n)
   if (scale === 'crore') {
     const text = `${grouped(n / 1e7, d, indian)} crore`
-    const alt = Math.abs(n) >= 1e9 ? `${(n / 1e9).toFixed(d + 1)} billion` : `${grouped(n / 1e6, d, intl)} million`
+    const alt = a >= 1e9 ? `${(n / 1e9).toFixed(di ?? d + 1)} billion` : `${grouped(n / 1e6, di ?? d, intl)} million`
     return { text, alt }
   }
   if (scale === 'lakh') {
     const text = `${grouped(n / 1e5, d, indian)} lakh`
     // Under a million the international reading is the plain number: ₹205,324, not ₹205.32 thousand.
-    const alt = Math.abs(n) >= 1e6 ? `${(n / 1e6).toFixed(d + 1)} million` : grouped(n, 0, intl)
+    const alt = a >= 1e6 ? `${(n / 1e6).toFixed(di ?? d + 1)} million` : grouped(n, di ?? 0, intl)
+    return { text, alt }
+  }
+  if (scale === 'lakh crore') {
+    // A lakh crore is 10^12: ₹2.62 lakh crore is ₹2.62 trillion, with the same digits.
+    const text = `${grouped(n / 1e12, d, indian)} lakh crore`
+    const alt = a >= 1e12 ? `${grouped(n / 1e12, di ?? d, intl)} trillion` : `${grouped(n / 1e9, di ?? d, intl)} billion`
     return { text, alt }
   }
   throw new Error(`Unknown scale ${scale}`)
@@ -90,7 +101,7 @@ function indianFirst(value: number, fmt: Format = {}, raw?: string): Shown {
     return { text: withUnit(s.text, fmt.unit, fmt.suffix), alt: alt && withUnit(alt, fmt.unit, fmt.suffix) }
   }
   if (fmt.scale && fmt.scale !== 'none') {
-    const s = scaled(value, fmt.scale, fmt.decimals)
+    const s = scaled(value, fmt.scale, fmt.decimals, fmt.intlDecimals)
     return { text: withUnit(s.text, fmt.unit, fmt.suffix), alt: s.alt && withUnit(s.alt, fmt.unit, fmt.suffix) }
   }
   const d = fmt.decimals ?? (raw ? decimalsOf(raw) : Math.min(2, decimalsOf(String(value))))
