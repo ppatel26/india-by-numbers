@@ -57,7 +57,8 @@ function scaled(n: number, scale: Format['scale'], d = 1): Shown {
   }
   if (scale === 'lakh') {
     const text = `${grouped(n / 1e5, d, indian)} lakh`
-    const alt = Math.abs(n) >= 1e6 ? `${(n / 1e6).toFixed(d + 1)} million` : `${grouped(n / 1e3, d, intl)} thousand`
+    // Under a million the international reading is the plain number: ₹205,324, not ₹205.32 thousand.
+    const alt = Math.abs(n) >= 1e6 ? `${(n / 1e6).toFixed(d + 1)} million` : grouped(n, 0, intl)
     return { text, alt }
   }
   throw new Error(`Unknown scale ${scale}`)

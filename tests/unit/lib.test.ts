@@ -29,6 +29,7 @@ describe('formatNumber', () => {
   it('writes billion and million, with crore and lakh in the other mode', () => {
     expect(formatNumber(1426000000, { scale: 'crore' })).toEqual({ text: '1.43 billion', alt: '142.6 crore' })
     expect(formatNumber(2500000, { scale: 'lakh' })).toEqual({ text: '2.50 million', alt: '25.0 lakh' })
+    expect(formatNumber(205324, { unit: '₹', scale: 'lakh', decimals: 2 })).toEqual({ text: '₹205,324', alt: '₹2.05 lakh' })
     expect(formatNumber(1426000, { scale: 'crore', multiply: 1000 }).alt).toBe('142.6 crore')
     expect(formatNumber(247219766, { scale: 'crore', decimals: 2 })).toEqual({ text: '247.22 million', alt: '24.72 crore' })
   })
