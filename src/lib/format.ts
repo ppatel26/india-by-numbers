@@ -1,14 +1,38 @@
 /**
- * Number display. Lakh and crore by default, with Indian digit grouping;
- * the "Million" switch shows the international form. `formatNumber` returns
- * both, and the page script swaps them (see src/scripts/numbers.ts).
+ * Number display. Million and billion by default, with international digit grouping;
+ * the "Lakh · crore" switch shows the Indian form. `formatNumber` returns both,
+ * and the page script swaps them (see src/scripts/numbers.ts).
+ * The functions below build the Indian form as `text` and the international form as `alt`;
+ * `intlFirst` turns that round at the one exit, so the page HTML is in the default form.
  */
 import type { Format } from '~/content/types'
 
 export interface Shown {
+  /** The default (million) text. */
   text: string
-  /** The million-mode text, when it differs. */
+  /** The lakh and crore text, when it differs. */
   alt?: string
+}
+
+/** True only inside `both`, while it builds the lakh and crore form of a string. */
+let indianOut = false
+
+/** Indian form first in, international form first out (or as it came, inside `both`). */
+const intlFirst = (s: Shown): Shown => (indianOut || s.alt === undefined ? s : { text: s.alt, alt: s.text })
+
+/**
+ * Build a string that holds formatted numbers, such as a tooltip or a callout, in both forms:
+ * `text` in million mode, and `alt` in lakh and crore mode when it differs.
+ */
+export function both(build: () => string): Shown {
+  const text = build()
+  indianOut = true
+  try {
+    const alt = build()
+    return alt === text ? { text } : { text, alt }
+  } finally {
+    indianOut = false
+  }
 }
 
 const indian = new Intl.NumberFormat('en-IN', { maximumFractionDigits: 2 })
@@ -47,9 +71,11 @@ const withUnit = (s: string, unit: Format['unit'], suffix = ''): string =>
  * Format a value. Pass the published string as `raw` to keep the publisher's
  * digits; computed values pass a number and `decimals`.
  */
-export function formatNumber(value: number, fmt: Format = {}, raw?: string): Shown {
+export const formatNumber = (value: number, fmt: Format = {}, raw?: string): Shown => intlFirst(indianFirst(value, fmt, raw))
+
+function indianFirst(value: number, fmt: Format = {}, raw?: string): Shown {
   // Round the product to 12 significant digits: 30,00,000 × 1e-5 is 30.000000000000004 in floating point.
-  if (fmt.multiply) return formatNumber(Number((value * fmt.multiply).toPrecision(12)), { ...fmt, multiply: undefined })
+  if (fmt.multiply) return indianFirst(Number((value * fmt.multiply).toPrecision(12)), { ...fmt, multiply: undefined })
   // A lakh or more, with no scale set, reads in lakh or crore: nobody should count digits.
   // Tables and CSVs keep every digit (they pass scale 'none').
   if (fmt.scale === undefined && Math.abs(value) >= 1e5) {
@@ -74,14 +100,27 @@ export function formatNumber(value: number, fmt: Format = {}, raw?: string): Sho
   return alt === text ? { text } : { text, alt }
 }
 
-/** An axis tick: as formatNumber, but crore and lakh ticks print `d` decimals, so 20 crore, not 20.0. */
-export function formatTick(value: number, fmt: Format, d: number): Shown {
+/** The international unit for an axis that reaches `peak`: one unit on every tick. */
+export interface IntlScale {
+  per: number
+  word: '' | ' million' | ' billion'
+}
+export const intlScale = (peak: number): IntlScale => (peak >= 1e9 ? { per: 1e9, word: ' billion' } : peak >= 1e6 ? { per: 1e6, word: ' million' } : { per: 1, word: '' })
+
+/**
+ * An axis tick: as formatNumber, but crore and lakh ticks print `d` decimals, so 20 crore, not 20.0.
+ * The international form uses one unit for the whole axis (`i`) with its own decimals (`di`),
+ * so an axis never reads 400, 800, 1.20 billion.
+ */
+export function formatTick(value: number, fmt: Format, d: number, i: IntlScale, di: number): Shown {
   if (!fmt.scale || fmt.scale === 'none') return formatNumber(value, fmt)
-  const s = scaled(value * (fmt.multiply ?? 1), fmt.scale, d)
-  return { text: withUnit(s.text, fmt.unit, fmt.suffix), alt: s.alt && withUnit(s.alt, fmt.unit, fmt.suffix) }
+  const v = value * (fmt.multiply ?? 1)
+  const indianText = withUnit(scaled(v, fmt.scale, d).text, fmt.unit, fmt.suffix)
+  const intlText = withUnit(`${grouped(v / i.per, di, intl)}${i.word}`, fmt.unit, fmt.suffix)
+  return intlFirst({ text: indianText, alt: intlText })
 }
 
-/** Plain text in the default (lakh and crore) mode. */
+/** Plain text in the default (million) mode. */
 export const fmt = (value: number, f?: Format, raw?: string): string => formatNumber(value, f, raw).text
 
 /** 1st, 2nd, 3rd, 4th ... */

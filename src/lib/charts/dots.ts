@@ -2,7 +2,7 @@ import { scaleLinear } from 'd3-scale'
 import { INDIA, geoName, isPlace, place } from '~/lib/geography'
 import { svg, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
-import { FONT, REF_ROW, WIDTH, frame, refRows, valueRefs, type Width } from './axes'
+import { FONT, REF_ROW, WIDTH, frame, refRows, tipAttr, valueRefs, type Width } from './axes'
 import { drawn, seriesOf, tipLine, type Of, type SeriesData } from './model'
 import { fmt } from '~/lib/format'
 
@@ -120,9 +120,9 @@ export function renderDots(chart: Of<'dots'>, width: Width): Markup {
     const vs = series.map((s) => ({ s, p: val(s, k) })).filter((v) => v.p?.y != null)
     const xs = vs.map((v) => x(v.p!.y!))
     const india = k === INDIA
-    const tip = [rowName(k, false), ...series.map((s) => tipLine(chart, s, val(s, k)))].join('\n')
+    const tip = () => [rowName(k, false), ...series.map((s) => tipLine(chart, s, val(s, k)))].join('\n')
     const name = svg`<text class="name" x="${m.left - 8}" y="${y + 4}" text-anchor="end" font-size="12.5" font-weight="${india ? 600 : 400}" fill="var(--ink)">${label(k)}</text>`
-    return svg`<g class="row" data-geo="${k}" data-tip="${tip}">${india ? svg`<rect x="0" y="${y - rowH / 2}" width="${W}" height="${rowH}" fill="var(--band)"/>` : null}
+    return svg`<g class="row" data-geo="${k}" ${tipAttr(tip)}>${india ? svg`<rect x="0" y="${y - rowH / 2}" width="${W}" height="${rowH}" fill="var(--band)"/>` : null}
 ${isPlace(k) ? svg`<a href="/states/${k}/">${name}</a>` : name}
 ${xs.length > 1 ? svg`<line x1="${Math.min(...xs)}" x2="${Math.max(...xs)}" y1="${y}" y2="${y}" stroke="var(--other-line)"/>` : null}
 ${[...vs].sort((a, b) => Number(hollow.includes(b.s.key)) - Number(hollow.includes(a.s.key))).map((v) => {

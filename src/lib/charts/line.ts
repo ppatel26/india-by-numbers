@@ -105,7 +105,10 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
   // End labels need room for the longest name or "value in period" line (about 7 px a character).
   const lastLine = (s: SeriesData) => {
     const p = s.points.findLast((q) => q.y !== null)
-    return p ? `${show(chart, p, s).text}${narrow ? '' : ` ${when(p.label)}`}`.length : 0
+    if (!p) return 0
+    const v = show(chart, p, s)
+    // Room for the longer of the two number forms, so the switch never runs a label off the frame.
+    return Math.max(v.text.length, v.alt?.length ?? 0) + (narrow ? 0 : 1 + when(p.label).length)
   }
   const labelRoom = Math.max(...panel.series.map((s) => Math.max(s.label.length, lastLine(s))), 8) * 7 + 12
   // A panel on its own scale may also have its own unit (enrolment in crore beside ratios).
@@ -142,20 +145,22 @@ function linePanel(chart: Of<'line'>, panel: Panel, W: number, H: number, values
         if (!last || tLast - last.t >= 0.5) return []
         const v = show(chart, last, s)
         const full = `${v.text} ${when(last.label)}`
-        const value = narrow || full.length > perLine ? v.text : full
-        return [{ s, p: last, v, value, names: wrapLines(s.label, perLine, 2), y: y(last.y!) }]
+        const long = narrow || Math.max(full.length, (v.alt ?? '').length + full.length - v.text.length) > perLine
+        const value = long ? v.text : full
+        const alt = v.alt && (long ? v.alt : `${v.alt} ${when(last.label)}`)
+        return [{ s, p: last, v, value, alt, names: wrapLines(s.label, perLine, 2), y: y(last.y!) }]
       })
     : []
   const nameRows = Math.max(1, ...endItems.map((e) => e.names.length))
   // The first name line sits 12 px above its anchor, so the top anchor stays 12 px inside the plot.
   const placedEnds = spread(endItems, 16 + nameRows * 14, m.top + 12, H - m.bottom)
   const endBoxes = placedEnds.map(({ p, names, ly }) => ({ l: x(p.t) + 4, t: ly - 14, r: W, b: ly + names.length * 14 + 2 }))
-  const ends = placedEnds.map(({ s, p, v, value, names, ly }) => {
+  const ends = placedEnds.map(({ s, p, value, alt, names, ly }) => {
     // A label pushed away from its dot gets a short grey connector, so it never reads as data.
     const moved = Math.abs(ly + 3 - y(p.y!)) > 9
     return svg`${moved ? svg`<path d="M${x(p.t) + 3} ${y(p.y!)}L${x(p.t) + 6} ${ly + 3}" stroke="var(--slate)" fill="none"/>` : null}<circle cx="${x(p.t)}" cy="${y(p.y!)}" r="3" fill="${colorVar(s.color)}"/>
 ${names.map((n, i) => svg`<text x="${x(p.t) + 8}" y="${ly - 2 + i * 14}" font-size="12.5" font-weight="600" fill="var(--ink)">${n}</text>`)}
-<text x="${x(p.t) + 8}" y="${ly - 2 + names.length * 14}" font-size="12.5" fill="var(--ink)"${attr('data-alt', v.alt)}>${value}</text>`
+<text x="${x(p.t) + 8}" y="${ly - 2 + names.length * 14}" font-size="12.5" fill="var(--ink)"${attr('data-alt', alt)}>${value}</text>`
   })
 
   const notes = timeNotes(chart, {
@@ -233,14 +238,14 @@ ${note(right - 4, y(r.y) - 5, r.label, 'end')}`
     const next = sorted[i + 1]
     const x0 = prev ? (x(prev.t) + x(p.t)) / 2 : x(p.t) - 4
     const x1 = next ? (x(next.t) + x(p.t)) / 2 : x(p.t) + 4
-    const lines = [...byLabel.values()].flatMap((group) => {
+    const lines = () => [...byLabel.values()].flatMap((group) => {
       const available = group.flatMap((s) => {
         const point = s.points.find((q) => q.x === p.x && q.y !== null)
         return point ? [tipLine(chart, s, point)] : []
       })
       return available.length ? available : [tipLine(chart, group[0]!, undefined)]
     })
-    return hit(x0, m.top, x1 - x0, H - m.top - m.bottom, [p.label, ...lines].join('\n'))
+    return hit(x0, m.top, x1 - x0, H - m.top - m.bottom, () => [p.label, ...lines()].join('\n'))
   })
 
   return svg`${panel.label ? svg`<text x="${m.left}" y="14" font-size="13" font-weight="600" fill="var(--ink)">${panel.label}</text>` : null}

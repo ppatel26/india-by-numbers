@@ -83,7 +83,7 @@ export function renderArea(chart: Of<'area'>, width: Width): Markup {
     const x0 = i ? (x(xs[i - 1]!.t) + x(p.t)) / 2 : x(p.t) - 4
     const x1 = i < xs.length - 1 ? (x(xs[i + 1]!.t) + x(p.t)) / 2 : x(p.t) + 4
     const here = [...series].reverse().filter((s) => s.points.some((v) => v.x === p.x))
-    return hit(x0, m.top, x1 - x0, H - m.top - m.bottom, [p.label, ...here.map((s) => tipLine(chart, s, s.points.find((v) => v.x === p.x)))].join('\n'))
+    return hit(x0, m.top, x1 - x0, H - m.top - m.bottom, () => [p.label, ...here.map((s) => tipLine(chart, s, s.points.find((v) => v.x === p.x)))].join('\n'))
   })
   return frame(
     width,

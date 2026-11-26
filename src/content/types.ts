@@ -79,7 +79,7 @@ export interface Format {
   multiply?: number
   /** Words after the number, for example ' mm' or ' years'. */
   suffix?: string
-  /** 'crore' and 'lakh' print 142.6 crore (and 1.43 billion in million mode). */
+  /** 'crore' and 'lakh' print 1.43 billion by default, and 142.6 crore in lakh and crore mode. */
   scale?: 'crore' | 'lakh' | 'none'
 }
 

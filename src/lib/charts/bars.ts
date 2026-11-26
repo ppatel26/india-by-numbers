@@ -1,7 +1,7 @@
 import { scaleLinear } from 'd3-scale'
 import { svg, attr, type Markup } from '~/lib/markup'
 import { fillVar, textOn } from '~/lib/tokens'
-import { FONT, REF_ROW, WIDTH, frame, refRows, valueRefs, type Gap, type Width } from './axes'
+import { FONT, REF_ROW, WIDTH, frame, refRows, tipAttr, valueRefs, type Gap, type Width } from './axes'
 import { KEY_ROW, legend, legendRows, rowName } from './dots'
 import { drawn, show, tipLine, type Of, type SeriesData } from './model'
 
@@ -59,7 +59,7 @@ export function renderBars(chart: Of<'bars'>, width: Width): Markup {
 
   const rows = keys.map((k, i) => {
     const y = m.top + i * rowH
-    const tip = [chart.labels?.[k] ?? rowName(k, false), ...series.map((s) => tipLine(chart, s, val(s, k)))].join('\n')
+    const tip = () => [chart.labels?.[k] ?? rowName(k, false), ...series.map((s) => tipLine(chart, s, val(s, k)))].join('\n')
     const hi = chart.highlight === k
     const label = above
       ? svg`<text x="0" y="${y + 13}" font-size="12.5" font-weight="${hi ? 600 : 400}" fill="var(--ink)">${name(k)}</text>`
@@ -90,7 +90,7 @@ ${w > v.text.length * 7 + 8 ? svg`<text x="${x0 + 4}" y="${bandTop + bandH / 2 +
       return svg`<rect x="${x0}" y="${by}" width="${Math.max(1, x1 - x0)}" height="${barH - 3}" fill="${fill}"/>
 <text x="${(p.y >= 0 ? x1 : x0) + (p.y >= 0 ? 5 : -5)}" y="${by + (barH - 3) / 2 + 4}" text-anchor="${p.y >= 0 ? 'start' : 'end'}" font-size="${grouped ? 11 : 12}" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3"${attr('data-alt', v.alt)}>${v.text}</text>`
     })
-    return svg`<g class="row" data-tip="${tip}">${label}${marks}</g>`
+    return svg`<g class="row"${tipAttr(tip)}>${label}${marks}</g>`
   })
   // Negative values hang from a zero line.
   const zero =

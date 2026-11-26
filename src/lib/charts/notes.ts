@@ -1,7 +1,8 @@
 /** Notes on a time axis, shared by line and column charts: spans, markers, breaks and callouts. */
 import type { ScaleLinear } from 'd3-scale'
 import type { Chart, Callout, Breakpoint } from '~/content/types'
-import { svg, type Markup } from '~/lib/markup'
+import { attr, svg, type Markup } from '~/lib/markup'
+import { both } from '~/lib/format'
 import { colorVar } from '~/lib/tokens'
 import { note as mono } from './axes'
 import { show, when, type SeriesData } from './model'
@@ -116,12 +117,13 @@ function callout(c: Callout, chart: WithNotes, box: NoteBox, taken: Box[]): Mark
   // The end label already names a series' last value.
   if (!s || !p || p.y === null || px === undefined || (box.endLabeled?.has(s.key) && s.points.findLast((q) => q.y !== null) === p)) return null
   const py = box.y(p.y)
-  const text = c.label ?? `${show(chart, p, s).text} ${when(p.label)}`
+  const shown = both(() => c.label ?? `${show(chart, p, s).text} ${when(p.label)}`)
+  const text = shown.text
   const rules = [...(chart.breaks ?? []), ...(chart.markers ?? [])].flatMap((b) => {
     const rx = box.xOf(b.x)
     return rx === undefined ? [] : [rx]
   })
-  if (box.capAt) return capLabel(text, px, box, p.y < 0, rules)
+  if (box.capAt) return capLabel(text, px, box, p.y < 0, rules, shown.alt)
   const segs: Seg[] = [...lineSegments(box), ...rules.map((rx): Seg => [rx, box.top - 22, rx, box.bottom])]
   const left = box.left ?? -Infinity
   const right = box.edge ?? box.right ?? Infinity
@@ -141,8 +143,11 @@ function callout(c: Callout, chart: WithNotes, box: NoteBox, taken: Box[]): Mark
     return best
   }
   type Spot = { x: number; y: number; r: Box; lines: string[]; crossed: number }
+  // Each line of the other form: the same split, so line i swaps with line i.
+  const altLines = (lines: string[]): string[] | undefined => (shown.alt === undefined ? undefined : lines.length === 1 ? [shown.alt] : split(shown.alt))
   const spotsFor = (lines: string[]): Spot[] => {
-    const w = Math.max(...lines.map((l) => l.length)) * 6.5
+    // Room for the longer form, so the switch never pushes the text over a line or off the frame.
+    const w = Math.max(...lines.map((l) => l.length), ...(altLines(lines) ?? []).map((l) => l.length)) * 6.5
     const h = (lines.length - 1) * 14
     return offsets
       .map(([dx, dy]) => {
@@ -155,7 +160,8 @@ function callout(c: Callout, chart: WithNotes, box: NoteBox, taken: Box[]): Mark
       .filter((o) => o.r.l >= left && o.r.r <= right && o.r.t >= box.top - 4 && o.r.b <= box.bottom && ![...(box.avoid ?? []), ...taken].some((a) => overlaps(a, o.r)))
   }
   const one = spotsFor([text])
-  const two = text.includes(' ') ? spotsFor(split(text)) : []
+  // Two lines only when the other form splits in two as well.
+  const two = text.includes(' ') && (shown.alt === undefined || split(shown.alt).length === 2) ? spotsFor(split(text)) : []
   // Best: one line crossing nothing; then two lines crossing nothing; then whatever crosses least.
   const best =
     one.find((o) => o.crossed === 0) ??
@@ -170,15 +176,15 @@ function callout(c: Callout, chart: WithNotes, box: NoteBox, taken: Box[]): Mark
   const lx = best.x < px ? best.r.r - 2 : best.r.l + 2
   const ly = best.y < py ? best.r.b : best.r.t
   return svg`${far ? svg`<path d="M${px} ${py}L${lx} ${ly}" stroke="var(--slate)" fill="none"/>` : null}<circle cx="${px}" cy="${py}" r="3.5" fill="${colorVar(s.color)}" stroke="var(--paper)" stroke-width="1.5"/>
-<text x="${best.x}" y="${best.y}" font-size="12" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3">${best.lines.map((l, i) => svg`<tspan x="${best.x}" dy="${i === 0 ? 0 : 14}">${l}</tspan>`)}</text>`
+<text x="${best.x}" y="${best.y}" font-size="12" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3">${best.lines.map((l, i) => svg`<tspan x="${best.x}" dy="${i === 0 ? 0 : 14}"${attr('data-alt', altLines(best.lines)?.[i])}>${l}</tspan>`)}</text>`
 }
 
 /**
  * A column callout: the text centred on the column's cap, raised clear of every bar it spans.
  * When it has to rise above its own cap, a short rule ties it back to the column.
  */
-function capLabel(text: string, px: number, box: NoteBox, below = false, rules: readonly number[] = []): Markup {
-  const half = (text.length * 6.6) / 2 + 4
+function capLabel(text: string, px: number, box: NoteBox, below = false, rules: readonly number[] = [], alt?: string): Markup {
+  const half = (Math.max(text.length, alt?.length ?? 0) * 6.6) / 2 + 4
   let cx = Math.max((box.left ?? -Infinity) + half, Math.min(px, (box.right ?? Infinity) - half))
   // Keep the text off any break or marker rule: shift it to the column's side of the rule.
   for (const rx of rules) if (Math.abs(rx - cx) < half + 2) cx = rx >= px ? rx - half - 3 : rx + half + 3
@@ -191,7 +197,7 @@ function capLabel(text: string, px: number, box: NoteBox, below = false, rules: 
   const y1 = below ? own + 2 : own - 2
   const y2 = below ? ty - 12 : ty + 4
   return svg`${tied ? svg`<line x1="${px}" x2="${px}" y1="${y1}" y2="${y2}" stroke="var(--slate)"/>` : null}
-<text x="${cx}" y="${ty}" text-anchor="middle" font-size="12" font-weight="500" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3">${text}</text>`
+<text x="${cx}" y="${ty}" text-anchor="middle" font-size="12" font-weight="500" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3"${attr('data-alt', alt)}>${text}</text>`
 }
 
 /** `under` goes below the data marks, `over` above them. */

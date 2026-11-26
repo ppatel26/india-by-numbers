@@ -128,7 +128,7 @@ describe('headline figures read a value from data', () => {
     for (const [name, f] of figures) {
       const { text } = figureValue(f).value
       expect(text, name).toMatch(/\d/)
-      // A count of a crore or more reads in crore or lakh, never as eight or more raw digits.
+      // A count of a crore or more reads in million or billion, never as eight or more raw digits.
       expect(text.replace(/[^\d.]/g, '').split('.')[0]!.length, name).toBeLessThan(8)
     }
   })

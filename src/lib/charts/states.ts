@@ -4,7 +4,7 @@ import { decimalsOf, fmt } from '~/lib/format'
 import { GRID, type Place } from '~/lib/geography'
 import { attr, svg, type Markup } from '~/lib/markup'
 import { colorVar, div, seq, textOn, type Token } from '~/lib/tokens'
-import { WIDTH, frame, type Width } from './axes'
+import { WIDTH, frame, tipAttr, type Width } from './axes'
 import { nameColumn, rowName } from './dots'
 import { gapFormat, ranked, show, statesOf, type Of, type StateData } from './model'
 
@@ -76,7 +76,7 @@ export function renderRanked(chart: Of<'states'>, width: Width): Markup {
     const whisker = ci
       ? svg`<path d="M${x(ci[0])} ${y + rowH / 2}H${x(ci[1])}M${x(ci[0])} ${y + 7}V${y + rowH - 7}M${x(ci[1])} ${y + 7}V${y + rowH - 7}" stroke="var(--slate)" fill="none"/>`
       : null
-    return svg`<g class="row" data-geo="${r.place.slug}" data-tip="${stateTip(chart, data, r.place)}">${label}
+    return svg`<g class="row" data-geo="${r.place.slug}" ${tipAttr(() => stateTip(chart, data, r.place))}>${label}
 <rect class="bar" x="${x0}" y="${y + 3}" width="${Math.max(1, x1 - x0)}" height="${rowH - 6}" fill="var(--other)"/>${whisker}
 <text class="value" x="${lx}" y="${y + 14}" paint-order="stroke" stroke="var(--paper)" stroke-width="4" font-size="12" fill="var(--ink)"${attr('data-alt', v.alt)}>${v.text}</text></g>`
   })
@@ -193,7 +193,7 @@ export function renderTiles(chart: Of<'states'>, width: Width): Markup {
     const name = narrow
       ? svg`<text x="${x + 4}" y="${y + 13}" font-size="10.5" font-weight="600" fill="${ink}">${place.code}</text>`
       : svg`<text x="${x + 5}" y="${y + 14}" font-size="11" font-weight="600" fill="${ink}">${l1}${l2 ? svg`<tspan x="${x + 5}" dy="12">${l2}</tspan>` : null}</text>`
-    return svg`<a href="${href(place)}" class="tile" data-geo="${place.slug}" data-tip="${stateTip(chart, data, place)}">
+    return svg`<a href="${href(place)}" class="tile" data-geo="${place.slug}" ${tipAttr(() => stateTip(chart, data, place))}>
 <rect x="${x}" y="${y}" width="${tileW}" height="${size}" rx="2" fill="${token ? colorVar(token) : `url(#${noData})`}"/>
 ${place.type === 'ut' ? svg`<path d="M${x + tileW - 10} ${y}h10v10z" fill="var(--paper)"/>` : null}${name}
 <text x="${x + (narrow ? 4 : 5)}" y="${y + size - (narrow ? 6 : 8)}" font-size="${vSize.toFixed(1)}" fill="${ink}"${attr('data-alt', v?.alt)}>${v?.text ?? '–'}</text></a>`

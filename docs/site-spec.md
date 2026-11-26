@@ -466,8 +466,8 @@ Do not copy these UK habits:
 
 ### India-specific rules
 
-- Lakh and crore by default. 1 lakh = 1,00,000. 1 crore = 1,00,00,000. Use Indian digit grouping in full figures: 1,40,00,000.
-- The number switch changes every figure on the page, the charts, the tables and the downloads' display labels. "1.4 crore" becomes "14 million". "₹2.5 lakh crore" becomes "₹2.5 trillion". CSV files always hold the plain number with a unit column.
+- Million and billion by default, with international digit grouping in full figures: 14,000,000. The switch shows lakh and crore, with Indian digit grouping: 1,40,00,000. 1 lakh = 1,00,000. 1 crore = 1,00,00,000. Prose keeps the form it is written in.
+- The number switch changes every figure on the page, the charts, the tables and the downloads' display labels. "14 million" becomes "1.4 crore". "₹2.5 lakh crore" becomes "₹2.5 trillion". CSV files always hold the plain number with a unit column.
 - Put ₹ before the number with no space: ₹93.57.
 - Fiscal years: "FY 2026-27" (1 April 2026 to 31 March 2027). Quarters: "Q1 FY 2026-27 (Apr to Jun 2026)". Calendar years stay plain: "2025".
 - Survey rounds: the name, the round and the years, "NFHS-5 (2019-21)".

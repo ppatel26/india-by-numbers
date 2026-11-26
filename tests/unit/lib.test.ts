@@ -4,8 +4,10 @@ import { scaleLinear } from 'd3-scale'
 import { describe, expect, it } from 'vitest'
 import { TOPICS } from '~/content/types'
 import { yGrid } from '~/lib/charts/axes'
+import { renderPlot } from '~/lib/charts'
+import { placed } from '~/content'
 import { EMBLEM_ALT, hasEmblem } from '~/lib/emblems'
-import { fmt, formatNumber, ordinal } from '~/lib/format'
+import { both, fmt, formatNumber, ordinal } from '~/lib/format'
 import { formatDate, longPeriod, parsePeriod, yyMmOf } from '~/lib/period'
 import { match, normalise, SYNONYMS, type Entry } from '~/lib/search'
 
@@ -14,21 +16,32 @@ describe('formatNumber', () => {
     expect(fmt(6.09, { unit: '%' }, '6.09')).toBe('6.09%')
     expect(fmt(5.5, { unit: '%' }, '5.50')).toBe('5.50%')
   })
-  it('groups digits the Indian way, with an international alternative', () => {
+  it('groups digits the international way, with the Indian way as the alternative', () => {
     expect(formatNumber(61619, { unit: '₹', decimals: 0 })).toEqual({ text: '₹61,619' })
-    expect(formatNumber(361619, { unit: '₹', scale: 'none', decimals: 0 })).toEqual({ text: '₹3,61,619', alt: '₹361,619' })
+    expect(formatNumber(361619, { unit: '₹', scale: 'none', decimals: 0 })).toEqual({ text: '₹361,619', alt: '₹3,61,619' })
   })
-  it('reads a lakh or more in lakh or crore unless told not to', () => {
-    expect(formatNumber(157141, { unit: '₹', decimals: 0 })).toEqual({ text: '₹1.57 lakh', alt: '₹157,141' })
-    expect(formatNumber(600000, { unit: '₹' }).text).toBe('₹6 lakh')
-    expect(formatNumber(231438, {}).text).toBe('2.31 lakh')
+  it('reads a lakh or more in lakh or crore in the other mode unless told not to', () => {
+    expect(formatNumber(157141, { unit: '₹', decimals: 0 })).toEqual({ text: '₹157,141', alt: '₹1.57 lakh' })
+    expect(formatNumber(600000, { unit: '₹' }).alt).toBe('₹6 lakh')
+    expect(formatNumber(231438, {}).alt).toBe('2.31 lakh')
     expect(fmt(999)).toBe('999')
   })
-  it('writes crore and lakh, with billion and million in the other mode', () => {
-    expect(formatNumber(1426000000, { scale: 'crore' })).toEqual({ text: '142.6 crore', alt: '1.43 billion' })
-    expect(formatNumber(2500000, { scale: 'lakh' })).toEqual({ text: '25.0 lakh', alt: '2.50 million' })
-    expect(formatNumber(1426000, { scale: 'crore', multiply: 1000 }).text).toBe('142.6 crore')
-    expect(formatNumber(247219766, { scale: 'crore', decimals: 2 })).toEqual({ text: '24.72 crore', alt: '247.22 million' })
+  it('writes billion and million, with crore and lakh in the other mode', () => {
+    expect(formatNumber(1426000000, { scale: 'crore' })).toEqual({ text: '1.43 billion', alt: '142.6 crore' })
+    expect(formatNumber(2500000, { scale: 'lakh' })).toEqual({ text: '2.50 million', alt: '25.0 lakh' })
+    expect(formatNumber(1426000, { scale: 'crore', multiply: 1000 }).alt).toBe('142.6 crore')
+    expect(formatNumber(247219766, { scale: 'crore', decimals: 2 })).toEqual({ text: '247.22 million', alt: '24.72 crore' })
+  })
+  it('builds a string in both forms, for tooltips and callouts', () => {
+    expect(both(() => `People: ${fmt(1426000000, { scale: 'crore' })}`)).toEqual({ text: 'People: 1.43 billion', alt: 'People: 142.6 crore' })
+    expect(both(() => `Rate: ${fmt(6.09, { unit: '%' }, '6.09')}`)).toEqual({ text: 'Rate: 6.09%' })
+    // Outside both, the default form is back.
+    expect(fmt(1426000000, { scale: 'crore' })).toBe('1.43 billion')
+  })
+  it('gives chart labels and tooltips their lakh and crore form', () => {
+    const html = renderPlot(placed('population-by-census').chart, 'chart', 'wide').html
+    expect(html).toContain('data-alt="121.1 crore in 2011">1.21 billion in 2011')
+    expect(html).toContain('data-tip="1951\nCensus count: 361.1 million\nProjected: No data" data-tip-alt="1951\nCensus count: 36.1 crore\nProjected: No data"')
   })
   it('multiplies without floating-point noise', () => {
     // 30,00,000 crore is ₹30 lakh crore, not ₹30.00 lakh crore from 30.000000000000004.
@@ -111,9 +124,16 @@ describe('objects', () => {
 })
 
 describe('axis ticks', () => {
+  const ticksOf = (grid: string) => ({
+    text: [...grid.matchAll(/>([^<>]+)<\/text>/g)].map((m) => m[1]),
+    alt: [...grid.matchAll(/data-alt="([^"]+)"/g)].map((m) => m[1]),
+  })
   it('keep a decimal on half-lakh ticks when the lakh scale is automatic', () => {
     const grid = String(yGrid(scaleLinear().domain([0, 200000]).range([100, 0]), [0, 50000, 100000, 150000, 200000], 0, 100, {}))
-    const labels = [...grid.matchAll(/>([^<>]+)<\/text>/g)].map((m) => m[1])
-    expect(labels).toEqual(['0', '0.5', '1.0', '1.5', '2.0 lakh'])
+    expect(ticksOf(grid)).toEqual({ text: ['0', '50,000', '100,000', '150,000', '200,000'], alt: ['0.5', '1.0', '1.5', '2.0 lakh'] })
+  })
+  it('use one international unit on every tick of a crore axis', () => {
+    const grid = String(yGrid(scaleLinear().domain([0, 1.6e9]).range([100, 0]), [0, 4e8, 8e8, 1.2e9, 1.6e9], 0, 100, { scale: 'crore' }))
+    expect(ticksOf(grid)).toEqual({ text: ['0', '0.4', '0.8', '1.2', '1.6 billion'], alt: ['40', '80', '120', '160 crore'] })
   })
 })

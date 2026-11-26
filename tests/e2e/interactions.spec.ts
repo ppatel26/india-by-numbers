@@ -31,14 +31,14 @@ test('the tooltip shows a value on hover', async ({ page }) => {
   await expect(page.locator('.tip')).toContainText(/Kerala: -?\d+(\.\d+)?%/)
 })
 
-test('the number switch changes crore to million and is remembered', async ({ page }) => {
+test('the number switch changes million to crore and is remembered', async ({ page }) => {
   await page.goto('/population/')
   const figure = page.locator('header .figure .value').first()
-  await expect(figure).toContainText('crore')
-  await page.getByRole('button', { name: 'Million' }).first().click()
   await expect(figure).toContainText(/million|billion/)
+  await page.getByRole('button', { name: 'Lakh · crore' }).first().click()
+  await expect(figure).toContainText('crore')
   await page.goto('/education/')
-  await expect(page.getByRole('button', { name: 'Million' }).first()).toHaveAttribute('aria-pressed', 'true')
+  await expect(page.getByRole('button', { name: 'Lakh · crore' }).first()).toHaveAttribute('aria-pressed', 'true')
 })
 
 test('choosing a state marks it on every chart and carries to other pages', async ({ page }) => {

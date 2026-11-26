@@ -1,7 +1,7 @@
 /** Shared plot parts: sizes, scales, gridlines, ticks, labels and hover targets. */
 import { scaleLinear, type ScaleLinear } from 'd3-scale'
 import type { Axis, Format } from '~/content/types'
-import { formatTick, type Shown } from '~/lib/format'
+import { both, formatTick, intlScale, type Shown } from '~/lib/format'
 import { colorVar } from '~/lib/tokens'
 import { attr, svg, type Markup } from '~/lib/markup'
 import type { Point } from '~/lib/data'
@@ -53,12 +53,17 @@ function tickLabels(ticks: readonly number[], f: Format | undefined): (t: number
   const per = (auto === 'crore' ? 1e7 : auto === 'lakh' ? 1e5 : 0) / (f?.multiply ?? 1)
   const exact = (d: number) => ticks.every((t) => Math.abs(Math.round((t / per) * 10 ** d) - (t / per) * 10 ** d) < 1e-6)
   const d = per ? ([0, 1, 2].find(exact) ?? 2) : 0
+  // The international form picks its own unit and decimals for the whole axis.
+  const intl = intlScale(peak)
+  const perIntl = intl.per / (f?.multiply ?? 1)
+  const exactIntl = (k: number) => ticks.every((t) => Math.abs(Math.round((t / perIntl) * 10 ** k) - (t / perIntl) * 10 ** k) < 1e-6)
+  const di = [0, 1, 2].find(exactIntl) ?? 2
   // The baseline reads plain 0; the unit, the scale word (crore, lakh) and any suffix sit on the
   // top tick only, as "%" does: 160 crore, 120, 80.
   const bare = (x: string) => x.replace(/ (crore|lakh|thousand|million|billion)$/, '')
   return (t, withUnit) => {
     if (t === 0 && !withUnit) return { text: '0' }
-    const shown = formatTick(t, { ...base, unit: withUnit ? base.unit : '', suffix: withUnit ? base.suffix : '' }, d)
+    const shown = formatTick(t, { ...base, unit: withUnit ? base.unit : '', suffix: withUnit ? base.suffix : '' }, d, intl, di)
     return withUnit ? shown : { text: bare(shown.text), alt: shown.alt && bare(shown.alt) }
   }
 }
@@ -253,5 +258,11 @@ ${note(p.tx, top - 6 - p.row * REF_ROW, p.label, p.anchor)}`
 }
 
 /** An invisible hover target. The page script shows `tip` (lines split by "\n"). */
-export const hit = (x: number, y: number, w: number, h: number, tip: string): Markup =>
-  svg`<rect class="hit" x="${x}" y="${y}" width="${Math.max(1, w)}" height="${Math.max(1, h)}" fill="transparent" data-tip="${tip}" tabindex="-1"/>`
+/** A tooltip in both number forms: data-tip, and data-tip-alt for the switch to swap in. */
+export function tipAttr(build: () => string): Markup {
+  const t = both(build)
+  return svg` data-tip="${t.text}"${attr('data-tip-alt', t.alt)}`
+}
+
+export const hit = (x: number, y: number, w: number, h: number, tip: () => string): Markup =>
+  svg`<rect class="hit" x="${x}" y="${y}" width="${Math.max(1, w)}" height="${Math.max(1, h)}" fill="transparent"${tipAttr(tip)} tabindex="-1"/>`

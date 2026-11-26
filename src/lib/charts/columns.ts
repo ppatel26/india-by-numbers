@@ -118,7 +118,7 @@ export function renderColumns(chart: Of<'columns'>, width: Width, inPanel = fals
   })
 
   const hits = xs.map((p) =>
-    hit(x(p.x)!, m.top, x.step(), H - m.top - m.bottom, [p.label, ...at(p.x).map((v) => tipLine(chart, v.s, v.p))].join('\n')),
+    hit(x(p.x)!, m.top, x.step(), H - m.top - m.bottom, () => [p.label, ...at(p.x).map((v) => tipLine(chart, v.s, v.p))].join('\n')),
   )
 
   return frame(

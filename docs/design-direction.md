@@ -18,7 +18,7 @@ The brand colour is lac (लाख), the resin India used for sealing wax on off
 4. "Latest" is a word, not a colour. A selected item uses weight and a 6 px lac dot, never a coloured side bar or chip.
 5. The national flag is an exact SVG (IS 1 proportions, 24 spokes). It marks India as a whole and nothing else. Its colours never encode data. The State Emblem is not used.
 6. Faith objects are welcome on faith and culture pages.
-7. Lakh and crore by default, with a switch to million. Hindi in the interface from launch.
+7. Million and billion by default, with a switch to lakh and crore (the owner chose this on 25 Nov 2026). The switch lists Million first. Hindi in the interface from launch.
 8. No cards for figures or charts. Figures sit in ruled ledger rows. Charts sit on the white ground under a 1 px rule. A tooltip or bottom sheet may keep one shadow ring.
 9. Nothing decorates the hero. No guide circles or construction lines.
 

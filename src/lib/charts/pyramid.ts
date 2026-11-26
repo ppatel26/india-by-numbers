@@ -2,7 +2,7 @@ import { scaleLinear } from 'd3-scale'
 import { fmt } from '~/lib/format'
 import { svg, type Markup } from '~/lib/markup'
 import { colorVar } from '~/lib/tokens'
-import { FONT, WIDTH, frame, type Width } from './axes'
+import { FONT, WIDTH, frame, tipAttr, type Width } from './axes'
 import { legend } from './dots'
 import type { Point } from '~/lib/data'
 import { seriesOf, type Of, type SeriesData } from './model'
@@ -28,8 +28,8 @@ export function renderPyramid(chart: Of<'pyramid'>, width: Width): Markup {
     const r = right.points.find((p) => p.x === g)
     const line = (s: SeriesData, p: Point | undefined) =>
       `${s.label}: ${fmt(share(p?.y ?? null), { decimals: 2, unit: '%' })} (${p?.y != null ? fmt(p.y, { scale: 'lakh' }) : 'no data'})`
-    const tip = `Age ${g}\n${line(left, l)}\n${line(right, r)}`
-    return svg`<g class="row" data-tip="${tip}">
+    const tip = () => `Age ${g}\n${line(left, l)}\n${line(right, r)}`
+    return svg`<g class="row"${tipAttr(tip)}>
 <rect x="${mid - gutter - x(share(l?.y ?? null))}" y="${y + 1}" width="${x(share(l?.y ?? null))}" height="${rowH - 2}" fill="${colorVar(left.color)}"/>
 <rect x="${mid + gutter}" y="${y + 1}" width="${x(share(r?.y ?? null))}" height="${rowH - 2}" fill="${colorVar(right.color)}"/>
 <text x="${mid}" y="${y + rowH - 4}" text-anchor="middle" font-family="${FONT.mono}" font-size="10.5" fill="var(--slate)">${g}</text></g>`
