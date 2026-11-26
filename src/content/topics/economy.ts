@@ -385,7 +385,7 @@ const topic: Topic = {
     },
     {
       title: 'Which states are richest and poorest per person?',
-      lede: 'In 2024-25 income per person was highest in Sikkim, at ₹6.46 lakh, and lowest in Bihar, at ₹69,211. The national figure was ₹2.05 lakh.',
+      lede: 'In 2024-25 income per person was highest in Sikkim, at {{₹646183 lakh 2}}, and lowest in Bihar, at ₹69,211. The national figure was {{₹205324 lakh 2}}.',
       blocks: [
         { text: 'Income per person was above the national figure in 19 of the 32 states and UTs with data.' },
         {
@@ -553,9 +553,9 @@ const topic: Topic = {
     },
     {
       title: 'How many people work in factories and small firms?',
-      lede: 'Registered factories engaged 2.10 crore people in 2024-25. Small unincorporated firms outside farming had 12.81 crore workers in 2025. Two different surveys count them.',
+      lede: 'Registered factories engaged {{20996913 crore 2}} people in 2024-25. Small unincorporated firms outside farming had {{128051841 crore 2}} workers in 2025. Two different surveys count them.',
       blocks: [
-        { text: 'Factories engaged 2.10 crore people in 2024-25, up from 1.13 crore in 2008-09. Their gross value added was ₹26.94 lakh crore at current prices.' },
+        { text: 'Factories engaged {{20996913 crore 2}} people in 2024-25, up from {{11327485 crore 2}} in 2008-09. Their gross value added was {{₹26941980600000 lakh-crore 2}} at current prices.' },
         {
           chart: {
             kind: 'line',
@@ -616,7 +616,7 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
-        { text: 'Tamil Nadu had the most factory jobs in 2024-25, at 31.48 lakh, or 14.99% of the national total. Maharashtra had 27.47 lakh and Gujarat 27.27 lakh.' },
+        { text: 'Tamil Nadu had the most factory jobs in 2024-25, at {{3147520 lakh 2}}, or 14.99% of the national total. Maharashtra had {{2747179 lakh 2}} and Gujarat {{2726813 lakh 2}}.' },
         {
           chart: {
             kind: 'states',
@@ -650,7 +650,7 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
-        { text: 'Uttar Pradesh had the most workers in small unincorporated firms in 2025, at 1.86 crore. West Bengal had 1.33 crore and Maharashtra 1.17 crore.' },
+        { text: 'Uttar Pradesh had the most workers in small unincorporated firms in 2025, at {{18562968 crore 2}}. West Bengal had {{13287026 crore 2}} and Maharashtra {{11702261 crore 2}}.' },
         {
           chart: {
             kind: 'states',
@@ -682,7 +682,7 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
-        { text: 'Small firms had 7.92 crore establishments and 12.81 crore workers in 2025. In 2021-22 they had 5.97 crore establishments and 9.79 crore workers.' },
+        { text: 'Small firms had {{79246545 crore 2}} establishments and {{128051841 crore 2}} workers in 2025. In 2021-22 they had {{59702678 crore 2}} establishments and {{97887906 crore 2}} workers.' },
         {
           chart: {
             kind: 'line',
@@ -858,7 +858,7 @@ const topic: Topic = {
     },
     {
       title: 'How fast is digital payment growing?',
-      lede: 'UPI carried 2,546.67 crore payments in October 2026, worth ₹31.53 lakh crore. In June 2020 it carried 133.69 crore payments, worth ₹2.62 lakh crore.',
+      lede: 'UPI carried {{25466692000 crore 2}} payments in October 2026, worth {{₹31529290000000 lakh-crore 2}}. In June 2020 it carried {{1336931000 crore 2}} payments, worth {{₹2618350000000 lakh-crore 2}}.',
       blocks: [
         {
           chart: {
@@ -893,7 +893,7 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
-        { text: 'In 2025-26 UPI carried 24,162 crore payments, far more than any other system. RTGS, the system for large transfers, moved the most money: ₹2,273.7 lakh crore.' },
+        { text: 'In 2025-26 UPI carried {{241616886000 crore 0}} payments, far more than any other system. RTGS, the system for large transfers, moved the most money: {{₹2273726480000000 lakh-crore 1}}.' },
         {
           chart: {
             kind: 'bars',
@@ -940,7 +940,7 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
-        { text: 'Credit cards carried 68.33 crore payments in October 2026, up from 12.49 crore in June 2020. Debit card payments fell from 30.02 crore to 10.50 crore in the same months.' },
+        { text: 'Credit cards carried {{683320000 crore 2}} payments in October 2026, up from {{124855000 crore 2}} in June 2020. Debit card payments fell from {{300234000 crore 2}} to {{105041000 crore 2}} in the same months.' },
         {
           chart: {
             kind: 'line',

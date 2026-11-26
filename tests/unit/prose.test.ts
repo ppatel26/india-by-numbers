@@ -10,6 +10,7 @@ import { readdirSync, readFileSync } from 'node:fs'
 import { join } from 'node:path'
 import { DATA_DIR, rows } from '~/lib/data'
 import { isGated } from '~/content/gated'
+import { proseIndian, strayMarker } from '~/lib/prose'
 
 /** Every number in the topic's data folders (CSVs and the README headline tables), as printed. */
 function pool(t: Topic): Set<string> {
@@ -76,13 +77,32 @@ function numbers(text: string): string[] {
   return [...t.matchAll(/₹?(\d[\d,]*\.\d+|\d{1,3}(,\d{2,3})+|\d+(?=%| per cent| percentage| crore| lakh))/g)].map((m) => m[0].replace(/[₹,]/g, ''))
 }
 
-const prose = (t: Topic): [string, string][] => [
+/** The prose as written, with each count marker in its raw form. */
+const written = (t: Topic): [string, string][] => [
   ['standfirst', t.standfirst],
   ...t.parts.flatMap((p, i): [string, string][] => [
     [`part ${i + 1} lede`, p.lede],
     ...p.blocks.flatMap((b, j): [string, string][] => ('text' in b ? [[`part ${i + 1} text ${j + 1}`, b.text]] : [])),
   ]),
 ]
+
+/** The prose as it reads in lakh and crore mode: each marker shows the digits the sentence quotes. */
+const prose = (t: Topic): [string, string][] => written(t).map(([where, text]) => [where, proseIndian(text)])
+
+// Counts of a lakh or more follow the number switch, so prose writes them as markers
+// (src/lib/prose.ts), never as bare text. Rates such as "for every lakh people" have no number
+// before "lakh", so they do not match.
+const BARE = /(₹|US\$)?\d[\d,]*(\.\d+)? (lakh crore|crore|lakh)\b|\b\d{1,3}(,\d{2})+,\d{3}\b/g
+
+describe('prose counts follow the number switch', () => {
+  it.each(topics.map((t) => [t.slug, t] as const))('%s', (_, t) => {
+    for (const [where, text] of written(t)) {
+      expect(strayMarker(text), `${where}: a {{ that is not a count marker: ${text}`).toBe(false)
+      const outside = text.replace(/\{\{[^}]*\}\}/g, ' ')
+      expect(outside.match(BARE), `${where}: write these counts as markers: ${text}`).toBeNull()
+    }
+  })
+})
 
 // One test per topic; a failure names the passage and the numbers not found in the data.
 describe('prose quotes only published values', () => {

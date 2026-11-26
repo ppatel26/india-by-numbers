@@ -245,7 +245,7 @@ const topic: Topic = {
   hindi: 'शिक्षा',
   question: 'How many children are in school, and how far do they get?',
   standfirst:
-    'In 2025-26, 24.72 crore children were enrolled from pre-primary to class 12, against 24.69 crore in 2024-25.',
+    'In 2025-26, {{247219766 crore 2}} children were enrolled from pre-primary to class 12, against {{246932680 crore 2}} in 2024-25.',
   figures: [
     { chart: 'school-enrolment-trend', series: 'enrol-total-new', label: 'Students, pre-primary to class 12' },
     { chart: 'ger-higher-secondary-by-state', label: 'Enrolment ratio, classes 11 and 12' },
@@ -255,7 +255,7 @@ const topic: Topic = {
   parts: [
     {
       title: 'How many children are in school?',
-      lede: 'Total enrolment barely changed in 2025-26. Primary enrolment (classes 1 to 5) fell from 10.44 crore to 10.19 crore.',
+      lede: 'Total enrolment barely changed in 2025-26. Primary enrolment (classes 1 to 5) fell from {{104381347 crore 2}} to {{101915874 crore 2}}.',
       blocks: [
         {
           chart: {

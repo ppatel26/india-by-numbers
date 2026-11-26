@@ -247,7 +247,7 @@ const topic: Topic = {
   hindi: 'परिवहन',
   question: 'How many people die on the roads, and how do people travel?',
   standfirst:
-    'In 2024, the police recorded 1,77,175 road deaths, or 12.6 for every lakh people. Of those killed, 46.2% were on two-wheelers.',
+    'In 2024, the police recorded {{177175 plain 0}} road deaths, or 12.6 for every lakh people. Of those killed, 46.2% were on two-wheelers.',
   figures: [
     { chart: 'road-deaths-india', series: 'deaths', label: 'Road deaths recorded by the police', period: '2024', format: { scale: 'none', decimals: 0 } },
     { chart: 'road-deaths-per-lakh-by-state', label: 'Road deaths per lakh people' },
@@ -257,7 +257,7 @@ const topic: Topic = {
   parts: [
     {
       title: 'How many people die on the roads in each state?',
-      lede: 'In 2024, the police recorded 1,77,175 road deaths: 12.6 for every lakh people. Tamil Nadu had the highest rate, 23.9.',
+      lede: 'In 2024, the police recorded {{177175 plain 0}} road deaths: 12.6 for every lakh people. Tamil Nadu had the highest rate, 23.9.',
       blocks: [
         {
           chart: {
@@ -332,7 +332,7 @@ const topic: Topic = {
     },
     {
       title: 'Have road deaths risen over time?',
-      lede: 'Road deaths rose from 14,500 in 1970 to 1,77,175 in 2024. Accidents rose more slowly: from 4,05,637 in 2001 to 4,87,707 in 2024, with a high of 5,05,770 in 2015.',
+      lede: 'Road deaths rose from 14,500 in 1970 to {{177175 plain 0}} in 2024. Accidents rose more slowly: from {{405637 plain 0}} in 2001 to {{487707 plain 0}} in 2024, with a high of {{505770 plain 0}} in 2015.',
       blocks: [
         {
           chart: {

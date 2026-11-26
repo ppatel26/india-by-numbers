@@ -175,7 +175,7 @@ const topic: Topic = {
   parts: [
     {
       title: 'How much crime do the police record?',
-      lede: 'In 2024, the police recorded 58.86 lakh cognizable crimes, or 418.9 for every lakh people. The new criminal law changed what NCRB counts, so 2024 does not compare exactly with 2023.',
+      lede: 'In 2024, the police recorded {{5885867 lakh 2}} cognizable crimes, or 418.9 for every lakh people. The new criminal law changed what NCRB counts, so 2024 does not compare exactly with 2023.',
       blocks: [
         {
           chart: {
@@ -252,7 +252,7 @@ const topic: Topic = {
     },
     {
       title: 'How many murders and crimes against women do the police record?',
-      lede: 'In 2024, the police recorded 27,049 murders, or 1.9 for every lakh people. They recorded 4,41,534 crimes against women, or 64.6 for every lakh women.',
+      lede: 'In 2024, the police recorded 27,049 murders, or 1.9 for every lakh people. They recorded {{441534 plain 0}} crimes against women, or 64.6 for every lakh women.',
       blocks: [
         {
           chart: {
@@ -371,7 +371,7 @@ const topic: Topic = {
     },
     {
       title: 'How full are the prisons, and how many prisoners are undertrials?',
-      lede: "On 31 December 2024, India's prisons held 5,09,012 people, in space for 4,53,769: an occupancy rate of 112.2%. Of these prisoners, 72.5% were undertrials.",
+      lede: "On 31 December 2024, India's prisons held {{509012 plain 0}} people, in space for {{453769 plain 0}}: an occupancy rate of 112.2%. Of these prisoners, 72.5% were undertrials.",
       blocks: [
         {
           text: 'An undertrial is a prisoner whose case is under investigation or trial, and who has not been convicted. Occupancy was highest at 131.4% in 2022. The undertrial share rose from 67.6% in 2014 to 77.1% in 2021, and was 72.5% in 2024.',
@@ -483,7 +483,7 @@ const topic: Topic = {
     },
     {
       title: 'How many cases wait in the courts?',
-      lede: 'On 30 July 2026, 4.99 crore cases were pending in the district and subordinate courts, and 64.67 lakh in the High Courts. The Supreme Court had 95,954.',
+      lede: 'On 30 July 2026, {{49911920 crore 2}} cases were pending in the district and subordinate courts, and {{6466970 lakh 2}} in the High Courts. The Supreme Court had 95,954.',
       blocks: [
         {
           chart: {
@@ -520,7 +520,7 @@ const topic: Topic = {
           },
         },
         {
-          text: 'At the end of 2025, 4.77 crore cases were pending in the district courts, against 4.11 crore in 2021. On 16 July 2026, 54.37 lakh district court cases had been pending for more than 10 years. Uttar Pradesh had the most pending cases on 30 July 2026, 1.20 crore, then Maharashtra with 61.70 lakh. These are counts, not rates: states with more people have more cases.',
+          text: 'At the end of 2025, {{47657328 crore 2}} cases were pending in the district courts, against {{41053498 crore 2}} in 2021. On 16 July 2026, {{5437032 lakh 2}} district court cases had been pending for more than 10 years. Uttar Pradesh had the most pending cases on 30 July 2026, {{11990328 crore 2}}, then Maharashtra with {{6170497 lakh 2}}. These are counts, not rates: states with more people have more cases.',
         },
         {
           chart: {

@@ -471,7 +471,7 @@ const topic: Topic = {
   hindi: 'जनसंख्या',
   question: 'How many people live in India, and how fast has the number grown since 1901?',
   standfirst:
-    'India had a projected 142.6 crore people on 1 March 2026. Census 2011 counted 121.09 crore.',
+    'India had a projected {{1425908000 crore 1}} people on 1 March 2026. Census 2011 counted {{1210854977 crore 2}}.',
   figures: [
     {
       chart: 'population-projection',
@@ -487,7 +487,7 @@ const topic: Topic = {
   parts: [
     {
       title: 'How many people live in India?',
-      lede: 'India had 121.1 crore people at Census 2011, up from 36.1 crore in 1951. MoHFW projects 142.6 crore for 1 March 2026.',
+      lede: 'India had {{1210854977 crore 1}} people at Census 2011, up from {{361088090 crore 1}} in 1951. MoHFW projects {{1425908000 crore 1}} for 1 March 2026.',
       blocks: [
         {
           chart: {
@@ -783,7 +783,7 @@ const topic: Topic = {
     },
     {
       title: 'Where do people live?',
-      lede: 'Uttar Pradesh had 19.98 crore people in 2011, more than any other state. Nagaland was the only state whose population fell between 2001 and 2011 (−0.58%).',
+      lede: 'Uttar Pradesh had {{199812341 crore 2}} people in 2011, more than any other state. Nagaland was the only state whose population fell between 2001 and 2011 (−0.58%).',
       blocks: [
         {
           periods: [
@@ -873,7 +873,7 @@ const topic: Topic = {
     },
     {
       title: 'How might the population change?',
-      lede: 'MoHFW projects 152.2 crore people in India on 1 March 2036, up from 142.6 crore in 2026. These are projections made in 2020, not counts.',
+      lede: 'MoHFW projects {{1522288000 crore 1}} people in India on 1 March 2036, up from {{1425908000 crore 1}} in 2026. These are projections made in 2020, not counts.',
       blocks: [
         {
           // LATER: the board frame has a Map tab (state projections for 2026, same file); 'line' has no map view.
@@ -933,7 +933,7 @@ const topic: Topic = {
     },
     {
       title: 'How many people born in India live abroad?',
-      lede: '1.85 crore people born in India lived in other countries in mid-2024, up from 65.75 lakh in 1990, the UN estimates. 1.19 crore were men and 66.32 lakh women.',
+      lede: '{{18533845 crore 2}} people born in India lived in other countries in mid-2024, up from {{6575416 lakh 2}} in 1990, the UN estimates. {{11902243 crore 2}} were men and {{6631602 lakh 2}} women.',
       blocks: [
         {
           chart: {
@@ -967,7 +967,7 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
-        { text: 'The United Arab Emirates had the most, 32.5 lakh, then the United States, 31.7 lakh, and Saudi Arabia, 19.5 lakh.' },
+        { text: 'The United Arab Emirates had the most, {{3248545 lakh 1}}, then the United States, {{3165238 lakh 1}}, and Saudi Arabia, {{1953496 lakh 1}}.' },
         {
           chart: {
             kind: 'bars',

@@ -627,7 +627,7 @@ const topic: Topic = {
           },
         },
         {
-          text: 'On average, a rural household owned assets worth ₹15.92 lakh and owed ₹59,748. An urban household owned ₹27.17 lakh and owed ₹1,20,336. Households in debt owed ₹1,70,533 on average in villages and ₹5,36,861 in towns.',
+          text: 'On average, a rural household owned assets worth {{₹1592379 lakh 2}} and owed ₹59,748. An urban household owned {{₹2717081 lakh 2}} and owed {{₹120336 plain 0}}. Households in debt owed {{₹170533 plain 0}} on average in villages and {{₹536861 plain 0}} in towns.',
         },
         {
           chart: {

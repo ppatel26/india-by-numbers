@@ -371,7 +371,7 @@ const topic: Topic = {
     },
     {
       title: 'How many women die in pregnancy and childbirth?',
-      lede: 'In 2022-24, 87 women died from pregnancy or childbirth for every 1,00,000 live births, down from 398 in 1997-98.',
+      lede: 'In 2022-24, 87 women died from pregnancy or childbirth for every {{100000 plain 0}} live births, down from 398 in 1997-98.',
       blocks: [
         { text: 'The fall has slowed: the ratio was 88 in both 2020-22 and 2021-23. The target is below 70.' },
         {
@@ -1130,7 +1130,7 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
-        { text: 'Uttar Pradesh had the highest maternal mortality ratio in 2022-24, at 154 per 1,00,000 live births. Kerala had the lowest, at 24.' },
+        { text: 'Uttar Pradesh had the highest maternal mortality ratio in 2022-24, at 154 per {{100000 plain 0}} live births. Kerala had the lowest, at 24.' },
         {
           chart: {
             kind: 'states',

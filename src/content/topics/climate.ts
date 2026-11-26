@@ -325,7 +325,7 @@ const topic: Topic = {
       title: 'How fast is power capacity moving away from coal?',
       lede: "Non-fossil sources made up 55.45% of India's power capacity on 31 October 2026, up from 32.31% in March 2014. Capacity is the most power plants can make at once.",
       blocks: [
-        { text: 'Solar grew from 2,632 MW in March 2014 to 1.75 lakh MW in October 2026. Coal and lignite grew from 1.45 to 2.31 lakh MW.' },
+        { text: 'Solar grew from 2,632 MW in March 2014 to {{174547.05 lakh 2}} MW in October 2026. Coal and lignite grew from {{145273.39 lakh 2}} to {{231437.5 lakh 2}} MW.' },
         {
           chart: {
             kind: 'area',
@@ -414,7 +414,7 @@ const topic: Topic = {
     },
     {
       title: 'Which states have the most renewable power?',
-      lede: 'Gujarat has the most renewable capacity, 56,289 MW, then Rajasthan, 52,134 MW. India had 3.03 lakh MW on 31 October 2026.',
+      lede: 'Gujarat has the most renewable capacity, 56,289 MW, then Rajasthan, 52,134 MW. India had {{303463.48 lakh 2}} MW on 31 October 2026.',
       blocks: [
         { text: "The four states above 30,000 MW hold 56.84% of India's total. Tamil Nadu is fourth, with 30,401 MW." },
         {

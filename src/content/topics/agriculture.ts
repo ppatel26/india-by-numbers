@@ -276,7 +276,7 @@ const topic: Topic = {
           text: 'More than 90% of agricultural households were in debt in Andhra Pradesh (93.2%) and Telangana (91.7%), against 6.0% in Nagaland.',
         },
         {
-          text: 'Households with more land owe more. The average loan outstanding rose from ₹26,883 for households with less than 0.01 ha to ₹7,91,132 for those with more than 10.00 ha.',
+          text: 'Households with more land owe more. The average loan outstanding rose from ₹26,883 for households with less than 0.01 ha to {{₹791132 plain 0}} for those with more than 10.00 ha.',
         },
         {
           chart: {

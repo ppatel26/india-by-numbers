@@ -34,9 +34,13 @@ test('the tooltip shows a value on hover', async ({ page }) => {
 test('the number switch changes million to crore and is remembered', async ({ page }) => {
   await page.goto('/population/')
   const figure = page.locator('header .figure .value').first()
+  const standfirst = page.locator('header .standfirst')
   await expect(figure).toContainText(/million|billion/)
+  await expect(standfirst).toContainText('1.43 billion')
   await page.getByRole('button', { name: 'Lakh · crore' }).first().click()
   await expect(figure).toContainText('crore')
+  // Prose follows the switch too.
+  await expect(standfirst).toContainText('142.6 crore')
   await page.goto('/education/')
   await expect(page.getByRole('button', { name: 'Lakh · crore' }).first()).toHaveAttribute('aria-pressed', 'true')
 })

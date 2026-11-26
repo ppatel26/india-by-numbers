@@ -158,7 +158,7 @@ const topic: Topic = {
   // Home tile (S01) lists two questions; the first is used here.
   question: 'What share of electors vote?',
   standfirst:
-    'India had 97.80 crore electors in 2024, up from 17.32 crore at the first general election in 1951-52.',
+    'India had {{978000000 crore 2 1}} electors in 2024, up from {{173200000 crore 2 1}} at the first general election in 1951-52.',
   // LATER: the board's figure punch says "ECI"; a Figure takes the chart's office (MoSPI, which compiles ECI data).
   // LATER: Figure 2 has a footnote on the board ("* MoSPI's Women and Men in India 2025 gives 66.10% in Table 5.7 and 65.7% in Table 5.6.").
   // Figure 3 reads 74 from chart 2.1 (Table 5.2); Table 5.3 (chart 3.2) also gives 74 of 543.
@@ -221,7 +221,7 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
-        { text: 'The number of electors fell only once, in 1991, from 49.89 crore to 49.84 crore.' },
+        { text: 'The number of electors fell only once, in 1991, from {{498900000 crore 2 1}} to {{498400000 crore 2 1}}.' },
         {
           chart: {
             kind: 'line',
@@ -314,7 +314,7 @@ const topic: Topic = {
     },
     {
       title: 'Which states vote the most?',
-      lede: 'Turnout in 2024 was highest in Lakshadweep, at 84.98%, and lowest in Bihar, at 56.28%. Among states with more than 2 crore electors, Assam was highest, at 81.87%.',
+      lede: 'Turnout in 2024 was highest in Lakshadweep, at 84.98%, and lowest in Bihar, at 56.28%. Among states with more than {{20000000 crore 0}} electors, Assam was highest, at 81.87%.',
       blocks: [
         {
           chart: {
@@ -392,7 +392,7 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
-        { text: '63.72 lakh voters chose "None of the above" (NOTA) in 2024, 0.99% of votes counted.' },
+        { text: '{{6371839 lakh 2}} voters chose "None of the above" (NOTA) in 2024, 0.99% of votes counted.' },
         {
           chart: {
             kind: 'states',
