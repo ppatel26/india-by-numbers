@@ -165,7 +165,7 @@ const topic: Topic = {
   hindi: 'अपराध और न्याय',
   question: 'How much crime do the police record, and how full are the prisons and courts?',
   standfirst:
-    'In 2024, the police recorded 418.9 cognizable crimes for every lakh people. A higher recorded rate can mean that more crimes are reported and registered, not that more crimes happen. On 31 December 2024, 72.5% of prisoners were undertrials, held before or during their trial.',
+    'In 2024, the police recorded 418.9 cognizable crimes for every lakh people. Of all prisoners, 72.5% were undertrials.',
   figures: [
     { chart: 'crime-rate-by-state', label: 'Cognizable crimes recorded per lakh people' },
     { chart: 'undertrials-by-state', label: 'Prisoners who are undertrials' },
@@ -175,7 +175,7 @@ const topic: Topic = {
   parts: [
     {
       title: 'How much crime do the police record?',
-      lede: 'In 2024, the police recorded 58.86 lakh cognizable crimes, or 418.9 for every lakh people. The rate was 448.3 in 2023, but the new criminal law changed what NCRB counts, so the two years do not compare exactly.',
+      lede: 'In 2024, the police recorded 58.86 lakh cognizable crimes, or 418.9 for every lakh people. The new criminal law changed what NCRB counts, so 2024 does not compare exactly with 2023.',
       blocks: [
         {
           chart: {

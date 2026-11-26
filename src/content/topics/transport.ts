@@ -247,7 +247,7 @@ const topic: Topic = {
   hindi: 'परिवहन',
   question: 'How many people die on the roads, and how do people travel?',
   standfirst:
-    'In 2024, the police recorded 1,77,175 road deaths, or 12.6 for every lakh people. People on two-wheelers were 46.2% of them. In 2025-26, 42.6% of workers who travelled 1 km or more to work went by two-wheeler. This topic covers road safety, household travel and domestic tourism. Railways, aviation, freight and vehicle registrations are not covered yet.',
+    'In 2024, the police recorded 1,77,175 road deaths, or 12.6 for every lakh people. Of those killed, 46.2% were on two-wheelers.',
   figures: [
     { chart: 'road-deaths-india', series: 'deaths', label: 'Road deaths recorded by the police', period: '2024', format: { scale: 'none', decimals: 0 } },
     { chart: 'road-deaths-per-lakh-by-state', label: 'Road deaths per lakh people' },
@@ -257,7 +257,7 @@ const topic: Topic = {
   parts: [
     {
       title: 'How many people die on the roads in each state?',
-      lede: 'In 2024, the police recorded 4,87,707 road accidents, in which 1,77,175 people died and 4,71,441 were injured. That is 12.6 deaths for every lakh people. The rate was highest in Tamil Nadu (23.9), Chhattisgarh (22.8) and Telangana (20.8).',
+      lede: 'In 2024, the police recorded 1,77,175 road deaths: 12.6 for every lakh people. Tamil Nadu had the highest rate, 23.9.',
       blocks: [
         {
           chart: {
@@ -643,7 +643,7 @@ const topic: Topic = {
     },
     {
       title: 'How do Indians travel for leisure, family and pilgrimage?',
-      lede: 'In 2025-26, 36.1% of households made at least one overnight trip for a holiday, a pilgrimage, health care, shopping, a social visit, business or study. In villages the share was 35.2%, and in towns 37.7%.',
+      lede: 'In 2025-26, 36.1% of households made at least one overnight trip, for reasons such as a holiday, a pilgrimage or a social visit.',
       blocks: [
         {
           chart: {

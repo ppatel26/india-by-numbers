@@ -21,7 +21,7 @@ const tiles: Readonly<Record<TopicSlug, Tile>> = {
   },
   trade: {
     questions: ['Does India spend more abroad than it earns?', 'How large are the foreign exchange reserves?'],
-    figure: { chart: 'forex-reserves', series: 'total', label: 'Foreign exchange reserves, end of March 2026' },
+    figure: { chart: 'forex-reserves', series: 'total', label: 'Foreign exchange reserves' },
   },
   jobs: {
     questions: ['How many people are out of work?', 'How many women work or look for work?'],
@@ -33,7 +33,7 @@ const tiles: Readonly<Record<TopicSlug, Tile>> = {
   },
   agriculture: {
     questions: ['How much does a farm household earn?', 'How many farm households are in debt?'],
-    figure: { chart: 'farm-income-by-state', label: 'Income of an agricultural household, a month' },
+    figure: { chart: 'farm-income-by-state', label: 'Farm household income, a month' },
   },
   health: {
     questions: ['How many babies die before their first birthday?', 'How long do people in India live?'],
@@ -53,7 +53,7 @@ const tiles: Readonly<Record<TopicSlug, Tile>> = {
   },
   transport: {
     questions: ['How many people die on the roads?', 'How do people get to work and school?'],
-    figure: { chart: 'road-deaths-india', series: 'deaths', label: 'Road deaths recorded by the police, 2024', format: { scale: 'none', decimals: 0 } },
+    figure: { chart: 'road-deaths-india', series: 'deaths', label: 'Road deaths recorded by the police', format: { scale: 'none', decimals: 0 } },
   },
   climate: {
     questions: ['How much rain did the 2026 monsoon bring?', 'How fast is power moving away from coal?'],

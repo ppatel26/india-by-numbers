@@ -126,9 +126,9 @@ const topic: Topic = {
   hindi: 'व्यापार',
   question: 'Does India spend more abroad than it earns, and what does it buy and sell?',
   standfirst:
-    'In 2025-26, India ran a current account deficit of 0.61% of GDP: it paid out more abroad than it took in. In the balance of payments, a goods deficit of US$337.3 billion was mostly offset by a services surplus and by money that Indians abroad send home. This topic is India only. It covers goods, services, remittances, the current account and foreign exchange reserves.',
+    'In 2025-26, India ran a current account deficit of 0.61% of GDP: it paid out more abroad than it took in.',
   figures: [
-    { chart: 'current-account-balance', label: 'Current account balance, share of GDP. Below zero is a deficit' },
+    { chart: 'current-account-balance', label: 'Current account balance, share of GDP' },
     { chart: 'merchandise-exports-imports', series: 'exports', label: 'Goods exports, customs data' },
     { chart: 'forex-reserves', series: 'total', label: 'Foreign exchange reserves, end of March 2026' },
   ],
@@ -136,7 +136,7 @@ const topic: Topic = {
   parts: [
     {
       title: 'Does India spend more abroad than it earns?',
-      lede: 'India ran a current account deficit of 0.61% of GDP in 2025-26, or US$25.4 billion. The last surplus was in 2020-21, at 0.93% of GDP. The deficit was largest in 2012-13, at 4.81%.',
+      lede: 'India ran a current account deficit of 0.61% of GDP in 2025-26, or US$25.4 billion. The last surplus was in 2020-21.',
       blocks: [
         {
           chart: {

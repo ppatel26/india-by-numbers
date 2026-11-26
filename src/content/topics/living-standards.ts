@@ -190,7 +190,7 @@ const topic: Topic = {
   hindi: 'जीवन स्तर',
   question: 'How much do households spend, and what do they have at home?',
   standfirst:
-    'In 2023-24, households in villages spent ₹4,122 a month on each person, and households in towns ₹6,996. This topic has no income or poverty figures: these surveys measure spending, not income.',
+    'In 2023-24, households in villages spent ₹4,122 a month on each person, and households in towns ₹6,996.',
   figures: [
     { chart: 'household-spending-by-state', series: 'rural', x: 'india', label: 'Rural spending per person, a month' },
     { chart: 'clean-cooking-fuel-by-state', label: 'Households that cook with clean fuel' },
@@ -200,7 +200,7 @@ const topic: Topic = {
   parts: [
     {
       title: 'How much do households spend?',
-      lede: 'In 2023-24, rural spending per person ranged from ₹2,739 a month in Chhattisgarh to ₹9,377 in Sikkim. In every state and UT, urban households spent more per person than rural households.',
+      lede: 'In 2023-24, rural spending per person ranged from ₹2,739 a month in Chhattisgarh to ₹9,377 in Sikkim. Urban spending was higher in every state and UT.',
       blocks: [
         {
           chart: {

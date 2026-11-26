@@ -136,17 +136,17 @@ const topic: Topic = {
   hindi: 'कृषि',
   question: 'How much do farm households earn, and how many are in debt?',
   standfirst:
-    'In 2018-19, an agricultural household in rural India earned ₹10,218 a month, and more of it came from wages than from crops. This topic covers rural agricultural households only, from one survey: NSS round 77. Crop production and yields will follow.',
+    'In 2018-19, an agricultural household earned ₹10,218 a month, more of it from wages than from crops.',
   figures: [
     { chart: 'farm-income-by-state', label: 'Income of an agricultural household, a month' },
     { chart: 'farm-households-in-debt-by-state', label: 'Agricultural households in debt' },
-    { chart: 'farm-debt-by-land-size', series: 'loan', x: 'all sizes', label: 'Loan outstanding, average per agricultural household', period: '2019' },
+    { chart: 'farm-debt-by-land-size', series: 'loan', x: 'all sizes', label: 'Average loan, all agricultural households', period: '2019' },
   ],
   nextRelease: 'not announced',
   parts: [
     {
       title: 'How much does a farm household earn, and from what?',
-      lede: 'In 2018-19, an agricultural household earned ₹10,218 a month on average: ₹4,063 from wages, ₹3,798 from crops, ₹1,582 from animals, ₹641 from a non-farm business and ₹134 from land leased out.',
+      lede: 'In 2018-19, an agricultural household earned ₹10,218 a month on average: ₹4,063 from wages and ₹3,798 from crops.',
       blocks: [
         {
           chart: {
@@ -333,7 +333,7 @@ const topic: Topic = {
     },
     {
       title: 'Do farm households borrow from banks or from moneylenders?',
-      lede: 'In 2019, 69.6% of the amount that agricultural households owed came from institutions such as banks and co-operatives, and 30.7% from moneylenders, relatives and other non-institutional sources. Professional moneylenders gave 14.0%.',
+      lede: 'In 2019, banks, co-operatives and other institutions gave 69.6% of the amount that agricultural households owed. Professional moneylenders gave 14.0%.',
       blocks: [
         {
           chart: {
