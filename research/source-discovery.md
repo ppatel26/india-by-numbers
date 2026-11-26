@@ -257,11 +257,12 @@ rules above). It does not wait for the owner.
 
 ## Waiting on the owner
 
-- **Topic objects.** Five topics have no object yet: Crime and justice (tarazu), Living standards
-  (tiffin carrier), Trade (uru), Transport (Harappan cart), Agriculture (hal). Each prompt is in
-  `docs/design-direction.md`. Paper's image models cost about 1 credit each, and Paper asks that
-  images be generated only when the owner asks.
 - **Crop data permission.** Mail the Directorate of Economics and Statistics, Ministry of
   Agriculture and Farmers Welfare, for permission to reuse Agricultural Statistics at a Glance
   (desagri.gov.in Website Policies). Then remove its four files from `src/content/gated.ts` and
   chart them.
+  data.gov.in (checked 25 Nov 2026) carries only part of the same data under the Government Open
+  Data License - India, which needs no request: state yields for rice, wheat, gram and lentil,
+  2021-22 to 2023-24, and Agriculture Census holdings for 2005-06 and 2010-11 (plus 1970-71 to
+  2015-16 counts in a Rajya Sabha answer file). It has no long crop series from 1950-51 and no state
+  production for 2023-24 or 2024-25. Its data files need a data.gov.in API key.
