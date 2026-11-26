@@ -20,7 +20,7 @@ The brand colour is lac (लाख), the resin India used for sealing wax on off
 6. Faith objects are welcome on faith and culture pages.
 7. Million and billion by default, with a switch to lakh and crore (the owner chose this on 25 Nov 2026). The switch lists Million first. Hindi in the interface from launch.
 8. No cards for figures or charts. Figures sit in ruled ledger rows. Charts sit on the white ground under a 1 px rule. A tooltip or bottom sheet may keep one shadow ring.
-9. Nothing decorates the hero. No guide circles or construction lines.
+9. The topic hero is a coin face (see "Topic heroes: the die"). Nothing else decorates a hero: no guide circles or construction lines.
 
 ## Tokens
 
@@ -224,6 +224,14 @@ settled each point.
 - On hover or keyboard focus, the jaali opens out across the whole tile in 700 ms. The pointer light still brightens the lattice under the pointer, and the medallion still tilts toward it.
 - With reduced motion, the jaali changes at once, and there is no pointer light and no tilt.
 - The jaali stays on the tiles. It never goes behind a chart, a figure row or the hero (rules 8 and 9).
+
+### Topic heroes: the die (decided 26 Nov 2026)
+
+- A flat pigment hero read as plain. The topic hero is now the face of a large coin, cropped by the frame. The object is the coin's device.
+- Round it: a beaded rim, two hairline rings and a legend with the topic and the site, in English and Hindi, as on a struck coin.
+- The marks are struck, not printed: the ground a shade deeper, with a light edge below and a dark edge above. They carry no data and never sit on a chart.
+- One moment of motion: the die strikes (settles from 106% scale and fades in) when the page opens. Nothing moves with reduced motion.
+- On phones the rim and rings stay round the small object. The legend goes, because it would be too small to read.
 
 ## The design boards
 

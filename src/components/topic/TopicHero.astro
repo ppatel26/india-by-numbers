@@ -5,6 +5,7 @@ import FigureValue from '../FigureValue.astro'
 import type { Topic } from '~/content/types'
 import { emblemAlt } from '~/lib/emblems'
 import { pigments } from '~/lib/tokens'
+import { SITE } from '~/lib/site'
 
 interface Props {
   topic: Topic
@@ -13,6 +14,26 @@ const { topic } = Astro.props
 const pigment = pigments[topic.slug]
 /** No object yet: the text takes the full width, and nothing stands in for the object. */
 const alt = emblemAlt(topic.slug)
+
+/*
+ * The die: the hero is the face of a coin, cropped by the frame. The object is the device, and a
+ * legend runs round it, as on a struck coin: the topic and the site, in English and Hindi. The
+ * legend is struck into the ground, tone on tone, inside a beaded rim.
+ */
+const R = 186
+// The legend starts at the left and runs up over the top, so the topic name sits where the frame
+// does not crop it.
+const CIRC = 2 * Math.PI * R
+const legend = [
+  { text: topic.name.toUpperCase(), deva: false },
+  { text: topic.hindi, deva: true },
+  { text: SITE.name.toUpperCase(), deva: false },
+  { text: SITE.hindiName, deva: true },
+]
+// About 11 px a character at this size: repeat the legend while it fills less than the ring.
+const once = legend.reduce((n, l) => n + l.text.length + 3, 0) * 11
+const turns = Math.max(1, Math.floor(CIRC / once))
+const parts = Array.from({ length: turns }, () => legend).flat()
 ---
 
 <header class:list={['hero', pigment.text === 'light' ? 'on-dark' : 'on-light', { bare: alt === undefined }]} style={`--ground:${pigment.hex}`}>
@@ -27,7 +48,27 @@ const alt = emblemAlt(topic.slug)
         {topic.figures.map((f) => <FigureValue figure={f} />)}
       </div>
     </div>
-    {alt !== undefined && <Emblem name={topic.slug} alt={alt} eager />}
+    <div class="die">
+      <svg class="face" viewBox="-225 -225 450 450" aria-hidden="true" focusable="false">
+        <defs>
+          <path id={`legend-${topic.slug}`} d={`M ${-R} 0 A ${R} ${R} 0 1 1 ${R} 0 A ${R} ${R} 0 1 1 ${-R} 0`} />
+        </defs>
+        <circle class="rim" r="214" />
+        <circle class="line" r="205" />
+        <circle class="line" r="168" />
+        <text class="legend">
+          <textPath href={`#legend-${topic.slug}`} textLength={CIRC - 8} lengthAdjust="spacing">
+            {parts.map((l) => (
+              <>
+                <tspan class:list={{ deva: l.deva }}>{l.text}</tspan>
+                <tspan class="sep"> ✦ </tspan>
+              </>
+            ))}
+          </textPath>
+        </text>
+      </svg>
+      {alt !== undefined && <Emblem name={topic.slug} alt={alt} eager />}
+    </div>
   </div>
 </header>
 
@@ -35,6 +76,75 @@ const alt = emblemAlt(topic.slug)
   .hero {
     background: var(--ground);
     color: var(--ink);
+    overflow: hidden;
+  }
+  .die {
+    position: relative;
+    display: grid;
+    place-items: center;
+    flex-shrink: 0;
+    /* The rim reaches 74 px past the object: keep that clear of the figures. */
+    margin-left: 56px;
+  }
+  .die > :global(.emblem) {
+    position: relative;
+  }
+  /*
+   * Struck, not printed: the marks are the ground a shade deeper, with a light edge below and a
+   * dark edge above, so they read as cut into the surface.
+   */
+  .face {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 450px;
+    max-width: none;
+    height: 450px;
+    translate: -50% -50%;
+    overflow: visible;
+    --struck: color-mix(in oklab, var(--ground) 76%, black);
+    filter: drop-shadow(0 1px 0 rgb(255 255 255 / 0.22)) drop-shadow(0 -1px 0 rgb(0 0 0 / 0.14));
+  }
+  .rim {
+    fill: none;
+    stroke: var(--struck);
+    stroke-width: 7;
+    stroke-linecap: round;
+    stroke-dasharray: 0 15.5;
+  }
+  .line {
+    fill: none;
+    stroke: var(--struck);
+    stroke-width: 1.5;
+  }
+  .legend {
+    fill: var(--struck);
+    font: 400 16px var(--font-display);
+    letter-spacing: 0.12em;
+  }
+  .legend .deva {
+    font-family: var(--font-deva);
+    font-size: 18px;
+    letter-spacing: 0;
+  }
+  .legend .sep {
+    font-size: 12px;
+  }
+  /* One moment: the die strikes as the page opens. */
+  @media (prefers-reduced-motion: no-preference) {
+    .face {
+      animation: strike 900ms cubic-bezier(0.16, 1, 0.3, 1) 120ms both;
+    }
+    @keyframes strike {
+      from {
+        opacity: 0;
+        scale: 1.06;
+      }
+      to {
+        opacity: 1;
+        scale: 1;
+      }
+    }
   }
   .on-dark {
     color: var(--silver);
@@ -84,11 +194,22 @@ const alt = emblemAlt(topic.slug)
     color: var(--on-light-dim);
   }
   @media (max-width: 900px) {
-    /* Phones: a small object beside the title, and the three figures side by side. */
-    .inner > :global(.emblem) {
+    /* Phones: a small object beside the title, and the three figures side by side. The rim and
+       rings stay round it; the legend would be too small to read, so it goes. */
+    .face {
+      width: 120px;
+      height: 120px;
+    }
+    .legend {
+      display: none;
+    }
+    .die {
       position: absolute;
       top: 12px;
       right: 0;
+      margin-left: 0;
+    }
+    .die > :global(.emblem) {
       width: 88px !important;
       height: 88px !important;
     }
@@ -96,7 +217,7 @@ const alt = emblemAlt(topic.slug)
       min-width: 0;
     }
     .title {
-      padding-right: 92px;
+      padding-right: 108px;
     }
     .bare .title {
       padding-right: 0;
