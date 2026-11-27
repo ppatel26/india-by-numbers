@@ -283,6 +283,35 @@ const steps = page && chart.kind === 'states' ? timelineOf(chart) : []
     stroke: var(--ink);
     stroke-width: 2.5;
   }
+  /* Scatter and slope: the selected state in series-1, with its label shown. */
+  .chart :global(.is-sel .dot) {
+    fill: var(--s1);
+    r: 6px;
+  }
+  .chart :global(.is-sel .sel-label) {
+    display: inline;
+  }
+  .chart :global(.is-sel .pt-label),
+  .chart :global(.is-sel .slope-label) {
+    font-weight: 600;
+  }
+  .chart :global(.is-sel .slope-line) {
+    stroke: var(--s1);
+    stroke-width: 2.5;
+  }
+  .chart :global(.is-sel .slope-dot) {
+    fill: var(--s1);
+  }
+  .chart :global(.pt:hover .dot),
+  .chart :global(.pt:focus-within .dot) {
+    stroke: var(--ink);
+  }
+  .chart :global(.slope:hover .slope-line) {
+    stroke-width: 2.5;
+  }
+  .chart :global(.band:hover) {
+    fill-opacity: 0.6;
+  }
   .chart :global(.hit:hover),
   .chart :global(.row:hover) {
     fill-opacity: 1;
