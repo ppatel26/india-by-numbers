@@ -4,8 +4,8 @@ Run pipeline/international/fetch.sh first. Then, from the repository root:
 
     python3 -I pipeline/international/build_international.py
 
-Reads the World Bank WDI API responses (eight series, one panel of countries, one WDI update) and
-the UN DESA International Migrant Stock 2024 workbooks. Writes ten CSVs to
+Reads the World Bank WDI API responses (nine series, one panel of countries, one WDI update) and
+the UN DESA International Migrant Stock 2024 workbooks. Writes eleven CSVs to
 research/data/international/. Every value keeps the publisher's digits: WDI values are copied from
 the JSON text, UN DESA counts from the cells.
 
@@ -34,6 +34,7 @@ SERIES = [
     ("wdi-rd-spending.csv", "GB.XPD.RSDV.GD.ZS", "% of GDP", None, ""),
     ("wdi-researchers-per-million.csv", "SP.POP.SCIE.RD.P6", "researchers per million people", None, ""),
     ("wdi-journal-articles.csv", "IP.JRN.ARTC.SC", "articles", None, ""),
+    ("wdi-armed-forces-share-of-labour-force.csv", "MS.MIL.TOTL.TF.ZS", "% of labour force", None, ""),
 ]
 # Panel countries with no value at all in a series (UNESCO UIS has no R&D survey for Bangladesh).
 MISSING = {
@@ -75,6 +76,9 @@ CHECKS = [  # (csv, {column: value}, published value, where the publisher prints
     ("wdi-researchers-per-million.csv", dict(iso3="CHN", period="2020"), "1600.30633", "WDI API, SP.POP.SCIE.RD.P6"),
     ("wdi-journal-articles.csv", dict(iso3="IND", period="2023"), "228174.31", "WDI API, IP.JRN.ARTC.SC"),
     ("wdi-journal-articles.csv", dict(iso3="IND", period="1996"), "18904.78", "WDI API, IP.JRN.ARTC.SC"),
+    ("wdi-armed-forces-share-of-labour-force.csv", dict(iso3="IND", period="2020"), "0.576119558133425", "WDI API, MS.MIL.TOTL.TF.ZS"),
+    ("wdi-armed-forces-share-of-labour-force.csv", dict(iso3="IND", period="1990"), "0.409225569547725", "WDI API, MS.MIL.TOTL.TF.ZS"),
+    ("wdi-armed-forces-share-of-labour-force.csv", dict(iso3="PAK", period="2020"), "1.25177962110476", "WDI API, MS.MIL.TOTL.TF.ZS"),
     ("migrants-from-india-1990-2024.csv", dict(period="2024", sex="total"), "18533845", "Origin file, Table 1, India"),
     ("migrants-from-india-1990-2024.csv", dict(period="1990", sex="total"), "6575416", "Origin file, Table 1, India"),
     ("migrants-from-india-1990-2024.csv", dict(period="2024", sex="female"), "6631602", "Origin file, Table 1, India"),

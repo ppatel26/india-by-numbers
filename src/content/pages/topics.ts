@@ -147,6 +147,17 @@ const topics: TopicsPage = {
       latest: { date: '15 Sep 2026', label: 'Prison Statistics India 2024, revised, NCRB' },
       next: { date: 'Not announced', label: 'NCRB publishes Crime in India once a year. No date announced.' },
     },
+    defence: {
+      questions: [
+        'How much does the central government spend on defence, and how much of it is capital?',
+        'What share of central government spending goes to defence?',
+        'How is the 2026-27 defence budget split between pay, pensions, equipment and running costs?',
+        'How much defence equipment does India export, and how much comes from the public and the private sector?',
+        'How large are India\'s armed forces against its neighbours, as a share of the labour force?',
+      ],
+      latest: { date: '31 Jul 2026', label: 'RBI Handbook of Statistics 2025-26, Table 89; PIB release on defence exports, 2 Apr 2026' },
+      next: { date: 'Not announced', label: 'The Union Budget each February; defence exports each April.' },
+    },
     transport: {
       questions: [
         'How many people die on the roads per lakh people, in India and in each state?',

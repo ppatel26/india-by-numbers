@@ -72,6 +72,7 @@ Topic pigments (hero ground, home and topics tiles, topic tag; never a data colo
 | Transport | neel (washed indigo) | #8CA8E7 | ink 7.5:1 |
 | Agriculture | dhani (young paddy) | #88CD65 | ink 9.3:1 |
 | Science and technology | banafsha (sweet violet) | #CF96E2 | ink 7.7:1 |
+| Defence | khaki (dust-dyed cloth) | #BBA97E | ink 7.7:1 |
 
 Kattha (added 25 Nov 2026) sits at OKLCH L 0.452, C 0.086, H 60, in the gap between lac (H 27) and mehendi (H 122). Its nearest pigment is mehendi (OKLab distance 0.092).
 
@@ -105,6 +106,7 @@ Made with Paper's image models: nano-banana-2-1 for objects, nano-banana-pro for
 | Transport | Harappan two-wheeled cart with solid wheels | Silver |
 | Agriculture | Hal, the Indian ard plough, after the Banawali model | Silver |
 | Science and technology | Aryabhata, India's first satellite (1975) | Silver |
+| Defence | Dhal, the round Indian shield | Silver |
 
 The five objects added on 25 Nov 2026 (tarazu, tiffin carrier, uru, Harappan cart, hal) are on the
 Paper page "05 - Topic objects, new topics". Each was made with nano-banana-2-1 on its pigment, from
@@ -255,6 +257,42 @@ earlier Muse votes below.
   `pipeline/emblems/cutout.py`.
 - Order: after Education, 3 of 3. Educational institutions file more than half of Indian patent
   applications, so research sits next to education.
+
+### Defence (decided 27 Nov 2026)
+
+The owner asked for Defence, AI advances and Human rights. A research pass found official,
+licence-clear data for Defence (RBI Table 89, PIB releases, WDI armed forces), none for AI as a
+topic, and NCRB tables for the human rights questions. The council (GPT 6.2 Sol, Gemini 4 Neon,
+Muse Wonder Full 1.0) decided:
+
+- Defence is a new topic now, 3 of 3. Name "Defence", slug `defence`, Hindi draft रक्षा, 3 of 3.
+- Order: after Crime and justice, 2 of 3 (GPT, Gemini); Muse put it before Crime and justice.
+- Pigment khaki #BBA97E with ink text: khaki 2 of 3 in round 1 (Gemini #C4BBA8, Muse #BBA97E; GPT
+  proposed loha #383B40), and #BBA97E 3 of 3 in round 2. OKLCH L 0.740, C 0.062, H 88. Nearest
+  pigment haldi (OKLab 0.104), then kesar (0.111). Ink 7.7:1. It reads as dyed khaki and stands
+  0.226 from the band grey #F2F1EE, where #C4BBA8 (0.166) came close to it.
+- Object: a silver dhal, the round Indian shield, 3 of 3: defensive, from the material record, no
+  weapon pointed at the viewer, and readable by its dome and four bosses. Made on 27 Nov 2026 in
+  Paper. The first image read as a flat lid, so the prompt asked for a hand-forged, strongly domed
+  shield: "Three-quarter studio view of a traditional Indian dhal, a round hand-forged shield from a
+  museum collection, strongly domed like a shallow bowl seen from its outer face, four raised conical
+  bosses set in a diamond at the centre, a broad flat rim band with a raised lip, subtle hammered
+  texture, all in brushed silver, resting upright on its edge, crisp shadows, one soft key light
+  from the top left, no text, engravings, crests, emblems, flags or insignia, no weapons, centred on
+  a flat matte khaki backdrop (#BBA97E), no gradient, no vignette." Then
+  openai-gpt-image-edit-2-6 to a transparent background, as for the other light pigments. The first
+  cut kept part of the cast shadow, so a second edit asked it to remove the floor and every trace of
+  the shadow and keep the shield unchanged.
+- Pensions, 3 of 3: a method choice. RBI's series, which leaves out defence pensions, is the only
+  long series of spending. PIB's budget total, which counts pensions, appears only in its own chart,
+  with its scope stated. Never join or derive one from the other.
+- Human rights: a part in Crime and justice, not a topic, 3 of 3, because every series is NCRB and a
+  "Human rights" label passes a verdict the counts cannot carry. Title: a plain question that names
+  the subjects, 2 of 3 in round 2 (Gemini, Muse); GPT preferred "Recorded crimes and deaths in
+  custody".
+- AI advances: no topic, 3 of 3. At most one chart in Science and technology, titled by its real
+  measure (for example patent applications in computer technology), and only if WIPO's terms allow
+  reuse; Muse voted to wait.
 
 ### Topic tiles: the jaali (decided 25 Nov 2026)
 

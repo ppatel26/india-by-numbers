@@ -15,7 +15,7 @@ mkdir -p "$raw/wdi" "$raw/wpp-2024" "$raw/ilostat" "$raw/undesa"
 api="https://api.worldbank.org/v2"
 # Rule R6 (research/source-discovery.md): the default panel. Never change it to change India's rank.
 countries="IND;BGD;PAK;NPL;LKA;CHN;IDN;WLD"
-indicators="NY.GDP.PCAP.PP.KD SP.DYN.LE00.IN SP.DYN.TFRT.IN EN.GHG.CO2.PC.CE.AR5 SL.TLF.CACT.FE.ZS GB.XPD.RSDV.GD.ZS SP.POP.SCIE.RD.P6 IP.JRN.ARTC.SC"
+indicators="NY.GDP.PCAP.PP.KD SP.DYN.LE00.IN SP.DYN.TFRT.IN EN.GHG.CO2.PC.CE.AR5 SL.TLF.CACT.FE.ZS GB.XPD.RSDV.GD.ZS SP.POP.SCIE.RD.P6 IP.JRN.ARTC.SC MS.MIL.TOTL.TF.ZS"
 "$fetch" --raw "$raw" "$api/sources/2?format=json" "wdi/source.json"
 for i in $indicators; do
   "$fetch" --raw "$raw" "$api/country/$countries/indicator/$i?source=2&format=json&per_page=2000" "wdi/$i.data.json"

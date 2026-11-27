@@ -18,6 +18,7 @@ export const TOPICS = [
   'science-and-technology',
   'elections',
   'crime-and-justice',
+  'defence',
   'transport',
   'climate',
   'religion-and-culture',
