@@ -142,7 +142,7 @@ const topics: TopicsPage = {
         'How many murders and crimes against women do the police record?',
         'What share of cases end in a charge-sheet, and what share of trials in a conviction?',
         'How full are the prisons, and how many prisoners are undertrials?',
-        'How many cases wait in the district courts and the High Courts?',
+        'What do the police record on crimes against Scheduled Castes and Scheduled Tribes, and on deaths in custody?',
       ],
       latest: { date: '15 Sep 2026', label: 'Prison Statistics India 2024, revised, NCRB' },
       next: { date: 'Not announced', label: 'NCRB publishes Crime in India once a year. No date announced.' },

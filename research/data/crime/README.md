@@ -18,7 +18,7 @@ The Crime and justice topic (`src/content/topics/crime-and-justice.ts`) uses the
 
 ## Sources
 
-All read on 25 Nov 2026. NCRB pages say "All Rights Reserved" and state no reuse licence. The Parliament answers state no licence. The sha256 of each raw file is in "Raw files" below.
+All read on 25 Nov 2026. NCRB pages say "All Rights Reserved" and state no reuse licence. The Parliament answers carry no licence of their own, but the sansad.in portal that holds them does (read 27 Nov 2026, https://sansad.in/ls/privacyPolicy): "Contents of this portal may not be reproduced partially or fully, without due permission from the Parliament of India and National Informatics Centre." The two pendency CSVs are therefore listed in `src/content/gated.ts` and no page shows them until that permission is kept (council, 27 Nov 2026, 3 of 3). The sha256 of each raw file is in "Raw files" below.
 
 | Publisher | Release | Release date | Period | Link |
 | --- | --- | --- | --- | --- |

@@ -276,6 +276,14 @@ rules above). It does not wait for the owner.
   2021-22 to 2023-24, and Agriculture Census holdings for 2005-06 and 2010-11 (plus 1970-71 to
   2015-16 counts in a Rajya Sabha answer file). It has no long crop series from 1950-51 and no state
   production for 2023-24 or 2024-25. Its data files need a data.gov.in API key.
+- **Parliament permission for court pendency.** Mail the Lok Sabha and Rajya Sabha Secretariats and
+  NIC for permission to reuse answers from sansad.in (its Copyright Policy). Then remove the two
+  pendency files from `src/content/gated.ts` and restore the part "How many cases wait in the
+  courts?" from git history (commit e2756a0 has it). In parallel, ask the Department of Justice for
+  the same NJDG figures under its own terms.
+- **Parliamentary Affairs permission.** Mail the Ministry of Parliamentary Affairs for its
+  Statistical Handbook (sittings, bills, ordinances, disruptions since 1952): the data for a
+  Parliament topic.
 - **R&D and telecom permission.** Mail NSTMIS, Department of Science and Technology
   (nstmis-dst.org Copyrights Policy), and TRAI (trai.gov.in Website Policy) for permission to reuse
   R&D Statistics 2025-26 and the Yearly Performance Indicators. Then build their CSVs from the raw

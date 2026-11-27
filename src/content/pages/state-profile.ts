@@ -206,10 +206,9 @@ const stateProfile: StateProfile = {
         { label: 'Conviction rate', chart: 'chargesheeting-and-conviction-by-state', series: 'conviction' },
         { label: 'Prison occupancy', chart: 'prison-occupancy-by-state' },
         { label: 'Undertrials, share of prisoners', chart: 'undertrials-by-state' },
-        { label: 'Cases pending in district courts', chart: 'district-court-pendency-by-state' },
       ],
       footnote:
-        'Ranks count only states and UTs with data. Recorded crime rows have no rank: a higher recorded rate can mean better registration, not more crime, and NCRB says states should not be compared on crime figures alone. Crimes against Scheduled Castes and Scheduled Tribes are per lakh people of each group at Census 2011. Prisons as on 31 Dec 2024. Pending cases are a count on 30 Jul 2026, not a rate.',
+        'Ranks count only states and UTs with data. Recorded crime rows have no rank: a higher recorded rate can mean better registration, not more crime, and NCRB says states should not be compared on crime figures alone. Crimes against Scheduled Castes and Scheduled Tribes are per lakh people of each group at Census 2011. Prisons as on 31 Dec 2024.',
     },
     {
       topic: 'transport',

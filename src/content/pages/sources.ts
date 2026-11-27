@@ -312,19 +312,6 @@ const PUBLISHERS: readonly Publisher[] = [
     site: 'https://www.ncrb.gov.in',
   },
   {
-    short: 'MoLJ',
-    logos: [],
-    full: 'Department of Justice, Ministry of Law and Justice',
-    topics: ['crime-and-justice'],
-    dataSets: [
-      { name: 'Answers in Parliament on court pendency', detail: 'Cases pending in the district courts, High Courts and the Supreme Court, from NJDG', rhythm: 'When a question is asked', match: /unstarred question/ },
-    ],
-    licence: NOT_STATED,
-    access: ['Answers to Lok Sabha and Rajya Sabha questions as PDF (sansad.in)'],
-    note: 'Each answer quotes the National Judicial Data Grid (NJDG) on a stated date. NJDG is a live dashboard.',
-    site: 'https://doj.gov.in',
-  },
-  {
     short: 'IP India',
     logos: [],
     full: 'Office of the Controller General of Patents, Designs, Trade Marks and Geographical Indications, Department for Promotion of Industry and Internal Trade',
@@ -412,6 +399,10 @@ const sources: SourcesPage = {
       {
         source: 'MoSPI, EnviStats India 2025',
         why: 'A scanned PDF with a chart and no table of values.',
+      },
+      {
+        source: 'Answers in Parliament on court pendency, Department of Justice (sansad.in)',
+        why: 'The sansad.in Copyright Policy allows reproduction only with the permission of the Parliament of India and NIC. We have not asked yet, so the pendency charts wait for a reply. The data are kept in research/data/crime.',
       },
       {
         source: 'Department of Justice, compilation of pendency answers (doj.gov.in)',

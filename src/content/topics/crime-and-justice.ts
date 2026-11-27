@@ -3,7 +3,6 @@ import type { Breakpoint, Color, Series, Source, Topic } from '../types'
 // Sources: research/data/crime/README.md, "Sources" and "Raw files".
 
 const NCRB = 'NCRB, Ministry of Home Affairs'
-const DOJ = 'Department of Justice, Ministry of Law and Justice'
 const UPLOADS = 'https://www.ncrb.gov.in/uploads/'
 
 // NCRB gives no release date for Crime in India 2024, on the year page or in the volumes. News
@@ -67,28 +66,6 @@ const PSI_SUMMARIES: readonly Source[] = [
   psiSummary(2016, '2022/July/11/custom/psi/psi-executive-summary-2016.pdf'),
 ]
 
-// Parliament answers: the release date is the date of the answer.
-const ls3295: Source = {
-  publisher: DOJ,
-  release: 'Lok Sabha unstarred question 3295, Case Pendency in Judiciary',
-  released: '2026-08-07',
-  url: 'https://elibrary.sansad.in/server/api/core/bitstreams/66563714-2b9c-4a02-884f-3893b5b6e128/content',
-}
-
-const ls3371: Source = {
-  publisher: DOJ,
-  release: 'Lok Sabha unstarred question 3371, Cases Pendency and e-Courts Project',
-  released: '2026-08-07',
-  url: 'https://sansad.in/getFile/lsapps/loksabhaquestions/annex/188/AU3371_Lq6K9K.pdf',
-}
-
-const rs597: Source = {
-  publisher: DOJ,
-  release: 'Rajya Sabha unstarred question 597, Pending cases in Indian courts',
-  released: '2026-07-23',
-  url: 'https://sansad.in/getFile/annex/271/AU597_ZRzDHo.pdf?source=pqars',
-}
-
 const BY_STATE = 'crime/crime-by-state-2024.csv'
 const TREND = 'crime/crime-india-trend.csv'
 const MURDER = 'crime/murder-by-state-2024.csv'
@@ -96,8 +73,6 @@ const WOMEN = 'crime/crimes-against-women-by-state-2024.csv'
 const DISPOSAL = 'crime/police-and-court-disposal-by-state-2024.csv'
 const PRISONS = 'crime/prisons-by-state-2024.csv'
 const PRISONS_TREND = 'crime/prisons-india-trend.csv'
-const DISTRICT = 'crime/court-pendency-district-by-state.csv'
-const HIGH = 'crime/court-pendency-high-courts.csv'
 const SC_ST = 'crime/crimes-against-scs-sts-by-state-2024.csv'
 const CUSTODY = 'crime/deaths-in-police-custody-2024.csv'
 const PRISON_DEATHS = 'crime/prison-deaths-2024.csv'
@@ -163,9 +138,6 @@ const HRV_TYPES = ['encounter-killing', 'deaths-in-custody', 'illegal-detention'
 const noRate = (group: string, places: readonly string[]): Record<string, string> =>
   Object.fromEntries(places.map((p) => [p, `NCRB prints no rate: it gives the ${group} population of Census 2011 as 0.0 lakh`]))
 
-/** Year-end pendency from LS 3295. The answer gives 2021 and 2022 with no day. */
-const YEAR_END = ['2021', '2022', '2023-12-31', '2024-12-31', '2025-12-31']
-
 // Know lines that several charts share.
 const REGISTRATION_KNOW =
   'NCRB counts the cases that the police register (first information reports, or FIRs). A higher recorded rate can mean that more crimes are reported and registered, not that more crimes happen. A low rate can mean that crimes go unregistered.'
@@ -196,20 +168,17 @@ const CENSUS_BASE_KNOW =
 const NHRC_KNOW =
   'The National Human Rights Commission (NHRC) also counts deaths in custody, from the reports that it receives. Its counts differ from NCRB counts. This page shows NCRB counts only and does not combine the two.'
 
-const NJDG_KNOW =
-  'Each answer quotes the National Judicial Data Grid (NJDG) on a stated date. NJDG is a live dashboard, and counts for nearby dates can differ by more than real change. Gujarat had 19,67,723 cases on 9 Mar 2026 and 15,60,074 on 23 Mar 2026.'
-
 const topic: Topic = {
   slug: 'crime-and-justice',
   name: 'Crime and justice',
   hindi: 'अपराध और न्याय',
-  question: 'How much crime do the police record, and how full are the prisons and courts?',
+  question: 'How much crime do the police record, and how full are the prisons?',
   standfirst:
     'In 2024, the police recorded 418.9 cognizable crimes for every lakh people. Of all prisoners, 72.5% were undertrials.',
   figures: [
     { chart: 'crime-rate-by-state', label: 'Cognizable crimes recorded per lakh people' },
     { chart: 'undertrials-by-state', label: 'Prisoners who are undertrials' },
-    { chart: 'district-court-pendency-by-state', label: 'Cases pending in district courts', format: { scale: 'crore', decimals: 2 } },
+    { chart: 'prison-occupancy-by-state', label: 'Prison occupancy' },
   ],
   nextRelease: 'not announced',
   parts: [
@@ -522,81 +491,6 @@ const topic: Topic = {
       ],
     },
     {
-      title: 'How many cases wait in the courts?',
-      lede: 'On 30 July 2026, {{49911920 crore 2}} cases were pending in the district and subordinate courts, and {{6466970 lakh 2}} in the High Courts. The Supreme Court had 95,954.',
-      blocks: [
-        {
-          chart: {
-            kind: 'columns',
-            slug: 'court-pendency-india',
-            checked: CHECKED,
-            title: 'Cases pending in the courts of India, 2021 to 2025',
-            subtitle: 'Cases pending at the end of each year, in the district and subordinate courts and in the 25 High Courts. Panels have different scales.',
-            punches: { office: 'MoLJ', unit: 'cases', period: '2021-2025' },
-            note: 'From one Lok Sabha answer, which quotes NJDG. It gives 2021 and 2022 with no date. The values for 2023 to 2025 are as on 31 December.',
-            sources: [ls3295],
-            format: { scale: 'crore', decimals: 2 },
-            series: [
-              { key: 'district', label: 'District and subordinate courts', color: 'ink', file: DISTRICT, where: { geography: 'india', case_type: 'all', pending_for: 'all', period: YEAR_END } },
-              { key: 'high', label: 'High Courts', color: 'ink', file: HIGH, where: { court: 'high-courts-total', case_type: 'all', pending_for: 'all', period: YEAR_END }, format: { scale: 'lakh', decimals: 2 } },
-            ],
-            panels: [
-              { label: 'District and subordinate courts, crore', series: ['district'], own: true },
-              { label: 'High Courts, lakh', series: ['high'], own: true },
-            ],
-            know: [
-              'Pendency is a count of cases, not a rate. The answers give no population or number of judges to divide by.',
-              NJDG_KNOW,
-              'For a trend, use these year-end values from one answer. Do not read a change between two nearby dates in different answers as a trend.',
-              'The High Courts total does not include the Supreme Court. The Supreme Court had 92,101 cases pending at the end of 2025.',
-              'A Lok Sabha answer of 13 Feb 2026 gives the same values for 2023 to 2025 and dates them to 31 December.',
-            ],
-            processing: [
-              'Read Annexures I and II of Lok Sabha unstarred question 3295 (7 Aug 2026).',
-              'Check that the states add up to the Total row in each annexure.',
-              'Check 2023 to 2025 against Lok Sabha unstarred question 2362 (13 Feb 2026). All agree.',
-            ],
-            nextRelease: 'not announced',
-          },
-        },
-        {
-          text: 'At the end of 2025, {{47657328 crore 2}} cases were pending in the district courts, against {{41053498 crore 2}} in 2021. On 16 July 2026, {{5437032 lakh 2}} district court cases had been pending for more than 10 years. Uttar Pradesh had the most pending cases on 30 July 2026, {{11990328 crore 2}}, then Maharashtra with {{6170497 lakh 2}}. These are counts, not rates: states with more people have more cases.',
-        },
-        {
-          chart: {
-            kind: 'states',
-            slug: 'district-court-pendency-by-state',
-            checked: CHECKED,
-            title: 'Cases pending in district courts by state, 30 Jul 2026',
-            subtitle: 'Cases pending in the district and subordinate courts of each state and UT. Darker means more cases.',
-            punches: { office: 'MoLJ', unit: 'cases', period: '30 Jul 2026' },
-            note: 'A count, not a rate: states with more people have more cases. From a Lok Sabha answer of 7 Aug 2026, which quotes NJDG.',
-            sources: [ls3371, rs597],
-            format: { scale: 'none', decimals: 0 },
-            data: { file: DISTRICT, where: { period: '2026-07-30', case_type: 'all', pending_for: 'all' }, x: 'geography' },
-            total: true,
-            open: 'map',
-            scale: 'seq',
-            bins: [10000, 100000, 500000, 1000000, 3000000],
-            short: 'Cases pending, district courts',
-            know: [
-              'Pendency is a count of cases, not a rate. The answer gives no population or number of judges to divide by.',
-              NJDG_KNOW,
-              'A Rajya Sabha answer of 23 Jul 2026 gives cases by age on 16 Jul 2026: 54,37,032 district court cases had been pending for more than 10 years, 23,09,086 of them in Uttar Pradesh.',
-              'High Courts are not on this map: seven High Courts serve more than one state or UT.',
-            ],
-            processing: [
-              'Read Annexure II of Lok Sabha unstarred question 3371 (7 Aug 2026), as on 30 Jul 2026.',
-              'Check that the states add up to the Total row. Check Uttar Pradesh (1,19,90,328) against the annexure.',
-              'Read cases by age from Annexure II of Rajya Sabha unstarred question 597 (23 Jul 2026).',
-              'Match state names to the site geography table.',
-            ],
-            nextRelease: 'not announced',
-          },
-        },
-      ],
-    },
-    {
       title: 'What do the police record on crimes against Scheduled Castes and Scheduled Tribes, deaths in custody, trafficking and missing children?',
       lede: 'In 2024, the police recorded 55,698 crimes against Scheduled Castes and 9,966 against Scheduled Tribes. NCRB recorded 65 deaths in police custody and 1,953 deaths in prisons.',
       blocks: [
@@ -898,19 +792,19 @@ const topic: Topic = {
     intro:
       'NCRB counts the crimes that the police register, not all crimes. A higher recorded crime rate can mean better registration, not more crime. NCRB counts only the principal offence in each case, and computes rates with its own population base. These figures do not show which states are safer: NCRB says states should not be compared on crime figures alone.',
     publisher:
-      'The National Crime Records Bureau (NCRB), Ministry of Home Affairs, publishes Crime in India and Prison Statistics India. Court pendency comes from answers by the Department of Justice, Ministry of Law and Justice (MoLJ), in the Lok Sabha and the Rajya Sabha. Each answer quotes the National Judicial Data Grid (NJDG).',
+      'The National Crime Records Bureau (NCRB), Ministry of Home Affairs, publishes Crime in India and Prison Statistics India.',
     frequency:
-      'Crime in India and Prison Statistics India: once a year. NCRB gives no release date for Crime in India 2024. Prison Statistics India 2024 came out on 6 May 2026 and was revised on 15 Sep 2026. Pendency: in answers to questions in Parliament, with no fixed schedule. No date published for the next releases.',
+      'Crime in India and Prison Statistics India: once a year. NCRB gives no release date for Crime in India 2024. Prison Statistics India 2024 came out on 6 May 2026 and was revised on 15 Sep 2026. No date published for the next releases.',
     revisions:
-      "NCRB revises counts in later editions, so the national trend uses the latest edition that prints each year. This page uses the revised Prison Statistics India 2024, with West Bengal's 2024 data. NJDG is a live dashboard: counts for nearby dates can differ.",
+      "NCRB revises counts in later editions, so the national trend uses the latest edition that prints each year. This page uses the revised Prison Statistics India 2024, with West Bengal's 2024 data.",
     breaks:
       'The Bharatiya Nyaya Sanhita (BNS) replaced the Indian Penal Code (IPC) on 1 July 2024, and NCRB links part of the fall in 2024 to it: simple hurt and criminal intimidation are no longer cognizable. NCRB also changed the population base of its rates in 2018 and in 2020. The national crime rate chart breaks at each change. NCRB rates of crimes against Scheduled Castes and Scheduled Tribes use the Census 2011 population of each group, not a projection.',
     coverage:
-      'India and all 36 states and UTs. Crime: calendar year 2024, with national rates from 2015. Prisons: 31 December 2024, with India from 2014. Crimes against Scheduled Castes and Scheduled Tribes, deaths in police custody and in prisons, trafficking and missing children: 2024. Deaths by cause and cases against police for human right violation are shown for India only. Courts: district courts by state on 30 July 2026, and year-end totals for India from 2021. High Courts and the Supreme Court are shown for India only.',
+      'India and all 36 states and UTs. Crime: calendar year 2024, with national rates from 2015. Prisons: 31 December 2024, with India from 2014. Crimes against Scheduled Castes and Scheduled Tribes, deaths in police custody and in prisons, trafficking and missing children: 2024. Deaths by cause and cases against police for human right violation are shown for India only.',
     missing:
-      'No crime figures for cities. No trend in the charge-sheeting or conviction rate. No data on how long undertrials are held. Murder and crimes against women rates start in 2017. High Court pendency is not shown by state, because seven High Courts serve more than one state or UT. No custody death counts from the National Human Rights Commission (NHRC): they differ from NCRB counts, and this page does not combine the two. No trend in deaths in custody before 2024. No publisher states a reuse licence; NCRB pages say "All Rights Reserved".',
+      'No crime figures for cities. No trend in the charge-sheeting or conviction rate. No data on how long undertrials are held. Murder and crimes against women rates start in 2017. No court pendency: the Department of Justice gives it in answers to questions in Parliament, and sansad.in, which holds the answers, allows reuse only with the permission of Parliament. The figures wait for that permission. No custody death counts from the National Human Rights Commission (NHRC): they differ from NCRB counts, and this page does not combine the two. No trend in deaths in custody before 2024. No publisher states a reuse licence; NCRB pages say "All Rights Reserved".',
   },
-  sources: [cii2024v1, cii2024v2, cii2024v3, ...CII_EDITIONS, psi2024, ...PSI_SUMMARIES, ls3295, ls3371, rs597],
+  sources: [cii2024v1, cii2024v2, cii2024v3, ...CII_EDITIONS, psi2024, ...PSI_SUMMARIES],
   related: [
     { label: 'Population: Population projection', href: '/charts/population-projection/' },
     { label: 'Elections: Lok Sabha turnout by state', href: '/charts/lok-sabha-turnout-by-state/' },

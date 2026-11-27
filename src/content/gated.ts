@@ -14,7 +14,12 @@ export interface GatedFile {
 const ASG =
   'Agricultural Statistics at a Glance 2024-25: the publisher allows reuse only "after taking proper permission by sending a mail to us" (desagri.gov.in Website Policies). The owner has not asked yet.'
 
+const SANSAD =
+  'Answers to Lok Sabha and Rajya Sabha questions downloaded from sansad.in. Its Copyright Policy says: "Contents of this portal may not be reproduced partially or fully, without due permission from the Parliament of India and National Informatics Centre." The owner has not asked yet (council, 27 Nov 2026, 3 of 3).'
+
 export const GATED: readonly GatedFile[] = [
+  { file: 'crime/court-pendency-district-by-state.csv', reason: SANSAD },
+  { file: 'crime/court-pendency-high-courts.csv', reason: SANSAD },
   { file: 'agriculture/crop-area-production-yield-india.csv', reason: ASG },
   { file: 'agriculture/crop-yield-by-state.csv', reason: ASG },
   { file: 'agriculture/crop-production-by-state.csv', reason: ASG },

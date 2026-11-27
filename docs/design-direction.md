@@ -294,6 +294,24 @@ Muse Wonder Full 1.0) decided:
   measure (for example patent applications in computer technology), and only if WIPO's terms allow
   reuse; Muse voted to wait.
 
+### Politics and Parliament sources (decided 27 Nov 2026)
+
+The owner suggested politics as a topic. The council (GPT 6.2 Sol, Gemini 4 Neon, Muse Wonder Full
+1.0) decided, 3 of 3 on each point:
+
+- No Politics topic yet. Only representation data are licence-clear, so they become a part in
+  Elections on women in elected office: women in panchayats by state (MoPR, as on 31 Mar 2025)
+  first, then women MLAs by state and women in the Union Council of Ministers (MoSPI, Women and Men
+  in India 2025), with the publisher's gaps and mixed election years shown as published.
+- Leave out the WDI women in parliament series: its source, IPU, licenses it CC BY-NC-SA 4.0, which
+  conflicts with the site's CC BY 4.0, as SIPRI's terms did for military spending.
+- The court pendency charts read answers downloaded from sansad.in, whose policy requires
+  Parliament's permission. Gate the two pendency CSVs and take the charts, the headline figure and
+  the state-profile row off the site until the permission is kept. The headline figure becomes
+  prison occupancy.
+- No electoral bond charts: ECI published row-level records, not totals, so any total would be the
+  site's own sum over thousands of rows on the most charged data set.
+
 ### Topic tiles: the jaali (decided 25 Nov 2026)
 
 - At rest, a faint jaali (13% of the text colour) spreads out from the medallion and fades before the topic name. A flat tile with no lattice read as dull.
