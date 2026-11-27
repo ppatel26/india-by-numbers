@@ -201,11 +201,18 @@ function treemapTable(chart: Of<'treemap'>): TableModel {
 /** One row per flow: from, to, value. */
 function sankeyTable(chart: Of<'sankey'>): TableModel {
   const flows = checkFlows(chart)
+  // The values as published, in the data file's unit (₹ crore), not scaled for the chart.
+  const unit = flows[0]?.row.unit?.replace(/^Rs\b/, '₹') || chart.punches.unit
   return {
-    columns: ['From', 'To', chart.punches.unit],
+    columns: ['From', 'To', unit],
     rows: flows.map((f) => {
-      const pt: Point = { x: `${f.from}|${f.to}`, label: '', t: NaN, y: f.value, raw: f.raw, row: f.row }
-      return { key: pt.x, head: nodeName(chart, f.from), cells: [{ shown: { text: nodeName(chart, f.to) }, raw: nodeName(chart, f.to) }, cell(chart, pt)] }
+      const v = formatNumber(f.value, { scale: 'none' }, f.raw)
+      const derived = f.row.derived === 'derived' ? ' (derived)' : ''
+      return {
+        key: `${f.from}|${f.to}`,
+        head: nodeName(chart, f.from),
+        cells: [{ shown: { text: nodeName(chart, f.to) }, raw: nodeName(chart, f.to) }, { shown: { text: v.text + derived, alt: v.alt && v.alt + derived }, raw: f.raw }],
+      }
     }),
   }
 }

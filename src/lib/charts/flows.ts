@@ -67,7 +67,9 @@ export function checkFlows(chart: Sankey): Flow[] {
   if (!flows.length) throw new Error(`${chart.slug}: no flows`)
   const bad = imbalances(flows, chart.tolerance ?? 0)
   if (bad.length) throw new Error(`${chart.slug}: flows do not reconcile at ${bad.map((b) => `${b.node} (in ${b.in}, out ${b.out})`).join('; ')}`)
-  depths(flows)
+  // The council's limits (docs/design-direction.md): two or three columns, at most 12 nodes in each.
+  const cols = Map.groupBy(depths(flows), ([, d]) => d)
+  if (cols.size > 3 || [...cols.values()].some((ns) => ns.length > 12)) throw new Error(`${chart.slug}: a Sankey has at most three columns of at most 12 nodes`)
   return flows
 }
 

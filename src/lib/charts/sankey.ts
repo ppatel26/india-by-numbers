@@ -32,8 +32,9 @@ export function renderSankey(chart: Sankey, width: Width): Markup {
 
 function renderBands(chart: Sankey, flows: Flow[], width: Width): Markup {
   const W = WIDTH[width]
-  const plotH = 400
-  const top = 24
+  const plotH = 360
+  // Room above the plot for the two-line label of a middle node.
+  const top = 40
   const { nodes, links } = layoutFlows(flows, plotH, 10)
   const cols = Math.max(...nodes.map((n) => n.col)) + 1
   const nodeW = 12
@@ -86,9 +87,7 @@ function renderBands(chart: Sankey, flows: Flow[], width: Width): Markup {
     return svg`<rect class="node" x="${colX(n.col)}" y="${top + n.y0}" width="${nodeW}" height="${Math.max(1, n.y1 - n.y0)}" fill="var(--ink)"${tipAttr(tip)}/>`
   })
   const H = top + plotH + 12
-  // A middle column needs room above for its two-line label.
-  const lift = nodes.some((n) => n.col > 0 && n.col < cols - 1 && n.y0 < 34) ? 34 : 0
-  return frame(width, H + lift, chart.title, svg`<g transform="translate(0,${lift})"><g class="bands">${links.map(band)}</g>${rects}${Array.from({ length: cols }, (_, c) => labels(c))}</g>`)
+  return frame(width, H, chart.title, svg`<g class="bands">${links.map(band)}</g>${rects}${Array.from({ length: cols }, (_, c) => labels(c))}`)
 }
 
 /** Phones: each side as a list, a bar for each part's share of the total. */

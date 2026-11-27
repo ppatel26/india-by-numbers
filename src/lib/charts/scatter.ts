@@ -68,7 +68,8 @@ export function renderScatter(chart: Of<'scatter'>, width: Width): Markup {
   const yTicks = y.ticks(5)
   const tickW = Math.max(...yTicks.map((t, i) => fmt(t, { ...fy, decimals: undefined, ...(i === yTicks.length - 1 ? {} : { unit: fy?.unit === '%' ? '%' : '' }) }).length))
   const m = { top: 34, right: compact ? 12 : 20, bottom: 52, left: Math.max(36, tickW * 7 + 14) }
-  const plotH = width === 'wide' ? 400 : width === 'half' ? 330 : 300
+  // Short enough that the social image (1200 by 630) can show the plot, not its table.
+  const plotH = width === 'wide' ? 340 : width === 'half' ? 330 : 300
   const missLines = wrapList('No data:', none.map((p) => p.name), Math.floor(W / 6.4))
   const H = m.top + plotH + m.bottom + (missLines.length ? 8 + missLines.length * 17 : 0)
   y.range([m.top + plotH, m.top])
