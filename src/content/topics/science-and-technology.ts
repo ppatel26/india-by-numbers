@@ -31,12 +31,36 @@ const ar1415: Source = {
   url: 'https://ipindia.gov.in/storage/uploads/docs-operator/d6c55361-1cf1-46a7-b98f-01cbd944b657.pdf',
 }
 
+// The income and population sources of the per-person chart, as the Economy and Population pages cite them.
+const STATE_API: Source = {
+  publisher: 'MoSPI (NSO)',
+  release: 'eSankhyiki API, state accounts: per capita NSDP (indicator 25) and GSDP growth (indicator 26), base 2011-12',
+  released: '2026-04-15',
+  url: 'https://api.mospi.gov.in/api/nas/getNASData?base_year=2011-12&series=Current&frequency_code=Annually&indicator_code=25',
+}
+
+const RBI_TABLE_9: Source = {
+  publisher: 'RBI',
+  release: 'Handbook of Statistics on Indian Economy 2025-26, Tables 9 and 10: Per Capita Net State Domestic Product, state-wise',
+  released: '2026-07-31',
+  url: 'https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/9T_HBIE31072026A3F18AB442CE4A23BEC929D29B406162.XLSX',
+}
+
+const PROJECTIONS: Source = {
+  publisher: 'MoHFW, National Commission on Population',
+  release: 'Population Projections for India and States 2011-2036, Report of the Technical Group, Table 8',
+  released: '2020-07',
+  url: 'https://www.mohfw-dohfw.gov.in/static/uploads/2025/10/1c3c2048814bd3747f44e661f8547055.pdf',
+}
+
 // ---------------------------------------------------------------- Data
 
 const DIR = 'science-technology'
 const APPS = `${DIR}/patent-applications.csv`
 const GRANTS = `${DIR}/patents-granted-and-in-force.csv`
 const BY_STATE = `${DIR}/patent-applications-by-state.csv`
+const PER_MILLION = `${DIR}/patent-applications-per-million-by-state.csv`
+const NSDP = 'economy/per-capita-nsdp-by-state.csv'
 const BY_TYPE = `${DIR}/patent-applications-by-applicant-type.csv`
 const BY_FIELD = `${DIR}/patents-by-field.csv`
 
@@ -173,6 +197,47 @@ const topic: Topic = {
               'Check that the states add up to the TOTAL row, and that the total equals the applications by residents in Appendix C. Both agree.',
               'Check Tamil Nadu (15,440), Karnataka (8,371) and Maharashtra (7,893) against the report text. All agree.',
               'Match state names to the site geography table.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'Per million people, Chandigarh filed the most applications in 2024-25, 230.28, then Tamil Nadu, 199.70, and Punjab, 143.34. India had 48.26. States with a higher income per person tended to file more, but not always: Sikkim, the richest state per person, filed 18.52.',
+        },
+        {
+          chart: {
+            kind: 'scatter',
+            slug: 'patents-per-person-and-income-by-state',
+            checked: CHECKED,
+            title: 'Patent applications per person and income per person by state and UT, 2024-25',
+            subtitle: 'Net state domestic product per person at current prices, against patent applications by Indian applicants per million people, 2024-25. One dot per state or UT.',
+            punches: { office: 'IP India · MoSPI · MoHFW', unit: '₹ a year · per million people', period: '2024-25' },
+            status: ['Projection'],
+            note: 'An association, not a cause. Applications per million people are our own calculation, on projected population. The lines mark India.',
+            sources: [ar2425, STATE_API, RBI_TABLE_9, PROJECTIONS],
+            x: { key: 'income', label: 'Income per person, ₹ a year', color: 'slate', format: { unit: '₹', scale: 'lakh', decimals: 2 }, file: NSDP, where: { price_basis: 'current prices' } },
+            y: { key: 'patents', label: 'Applications per million people', color: 'slate', format: { decimals: 2 }, file: PER_MILLION, where: { period: '2024-25' } },
+            labels: ['chandigarh', 'tamil-nadu', 'punjab', 'sikkim', 'goa', 'bihar', 'karnataka'],
+            missing: {
+              lakshadweep: 'Not listed in Appendix B',
+              nagaland: 'No income per person for 2024-25',
+              ladakh: 'No income per person for 2024-25',
+              'dnh-dd': 'No income per person for 2024-25',
+            },
+            know: [
+              'This chart shows how the two measures sit together in each state. It does not show that one causes the other.',
+              'Applications per million people are derived: applications by Indian applicants in 2024-25, divided by the projected population on 1 March 2025 from the Technical Group report of July 2020. The projection starts from Census 2011, so the rates are less certain where a state has grown faster or slower than projected.',
+              'The state of an application is the address of its Indian applicant, which may not be where the research was done. Educational institutions filed more than half of the applications.',
+              'Income per person is net state domestic product per person at current prices, base 2011-12. India is per capita net national income.',
+              'A raw count of applications would rise with the size of a state, so this chart divides by population. Income per person is already a rate.',
+              YEAR_KNOW,
+            ],
+            processing: [
+              'Read applications by state, all routes, from Appendix B of the Annual Report 2024-25, as in the map above. For India, read applications by residents in Appendix C: the states add up to it.',
+              'Read the projected population of each state and of India on 1 March 2025 from Table 8 of the Technical Group report, in thousands.',
+              'Derived: divide applications by population (thousands times 1,000) and multiply by 1,000,000. Round to two decimals. pipeline/science-technology/per_million.py writes the file and marks every row derived.',
+              'Read income per person for 2024-25 at current prices, as in the income map on the Economy page.',
+              'Pair the two values by state. Draw no fitted line.',
             ],
             nextRelease: 'not announced',
           },
