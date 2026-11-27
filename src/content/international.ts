@@ -29,6 +29,7 @@ export const WDI = {
   rd: wdiSource('GB.XPD.RSDV.GD.ZS', 'Research and development expenditure (% of GDP), from the UNESCO Institute for Statistics'),
   researchers: wdiSource('SP.POP.SCIE.RD.P6', 'Researchers in R&D (per million people), from the UNESCO Institute for Statistics'),
   articles: wdiSource('IP.JRN.ARTC.SC', 'Scientific and technical journal articles, from the National Science Foundation'),
+  armedForces: wdiSource('MS.MIL.TOTL.TF.ZS', 'Armed forces personnel (% of total labor force), from IISS, The Military Balance'),
 } as const
 
 /** For "About the data": the publisher sentence each topic adds. */
