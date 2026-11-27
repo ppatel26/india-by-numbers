@@ -275,6 +275,3 @@ rules above). It does not wait for the owner.
   R&D Statistics 2025-26 and the Yearly Performance Indicators. Then build their CSVs from the raw
   files listed in `research/data/science-technology/README.md` ("Held back") and chart India's own
   research spending and the price of mobile data in Science and technology.
-- **Science and technology object.** Make the silver Aryabhata satellite (council, 3 of 3; prompt in
-  `docs/design-direction.md`) and approve its image credits. Then add it to `pipeline/emblems/cutout.py`
-  and `src/lib/emblems.ts`.

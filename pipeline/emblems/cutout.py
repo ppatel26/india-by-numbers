@@ -22,6 +22,7 @@ FILES = {
     'population': 'pop', 'prices': 'prices', 'economy': 'econ', 'jobs': 'jobs2', 'health': 'health',
     'education': 'edu', 'elections': 'elec', 'climate': 'climate2', 'religion-and-culture': 'rel', 'home': 'seal',
     'crime-and-justice': 'tarazu', 'living-standards': 'tiffin', 'trade': 'uru', 'transport': 'cart', 'agriculture': 'hal',
+    'science-and-technology': 'aryabhata',
 }
 # Backdrop-coloured parts of an object (the voter's violet ink, violet reflections) turn clear too;
 # every object sits on its own pigment, which shows through in the same colour.

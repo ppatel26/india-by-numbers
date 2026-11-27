@@ -27,6 +27,7 @@ export const EMBLEM_ALT: Partial<Record<EmblemName, string>> & Record<'home' | '
   trade: 'A silver model of an uru, the Indian Ocean trading ship, with a furled lateen sail',
   transport: 'A silver model of a Harappan two-wheeled cart with solid wheels',
   agriculture: 'A silver hal, the Indian ard plough, after the Banawali model',
+  'science-and-technology': 'A silver model of Aryabhata, India\'s first satellite, with solar panels on its many faces',
 }
 
 /** The object's alt text, or undefined when the object is not made yet. */

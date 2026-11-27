@@ -104,6 +104,7 @@ Made with Paper's image models: nano-banana-2-1 for objects, nano-banana-pro for
 | Trade | Uru, the Indian Ocean trading ship | Silver |
 | Transport | Harappan two-wheeled cart with solid wheels | Silver |
 | Agriculture | Hal, the Indian ard plough, after the Banawali model | Silver |
+| Science and technology | Aryabhata, India's first satellite (1975) | Silver |
 
 The five objects added on 25 Nov 2026 (tarazu, tiffin carrier, uru, Harappan cart, hal) are on the
 Paper page "05 - Topic objects, new topics". Each was made with nano-banana-2-1 on its pigment, from
@@ -248,7 +249,10 @@ earlier Muse votes below.
   backdrop (#CF96E2), no gradient, no vignette." On a light ground, give the silver crisp shadows,
   as for haldi and kesar, and cut it out as for the other light pigments.
 - Interim: 3 of 3. Publish with no object until it is made and the owner approves the image
-  credits.
+  credits. Made on 27 Nov 2026 under the owner's standing approval of Paper image credits: Paper
+  page "05 - Topic objects, new topics", nano-banana-2-1 on banafsha, then
+  openai-gpt-image-edit-2-6 to a transparent background, as for the other light pigments, and
+  `pipeline/emblems/cutout.py`.
 - Order: after Education, 3 of 3. Educational institutions file more than half of Indian patent
   applications, so research sits next to education.
 
