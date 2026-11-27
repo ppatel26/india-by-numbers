@@ -2,6 +2,8 @@
 
 Data gathered on 25 Nov 2026 from the National Crime Records Bureau (NCRB, Ministry of Home Affairs) and from Ministry of Law and Justice answers in the Lok Sabha and the Rajya Sabha. The CSVs keep the publishers' digits. No rate was computed here. One value is derived: the undertrial share of prisoners for the years where NCRB prints only the counts (marked `derived` in `prisons-india-trend.csv`).
 
+On 27 Nov 2026 we added six CSVs from the same Crime in India 2024 (Volumes II and III) and revised Prison Statistics India 2024 files: crimes against Scheduled Castes and Scheduled Tribes, deaths in police custody, cases against police personnel, deaths in prisons, human trafficking and missing children. The sha256 of each file was the same on both days.
+
 The Crime and justice topic (`src/content/topics/crime-and-justice.ts`) uses these files, since 25 Nov 2026. "Proposed charts" at the end lists the charts it was built from.
 
 ## Questions this topic answers
@@ -12,6 +14,7 @@ The Crime and justice topic (`src/content/topics/crime-and-justice.ts`) uses the
 4. What share of cases do the police charge-sheet, and what share of trials end in a conviction?
 5. How crowded are the prisons, and what share of prisoners have not been convicted (undertrials)?
 6. How many cases wait in the district courts and the High Courts, and how many have waited more than 10 years?
+7. What do the police record on crimes against Scheduled Castes and Scheduled Tribes, deaths in police custody and in prisons, cases against police personnel, human trafficking and missing children?
 
 ## Sources
 
@@ -31,6 +34,7 @@ All read on 25 Nov 2026. NCRB pages say "All Rights Reserved" and state no reuse
 - **NCRB year pages.** The site serves Hindi by default. The Hindi page for 2024 says "कोई रिकॉर्ड नहीं मिला" (no records found), and the Hindi pages for 2022 and 2023 list only the front matter. This is why the backlog found no files. The URL with `/en/` returns "The page you are trying to access doesn't exist". The page's own language switch posts to `/api/language/set`. After that post, the English page lists the volumes. `pipeline/crime/ncrb_files.mjs` does this.
 - **Parliament answers.** The Lok Sabha list on sansad.in reads the Lok Sabha eLibrary (a DSpace API). The Rajya Sabha list reads `rsdoc.nic.in`. `pipeline/crime/find_answers.py` queries both. Searches covered Law and Justice answers from 1 Jul 2025 (Lok Sabha) and sessions 270 and 271 (Rajya Sabha). Each answer used here has a full State/UT table. Answers with only national totals, or with one state, were not used.
 - **Department of Justice compilation** (`doj.gov.in/static/uploads/2026/04/c393f1e761f310476a68fe8f1f87c16a.pdf`): HTTP 403 "Access Denied" from the Akamai edge, to curl and to headless Chromium, on 25 Nov 2026. Not used. Per the pipeline rule, the fetch stopped there. The compilation repeats answers that sansad.in also publishes.
+- **National Human Rights Commission (NHRC).** Not used. NHRC asks for permission by mail before its data are reused, and its counts of deaths in custody differ from NCRB counts. The design council decided to show NCRB counts only and never to combine the two. The custody charts say so.
 - **data.gov.in.** Not used. The NCRB PDFs held every table we need, so the fallback was not tried.
 
 ## Method breaks
@@ -127,6 +131,49 @@ All rows use `geography` slugs from `research/data/geography.csv`, or `india`. M
 - The Supreme Court (`supreme-court`), the 25 High Courts and `high-courts-total` (the Total row, which leaves out the Supreme Court). `geography` is `india`; `court` names the court and `jurisdiction` lists the States/UTs it serves. LS 2142 gives no Supreme Court row.
 - Same answers, dates and columns as the district file.
 
+### `crimes-against-scs-sts-by-state-2024.csv` (444 rows)
+
+- India and 36 States/UTs, CII 2024 Volume II, Table 7A.1 (Scheduled Castes, p. 655) and Table 7C.1 (Scheduled Tribes, p. 761). `group`: `scheduled-castes`, `scheduled-tribes`. `indicator`: `cases` (2022 to 2024), `population` (the group's population at Census 2011, lakh; `period` is `2011`), `crime-rate` (2024, per lakh people of the group), `chargesheeting-rate` (2024, percent).
+- NCRB's footnote: "Atrocities refers to Crimes committed against SCs by Non-SCs/STs. Cases under only IPC (without SC/ST Act) have been excluded as those cases refers to Crime against SCs by SCs/STs." The same note applies to STs.
+- **Population base.** The rate uses the "Actual Population of SCs [STs] as per the Population Census 2011 (RGI)", not the 2024 projection that the other CII rates use. Do not compare it with the total crime rate.
+- NCRB prints "-" for the rate where it prints the group's population as 0.0 lakh: for SCs, Arunachal Pradesh, Nagaland, Andaman and Nicobar Islands and Lakshadweep; for STs, Haryana, Punjab, Chandigarh, Delhi and Puducherry. Empty here. Mizoram (SC population 0.0 lakh as printed) still gets a rate: 2 cases give 164.2. Ladakh (SC population 0.0 lakh) gets 0.0 from 0 cases.
+- Manipur: 1 case against STs in 2022, 3,399 in 2023 and 289 in 2024. The table gives no reason.
+- Charge-sheeting rates are "-" where no case was disposed of; empty here.
+
+### `deaths-in-police-custody-2024.csv` (1,110 rows)
+
+- India and 36 States/UTs, CII 2024 Volume III. `remand`: `not-on-remand` (Table 16A.1, p. 1173: "Persons Not on Remand includes Persons Arrested and yet to be produced before court"), `in-remand` (Table 16A.2, p. 1174: "Persons in remand includes Persons in Police/Judicial Remand"), `all` (Table 16A.2, col. 14, and Table 16A.3).
+- `indicator`: `deaths-reported`, `magisterial-enquiries-ordered`, `judicial-enquiries-ordered`, then cases (`cases-registered`, `cases-chargesheeted`, `cases-convicted`, `cases-acquitted-or-discharged`) and policemen (`policemen-arrested`, `policemen-chargesheeted`, `policemen-convicted`, `policemen-acquitted-or-discharged`). `cause` (Table 16A.3, p. 1175, "Reasons of Custodial Deaths"): `suicide`, `illness-or-death-in-hospital-during-treatment`, `injuries-sustained-prior-to-police-custody`, `injuries-in-police-custody-due-to-physical-assault-by-police`, `while-escaping-from-custody`, `road-accident-or-journey-connected-with-investigation`, `others`, or `all`.
+- 65 deaths in 2024: 40 not on remand, 25 on remand. Cases were registered over 6 and 7 of them; no charge-sheet, conviction or arrest is recorded in 2024.
+- The cause is the one that the state police report. It is not the finding of an enquiry.
+
+### `cases-against-police-personnel-2024.csv` (100 rows)
+
+- CII 2024 Volume III. `category` `all`: Table 16A.5 "Cases Registered against State Police Personnel" (p. 1177), cases registered, India and 36 States/UTs. `category` `human-right-violation`: Table 16A.6 "Cases Registered against State Police Personnel for Human Right Violation" (p. 1178), India only, by `incidence` (`encounter-killing`, `deaths-in-custody`, `illegal-detention`, `torture-causing-hurt-or-injury`, `extortion`, `others`, `all`), with nine columns: cases registered, final reports submitted, charge-sheeted, convicted, acquitted or discharged, and policemen arrested, charge-sheeted, convicted, acquitted or discharged.
+- The category name is NCRB's own ("Human Right Violation" in the table title, "Human Rights Violation" in the contents). The site quotes the table title.
+- From Table 16A.5 we keep only the cases registered (col. 3). The column heads of cols. 4 to 12 are printed out of line in the PDF text, and we could not match them to the columns with confidence.
+- Chandigarh reports 4,069 of the 6,269 cases in Table 16A.5. The table gives no reason.
+
+### `prison-deaths-2024.csv` (518 rows)
+
+- India and 36 States/UTs, revised PSI 2024, Table 8.1 (p. 189: natural, un-natural, cause not known, total), Table 8.2 (p. 190: ageing, illness) and Table 8.4 (p. 193: suicide, execution, murder by inmates, assault by outside elements, firing, negligence or excess by jail personnel, accidental, others).
+- `cause_group`: `natural`, `unnatural`, `not-known`, `all`. `cause` is `all` on the group totals.
+- All 57 deaths with the cause not known are in Rajasthan. The Executive Summary says: "Rajasthan has reported that causes of 63 deaths in 2022, 35 deaths in 2023 and 57 deaths in 2024 were not known."
+- These are deaths of prison inmates (judicial custody). They are not the deaths in police custody of CII Table 16A. Do not add the two.
+
+### `human-trafficking-by-state-2024.csv` (962 rows)
+
+- India and 36 States/UTs, CII 2024 Volume III. Table 14.1 (p. 1152): cases 2022 and 2023, cases 2024 under the IPC, under the BNS and both (`law` `ipc`, `bns`, `ipc-bns`), mid-year projected population, rate and charge-sheeting rate. Tables 14.3 (p. 1157, victims trafficked) and 14.4 (p. 1158, victims rescued), by `age` (`below-18`, `above-18`, `all`) and `sex` (`male`, `female`, `total`).
+- NCRB: "Human Trafficking data published is based on annual data as provided by States/UTs from their Anti Human Trafficking Units". The chapter text adds: "This data represents only those human trafficking cases which are reported to respective AHTUs."
+- **Rate or count.** NCRB prints a rate ("Cases Reported per 1 lakh population") to one decimal. It is 0.2 for India and 0.0 or 0.1 in 23 of the 36 States/UTs, so it does not separate the states. The chart shows the counts with `total: true`, as the district pendency chart does, and says that they are counts. The rate stays in the CSV.
+- Rescued victims "include victims from previous year cases or cases registered in other States" (Table 14.4 note).
+
+### `missing-children-by-state-2024.csv` (888 rows)
+
+- India and 36 States/UTs, CII 2024 Volume III, Table 15.1 "Missing and Traced Children (Below 18 Years)" (pp. 1167 and 1168), by `sex` (`boys`, `girls`, `transgender`, `total`).
+- **Counting periods.** `untraced-from-previous-years` (children missing before 2024 and not traced by the start of 2024), `missing-in-year` (reported missing in 2024), `total-missing` (the two together), `traced-in-year` (traced during 2024, whenever they went missing: "Total Recovered Data includes Missing Children from previous years"), `recovery-percentage` (NCRB: traced / total missing x 100), `untraced-at-year-end`.
+- The recovery percentage is "-" for Mizoram and Lakshadweep, which report no missing children; empty here.
+
 ## Gaps and cautions
 
 **Recorded crime is not all crime**
@@ -160,6 +207,15 @@ All rows use `geography` slugs from `research/data/geography.csv`, or `india`. M
 - LS 3501 (9 Mar 2026) has a Meghalaya row where civil (4,917) plus criminal (4,917) does not equal the total (16,671). We keep the published digits and a note. Some LS 3501 numbers are printed with irregular commas (for example "6,076,736", "31,1033", "51,40"); the digits are kept.
 - Pendency is a count of cases, not a rate. States with more people have more cases. The answers give no population or judge base.
 
+**Scheduled Castes and Tribes, custody, trafficking and missing children (added 27 Nov 2026)**
+
+- Every table here says "As per data provided by States/UTs". Most also say "States/UTs may not be compared purely on the basis of crime figures". The state charts have no rank.
+- The SC and ST rates use the Census 2011 population of each group; the other CII rates use the 2024 projection.
+- Deaths in police custody (CII Table 16A) and deaths in prisons (PSI Chapter 8) are separate counts from separate tables. NCRB does not reconcile them, and we do not add them.
+- NHRC counts of deaths in custody are not used (see "How the files were found").
+- Only 2024 was read. A trend in custodial deaths, trafficking or missing children would need the same tables from earlier CII editions.
+- No city tables (Chapters 7B and 7D) were read.
+
 **State boundaries**
 
 - **Ladakh and Jammu and Kashmir** are separate UTs from 31 Oct 2019. CII and PSI 2024 have a row for each. CII 2017 to 2019 India totals include the former state. LS 3295 leaves Ladakh blank for 2021 and 2022 (empty in the CSV); the answer does not say whether the Jammu and Kashmir row includes it. One High Court serves both (`jammu-kashmir-ladakh`).
@@ -175,7 +231,7 @@ All rows use `geography` slugs from `research/data/geography.csv`, or `india`. M
 - Prison data before 2014: PSI 2015 and earlier were not read.
 - Pendency answers before July 2025 (Lok Sabha) and before session 270 (Rajya Sabha) were not searched.
 
-## Checks (25 Nov 2026)
+## Checks (25 and 27 Nov 2026)
 
 `build_ncrb.py` and `build_pendency.py` stop with an error if any of these values differs. Each value was read from the text of the publisher's PDF, which `pdftotext -layout` keeps in table order. Page numbers are the printed page numbers.
 
@@ -191,8 +247,14 @@ All rows use `geography` slugs from `research/data/geography.csv`, or `india`. M
 | `prisons-india-trend.csv` | 2014 occupancy 117.4% (PSI 2016); 2022 occupancy 131.4% (PSI 2024); 2024 undertrial share 72.5% (derived, equals PSI 2024 Table 2.2) | Executive Summaries |
 | `court-pendency-district-by-state.csv` | Uttar Pradesh 1,19,90,328 on 30 Jul 2026 (LS 3371 Annexure-II); Lakshadweep 26 over 10 years on 16 Jul 2026 (RS 597 Annexure-II); Bihar 32,76,696 in 2021 (LS 3295 Annexure-II) | As named |
 | `court-pendency-high-courts.csv` | Allahabad 12,28,281 and Supreme Court 95,954 on 30 Jul 2026 (LS 3371 Annexure-I); Madras criminal 75,555 on 9 Mar 2026 (LS 3501 Annexure-I) | As named |
+| `crimes-against-scs-sts-by-state-2024.csv` | India 55,698 cases and rate 27.7, Uttar Pradesh 14,642, Madhya Pradesh rate 68.5 (Table 7A.1, p. 655); India 9,966 cases and rate 9.5, Manipur 3,399 in 2023, Punjab rate "-" (Table 7C.1, p. 761) | CII 2024 Volume II |
+| `deaths-in-police-custody-2024.csv` | India 65 deaths, 40 not on remand, 22 suicides, 28 from illness or in hospital; Gujarat 17 (Tables 16A.1 to 16A.3, pp. 1173 to 1175) | CII 2024 Volume III |
+| `cases-against-police-personnel-2024.csv` | India 6,269, Chandigarh 4,069 (Table 16A.5, p. 1177); 13 human right violation cases, 4 encounter killings, 6 deaths in custody (Table 16A.6, p. 1178) | CII 2024 Volume III |
+| `prison-deaths-2024.csv` | India 1,953 deaths, 1,727 natural, 1,652 from illness, 126 suicides; Rajasthan 57 not known; Uttar Pradesh 330 (Tables 8.1, 8.2, 8.4, pp. 189 to 193) | PSI 2024, revised |
+| `human-trafficking-by-state-2024.csv` | India 2,135 cases, Telangana 423 (Table 14.1, p. 1152); India 6,018 victims, 2,297 below 18, Odisha 1,039 (Table 14.3, p. 1157); India 5,839 rescued (Table 14.4) | CII 2024 Volume III |
+| `missing-children-by-state-2024.csv` | India 98,375 missing in 2024, 98,826 traced, 67.1%; West Bengal 15,849 missing; Odisha 26.4%; Mizoram "-" (Table 15.1, pp. 1167 and 1168) | CII 2024 Volume III |
 
-Other checks in the scripts: the states in each pendency table add up to its Total row; LS 2362 equals LS 3295 for 2023 to 2025; inmates in PSI Table 1.2 equal inmates in Table 2.1; inmates in the two Executive Summary tables agree for every year.
+Other checks in the scripts: the states in each pendency table add up to its Total row; in every table added on 27 Nov 2026, the 36 State/UT rows add up to the India row in each count column; the parts of each row add up to its total (IPC + BNS trafficking cases; Table 16A.1 + 16A.2 deaths = the Table 16A.2 total = the Table 16A.3 total; the reasons in 16A.3; the six types in 16A.6; natural + un-natural + not known = total, and Tables 8.2 and 8.4 = the natural and un-natural columns of 8.1; previous years + 2024 = total missing, and total missing - traced = untraced, for boys, girls and transgender children); LS 2362 equals LS 3295 for 2023 to 2025; inmates in PSI Table 1.2 equal inmates in Table 2.1; inmates in the two Executive Summary tables agree for every year.
 
 ## Raw files
 
@@ -202,6 +264,8 @@ Read 25 Nov 2026. Paths are relative to `raw/crime/`. `pipeline/crime/sources.ts
 pipeline/crime/fetch.sh                    # downloads every file in sources.tsv; logs sha256 to raw/crime/<dir>/_log.tsv
 pipeline/crime/extract_text.sh             # pdftotext -layout, one .txt per PDF in work/crime/
 python3 -I pipeline/crime/build_ncrb.py
+# or only the parts added on 27 Nov 2026, which need only cii-2024/volume2, cii-2024/volume3 and psi-2024/report-revised:
+# python3 -I pipeline/crime/build_ncrb.py --only sc-st custody trafficking-missing prison-deaths
 python3 -I pipeline/crime/build_pendency.py
 ```
 
@@ -210,8 +274,8 @@ NCRB file URLs start with `https://www.ncrb.gov.in/uploads/`. Lok Sabha eLibrary
 | Raw file | Release | URL (after the prefix) | SHA-256 |
 | --- | --- | --- | --- |
 | `cii-2024/volume1.pdf` | CII 2024, Volume I | `files/11CrimeinIndia2024-VolumeI.pdf` | `5c119c907c8b194e0bcde8cf6ef63392ff9923dfb159a8780607f54719a79cb8` |
-| `cii-2024/volume2.pdf` | CII 2024, Volume II (read for the Glossary and Disclaimer only) | `files/2CrimeinIndia2024-VolumeII.pdf` | `423af46b6704338d9241fc95411fbca706b70662e79becdd4dc8f7ab0c16ae50` |
-| `cii-2024/volume3.pdf` | CII 2024, Volume III | `files/3CrimeinIndia2024-VolumeIII1.pdf` | `ab326640371b167c0d98fed0bf747274c559b9b33d9017ed91c80799f9be2fc0` |
+| `cii-2024/volume2.pdf` | CII 2024, Volume II (Glossary, Disclaimer, and Tables 7A.1 and 7C.1 from 27 Nov 2026) | `files/2CrimeinIndia2024-VolumeII.pdf` | `423af46b6704338d9241fc95411fbca706b70662e79becdd4dc8f7ab0c16ae50` |
+| `cii-2024/volume3.pdf` | CII 2024, Volume III (Chapters 17A and 18A; Chapters 14, 15 and 16A from 27 Nov 2026) | `files/3CrimeinIndia2024-VolumeIII1.pdf` | `ab326640371b167c0d98fed0bf747274c559b9b33d9017ed91c80799f9be2fc0` |
 | `cii-2024/glossary.pdf` | CII 2024, Glossary | `files/13Glossary2024.pdf` | `1463e99cb3faba5502fd5fa2399035c01082ddab6b6cefc03d6ec87af4c5b53a` |
 | `cii-2024/methodology.pdf` | CII 2024, Methodology (standalone) | `files/7CIIMethodology2024.pdf` | `1afe0176ddd67ce146daf741f8294b4986528448c6c7099163120c88900877f7` |
 | `cii-2024/disclaimer.pdf` | CII 2024, Disclaimer and Limitations (standalone) | `files/6DisclaimerandLimitations1.pdf` | `eb2bfa25523301ddbd2e04b4f358bbfc66e2c696374783ca68aaac9ea400a6a7` |
@@ -226,7 +290,7 @@ NCRB file URLs start with `https://www.ncrb.gov.in/uploads/`. Lok Sabha eLibrary
 | `cii-2019/volume1.pdf` | CII 2019, Volume I | `nationalcrimerecordsbureau/custom/1653730573_CII%202019%20Volume%201.pdf` | `84a381dc748716ef97dafdd44b202102bc43d833b5f67c10799f667f03ce6bd0` |
 | `cii-2018/volume1.pdf` | CII 2018, Volume I | `nationalcrimerecordsbureau/custom/1653734481_Crime%20in%20India%202018%20-%20Volume%201_3_0_0.pdf` | `07d9b0b12281729a284639d900d942550082965a97de4366c90f38e5327ed8c8` |
 | `cii-2017/volume1.pdf` | CII 2017, Volume I | `nationalcrimerecordsbureau/post/16959893381653885627CrimeinIndia2017-Volume100.pdf` | `c57a514b3dcd6412d93f50637ac0dc37dad0b9e7b34288c07a8931e764f63059` |
-| `psi-2024/report-revised.pdf` | PSI 2024, revised report with West Bengal data | `files/PSI-2024Ason15092026.pdf` | `357736d1e63bf0a3b8638d5d61b366585c560047009a9adcb97b15d92c5a1ace` |
+| `psi-2024/report-revised.pdf` | PSI 2024, revised report with West Bengal data (Chapter 8 from 27 Nov 2026) | `files/PSI-2024Ason15092026.pdf` | `357736d1e63bf0a3b8638d5d61b366585c560047009a9adcb97b15d92c5a1ace` |
 | `psi-2024/report-original.pdf` | PSI 2024, first release of 6 May 2026 | `files/PSI-2024ason260220261.pdf` | `4f82f813fe1fb36d7a8ec07a0d81891662aabb1933b0c8129719a5d29346cdb4` |
 | `psi-2024/disclaimer-corrigendum.pdf` | PSI 2024, Disclaimer and Corrigendum | `files/DisclaimerCorrigendum-20241.pdf` | `d3b03e9a857bc2e4535f2a4be422ad601017e210179b7339555cf0766c9e6bbf` |
 | `psi-2024/methodology.pdf` | PSI 2024, Methodology | `files/Methodology-20241.pdf` | `f2feba1b5f9fc959757611a03ec2e089be7a65e20a578ba11d34ca5b5ee88f31` |
@@ -265,5 +329,12 @@ Kinds are from `src/content/types.ts`. Status words: state charts of recorded cr
 | `prisons-india` | `line` (two panels) | `prisons-india-trend.csv`, `occupancy-rate` and `undertrial-share` | 2014 to 2024 | The national trend of both prison measures; the share is `derived`. |
 | `district-court-pendency-by-state` | `states` (`total: true`) | `court-pendency-district-by-state.csv`, `period=2026-07-30`, `case_type=all`, `pending_for=all` | 30 Jul 2026 | 4,99,11,920 cases pending, by State/UT. Counts, not a rate: say so. |
 | `court-pendency-india` | `columns` | `court-pendency-district-by-state.csv` (`india`) and `court-pendency-high-courts.csv` (`high-courts-total`), periods 2021 to 2025-12-31 | 2021 to 2025 | The year-end trend from one answer (LS 3295), district courts and High Courts side by side. |
+| `crimes-against-scheduled-castes-by-state` | `states` (`noRank`) | `crimes-against-scs-sts-by-state-2024.csv`, `group=scheduled-castes`, `indicator=crime-rate` | 2024 | NCRB gives a rate, so the chart uses it, as the other recorded-crime state charts do. Base: Census 2011 SC population. |
+| `crimes-against-scheduled-tribes-by-state` | `states` (`noRank`) | same file, `group=scheduled-tribes` | 2024 | As above, for STs. |
+| `deaths-in-police-custody-by-cause` | `bars` | `deaths-in-police-custody-2024.csv`, `geography=india`, `remand=all`, the seven causes | 2024 | The 65 deaths by the cause the police recorded (Table 16A.3). |
+| `prison-deaths-by-cause` | `bars` | `prison-deaths-2024.csv`, `geography=india`, the causes with at least one death and `not-known` | 2024 | Kept apart from police custody. |
+| `cases-against-police-human-right-violation` | `bars` | `cases-against-police-personnel-2024.csv`, `category=human-right-violation`, `indicator=cases-registered` | 2024 | NCRB's own category, quoted. India only. |
+| `human-trafficking-by-state` | `states` (`noRank`, `total`) | `human-trafficking-by-state-2024.csv`, `indicator=cases`, `law=ipc-bns` | 2024 | Counts, not the rate: the rate is 0.0 or 0.1 in 23 States/UTs (see the CSV notes). |
+| `missing-children-traced-by-state` | `states` (`noRank`) | `missing-children-by-state-2024.csv`, `indicator=recovery-percentage`, `sex=total` | 2024 | NCRB's recovery percentage; the subtitle states both counting periods. |
 
 Not proposed: a High Court map (seven courts serve several States/UTs), the LS 3371 "more than 5 years" column (see cautions), and a BNS-only series (NCRB gives no BNS-only rate).

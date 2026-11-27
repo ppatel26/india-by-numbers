@@ -1,0 +1,519 @@
+geography,period,cause_group,cause,value,unit,table
+india,2024,all,all,1953,deaths,"Table 8.1, col. 6"
+india,2024,natural,all,1727,deaths,"Table 8.1, col. 3"
+india,2024,unnatural,all,169,deaths,"Table 8.1, col. 4"
+india,2024,not-known,not-known,57,deaths,"Table 8.1, col. 5"
+india,2024,natural,ageing,75,deaths,Table 8.2
+india,2024,natural,illness,1652,deaths,Table 8.2
+india,2024,unnatural,suicide,126,deaths,Table 8.4
+india,2024,unnatural,execution,0,deaths,Table 8.4
+india,2024,unnatural,murder-by-inmates,8,deaths,Table 8.4
+india,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+india,2024,unnatural,firing,0,deaths,Table 8.4
+india,2024,unnatural,negligence-or-excess-by-jail-personnel,1,deaths,Table 8.4
+india,2024,unnatural,accidental,12,deaths,Table 8.4
+india,2024,unnatural,others,22,deaths,Table 8.4
+andhra-pradesh,2024,all,all,25,deaths,"Table 8.1, col. 6"
+andhra-pradesh,2024,natural,all,19,deaths,"Table 8.1, col. 3"
+andhra-pradesh,2024,unnatural,all,6,deaths,"Table 8.1, col. 4"
+andhra-pradesh,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+andhra-pradesh,2024,natural,ageing,1,deaths,Table 8.2
+andhra-pradesh,2024,natural,illness,18,deaths,Table 8.2
+andhra-pradesh,2024,unnatural,suicide,3,deaths,Table 8.4
+andhra-pradesh,2024,unnatural,execution,0,deaths,Table 8.4
+andhra-pradesh,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+andhra-pradesh,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+andhra-pradesh,2024,unnatural,firing,0,deaths,Table 8.4
+andhra-pradesh,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+andhra-pradesh,2024,unnatural,accidental,3,deaths,Table 8.4
+andhra-pradesh,2024,unnatural,others,0,deaths,Table 8.4
+arunachal-pradesh,2024,all,all,0,deaths,"Table 8.1, col. 6"
+arunachal-pradesh,2024,natural,all,0,deaths,"Table 8.1, col. 3"
+arunachal-pradesh,2024,unnatural,all,0,deaths,"Table 8.1, col. 4"
+arunachal-pradesh,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+arunachal-pradesh,2024,natural,ageing,0,deaths,Table 8.2
+arunachal-pradesh,2024,natural,illness,0,deaths,Table 8.2
+arunachal-pradesh,2024,unnatural,suicide,0,deaths,Table 8.4
+arunachal-pradesh,2024,unnatural,execution,0,deaths,Table 8.4
+arunachal-pradesh,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+arunachal-pradesh,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+arunachal-pradesh,2024,unnatural,firing,0,deaths,Table 8.4
+arunachal-pradesh,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+arunachal-pradesh,2024,unnatural,accidental,0,deaths,Table 8.4
+arunachal-pradesh,2024,unnatural,others,0,deaths,Table 8.4
+assam,2024,all,all,47,deaths,"Table 8.1, col. 6"
+assam,2024,natural,all,41,deaths,"Table 8.1, col. 3"
+assam,2024,unnatural,all,6,deaths,"Table 8.1, col. 4"
+assam,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+assam,2024,natural,ageing,0,deaths,Table 8.2
+assam,2024,natural,illness,41,deaths,Table 8.2
+assam,2024,unnatural,suicide,2,deaths,Table 8.4
+assam,2024,unnatural,execution,0,deaths,Table 8.4
+assam,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+assam,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+assam,2024,unnatural,firing,0,deaths,Table 8.4
+assam,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+assam,2024,unnatural,accidental,0,deaths,Table 8.4
+assam,2024,unnatural,others,4,deaths,Table 8.4
+bihar,2024,all,all,123,deaths,"Table 8.1, col. 6"
+bihar,2024,natural,all,114,deaths,"Table 8.1, col. 3"
+bihar,2024,unnatural,all,9,deaths,"Table 8.1, col. 4"
+bihar,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+bihar,2024,natural,ageing,0,deaths,Table 8.2
+bihar,2024,natural,illness,114,deaths,Table 8.2
+bihar,2024,unnatural,suicide,6,deaths,Table 8.4
+bihar,2024,unnatural,execution,0,deaths,Table 8.4
+bihar,2024,unnatural,murder-by-inmates,2,deaths,Table 8.4
+bihar,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+bihar,2024,unnatural,firing,0,deaths,Table 8.4
+bihar,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+bihar,2024,unnatural,accidental,0,deaths,Table 8.4
+bihar,2024,unnatural,others,1,deaths,Table 8.4
+chhattisgarh,2024,all,all,66,deaths,"Table 8.1, col. 6"
+chhattisgarh,2024,natural,all,65,deaths,"Table 8.1, col. 3"
+chhattisgarh,2024,unnatural,all,1,deaths,"Table 8.1, col. 4"
+chhattisgarh,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+chhattisgarh,2024,natural,ageing,0,deaths,Table 8.2
+chhattisgarh,2024,natural,illness,65,deaths,Table 8.2
+chhattisgarh,2024,unnatural,suicide,0,deaths,Table 8.4
+chhattisgarh,2024,unnatural,execution,0,deaths,Table 8.4
+chhattisgarh,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+chhattisgarh,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+chhattisgarh,2024,unnatural,firing,0,deaths,Table 8.4
+chhattisgarh,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+chhattisgarh,2024,unnatural,accidental,0,deaths,Table 8.4
+chhattisgarh,2024,unnatural,others,1,deaths,Table 8.4
+goa,2024,all,all,2,deaths,"Table 8.1, col. 6"
+goa,2024,natural,all,2,deaths,"Table 8.1, col. 3"
+goa,2024,unnatural,all,0,deaths,"Table 8.1, col. 4"
+goa,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+goa,2024,natural,ageing,0,deaths,Table 8.2
+goa,2024,natural,illness,2,deaths,Table 8.2
+goa,2024,unnatural,suicide,0,deaths,Table 8.4
+goa,2024,unnatural,execution,0,deaths,Table 8.4
+goa,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+goa,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+goa,2024,unnatural,firing,0,deaths,Table 8.4
+goa,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+goa,2024,unnatural,accidental,0,deaths,Table 8.4
+goa,2024,unnatural,others,0,deaths,Table 8.4
+gujarat,2024,all,all,69,deaths,"Table 8.1, col. 6"
+gujarat,2024,natural,all,58,deaths,"Table 8.1, col. 3"
+gujarat,2024,unnatural,all,11,deaths,"Table 8.1, col. 4"
+gujarat,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+gujarat,2024,natural,ageing,1,deaths,Table 8.2
+gujarat,2024,natural,illness,57,deaths,Table 8.2
+gujarat,2024,unnatural,suicide,11,deaths,Table 8.4
+gujarat,2024,unnatural,execution,0,deaths,Table 8.4
+gujarat,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+gujarat,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+gujarat,2024,unnatural,firing,0,deaths,Table 8.4
+gujarat,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+gujarat,2024,unnatural,accidental,0,deaths,Table 8.4
+gujarat,2024,unnatural,others,0,deaths,Table 8.4
+haryana,2024,all,all,116,deaths,"Table 8.1, col. 6"
+haryana,2024,natural,all,101,deaths,"Table 8.1, col. 3"
+haryana,2024,unnatural,all,15,deaths,"Table 8.1, col. 4"
+haryana,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+haryana,2024,natural,ageing,11,deaths,Table 8.2
+haryana,2024,natural,illness,90,deaths,Table 8.2
+haryana,2024,unnatural,suicide,15,deaths,Table 8.4
+haryana,2024,unnatural,execution,0,deaths,Table 8.4
+haryana,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+haryana,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+haryana,2024,unnatural,firing,0,deaths,Table 8.4
+haryana,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+haryana,2024,unnatural,accidental,0,deaths,Table 8.4
+haryana,2024,unnatural,others,0,deaths,Table 8.4
+himachal-pradesh,2024,all,all,8,deaths,"Table 8.1, col. 6"
+himachal-pradesh,2024,natural,all,7,deaths,"Table 8.1, col. 3"
+himachal-pradesh,2024,unnatural,all,1,deaths,"Table 8.1, col. 4"
+himachal-pradesh,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+himachal-pradesh,2024,natural,ageing,0,deaths,Table 8.2
+himachal-pradesh,2024,natural,illness,7,deaths,Table 8.2
+himachal-pradesh,2024,unnatural,suicide,1,deaths,Table 8.4
+himachal-pradesh,2024,unnatural,execution,0,deaths,Table 8.4
+himachal-pradesh,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+himachal-pradesh,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+himachal-pradesh,2024,unnatural,firing,0,deaths,Table 8.4
+himachal-pradesh,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+himachal-pradesh,2024,unnatural,accidental,0,deaths,Table 8.4
+himachal-pradesh,2024,unnatural,others,0,deaths,Table 8.4
+jharkhand,2024,all,all,68,deaths,"Table 8.1, col. 6"
+jharkhand,2024,natural,all,65,deaths,"Table 8.1, col. 3"
+jharkhand,2024,unnatural,all,3,deaths,"Table 8.1, col. 4"
+jharkhand,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+jharkhand,2024,natural,ageing,3,deaths,Table 8.2
+jharkhand,2024,natural,illness,62,deaths,Table 8.2
+jharkhand,2024,unnatural,suicide,3,deaths,Table 8.4
+jharkhand,2024,unnatural,execution,0,deaths,Table 8.4
+jharkhand,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+jharkhand,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+jharkhand,2024,unnatural,firing,0,deaths,Table 8.4
+jharkhand,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+jharkhand,2024,unnatural,accidental,0,deaths,Table 8.4
+jharkhand,2024,unnatural,others,0,deaths,Table 8.4
+karnataka,2024,all,all,58,deaths,"Table 8.1, col. 6"
+karnataka,2024,natural,all,53,deaths,"Table 8.1, col. 3"
+karnataka,2024,unnatural,all,5,deaths,"Table 8.1, col. 4"
+karnataka,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+karnataka,2024,natural,ageing,3,deaths,Table 8.2
+karnataka,2024,natural,illness,50,deaths,Table 8.2
+karnataka,2024,unnatural,suicide,5,deaths,Table 8.4
+karnataka,2024,unnatural,execution,0,deaths,Table 8.4
+karnataka,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+karnataka,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+karnataka,2024,unnatural,firing,0,deaths,Table 8.4
+karnataka,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+karnataka,2024,unnatural,accidental,0,deaths,Table 8.4
+karnataka,2024,unnatural,others,0,deaths,Table 8.4
+kerala,2024,all,all,49,deaths,"Table 8.1, col. 6"
+kerala,2024,natural,all,45,deaths,"Table 8.1, col. 3"
+kerala,2024,unnatural,all,4,deaths,"Table 8.1, col. 4"
+kerala,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+kerala,2024,natural,ageing,0,deaths,Table 8.2
+kerala,2024,natural,illness,45,deaths,Table 8.2
+kerala,2024,unnatural,suicide,4,deaths,Table 8.4
+kerala,2024,unnatural,execution,0,deaths,Table 8.4
+kerala,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+kerala,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+kerala,2024,unnatural,firing,0,deaths,Table 8.4
+kerala,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+kerala,2024,unnatural,accidental,0,deaths,Table 8.4
+kerala,2024,unnatural,others,0,deaths,Table 8.4
+madhya-pradesh,2024,all,all,116,deaths,"Table 8.1, col. 6"
+madhya-pradesh,2024,natural,all,113,deaths,"Table 8.1, col. 3"
+madhya-pradesh,2024,unnatural,all,3,deaths,"Table 8.1, col. 4"
+madhya-pradesh,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+madhya-pradesh,2024,natural,ageing,0,deaths,Table 8.2
+madhya-pradesh,2024,natural,illness,113,deaths,Table 8.2
+madhya-pradesh,2024,unnatural,suicide,3,deaths,Table 8.4
+madhya-pradesh,2024,unnatural,execution,0,deaths,Table 8.4
+madhya-pradesh,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+madhya-pradesh,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+madhya-pradesh,2024,unnatural,firing,0,deaths,Table 8.4
+madhya-pradesh,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+madhya-pradesh,2024,unnatural,accidental,0,deaths,Table 8.4
+madhya-pradesh,2024,unnatural,others,0,deaths,Table 8.4
+maharashtra,2024,all,all,144,deaths,"Table 8.1, col. 6"
+maharashtra,2024,natural,all,136,deaths,"Table 8.1, col. 3"
+maharashtra,2024,unnatural,all,8,deaths,"Table 8.1, col. 4"
+maharashtra,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+maharashtra,2024,natural,ageing,0,deaths,Table 8.2
+maharashtra,2024,natural,illness,136,deaths,Table 8.2
+maharashtra,2024,unnatural,suicide,6,deaths,Table 8.4
+maharashtra,2024,unnatural,execution,0,deaths,Table 8.4
+maharashtra,2024,unnatural,murder-by-inmates,2,deaths,Table 8.4
+maharashtra,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+maharashtra,2024,unnatural,firing,0,deaths,Table 8.4
+maharashtra,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+maharashtra,2024,unnatural,accidental,0,deaths,Table 8.4
+maharashtra,2024,unnatural,others,0,deaths,Table 8.4
+manipur,2024,all,all,3,deaths,"Table 8.1, col. 6"
+manipur,2024,natural,all,3,deaths,"Table 8.1, col. 3"
+manipur,2024,unnatural,all,0,deaths,"Table 8.1, col. 4"
+manipur,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+manipur,2024,natural,ageing,0,deaths,Table 8.2
+manipur,2024,natural,illness,3,deaths,Table 8.2
+manipur,2024,unnatural,suicide,0,deaths,Table 8.4
+manipur,2024,unnatural,execution,0,deaths,Table 8.4
+manipur,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+manipur,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+manipur,2024,unnatural,firing,0,deaths,Table 8.4
+manipur,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+manipur,2024,unnatural,accidental,0,deaths,Table 8.4
+manipur,2024,unnatural,others,0,deaths,Table 8.4
+meghalaya,2024,all,all,6,deaths,"Table 8.1, col. 6"
+meghalaya,2024,natural,all,5,deaths,"Table 8.1, col. 3"
+meghalaya,2024,unnatural,all,1,deaths,"Table 8.1, col. 4"
+meghalaya,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+meghalaya,2024,natural,ageing,0,deaths,Table 8.2
+meghalaya,2024,natural,illness,5,deaths,Table 8.2
+meghalaya,2024,unnatural,suicide,1,deaths,Table 8.4
+meghalaya,2024,unnatural,execution,0,deaths,Table 8.4
+meghalaya,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+meghalaya,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+meghalaya,2024,unnatural,firing,0,deaths,Table 8.4
+meghalaya,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+meghalaya,2024,unnatural,accidental,0,deaths,Table 8.4
+meghalaya,2024,unnatural,others,0,deaths,Table 8.4
+mizoram,2024,all,all,0,deaths,"Table 8.1, col. 6"
+mizoram,2024,natural,all,0,deaths,"Table 8.1, col. 3"
+mizoram,2024,unnatural,all,0,deaths,"Table 8.1, col. 4"
+mizoram,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+mizoram,2024,natural,ageing,0,deaths,Table 8.2
+mizoram,2024,natural,illness,0,deaths,Table 8.2
+mizoram,2024,unnatural,suicide,0,deaths,Table 8.4
+mizoram,2024,unnatural,execution,0,deaths,Table 8.4
+mizoram,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+mizoram,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+mizoram,2024,unnatural,firing,0,deaths,Table 8.4
+mizoram,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+mizoram,2024,unnatural,accidental,0,deaths,Table 8.4
+mizoram,2024,unnatural,others,0,deaths,Table 8.4
+nagaland,2024,all,all,3,deaths,"Table 8.1, col. 6"
+nagaland,2024,natural,all,3,deaths,"Table 8.1, col. 3"
+nagaland,2024,unnatural,all,0,deaths,"Table 8.1, col. 4"
+nagaland,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+nagaland,2024,natural,ageing,0,deaths,Table 8.2
+nagaland,2024,natural,illness,3,deaths,Table 8.2
+nagaland,2024,unnatural,suicide,0,deaths,Table 8.4
+nagaland,2024,unnatural,execution,0,deaths,Table 8.4
+nagaland,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+nagaland,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+nagaland,2024,unnatural,firing,0,deaths,Table 8.4
+nagaland,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+nagaland,2024,unnatural,accidental,0,deaths,Table 8.4
+nagaland,2024,unnatural,others,0,deaths,Table 8.4
+odisha,2024,all,all,53,deaths,"Table 8.1, col. 6"
+odisha,2024,natural,all,47,deaths,"Table 8.1, col. 3"
+odisha,2024,unnatural,all,6,deaths,"Table 8.1, col. 4"
+odisha,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+odisha,2024,natural,ageing,0,deaths,Table 8.2
+odisha,2024,natural,illness,47,deaths,Table 8.2
+odisha,2024,unnatural,suicide,6,deaths,Table 8.4
+odisha,2024,unnatural,execution,0,deaths,Table 8.4
+odisha,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+odisha,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+odisha,2024,unnatural,firing,0,deaths,Table 8.4
+odisha,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+odisha,2024,unnatural,accidental,0,deaths,Table 8.4
+odisha,2024,unnatural,others,0,deaths,Table 8.4
+punjab,2024,all,all,228,deaths,"Table 8.1, col. 6"
+punjab,2024,natural,all,213,deaths,"Table 8.1, col. 3"
+punjab,2024,unnatural,all,15,deaths,"Table 8.1, col. 4"
+punjab,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+punjab,2024,natural,ageing,0,deaths,Table 8.2
+punjab,2024,natural,illness,213,deaths,Table 8.2
+punjab,2024,unnatural,suicide,12,deaths,Table 8.4
+punjab,2024,unnatural,execution,0,deaths,Table 8.4
+punjab,2024,unnatural,murder-by-inmates,2,deaths,Table 8.4
+punjab,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+punjab,2024,unnatural,firing,0,deaths,Table 8.4
+punjab,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+punjab,2024,unnatural,accidental,1,deaths,Table 8.4
+punjab,2024,unnatural,others,0,deaths,Table 8.4
+rajasthan,2024,all,all,90,deaths,"Table 8.1, col. 6"
+rajasthan,2024,natural,all,24,deaths,"Table 8.1, col. 3"
+rajasthan,2024,unnatural,all,9,deaths,"Table 8.1, col. 4"
+rajasthan,2024,not-known,not-known,57,deaths,"Table 8.1, col. 5"
+rajasthan,2024,natural,ageing,4,deaths,Table 8.2
+rajasthan,2024,natural,illness,20,deaths,Table 8.2
+rajasthan,2024,unnatural,suicide,8,deaths,Table 8.4
+rajasthan,2024,unnatural,execution,0,deaths,Table 8.4
+rajasthan,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+rajasthan,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+rajasthan,2024,unnatural,firing,0,deaths,Table 8.4
+rajasthan,2024,unnatural,negligence-or-excess-by-jail-personnel,1,deaths,Table 8.4
+rajasthan,2024,unnatural,accidental,0,deaths,Table 8.4
+rajasthan,2024,unnatural,others,0,deaths,Table 8.4
+sikkim,2024,all,all,1,deaths,"Table 8.1, col. 6"
+sikkim,2024,natural,all,1,deaths,"Table 8.1, col. 3"
+sikkim,2024,unnatural,all,0,deaths,"Table 8.1, col. 4"
+sikkim,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+sikkim,2024,natural,ageing,0,deaths,Table 8.2
+sikkim,2024,natural,illness,1,deaths,Table 8.2
+sikkim,2024,unnatural,suicide,0,deaths,Table 8.4
+sikkim,2024,unnatural,execution,0,deaths,Table 8.4
+sikkim,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+sikkim,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+sikkim,2024,unnatural,firing,0,deaths,Table 8.4
+sikkim,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+sikkim,2024,unnatural,accidental,0,deaths,Table 8.4
+sikkim,2024,unnatural,others,0,deaths,Table 8.4
+tamil-nadu,2024,all,all,87,deaths,"Table 8.1, col. 6"
+tamil-nadu,2024,natural,all,82,deaths,"Table 8.1, col. 3"
+tamil-nadu,2024,unnatural,all,5,deaths,"Table 8.1, col. 4"
+tamil-nadu,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+tamil-nadu,2024,natural,ageing,1,deaths,Table 8.2
+tamil-nadu,2024,natural,illness,81,deaths,Table 8.2
+tamil-nadu,2024,unnatural,suicide,5,deaths,Table 8.4
+tamil-nadu,2024,unnatural,execution,0,deaths,Table 8.4
+tamil-nadu,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+tamil-nadu,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+tamil-nadu,2024,unnatural,firing,0,deaths,Table 8.4
+tamil-nadu,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+tamil-nadu,2024,unnatural,accidental,0,deaths,Table 8.4
+tamil-nadu,2024,unnatural,others,0,deaths,Table 8.4
+telangana,2024,all,all,16,deaths,"Table 8.1, col. 6"
+telangana,2024,natural,all,14,deaths,"Table 8.1, col. 3"
+telangana,2024,unnatural,all,2,deaths,"Table 8.1, col. 4"
+telangana,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+telangana,2024,natural,ageing,0,deaths,Table 8.2
+telangana,2024,natural,illness,14,deaths,Table 8.2
+telangana,2024,unnatural,suicide,2,deaths,Table 8.4
+telangana,2024,unnatural,execution,0,deaths,Table 8.4
+telangana,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+telangana,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+telangana,2024,unnatural,firing,0,deaths,Table 8.4
+telangana,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+telangana,2024,unnatural,accidental,0,deaths,Table 8.4
+telangana,2024,unnatural,others,0,deaths,Table 8.4
+tripura,2024,all,all,5,deaths,"Table 8.1, col. 6"
+tripura,2024,natural,all,4,deaths,"Table 8.1, col. 3"
+tripura,2024,unnatural,all,1,deaths,"Table 8.1, col. 4"
+tripura,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+tripura,2024,natural,ageing,0,deaths,Table 8.2
+tripura,2024,natural,illness,4,deaths,Table 8.2
+tripura,2024,unnatural,suicide,1,deaths,Table 8.4
+tripura,2024,unnatural,execution,0,deaths,Table 8.4
+tripura,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+tripura,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+tripura,2024,unnatural,firing,0,deaths,Table 8.4
+tripura,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+tripura,2024,unnatural,accidental,0,deaths,Table 8.4
+tripura,2024,unnatural,others,0,deaths,Table 8.4
+uttar-pradesh,2024,all,all,330,deaths,"Table 8.1, col. 6"
+uttar-pradesh,2024,natural,all,304,deaths,"Table 8.1, col. 3"
+uttar-pradesh,2024,unnatural,all,26,deaths,"Table 8.1, col. 4"
+uttar-pradesh,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+uttar-pradesh,2024,natural,ageing,44,deaths,Table 8.2
+uttar-pradesh,2024,natural,illness,260,deaths,Table 8.2
+uttar-pradesh,2024,unnatural,suicide,16,deaths,Table 8.4
+uttar-pradesh,2024,unnatural,execution,0,deaths,Table 8.4
+uttar-pradesh,2024,unnatural,murder-by-inmates,1,deaths,Table 8.4
+uttar-pradesh,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+uttar-pradesh,2024,unnatural,firing,0,deaths,Table 8.4
+uttar-pradesh,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+uttar-pradesh,2024,unnatural,accidental,1,deaths,Table 8.4
+uttar-pradesh,2024,unnatural,others,8,deaths,Table 8.4
+uttarakhand,2024,all,all,18,deaths,"Table 8.1, col. 6"
+uttarakhand,2024,natural,all,18,deaths,"Table 8.1, col. 3"
+uttarakhand,2024,unnatural,all,0,deaths,"Table 8.1, col. 4"
+uttarakhand,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+uttarakhand,2024,natural,ageing,0,deaths,Table 8.2
+uttarakhand,2024,natural,illness,18,deaths,Table 8.2
+uttarakhand,2024,unnatural,suicide,0,deaths,Table 8.4
+uttarakhand,2024,unnatural,execution,0,deaths,Table 8.4
+uttarakhand,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+uttarakhand,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+uttarakhand,2024,unnatural,firing,0,deaths,Table 8.4
+uttarakhand,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+uttarakhand,2024,unnatural,accidental,0,deaths,Table 8.4
+uttarakhand,2024,unnatural,others,0,deaths,Table 8.4
+west-bengal,2024,all,all,138,deaths,"Table 8.1, col. 6"
+west-bengal,2024,natural,all,124,deaths,"Table 8.1, col. 3"
+west-bengal,2024,unnatural,all,14,deaths,"Table 8.1, col. 4"
+west-bengal,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+west-bengal,2024,natural,ageing,5,deaths,Table 8.2
+west-bengal,2024,natural,illness,119,deaths,Table 8.2
+west-bengal,2024,unnatural,suicide,7,deaths,Table 8.4
+west-bengal,2024,unnatural,execution,0,deaths,Table 8.4
+west-bengal,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+west-bengal,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+west-bengal,2024,unnatural,firing,0,deaths,Table 8.4
+west-bengal,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+west-bengal,2024,unnatural,accidental,1,deaths,Table 8.4
+west-bengal,2024,unnatural,others,6,deaths,Table 8.4
+andaman-nicobar,2024,all,all,1,deaths,"Table 8.1, col. 6"
+andaman-nicobar,2024,natural,all,1,deaths,"Table 8.1, col. 3"
+andaman-nicobar,2024,unnatural,all,0,deaths,"Table 8.1, col. 4"
+andaman-nicobar,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+andaman-nicobar,2024,natural,ageing,0,deaths,Table 8.2
+andaman-nicobar,2024,natural,illness,1,deaths,Table 8.2
+andaman-nicobar,2024,unnatural,suicide,0,deaths,Table 8.4
+andaman-nicobar,2024,unnatural,execution,0,deaths,Table 8.4
+andaman-nicobar,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+andaman-nicobar,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+andaman-nicobar,2024,unnatural,firing,0,deaths,Table 8.4
+andaman-nicobar,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+andaman-nicobar,2024,unnatural,accidental,0,deaths,Table 8.4
+andaman-nicobar,2024,unnatural,others,0,deaths,Table 8.4
+chandigarh,2024,all,all,5,deaths,"Table 8.1, col. 6"
+chandigarh,2024,natural,all,5,deaths,"Table 8.1, col. 3"
+chandigarh,2024,unnatural,all,0,deaths,"Table 8.1, col. 4"
+chandigarh,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+chandigarh,2024,natural,ageing,0,deaths,Table 8.2
+chandigarh,2024,natural,illness,5,deaths,Table 8.2
+chandigarh,2024,unnatural,suicide,0,deaths,Table 8.4
+chandigarh,2024,unnatural,execution,0,deaths,Table 8.4
+chandigarh,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+chandigarh,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+chandigarh,2024,unnatural,firing,0,deaths,Table 8.4
+chandigarh,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+chandigarh,2024,unnatural,accidental,0,deaths,Table 8.4
+chandigarh,2024,unnatural,others,0,deaths,Table 8.4
+dnh-dd,2024,all,all,0,deaths,"Table 8.1, col. 6"
+dnh-dd,2024,natural,all,0,deaths,"Table 8.1, col. 3"
+dnh-dd,2024,unnatural,all,0,deaths,"Table 8.1, col. 4"
+dnh-dd,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+dnh-dd,2024,natural,ageing,0,deaths,Table 8.2
+dnh-dd,2024,natural,illness,0,deaths,Table 8.2
+dnh-dd,2024,unnatural,suicide,0,deaths,Table 8.4
+dnh-dd,2024,unnatural,execution,0,deaths,Table 8.4
+dnh-dd,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+dnh-dd,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+dnh-dd,2024,unnatural,firing,0,deaths,Table 8.4
+dnh-dd,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+dnh-dd,2024,unnatural,accidental,0,deaths,Table 8.4
+dnh-dd,2024,unnatural,others,0,deaths,Table 8.4
+delhi,2024,all,all,65,deaths,"Table 8.1, col. 6"
+delhi,2024,natural,all,53,deaths,"Table 8.1, col. 3"
+delhi,2024,unnatural,all,12,deaths,"Table 8.1, col. 4"
+delhi,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+delhi,2024,natural,ageing,0,deaths,Table 8.2
+delhi,2024,natural,illness,53,deaths,Table 8.2
+delhi,2024,unnatural,suicide,5,deaths,Table 8.4
+delhi,2024,unnatural,execution,0,deaths,Table 8.4
+delhi,2024,unnatural,murder-by-inmates,1,deaths,Table 8.4
+delhi,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+delhi,2024,unnatural,firing,0,deaths,Table 8.4
+delhi,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+delhi,2024,unnatural,accidental,5,deaths,Table 8.4
+delhi,2024,unnatural,others,1,deaths,Table 8.4
+jammu-kashmir,2024,all,all,11,deaths,"Table 8.1, col. 6"
+jammu-kashmir,2024,natural,all,7,deaths,"Table 8.1, col. 3"
+jammu-kashmir,2024,unnatural,all,4,deaths,"Table 8.1, col. 4"
+jammu-kashmir,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+jammu-kashmir,2024,natural,ageing,2,deaths,Table 8.2
+jammu-kashmir,2024,natural,illness,5,deaths,Table 8.2
+jammu-kashmir,2024,unnatural,suicide,2,deaths,Table 8.4
+jammu-kashmir,2024,unnatural,execution,0,deaths,Table 8.4
+jammu-kashmir,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+jammu-kashmir,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+jammu-kashmir,2024,unnatural,firing,0,deaths,Table 8.4
+jammu-kashmir,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+jammu-kashmir,2024,unnatural,accidental,1,deaths,Table 8.4
+jammu-kashmir,2024,unnatural,others,1,deaths,Table 8.4
+ladakh,2024,all,all,0,deaths,"Table 8.1, col. 6"
+ladakh,2024,natural,all,0,deaths,"Table 8.1, col. 3"
+ladakh,2024,unnatural,all,0,deaths,"Table 8.1, col. 4"
+ladakh,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+ladakh,2024,natural,ageing,0,deaths,Table 8.2
+ladakh,2024,natural,illness,0,deaths,Table 8.2
+ladakh,2024,unnatural,suicide,0,deaths,Table 8.4
+ladakh,2024,unnatural,execution,0,deaths,Table 8.4
+ladakh,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+ladakh,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+ladakh,2024,unnatural,firing,0,deaths,Table 8.4
+ladakh,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+ladakh,2024,unnatural,accidental,0,deaths,Table 8.4
+ladakh,2024,unnatural,others,0,deaths,Table 8.4
+lakshadweep,2024,all,all,0,deaths,"Table 8.1, col. 6"
+lakshadweep,2024,natural,all,0,deaths,"Table 8.1, col. 3"
+lakshadweep,2024,unnatural,all,0,deaths,"Table 8.1, col. 4"
+lakshadweep,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+lakshadweep,2024,natural,ageing,0,deaths,Table 8.2
+lakshadweep,2024,natural,illness,0,deaths,Table 8.2
+lakshadweep,2024,unnatural,suicide,0,deaths,Table 8.4
+lakshadweep,2024,unnatural,execution,0,deaths,Table 8.4
+lakshadweep,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+lakshadweep,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+lakshadweep,2024,unnatural,firing,0,deaths,Table 8.4
+lakshadweep,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+lakshadweep,2024,unnatural,accidental,0,deaths,Table 8.4
+lakshadweep,2024,unnatural,others,0,deaths,Table 8.4
+puducherry,2024,all,all,2,deaths,"Table 8.1, col. 6"
+puducherry,2024,natural,all,0,deaths,"Table 8.1, col. 3"
+puducherry,2024,unnatural,all,2,deaths,"Table 8.1, col. 4"
+puducherry,2024,not-known,not-known,0,deaths,"Table 8.1, col. 5"
+puducherry,2024,natural,ageing,0,deaths,Table 8.2
+puducherry,2024,natural,illness,0,deaths,Table 8.2
+puducherry,2024,unnatural,suicide,2,deaths,Table 8.4
+puducherry,2024,unnatural,execution,0,deaths,Table 8.4
+puducherry,2024,unnatural,murder-by-inmates,0,deaths,Table 8.4
+puducherry,2024,unnatural,assault-by-outside-elements,0,deaths,Table 8.4
+puducherry,2024,unnatural,firing,0,deaths,Table 8.4
+puducherry,2024,unnatural,negligence-or-excess-by-jail-personnel,0,deaths,Table 8.4
+puducherry,2024,unnatural,accidental,0,deaths,Table 8.4
+puducherry,2024,unnatural,others,0,deaths,Table 8.4
