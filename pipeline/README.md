@@ -57,6 +57,7 @@ Exceptions:
 - `transport/fetch.sh` reads its URLs from `transport/sources.tsv`, in the same way as `crime/fetch.sh`.
   `transport/build_tourism.py` needs only `fetch.sh tourism/` and `extract_text.sh tourism/`.
 - `crime/fetch.sh` reads its URLs from `crime/sources.tsv`. Give a path prefix to fetch part of the list, for example `pipeline/crime/fetch.sh pendency/`.
+- `crime/build_ncrb.py --only sc-st custody trafficking-missing prison-deaths` needs only `cii-2024/volume2.pdf`, `cii-2024/volume3.pdf` and `psi-2024/report-revised.pdf`, with their text.
 - `parse_d33.py`, `check_d33.py` and `parse_proj.py` take file paths. The `extract_text.sh` script of
   their topic runs them.
 
@@ -118,7 +119,7 @@ Some CSVs were made in more than one step. Run the steps in this order:
 | `crime/ncrb_files.mjs` | None. Lists the files of an NCRB year page in English (the site serves Hindi by default) | NCRB |
 | `crime/find_answers.py` | None. Lists Ministry of Law and Justice answers and their files, from the Lok Sabha eLibrary or the Rajya Sabha question list | Lok Sabha, Rajya Sabha |
 | `crime/extract_text.sh` | None. Text of the Crime in India, Prison Statistics India and Parliament answer PDFs | NCRB, Ministry of Law and Justice |
-| `crime/build_ncrb.py` | `crime-by-state-2024`, `crime-india-trend`, `ipc-crimes-india-1981-2024`, `murder-by-state-2024`, `crimes-against-women-by-state-2024`, `police-and-court-disposal-by-state-2024`, `prisons-by-state-2024`, `prisons-india-trend` | NCRB (Crime in India, Prison Statistics India) |
+| `crime/build_ncrb.py` | `crime-by-state-2024`, `crime-india-trend`, `ipc-crimes-india-1981-2024`, `murder-by-state-2024`, `crimes-against-women-by-state-2024`, `police-and-court-disposal-by-state-2024`, `prisons-by-state-2024`, `prisons-india-trend`, `crimes-against-scs-sts-by-state-2024`, `deaths-in-police-custody-2024`, `cases-against-police-personnel-2024`, `human-trafficking-by-state-2024`, `missing-children-by-state-2024`, `prison-deaths-2024`. `--only` builds some parts. Checks that the states add up to the India row and that the parts of each row add up to its total, and stops on a difference | NCRB (Crime in India, Prison Statistics India) |
 | `crime/build_pendency.py` | `court-pendency-district-by-state`, `court-pendency-high-courts` | Ministry of Law and Justice (answers in the Lok Sabha and Rajya Sabha, citing NJDG) |
 | `transport/fetch.sh`, `transport/sources.tsv` | None. Downloads the MoRTH reports, the NHTS fact sheet, press note and workbooks, and NSS Report 597 with its press note and Appendix A Tables 1, 15 and 19, with `common/fetch.sh`. Give a path prefix to fetch part of the list, for example `tourism/` | MoRTH, MoSPI |
 | `transport/morth_reports.mjs` | None. Lists the documents in one group of the MoRTH reports page and saves the app's JSON responses (the site is a JavaScript app in Hindi) | MoRTH |

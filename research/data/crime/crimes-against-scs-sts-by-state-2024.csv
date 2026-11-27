@@ -1,0 +1,445 @@
+geography,period,group,indicator,value,unit,table
+india,2022,scheduled-castes,cases,57582,cases,Table 7A.1
+india,2023,scheduled-castes,cases,57789,cases,Table 7A.1
+india,2024,scheduled-castes,cases,55698,cases,Table 7A.1
+india,2011,scheduled-castes,population,2013.8,lakh SCs (Census 2011),Table 7A.1
+india,2024,scheduled-castes,crime-rate,27.7,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+india,2024,scheduled-castes,chargesheeting-rate,82.0,percent,Table 7A.1
+andhra-pradesh,2022,scheduled-castes,cases,2315,cases,Table 7A.1
+andhra-pradesh,2023,scheduled-castes,cases,2027,cases,Table 7A.1
+andhra-pradesh,2024,scheduled-castes,cases,1823,cases,Table 7A.1
+andhra-pradesh,2011,scheduled-castes,population,84.5,lakh SCs (Census 2011),Table 7A.1
+andhra-pradesh,2024,scheduled-castes,crime-rate,21.6,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+andhra-pradesh,2024,scheduled-castes,chargesheeting-rate,81.5,percent,Table 7A.1
+arunachal-pradesh,2022,scheduled-castes,cases,0,cases,Table 7A.1
+arunachal-pradesh,2023,scheduled-castes,cases,0,cases,Table 7A.1
+arunachal-pradesh,2024,scheduled-castes,cases,1,cases,Table 7A.1
+arunachal-pradesh,2011,scheduled-castes,population,0.0,lakh SCs (Census 2011),Table 7A.1
+arunachal-pradesh,2024,scheduled-castes,crime-rate,,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+arunachal-pradesh,2024,scheduled-castes,chargesheeting-rate,100.0,percent,Table 7A.1
+assam,2022,scheduled-castes,cases,14,cases,Table 7A.1
+assam,2023,scheduled-castes,cases,5,cases,Table 7A.1
+assam,2024,scheduled-castes,cases,7,cases,Table 7A.1
+assam,2011,scheduled-castes,population,22.3,lakh SCs (Census 2011),Table 7A.1
+assam,2024,scheduled-castes,crime-rate,0.3,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+assam,2024,scheduled-castes,chargesheeting-rate,25.0,percent,Table 7A.1
+bihar,2022,scheduled-castes,cases,6509,cases,Table 7A.1
+bihar,2023,scheduled-castes,cases,7064,cases,Table 7A.1
+bihar,2024,scheduled-castes,cases,7549,cases,Table 7A.1
+bihar,2011,scheduled-castes,population,165.7,lakh SCs (Census 2011),Table 7A.1
+bihar,2024,scheduled-castes,crime-rate,45.6,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+bihar,2024,scheduled-castes,chargesheeting-rate,87.9,percent,Table 7A.1
+chhattisgarh,2022,scheduled-castes,cases,323,cases,Table 7A.1
+chhattisgarh,2023,scheduled-castes,cases,250,cases,Table 7A.1
+chhattisgarh,2024,scheduled-castes,cases,268,cases,Table 7A.1
+chhattisgarh,2011,scheduled-castes,population,32.7,lakh SCs (Census 2011),Table 7A.1
+chhattisgarh,2024,scheduled-castes,crime-rate,8.2,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+chhattisgarh,2024,scheduled-castes,chargesheeting-rate,99.0,percent,Table 7A.1
+goa,2022,scheduled-castes,cases,8,cases,Table 7A.1
+goa,2023,scheduled-castes,cases,4,cases,Table 7A.1
+goa,2024,scheduled-castes,cases,1,cases,Table 7A.1
+goa,2011,scheduled-castes,population,0.3,lakh SCs (Census 2011),Table 7A.1
+goa,2024,scheduled-castes,crime-rate,3.9,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+goa,2024,scheduled-castes,chargesheeting-rate,100.0,percent,Table 7A.1
+gujarat,2022,scheduled-castes,cases,1279,cases,Table 7A.1
+gujarat,2023,scheduled-castes,cases,1373,cases,Table 7A.1
+gujarat,2024,scheduled-castes,cases,1304,cases,Table 7A.1
+gujarat,2011,scheduled-castes,population,40.7,lakh SCs (Census 2011),Table 7A.1
+gujarat,2024,scheduled-castes,crime-rate,32.0,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+gujarat,2024,scheduled-castes,chargesheeting-rate,97.2,percent,Table 7A.1
+haryana,2022,scheduled-castes,cases,1633,cases,Table 7A.1
+haryana,2023,scheduled-castes,cases,1539,cases,Table 7A.1
+haryana,2024,scheduled-castes,cases,1076,cases,Table 7A.1
+haryana,2011,scheduled-castes,population,51.1,lakh SCs (Census 2011),Table 7A.1
+haryana,2024,scheduled-castes,crime-rate,21.0,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+haryana,2024,scheduled-castes,chargesheeting-rate,55.5,percent,Table 7A.1
+himachal-pradesh,2022,scheduled-castes,cases,210,cases,Table 7A.1
+himachal-pradesh,2023,scheduled-castes,cases,229,cases,Table 7A.1
+himachal-pradesh,2024,scheduled-castes,cases,247,cases,Table 7A.1
+himachal-pradesh,2011,scheduled-castes,population,17.3,lakh SCs (Census 2011),Table 7A.1
+himachal-pradesh,2024,scheduled-castes,crime-rate,14.3,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+himachal-pradesh,2024,scheduled-castes,chargesheeting-rate,69.0,percent,Table 7A.1
+jharkhand,2022,scheduled-castes,cases,674,cases,Table 7A.1
+jharkhand,2023,scheduled-castes,cases,604,cases,Table 7A.1
+jharkhand,2024,scheduled-castes,cases,566,cases,Table 7A.1
+jharkhand,2011,scheduled-castes,population,39.9,lakh SCs (Census 2011),Table 7A.1
+jharkhand,2024,scheduled-castes,crime-rate,14.2,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+jharkhand,2024,scheduled-castes,chargesheeting-rate,60.3,percent,Table 7A.1
+karnataka,2022,scheduled-castes,cases,1977,cases,Table 7A.1
+karnataka,2023,scheduled-castes,cases,1923,cases,Table 7A.1
+karnataka,2024,scheduled-castes,cases,2016,cases,Table 7A.1
+karnataka,2011,scheduled-castes,population,104.7,lakh SCs (Census 2011),Table 7A.1
+karnataka,2024,scheduled-castes,crime-rate,19.2,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+karnataka,2024,scheduled-castes,chargesheeting-rate,83.6,percent,Table 7A.1
+kerala,2022,scheduled-castes,cases,1050,cases,Table 7A.1
+kerala,2023,scheduled-castes,cases,1128,cases,Table 7A.1
+kerala,2024,scheduled-castes,cases,1064,cases,Table 7A.1
+kerala,2011,scheduled-castes,population,30.4,lakh SCs (Census 2011),Table 7A.1
+kerala,2024,scheduled-castes,crime-rate,35.0,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+kerala,2024,scheduled-castes,chargesheeting-rate,83.3,percent,Table 7A.1
+madhya-pradesh,2022,scheduled-castes,cases,7733,cases,Table 7A.1
+madhya-pradesh,2023,scheduled-castes,cases,8232,cases,Table 7A.1
+madhya-pradesh,2024,scheduled-castes,cases,7765,cases,Table 7A.1
+madhya-pradesh,2011,scheduled-castes,population,113.4,lakh SCs (Census 2011),Table 7A.1
+madhya-pradesh,2024,scheduled-castes,crime-rate,68.5,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+madhya-pradesh,2024,scheduled-castes,chargesheeting-rate,99.7,percent,Table 7A.1
+maharashtra,2022,scheduled-castes,cases,2743,cases,Table 7A.1
+maharashtra,2023,scheduled-castes,cases,3024,cases,Table 7A.1
+maharashtra,2024,scheduled-castes,cases,3219,cases,Table 7A.1
+maharashtra,2011,scheduled-castes,population,132.8,lakh SCs (Census 2011),Table 7A.1
+maharashtra,2024,scheduled-castes,crime-rate,24.2,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+maharashtra,2024,scheduled-castes,chargesheeting-rate,94.0,percent,Table 7A.1
+manipur,2022,scheduled-castes,cases,0,cases,Table 7A.1
+manipur,2023,scheduled-castes,cases,0,cases,Table 7A.1
+manipur,2024,scheduled-castes,cases,1,cases,Table 7A.1
+manipur,2011,scheduled-castes,population,1.0,lakh SCs (Census 2011),Table 7A.1
+manipur,2024,scheduled-castes,crime-rate,1.0,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+manipur,2024,scheduled-castes,chargesheeting-rate,,percent,Table 7A.1
+meghalaya,2022,scheduled-castes,cases,0,cases,Table 7A.1
+meghalaya,2023,scheduled-castes,cases,0,cases,Table 7A.1
+meghalaya,2024,scheduled-castes,cases,0,cases,Table 7A.1
+meghalaya,2011,scheduled-castes,population,0.2,lakh SCs (Census 2011),Table 7A.1
+meghalaya,2024,scheduled-castes,crime-rate,0.0,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+meghalaya,2024,scheduled-castes,chargesheeting-rate,,percent,Table 7A.1
+mizoram,2022,scheduled-castes,cases,5,cases,Table 7A.1
+mizoram,2023,scheduled-castes,cases,0,cases,Table 7A.1
+mizoram,2024,scheduled-castes,cases,2,cases,Table 7A.1
+mizoram,2011,scheduled-castes,population,0.0,lakh SCs (Census 2011),Table 7A.1
+mizoram,2024,scheduled-castes,crime-rate,164.2,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+mizoram,2024,scheduled-castes,chargesheeting-rate,100.0,percent,Table 7A.1
+nagaland,2022,scheduled-castes,cases,0,cases,Table 7A.1
+nagaland,2023,scheduled-castes,cases,0,cases,Table 7A.1
+nagaland,2024,scheduled-castes,cases,0,cases,Table 7A.1
+nagaland,2011,scheduled-castes,population,0.0,lakh SCs (Census 2011),Table 7A.1
+nagaland,2024,scheduled-castes,crime-rate,,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+nagaland,2024,scheduled-castes,chargesheeting-rate,,percent,Table 7A.1
+odisha,2022,scheduled-castes,cases,2902,cases,Table 7A.1
+odisha,2023,scheduled-castes,cases,2696,cases,Table 7A.1
+odisha,2024,scheduled-castes,cases,2704,cases,Table 7A.1
+odisha,2011,scheduled-castes,population,71.9,lakh SCs (Census 2011),Table 7A.1
+odisha,2024,scheduled-castes,crime-rate,37.6,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+odisha,2024,scheduled-castes,chargesheeting-rate,100.0,percent,Table 7A.1
+punjab,2022,scheduled-castes,cases,162,cases,Table 7A.1
+punjab,2023,scheduled-castes,cases,116,cases,Table 7A.1
+punjab,2024,scheduled-castes,cases,166,cases,Table 7A.1
+punjab,2011,scheduled-castes,population,88.6,lakh SCs (Census 2011),Table 7A.1
+punjab,2024,scheduled-castes,crime-rate,1.9,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+punjab,2024,scheduled-castes,chargesheeting-rate,64.2,percent,Table 7A.1
+rajasthan,2022,scheduled-castes,cases,8752,cases,Table 7A.1
+rajasthan,2023,scheduled-castes,cases,8449,cases,Table 7A.1
+rajasthan,2024,scheduled-castes,cases,7008,cases,Table 7A.1
+rajasthan,2011,scheduled-castes,population,122.2,lakh SCs (Census 2011),Table 7A.1
+rajasthan,2024,scheduled-castes,crime-rate,57.3,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+rajasthan,2024,scheduled-castes,chargesheeting-rate,43.9,percent,Table 7A.1
+sikkim,2022,scheduled-castes,cases,3,cases,Table 7A.1
+sikkim,2023,scheduled-castes,cases,0,cases,Table 7A.1
+sikkim,2024,scheduled-castes,cases,1,cases,Table 7A.1
+sikkim,2011,scheduled-castes,population,0.3,lakh SCs (Census 2011),Table 7A.1
+sikkim,2024,scheduled-castes,crime-rate,3.5,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+sikkim,2024,scheduled-castes,chargesheeting-rate,0.0,percent,Table 7A.1
+tamil-nadu,2022,scheduled-castes,cases,1761,cases,Table 7A.1
+tamil-nadu,2023,scheduled-castes,cases,1921,cases,Table 7A.1
+tamil-nadu,2024,scheduled-castes,cases,1777,cases,Table 7A.1
+tamil-nadu,2011,scheduled-castes,population,144.4,lakh SCs (Census 2011),Table 7A.1
+tamil-nadu,2024,scheduled-castes,crime-rate,12.3,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+tamil-nadu,2024,scheduled-castes,chargesheeting-rate,84.3,percent,Table 7A.1
+telangana,2022,scheduled-castes,cases,1787,cases,Table 7A.1
+telangana,2023,scheduled-castes,cases,1709,cases,Table 7A.1
+telangana,2024,scheduled-castes,cases,2059,cases,Table 7A.1
+telangana,2011,scheduled-castes,population,54.3,lakh SCs (Census 2011),Table 7A.1
+telangana,2024,scheduled-castes,crime-rate,37.9,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+telangana,2024,scheduled-castes,chargesheeting-rate,76.4,percent,Table 7A.1
+tripura,2022,scheduled-castes,cases,2,cases,Table 7A.1
+tripura,2023,scheduled-castes,cases,0,cases,Table 7A.1
+tripura,2024,scheduled-castes,cases,0,cases,Table 7A.1
+tripura,2011,scheduled-castes,population,6.5,lakh SCs (Census 2011),Table 7A.1
+tripura,2024,scheduled-castes,crime-rate,0.0,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+tripura,2024,scheduled-castes,chargesheeting-rate,50.0,percent,Table 7A.1
+uttar-pradesh,2022,scheduled-castes,cases,15368,cases,Table 7A.1
+uttar-pradesh,2023,scheduled-castes,cases,15130,cases,Table 7A.1
+uttar-pradesh,2024,scheduled-castes,cases,14642,cases,Table 7A.1
+uttar-pradesh,2011,scheduled-castes,population,413.6,lakh SCs (Census 2011),Table 7A.1
+uttar-pradesh,2024,scheduled-castes,crime-rate,35.4,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+uttar-pradesh,2024,scheduled-castes,chargesheeting-rate,85.8,percent,Table 7A.1
+uttarakhand,2022,scheduled-castes,cases,114,cases,Table 7A.1
+uttarakhand,2023,scheduled-castes,cases,102,cases,Table 7A.1
+uttarakhand,2024,scheduled-castes,cases,153,cases,Table 7A.1
+uttarakhand,2011,scheduled-castes,population,18.9,lakh SCs (Census 2011),Table 7A.1
+uttarakhand,2024,scheduled-castes,crime-rate,8.1,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+uttarakhand,2024,scheduled-castes,chargesheeting-rate,79.2,percent,Table 7A.1
+west-bengal,2022,scheduled-castes,cases,104,cases,Table 7A.1
+west-bengal,2023,scheduled-castes,cases,102,cases,Table 7A.1
+west-bengal,2024,scheduled-castes,cases,116,cases,Table 7A.1
+west-bengal,2011,scheduled-castes,population,214.6,lakh SCs (Census 2011),Table 7A.1
+west-bengal,2024,scheduled-castes,crime-rate,0.5,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+west-bengal,2024,scheduled-castes,chargesheeting-rate,86.8,percent,Table 7A.1
+andaman-nicobar,2022,scheduled-castes,cases,0,cases,Table 7A.1
+andaman-nicobar,2023,scheduled-castes,cases,0,cases,Table 7A.1
+andaman-nicobar,2024,scheduled-castes,cases,0,cases,Table 7A.1
+andaman-nicobar,2011,scheduled-castes,population,0.0,lakh SCs (Census 2011),Table 7A.1
+andaman-nicobar,2024,scheduled-castes,crime-rate,,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+andaman-nicobar,2024,scheduled-castes,chargesheeting-rate,,percent,Table 7A.1
+chandigarh,2022,scheduled-castes,cases,4,cases,Table 7A.1
+chandigarh,2023,scheduled-castes,cases,3,cases,Table 7A.1
+chandigarh,2024,scheduled-castes,cases,5,cases,Table 7A.1
+chandigarh,2011,scheduled-castes,population,2.0,lakh SCs (Census 2011),Table 7A.1
+chandigarh,2024,scheduled-castes,crime-rate,2.5,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+chandigarh,2024,scheduled-castes,chargesheeting-rate,100.0,percent,Table 7A.1
+dnh-dd,2022,scheduled-castes,cases,0,cases,Table 7A.1
+dnh-dd,2023,scheduled-castes,cases,1,cases,Table 7A.1
+dnh-dd,2024,scheduled-castes,cases,2,cases,Table 7A.1
+dnh-dd,2011,scheduled-castes,population,0.1,lakh SCs (Census 2011),Table 7A.1
+dnh-dd,2024,scheduled-castes,crime-rate,16.2,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+dnh-dd,2024,scheduled-castes,chargesheeting-rate,100.0,percent,Table 7A.1
+delhi,2022,scheduled-castes,cases,130,cases,Table 7A.1
+delhi,2023,scheduled-castes,cases,128,cases,Table 7A.1
+delhi,2024,scheduled-castes,cases,133,cases,Table 7A.1
+delhi,2011,scheduled-castes,population,28.1,lakh SCs (Census 2011),Table 7A.1
+delhi,2024,scheduled-castes,crime-rate,4.7,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+delhi,2024,scheduled-castes,chargesheeting-rate,95.5,percent,Table 7A.1
+jammu-kashmir,2022,scheduled-castes,cases,11,cases,Table 7A.1
+jammu-kashmir,2023,scheduled-castes,cases,26,cases,Table 7A.1
+jammu-kashmir,2024,scheduled-castes,cases,19,cases,Table 7A.1
+jammu-kashmir,2011,scheduled-castes,population,9.2,lakh SCs (Census 2011),Table 7A.1
+jammu-kashmir,2024,scheduled-castes,crime-rate,2.1,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+jammu-kashmir,2024,scheduled-castes,chargesheeting-rate,26.7,percent,Table 7A.1
+ladakh,2022,scheduled-castes,cases,0,cases,Table 7A.1
+ladakh,2023,scheduled-castes,cases,0,cases,Table 7A.1
+ladakh,2024,scheduled-castes,cases,0,cases,Table 7A.1
+ladakh,2011,scheduled-castes,population,0.0,lakh SCs (Census 2011),Table 7A.1
+ladakh,2024,scheduled-castes,crime-rate,0.0,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+ladakh,2024,scheduled-castes,chargesheeting-rate,,percent,Table 7A.1
+lakshadweep,2022,scheduled-castes,cases,0,cases,Table 7A.1
+lakshadweep,2023,scheduled-castes,cases,0,cases,Table 7A.1
+lakshadweep,2024,scheduled-castes,cases,0,cases,Table 7A.1
+lakshadweep,2011,scheduled-castes,population,0.0,lakh SCs (Census 2011),Table 7A.1
+lakshadweep,2024,scheduled-castes,crime-rate,,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+lakshadweep,2024,scheduled-castes,chargesheeting-rate,,percent,Table 7A.1
+puducherry,2022,scheduled-castes,cases,9,cases,Table 7A.1
+puducherry,2023,scheduled-castes,cases,4,cases,Table 7A.1
+puducherry,2024,scheduled-castes,cases,4,cases,Table 7A.1
+puducherry,2011,scheduled-castes,population,2.0,lakh SCs (Census 2011),Table 7A.1
+puducherry,2024,scheduled-castes,crime-rate,2.0,crimes against SCs per lakh SC population (Census 2011),Table 7A.1
+puducherry,2024,scheduled-castes,chargesheeting-rate,50.0,percent,Table 7A.1
+india,2022,scheduled-tribes,cases,10064,cases,Table 7C.1
+india,2023,scheduled-tribes,cases,12960,cases,Table 7C.1
+india,2024,scheduled-tribes,cases,9966,cases,Table 7C.1
+india,2011,scheduled-tribes,population,1045.4,lakh STs (Census 2011),Table 7C.1
+india,2024,scheduled-tribes,crime-rate,9.5,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+india,2024,scheduled-tribes,chargesheeting-rate,81.0,percent,Table 7C.1
+andhra-pradesh,2022,scheduled-tribes,cases,396,cases,Table 7C.1
+andhra-pradesh,2023,scheduled-tribes,cases,361,cases,Table 7C.1
+andhra-pradesh,2024,scheduled-tribes,cases,333,cases,Table 7C.1
+andhra-pradesh,2011,scheduled-tribes,population,26.3,lakh STs (Census 2011),Table 7C.1
+andhra-pradesh,2024,scheduled-tribes,crime-rate,12.7,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+andhra-pradesh,2024,scheduled-tribes,chargesheeting-rate,85.4,percent,Table 7C.1
+arunachal-pradesh,2022,scheduled-tribes,cases,0,cases,Table 7C.1
+arunachal-pradesh,2023,scheduled-tribes,cases,0,cases,Table 7C.1
+arunachal-pradesh,2024,scheduled-tribes,cases,1,cases,Table 7C.1
+arunachal-pradesh,2011,scheduled-tribes,population,9.5,lakh STs (Census 2011),Table 7C.1
+arunachal-pradesh,2024,scheduled-tribes,crime-rate,0.1,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+arunachal-pradesh,2024,scheduled-tribes,chargesheeting-rate,,percent,Table 7C.1
+assam,2022,scheduled-tribes,cases,9,cases,Table 7C.1
+assam,2023,scheduled-tribes,cases,2,cases,Table 7C.1
+assam,2024,scheduled-tribes,cases,14,cases,Table 7C.1
+assam,2011,scheduled-tribes,population,38.8,lakh STs (Census 2011),Table 7C.1
+assam,2024,scheduled-tribes,crime-rate,0.4,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+assam,2024,scheduled-tribes,chargesheeting-rate,63.2,percent,Table 7C.1
+bihar,2022,scheduled-tribes,cases,146,cases,Table 7C.1
+bihar,2023,scheduled-tribes,cases,114,cases,Table 7C.1
+bihar,2024,scheduled-tribes,cases,113,cases,Table 7C.1
+bihar,2011,scheduled-tribes,population,13.4,lakh STs (Census 2011),Table 7C.1
+bihar,2024,scheduled-tribes,crime-rate,8.5,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+bihar,2024,scheduled-tribes,chargesheeting-rate,93.8,percent,Table 7C.1
+chhattisgarh,2022,scheduled-tribes,cases,516,cases,Table 7C.1
+chhattisgarh,2023,scheduled-tribes,cases,336,cases,Table 7C.1
+chhattisgarh,2024,scheduled-tribes,cases,387,cases,Table 7C.1
+chhattisgarh,2011,scheduled-tribes,population,78.2,lakh STs (Census 2011),Table 7C.1
+chhattisgarh,2024,scheduled-tribes,crime-rate,4.9,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+chhattisgarh,2024,scheduled-tribes,chargesheeting-rate,98.3,percent,Table 7C.1
+goa,2022,scheduled-tribes,cases,1,cases,Table 7C.1
+goa,2023,scheduled-tribes,cases,2,cases,Table 7C.1
+goa,2024,scheduled-tribes,cases,7,cases,Table 7C.1
+goa,2011,scheduled-tribes,population,1.5,lakh STs (Census 2011),Table 7C.1
+goa,2024,scheduled-tribes,crime-rate,4.7,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+goa,2024,scheduled-tribes,chargesheeting-rate,85.7,percent,Table 7C.1
+gujarat,2022,scheduled-tribes,cases,330,cases,Table 7C.1
+gujarat,2023,scheduled-tribes,cases,307,cases,Table 7C.1
+gujarat,2024,scheduled-tribes,cases,297,cases,Table 7C.1
+gujarat,2011,scheduled-tribes,population,89.2,lakh STs (Census 2011),Table 7C.1
+gujarat,2024,scheduled-tribes,crime-rate,3.3,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+gujarat,2024,scheduled-tribes,chargesheeting-rate,98.5,percent,Table 7C.1
+haryana,2022,scheduled-tribes,cases,0,cases,Table 7C.1
+haryana,2023,scheduled-tribes,cases,0,cases,Table 7C.1
+haryana,2024,scheduled-tribes,cases,1,cases,Table 7C.1
+haryana,2011,scheduled-tribes,population,0.0,lakh STs (Census 2011),Table 7C.1
+haryana,2024,scheduled-tribes,crime-rate,,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+haryana,2024,scheduled-tribes,chargesheeting-rate,0.0,percent,Table 7C.1
+himachal-pradesh,2022,scheduled-tribes,cases,4,cases,Table 7C.1
+himachal-pradesh,2023,scheduled-tribes,cases,7,cases,Table 7C.1
+himachal-pradesh,2024,scheduled-tribes,cases,1,cases,Table 7C.1
+himachal-pradesh,2011,scheduled-tribes,population,3.9,lakh STs (Census 2011),Table 7C.1
+himachal-pradesh,2024,scheduled-tribes,crime-rate,0.3,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+himachal-pradesh,2024,scheduled-tribes,chargesheeting-rate,100.0,percent,Table 7C.1
+jharkhand,2022,scheduled-tribes,cases,283,cases,Table 7C.1
+jharkhand,2023,scheduled-tribes,cases,308,cases,Table 7C.1
+jharkhand,2024,scheduled-tribes,cases,260,cases,Table 7C.1
+jharkhand,2011,scheduled-tribes,population,86.5,lakh STs (Census 2011),Table 7C.1
+jharkhand,2024,scheduled-tribes,crime-rate,3.0,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+jharkhand,2024,scheduled-tribes,chargesheeting-rate,50.9,percent,Table 7C.1
+karnataka,2022,scheduled-tribes,cases,438,cases,Table 7C.1
+karnataka,2023,scheduled-tribes,cases,434,cases,Table 7C.1
+karnataka,2024,scheduled-tribes,cases,393,cases,Table 7C.1
+karnataka,2011,scheduled-tribes,population,42.5,lakh STs (Census 2011),Table 7C.1
+karnataka,2024,scheduled-tribes,crime-rate,9.2,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+karnataka,2024,scheduled-tribes,chargesheeting-rate,85.7,percent,Table 7C.1
+kerala,2022,scheduled-tribes,cases,172,cases,Table 7C.1
+kerala,2023,scheduled-tribes,cases,185,cases,Table 7C.1
+kerala,2024,scheduled-tribes,cases,145,cases,Table 7C.1
+kerala,2011,scheduled-tribes,population,4.8,lakh STs (Census 2011),Table 7C.1
+kerala,2024,scheduled-tribes,crime-rate,29.9,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+kerala,2024,scheduled-tribes,chargesheeting-rate,86.0,percent,Table 7C.1
+madhya-pradesh,2022,scheduled-tribes,cases,2979,cases,Table 7C.1
+madhya-pradesh,2023,scheduled-tribes,cases,2858,cases,Table 7C.1
+madhya-pradesh,2024,scheduled-tribes,cases,3165,cases,Table 7C.1
+madhya-pradesh,2011,scheduled-tribes,population,153.2,lakh STs (Census 2011),Table 7C.1
+madhya-pradesh,2024,scheduled-tribes,crime-rate,20.7,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+madhya-pradesh,2024,scheduled-tribes,chargesheeting-rate,99.8,percent,Table 7C.1
+maharashtra,2022,scheduled-tribes,cases,742,cases,Table 7C.1
+maharashtra,2023,scheduled-tribes,cases,773,cases,Table 7C.1
+maharashtra,2024,scheduled-tribes,cases,830,cases,Table 7C.1
+maharashtra,2011,scheduled-tribes,population,105.1,lakh STs (Census 2011),Table 7C.1
+maharashtra,2024,scheduled-tribes,crime-rate,7.9,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+maharashtra,2024,scheduled-tribes,chargesheeting-rate,93.6,percent,Table 7C.1
+manipur,2022,scheduled-tribes,cases,1,cases,Table 7C.1
+manipur,2023,scheduled-tribes,cases,3399,cases,Table 7C.1
+manipur,2024,scheduled-tribes,cases,289,cases,Table 7C.1
+manipur,2011,scheduled-tribes,population,11.7,lakh STs (Census 2011),Table 7C.1
+manipur,2024,scheduled-tribes,crime-rate,24.8,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+manipur,2024,scheduled-tribes,chargesheeting-rate,0.0,percent,Table 7C.1
+meghalaya,2022,scheduled-tribes,cases,0,cases,Table 7C.1
+meghalaya,2023,scheduled-tribes,cases,0,cases,Table 7C.1
+meghalaya,2024,scheduled-tribes,cases,0,cases,Table 7C.1
+meghalaya,2011,scheduled-tribes,population,25.6,lakh STs (Census 2011),Table 7C.1
+meghalaya,2024,scheduled-tribes,crime-rate,0.0,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+meghalaya,2024,scheduled-tribes,chargesheeting-rate,,percent,Table 7C.1
+mizoram,2022,scheduled-tribes,cases,29,cases,Table 7C.1
+mizoram,2023,scheduled-tribes,cases,21,cases,Table 7C.1
+mizoram,2024,scheduled-tribes,cases,19,cases,Table 7C.1
+mizoram,2011,scheduled-tribes,population,10.4,lakh STs (Census 2011),Table 7C.1
+mizoram,2024,scheduled-tribes,crime-rate,1.8,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+mizoram,2024,scheduled-tribes,chargesheeting-rate,100.0,percent,Table 7C.1
+nagaland,2022,scheduled-tribes,cases,0,cases,Table 7C.1
+nagaland,2023,scheduled-tribes,cases,0,cases,Table 7C.1
+nagaland,2024,scheduled-tribes,cases,0,cases,Table 7C.1
+nagaland,2011,scheduled-tribes,population,17.1,lakh STs (Census 2011),Table 7C.1
+nagaland,2024,scheduled-tribes,crime-rate,0.0,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+nagaland,2024,scheduled-tribes,chargesheeting-rate,,percent,Table 7C.1
+odisha,2022,scheduled-tribes,cases,773,cases,Table 7C.1
+odisha,2023,scheduled-tribes,cases,662,cases,Table 7C.1
+odisha,2024,scheduled-tribes,cases,599,cases,Table 7C.1
+odisha,2011,scheduled-tribes,population,95.9,lakh STs (Census 2011),Table 7C.1
+odisha,2024,scheduled-tribes,crime-rate,6.2,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+odisha,2024,scheduled-tribes,chargesheeting-rate,100.0,percent,Table 7C.1
+punjab,2022,scheduled-tribes,cases,0,cases,Table 7C.1
+punjab,2023,scheduled-tribes,cases,0,cases,Table 7C.1
+punjab,2024,scheduled-tribes,cases,0,cases,Table 7C.1
+punjab,2011,scheduled-tribes,population,0.0,lakh STs (Census 2011),Table 7C.1
+punjab,2024,scheduled-tribes,crime-rate,,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+punjab,2024,scheduled-tribes,chargesheeting-rate,,percent,Table 7C.1
+rajasthan,2022,scheduled-tribes,cases,2521,cases,Table 7C.1
+rajasthan,2023,scheduled-tribes,cases,2453,cases,Table 7C.1
+rajasthan,2024,scheduled-tribes,cases,2282,cases,Table 7C.1
+rajasthan,2011,scheduled-tribes,population,92.4,lakh STs (Census 2011),Table 7C.1
+rajasthan,2024,scheduled-tribes,crime-rate,24.7,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+rajasthan,2024,scheduled-tribes,chargesheeting-rate,42.7,percent,Table 7C.1
+sikkim,2022,scheduled-tribes,cases,4,cases,Table 7C.1
+sikkim,2023,scheduled-tribes,cases,2,cases,Table 7C.1
+sikkim,2024,scheduled-tribes,cases,0,cases,Table 7C.1
+sikkim,2011,scheduled-tribes,population,2.1,lakh STs (Census 2011),Table 7C.1
+sikkim,2024,scheduled-tribes,crime-rate,0.0,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+sikkim,2024,scheduled-tribes,chargesheeting-rate,0.0,percent,Table 7C.1
+tamil-nadu,2022,scheduled-tribes,cases,67,cases,Table 7C.1
+tamil-nadu,2023,scheduled-tribes,cases,48,cases,Table 7C.1
+tamil-nadu,2024,scheduled-tribes,cases,55,cases,Table 7C.1
+tamil-nadu,2011,scheduled-tribes,population,7.9,lakh STs (Census 2011),Table 7C.1
+tamil-nadu,2024,scheduled-tribes,crime-rate,6.9,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+tamil-nadu,2024,scheduled-tribes,chargesheeting-rate,90.9,percent,Table 7C.1
+telangana,2022,scheduled-tribes,cases,545,cases,Table 7C.1
+telangana,2023,scheduled-tribes,cases,575,cases,Table 7C.1
+telangana,2024,scheduled-tribes,cases,658,cases,Table 7C.1
+telangana,2011,scheduled-tribes,population,32.9,lakh STs (Census 2011),Table 7C.1
+telangana,2024,scheduled-tribes,crime-rate,20.0,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+telangana,2024,scheduled-tribes,chargesheeting-rate,78.3,percent,Table 7C.1
+tripura,2022,scheduled-tribes,cases,3,cases,Table 7C.1
+tripura,2023,scheduled-tribes,cases,9,cases,Table 7C.1
+tripura,2024,scheduled-tribes,cases,3,cases,Table 7C.1
+tripura,2011,scheduled-tribes,population,11.7,lakh STs (Census 2011),Table 7C.1
+tripura,2024,scheduled-tribes,crime-rate,0.3,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+tripura,2024,scheduled-tribes,chargesheeting-rate,100.0,percent,Table 7C.1
+uttar-pradesh,2022,scheduled-tribes,cases,5,cases,Table 7C.1
+uttar-pradesh,2023,scheduled-tribes,cases,6,cases,Table 7C.1
+uttar-pradesh,2024,scheduled-tribes,cases,8,cases,Table 7C.1
+uttar-pradesh,2011,scheduled-tribes,population,11.3,lakh STs (Census 2011),Table 7C.1
+uttar-pradesh,2024,scheduled-tribes,crime-rate,0.7,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+uttar-pradesh,2024,scheduled-tribes,chargesheeting-rate,100.0,percent,Table 7C.1
+uttarakhand,2022,scheduled-tribes,cases,1,cases,Table 7C.1
+uttarakhand,2023,scheduled-tribes,cases,2,cases,Table 7C.1
+uttarakhand,2024,scheduled-tribes,cases,12,cases,Table 7C.1
+uttarakhand,2011,scheduled-tribes,population,2.9,lakh STs (Census 2011),Table 7C.1
+uttarakhand,2024,scheduled-tribes,crime-rate,4.1,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+uttarakhand,2024,scheduled-tribes,chargesheeting-rate,100.0,percent,Table 7C.1
+west-bengal,2022,scheduled-tribes,cases,90,cases,Table 7C.1
+west-bengal,2023,scheduled-tribes,cases,90,cases,Table 7C.1
+west-bengal,2024,scheduled-tribes,cases,87,cases,Table 7C.1
+west-bengal,2011,scheduled-tribes,population,53.0,lakh STs (Census 2011),Table 7C.1
+west-bengal,2024,scheduled-tribes,crime-rate,1.6,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+west-bengal,2024,scheduled-tribes,chargesheeting-rate,83.0,percent,Table 7C.1
+andaman-nicobar,2022,scheduled-tribes,cases,3,cases,Table 7C.1
+andaman-nicobar,2023,scheduled-tribes,cases,2,cases,Table 7C.1
+andaman-nicobar,2024,scheduled-tribes,cases,1,cases,Table 7C.1
+andaman-nicobar,2011,scheduled-tribes,population,0.3,lakh STs (Census 2011),Table 7C.1
+andaman-nicobar,2024,scheduled-tribes,crime-rate,3.5,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+andaman-nicobar,2024,scheduled-tribes,chargesheeting-rate,100.0,percent,Table 7C.1
+chandigarh,2022,scheduled-tribes,cases,0,cases,Table 7C.1
+chandigarh,2023,scheduled-tribes,cases,0,cases,Table 7C.1
+chandigarh,2024,scheduled-tribes,cases,0,cases,Table 7C.1
+chandigarh,2011,scheduled-tribes,population,0.0,lakh STs (Census 2011),Table 7C.1
+chandigarh,2024,scheduled-tribes,crime-rate,,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+chandigarh,2024,scheduled-tribes,chargesheeting-rate,,percent,Table 7C.1
+dnh-dd,2022,scheduled-tribes,cases,5,cases,Table 7C.1
+dnh-dd,2023,scheduled-tribes,cases,2,cases,Table 7C.1
+dnh-dd,2024,scheduled-tribes,cases,1,cases,Table 7C.1
+dnh-dd,2011,scheduled-tribes,population,1.9,lakh STs (Census 2011),Table 7C.1
+dnh-dd,2024,scheduled-tribes,crime-rate,0.5,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+dnh-dd,2024,scheduled-tribes,chargesheeting-rate,66.7,percent,Table 7C.1
+delhi,2022,scheduled-tribes,cases,0,cases,Table 7C.1
+delhi,2023,scheduled-tribes,cases,2,cases,Table 7C.1
+delhi,2024,scheduled-tribes,cases,4,cases,Table 7C.1
+delhi,2011,scheduled-tribes,population,0.0,lakh STs (Census 2011),Table 7C.1
+delhi,2024,scheduled-tribes,crime-rate,,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+delhi,2024,scheduled-tribes,chargesheeting-rate,100.0,percent,Table 7C.1
+jammu-kashmir,2022,scheduled-tribes,cases,1,cases,Table 7C.1
+jammu-kashmir,2023,scheduled-tribes,cases,0,cases,Table 7C.1
+jammu-kashmir,2024,scheduled-tribes,cases,1,cases,Table 7C.1
+jammu-kashmir,2011,scheduled-tribes,population,12.8,lakh STs (Census 2011),Table 7C.1
+jammu-kashmir,2024,scheduled-tribes,crime-rate,0.1,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+jammu-kashmir,2024,scheduled-tribes,chargesheeting-rate,100.0,percent,Table 7C.1
+ladakh,2022,scheduled-tribes,cases,0,cases,Table 7C.1
+ladakh,2023,scheduled-tribes,cases,0,cases,Table 7C.1
+ladakh,2024,scheduled-tribes,cases,0,cases,Table 7C.1
+ladakh,2011,scheduled-tribes,population,2.2,lakh STs (Census 2011),Table 7C.1
+ladakh,2024,scheduled-tribes,crime-rate,0.0,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+ladakh,2024,scheduled-tribes,chargesheeting-rate,,percent,Table 7C.1
+lakshadweep,2022,scheduled-tribes,cases,0,cases,Table 7C.1
+lakshadweep,2023,scheduled-tribes,cases,0,cases,Table 7C.1
+lakshadweep,2024,scheduled-tribes,cases,0,cases,Table 7C.1
+lakshadweep,2011,scheduled-tribes,population,0.6,lakh STs (Census 2011),Table 7C.1
+lakshadweep,2024,scheduled-tribes,crime-rate,0.0,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+lakshadweep,2024,scheduled-tribes,chargesheeting-rate,,percent,Table 7C.1
+puducherry,2022,scheduled-tribes,cases,0,cases,Table 7C.1
+puducherry,2023,scheduled-tribes,cases,0,cases,Table 7C.1
+puducherry,2024,scheduled-tribes,cases,0,cases,Table 7C.1
+puducherry,2011,scheduled-tribes,population,0.0,lakh STs (Census 2011),Table 7C.1
+puducherry,2024,scheduled-tribes,crime-rate,,crimes against STs per lakh ST population (Census 2011),Table 7C.1
+puducherry,2024,scheduled-tribes,chargesheeting-rate,,percent,Table 7C.1

@@ -4,7 +4,9 @@ Reads the text that pipeline/crime/extract_text.sh makes from the NCRB PDFs (one
 Keeps NCRB's digits. Computes no rate. The only derived value is the undertrial share of prisoners
 for years where NCRB prints the counts but not the share (marked `derived`).
 
-Usage: python3 -I pipeline/crime/build_ncrb.py [--work work/crime] [--out research/data/crime]
+Usage: python3 -I pipeline/crime/build_ncrb.py [--work work/crime] [--out research/data/crime] [--only part ...]
+--only builds some parts, for example `--only sc-st custody trafficking-missing prison-deaths`, which need only
+CII 2024 Volumes II and III and the revised PSI 2024 report.
 """
 import argparse
 import csv
@@ -337,16 +339,243 @@ def psi_trend(work, out):
     check('2024 undertrial share (published 72.5 in PSI 2024 Table 2.2)', by[('2024', 'undertrial-share')], '72.5')
 
 
+# Crimes against SCs and STs, custody, police personnel, trafficking, missing children (CII 2024) ----
+
+
+def sums_to_india(label, tables, cols):
+    """Check that the 36 State/UT rows add up to the India row in each named column."""
+    for k in cols:
+        got = sum(int(tables[g][k] or 0) for g in ORDER)
+        check(f'{label}, col {k}: states add up to India', str(got), tables['india'][k])
+
+
+def cii_2024_sc_st(work, out):
+    v2 = pages(work, 'cii-2024/volume2.txt')
+    rows = []
+    for group, tb, short in (('scheduled-castes', '7A.1', 'SC'), ('scheduled-tribes', '7C.1', 'ST')):
+        t = state_rows(v2[find(v2, tb)], 6)  # cases 2022, 2023, 2024, SC/ST population 2011, rate 2024, CS rate 2024
+        sums_to_india(f'Table {tb}', t, (0, 1, 2))
+        for g in GEOS:
+            a = t[g]
+            for i, y in enumerate(('2022', '2023', '2024')):
+                rows.append([g, y, group, 'cases', a[i], 'cases', f'Table {tb}'])
+            rows.append([g, '2011', group, 'population', a[3], f'lakh {short}s (Census 2011)', f'Table {tb}'])
+            rows.append([g, '2024', group, 'crime-rate', a[4], f'crimes against {short}s per lakh {short} population (Census 2011)', f'Table {tb}'])
+            rows.append([g, '2024', group, 'chargesheeting-rate', a[5], 'percent', f'Table {tb}'])
+    write(out, 'crimes-against-scs-sts-by-state-2024.csv', ['geography', 'period', 'group', 'indicator', 'value', 'unit', 'table'], rows)
+    by = {(r[0], r[1], r[2], r[3]): r[4] for r in rows}
+    check('India crimes against SCs 2024', by[('india', '2024', 'scheduled-castes', 'cases')], '55698')
+    check('India rate, SCs 2024', by[('india', '2024', 'scheduled-castes', 'crime-rate')], '27.7')
+    check('Uttar Pradesh crimes against SCs 2024', by[('uttar-pradesh', '2024', 'scheduled-castes', 'cases')], '14642')
+    check('Madhya Pradesh rate, SCs 2024', by[('madhya-pradesh', '2024', 'scheduled-castes', 'crime-rate')], '68.5')
+    check('India crimes against STs 2024', by[('india', '2024', 'scheduled-tribes', 'cases')], '9966')
+    check('India rate, STs 2024', by[('india', '2024', 'scheduled-tribes', 'crime-rate')], '9.5')
+    check('Manipur crimes against STs 2023', by[('manipur', '2023', 'scheduled-tribes', 'cases')], '3399')
+    check('Punjab rate, STs 2024 ("-")', by[('punjab', '2024', 'scheduled-tribes', 'crime-rate')], '')
+
+
+CUSTODY_CAUSES = ['suicide', 'illness-or-death-in-hospital-during-treatment', 'injuries-sustained-prior-to-police-custody',
+                  'injuries-in-police-custody-due-to-physical-assault-by-police', 'while-escaping-from-custody',
+                  'road-accident-or-journey-connected-with-investigation', 'others']
+CUSTODY_ACTIONS = ['deaths-reported', 'magisterial-enquiries-ordered', 'judicial-enquiries-ordered', 'cases-registered',
+                   'cases-chargesheeted', 'cases-convicted', 'cases-acquitted-or-discharged', 'policemen-arrested',
+                   'policemen-chargesheeted', 'policemen-convicted', 'policemen-acquitted-or-discharged']
+HRV_INCIDENCE = ['encounter-killing', 'deaths-in-custody', 'illegal-detention', 'torture-causing-hurt-or-injury', 'extortion', 'others']
+HRV_NAME = ['encounter', 'deaths', 'illegal', 'torture', 'extortion', 'others']
+HRV_COLS = ['cases-registered', 'cases-final-reports-submitted', 'cases-chargesheeted', 'cases-convicted',
+            'cases-acquitted-or-discharged', 'policemen-arrested', 'policemen-chargesheeted', 'policemen-convicted',
+            'policemen-acquitted-or-discharged']
+
+
+def hrv_rows(page):
+    """Table 16A.6: one row per incidence and the 'Total State Police' row, nine columns each."""
+    out, lines = {}, page.split('\n')
+    for n, line in enumerate(lines):
+        toks = line.split()
+        nums = [t for t in toks if NUM.match(t)]
+        if 'Total State Police' in line:
+            out['all'] = [val(t) for t in nums[-9:]]
+            continue
+        if not toks or not re.match(r'^[1-6]$', toks[0]) or len(nums) != 10:
+            continue
+        sl = int(toks[0])
+        # Torture wraps: its name sits on the line above and the line below the numbers.
+        name = ' '.join(t for t in toks[1:] if not NUM.match(t)).lower() or (lines[n - 1] + lines[n + 1]).strip().lower()
+        if not name.startswith(HRV_NAME[sl - 1]):
+            sys.exit(f'16A.6 row {sl} is {name!r}')
+        out[HRV_INCIDENCE[sl - 1]] = [val(t) for t in nums[1:]]
+    if len(out) != 7:
+        sys.exit(f'16A.6: found {sorted(out)}')
+    return out
+
+
+def cii_2024_custody(work, out):
+    v3 = pages(work, 'cii-2024/volume3.txt')
+    t1 = state_rows(v3[find(v3, '16A.1')], 11)  # persons not on remand: deaths, enquiries, cases, policemen
+    t2 = state_rows(v3[find(v3, '16A.2')], 12)  # persons in remand: the same, then total deaths (col 14)
+    t3 = state_rows(v3[find(v3, '16A.3')], 8)   # reasons of custodial deaths, then total
+    sums_to_india('Table 16A.1', t1, range(11))
+    sums_to_india('Table 16A.2', t2, range(12))
+    sums_to_india('Table 16A.3', t3, range(8))
+    rows = []
+    for g in GEOS:
+        check(f'{g}: 16A.2 total = 16A.1 col 3 + 16A.2 col 3', int(t2[g][11]), int(t1[g][0]) + int(t2[g][0]))
+        check(f'{g}: 16A.3 total = 16A.2 total', t3[g][7], t2[g][11])
+        check(f'{g}: 16A.3 reasons add up to the total', sum(int(x) for x in t3[g][:7]), int(t3[g][7]))
+        rows.append([g, '2024', 'all', 'deaths-reported', 'all', t2[g][11], 'deaths', 'Table 16A.2, col. 14'])
+        for remand, t, tb in (('not-on-remand', t1, '16A.1'), ('in-remand', t2, '16A.2')):
+            for k, ind in enumerate(CUSTODY_ACTIONS):
+                unit = 'deaths' if k == 0 else 'enquiries' if k < 3 else 'cases' if k < 7 else 'policemen'
+                rows.append([g, '2024', remand, ind, 'all', t[g][k], unit, f'Table {tb}, col. {k + 3}'])
+        for k, cause in enumerate(CUSTODY_CAUSES):
+            rows.append([g, '2024', 'all', 'deaths-reported', cause, t3[g][k], 'deaths', f'Table 16A.3, col. {k + 3}'])
+    write(out, 'deaths-in-police-custody-2024.csv', ['geography', 'period', 'remand', 'indicator', 'cause', 'value', 'unit', 'table'], rows)
+    check('India deaths in police custody 2024', t2['india'][11], '65')
+    check('India deaths, persons not on remand', t1['india'][0], '40')
+    check('India deaths, suicide', t3['india'][0], '22')
+    check('India deaths, illness or in hospital', t3['india'][1], '28')
+    check('Gujarat deaths in police custody', t3['gujarat'][7], '17')
+
+    t5 = state_rows(v3[find(v3, '16A.5')], 10)
+    sums_to_india('Table 16A.5, cases registered', t5, (0,))
+    hrv = hrv_rows(v3[find(v3, '16A.6')])
+    for k in range(9):
+        check(f'16A.6 col {k + 3}: incidences add up to the total', sum(int(hrv[i][k]) for i in HRV_INCIDENCE), int(hrv['all'][k]))
+    rows = [[g, '2024', 'all', 'all', 'cases-registered', t5[g][0], 'cases', 'Table 16A.5, col. 3'] for g in GEOS]
+    for inc in HRV_INCIDENCE + ['all']:
+        for k, ind in enumerate(HRV_COLS):
+            rows.append(['india', '2024', 'human-right-violation', inc, ind, hrv[inc][k],
+                         'cases' if k < 5 else 'policemen', f'Table 16A.6, col. {k + 3}'])
+    write(out, 'cases-against-police-personnel-2024.csv',
+          ['geography', 'period', 'category', 'incidence', 'indicator', 'value', 'unit', 'table'], rows)
+    check('India cases against police personnel 2024', t5['india'][0], '6269')
+    check('Chandigarh cases against police personnel 2024', t5['chandigarh'][0], '4069')
+    check('Human right violation cases, total', hrv['all'][0], '13')
+    check('Human right violation cases, encounter killing', hrv['encounter-killing'][0], '4')
+    check('Human right violation cases, deaths in custody', hrv['deaths-in-custody'][0], '6')
+
+
+def cii_2024_trafficking_missing(work, out):
+    v3 = pages(work, 'cii-2024/volume3.txt')
+    t1 = state_rows(v3[find(v3, '14.1')], 8)  # cases 2022, 2023, IPC, BNS, total 2024, population, rate, CS rate
+    t3 = state_rows(v3[find(v3, '14.3')], 9)  # victims trafficked: below 18 M F T, above 18 M F T, total M F T
+    t4 = state_rows(v3[find(v3, '14.4')], 9)  # victims rescued, same columns
+    sums_to_india('Table 14.1', t1, range(5))
+    sums_to_india('Table 14.3', t3, range(9))
+    sums_to_india('Table 14.4', t4, range(9))
+    rows = []
+    ages = ('below-18', 'above-18', 'all')
+    sexes = ('male', 'female', 'total')
+    for g in GEOS:
+        a = t1[g]
+        check(f'{g}: 14.1 IPC + BNS = total', int(a[2]) + int(a[3]), int(a[4]))
+        rows += [
+            [g, '2022', 'cases', 'ipc-bns', 'all', 'total', a[0], 'cases', 'Table 14.1'],
+            [g, '2023', 'cases', 'ipc-bns', 'all', 'total', a[1], 'cases', 'Table 14.1'],
+            [g, '2024', 'cases', 'ipc', 'all', 'total', a[2], 'cases', 'Table 14.1'],
+            [g, '2024', 'cases', 'bns', 'all', 'total', a[3], 'cases', 'Table 14.1'],
+            [g, '2024', 'cases', 'ipc-bns', 'all', 'total', a[4], 'cases', 'Table 14.1'],
+            [g, '2024', 'mid-year-population', '', 'all', 'total', a[5], 'lakh persons', 'Table 14.1'],
+            [g, '2024', 'crime-rate', 'ipc-bns', 'all', 'total', a[6], 'cases per lakh population', 'Table 14.1'],
+            [g, '2024', 'chargesheeting-rate', 'ipc-bns', 'all', 'total', a[7], 'percent', 'Table 14.1'],
+        ]
+        for ind, t, tb in (('victims-trafficked', t3, '14.3'), ('victims-rescued', t4, '14.4')):
+            for i, age in enumerate(ages):
+                for j, sex in enumerate(sexes):
+                    rows.append([g, '2024', ind, '', age, sex, t[g][3 * i + j], 'persons', f'Table {tb}'])
+    write(out, 'human-trafficking-by-state-2024.csv',
+          ['geography', 'period', 'indicator', 'law', 'age', 'sex', 'value', 'unit', 'table'], rows)
+    check('India trafficking cases 2024', t1['india'][4], '2135')
+    check('Telangana trafficking cases 2024', t1['telangana'][4], '423')
+    check('India victims trafficked 2024', t3['india'][8], '6018')
+    check('India victims trafficked below 18', t3['india'][2], '2297')
+    check('Odisha victims trafficked 2024', t3['odisha'][8], '1039')
+    check('India victims rescued 2024', t4['india'][8], '5839')
+
+    p1 = state_rows(v3[find(v3, '15.1', 1)], 12)  # untraced from previous years, missing in 2024, total missing: B G T total
+    p2 = state_rows(v3[find(v3, '15.1', 2)], 12)  # traced in 2024, percentage recovery, untraced at year end: B G T total
+    sums_to_india('Table 15.1, page 1', p1, range(12))
+    sums_to_india('Table 15.1, page 2', p2, (0, 1, 2, 3, 8, 9, 10, 11))
+    rows = []
+    sexes = ('boys', 'girls', 'transgender', 'total')
+    inds1 = (('untraced-from-previous-years', 3), ('missing-in-year', 7), ('total-missing', 11))
+    inds2 = (('traced-in-year', 15), ('recovery-percentage', 19), ('untraced-at-year-end', 23))
+    for g in GEOS:
+        for j in range(4):
+            check(f'{g} 15.1 {sexes[j]}: previous + this year = total missing', int(p1[g][j]) + int(p1[g][4 + j]), int(p1[g][8 + j]))
+            check(f'{g} 15.1 {sexes[j]}: total missing - traced = untraced', int(p1[g][8 + j]) - int(p2[g][j]), int(p2[g][8 + j]))
+        for t, inds in ((p1, inds1), (p2, inds2)):
+            for i, (ind, col) in enumerate(inds):
+                for j, sex in enumerate(sexes):
+                    unit = 'percent' if ind == 'recovery-percentage' else 'children'
+                    rows.append([g, '2024', ind, sex, t[g][4 * i + j], unit, f'Table 15.1, col. {col + j}'])
+    write(out, 'missing-children-by-state-2024.csv', ['geography', 'period', 'indicator', 'sex', 'value', 'unit', 'table'], rows)
+    check('India children missing in 2024', p1['india'][7], '98375')
+    check('India children traced in 2024', p2['india'][3], '98826')
+    check('India recovery percentage', p2['india'][7], '67.1')
+    check('West Bengal children missing in 2024', p1['west-bengal'][7], '15849')
+    check('Odisha recovery percentage', p2['odisha'][7], '26.4')
+    check('Mizoram recovery percentage ("-")', p2['mizoram'][7], '')
+
+
+PRISON_CAUSES = [
+    ('natural', 'ageing'), ('natural', 'illness'),
+    ('unnatural', 'suicide'), ('unnatural', 'execution'), ('unnatural', 'murder-by-inmates'),
+    ('unnatural', 'assault-by-outside-elements'), ('unnatural', 'firing'),
+    ('unnatural', 'negligence-or-excess-by-jail-personnel'), ('unnatural', 'accidental'), ('unnatural', 'others'),
+]
+
+
+def psi_2024_deaths(work, out):
+    pg = pages(work, 'psi-2024/report-revised.txt')
+    d1 = state_rows(pg[find(pg, '8.1')], 4)   # natural, un-natural, cause not known, total
+    d2 = state_rows(pg[find(pg, '8.2')], 3)   # ageing, illness, total natural
+    d4 = state_rows(pg[find(pg, '8.4')], 9)   # suicide, execution, murder by inmates, assault by outside elements, firing,
+    #                                            negligence/excess by jail personnel, accidental, others, total un-natural
+    sums_to_india('PSI Table 8.1', d1, range(4))
+    sums_to_india('PSI Table 8.2', d2, range(3))
+    sums_to_india('PSI Table 8.4', d4, range(9))
+    rows = []
+    for g in GEOS:
+        check(f'{g}: 8.1 natural + un-natural + not known = total', int(d1[g][0]) + int(d1[g][1]) + int(d1[g][2]), int(d1[g][3]))
+        check(f'{g}: 8.2 total = 8.1 natural', d2[g][2], d1[g][0])
+        check(f'{g}: 8.4 total = 8.1 un-natural', d4[g][8], d1[g][1])
+        check(f'{g}: 8.2 parts add up', int(d2[g][0]) + int(d2[g][1]), int(d2[g][2]))
+        check(f'{g}: 8.4 parts add up', sum(int(x) for x in d4[g][:8]), int(d4[g][8]))
+        rows += [
+            [g, '2024', 'all', 'all', d1[g][3], 'deaths', 'Table 8.1, col. 6'],
+            [g, '2024', 'natural', 'all', d1[g][0], 'deaths', 'Table 8.1, col. 3'],
+            [g, '2024', 'unnatural', 'all', d1[g][1], 'deaths', 'Table 8.1, col. 4'],
+            [g, '2024', 'not-known', 'not-known', d1[g][2], 'deaths', 'Table 8.1, col. 5'],
+        ]
+        vals = d2[g][:2] + d4[g][:8]
+        for (group, cause), v, tb in zip(PRISON_CAUSES, vals, ['8.2'] * 2 + ['8.4'] * 8):
+            rows.append([g, '2024', group, cause, v, 'deaths', f'Table {tb}'])
+    write(out, 'prison-deaths-2024.csv', ['geography', 'period', 'cause_group', 'cause', 'value', 'unit', 'table'], rows)
+    check('India deaths in prison 2024', d1['india'][3], '1953')
+    check('India natural deaths', d1['india'][0], '1727')
+    check('India deaths due to illness', d2['india'][1], '1652')
+    check('India suicides in prison', d4['india'][0], '126')
+    check('Rajasthan deaths, cause not known', d1['rajasthan'][2], '57')
+    check('Uttar Pradesh deaths in prison', d1['uttar-pradesh'][3], '330')
+
+
+PARTS = {
+    'cii-2024': cii_2024, 'cii-trend': cii_trend, 'psi-2024': psi_2024, 'psi-trend': psi_trend,
+    'sc-st': cii_2024_sc_st, 'custody': cii_2024_custody, 'trafficking-missing': cii_2024_trafficking_missing,
+    'prison-deaths': psi_2024_deaths,
+}
+
+
 def main():
     ap = argparse.ArgumentParser(description=__doc__.split('\n')[0])
     ap.add_argument('--work', default='work/crime')
     ap.add_argument('--out', default='research/data/crime')
+    ap.add_argument('--only', nargs='+', choices=sorted(PARTS), help='build these parts only (default: all)')
     a = ap.parse_args()
     os.makedirs(a.out, exist_ok=True)
-    cii_2024(a.work, a.out)
-    cii_trend(a.work, a.out)
-    psi_2024(a.work, a.out)
-    psi_trend(a.work, a.out)
+    for name in a.only or PARTS:
+        PARTS[name](a.work, a.out)
 
 
 if __name__ == '__main__':
