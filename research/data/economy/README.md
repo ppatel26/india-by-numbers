@@ -152,6 +152,32 @@ The main source is the MoSPI eSankhyiki API at `api.mospi.gov.in` (`getNASData` 
 - Check: 2022-23, 2023-24 and 2025 agree with Table 1 of the press note of 24 Mar 2026 (in hundreds) for both measures.
 - Method break: ASUSE 2025 moved to the calendar year and to a new sample design (districts as strata, about 1.5 times the sample). MoSPI compares 2025 with 2023-24 in its press note. We keep the 2025 point apart and mark a break.
 
+### E14. Where the central government's money comes from and goes, 2024-25
+
+- Type: Sankey, three columns: five sources, one pool ("Central government"), six heads of spending.
+- Unit: Rs crore (shown as Rs lakh crore). Period: 2024-25, accounts.
+- CSV: `central-government-flows.csv`, made by `pipeline/economy/build_central_flows.py` from RBI
+  Handbook 2025-26 Tables 86, 87, 88 and 89. 55 rows: 2022-23 to 2026-27, 11 flows a year.
+  `status` is `accounts`, `revised estimate` (2025-26) or `budget estimate` (2026-27). `rbi_table`
+  names the column of each value.
+- Into the pool: direct taxes (net, Table 87 col 3), indirect taxes with GST (net, col 6), non-tax
+  revenue (col 10), loan recoveries and disinvestment (Table 88 cols 6 and 7, added: `derived`), and
+  borrowing and other liabilities (Table 86 col 2, the gross fiscal deficit).
+- Out of the pool: interest payments (Table 89 col 4), subsidies (col 5), defence (cols 3 and 9,
+  added: `derived`), other revenue spending (col 2 less cols 3, 4 and 5: `derived`), other capital
+  outlay (col 8 less col 9: `derived`), loans and advances (col 7).
+- One pool: the government pays from one fund, so no receipt is tied to a head. Every flow goes in
+  to the pool or out of it, and no band joins a receipt to a head.
+- Checks (the script stops on a gap of more than Rs 2 crore): flows in equal flows out; flows out
+  equal total expenditure; total receipts plus the drawdown of cash balance equal total
+  expenditure; direct and indirect taxes equal tax revenue (net); loan recoveries, disinvestment and
+  the fiscal deficit less the drawdown equal capital receipts.
+- Checked values, 2024-25: total expenditure 4652867 (Table 89 col 10); flows 4652868 in and
+  4652868 out (Rs 1 crore of rounding); total receipts 4652260 (Table 87 col 14) plus drawdown 608
+  (Table 86 col 8); gross fiscal deficit 1574431; tax revenue (net) 2500039 against direct and
+  indirect taxes 2500038.
+- Defence leaves out defence pensions (Table 89 note 4). They sit in other revenue spending.
+
 ### Two frames: do not add ASI and ASUSE
 
 ASI covers registered factories: sections 2m(i) and 2m(ii) of the Factories Act, 1948 (10 or more workers with power, 20 or more without), registered bidi and cigar units, electricity units not registered with CEA, and since 2014-15 units with 100 or more employees on state business registers. ASUSE covers unincorporated non-farm establishments in manufacturing, trade and other services, without construction. It leaves out companies, LLPs and the units in the ASI frame. The two surveys have different reference periods (accounting year against survey months) and methods. The site never adds them.
@@ -193,6 +219,8 @@ ASI covers registered factories: sections 2m(i) and 2m(ii) of the Factories Act,
 | MoSPI, NSO | ASUSE 2025 (January to December 2025), full report, Table 26 | 6 May 2026 (PIB PRID 2258362; PDF created 3 May 2026) | 2025 | https://www.mospi.gov.in/uploads/publications_reports/publications_reports1778063953577_942565ce-f832-4fc4-aa99-90b0b2a5a6e1_ASUSE_2025_Full_Report.pdf | 25 Nov 2026 | Not stated | `economy/asuse/asuse-2025-full-report.pdf` |
 | MoSPI, NSO | Press Note on ASUSE 2025 (factsheet), Table 1 | 24 Mar 2026 | 2022-23, 2023-24, 2025 | https://www.mospi.gov.in/uploads/latestReleases/latest_release_1774347321466_c16ddf22-bfff-4097-88a7-b3134e464d51_Press_Note_ASUSE_2025_English.pdf | 25 Nov 2026 | Not stated | `economy/asuse/asuse-2025-press-note.pdf` |
 | MoSPI, NSO | eSankhyiki API, ASUSE (`getAsuseRecords`), indicators 2 and 27 | Not stated | 2021-22 to 2025 | https://api.mospi.gov.in/api/asuse/getAsuseRecords?Format=JSON&indicator_code=27&sector_code=3&gender_code=4&broad_activity_category_code=4&establishment_type_code=3 (workers); same with `indicator_code=2` and no `gender_code` (establishments) | 25 Nov 2026 | Not stated | `economy/asuse/api/asuse-*` |
+
+| RBI | Handbook 2025-26, Tables 86 (deficit indicators), 87 (receipts), 88 (capital receipts) and 89 (expenditure) of the Central Government, HTML | 31 Jul 2026 | 1987-88 to 2026-27 BE | https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23911 (Table 86; 23912, 23913 and 23914 for Tables 87 to 89) | 27 Nov 2026 | Reproduce accurately, acknowledge RBI | `economy/rbi/table-86.html` to `table-89.html`: 86 `006acc748e67c460ae13969df48c4e1d0b642067dc4f655855a260536c21d144`, 87 `31135eefbefb035c8cfe455af4596abb9dbf0956c2273582719967da50f06e38`, 88 `69fb3c950d56974809650d99b1ddeb06ae9ac62fbecd26bbc17066c849204ff2`, 89 `1eb514f668d8953b1b373682a544de1c270940e377becdba921ee899c128a2e1` |
 
 Other Handbook tables (1, 2, 3, 5, 6, 157, 158, 159, 205, 223, 228) were downloaded as cross-checks. They are not used in a chart.
 

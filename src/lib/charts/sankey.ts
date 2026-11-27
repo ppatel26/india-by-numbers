@@ -119,6 +119,6 @@ function renderLists(chart: Sankey, flows: Flow[], width: Width): Markup {
   const head = pool ? svg`<text x="0" y="14" font-size="13" fill="var(--slate)">${nodeName(chart, pool)}: ${value(chart, { value: total })}</text>` : null
   y = pool ? 28 : 0
   list('Where the money comes from', ins, (k) => chart.colors?.[k] ?? 'slate')
-  list('Where it goes', outs, () => 'ink')
+  list('Where it goes', outs, () => 'slate')
   return frame(width, y, chart.title, svg`${head}${out}`)
 }

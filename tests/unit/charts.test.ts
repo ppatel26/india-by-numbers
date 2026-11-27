@@ -2,7 +2,7 @@
 import { describe, expect, it } from 'vitest'
 import { charts } from '~/content'
 import { renderPlot, viewsOf } from '~/lib/charts'
-import { depths, imbalances, layoutFlows } from '~/lib/charts/flows'
+import { depths, flowsOf, imbalances, layoutFlows } from '~/lib/charts/flows'
 import { squarify, type Rect } from '~/lib/charts/treemap'
 import { stack } from '~/lib/charts/slope'
 
@@ -79,6 +79,9 @@ describe('Sankey flows', () => {
   })
   it('fail on a loop', () => {
     expect(() => depths([...flows, { from: 'other', to: 'tax', value: 1 }])).toThrow(/loop/)
+  })
+  it('reconcile in every Sankey chart on the site', () => {
+    for (const { chart } of charts) if (chart.kind === 'sankey') expect(imbalances(flowsOf(chart), chart.tolerance ?? 0), chart.slug).toEqual([])
   })
   it('lay out bands that add up to their nodes', () => {
     const { nodes, links } = layoutFlows(flows, 300, 10)
