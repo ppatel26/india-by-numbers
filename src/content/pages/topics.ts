@@ -114,6 +114,17 @@ const topics: TopicsPage = {
       latest: { date: '8 Jul 2026', label: 'AISHE 2023-24, Ministry of Education' },
       next: { date: 'Not announced', label: 'UDISE+ and AISHE are published once a year.' },
     },
+    'science-and-technology': {
+      questions: [
+        'How many patent applications are filed in India, and how many come from Indian residents?',
+        'Which states file the most patent applications?',
+        'Who files: universities, individuals, startups or companies?',
+        'How many patents does India grant, and how many are in force?',
+        'How does India\'s spending on research compare with other countries?',
+      ],
+      latest: { date: 'Not stated', label: 'IP India Annual Report 2024-25 (PDF made 24 Nov 2025)' },
+      next: { date: 'Not announced', label: 'IP India publishes one annual report a year. Research spending from DST and mobile data prices from TRAI will follow.' },
+    },
     elections: {
       questions: [
         'How many Indians can vote, and how has that changed since 1951-52?',

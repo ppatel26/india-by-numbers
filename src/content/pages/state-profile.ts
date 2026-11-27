@@ -178,6 +178,12 @@ const stateProfile: StateProfile = {
       footnote: 'Ranks count only states and UTs with data. A gross enrolment ratio can pass 100 when pupils outside the age group enrol. NSS values are survey estimates, with wide errors in small states and UTs.',
     },
     {
+      topic: 'science-and-technology',
+      heading: 'Science and technology',
+      measures: [{ label: 'Patent applications by Indian applicants', chart: 'patent-applications-by-state' }],
+      footnote: 'A count, not a rate: states with more people and more firms file more. 2024-25, all routes, by the address of the Indian applicant. Lakshadweep has no value.',
+    },
+    {
       topic: 'elections',
       heading: 'Elections',
       measures: [
