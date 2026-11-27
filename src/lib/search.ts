@@ -19,6 +19,7 @@ export const SYNONYMS: Record<string, string> = {
   'living-standards': 'living standards spending consumption mpce hces food internet bank account water drinking cooking fuel lpg gini kharch खर्च jeevan star जीवन स्तर',
   health: 'infant mortality imr life expectancy nfhs stunting maternal swasthya स्वास्थ्य',
   education: 'school literacy college enrolment udise aishe shiksha शिक्षा padhai',
+  'science-and-technology': 'science technology research r&d innovation invention inventions patent patents patent office ip india intellectual property researchers journal articles startup startups vigyan विज्ञान takneek prodyogiki प्रौद्योगिकी avishkar आविष्कार',
   elections: 'vote voting turnout lok sabha mp eci chunav चुनाव matdan मतदान',
   'crime-and-justice': 'crime justice murder police prison prisons jail undertrial undertrials court courts pendency ncrb fir ipc bns conviction chargesheet apradh अपराध nyay न्याय jail जेल',
   transport: 'transport road accidents road deaths accident crash helmet seat belt seatbelt commute travel bus train rail two-wheeler two wheeler bike scooter pedestrian morth nhts parivahan परिवहन sadak durghatna सड़क दुर्घटना yatra यात्रा',

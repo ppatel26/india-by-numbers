@@ -4,8 +4,8 @@ Run pipeline/international/fetch.sh first. Then, from the repository root:
 
     python3 -I pipeline/international/build_international.py
 
-Reads the World Bank WDI API responses (five series, one panel of countries, one WDI update) and
-the UN DESA International Migrant Stock 2024 workbooks. Writes seven CSVs to
+Reads the World Bank WDI API responses (eight series, one panel of countries, one WDI update) and
+the UN DESA International Migrant Stock 2024 workbooks. Writes ten CSVs to
 research/data/international/. Every value keeps the publisher's digits: WDI values are copied from
 the JSON text, UN DESA counts from the cells.
 
@@ -24,13 +24,22 @@ WDI_RELEASE = "2026-11-11"
 PANEL = ["IND", "BGD", "PAK", "NPL", "LKA", "CHN", "IDN", "WLD"]
 
 # (file, WDI code, unit, first WPP projection year or None, status for every row)
+# A series may lack some panel countries; MISSING lists them, and the script checks the list.
 SERIES = [
     ("wdi-gdp-per-person-ppp.csv", "NY.GDP.PCAP.PP.KD", "constant 2021 international $", None, ""),
     ("wdi-life-expectancy.csv", "SP.DYN.LE00.IN", "years", 2024, ""),
     ("wdi-fertility-rate.csv", "SP.DYN.TFRT.IN", "births per woman", 2024, ""),
     ("wdi-co2-per-person.csv", "EN.GHG.CO2.PC.CE.AR5", "t CO2e per person", None, ""),
     ("wdi-women-labour-force-participation.csv", "SL.TLF.CACT.FE.ZS", "% of women aged 15+", None, "modelled estimate"),
+    ("wdi-rd-spending.csv", "GB.XPD.RSDV.GD.ZS", "% of GDP", None, ""),
+    ("wdi-researchers-per-million.csv", "SP.POP.SCIE.RD.P6", "researchers per million people", None, ""),
+    ("wdi-journal-articles.csv", "IP.JRN.ARTC.SC", "articles", None, ""),
 ]
+# Panel countries with no value at all in a series (UNESCO UIS has no R&D survey for Bangladesh).
+MISSING = {
+    "GB.XPD.RSDV.GD.ZS": {"BGD"},
+    "SP.POP.SCIE.RD.P6": {"BGD"},
+}
 
 ORIGIN = "undesa/undesa_pd_2024_ims_stock_by_sex_and_origin.xlsx"
 DEST_ORIGIN = "undesa/undesa_pd_2024_ims_stock_by_sex_destination_and_origin.xlsx"
@@ -58,6 +67,14 @@ CHECKS = [  # (csv, {column: value}, published value, where the publisher prints
     ("wdi-women-labour-force-participation.csv", dict(iso3="IND", period="2024"), "32.415", "ILOSTAT, EAP_2WAP_SEX_AGE_RT_A"),
     ("wdi-women-labour-force-participation.csv", dict(iso3="IND", period="2025"), "32.425", "WDI API, SL.TLF.CACT.FE.ZS"),
     ("wdi-women-labour-force-participation.csv", dict(iso3="CHN", period="2025"), "59.148", "WDI API, SL.TLF.CACT.FE.ZS"),
+    ("wdi-rd-spending.csv", dict(iso3="IND", period="2020"), "0.64558", "WDI API, GB.XPD.RSDV.GD.ZS"),
+    ("wdi-rd-spending.csv", dict(iso3="CHN", period="2020"), "2.35712", "WDI API, GB.XPD.RSDV.GD.ZS"),
+    ("wdi-rd-spending.csv", dict(iso3="WLD", period="2020"), "2.45606936077903", "WDI API, GB.XPD.RSDV.GD.ZS"),
+    ("wdi-researchers-per-million.csv", dict(iso3="IND", period="2020"), "259.26325", "WDI API, SP.POP.SCIE.RD.P6"),
+    ("wdi-researchers-per-million.csv", dict(iso3="IND", period="2000"), "110.62568", "WDI API, SP.POP.SCIE.RD.P6"),
+    ("wdi-researchers-per-million.csv", dict(iso3="CHN", period="2020"), "1600.30633", "WDI API, SP.POP.SCIE.RD.P6"),
+    ("wdi-journal-articles.csv", dict(iso3="IND", period="2023"), "228174.31", "WDI API, IP.JRN.ARTC.SC"),
+    ("wdi-journal-articles.csv", dict(iso3="IND", period="1996"), "18904.78", "WDI API, IP.JRN.ARTC.SC"),
     ("migrants-from-india-1990-2024.csv", dict(period="2024", sex="total"), "18533845", "Origin file, Table 1, India"),
     ("migrants-from-india-1990-2024.csv", dict(period="1990", sex="total"), "6575416", "Origin file, Table 1, India"),
     ("migrants-from-india-1990-2024.csv", dict(period="2024", sex="female"), "6631602", "Origin file, Table 1, India"),
@@ -126,8 +143,8 @@ def build_wdi(raw, out):
                 row_status = "projection"
             country = "india" if iso3 == "IND" else r["country"]["value"]
             rows.append([country, iso3, r["date"], value, unit, code, row_status, release])
-        if {r[1] for r in rows} != set(PANEL):
-            fail("%s: panel incomplete" % code)
+        if {r[1] for r in rows} != set(PANEL) - MISSING.get(code, set()):
+            fail("%s: panel is %s" % (code, sorted({r[1] for r in rows})))
         rows.sort(key=lambda r: (PANEL.index(r[1]), r[2]))
         write(out, name, ["country", "iso3", "period", "value", "unit", "indicator", "status", "release"], rows)
 

@@ -1,12 +1,13 @@
 # International
 
-Data for the "How does India compare?" parts of five topics (Economy, Health, Population,
-Climate, Jobs), and for the "Indians living abroad" part of Population. Rule R6 in
+Data for the "How does India compare?" parts of six topics (Economy, Health, Population,
+Climate, Jobs, Science and technology), and for the "Indians living abroad" part of Population. Rule R6 in
 [`research/source-discovery.md`](../../source-discovery.md) governs every chart here: each chart
 that compares countries takes every country, India included, from one series, one release and one
 period.
 
-Read on 25 Nov 2026.
+Read on 25 Nov 2026. The three science series were added on 27 Nov 2026 (UTC), from the same WDI
+update; the five earlier series downloaded again with the same sha256.
 
 ## Questions these data answer
 
@@ -15,6 +16,8 @@ Read on 25 Nov 2026.
 3. How much CO2 does India emit per person, against its neighbours and the world?
 4. How many women in India are in the labour force, on one international definition?
 5. How many people born in India live in other countries, and where?
+6. How much does India spend on research, and how many researchers does it have, against its
+   neighbours, China and the world? How many scientific articles come from India?
 
 ## Sources
 
@@ -33,7 +36,7 @@ identify the vintage we print.
 ## Reuse terms
 
 Each WDI series states its own licence in its metadata (`License_Type`). The script stops if any
-of the five series does not say `CC BY-4.0`.
+of the eight series does not say `CC BY-4.0`.
 
 | Series | WDI code | `License_Type` | Original source (WDI metadata) |
 | --- | --- | --- | --- |
@@ -42,8 +45,11 @@ of the five series does not say `CC BY-4.0`.
 | Fertility rate, total (births per woman) | `SP.DYN.TFRT.IN` | CC BY-4.0 | UN Population Division, World Population Prospects; national statistical offices; Eurostat |
 | Carbon dioxide (CO2) emissions excluding LULUCF per capita (t CO2e/capita) | `EN.GHG.CO2.PC.CE.AR5` | CC BY-4.0 | EDGAR Community GHG Database, Joint Research Centre (JRC), European Commission, with IEA data. Metadata: "dataset_ghg2024, date published: 2024" |
 | Labor force participation rate, female (% of female population ages 15+) (modeled ILO estimate) | `SL.TLF.CACT.FE.ZS` | CC BY-4.0 | ILO Modelled Estimates database (ILOEST), "date accessed: January 17, 2026" |
+| Research and development expenditure (% of GDP) | `GB.XPD.RSDV.GD.ZS` | CC BY-4.0 | UNESCO Institute for Statistics (UIS), Stat Bulk Data Download Service, "date accessed: 2025-03-26, date published: 2025-02" |
+| Researchers in R&D (per million people) | `SP.POP.SCIE.RD.P6` | CC BY-4.0 | As above |
+| Scientific and technical journal articles | `IP.JRN.ARTC.SC` | CC BY-4.0 | Science and Engineering Indicators, National Science Foundation (NSF); unit "Fractional count" |
 
-The licence URL for all five is <https://datacatalog.worldbank.org/public-licenses#cc-by>. Credit
+The licence URL for all eight is <https://datacatalog.worldbank.org/public-licenses#cc-by>. Credit
 the World Bank, and name the original source.
 
 UN DESA prints this line on every sheet of both workbooks: "Copyright © 2024 by United Nations,
@@ -91,7 +97,7 @@ Division (2024). International Migrant Stock 2024." Document code: POP/DB/MIG/St
 
 ```sh
 pipeline/international/fetch.sh                                  # WDI, WPP 2024, ILOSTAT, UN DESA
-python3 -I pipeline/international/build_international.py         # seven CSVs; stops if a check fails
+python3 -I pipeline/international/build_international.py         # ten CSVs; stops if a check fails
 ```
 
 The build reads the UN DESA workbooks with `openpyxl`.
@@ -132,6 +138,30 @@ the WDI API prints. Years with no value are left out.
   2024: 32.415. PLFS gives 40.3% for calendar 2024, usual status (ps+ss), age 15+
   (`jobs/jobs-lfpr-wpr-ur-annual.csv`).
 
+### `wdi-rd-spending.csv` (123 rows)
+
+- `GB.XPD.RSDV.GD.ZS`, % of GDP, 1996 to 2023. No Bangladesh values. India runs 1996 to 2020: 0.75699
+  in 2000 and 0.64558 in 2020. 2020: China 2.35712, World 2.45606936077903.
+- The years with a value differ by country. 2000 and 2020 are the latest pair with values for India,
+  China, Indonesia, Sri Lanka and the world; Bangladesh, Nepal and Pakistan have no 2020 value. The
+  chart shows those five rows and says so (rule R6 keeps one period for every row shown).
+- DST's R&D Statistics 2025-26 (held back, see `../science-technology/README.md`) revises India's
+  series from 2021-22 with a new survey. WDI does not carry it.
+
+### `wdi-researchers-per-million.csv` (76 rows)
+
+- `SP.POP.SCIE.RD.P6`, researchers per million people, 1996 to 2023. No Bangladesh values. India has
+  8 years: 110.62568 in 2000 and 259.26325 in 2020. 2020: China 1600.30633, World 1651.58516904719.
+- Same two years and five rows as R&D spending.
+
+### `wdi-journal-articles.csv` (224 rows)
+
+- `IP.JRN.ARTC.SC`, articles (fractional count), 1996 to 2023, all eight rows. India: 18904.78 in
+  1996 and 228174.31 in 2023.
+- WDI: values before 2003 come from earlier editions of Science and Engineering Indicators "and may
+  not be strictly comparable with 2003-2022 data". The chart shows India alone: no Indian office
+  publishes a count (rule R6).
+
 ### `migrants-from-india-1990-2024.csv` (24 rows)
 
 - Origin file, Table 1, the India row (location code 356): international migrants born in India
@@ -161,12 +191,15 @@ from the raw file.
 | `wdi-fertility-rate.csv` | India 2023, 1.975; India 1990, 4.045; Pakistan 2023, 3.605 | WDI API, `SP.DYN.TFRT.IN` |
 | `wdi-co2-per-person.csv` | India 2024, 2.17365173535787; China 2024, 9.31508933799393; World 2024, 4.69378456136626 | WDI API, `EN.GHG.CO2.PC.CE.AR5` |
 | `wdi-women-labour-force-participation.csv` | India 2024, 32.415 (ILOSTAT); India 2025, 32.425; China 2025, 59.148 | WDI API, `SL.TLF.CACT.FE.ZS`; ILOSTAT |
+| `wdi-rd-spending.csv` | India 2020, 0.64558; China 2020, 2.35712; World 2020, 2.45606936077903 | WDI API, `GB.XPD.RSDV.GD.ZS` |
+| `wdi-researchers-per-million.csv` | India 2020, 259.26325; India 2000, 110.62568; China 2020, 1600.30633 | WDI API, `SP.POP.SCIE.RD.P6` |
+| `wdi-journal-articles.csv` | India 2023, 228174.31; India 1996, 18904.78 | WDI API, `IP.JRN.ARTC.SC` |
 | `migrants-from-india-1990-2024.csv` | 2024 total, 18533845; 1990 total, 6575416; 2024 women, 6631602 | Origin file, Table 1 |
 | `migrants-from-india-by-destination.csv` | United Arab Emirates 2024, 3248545; United States of America 2024, 3165238; Saudi Arabia 2024 men, 1774426 | Destination and origin file, Table 1 |
 
 Cross-checks that also stop the script:
 
-- The WDI source record and all five data responses say "last updated 2026-11-11". No WDI row has an
+- The WDI source record and all eight data responses say "last updated 2026-11-11". No WDI row has an
   `obs_status`.
 - WDI life expectancy and fertility equal WPP 2024 (medium variant) to three decimals for the seven
   countries, 1990 to 2024: 490 values.
@@ -225,6 +258,15 @@ URL prefix: `https://api.worldbank.org/v2/`.
 | `wdi/SL.TLF.CACT.FE.ZS.data.json` | `country/IND;BGD;PAK;NPL;LKA;CHN;IDN;WLD/indicator/SL.TLF.CACT.FE.ZS?source=2&format=json&per_page=2000` | `c1b6b596e13c2b5761644b7aa307da530ee29409a1d3fb04f1cc7fe350d97d2f` |
 | `wdi/SL.TLF.CACT.FE.ZS.indicator.json` | `indicator/SL.TLF.CACT.FE.ZS?format=json` | `9f57a27372d29ac71a6a810096c5b73001a8ae1090db6a2fe88f06b06d4daeec` |
 | `wdi/SL.TLF.CACT.FE.ZS.metadata.json` | `sources/2/series/SL.TLF.CACT.FE.ZS/metadata?format=json` | `ced4caabf9644e5f55e290bbf19d065cbd0137367523eb1b80957872a60bc0a0` |
+| `wdi/GB.XPD.RSDV.GD.ZS.data.json` | `country/IND;BGD;PAK;NPL;LKA;CHN;IDN;WLD/indicator/GB.XPD.RSDV.GD.ZS?source=2&format=json&per_page=2000` | `98718494f15b62c00adf803bb4f437b7e0b3496aea5cf2d1cd6bc97fed91d9b1` |
+| `wdi/GB.XPD.RSDV.GD.ZS.indicator.json` | `indicator/GB.XPD.RSDV.GD.ZS?format=json` | `8b86f8208807c1ba1fa83a27f753bc5e59e7fbec115a22aabf574d2449fe22ae` |
+| `wdi/GB.XPD.RSDV.GD.ZS.metadata.json` | `sources/2/series/GB.XPD.RSDV.GD.ZS/metadata?format=json` | `59ef7cf219230e8d54d13c1569c7a7fc6c25f9e27097a495dd7e7080b6911831` |
+| `wdi/SP.POP.SCIE.RD.P6.data.json` | `country/IND;BGD;PAK;NPL;LKA;CHN;IDN;WLD/indicator/SP.POP.SCIE.RD.P6?source=2&format=json&per_page=2000` | `9a123fad39dbd92ba59f05215be08ab16d38732ece0a75975ce1b4c800067e5f` |
+| `wdi/SP.POP.SCIE.RD.P6.indicator.json` | `indicator/SP.POP.SCIE.RD.P6?format=json` | `08eb4cad05cde99e4cfe51d15023abd82e6f096c8f5b70eb8c141d6c59ea3f25` |
+| `wdi/SP.POP.SCIE.RD.P6.metadata.json` | `sources/2/series/SP.POP.SCIE.RD.P6/metadata?format=json` | `f17e8098fd626cf4b31f333b5dba4b25f6b280c3f603eed846505f39f20b2099` |
+| `wdi/IP.JRN.ARTC.SC.data.json` | `country/IND;BGD;PAK;NPL;LKA;CHN;IDN;WLD/indicator/IP.JRN.ARTC.SC?source=2&format=json&per_page=2000` | `00a4bf8ea9a579797d098122d9530ba3596455165169c91d5c625fac72662613` |
+| `wdi/IP.JRN.ARTC.SC.indicator.json` | `indicator/IP.JRN.ARTC.SC?format=json` | `7fc25e97b9857f8b30ba0bfe3c4f6b066021c338c340b967953edbf4101c6618` |
+| `wdi/IP.JRN.ARTC.SC.metadata.json` | `sources/2/series/IP.JRN.ARTC.SC/metadata?format=json` | `8c2944cd238ee412dd91ca1493c2cebbd1a563e46b9cae74c66c94dc03a0ed0b` |
 | `wdi/EN.ATM.CO2E.PC.indicator.json` | `indicator/EN.ATM.CO2E.PC?format=json` | `1225d496c4e8fbd636c3e6520d5ebc860dbe37c7876151ad7b2d0b22a799ee8f` |
 | `wpp-2024/WPP2024_Demographic_Indicators_Medium.csv.gz` | [File](https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_Demographic_Indicators_Medium.csv.gz) (the same file as in the population README) | `286ac36bb1415e2e1ade03acfef0a29f0e4c087e2f78e38c48f50c5df89082bc` |
 | `ilostat/EAP_2WAP_SEX_AGE_RT_A.IND.F.15plus.csv` | [ILOSTAT API](https://rplumber.ilo.org/data/indicator/?id=EAP_2WAP_SEX_AGE_RT_A&ref_area=IND&sex=SEX_F&classif1=AGE_YTHADULT_YGE15&timefrom=2020&format=.csv) | `da95f3f1a50901b354c91deff24a80c637c360d85c1aab193dc3c001aac81667` |

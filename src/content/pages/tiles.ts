@@ -43,6 +43,10 @@ const tiles: Readonly<Record<TopicSlug, Tile>> = {
     questions: ['How many children are in school?', 'How many young adults go to college?'],
     figure: { chart: 'school-enrolment-trend', series: 'enrol-total-new', label: 'Students, pre-primary to class 12' },
   },
+  'science-and-technology': {
+    questions: ['How many patents do Indians apply for?', 'How much does India spend on research?'],
+    figure: { chart: 'patent-applications', series: 'all applicants', label: 'Patent applications filed' },
+  },
   elections: {
     questions: ['What share of electors vote?', 'How many women stand, and how many win?'],
     figure: { chart: 'lok-sabha-turnout-by-sex', series: 'total', x: '2024', label: 'Turnout, Lok Sabha 2024' },

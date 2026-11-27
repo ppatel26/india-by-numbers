@@ -201,6 +201,10 @@ These are the "Later" topics in `docs/site-spec.md`.
 | Agriculture | Agriculture Census (operational holdings by size class) | 2015-16 is the latest on the census portal on 25 Nov 2026. The 2021-22 census was launched; no results on the portal | `data ready` for India 2005-06 to 2015-16 through ASG Table 5.1. `later` for state tables and 2021-22 | No |
 | Tourism | NSS Report 597, Domestic Tourism in India (Jul 2025 to Jun 2026) | 23 Sep 2026 (press note and MoSPI release list): Statements 3.1, 3.2, 3.13, 3.15, 3.16, 3.19; Appendix A Tables 1, 15, 19 (XLSX). Not on the API | `in use` in Transport: `overnight-trip-households-by-state` (derived from Table 1, checked against Statement 3.1), `overnight-trips-by-purpose`, `overnight-trip-spending-by-purpose`, `overnight-trip-spending-by-item`. Same-day trips by state (Statement 3.16) are in `research/data/transport/`, not charted | No |
 | Disability | NSS round 76, Report 583, Persons with Disabilities (Jul to Dec 2018) | API (NSS76, survey code 1, 13 indicators, state, sex, rural/urban); PDF Tables 1.2, 4.1, 32.1 and RSE1 | `in use` (Health): `disability-by-state`, `disability-by-type`, `disability-aid-received`, `disability-government-aid-by-state`. All 4,527 API values match the report. Certificate (Statement 32.2) and work (Statement 35) are report-only and not used yet | No |
+| Science and technology | IP India (CGPDTM) Annual Reports 2024-25, 2022-23 and 2014-15 | 2024-25 (release date not stated; PDF made 24 Nov 2025). Appendix B (state), C (residents and routes), D (grants and in force), E and F (fields), category table | `in use` in Science and technology (6 charts and 1 state-profile row) from `research/data/science-technology/`. Reuse free with credit (ipindia.gov.in Copyright Policy). Reports back to 2002-03 are listed; 2019-20 and 2009-10 are scans | No |
+| Science and technology | DST NSTMIS, R&D Statistics at a Glance 2025-26 and S&T Indicators Tables 2025-26 | PDFs made 29 Jul 2026. National R&D spending from 1995-96 (Table 3), by sector (Tables 1, 2), researchers, PhDs | `data ready` (raw files read, no CSV yet). Reuse needs permission by mail (nstmis-dst.org Copyrights Policy). A new national survey makes a method break at 2021-22 | No |
+| Science and technology | TRAI, Indian Telecom Services Yearly Performance Indicators 2025-26, 2024-25, 2023-24 | 2025-26 report PDF made 5 Oct 2026; Press Release 127/2026. Revenue per GB of wireless data, GB per subscriber, internet subscribers per 100 people by state | `data ready` (raw files read, no CSV yet). Reuse needs permission by mail (trai.gov.in Website Policy). Yearly reports start with 2022-23; quarterly reports go back further | No |
+| Science and technology | World Bank WDI: R&D spending (UNESCO UIS), researchers per million (UIS), journal articles (NSF) | Updated 11 Nov 2026. India's R&D values stop at 2020 | `in use` in Science and technology (3 charts). CC BY 4.0. Bangladesh has no R&D or researcher values, and Nepal and Pakistan none for 2020 | No |
 
 ### Checks on data we already show
 
@@ -266,3 +270,11 @@ rules above). It does not wait for the owner.
   2021-22 to 2023-24, and Agriculture Census holdings for 2005-06 and 2010-11 (plus 1970-71 to
   2015-16 counts in a Rajya Sabha answer file). It has no long crop series from 1950-51 and no state
   production for 2023-24 or 2024-25. Its data files need a data.gov.in API key.
+- **R&D and telecom permission.** Mail NSTMIS, Department of Science and Technology
+  (nstmis-dst.org Copyrights Policy), and TRAI (trai.gov.in Website Policy) for permission to reuse
+  R&D Statistics 2025-26 and the Yearly Performance Indicators. Then build their CSVs from the raw
+  files listed in `research/data/science-technology/README.md` ("Held back") and chart India's own
+  research spending and the price of mobile data in Science and technology.
+- **Science and technology object.** Make the silver Aryabhata satellite (council, 3 of 3; prompt in
+  `docs/design-direction.md`) and approve its image credits. Then add it to `pipeline/emblems/cutout.py`
+  and `src/lib/emblems.ts`.

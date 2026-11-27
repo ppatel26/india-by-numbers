@@ -15,6 +15,7 @@ export const TOPICS = [
   'agriculture',
   'health',
   'education',
+  'science-and-technology',
   'elections',
   'crime-and-justice',
   'transport',

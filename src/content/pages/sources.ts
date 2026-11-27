@@ -258,18 +258,18 @@ const PUBLISHERS: readonly Publisher[] = [
     short: 'World Bank',
     logos: [],
     full: 'World Bank, Development Data Group',
-    topics: ['economy', 'jobs', 'population', 'health', 'climate'],
+    topics: ['economy', 'jobs', 'population', 'health', 'science-and-technology', 'climate'],
     dataSets: [
       {
         name: 'World Development Indicators',
-        detail: 'Comparison charts only: GDP per person at PPP, life expectancy and fertility (from UN WPP 2024), CO2 per person (from EDGAR) and women\'s labour force participation (ILO modelled estimates), for India, six other countries and the world',
+        detail: 'Comparison charts: GDP per person at PPP, life expectancy and fertility (from UN WPP 2024), CO2 per person (from EDGAR), women\'s labour force participation (ILO modelled estimates), and research spending and researchers (from the UNESCO Institute for Statistics), for India, six other countries and the world. Also scientific and technical journal articles from India (from NSF), which no Indian office counts',
         rhythm: 'Several updates a year; this site uses the update of 11 Nov 2026',
         match: /World Development Indicators/,
       },
     ],
-    licence: 'CC BY 4.0 for the five series we use, as each series\' metadata states. Some WDI series from other bodies carry other terms.',
+    licence: 'CC BY 4.0 for the eight series we use, as each series\' metadata states. Some WDI series from other bodies carry other terms.',
     access: ['WDI API (api.worldbank.org/v2), no key'],
-    note: 'We use WDI only to compare countries. For India alone we use the Indian publisher.',
+    note: 'We use WDI to compare countries. For India alone we use the Indian publisher, except where no Indian office publishes the figure.',
     site: 'https://data.worldbank.org',
   },
   {
@@ -322,6 +322,19 @@ const PUBLISHERS: readonly Publisher[] = [
     access: ['Answers to Lok Sabha and Rajya Sabha questions as PDF (sansad.in)'],
     note: 'Each answer quotes the National Judicial Data Grid (NJDG) on a stated date. NJDG is a live dashboard.',
     site: 'https://doj.gov.in',
+  },
+  {
+    short: 'IP India',
+    logos: [],
+    full: 'Office of the Controller General of Patents, Designs, Trade Marks and Geographical Indications, Department for Promotion of Industry and Internal Trade',
+    topics: ['science-and-technology'],
+    dataSets: [
+      { name: 'Annual Report', detail: 'Patent applications by residents and non-residents, grants and patents in force, 2005-06 to 2024-25; applications by state, by type of applicant and by field of invention', rhythm: 'Yearly, some months after the financial year', match: /Annual Report 20\d\d-\d\d, Office of the Controller General/ },
+    ],
+    licence: 'Reuse free of charge in any format without asking, if reproduced accurately and credited to "Office of the Controller General of Patents, Designs and Trade Marks, Government of India (ipindia.gov.in)" (ipindia.gov.in Copyright Policy)',
+    access: ['Annual reports as PDF (ipindia.gov.in/annual-report)'],
+    note: 'The report gives no release date. The 2014-15 report is a scan, so we read its tables from the page images.',
+    site: 'https://ipindia.gov.in',
   },
   {
     short: 'MoRTH',
@@ -410,6 +423,14 @@ const sources: SourcesPage = {
       {
         source: 'Agricultural Statistics at a Glance 2024-25, Ministry of Agriculture and Farmers Welfare (desagri.gov.in)',
         why: 'Its website allows reuse only after permission by mail. We have not asked yet, so crop area, production and yields, and the Agriculture Census holdings it reprints, wait for a reply.',
+      },
+      {
+        source: 'Research and Development Statistics at a Glance 2025-26 and S&T Indicators Tables 2025-26, DST (nstmis-dst.org)',
+        why: 'Its website allows reuse only after permission by mail. We have not asked yet, so India\'s own research spending, by sector and from 1995-96, waits for a reply.',
+      },
+      {
+        source: 'Indian Telecom Services Yearly Performance Indicators 2025-26, TRAI (trai.gov.in)',
+        why: 'Its website allows reuse only after permission by mail. We have not asked yet, so the price of mobile data per GB and the data used per subscriber wait for a reply.',
       },
       {
         source: 'News reports of official figures',

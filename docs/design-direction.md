@@ -71,6 +71,7 @@ Topic pigments (hero ground, home and topics tiles, topic tag; never a data colo
 | Trade | manjistha (Indian madder) | #F28DA0 | ink 7.7:1 |
 | Transport | neel (washed indigo) | #8CA8E7 | ink 7.5:1 |
 | Agriculture | dhani (young paddy) | #88CD65 | ink 9.3:1 |
+| Science and technology | banafsha (sweet violet) | #CF96E2 | ink 7.7:1 |
 
 Kattha (added 25 Nov 2026) sits at OKLCH L 0.452, C 0.086, H 60, in the gap between lac (H 27) and mehendi (H 122). Its nearest pigment is mehendi (OKLab distance 0.092).
 
@@ -217,6 +218,39 @@ settled each point.
   crisp shadows, one soft key light from the top left, no text or engravings, centred on a flat
   matte dhani backdrop (#88CD65), no gradient, no vignette."
 - Interim: 3 of 3. Publish with no object until the owner approves the image credits.
+
+### Science and technology (decided 26 Nov 2026)
+
+The council had the scope in front of it: patents from IP India and WDI comparisons at launch, with
+DST research spending and TRAI mobile data prices held back for the publishers' permission. Round 1
+sat GPT 6.2 Sol, Gemini 4 Neon and Muse Wonder 1.0. At the owner's request, Muse Wonder Full 1.0
+then took the Muse seat and voted again on the pigment and the object; its votes replace the
+earlier Muse votes below.
+
+- Name "Science and technology", slug `science-and-technology`, Hindi draft विज्ञान और प्रौद्योगिकी:
+  3 of 3 in round 1. It covers patents and research now, and keeps one address when R&D spending,
+  telecom or space data arrive. "Innovation" read too narrow for telecom and space.
+- Pigment banafsha (sweet violet) #CF96E2 with ink text: 2 of 3 (Gemini, Muse Wonder Full). OKLCH
+  L 0.754, C 0.122, H 317.5. Its nearest pigment is neel (OKLab 0.100), then manjistha (0.106). Ink
+  gives 7.7:1. It fills the empty violet stretch of the light band, and the palette becomes eight
+  dark and seven light pigments. GPT proposed ratanjot #694476 (#6A4475 as recorded for
+  Agriculture), with white text: at L 0.450 it sits 0.095 from rani and 0.099 from jamuni, two dark
+  purples it could be mistaken for on tiles.
+- Object: a silver model of the Aryabhata satellite (1975), India's first satellite: 3 of 3 in
+  round 2. Round 1 split three ways (GPT Aryabhata, Gemini a yantra-raj astrolabe, Muse a gola yantra
+  armillary sphere). In round 2 every member chose Aryabhata: its faceted body reads at tile size,
+  where thin rings dissolve and a flat disc merges with the coin face; astronomical instruments
+  would echo Climate's Samrat Yantra and often carry zodiac, star-name or deity markings. The model
+  carries no ISRO mark, flag or lettering.
+- Prompt: "Three-quarter studio view of the Aryabhata satellite in brushed silver, a squat 26-faced
+  polyhedral body with broad flush solar-panel facets, crisp shadows, one soft key light from the
+  top left, no text or engravings, no logos, flags or emblems, centred on a flat matte banafsha
+  backdrop (#CF96E2), no gradient, no vignette." On a light ground, give the silver crisp shadows,
+  as for haldi and kesar, and cut it out as for the other light pigments.
+- Interim: 3 of 3. Publish with no object until it is made and the owner approves the image
+  credits.
+- Order: after Education, 3 of 3. Educational institutions file more than half of Indian patent
+  applications, so research sits next to education.
 
 ### Topic tiles: the jaali (decided 25 Nov 2026)
 
