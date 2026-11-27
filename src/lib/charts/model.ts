@@ -4,6 +4,7 @@ import { latest, points, type Point } from '~/lib/data'
 import { INDIA, places, type Place } from '~/lib/geography'
 import { formatNumber, type Shown } from '~/lib/format'
 import { parsePeriod } from '~/lib/period'
+import { flowSeries } from './flows'
 
 export interface SeriesData {
   key: string
@@ -17,11 +18,12 @@ export interface SeriesData {
 
 export type Of<K extends Chart['kind']> = Extract<Chart, { kind: K }>
 
-const categoryKinds = new Set<Chart['kind']>(['dots', 'bars', 'pyramid'])
+const categoryKinds = new Set<Chart['kind']>(['dots', 'bars', 'pyramid', 'scatter', 'slope', 'treemap'])
 
 function byColumn(chart: Chart): string | undefined {
   if (chart.kind === 'dots') return chart.by ?? 'geography'
-  if (chart.kind === 'bars' || chart.kind === 'pyramid') return chart.by
+  if (chart.kind === 'scatter' || chart.kind === 'slope') return 'geography'
+  if (chart.kind === 'bars' || chart.kind === 'pyramid' || chart.kind === 'treemap') return chart.by
   return undefined
 }
 
@@ -50,8 +52,15 @@ export function seriesOf(chart: Chart): SeriesData[] {
     case 'dots':
     case 'bars':
       return chart.series.map((s) => resolve(chart, s))
+    case 'slope':
+    case 'treemap':
+      return chart.series.map((s) => resolve(chart, s))
     case 'pyramid':
       return [resolve(chart, chart.left), resolve(chart, chart.right)]
+    case 'scatter':
+      return [resolve(chart, chart.x), resolve(chart, chart.y)]
+    case 'sankey':
+      return [flowSeries(chart)]
     case 'states':
     case 'table':
       return []

@@ -9,8 +9,9 @@ import { releasedText } from './sources'
 
 /** Every pick a chart reads. */
 export function picksOf(chart: Chart): Pick[] {
-  if (chart.kind === 'states' || chart.kind === 'table') return [chart.data]
+  if (chart.kind === 'states' || chart.kind === 'table' || chart.kind === 'sankey') return [chart.data]
   if (chart.kind === 'pyramid') return [chart.left, chart.right]
+  if (chart.kind === 'scatter') return [chart.x, chart.y]
   return [...chart.series]
 }
 

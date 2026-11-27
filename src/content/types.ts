@@ -275,6 +275,65 @@ export type Chart =
       max?: number
     })
   | (ChartBase & {
+      /**
+       * One dot per state or UT at its values on two measures: an association, never a cause.
+       * India is a pair of crossed reference lines, not a dot. No fitted line.
+       */
+      kind: 'scatter'
+      /** The horizontal measure. `label` names the measure and its unit ("Income a month, ₹"). */
+      x: Series & { axis?: Axis }
+      /** The vertical measure. */
+      y: Series & { axis?: Axis }
+      /** States and UTs labelled on phones too (outliers). On the page, every label that fits shows. */
+      labels?: readonly string[]
+      /** Why a state has no point, shown in the table: { goa: 'No value in NSS round 77' }. */
+      missing?: Readonly<Record<string, string>>
+    })
+  | (ChartBase & {
+      /** Two periods per state or UT: a line from the first value to the second, on one scale. */
+      kind: 'slope'
+      /** The first period, then the second. Each picks one value per state, by geography. */
+      series: readonly [Series, Series]
+      axis?: Axis
+      /** States and UTs labelled on phones besides India and the largest movers. */
+      labels?: readonly string[]
+      /** Why a state has no value at one end, shown in the table. */
+      missing?: Readonly<Record<string, string>>
+    })
+  | (ChartBase & {
+      /**
+       * Parts of a whole as tiles sized by value, at most two levels. Pick the parts only: never a
+       * parent and its children both. A hidden series may pick the published total, for the check.
+       */
+      kind: 'treemap'
+      series: readonly Series[]
+      /** Column that names the parts. */
+      by: string
+      /** Parts whose `column` holds one of these values sit inside a parent tile with that label. */
+      parent?: { column: string; groups: Readonly<Record<string, string>> }
+      labels?: Readonly<Record<string, string>>
+      /** Heading of the part column in the table view. Default: "Part". */
+      rowHead?: string
+      /** A fixed colour per part or per parent label. */
+      colors?: Readonly<Record<string, Color>>
+    })
+  | (ChartBase & {
+      /**
+       * Flows that reconcile: each row is one flow from a node to a node. Every node with flows in
+       * and out must balance, within `tolerance`, or the build stops.
+       */
+      kind: 'sankey'
+      data: Pick
+      /** Columns that name the start and the end of each flow. */
+      from: string
+      to: string
+      labels?: Readonly<Record<string, string>>
+      /** A colour for the flows out of each start node. Default: slate. */
+      colors?: Readonly<Record<string, Color>>
+      /** Largest gap allowed between flows in and out of a node, in the data unit. Default 0. */
+      tolerance?: number
+    })
+  | (ChartBase & {
       kind: 'table'
       data: Pick
       /** Column that names the rows. */

@@ -3,10 +3,14 @@ import { csvFormatRows } from 'd3-dsv'
 import type { Chart } from '~/content/types'
 import { select, toNumber, type Point } from '~/lib/data'
 import { decimalsOf, fmt, formatNumber, type Shown } from '~/lib/format'
-import { INDIA } from '~/lib/geography'
+import { INDIA, places } from '~/lib/geography'
 import { seq, type Token } from '~/lib/tokens'
 import { rowName } from './dots'
 import { exact, gapFormat, seriesOf, standing, statesOf, type Of, type SeriesData } from './model'
+import { checkFlows, nodeName } from './flows'
+import { scatterData } from './scatter'
+import { changeFormat, slopeRows } from './slope'
+import { isShares, shareText, treemapData } from './treemap'
 
 export interface Cell {
   shown: Shown
@@ -37,6 +41,14 @@ export function tableOf(chart: Chart): TableModel {
       return statesTable(chart)
     case 'table':
       return plainTable(chart)
+    case 'scatter':
+      return scatterTable(chart)
+    case 'slope':
+      return slopeTable(chart)
+    case 'treemap':
+      return treemapTable(chart)
+    case 'sankey':
+      return sankeyTable(chart)
     case 'line':
     case 'columns':
     case 'area': {
@@ -119,6 +131,92 @@ function statesTable(chart: Of<'states'>): TableModel {
   }
 }
 
+/** India first, then every state and UT: both values, or the reason there is no point. */
+function scatterTable(chart: Of<'scatter'>): TableModel {
+  const { sx, sy } = scatterData(chart)
+  const at = (s: SeriesData, k: string) => s.points.find((p) => p.x === k)
+  const keys = [INDIA, ...places.map((p) => p.slug)].filter((k) => k !== INDIA || at(sx, k) || at(sy, k))
+  return {
+    columns: ['State or UT', sx.label, sy.label],
+    rows: keys.map((k) => ({
+      key: k,
+      head: rowName(k, false),
+      cells: [sx, sy].map((s) => {
+        const p = at(s, k)
+        return p?.y == null && chart.missing?.[k] ? { shown: { text: `No data: ${chart.missing[k]}` }, raw: '' } : cell(chart, p, s)
+      }),
+    })),
+  }
+}
+
+/** Both periods and the change between them: a derived value, to the published digits. */
+function slopeTable(chart: Of<'slope'>): TableModel {
+  const { a, b, rows } = slopeRows(chart)
+  const d = Math.max(0, ...rows.flatMap((r) => [decimalsOf(r.a?.raw ?? ''), decimalsOf(r.b?.raw ?? '')]))
+  const f = changeFormat(a.format ?? chart.format, d)
+  const shown = new Set(rows.map((r) => r.key))
+  const all = [...rows, ...places.filter((p) => !shown.has(p.slug)).map((p) => ({ key: p.slug, a: undefined, b: undefined, change: undefined }))]
+  const miss = (k: string): Cell => (chart.missing?.[k] ? { shown: { text: `No data: ${chart.missing[k]}` }, raw: '' } : none)
+  return {
+    columns: ['State or UT', a.label, b.label, 'Change'],
+    rows: all.map((r) => ({
+      key: r.key,
+      head: rowName(r.key, false),
+      cells: [
+        r.a ? cell(chart, r.a, a) : miss(r.key),
+        r.b ? cell(chart, r.b, b) : miss(r.key),
+        r.change === undefined ? { shown: { text: '' }, raw: '' } : { shown: { text: fmt(r.change, f) }, raw: r.change.toFixed(d) },
+      ],
+    })),
+  }
+}
+
+/** Every part with its exact value and its share of the total, then the published total. */
+function treemapTable(chart: Of<'treemap'>): TableModel {
+  const data = treemapData(chart)
+  const all = data.series.points
+  // Values that are already shares of 100 need no share column.
+  const shares = isShares(chart, data.total)
+  const group = (p: Point) => (chart.parent ? (chart.parent.groups[p.row[chart.parent.column] ?? ''] ?? '') : '')
+  const rows = all.map((p) => ({
+    key: p.x,
+    head: chart.labels?.[p.x] ?? p.x,
+    cells: [
+      ...(chart.parent ? [{ shown: { text: group(p) || '–' }, raw: group(p) }] : []),
+      cell(chart, p, data.series),
+      ...(shares ? [] : [p.y === null ? { shown: { text: '' }, raw: '' } : { shown: { text: shareText(p.y, data.total) }, raw: ((p.y / data.total) * 100).toFixed(1) }]),
+    ],
+  }))
+  const pub = data.published
+  const hidden = seriesOf(chart).find((s) => s.hidden)
+  return {
+    columns: [chart.rowHead ?? 'Part', ...(chart.parent ? ['Part of'] : []), data.series.label, ...(shares ? [] : ['Share of the total'])],
+    rows: [
+      ...rows,
+      ...(pub && hidden ? [{ key: 'total', head: hidden.label, cells: [...(chart.parent ? [{ shown: { text: '' }, raw: '' }] : []), cell(chart, pub, hidden), ...(shares ? [] : [{ shown: { text: '' }, raw: '' }])] }] : []),
+    ],
+  }
+}
+
+/** One row per flow: from, to, value. */
+function sankeyTable(chart: Of<'sankey'>): TableModel {
+  const flows = checkFlows(chart)
+  // The values as published, in the data file's unit (₹ crore), not scaled for the chart.
+  const unit = flows[0]?.row.unit?.replace(/^Rs\b/, '₹') || chart.punches.unit
+  return {
+    columns: ['From', 'To', unit],
+    rows: flows.map((f) => {
+      const v = formatNumber(f.value, { scale: 'none' }, f.raw)
+      const derived = f.row.derived === 'derived' ? ' (derived)' : ''
+      return {
+        key: `${f.from}|${f.to}`,
+        head: nodeName(chart, f.from),
+        cells: [{ shown: { text: nodeName(chart, f.to) }, raw: nodeName(chart, f.to) }, { shown: { text: v.text + derived, alt: v.alt && v.alt + derived }, raw: f.raw }],
+      }
+    }),
+  }
+}
+
 function plainTable(chart: Of<'table'>): TableModel {
   const picked = select(chart.data)
   const keys = [...new Set(picked.map((r) => r[chart.by]!))]
@@ -153,7 +251,9 @@ function observations(chart: Chart): { entity: string; series: string; pt: Point
     const d = statesOf(chart)
     return [...(d.india ? [{ entity: 'India', series: chart.short, pt: d.india }] : []), ...d.values.flatMap((v) => (v.pt ? [{ entity: v.place.name, series: chart.short, pt: v.pt }] : []))]
   }
-  const name = chart.kind === 'bars' ? (k: string) => chart.labels?.[k] ?? rowName(k) : rowName
+  if (chart.kind === 'sankey')
+    return checkFlows(chart).map((f) => ({ entity: nodeName(chart, f.from), series: `To ${nodeName(chart, f.to)}`, pt: { x: `${f.from}|${f.to}`, label: '', t: NaN, y: f.value, raw: f.raw, row: f.row } }))
+  const name = chart.kind === 'bars' || chart.kind === 'treemap' ? (k: string) => chart.labels?.[k] ?? rowName(k) : rowName
   // Over time, the row's place names the entity; by category, the category does.
   const time = chart.kind === 'line' || chart.kind === 'columns' || chart.kind === 'area'
   const entity = (pt: Point) => (time ? rowName(pt.row.geography ?? 'india') : name(pt.x))
@@ -163,7 +263,7 @@ function observations(chart: Chart): { entity: string; series: string; pt: Point
     const panel = panels.find((p) => p.series.includes(s.key))?.label
     return panel && panel !== s.label ? `${panel}: ${s.label}` : s.label
   }
-  const defs = chart.kind === 'pyramid' ? [chart.left, chart.right] : 'series' in chart ? chart.series : []
+  const defs = chart.kind === 'pyramid' ? [chart.left, chart.right] : chart.kind === 'scatter' ? [chart.x, chart.y] : 'series' in chart ? chart.series : []
   const def = (key: string) => defs.find((d) => d.key === key)
   const obs = seriesOf(chart).flatMap((s) => s.points.map((pt) => ({ entity: entity(pt), series: label(s), pt, y: def(s.key)?.y, x: def(s.key)?.x })))
   // Rows that still share entity, series and period (a season, an area, or the parts of a summed

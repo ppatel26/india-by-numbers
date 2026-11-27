@@ -82,6 +82,39 @@ const aidisPress: Source = {
 const MPCE_STATE = 'living-standards/mpce-by-state.csv'
 const MPCE_ROUNDS = 'living-standards/mpce-india-rounds.csv'
 const ITEM_SHARES = 'living-standards/mpce-item-shares-india-rounds.csv'
+
+/** Item groups of Table 3.11, as the CSV names them: 13 food groups, then 14 non-food groups. */
+const FOOD_ITEMS = ['cereal', 'cereal substitutes', 'gram', 'pulses and pulse products', 'sugar and salt', 'milk and milk products', 'vegetables', 'fruits (fresh)', 'fruits (dry)', 'egg, fish and meat', 'edible oil', 'spices', 'beverages, processed food, etc.']
+const NON_FOOD_ITEMS = ['pan, tobacco and intoxicants', 'fuel and light', 'toilet articles and other household consumables', 'education', 'medical (hospitalisation)', 'medical (non-hospitalisation)', 'conveyance', 'consumer services excluding conveyance', 'entertainment', 'rent', 'other taxes and cesses', 'clothing and bedding', 'footwear', 'durable goods']
+const ITEM_LABELS: Readonly<Record<string, string>> = {
+  cereal: 'Cereals',
+  'cereal substitutes': 'Cereal substitutes',
+  gram: 'Gram',
+  'pulses and pulse products': 'Pulses',
+  'sugar and salt': 'Sugar and salt',
+  'milk and milk products': 'Milk',
+  vegetables: 'Vegetables',
+  'fruits (fresh)': 'Fresh fruit',
+  'fruits (dry)': 'Dry fruit',
+  'egg, fish and meat': 'Egg, fish and meat',
+  'edible oil': 'Edible oil',
+  spices: 'Spices',
+  'beverages, processed food, etc.': 'Beverages and processed food',
+  'pan, tobacco and intoxicants': 'Paan and tobacco',
+  'fuel and light': 'Fuel and light',
+  'toilet articles and other household consumables': 'Toiletries and consumables',
+  education: 'Education',
+  'medical (hospitalisation)': 'Hospital care',
+  'medical (non-hospitalisation)': 'Other medical',
+  conveyance: 'Conveyance',
+  'consumer services excluding conveyance': 'Consumer services',
+  entertainment: 'Entertainment',
+  rent: 'Rent',
+  'other taxes and cesses': 'Taxes and cesses',
+  'clothing and bedding': 'Clothing and bedding',
+  footwear: 'Footwear',
+  'durable goods': 'Durable goods',
+}
 const FOOD_STATE = 'living-standards/food-share-by-state.csv'
 const GINI = 'living-standards/gini-mpce.csv'
 const AMENITIES = 'living-standards/household-amenities-by-state.csv'
@@ -308,6 +341,44 @@ const topic: Topic = {
           },
         },
         {
+          text: 'In villages in 2023-24, beverages and processed food took 9.84% of spending, more than milk (8.44%) or cereals (4.97%). Conveyance took 7.59%, and durable goods 6.48%.',
+        },
+        {
+          chart: {
+            kind: 'treemap',
+            slug: 'rural-spending-by-item',
+            checked: CHECKED,
+            title: 'What rural households spend on, India, 2023-24',
+            subtitle: 'Share of monthly per capita consumption expenditure in villages, by item group, food and non-food.',
+            punches: { office: 'MoSPI', unit: '% of MPCE', period: '2023-24' },
+            status: ['Survey estimate'],
+            note: 'Rural households, values without imputation. Small groups have no label inside their tile; the table lists every group.',
+            sources: [hces2023_24],
+            format: { unit: '%', decimals: 2 },
+            by: 'item_group',
+            rowHead: 'Item group',
+            parent: { column: 'item_group', groups: { ...Object.fromEntries(FOOD_ITEMS.map((k) => [k, 'Food'])), ...Object.fromEntries(NON_FOOD_ITEMS.map((k) => [k, 'Non-food'])) } },
+            labels: ITEM_LABELS,
+            colors: { Food: 's6', 'Non-food': 's7' },
+            series: [
+              { key: 'share', label: 'Share of spending', color: 'other', file: ITEM_SHARES, x: 'item_group', where: { geography: 'india', period: '2023-24', sector: 'rural', item_group: [...FOOD_ITEMS, ...NON_FOOD_ITEMS] } },
+              { key: 'total', label: 'Total expenditure, as published', color: 'ink', hidden: true, file: ITEM_SHARES, x: 'item_group', where: { geography: 'india', period: '2023-24', sector: 'rural', item_group: 'total expenditure' } },
+            ],
+            know: [
+              'Each tile is one item group of Table 3.11R, sized by its share of monthly per capita consumption expenditure.',
+              'The 13 food groups add up to the food total, 47.04%, and the 14 non-food groups to 52.96%. The chart draws the groups only, so no total is counted twice.',
+              'Table 3.11 joins sugar and salt, and toilet articles and other household consumables, as published.',
+              'Values are without imputation for free items, such as grain from the public distribution system.',
+            ],
+            processing: [
+              'Read Table 3.11R of NSS Report No. 592: India, rural, 2023-24.',
+              'Check that the food groups add up to "food: total" and the non-food groups to "non-food: total". Both agree.',
+              'Group the tiles by food and non-food. The shares of the two groups in the strips are derived: the sum of their parts.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
           text: 'In 2023-24, food took more than half of rural spending in eight states and UTs, among them Assam (53.22%), Bihar (52.53%) and West Bengal (51.54%). In rural Kerala and Delhi it took 40.32%.',
         },
         {
@@ -334,6 +405,40 @@ const topic: Topic = {
               'Read the "Food Total" category of indicator 4 of the HCES API.',
               'Check it against rows 15 and 31 of Statements 4R, 4U, 11R and 11U of NSS Reports No. 592 and 591. All 1,184 cells agree.',
               'Match state names to the site geography table.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'From 2022-23 to 2023-24 the rural food share rose in 25 of the 36 states and UTs. It rose most in Puducherry, from 40.09% to 43.08%, and fell most in Tripura, from 48.96% to 46.66%. For India it rose from 46.38% to 47.04%.',
+        },
+        {
+          chart: {
+            kind: 'slope',
+            slug: 'food-share-change-by-state',
+            checked: CHECKED,
+            title: 'Share of rural household spending on food by state, 2022-23 and 2023-24',
+            subtitle: 'Food as a share of monthly per capita consumption expenditure in villages, by state and UT, two HCES rounds.',
+            punches: { office: 'MoSPI', unit: '% of MPCE', period: '2022-23 and 2023-24' },
+            status: ['Survey estimate'],
+            note: 'Rural households, values without imputation. Both ends use one scale. Small states and UTs have wide margins of error.',
+            sources: [hces2023_24, hces2022_23, hcesApi(4)],
+            format: { unit: '%', decimals: 2 },
+            series: [
+              { key: '2022-23', label: '2022-23', color: 'slate', file: FOOD_STATE, where: { period: '2022-23', imputation: 'without', sector: 'rural', item_group: 'food' } },
+              { key: '2023-24', label: '2023-24', color: 'ink', file: FOOD_STATE, where: { period: '2023-24', imputation: 'without', sector: 'rural', item_group: 'food' } },
+            ],
+            labels: ['puducherry', 'tripura', 'jammu-kashmir', 'ladakh'],
+            know: [
+              'The share is food spending divided by all consumption spending, for rural households.',
+              'HCES 2022-23 and HCES 2023-24 used the same design: the same item list, three questionnaires over three visits, and computer-assisted interviews. So the two rounds compare. Rounds before 2022-23 do not.',
+              'A one-year change of a point or two can come from sampling. Small states and UTs have wide margins of error.',
+              'The change in the table is derived: the 2023-24 value minus the 2022-23 value, in percentage points.',
+            ],
+            processing: [
+              'Read the "Food Total" category of indicator 4 of the HCES API, rural, without imputation, for both rounds.',
+              'Check it against Statements 4R of NSS Reports No. 592 and 591, as in the map above.',
+              'Derived: subtract the 2022-23 value from the 2023-24 value for the change in the table.',
             ],
             nextRelease: 'not announced',
           },

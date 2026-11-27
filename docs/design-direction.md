@@ -312,6 +312,39 @@ The owner suggested politics as a topic. The council (GPT 6.2 Sol, Gemini 4 Neon
 - No electoral bond charts: ECI published row-level records, not totals, so any total would be the
   site's own sum over thousands of rows on the most charged data set.
 
+### Chart kinds (decided 27 Nov 2026)
+
+The council (GPT 6.2 Sol, Gemini 4 Neon, Muse Wonder Full 1.0) added four chart kinds, built in this
+order: scatter, slope, treemap, Sankey. Every kind has a table view, CSV and JSON downloads, and one
+renderer for the page, the PNG and SVG files and the social image. India is ink and the selected
+state is slot 1. Each kind reads at 390 px and at the 444 px half width.
+
+- Scatter: one dot per state or UT. India is a vertical and a horizontal reference line, each
+  labelled, not a dot. No fitted or trend line. The copy says association, never cause. Both axes
+  name the measure and its unit, and the periods match as closely as the data allow, with the gap
+  stated. A per-person rate is a derived value with a population source the site already holds for
+  a matching period, or the pair is not drawn.
+- Slope: two periods per state on one scale. Names and values at both ends; on phones only India,
+  the selected state and the largest movers. A missing end is not joined.
+- Treemap: squarified, at most two levels. Labels inside tiles only where they fit; every part is in
+  the table. A parent and its children are never both counted.
+- Sankey: at most two on the site, at most 12 nodes a column, two or three columns. Receipts and
+  borrowing go into one pool and out to the heads, so no band implies earmarking. The two sides must
+  reconcile to the published totals for the same year and basis, or the chart is not built.
+- No dual-axis charts. Two publishers of one measure may share one axis with the line kind only when
+  the unit and the definition match: the official series solid in ink, the other in a palette slot,
+  dashed if modelled, never spliced. Otherwise use panels with their own scale.
+- A conversion in a multiply factor is stated in the processing lines.
+- Maps stay equal tile grids. No geographic map.
+
+First charts: three scatters (farm income and debt, literacy and college enrolment, patent
+applications per million people and income per person), two slopes (facility births, NFHS-5 to
+NFHS-6; rural food share, HCES 2022-23 to 2023-24), three treemaps (CPI basket weights, rural
+spending by item, patent applications by field), one Sankey (central government receipts and
+spending, 2024-25) and one two-publisher line (life expectancy, SRS and UN). The defence budget
+split keeps its bars: five parts read better as bars. Patent counts by state would grow with the size
+of a state, so the patents scatter divides by projected population.
+
 ### Topic tiles: the jaali (decided 25 Nov 2026)
 
 - At rest, a faint jaali (13% of the text colour) spreads out from the medallion and fades before the topic name. A flat tile with no lattice read as dull.

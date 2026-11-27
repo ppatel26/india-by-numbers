@@ -35,6 +35,14 @@ function kindOf(c: Chart): string {
       return c.stacked ? 'Stacked' : 'H-bar'
     case 'pyramid':
       return 'Pyramid'
+    case 'scatter':
+      return 'Scatter'
+    case 'slope':
+      return 'Slope'
+    case 'treemap':
+      return 'Treemap'
+    case 'sankey':
+      return 'Sankey'
     case 'table':
       return 'Table'
   }

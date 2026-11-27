@@ -150,3 +150,20 @@ test('the change log filters by kind and topic, and says when nothing matches', 
   await expect(rows).toHaveCount(all)
   await expect(page.locator('[data-none]')).toBeHidden()
 })
+
+test('a scatter and a slope mark the selected state in series-1, and a keyboard reaches each point', async ({ page }) => {
+  await page.goto('/agriculture/')
+  const picker = page.locator('[data-pick="select"]').first()
+  await picker.locator('.trigger').click()
+  // Type only once the search box has focus, or the keys go nowhere and Enter picks the first state.
+  await expect(picker.locator('[data-pick-input]')).toBeFocused()
+  await page.keyboard.type('kera')
+  await page.keyboard.press('Enter')
+  await expect(picker.locator('[data-pick-name]')).toHaveText('Kerala')
+  const point = page.locator('#farm-income-and-debt-by-state .w-wide .pt[data-geo="kerala"]')
+  await expect(point.locator('.dot')).toHaveCSS('fill', 'rgb(204, 40, 39)')
+  await point.locator('a').focus()
+  await expect(page.locator('.tip')).toContainText('Households in debt, %: 69.9%')
+  await page.goto('/health/')
+  await expect(page.locator('#facility-births-by-state .w-wide .slope[data-geo="kerala"] .slope-line')).toHaveCSS('stroke', 'rgb(204, 40, 39)')
+})

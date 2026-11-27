@@ -148,6 +148,21 @@ names the report and table the value comes from.
 - The states add up to the TOTAL row (67822 ordinary, 225 convention, 154 PCT in 2024-25), and the
   three routes add up to the residents in Appendix C: 68201 in 2024-25 and 51574 in 2023-24.
 
+### `patent-applications-per-million-by-state.csv`
+
+- 36 rows: India and 35 states and UTs, 2024-25. Unit: applications per million people. Every row
+  is `derived`.
+- Made by `pipeline/science-technology/per_million.py` from two CSVs the site already holds:
+  applications by state, all routes, 2024-25 (above; India: residents in Appendix C), and the
+  Technical Group projection of persons on 1 March 2025, in thousands
+  (`../population/population-projections-2011-2036.csv`, MoHFW, July 2020, Table 8).
+- Rate = applications / (population in thousands x 1,000) x 1,000,000, to two decimals. The script
+  stops if the states do not add up to the India total.
+- Checked values: India 48.26 (68201 applications, 1413324 thousand people); Chandigarh 230.28;
+  Tamil Nadu 199.70.
+- Read it as an approximate rate: the projection starts from Census 2011, and a state's
+  applications count by the address of its applicant.
+
 ### `patent-applications-by-applicant-type.csv`
 
 - 50 rows: India, 2020-21 to 2024-25, five `applicant_type` values (`natural person`, `startup`,
@@ -210,8 +225,9 @@ Each known difference is checked too, so the script stops if a later report corr
   January 2025 (Annual Report 2024-25). Read a year's grants as the office's output, not as the
   year's inventions.
 - **State of origin is an address.** The state is the address of the Indian applicant.
-- **Counts, not rates.** No chart divides by population or by GDP. A per-person rate would be a
-  derived value with a second source.
+- **Counts, and one derived rate.** The maps show counts. One scatter chart divides applications by
+  population: `patent-applications-per-million-by-state.csv`, below. Its denominator is a projection
+  from Census 2011, so the rate is a derived value with a second source.
 - **Before 2005-06.** The 2004-05 report has text, and older reports are listed back to 2002-03.
   Not built yet.
 

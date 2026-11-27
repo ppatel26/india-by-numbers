@@ -766,6 +766,37 @@ const topic: Topic = {
           },
         },
         {
+          text: 'States with more literate people did not always send more young people to college. Mizoram had the highest literacy, 99.8%, and a college enrolment ratio of 31.5. Telangana had 74.6% literacy and a ratio of 46.6.',
+        },
+        {
+          chart: {
+            kind: 'scatter',
+            slug: 'literacy-and-college-enrolment-by-state',
+            title: 'Literacy and college enrolment by state and UT, 2025 and 2023-24',
+            subtitle: 'Share of people aged 7 and over who can read and write, 2025, against the gross enrolment ratio in higher education, ages 18 to 23, 2023-24. One dot per state or UT.',
+            punches: { office: 'MoSPI · MoE', unit: '% 7+ · GER 18-23', period: '2025 and 2023-24' },
+            status: ['Survey estimate'],
+            note: 'An association, not a cause. The two measures are about one year apart: no literacy estimate by state exists for 2023-24. The lines mark India.',
+            sources: [plfsAnnual2025, aishe2023_24],
+            x: { key: 'literacy', label: 'Literacy, % aged 7+', color: 'slate', format: { unit: '%' }, file: LITERACY, where: { period: '2025', sex: 'person' } },
+            y: { key: 'ger', label: 'College enrolment ratio, 18-23', color: 'slate', format: { decimals: 1 }, file: GER_HE_STATE, where: { period: '2023-24', sex: 'total', social_group: 'all categories' } },
+            labels: ['mizoram', 'telangana', 'puducherry', 'chandigarh', 'bihar', 'lakshadweep'],
+            know: [
+              'This chart shows how the two measures sit together in each state. It does not show that one causes the other.',
+              'The periods do not match. Literacy is from PLFS, January to December 2025. The enrolment ratio is from AISHE 2023-24, the latest report. PLFS gives no literacy by state for 2023-24, and the Census gives it for 2011 only.',
+              'Literacy counts everyone aged 7 and over. The enrolment ratio divides enrolment in higher education, of any age, by the population aged 18 to 23.',
+              'Students who study in another state count where they study, so small UTs with many colleges, such as Puducherry and Chandigarh, show high ratios.',
+              'Literacy in 2025 is a survey estimate. Universities and colleges submit data to AISHE voluntarily.',
+            ],
+            processing: [
+              'Read literacy from Table (7) of Appendix A of the PLFS Annual Report 2025 (rural plus urban, age 7 and over), as in the chart above.',
+              'Read the enrolment ratio from Table 19 of the AISHE 2023-24 final report, all categories, as in the college chart.',
+              'Pair the two values by state. Draw no fitted line.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
           text: 'In 2022-23 adults aged 25 and over had spent 7.5 years in school or college on average. Goa had 11.6 years. Andhra Pradesh and Rajasthan had 6.1.',
         },
         {

@@ -373,6 +373,53 @@ const topic: Topic = {
             nextRelease: CPI_NEXT,
           },
         },
+        { text: 'Food and beverages carry 36.75% of the basket, and housing, water, electricity, gas and other fuels 17.66%. Recreation, sport and culture carry 1.52%.' },
+        {
+          chart: {
+            kind: 'treemap',
+            slug: 'cpi-weights-by-division',
+            checked: '2026-11-27',
+            title: 'What the consumer price basket is made of, India, base 2024=100',
+            subtitle: 'Weight of each COICOP 2018 spending division in the Consumer Price Index, rural and urban combined, % of the basket.',
+            punches: { office: 'MoSPI', unit: '% of basket', period: 'Base 2024=100' },
+            sources: [CPI_RELEASE],
+            format: { unit: '%', decimals: 2 },
+            by: 'division',
+            rowHead: 'Division',
+            labels: {
+              'Personal care, social protection and miscellaneous goods and services': 'Personal care and miscellaneous',
+              'Furnishings, household equipment and routine household maintenance': 'Furnishings and household equipment',
+              'Housing, water, electricity, gas and other fuels': 'Housing, water and fuels',
+              'Paan, tobacco and intoxicants': 'Paan and tobacco',
+              'Restaurants and accommodation services': 'Restaurants and hotels',
+              'Recreation, sport and culture': 'Recreation and culture',
+            },
+            colors: { 'Food and beverages': 's6' },
+            series: [
+              {
+                key: 'weight',
+                label: 'Weight in the basket',
+                color: 'other',
+                file: DIVISIONS_LATEST,
+                y: 'weight_combined',
+                where: { period: '2026-10', sector: 'combined', division_code: ['01', '02', '03', '04', '05', '06', '07', '08', '09', '10', '11', '13'] },
+              },
+              { key: 'all', label: 'CPI (General), as published', color: 'ink', hidden: true, file: DIVISIONS_LATEST, y: 'weight_combined', where: { period: '2026-10', sector: 'combined', division_code: '00' } },
+            ],
+            know: [
+              'A weight is the share of household spending that a division carries in the index. The weights come from household spending in the base period and stay fixed until the next base revision.',
+              'The 12 divisions add up to 100.00. The release has no division 12.',
+              'Rural and urban India have their own weights. This chart shows the combined index.',
+              'The divisions follow COICOP 2018 and are new with base 2024=100. They do not match the six groups of the 2012 series.',
+            ],
+            processing: [
+              'Read the combined weight of each division from Annexure I of the CPI press release of 12 Nov 2026, as kept in the division CSV.',
+              'Check that the 12 weights add up to the general index, 100.00. They do.',
+              'Size each tile by its weight. Draw each division once: the general index is the whole, not a tile.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
         { text: 'All-items inflation went up every month in 2026, from 2.74% in January to 6.09% in October.' },
         {
           chart: {

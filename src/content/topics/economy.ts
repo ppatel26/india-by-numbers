@@ -108,6 +108,14 @@ const RBI_TABLE_9: Source = {
   url: 'https://rbidocs.rbi.org.in/rdocs/Publications/DOCs/9T_HBIE31072026A3F18AB442CE4A23BEC929D29B406162.XLSX',
 }
 
+// Tables 86 to 89 are pages 23911 to 23914 of the Handbook (id = 23825 + table number).
+const RBI_T86_89: Source = {
+  publisher: 'RBI',
+  release: 'Handbook of Statistics on Indian Economy 2025-26, Tables 86 to 89: deficit indicators, receipts, capital receipts and expenditure of the Central Government',
+  released: '2026-07-31',
+  url: 'https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23912',
+}
+
 const RBI_TABLE_133: Source = {
   publisher: 'RBI',
   release: 'Handbook of Statistics on Indian Economy 2025-26, Table 133: Exchange Rate of the Rupee (financial year average and end-year)',
@@ -714,6 +722,56 @@ const topic: Topic = {
               'Fetch establishments (indicator 2) and workers (indicator 27) for India from the MoSPI eSankhyiki API, for all four rounds.',
               'Check 2022-23, 2023-24 and 2025 against Table 1 of the ASUSE 2025 press note, which gives the counts in hundreds. All six agree.',
               'Plot each round at its own survey period, and keep the 2025 round apart.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
+    {
+      title: "Where does the central government's money come from, and where does it go?",
+      lede: 'In 2024-25 the central government spent {{₹46528670000000 lakh-crore 2}}. Taxes, net of the states\' share, paid for {{₹25000390000000 lakh-crore 2}} of it. Borrowing and other liabilities covered {{₹15744310000000 lakh-crore 2}}, the fiscal deficit.',
+      blocks: [
+        {
+          text: 'Interest took {{₹11155750000000 lakh-crore 2}}, more than defence ({{₹4507330000000 lakh-crore 2}}) and subsidies ({{₹4226060000000 lakh-crore 2}}) together.',
+        },
+        {
+          chart: {
+            kind: 'sankey',
+            slug: 'central-government-money',
+            checked: '2026-11-27',
+            title: "Where the central government's money came from and went, 2024-25",
+            subtitle: 'Receipts and borrowing of the central government, pooled, and its spending by head, ₹ lakh crore at current prices, 2024-25 accounts.',
+            punches: { office: 'RBI', unit: '₹ lakh crore', period: '2024-25' },
+            note: 'All money goes into one pool and out again: no tax pays for a particular head. Defence leaves out defence pensions, which are in other revenue spending.',
+            sources: [RBI_T86_89],
+            format: { unit: '₹', multiply: 1e7, scale: 'lakh crore', decimals: 2 },
+            data: { file: 'economy/central-government-flows.csv', where: { period: '2024-25' } },
+            from: 'from',
+            to: 'to',
+            tolerance: 2,
+            colors: {
+              'Direct taxes': 's2',
+              'Indirect taxes, with GST': 's5',
+              'Non-tax revenue': 's4',
+              'Loan recoveries and disinvestment': 's6',
+              'Borrowing and other liabilities': 's8',
+            },
+            know: [
+              'The government pays from one fund. The chart puts every receipt into one pool and pays every head out of it, so no band says that a tax pays for a head.',
+              'Taxes are net: the states\' share of central taxes is already taken out.',
+              'Borrowing and other liabilities is the gross fiscal deficit: total spending less revenue receipts, loan recoveries and disinvestment. It covers market loans, small savings, provident funds and other liabilities, and a small draw on cash.',
+              'Other revenue spending is all revenue spending other than interest, subsidies and defence: for example pensions, pay, and grants to states. Other capital outlay is capital outlay other than defence.',
+              'Defence spending leaves out defence pensions and the civil spending of the Ministry of Defence (RBI note).',
+              'The two sides add up to ₹46.53 lakh crore. The published total spending is ₹1 crore less, from rounding.',
+              'The figures for 2024-25 are accounts. Later years in the data file are revised and budget estimates, which change.',
+            ],
+            processing: [
+              'Read Tables 86, 87, 88 and 89 of the RBI Handbook of Statistics on Indian Economy 2025-26, the row for 2024-25.',
+              'Into the pool: direct taxes and indirect taxes (Table 87), non-tax revenue (Table 87), loan recoveries and disinvestment (Table 88, added: derived), and the gross fiscal deficit (Table 86).',
+              'Out of the pool: interest and subsidies (Table 89); defence, revenue and capital added (derived); other revenue spending and other capital outlay, the rest of each account (derived); loans and advances (Table 89).',
+              'Check that the flows in equal the flows out, and that both equal total spending in Table 89 within ₹2 crore. pipeline/economy/build_central_flows.py stops if any check fails.',
+              'The data file holds ₹ crore, as published. The chart multiplies by 1,00,00,000 to show rupees in lakh crore; the values do not change.',
             ],
             nextRelease: 'not announced',
           },

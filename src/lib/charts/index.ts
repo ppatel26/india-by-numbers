@@ -11,6 +11,10 @@ import { renderPanels } from './panels'
 import { renderPyramid } from './pyramid'
 import { renderRanked, renderTiles } from './states'
 import { asStates } from './model'
+import { renderSankey } from './sankey'
+import { renderScatter } from './scatter'
+import { renderSlope } from './slope'
+import { renderTreemap } from './treemap'
 
 export type View = 'chart' | 'map' | 'table'
 
@@ -41,6 +45,14 @@ export function renderPlot(chart: Chart, view: 'chart' | 'map', width: Width): M
       return chart.panels ? renderPanels(chart, width, renderBars) : renderBars(chart, width)
     case 'pyramid':
       return renderPyramid(chart, width)
+    case 'scatter':
+      return renderScatter(chart, width)
+    case 'slope':
+      return renderSlope(chart, width)
+    case 'treemap':
+      return renderTreemap(chart, width)
+    case 'sankey':
+      return renderSankey(chart, width)
     case 'table':
       throw new Error(`${chart.slug}: a table chart has no plot`)
   }
