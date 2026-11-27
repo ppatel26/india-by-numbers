@@ -302,8 +302,8 @@ const PUBLISHERS: readonly Publisher[] = [
     full: 'National Crime Records Bureau, Ministry of Home Affairs',
     topics: ['crime-and-justice'],
     dataSets: [
-      { name: 'Crime in India', detail: 'Crimes, murder, crimes against women, police and court disposal, 2024; national rates from 2015', rhythm: 'Yearly', match: /Crime in India/ },
-      { name: 'Prison Statistics India', detail: 'Prison capacity, prisoners and undertrials, 31 Dec 2024; India from 2014', rhythm: 'Yearly', match: /Prison Statistics India/ },
+      { name: 'Crime in India', detail: 'Crimes, murder, crimes against women, Scheduled Castes and Scheduled Tribes, police and court disposal, deaths in police custody, trafficking and missing children, 2024; national rates from 2015', rhythm: 'Yearly', match: /Crime in India/ },
+      { name: 'Prison Statistics India', detail: 'Prison capacity, prisoners and undertrials, 31 Dec 2024; deaths in prisons, 2024; India from 2014', rhythm: 'Yearly', match: /Prison Statistics India/ },
     ],
     licence: 'Not stated. NCRB pages say "All Rights Reserved".',
     access: ['Volumes and tables as PDF (ncrb.gov.in)'],

@@ -9,7 +9,7 @@ const UPLOADS = 'https://www.ncrb.gov.in/uploads/'
 // NCRB gives no release date for Crime in India 2024, on the year page or in the volumes. News
 // reports give 6 May 2026, and the PDF metadata gives 7 Apr to 13 May 2026, so neither is the
 // publisher's date. The source line says "not stated".
-const cii2024 = (volume: 'I' | 'III', path: string): Source => ({
+const cii2024 = (volume: 'I' | 'II' | 'III', path: string): Source => ({
   publisher: NCRB,
   release: `Crime in India 2024, Volume ${volume}`,
   released: 'not stated',
@@ -17,6 +17,7 @@ const cii2024 = (volume: 'I' | 'III', path: string): Source => ({
 })
 
 const cii2024v1 = cii2024('I', 'files/11CrimeinIndia2024-VolumeI.pdf')
+const cii2024v2 = cii2024('II', 'files/2CrimeinIndia2024-VolumeII.pdf')
 const cii2024v3 = cii2024('III', 'files/3CrimeinIndia2024-VolumeIII1.pdf')
 
 // Earlier editions: NCRB dates none of them on its year pages.
@@ -97,8 +98,17 @@ const PRISONS = 'crime/prisons-by-state-2024.csv'
 const PRISONS_TREND = 'crime/prisons-india-trend.csv'
 const DISTRICT = 'crime/court-pendency-district-by-state.csv'
 const HIGH = 'crime/court-pendency-high-courts.csv'
+const SC_ST = 'crime/crimes-against-scs-sts-by-state-2024.csv'
+const CUSTODY = 'crime/deaths-in-police-custody-2024.csv'
+const PRISON_DEATHS = 'crime/prison-deaths-2024.csv'
+const POLICE_CASES = 'crime/cases-against-police-personnel-2024.csv'
+const TRAFFICKING = 'crime/human-trafficking-by-state-2024.csv'
+const MISSING = 'crime/missing-children-by-state-2024.csv'
 
 const CHECKED = '2026-11-25'
+/** The day the part on Scheduled Castes and Tribes, custody, trafficking and missing children was checked. */
+const CHECKED_PART6 = '2026-11-27'
+const COUNT = { scale: 'none', decimals: 0 } as const
 
 /** Years with one population base and one law: NCRB changed the base in 2018 and 2020, and the law in 2024. */
 const RATE_SPANS = [
@@ -132,6 +142,27 @@ const rateSeries: Series[] = LAWS.flatMap(([law, label, color]) =>
   })),
 )
 
+/** Recorded causes of deaths in police custody, Table 16A.3, with "Others" last. */
+const CUSTODY_CAUSES = [
+  'illness-or-death-in-hospital-during-treatment',
+  'suicide',
+  'while-escaping-from-custody',
+  'injuries-sustained-prior-to-police-custody',
+  'injuries-in-police-custody-due-to-physical-assault-by-police',
+  'road-accident-or-journey-connected-with-investigation',
+  'others',
+]
+
+/** Causes of deaths in prisons, Tables 8.1, 8.2 and 8.4. Execution, firing and assault by outside elements had no deaths in 2024. */
+const PRISON_CAUSES = ['illness', 'ageing', 'suicide', 'accidental', 'murder-by-inmates', 'negligence-or-excess-by-jail-personnel', 'others', 'not-known']
+
+/** Types of incident in Table 16A.6, in the table's order. */
+const HRV_TYPES = ['encounter-killing', 'deaths-in-custody', 'illegal-detention', 'torture-causing-hurt-or-injury', 'extortion', 'others']
+
+/** Tooltip text for the states and UTs where NCRB prints "-" for the rate. */
+const noRate = (group: string, places: readonly string[]): Record<string, string> =>
+  Object.fromEntries(places.map((p) => [p, `NCRB prints no rate: it gives the ${group} population of Census 2011 as 0.0 lakh`]))
+
 /** Year-end pendency from LS 3295. The answer gives 2021 and 2022 with no day. */
 const YEAR_END = ['2021', '2022', '2023-12-31', '2024-12-31', '2025-12-31']
 
@@ -155,6 +186,15 @@ const PRISON_DAY_KNOW = 'Each value is a count on 31 December 2024, not an avera
 
 const PSI_REVISED_KNOW =
   "NCRB revised Prison Statistics India 2024 on 15 Sep 2026 with West Bengal's 2024 data. The first release, of 6 May 2026, used West Bengal's 2023 data. This page uses the revised report."
+
+const ATROCITY_KNOW =
+  'NCRB counts a crime against a Scheduled Caste or Scheduled Tribe person by a person who is not from a Scheduled Caste or Scheduled Tribe. It leaves out cases under the IPC or the BNS alone, without the SC/ST (Prevention of Atrocities) Act, because it takes those to be crimes by Scheduled Caste or Scheduled Tribe persons.'
+
+const CENSUS_BASE_KNOW =
+  'NCRB computes this rate with the Scheduled Caste or Scheduled Tribe population of Census 2011, not with a projection for 2024. The other NCRB rates on this page use the projected population of 2024.'
+
+const NHRC_KNOW =
+  'The National Human Rights Commission (NHRC) also counts deaths in custody, from the reports that it receives. Its counts differ from NCRB counts. This page shows NCRB counts only and does not combine the two.'
 
 const NJDG_KNOW =
   'Each answer quotes the National Judicial Data Grid (NJDG) on a stated date. NJDG is a live dashboard, and counts for nearby dates can differ by more than real change. Gujarat had 19,67,723 cases on 9 Mar 2026 and 15,60,074 on 23 Mar 2026.'
@@ -556,6 +596,303 @@ const topic: Topic = {
         },
       ],
     },
+    {
+      title: 'What do the police record on crimes against Scheduled Castes and Scheduled Tribes, deaths in custody, trafficking and missing children?',
+      lede: 'In 2024, the police recorded 55,698 crimes against Scheduled Castes and 9,966 against Scheduled Tribes. NCRB recorded 65 deaths in police custody and 1,953 deaths in prisons.',
+      blocks: [
+        {
+          text: 'For every lakh Scheduled Caste people, the police recorded 27.7 crimes against Scheduled Castes across India, 68.5 in Madhya Pradesh and 57.3 in Rajasthan. Uttar Pradesh recorded the most cases, 14,642. The rate of 164.2 in Mizoram comes from 2 cases and a very small Scheduled Caste population.',
+        },
+        {
+          chart: {
+            kind: 'states',
+            slug: 'crimes-against-scheduled-castes-by-state',
+            noRank: true,
+            checked: CHECKED_PART6,
+            title: 'Recorded crimes against Scheduled Castes by state, 2024',
+            subtitle: 'Crimes against Scheduled Caste people registered by the police, per lakh Scheduled Caste people (Census 2011), by state and UT.',
+            punches: { office: 'NCRB', unit: 'per lakh SC people', period: '2024' },
+            note: 'A higher recorded rate can mean that more crimes are reported and registered. NCRB says states should not be compared on crime figures alone.',
+            sources: [cii2024v2],
+            format: { decimals: 1 },
+            data: { file: SC_ST, where: { period: '2024', group: 'scheduled-castes', indicator: 'crime-rate' }, x: 'geography' },
+            open: 'map',
+            scale: 'seq',
+            bins: [5, 10, 20, 40, 60],
+            short: 'Recorded crimes against SCs',
+            missing: noRate('Scheduled Caste', ['arunachal-pradesh', 'nagaland', 'andaman-nicobar', 'lakshadweep']),
+            know: [
+              ATROCITY_KNOW,
+              CENSUS_BASE_KNOW,
+              'Mizoram recorded 2 cases. NCRB gives its Scheduled Caste population as 0.0 lakh, so 2 cases give a rate of 164.2.',
+              'Across India, the police recorded 57,582 cases in 2022, 57,789 in 2023 and 55,698 in 2024.',
+              REGISTRATION_KNOW,
+              PRINCIPAL_KNOW,
+              BNS_KNOW,
+            ],
+            processing: [
+              'Read Table 7A.1 of Crime in India 2024, Volume II: cases for 2022 to 2024, the Scheduled Caste population of Census 2011 and the rate for 2024.',
+              'Check that the states and UTs add up to the India total for each year.',
+              'Check India (55,698 cases, rate 27.7), Uttar Pradesh (14,642 cases) and Madhya Pradesh (rate 68.5) against the table.',
+              'Keep each "-" in the table as an empty value.',
+              'Match state names to the site geography table.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'For every lakh Scheduled Tribe people, the police recorded 9.5 crimes against Scheduled Tribes across India, 29.9 in Kerala and 20.7 in Madhya Pradesh. Madhya Pradesh recorded the most cases, 3,165. Manipur recorded 3,399 cases in 2023 and 289 in 2024.',
+        },
+        {
+          chart: {
+            kind: 'states',
+            slug: 'crimes-against-scheduled-tribes-by-state',
+            noRank: true,
+            checked: CHECKED_PART6,
+            title: 'Recorded crimes against Scheduled Tribes by state, 2024',
+            subtitle: 'Crimes against Scheduled Tribe people registered by the police, per lakh Scheduled Tribe people (Census 2011), by state and UT.',
+            punches: { office: 'NCRB', unit: 'per lakh ST people', period: '2024' },
+            note: 'A higher recorded rate can mean that more crimes are reported and registered. NCRB says states should not be compared on crime figures alone.',
+            sources: [cii2024v2],
+            format: { decimals: 1 },
+            data: { file: SC_ST, where: { period: '2024', group: 'scheduled-tribes', indicator: 'crime-rate' }, x: 'geography' },
+            open: 'map',
+            scale: 'seq',
+            bins: [1, 5, 10, 20, 25],
+            short: 'Recorded crimes against STs',
+            missing: noRate('Scheduled Tribe', ['haryana', 'punjab', 'chandigarh', 'delhi', 'puducherry']),
+            know: [
+              ATROCITY_KNOW,
+              CENSUS_BASE_KNOW,
+              'Manipur recorded 1 case in 2022, 3,399 in 2023 and 289 in 2024. NCRB gives no reason in its tables.',
+              'Across India, the police recorded 10,064 cases in 2022, 12,960 in 2023 and 9,966 in 2024.',
+              REGISTRATION_KNOW,
+              PRINCIPAL_KNOW,
+            ],
+            processing: [
+              'Read Table 7C.1 of Crime in India 2024, Volume II: cases for 2022 to 2024, the Scheduled Tribe population of Census 2011 and the rate for 2024.',
+              'Check that the states and UTs add up to the India total for each year.',
+              'Check India (9,966 cases, rate 9.5) and Manipur (3,399 cases in 2023) against the table.',
+              'Keep each "-" in the table as an empty value.',
+              'Match state names to the site geography table.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'Of the 65 people who died in police custody in 2024, 40 were not on remand and 25 were on police or judicial remand. The police recorded illness or death in hospital as the cause for 28 people, and suicide for 22.',
+        },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'deaths-in-police-custody-by-cause',
+            checked: CHECKED_PART6,
+            title: 'Deaths in police custody by recorded cause, India, 2024',
+            subtitle: 'Deaths of people in police custody or lockup, by the cause that the police recorded, India.',
+            punches: { office: 'NCRB', unit: 'deaths', period: '2024' },
+            note: 'NCRB counts 65 deaths: 40 of people not on remand and 25 of people on police or judicial remand.',
+            sources: [cii2024v3],
+            format: COUNT,
+            by: 'cause',
+            rowHead: 'Recorded cause',
+            order: CUSTODY_CAUSES,
+            labels: {
+              'illness-or-death-in-hospital-during-treatment': 'Illness, or death in hospital during treatment',
+              suicide: 'Suicide',
+              'while-escaping-from-custody': 'While escaping from custody',
+              'injuries-sustained-prior-to-police-custody': 'Injuries sustained before police custody',
+              'injuries-in-police-custody-due-to-physical-assault-by-police': 'Injuries from assault by police in custody',
+              'road-accident-or-journey-connected-with-investigation': 'Road accident or journey in investigation',
+              others: 'Others',
+            },
+            series: [
+              { key: 'deaths', label: 'Deaths', color: 'ink', file: CUSTODY, where: { geography: 'india', remand: 'all', indicator: 'deaths-reported', cause: CUSTODY_CAUSES } },
+            ],
+            know: [
+              'The cause is the one that the state and UT police report to NCRB. It is not the finding of an enquiry or a court.',
+              '"Not on remand" includes people who were arrested but not yet produced before a court. "On remand" means police or judicial remand.',
+              'For the 40 deaths of people not on remand, 20 magisterial and 14 judicial enquiries were ordered. For the 25 deaths on remand, 8 magisterial and 7 judicial enquiries were ordered.',
+              'The police registered 6 cases over deaths of people not on remand, and 7 over deaths of people on remand. NCRB records no charge-sheet, no conviction and no arrest of a policeman in these cases in 2024.',
+              'Gujarat reported 17 deaths and Maharashtra 16.',
+              'Prison Statistics India counts deaths of prison inmates separately. Do not add the two counts.',
+              NHRC_KNOW,
+            ],
+            processing: [
+              'Read Tables 16A.1, 16A.2 and 16A.3 of Crime in India 2024, Volume III.',
+              'Check that the states and UTs add up to the India total in every column.',
+              'Check, for India and every state, that the deaths in Tables 16A.1 and 16A.2 add up to the total in Table 16A.2, and that the causes in Table 16A.3 add up to the same total.',
+              'Check India (65 deaths: 22 suicides, 28 from illness or in hospital) and Gujarat (17 deaths) against the tables.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'Prisons recorded 1,953 deaths of inmates in 2024. Of these, 1,727 were natural deaths: 1,652 from illness and 75 from ageing. Of the 169 un-natural deaths, 126 were suicides. Rajasthan reported 57 deaths with the cause not known.',
+        },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'prison-deaths-by-cause',
+            checked: CHECKED_PART6,
+            title: 'Deaths in prisons by cause, India, 2024',
+            subtitle: 'Deaths of prison inmates during 2024, by cause, India. Illness and ageing are natural deaths; the others are un-natural.',
+            punches: { office: 'NCRB', unit: 'deaths', period: '2024' },
+            note: 'These are deaths in prisons, not in police custody. NCRB counts the two separately.',
+            sources: [psi2024],
+            format: COUNT,
+            by: 'cause',
+            rowHead: 'Cause',
+            order: PRISON_CAUSES,
+            labels: {
+              illness: 'Illness',
+              ageing: 'Ageing',
+              suicide: 'Suicide',
+              accidental: 'Accident',
+              'murder-by-inmates': 'Murder by other inmates',
+              'negligence-or-excess-by-jail-personnel': 'Negligence or excess by jail personnel',
+              others: 'Other un-natural causes',
+              'not-known': 'Cause not known',
+            },
+            series: [{ key: 'deaths', label: 'Deaths', color: 'ink', file: PRISON_DEATHS, where: { geography: 'india', cause: PRISON_CAUSES } }],
+            know: [
+              'NCRB divides deaths into natural deaths (illness and ageing) and un-natural deaths (suicide, murder by inmates, accidents, negligence or excess by jail personnel, and others).',
+              'NCRB recorded no death by execution, by firing or by assault by outside elements in prisons in 2024.',
+              'All 57 deaths with the cause not known are in Rajasthan.',
+              'Uttar Pradesh reported the most deaths, 330, then Punjab with 228.',
+              'Deaths in police custody are counted separately, in Crime in India. Do not add the two counts.',
+              NHRC_KNOW,
+              PSI_REVISED_KNOW,
+            ],
+            processing: [
+              'Read Tables 8.1, 8.2 and 8.4 of Prison Statistics India 2024 (revised).',
+              'Check that the states and UTs add up to the India total in every column.',
+              'Check, for India and every state, that natural, un-natural and not-known deaths add up to the total, and that the causes in Tables 8.2 and 8.4 add up to the natural and un-natural deaths in Table 8.1.',
+              'Check India (1,953 deaths, 1,652 from illness, 126 suicides) and Rajasthan (57 not known) against the tables.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'NCRB has a category for "Cases Registered against State Police Personnel for Human Right Violation". In 2024 it lists 13 such cases across India: 6 for deaths in custody and 4 for encounter killings. None of the 13 was charge-sheeted in 2024.',
+        },
+        {
+          chart: {
+            kind: 'bars',
+            slug: 'cases-against-police-human-right-violation',
+            checked: CHECKED_PART6,
+            title: 'Cases against police personnel for "Human Right Violation", India, 2024',
+            subtitle: 'Cases that NCRB lists as "Cases Registered against State Police Personnel for Human Right Violation", by type of incident, India.',
+            punches: { office: 'NCRB', unit: 'cases', period: '2024' },
+            note: '13 cases in all. NCRB gives this table for India only, not by state.',
+            sources: [cii2024v3],
+            format: COUNT,
+            by: 'incidence',
+            rowHead: 'Type of incident',
+            order: HRV_TYPES,
+            labels: {
+              'encounter-killing': 'Encounter killing',
+              'deaths-in-custody': 'Deaths in custody',
+              'illegal-detention': 'Illegal detention',
+              'torture-causing-hurt-or-injury': 'Torture, causing hurt or injury',
+              extortion: 'Extortion',
+              others: 'Others',
+            },
+            series: [
+              { key: 'cases', label: 'Cases registered', color: 'ink', file: POLICE_CASES, where: { category: 'human-right-violation', indicator: 'cases-registered', incidence: HRV_TYPES } },
+            ],
+            know: [
+              'The category name is NCRB\'s own: "Cases Registered against State Police Personnel for Human Right Violation" (Table 16A.6). It covers the state police only.',
+              'Of the 13 cases, the police closed 3 with a final report. None was charge-sheeted in 2024. The police arrested 5 policemen, all in cases of extortion.',
+              'NCRB does not link this table to its count of 65 deaths in police custody.',
+              'For all offences, NCRB lists 6,269 cases registered against state police personnel in 2024 (Table 16A.5). Chandigarh reported 4,069 of them. NCRB gives no reason.',
+              'The National Human Rights Commission (NHRC) takes complaints separately. This page shows NCRB counts only.',
+            ],
+            processing: [
+              'Read Table 16A.6 of Crime in India 2024, Volume III, and the cases registered in Table 16A.5.',
+              'Check that the six types add up to the total in every column of Table 16A.6, and that the states and UTs add up to the India total in Table 16A.5.',
+              'Check the total (13 cases), encounter killing (4) and deaths in custody (6) against the table.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'Anti-human trafficking units registered 2,135 cases in 2024: 1,125 under the IPC and 1,010 under the BNS. Telangana registered 423 cases and Maharashtra 337. The units counted 6,018 victims of trafficking, 2,297 of them below 18 years.',
+        },
+        {
+          chart: {
+            kind: 'states',
+            slug: 'human-trafficking-by-state',
+            noRank: true,
+            checked: CHECKED_PART6,
+            title: 'Human trafficking cases by state, 2024',
+            subtitle: 'Cases of human trafficking registered by anti-human trafficking units, IPC and BNS, by state and UT. Darker means more cases.',
+            punches: { office: 'NCRB', unit: 'cases', period: '2024' },
+            note: 'A count, not a rate: states with more people can have more cases. NCRB says states should not be compared on crime figures alone.',
+            sources: [cii2024v3],
+            format: COUNT,
+            data: { file: TRAFFICKING, where: { period: '2024', indicator: 'cases', law: 'ipc-bns', age: 'all', sex: 'total' }, x: 'geography' },
+            total: true,
+            open: 'map',
+            scale: 'seq',
+            bins: [1, 10, 50, 100, 200],
+            short: 'Human trafficking cases',
+            know: [
+              'NCRB counts only the cases that are reported to the anti-human trafficking units (AHTUs) of each state and UT.',
+              'NCRB prints a rate per lakh people, but to one decimal: it is 0.2 for India, and 0.0 or 0.1 in 23 of the 36 states and UTs. So this chart shows the counts. The rate is in the data file.',
+              'In 2024, 1,125 cases were registered under the IPC and 1,010 under the BNS, which replaced the IPC on 1 July 2024. NCRB counted 2,250 cases in 2022 and 2,183 in 2023.',
+              'The units counted 6,018 victims of trafficking and 5,839 victims rescued. Rescued victims include victims of earlier cases and of cases registered in other states.',
+              'Seven states and UTs registered no case: Mizoram, Nagaland, Sikkim, the Andaman and Nicobar Islands, Dadra and Nagar Haveli and Daman and Diu, Ladakh and Lakshadweep.',
+              REGISTRATION_KNOW,
+            ],
+            processing: [
+              'Read Tables 14.1, 14.3 and 14.4 of Crime in India 2024, Volume III.',
+              'Check that IPC and BNS cases add up to the total in every row, and that the states and UTs add up to the India total.',
+              'Check India (2,135 cases, 6,018 victims) and Telangana (423 cases) against the tables.',
+              'Match state names to the site geography table.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'In 2024, 98,375 children were reported missing, and 48,800 children missing from earlier years were still untraced. Of these {{147175 plain 0}} children, the police traced 98,826 during 2024, or 67.1%. Girls were 75,603 of the children reported missing in 2024.',
+        },
+        {
+          chart: {
+            kind: 'states',
+            slug: 'missing-children-traced-by-state',
+            noRank: true,
+            checked: CHECKED_PART6,
+            title: 'Missing children traced by state, 2024',
+            subtitle: 'Children below 18 traced during 2024, as a share of all missing children: those reported missing in 2024 and those still untraced from earlier years, by state and UT.',
+            punches: { office: 'NCRB', unit: '% traced', period: '2024' },
+            note: 'Children traced in 2024 include children who went missing in earlier years.',
+            sources: [cii2024v3],
+            format: { unit: '%', decimals: 1 },
+            data: { file: MISSING, where: { period: '2024', indicator: 'recovery-percentage', sex: 'total' }, x: 'geography' },
+            open: 'map',
+            scale: 'seq',
+            bins: [30, 50, 65, 80, 90],
+            short: 'Missing children traced',
+            missing: { mizoram: 'NCRB records no missing children', lakshadweep: 'NCRB records no missing children' },
+            know: [
+              "NCRB's recovery percentage is the children traced in 2024 divided by all missing children, times 100. All missing children are the children reported missing in 2024 plus the children still untraced from earlier years.",
+              'In 2024, 98,375 children were reported missing and 48,800 were still untraced from earlier years: 1,47,175 in all. The police traced 98,826. At the end of 2024, 48,349 were still untraced.',
+              'Girls were 75,603 of the 98,375 children reported missing in 2024.',
+              'West Bengal reported the most children missing in 2024, 15,849, then Madhya Pradesh with 14,296.',
+              'The table carries the NCRB footnote "States/UTs may not be compared purely on the basis of crime figures".',
+            ],
+            processing: [
+              'Read Table 15.1 of Crime in India 2024, Volume III (two pages).',
+              'Check, for every row and for boys, girls and transgender children, that the children untraced from earlier years plus the children missing in 2024 equal all missing children, and that all missing children less those traced equal those still untraced.',
+              'Check that the states and UTs add up to the India total.',
+              'Check India (98,375 missing in 2024, 98,826 traced, 67.1%) and Odisha (26.4%) against the table.',
+              'Match state names to the site geography table.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
   ],
   about: {
     intro:
@@ -567,13 +904,13 @@ const topic: Topic = {
     revisions:
       "NCRB revises counts in later editions, so the national trend uses the latest edition that prints each year. This page uses the revised Prison Statistics India 2024, with West Bengal's 2024 data. NJDG is a live dashboard: counts for nearby dates can differ.",
     breaks:
-      'The Bharatiya Nyaya Sanhita (BNS) replaced the Indian Penal Code (IPC) on 1 July 2024, and NCRB links part of the fall in 2024 to it: simple hurt and criminal intimidation are no longer cognizable. NCRB also changed the population base of its rates in 2018 and in 2020. The national crime rate chart breaks at each change.',
+      'The Bharatiya Nyaya Sanhita (BNS) replaced the Indian Penal Code (IPC) on 1 July 2024, and NCRB links part of the fall in 2024 to it: simple hurt and criminal intimidation are no longer cognizable. NCRB also changed the population base of its rates in 2018 and in 2020. The national crime rate chart breaks at each change. NCRB rates of crimes against Scheduled Castes and Scheduled Tribes use the Census 2011 population of each group, not a projection.',
     coverage:
-      'India and all 36 states and UTs. Crime: calendar year 2024, with national rates from 2015. Prisons: 31 December 2024, with India from 2014. Courts: district courts by state on 30 July 2026, and year-end totals for India from 2021. High Courts and the Supreme Court are shown for India only.',
+      'India and all 36 states and UTs. Crime: calendar year 2024, with national rates from 2015. Prisons: 31 December 2024, with India from 2014. Crimes against Scheduled Castes and Scheduled Tribes, deaths in police custody and in prisons, trafficking and missing children: 2024. Deaths by cause and cases against police for human right violation are shown for India only. Courts: district courts by state on 30 July 2026, and year-end totals for India from 2021. High Courts and the Supreme Court are shown for India only.',
     missing:
-      'No crime figures for cities. No trend in the charge-sheeting or conviction rate. No data on how long undertrials are held. Murder and crimes against women rates start in 2017. High Court pendency is not shown by state, because seven High Courts serve more than one state or UT. No publisher states a reuse licence; NCRB pages say "All Rights Reserved".',
+      'No crime figures for cities. No trend in the charge-sheeting or conviction rate. No data on how long undertrials are held. Murder and crimes against women rates start in 2017. High Court pendency is not shown by state, because seven High Courts serve more than one state or UT. No custody death counts from the National Human Rights Commission (NHRC): they differ from NCRB counts, and this page does not combine the two. No trend in deaths in custody before 2024. No publisher states a reuse licence; NCRB pages say "All Rights Reserved".',
   },
-  sources: [cii2024v1, cii2024v3, ...CII_EDITIONS, psi2024, ...PSI_SUMMARIES, ls3295, ls3371, rs597],
+  sources: [cii2024v1, cii2024v2, cii2024v3, ...CII_EDITIONS, psi2024, ...PSI_SUMMARIES, ls3295, ls3371, rs597],
   related: [
     { label: 'Population: Population projection', href: '/charts/population-projection/' },
     { label: 'Elections: Lok Sabha turnout by state', href: '/charts/lok-sabha-turnout-by-state/' },
