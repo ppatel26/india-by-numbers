@@ -124,29 +124,50 @@ const textW = (s: string, size = 12) => s.length * size * 0.54
 
 export const shareText = (value: number, total: number): string => `${((value / total) * 100).toFixed(1)}%`
 
+/** True when the values are already shares of 100, so a share of the total would repeat them. */
+export const isShares = (chart: Of<'treemap'>, total: number): boolean => chart.format?.unit === '%' && Math.abs(total - 100) < 0.5
+
+/** Words in lines of at most `chars` characters; undefined when a word is longer than that. */
+function lines(text: string, chars: number): string[] | undefined {
+  const out: string[] = []
+  for (const w of text.split(' ')) {
+    if (w.length > chars) return undefined
+    const last = out.at(-1)
+    if (last !== undefined && last.length + 1 + w.length <= chars) out[out.length - 1] = `${last} ${w}`
+    else out.push(w)
+  }
+  return out
+}
+
 export function renderTreemap(chart: Of<'treemap'>, width: Width): Markup {
   const data = treemapData(chart)
   const W = WIDTH[width]
   const H = width === 'wide' ? 440 : width === 'half' ? 380 : 420
   const head = 18
+  const shares = isShares(chart, data.total)
   const groups = data.tops.filter((t) => t.group)
   const color = (t: { key: string; group: boolean }): Color => chart.colors?.[t.key] ?? (t.group ? GROUP_COLORS[groups.findIndex((g) => g.key === t.key) % GROUP_COLORS.length]! : 'other')
   const tiles: Markup[] = []
-  const tip = (p: Part) => () => [p.label, ...(p.group ? [`In ${p.group}`] : []), `${data.series.label}: ${show(chart, p.pt, data.series).text}`, `Share of the total: ${shareText(p.value, data.total)}`].join('\n')
+  const amount = (value: number, pt?: Point) => {
+    const v = show(chart, pt ?? { x: '', label: '', t: NaN, y: value, raw: String(+value.toFixed(6)), row: {} }, data.series).text
+    return shares ? v : `${v} · ${shareText(value, data.total)}`
+  }
+  const tip = (p: Part) => () =>
+    [p.label, ...(p.group ? [`In ${p.group}`] : []), `${data.series.label}: ${show(chart, p.pt, data.series).text}`, ...(shares ? [] : [`Share of the total: ${shareText(p.value, data.total)}`])].join('\n')
   const tile = (p: Part, r: Rect, c: Color) => {
     const fill = fillVar(c)
     const ink = textOn(c === 'ink' ? 'ink-fill' : c)
-    const v = show(chart, p.pt, data.series)
-    const value = `${v.text} · ${shareText(p.value, data.total)}`
+    const value = amount(p.value, p.pt)
     const pad = 6
-    // A label only where it fits: name and value, else the name alone, else nothing.
-    const fitsName = r.w - 2 * pad >= textW(p.label) && r.h >= 22
-    const fitsBoth = fitsName && r.h >= 38 && r.w - 2 * pad >= textW(value, 11.5)
-    const text = fitsBoth
-      ? svg`<text x="${r.x + pad}" y="${r.y + 16}" font-size="12" font-weight="600" fill="${ink}">${p.label}</text><text x="${r.x + pad}" y="${r.y + 31}" font-size="11.5" fill="${ink}">${value}</text>`
-      : fitsName
-        ? svg`<text x="${r.x + pad}" y="${r.y + 15}" font-size="12" font-weight="600" fill="${ink}">${p.label}</text>`
-        : null
+    // A label only where it fits: the name on up to three lines, then the value; else the name
+    // alone; else nothing. The table lists every part.
+    const name = lines(p.label, Math.floor((r.w - 2 * pad) / 6.5))
+    const room = (n: number) => 8 + n * 14
+    const withValue = name && name.length <= 3 && r.h >= room(name.length + 1) && r.w - 2 * pad >= textW(value, 11.5)
+    const nameOnly = name && name.length <= 3 && r.h >= room(name.length)
+    const text = withValue || nameOnly
+      ? svg`<text x="${r.x + pad}" y="${r.y + 16}" font-size="12" font-weight="600" fill="${ink}">${name!.map((l, i) => svg`<tspan x="${r.x + pad}" dy="${i ? 14 : 0}">${l}</tspan>`)}</text>${withValue ? svg`<text x="${r.x + pad}" y="${r.y + 16 + name!.length * 14 + 1}" font-size="11.5" fill="${ink}">${value}</text>` : null}`
+      : null
     return svg`<g class="part"${tipAttr(tip(p))}><rect x="${r.x}" y="${r.y}" width="${Math.max(0, r.w)}" height="${Math.max(0, r.h)}" fill="${fill}" stroke="var(--paper)" stroke-width="2"/>${text}</g>`
   }
   for (const t of squarify(data.tops, { x: 0, y: 0, w: W, h: H })) {
@@ -155,9 +176,10 @@ export function renderTreemap(chart: Of<'treemap'>, width: Width): Markup {
       tiles.push(tile(t.parts[0]!, t, c))
       continue
     }
-    // A group: a strip with its name and total, then its parts inside.
-    const label = `${t.label} · ${shareText(t.value, data.total)}`
-    const strip = t.h > 60 && t.w > textW(label) + 12
+    // A group: a strip with its name and total (or its name alone, where the total does not fit),
+    // then its parts inside.
+    const label = [`${t.label} · ${amount(t.value)}`, t.label].find((l) => t.w > textW(l) + 12)
+    const strip = t.h > 40 && label !== undefined
     const inner = strip ? { x: t.x, y: t.y + head, w: t.w, h: t.h - head } : t
     tiles.push(svg`<g class="group"><rect x="${t.x}" y="${t.y}" width="${t.w}" height="${t.h}" fill="var(--paper)" stroke="var(--ink)" stroke-width="1"/>${strip ? svg`<text x="${t.x + 6}" y="${t.y + 13}" font-size="12" font-weight="600" fill="var(--ink)">${label}</text>` : null}</g>`)
     for (const p of squarify(t.parts, inner)) tiles.push(tile(p, p, c))

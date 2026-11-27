@@ -97,6 +97,22 @@ const FIELDS: Readonly<Record<string, string>> = {
   'other fields': 'Other fields',
 }
 
+/** The fields of Appendix E1, which add up to the major field "other fields". */
+const OTHER_FIELDS: Readonly<Record<string, string>> = {
+  biotechnology: 'Biotechnology',
+  'bio-chemistry': 'Bio-chemistry',
+  'metallurgy and material science': 'Metallurgy and materials',
+  'civil engineering': 'Civil engineering',
+  food: 'Food',
+  textile: 'Textile',
+  miscellaneous: 'Miscellaneous',
+  'micro-biology': 'Micro-biology',
+  'general engineering': 'General engineering',
+  'agro-chemicals': 'Agro-chemicals',
+  'agriculture engineering': 'Agriculture engineering',
+  'traditional knowledge': 'Traditional knowledge',
+}
+
 const applicantSeries = (): Series[] =>
   APPLICANTS.map(([applicant, label, color]) => ({ key: applicant, label, color, file: APPS, where: { geography: 'india', applicant } }))
 
@@ -375,6 +391,49 @@ const topic: Topic = {
             processing: [
               'Read Appendix E (applications) and Appendix F (grants) of the Annual Report 2024-25, the row for 2024-25.',
               'Check that the major fields add up to the total, and that Appendix E1 and F1 add up to "other fields". Applications agree; grants differ by 2.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'Computer science and electronics took 29,494 of the {{110375 plain 0}} applications filed in 2024-25. Other fields took 12,114, led by biotechnology with 4,263.',
+        },
+        {
+          chart: {
+            kind: 'treemap',
+            slug: 'patent-applications-by-field',
+            checked: '2026-11-27',
+            title: 'Patent applications in India by field of invention, 2024-25',
+            subtitle: 'Patent applications filed in 2024-25, by the field of invention the office assigns, with the fields grouped as "other fields" shown inside it.',
+            punches: { office: 'IP India', unit: 'applications', period: '2024-25' },
+            note: 'Chemical includes pharmaceuticals. Fields with no applications have no tile; the table lists them.',
+            sources: [ar2425],
+            format: COUNT,
+            by: 'field',
+            rowHead: 'Field of invention',
+            parent: { column: 'group', groups: { other: 'Other fields' } },
+            labels: { ...FIELDS, ...OTHER_FIELDS },
+            series: [
+              {
+                key: 'filed',
+                label: 'Applications filed',
+                color: 'other',
+                file: BY_FIELD,
+                x: 'field',
+                where: { period: '2024-25', measure: 'applications filed', field: [...Object.keys(FIELDS).filter((f) => f !== 'other fields'), ...Object.keys(OTHER_FIELDS)] },
+              },
+              { key: 'all', label: 'All fields, as published', color: 'ink', hidden: true, file: BY_FIELD, x: 'field', where: { period: '2024-25', measure: 'applications filed', field: 'all fields' } },
+            ],
+            know: [
+              'The office assigns each application to one field. Appendix E gives ten major fields. Appendix E1 splits the major field "other fields" into twelve smaller ones.',
+              'The chart draws the twelve smaller fields inside "other fields", in place of that field\'s own total, so no application is counted twice.',
+              'From 2022-23 the office counts pharmaceuticals with chemical, and prints pharmaceuticals as 0. The chart leaves that row out.',
+              YEAR_KNOW,
+            ],
+            processing: [
+              'Read Appendix E (major fields) and Appendix E1 (other fields) of the Annual Report 2024-25, the row for 2024-25.',
+              'Check that the major fields add up to the total, 110,375, and that Appendix E1 adds up to "other fields", 12,114. Both agree.',
+              'Draw the eight major fields other than "other fields", and the twelve fields of Appendix E1 inside a parent tile. The share of each field is derived: its applications divided by the total.',
             ],
             nextRelease: 'not announced',
           },

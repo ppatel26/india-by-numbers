@@ -10,7 +10,7 @@ import { exact, gapFormat, seriesOf, standing, statesOf, type Of, type SeriesDat
 import { checkFlows, nodeName } from './flows'
 import { scatterData } from './scatter'
 import { changeFormat, slopeRows } from './slope'
-import { shareText, treemapData } from './treemap'
+import { isShares, shareText, treemapData } from './treemap'
 
 export interface Cell {
   shown: Shown
@@ -175,6 +175,8 @@ function slopeTable(chart: Of<'slope'>): TableModel {
 function treemapTable(chart: Of<'treemap'>): TableModel {
   const data = treemapData(chart)
   const all = data.series.points
+  // Values that are already shares of 100 need no share column.
+  const shares = isShares(chart, data.total)
   const group = (p: Point) => (chart.parent ? (chart.parent.groups[p.row[chart.parent.column] ?? ''] ?? '') : '')
   const rows = all.map((p) => ({
     key: p.x,
@@ -182,16 +184,16 @@ function treemapTable(chart: Of<'treemap'>): TableModel {
     cells: [
       ...(chart.parent ? [{ shown: { text: group(p) || '–' }, raw: group(p) }] : []),
       cell(chart, p, data.series),
-      p.y === null ? { shown: { text: '' }, raw: '' } : { shown: { text: shareText(p.y, data.total) }, raw: ((p.y / data.total) * 100).toFixed(1) },
+      ...(shares ? [] : [p.y === null ? { shown: { text: '' }, raw: '' } : { shown: { text: shareText(p.y, data.total) }, raw: ((p.y / data.total) * 100).toFixed(1) }]),
     ],
   }))
   const pub = data.published
   const hidden = seriesOf(chart).find((s) => s.hidden)
   return {
-    columns: [chart.rowHead ?? 'Part', ...(chart.parent ? ['Part of'] : []), data.series.label, 'Share of the total'],
+    columns: [chart.rowHead ?? 'Part', ...(chart.parent ? ['Part of'] : []), data.series.label, ...(shares ? [] : ['Share of the total'])],
     rows: [
       ...rows,
-      ...(pub && hidden ? [{ key: 'total', head: hidden.label, cells: [...(chart.parent ? [{ shown: { text: '' }, raw: '' }] : []), cell(chart, pub, hidden), { shown: { text: '' }, raw: '' }] }] : []),
+      ...(pub && hidden ? [{ key: 'total', head: hidden.label, cells: [...(chart.parent ? [{ shown: { text: '' }, raw: '' }] : []), cell(chart, pub, hidden), ...(shares ? [] : [{ shown: { text: '' }, raw: '' }])] }] : []),
     ],
   }
 }
