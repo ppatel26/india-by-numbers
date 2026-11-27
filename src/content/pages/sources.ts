@@ -171,7 +171,7 @@ const PUBLISHERS: readonly Publisher[] = [
     ],
     licence: NOT_STATED,
     access: ['Results (results.eci.gov.in)', 'Statistical reports as PDF (eci.gov.in)'],
-    note: "Five more election charts use ECI data through MoSPI's Women and Men in India 2025.",
+    note: "Six more election charts use ECI data through MoSPI's Women and Men in India 2025.",
     site: 'https://www.eci.gov.in',
   },
   {
@@ -310,6 +310,19 @@ const PUBLISHERS: readonly Publisher[] = [
     access: ['Volumes and tables as PDF (ncrb.gov.in)'],
     note: 'NCRB gives no release date for Crime in India 2024. Its site opens in Hindi; the English pages list the volumes.',
     site: 'https://www.ncrb.gov.in',
+  },
+  {
+    short: 'MoPR',
+    logos: [],
+    full: 'Ministry of Panchayati Raj',
+    topics: ['elections'],
+    dataSets: [
+      { name: 'Basic Statistics of Panchayati Raj Institutions', detail: 'Elected panchayat representatives and women among them, by state, as on 31 Mar 2025', rhythm: 'Yearly compendium', match: /Panchayati Raj Institutions/ },
+    ],
+    licence: 'The publication says: "Reproduction is permitted provided an acknowledgement of the source is made."',
+    access: ['Reports as PDF (panchayat.gov.in/download-reports)'],
+    note: 'States and UTs whose panchayats were dissolved, or that are outside Part IX of the Constitution, have no value.',
+    site: 'https://panchayat.gov.in',
   },
   {
     short: 'IP India',

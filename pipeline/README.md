@@ -149,6 +149,7 @@ Some CSVs were made in more than one step. Run the steps in this order:
 | `elections/check_d33.py` | None. Checks that candidate votes add up to each constituency total | ECI |
 | `elections/build_elections.py` | `lok-sabha-turnout-by-sex`, `lok-sabha-electors`, `lok-sabha-women-candidates-and-mps`, `lok-sabha-2024-turnout-by-state`, `lok-sabha-2024-seats-and-women-mps-by-state` (transcribed from MoSPI), `lok-sabha-2024-nota-by-state` | MoSPI (Women and Men in India 2025), ECI |
 | `elections/build_party.py` | `lok-sabha-2024-party-results` | ECI |
+| `elections/build_representation.py` | `panchayat-representatives-by-state-2025`, `women-mlas-by-state`. Reads MoPR Tables 3.2 and 3.5 with pdftotext; holds MoSPI Table 5.4 as typed from the page image. Checks the sums and the printed shares | MoPR (Basic Statistics of Panchayati Raj Institutions 2025), MoSPI (Women and Men in India 2025) |
 | `elections/build_ae.py` | `assembly-2025-2026-seats-by-party` | ECI |
 
 ## CSVs that differ from a fresh run

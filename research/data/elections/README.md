@@ -91,6 +91,33 @@ The ECI website (eci.gov.in) blocked every request from this machine with "406 N
 - Sources: seats from S5 and S6 (ECI results pages). Turnout from S7, S10, S11 and S12 (ECI releases on PIB). Tamil Nadu electors from S13.
 - No other state held a general assembly election in 2025 or 2026 up to 17 Nov 2026. The live results site shows only bye-elections (October 2026) after the May 2026 round.
 
+### C9. Women in elected panchayat seats by state, 31 Mar 2025
+
+- Type: states (map, ranked bars, table). Unit: % of elected representatives.
+- File: `panchayat-representatives-by-state-2025.csv` (built by `pipeline/elections/build_representation.py`):
+  83 rows. Measures `elected representatives`, `women elected representatives` (persons) and
+  `women share` (%), for 34 states and UTs in Table 3.5 and India from Table 3.2. States with "Nil"
+  or "N/A" have an empty share and the reason in `note`. Chandigarh and Delhi are not in the table.
+- MoPR prints each share to two decimals, rounded for some states and cut for others (Bihar 44.8053
+  prints 44.81; Karnataka 52.8776 prints 52.87). The CSV keeps the printed shares.
+- Derived: the India share, 48.44, is women elected representatives / elected representatives x 100
+  from Table 3.2 (11,69,896 of 24,14,943). MoPR prints no national share.
+- Source: S17.
+
+### C10. Women MLAs by state
+
+- Type: states (map, ranked bars, table). Unit: % of MLAs, rounded half up to a whole number by MoSPI.
+- File: `women-mlas-by-state.csv`: 128 rows. 31 states and UTs with an assembly, by `election_year`
+  (2014 to 2025), with men, women, total and the women share; India (the Total row, 9.46%).
+- Source: S1, Table 5.4 (printed page 232, PDF page 264), "Source: Election Commission of India".
+  The table is an image: the values are typed in `build_representation.py` from the page image.
+- The table predates the 2024 assembly elections in Haryana, Jammu and Kashmir, Jharkhand and
+  Maharashtra, and the 2026 elections in Assam, Kerala, Puducherry, Tamil Nadu and West Bengal.
+- Left out: Table 5.1, women in the Union Council of Ministers, 1996 to 2025. It does not add up: in
+  1996 and 1997 the women ministers are 1 and 5 but the women total is 0; 1996's share is 1.28% where
+  1 of 39 is 2.56%; a second 2009 row has no year; the 2021 and 2022 totals are blank; its note says
+  "As on 20th December, 2024" above a 2025 row; and it cites the Lok Sabha Secretariat.
+
 ## Headline figures
 
 | Figure | Period | Source |
@@ -130,6 +157,7 @@ All read on 17 Nov 2026. "Archive" means the Internet Archive copy of the ECI UR
 | S13 | Election Commission of India | Tamil Nadu 2026 Statistical Report 10: Detailed Results | Published by 8 May 2026 (S14) | 2026 | https://www.eci.gov.in/eci-backend/public//all_files/election_report/General_Election_to_the_Legislative_Assembly_of_Tamil_Nadu_2026_2026/10-Detailed_Results_1778165153.pdf (archive capture 2026-05-10 05:45 UTC) | Not stated | fe9f808a08ac53cc71b4edeba76a23b6533e9261220d36ead1b5bcda936a3834 |
 | S14 | ECI via PIB | Index Cards and Statistical Reports published on ECINET (Release ID 2258991) | 8 May 2026 | 2026 | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2258991&reg=3&lang=1 | Not stated | ea4e340943a0669f41f103e66cc72a24d85ff2a149a9a711ffde4e6f97b69580 |
 | S15 | Election Commission of India | Odisha assembly results June 2024 (used only for the party name "Biju Janata Dal") | 05/06/2024 | 2024 | https://results.eci.gov.in/AcResultGenJune2024/partywiseresult-S18.htm (capture 2024-06-18 13:54 UTC) | Not stated | a28866d5f86885eac08b757bf4b89af583a38632fa81305819fd7cf86725e917 |
+| S17 | Ministry of Panchayati Raj | Basic Statistics of Panchayati Raj Institutions 2025, Tables 3.2 and 3.5 (106 pages) | 28 Jan 2026 (the MoPR report list; the PDF was made on 13 May 2026) | As on 31 Mar 2025 | https://cdnbbsr.s3waas.gov.in/s316026d60ff9b54410b3435b403afd226/uploads/2026/01/20260806496181113.pdf (read 27 Nov 2026) | "Reproduction is permitted provided an acknowledgement of the source is made." (the publication); panchayat.gov.in Website Policies: "may be reproduced free of charge and there is no need for any prior approval" | 9a48996f93c7c3441007fc8a9da2544b0f24236be6b6a1f4bcba5e2dd8a1089a |
 | S16 | MoSPI via PIB | Release of "Women and Men in India 2025" (Release ID 2256593), for the S1 release date | 29 Apr 2026 | n/a | https://www.pib.gov.in/PressReleasePage.aspx?PRID=2256593&reg=3&lang=1 | Not stated | c9731568093bd0a20d3d8b564d972c98f00ddc907dfc20a29d8f0d37820a0035 |
 
 Raw downloads are not kept in the repository; the URL and sha256 above identify each file. Files were fetched with `pipeline/common/fetch.sh` and `pipeline/elections/get2026.sh`. Parsing scripts are in `pipeline/elections/` (`extract_text.sh`, `parse_d33.py`, `check_d33.py`, `build_elections.py`, `build_party.py`, `build_ae.py`).
@@ -139,6 +167,13 @@ Raw downloads are not kept in the repository; the URL and sha256 above identify 
 - S1 Tables 5.2, 5.3, 5.6 and 5.7 are drawn as vector graphics, so the PDF has no text layer for them. The values were transcribed from page renders at 2.5x, and doubtful digits were checked at 4x.
 - Checks on Table 5.7: for every state, voters / electors was recomputed and compared with the published percentage. All 37 rows agree within 0.6 points. Lakshadweep is the only row that differs by more than 0.1 point, because its counts are rounded to thousands.
 - Checks on Table 5.3: the state rows sum to 74 women MPs and 543 seats, as published.
+- Checks on Table 5.4 (27 Nov 2026, in `build_representation.py`): men plus women equal the total in
+  every row; the rows sum to the printed Total row (3,721 men, 389 women, 4,110 seats); each share is
+  women / total rounded half up (Sikkim 4 of 32 prints 13). S1 was fetched again on 27 Nov 2026 with
+  the same sha256.
+- Checks on S17 (27 Nov 2026): the 34 rows of Table 3.5 sum to the Table 3.2 totals, 24,14,943
+  elected representatives and 11,69,896 women; each share equals women / all, rounded or cut to two
+  decimals.
 - S3 was parsed with `pdftotext -layout`. The parse gives 542 constituencies and 8,901 rows (8,359 candidates and 542 NOTA rows). In every constituency the candidate votes sum to the published TOTAL row. National totals match S2: 977,965,560 electors, 638,990,692 valid votes, and BJP, INC, BSP, CPI(M), AAP and NPP votes exactly. Candidates by sex (7,553 men, 800 women, 6 third gender) and winners (468 men, 74 women) match S1 Table 5.2.
 
 ## Gaps and cautions

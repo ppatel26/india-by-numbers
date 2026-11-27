@@ -16,6 +16,17 @@ const WMI_5_2 = withTable(WMI_2025, 'Table 5.2')
 const WMI_5_3 = withTable(WMI_2025, 'Table 5.3')
 const WMI_5_6 = withTable(WMI_2025, 'Table 5.6')
 const WMI_5_7 = withTable(WMI_2025, 'Table 5.7')
+const WMI_5_4 = withTable(WMI_2025, 'Table 5.4')
+
+// The PDF file gives no release date: the Ministry's report list dates it 28 Jan 2026, and the file
+// was made on 13 May 2026. Reuse: "Reproduction is permitted provided an acknowledgement of the
+// source is made."
+const MOPR_PRI_2025: Source = {
+  publisher: 'Ministry of Panchayati Raj (MoPR)',
+  release: 'Basic Statistics of Panchayati Raj Institutions 2025, Tables 3.2 and 3.5',
+  released: '2026-01-28',
+  url: 'https://cdnbbsr.s3waas.gov.in/s316026d60ff9b54410b3435b403afd226/uploads/2026/01/20260806496181113.pdf',
+}
 
 // S2. The file states no release date; the PDF is dated 25 Dec 2024, so the month is December 2024.
 const ECI_REPORT_20: Source = {
@@ -138,6 +149,34 @@ const SEATS_BY_STATE = 'elections/lok-sabha-2024-seats-and-women-mps-by-state.cs
 const NOTA_BY_STATE = 'elections/lok-sabha-2024-nota-by-state.csv'
 const PARTY_RESULTS = 'elections/lok-sabha-2024-party-results.csv'
 const ASSEMBLY_SEATS = 'elections/assembly-2025-2026-seats-by-party.csv'
+const PANCHAYATS = 'elections/panchayat-representatives-by-state-2025.csv'
+const MLAS = 'elections/women-mlas-by-state.csv'
+
+/** Why a place has no panchayat value on 31 Mar 2025 (MoPR Table 3.5, remarks). */
+const NO_PANCHAYAT: Readonly<Record<string, string>> = {
+  manipur: 'Panchayats dissolved in Oct 2022; elections not held yet',
+  'tamil-nadu': 'Panchayats dissolved in Dec 2024; elections not held yet',
+  telangana: 'Panchayats dissolved in May 2024; elections not held yet',
+  uttarakhand: 'No value on 31 Mar 2025; MoPR says the election has since been held',
+  'jammu-kashmir': 'Panchayats dissolved in Dec 2023; elections not held yet',
+  ladakh: 'Panchayats dissolved in Dec 2023; elections not held yet',
+  lakshadweep: 'Panchayats dissolved in Dec 2022; elections not held yet',
+  puducherry: 'Panchayats dissolved in Jul 2011; elections not held yet',
+  meghalaya: 'Not covered by Part IX of the Constitution',
+  mizoram: 'Not covered by Part IX of the Constitution',
+  nagaland: 'Not covered by Part IX of the Constitution',
+  chandigarh: 'Not in the MoPR table',
+  delhi: 'Not in the MoPR table',
+}
+
+/** UTs with no legislative assembly. */
+const NO_ASSEMBLY: Readonly<Record<string, string>> = {
+  'andaman-nicobar': 'No legislative assembly',
+  chandigarh: 'No legislative assembly',
+  'dnh-dd': 'No legislative assembly',
+  ladakh: 'No legislative assembly',
+  lakshadweep: 'No legislative assembly',
+}
 
 const assembly = (geography: string, label: string) => ({
   key: geography,
@@ -533,13 +572,83 @@ const topic: Topic = {
         },
       ],
     },
+    {
+      title: 'Who holds elected office, and how many are women?',
+      lede: 'On 31 March 2025, women held {{1169896 plain 0}} of the {{2414943 plain 0}} elected seats in panchayats, 48.44%. In the state assemblies they held 389 of 4,110 seats, 9.46%.',
+      blocks: [
+        {
+          chart: {
+            kind: 'states',
+            slug: 'women-in-panchayats-by-state',
+            checked: '2026-11-27',
+            title: 'Women in elected panchayat seats by state, 31 Mar 2025',
+            subtitle: 'Women elected representatives as a share of all elected representatives in panchayats, by state and UT.',
+            punches: { office: 'MoPR', unit: '% of seats', period: '31 MAR 2025' },
+            note: 'The India share is derived from the national totals. Where panchayats were dissolved or are not covered, there is no value.',
+            sources: [MOPR_PRI_2025],
+            format: { unit: '%', decimals: 2 },
+            data: { file: PANCHAYATS, where: { measure: 'women share' }, x: 'geography' },
+            open: 'map',
+            scale: 'seq',
+            short: 'Women in panchayat seats',
+            missing: NO_PANCHAYAT,
+            know: [
+              'The Constitution reserves at least one third of the seats in each panchayat for women (Article 243D). Many states reserve half.',
+              'A panchayat is a rural local government: the village, block and district levels. Cities have municipal bodies, which are not here.',
+              'Eight states and UTs had no elected panchayats on 31 Mar 2025: their panchayats were dissolved and elections not yet held. Three north-eastern states are outside Part IX of the Constitution.',
+              'Rajasthan shows 11,590 elected representatives, far fewer than its size suggests. The terms of most of its gram panchayats ended between January and March 2025, MoPR says.',
+            ],
+            processing: [
+              'Read Table 3.5 of MoPR, Basic Statistics of Panchayati Raj Institutions 2025: elected representatives, women elected representatives and the share of women, as on 31 Mar 2025.',
+              'Check that the states add up to the national totals in Table 3.2: 24,14,943 and 11,69,896. They do.',
+              'MoPR rounds some shares and cuts others to two decimals. We print its shares as published.',
+              'Work out the India share from the Table 3.2 totals: MoPR prints none. This is a derived value.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+        {
+          text: 'Assam had the highest share of women in panchayat seats, 60.08%, and Uttar Pradesh the lowest, 40.77%. In the assemblies, Chhattisgarh had the highest share of women MLAs, 21%, and Himachal Pradesh the lowest, 1%.',
+        },
+        {
+          chart: {
+            kind: 'states',
+            slug: 'women-mlas-by-state',
+            checked: '2026-11-27',
+            title: 'Women MLAs by state, latest assembly in each state',
+            subtitle: 'Women as a share of members elected to each state assembly, at the latest election MoSPI lists, 2014 to 2025.',
+            punches: { office: 'MoSPI', unit: '% of MLAs', period: '2014-2025' },
+            note: 'The election year differs by state; the tooltip gives it. MoSPI rounds each state share to a whole number.',
+            sources: [WMI_5_4],
+            format: { unit: '%', decimals: 0 },
+            data: { file: MLAS, where: { measure: 'women share', geography: STATES_AND_UTS }, x: 'geography', note: 'note' },
+            open: 'map',
+            scale: 'seq',
+            short: 'Women MLAs',
+            missing: NO_ASSEMBLY,
+            know: [
+              'Each row is the latest assembly election in the table: from 2014 in Jammu and Kashmir to 2025 in Bihar and Delhi. The rows do not describe one date.',
+              'The table does not include the assembly elections of 2024 in Haryana, Jammu and Kashmir, Jharkhand and Maharashtra, or of 2026 in Assam, Kerala, Puducherry, Tamil Nadu and West Bengal.',
+              'MoSPI takes the counts from the Election Commission of India and rounds each share to a whole number. The India share, 9.46%, has two decimals.',
+              'No assembly seats are reserved for women yet. The Constitution (One Hundred and Sixth Amendment) Act, 2023 reserves one third of them, from the delimitation that follows the next census.',
+            ],
+            processing: [
+              'Read Table 5.4 of MoSPI, Women and Men in India 2025. The table is an image, so we type the values from the page.',
+              'Check that men plus women equal the total in every row, and that the rows add up to the printed Total row: 3,721 men, 389 women and 4,110 seats. They do.',
+              'Check each printed share against women divided by the total, rounded half up. All agree.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
+      ],
+    },
   ],
   // LATER: the About band's side line ("How each election figure is made, where it breaks, and what is missing.") has no field.
   about: {
     intro:
       "ECI's reports are the source; we read archived copies of the original ECI pages.",
     publisher:
-      'The Election Commission of India (ECI) runs elections and publishes the results. MoSPI republishes the Lok Sabha series by sex. The Lok Sabha Secretariat counts women MPs.',
+      'The Election Commission of India (ECI) runs elections and publishes the results. MoSPI republishes the Lok Sabha series by sex and the women elected to state assemblies. The Lok Sabha Secretariat counts women MPs. The Ministry of Panchayati Raj (MoPR) counts elected panchayat representatives.',
     frequency:
       'Lok Sabha elections are every five years, most recently in 2024. Each state assembly has its own five-year term. Women and Men in India is annual; the 2025 edition came out on 29 April 2026.',
     revisions:
@@ -549,11 +658,12 @@ const topic: Topic = {
     coverage:
       'All 543 Lok Sabha seats. Surat was won unopposed in 2024, so turnout and votes cover 542 constituencies. Assembly elections: Delhi and Bihar (2025); Assam, Kerala, Puducherry, Tamil Nadu and West Bengal (2026).',
     missing:
-      'No turnout or electors by sex for 1952 and 1957, and no turnout by sex for 1971. No assembly vote shares, and no Delhi 2025 turnout. No ECI or MoSPI file states a reuse licence.',
+      'No turnout or electors by sex for 1952 and 1957, and no turnout by sex for 1971. No assembly vote shares, and no Delhi 2025 turnout. No women in the Union Council of Ministers: MoSPI Table 5.1 does not add up (it gives 1 woman minister and a total of 0 for 1996). No comparison of women in parliaments: the World Bank series comes from the IPU, whose terms do not allow commercial reuse. No figures on how Parliament works: the Ministry of Parliamentary Affairs and sansad.in ask for permission before reuse. No ECI or MoSPI file states a reuse licence; MoPR allows reproduction with acknowledgement.',
   },
   // The board has six rows; rows that name two releases are split so each has its own link and date.
   sources: [
-    { ...WMI_2025, release: 'Women and Men in India 2025, chapter 5, Tables 5.2, 5.3, 5.6 and 5.7' },
+    { ...WMI_2025, release: 'Women and Men in India 2025, chapter 5, Tables 5.2, 5.3, 5.4, 5.6 and 5.7' },
+    MOPR_PRI_2025,
     ECI_REPORT_20,
     ECI_REPORT_33,
     ECI_RESULTS_JUN_2024,

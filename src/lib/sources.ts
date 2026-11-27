@@ -66,6 +66,7 @@ const PUBLISHER_RULES: readonly (readonly [RegExp, string])[] = [
   [/Ministry of Law and Justice/, 'MoLJ'],
   [/\bMoRTH\b/, 'MoRTH'],
   [/\bCGPDTM\b/, 'IP India'],
+  [/Panchayati Raj/, 'MoPR'],
 ]
 
 /** The short name of the publisher on a source line, as the Sources page lists it. */
