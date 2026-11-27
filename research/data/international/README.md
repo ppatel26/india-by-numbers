@@ -1,7 +1,7 @@
 # International
 
-Data for the "How does India compare?" parts of six topics (Economy, Health, Population,
-Climate, Jobs, Science and technology), and for the "Indians living abroad" part of Population. Rule R6 in
+Data for the "How does India compare?" parts of seven topics (Economy, Health, Population,
+Climate, Jobs, Science and technology, Defence), and for the "Indians living abroad" part of Population. Rule R6 in
 [`research/source-discovery.md`](../../source-discovery.md) governs every chart here: each chart
 that compares countries takes every country, India included, from one series, one release and one
 period.
@@ -18,6 +18,7 @@ update; the five earlier series downloaded again with the same sha256.
 5. How many people born in India live in other countries, and where?
 6. How much does India spend on research, and how many researchers does it have, against its
    neighbours, China and the world? How many scientific articles come from India?
+7. How large are the armed forces, as a share of the labour force, in India and its neighbours?
 
 ## Sources
 
@@ -36,7 +37,7 @@ identify the vintage we print.
 ## Reuse terms
 
 Each WDI series states its own licence in its metadata (`License_Type`). The script stops if any
-of the eight series does not say `CC BY-4.0`.
+of the nine series does not say `CC BY-4.0`.
 
 | Series | WDI code | `License_Type` | Original source (WDI metadata) |
 | --- | --- | --- | --- |
@@ -48,8 +49,9 @@ of the eight series does not say `CC BY-4.0`.
 | Research and development expenditure (% of GDP) | `GB.XPD.RSDV.GD.ZS` | CC BY-4.0 | UNESCO Institute for Statistics (UIS), Stat Bulk Data Download Service, "date accessed: 2025-03-26, date published: 2025-02" |
 | Researchers in R&D (per million people) | `SP.POP.SCIE.RD.P6` | CC BY-4.0 | As above |
 | Scientific and technical journal articles | `IP.JRN.ARTC.SC` | CC BY-4.0 | Science and Engineering Indicators, National Science Foundation (NSF); unit "Fractional count" |
+| Armed forces personnel (% of total labor force) | `MS.MIL.TOTL.TF.ZS` | CC BY-4.0 | The Military Balance, International Institute for Strategic Studies (IISS). Added 27 Nov 2026 |
 
-The licence URL for all eight is <https://datacatalog.worldbank.org/public-licenses#cc-by>. Credit
+The licence URL for all nine is <https://datacatalog.worldbank.org/public-licenses#cc-by>. Credit
 the World Bank, and name the original source.
 
 UN DESA prints this line on every sheet of both workbooks: "Copyright © 2024 by United Nations,
@@ -97,7 +99,7 @@ Division (2024). International Migrant Stock 2024." Document code: POP/DB/MIG/St
 
 ```sh
 pipeline/international/fetch.sh                                  # WDI, WPP 2024, ILOSTAT, UN DESA
-python3 -I pipeline/international/build_international.py         # ten CSVs; stops if a check fails
+python3 -I pipeline/international/build_international.py         # eleven CSVs; stops if a check fails
 ```
 
 The build reads the UN DESA workbooks with `openpyxl`.
@@ -162,6 +164,13 @@ the WDI API prints. Years with no value are left out.
   not be strictly comparable with 2003-2022 data". The chart shows India alone: no Indian office
   publishes a count (rule R6).
 
+### `wdi-armed-forces-share-of-labour-force.csv` (248 rows)
+
+- `MS.MIL.TOTL.TF.ZS`, % of the labour force, 1990 to 2020, all eight rows. India: 0.409225569547725
+  in 1990 and 0.576119558133425 in 2020. 2020: Pakistan 1.25177962110476, World 0.790974868577098.
+- WDI has no value after 2020 for any panel country. The other WDI military series (spending and
+  arms trade) carry SIPRI terms and are not used (see `../defence/README.md`).
+
 ### `migrants-from-india-1990-2024.csv` (24 rows)
 
 - Origin file, Table 1, the India row (location code 356): international migrants born in India
@@ -194,12 +203,13 @@ from the raw file.
 | `wdi-rd-spending.csv` | India 2020, 0.64558; China 2020, 2.35712; World 2020, 2.45606936077903 | WDI API, `GB.XPD.RSDV.GD.ZS` |
 | `wdi-researchers-per-million.csv` | India 2020, 259.26325; India 2000, 110.62568; China 2020, 1600.30633 | WDI API, `SP.POP.SCIE.RD.P6` |
 | `wdi-journal-articles.csv` | India 2023, 228174.31; India 1996, 18904.78 | WDI API, `IP.JRN.ARTC.SC` |
+| `wdi-armed-forces-share-of-labour-force.csv` | India 2020, 0.576119558133425; India 1990, 0.409225569547725; Pakistan 2020, 1.25177962110476 | WDI API, `MS.MIL.TOTL.TF.ZS` |
 | `migrants-from-india-1990-2024.csv` | 2024 total, 18533845; 1990 total, 6575416; 2024 women, 6631602 | Origin file, Table 1 |
 | `migrants-from-india-by-destination.csv` | United Arab Emirates 2024, 3248545; United States of America 2024, 3165238; Saudi Arabia 2024 men, 1774426 | Destination and origin file, Table 1 |
 
 Cross-checks that also stop the script:
 
-- The WDI source record and all eight data responses say "last updated 2026-11-11". No WDI row has an
+- The WDI source record and all nine data responses say "last updated 2026-11-11". No WDI row has an
   `obs_status`.
 - WDI life expectancy and fertility equal WPP 2024 (medium variant) to three decimals for the seven
   countries, 1990 to 2024: 490 values.
@@ -267,6 +277,9 @@ URL prefix: `https://api.worldbank.org/v2/`.
 | `wdi/IP.JRN.ARTC.SC.data.json` | `country/IND;BGD;PAK;NPL;LKA;CHN;IDN;WLD/indicator/IP.JRN.ARTC.SC?source=2&format=json&per_page=2000` | `00a4bf8ea9a579797d098122d9530ba3596455165169c91d5c625fac72662613` |
 | `wdi/IP.JRN.ARTC.SC.indicator.json` | `indicator/IP.JRN.ARTC.SC?format=json` | `7fc25e97b9857f8b30ba0bfe3c4f6b066021c338c340b967953edbf4101c6618` |
 | `wdi/IP.JRN.ARTC.SC.metadata.json` | `sources/2/series/IP.JRN.ARTC.SC/metadata?format=json` | `8c2944cd238ee412dd91ca1493c2cebbd1a563e46b9cae74c66c94dc03a0ed0b` |
+| `wdi/MS.MIL.TOTL.TF.ZS.data.json` | `country/IND;BGD;PAK;NPL;LKA;CHN;IDN;WLD/indicator/MS.MIL.TOTL.TF.ZS?source=2&format=json&per_page=2000` | `1e0db30367fcfa6605ac83d025809e117612f7926b65486962468daae69e9236` |
+| `wdi/MS.MIL.TOTL.TF.ZS.indicator.json` | `indicator/MS.MIL.TOTL.TF.ZS?format=json` | `04fd61f5792cfc2b0fb26ad6522e732900519e6016ab9edb8cdecc78bc9ad822` |
+| `wdi/MS.MIL.TOTL.TF.ZS.metadata.json` | `sources/2/series/MS.MIL.TOTL.TF.ZS/metadata?format=json` | `87f9e470db04f9a27f274aa88d4bbd227eb599bb1db4474b2f83d232ce3e6e3a` |
 | `wdi/EN.ATM.CO2E.PC.indicator.json` | `indicator/EN.ATM.CO2E.PC?format=json` | `1225d496c4e8fbd636c3e6520d5ebc860dbe37c7876151ad7b2d0b22a799ee8f` |
 | `wpp-2024/WPP2024_Demographic_Indicators_Medium.csv.gz` | [File](https://population.un.org/wpp/assets/Excel%20Files/1_Indicator%20(Standard)/CSV_FILES/WPP2024_Demographic_Indicators_Medium.csv.gz) (the same file as in the population README) | `286ac36bb1415e2e1ade03acfef0a29f0e4c087e2f78e38c48f50c5df89082bc` |
 | `ilostat/EAP_2WAP_SEX_AGE_RT_A.IND.F.15plus.csv` | [ILOSTAT API](https://rplumber.ilo.org/data/indicator/?id=EAP_2WAP_SEX_AGE_RT_A&ref_area=IND&sex=SEX_F&classif1=AGE_YTHADULT_YGE15&timefrom=2020&format=.csv) | `da95f3f1a50901b354c91deff24a80c637c360d85c1aab193dc3c001aac81667` |

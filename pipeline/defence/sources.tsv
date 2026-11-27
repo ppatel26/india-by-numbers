@@ -1,0 +1,12 @@
+# raw path under raw/defence	URL. Read by pipeline/defence/fetch.sh. The topic README gives the sha256 of each file.
+# PIB answers scripts with HTTP 403, so its releases are read from Internet Archive captures (the capture time is in the URL).
+rbi/table-89.html	https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=23914
+rbi/notes-on-tables.html	https://www.rbi.org.in/Scripts/PublicationsView.aspx?id=24071
+pib/copyright-policy.wayback.html	https://web.archive.org/web/20251110063154/https://www.pib.gov.in/Content/102_2_Copyright-Policy.aspx
+pib/pr-1912885.wayback.html	https://web.archive.org/web/20250718200616/https://www.pib.gov.in/PressReleasePage.aspx?PRID=1912885
+pib/pr-2117348.wayback.html	https://web.archive.org/web/20261127053745/https://www.pib.gov.in/PressReleasePage.aspx?PRID=2117348&reg=48&lang=2
+pib/pr-2248124.wayback.html	https://web.archive.org/web/20261127054446/https://www.pib.gov.in/PressReleasePage.aspx?PRID=2248124&reg=48&lang=2
+pib/pr-2154551.wayback.html	https://web.archive.org/web/20261127054018/https://www.pib.gov.in/PressReleasePage.aspx?PRID=2154551&reg=48&lang=2
+pib/pr-2273854.wayback.html	https://web.archive.org/web/20261127053856/https://www.pib.gov.in/PressReleasePage.aspx?PRID=2273854&reg=48&lang=2
+pib/budget-2026-27.pdf	https://static.pib.gov.in/WriteReadData/specificdocs/documents/2026/feb/doc202623778301.pdf
+pib/backgrounder-2025-11-20.pdf	https://static.pib.gov.in/WriteReadData/specificdocs/documents/2025/nov/doc20251120699601.pdf
