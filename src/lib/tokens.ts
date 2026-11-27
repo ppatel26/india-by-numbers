@@ -67,6 +67,7 @@ export const pigments: Record<TopicSlug, { name: string; hex: string; text: 'lig
   transport: { name: 'neel', hex: '#8CA8E7', text: 'dark' },
   agriculture: { name: 'dhani', hex: '#88CD65', text: 'dark' },
   'science-and-technology': { name: 'banafsha', hex: '#CF96E2', text: 'dark' },
+  defence: { name: 'khaki', hex: '#BBA97E', text: 'dark' },
 }
 
 export const seq = ['seq-1', 'seq-2', 'seq-3', 'seq-4', 'seq-5', 'seq-6'] as const satisfies readonly Token[]
