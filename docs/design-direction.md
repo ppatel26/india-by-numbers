@@ -221,7 +221,7 @@ settled each point.
 ### Topic tiles: the jaali (decided 25 Nov 2026)
 
 - At rest, a faint jaali (13% of the text colour) spreads out from the medallion and fades before the topic name. A flat tile with no lattice read as dull.
-- On hover or keyboard focus, the jaali opens out across the whole tile in 700 ms. The pointer light still brightens the lattice under the pointer, and the medallion still tilts toward it.
+- On hover or keyboard focus, the jaali grows a little further round the medallion (180 px to 300 px) in 700 ms. It stays clear of the text. A faint pointer light (6%) brightens the lattice under the pointer, and the medallion tilts toward it. The hover is subtle: a full-tile lattice was too loud (26 Nov 2026).
 - With reduced motion, the jaali changes at once, and there is no pointer light and no tilt.
 - The jaali stays on the tiles. It never goes behind a chart, a figure row or the hero (rules 8 and 9).
 

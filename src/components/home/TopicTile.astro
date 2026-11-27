@@ -47,8 +47,8 @@ const count = charts.filter((c) => c.topic.slug === topic.slug).length
   /*
    * A jaali, like a carved stone screen, set around the object.
    * At rest (::before) the lattice spreads out a little from the medallion and fades before the
-   * text. On hover or focus it opens out across the whole tile (--reach grows).
-   * The pointer light (::after) brightens the lattice under the pointer (--mx, --my, set by the
+   * text. On hover or focus it grows a little further round the medallion (--reach grows).
+   * A faint pointer light (::after) brightens the lattice under the pointer (--mx, --my, set by the
    * script below). Both layers use the same tile-relative lattice, so their lines meet exactly.
    */
   @property --reach {
@@ -79,7 +79,7 @@ const count = charts.filter((c) => c.topic.slug === topic.slug).length
     opacity: 0;
     mask:
       url('/patterns/jaali.svg') 0 0 / 56px 56px repeat,
-      radial-gradient(circle 200px at var(--mx, 70%) var(--my, 30%), #000, transparent 72%);
+      radial-gradient(circle 160px at var(--mx, 70%) var(--my, 30%), #000, transparent 72%);
     mask-composite: intersect;
   }
   .tile > :global(.medallion) {
@@ -95,11 +95,11 @@ const count = charts.filter((c) => c.topic.slug === topic.slug).length
   }
   .tile:hover::before,
   .tile:focus-within::before {
-    --reach: 900px;
+    --reach: 300px;
   }
   @media (hover: hover) and (pointer: fine) and (prefers-reduced-motion: no-preference) {
     .tile:hover::after {
-      opacity: 0.14;
+      opacity: 0.06;
     }
   }
   .tile > :global(.medallion) {
