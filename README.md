@@ -2,8 +2,8 @@
 
 **[indiabynumbers.org](https://indiabynumbers.org)**: India's official statistics, checked and charted.
 
-The site covers fourteen topics: prices, the economy, trade, jobs, living standards, agriculture, population,
-health, education, elections, crime and justice, transport, climate, and religion and culture. It has 176 charts. It also has a profile for each of India's 28
+The site covers fifteen topics: prices, the economy, trade, jobs, living standards, agriculture, population,
+health, education, science and technology, elections, crime and justice, transport, climate, and religion and culture. It has 185 charts. It also has a profile for each of India's 28
 states and 8 union territories, beside the national figure. The site follows the example of
 [UK by Numbers](https://ukbynumbers.org/) and [Our World in Data](https://ourworldindata.org/).
 
@@ -12,8 +12,8 @@ Built by Parv ([@patel_parv](https://x.com/patel_parv)).
 ## How the numbers are checked
 
 - Every value comes from a release by a government office: MoSPI, RBI, the Registrar General (Census
-  and SRS), IIPS for the NFHS, the Ministry of Education, the Election Commission, IMD, CEA, MNRE and
-  others. Each topic folder in [`research/data/`](research/data/) has a README with the release, its
+  and SRS), IIPS for the NFHS, the Ministry of Education, the Election Commission, IMD, CEA, MNRE, the patent office
+  (IP India) and others. Each topic folder in [`research/data/`](research/data/) has a README with the release, its
   date, the link and the checksum of the file we read.
 - Charts that compare India with other countries take every country, India included, from one
   international series: the World Bank's World Development Indicators, or UN DESA for migrants.

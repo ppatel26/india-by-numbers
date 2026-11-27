@@ -58,7 +58,7 @@ All URLs are lower case with a trailing slash. Slugs come from `research/data/ge
 | --- | --- | --- | --- |
 | Home | `/` | Yes | UK home |
 | Topics index | `/topics/` | Yes | UK "Browse by topic" and "Coming soon", as its own page |
-| Topic page | `/<topic>/`, for example `/prices/` | Yes, 14 pages | UK topic page |
+| Topic page | `/<topic>/`, for example `/prices/` | Yes, 15 pages | UK topic page |
 | Chart and data page | `/charts/<chart-slug>/` | Yes | OWID grapher and data page, UK chart page |
 | Chart view state | `/charts/<chart-slug>/?tab=table&state=kerala&time=2011..2024&units=million` | Yes | OWID URL parameters |
 | All charts | `/charts/` | Yes | UK "All charts" |
@@ -95,6 +95,7 @@ Each topic gets a slug, a Taksal object (`docs/design-direction.md`) and parts i
 | Jobs | `jobs` | How many people work? How many people are unemployed? What kind of work do people do? What do people earn? Jobs across the states. About the data. | MoSPI (PLFS) |
 | Health | `health` | How long do people live? Child and maternal health. Nutrition. Health across the states. About the data. | SRS (ORGI), NFHS (to check) |
 | Education | `education` | How many children are in school? Literacy. Schools and teachers. Education across the states. About the data. | UDISE+ (to check), Census of India, MoSPI surveys (to check) |
+| Science and technology | `science-and-technology` | How many patents do Indians apply for, and from which states? Who files: universities, individuals, startups or companies? How many patents does India grant? How does India's research spending compare? About the data. Patents from IP India, and comparisons from World Bank WDI: India's own research spending (DST) and mobile data prices (TRAI) wait for the publishers' permission. | IP India (CGPDTM annual reports 2014-15 and 2024-25); World Bank WDI (UNESCO UIS, NSF) |
 | Elections | `elections` | How many people vote? Women voters and candidates. Seats and votes by state. About the data. | Election Commission of India (to check) |
 | Crime and justice | `crime-and-justice` | How much crime do the police record? Murders and crimes against women. Charge-sheets and convictions. Prisons and undertrials. Cases pending in the courts. About the data. | NCRB (Crime in India 2024, Prison Statistics India 2024); Ministry of Law and Justice answers in Parliament (court pendency, from NJDG) |
 | Transport | `transport` | How many people die on the roads in each state? Have road deaths risen over time? Who dies on the roads? How do people travel to work and to school? How do households travel on overnight trips? How do Indians travel for leisure, family and pilgrimage? About the data. Road safety, household travel and domestic tourism only: no railways, aviation, freight or vehicle registrations yet. | MoRTH (Road Accidents in India 2024, police records); MoSPI (National Household Travel Survey 2025-26; NSS Report 597, Domestic Tourism in India 2025-26) |
@@ -103,7 +104,7 @@ Each topic gets a slug, a Taksal object (`docs/design-direction.md`) and parts i
 | Agriculture | `agriculture` | How much does a farm household earn, and from what? How many farm households are in debt? Do farm households borrow from banks or from moneylenders? How much land do farm households have? About the data. Rural agricultural households only, 2018-19: no crop area, production or yield until the ministry gives permission. | MoSPI (NSS round 77, Report 587) |
 | Religion and culture | `religion-and-culture` | Religion in India. Languages. Religion and language across the states. About the data. | Census of India (latest full count is 2011; Census 2027 counting runs to 4 Jan 2027) |
 
-Note: `docs/build-exploration.md` scoped the MVP at 6 topics. Release 1 adds Elections, Climate, and Religion and culture, for 9 topics. Living standards (decided 25 Nov 2026, `docs/design-direction.md`) is the tenth, Crime and justice (decided the same day) the eleventh, Trade (decided the same day) the twelfth, Transport (decided the same day) the thirteenth, and Agriculture (decided the same day) the fourteenth.
+Note: `docs/build-exploration.md` scoped the MVP at 6 topics. Release 1 adds Elections, Climate, and Religion and culture, for 9 topics. Living standards (decided 25 Nov 2026, `docs/design-direction.md`) is the tenth, Crime and justice (decided the same day) the eleventh, Trade (decided the same day) the twelfth, Transport (decided the same day) the thirteenth, and Agriculture (decided the same day) the fourteenth. Science and technology (decided 26 Nov 2026) is the fifteenth.
 
 ### Later
 
@@ -120,7 +121,7 @@ Each list gives the blocks from top to bottom. "UK" and "OWID" name the pattern 
 1. Header. Wordmark, navigation, search, number switch. UK header (`home-desktop.png`).
 2. Hero on lac. The Indus seal object, the site name, one line ("India's official statistics, checked and charted"), and search: "Search N charts, topics and states". Under it, "Try" with four terms, for example "inflation", "unemployment", "Kerala", "turnout". UK hero (`home-desktop.png`, `home-mobile.png`).
 3. Latest figures. A ledger of five to seven hero numbers, one per row. Each row has the figure, a plain label, the change from the last period, and the hallmark. Example rows (checked 17 Nov 2026, `docs/design-direction.md`): CPI inflation 6.09%, Oct 2026, Provisional, MoSPI; real GDP growth 7.8%, Q1 FY 2026-27, MoSPI; unemployment 5.0%, Sep 2026, persons 15+, CWS, MoSPI PLFS. Each row links to its chart page. New (UK has no figures on the home page).
-4. Browse by topic. Fourteen topics in a ruled list. Each item has the topic coin (none for a topic whose object is not made yet), the name, one question, and the number of charts. UK "Browse by topic".
+4. Browse by topic. Fifteen topics in a ruled list. Each item has the topic coin (none for a topic whose object is not made yet), the name, one question, and the number of charts. UK "Browse by topic".
 5. Coming later. One text line with the later topics. UK "Coming soon".
 6. States. A small tile map of the 36 states and UTs. Each tile links to its state profile. Under it: "Choose a state or union territory". New.
 7. Latest releases. The five most recent entries from `/releases/`: date, publisher, release, what we changed. Link "All releases". New (OWID "Latest" is articles, not releases).
@@ -375,6 +376,7 @@ A figure that cannot carry all of these does not publish. A figure from a portal
 | National Household Travel Survey | MoSPI | First round 2025-26; fact sheet 5 Oct 2026 |
 | Domestic Tourism Expenditure Survey | MoSPI | NSS rounds 65, 72 and 80; Report 597 for 2025-26, 23 Sep 2026 |
 | Situation Assessment of Agricultural Households | MoSPI | NSS rounds 59, 70 and 77; Report 587 for 2019, September 2021; next round not announced |
+| Annual Report (patents) | IP India (CGPDTM) | Annual, by financial year; no release date stated (the 2024-25 PDF was made on 24 Nov 2025) |
 
 Rhythms to confirm per source before launch. Nothing publishes on its own. A person merges each update (`docs/build-exploration.md`).
 
@@ -474,7 +476,7 @@ Do not copy these UK habits:
 - Index base: "2024=100", with no spaces. GDP base: "base 2022-23".
 - Dates: "17 Nov 2026" in labels, "17 November 2026" in text.
 - Change in a rate: "percentage points", not "%". Write "rose by 0.4 percentage points", not "rose by 0.4%".
-- Hindi: the interface, topic names, chart titles, axis labels, status words and hallmark labels are in Hindi from launch. Use the digits 0 to 9 on Hindi pages too. All Hindi text needs native-speaker review before launch. Draft labels: जनसंख्या (Population), कीमतें (Prices), अर्थव्यवस्था (Economy), व्यापार (Trade), रोज़गार (Jobs), कृषि (Agriculture), स्वास्थ्य (Health), शिक्षा (Education), चुनाव (Elections), अपराध और न्याय (Crime and justice), परिवहन (Transport), जलवायु (Climate), धर्म और संस्कृति (Religion and culture); अनंतिम (Provisional), प्रक्षेपण (Projection), सर्वेक्षण अनुमान (Survey estimate), पद्धति में बदलाव (Method break).
+- Hindi: the interface, topic names, chart titles, axis labels, status words and hallmark labels are in Hindi from launch. Use the digits 0 to 9 on Hindi pages too. All Hindi text needs native-speaker review before launch. Draft labels: जनसंख्या (Population), कीमतें (Prices), अर्थव्यवस्था (Economy), व्यापार (Trade), रोज़गार (Jobs), कृषि (Agriculture), स्वास्थ्य (Health), शिक्षा (Education), विज्ञान और प्रौद्योगिकी (Science and technology), चुनाव (Elections), अपराध और न्याय (Crime and justice), परिवहन (Transport), जलवायु (Climate), धर्म और संस्कृति (Religion and culture); अनंतिम (Provisional), प्रक्षेपण (Projection), सर्वेक्षण अनुमान (Survey estimate), पद्धति में बदलाव (Method break).
 - Name states and UTs as in `research/data/geography.csv`. Say "states and union territories" in full the first time on a page, then "states and UTs".
 - Name the publisher in full the first time, with the short name after it: "the National Statistics Office (NSO), MoSPI".
 
