@@ -4,6 +4,7 @@ import { charts } from '~/content'
 import { renderPlot, viewsOf } from '~/lib/charts'
 import { depths, imbalances, layoutFlows } from '~/lib/charts/flows'
 import { squarify, type Rect } from '~/lib/charts/treemap'
+import { stack } from '~/lib/charts/slope'
 
 const area = (r: Rect) => r.w * r.h
 const overlap = (a: Rect, b: Rect) => Math.max(0, Math.min(a.x + a.w, b.x + b.w) - Math.max(a.x, b.x)) * Math.max(0, Math.min(a.y + a.h, b.y + b.h) - Math.max(a.y, b.y))
@@ -35,6 +36,26 @@ describe('squarify', () => {
   it('gives no tile to a part of 0', () => {
     expect(squarify([{ value: 5 }, { value: 0 }], rect)).toHaveLength(1)
     expect(squarify([], rect)).toEqual([])
+  })
+})
+
+describe('slope labels', () => {
+  it('keep their order, a gap apart, inside the plot', () => {
+    const ys = [100, 101, 102, 103, 104, 400, 10]
+    const ly = stack(ys, 13, 0, 420)
+    const sorted = ys.map((y, i) => ({ y, l: ly[i]! })).sort((a, b) => a.y - b.y)
+    for (let i = 1; i < sorted.length; i++) expect(sorted[i]!.l - sorted[i - 1]!.l).toBeGreaterThanOrEqual(13 - 1e-9)
+    for (const l of ly) {
+      expect(l).toBeGreaterThanOrEqual(0)
+      expect(l).toBeLessThanOrEqual(420)
+    }
+    // A label with room stays on its point.
+    expect(ly[5]).toBe(400)
+  })
+  it('fit a crowded column by using the whole height', () => {
+    const ly = stack(Array.from({ length: 30 }, () => 400), 13, 0, 400)
+    expect(Math.max(...ly)).toBeLessThanOrEqual(400)
+    expect(Math.min(...ly)).toBeGreaterThanOrEqual(0)
   })
 })
 

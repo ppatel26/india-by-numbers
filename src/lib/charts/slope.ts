@@ -7,7 +7,7 @@ import type { Format } from '~/content/types'
 import { decimalsOf, fmt } from '~/lib/format'
 import { INDIA, places } from '~/lib/geography'
 import { svg, type Markup } from '~/lib/markup'
-import { WIDTH, frame, spread, tipAttr, type Width } from './axes'
+import { WIDTH, frame, tipAttr, type Width } from './axes'
 import { fitRow, rowName } from './dots'
 import { drawn, show, type Of, type SeriesData } from './model'
 import { wrapList } from './scatter'
@@ -40,6 +40,34 @@ export function slopeRows(chart: Of<'slope'>): { a: SeriesData; b: SeriesData; r
 /** The change in the chart's unit: a rate in % changes by percentage points. */
 export const changeFormat = (f: Format | undefined, d: number): Format => ({ ...f, unit: f?.unit === '%' ? 'pp' : f?.unit, signed: true, decimals: d, scale: 'none' })
 
+/**
+ * Label positions for points at `y`, in order, at least `gap` apart and inside [lo, hi]. Each
+ * label moves no further than its neighbours force it.
+ */
+export function stack(ys: readonly number[], gap: number, lo: number, hi: number): number[] {
+  const order = ys.map((y, i) => ({ y, i })).sort((a, b) => a.y - b.y)
+  const n = order.length
+  const at = order.map((o) => o.y)
+  for (let k = 0; k < n; k++) at[k] = Math.max(at[k]!, lo + k * gap, k ? at[k - 1]! + gap : -Infinity)
+  for (let k = n - 1; k >= 0; k--) at[k] = Math.min(at[k]!, hi - (n - 1 - k) * gap, k < n - 1 ? at[k + 1]! - gap : Infinity)
+  // Pull each run of touching labels back towards the middle of its points.
+  for (let start = 0; start < n; ) {
+    let end = start
+    while (end + 1 < n && at[end + 1]! - at[end]! <= gap + 1e-9) end++
+    const want = order.slice(start, end + 1).reduce((a, o) => a + o.y, 0) / (end - start + 1)
+    const have = (at[start]! + at[end]!) / 2
+    const shift = Math.max(lo - at[start]!, Math.min(hi - at[end]!, want - have))
+    const prev = start ? at[start - 1]! + gap : -Infinity
+    const next = end < n - 1 ? at[end + 1]! - gap : Infinity
+    const ok = Math.max(prev - at[start]!, Math.min(next - at[end]!, shift))
+    for (let k = start; k <= end; k++) at[k]! += ok
+    start = end + 1
+  }
+  const out: number[] = new Array(n)
+  order.forEach((o, k) => (out[o.i] = at[k]!))
+  return out
+}
+
 /** The rows with the largest change either way, India aside. */
 export function movers(rows: readonly SlopeRow[], n: number): string[] {
   return rows
@@ -61,7 +89,9 @@ export function renderSlope(chart: Of<'slope'>, width: Width): Markup {
   const leftText = (r: SlopeRow) => `${name(r.key)} ${val(r.a!, a)}`
   const rightText = (r: SlopeRow) => `${val(r.b!, b)} ${name(r.key)}`
   const longest = Math.max(...rows.flatMap((r) => [r.a ? leftText(r).length : 0, r.b ? rightText(r).length : 0]))
-  const side = Math.min(compact ? 124 : 250, 12 + longest * 6.3)
+  // Labels sit a little away from the axis, so a leader can fan out to a label moved off its point.
+  const off = compact ? 14 : 30
+  const side = Math.min(compact ? 128 : 260, off + 8 + longest * 6.3)
   const x0 = side
   const x1 = W - side
   const all = rows.flatMap((r) => [r.a?.y, r.b?.y].filter((v): v is number => v != null))
@@ -77,8 +107,9 @@ export function renderSlope(chart: Of<'slope'>, width: Width): Markup {
 
   // Labels at each end, spread so none touch; the line runs to the point, a leader to the label.
   const place = (end: 'a' | 'b') => {
-    const items = rows.filter((r) => named.has(r.key) && r[end]).map((r) => ({ key: r.key, y: y(r[end]!.y!) }))
-    return new Map(spread(items, gap, top - 4, top + plotH + 4).map((i) => [i.key, i.ly]))
+    const items = rows.filter((r) => named.has(r.key) && r[end])
+    const ly = stack(items.map((r) => y(r[end]!.y!)), gap, top, top + plotH + 4)
+    return new Map(items.map((r, i) => [r.key, ly[i]!]))
   }
   const left = place('a')
   const right = place('b')
@@ -106,15 +137,17 @@ export function renderSlope(chart: Of<'slope'>, width: Width): Markup {
     const label = (end: 'a' | 'b') => {
       const p = r[end]
       if (!p) return null
-      const at = end === 'a' ? x0 - 8 : x1 + 8
+      const dir = end === 'a' ? -1 : 1
+      const axis = end === 'a' ? x0 : x1
+      const at = axis + dir * off
       const py = y(p.y!)
       const ly = (end === 'a' ? left : right).get(r.key) ?? py
       const text = end === 'a' ? leftText(r) : rightText(r)
       const anchor = end === 'a' ? 'end' : 'start'
-      const leader = shown && Math.abs(ly - py) > 3 ? svg`<path d="M${end === 'a' ? x0 - 2 : x1 + 2} ${py}L${at + (end === 'a' ? 3 : -3)} ${ly - 4}" stroke="var(--grid)" fill="none"/>` : null
+      const leader = svg`<path d="M${axis + dir * 5} ${py}L${at - dir * 4} ${ly - 4}" stroke="var(--other-line)" stroke-width="0.75" fill="none"/>`
       return shown
         ? svg`${leader}<text class="slope-label" x="${at}" y="${ly}" text-anchor="${anchor}" font-size="12" font-weight="${weight}" fill="var(--ink)">${text}</text>`
-        : svg`<text class="slope-label sel-label" display="none" x="${at}" y="${py + 4}" text-anchor="${anchor}" font-size="12" font-weight="600" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3">${text}</text>`
+        : svg`<text class="slope-label sel-label" display="none" x="${axis + dir * 8}" y="${py + 4}" text-anchor="${anchor}" font-size="12" font-weight="600" fill="var(--ink)" paint-order="stroke" stroke="var(--paper)" stroke-width="3">${text}</text>`
     }
     const aria = tip(r)().replace(/\n/g, '; ')
     const body = svg`${line}${dots}${hitLine}`

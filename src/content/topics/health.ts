@@ -663,6 +663,40 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
+        { text: 'Births in a health facility rose in 28 of the 35 states and UTs surveyed. Nagaland rose most, from 45.7% to 62.2%, and Arunachal Pradesh from 79.2% to 88.7%. Chandigarh fell from 96.9% to 95.8%.' },
+        {
+          chart: {
+            kind: 'slope',
+            slug: 'facility-births-by-state',
+            checked: '2026-11-27',
+            title: 'Births in health facilities by state and UT, 2019-21 and 2023-24',
+            subtitle: 'Share of births in the five years before the survey that took place in a health facility, by state and UT, NFHS-5 and NFHS-6.',
+            punches: { office: 'IIPS', unit: '%', period: '2019-21 and 2023-24' },
+            status: ['Survey estimate', 'Provisional'],
+            note: 'Both ends use one scale. NFHS-6 did not survey Manipur, and its fact sheets give no NFHS-5 value for it.',
+            sources: [NFHS_6],
+            format: { decimals: 1, unit: '%' },
+            series: [
+              { key: 'nfhs5', label: '2019-21', color: 'slate', file: 'health/nfhs-key-indicators-by-state.csv', where: { round: 'NFHS-5', indicator: 'institutional-births' } },
+              { key: 'nfhs6', label: '2023-24', color: 'ink', file: 'health/nfhs-key-indicators-by-state.csv', where: { round: 'NFHS-6', indicator: 'institutional-births' } },
+            ],
+            labels: ['nagaland', 'meghalaya', 'arunachal-pradesh', 'chandigarh'],
+            missing: { manipur: 'NFHS-6 did not survey Manipur' },
+            know: [
+              'A facility birth is a birth in a public or private hospital, health centre or clinic, among all births in the five years before the survey.',
+              'NFHS-5 and NFHS-6 use the same definition. The NFHS-6 fact sheets print the NFHS-5 value beside each NFHS-6 value, so the two ends compare.',
+              'NFHS-6 results are provisional, as the fact sheets say.',
+              'Many states are near 100%, so their lines are short. Small states and UTs have small samples, so small changes may not be real.',
+              'The change in the table is derived: the 2023-24 value minus the 2019-21 value, in percentage points.',
+            ],
+            processing: [
+              'Take both values for each state and UT from the NFHS-6 state and UT fact sheets.',
+              'Draw both periods on one scale. Join the two values of a state only when both exist.',
+              'Derived: subtract the 2019-21 value from the 2023-24 value for the change in the table.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
         {
           chart: {
             kind: 'line',

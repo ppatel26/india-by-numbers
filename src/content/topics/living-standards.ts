@@ -338,6 +338,40 @@ const topic: Topic = {
             nextRelease: 'not announced',
           },
         },
+        {
+          text: 'From 2022-23 to 2023-24 the rural food share rose in 25 of the 36 states and UTs. It rose most in Puducherry, from 40.09% to 43.08%, and fell most in Tripura, from 48.96% to 46.66%. For India it rose from 46.38% to 47.04%.',
+        },
+        {
+          chart: {
+            kind: 'slope',
+            slug: 'food-share-change-by-state',
+            checked: CHECKED,
+            title: 'Share of rural household spending on food by state, 2022-23 and 2023-24',
+            subtitle: 'Food as a share of monthly per capita consumption expenditure in villages, by state and UT, two HCES rounds.',
+            punches: { office: 'MoSPI', unit: '% of MPCE', period: '2022-23 and 2023-24' },
+            status: ['Survey estimate'],
+            note: 'Rural households, values without imputation. Both ends use one scale. Small states and UTs have wide margins of error.',
+            sources: [hces2023_24, hces2022_23, hcesApi(4)],
+            format: { unit: '%', decimals: 2 },
+            series: [
+              { key: '2022-23', label: '2022-23', color: 'slate', file: FOOD_STATE, where: { period: '2022-23', imputation: 'without', sector: 'rural', item_group: 'food' } },
+              { key: '2023-24', label: '2023-24', color: 'ink', file: FOOD_STATE, where: { period: '2023-24', imputation: 'without', sector: 'rural', item_group: 'food' } },
+            ],
+            labels: ['puducherry', 'tripura', 'jammu-kashmir', 'ladakh'],
+            know: [
+              'The share is food spending divided by all consumption spending, for rural households.',
+              'HCES 2022-23 and HCES 2023-24 used the same design: the same item list, three questionnaires over three visits, and computer-assisted interviews. So the two rounds compare. Rounds before 2022-23 do not.',
+              'A one-year change of a point or two can come from sampling. Small states and UTs have wide margins of error.',
+              'The change in the table is derived: the 2023-24 value minus the 2022-23 value, in percentage points.',
+            ],
+            processing: [
+              'Read the "Food Total" category of indicator 4 of the HCES API, rural, without imputation, for both rounds.',
+              'Check it against Statements 4R of NSS Reports No. 592 and 591, as in the map above.',
+              'Derived: subtract the 2022-23 value from the 2023-24 value for the change in the table.',
+            ],
+            nextRelease: 'not announced',
+          },
+        },
       ],
     },
     {
